@@ -94,6 +94,9 @@ L('mb_wall','Medball-Wurf gegen Wand',{},['mb_chest']);
 L('mb_toss','Medball-Scoop-Toss',{},['broad']);
 L('broad','Standweitsprung',{},['mb_toss']);
 
+/* Zuordnung zu RepDB (repdb.co, Free Tier): Bilder und Anleitungen werden zur Laufzeit geladen, nicht mitgeliefert */
+const REPDB = {"fs":"front-squat","hack":"hack-squat","legpress":"leg-press","goblet":"goblet-squat","rdl_db":"dumbbell-romanian-deadlift","hyper45":"back-extension","glute_bridge":"barbell-glute-bridge","ht":"hip-thrust","ht_machine":"hip-thrust","legext":"leg-extension","bss":"bulgarian-split-squat","rev_lunge":"reverse-lunge","stepup":"step-ups","curl_seated":"seated-leg-curl","curl_lying":"leg-curl","nordic":"nordic-hamstring-curl","calf_st":"standing-calf-raise","calf_smith":"smith-machine-calf-raise","calf_se":"seated-calf-raise","calf_lp":"machine-calf-raise","bench":"bench-press","db_bench":"db-bench-press","smith_bench":"smith-machine-bench-press","machine_press":"chest-press-machine","dip_w":"dips","dip":"dips","dip_assist":"assisted-dips","dip_machine":"plate-loaded-seated-dip-machine","incl":"incline-db-press","db_ohp":"seated-db-press","machine_ohp":"machine-shoulder-press","pullup_w":"weighted-pull-up","chinup_w":"chin-ups","latpd_heavy":"lat-pulldown","pullup":"pull-up","neutral_pu":"neutral-grip-pull-ups","chinup":"chin-ups","latpd":"lat-pulldown","assisted_pu":"assisted-pull-ups","row":"chest-supported-db-row","cable_row":"seated-cable-row","tbar_cs":"t-bar-row","face":"face-pull","rev_fly":"dumbbell-reverse-fly","lat":"lateral-raise","lat_cable":"cable-lateral-raise","incline_curl":"incline-db-curl","curl":"ez-bar-curl","db_curl":"seated-dumbbell-curl","cable_curl":"cable-curl","preacher":"preacher-curl","hammer":"hammer-curl","tri_oh":"cable-overhead-tricep-extension","db_oh_ext":"overhead-tricep-extension","tri_pd":"tricep-pushdown","crunch":"cable-crunch","machine_crunch":"machine-seated-crunch","decline_crunch":"decline-crunch","hlr":"hanging-leg-raise","captain":"captains-chair-knee-raise","rev_crunch":"reverse-crunches","carry":"suitcase-carry","farmer":"dumbbell-farmers-walk","box":"box-jump","squat_jump":"jump-squat"};
+
 const LP = 'Letzter Satz: bis zum Versagen, dann 4–6 Teilwiederholungen in der gedehnten Position.';
 
 /* ---------- Plan ---------- */
@@ -200,20 +203,20 @@ const ZEPP_TYPE = { 1:'joggen', 6:'gehen', 8:'joggen', 9:'rad', 10:'rad', 14:'sc
 
 /* ---------- Lebensmittel-Presets (Schätzwerte, editierbar) ---------- */
 const PRESET_FOODS = [
-  { id:'p_koefte', name:'Hähnchen-Köfte (eigenes Rezept)', base:'piece', kcal:100, p:19.6, f:1.1, c:3.0, pieceG:95 },
-  { id:'p_syrniki', name:'Syrniki (eigenes Rezept)', base:'piece', kcal:116, p:10.4, f:2.3, c:12.7, pieceG:70 },
-  { id:'p_skyr', name:'Skyr natur', base:'100g', kcal:63, p:11, f:0.2, c:4 },
-  { id:'p_reis', name:'Reis, gekocht', base:'100g', kcal:130, p:2.7, f:0.3, c:28 },
-  { id:'p_kartoffel', name:'Kartoffeln, gekocht', base:'100g', kcal:77, p:2, f:0.1, c:17 },
-  { id:'p_gemuese', name:'Gemüse gemischt', base:'100g', kcal:30, p:2, f:0.3, c:5 },
-  { id:'p_beeren', name:'Beeren (TK)', base:'100g', kcal:45, p:0.8, f:0.3, c:9 },
-  { id:'p_banane', name:'Banane', base:'piece', kcal:105, p:1.3, f:0.4, c:27, pieceG:120 },
-  { id:'p_whey', name:'Whey (30 g Scoop)', base:'piece', kcal:120, p:24, f:1.5, c:2, pieceG:30 },
-  { id:'p_ei', name:'Ei (M)', base:'piece', kcal:78, p:6.5, f:5.3, c:0.5, pieceG:55 },
-  { id:'p_oel', name:'Olivenöl', base:'100g', kcal:884, p:0, f:100, c:0 },
-  { id:'p_haehnchen', name:'Hähnchenbrust, roh', base:'100g', kcal:105, p:23, f:1.2, c:0 },
-  { id:'p_quark', name:'Magerquark', base:'100g', kcal:67, p:12, f:0.3, c:4 },
-  { id:'p_hafer', name:'Haferflocken', base:'100g', kcal:370, p:13, f:7, c:59 } ];
+  { id:'p_koefte', name:'Hähnchen-Köfte (eigenes Rezept)', base:'piece', kcal:100, p:19.6, f:1.1, c:3.0, pieceG:95, fib:0.6, sug:0.6, salt:0.4 },
+  { id:'p_syrniki', name:'Syrniki (eigenes Rezept)', base:'piece', kcal:116, p:10.4, f:2.3, c:12.7, pieceG:70, fib:0.3, sug:4, salt:0.1 },
+  { id:'p_skyr', name:'Skyr natur', base:'100g', kcal:63, p:11, f:0.2, c:4, fib:0, sug:4, salt:0.1 },
+  { id:'p_reis', name:'Reis, gekocht', base:'100g', kcal:130, p:2.7, f:0.3, c:28, fib:0.4, sug:0.1, salt:0 },
+  { id:'p_kartoffel', name:'Kartoffeln, gekocht', base:'100g', kcal:77, p:2, f:0.1, c:17, fib:1.8, sug:0.8, salt:0 },
+  { id:'p_gemuese', name:'Gemüse gemischt', base:'100g', kcal:30, p:2, f:0.3, c:5, fib:2.5, sug:2.5, salt:0.05 },
+  { id:'p_beeren', name:'Beeren (TK)', base:'100g', kcal:45, p:0.8, f:0.3, c:9, fib:4, sug:6, salt:0 },
+  { id:'p_banane', name:'Banane', base:'piece', kcal:105, p:1.3, f:0.4, c:27, pieceG:120, fib:3.1, sug:14, salt:0 },
+  { id:'p_whey', name:'Whey (30 g Scoop)', base:'piece', kcal:120, p:24, f:1.5, c:2, pieceG:30, fib:0.3, sug:1.5, salt:0.15 },
+  { id:'p_ei', name:'Ei (M)', base:'piece', kcal:78, p:6.5, f:5.3, c:0.5, pieceG:55, fib:0, sug:0.2, salt:0.2 },
+  { id:'p_oel', name:'Olivenöl', base:'100g', kcal:884, p:0, f:100, c:0, fib:0, sug:0, salt:0 },
+  { id:'p_haehnchen', name:'Hähnchenbrust, roh', base:'100g', kcal:105, p:23, f:1.2, c:0, fib:0, sug:0, salt:0.15 },
+  { id:'p_quark', name:'Magerquark', base:'100g', kcal:67, p:12, f:0.3, c:4, fib:0, sug:4, salt:0.1 },
+  { id:'p_hafer', name:'Haferflocken', base:'100g', kcal:370, p:13, f:7, c:59, fib:10, sug:1, salt:0 } ];
 const DAY_TEMPLATE = [
   { meal:'Frühstück', food:'p_syrniki', qty:3, unit:'Stk' }, { meal:'Frühstück', food:'p_skyr', qty:250, unit:'g' }, { meal:'Frühstück', food:'p_beeren', qty:100, unit:'g' },
   { meal:'Mittag', food:'p_koefte', qty:4, unit:'Stk' }, { meal:'Mittag', food:'p_reis', qty:250, unit:'g' }, { meal:'Mittag', food:'p_gemuese', qty:300, unit:'g' }, { meal:'Mittag', food:'p_oel', qty:10, unit:'g' },

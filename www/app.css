@@ -251,3 +251,29 @@ ul.rules{margin:6px 0 0;padding-left:20px} ul.rules li{margin-bottom:6px;max-wid
 .ex-actions{align-items:center}
 .exnote{font-family:var(--f);font-size:14px;min-height:38px;padding:8px 14px}
 .health.four{grid-template-columns:repeat(2,minmax(0,1fr))}
+
+/* Übungsbilder, Körperkarte, Fotos, Ernährung */
+.thumb{flex:0 0 64px;width:64px;height:64px;border-radius:18px;background:var(--paper);border:0;padding:0;overflow:hidden;cursor:pointer}
+.thumb img{width:100%;height:100%;object-fit:contain}
+.ex-h .grow .exlink{display:inline}
+.histbtn{border:0;cursor:pointer}
+.ex-h .prio{margin-left:6px}
+.demo{position:relative;width:100%;max-width:340px;aspect-ratio:1/1;margin:14px auto 0;border-radius:var(--r);background:var(--fog);overflow:hidden}
+.demo img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.demo.two img.b{animation:hbFade 2.6s ease-in-out infinite alternate}
+@keyframes hbFade{0%,30%{opacity:0}70%,100%{opacity:1}}
+@media (prefers-reduced-motion:reduce){.demo.two img.b{animation:none;opacity:.0}}
+.bodymap{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
+.bodymap svg{width:100%;height:auto;display:block;max-height:420px}
+.rpehelp{border:0;background:none;font:inherit;font-family:var(--f-micro);font-size:12px;font-weight:700;color:var(--amber);cursor:pointer;padding:0}
+.ba{position:relative;width:100%;aspect-ratio:3/4;border-radius:var(--r);overflow:hidden;background:var(--paper);margin-top:8px}
+.ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ba-l,.ba-r{position:absolute;bottom:10px;background:rgba(47,47,47,.75);color:#fff;font-size:12px;font-weight:700;border-radius:var(--r);padding:3px 10px}
+.ba-l{right:10px} .ba-r{left:10px}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(88px,1fr));gap:8px;margin-top:12px}
+.pth{border:3px solid transparent;border-radius:18px;padding:0;background:var(--paper);overflow:hidden;cursor:pointer;position:relative;aspect-ratio:3/4}
+.pth img{width:100%;height:100%;object-fit:cover;display:block}
+.pth span{position:absolute;left:4px;bottom:4px;background:rgba(47,47,47,.75);color:#fff;font-size:11px;font-weight:700;border-radius:10px;padding:1px 6px}
+.pth.sel{border-color:var(--ember)}
+.micro{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:16px;font-size:14px}
+.micro .k{font-size:13px;color:var(--muted);font-weight:600}
