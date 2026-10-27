@@ -100,7 +100,7 @@ const REPDB = {"fs":"front-squat","hack":"hack-squat","legpress":"leg-press","go
 const LP = $t('Letzter Satz: bis zum Versagen, dann 4–6 Teilwiederholungen in der gedehnten Position.');
 
 /* ---------- Plan ---------- */
-function phase(w){ if(w<=3) return 'b1'; if(w===4||w===8) return 'dl'; if(w<=7) return 'b2'; if(w<=11) return 'b3'; return 'test'; }
+function phase(w){ const P = typeof S !== 'undefined' && S && S.plan && S.plan.phases; if (P && P[w - 1]) return P[w - 1]; if(w<=3) return 'b1'; if(w===4||w===8) return 'dl'; if(w<=7) return 'b2'; if(w<=11) return 'b3'; return 'test'; }
 const PH_LABEL = { b1:$t('Einstieg'), b2:$t('Aufbau'), b3:$t('Intensiv'), dl:$t('Deload'), test:$t('Testwoche') };
 const BACK_NOTE = $t('Rücken-Ampel rot → Pendulum Squat.');
 /* slot · ex · sets · reps · rpe · rest (s) · type: main|bo|dp|bw|power|carry · note · superset */
@@ -199,7 +199,7 @@ const PLAN_TPL = {
   blank: { name:'Leerer Plan', desc:'Zwei leere Kraft-Einheiten, du baust alles selbst.',
     sessions: () => [ { k:'A', kind:'gym', title:'Einheit A', sub:'', add:[] }, { k:'B', kind:'gym', title:'Einheit B', sub:'', add:[] } ] } };
 const TPL_DAYMAP = { hybrid: DEFAULT_DAYMAP, gk3: { A:1, B:3, Z:4, C:5 }, blank: { A:1, B:4 } };
-function makePlan(tpl) { const T = PLAN_TPL[tpl] || PLAN_TPL.hybrid; return { tpl: PLAN_TPL[tpl] ? tpl : 'hybrid', name: T.name, sessions: JSON.parse(JSON.stringify(T.sessions())), dayMap: Object.assign({}, TPL_DAYMAP[tpl] || DEFAULT_DAYMAP), note:'', targets:null, v:1 }; }
+function makePlan(tpl) { const T = PLAN_TPL[tpl] || PLAN_TPL.hybrid; return { tpl: PLAN_TPL[tpl] ? tpl : 'hybrid', name: T.name, phases: T.phases || null, sessions: JSON.parse(JSON.stringify(T.sessions())), dayMap: Object.assign({}, TPL_DAYMAP[tpl] || DEFAULT_DAYMAP), note:'', targets:null, v:1 }; }
 const SESSION_LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
 /* ---------- Freie Aktivitäten ---------- */

@@ -40,3 +40,12 @@ npx cap open android   # in Android Studio auf Run tippen
 - Anmeldung per Einladungscode: Der Coach erstellt im Team-Bereich einen Code, der Athlet löst ihn beim ersten Start ein und wählt Benutzername und Passwort.
 - Pläne sind Daten (`S.plan`): Vorlage (Hybridblock, Ganzkörper 3×, leer) plus Anpassungen pro Übung. Der Coach bearbeitet sie im Plan-Editor, die App des Athleten holt sie beim Öffnen.
 - Sprachen: Deutsch (Quelle), Englisch, Russisch. Alle Anzeige-Texte laufen durch `$t()`, Wörterbücher in `www/lang-en.js` und `www/lang-ru.js`.
+
+## Pläne, Planung und Geräte
+
+- **Einladung mit drei Wegen:** frei dem Athleten überlassen (er wählt Bibliothek, generierten Plan, eigenen Plan oder freies Training), nach fertigem Plan aus der Bibliothek, oder vom Coach erstellen lassen (Fragebogen mit Körperkarte für Beschwerden → Anfrage in `plan_requests` → Coach bekommt eine Benachrichtigung beim nächsten Abruf).
+- **Plan-Bibliothek** (`library.js`): 14 Pläne aus freien Quellen (T Nation, jimwendler.com, GZCL, r/Fitness, r/bodyweightfitness, NHS, Helgerud 2007 …) mit Zielgruppe, Voraussetzungen, Evidenz-Bewertung A/B/C, Vor- und Nachteilen. Prozentangaben der Originale sind als RPE umgesetzt. Beschreibungen sind eigene Zusammenfassungen mit Quellenlink.
+- **Empfehlung und Generator:** `recommendPlans()` bewertet Pläne nach Ziel, Erfahrung, Tagen, Zeit und Ort; `generatePlan()` baut aus denselben Angaben einen Plan und meidet Übungen, die markierte Beschwerdestellen belasten.
+- **Training planen:** einzelne Trainings zusammenstellen, speichern und jederzeit starten, auch ohne festen Plan.
+- **Mein Studio:** fehlende Geräte und ausgeschlossene Übungen; betroffene Übungen werden automatisch durch die nächste passende Alternative ersetzt. Bei jeder Übung unter „Varianten“: Alternativen, leichter, schwerer.
+- **Planwechsel:** der alte Plan wird archiviert, Verlauf und Vorschläge bleiben erhalten.

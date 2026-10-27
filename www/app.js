@@ -7,18 +7,18 @@ const DEFAULTS = () => ({
   v: 2,
   settings: { hfmax:186, rhrBase:'', puStart:8, goalRate:0.8, tdee0:3200, protein:200, fat:70, floor:2000, startWeight:115, targetWeight:103, startKcal:2400, stepGoal:9000, sleepNeedH:8, barKg:20, dayMap: Object.assign({}, DEFAULT_DAYMAP) },
   block: { week:1, startedOn:null },
-  plan:null, meta:{}, sessions:{}, swaps:{}, days:{}, foods:{}, recent:[], checkins:[], body:{}, activities:[], health:{}, daily:{}, hrTraces:{}, exNotes:{}, mealTemplates:[], healthMeta:{ lastSync:null, source:null, ignored:[] }
+  plan:null, meta:{}, sessions:{}, swaps:{}, days:{}, foods:{}, recent:[], checkins:[], body:{}, activities:[], health:{}, daily:{}, hrTraces:{}, exNotes:{}, mealTemplates:[], workouts:[], archive:[], healthMeta:{ lastSync:null, source:null, ignored:[] }
 });
 let S = DEFAULTS(); S.plan = makePlan('hybrid');
 function loadState(raw) { const d = JSON.parse(raw); const def = DEFAULTS(); const s = Object.assign(DEFAULTS(), d);
   s.settings = Object.assign(def.settings, d.settings || {}); s.settings.dayMap = Object.assign({}, DEFAULT_DAYMAP, (d.settings && d.settings.dayMap) || {});
   s.block = Object.assign({ week:1, startedOn:null }, d.block || {}); s.healthMeta = Object.assign({ lastSync:null, source:null, ignored:[] }, d.healthMeta || {});
-  ['activities','recent','checkins','mealTemplates'].forEach(k => { if (!Array.isArray(s[k])) s[k] = []; });
+  ['activities','recent','checkins','mealTemplates','workouts','archive'].forEach(k => { if (!Array.isArray(s[k])) s[k] = []; });
   ['sessions','swaps','days','foods','body','health','daily','hrTraces','exNotes'].forEach(k => { if (!s[k] || typeof s[k] !== 'object') s[k] = {}; });
   if (!d.v || d.v < 2) { delete s.settings.start; s.v = 2; }
   if (!s.meta || typeof s.meta !== 'object') s.meta = {}; if (!s.meta.onboarded && s.settings.vo2Start === undefined && Object.keys(s.sessions).length) s.settings.vo2Start = '39';
   if (!s.meta.onboarded && (Object.keys(s.sessions).length || Object.keys(s.days).length || s.activities.length)) s.meta.onboarded = true;
-  if (!s.plan || !Array.isArray(s.plan.sessions) || !s.plan.sessions.length) s.plan = makePlan('hybrid'); if (!s.meta || typeof s.meta !== 'object') s.meta = {};
+  if (!s.plan || !Array.isArray(s.plan.sessions) || (!s.plan.sessions.length && !s.plan.free && !s.plan.waiting)) s.plan = makePlan('hybrid'); if (!s.meta || typeof s.meta !== 'object') s.meta = {};
   s.plan.sessions.forEach(x => { if (!(x.k in s.settings.dayMap)) s.settings.dayMap[x.k] = s.plan.dayMap && s.plan.dayMap[x.k] != null ? s.plan.dayMap[x.k] : ''; });
   /* alte Slot-Namen aus v1 auf neue Slots mappen, damit der Verlauf bleibt */
   const ren = { calf_st:'calf_a', legext:'legext', calf_se:'calf_c', curl:'bi_b', crunch:'ab_b', hlr:'ab_a', hammer:'bi_c', lat_c:'lat_c' };
@@ -66,10 +66,12 @@ const sKey = (w, k) => 'w' + pad(w) + '-' + k;
 let ORDER = [], SESS = {};
 const TPL_SESS = Object.fromEntries(SESSIONS.map(s => [s.k, s]));
 function sessDef(x) { return x.base ? TPL_SESS[x.base] : x.kind === 'hiit' ? TPL_SESS.H : x.kind === 'z2' ? TPL_SESS.Z : { title: $t('Einheit ') + x.k, sub: '' }; }
-function resolveSessions(plan) { return Object.fromEntries(plan.sessions.map(x => { const d = sessDef(x) || {}; return [x.k, Object.assign({}, x, { title: $t(x.title || d.title), sub: $t(x.sub != null && x.sub !== '' ? x.sub : (d.sub || '')) })]; })); }
+function resolveSessions(plan) { return Object.fromEntries(plan.sessions.map(x => { const d = sessDef(x) || {}; return [x.k, Object.assign({}, x, { title: $t(x.title || d.title), sub: $t(x.sub != null && x.sub !== '' ? x.sub : x.cardio ? '' : (d.sub || '')) })]; })); }
 function applyPlan() { ORDER = S.plan.sessions.map(x => x.k); SESS = resolveSessions(S.plan); S.plan.sessions.forEach(x => { if (!(x.k in S.settings.dayMap)) S.settings.dayMap[x.k] = ''; }); }
 const isLite = w => { const p = phase(w); return p === 'dl' || p === 'test'; };
-function scaleItem(it, w) { const x = Object.assign({ note: '', sup: '', type: 'dp', rest: 90 }, it); if (isLite(w)) { x.sets = Math.max(1, Math.ceil(x.sets / 2)); if (x.rpe != null) x.rpe = Math.max(5, x.rpe - 2); } return x; }
+function scaleItem(it, w) { const x = Object.assign({ note: '', sup: '', type: 'dp', rest: 90 }, it);
+  if (it.wk && it.wk.length) { const e = it.wk[(w - 1) % it.wk.length]; if (e) { if (e.sets != null) x.sets = e.sets; if (e.reps != null) x.reps = e.reps; if (e.rpe !== undefined) x.rpe = e.rpe; if (e.note) x.note = e.note; } delete x.wk; return x; }
+  if (isLite(w)) { x.sets = Math.max(1, Math.ceil(x.sets / 2)); if (x.rpe != null) x.rpe = Math.max(5, x.rpe - 2); } return x; }
 function applyOv(x, o, w) { const y = Object.assign({}, x); ['ex', 'reps', 'note', 'sup', 'type'].forEach(f => { if (o[f] != null && o[f] !== '') y[f] = o[f]; }); if (o.rest != null) y.rest = o.rest;
   if (o.sets != null) y.sets = isLite(w) ? Math.min(o.sets, x.sets) : o.sets; if (o.rpe != null && !isLite(w)) y.rpe = o.rpe; return y; }
 function planForP(plan, w, k) { const s = plan && plan.sessions.find(x => x.k === k); if (!s || s.kind !== 'gym') return []; const ov = s.ov || {};
@@ -84,12 +86,23 @@ const GYM = () => ORDER.filter(isGym);
 const Z2K = () => ORDER.find(k => SESS[k].kind === 'z2');
 /* beinlastige Einheit: Hauptübung oder mehrere Übungen für Quads/Hamstrings/Glutes */
 function legDay(k, w) { if (!isGym(k)) return false; const l = planFor(w || curWeek(), k); return l.some(p => p.type === 'main' && LIB[p.ex] && ((LIB[p.ex].muscles.q || 0) >= 1 || (LIB[p.ex].muscles.g || 0) >= 1)) || l.filter(p => LIB[p.ex] && ((LIB[p.ex].muscles.q || 0) + (LIB[p.ex].muscles.h || 0) >= 1)).length >= 3; }
-function sessSub(w, k) { const s = SESS[k]; if (s.kind === 'hiit') return hiit(w).title; if (s.kind === 'z2') return Z2MIN[w - 1] + $t(' min · ') + s.sub; return s.sub; }
+function cardioSpec(w, k) { return cardioSpecS(SESS[k], w); }
+function cardioSpecS(s, w) { const c = s && s.cardio;
+  if (c && c.weeks && c.weeks.length) { const i = c.clamp ? Math.min(w, c.weeks.length) - 1 : (w - 1) % c.weeks.length; let e = c.weeks[i]; if (typeof e === 'number') e = { mode: 'z2', min: e }; return Object.assign({ mode: s.kind === 'hiit' ? 'int' : 'z2' }, e); }
+  if (s && s.kind === 'hiit') { const h = hiit(w); return { mode: h.mode, reps: h.reps, dur: h.dur, rest: 3, warm: 10, cool: 5, hi: true, min: h.min, title: h.title, sub: h.sub }; }
+  return { mode: 'z2', min: Z2MIN[w - 1], std: true }; }
+function cardioTitle(sp) { if (sp.title) return $t(sp.title); if (sp.mode === 'int') return sp.reps + ' × ' + fmt(sp.dur) + (sp.run ? $t(' min laufen') : $t(' min')); return sp.min + (sp.run ? $t(' min am Stück laufen') : $t(' min Z2')); }
+function cardioSub(sp) { if (sp.sub) return $t(sp.sub); if (sp.mode === 'int') return sp.run ? fmt(sp.rest) + $t(' min gehen dazwischen, 5 min zügig gehen zum Auf- und Abwärmen') : fmt(sp.rest) + $t(' min locker zwischen den Intervallen'); return sp.run ? $t('Locker, du kannst dich dabei unterhalten.') : $t('Du kannst in ganzen Sätzen reden.'); }
+function sessSub(w, k) { const s = SESS[k]; if (s.cardio) return cardioTitle(cardioSpec(w, k)); if (s.kind === 'hiit') return hiit(w).title; if (s.kind === 'z2') return Z2MIN[w - 1] + $t(' min · ') + s.sub; return s.sub; }
 const RE_SESS = /^w(\d+)-([A-Z])$/;
 applyPlan();
 function sess(w, k) { const key = sKey(w, k); return S.sessions[key] || (S.sessions[key] = { check: {}, logs: {}, swaps: {} }); }
 function peekSess(w, k) { return S.sessions[sKey(w, k)]; }
-function actualEx(w, k, spec) { const s = peekSess(w, k); return (s && s.swaps && s.swaps[spec.slot]) || S.swaps[spec.slot] || spec.ex; }
+function chosenEx(w, k, spec) { const s = peekSess(w, k); return (s && s.swaps && s.swaps[spec.slot]) || S.swaps[spec.slot] || spec.ex; }
+function actualEx(w, k, spec) { const c = chosenEx(w, k, spec); return exAvailable(c) ? c : (substituteEx(c) || c); }
+/* Ersatz, wenn ein Gerät fehlt: Alternativen, dann leichtere Varianten, Breitensuche */
+function substituteEx(id) { if (!LIB[id]) return null; const seen = new Set([id]); const q = [...(LIB[id].alts || []), ...((SCALE[id] || {}).e || []), ...((SCALE[id] || {}).h || [])];
+  while (q.length) { const x = q.shift(); if (seen.has(x) || !LIB[x]) continue; seen.add(x); if (exAvailable(x)) return x; (LIB[x].alts || []).forEach(y => q.push(y)); } return null; }
 function chronIndex(w, k) { return (w - 1) * ORDER.length + ORDER.indexOf(k); }
 const curWeek = () => Math.max(1, Math.min(12, S.block.week || 1));
 function markStarted(w, k) { const s = sess(w, k); if (!s.date) s.date = today(); if (!S.block.startedOn) S.block.startedOn = today(); }
@@ -101,7 +114,7 @@ function sessProgress(w, k) { const s = peekSess(w, k);
   if (isCardio(k)) { const d = (s && s.cardio && num(s.cardio.dur) != null) || !!countsAsActivity(w, k); return { done: d, f: d ? 1 : 0, t: 1 }; }
   let t = 0, f = 0; planFor(w, k).forEach(p => { t += p.sets; const lg = s && s.logs[p.slot]; if (lg) f += (lg.sets || []).filter(x => x && x.done).length; });
   return { done: t > 0 && f / t >= 0.8, f, t }; }
-function weekDone(w) { return ORDER.every(k => sessProgress(w, k).done); }
+function weekDone(w) { return ORDER.length > 0 && ORDER.every(k => sessProgress(w, k).done); }
 function lastDate(w) { let d = null; ORDER.forEach(k => { const s = peekSess(w, k); if (s && s.date && (!d || s.date > d)) d = s.date; const a = countsAsActivity(w, k); if (a && (!d || a.date > d)) d = a.date; }); return d; }
 /* nächste Woche erst am Tag nach der letzten Einheit, damit „Heute“ am Trainingstag „erledigt“ zeigt */
 function maybeAdvance() { const w = curWeek(); if (w >= 12 || !weekDone(w)) return; const ld = lastDate(w); if (ld && ld >= today()) return;
@@ -149,7 +162,7 @@ function history(w, k, exId) {
     if (found.length) return { w: ww, k: kk, items: found };
   }
   return null; }
-function lastAny(exId) { for (let w = 12; w >= 1; w--) for (let i = 4; i >= 0; i--) { const h = history(w, ORDER[i], exId); if (h) return h; } return null; }
+function lastAny(exId) { for (let w = 12; w >= 1; w--) for (let i = ORDER.length - 1; i >= 0; i--) { const h = history(w, ORDER[i], exId); if (h) return h; } return null; }
 function bestE1rm(h) { let best = null;
   h.items.forEach(it => it.sets.forEach(s => { if (!s.w || !s.r) return; const rpe = s.rpe ?? (it.spec && it.spec.rpe) ?? 8; const v = e1rm(s.w, s.r, Math.min(10, rpe)); if (!best || v > best) best = v; }));
   return best; }
@@ -158,7 +171,8 @@ const isPrio = exId => { const m = LIB[exId] && LIB[exId].muscles; if (!m) retur
 
 function planSuggestion(w, k, spec, exId, rd) {
   const tgt = spec.rpe != null ? spec.rpe + (spec.type === 'main' ? rd.rpeShift : 0) : null;
-  const h = history(w, k, exId); const rng = repRange(spec.reps);
+  const h = history(w, k, exId) || archiveHistory(exId); const rng = repRange(spec.reps);
+  if (spec.type === 'time') { const rr = repRange(spec.reps); return { txt: $t('Zeit pro Satz: ') + spec.reps + $t(' s. Gleichmäßig, Technik vor Tempo.'), cls: 'first', reps: rr && rr.lo }; }
   if (spec.type === 'power') return { txt: $t('Jede Wiederholung maximal schnell. Qualität vor Menge.'), cls: 'first' };
   if (spec.type === 'bo') {
     const top = (sess(w, k).logs.bench_top ? loggedSets(sess(w, k).logs.bench_top) : []).find(s => s.w);
@@ -259,10 +273,10 @@ function render(scrollTop) {
   if (!S.meta.onboarded && route.name !== 'start' && !VIEW) { location.hash = '#start'; return; }
   document.body.classList.toggle('onb-mode', route.name === 'start');
   if (!VIEW) maybeAdvance();
-  const tabName = route.name === 'frei' ? 'training' : ['mehr', 'admin', 'plan', 'start'].includes(route.name) ? '' : route.name;
+  const tabName = route.name === 'frei' ? 'training' : ['mehr', 'admin', 'plan', 'start'].includes(route.name) ? '' : ['library', 'workout'].includes(route.name) ? 'training' : route.name;
   document.querySelectorAll('#tabbar a').forEach(a => a.classList.toggle('on', a.dataset.r === tabName));
   const v = $('#view'); const y = window.scrollY;
-  const map = { training: () => route.arg ? viewSession(route.arg) : viewTraining(), frei: () => viewFree(route.arg), essen: viewEssen, verlauf: viewProgress, mehr: viewMehr, start: () => viewStart(route.arg), admin: () => viewAdmin(route.arg), plan: () => viewPlan(route.arg) };
+  const map = { training: () => route.arg ? viewSession(route.arg) : viewTraining(), frei: () => viewFree(route.arg), essen: viewEssen, verlauf: viewProgress, mehr: viewMehr, start: () => viewStart(route.arg), library: () => route.arg ? viewLibPlan(route.arg) : viewLibrary(), workout: () => viewWorkout(route.arg), admin: () => viewAdmin(route.arg), plan: () => viewPlan(route.arg) };
   v.innerHTML = viewBar() + (map[route.name] || viewHeute)();
   if (route.name === 'training' && route.arg) keepAwake(); else if ($('#timer').hidden && wakeLock) { try { wakeLock.release(); } catch (e) {} wakeLock = null; }
   if (route.name === 'verlauf') refreshPhotoCard();
@@ -287,7 +301,7 @@ function viewHeute() {
   planned.forEach(k => { const pr = sessProgress(w, k); const s = SESS[k];
     train += '<a class="li" href="#training/' + sKey(w, k) + '">' + badge(k) + '<div class="grow"><b>' + s.title + '</b><small>' + esc(sessSub(w, k)) + '</small></div><span class="tag"><span class="dot ' + (pr.done ? 'green' : pr.f ? 'amber' : 'mist') + '"></span>' + (pr.skipped ? $t('übersprungen') : pr.done ? $t('erledigt') : pr.f ? pr.f + '/' + pr.t : $t('offen')) + '</span></a>'; });
   const others = open.filter(k => !planned.includes(k));
-  const trainCard = $t('<div class="card flush"><div class="meal-h"><b>Training · Woche ') + w + '</b><span class="tag">' + PH_LABEL[phase(w)] + '</span></div>' +
+  const trainCard = !ORDER.length ? noPlanCard() : $t('<div class="card flush"><div class="meal-h"><b>Training · Woche ') + w + '</b><span class="tag">' + PH_LABEL[phase(w)] + '</span></div>' +
     (train ? (S.settings.mode === 'rotation' ? $t('<div class="lbl" style="padding:0 20px">Als Nächstes</div>') : '') + '<div class="list">' + train + '</div>' : '<div style="padding:0 20px 14px" class="muted">' + (S.settings.mode === 'rotation' ? $t('Woche ') + w + $t(' ist komplett.') : $t('Heute ist kein Training eingeplant.')) + '</div>') +
     (others.length ? '<div style="padding:4px 20px 18px"><div class="lbl" style="margin-bottom:8px">' + (train ? $t('Diese Woche noch offen') : $t('Nachholen oder vorziehen')) + '</div><div class="row">' + others.map(k => '<a class="btn sm" href="#training/' + sKey(w, k) + '">' + SESS[k].title + (st.dayMap[k] === '' || st.dayMap[k] == null ? '' : ' <span class="muted">' + WD[st.dayMap[k]] + '</span>') + '</a>').join('') + '</div></div>' : '') + '</div>';
   const todaysActs = S.activities.filter(a => a.date === t);
@@ -315,8 +329,8 @@ function healthStrip(d) { const h = S.health[d] || {}, y = S.health[addDays(d, -
   (h.hrv ? $t('<div class="stat" style="background:var(--paper)"><div class="k">HRV</div><div class="v num">') + fmt(h.hrv, 0) + $t('</div><div class="s">ms</div>') + deltaTag(h.hrv, avgPrev('hrv', d, 30), true, $t(' ms')) + '</div>' : '') +
   '</div>' + (src && !nodata ? $t('<div class="src" style="margin-top:8px">Quelle: ') + esc({ hc: $t('Health Connect (Zepp)'), zepp: $t('Zepp-Export'), manual: $t('manuell') }[src] || src) + (S.healthMeta.lastSync ? $t(' · Stand ') + new Date(S.healthMeta.lastSync).toLocaleString(LOCALE, { day: 'numeric', month: 'numeric', hour: $t('2-digit'), minute: $t('2-digit') }) : '') + '</div>' : '') + '</div>'; }
 function rings(tot, tg) { const R = (v, t, color, lab, unit) => { const pct = t ? Math.min(1, v / t) : 0, over = t && v > t * 1.05, C = 2 * Math.PI * 28;
-    return '<div class="ring"><svg viewBox="0 0 72 72"><circle cx="36" cy="36" r="28" fill="none" stroke="var(--paper)" stroke-width="8"/>' + (pct > 0 ? '<circle cx="36" cy="36" r="28" fill="none" stroke="' + (over ? 'var(--signal)' : color) + '" stroke-width="8" stroke-linecap="round" stroke-dasharray="' + (C * pct).toFixed(1) + ' ' + C.toFixed(1) + '" transform="rotate(-90 36 36)"/>' : '') + '</svg><div class="v num">' + fmt(v, 0) + '</div><div class="t">' + lab + ' / ' + fmt(t, 0) + unit + '</div></div>'; };
-  return '<div class="rings">' + R(tot.kcal, tg.kcal, 'var(--signal)', $t('kcal'), '') + R(tot.p, tg.p, 'var(--plum)', $t('Protein'), $t(' g')) + R(tot.c, tg.c, 'var(--sky)', $t('KH'), $t(' g')) + R(tot.f, tg.f, 'var(--verdant)', $t('Fett'), $t(' g')) + '</div>'; }
+    return '<div class="ring"><svg viewBox="0 0 72 72"><circle cx="36" cy="36" r="28" fill="none" stroke="var(--paper)" stroke-width="8"/>' + (pct > 0 ? '<circle cx="36" cy="36" r="28" fill="none" stroke="' + (over ? $t('var(--signal)') : color) + '" stroke-width="8" stroke-linecap="round" stroke-dasharray="' + (C * pct).toFixed(1) + ' ' + C.toFixed(1) + '" transform="rotate(-90 36 36)"/>' : '') + '</svg><div class="v num">' + fmt(v, 0) + '</div><div class="t">' + lab + ' / ' + fmt(t, 0) + unit + '</div></div>'; };
+  return '<div class="rings">' + R(tot.kcal, tg.kcal, $t('var(--signal)'), $t('kcal'), '') + R(tot.p, tg.p, $t('var(--plum)'), $t('Protein'), $t(' g')) + R(tot.c, tg.c, $t('var(--sky)'), $t('KH'), $t(' g')) + R(tot.f, tg.f, $t('var(--verdant)'), $t('Fett'), $t(' g')) + '</div>'; }
 function actRow(a) { const t = ACT_MAP[a.type] || ACT_MAP.sonst; const bits = [];
   if (num(a.dur) != null) bits.push(fmt(num(a.dur), 0) + $t(' min')); if (num(a.dist) != null) bits.push(fmt(num(a.dist), 1) + $t(' km')); if (num(a.avgHr) != null) bits.push('Ø ' + fmt(num(a.avgHr), 0) + $t(' bpm'));
   if (a.exercises) bits.push(a.exercises.length + $t(' Übungen'));
@@ -324,13 +338,14 @@ function actRow(a) { const t = ACT_MAP[a.type] || ACT_MAP.sonst; const bits = []
 
 /* ======================= TRAINING ======================= */
 function viewTraining() {
+  if (!ORDER.length) return noPlanView();
   const cw = curWeek(); if (!ui.week) ui.week = cw; const w = ui.week;
   let n = 0; ORDER.forEach(k => { if (sessProgress(w, k).done) n++; });
   const weeks = Array.from({ length: 12 }, (_, i) => { const x = i + 1; return '<button class="wk' + (x === w ? $t(' on') : '') + (x === cw ? $t(' cur') : '') + (weekDone(x) ? $t(' done') : '') + '" data-act="week" data-w="' + x + '" type="button" aria-label="Woche ' + x + '"><b>' + x + '</b><i class="ph-' + phase(x) + '"></i></button>'; }).join('');
   const rows = ORDER.map(k => { const s = SESS[k], pr = sessProgress(w, k); const sub = sessSub(w, k);
     const se = peekSess(w, k); const when = se && se.date ? fmtDay(se.date) : dayLabel(k);
-    return '<a class="li" href="#training/' + sKey(w, k) + '">' + badge(k) + '<div class="grow"><b>' + s.title + '</b><small>' + esc(when + ' · ' + sub) + '</small></div><span class="tag"><span class="dot ' + (pr.done ? 'green' : pr.f ? 'amber' : 'mist') + '"></span>' + (pr.skipped ? $t('übersprungen') : pr.done ? $t('erledigt') : pr.f ? pr.f + '/' + pr.t : $t('offen')) + '</span></a>'; }).join('');
-  const frees = S.activities.filter(a => a.week === w);
+    return '<a class="li" href="#training/' + sKey(w, k) + '">' + badge(k) + '<div class="grow"><b>' + s.title + '</b><small>' + esc(when + (sub ? ' · ' + sub : '')) + '</small></div><span class="tag"><span class="dot ' + (pr.done ? 'green' : pr.f ? 'amber' : 'mist') + '"></span>' + (pr.skipped ? $t('übersprungen') : pr.done ? $t('erledigt') : pr.f ? pr.f + '/' + pr.t : $t('offen')) + '</span></a>'; }).join('');
+  const frees = S.activities.filter(a => a.week === w && a.week);
   const warn = scheduleWarnings();
   const vol = weekVolume(w), pv = plannedVolume(w);
   const finishBtn = w === cw && !weekDone(w) && cw < 12 ? (ui.confirmFinish ? $t('<div class="row"><span class="grow small">Offene Einheiten werden als übersprungen markiert.</span><button class="btn sm" data-act="finishNo" type="button">Abbrechen</button><button class="btn dark sm" data-act="finishYes" type="button">Ja, abschließen</button></div>') : $t('<button class="btn block" data-act="finish" type="button">Woche ') + w + $t(' abschließen und weiter</button>')) : '';
@@ -339,6 +354,7 @@ function viewTraining() {
   $t('<div class="legend"><span><i class="ph-b1"></i>Einstieg</span><span><i class="ph-b2"></i>Aufbau</span><span><i class="ph-b3"></i>Intensiv</span><span><i class="ph-dl"></i>Deload</span><span><i class="ph-test"></i>Test</span></div>') +
   warn.map(x => note('amber', esc(x), $t('<a class="btn sm" href="#mehr">Ändern</a>'))).join('') +
   '<div class="card flush"><div class="list">' + rows + '</div></div>' + finishBtn +
+  planInfoCard() + workoutsSection() +
   $t('<div class="section-h"><h2>Freies Training</h2><button class="btn sm fog" data-act="newAct" type="button">+ Aktivität</button></div>') +
   (frees.length ? '<div class="card flush"><div class="list">' + frees.map(actRow).join('') + '</div></div>' : $t('<p class="muted small" style="margin:0 4px">Spontan joggen, schwimmen oder frei trainieren? Über das Plus unten rechts eintragen.</p>')) +
   (weekDone(w) || w < cw ? weekReport(w) : '') + bodyCard(w) +
@@ -356,7 +372,7 @@ function viewSession(key) {
     $t('<div class="field"><label for="sdate">Datum</label><input id="sdate" type="date" data-sdate="1" data-sw="') + w + '" data-sk="' + k + '" value="' + esc(s.date || today()) + '" style="width:170px"></div>' +
     $t('<div class="field"><label for="ckb">Rücken 0–10</label><input id="ckb" type="number" inputmode="numeric" min="0" max="10" data-sw="') + w + '" data-sk="' + k + '" data-ck="back" value="' + esc(c.back) + '" placeholder="–"></div>' +
     $t('<div class="field"><label for="ckr">Ruhepuls') + (rd.autoRhr ? $t(' (Zepp)') : '') + '</label><input id="ckr" type="number" inputmode="numeric" data-sw="' + w + '" data-sk="' + k + '" data-ck="rhr" value="' + esc(c.rhr) + '" placeholder="' + (rd.autoRhr ? fmt(rd.rhr, 0) : $t('bpm')) + '"></div>' +
-    $t('<div class="field"><label for="cks">Schlaf') + (rd.autoSleep ? $t(' (Zepp: ') + fmtMin(rd.sleepMin) + ')' : '') + '</label><select id="cks" data-sw="' + w + '" data-sk="' + k + '" data-ck="sleep"><option value="">' + (rd.autoSleep ? $t('automatisch: ') + $t(rd.sleep) : '–') + '</option>' + ['gut', 'ok', 'schlecht'].map(o => '<option value="' + o + '"' + (c.sleep === o ? ' selected' : '') + '>' + $t(o) + '</option>').join('') + '</select></div></div></div>';
+    $t('<div class="field"><label for="cks">Schlaf') + (rd.autoSleep ? $t(' (Zepp: ') + fmtMin(rd.sleepMin) + ')' : '') + '</label><select id="cks" data-sw="' + w + '" data-sk="' + k + '" data-ck="sleep"><option value="">' + (rd.autoSleep ? $t('automatisch: ') + $t(rd.sleep) : '–') + '</option>' + ['gut', 'ok', 'schlecht'].map(o => '<option value="' + o + '"' + (c.sleep === o ? $t(' selected') : '') + '>' + $t(o) + '</option>').join('') + '</select></div></div></div>';
   const watch = s.watch ? note('sky', $t('Uhr: ') + fmt(s.watch.dur, 0) + $t(' min') + (s.watch.kcal ? ' · ' + fmt(s.watch.kcal, 0) + $t(' kcal') : '') + $t(' aus Zepp übernommen.')) : '';
   return head + '<div class="stack">' + check + flagsHTML(w, k) + watch + planFor(w, k).map(spec => exCard(w, k, spec)).join('') + endCard(w, k) + traceCard(sKey(w, k), gymWindow(s), false) +
     (s.skipped ? '<button class="btn block" data-act="unskip" data-w="' + w + '" data-k="' + k + $t('" type="button">Wieder öffnen</button>') : '<button class="btn block fog" data-act="skip" data-w="' + w + '" data-k="' + k + $t('" type="button" style="background:var(--fog)">Einheit überspringen</button>')) + '</div>'; }
@@ -378,28 +394,28 @@ function flagsHTML(w, k) { const r = readiness(w, k); let h = '';
 
 function setRows(prefix, spec, raw, sugg, showRpe, tgt, isCarry, dataAttrs) { let rows = '';
   for (let i = 0; i < spec.sets; i++) { const v = raw[i] || {}; const sg = sugg(i);
-    const wPh = sg.load != null ? fmt(sg.load) : $t('kg'), rPh = sg.reps != null ? String(sg.reps) : (isCarry ? 'm' : $t('Reps'));
+    const wPh = sg.load != null ? fmt(sg.load) : $t('kg'), rPh = sg.reps != null ? String(sg.reps) : (isCarry === 'time' ? 's' : isCarry ? 'm' : $t('Reps'));
     rows += '<div class="set' + (v.done ? $t(' done') : '') + '"><span class="n">' + (i + 1) + '</span>' +
       '<input id="' + prefix + i + '-w" type="number" inputmode="decimal" step="any" ' + dataAttrs + ' data-i="' + i + '" data-f="w" value="' + esc(v.w) + '" placeholder="' + esc(wPh) + '" aria-label="Satz ' + (i + 1) + ' kg">' +
       '<input id="' + prefix + i + '-r" type="number" inputmode="numeric" ' + dataAttrs + ' data-i="' + i + '" data-f="r" value="' + esc(v.r) + '" placeholder="' + esc(rPh) + '" aria-label="Satz ' + (i + 1) + ' ' + (isCarry ? $t('Meter') : $t('Wiederholungen')) + '">' +
       (showRpe ? '<input id="' + prefix + i + '-rpe" type="number" inputmode="decimal" step="0.5" ' + dataAttrs + ' data-i="' + i + '" data-f="rpe" value="' + esc(v.rpe) + '" placeholder="' + (tgt != null ? fmt(tgt) : $t('RPE')) + '" aria-label="Satz ' + (i + 1) + ' RPE">' : '<span></span>') +
       '<button class="chk" type="button" data-act="done" ' + dataAttrs + ' data-i="' + i + '" aria-label="Satz ' + (i + 1) + ' erledigt">' + ICON.check + '</button></div>'; }
-  return $t('<div class="sets"><div class="sethead"><span>#</span><span>kg</span><span>') + (isCarry ? $t('Meter') : $t('Reps')) + '</span><span>' + (showRpe ? $t('<button class="rpehelp" type="button" data-act="rpeHelp">RPE ?</button>') : '') + '</span><span></span></div>' + rows + '</div>'; }
+  return $t('<div class="sets"><div class="sethead"><span>#</span><span>kg</span><span>') + (isCarry === 'time' ? $t('Sek.') : isCarry ? $t('Meter') : $t('Reps')) + '</span><span>' + (showRpe ? $t('<button class="rpehelp" type="button" data-act="rpeHelp">RPE ?</button>') : '') + '</span><span></span></div>' + rows + '</div>'; }
 function exCard(w, k, spec0) {
   const s = sess(w, k); const lg = s.logs[spec0.slot]; const raw = (lg && lg.sets) || []; const extra = (lg && lg.extra) || 0; const spec = extra ? Object.assign({}, spec0, { sets: spec0.sets + extra }) : spec0;
   const exId = actualEx(w, k, spec), ex = LIB[exId], rd = readiness(w, k);
   const base = planSuggestion(w, k, spec, exId, rd); const tgt = spec.rpe != null ? spec.rpe + (spec.type === 'main' ? rd.rpeShift : 0) : null;
   const h = history(w, k, exId);
   const histTxt = h ? $t('Zuletzt Woche ') + h.w + ': ' + h.items.flatMap(it => it.sets).map(x => (x.w != null ? fmt(x.w) + ' × ' : '') + (x.r ?? '–') + (x.rpe != null ? ' @' + fmt(x.rpe) : '')).join(', ') : '';
-  const isCarry = spec.type === 'carry', showRpe = spec.rpe != null && spec.type !== 'power';
+  const isCarry = spec.type === 'carry' ? true : spec.type === 'time' ? 'time' : false, showRpe = spec.rpe != null && spec.type !== 'power' && spec.type !== 'time';
   const sugg = i => setSuggestion(w, k, spec, exId, i, base, rd);
   const nextWhy = (() => { for (let i = 0; i < spec.sets; i++) { if (!(raw[i] && raw[i].done)) { const sg = sugg(i); return sg.why ? $t('Satz ') + (i + 1) + ': ' + sg.why + (sg.load != null ? ' (' + fmt(sg.load) + $t(' kg)') : '') : ''; } } return ''; })();
   const swapped = exId !== spec.ex; const stall = (spec.type === 'main' || spec.type === 'dp') ? stallInfo(exId, w) : null;
   return '<div class="ex" id="ex-' + spec.slot + '"><div class="ex-h">' + exThumb(exId) + '<div class="grow"><button class="nm exlink" type="button" data-act="exInfo" data-ex="' + exId + '">' + (spec.sup ? '<span class="sup">' + spec.sup + '</span>' : '') + esc(ex.name) + '</button>' + (isPrio(exId) ? $t('<span class="prio">Schwerpunkt</span>') : '') + '<button class="histbtn" type="button" data-act="exHist" data-ex="' + exId + '">' + ICON.chart + $t('Verlauf</button>') +
-    (swapped ? $t('<div class="swapped">statt ') + esc(LIB[spec.ex].name) + '</div>' : '') +
-    '<div class="spec"><b>' + spec.sets + ' × ' + esc(spec.reps) + (isCarry ? ' m' : '') + '</b>' + (tgt != null ? $t(' bei RPE ') + fmt(tgt) : '') + (spec.rest ? $t(' · Pause ') + (spec.rest >= 60 ? fmt(spec.rest / 60) + $t(' min') : spec.rest + ' s') : spec.slot === 'lat_a' ? $t(' · ohne eigene Pause') : '') + '</div>' +
-    ((spec.note || ex.note) ? '<div class="note">' + esc([spec.note, ex.note].filter(Boolean).join(' ')) + '</div>' : '') + '</div>' +
-    '<button class="btn sm" data-act="swap" data-slot="' + spec.slot + $t('" type="button">Tauschen</button></div>') +
+    (swapped ? $t('<div class="swapped">statt ') + esc(LIB[spec.ex].name) + (!exAvailable(chosenEx(w, k, spec)) ? $t(' · Gerät fehlt') : '') + '</div>' : '') +
+    '<div class="spec"><b>' + spec.sets + ' × ' + esc(spec.reps) + (isCarry === 'time' ? ' s' : isCarry ? ' m' : '') + '</b>' + (tgt != null ? $t(' bei RPE ') + fmt(tgt) : '') + (spec.rest ? $t(' · Pause ') + (spec.rest >= 60 ? fmt(spec.rest / 60) + $t(' min') : spec.rest + ' s') : spec.slot === 'lat_a' ? $t(' · ohne eigene Pause') : '') + '</div>' +
+    ((spec.note || ex.note) ? '<div class="note">' + esc([$t(spec.note), ex.note].filter(Boolean).join(' ')) + '</div>' : '') + '</div>' +
+    '<button class="btn sm" data-act="swap" data-slot="' + spec.slot + $t('" type="button">Varianten</button></div>') +
     (histTxt ? '<div class="hint">' + esc(histTxt) + '</div>' : '') + '<div class="sugg ' + (base.cls || '') + '">' + esc(base.txt) + '</div>' +
     (nextWhy ? '<div class="next">' + esc(nextWhy) + '</div>' : '') + (stall ? $t('<div class="next" style="color:var(--signal-ink)">Stillstand seit ') + stall.n + $t(' Einheiten: nächstes Mal 10 % leichter und in 2–3 Wochen neu aufbauen.</div>') : '') +
     setRows('s-' + spec.slot + '-', spec, raw, sugg, showRpe, tgt, isCarry, 'data-slot="' + spec.slot + '"') + exActions(exId, spec.type === 'main' || spec.type === 'bo', base.load, spec.type === 'main', spec.slot, extra) + '</div>'; }
@@ -409,7 +425,9 @@ function exActions(exId, plates, load, isMain, slot, extra) { return '<div class
 function cardioView(w, k) {
   const s = sess(w, k); const c = s.cardio || {}; const hf = num(S.settings.hfmax) || 186; const z2 = [Math.round(hf * .65), Math.round(hf * .75)], hi = Math.round(hf * .9);
   const rd = readiness(w, k); let title, sub, zones; const act = countsAsActivity(w, k);
-  const hk = isHiit(k); if (hk) { const h = hiit(w); title = h.title; sub = h.sub;
+  const hk = isHiit(k), sp = cardioSpec(w, k); if (SESS[k].cardio) { title = cardioTitle(sp); sub = cardioSub(sp);
+    zones = sp.mode === 'int' && sp.hi ? '<span class="tag"><span class="dot red"></span>' + $t('Intervalle ab ') + hi + $t(' bpm</span><span class="tag"><span class="dot green"></span>') + $t('Pausen locker</span>') : sp.mode === 'int' ? '<span class="tag"><span class="dot green"></span>' + $t('Locker laufen, gehen zur Erholung</span>') : '<span class="tag"><span class="dot green"></span>Z2 ' + z2[0] + '–' + z2[1] + $t(' bpm</span>'); }
+  else if (hk) { const h = hiit(w); title = h.title; sub = h.sub;
     zones = h.mode === 'int' ? $t('<span class="tag"><span class="dot red"></span>Letzte 2 min je Intervall ab ') + hi + $t(' bpm</span><span class="tag"><span class="dot green"></span>Pausen locker</span>') : h.mode === 'z2' ? '<span class="tag"><span class="dot green"></span>Z2 ' + z2[0] + '–' + z2[1] + $t(' bpm</span>') : $t('<span class="tag"><span class="dot red"></span>Zeit unter „Leistung“ eintragen</span>'); }
   else { title = Z2MIN[w - 1] + $t(' min Z2'); sub = $t('Du kannst in ganzen Sätzen reden.'); zones = '<span class="tag"><span class="dot green"></span>Z2 ' + z2[0] + '–' + z2[1] + $t(' bpm</span>'); }
   const devs = hk ? ['', $t('Air-Bike'), $t('Incline-Laufband'), $t('Ergometer'), $t('Rudergerät')] : ['', $t('Rudergerät'), $t('Rad / Ergometer'), $t('Schwimmen'), $t('Incline Walk'), $t('Stepper'), $t('Joggen')];
@@ -419,12 +437,12 @@ function cardioView(w, k) {
     (hk && rd.rhrHigh ? note('amber', $t('<b>Ruhepuls erhöht</b> (') + fmt(rd.rhr, 0) + $t(' statt ') + rd.base.v + $t('). Heute ') + Z2MIN[w - 1] + $t(' min Z2 statt Intervalle.')) : hk && rd.dr && rd.dr.score < 34 ? note('red', $t('<b>Bereitschaft ') + rd.dr.score + $t(' %.</b> Heute ') + Z2MIN[w - 1] + $t(' min Z2 statt Intervalle.')) : '') +
     (z && num(c.dur) == null ? note('sky', $t('Zepp hat heute ') + esc(z.title || ACT_MAP[z.type].name) + $t(' mit ') + fmt(z.dur, 0) + $t(' min aufgezeichnet.'), '<button class="btn sm brand" data-act="useZepp" data-id="' + z.id + '" data-w="' + w + '" data-k="' + k + $t('" type="button">Übernehmen</button>')) : '') +
     '<div class="card"><div class="big">' + esc(title) + '</div><div class="muted">' + esc(sub) + '</div><div class="zones">' + zones + '</div>' +
-    (hk && hiit(w).mode === 'int' ? '<button class="btn brand" data-act="intervals" data-w="' + w + '" data-k="' + k + $t('" type="button">Intervall-Timer starten</button>') : '') + '</div>' +
+    (sp.mode === 'int' ? '<button class="btn brand" data-act="intervals" data-w="' + w + '" data-k="' + k + $t('" type="button">Intervall-Timer starten</button>') : '') + '</div>' +
     '<div class="card"><div class="fields">' +
-    $t('<div class="field"><label for="c-dev">Gerät</label><select id="c-dev" data-cw="') + w + '" data-ck2="' + k + '" data-cf="dev">' + devs.map(o => '<option' + (c.dev === o ? ' selected' : '') + '>' + o + '</option>').join('') + '</select></div>' +
+    $t('<div class="field"><label for="c-dev">Gerät</label><select id="c-dev" data-cw="') + w + '" data-ck2="' + k + '" data-cf="dev">' + devs.map(o => '<option' + (c.dev === o ? $t(' selected') : '') + '>' + o + '</option>').join('') + '</select></div>' +
     f('dur', $t('Dauer (min)'), 'min') + f('avg', $t('Ø Puls'), $t('bpm')) + f('max', $t('Max. Puls'), $t('bpm')) + f('perf', hk ? $t('Leistung') : $t('Distanz'), hk ? 'z. B. 280 W' : $t('z. B. 6 km'), 'text') + f('rpe', $t('RPE'), '1–10') +
     '</div>' + (num(c.dur) && num(c.rpe) ? $t('<p class="small" style="margin-top:10px">Belastung: <b>') + fmt(num(c.dur) * num(c.rpe), 0) + $t('</b> (Dauer × RPE)</p>') : $t('<p class="small muted" style="margin-top:10px">Mit Dauer und RPE berechnet die App deine Tagesbelastung.</p>')) + '</div>' +
-    traceCard(act && S.hrTraces[act.id] ? act.id : sKey(w, k), act && act.start ? { start: act.start, end: act.end } : s.timerStart ? { start: s.timerStart, end: s.timerStart + (s.timerDur || 0) * 1000 } : null, hk && hiit(w).mode === 'int') +
+    traceCard(act && S.hrTraces[act.id] ? act.id : sKey(w, k), act && act.start ? { start: act.start, end: act.end } : s.timerStart ? { start: s.timerStart, end: s.timerStart + (s.timerDur || 0) * 1000 } : null, sp.mode === 'int' && !!sp.hi) +
     (s.skipped ? '<button class="btn block" data-act="unskip" data-w="' + w + '" data-k="' + k + $t('" type="button">Wieder öffnen</button>') : '<button class="btn block" style="background:var(--fog)" data-act="skip" data-w="' + w + '" data-k="' + k + $t('" type="button">Einheit überspringen</button>')) + '</div>'; }
 function zeppWorkoutFor(d, k) { return S.activities.find(a => a.date === d && a.src && a.src !== 'manual' && !a.countsAs && ACT_MAP[a.type] && ACT_MAP[a.type].cardio && isCardio(k)); }
 
@@ -434,22 +452,22 @@ function viewFree(id) { const a = S.activities.find(x => x.id === id); if (!a) r
   const f = (k, lab, ph, type) => '<div class="field"><label for="a-' + k + '">' + lab + '</label><input id="a-' + k + '" type="' + (type || 'number') + '" ' + (type ? '' : 'inputmode="decimal" step="any"') + ' data-aid="' + a.id + '" data-af="' + k + '" value="' + esc(a[k]) + '" placeholder="' + ph + '"' + (type === 'date' ? ' style="width:170px"' : '') + '></div>';
   const w = a.week || curWeek(); const zk = Z2K(); const zOpen = !!zk && (!sessProgress(w, zk).done || a.countsAs === zk);
   let ex = '';
-  if (t.strength) { ex = (a.exercises || []).map((e, idx) => freeExCard(a, e, idx)).join('') + '<button class="btn block brand" data-act="freeAddEx" data-aid="' + a.id + $t('" type="button">+ Übung hinzufügen</button>'); }
-  return '<a href="#training" class="back">' + ICON.back + $t('Training</a>') + pageTop(t.name, '', fmtDay(a.date) + (a.src && a.src !== 'manual' ? $t(' · aus Zepp') : '')) +
+  if (t.strength) { ex = (a.exercises || []).map((e, idx) => freeExCard(a, e, idx)).join('') + '<button class="btn block brand" data-act="freeAddEx" data-aid="' + a.id + $t('" type="button">+ Übung hinzufügen</button>') + ((a.exercises || []).length ? '<button class="btn block fog" data-act="woFromAct" data-aid="' + a.id + $t('" type="button">Als geplantes Training speichern</button>') : ''); }
+  return '<a href="#training" class="back">' + ICON.back + $t('Training</a>') + pageTop(esc(a.title || t.name), '', fmtDay(a.date) + (a.src && a.src !== 'manual' ? $t(' · aus Zepp') : '')) +
   '<div class="stack"><div class="card"><div class="fields">' +
-  $t('<div class="field"><label for="a-type">Art</label><select id="a-type" data-aid="') + a.id + '" data-af="type">' + ACT_TYPES.map(x => '<option value="' + x.id + '"' + (x.id === a.type ? ' selected' : '') + '>' + x.name + '</option>').join('') + '</select></div>' +
+  $t('<div class="field"><label for="a-type">Art</label><select id="a-type" data-aid="') + a.id + '" data-af="type">' + ACT_TYPES.map(x => '<option value="' + x.id + '"' + (x.id === a.type ? $t(' selected') : '') + '>' + x.name + '</option>').join('') + '</select></div>' +
   f('date', $t('Datum'), '', 'date') + f('dur', $t('Dauer (min)'), 'min') + (t.dist ? f('dist', $t('Distanz (km)'), $t('km')) : '') + f('avgHr', $t('Ø Puls'), $t('bpm')) + f('kcal', $t('kcal (Uhr)'), 'kcal') + f('rpe', $t('RPE'), '1–10') +
   $t('<div class="field" style="flex:1 1 100%"><label for="a-note">Notiz</label><input id="a-note" type="text" data-aid="') + a.id + '" data-af="note" value="' + esc(a.note) + $t('" placeholder="optional"></div></div>') +
-  (t.cardio && zOpen ? '<label class="row" style="margin-top:14px;gap:10px"><input type="checkbox" data-aid="' + a.id + '" data-af="countsZ"' + (a.countsAs && a.countsAs === zk ? ' checked' : '') + $t('> <span>Zählt als Z2-Einheit von Woche ') + w + $t('</span></label><p class="small muted">Nur wenn du locker in Zone 2 unterwegs warst und es mindestens ') + Math.min(30, Z2MIN[w - 1]) + $t(' Minuten waren.</p>') : '') + '</div>' +
+  (t.cardio && zOpen ? '<label class="row" style="margin-top:14px;gap:10px"><input type="checkbox" data-aid="' + a.id + '" data-af="countsZ"' + (a.countsAs && a.countsAs === zk ? $t(' checked') : '') + $t('> <span>Zählt als Z2-Einheit von Woche ') + w + $t('</span></label><p class="small muted">Nur wenn du locker in Zone 2 unterwegs warst und es mindestens ') + Math.min(30, Z2MIN[w - 1]) + $t(' Minuten waren.</p>') : '') + '</div>' +
   ex + (num(a.dur) && num(a.rpe) ? $t('<p class="small" style="margin:0 4px">Belastung: <b>') + fmt(num(a.dur) * num(a.rpe), 0) + $t('</b> (Dauer × RPE)</p>') : $t('<p class="small muted" style="margin:0 4px">Trag die RPE ein, dann zählt die Aktivität in deine Tagesbelastung.</p>')) + traceCard(a.id, a.start ? { start: a.start, end: a.end } : null, false) +
   $t('<p class="small muted" style="margin:0 4px">Freie Aktivitäten verändern dein Kalorienziel nicht. Der Bedarf wird aus deinem Gewichtstrend berechnet, Bewegung ist darin schon enthalten.</p>') +
   (ui.confirmDel === a.id ? $t('<div class="row"><span class="grow small">Wirklich löschen?</span><button class="btn sm" data-act="delActNo" type="button">Abbrechen</button><button class="btn sm dark" data-act="delActYes" data-aid="') + a.id + $t('" type="button">Löschen</button></div>') : '<button class="btn block danger" style="background:var(--fog)" data-act="delAct" data-aid="' + a.id + $t('" type="button">Aktivität löschen</button>')) + '</div>'; }
-function freeExCard(a, e, idx) { const ex = LIB[e.ex]; const spec = { slot: 'f' + idx, sets: e.sets.length, reps: e.reps || '8–12', rpe: 8, type: 'dp' };
+function freeExCard(a, e, idx) { const ex = LIB[e.ex]; const spec = { slot: 'f' + idx, sets: e.sets.length, reps: e.reps || '8–12', rpe: e.rpe ?? 8, type: 'dp' };
   const h = lastAny(e.ex); const histTxt = h ? $t('Zuletzt im Plan (Woche ') + h.w + '): ' + h.items.flatMap(it => it.sets).map(x => (x.w != null ? fmt(x.w) + ' × ' : '') + (x.r ?? '–')).join(', ') : '';
-  const sugg = i => { const raw = e.sets; for (let j = i - 1; j >= 0; j--) { const x = raw[j]; if (x && x.done) return { load: num(x.w), reps: num(x.r) }; } return { load: null, reps: null }; };
+  const sugg = i => { const raw = e.sets; for (let j = i - 1; j >= 0; j--) { const x = raw[j]; if (x && x.done) return { load: num(x.w), reps: num(x.r) }; } const rr = repRange(e.reps || ''); return { load: null, reps: rr ? rr.lo : null }; };
   return '<div class="ex" id="fx-' + idx + '"><div class="ex-h">' + exThumb(e.ex) + '<div class="grow"><button class="nm exlink" type="button" data-act="exInfo" data-ex="' + e.ex + '">' + esc(ex.name) + '</button>' + (isPrio(e.ex) ? $t('<span class="prio">Schwerpunkt</span>') : '') + '<button class="histbtn" type="button" data-act="exHist" data-ex="' + e.ex + '">' + ICON.chart + $t('Verlauf</button></div><button class="btn sm" data-act="freeDelEx" data-aid="') + a.id + '" data-idx="' + idx + $t('" type="button">Entfernen</button></div>') +
     (histTxt ? '<div class="hint">' + esc(histTxt) + '</div>' : '') + setRows('f-' + idx + '-', spec, e.sets, sugg, true, null, false, 'data-aid="' + a.id + '" data-idx="' + idx + '"') +
-    '<div class="ex-actions"><button class="btn sm" data-act="freeAddSet" data-aid="' + a.id + '" data-idx="' + idx + $t('" type="button">+ Satz</button><input class="exnote grow" id="exn-') + e.ex + '-f' + idx + '" type="text" data-exnote="' + e.ex + '" value="' + esc(S.exNotes[e.ex]) + $t('" placeholder="Notiz zur Übung" aria-label="Notiz zur Übung"></div></div>'); }
+    '<div class="ex-actions"><button class="btn sm" data-act="freeAddSet" data-aid="' + a.id + '" data-idx="' + idx + $t('" type="button">+ Satz</button>') + '<button class="btn sm" data-act="exEq" data-ex="' + e.ex + $t('" type="button">Gerät</button>') + $t('<input class="exnote grow" id="exn-') + e.ex + '-f' + idx + '" type="text" data-exnote="' + e.ex + '" value="' + esc(S.exNotes[e.ex]) + $t('" placeholder="Notiz zur Übung" aria-label="Notiz zur Übung"></div></div>'); }
 function newActivity(type, dateStr) { const a = { id: uid(), type, date: dateStr || today(), week: curWeek(), src: 'manual' }; if (ACT_MAP[type].strength) a.exercises = []; S.activities.push(a); save(); return a; }
 
 /* ======================= ESSEN ======================= */
@@ -460,14 +478,14 @@ function viewEssen() {
       es.map(e => '<div class="entry" data-act="edit" data-uid="' + e.uid + '"><div class="grow" style="min-width:0"><div class="nm">' + esc(entryName(e)) + '</div><div class="small muted">' + fmt(e.qty) + ' ' + $t(e.unit) + '</div></div><div class="k num">' + fmt(e.kcal, 0) + $t(' kcal<small>') + fmt(e.p, 0) + $t(' g Protein</small></div></div>')).join('') + (es.length ? '<div style="height:8px"></div>' : '') + '</div>'; }).join('');
   const head = '<div class="top"><div class="grow"><h1>' + (left >= 0 ? '<span class="t-green">' + fmt(left, 0) + $t(' kcal</span> übrig') : '<span class="t-red">' + fmt(-left, 0) + $t(' kcal</span> über dem Ziel')) + '</h1><div class="sub">' + (d === today() ? $t('Heute') : fmtDay(d)) + $t(' · Ziel ') + fmt(tg.kcal, 0) + $t(' kcal</div></div><a class="iconbtn" href="#mehr" aria-label="Einstellungen">') + ICON.gear + '</a></div>';
   return head + '<div class="stack">' +
-  $t('<div class="daynav"><button class="iconbtn" data-act="dprev" type="button" aria-label="Vortag">‹</button><div class="grow">') + (d === today() ? $t('Heute') : fmtDay(d)) + $t('</div><button class="iconbtn" data-act="dnext" type="button" aria-label="Nächster Tag"') + (d >= today() ? ' disabled' : '') + '>›</button></div>' +
+  $t('<div class="daynav"><button class="iconbtn" data-act="dprev" type="button" aria-label="Vortag">‹</button><div class="grow">') + (d === today() ? $t('Heute') : fmtDay(d)) + $t('</div><button class="iconbtn" data-act="dnext" type="button" aria-label="Nächster Tag"') + (d >= today() ? $t(' disabled') : '') + '>›</button></div>' +
   (checkinDue() ? note('ember', $t('<b>Check-in fällig:</b> neues Kalorienziel aus deinem Trend berechnen.'), $t('<button class="btn brand sm" data-act="checkin" type="button">Check-in</button>')) : '') +
   '<div class="card">' + rings(tot, tg) + microRow(d) + '</div>' + waterCard(d) +
   '<div class="scanbar"><button class="btn brand" data-act="scan" type="button">' + ICON.scan + $t('Barcode scannen</button><button class="btn" style="background:var(--fog)" data-act="add" data-meal="') + guessMeal() + '" type="button">' + ICON.search + $t('Suchen</button></div>') +
   ((o.entries || []).length ? '' : $t('<div class="scanbar"><button class="btn" style="background:var(--fog)" data-act="template" type="button">Meal-Prep-Tag</button>') + (((S.days[addDays(d, -1)] || {}).entries || []).length ? $t('<button class="btn" style="background:var(--fog)" data-act="copyYesterday" type="button">Gestern übernehmen</button>') : '') + '</div>') +
   meals +
   $t('<div class="card"><div class="row"><div class="field"><label for="wDay">Gewicht</label><input id="wDay" type="number" inputmode="decimal" step="0.1" data-day="') + d + '" data-f="weight" value="' + esc(o.weight) + $t('" placeholder="kg"></div><div class="grow"></div>') +
-  '<label class="row" style="gap:10px"><input type="checkbox" id="complete" data-day="' + d + '" data-f="complete"' + (o.complete === false ? '' : ' checked') + $t('> Tag vollständig geloggt</label></div>') +
+  '<label class="row" style="gap:10px"><input type="checkbox" id="complete" data-day="' + d + '" data-f="complete"' + (o.complete === false ? '' : $t(' checked')) + $t('> Tag vollständig geloggt</label></div>') +
   $t('<p class="small muted">Nur vollständig geloggte Tage fließen in die Bedarfsberechnung. Hast du etwas vergessen, nimm den Haken raus.</p></div></div>'); }
 function guessMeal() { const h = new Date().getHours(); return h < 11 ? 'Frühstück' : h < 15 ? 'Mittag' : h < 18 ? 'Snack' : 'Abend'; }
 
@@ -491,8 +509,8 @@ function addSheet() {
   if (ui.foodTab === 'search') setTimeout(() => { const q = $('#q'); if (q) q.focus(); }, 60); }
 function qtySheet(id, entry) { const f = getFood(id); if (!f) return; const units = unitsFor(f); const unit = entry ? entry.unit : units[0]; const qty = entry ? entry.qty : (unit === 'g' ? (f.pieceG && f.src === 'off' ? f.pieceG : 100) : 1);
   openSheet(sheetHead(esc(foodName(f))) + (f.brand ? '<p class="small muted">' + esc(f.brand) + (f.code ? ' · ' + esc(f.code) : '') + '</p>' : '') +
-    $t('<div class="fields on-white" style="margin:14px 0"><div class="field"><label for="qq">Menge</label><input id="qq" type="number" inputmode="decimal" step="any" value="') + qty + $t('"></div><div class="field"><label for="qu">Einheit</label><select id="qu">') + units.map(u => '<option value="' + u + '"' + (u === unit ? ' selected' : '') + '>' + $t(u) + '</option>').join('') + '</select></div>' +
-    (entry ? '' : $t('<div class="field"><label for="qm">Mahlzeit</label><select id="qm">') + MEALS.map(m => '<option value="' + m + '"' + (m === ui.meal ? ' selected' : '') + '>' + $t(m) + '</option>').join('') + '</select></div>') + '</div>' +
+    $t('<div class="fields on-white" style="margin:14px 0"><div class="field"><label for="qq">Menge</label><input id="qq" type="number" inputmode="decimal" step="any" value="') + qty + $t('"></div><div class="field"><label for="qu">Einheit</label><select id="qu">') + units.map(u => '<option value="' + u + '"' + (u === unit ? $t(' selected') : '') + '>' + $t(u) + '</option>').join('') + '</select></div>' +
+    (entry ? '' : $t('<div class="field"><label for="qm">Mahlzeit</label><select id="qm">') + MEALS.map(m => '<option value="' + m + '"' + (m === ui.meal ? $t(' selected') : '') + '>' + $t(m) + '</option>').join('') + '</select></div>') + '</div>' +
     '<div id="qprev" class="card" style="padding:14px 18px"></div><div class="row" style="margin-top:14px">' + (entry ? '<button class="btn danger" style="background:var(--fog)" data-act="delEntry" data-uid="' + entry.uid + $t('" type="button">Löschen</button>') : '') + '<div class="grow"></div><button class="btn sm" style="background:var(--fog)" data-act="editFood" data-id="' + esc(id) + $t('" type="button">Nährwerte bearbeiten</button><button class="btn brand" data-act="') + (entry ? 'saveEntry' : 'confirmAdd') + '" data-id="' + esc(id) + '"' + (entry ? ' data-uid="' + entry.uid + '"' : '') + ' type="button">' + (entry ? $t('Speichern') : $t('Hinzufügen')) + '</button></div>');
   updatePrev(id); }
 function updatePrev(id) { const f = getFood(id); const q = num($('#qq') && $('#qq').value) || 0, u = $('#qu') && $('#qu').value; const m = macrosFor(f, q, u); const el = $('#qprev');
@@ -500,7 +518,7 @@ function updatePrev(id) { const f = getFood(id); const q = num($('#qq') && $('#q
 function foodForm(f, code) { f = f || { base: '100g', code: code || '' }; const v = k => esc(f[k] ?? '');
   return (code && !f.id ? $t('<p class="muted" style="margin-top:12px">Barcode ') + esc(code) + $t(' ist nicht in Open Food Facts. Trag die Werte von der Packung ein. Beim nächsten Scan kennt die App das Produkt.</p>') : '') +
     $t('<div class="fields on-white" style="margin-top:12px"><div class="field" style="flex:1 1 100%"><label for="ff-name">Name</label><input id="ff-name" type="text" value="') + v('name') + '"></div>' +
-    $t('<div class="field"><label for="ff-base">Werte pro</label><select id="ff-base"><option value="100g"') + (f.base === '100g' ? ' selected' : '') + '>100 g</option><option value="piece"' + (f.base === 'piece' ? ' selected' : '') + $t('>Stück</option></select></div>') +
+    $t('<div class="field"><label for="ff-base">Werte pro</label><select id="ff-base"><option value="100g"') + (f.base === '100g' ? $t(' selected') : '') + '>100 g</option><option value="piece"' + (f.base === 'piece' ? $t(' selected') : '') + $t('>Stück</option></select></div>') +
     ['kcal', 'p', 'c', 'f'].map(k => '<div class="field"><label for="ff-' + k + '">' + { kcal: 'kcal', p: $t('Protein (g)'), f: $t('Fett (g)'), c: $t('Kohlenhydrate (g)') }[k] + '</label><input id="ff-' + k + '" type="number" inputmode="decimal" step="any" value="' + v(k) + '"></div>').join('') +
     $t('<div class="field"><label for="ff-pg">Gramm pro Stück/Portion</label><input id="ff-pg" type="number" inputmode="decimal" step="any" value="') + v('pieceG') + $t('" placeholder="optional"></div>') +
     '<input type="hidden" id="ff-code" value="' + v('code') + '"></div>' +
@@ -656,23 +674,23 @@ function viewProgress() {
   const lifts = keyLifts().map(id => ({ id, name: LIB[id].name, pts: liftSeries(id) }));
   const headline = lost > 0.05 ? '<span class="t-green">−' + fmt(lost) + $t(' kg</span> seit Start') : $t('<span class="t-ember">Dein</span> Verlauf');
   return '<div class="top"><div class="grow"><h1>' + headline + $t('</h1><div class="sub">Trendgewicht, Bedarf, Gesundheit und Kraft</div></div><a class="iconbtn" href="#mehr" aria-label="Einstellungen">') + ICON.gear + '</a></div><div class="stack">' + stats +
-    $t('<div class="card"><h2>Gewicht</h2>') + (wPts.length > 1 ? lineChart('cw', wPts, [{ key: 'weight', label: $t('Waage'), dots: true, color: 'var(--mist)' }, { key: 'trend', label: $t('Trend'), color: 'var(--ember)' }], { ref: num(st.targetWeight), refLabel: $t('Ziel'), unit: $t('kg'), dec: 1 }) : empty($t('Täglich morgens wiegen. Ab zwei Messungen erscheint die Kurve.'))) + '</div>' +
-    $t('<div class="card"><h2>Bedarf und Aufnahme</h2>') + (eSer.length > 1 ? lineChart('ce', eSer, [{ key: 'intake', label: $t('Aufnahme'), bars: true, color: 'var(--mist)' }, { key: 'est', label: $t('Bedarf'), color: 'var(--amber)' }], { unit: 'kcal', dec: 0 }) : empty($t('Der Bedarf wird ab 14 Tagen mit Gewicht und vollständigem Essens-Log geschätzt. Bis dahin gilt dein Startwert.'))) +
+    $t('<div class="card"><h2>Gewicht</h2>') + (wPts.length > 1 ? lineChart('cw', wPts, [{ key: 'weight', label: $t('Waage'), dots: true, color: $t('var(--mist)') }, { key: 'trend', label: $t('Trend'), color: $t('var(--ember)') }], { ref: num(st.targetWeight), refLabel: $t('Ziel'), unit: $t('kg'), dec: 1 }) : empty($t('Täglich morgens wiegen. Ab zwei Messungen erscheint die Kurve.'))) + '</div>' +
+    $t('<div class="card"><h2>Bedarf und Aufnahme</h2>') + (eSer.length > 1 ? lineChart('ce', eSer, [{ key: 'intake', label: $t('Aufnahme'), bars: true, color: $t('var(--mist)') }, { key: 'est', label: $t('Bedarf'), color: $t('var(--amber)') }], { unit: 'kcal', dec: 0 }) : empty($t('Der Bedarf wird ab 14 Tagen mit Gewicht und vollständigem Essens-Log geschätzt. Bis dahin gilt dein Startwert.'))) +
     $t('<p class="small muted">Bedarf = Ø Aufnahme minus Änderung des Trendgewichts × 7.700 kcal/kg, über 14 Tage, langsam geglättet.</p></div>') +
     readinessHistCard() + loadCard() + heatmapCard() + '<div id="photocard"></div>' +
-    $t('<div class="card"><h2>Schritte</h2>') + (hasH('steps') ? lineChart('cs', hDays, [{ key: 'steps', label: $t('Schritte'), bars: true, color: 'var(--verdant)' }], { unit: '', dec: 0, ref: num(st.stepGoal), refLabel: $t('Ziel'), zero: true, noLegend: true }) : empty($t('Noch keine Schrittdaten. Verbinde Zepp unter „Einstellungen“.'))) + '</div>' +
-    $t('<div class="card"><h2>Ruhepuls</h2>') + (hasH('rhr') ? lineChart('cr', hDays, [{ key: 'rhr', label: $t('Ruhepuls'), color: 'var(--plum)' }], { unit: $t('bpm'), dec: 0, noLegend: true }) : empty($t('Noch keine Pulsdaten.'))) + '</div>' +
+    $t('<div class="card"><h2>Schritte</h2>') + (hasH('steps') ? lineChart('cs', hDays, [{ key: 'steps', label: $t('Schritte'), bars: true, color: $t('var(--verdant)') }], { unit: '', dec: 0, ref: num(st.stepGoal), refLabel: $t('Ziel'), zero: true, noLegend: true }) : empty($t('Noch keine Schrittdaten. Verbinde Zepp unter „Einstellungen“.'))) + '</div>' +
+    $t('<div class="card"><h2>Ruhepuls</h2>') + (hasH('rhr') ? lineChart('cr', hDays, [{ key: 'rhr', label: $t('Ruhepuls'), color: $t('var(--plum)') }], { unit: $t('bpm'), dec: 0, noLegend: true }) : empty($t('Noch keine Pulsdaten.'))) + '</div>' +
     sleepCard() +
-    $t('<div class="card"><h2>Kraft (geschätztes 1RM)</h2>') + lifts.map(l => '<div style="margin-top:12px"><div class="lbl">' + l.name + '</div>' + (l.pts.length > 1 ? lineChart('cl-' + l.id, l.pts, [{ key: 'v', label: 'e1RM', color: 'var(--iris)' }], { unit: $t('kg'), dec: 0, height: 130, noLegend: true }) : empty(l.pts.length ? $t('Ab der zweiten Einheit gibt es eine Kurve. Aktuell ') + fmt(l.pts[0].v, 0) + $t(' kg.') : $t('Noch keine Sätze mit RPE geloggt.'))) + '</div>').join('') + '</div>' +
+    $t('<div class="card"><h2>Kraft (geschätztes 1RM)</h2>') + lifts.map(l => '<div style="margin-top:12px"><div class="lbl">' + l.name + '</div>' + (l.pts.length > 1 ? lineChart('cl-' + l.id, l.pts, [{ key: 'v', label: 'e1RM', color: $t('var(--iris)') }], { unit: $t('kg'), dec: 0, height: 130, noLegend: true }) : empty(l.pts.length ? $t('Ab der zweiten Einheit gibt es eine Kurve. Aktuell ') + fmt(l.pts[0].v, 0) + $t(' kg.') : $t('Noch keine Sätze mit RPE geloggt.'))) + '</div>').join('') + '</div>' +
     exListCard() +
     $t('<div class="card"><h2>Check-ins</h2>') + (S.checkins.length ? $t('<div class="tbl"><table><thead><tr><th>Datum</th><th>Trend</th><th>kg/Woche</th><th>Bedarf</th><th>Ziel</th></tr></thead><tbody>') + S.checkins.slice().reverse().map(c => '<tr><td>' + fmtDay(c.date) + '</td><td class="num">' + fmt(c.trend) + '</td><td class="num">' + (c.rate != null ? fmt(c.rate, 2) : '–') + '</td><td class="num">' + fmt(c.tdee, 0) + '</td><td class="num">' + fmt(c.kcal, 0) + '</td></tr>').join('') + '</tbody></table></div>' : empty($t('Der erste Check-in ist nach 7 Tagen mit Gewicht möglich.'))) + '</div></div>'; }
 const empty = t => '<p class="small muted">' + esc(t) + '</p>';
 function readinessHistCard() { const pts = []; for (let i = 27; i >= 0; i--) { const d = addDays(today(), -i); const r = dailyReadiness(d); pts.push({ d, score: r ? r.score : null }); }
-  return $t('<div class="card"><h2>Bereitschaft</h2>') + (pts.filter(p => p.score != null).length > 1 ? lineChart('crd', pts, [{ key: 'score', label: $t('Bereitschaft'), color: 'var(--iris)', dotsToo: true }], { unit: '%', dec: 0, ref: 67, refLabel: $t('grün ab 67'), noLegend: true, zero: true }) : empty($t('Ab zwei Tagen mit Schlaf, Ruhepuls oder deinem Energie-Eintrag erscheint die Kurve.'))) +
+  return $t('<div class="card"><h2>Bereitschaft</h2>') + (pts.filter(p => p.score != null).length > 1 ? lineChart('crd', pts, [{ key: 'score', label: $t('Bereitschaft'), color: $t('var(--iris)'), dotsToo: true }], { unit: '%', dec: 0, ref: 67, refLabel: $t('grün ab 67'), noLegend: true, zero: true }) : empty($t('Ab zwei Tagen mit Schlaf, Ruhepuls oder deinem Energie-Eintrag erscheint die Kurve.'))) +
     $t('<p class="small muted">Gewichtet aus Schlaf gegen deinen Bedarf (30 %), Ruhepuls gegen deine Basis (25 %), HRV gegen dein 7-Tage-Mittel (20 %) und deinem Gefühl (25 %). Fehlt ein Wert, zählen die anderen anteilig.</p></div>'); }
 function loadCard() { const pts = []; for (let i = 27; i >= 0; i--) { const d = addDays(today(), -i); pts.push({ d, load: dailyLoad(d).load || null }); }
   const wk = weekLoad(today()), prev = weekLoad(addDays(today(), -7));
-  return $t('<div class="card"><h2>Belastung</h2>') + (pts.filter(p => p.load).length ? lineChart('cld', pts, [{ key: 'load', label: $t('Belastung'), bars: true, color: 'var(--sky)' }], { unit: '', dec: 0, zero: true, noLegend: true }) : empty($t('Trag nach jeder Einheit Dauer und Session-RPE ein. Daraus entsteht deine Tagesbelastung.'))) +
+  return $t('<div class="card"><h2>Belastung</h2>') + (pts.filter(p => p.load).length ? lineChart('cld', pts, [{ key: 'load', label: $t('Belastung'), bars: true, color: $t('var(--sky)') }], { unit: '', dec: 0, zero: true, noLegend: true }) : empty($t('Trag nach jeder Einheit Dauer und Session-RPE ein. Daraus entsteht deine Tagesbelastung.'))) +
     $t('<div class="stats" style="grid-template-columns:repeat(2,minmax(0,1fr));margin-top:12px"><div class="stat" style="background:var(--paper)"><div class="k">Letzte 7 Tage</div><div class="v" style="font-size:22px">') + fmt(wk.tot, 0) + '</div><div class="s">' + (prev.tot ? (wk.tot >= prev.tot ? '+' : '−') + fmt(Math.abs((wk.tot - prev.tot) / prev.tot * 100), 0) + $t(' % zur Vorwoche') : $t('Vorwoche ') + fmt(prev.tot, 0)) + '</div></div>' +
     $t('<div class="stat" style="background:var(--paper)"><div class="k">Monotonie</div><div class="v" style="font-size:22px">') + (wk.mono != null ? fmt(wk.mono, 1) : '–') + '</div><div class="s">' + (wk.mono != null && wk.mono > 2 ? $t('hoch: Tage abwechslungsreicher gestalten') : $t('unter 2 ist gut')) + '</div></div></div>' +
     (wk.miss ? '<p class="small t-amber" style="font-weight:700">' + wk.miss + $t(' Einheit(en) der letzten 7 Tage ohne RPE.</p>') : '') +
@@ -680,12 +698,13 @@ function loadCard() { const pts = []; for (let i = 27; i >= 0; i--) { const d = 
 function sleepCard() { const pts = []; for (let i = 13; i >= 0; i--) { const d = addDays(today(), -i); const h = S.health[d] || {}; const staged = h.deep != null || h.rem != null || h.light != null;
     pts.push({ d, deep: staged ? (h.deep || 0) / 60 : null, rem: staged ? (h.rem || 0) / 60 : null, light: staged ? (h.light || 0) / 60 : (h.sleepMin != null ? h.sleepMin / 60 : null), awake: (h.awake || 0) / 60 || null }); }
   const has = pts.some(p => p.light != null || p.deep != null); const debt = sleepDebt(today()), cons = sleepConsistency(today());
-  return $t('<div class="card"><h2>Schlaf</h2>') + (has ? stackChart('csl', pts, [{ key: 'deep', label: $t('Tief'), color: 'var(--iris)' }, { key: 'rem', label: $t('REM'), color: 'var(--plum)' }, { key: 'light', label: $t('Leicht'), color: 'var(--sky)' }, { key: 'awake', label: $t('Wach'), color: 'var(--rule-strong)' }], { unit: 'h', dec: 1, ref: sleepNeed() / 60, refLabel: $t('Bedarf ') + fmt(sleepNeed() / 60, 1) + ' h' }) : empty($t('Noch keine Schlafdaten.'))) +
+  return $t('<div class="card"><h2>Schlaf</h2>') + (has ? stackChart('csl', pts, [{ key: 'deep', label: $t('Tief'), color: $t('var(--iris)') }, { key: 'rem', label: $t('REM'), color: $t('var(--plum)') }, { key: 'light', label: $t('Leicht'), color: $t('var(--sky)') }, { key: 'awake', label: $t('Wach'), color: $t('var(--rule-strong)') }], { unit: 'h', dec: 1, ref: sleepNeed() / 60, refLabel: $t('Bedarf ') + fmt(sleepNeed() / 60, 1) + ' h' }) : empty($t('Noch keine Schlafdaten.'))) +
     $t('<div class="stats" style="grid-template-columns:repeat(2,minmax(0,1fr));margin-top:12px"><div class="stat" style="background:var(--paper)"><div class="k">Schlafschuld 7 Tage</div><div class="v" style="font-size:22px">') + (debt ? fmtMin(debt.debt) : '–') + $t('</div><div class="s">bei ') + fmt(sleepNeed() / 60, 1) + $t(' h Bedarf</div></div>') +
     $t('<div class="stat" style="background:var(--paper)"><div class="k">Regelmäßigkeit</div><div class="v" style="font-size:22px">') + (cons ? '±' + fmt((cons.sdBed + cons.sdWake) / 2, 0) + $t(' min') : '–') + '</div><div class="s">' + (cons ? $t('Ø ins Bett ') + hm(cons.bed) + $t(', auf ') + hm(cons.wake) : $t('braucht Zubett- und Aufstehzeiten')) + '</div></div></div>' +
     $t('<p class="small muted">Regelmäßige Schlafzeiten hängen mit besserer Erholung zusammen. Weniger als ±30 min Schwankung ist ein gutes Ziel.</p></div>'); }
 function exListCard() { const ids = new Set(); for (let w = 1; w <= 12; w++) ORDER.forEach(k => { const s = peekSess(w, k); if (s && s.logs) Object.values(s.logs).forEach(lg => { if (loggedSets(lg).length) ids.add(lg.ex); }); });
   S.activities.forEach(a => (a.exercises || []).forEach(e => { if (loggedSets(e).length) ids.add(e.ex); }));
+  S.archive.forEach(ar => Object.values(ar.sessions || {}).forEach(s => Object.values(s.logs || {}).forEach(lg => { if (loggedSets(lg).length) ids.add(lg.ex); })));
   const list = [...ids].filter(id => LIB[id]).map(id => { const h = exHistory(id); const last = h[h.length - 1]; const m = h.some(o => o.e1) ? 'e1' : 'reps'; const v = h.map(o => o[m]).filter(x => x != null);
     return { id, n: h.length, last, m, chg: v.length > 1 && v[0] ? (v[v.length - 1] - v[0]) / Math.abs(v[0]) * 100 : null, cur: v[v.length - 1] }; }).sort((a, b) => (b.last && b.last.ord || '') < (a.last && a.last.ord || '') ? -1 : 1);
   return $t('<div class="card flush"><div class="meal-h"><b>Alle Übungen</b><span class="small muted">') + list.length + '</span></div>' + (list.length ? '<div class="list">' + list.map(x => '<button class="li" data-act="exHist" data-ex="' + x.id + '" type="button"><div class="grow"><b>' + esc(LIB[x.id].name) + '</b><small>' + x.n + $t(' Einheiten · ') + (x.m === 'e1' ? $t('e1RM ') + fmt(x.cur, 0) + $t(' kg') : fmt(x.cur, 0) + $t(' Wdh.')) + '</small></div>' + (x.chg != null ? '<span class="tag"><span class="dot ' + (x.chg >= 0 ? 'green' : 'red') + '"></span>' + (x.chg > 0 ? '+' : '') + fmt(x.chg, 0) + ' %</span>' : '') + '<span class="chev">›</span></button>').join('') + '</div>' : $t('<p class="small muted" style="padding:0 20px 18px">Sobald du Sätze loggst, erscheint hier jede Übung mit ihrem Verlauf.</p>')) + '</div>'; }
@@ -696,6 +715,9 @@ function exHistory(exId) { const out = [];
       loggedSets(lg).filter(x => x.done || x.r != null).forEach(x => sets.push({ ...x, rpe: x.rpe ?? (spec && spec.rpe) ?? null })); }
     if (sets.length) out.push({ d: s.date || null, wk: w, label: SESS[k].title + $t(' · Woche ') + w, sets, ord: s.date || ('0000-' + pad(chronIndex(w, k))) }); });
   S.activities.forEach(a => (a.exercises || []).forEach(e => { if (e.ex !== exId) return; const sets = loggedSets(e).filter(x => x.done || x.r != null); if (sets.length) out.push({ d: a.date, wk: a.week, label: $t('Freies Training'), sets, ord: a.date }); }));
+  S.archive.forEach(ar => { for (const key in ar.sessions || {}) { const m = key.match(RE_SESS); if (!m) continue; const s = ar.sessions[key]; const sets = [];
+    for (const slot in s.logs || {}) { const lg = s.logs[slot]; if (lg.ex !== exId) continue; const spec = planForP(ar.plan, +m[1], m[2]).find(p => p.slot === slot); loggedSets(lg).filter(x => x.done || x.r != null).forEach(x => sets.push({ ...x, rpe: x.rpe ?? (spec && spec.rpe) ?? null })); }
+    if (sets.length) out.push({ d: s.date || null, wk: +m[1], label: $t(ar.plan.name || $t('Früherer Plan')) + $t(' · Woche ') + m[1], sets, ord: s.date || (ar.until || '0000') }); } });
   out.sort((x, y) => x.ord < y.ord ? -1 : 1);
   out.forEach((o, i) => { o.x = i; const ws = o.sets.filter(x => x.w != null && x.r);
     o.e1 = ws.filter(x => x.w > 0).reduce((m, x) => Math.max(m, e1rm(x.w, x.r, Math.min(10, x.rpe ?? 8))), 0) || null;
@@ -715,7 +737,7 @@ function exHistSheet(exId, metric, period) { const ex = LIB[exId]; let all = exH
   const best = vals.length ? Math.max(...vals) : null, first = vals[0], last = vals[vals.length - 1];
   const chg = vals.length > 1 && first ? (last - first) / Math.abs(first) * 100 : null;
   const seg = (k, l, cur, act) => '<button class="' + (k === cur ? 'on' : '') + '" data-act="' + act + '" data-v="' + k + '" type="button">' + l + '</button>';
-  const chart = pts.filter(o => o[metric] != null).length > 1 ? lineChart('exh', pts, [{ key: metric, label: mLab, color: 'var(--ember)' }], { unit: mUnit, dec: mDec, noLegend: true, height: 210 })
+  const chart = pts.filter(o => o[metric] != null).length > 1 ? lineChart('exh', pts, [{ key: metric, label: mLab, color: $t('var(--ember)') }], { unit: mUnit, dec: mDec, noLegend: true, height: 210 })
     : '<p class="muted">' + (pts.length ? $t('Ab der zweiten Einheit erscheint hier die Kurve.') : $t('Für diese Übung ist noch nichts geloggt.')) + '</p>';
   const rows = pts.slice().reverse().map(o => '<div class="it" style="cursor:default"><div class="grow"><b>' + (o.d ? fmtDay(o.d) : $t('Woche ') + o.wk) + '</b><small>' + esc(o.label) + '</small><small>' + esc(o.sets.map(x => (x.w != null ? fmt(x.w) + ' × ' : '') + (x.r ?? '–') + (x.rpe != null ? ' @' + fmt(x.rpe) : '')).join(', ')) + '</small></div><div class="end"><b class="num" style="color:var(--graphite)">' + (o[metric] != null ? fmt(o[metric], mDec) : '–') + '</b><br>' + mUnit + '</div></div>').join('');
   openSheet(sheetHead(esc(ex.name)) + (S.exNotes[exId] ? $t('<p class="small" style="margin-top:6px"><b>Notiz:</b> ') + esc(S.exNotes[exId]) + '</p>' : '') +
@@ -772,7 +794,7 @@ function chartLeave(box) { box.querySelector('.tip').style.display = 'none'; con
 
 /* ======================= EINSTELLUNGEN ======================= */
 function viewMehr() { const st = S.settings; const f = (k, lab, type, extra) => '<div class="field"><label for="st-' + k + '">' + lab + '</label><input id="st-' + k + '" type="' + (type || 'number') + '" inputmode="decimal" step="any" data-st="' + k + '" value="' + esc(st[k]) + '"' + (extra || '') + '></div>';
-  const sel = k => '<div class="field"><label for="dm-' + k + '">' + SESS[k].title + '</label><select id="dm-' + k + '" data-dm="' + k + $t('"><option value="">ohne festen Tag</option>') + [1, 2, 3, 4, 5, 6, 0].map(d => '<option value="' + d + '"' + (String(st.dayMap[k]) === String(d) ? ' selected' : '') + '>' + WD_LONG[d] + '</option>').join('') + '</select></div>';
+  const sel = k => '<div class="field"><label for="dm-' + k + '">' + SESS[k].title + '</label><select id="dm-' + k + '" data-dm="' + k + $t('"><option value="">ohne festen Tag</option>') + [1, 2, 3, 4, 5, 6, 0].map(d => '<option value="' + d + '"' + (String(st.dayMap[k]) === String(d) ? $t(' selected') : '') + '>' + WD_LONG[d] + '</option>').join('') + '</select></div>';
   let rows = ''; for (let w = 1; w <= 12; w++) { const b = S.body['w' + pad(w)] || {}; const c = (k, ph) => '<td><input id="b-' + w + k + '" type="number" inputmode="decimal" step="any" data-bw="' + w + '" data-bf="' + k + '" value="' + esc(b[k]) + '" placeholder="' + ph + '"></td>'; rows += $t('<tr><td>Woche ') + w + '</td>' + c('waist', $t('cm')) + c('arm', $t('cm')) + c('thigh', $t('cm')) + c('calf', $t('cm')) + c('vo2', '') + '</tr>'; }
   const warn = scheduleWarnings(); const base = rhrBaseline(); const hm = S.healthMeta;
   const healthCard = HEALTH.native ?
@@ -783,10 +805,10 @@ function viewMehr() { const st = S.settings; const f = (k, lab, type, extra) => 
     : $t('<div class="card"><h2>Zepp verbinden</h2><p>Die direkte Verbindung läuft über Health Connect und funktioniert nur in der Android-App. Im Browser kannst du deinen Zepp-Datenexport importieren.</p>') +
     $t('<ol class="rules small"><li>Zepp-App: Profil → Einstellungen → Konto → Daten exportieren. Du bekommst einen Link und ein Passwort.</li><li>ZIP mit dem Passwort entpacken (am Handy z. B. mit ZArchiver).</li><li>Hier die CSV-Dateien auswählen (ACTIVITY, SLEEP, HEARTRATE_AUTO, SPORT, BODY).</li></ol>') +
     $t('<div class="row" style="margin-top:14px"><button class="btn brand" data-act="zepp" type="button">Zepp-Dateien importieren</button></div>') + (hm.lastSync ? $t('<p class="small muted">Letzter Import: ') + new Date(hm.lastSync).toLocaleString(LOCALE) + '</p>' : '') + '</div>';
-  return '<a href="#heute" class="back">' + ICON.back + $t('Heute</a><div class="top"><div class="grow"><h1><span class="t-ember">Einstellungen</span> und Daten</h1></div></div><div class="stack">') + accountCard() +
+  return '<a href="#heute" class="back">' + ICON.back + $t('Heute</a><div class="top"><div class="grow"><h1><span class="t-ember">Einstellungen</span> und Daten</h1></div></div><div class="stack">') + accountCard() + studioCard() +
   $t('<div class="card"><h2>Wochentage</h2><p style="margin-bottom:14px">Leg fest, an welchem Tag du welche Einheit machst. Der Block startet mit deiner ersten Einheit, egal an welchem Tag. Eine Woche ist geschafft, wenn alle Einheiten deines Plans erledigt sind.</p><div class="fields">') + ORDER.map(sel).join('') + '</div>' +
   warn.map(x => '<p class="small t-amber" style="font-weight:700">' + esc(x) + '</p>').join('') + $t('<p class="small muted">Faustregel: kein HIIT am Tag vor Gym A oder Gym C, und zwischen zwei Gym-Tagen möglichst ein anderer Tag.</p>') +
-  $t('<div class="field" style="margin-top:12px"><label for="st-mode">Modus</label><select id="st-mode" data-st="mode"><option value="days"') + (st.mode !== 'rotation' ? ' selected' : '') + $t('>Feste Wochentage</option><option value="rotation"') + (st.mode === 'rotation' ? ' selected' : '') + $t('>Reihenfolge (') + ORDER.map(k => SESS[k].title).join(', ') + $t(', egal welcher Tag)</option></select></div>') +
+  $t('<div class="field" style="margin-top:12px"><label for="st-mode">Modus</label><select id="st-mode" data-st="mode"><option value="days"') + (st.mode !== 'rotation' ? $t(' selected') : '') + $t('>Feste Wochentage</option><option value="rotation"') + (st.mode === 'rotation' ? $t(' selected') : '') + $t('>Reihenfolge (') + ORDER.map(k => SESS[k].title).join(', ') + $t(', egal welcher Tag)</option></select></div>') +
   $t('<div class="row" style="margin-top:10px"><span class="grow small">Aktuelle Trainingswoche: <b>') + curWeek() + '</b></span><button class="btn sm" data-act="wkMinus" type="button">−</button><button class="btn sm" data-act="wkPlus" type="button">+</button></div></div>' +
   healthCard +
   $t('<div class="card"><h2>Training</h2><div class="fields">') + f('hfmax', $t('Maximalpuls')) + f('rhrBase', $t('Ruhepuls-Basis (manuell)')) + f('puStart', $t('Klimmzüge Start')) + f('stepGoal', $t('Schrittziel')) + f('sleepNeedH', $t('Schlafbedarf (h)')) + f('barKg', $t('Langhantel (kg)')) + f('trapBarKg', $t('Trap Bar (kg)')) + f('waterGoal', $t('Wasserziel (ml)')) + $t('<div class="field" style="flex:1 1 100%"><label for="st-plates">Deine Scheiben (kg, mit Komma)</label><input id="st-plates" type="text" data-st="plates" value="') + esc(st.plates || '25, 20, 15, 10, 5, 2.5, 1.25') + '"></div></div><p class="small muted">' + (base && base.auto ? $t('Ruhepuls-Basis automatisch aus Zepp: ') + base.v + $t(' bpm (Median der letzten ') + base.n + $t(' Tage). Der manuelle Wert gilt nur, wenn Daten fehlen.') : $t('Mit Zepp-Daten berechnet die App die Basis selbst.')) + $t(' Maximalpuls geschätzt (208 − 0,7 × Alter). Hat deine Uhr einen höheren Wert gemessen, nimm den.</p></div>') +
@@ -818,7 +840,10 @@ function startTimer(sec, label, queue) { if (!sec) return; TM.total = sec; TM.en
 function tick() { const left = Math.max(0, Math.round((TM.end - Date.now()) / 1000)); $('#tmTime').textContent = Math.floor(left / 60) + ':' + pad(left % 60); $('#tmBar').style.width = Math.max(0, 100 - left / TM.total * 100) + '%';
   if (left <= 0) { clearInterval(TM.iv); if (navigator.vibrate) navigator.vibrate([300, 150, 300]); beep();
     if (TM.queue.length) { const nx = TM.queue.shift(); startTimer(nx.sec, nx.label, TM.queue); } else { $('#timer').classList.add('end'); $('#tmLabel').textContent = $t('Weiter geht’s'); setTimeout(() => { if (Date.now() >= TM.end) showTimer(false); }, 6000); } } }
-function intervalQueue(w) { const h = hiit(w); const q = [{ sec: 600, label: $t('Aufwärmen, locker') }]; for (let i = 1; i <= h.reps; i++) { q.push({ sec: h.dur * 60, label: $t('Intervall ') + i + $t(' von ') + h.reps + $t(': hart') }); if (i < h.reps) q.push({ sec: 180, label: $t('Pause, locker') }); } q.push({ sec: 300, label: $t('Auslaufen') }); return q; }
+function intervalQueue(w, k) { const sp = k ? cardioSpec(w, k) : hiit(w);
+  if (sp.seq || sp.run) { const q = [{ sec: (sp.warm || 5) * 60, label: $t('Zügig gehen zum Aufwärmen') }]; const seq = sp.seq || Array.from({ length: sp.reps }, (_, i) => [sp.dur, i < sp.reps - 1 ? sp.rest : 0]);
+    seq.forEach((x, i) => { q.push({ sec: Math.round(x[0] * 60), label: $t('Laufen ') + (i + 1) + $t(' von ') + seq.length }); if (x[1]) q.push({ sec: Math.round(x[1] * 60), label: $t('Gehen') }); }); q.push({ sec: (sp.cool || 5) * 60, label: $t('Gehen zum Abwärmen') }); return q; }
+  const h = sp; const q = [{ sec: (sp.warm || 10) * 60, label: $t('Aufwärmen, locker') }]; for (let i = 1; i <= h.reps; i++) { q.push({ sec: h.dur * 60, label: $t('Intervall ') + i + $t(' von ') + h.reps + $t(': hart') }); if (i < h.reps) q.push({ sec: (h.rest || 3) * 60, label: $t('Pause, locker') }); } q.push({ sec: (h.cool || 5) * 60, label: $t('Auslaufen') }); return q; }
 
 /* ======================= EVENTS ======================= */
 function sessFromRoute() { const m = route.name === 'training' && route.arg && route.arg.match(RE_SESS); return m && SESS[m[2]] ? { w: +m[1], k: m[2] } : null; }
@@ -828,7 +853,7 @@ function plusMenu() { const t = (act, label, sub, cls, extra) => '<button class=
 function actSheet() { openSheet(sheetHead($t('Aktivität')) + $t('<p class="muted">Was hast du gemacht?</p><div class="grid-acts" style="margin-top:12px">') + ACT_TYPES.map(a => '<button class="act-pick" data-act="pickAct" data-type="' + a.id + '" type="button"><span class="badge act sm">' + esc(a.short) + '</span>' + esc(a.name) + '</button>').join('') + '</div>'); }
 function exPickSheet(aid, q) { q = (q || '').toLowerCase(); const items = Object.values(LIB).filter(e => !q || e.name.toLowerCase().includes(q));
   openSheet(sheetHead($t('Übung wählen')) + $t('<div class="on-white" style="margin-top:12px"><input id="exq" type="search" placeholder="Übung suchen" style="width:100%" value="') + esc(q) + '" data-aid="' + aid + '"></div><div class="plist" id="exlist" style="margin-top:8px">' + exItems(items, aid) + '</div>'); }
-const exItems = (items, aid) => items.map(e => '<div class="it" data-act="freePickEx" data-aid="' + aid + '" data-ex="' + e.id + '"><div class="grow"><b>' + esc(e.name) + '</b><small>' + Object.keys(e.muscles).filter(m => e.muscles[m] >= 1).map(m => MUSCLES[m]).join(', ') + '</small></div>' + (isPrio(e.id) ? $t('<span class="prio">Schwerpunkt</span>') : '') + '</div>').join('');
+const exItems = (items, aid) => items.slice().sort((a, b) => (exAvailable(a.id) ? 0 : 1) - (exAvailable(b.id) ? 0 : 1)).map(e => '<div class="it' + (exAvailable(e.id) ? '' : $t(' off')) + '" data-act="freePickEx" data-aid="' + aid + '" data-ex="' + e.id + '"><div class="grow"><b>' + esc(e.name) + '</b><small>' + Object.keys(e.muscles).filter(m => e.muscles[m] >= 1).map(m => MUSCLES[m]).join(', ') + '</small></div>' + (isPrio(e.id) ? $t('<span class="prio">Schwerpunkt</span>') : '') + (exAvailable(e.id) ? '' : $t('<span class="small t-red">Gerät fehlt</span>')) + '</div>').join('');
 
 document.addEventListener('input', e => { const t = e.target;
   if (t.dataset.day) { const o = dayObj(t.dataset.day); if (t.dataset.f === 'complete') o.complete = t.checked; else { o.weight = t.value; o.weightSrc = 'manual'; } save(); return; }
@@ -885,7 +910,7 @@ document.addEventListener('click', async e => { const b = e.target.closest('[dat
     case 'wkPlus': S.block.week = Math.min(12, curWeek() + 1); ui.week = null; save(); render(); break;
     case 'done': {
       if (b.dataset.aid) { const act = findAct(b.dataset.aid); const ex = act.exercises[+b.dataset.idx]; const i = +b.dataset.i; ex.sets[i] = ex.sets[i] || {}; const set = ex.sets[i];
-        if (set.done) set.done = false; else { set.t = Date.now(); for (let j = i - 1; j >= 0; j--) { const p = ex.sets[j]; if (p && p.done) { if (!set.w) set.w = p.w; if (!set.r) set.r = p.r; break; } } set.done = true; startTimer(90, LIB[ex.ex].name + $t(': Pause')); }
+        if (set.done) set.done = false; else { set.t = Date.now(); for (let j = i - 1; j >= 0; j--) { const p = ex.sets[j]; if (p && p.done) { if (!set.w) set.w = p.w; if (!set.r) set.r = p.r; break; } } set.done = true; startTimer(ex.rest || 90, LIB[ex.ex].name + $t(': Pause')); }
         save(); softPatch('fx-' + b.dataset.idx, freeExCard(act, ex, +b.dataset.idx)); break; }
       const spec = planFor(r.w, r.k).find(p => p.slot === b.dataset.slot); const exId = actualEx(r.w, r.k, spec); const s = sess(r.w, r.k);
       const lg = s.logs[spec.slot] || (s.logs[spec.slot] = { ex: exId, sets: [] }); const i = +b.dataset.i; for (let j = 0; j <= i; j++) lg.sets[j] = lg.sets[j] || {}; const set = lg.sets[i];
@@ -893,18 +918,14 @@ document.addEventListener('click', async e => { const b = e.target.closest('[dat
         if ((set.w === undefined || set.w === '') && sg.load != null) set.w = String(sg.load); if ((set.r === undefined || set.r === '') && sg.reps != null) set.r = String(sg.reps);
         set.done = true; set.t = Date.now(); lg.ex = exId; markStarted(r.w, r.k); prCheck(exId, r.w, r.k, set); if (spec.rest) { startTimer(spec.rest, LIB[exId].name + $t(': Pause')); restNotify(spec.rest, $t('Nächster Satz: ') + LIB[exId].name); } }
       save(); softPatch('ex-' + spec.slot, exCard(r.w, r.k, spec)); if (spec.slot === 'bench_top') { const bo = planFor(r.w, r.k).find(p => p.slot === 'bench_bo'); if (bo) softPatch('ex-bench_bo', exCard(r.w, r.k, bo)); } break; }
-    case 'swap': { const spec = planFor(r.w, r.k).find(p => p.slot === b.dataset.slot); const cur = actualEx(r.w, r.k, spec); const opts = [spec.ex, ...LIB[spec.ex].alts.filter(x => x !== spec.ex)];
-      LIB[cur].alts.forEach(x => { if (!opts.includes(x)) opts.push(x); }); ui.swapScope = 'today';
-      openSheet(sheetHead($t('Übung tauschen')) + $t('<p class="muted">Gleiches Bewegungsmuster, gleiche Sätze und RPE. Der Verlauf läuft pro Übung weiter.</p>') +
-        $t('<div class="seg"><button class="on" data-act="swapscope" data-s="today" type="button">Nur heute</button><button data-act="swapscope" data-s="always" type="button">Dauerhaft</button></div>') +
-        '<div class="plist">' + opts.map(x => '<div class="it" data-act="doswap" data-slot="' + spec.slot + '" data-ex="' + x + '"><div class="grow"><b>' + esc(LIB[x].name) + '</b>' + (x === spec.ex ? $t('<small>Plan-Standard</small>') : '') + '</div>' + (x === cur ? $t('<span class="tag on-white" style="background:var(--fog)"><span class="dot green"></span>aktiv</span>') : '') + '</div>').join('') + '</div>'); break; }
+    case 'swap': ui.swapScope = 'today'; ui.swapTab = 'alt'; variantsSheet(r.w, r.k, b.dataset.slot); break;
     case 'swapscope': ui.swapScope = b.dataset.s; b.parentNode.querySelectorAll('button').forEach(x => x.classList.toggle('on', x === b)); break;
     case 'doswap': { const spec = planFor(r.w, r.k).find(p => p.slot === b.dataset.slot); const s = sess(r.w, r.k); const ex = b.dataset.ex;
       if (ui.swapScope === 'always') { if (ex === spec.ex) delete S.swaps[spec.slot]; else S.swaps[spec.slot] = ex; delete s.swaps[spec.slot]; } else { if (ex === spec.ex && !S.swaps[spec.slot]) delete s.swaps[spec.slot]; else s.swaps[spec.slot] = ex; }
       if (s.logs[spec.slot]) s.logs[spec.slot].ex = actualEx(r.w, r.k, spec); save(); closeSheet(); softPatch('ex-' + spec.slot, exCard(r.w, r.k, spec)); toast(LIB[ex].name + (ui.swapScope === 'always' ? $t(', dauerhaft') : $t(', nur heute'))); break; }
     case 'backswap': { const w = +b.dataset.w, k = b.dataset.k; const s = sess(w, k); if (planFor(w, k).some(p => p.slot === 'fs')) s.swaps.fs = 'pend'; if (planFor(w, k).some(p => p.slot === 'trap')) s.swaps.trap = 'glute_bridge';
       ['fs', 'trap'].forEach(sl => { if (s.logs[sl]) s.logs[sl].ex = s.swaps[sl]; }); save(); render(); toast($t('Für heute getauscht')); break; }
-    case 'intervals': { const q = intervalQueue(+b.dataset.w); const s = sess(+b.dataset.w, b.dataset.k); s.timerStart = Date.now(); s.timerDur = q.reduce((a, x) => a + x.sec, 0); markStarted(+b.dataset.w, b.dataset.k); save(); startTimer(1, $t('Los'), q); break; }
+    case 'intervals': { const q = intervalQueue(+b.dataset.w, b.dataset.k); const s = sess(+b.dataset.w, b.dataset.k); s.timerStart = Date.now(); s.timerDur = q.reduce((a, x) => a + x.sec, 0); markStarted(+b.dataset.w, b.dataset.k); save(); startTimer(1, $t('Los'), q); break; }
     case 'useZepp': { const act = findAct(b.dataset.id); const w = +b.dataset.w, k = b.dataset.k; act.countsAs = k; act.week = w; markStarted(w, k); const s = sess(w, k); s.cardio = Object.assign(s.cardio || {}, { dur: String(act.dur), avg: act.avgHr ? String(act.avgHr) : (s.cardio && s.cardio.avg) || '' }); save(); render(); toast($t('Aus Zepp übernommen')); break; }
     case 'checkin': { if (!checkinDue()) break; const c = doCheckin(); toast($t('Neues Ziel: ') + fmt(c.kcal, 0) + $t(' kcal')); render(); break; }
     case 'dprev': ui.day = addDays(ui.day, -1); render(); break;
@@ -931,6 +952,7 @@ document.addEventListener('click', async e => { const b = e.target.closest('[dat
       S.foods[id] = f; save(); qtySheet(id); toast($t('Gespeichert')); break; }
     case 'closeSheet': closeSheet(); break;
     case 'exInfo': exInfoSheet(b.dataset.ex); break;
+    case 'exEq': exEqSheet(b.dataset.ex); break;
     case 'bodyMode': ui.bodyMode = b.dataset.v; { const el = $('#bodycard'); if (el) el.outerHTML = bodyCard(ui.week || curWeek()); } break;
     case 'addSet': case 'remSet': { const spec = planFor(r.w, r.k).find(p => p.slot === b.dataset.slot); const s2 = sess(r.w, r.k); const lg2 = s2.logs[spec.slot] || (s2.logs[spec.slot] = { ex: actualEx(r.w, r.k, spec), sets: [] }); lg2.extra = Math.max(0, (lg2.extra || 0) + (a === 'addSet' ? 1 : -1)); if (a === 'remSet') lg2.sets.length = Math.min(lg2.sets.length, spec.sets + lg2.extra); save(); const el = document.getElementById('ex-' + spec.slot); if (el) el.outerHTML = exCard(r.w, r.k, spec); break; }
     case 'rpeHelp': openSheet(sheetHead($t('RPE-Skala')) + '<div class="plist" style="margin-top:8px">' + [['10', $t('Maximal, keine Wiederholung mehr möglich')], ['9,5', $t('Vielleicht noch eine, eher nicht')], ['9', $t('Noch 1 Wiederholung im Tank')], ['8,5', $t('Sicher 1, vielleicht 2')], ['8', $t('Noch 2 Wiederholungen')], ['7', $t('Noch 3 Wiederholungen, Tempo bleibt schnell')], ['6', $t('Noch 4 oder mehr, gutes Aufwärmgewicht')]].map(x => '<div class="it" style="cursor:default"><b style="width:48px">' + x[0] + '</b><div class="grow">' + x[1] + '</div></div>').join('') + $t('</div><p class="small muted">RPE = wie anstrengend der Satz war. Die App rechnet daraus den nächsten Satz.</p>')); break;
@@ -963,7 +985,7 @@ document.addEventListener('click', async e => { const b = e.target.closest('[dat
     case 'newAct': actSheet(); break;
     case 'pickAct': { const act = newActivity(b.dataset.type); closeSheet(); location.hash = '#frei/' + act.id; if (ACT_MAP[act.type].strength) setTimeout(() => exPickSheet(act.id), 120); break; }
     case 'freeAddEx': exPickSheet(b.dataset.aid); break;
-    case 'freePickEx': { const act = findAct(b.dataset.aid); act.exercises.push({ ex: b.dataset.ex, sets: [{}, {}, {}] }); save(); closeSheet(); render(); break; }
+    case 'freePickEx': { if (b.dataset.aid.startsWith('wo:')) { const wo = S.workouts.find(o => o.id === b.dataset.aid.slice(3)); if (wo) wo.items.push({ ex: b.dataset.ex, sets: 3, reps: '8–12', rpe: 8, rest: 90 }); save(); closeSheet(); render(); break; } const act = findAct(b.dataset.aid); act.exercises.push({ ex: b.dataset.ex, sets: [{}, {}, {}] }); save(); closeSheet(); render(); break; }
     case 'freeAddSet': { const act = findAct(b.dataset.aid); act.exercises[+b.dataset.idx].sets.push({}); save(); softPatch('fx-' + b.dataset.idx, freeExCard(act, act.exercises[+b.dataset.idx], +b.dataset.idx)); render(); break; }
     case 'freeDelEx': { const act = findAct(b.dataset.aid); act.exercises.splice(+b.dataset.idx, 1); save(); render(); break; }
     case 'delAct': ui.confirmDel = b.dataset.aid; render(); break;
@@ -1013,7 +1035,7 @@ function dailyReadiness(d) { const h = S.health[d] || {}, dl = S.daily[d] || {},
 const LVL_COLOR = { green: 'var(--verdant)', amber: 'var(--sunset)', red: 'var(--signal)' };
 function scoreRing(score, level, size) { const C = 2 * Math.PI * 40, pct = score / 100; return '<svg viewBox="0 0 100 100" width="' + size + '" height="' + size + '" aria-hidden="true"><circle cx="50" cy="50" r="40" fill="none" stroke="var(--paper)" stroke-width="12"/><circle cx="50" cy="50" r="40" fill="none" stroke="' + LVL_COLOR[level] + '" stroke-width="12" stroke-linecap="round" stroke-dasharray="' + (C * pct).toFixed(1) + ' ' + C.toFixed(1) + '" transform="rotate(-90 50 50)"/><text x="50" y="57" text-anchor="middle" font-size="24" font-weight="800" fill="var(--graphite)" font-family="Nunito Sans, sans-serif">' + score + '</text></svg>'; }
 function readinessCard(d) { const r = dailyReadiness(d); const dl = S.daily[d] || {};
-  const sel = (f, lab, opts) => '<div class="field"><label for="dl-' + f + '">' + lab + '</label><select id="dl-' + f + '" data-daily="' + f + '" data-d="' + d + '"><option value="">–</option>' + opts.map(o => '<option value="' + o[0] + '"' + (String(dl[f]) === String(o[0]) ? ' selected' : '') + '>' + o[1] + '</option>').join('') + '</select></div>';
+  const sel = (f, lab, opts) => '<div class="field"><label for="dl-' + f + '">' + lab + '</label><select id="dl-' + f + '" data-daily="' + f + '" data-d="' + d + '"><option value="">–</option>' + opts.map(o => '<option value="' + o[0] + '"' + (String(dl[f]) === String(o[0]) ? $t(' selected') : '') + '>' + o[1] + '</option>').join('') + '</select></div>';
   const lvlTxt = { green: $t('Bereit'), amber: $t('Eingeschränkt'), red: $t('Erholung zuerst') };
   return '<div class="card"><div class="row" style="align-items:center;gap:16px">' + (r ? scoreRing(r.score, r.level, 92) : '<div class="badge mute" style="width:92px;height:92px;flex-basis:92px;font-size:14px">–</div>') +
     $t('<div class="grow"><div class="lbl">Bereitschaft heute</div><h2 style="margin:2px 0 4px">') + (r ? lvlTxt[r.level] : $t('Noch keine Daten')) + '</h2><div class="small">' + (r ? esc(r.rec) : $t('Trag unten ein, wie du dich fühlst. Mit Zepp-Daten kommen Schlaf, Ruhepuls und HRV dazu.')) + '</div></div></div>' +
@@ -1049,7 +1071,7 @@ function stackChart(id, pts, keys, o) { const W = 640, H = o.height || 200, L = 
   return '<div class="chart" data-chart="' + id + '"><svg viewBox="0 0 ' + W + ' ' + H + $t('" role="img" aria-label="Diagramm">') + g + '<rect x="' + L + '" y="0" width="' + (W - L - R) + '" height="' + H + '" fill="transparent"/></svg><div class="tip"></div></div><div class="clegend">' + keys.map(k => '<span><i style="background:' + k.color + '"></i>' + k.label + '</span>').join('') + '</div>'; }
 
 /* Pulskurve und Zonen (Zonen passend zu den Vorgaben im Plan) */
-const ZONES = [{ k: 'Z1', lo: 0, hi: .65, c: 'var(--mist)', n: $t('locker') }, { k: 'Z2', lo: .65, hi: .75, c: 'var(--verdant)', n: $t('Grundlage') }, { k: 'Z3', lo: .75, hi: .85, c: 'var(--sky)', n: $t('Tempo') }, { k: 'Z4', lo: .85, hi: .9, c: 'var(--sunset)', n: $t('Schwelle') }, { k: 'Z5', lo: .9, hi: 9, c: 'var(--signal)', n: $t('VO₂max') }];
+const ZONES = [{ k: 'Z1', lo: 0, hi: .65, c: $t('var(--mist)'), n: $t('locker') }, { k: 'Z2', lo: .65, hi: .75, c: $t('var(--verdant)'), n: $t('Grundlage') }, { k: 'Z3', lo: .75, hi: .85, c: $t('var(--sky)'), n: $t('Tempo') }, { k: 'Z4', lo: .85, hi: .9, c: $t('var(--sunset)'), n: $t('Schwelle') }, { k: 'Z5', lo: .9, hi: 9, c: $t('var(--signal)'), n: $t('VO₂max') }];
 function zoneTimes(tr) { const hf = num(S.settings.hfmax) || 186; const t = ZONES.map(() => 0); const p = tr.pts; for (let i = 1; i < p.length; i++) { const dt = Math.min(180, p[i][0] - p[i - 1][0]); const f = p[i - 1][1] / hf; const zi = ZONES.findIndex(z => f >= z.lo && f < z.hi); if (zi >= 0 && dt > 0) t[zi] += dt; } return t; }
 function downsample(raw, max) { max = max || 360; if (raw.length <= max) return raw.map(p => [Math.round(p[0]), Math.round(p[1])]); const t0 = raw[0][0], span = raw[raw.length - 1][0] - t0 || 1, b = span / max; const out = []; let cur = null;
   raw.forEach(p => { const i = Math.floor((p[0] - t0) / b); if (!cur || cur.i !== i) { if (cur) out.push([Math.round(cur.t / cur.n), Math.round(cur.v / cur.n)]); cur = { i, t: 0, v: 0, n: 0 }; } cur.t += p[0]; cur.v += p[1]; cur.n++; }); if (cur) out.push([Math.round(cur.t / cur.n), Math.round(cur.v / cur.n)]); return out; }
@@ -1066,7 +1088,7 @@ function traceCard(tkey, win, isHiit) { const tr = S.hrTraces[tkey]; const hf = 
   const pts = tr.pts.map(p => ({ lab: Math.round(p[0] / 60) + $t(' min'), bpm: p[1] })); const zt = zoneTimes(tr); const tot = zt.reduce((a, b) => a + b, 0) || 1;
   const bpms = tr.pts.map(p => p[1]); const avg = bpms.reduce((a, b) => a + b, 0) / bpms.length, mx = Math.max(...bpms);
   return $t('<div class="card"><div class="row"><h2 class="grow">Puls</h2><span class="tag">Ø ') + fmt(avg, 0) + $t(' · max ') + fmt(mx, 0) + $t(' bpm</span></div>') +
-    lineChart('tr-' + tkey, pts, [{ key: $t('bpm'), label: $t('Puls'), color: 'var(--signal)' }], { unit: $t('bpm'), dec: 0, noLegend: true, ref: Math.round(hf * .9), refLabel: $t('90 % HFmax'), height: 180 }) +
+    lineChart('tr-' + tkey, pts, [{ key: $t('bpm'), label: $t('Puls'), color: $t('var(--signal)') }], { unit: $t('bpm'), dec: 0, noLegend: true, ref: Math.round(hf * .9), refLabel: $t('90 % HFmax'), height: 180 }) +
     (isHiit ? '<p style="margin:10px 0 0"><b>' + fmt(zt[4] / 60, 1) + $t(' min</b> über 90 % HFmax. Ziel bei 4×4: etwa 2 min pro Intervall.</p>') : '') +
     '<div class="vol" style="margin-top:12px">' + ZONES.map((z, i) => '<span>' + z.k + ' ' + z.n + '</span><div class="b"><i style="width:' + (zt[i] / tot * 100) + '%;background:' + z.c + '"></i></div><span class="num small">' + fmt(zt[i] / 60, 0) + $t(' min</span>')).join('') + '</div>' +
     $t('<p class="src" style="margin-top:8px">Zonen in % von HFmax ') + hf + $t(': Z1 unter 65, Z2 65–75, Z3 75–85, Z4 85–90, Z5 ab 90. Quelle: ') + (tr.src === 'zepp' ? $t('Zepp-Export') : $t('Health Connect')) + '</p></div>'; }
@@ -1213,7 +1235,7 @@ function stallInfo(exId, w) { if (phase(w) === 'dl' || phase(w) === 'test') retu
 /* ======================= ERNÄHRUNG: Rezepte, Schnell-Eintrag, Wasser, Mikros ======================= */
 function microTotals(d) { const o = S.days[d]; const t = { fib: 0, sug: 0, salt: 0, cov: 0, n: 0 }; if (!o || !o.entries) return t;
   o.entries.forEach(e => { t.n++; if (e.fib != null || e.sug != null || e.salt != null) { t.cov++; t.fib += e.fib || 0; t.sug += e.sug || 0; t.salt += e.salt || 0; } }); return t; }
-function microRow(d) { const m = microTotals(d); if (!m.n) return ''; const bar = (v, goal, good) => { const p = Math.min(100, v / goal * 100); return '<div class="meter" style="background:var(--paper)"><i style="width:' + p + '%;background:' + (good ? 'var(--verdant)' : v > goal ? 'var(--signal)' : 'var(--sunset)') + '"></i></div>'; };
+function microRow(d) { const m = microTotals(d); if (!m.n) return ''; const bar = (v, goal, good) => { const p = Math.min(100, v / goal * 100); return '<div class="meter" style="background:var(--paper)"><i style="width:' + p + '%;background:' + (good ? $t('var(--verdant)') : v > goal ? $t('var(--signal)') : $t('var(--sunset)')) + '"></i></div>'; };
   return $t('<div class="micro"><div><div class="k">Ballaststoffe</div><b class="num">') + fmt(m.fib, 0) + '</b> / 30 g' + bar(m.fib, 30, true) + $t('</div><div><div class="k">Zucker</div><b class="num">') + fmt(m.sug, 0) + '</b> g' + bar(m.sug, 50, false) + $t('</div><div><div class="k">Salz</div><b class="num">') + fmt(m.salt, 1) + '</b> / 6 g' + bar(m.salt, 6, false) + '</div></div>' +
     (m.cov < m.n ? '<p class="src" style="margin-top:6px">' + (m.n - m.cov) + $t(' von ') + m.n + $t(' Einträgen ohne diese Angaben.</p>') : ''); }
 function waterCard(d) { const o = S.days[d] || {}; const ml = num(o.water) || 0, goal = num(S.settings.waterGoal) || 3000; const p = Math.min(100, ml / goal * 100);

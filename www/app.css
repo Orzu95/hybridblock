@@ -315,3 +315,26 @@ body.viewing #view input,body.viewing #view select{opacity:.85}
 .pe-h .nm{flex:1 1 0}
 .viewbar>span{flex:1 1 100%}
 .codebox+p{overflow-wrap:anywhere}
+
+/* Runde 5: Bibliothek, Varianten, Geräte, Onboarding-Wege */
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{border:0;border-radius:var(--r);background:var(--paper);color:var(--muted);padding:6px 12px;font:inherit;font-size:14px;font-weight:600;cursor:pointer;text-decoration:line-through;text-decoration-color:rgba(0,0,0,.25)}
+.chip.on{background:var(--graphite);color:#fff;text-decoration:none}
+.on-white .chip,.sheet-card .chip{background:var(--fog)}
+.sheet-card .chip.on{background:var(--graphite)}
+.small-chips{margin-top:10px}.small-chips .chip{cursor:default;font-size:12px;padding:3px 10px;text-decoration:none;background:var(--paper);color:var(--graphite)}.small-chips .chip.on{background:var(--ember);color:#fff}
+.it.off{opacity:.55}
+.grade{flex:0 0 36px;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;font-weight:800;color:#fff;background:var(--mist)}
+.grade.gA{background:var(--verdant)}.grade.gB{background:var(--sky)}.grade.gC{background:var(--sunset)}
+a.libcard{display:block;text-decoration:none;color:inherit}
+.prevsess{padding:10px 0;border-top:1px solid var(--rule)}.prevsess:first-of-type{border-top:0}
+.prevsess ul{margin:8px 0 0;padding-left:20px;font-size:14px;line-height:1.55}
+.rules.pros li::marker{content:'✓  ';color:var(--verdant-ink)}.rules.cons li::marker{content:'!  ';color:var(--signal-ink);font-weight:800}
+.pathcard{display:flex;flex-direction:column;gap:4px;text-align:left;border:0;width:100%;cursor:pointer;font:inherit;color:inherit;border:2px solid transparent}
+.pathcard.sel{border-color:var(--ember);background:var(--paper)}
+.sheet-card .pathcard{background:var(--fog)}.sheet-card .pathcard.sel{background:var(--paper)}
+.painbox{background:var(--paper);border-radius:var(--r);padding:14px 16px;margin-top:12px}
+.painbox input,.painbox select{background:var(--fog)}
+.prio.req::before{background:var(--signal)}
+.reqopen{outline:2px solid var(--signal);outline-offset:-2px}
+details.card summary{cursor:pointer;list-style:none}details.card summary::-webkit-details-marker{display:none}
