@@ -57,3 +57,8 @@ npx cap open android   # in Android Studio auf Run tippen
 - **Health Connect schreiben**: eigenes Kotlin-Plugin `HbHealthPlugin` (Sitzung, Strecke, Distanz, Kalorien, Puls).
 - **Datenschutz** (`privacy.js`, `privacypolicy.html`): Einwilligung nach Art. 9 DSGVO vor der ersten Eingabe, Datenschutzerklärung DE/EN, Daten exportieren, lokal löschen, Konto löschen (Edge Function `hb-auth`, Aktion `delete`). Play-Store-Vorlage in `docs/PLAY_STORE.md`.
 - **Probe-Builds** laufen auf dem Branch `dev` ohne Release, veröffentlicht wird nur von `main`.
+
+## Frauen: Zyklus und Pläne mit Schwerpunkt Beine und Po
+
+- **Zyklus** (`cycle.js`, nur bei Geschlecht weiblich, eigene Einwilligung): Periode und Beschwerden im Check-in auf „Heute“, starke Beschwerden senken die Bereitschaft und die RPE-Ziele, Hinweis mit Ersatz (lockeres Cardio, Mobility), gelerntes Muster pro Zyklustag ab 2 Zyklen, Prognose der nächsten Periode. Bleibt die Periode über 90 Tage aus (natürlicher Zyklus), Warnhinweis RED-S und kein weiteres Kaloriendefizit. Import aus Health Connect (`HbHealth.readCycle`). Cloud: getrennte Tabelle `private_state`, nur für die Person selbst; der Coach sieht Zyklusdaten nur mit Freigabe.
+- **Schwerpunkt Beine und Po**: Generator und Empfehlung lesen `focus` (Standard bei Frauen `lower`). Bleibt Ganzkörper, Gesäß in jeder Einheit zuerst, Arme ohne eigene Sätze. Neue Bibliothekspläne `curves` (nach Strong Curves) und `lowerfb` (eigener Plan, 4× Ganzkörper), neue Übungen für Gesäß und Abduktion.

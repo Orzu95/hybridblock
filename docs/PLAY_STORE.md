@@ -39,6 +39,7 @@ In der Play Console unter „App-Inhalte → Health Connect“. Pro Datenart ein
 | VO₂max lesen | Fortschritt der Ausdauer im Verlauf. |
 | Trainings lesen | Übernimmt Trainings der Uhr in den Trainingsplan und den Verlauf. |
 | Distanz lesen | Zeigt die Strecke übernommener Trainings. |
+| Menstruation lesen | Nur wenn die Nutzerin Zyklus-Tracking einschaltet: Periode und Blutungsstärke, um das Training an Beschwerden anzupassen und auf ein Ausbleiben der Periode hinzuweisen. |
 | Trainings, Strecke, Distanz, Puls, Kalorien schreiben | Speichert in der App aufgezeichnete Trainings mit GPS-Strecke, damit sie auch in anderen Gesundheits-Apps erscheinen. |
 | Verlaufsdaten lesen | Übernimmt beim ersten Verbinden die letzten 60 Tage für Trends. |
 

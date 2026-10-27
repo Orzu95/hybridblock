@@ -389,6 +389,7 @@ function flagsHTML(w, k) { const r = readiness(w, k); let h = '';
   if (r.rhrHigh) h += note('amber', $t('<b>Ruhepuls erhöht</b> (') + fmt(r.rhr, 0) + $t(' statt ') + r.base.v + $t('). Top-Sätze heute eine RPE-Stufe leichter. Die Vorschläge sind schon angepasst.'));
   else if (r.sleepBad) h += note('amber', $t('<b>Wenig Schlaf') + (r.sleepMin != null ? ' (' + fmtMin(r.sleepMin) + ')' : '') + $t('.</b> Top-Sätze eine RPE-Stufe leichter. Die Vorschläge sind schon angepasst.'));
   else if (r.dr && r.dr.score < 50) h += note(r.dr.level === 'red' ? 'red' : 'amber', $t('<b>Bereitschaft ') + r.dr.score + ' %.</b> ' + esc(r.dr.rec) + $t(' Die RPE-Vorschläge sind schon angepasst.'));
+  if (typeof cycleFlags === 'function') h += cycleFlags(w, k);
   if (r.runPrev) h += note('sky', '<b>' + esc(ACT_MAP[r.runPrev.type].name) + ' ' + (r.runPrev.date === today() ? $t('heute') : $t('gestern')) + $t('.</b> Laufen belastet die Beine stärker als Rad oder Rudern. Die Hauptübung nach RPE steuern, nicht nach der Plan-Last.'));
   return '<div id="flags" class="stack">' + h + '</div>'; }
 
@@ -1022,6 +1023,7 @@ function dailyReadiness(d) { const h = S.health[d] || {}, dl = S.daily[d] || {},
   const hb = h.hrv > 0 ? hrvBaseline(d) : null; if (hb) { const z = (Math.log(h.hrv) - hb.m7) / hb.sd; comps.push({ k: $t('HRV'), v: clamp(70 + 20 * z, 0, 100), w: .2, txt: fmt(h.hrv, 0) + $t(' ms, Ø 7 Tage ') + fmt(Math.exp(hb.m7), 0) }); }
   const feel = num(dl.feel), sore = num(dl.sore); if (feel != null || sore != null) { const p = []; if (feel != null) p.push((feel - 1) / 4 * 100); if (sore != null) p.push((5 - sore) / 4 * 100);
     comps.push({ k: $t('Gefühl'), v: p.reduce((a, b) => a + b, 0) / p.length, w: .25, txt: [feel != null ? $t('Energie ') + feel + '/5' : '', sore != null ? $t('Muskelkater ') + sore + '/5' : ''].filter(Boolean).join(', ') }); }
+  if (typeof cycleComp === 'function') comps.push(...cycleComp(d));
   if (!comps.length) return null; const W = comps.reduce((a, c) => a + c.w, 0); const score = Math.round(comps.reduce((a, c) => a + c.v * c.w, 0) / W);
   const level = score >= 67 ? 'green' : score >= 34 ? 'amber' : 'red';
   const rec = score >= 67 ? $t('Plan wie vorgegeben.') : score >= 50 ? $t('Normal trainieren, die RPE-Ziele ernst nehmen.') : score >= 34 ? $t('Top-Sätze eine RPE-Stufe leichter.') : $t('Hauptübungen eine RPE-Stufe leichter, Zubehör einen Satz weniger, HIIT als lockere Z2-Einheit.');
