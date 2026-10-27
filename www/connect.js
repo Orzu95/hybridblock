@@ -4,21 +4,23 @@
 const OWN_PKG = 'de.orzu.hybridblock';
 /* Bekannte Apps: Paketnamen zum Wiedererkennen, Hinweis, wo man Health Connect einschaltet (Menüs ändern sich, darum „meist“) */
 const PROVIDERS = [
-  { id: 'zepp', name: 'Zepp / Amazfit', pkg: ['com.huami.watch.hmwatchmanager'], how: $t('Zepp-App: Profil → Mit Drittanbietern verbinden → Health Connect.') },
+  { id: 'huawei', name: 'Huawei Health', pkg: ['com.huawei.health', 'nl.appyhapps.healthsync'], how: $t('Huawei Health schreibt nicht selbst in Health Connect. Die App „Health Sync“ überträgt die Daten.') },
+  { id: 'apple', name: 'Apple Watch', pkg: [], ios: true, how: $t('Die Apple Watch läuft nur mit dem iPhone. Ihre Daten kommen mit der iOS-App über Apple Health. Bis dahin: Trainings in der App aufzeichnen oder nachtragen.') },
+  { id: 'xiaomi', name: 'Mi Fitness / Xiaomi', pkg: ['com.mi.health', 'com.xiaomi.wearable'], how: $t('Mi Fitness: Profil → Daten teilen → Health Connect.') },
+  { id: 'garmin', name: 'Garmin Connect', pkg: ['com.garmin.android.apps.connectmobile'], how: $t('Garmin Connect: Mehr → Einstellungen → Verbundene Apps → Health Connect.') + ' ' + $t('Garmin gibt Schlaf, Puls, Schritte, Gewicht und Trainings weiter, aber kein VO₂max und keinen HRV-Status.') },
   { id: 'samsung', name: 'Samsung Health', pkg: ['com.sec.android.app.shealth'], how: $t('Samsung Health: Einstellungen → Health Connect.') },
-  { id: 'garmin', name: 'Garmin Connect', pkg: ['com.garmin.android.apps.connectmobile'], how: $t('Garmin Connect: Mehr → Einstellungen → Verbundene Apps → Health Connect.') },
+  { id: 'zepp', name: 'Zepp / Amazfit', pkg: ['com.huami.watch.hmwatchmanager'], how: $t('Zepp-App: Profil → Mit Drittanbietern verbinden → Health Connect.') },
   { id: 'google', name: 'Fitbit / Pixel Watch / Google', pkg: ['com.fitbit.FitbitMobile', 'com.google.android.apps.fitness', 'com.google.android.apps.healthdata'], how: $t('Fitbit-App: Profil → Einstellungen → Health Connect.') },
   { id: 'polar', name: 'Polar Flow', pkg: ['fi.polar.polarflow'], how: $t('Polar Flow: Einstellungen → Allgemeine Einstellungen → Health Connect.') },
-  { id: 'xiaomi', name: 'Mi Fitness / Xiaomi', pkg: ['com.mi.health', 'com.xiaomi.wearable'], how: $t('Mi Fitness: Profil → Daten teilen → Health Connect.') },
-  { id: 'withings', name: 'Withings', pkg: ['com.withings.wiscale2'], how: $t('Withings: Profil → Health Connect.') },
-  { id: 'oura', name: 'Oura', pkg: ['com.ouraring.oura'], how: $t('Oura: Einstellungen → Datenfreigabe → Health Connect.') },
   { id: 'coros', name: 'COROS', pkg: ['com.yf.smart.coros.dist'], how: $t('COROS: Profil → Einstellungen → Health Connect.') },
   { id: 'suunto', name: 'Suunto', pkg: ['com.stt.android.suunto'], how: $t('Suunto: Profil → Einstellungen → Health Connect.') },
+  { id: 'withings', name: 'Withings', pkg: ['com.withings.wiscale2'], how: $t('Withings: Profil → Health Connect.') },
+  { id: 'oura', name: 'Oura', pkg: ['com.ouraring.oura'], how: $t('Oura: Einstellungen → Datenfreigabe → Health Connect.') },
   { id: 'whoop', name: 'WHOOP', pkg: ['com.whoop.android'], how: $t('WHOOP: Mehr → App-Einstellungen → Integrationen → Health Connect.') },
   { id: 'ultrahuman', name: 'Ultrahuman', pkg: ['com.ultrahuman.android'], how: $t('Ultrahuman: Profil → Health Connect.') },
   { id: 'strava', name: 'Strava', pkg: ['com.strava'], how: $t('Strava: Einstellungen → Apps, Dienste und Geräte → Health Connect.') },
-  { id: 'huawei', name: 'Huawei Health', pkg: ['com.huawei.health', 'nl.appyhapps.healthsync'], how: $t('Huawei Health schreibt nicht selbst in Health Connect. Die App „Health Sync“ überträgt die Daten.') },
-  { id: 'other', name: $t('Andere App oder Uhr'), pkg: [], how: $t('In der App deiner Uhr in den Einstellungen nach „Health Connect“ suchen und das Schreiben der Daten erlauben.') }];
+  { id: 'other', name: $t('Andere App oder Uhr'), pkg: [], how: $t('In der App deiner Uhr in den Einstellungen nach „Health Connect“ suchen und das Schreiben der Daten erlauben.') }
+];
 const PROV_BY_PKG = {}; PROVIDERS.forEach(p => p.pkg.forEach(k => PROV_BY_PKG[k] = p));
 /* Datenarten mit eigener Quellenwahl */
 const HC_KINDS = [['steps', $t('Schritte')], ['calories', $t('Kalorien')], ['heartRate', $t('Puls')], ['restingHeartRate', $t('Ruhepuls')], ['heartRateVariability', $t('HRV')], ['sleep', $t('Schlaf')], ['weight', $t('Gewicht')], ['vo2Max', $t('VO₂max')], ['workouts', $t('Trainings')]];
