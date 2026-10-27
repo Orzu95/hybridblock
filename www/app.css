@@ -6,6 +6,7 @@
   --graphite:#2f2f2f; --charcoal:#000000; --muted:#6b6b6b; --faint:#9b9b9b;
   --ember:#ff5406; --signal:#ff3400; --sunset:#ff6d00; --verdant:#00b33f;
   --sky:#00a9dd; --mist:#72a2c5; --plum:#bd4be5; --iris:#5856de; --amber:#945300;
+  --verdant-ink:#00873a; --signal-ink:#d42c00; /* dunklere Varianten nur für kleine Schrift, damit sie auf Weiß lesbar bleibt */
   --f:'Nunito Sans',ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
   --f-micro:ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
   --r:26px; color-scheme:light;
@@ -222,7 +223,7 @@ textarea{width:100%;min-height:90px;font-family:var(--f-micro);font-size:13px}
 .clegend{display:flex;gap:16px;flex-wrap:wrap;font-size:14px;color:var(--muted);margin-top:8px}
 .clegend i{display:inline-block;width:14px;height:4px;border-radius:2px;vertical-align:middle;margin-right:6px}
 .clegend i.dot{width:10px;height:10px;border-radius:50%}
-.vol{display:grid;grid-template-columns:minmax(0,120px) minmax(0,1fr) 44px;gap:10px 12px;align-items:center;font-size:15px}
+.vol{display:grid;grid-template-columns:minmax(0,120px) minmax(0,1fr) 58px;gap:10px 12px;align-items:center;font-size:15px}
 .vol .b{height:12px;background:var(--paper);border-radius:6px;position:relative;overflow:hidden}
 .vol .b i{position:absolute;left:0;top:0;bottom:0;border-radius:6px;background:var(--mist)}
 .vol .b i.p{background:var(--plum)}
@@ -241,3 +242,12 @@ ul.rules{margin:6px 0 0;padding-left:20px} ul.rules li{margin-bottom:6px;max-wid
 .exlink{display:block;text-align:left;background:none;border:0;padding:0;cursor:pointer;color:inherit;font:inherit;font-weight:700;font-size:18px;line-height:1.25}
 .histbtn{display:inline-flex;align-items:center;gap:4px;margin-left:8px;font-size:12px;font-weight:700;font-family:var(--f-micro);color:var(--amber);background:var(--paper);border-radius:var(--r);padding:2px 9px;vertical-align:2px}
 .sheet .stats{gap:8px}
+
+.delta{display:block;font-size:12px;font-weight:700;font-family:var(--f-micro);color:var(--muted);margin-top:4px}
+.delta.good{color:var(--verdant-ink)} .delta.bad{color:var(--signal-ink)}
+.comps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:14px}
+.comp{background:var(--paper);border-radius:18px;padding:10px 12px;display:grid;grid-template-columns:auto 1fr auto;gap:2px 8px;align-items:center}
+.comp b{font-size:14px} .comp .num{font-weight:800} .comp small{grid-column:1/-1;font-size:12px;color:var(--muted)}
+.ex-actions{align-items:center}
+.exnote{font-family:var(--f);font-size:14px;min-height:38px;padding:8px 14px}
+.health.four{grid-template-columns:repeat(2,minmax(0,1fr))}
