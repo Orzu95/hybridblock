@@ -395,3 +395,10 @@ details.card summary{cursor:pointer;list-style:none}details.card summary::-webki
 /* Wochen-Check-in */
 .rev-facts{margin:4px 0 0;padding-left:18px;font-size:14px;line-height:1.5}
 .rev-sug{background:var(--paper);border-radius:16px;padding:12px 14px;margin-top:8px}
+
+/* SpoWi-Ansicht */
+body:not(.spowi) .sw-only{display:none!important}
+.sw-card{border:2px solid var(--iris)}
+.sw-card .tag{background:var(--iris);color:#fff}
+.tbl{border-collapse:collapse;table-layout:auto}.tbl td.num{text-align:right;white-space:nowrap;padding-left:8px;vertical-align:top}
+.sw-card .tbl td,.rev .tbl td{vertical-align:top}
