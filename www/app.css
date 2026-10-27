@@ -391,3 +391,7 @@ details.card summary{cursor:pointer;list-style:none}details.card summary::-webki
 
 .privacy h1{font-size:26px;color:var(--ember);margin:0 0 4px}.privacy h2{font-size:18px;margin:20px 0 4px}.privacy .box{background:var(--paper);border-radius:16px;padding:12px 14px;margin:12px 0}.privacy mark{background:#fff4dc;border-radius:4px;padding:0 3px}.privacy ul{padding-left:20px}.privacy .muted{color:var(--muted);font-size:14px}
 .act-pick{overflow-wrap:anywhere;hyphens:auto}
+
+/* Wochen-Check-in */
+.rev-facts{margin:4px 0 0;padding-left:18px;font-size:14px;line-height:1.5}
+.rev-sug{background:var(--paper);border-radius:16px;padding:12px 14px;margin-top:8px}
