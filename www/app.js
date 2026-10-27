@@ -423,7 +423,7 @@ let searchAbort = null;
 function openSheet(html) { $('#sheetCard').innerHTML = '<div class="grab"></div>' + html; $('#sheet').hidden = false; }
 function closeSheet() { $('#sheet').hidden = true; $('#sheetCard').innerHTML = ''; }
 const sheetHead = t => '<div class="row"><h2 class="grow">' + t + '</h2><button class="btn sm" style="background:var(--fog)" data-act="closeSheet" type="button">Schließen</button></div>';
-function foodRow(f) { const per = f.base === '100g' ? '100 g' : 'Stück'; return '<div class="it" data-act="pick" data-id="' + esc(f.id) + '"><div class="grow"><b>' + esc(f.name) + '</b><small>' + (f.brand ? esc(f.brand) + ' · ' : '') + fmt(f.kcal, 0) + ' kcal · ' + fmt(f.p, 1) + ' g Protein pro ' + per + '</small></div><span class="chev">›</span></div>'; }
+function foodRow(f) { const per = f.base === '100g' ? '100 g' : 'Stück'; return '<div class="it" data-act="pick" data-id="' + esc(f.id) + '"><div class="grow"><b>' + esc(f.name) + '</b><small>' + (f.brand ? esc(f.brand) + ' · ' : '') + (f.needsFetch ? 'Nährwerte werden beim Antippen geladen' : fmt(f.kcal, 0) + ' kcal · ' + fmt(f.p, 1) + ' g Protein pro ' + per) + '</small></div><span class="chev">›</span></div>'; }
 function addSheet() {
   const tabs = [['presets', 'Meal-Prep'], ['recent', 'Zuletzt'], ['search', 'Suche'], ['new', 'Neu']];
   let body = '';
@@ -449,15 +449,29 @@ function foodForm(f, code) { f = f || { base: '100g', code: code || '' }; const 
     '<div class="field"><label for="ff-pg">Gramm pro Stück/Portion</label><input id="ff-pg" type="number" inputmode="decimal" step="any" value="' + v('pieceG') + '" placeholder="optional"></div>' +
     '<input type="hidden" id="ff-code" value="' + v('code') + '"></div>' +
     '<div class="row" style="margin-top:16px"><div class="grow"></div><button class="btn brand" data-act="saveFood" data-id="' + esc(f.id || '') + '" type="button">Speichern</button></div>'; }
-function offMap(p) { const n = p.nutriments || {}; let kcal = num(n['energy-kcal_100g']); if (kcal == null && num(n.energy_100g) != null) kcal = num(n.energy_100g) / 4.184;
-  if (kcal == null) return null; return { id: 'off_' + p.code, code: String(p.code), name: (p.product_name_de || p.product_name || 'Ohne Namen').trim(), brand: (p.brands || '').split(',')[0].trim(), base: '100g', kcal, p: num(n.proteins_100g) || 0, f: num(n.fat_100g) || 0, c: num(n.carbohydrates_100g) || 0, pieceG: num(p.serving_quantity) || null, src: 'off' }; }
+function offMap(p, partial) { const n = p.nutriments || {}; let kcal = num(n['energy-kcal_100g']); if (kcal == null && num(n.energy_100g) != null) kcal = num(n.energy_100g) / 4.184;
+  const brand = Array.isArray(p.brands) ? (p.brands[0] || '') : String(p.brands || '').split(',')[0];
+  const name = (p.product_name_de || p.product_name || '').toString().trim();
+  if (kcal == null && !(partial && name && p.code)) return null;
+  return { id: 'off_' + p.code, code: String(p.code), name: name || 'Ohne Namen', brand: brand.trim(), base: '100g', kcal, p: num(n.proteins_100g) || 0, f: num(n.fat_100g) || 0, c: num(n.carbohydrates_100g) || 0, pieceG: num(p.serving_quantity) || null, src: 'off', needsFetch: kcal == null }; }
 const offCache = {};
 async function fetchJson(url, ms) { const ac = new AbortController(); const t = setTimeout(() => ac.abort(), ms || 9000); try { const r = await fetch(url, { signal: ac.signal }); if (!r.ok && r.status !== 404) throw new Error('HTTP ' + r.status); return await r.json(); } finally { clearTimeout(t); } }
-async function offSearch(q) { const res = $('#results'); if (!q || !res) return; res.innerHTML = '<p class="small muted">Suche …</p>';
-  try { const j = await fetchJson('https://de.openfoodfacts.org/cgi/search.pl?search_terms=' + encodeURIComponent(q) + '&search_simple=1&action=process&json=1&page_size=30&fields=code,product_name,product_name_de,brands,nutriments,serving_quantity', 12000);
-    const items = (j.products || []).map(offMap).filter(Boolean); items.forEach(f => offCache[f.id] = f);
-    res.innerHTML = items.length ? items.map(foodRow).join('') : '<p class="small muted">Nichts gefunden. Anders formulieren oder unter „Neu“ selbst anlegen.</p>';
-  } catch (e) { res.innerHTML = '<p class="small muted">Suche gerade nicht erreichbar (' + esc(e.name === 'AbortError' ? 'Zeitüberschreitung' : e.message) + '). Unter „Neu“ kannst du das Lebensmittel selbst anlegen.</p>'; } }
+async function offSearch(q) { const res = $('#results'); if (!q || !res) return; const ql = q.toLowerCase();
+  const mine = []; const seen = new Set(); [...PRESET_FOODS.map(f => getFood(f.id)), ...Object.values(S.foods)].forEach(f => { if (f && !seen.has(f.id) && f.name.toLowerCase().includes(ql)) { seen.add(f.id); mine.push(f); } });
+  const mineHtml = mine.length ? '<div class="lbl" style="margin:10px 0 2px">Deine Lebensmittel</div>' + mine.map(foodRow).join('') : '';
+  res.innerHTML = mineHtml + '<p class="small muted">Suche in Open Food Facts …</p>';
+  const enc = encodeURIComponent(q), F = 'code,product_name,product_name_de,brands,nutriments,serving_quantity';
+  const sources = [
+    { url: 'https://search.openfoodfacts.org/search?q=' + enc + '&langs=de,en&page_size=40&fields=' + F, pick: j => j.hits },
+    { url: 'https://world.openfoodfacts.org/cgi/search.pl?search_terms=' + enc + '&search_simple=1&action=process&json=1&page_size=30&fields=' + F, pick: j => j.products } ];
+  let items = null; const errs = [];
+  for (const src of sources) { try { const j = await fetchJson(src.url, 10000); const list = (src.pick(j) || []).map(p => offMap(p, true)).filter(Boolean); if (list.length) { items = list; break; } if (items == null) items = []; }
+    catch (e) { errs.push(e.name === 'AbortError' ? 'Zeitüberschreitung' : e.message); } }
+  if (!$('#results')) return;
+  if (items && items.length) { items.sort((a, b) => (a.needsFetch ? 1 : 0) - (b.needsFetch ? 1 : 0)); items.forEach(f => offCache[f.id] = f);
+    res.innerHTML = mineHtml + '<div class="lbl" style="margin:10px 0 2px">Open Food Facts</div>' + items.map(foodRow).join(''); return; }
+  res.innerHTML = mineHtml + (items ? '<p class="small muted">In Open Food Facts nichts gefunden. Anders formulieren, Barcode scannen oder unter „Neu“ selbst anlegen.</p>'
+    : '<p class="small muted">Open Food Facts ist gerade nicht erreichbar (' + esc(errs.join(', ')) + '). Barcode-Scan oder „Neu“ funktionieren trotzdem.</p>'); }
 async function lookupBarcode(code) { code = String(code || '').replace(/\D/g, ''); if (!code) return;
   const known = Object.values(S.foods).find(f => f.code === code); if (known) { qtySheet(known.id); return; }
   openSheet(sheetHead('Barcode ' + esc(code)) + '<p class="muted">Suche in Open Food Facts …</p>');
@@ -747,7 +761,10 @@ document.addEventListener('click', async e => { const b = e.target.closest('[dat
     case 'scanClose': closeScanner(); break;
     case 'scanManual': { const c = $('#scanCode').value; closeScanner(); lookupBarcode(c); break; }
     case 'torch': toggleTorch(); break;
-    case 'pick': { const id = b.dataset.id; if (offCache[id] && !S.foods[id]) { S.foods[id] = offCache[id]; save(); } qtySheet(id); break; }
+    case 'pick': { const id = b.dataset.id; const c = offCache[id];
+      if (c && c.needsFetch && !S.foods[id]) { try { const j = await fetchJson('https://world.openfoodfacts.org/api/v2/product/' + c.code + '.json?fields=code,product_name,product_name_de,brands,nutriments,serving_quantity'); const f = j && j.product ? offMap(Object.assign({ code: c.code }, j.product)) : null;
+          if (f) { S.foods[id] = f; save(); qtySheet(id); } else openSheet(sheetHead('Nährwerte fehlen') + foodForm({ base: '100g', name: c.name, code: c.code }, c.code)); } catch (e) { openSheet(sheetHead('Nährwerte fehlen') + foodForm({ base: '100g', name: c.name, code: c.code }, c.code)); } break; }
+      if (c && !S.foods[id]) { S.foods[id] = c; save(); } qtySheet(id); break; }
     case 'confirmAdd': { const q = num($('#qq').value); if (!q) { toast('Menge eingeben'); break; } ui.meal = $('#qm').value; addEntry(ui.day, b.dataset.id, ui.meal, q, $('#qu').value); closeSheet(); if (route.name !== 'essen') location.hash = '#essen'; else render(); toast('Hinzugefügt'); break; }
     case 'edit': { const en = (dayObj(ui.day).entries || []).find(x => x.uid === b.dataset.uid); if (en && getFood(en.food)) qtySheet(en.food, en); break; }
     case 'saveEntry': { const o = dayObj(ui.day), en = o.entries.find(x => x.uid === b.dataset.uid); const q = num($('#qq').value); if (!en || !q) break; en.qty = q; en.unit = $('#qu').value; Object.assign(en, macrosFor(getFood(en.food), q, en.unit)); save(); closeSheet(); render(); break; }
