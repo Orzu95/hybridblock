@@ -1,0 +1,30 @@
+# Hybridblock
+
+Eigene Trainings- und Ernährungs-App: 12-Wochen-Hybridplan mit Autoregulation, adaptiver Kalorienbedarf, Barcode-Scanner und Zepp-Gesundheitsdaten.
+
+## Zwei Versionen, ein Code
+
+- **Web-App** (`www/`): läuft im Browser und lässt sich auf dem Startbildschirm installieren. Zepp-Daten kommen per Export-Import.
+- **Android-App** (`android/`): dieselbe App in einer Capacitor-Hülle. Liest Schritte, Puls, Ruhepuls, Schlaf, Gewicht, VO₂max und Workouts direkt aus Health Connect, wohin Zepp synchronisiert.
+
+## Bauen
+
+**Automatisch (GitHub):** Jeder Push auf `main` baut die APK und legt sie unter *Releases → latest* ab. Die Web-App landet auf GitHub Pages (einmalig unter *Settings → Pages → Source: GitHub Actions* einschalten).
+
+**Lokal:** Node 22 und Android Studio (JDK 21) installieren, dann:
+
+```
+npm ci
+npx cap sync android
+npx cap open android   # in Android Studio auf Run tippen
+```
+
+## Zepp verbinden (Android-App)
+
+1. Health Connect installieren (bei Android 14+ schon dabei).
+2. Zepp-App: Profil → Mit Drittanbietern verbinden → Health Connect einschalten.
+3. Hybridblock: Einstellungen → Zepp über Health Connect → Verbinden.
+
+## Signaturschlüssel
+
+`android/app/hybridblock.jks` signiert jede Version gleich, damit Updates über die alte App installiert werden und die Daten bleiben. Das Repo deshalb **privat** halten. Optional die Umgebungsvariablen `HB_KEYSTORE` und `HB_KEYSTORE_PASSWORD` für einen eigenen Schlüssel setzen.

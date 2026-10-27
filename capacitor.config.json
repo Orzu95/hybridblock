@@ -1,0 +1,9 @@
+{
+  "appId": "de.orzu.hybridblock",
+  "appName": "Hybridblock",
+  "webDir": "www",
+  "android": { "allowMixedContent": false, "backgroundColor": "#ffffff" },
+  "plugins": {
+    "SystemBars": { "insetsHandling": "css", "initialViewportFitValueHint": "cover", "style": "LIGHT" }
+  }
+}

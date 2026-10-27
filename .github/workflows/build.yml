@@ -1,0 +1,67 @@
+name: App bauen und veröffentlichen
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+concurrency:
+  group: build
+  cancel-in-progress: false
+jobs:
+  apk:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+      - uses: android-actions/setup-android@v3
+      - name: Build-Nummer eintragen
+        run: echo "{\"build\":${GITHUB_RUN_NUMBER},\"sha\":\"${GITHUB_SHA::7}\"}" > www/build.json
+      - run: npm ci
+      - run: npx cap sync android
+      - name: Signaturschlüssel aus Secret
+        env:
+          HB_KEYSTORE_B64: ${{ secrets.HB_KEYSTORE_B64 }}
+        run: |
+          if [ -z "$HB_KEYSTORE_B64" ]; then echo "Secret HB_KEYSTORE_B64 fehlt"; exit 1; fi
+          echo "$HB_KEYSTORE_B64" | base64 -d > "$RUNNER_TEMP/hybridblock.jks"
+          echo "HB_KEYSTORE=$RUNNER_TEMP/hybridblock.jks" >> "$GITHUB_ENV"
+      - name: APK bauen
+        working-directory: android
+        env:
+          HB_KEYSTORE_PASSWORD: ${{ secrets.HB_KEYSTORE_PASSWORD }}
+        run: |
+          chmod +x gradlew
+          ./gradlew assembleRelease --no-daemon
+      - run: cp android/app/build/outputs/apk/release/app-release.apk Hybridblock.apk
+      - name: Als Release veröffentlichen
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: build-${{ github.run_number }}
+          name: Hybridblock Build ${{ github.run_number }}
+          body: "Auf dem Handy herunterladen und über die alte Version installieren. Deine Daten bleiben erhalten."
+          files: Hybridblock.apk
+          make_latest: true
+      - name: Web-App vorbereiten
+        run: cp -r www site
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+  pages:
+    needs: apk
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
