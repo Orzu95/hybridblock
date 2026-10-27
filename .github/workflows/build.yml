@@ -28,12 +28,12 @@ jobs:
         run: echo "{\"build\":${GITHUB_RUN_NUMBER},\"sha\":\"${GITHUB_SHA::7}\"}" > www/build.json
       - run: npm ci
       - run: npx cap sync android
-      - name: Signaturschlüssel aus Secret
+      - name: Signaturschlüssel entschlüsseln
         env:
-          HB_KEYSTORE_B64: ${{ secrets.HB_KEYSTORE_B64 }}
+          HB_KEYSTORE_PASSWORD: ${{ secrets.HB_KEYSTORE_PASSWORD }}
         run: |
-          if [ -z "$HB_KEYSTORE_B64" ]; then echo "Secret HB_KEYSTORE_B64 fehlt"; exit 1; fi
-          echo "$HB_KEYSTORE_B64" | base64 -d > "$RUNNER_TEMP/hybridblock.jks"
+          if [ -z "$HB_KEYSTORE_PASSWORD" ]; then echo "::warning::Secret HB_KEYSTORE_PASSWORD fehlt. Probe-Build ohne festen Schlüssel, kein Release."; exit 0; fi
+          openssl enc -d -aes-256-cbc -pbkdf2 -iter 200000 -in android/app/hybridblock.jks.enc -out "$RUNNER_TEMP/hybridblock.jks" -pass env:HB_KEYSTORE_PASSWORD
           echo "HB_KEYSTORE=$RUNNER_TEMP/hybridblock.jks" >> "$GITHUB_ENV"
       - name: APK bauen
         working-directory: android
@@ -43,7 +43,12 @@ jobs:
           chmod +x gradlew
           ./gradlew assembleRelease --no-daemon
       - run: cp android/app/build/outputs/apk/release/app-release.apk Hybridblock.apk
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Hybridblock-APK
+          path: Hybridblock.apk
       - name: Als Release veröffentlichen
+        if: env.HB_KEYSTORE != ''
         uses: softprops/action-gh-release@v2
         with:
           tag_name: build-${{ github.run_number }}
@@ -58,6 +63,7 @@ jobs:
           path: site
   pages:
     needs: apk
+    continue-on-error: true
     runs-on: ubuntu-latest
     environment:
       name: github-pages
