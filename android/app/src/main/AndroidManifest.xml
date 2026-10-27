@@ -77,6 +77,7 @@
     <uses-permission android:name="android.permission.health.READ_BODY_FAT" tools:node="remove" />
     <uses-permission android:name="android.permission.health.READ_OXYGEN_SATURATION" tools:node="remove" />
     <uses-permission android:name="android.permission.health.READ_RESPIRATORY_RATE" tools:node="remove" />
+    <uses-permission android:name="android.permission.health.READ_MENSTRUATION" />
     <uses-permission android:name="android.permission.health.WRITE_EXERCISE" />
     <uses-permission android:name="android.permission.health.WRITE_EXERCISE_ROUTE" />
     <!-- GPS-Tracking im Vordergrund-Dienst, Bluetooth-Pulsgurte -->

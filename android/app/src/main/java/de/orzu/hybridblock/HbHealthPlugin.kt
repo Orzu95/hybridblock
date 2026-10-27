@@ -8,6 +8,11 @@ import androidx.health.connect.client.records.DistanceRecord
 import androidx.health.connect.client.records.ExerciseRoute
 import androidx.health.connect.client.records.ExerciseSessionRecord
 import androidx.health.connect.client.records.HeartRateRecord
+import androidx.health.connect.client.records.MenstruationFlowRecord
+import androidx.health.connect.client.records.MenstruationPeriodRecord
+import androidx.health.connect.client.request.ReadRecordsRequest
+import androidx.health.connect.client.time.TimeRangeFilter
+import com.getcapacitor.JSArray
 import androidx.health.connect.client.records.Record
 import androidx.health.connect.client.records.TotalCaloriesBurnedRecord
 import androidx.health.connect.client.records.metadata.Device
@@ -152,6 +157,58 @@ class HbHealthPlugin : Plugin() {
                 o.put("route", route != null)
                 call.resolve(o)
             } catch (e: Exception) { call.reject(e.message ?: "write_failed") }
+        }
+    }
+
+    /* ---------- Zyklus lesen (Periode, Blutungsstärke) ---------- */
+    private val cyclePerms = setOf(
+        HealthPermission.getReadPermission(MenstruationPeriodRecord::class),
+        HealthPermission.getReadPermission(MenstruationFlowRecord::class)
+    )
+
+    @PluginMethod
+    fun requestCycle(call: PluginCall) {
+        val c = client() ?: run { call.reject("health_connect_unavailable"); return }
+        scope.launch {
+            try {
+                val granted = c.permissionController.getGrantedPermissions()
+                if (granted.containsAll(cyclePerms)) { call.resolve(JSObject().put("granted", true)); return@launch }
+                startActivityForResult(call, contract.createIntent(context, cyclePerms), "onCycleResult")
+            } catch (e: Exception) { call.reject(e.message ?: "request_failed") }
+        }
+    }
+
+    @ActivityCallback
+    private fun onCycleResult(call: PluginCall?, result: ActivityResult) {
+        if (call == null) return
+        val c = client() ?: run { call.reject("health_connect_unavailable"); return }
+        scope.launch {
+            try { call.resolve(JSObject().put("granted", c.permissionController.getGrantedPermissions().containsAll(cyclePerms))) }
+            catch (e: Exception) { call.reject(e.message ?: "status_failed") }
+        }
+    }
+
+    /** start, end in ms. Ergebnis: periods [[startMs, endMs, quelle]], flows [[ms, stärke 0–3, quelle]] */
+    @PluginMethod
+    fun readCycle(call: PluginCall) {
+        val c = client() ?: run { call.reject("health_connect_unavailable"); return }
+        val start = Instant.ofEpochMilli(call.getLong("start") ?: (System.currentTimeMillis() - 200L * 86400000L))
+        val end = Instant.ofEpochMilli(call.getLong("end") ?: System.currentTimeMillis())
+        scope.launch {
+            try {
+                val granted = c.permissionController.getGrantedPermissions()
+                val out = JSObject(); val periods = JSArray(); val flows = JSArray()
+                if (granted.contains(HealthPermission.getReadPermission(MenstruationPeriodRecord::class))) {
+                    val r = c.readRecords(ReadRecordsRequest(MenstruationPeriodRecord::class, TimeRangeFilter.between(start, end)))
+                    r.records.forEach { x -> val a = JSArray(); a.put(x.startTime.toEpochMilli()); a.put(x.endTime.toEpochMilli()); a.put(x.metadata.dataOrigin.packageName); periods.put(a) }
+                }
+                if (granted.contains(HealthPermission.getReadPermission(MenstruationFlowRecord::class))) {
+                    val r = c.readRecords(ReadRecordsRequest(MenstruationFlowRecord::class, TimeRangeFilter.between(start, end)))
+                    r.records.forEach { x -> val a = JSArray(); a.put(x.time.toEpochMilli()); a.put(x.flow); a.put(x.metadata.dataOrigin.packageName); flows.put(a) }
+                }
+                out.put("periods", periods); out.put("flows", flows); out.put("granted", granted.containsAll(cyclePerms))
+                call.resolve(out)
+            } catch (e: Exception) { call.reject(e.message ?: "read_failed") }
         }
     }
 }
