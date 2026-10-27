@@ -12,18 +12,19 @@ concurrency:
   cancel-in-progress: false
 jobs:
   apk:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: 22
           cache: npm
-      - uses: actions/setup-java@v4
+      - uses: actions/setup-java@v5
         with:
           distribution: temurin
           java-version: 21
-      - uses: android-actions/setup-android@v3
+      - name: Android-SDK prüfen
+        run: echo "::notice::ANDROID_HOME=${ANDROID_HOME:-fehlt}"
       - name: Build-Nummer eintragen
         run: echo "{\"build\":${GITHUB_RUN_NUMBER},\"sha\":\"${GITHUB_SHA::7}\"}" > www/build.json
       - run: npm ci
@@ -41,7 +42,12 @@ jobs:
           HB_KEYSTORE_PASSWORD: ${{ secrets.HB_KEYSTORE_PASSWORD }}
         run: |
           chmod +x gradlew
-          ./gradlew assembleRelease --no-daemon
+          set -o pipefail
+          if ! ./gradlew assembleRelease --no-daemon --console=plain 2>&1 | tee gradle.log; then
+            msg=$(grep -E "error|Error|What went wrong|FAILURE|> |e: " gradle.log | tail -40 | sed 's/%/%25/g' | awk '{printf "%s%%0A", $0}')
+            echo "::error title=Gradle::${msg}"
+            exit 1
+          fi
       - run: cp android/app/build/outputs/apk/release/app-release.apk Hybridblock.apk
       - uses: actions/upload-artifact@v4
         with:
@@ -64,7 +70,7 @@ jobs:
   pages:
     needs: apk
     continue-on-error: true
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
