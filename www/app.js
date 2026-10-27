@@ -53,6 +53,7 @@ const ICON = {
   scan:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8V5h3M17 5h3v3M20 16v3h-3M7 19H4v-3M8 9v6M11 9v6M14 9v6M17 9v6"/></svg>',
   search:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4 4"/></svg>',
   sync:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11a8 8 0 0 0-14.5-4.5L4 8M4 4v4h4M4 13a8 8 0 0 0 14.5 4.5L20 16M20 20v-4h-4"/></svg>',
+  chart:'<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18l5-6 4 3 7-9"/></svg>',
   back:'<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>' };
 
 /* ======================= PLAN / WOCHEN ======================= */
@@ -347,7 +348,7 @@ function exCard(w, k, spec) {
   const sugg = i => setSuggestion(w, k, spec, exId, i, base, rd);
   const nextWhy = (() => { for (let i = 0; i < spec.sets; i++) { if (!(raw[i] && raw[i].done)) { const sg = sugg(i); return sg.why ? 'Satz ' + (i + 1) + ': ' + sg.why + (sg.load != null ? ' (' + fmt(sg.load) + ' kg)' : '') : ''; } } return ''; })();
   const swapped = exId !== spec.ex;
-  return '<div class="ex" id="ex-' + spec.slot + '"><div class="ex-h"><div class="grow"><div class="nm">' + (spec.sup ? '<span class="sup">' + spec.sup + '</span>' : '') + esc(ex.name) + (isPrio(exId) ? '<span class="prio">Schwerpunkt</span>' : '') + '</div>' +
+  return '<div class="ex" id="ex-' + spec.slot + '"><div class="ex-h"><div class="grow"><button class="nm exlink" type="button" data-act="exHist" data-ex="' + exId + '">' + (spec.sup ? '<span class="sup">' + spec.sup + '</span>' : '') + esc(ex.name) + (isPrio(exId) ? '<span class="prio">Schwerpunkt</span>' : '') + '<span class="histbtn">' + ICON.chart + 'Verlauf</span></button>' +
     (swapped ? '<div class="swapped">statt ' + esc(LIB[spec.ex].name) + '</div>' : '') +
     '<div class="spec"><b>' + spec.sets + ' × ' + esc(spec.reps) + (isCarry ? ' m' : '') + '</b>' + (tgt != null ? ' bei RPE ' + fmt(tgt) : '') + (spec.rest ? ' · Pause ' + (spec.rest >= 60 ? fmt(spec.rest / 60) + ' min' : spec.rest + ' s') : spec.slot === 'lat_a' ? ' · ohne eigene Pause' : '') + '</div>' +
     ((spec.note || ex.note) ? '<div class="note">' + esc([spec.note, ex.note].filter(Boolean).join(' ')) + '</div>' : '') + '</div>' +
@@ -394,7 +395,7 @@ function viewFree(id) { const a = S.activities.find(x => x.id === id); if (!a) r
 function freeExCard(a, e, idx) { const ex = LIB[e.ex]; const spec = { slot: 'f' + idx, sets: e.sets.length, reps: e.reps || '8–12', rpe: 8, type: 'dp' };
   const h = lastAny(e.ex); const histTxt = h ? 'Zuletzt im Plan (Woche ' + h.w + '): ' + h.items.flatMap(it => it.sets).map(x => (x.w != null ? fmt(x.w) + ' × ' : '') + (x.r ?? '–')).join(', ') : '';
   const sugg = i => { const raw = e.sets; for (let j = i - 1; j >= 0; j--) { const x = raw[j]; if (x && x.done) return { load: num(x.w), reps: num(x.r) }; } return { load: null, reps: null }; };
-  return '<div class="ex" id="fx-' + idx + '"><div class="ex-h"><div class="grow"><div class="nm">' + esc(ex.name) + (isPrio(e.ex) ? '<span class="prio">Schwerpunkt</span>' : '') + '</div></div><button class="btn sm" data-act="freeDelEx" data-aid="' + a.id + '" data-idx="' + idx + '" type="button">Entfernen</button></div>' +
+  return '<div class="ex" id="fx-' + idx + '"><div class="ex-h"><div class="grow"><button class="nm exlink" type="button" data-act="exHist" data-ex="' + e.ex + '">' + esc(ex.name) + (isPrio(e.ex) ? '<span class="prio">Schwerpunkt</span>' : '') + '<span class="histbtn">' + ICON.chart + 'Verlauf</span></button></div><button class="btn sm" data-act="freeDelEx" data-aid="' + a.id + '" data-idx="' + idx + '" type="button">Entfernen</button></div>' +
     (histTxt ? '<div class="hint">' + esc(histTxt) + '</div>' : '') + setRows('f-' + idx + '-', spec, e.sets, sugg, true, null, false, 'data-aid="' + a.id + '" data-idx="' + idx + '"') +
     '<div class="ex-actions"><button class="btn sm" data-act="freeAddSet" data-aid="' + a.id + '" data-idx="' + idx + '" type="button">+ Satz</button></div></div>'; }
 function newActivity(type, dateStr) { const a = { id: uid(), type, date: dateStr || today(), week: curWeek(), src: 'manual' }; if (ACT_MAP[type].strength) a.exercises = []; S.activities.push(a); save(); return a; }
@@ -595,8 +596,56 @@ function viewProgress() {
     '<div class="card"><h2>Ruhepuls</h2>' + (hasH('rhr') ? lineChart('cr', hDays, [{ key: 'rhr', label: 'Ruhepuls', color: 'var(--plum)' }], { unit: 'bpm', dec: 0, noLegend: true }) : empty('Noch keine Pulsdaten.')) + '</div>' +
     '<div class="card"><h2>Schlaf</h2>' + (hasH('sleep') ? lineChart('csl', hDays, [{ key: 'sleep', label: 'Schlaf', bars: true, color: 'var(--iris)' }], { unit: 'h', dec: 1, ref: 7, refLabel: '7 h', zero: true, noLegend: true }) : empty('Noch keine Schlafdaten.')) + '</div>' +
     '<div class="card"><h2>Kraft (geschätztes 1RM)</h2>' + lifts.map(l => '<div style="margin-top:12px"><div class="lbl">' + l.name + '</div>' + (l.pts.length > 1 ? lineChart('cl-' + l.id, l.pts, [{ key: 'v', label: 'e1RM', color: 'var(--iris)' }], { unit: 'kg', dec: 0, height: 130, noLegend: true }) : empty(l.pts.length ? 'Ab der zweiten Einheit gibt es eine Kurve. Aktuell ' + fmt(l.pts[0].v, 0) + ' kg.' : 'Noch keine Sätze mit RPE geloggt.')) + '</div>').join('') + '</div>' +
+    exListCard() +
     '<div class="card"><h2>Check-ins</h2>' + (S.checkins.length ? '<div class="tbl"><table><thead><tr><th>Datum</th><th>Trend</th><th>kg/Woche</th><th>Bedarf</th><th>Ziel</th></tr></thead><tbody>' + S.checkins.slice().reverse().map(c => '<tr><td>' + fmtDay(c.date) + '</td><td class="num">' + fmt(c.trend) + '</td><td class="num">' + (c.rate != null ? fmt(c.rate, 2) : '–') + '</td><td class="num">' + fmt(c.tdee, 0) + '</td><td class="num">' + fmt(c.kcal, 0) + '</td></tr>').join('') + '</tbody></table></div>' : empty('Der erste Check-in ist nach 7 Tagen mit Gewicht möglich.')) + '</div></div>'; }
 const empty = t => '<p class="small muted">' + esc(t) + '</p>';
+function exListCard() { const ids = new Set(); for (let w = 1; w <= 12; w++) ORDER.forEach(k => { const s = peekSess(w, k); if (s && s.logs) Object.values(s.logs).forEach(lg => { if (loggedSets(lg).length) ids.add(lg.ex); }); });
+  S.activities.forEach(a => (a.exercises || []).forEach(e => { if (loggedSets(e).length) ids.add(e.ex); }));
+  const list = [...ids].filter(id => LIB[id]).map(id => { const h = exHistory(id); const last = h[h.length - 1]; const m = h.some(o => o.e1) ? 'e1' : 'reps'; const v = h.map(o => o[m]).filter(x => x != null);
+    return { id, n: h.length, last, m, chg: v.length > 1 && v[0] ? (v[v.length - 1] - v[0]) / Math.abs(v[0]) * 100 : null, cur: v[v.length - 1] }; }).sort((a, b) => (b.last && b.last.ord || '') < (a.last && a.last.ord || '') ? -1 : 1);
+  return '<div class="card flush"><div class="meal-h"><b>Alle Übungen</b><span class="small muted">' + list.length + '</span></div>' + (list.length ? '<div class="list">' + list.map(x => '<button class="li" data-act="exHist" data-ex="' + x.id + '" type="button"><div class="grow"><b>' + esc(LIB[x.id].name) + '</b><small>' + x.n + ' Einheiten · ' + (x.m === 'e1' ? 'e1RM ' + fmt(x.cur, 0) + ' kg' : fmt(x.cur, 0) + ' Wdh.') + '</small></div>' + (x.chg != null ? '<span class="tag"><span class="dot ' + (x.chg >= 0 ? 'green' : 'red') + '"></span>' + (x.chg > 0 ? '+' : '') + fmt(x.chg, 0) + ' %</span>' : '') + '<span class="chev">›</span></button>').join('') + '</div>' : '<p class="small muted" style="padding:0 20px 18px">Sobald du Sätze loggst, erscheint hier jede Übung mit ihrem Verlauf.</p>') + '</div>'; }
+/* ---------- Verlauf pro Übung ---------- */
+function exHistory(exId) { const out = [];
+  for (let w = 1; w <= 12; w++) ORDER.forEach(k => { const s = peekSess(w, k); if (!s || !s.logs) return; const sets = [];
+    for (const slot in s.logs) { const lg = s.logs[slot]; if (lg.ex !== exId) continue; const spec = planFor(w, k).find(p => p.slot === slot);
+      loggedSets(lg).filter(x => x.done || x.r != null).forEach(x => sets.push({ ...x, rpe: x.rpe ?? (spec && spec.rpe) ?? null })); }
+    if (sets.length) out.push({ d: s.date || null, wk: w, label: SESS[k].title + ' · Woche ' + w, sets, ord: s.date || ('0000-' + pad(chronIndex(w, k))) }); });
+  S.activities.forEach(a => (a.exercises || []).forEach(e => { if (e.ex !== exId) return; const sets = loggedSets(e).filter(x => x.done || x.r != null); if (sets.length) out.push({ d: a.date, wk: a.week, label: 'Freies Training', sets, ord: a.date }); }));
+  out.sort((x, y) => x.ord < y.ord ? -1 : 1);
+  out.forEach((o, i) => { o.x = i; const ws = o.sets.filter(x => x.w != null && x.r);
+    o.e1 = ws.filter(x => x.w > 0).reduce((m, x) => Math.max(m, e1rm(x.w, x.r, Math.min(10, x.rpe ?? 8))), 0) || null;
+    o.top = ws.length ? Math.max(...ws.map(x => x.w)) : null;
+    o.vol = o.sets.reduce((a, x) => a + (x.w > 0 && x.r ? x.w * x.r : 0), 0) || null;
+    o.reps = o.sets.reduce((a, x) => a + (x.r || 0), 0) || null; });
+  return out; }
+const EX_METRICS = { e1: ['Geschätztes 1RM', 'kg', 1], top: ['Schwerster Satz', 'kg', 1], vol: ['Volumen (kg × Wdh.)', 'kg', 0], reps: ['Wiederholungen gesamt', 'Wdh.', 0] };
+function exHistSheet(exId, metric, period) { const ex = LIB[exId]; let all = exHistory(exId);
+  const avail = Object.keys(EX_METRICS).filter(m => all.filter(o => o[m] != null).length);
+  if (!metric || !avail.includes(metric)) metric = avail.includes('e1') ? 'e1' : avail[0] || 'reps';
+  ui.exHist = { exId, metric, period: period || ui.exHist && ui.exHist.period || 'all' }; period = ui.exHist.period;
+  const cut = period === '1m' ? addDays(today(), -30) : period === '3m' ? addDays(today(), -91) : null;
+  const pts = all.filter(o => !cut || !o.d || o.d >= cut).map((o, i) => ({ ...o, x: i }));
+  const [mLab, mUnit, mDec] = EX_METRICS[metric];
+  const vals = pts.map(o => o[metric]).filter(v => v != null);
+  const best = vals.length ? Math.max(...vals) : null, first = vals[0], last = vals[vals.length - 1];
+  const chg = vals.length > 1 && first ? (last - first) / Math.abs(first) * 100 : null;
+  const seg = (k, l, cur, act) => '<button class="' + (k === cur ? 'on' : '') + '" data-act="' + act + '" data-v="' + k + '" type="button">' + l + '</button>';
+  const chart = pts.filter(o => o[metric] != null).length > 1 ? lineChart('exh', pts, [{ key: metric, label: mLab, color: 'var(--ember)' }], { unit: mUnit, dec: mDec, noLegend: true, height: 210 })
+    : '<p class="muted">' + (pts.length ? 'Ab der zweiten Einheit erscheint hier die Kurve.' : 'Für diese Übung ist noch nichts geloggt.') + '</p>';
+  const rows = pts.slice().reverse().map(o => '<div class="it" style="cursor:default"><div class="grow"><b>' + (o.d ? fmtDay(o.d) : 'Woche ' + o.wk) + '</b><small>' + esc(o.label) + '</small><small>' + esc(o.sets.map(x => (x.w != null ? fmt(x.w) + ' × ' : '') + (x.r ?? '–') + (x.rpe != null ? ' @' + fmt(x.rpe) : '')).join(', ')) + '</small></div><div class="end"><b class="num" style="color:var(--graphite)">' + (o[metric] != null ? fmt(o[metric], mDec) : '–') + '</b><br>' + mUnit + '</div></div>').join('');
+  openSheet(sheetHead(esc(ex.name)) +
+    '<div class="seg">' + avail.map(m => seg(m, EX_METRICS[m][0], metric, 'exMetric')).join('') + '</div>' +
+    '<div class="seg" style="margin-top:-6px">' + [['all', 'Alles'], ['3m', '3 Monate'], ['1m', '1 Monat']].map(p => seg(p[0], p[1], period, 'exPeriod')).join('') + '</div>' +
+    '<div class="stats" style="grid-template-columns:repeat(3,minmax(0,1fr))"><div class="stat"><div class="k">Bestwert</div><div class="v" style="font-size:22px">' + (best != null ? fmt(best, mDec) : '–') + '</div><div class="s">' + mUnit + '</div></div>' +
+    '<div class="stat"><div class="k">Zuletzt</div><div class="v" style="font-size:22px">' + (last != null ? fmt(last, mDec) : '–') + '</div><div class="s">' + mUnit + '</div></div>' +
+    '<div class="stat"><div class="k">Veränderung</div><div class="v ' + (chg > 0 ? 't-green' : chg < 0 ? 't-red' : '') + '" style="font-size:22px">' + (chg != null ? (chg > 0 ? '+' : '') + fmt(chg, 0) + ' %' : '–') + '</div><div class="s">seit ' + (period === 'all' ? 'Start' : 'Beginn') + '</div></div></div>' +
+    '<div class="card" style="margin-top:12px;padding:16px">' + chart + '</div>' +
+    (metric === 'e1' ? '<p class="small muted">e1RM = Gewicht × (1 + (Wdh. + Wdh. in Reserve) / 30). Ohne RPE-Eintrag wird die Plan-RPE angenommen.</p>' : '') +
+    (rows ? '<h3 style="margin:16px 0 4px">Alle Einheiten</h3><div class="plist">' + rows + '</div>' : '')); }
+function prCheck(exId, w, k, set) { const x = { w: num(set.w), r: num(set.r), rpe: num(set.rpe) }; if (!x.w || x.w <= 0 || !x.r) return;
+  const key = sKey(w, k); const before = exHistory(exId).filter(o => !(o.label.startsWith(SESS[k].title) && o.wk === w)).reduce((m, o) => Math.max(m, o.e1 || 0), 0);
+  const spec = planFor(w, k).find(p => (sess(w, k).logs[p.slot] || {}).ex === exId); const v = e1rm(x.w, x.r, Math.min(10, x.rpe ?? (spec && spec.rpe) ?? 8));
+  if (before > 0 && v > before * 1.005) setTimeout(() => toast('Neuer Rekord: e1RM ' + fmt(v, 0) + ' kg (vorher ' + fmt(before, 0) + ')'), 400); }
 function liftSeries(exId) { const out = []; for (let w = 1; w <= 12; w++) ORDER.forEach(k => { const s = peekSess(w, k); if (!s) return; let best = null;
   for (const slot in s.logs) { const lg = s.logs[slot]; if (lg.ex !== exId) continue; const spec = planFor(w, k).find(p => p.slot === slot);
     loggedSets(lg).forEach(x => { if (!x.w || !x.r) return; const v = e1rm(x.w, x.r, Math.min(10, x.rpe ?? (spec && spec.rpe) ?? 8)); if (!best || v > best) best = v; }); }
@@ -735,7 +784,7 @@ document.addEventListener('click', async e => { const b = e.target.closest('[dat
       const lg = s.logs[spec.slot] || (s.logs[spec.slot] = { ex: exId, sets: [] }); const i = +b.dataset.i; for (let j = 0; j <= i; j++) lg.sets[j] = lg.sets[j] || {}; const set = lg.sets[i];
       if (set.done) { set.done = false; } else { const rd = readiness(r.w, r.k); const sg = setSuggestion(r.w, r.k, spec, exId, i, planSuggestion(r.w, r.k, spec, exId, rd), rd);
         if ((set.w === undefined || set.w === '') && sg.load != null) set.w = String(sg.load); if ((set.r === undefined || set.r === '') && sg.reps != null) set.r = String(sg.reps);
-        set.done = true; lg.ex = exId; markStarted(r.w, r.k); if (spec.rest) startTimer(spec.rest, LIB[exId].name + ': Pause'); }
+        set.done = true; lg.ex = exId; markStarted(r.w, r.k); prCheck(exId, r.w, r.k, set); if (spec.rest) startTimer(spec.rest, LIB[exId].name + ': Pause'); }
       save(); softPatch('ex-' + spec.slot, exCard(r.w, r.k, spec)); if (spec.slot === 'bench_top') { const bo = planFor(r.w, r.k).find(p => p.slot === 'bench_bo'); if (bo) softPatch('ex-bench_bo', exCard(r.w, r.k, bo)); } break; }
     case 'swap': { const spec = planFor(r.w, r.k).find(p => p.slot === b.dataset.slot); const cur = actualEx(r.w, r.k, spec); const opts = [spec.ex, ...LIB[spec.ex].alts.filter(x => x !== spec.ex)];
       LIB[cur].alts.forEach(x => { if (!opts.includes(x)) opts.push(x); }); ui.swapScope = 'today';
@@ -774,6 +823,9 @@ document.addEventListener('click', async e => { const b = e.target.closest('[dat
       const f = { ...old, id, name: $('#ff-name').value.trim() || 'Ohne Namen', base: $('#ff-base').value, kcal: num($('#ff-kcal').value) || 0, p: num($('#ff-p').value) || 0, f: num($('#ff-f').value) || 0, c: num($('#ff-c').value) || 0, pieceG: num($('#ff-pg').value), code: code || old.code || '', src: old.src || 'custom' };
       S.foods[id] = f; save(); qtySheet(id); toast('Gespeichert'); break; }
     case 'closeSheet': closeSheet(); break;
+    case 'exHist': exHistSheet(b.dataset.ex); break;
+    case 'exMetric': exHistSheet(ui.exHist.exId, b.dataset.v, ui.exHist.period); break;
+    case 'exPeriod': exHistSheet(ui.exHist.exId, ui.exHist.metric, b.dataset.v); break;
     case 'newAct': actSheet(); break;
     case 'pickAct': { const act = newActivity(b.dataset.type); closeSheet(); location.hash = '#frei/' + act.id; if (ACT_MAP[act.type].strength) setTimeout(() => exPickSheet(act.id), 120); break; }
     case 'freeAddEx': exPickSheet(b.dataset.aid); break;

@@ -237,3 +237,7 @@ ul.rules{margin:6px 0 0;padding-left:20px} ul.rules li{margin-bottom:6px;max-wid
 .src{font-size:12px;font-family:var(--f-micro);color:var(--muted)}
 @media (min-width:640px){.card{padding:28px}.stats{grid-template-columns:repeat(4,minmax(0,1fr))}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+.exlink{display:block;text-align:left;background:none;border:0;padding:0;cursor:pointer;color:inherit;font:inherit;font-weight:700;font-size:18px;line-height:1.25}
+.histbtn{display:inline-flex;align-items:center;gap:4px;margin-left:8px;font-size:12px;font-weight:700;font-family:var(--f-micro);color:var(--amber);background:var(--paper);border-radius:var(--r);padding:2px 9px;vertical-align:2px}
+.sheet .stats{gap:8px}
