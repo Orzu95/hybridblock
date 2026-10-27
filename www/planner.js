@@ -141,3 +141,50 @@ document.addEventListener('click', e => { const b = e.target.closest('[data-act]
 function exEqSheet(exId) { ui.exEqCtx = exId; ui.varCtx = null; openSheet(sheetHead(esc(LIB[exId].name)) + eqBlock(exId)); }
 function planInfoCard() { const meta = LIBRARY[S.plan.tpl]; return $t('<div class="card"><div class="row" style="flex-wrap:nowrap"><div class="grow"><div class="lbl">Dein Plan</div><h2 style="margin:2px 0 0">') + esc($t(S.plan.name)) + '</h2>' + (meta ? '<div class="small muted">' + esc($t(meta.author)) + '</div>' : '') + '</div>' + (meta ? '<span class="grade g' + meta.ev.g + '">' + meta.ev.g + '</span>' : '') + '</div>' +
   '<div class="row" style="margin-top:12px">' + (meta ? '<a class="btn sm" href="#library/' + S.plan.tpl + $t('">Details</a>') : '') + $t('<a class="btn sm" href="#plan/me">Bearbeiten</a><a class="btn sm" href="#library">Plan wechseln</a></div></div>'); }
+
+/* ======================= EINHEIT ABSCHLIESSEN ======================= */
+function finBtn(w, k) { const s = peekSess(w, k); if (!s || s.skipped) return '';
+  return (s.end && s.end.fin) ? '<button class="btn block fin-done" data-act="finShow" data-w="' + w + '" data-k="' + k + $t('" type="button" style="margin-top:14px">✓ Einheit abgeschlossen · Zusammenfassung</button>')
+    : '<button class="btn brand block" data-act="finSess" data-w="' + w + '" data-k="' + k + $t('" type="button" style="margin-top:14px">Einheit beenden</button>'); }
+/* Automatisch, sobald alle Sätze erledigt und Dauer + RPE eingetragen sind */
+function maybeAutoFinish(w, k) { const s = peekSess(w, k); if (!s || s.skipped || (s.end && s.end.fin)) return;
+  const L = sessLoad(w, k); if (!L || !L.dur || !L.rpe) return; if (!sessProgress(w, k).done) return; finishSession(w, k); }
+function finishSession(w, k) { const s = sess(w, k); markStarted(w, k);
+  if (isCardio(k)) { s.end = s.end || {}; } else { s.end = s.end || {}; if (!num(s.end.dur)) { const ad = autoDur(s) || (s.watch && Math.round(s.watch.dur)); if (ad) s.end.dur = String(ad); } }
+  s.end.fin = Date.now(); save(); try { clearInterval(TM.iv); TM.queue = []; showTimer(false); restCancel(); } catch (e) {}
+  try { if (navigator.vibrate) navigator.vibrate([30, 60, 30]); } catch (e) {}
+  if (route.name === 'training' && sessFromRoute()) { if (isCardio(k)) render(); else softPatch('endcard', endCard(w, k)); }
+  finSheet(w, k, true); }
+function sessStats(w, k) { const s = peekSess(w, k) || {}; let sets = 0, total = 0, vol = 0, reps = 0; const prs = [];
+  planFor(w, k).forEach(p => { total += p.sets; });
+  Object.keys(s.logs || {}).forEach(slot => { const lg = s.logs[slot]; const spec = planFor(w, k).find(p => p.slot === slot); const done = loggedSets(lg).filter(x => x.done);
+    sets += done.length; done.forEach(x => { if (x.r) reps += x.r; if (x.w > 0 && x.r) vol += x.w * x.r; });
+    const best = done.reduce((m, x) => x.w > 0 && x.r ? Math.max(m, e1rm(x.w, x.r, Math.min(10, x.rpe ?? (spec && spec.rpe) ?? 8))) : m, 0);
+    if (best > 0 && LIB[lg.ex]) { const before = exHistory(lg.ex).filter(o => !(o.label.startsWith(SESS[k].title) && o.wk === w)).reduce((m, o) => Math.max(m, ...o.sets.filter(x => x.w > 0 && x.r).map(x => e1rm(x.w, x.r, Math.min(10, x.rpe ?? 8)))), 0);
+      if (before > 0 && best > before * 1.005) prs.push({ name: LIB[lg.ex].name, v: best, before }); } });
+  return { sets, total, vol, reps, prs, load: sessLoad(w, k) }; }
+function finSheet(w, k, fresh) { const st = sessStats(w, k); const L = st.load || {}; const cardio = isCardio(k);
+  const doneN = ORDER.filter(x => { const p = sessProgress(w, x); return p.done && !p.skipped; }).length;
+  const next = ORDER.find(x => !sessProgress(w, x).done);
+  const tile = (v, l) => '<div class="fin-tile"><b>' + v + '</b><span>' + l + '</span></div>';
+  const tiles = [L.dur ? tile(fmt(L.dur, 0), $t('Minuten')) : '', cardio ? '' : tile(st.sets + (st.total ? '<small>/' + st.total + '</small>' : ''), $t('Sätze')),
+    !cardio && st.vol ? tile(st.vol >= 10000 ? fmt(st.vol / 1000, 1) + ' ' + $t('t') : fmt(st.vol, 0) + ' ' + $t('kg'), $t('Volumen')) : '', !cardio && !st.vol && st.reps ? tile(st.reps, $t('Wiederholungen')) : '',
+    L.rpe ? tile(fmt(L.rpe), $t('Session-RPE')) : '', L.load ? tile(fmt(L.load, 0), $t('Belastung')) : ''].filter(Boolean).join('');
+  const prH = st.prs.length ? $t('<div class="fin-pr"><div class="lbl">Neue Rekorde</div>') + st.prs.map(p => '<div class="row"><span class="grow">🏆 ' + esc(p.name) + '</span><b>' + fmt(p.v, 0) + $t(' kg e1RM') + '</b></div>').join('') + '</div>' : '';
+  const wk = '<div class="fin-week"><div class="row"><span class="grow">' + $t('Woche ') + w + '</span><b>' + doneN + ' / ' + ORDER.length + '</b></div><div class="fin-bar"><i style="width:' + Math.round(doneN / Math.max(1, ORDER.length) * 100) + '%"></i></div>' +
+    '<p class="small muted" style="margin-top:8px">' + (next ? $t('Als Nächstes: ') + '<b>' + esc(SESS[next].title) + '</b> · ' + esc(dayLabel(next)) : (w < 12 ? $t('Alle Einheiten dieser Woche erledigt. Stark!') : $t('Block geschafft. Stark!'))) + '</p></div>';
+  openSheet('<div class="fin' + (fresh ? ' fresh' : '') + '"><div class="fin-check"><svg viewBox="0 0 52 52"><circle cx="26" cy="26" r="24"/><path d="M15 27l7 7 15-15"/></svg></div>' +
+    '<h2>' + $t('Einheit geschafft!') + '</h2><p class="muted">' + esc(SESS[k].title) + ' · ' + $t('Woche ') + w + '</p>' +
+    (tiles ? '<div class="fin-tiles">' + tiles + '</div>' : '') + prH + wk +
+    '<button class="btn brand block" data-act="finClose" type="button">' + $t('Fertig') + '</button>' +
+    '<button class="btn block ghost" data-act="finReopen" data-w="' + w + '" data-k="' + k + '" type="button" style="margin-top:6px">' + $t('Doch noch weitermachen') + '</button></div>'); }
+document.addEventListener('change', e => { const t = e.target;
+  if (t.dataset.se && (t.dataset.se === 'dur' || t.dataset.se === 'rpe')) maybeAutoFinish(+t.dataset.sw, t.dataset.sk);
+  if (t.dataset.cf && (t.dataset.cf === 'dur' || t.dataset.cf === 'rpe')) maybeAutoFinish(+t.dataset.cw, t.dataset.ck2); });
+document.addEventListener('click', e => { const b = e.target.closest('[data-act]'); if (!b) return;
+  switch (b.dataset.act) {
+    case 'finSess': { const w = +b.dataset.w, k = b.dataset.k; const ae = document.activeElement; if (ae && ae.dataset && (ae.dataset.se || ae.dataset.cf)) ae.blur(); finishSession(w, k); break; }
+    case 'finShow': finSheet(+b.dataset.w, b.dataset.k, false); break;
+    case 'finClose': closeSheet(); location.hash = '#training'; break;
+    case 'finReopen': { const w = +b.dataset.w, k = b.dataset.k; const s = sess(w, k); if (s.end) delete s.end.fin; save(); closeSheet(); if (isCardio(k)) render(); else softPatch('endcard', endCard(w, k)); break; }
+  } });

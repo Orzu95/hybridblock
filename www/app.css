@@ -338,3 +338,26 @@ a.libcard{display:block;text-decoration:none;color:inherit}
 .prio.req::before{background:var(--signal)}
 .reqopen{outline:2px solid var(--signal);outline-offset:-2px}
 details.card summary{cursor:pointer;list-style:none}details.card summary::-webkit-details-marker{display:none}
+/* Einheit geschafft */
+.fin{text-align:center;padding:6px 2px 4px}
+.fin h2{font-size:26px;margin:10px 0 2px}
+.fin-check{width:84px;height:84px;margin:6px auto 0;border-radius:50%;background:var(--verdant);display:grid;place-items:center}
+.fin-check svg{width:56px;height:56px;fill:none;stroke:#fff;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+.fin-check circle{stroke:none}
+.fin-check path{stroke-dasharray:40;stroke-dashoffset:0}
+.fin.fresh .fin-check{animation:finPop .5s cubic-bezier(.2,1.6,.4,1) both}
+.fin.fresh .fin-check path{animation:finDraw .45s .3s ease-out both}
+@keyframes finPop{0%{transform:scale(.3);opacity:0}100%{transform:scale(1);opacity:1}}
+@keyframes finDraw{0%{stroke-dashoffset:40}100%{stroke-dashoffset:0}}
+.fin-tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(90px,1fr));gap:8px;margin:18px 0 4px}
+.fin-tile{background:var(--fog);border-radius:16px;padding:12px 6px;display:flex;flex-direction:column;gap:2px}
+.fin-tile b{font-size:22px}.fin-tile b small{font-size:14px;opacity:.55}
+.fin-tile span{font-size:12px;opacity:.65}
+.fin-pr{text-align:left;background:#fff7e0;border-radius:16px;padding:12px 14px;margin-top:10px}
+.fin-pr .row{margin-top:6px}
+.fin-week{text-align:left;background:var(--fog);border-radius:16px;padding:12px 14px;margin:10px 0 16px}
+.fin-bar{height:8px;border-radius:4px;background:rgba(0,0,0,.08);margin-top:8px;overflow:hidden}
+.fin-bar i{display:block;height:100%;background:var(--ember);border-radius:4px}
+.btn.ghost{background:transparent}
+.btn.fin-done{background:#e7f6ec;color:#166534}
+@media (prefers-reduced-motion:reduce){.fin.fresh .fin-check,.fin.fresh .fin-check path{animation:none}}
