@@ -85,7 +85,7 @@ function trNew(type, ctx) { const t = ACT_MAP[type] || ACT_MAP.joggen; return { 
 async function trStart(type, ctx) { if (TR.active) return; const o = trOpts(); TR = trNew(type, ctx);
   TR.zone = ui.trZone != null ? ui.trZone : null; if (ctx && isCardio(ctx.k)) { const sp = cardioSpec(ctx.w, ctx.k); if (sp.mode === 'int') { TR.q = intervalQueue(ctx.w, ctx.k).map(x => ({ ...x, hi: /hart|Laufen |hard|Run |Бег /i.test(x.label) })); } else if (TR.zone == null && Z2K() === ctx.k) TR.zone = 1; }
   if (ui.trIntervals === '4x4' && !TR.q) TR.q = intervalQueue(curWeek(), null).map(x => ({ ...x, hi: /hart|hard|Интерв/i.test(x.label) }));
-  if (TR.q) { TR.qi = 0; TR.qLeft = TR.q[0].sec; }
+  if (TR.q) { TR.qi = 0; TR.qAt = 0; TR.qLeft = TR.q[0].sec; }
   try { const LN = NP('LocalNotifications'); if (LN) await LN.requestPermissions(); } catch (e) {}
   if (TR.gps) await gpsStart(); keepAwake(); trPersist(); clearInterval(TR_TICK.iv); TR_TICK.iv = setInterval(trTick, 1000);
   if (!hrFresh() && S.settings.hrm && HRM.state !== 'connecting') hrmConnect(false);
@@ -108,7 +108,7 @@ function onLoc(lat, lng, acc, alt, t) { if (!TR.active || lat == null) return; T
     TR.dist += d; }
   if (alt != null) { if (TR.altRef == null) TR.altRef = alt; else if (alt - TR.altRef > 4) { TR.elevUp += alt - TR.altRef; TR.altRef = alt; } else if (TR.altRef - alt > 4) TR.altRef = alt; }
   if (!TR.paused) { TR.pts.push([Math.round(lat * 1e6) / 1e6, Math.round(lng * 1e6) / 1e6, t, alt != null ? Math.round(alt) : null, acc != null ? Math.round(acc) : null]); TR.mapDirty = true; }
-  TR.lastPt = p; autoPause(g); checkSplit(); }
+  TR.lastPt = p; autoPause(g); checkSplit(); if (TR.q) trTick(true); }
 /* Auto-Pause: steht man ca. 8 s, ruht die Uhr; ab Bewegung läuft sie weiter. Nicht bei Intervallen (Gehpausen gehören dazu). */
 function autoPause(g) { if (!trOpts().auto || TR.q || TR.manualPause || !PAUSE_V[g] || TR.recent.length < 2) return; const a = TR.recent[0], b = TR.recent[TR.recent.length - 1]; const dt = (b[2] - a[2]) / 1000; if (dt < 6) return;
   const v = hav(a, b) / dt;
@@ -123,15 +123,16 @@ function checkSplit() { const L = splitLen(); if (TR.dist < TR.nextSplit * L) re
     say((L === 1000 ? $t('Kilometer ') + km : fmt(km, 1) + $t(' Kilometer')) + '. ' + $t('Zeit ') + sayDur(sec) + '. ' + ((ACT_MAP[TR.type].m === 'speed') ? $t('Schnitt ') + fmt(TR.dist / sec * 3.6, 1) + $t(' km/h') : $t('Pace ') + sayPace(pace)) + (sp.hr ? '. ' + $t('Puls ') + sp.hr : '') + '.'); buzz(); } }
 function trLap() { if (!TR.active) return; const sec = movingSec(); const prev = TR.laps[TR.laps.length - 1] || { sec: 0, dist: 0 }; const lap = { n: TR.laps.length + 1, sec, dist: TR.dist, lsec: sec - prev.sec, ldist: TR.dist - prev.dist }; TR.laps.push(lap);
   say($t('Runde ') + lap.n + '. ' + sayDur(lap.lsec) + (lap.ldist > 50 ? ', ' + fmt(lap.ldist / 1000, 2) + $t(' Kilometer') : '') + '.'); buzz(); toast($t('Runde ') + lap.n + ': ' + fmtClock(lap.lsec)); }
-function trTick() { if (!TR.active) return; const o = trOpts();
-  if (!TR.paused && TR.q && TR.qi >= 0 && TR.qi < TR.q.length) { TR.qLeft--; if (TR.qLeft === 3 || TR.qLeft === 2 || TR.qLeft === 1) buzz([30]);
-    if (TR.qLeft <= 0) { TR.qi++; if (TR.qi < TR.q.length) { TR.qLeft = TR.q[TR.qi].sec; say(TR.q[TR.qi].label); buzz([200, 100, 200]); } else { say($t('Intervalle geschafft. Locker ausrollen oder beenden.')); buzz([300, 100, 300]); } } }
+function trTick(fromGps) { if (!TR.active) return; const o = trOpts();
+  /* Intervalle nach Uhrzeit statt Takt zählen, damit sie bei ausgeschaltetem Bildschirm nicht nachgehen */
+  if (TR.q && TR.qi >= 0 && TR.qi < TR.q.length) { const el = movingSec() - (TR.qAt || 0); const left = Math.ceil(TR.q[TR.qi].sec - el); if (left !== TR.qLeft && left > 0 && left <= 3) buzz([30]); TR.qLeft = left;
+    if (left <= 0) { TR.qAt = (TR.qAt || 0) + TR.q[TR.qi].sec; TR.qi++; if (TR.qi < TR.q.length) { TR.qLeft = TR.q[TR.qi].sec; say(TR.q[TR.qi].label); buzz([200, 100, 200]); } else { say($t('Intervalle geschafft. Locker ausrollen oder beenden.')); buzz([300, 100, 300]); } } }
   /* Zeitansage ohne Strecke (Indoor, Ballsport): alle 5 min */
   if (!TR.paused && o.voice && !TR.gps) { const min = Math.floor(movingSec() / 60); if (min >= 5 && min % 5 === 0 && min !== TR.nextVoiceMin) { TR.nextVoiceMin = min; say(min + $t(' Minuten') + (hrFresh() ? '. ' + $t('Puls ') + HRM.bpm : '') + '.'); } }
   /* Zielzone: nach 20 s außerhalb eine Ansage, höchstens alle 60 s */
-  if (!TR.paused && TR.zone != null && hrFresh() && movingSec() > 300) { const z = hrZone(HRM.bpm); if (z !== TR.zone) TR.out++; else TR.out = 0;
-    if (TR.out >= 20 && Date.now() - TR.lastAlert > 60000) { TR.lastAlert = Date.now(); TR.out = 0; buzz([150, 80, 150, 80, 150]); say(z > TR.zone ? $t('Puls zu hoch. Etwas langsamer.') : $t('Puls zu niedrig. Etwas schneller.')); } }
-  if (Date.now() - (TR.savedAt || 0) > 15000) trPersist(); trLive(false); }
+  if (!TR.paused && TR.zone != null && hrFresh() && movingSec() > 300) { const z = hrZone(HRM.bpm); if (z !== TR.zone) { if (!TR.outSince) TR.outSince = Date.now(); } else TR.outSince = 0;
+    if (TR.outSince && Date.now() - TR.outSince >= 20000 && Date.now() - TR.lastAlert > 60000) { TR.lastAlert = Date.now(); TR.outSince = 0; buzz([150, 80, 150, 80, 150]); say(z > TR.zone ? $t('Puls zu hoch. Etwas langsamer.') : $t('Puls zu niedrig. Etwas schneller.')); } }
+  if (Date.now() - (TR.savedAt || 0) > 15000) trPersist(); if (!fromGps) trLive(false); }
 function trPersist() { try { const snap = Object.assign({}, TR, { watch: null }); localStorage.setItem(TR_KEY, JSON.stringify(snap)); TR.savedAt = Date.now(); } catch (e) {} }
 
 /* ---------- Live-Anzeige ---------- */
