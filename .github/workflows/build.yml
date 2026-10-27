@@ -31,15 +31,21 @@ jobs:
       - run: npx cap sync android
       - name: Signaturschlüssel entschlüsseln
         env:
-          HB_KEYSTORE_PASSWORD: ${{ secrets.HB_KEYSTORE_PASSWORD }}
+          RAW_PW: ${{ secrets.HB_KEYSTORE_PASSWORD }}
         run: |
-          if [ -z "$HB_KEYSTORE_PASSWORD" ]; then echo "::warning::Secret HB_KEYSTORE_PASSWORD fehlt. Probe-Build ohne festen Schlüssel, kein Release."; exit 0; fi
-          openssl enc -d -aes-256-cbc -pbkdf2 -iter 200000 -in android/app/hybridblock.jks.enc -out "$RUNNER_TEMP/hybridblock.jks" -pass env:HB_KEYSTORE_PASSWORD
+          if [ -z "$RAW_PW" ]; then echo "::warning::Secret HB_KEYSTORE_PASSWORD fehlt. Probe-Build ohne festen Schlüssel, kein Release."; exit 0; fi
+          ok=""
+          # erst das ganze Secret ohne Leerzeichen, dann jedes 32-stellige Wort darin (falls der ganze Text eingefügt wurde)
+          for cand in "$(printf %s "$RAW_PW" | tr -d '[:space:]')" $(printf %s "$RAW_PW" | grep -oE '[A-Za-z0-9_-]{32}'); do
+            if HBPW="$cand" openssl enc -d -aes-256-cbc -pbkdf2 -iter 200000 -in android/app/hybridblock.jks.enc -out "$RUNNER_TEMP/hybridblock.jks" -pass env:HBPW 2>/dev/null \
+               && keytool -list -keystore "$RUNNER_TEMP/hybridblock.jks" -storepass "$cand" >/dev/null 2>&1; then ok="$cand"; break; fi
+          done
+          if [ -z "$ok" ]; then echo "::error title=Schlüssel::Passwort im Secret HB_KEYSTORE_PASSWORD passt nicht (Länge ${#RAW_PW} Zeichen, erwartet 32)."; exit 1; fi
+          echo "::add-mask::$ok"
           echo "HB_KEYSTORE=$RUNNER_TEMP/hybridblock.jks" >> "$GITHUB_ENV"
+          echo "HB_KEYSTORE_PASSWORD=$ok" >> "$GITHUB_ENV"
       - name: APK bauen
         working-directory: android
-        env:
-          HB_KEYSTORE_PASSWORD: ${{ secrets.HB_KEYSTORE_PASSWORD }}
         run: |
           chmod +x gradlew
           set -o pipefail
