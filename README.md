@@ -33,3 +33,10 @@ npx cap open android   # in Android Studio auf Run tippen
 ## Signaturschlüssel
 
 `android/app/hybridblock.jks.enc` ist der verschlüsselte Signaturschlüssel. Der Build entschlüsselt ihn mit dem Secret `HB_KEYSTORE_PASSWORD`, damit jede Version gleich signiert ist und Updates über die alte App laufen. Ohne Secret entsteht nur ein Probe-Build ohne Release.
+
+## Konten, Coaching und Sprachen
+
+- Backend: Supabase-Projekt `hybridblock` (Tabellen `profiles`, `invites`, `plans`, `user_state` mit Row Level Security, Edge Function `hb-auth` für Einladungscodes und Passwort-Reset).
+- Anmeldung per Einladungscode: Der Coach erstellt im Team-Bereich einen Code, der Athlet löst ihn beim ersten Start ein und wählt Benutzername und Passwort.
+- Pläne sind Daten (`S.plan`): Vorlage (Hybridblock, Ganzkörper 3×, leer) plus Anpassungen pro Übung. Der Coach bearbeitet sie im Plan-Editor, die App des Athleten holt sie beim Öffnen.
+- Sprachen: Deutsch (Quelle), Englisch, Russisch. Alle Anzeige-Texte laufen durch `$t()`, Wörterbücher in `www/lang-en.js` und `www/lang-ru.js`.

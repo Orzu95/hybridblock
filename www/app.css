@@ -277,3 +277,41 @@ ul.rules{margin:6px 0 0;padding-left:20px} ul.rules li{margin-bottom:6px;max-wid
 .pth.sel{border-color:var(--ember)}
 .micro{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:16px;font-size:14px}
 .micro .k{font-size:13px;color:var(--muted);font-weight:600}
+
+/* Runde 4: Konto, Onboarding, Coaching, Plan-Editor */
+body.onb-mode .tabbar{display:none}
+body.onb-mode .wrap{padding-bottom:40px}
+.onb{max-width:520px;margin:0 auto}
+.onb-top{margin:12px 0 20px}
+.onb-top h1{margin-top:16px}
+.onb-top p{margin:8px 0 0}
+.onb .logo{width:64px;height:64px;border-radius:var(--r);background:var(--ember);display:grid;place-items:center}
+.onb .logo svg{width:34px;height:34px}
+.onb .card input[type=text],.onb .card input[type=password]{width:100%}
+.langseg{margin-top:0}
+.viewbar{position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:8px;flex-wrap:wrap;background:var(--graphite);color:#fff;border-radius:var(--r);padding:10px 12px 10px 18px;margin-bottom:16px;font-size:14px}
+.viewbar .btn{background:rgba(255,255,255,.14);color:#fff}
+.viewbar .btn.dark{background:var(--ember)}
+body.viewing #view input,body.viewing #view select,body.viewing #view textarea,body.viewing #view .chk,body.viewing .fab{pointer-events:none}
+body.viewing #view input,body.viewing #view select{opacity:.85}
+.codebox{font-size:34px;font-weight:800;letter-spacing:.1em;text-align:center;background:var(--fog);border-radius:var(--r);padding:20px;margin:14px 0}
+.linkbtn{background:none;border:0;padding:0;font:inherit;font-weight:700;color:var(--ember);cursor:pointer;text-decoration:underline}
+.pe-sess>.row{gap:8px}
+.pe-title{font-weight:700;font-size:18px}
+.pe-sub{width:100%;margin-top:8px;font-size:14px}
+.pe-list{margin-top:12px;display:flex;flex-direction:column;gap:10px}
+.pe-row{background:var(--paper);border-radius:var(--r);padding:12px 14px}
+.pe-h{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.pe-h .nm{flex:1 1 auto;min-width:0;text-align:left}
+.pe-h .small{flex:1 1 100%;order:3}
+.pe-f{display:flex;flex-wrap:wrap;gap:8px 10px;margin-top:8px}
+.pe-f label{display:flex;flex-direction:column;gap:4px;font-size:12px;font-weight:700;color:var(--muted)}
+.pe-f input{background:var(--fog);min-height:40px;padding:8px 12px}
+.pe-f .pe-chk{flex-direction:row;align-items:center;gap:6px;font-size:14px;align-self:flex-end;min-height:40px}
+.pe-note{width:100%;margin-top:8px;background:var(--fog);font-size:14px;min-height:40px}
+.pe-save{position:sticky;bottom:calc(84px + env(safe-area-inset-bottom,0px));background:var(--paper);padding:10px 0;z-index:5}
+.pe-tr{flex-wrap:nowrap}
+.pe-ctl{margin-top:8px;gap:6px}
+.pe-h .nm{flex:1 1 0}
+.viewbar>span{flex:1 1 100%}
+.codebox+p{overflow-wrap:anywhere}
