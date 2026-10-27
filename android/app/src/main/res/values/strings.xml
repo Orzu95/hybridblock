@@ -4,4 +4,7 @@
     <string name="title_activity_main">Hybridblock</string>
     <string name="package_name">de.orzu.hybridblock</string>
     <string name="custom_url_scheme">de.orzu.hybridblock</string>
+    <string name="capacitor_background_geolocation_notification_channel_name">Training läuft</string>
+    <string name="capacitor_background_geolocation_notification_icon">drawable/ic_tracking</string>
+    <string name="health_connect_privacy_policy_url">https://orzu95.github.io/hybridblock/privacypolicy.html</string>
 </resources>

@@ -2,8 +2,16 @@
   "appId": "de.orzu.hybridblock",
   "appName": "Hybridblock",
   "webDir": "www",
-  "android": { "allowMixedContent": false, "backgroundColor": "#ffffff" },
+  "android": {
+    "allowMixedContent": false,
+    "backgroundColor": "#ffffff",
+    "useLegacyBridge": true
+  },
   "plugins": {
-    "SystemBars": { "insetsHandling": "css", "initialViewportFitValueHint": "cover", "style": "LIGHT" }
+    "SystemBars": {
+      "insetsHandling": "css",
+      "initialViewportFitValueHint": "cover",
+      "style": "LIGHT"
+    }
   }
 }

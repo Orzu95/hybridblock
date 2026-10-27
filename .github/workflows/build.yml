@@ -1,14 +1,14 @@
 name: App bauen und veröffentlichen
 on:
   push:
-    branches: [main]
+    branches: [main, dev]
   workflow_dispatch:
 permissions:
   contents: write
   pages: write
   id-token: write
 concurrency:
-  group: build
+  group: build-${{ github.ref }}
   cancel-in-progress: false
 jobs:
   apk:
@@ -60,7 +60,7 @@ jobs:
           name: Hybridblock-APK
           path: Hybridblock.apk
       - name: Als Release veröffentlichen
-        if: env.HB_KEYSTORE != ''
+        if: env.HB_KEYSTORE != '' && github.ref == 'refs/heads/main'
         uses: softprops/action-gh-release@v2
         with:
           tag_name: build-${{ github.run_number }}
@@ -69,12 +69,15 @@ jobs:
           files: Hybridblock.apk
           make_latest: true
       - name: Web-App vorbereiten
+        if: github.ref == 'refs/heads/main'
         run: cp -r www site
       - uses: actions/upload-pages-artifact@v3
+        if: github.ref == 'refs/heads/main'
         with:
           path: site
   pages:
     needs: apk
+    if: github.ref == 'refs/heads/main'
     continue-on-error: true
     runs-on: ubuntu-24.04
     environment:
