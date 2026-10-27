@@ -49,3 +49,11 @@ npx cap open android   # in Android Studio auf Run tippen
 - **Training planen:** einzelne Trainings zusammenstellen, speichern und jederzeit starten, auch ohne festen Plan.
 - **Mein Studio:** fehlende Geräte und ausgeschlossene Übungen; betroffene Übungen werden automatisch durch die nächste passende Alternative ersetzt. Bei jeder Übung unter „Varianten“: Alternativen, leichter, schwerer.
 - **Planwechsel:** der alte Plan wird archiviert, Verlauf und Vorschläge bleiben erhalten.
+
+## Verbindungen, GPS-Tracking, Datenschutz
+
+- **Verbindungen** (`connect.js`): alle Uhren und Apps über Health Connect. Dropdown „Deine Uhr oder App“ mit Hinweis zum Einschalten, pro Datenart wählbare Quelle (Automatisch bevorzugt die gewählte Uhr), keine Doppelten bei Schlaf, Ruhepuls, Gewicht usw., doppelte Trainings (z. B. Uhr und Strava) werden über die Zeitüberlappung erkannt.
+- **Live-Tracking** (`track.js`): über 40 Sportarten (`ACT_TYPES` in `data.js` mit GPS-Flag, Anzeige Pace/km/h/100 m/500 m, MET-Wert). Android: GPS im Vordergrund-Dienst (`@capacitor-community/background-geolocation`), Pulsgurt über Bluetooth (`@capacitor-community/bluetooth-le`, Standard-Profil Heart Rate), Sprachansagen (`@capacitor-community/text-to-speech`), Karte mit Leaflet und OpenStreetMap, Auto-Pause, Runden, km-Abschnitte, Zielzonen-Warnung, Intervalle aus dem Plan, GPX-Export, Wiederherstellung nach Absturz. Browser: GPS bei eingeschaltetem Bildschirm, Pulsgurt über Web Bluetooth.
+- **Health Connect schreiben**: eigenes Kotlin-Plugin `HbHealthPlugin` (Sitzung, Strecke, Distanz, Kalorien, Puls).
+- **Datenschutz** (`privacy.js`, `privacypolicy.html`): Einwilligung nach Art. 9 DSGVO vor der ersten Eingabe, Datenschutzerklärung DE/EN, Daten exportieren, lokal löschen, Konto löschen (Edge Function `hb-auth`, Aktion `delete`). Play-Store-Vorlage in `docs/PLAY_STORE.md`.
+- **Probe-Builds** laufen auf dem Branch `dev` ohne Release, veröffentlicht wird nur von `main`.

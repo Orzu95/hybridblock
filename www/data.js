@@ -203,25 +203,65 @@ function makePlan(tpl) { const T = PLAN_TPL[tpl] || PLAN_TPL.hybrid; return { tp
 const SESSION_LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
 /* ---------- Freie Aktivitäten ---------- */
+/* g = Gruppe, gps = draußen mit GPS aufzeichnen, m = Anzeige (pace min/km, speed km/h, p100 min/100 m, p500 min/500 m, none),
+   hc = Workout-Name für Health Connect, met = MET-Wert für die Kalorienschätzung (Ainsworth Compendium, gerundet) */
+const ACT_GROUPS = [['lauf', $t('Laufen und Gehen')], ['rad', $t('Rad')], ['wasser', $t('Wasser')], ['winter', $t('Winter und Rollen')], ['indoor', $t('Fitness und Geräte')], ['ball', $t('Ballsport')], ['kampf', $t('Kampfsport')], ['sonst', $t('Sonstiges')]];
 const ACT_TYPES = [
-  { id:'joggen', name:$t('Joggen'), short:$t('Lauf'), cardio:true, dist:true, run:true },
-  { id:'schwimmen', name:$t('Schwimmen'), short:$t('Swim'), cardio:true, dist:true },
-  { id:'rad', name:$t('Radfahren'), short:$t('Rad'), cardio:true, dist:true },
-  { id:'gehen', name:$t('Gehen'), short:$t('Geh'), cardio:true, dist:true },
-  { id:'wandern', name:$t('Wandern'), short:$t('Berg'), cardio:true, dist:true },
-  { id:'rudern', name:$t('Rudern'), short:$t('Ruder'), cardio:true, dist:true },
-  { id:'fussball', name:$t('Fußball'), short:$t('Ball'), cardio:true, dist:false, run:true },
-  { id:'kampfsport', name:$t('Kampfsport'), short:$t('Kampf'), cardio:true, dist:false },
-  { id:'kraft', name:$t('Krafttraining frei'), short:$t('Kraft'), cardio:false, dist:false, strength:true },
-  { id:'mobility', name:$t('Mobility / Yoga'), short:$t('Mobil'), cardio:false, dist:false },
-  { id:'sonst', name:$t('Sonstiges'), short:$t('Akt'), cardio:true, dist:false } ];
+  { id:'joggen', name:$t('Laufen'), short:$t('Lauf'), cardio:true, dist:true, run:true, g:'lauf', gps:true, m:'pace', hc:'running', met:9.8 },
+  { id:'trail', name:$t('Trailrunning'), short:$t('Trail'), cardio:true, dist:true, run:true, g:'lauf', gps:true, m:'pace', hc:'running', met:9 },
+  { id:'laufband', name:$t('Laufband'), short:$t('Band'), cardio:true, dist:true, run:true, g:'lauf', gps:false, m:'pace', hc:'runningTreadmill', met:9 },
+  { id:'gehen', name:$t('Gehen'), short:$t('Geh'), cardio:true, dist:true, g:'lauf', gps:true, m:'pace', hc:'walking', met:3.5 },
+  { id:'nordic', name:$t('Nordic Walking'), short:$t('NW'), cardio:true, dist:true, g:'lauf', gps:true, m:'pace', hc:'walking', met:4.8 },
+  { id:'wandern', name:$t('Wandern'), short:$t('Berg'), cardio:true, dist:true, g:'lauf', gps:true, m:'pace', hc:'hiking', met:6 },
+  { id:'rad', name:$t('Radfahren'), short:$t('Rad'), cardio:true, dist:true, g:'rad', gps:true, m:'speed', hc:'cycling', met:7.5 },
+  { id:'mtb', name:$t('Mountainbike'), short:$t('MTB'), cardio:true, dist:true, g:'rad', gps:true, m:'speed', hc:'cycling', met:8.5 },
+  { id:'ebike', name:$t('E-Bike'), short:$t('E-B'), cardio:true, dist:true, g:'rad', gps:true, m:'speed', hc:'cycling', met:4 },
+  { id:'indoorrad', name:$t('Indoor-Rad / Spinning'), short:$t('Spin'), cardio:true, dist:true, g:'rad', gps:false, m:'speed', hc:'bikingStationary', met:7 },
+  { id:'schwimmen', name:$t('Schwimmen (Becken)'), short:$t('Swim'), cardio:true, dist:true, g:'wasser', gps:false, m:'p100', hc:'swimmingPool', met:7 },
+  { id:'freiwasser', name:$t('Freiwasserschwimmen'), short:$t('OW'), cardio:true, dist:true, g:'wasser', gps:true, m:'p100', hc:'swimmingOpenWater', met:8 },
+  { id:'rudern', name:$t('Rudergerät'), short:$t('Ruder'), cardio:true, dist:true, g:'indoor', gps:false, m:'p500', hc:'rowingMachine', met:7 },
+  { id:'rudernboot', name:$t('Rudern (Boot)'), short:$t('Boot'), cardio:true, dist:true, g:'wasser', gps:true, m:'p500', hc:'rowing', met:6 },
+  { id:'kajak', name:$t('Kajak, Kanu, SUP'), short:$t('SUP'), cardio:true, dist:true, g:'wasser', gps:true, m:'speed', hc:'paddling', met:5 },
+  { id:'langlauf', name:$t('Skilanglauf'), short:$t('Loipe'), cardio:true, dist:true, g:'winter', gps:true, m:'speed', hc:'crossCountrySkiing', met:9 },
+  { id:'ski', name:$t('Ski alpin'), short:$t('Ski'), cardio:true, dist:true, g:'winter', gps:true, m:'speed', hc:'skiing', met:5.3 },
+  { id:'snowboard', name:$t('Snowboard'), short:$t('Board'), cardio:true, dist:true, g:'winter', gps:true, m:'speed', hc:'snowboarding', met:5.3 },
+  { id:'schneeschuh', name:$t('Schneeschuhwandern'), short:$t('Schn'), cardio:true, dist:true, g:'winter', gps:true, m:'pace', hc:'snowshoeing', met:7 },
+  { id:'inline', name:$t('Inlineskaten'), short:$t('Inl'), cardio:true, dist:true, g:'winter', gps:true, m:'speed', hc:'skating', met:7.5 },
+  { id:'eislauf', name:$t('Eislaufen'), short:$t('Eis'), cardio:true, dist:false, g:'winter', gps:false, m:'none', hc:'iceSkating', met:7 },
+  { id:'crosstrainer', name:$t('Crosstrainer'), short:$t('Cross'), cardio:true, dist:false, g:'indoor', gps:false, m:'none', hc:'elliptical', met:5 },
+  { id:'stepper', name:$t('Stepper / Treppenmaschine'), short:$t('Step'), cardio:true, dist:false, g:'indoor', gps:false, m:'none', hc:'stairClimbingMachine', met:9 },
+  { id:'treppen', name:$t('Treppen steigen'), short:$t('Trep'), cardio:true, dist:false, g:'indoor', gps:false, m:'none', hc:'stairClimbing', met:8 },
+  { id:'seil', name:$t('Seilspringen'), short:$t('Seil'), cardio:true, dist:false, g:'indoor', gps:false, m:'none', hc:'jumpRope', met:11 },
+  { id:'hiit', name:$t('HIIT'), short:$t('HIIT'), cardio:true, dist:false, g:'indoor', gps:false, m:'none', hc:'highIntensityIntervalTraining', met:8 },
+  { id:'zirkel', name:$t('Zirkel / Functional'), short:$t('Zirk'), cardio:true, dist:false, g:'indoor', gps:false, m:'none', hc:'crossTraining', met:8 },
+  { id:'kurs', name:$t('Fitnesskurs'), short:$t('Kurs'), cardio:true, dist:false, g:'indoor', gps:false, m:'none', hc:'exerciseClass', met:6 },
+  { id:'tanzen', name:$t('Tanzen'), short:$t('Tanz'), cardio:true, dist:false, g:'indoor', gps:false, m:'none', hc:'dance', met:5.5 },
+  { id:'fussball', name:$t('Fußball'), short:$t('Ball'), cardio:true, dist:true, run:true, g:'ball', gps:true, m:'none', hc:'soccer', met:7 },
+  { id:'basketball', name:$t('Basketball'), short:$t('Korb'), cardio:true, dist:false, g:'ball', gps:false, m:'none', hc:'basketball', met:6.5 },
+  { id:'handball', name:$t('Handball'), short:$t('Hand'), cardio:true, dist:false, g:'ball', gps:false, m:'none', hc:'handball', met:8 },
+  { id:'volleyball', name:$t('Volleyball'), short:$t('Vol'), cardio:true, dist:false, g:'ball', gps:false, m:'none', hc:'volleyball', met:4 },
+  { id:'tennis', name:$t('Tennis'), short:$t('Tennis'), cardio:true, dist:false, g:'ball', gps:false, m:'none', hc:'tennis', met:7.3 },
+  { id:'padel', name:$t('Padel'), short:$t('Padel'), cardio:true, dist:false, g:'ball', gps:false, m:'none', hc:'racquetball', met:6 },
+  { id:'badminton', name:$t('Badminton'), short:$t('Bad'), cardio:true, dist:false, g:'ball', gps:false, m:'none', hc:'badminton', met:5.5 },
+  { id:'tischtennis', name:$t('Tischtennis'), short:$t('TT'), cardio:true, dist:false, g:'ball', gps:false, m:'none', hc:'tableTennis', met:4 },
+  { id:'squash', name:$t('Squash'), short:$t('Sq'), cardio:true, dist:false, g:'ball', gps:false, m:'none', hc:'squash', met:7.3 },
+  { id:'kampfsport', name:$t('Kampfsport'), short:$t('Kampf'), cardio:true, dist:false, g:'kampf', gps:false, m:'none', hc:'martialArts', met:10 },
+  { id:'boxen', name:$t('Boxen'), short:$t('Box'), cardio:true, dist:false, g:'kampf', gps:false, m:'none', hc:'boxing', met:7.8 },
+  { id:'klettern', name:$t('Klettern / Bouldern'), short:$t('Klet'), cardio:true, dist:false, g:'sonst', gps:false, m:'none', hc:'climbing', met:7.5 },
+  { id:'kraft', name:$t('Krafttraining frei'), short:$t('Kraft'), cardio:false, dist:false, strength:true, g:'sonst', gps:false, m:'none', hc:'strengthTraining', met:5 },
+  { id:'mobility', name:$t('Mobility / Yoga'), short:$t('Mobil'), cardio:false, dist:false, g:'sonst', gps:false, m:'none', hc:'yoga', met:2.5 },
+  { id:'sonst', name:$t('Sonstiges'), short:$t('Akt'), cardio:true, dist:false, g:'sonst', gps:false, m:'none', hc:'other', met:5 } ];
 const ACT_MAP = Object.fromEntries(ACT_TYPES.map(a => [a.id, a]));
 /* Health-Connect-Workouttyp → Aktivität */
-const HC_TYPE = { running:'joggen', runningTreadmill:'joggen', trackAndField:'joggen', swimming:'schwimmen', swimmingPool:'schwimmen', swimmingOpenWater:'schwimmen',
-  cycling:'rad', bikingStationary:'rad', distanceCycling:'rad', walking:'gehen', hiking:'wandern', rowing:'rudern', rowingMachine:'rudern', soccer:'fussball',
-  boxing:'kampfsport', martialArts:'kampfsport', kickboxing:'kampfsport', wrestling:'kampfsport',
+const HC_TYPE = { running:'joggen', trackAndField:'joggen', runningTreadmill:'laufband', swimming:'schwimmen', swimmingPool:'schwimmen', swimmingOpenWater:'freiwasser',
+  cycling:'rad', distanceCycling:'rad', bikingStationary:'indoorrad', walking:'gehen', hiking:'wandern', rowing:'rudernboot', rowingMachine:'rudern', paddling:'kajak', paddleSports:'kajak',
+  crossCountrySkiing:'langlauf', skiing:'ski', downhillSkiing:'ski', snowboarding:'snowboard', snowshoeing:'schneeschuh', skating:'inline', skatingSports:'inline', iceSkating:'eislauf',
+  elliptical:'crosstrainer', stairClimbingMachine:'stepper', stairClimbing:'treppen', stairs:'treppen', jumpRope:'seil', crossTraining:'zirkel', bootCamp:'zirkel', mixedCardio:'zirkel',
+  exerciseClass:'kurs', dance:'tanzen', dancing:'tanzen', cardioDance:'tanzen', socialDance:'tanzen',
+  soccer:'fussball', basketball:'basketball', handball:'handball', volleyball:'volleyball', tennis:'tennis', racquetball:'padel', pickleball:'padel', badminton:'badminton', tableTennis:'tischtennis', squash:'squash',
+  boxing:'boxen', martialArts:'kampfsport', kickboxing:'kampfsport', wrestling:'kampfsport', climbing:'klettern', rockClimbing:'klettern',
   strengthTraining:'kraft', traditionalStrengthTraining:'kraft', functionalStrengthTraining:'kraft', weightlifting:'kraft', calisthenics:'kraft',
-  yoga:'mobility', stretching:'mobility', flexibility:'mobility', pilates:'mobility', highIntensityIntervalTraining:'sonst' };
+  yoga:'mobility', stretching:'mobility', flexibility:'mobility', pilates:'mobility', highIntensityIntervalTraining:'hiit' };
 /* Zepp-Export SPORT.type (Schätzung, im Zweifel „Sonstiges“) */
 const ZEPP_TYPE = { 1:'joggen', 6:'gehen', 8:'joggen', 9:'rad', 10:'rad', 14:'schwimmen', 15:'schwimmen', 16:'kraft' };
 

@@ -361,3 +361,33 @@ details.card summary{cursor:pointer;list-style:none}details.card summary::-webki
 .btn.ghost{background:transparent}
 .btn.fin-done{background:#e7f6ec;color:#166534}
 @media (prefers-reduced-motion:reduce){.fin.fresh .fin-check,.fin.fresh .fin-check path{animation:none}}
+/* Live-Tracking */
+.trk{padding-top:4px}
+.trk-top{gap:6px;margin-bottom:6px}
+.trchip{display:inline-block;font-size:12px;font-weight:700;padding:5px 10px;border-radius:999px;background:var(--fog);color:var(--muted);white-space:nowrap}
+.trchip.ok{background:#e7f6ec;color:#166534}.trchip.wait{background:#fff4dc;color:var(--amber)}.trchip.bad{background:#ffe7e0;color:var(--signal)}
+.trk-time{font-size:64px;font-weight:800;text-align:center;letter-spacing:-1px;line-height:1.05;margin-top:10px;font-variant-numeric:tabular-nums}
+.trk-state{text-align:center;font-weight:700;color:var(--amber);min-height:20px}
+.trk-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}
+.trk-grid>div{background:var(--fog);border-radius:18px;padding:12px;display:flex;flex-direction:column;gap:2px;text-align:center}
+.trk-grid b{font-size:30px;font-weight:800;font-variant-numeric:tabular-nums}
+.trk-grid span{font-size:12px;color:var(--muted)}
+.trk-hr{grid-column:1/-1;transition:background .4s}
+.trk-hr.lit,.trk-hr.lit span{color:#fff}
+.trk-hr b{font-size:40px}
+.trk-q{background:var(--graphite);color:#fff;border-radius:18px;padding:12px 14px;margin-top:10px}
+.trk-q.hi{background:var(--ember)}
+.trk-qleft{font-size:40px;font-weight:800;text-align:center;font-variant-numeric:tabular-nums}
+.trk-map{height:260px;border-radius:18px;overflow:hidden;background:var(--fog);z-index:0}
+.trk-btns{gap:8px;margin-top:12px}.trk-btns .btn{flex:1}
+.btn.stop{background:var(--graphite);color:#fff}
+.btn.big{font-size:20px;padding:18px}
+.trtog{border:0;border-radius:999px;background:var(--paper);color:var(--graphite);padding:9px 14px;font:inherit;font-size:14px;font-weight:700;cursor:pointer}.trtog.on{background:var(--graphite);color:#fff}
+.trk-btns .btn:not(.stop):not(.brand){background:var(--fog)}
+#trbar{position:fixed;left:12px;right:12px;bottom:calc(84px + env(safe-area-inset-bottom));z-index:40;background:var(--graphite);color:#fff;border-radius:16px;padding:12px 14px;font-size:14px;text-decoration:none;box-shadow:0 6px 20px rgba(0,0,0,.2)}
+#trbar .dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--signal);margin-right:8px;animation:trBlink 1.2s infinite}
+@keyframes trBlink{50%{opacity:.25}}
+.tbl th{text-align:left;font-weight:700;color:var(--muted);padding:4px 2px}.tbl td{padding:5px 2px;border-top:1px solid var(--rule)}
+
+.privacy h1{font-size:26px;color:var(--ember);margin:0 0 4px}.privacy h2{font-size:18px;margin:20px 0 4px}.privacy .box{background:var(--paper);border-radius:16px;padding:12px 14px;margin:12px 0}.privacy mark{background:#fff4dc;border-radius:4px;padding:0 3px}.privacy ul{padding-left:20px}.privacy .muted{color:var(--muted);font-size:14px}
+.act-pick{overflow-wrap:anywhere;hyphens:auto}
