@@ -72,13 +72,13 @@ const isLite = w => { const p = phase(w); return p === 'dl' || p === 'test'; };
 function scaleItem(it, w) { const x = Object.assign({ note: '', sup: '', type: 'dp', rest: 90 }, it);
   if (it.wk && it.wk.length) { const e = it.wk[(w - 1) % it.wk.length]; if (e) { if (e.sets != null) x.sets = e.sets; if (e.reps != null) x.reps = e.reps; if (e.rpe !== undefined) x.rpe = e.rpe; if (e.note) x.note = e.note; } delete x.wk; return x; }
   if (isLite(w)) { x.sets = Math.max(1, Math.ceil(x.sets / 2)); if (x.rpe != null) x.rpe = Math.max(5, x.rpe - 2); } return x; }
-function applyOv(x, o, w) { const y = Object.assign({}, x); ['ex', 'reps', 'note', 'sup', 'type'].forEach(f => { if (o[f] != null && o[f] !== '') y[f] = o[f]; }); if (o.rest != null) y.rest = o.rest;
+function applyOv(x, o, w) { const y = Object.assign({}, x); ['ex', 'reps', 'note', 'sup', 'gm', 'type'].forEach(f => { if (o[f] != null && o[f] !== '') y[f] = o[f]; }); if (y.sup === '-') y.sup = ''; if (o.rest != null) y.rest = o.rest;
   if (o.sets != null) y.sets = isLite(w) ? Math.min(o.sets, x.sets) : o.sets; if (o.rpe != null && !isLite(w)) y.rpe = o.rpe; return y; }
 function planForP(plan, w, k) { const s = plan && plan.sessions.find(x => x.k === k); if (!s || s.kind !== 'gym') return []; const ov = s.ov || {};
   let list = s.base && BASE_FN[s.base] ? BASE_FN[s.base](w) : [];
   list = list.filter(x => !(ov[x.slot] && ov[x.slot].del)).map(x => ov[x.slot] ? applyOv(x, ov[x.slot], w) : x);
   return list.concat((s.add || []).filter(it => LIB[it.ex]).map(it => scaleItem(it, w))); }
-const planFor = (w, k) => planForP(S.plan, w, k);
+function planFor(w, k) { const list = planForP(S.plan, w, k); return typeof sessAdjust === 'function' ? sessAdjust(w, k, list) : list; }
 const isGym = k => !!SESS[k] && SESS[k].kind === 'gym';
 const isCardio = k => !!SESS[k] && SESS[k].kind !== 'gym';
 const isHiit = k => !!SESS[k] && SESS[k].kind === 'hiit';
@@ -285,7 +285,7 @@ function render(scrollTop) {
 function softPatch(id, html) { const el = document.getElementById(id); if (!el || !el.isConnected) return; const tmp = document.createElement('div'); tmp.innerHTML = html; const nu = tmp.firstElementChild; if (!nu) return;
   const oldSets = el.querySelector('.sets'), newSets = nu.querySelector('.sets');
   Array.from(el.children).forEach(c => { if (c !== oldSets && c.parentNode === el) { try { c.remove(); } catch (e) {} } });
-  const anchor = oldSets && oldSets.parentNode === el ? oldSets : null; Array.from(nu.children).forEach(c => { if (c !== newSets) el.insertBefore(c, anchor); });
+  const anchor = oldSets && oldSets.parentNode === el ? oldSets : null; let after = false; Array.from(nu.children).forEach(c => { if (c === newSets) { after = true; return; } if (after && anchor) el.appendChild(c); else el.insertBefore(c, anchor); });
   if (oldSets && newSets) { const or = oldSets.querySelectorAll('.set'), nr = newSets.querySelectorAll('.set'); nr.forEach((n, i) => { const o = or[i]; if (!o) return; o.className = n.className;
       n.querySelectorAll('input').forEach(ni => { const oi = document.getElementById(ni.id); if (!oi) return; oi.placeholder = ni.placeholder; if (document.activeElement !== oi && oi.value !== ni.value) oi.value = ni.value; }); }); } }
 const pageTop = (accent, rest, sub, extra) => '<div class="top"><div class="grow"><h1><span class="t-ember">' + accent + '</span>' + (rest ? ' ' + rest : '') + '</h1>' + (sub ? '<div class="sub">' + sub + '</div>' : '') + '</div>' + (extra || '') + $t('<a class="iconbtn" href="#mehr" aria-label="Einstellungen">') + ICON.gear + '</a></div>';
@@ -910,13 +910,13 @@ document.addEventListener('click', async e => { const b = e.target.closest('[dat
     case 'wkPlus': S.block.week = Math.min(12, curWeek() + 1); ui.week = null; save(); render(); break;
     case 'done': {
       if (b.dataset.aid) { const act = findAct(b.dataset.aid); const ex = act.exercises[+b.dataset.idx]; const i = +b.dataset.i; ex.sets[i] = ex.sets[i] || {}; const set = ex.sets[i];
-        if (set.done) set.done = false; else { set.t = Date.now(); for (let j = i - 1; j >= 0; j--) { const p = ex.sets[j]; if (p && p.done) { if (!set.w) set.w = p.w; if (!set.r) set.r = p.r; break; } } set.done = true; startTimer(ex.rest || 90, LIB[ex.ex].name + $t(': Pause')); }
+        if (set.done) set.done = false; else { set.t = Date.now(); for (let j = i - 1; j >= 0; j--) { const p = ex.sets[j]; if (p && p.done) { if (!set.w) set.w = p.w; if (!set.r) set.r = p.r; break; } } set.done = true; if (!(typeof ssAfterSet === 'function' && ssAfterSet('free', { act, idx: +b.dataset.idx, i }))) startTimer(ex.rest || 90, LIB[ex.ex].name + $t(': Pause')); }
         save(); softPatch('fx-' + b.dataset.idx, freeExCard(act, ex, +b.dataset.idx)); break; }
       const spec = planFor(r.w, r.k).find(p => p.slot === b.dataset.slot); const exId = actualEx(r.w, r.k, spec); const s = sess(r.w, r.k);
       const lg = s.logs[spec.slot] || (s.logs[spec.slot] = { ex: exId, sets: [] }); const i = +b.dataset.i; for (let j = 0; j <= i; j++) lg.sets[j] = lg.sets[j] || {}; const set = lg.sets[i];
       if (set.done) { set.done = false; } else { const rd = readiness(r.w, r.k); const sg = setSuggestion(r.w, r.k, spec, exId, i, planSuggestion(r.w, r.k, spec, exId, rd), rd);
         if ((set.w === undefined || set.w === '') && sg.load != null) set.w = String(sg.load); if ((set.r === undefined || set.r === '') && sg.reps != null) set.r = String(sg.reps);
-        set.done = true; set.t = Date.now(); lg.ex = exId; markStarted(r.w, r.k); prCheck(exId, r.w, r.k, set); if (spec.rest) { startTimer(spec.rest, LIB[exId].name + $t(': Pause')); restNotify(spec.rest, $t('Nächster Satz: ') + LIB[exId].name); } }
+        set.done = true; set.t = Date.now(); lg.ex = exId; markStarted(r.w, r.k); prCheck(exId, r.w, r.k, set); if (!(typeof ssAfterSet === 'function' && ssAfterSet('plan', { w: r.w, k: r.k, spec, exId, i })) && spec.rest) { startTimer(spec.rest, LIB[exId].name + $t(': Pause')); restNotify(spec.rest, $t('Nächster Satz: ') + LIB[exId].name); } }
       save(); softPatch('ex-' + spec.slot, exCard(r.w, r.k, spec)); if (spec.slot === 'bench_top') { const bo = planFor(r.w, r.k).find(p => p.slot === 'bench_bo'); if (bo) softPatch('ex-bench_bo', exCard(r.w, r.k, bo)); } break; }
     case 'swap': ui.swapScope = 'today'; ui.swapTab = 'alt'; variantsSheet(r.w, r.k, b.dataset.slot); break;
     case 'swapscope': ui.swapScope = b.dataset.s; b.parentNode.querySelectorAll('button').forEach(x => x.classList.toggle('on', x === b)); break;

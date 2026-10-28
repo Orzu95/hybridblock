@@ -112,11 +112,12 @@ function gymA(w){ const p=phase(w), i=(w-1)%4, lite=p==='dl'||p==='test'; let fs
   else if(p==='b3') fs=S_('fs','fs',5,4,8,180,'main',BACK_NOTE);
   else if(p==='dl') fs=S_('fs','fs',2,5,6,180,'main',$t('Deload: locker, Technik.'));
   else fs=S_('fs','fs',1,3,9,240,'main',$t('3RM: in 2,5–5-kg-Schritten hocharbeiten, Stopp bei RPE 9. Nur bei grüner Rücken-Ampel.'));
+  fs.sup='F'; fs.gm='fa'; /* Seitheben als Füllsatz in den Front-Squat-Pausen */
   return [
     S_('box','box',lite?2:3,3,null,90,'power',$t('Explosiv hoch, weich landen, runtersteigen.')),
     S_('calf_a','calf_st',lite?2:4,'8–12',lite?7:9.5,60,'dp',lite?'':$t('2 s Pause unten. ')+LP),
     fs,
-    S_('lat_a','lat',lite?2:3,'15–20',lite?7:9,0,'dp',$t('Füllsatz in den Front-Squat-Pausen.')),
+    Object.assign(S_('lat_a','lat',lite?2:3,'15–20',lite?7:9,0,'dp',$t('Füllsatz in den Front-Squat-Pausen.'),'F'),{gm:'fill'}),
     S_('hc_a','curl_seated',lite?2:4,'8–12',lite?7:9.5,60,'dp',lite?'':LP,'S1'),
     S_('legext','legext',lite?2:3,'12–15',lite?7:9,60,'dp','','S1'),
     S_('ht','ht',lite?2:3,'8–12',lite?6:8,120,'dp',$t('Kinn eingezogen, oben 1 s halten.')),

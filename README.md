@@ -77,3 +77,10 @@ npx cap open android   # in Android Studio auf Run tippen
 - **E-Mail-Link (optional)**: Funktion `hb-auth` (Aktionen `set_email`, `forgot_email`, `reset_token`, Link `#reset/<token>`, 1 Stunde gültig). Aktiv erst, wenn in Supabase die Secrets `RESEND_API_KEY` und `MAIL_FROM` (Absender mit bei Resend verifizierter Domain) gesetzt sind; vorher blendet die App das E-Mail-Feld aus.
 - **Betreiber-Konsole** (`#ops`, Link in den Einstellungen): nur für Konten in der Tabelle `operators`. Kennzahlen, Kontosuche, Coach- und Nutzereinladungen, Rolle ändern, Coach zuweisen, sperren/entsperren, Einmal-Passwort, Konto löschen. Funktion `hb-admin`; Trainings- und Gesundheitsdaten sind dort bewusst nicht sichtbar. Weitere Betreiber: `insert into operators(user_id) select id from profiles where username = '…';`
 - **Essen**: Pro Mahlzeit „⋯“ → alle Einträge löschen (mit Rückgängig), in andere Mahlzeit verschieben, Mahlzeit ausblenden (z. B. Frühstück auslassen; gilt für alle Tage). Unten „Alle Einträge dieses Tages löschen“. Die Lebensmittelsuche läuft über die Funktion `food-search` (Open-Food-Facts-Proxy mit 7-Tage-Cache), weil direkte Browser-Anfragen an Open Food Facts oft an CORS und Ratenlimits scheitern.
+
+## Supersätze, Triple-Sets, Füllsätze
+
+- **In der laufenden Einheit**: Bei jeder Übung „Supersatz“ → Partner wählen (auch eine neue Übung dazunehmen), Ablauf „Im Wechsel“ (Supersatz/Triple-Set/Riesensatz) oder „In der Pause“ (Füllsatz, z. B. Seitheben in den Front-Squat-Pausen), gültig „Nur heute“ oder „Dauerhaft im Plan“. Unten „+ Übung hinzufügen (nur heute)“.
+- **Timer**: Im Wechsel springt die App nach jedem Satz zur nächsten Übung, die Pause (längste Pause der Gruppe) startet erst nach der Runde. Beim Füllsatz läuft die Pause der Hauptübung weiter.
+- **Plan-Editor, geplante Trainings, freies Training**: zwischen zwei Übungen „+ als Supersatz verbinden“, mehrfach verbinden ergibt Triple-Set oder Riesensatz, Modus umschaltbar.
+- Daten: Gruppen-Kennung `sup` und Modus `gm` (`ss`, `fill`, `fa` = Anker) am Plan-Eintrag bzw. als Override; heutige Änderungen in `sess.grp` und `sess.extra`; im freien Training `grp`/`gm` je Übung.
