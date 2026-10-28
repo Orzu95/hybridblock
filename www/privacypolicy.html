@@ -27,7 +27,7 @@ a{color:var(--ember)}ul{padding-left:20px}
 
 <h2>2. Welche Daten verarbeitet werden</h2>
 <ul>
-<li><b>Konto</b> (nur wenn du eines anlegst): Benutzername, Anzeigename, Sprache, verschlüsseltes Passwort. Eine echte E-Mail-Adresse brauchst du nicht.</li>
+<li><b>Konto</b> (nur wenn du eines anlegst): Benutzername, Anzeigename, Sprache, verschlüsseltes Passwort, ein Wiederherstellungscode (nur als Hash gespeichert). Eine echte E-Mail-Adresse brauchst du nicht. Hinterlegst du freiwillig eine, wird sie nur genutzt, um dir auf Anfrage einen Link zum Zurücksetzen des Passworts zu schicken.</li>
 <li><b>Deine Eingaben</b>: Trainingspläne, Sätze, Gewichte, Aktivitäten, Mahlzeiten, Körpergewicht und Maße, Fortschrittsfotos (nur auf deinem Gerät), Notizen.</li>
 <li><b>Gesundheitsdaten</b> (besondere Kategorie nach Art. 9 DSGVO): Angaben zu Beschwerden im Fragebogen, Ruhepuls, Puls, Herzfrequenzvariabilität, Schlaf, Schritte, Kalorien, VO₂max, Gewicht und Trainings aus Health Connect.</li>
 <li><b>Zyklusdaten</b> (freiwillig, nur bei Geschlecht weiblich, mit eigener Einwilligung): Tage mit Periode, Blutungsstärke, Beschwerden, Situation (z. B. hormonelle Verhütung). Sie werden in der Cloud getrennt in einem Bereich gespeichert, den nur du lesen kannst. Ein Coach sieht sie nur, wenn du das in den Einstellungen einschaltest.</li>
@@ -39,6 +39,7 @@ a{color:var(--ember)}ul{padding-left:20px}
 <ul>
 <li>Bereitstellen der App-Funktionen (Plan, Fortschritt, Kalorienbedarf, Belastungssteuerung, Synchronisation zwischen deinen Geräten): Art. 6 Abs. 1 lit. b DSGVO.</li>
 <li>Verarbeitung von Gesundheitsdaten: deine ausdrückliche Einwilligung nach Art. 9 Abs. 2 lit. a DSGVO, die du beim Start der App erteilst. Du kannst sie jederzeit widerrufen, indem du in der App unter „Einstellungen → Datenschutz“ deine Daten löschst.</li>
+<li>Betrieb: Der Betreiber der App kann Kontodaten (Benutzername, Anzeigename, Rolle, Coach, Zeitpunkt der letzten Anmeldung und Synchronisation) einsehen, um Konten zu verwalten und Missbrauch zu verhindern, aber nicht deine Trainings-, Ernährungs- oder Gesundheitsdaten: Art. 6 Abs. 1 lit. b und f DSGVO.</li>
 <li>Coaching: Wenn du eine Einladung deines Coaches annimmst, sieht dein Coach deinen Plan, deinen Trainingsfortschritt, Ernährung, Gewicht und Gesundheitswerte. Das ist der Zweck der Einladung; mit der Annahme willigst du ein.</li>
 </ul>
 
@@ -56,6 +57,7 @@ a{color:var(--ember)}ul{padding-left:20px}
 <li><b>Open Food Facts</b>: Beim Scannen eines Barcodes oder bei der Lebensmittelsuche wird der Code bzw. Suchbegriff an Open Food Facts gesendet. Es werden keine Kontodaten übertragen.</li>
 <li><b>Karten</b>: Kartenkacheln kommen von OpenStreetMap. Dabei wird deine IP-Adresse an den Kartenserver übermittelt, nicht aber deine aufgezeichnete Strecke.</li>
 <li><b>Übungsbilder</b>: werden von exercise-dataset.com (RepDB) geladen; dabei wird deine IP-Adresse übermittelt.</li>
+<li><b>E-Mail-Versand</b>: Forderst du einen Link zum Zurücksetzen an und hast eine E-Mail-Adresse hinterlegt, wird sie über den Dienst Resend versendet.</li>
 <li><b>Web-Version</b>: wird über GitHub Pages ausgeliefert. GitHub verarbeitet dabei technische Zugriffsdaten (z. B. IP-Adresse).</li>
 </ul>
 
@@ -76,7 +78,7 @@ a{color:var(--ember)}ul{padding-left:20px}
 <h2>1. Controller</h2>
 <p><mark>[First and last name]</mark><br><mark>[Street, postcode, city]</mark><br>Email: <mark>[contact email]</mark></p>
 <h2>2. Data processed</h2>
-<p>Account data (only if you create an account: username, display name, language, hashed password); your entries (plans, sets, activities, meals, body weight and measurements, notes; progress photos stay on your device); health data (complaints in the questionnaire, heart rate, resting heart rate, HRV, sleep, steps, calories, VO₂max, weight and workouts from Health Connect); cycle data (optional, separate consent, stored in an area only you can read, shared with a coach only if you turn that on); location (GPS routes, only while you record a workout); live heart rate from a Bluetooth strap during a recording.</p>
+<p>Account data (only if you create an account: username, display name, language, hashed password, a hashed recovery code and, optionally, an email address used only for password reset links); the app operator can see account data (username, role, coach, last sign-in and sync) to manage accounts, but not your training, nutrition or health data; your entries (plans, sets, activities, meals, body weight and measurements, notes; progress photos stay on your device); health data (complaints in the questionnaire, heart rate, resting heart rate, HRV, sleep, steps, calories, VO₂max, weight and workouts from Health Connect); cycle data (optional, separate consent, stored in an area only you can read, shared with a coach only if you turn that on); location (GPS routes, only while you record a workout); live heart rate from a Bluetooth strap during a recording.</p>
 <h2>3. Purposes and legal bases</h2>
 <p>Providing the app's features: Art. 6(1)(b) GDPR. Health data: your explicit consent under Art. 9(2)(a) GDPR, which you can withdraw at any time by deleting your data in the app (Settings → Privacy). Coaching: if you accept a coach's invitation, your coach can see your plan, training progress, nutrition, weight and health values.</p>
 <h2>4. Storage</h2>
@@ -84,7 +86,7 @@ a{color:var(--ember)}ul{padding-left:20px}
 <h2>5. Health Connect</h2>
 <p>Hybridblock reads only the data types you allow and, if you permit it, writes workouts recorded in the app (session, route, distance, calories, heart rate). The use of information received from Health Connect adheres to the <a href="https://support.google.com/googleplay/android-developer/answer/12991134">Health Connect Permissions policy</a>, including the Limited Use requirements. This data is not used for advertising, not sold and not shared with third parties other than your coach, if you have one.</p>
 <h2>6. Other services</h2>
-<p>Open Food Facts (barcode or search term when you look up food), OpenStreetMap map tiles (your IP address, not your route), exercise images from exercise-dataset.com (your IP address), GitHub Pages for the web version (technical access data).</p>
+<p>Open Food Facts (barcode or search term when you look up food), OpenStreetMap map tiles (your IP address, not your route), exercise images from exercise-dataset.com (your IP address), GitHub Pages for the web version (technical access data). If you add an email address for password reset links, it is sent via the email service Resend only when you request a reset link.</p>
 <h2>7. Retention and deletion</h2>
 <p>Data is kept until you delete it. In the app (Settings → Privacy) you can delete all data on the device and permanently delete your account with all cloud data, or contact us at the address above.</p>
 <h2>8. Your rights</h2>

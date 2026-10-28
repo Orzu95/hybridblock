@@ -267,16 +267,17 @@ function doCheckin() { const ser = series(); const last = ser[ser.length - 1]; c
 /* ======================= ROUTER ======================= */
 let route = { name: 'heute', arg: null };
 const ui = { week: null, day: today(), foodTab: 'presets', meal: 'Frühstück', swapScope: 'today' };
-function parseHash() { const h = (location.hash || '#heute').slice(1).split('/'); route = { name: h[0] || 'heute', arg: h[1] || null }; }
+let RESET_TOKEN = null;
+function parseHash() { const h = (location.hash || '#heute').slice(1).split('/'); if (h[0] === 'reset' && h[1]) { RESET_TOKEN = h[1]; try { history.replaceState(null, '', '#start/reset'); } catch (e) {} route = { name: 'start', arg: 'reset' }; return; } route = { name: h[0] || 'heute', arg: h[1] || null }; }
 window.addEventListener('hashchange', () => { parseHash(); render(true); });
 function render(scrollTop) {
   if (!S.meta.onboarded && route.name !== 'start' && route.name !== 'datenschutz' && !VIEW) { location.hash = '#start'; return; }
   document.body.classList.toggle('onb-mode', route.name === 'start');
   if (!VIEW) maybeAdvance();
-  const tabName = route.name === 'frei' ? 'training' : ['mehr', 'admin', 'plan', 'start', 'datenschutz'].includes(route.name) ? '' : ['library', 'workout', 'track'].includes(route.name) ? 'training' : route.name;
+  const tabName = route.name === 'frei' ? 'training' : ['mehr', 'admin', 'plan', 'start', 'datenschutz', 'ops'].includes(route.name) ? '' : ['library', 'workout', 'track'].includes(route.name) ? 'training' : route.name;
   document.querySelectorAll('#tabbar a').forEach(a => a.classList.toggle('on', a.dataset.r === tabName));
   const v = $('#view'); const y = window.scrollY;
-  const map = { training: () => route.arg ? viewSession(route.arg) : viewTraining(), frei: () => viewFree(route.arg), essen: viewEssen, verlauf: viewProgress, mehr: viewMehr, start: () => viewStart(route.arg), library: () => route.arg ? viewLibPlan(route.arg) : viewLibrary(), workout: () => viewWorkout(route.arg), admin: () => viewAdmin(route.arg), plan: () => viewPlan(route.arg), track: () => viewTrack(), datenschutz: () => viewPrivacy() };
+  const map = { training: () => route.arg ? viewSession(route.arg) : viewTraining(), frei: () => viewFree(route.arg), essen: viewEssen, verlauf: viewProgress, mehr: viewMehr, start: () => viewStart(route.arg), library: () => route.arg ? viewLibPlan(route.arg) : viewLibrary(), workout: () => viewWorkout(route.arg), admin: () => viewAdmin(route.arg), plan: () => viewPlan(route.arg), track: () => viewTrack(), datenschutz: () => viewPrivacy(), ops: () => typeof viewOps === 'function' ? viewOps() : '' };
   v.innerHTML = viewBar() + (map[route.name] || viewHeute)();
   if (route.name === 'training' && route.arg) keepAwake(); else if ($('#timer').hidden && wakeLock) { try { wakeLock.release(); } catch (e) {} wakeLock = null; }
   if (route.name === 'verlauf') refreshPhotoCard();
@@ -474,8 +475,8 @@ function newActivity(type, dateStr) { const a = { id: uid(), type, date: dateStr
 /* ======================= ESSEN ======================= */
 function viewEssen() {
   const d = ui.day, o = S.days[d] || { entries: [] }, tot = dayTotals(d), tg = currentTargets(); const left = tg.kcal - tot.kcal;
-  const meals = MEALS.map(m => { const es = (o.entries || []).filter(e => e.meal === m); const k = es.reduce((a, e) => a + e.kcal, 0);
-    return '<div class="card flush"><div class="meal-h"><b>' + $t(m) + '</b><span class="small muted num">' + fmt(k, 0) + $t(' kcal</span>') + (es.length ? '<button class="btn sm" data-act="saveTpl" data-meal="' + m + '" type="button" aria-label="' + $t(m) + $t(' als Vorlage speichern" title="Als Vorlage speichern">☆</button>') : '') + '<button class="btn sm" data-act="add" data-meal="' + m + $t('" type="button">+ Hinzufügen</button></div>') +
+  const hidM = S.settings.hiddenMeals || []; const meals = MEALS.filter(m => !hidM.includes(m) || (o.entries || []).some(e => e.meal === m)).map(m => { const es = (o.entries || []).filter(e => e.meal === m); const k = es.reduce((a, e) => a + e.kcal, 0);
+    return '<div class="card flush"><div class="meal-h"><b>' + $t(m) + '</b><span class="small muted num">' + fmt(k, 0) + $t(' kcal</span>') + (es.length ? '<button class="btn sm" data-act="saveTpl" data-meal="' + m + '" type="button" aria-label="' + $t(m) + $t(' als Vorlage speichern" title="Als Vorlage speichern">☆</button>') : '') + '<button class="btn sm" data-act="add" data-meal="' + m + $t('" type="button">+ Hinzufügen</button>') + '<button class="btn sm" data-act="mealMenu" data-meal="' + m + '" type="button" aria-label="' + $t('Mahlzeit-Optionen') + '">⋯</button></div>' +
       es.map(e => '<div class="entry" data-act="edit" data-uid="' + e.uid + '"><div class="grow" style="min-width:0"><div class="nm">' + esc(entryName(e)) + '</div><div class="small muted">' + fmt(e.qty) + ' ' + $t(e.unit) + '</div></div><div class="k num">' + fmt(e.kcal, 0) + $t(' kcal<small>') + fmt(e.p, 0) + $t(' g Protein</small></div></div>')).join('') + (es.length ? '<div style="height:8px"></div>' : '') + '</div>'; }).join('');
   const head = '<div class="top"><div class="grow"><h1>' + (left >= 0 ? '<span class="t-green">' + fmt(left, 0) + $t(' kcal</span> übrig') : '<span class="t-red">' + fmt(-left, 0) + $t(' kcal</span> über dem Ziel')) + '</h1><div class="sub">' + (d === today() ? $t('Heute') : fmtDay(d)) + $t(' · Ziel ') + fmt(tg.kcal, 0) + $t(' kcal</div></div><a class="iconbtn" href="#mehr" aria-label="Einstellungen">') + ICON.gear + '</a></div>';
   return head + '<div class="stack">' +
@@ -484,11 +485,11 @@ function viewEssen() {
   '<div class="card">' + rings(tot, tg) + microRow(d) + '</div>' + waterCard(d) +
   '<div class="scanbar"><button class="btn brand" data-act="scan" type="button">' + ICON.scan + $t('Barcode scannen</button><button class="btn" style="background:var(--fog)" data-act="add" data-meal="') + guessMeal() + '" type="button">' + ICON.search + $t('Suchen</button></div>') +
   ((o.entries || []).length ? '' : $t('<div class="scanbar"><button class="btn" style="background:var(--fog)" data-act="template" type="button">Meal-Prep-Tag</button>') + (((S.days[addDays(d, -1)] || {}).entries || []).length ? $t('<button class="btn" style="background:var(--fog)" data-act="copyYesterday" type="button">Gestern übernehmen</button>') : '') + '</div>') +
-  meals +
+  (typeof foodUndoNote === 'function' ? foodUndoNote() : '') + meals + (typeof foodExtras === 'function' ? foodExtras(d) : '') +
   $t('<div class="card"><div class="row"><div class="field"><label for="wDay">Gewicht</label><input id="wDay" type="number" inputmode="decimal" step="0.1" data-day="') + d + '" data-f="weight" value="' + esc(o.weight) + $t('" placeholder="kg"></div><div class="grow"></div>') +
   '<label class="row" style="gap:10px"><input type="checkbox" id="complete" data-day="' + d + '" data-f="complete"' + (o.complete === false ? '' : $t(' checked')) + $t('> Tag vollständig geloggt</label></div>') +
   $t('<p class="small muted">Nur vollständig geloggte Tage fließen in die Bedarfsberechnung. Hast du etwas vergessen, nimm den Haken raus.</p></div></div>'); }
-function guessMeal() { const h = new Date().getHours(); return h < 11 ? 'Frühstück' : h < 15 ? 'Mittag' : h < 18 ? 'Snack' : 'Abend'; }
+function guessMeal() { const h = new Date().getHours(); const g = h < 11 ? 'Frühstück' : h < 15 ? 'Mittag' : h < 18 ? 'Snack' : 'Abend'; const hid = S.settings.hiddenMeals || []; if (!hid.includes(g)) return g; const i = MEALS.indexOf(g); return MEALS.slice(i).concat(MEALS.slice(0, i)).find(m => !hid.includes(m)) || g; }
 
 /* ---------- Sheets ---------- */
 let searchAbort = null;
@@ -531,17 +532,21 @@ function offMap(p, partial) { const n = p.nutriments || {}; let kcal = num(n['en
   return { id: 'off_' + p.code, code: String(p.code), name: name || $t('Ohne Namen'), names, brand: brand.trim(), base: '100g', kcal, p: num(n.proteins_100g) || 0, f: num(n.fat_100g) || 0, c: num(n.carbohydrates_100g) || 0, pieceG: num(p.serving_quantity) || null, src: 'off', needsFetch: kcal == null, fib: num(n.fiber_100g), sug: num(n.sugars_100g), salt: num(n.salt_100g) }; }
 const offCache = {};
 async function fetchJson(url, ms) { const ac = new AbortController(); const t = setTimeout(() => ac.abort(), ms || 9000); try { const r = await fetch(url, { signal: ac.signal }); if (!r.ok && r.status !== 404) throw new Error($t('HTTP ') + r.status); return await r.json(); } finally { clearTimeout(t); } }
+/* Lebensmittelsuche: zuerst über die eigene Edge Function (Zwischenspeicher, kein CORS, schont das OFF-Suchlimit), dann direkt bei OFF */
+async function offQuery(q, size) { const enc = encodeURIComponent(q), F = 'code,product_name,product_name_de,product_name_en,product_name_ru,brands,nutriments,serving_quantity'; const errs = [];
+  if (typeof SB !== 'undefined') { try { const ac = new AbortController(); const t = setTimeout(() => ac.abort(), 15000);
+      const r = await fetch(SB.url + '/functions/v1/food-search', { method: 'POST', headers: { 'Content-Type': 'application/json', apikey: SB.key }, body: JSON.stringify({ q, langs: OFF_LANGS, size }), signal: ac.signal }); clearTimeout(t);
+      const j = await r.json(); if (r.ok && Array.isArray(j.hits)) return { list: j.hits, errs }; errs.push(j.error || ('HTTP ' + r.status)); } catch (e) { errs.push(e.name === 'AbortError' ? $t('Zeitüberschreitung') : e.message); } }
+  const urls = ['https://search.openfoodfacts.org/search?q=' + enc + '&langs=' + OFF_LANGS + '&page_size=' + size + '&fields=' + F, 'https://world.openfoodfacts.org/cgi/search.pl?search_terms=' + enc + '&search_simple=1&action=process&json=1&page_size=' + size + '&fields=' + F];
+  const CH = window.Capacitor && Capacitor.isNativePlatform && Capacitor.isNativePlatform() && Capacitor.Plugins && Capacitor.Plugins.CapacitorHttp;
+  for (const u of urls) { try { let j; if (CH) { const r = await CH.get({ url: u, headers: { Accept: 'application/json' }, connectTimeout: 10000, readTimeout: 10000 }); j = typeof r.data === 'string' ? JSON.parse(r.data) : r.data; } else j = await fetchJson(u, 10000);
+      const list = j.hits || j.products; if (Array.isArray(list)) return { list, errs }; } catch (e) { errs.push(e.name === 'AbortError' ? $t('Zeitüberschreitung') : e.message); } }
+  return { list: null, errs }; }
 async function offSearch(q) { const res = $('#results'); if (!q || !res) return; const ql = q.toLowerCase();
   const mine = []; const seen = new Set(); [...PRESET_FOODS.map(f => getFood(f.id)), ...Object.values(S.foods)].forEach(f => { if (f && !seen.has(f.id) && foodName(f).toLowerCase().includes(ql)) { seen.add(f.id); mine.push(f); } });
   const mineHtml = mine.length ? $t('<div class="lbl" style="margin:10px 0 2px">Deine Lebensmittel</div>') + mine.map(foodRow).join('') : '';
   res.innerHTML = mineHtml + $t('<p class="small muted">Suche in Open Food Facts …</p>');
-  const enc = encodeURIComponent(q), F = 'code,product_name,product_name_de,product_name_en,product_name_ru,brands,nutriments,serving_quantity';
-  const sources = [
-    { url: 'https://search.openfoodfacts.org/search?q=' + enc + '&langs=' + OFF_LANGS + '&page_size=40&fields=' + F, pick: j => j.hits },
-    { url: 'https://world.openfoodfacts.org/cgi/search.pl?search_terms=' + enc + '&search_simple=1&action=process&json=1&page_size=30&fields=' + F, pick: j => j.products } ];
-  let items = null; const errs = [];
-  for (const src of sources) { try { const j = await fetchJson(src.url, 10000); const list = (src.pick(j) || []).map(p => offMap(p, true)).filter(Boolean); if (list.length) { items = list; break; } if (items == null) items = []; }
-    catch (e) { errs.push(e.name === 'AbortError' ? $t('Zeitüberschreitung') : e.message); } }
+  const rq = await offQuery(q, 40); const errs = rq.errs; const items = rq.list == null ? null : rq.list.map(p => offMap(p, true)).filter(Boolean);
   if (!$('#results')) return;
   if (items && items.length) { items.sort((a, b) => (a.needsFetch ? 1 : 0) - (b.needsFetch ? 1 : 0)); items.forEach(f => offCache[f.id] = f);
     res.innerHTML = mineHtml + $t('<div class="lbl" style="margin:10px 0 2px">Open Food Facts</div>') + items.map(foodRow).join(''); return; }
@@ -1253,8 +1258,7 @@ function recipeSheet() { const r = ui.recipe; const t = recipeTotals(r); const p
 async function recSearch(q) { const box = $('#rc-res'); if (!box || !q) return; const ql = q.toLowerCase(); const mine = [...PRESET_FOODS.map(f => getFood(f.id)), ...Object.values(S.foods).filter(f => f.src !== 'quick' && f.src !== 'recipe')].filter(f => f && foodName(f).toLowerCase().includes(ql));
   const row = f => '<div class="it" data-act="recPick" data-id="' + esc(f.id) + '"><div class="grow"><b>' + esc(foodName(f)) + '</b><small>' + (f.needsFetch ? $t('Nährwerte werden beim Antippen geladen') : fmt(f.kcal, 0) + $t(' kcal pro ') + (f.base === '100g' ? $t('100 g') : $t('Stück'))) + '</small></div><span class="chev">›</span></div>';
   box.innerHTML = mine.map(row).join('') + $t('<p class="small muted">Suche in Open Food Facts …</p>');
-  try { const enc = encodeURIComponent(q), F = 'code,product_name,product_name_de,product_name_en,product_name_ru,brands,nutriments,serving_quantity'; let list = [];
-    for (const u of ['https://search.openfoodfacts.org/search?q=' + enc + '&langs=' + OFF_LANGS + '&page_size=20&fields=' + F, 'https://world.openfoodfacts.org/cgi/search.pl?search_terms=' + enc + '&search_simple=1&action=process&json=1&page_size=20&fields=' + F]) { try { const j = await fetchJson(u, 9000); list = ((j.hits || j.products) || []).map(p => offMap(p, false)).filter(Boolean); if (list.length) break; } catch (e) {} }
+  try { const rq = await offQuery(q, 20); const list = (rq.list || []).map(p => offMap(p, true)).filter(Boolean);
     list.forEach(f => offCache[f.id] = f); if ($('#rc-res')) $('#rc-res').innerHTML = mine.map(row).join('') + list.map(row).join('') + (list.length || mine.length ? '' : $t('<p class="small muted">Nichts gefunden.</p>')); } catch (e) {} }
 function recipeQty(id) { const f = getFood(id); const units = unitsFor(f); const box = $('#rc-res'); if (!box) return;
   box.innerHTML = '<div class="card" style="padding:14px 18px"><b>' + esc(foodName(f)) + $t('</b><div class="fields on-white" style="margin-top:10px"><div class="field"><label for="rq-q">Menge</label><input id="rq-q" type="number" inputmode="decimal" step="any" value="') + (units[0] === 'g' ? 100 : 1) + $t('"></div><div class="field"><label for="rq-u">Einheit</label><select id="rq-u">') + units.map(u => '<option value="' + u + '">' + $t(u) + '</option>').join('') + '</select></div></div><div class="row" style="margin-top:10px"><div class="grow"></div><button class="btn brand sm" data-act="recAddItem" data-id="' + esc(id) + $t('" type="button">Hinzufügen</button></div></div>'); }
