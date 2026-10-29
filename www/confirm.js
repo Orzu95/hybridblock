@@ -32,7 +32,7 @@ const _viewFreeCf = viewFree; viewFree = function (id) { const h = _viewFreeCf(i
 document.addEventListener('click', e => { const b = e.target.closest('[data-act=actDone]'); if (!b) return; const a = S.activities.find(x => x.id === b.dataset.aid); if (!a) return;
   if (!num(a.dur)) { toast($t('Bitte noch die Dauer eintragen.')); const el = document.getElementById('a-dur'); if (el) el.focus(); return; }
   const first = !a.done; a.done = true; save(); doneOverlay(first ? $t('Erledigt') : $t('Gespeichert'), (a.title || (ACT_MAP[a.type] || {}).name || '') + ' · ' + fmt(num(a.dur), 0) + ' min');
-  setTimeout(() => { location.hash = typeof resultHref === 'function' ? resultHref({ type: 'act', id: a.id }) : '#training'; }, 900); });
+  setTimeout(() => { ui.editAct = null; const h = typeof resultHref === 'function' ? resultHref({ type: 'act', id: a.id }) : '#training'; if (location.hash === h) { render(); window.scrollTo(0, 0); } else location.hash = h; }, 900); });
 /* Eingaben, die sofort gespeichert werden: kurze Bestätigung */
 document.addEventListener('change', e => { const t = e.target; if (!t || !t.dataset) return; const n0 = TOAST_N;
   let msg = null; if (t.dataset.f === 'weight' && t.value) msg = $t('Gewicht gespeichert'); else if (t.dataset.st && t.dataset.st !== 'mode' && t.dataset.st !== 'lang') msg = $t('Gespeichert'); else if (t.dataset.f === 'complete') msg = t.checked ? $t('Tag als vollständig markiert') : $t('Tag als unvollständig markiert');
