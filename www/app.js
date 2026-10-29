@@ -672,9 +672,9 @@ function viewProgress() {
   const vos = Object.keys(S.health).sort().map(d => S.health[d].vo2).filter(x => x != null).concat(Object.keys(S.body).sort().map(k => num(S.body[k].vo2)).filter(x => x != null)); const v0 = num(st.vo2Start); const v2 = vos.length ? vos[vos.length - 1] : v0;
   const tg = currentTargets(); const rate = weeklyRate(ser); const eta = goalEta();
   const stats = '<div class="stats">' +
-    $t('<div class="stat"><div class="k">Trendgewicht</div><div class="v">') + fmt(cur) + $t(' kg</div><div class="s">Ziel ') + fmt(num(st.targetWeight), 0) + $t(' kg') + (eta ? (eta.done ? $t(' · erreicht') : $t(' · ca. ') + fmtDay(eta.date)) : '') + '</div><div class="meter"><i style="width:' + Math.round(pct * 100) + '%"></i></div></div>' +
+    $t('<div class="stat"><div class="k">Trendgewicht</div><div class="v">') + (last ? fmt(cur) + $t(' kg') : '–') + $t('</div><div class="s">Ziel ') + fmt(num(st.targetWeight), 0) + $t(' kg') + (eta ? (eta.done ? $t(' · erreicht') : $t(' · ca. ') + fmtDay(eta.date)) : '') + '</div><div class="meter"><i style="width:' + Math.round(pct * 100) + '%"></i></div></div>' +
     $t('<div class="stat"><div class="k">Tempo</div><div class="v ') + (rate != null && rate < 0 ? 't-green' : '') + '">' + (rate != null ? (rate <= 0 ? '−' : '+') + fmt(Math.abs(rate), 2) : '–') + $t('</div><div class="s">kg pro Woche · Ziel −') + fmt(num(st.goalRate), 1) + '</div></div>' +
-    $t('<div class="stat"><div class="k">Bedarf</div><div class="v">') + (last ? fmt(last.est, 0) : '–') + $t('</div><div class="s">kcal pro Tag · Ziel ') + fmt(tg.kcal, 0) + '</div></div>' +
+    $t('<div class="stat"><div class="k">Bedarf</div><div class="v">') + (last ? fmt(last.est, 0) : '–') + $t('</div><div class="s">kcal/Tag Verbrauch · Essensziel ') + fmt(tg.kcal, 0) + '</div></div>' +
     $t('<div class="stat"><div class="k">VO₂max</div><div class="v">') + fmt(v2) + '</div><div class="s">' + (v0 != null ? $t('Start ') + fmt(v0) : $t('von der Uhr oder Messwerten')) + '</div></div></div>';
   const wPts = ser.map((s, i) => ({ x: i, d: s.d, trend: s.trend, weight: s.weight }));
   const eSer = ser.map((s, i) => ({ x: i, d: s.d, est: s.est, intake: s.intake }));
