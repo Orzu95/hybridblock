@@ -778,20 +778,20 @@ function lineChart(id, pts, ser, o) {
   ser.forEach(s => pts.forEach(p => { if (p[s.key] != null) vals.push(p[s.key]); })); if (o.ref != null) vals.push(o.ref);
   let lo = Math.min(...vals), hi = Math.max(...vals); if (o.zero) lo = 0; else { const padv = (hi - lo) * 0.1 || Math.abs(hi) * 0.05 || 1; lo -= padv; }
   hi += (hi - lo) * 0.06 || 1; const raw = (hi - lo) / 4, mag = Math.pow(10, Math.floor(Math.log10(raw))), nr = raw / mag; const step = (nr <= 1 ? 1 : nr <= 2 ? 2 : nr <= 2.5 ? 2.5 : nr <= 5 ? 5 : 10) * mag; lo = Math.floor(lo / step) * step; hi = Math.ceil(hi / step) * step; const nt = Math.round((hi - lo) / step);
-  const n = pts.length; const X = i => L + (n === 1 ? 0 : i / (n - 1) * (W - L - R)); const Y = v => T + (1 - (v - lo) / (hi - lo)) * (H - T - B);
+  const n = pts.length; const band = ser.some(x => x.bars); const X = i => band ? L + (i + 0.5) * (W - L - R) / n : L + (n === 1 ? 0 : i / (n - 1) * (W - L - R)); const Y = v => T + (1 - (v - lo) / (hi - lo)) * (H - T - B);
   let g = ''; for (let i = 0; i <= nt; i++) { const v = lo + step * i; g += '<line class="grid" x1="' + L + '" x2="' + (W - R) + '" y1="' + Y(v) + '" y2="' + Y(v) + '"/><text class="ax" x="' + (L - 8) + '" y="' + (Y(v) + 4) + '" text-anchor="end">' + fmt(v, step < 1 ? 1 : 0) + '</text>'; }
   const lab = i => { if (pts[i].lab) return pts[i].lab; const d = pts[i].d; return d ? parseISO(d).getDate() + '.' + (parseISO(d).getMonth() + 1) + '.' : pts[i].wk ? 'W' + pts[i].wk : ''; };
   g += '<text class="ax" x="' + L + '" y="' + (H - 6) + '">' + lab(0) + '</text><text class="ax" x="' + (W - R) + '" y="' + (H - 6) + '" text-anchor="end">' + lab(n - 1) + '</text>';
   if (o.ref != null) g += '<line x1="' + L + '" x2="' + (W - R) + '" y1="' + Y(o.ref) + '" y2="' + Y(o.ref) + '" stroke="var(--graphite)" stroke-dasharray="5 5" stroke-width="1.5" opacity=".55"/><text class="ax" x="' + (W - R) + '" y="' + (Y(o.ref) - 6) + '" text-anchor="end">' + (o.refLabel || '') + ' ' + fmt(o.ref, o.dec) + '</text>';
   ser.forEach(s => {
-    if (s.bars) { const bw = Math.max(3, (W - L - R) / n - 3); pts.forEach((p, i) => { if (p[s.key] == null) return; const y = Y(p[s.key]), y0 = Y(Math.max(lo, 0)); g += '<rect x="' + (X(i) - bw / 2) + '" y="' + Math.min(y, y0) + '" width="' + bw + '" height="' + Math.max(1, Math.abs(y0 - y)) + '" rx="3" fill="' + s.color + '"/>'; }); }
+    if (s.bars) { const bw = Math.max(3, Math.min(28, (W - L - R) / n * 0.72)); pts.forEach((p, i) => { if (p[s.key] == null) return; const y = Y(p[s.key]), y0 = Y(Math.max(lo, 0)); g += '<rect x="' + (X(i) - bw / 2) + '" y="' + Math.min(y, y0) + '" width="' + bw + '" height="' + Math.max(1, Math.abs(y0 - y)) + '" rx="3" fill="' + s.color + '"/>'; }); }
     else if (s.dots) pts.forEach((p, i) => { if (p[s.key] != null) g += '<circle cx="' + X(i) + '" cy="' + Y(p[s.key]) + '" r="4" fill="' + s.color + '" stroke="var(--fog)" stroke-width="2"/>'; });
     else { let dp = '', st = false; pts.forEach((p, i) => { if (p[s.key] == null) return; dp += (st ? 'L' : 'M') + X(i).toFixed(1) + ' ' + Y(p[s.key]).toFixed(1); st = true; });
       g += '<path d="' + dp + '" fill="none" stroke="' + s.color + '" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>';
       if (s.dotsToo) pts.forEach((p, i) => { if (p[s.key] != null) g += '<circle cx="' + X(i) + '" cy="' + Y(p[s.key]) + '" r="3" fill="' + s.color + '"/>'; });
       let li = -1; pts.forEach((p, i) => { if (p[s.key] != null) li = i; }); if (li >= 0) g += '<circle cx="' + X(li) + '" cy="' + Y(pts[li][s.key]) + '" r="5" fill="' + s.color + '" stroke="var(--fog)" stroke-width="2"/>'; } });
   g += '<line id="' + id + '-x" x1="0" x2="0" y1="' + T + '" y2="' + (H - B) + '" stroke="var(--graphite)" stroke-width="1" visibility="hidden"/>';
-  CHARTS[id] = { pts, ser, X, L, R, W, o };
+  CHARTS[id] = { pts, ser, X, L, R, W, o, band };
   const legend = o.noLegend ? '' : '<div class="clegend">' + ser.map(s => '<span><i class="' + (s.dots ? 'dot' : '') + '" style="background:' + s.color + '"></i>' + s.label + '</span>').join('') + '</div>';
   return '<div class="chart" data-chart="' + id + '"><svg viewBox="0 0 ' + W + ' ' + H + $t('" role="img" aria-label="Diagramm">') + g + '<rect x="' + L + '" y="0" width="' + (W - L - R) + '" height="' + H + '" fill="transparent"/></svg><div class="tip"></div></div>' + legend; }
 function chartHover(e) { const box = e.target.closest('.chart'); if (!box) return; const c = CHARTS[box.dataset.chart]; if (!c) return; const svg = box.querySelector('svg'); const r = svg.getBoundingClientRect();

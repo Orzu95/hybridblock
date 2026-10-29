@@ -17,6 +17,8 @@ function $t(s) { if (LANG === 'de' || typeof s !== 'string' || !s) return s; con
    (z. B. „Dein Ziel“ → „Твоя цель“, nicht „Твой“ + „Цель“). Ein „|“ in der Übersetzung legt die Trennstelle fest, sonst nach dem ersten Wort. */
 function $tsplit(v) { const i = v.indexOf('|'); if (i >= 0) return [v.slice(0, i).trim(), v.slice(i + 1).trim()]; const j = v.indexOf(' '); return j < 0 ? [v, ''] : [v.slice(0, j), v.slice(j + 1)]; }
 function $tp(a, b) { if (LANG === 'de' || !b) return [$t(a), b ? $t(b) : b]; const D = I18N[LANG] || {}; const v = D[(a + ' ' + b).replace(/\s+/g, ' ').trim()]; return v != null ? $tsplit(v) : [$t(a), $t(b)]; }
+/* Ganze Sätze mit Platzhaltern übersetzen: $tf('Du hast {n} Einheiten', { n: 3 }) */
+function $tf(s, v) { let o = $t(s); for (const k in v) o = o.split('{' + k + '}').join(v[k]); return o; }
 function setLang(l) { if (!LANGS.includes(l) || l === LANG) return; try { localStorage.setItem('hb_lang', l); } catch (e) {}
   if (typeof S !== 'undefined' && S && S.settings && !(typeof VIEW !== 'undefined' && VIEW)) { S.settings.lang = l; persist(); }
   if (typeof AUTH !== 'undefined' && AUTH && typeof api === 'function') api('/rest/v1/profiles?id=eq.' + AUTH.uid, { method: 'PATCH', body: JSON.stringify({ lang: l }) }).catch(() => {}).finally(() => location.reload()); else location.reload(); }
@@ -29,7 +31,7 @@ function translateStatic() { if (LANG === 'de') return;
    Hier wird nach dem Rendern die richtige Form gesetzt: 1 день, 2 дня, 5 дней, 21 день, 1,5 дня. Nach Präpositionen mit Genitiv bleibt die Form. */
 const RU_PL = [['упражнение', 'упражнения', 'упражнений'], ['день', 'дня', 'дней'], ['запись', 'записи', 'записей'], ['минута', 'минуты', 'минут'], ['секунда', 'секунды', 'секунд'], ['час', 'часа', 'часов'], ['ночь', 'ночи', 'ночей'], ['год', 'года', 'лет'], ['неделя', 'недели', 'недель'],
   ['тренировка', 'тренировки', 'тренировок'], ['новая тренировка', 'новых тренировки', 'новых тренировок'], ['взвешивание', 'взвешивания', 'взвешиваний'], ['утверждение', 'утверждения', 'утверждений'], ['продукт', 'продукта', 'продуктов'], ['подход', 'подхода', 'подходов'], ['тяжёлый подход', 'тяжёлых подхода', 'тяжёлых подходов'],
-  ['атлет', 'атлета', 'атлетов'], ['атлет ждёт', 'атлета ждут', 'атлетов ждут'], ['повторение', 'повторения', 'повторений'], ['спортсмен', 'спортсмена', 'спортсменов'], ['приглашение', 'приглашения', 'приглашений'], ['источник', 'источника', 'источников']];
+  ['атлет', 'атлета', 'атлетов'], ['атлет ждёт', 'атлета ждут', 'атлетов ждут'], ['повторение', 'повторения', 'повторений'], ['спортсмен', 'спортсмена', 'спортсменов'], ['приглашение', 'приглашения', 'приглашений'], ['источник', 'источника', 'источников'], ['раз', 'раза', 'раз']];
 const RU_PL_MAP = {}; RU_PL.forEach(f => { RU_PL_MAP[f[1]] = f; RU_PL_MAP[f[2]] = f; });
 const RU_PL_RE = new RegExp('(^|[^\\d.,])(\\d+(?:[.,]\\d+)?)([ \\u00a0])(' + Object.keys(RU_PL_MAP).sort((a, b) => b.length - a.length).join('|') + ')(?![а-яё])', 'g');
 const RU_GEN = /(?:^|[\s(«„])(из|до|от|с|со|около|больше|меньше|более|менее|после|свыше|кроме|для|без|у|не менее|не более|не меньше|не больше)\s*$/i;
