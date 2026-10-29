@@ -255,7 +255,8 @@ function series() {
   return out; }
 /* Fett nie unter 20 % der Kalorien (ERN-109: darunter sinkt bei Männern das Testosteron; Empfehlung 20–35 %) */
 const fatFloor = kcal => Math.ceil(0.2 * kcal / 9 / 5) * 5; const fatG = (kcal, f) => Math.max(f, fatFloor(kcal));
-function currentTargets() { const cs = S.checkins.filter(c => c.date <= today()).sort((a, b) => a.date < b.date ? -1 : 1); if (cs.length) return cs[cs.length - 1];
+function currentTargets() { const cs = S.checkins.filter(c => c.date <= today()).sort((a, b) => a.date < b.date ? -1 : 1);
+  if (cs.length) { const l = cs[cs.length - 1]; const f = fatG(l.kcal, num(l.f) || 0); return f === l.f ? l : Object.assign({}, l, { f, c: Math.max(0, Math.round((l.kcal - 4 * l.p - 9 * f) / 4)) }); }
   const kcal = num(S.settings.startKcal) || 2400, p = num(S.settings.protein) || 200, f = fatG(kcal, num(S.settings.fat) || 70); return { date: null, kcal, p, f, c: Math.round((kcal - 4 * p - 9 * f) / 4), tdee: null }; }
 function checkinDue() { const ser = series(); if (ser.length < 7) return false; const last = S.checkins[S.checkins.length - 1]; return !last || daysBetween(last.date, today()) >= 7; }
 function weeklyRate(ser) { if (ser.length < 8) return null; return ser[ser.length - 1].trend - ser[ser.length - 8].trend; }
