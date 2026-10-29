@@ -274,10 +274,10 @@ function render(scrollTop) {
   if (!S.meta.onboarded && route.name !== 'start' && route.name !== 'datenschutz' && !VIEW) { location.hash = '#start'; return; }
   document.body.classList.toggle('onb-mode', route.name === 'start');
   if (!VIEW) maybeAdvance();
-  const tabName = route.name === 'frei' ? 'training' : ['mehr', 'admin', 'plan', 'start', 'datenschutz', 'ops'].includes(route.name) ? '' : ['library', 'workout', 'track'].includes(route.name) ? 'training' : route.name;
+  const tabName = route.name === 'frei' ? 'training' : ['mehr', 'admin', 'plan', 'start', 'datenschutz', 'ops', 'wissen'].includes(route.name) ? '' : ['library', 'workout', 'track'].includes(route.name) ? 'training' : route.name;
   document.querySelectorAll('#tabbar a').forEach(a => a.classList.toggle('on', a.dataset.r === tabName));
   const v = $('#view'); const y = window.scrollY;
-  const map = { training: () => route.arg ? viewSession(route.arg) : viewTraining(), frei: () => viewFree(route.arg), essen: viewEssen, verlauf: viewProgress, mehr: viewMehr, start: () => viewStart(route.arg), library: () => route.arg ? viewLibPlan(route.arg) : viewLibrary(), workout: () => viewWorkout(route.arg), admin: () => viewAdmin(route.arg), plan: () => viewPlan(route.arg), track: () => viewTrack(), datenschutz: () => viewPrivacy(), ops: () => typeof viewOps === 'function' ? viewOps() : '' };
+  const map = { training: () => route.arg ? viewSession(route.arg) : viewTraining(), frei: () => viewFree(route.arg), essen: viewEssen, verlauf: viewProgress, mehr: viewMehr, start: () => viewStart(route.arg), library: () => route.arg ? viewLibPlan(route.arg) : viewLibrary(), workout: () => viewWorkout(route.arg), admin: () => viewAdmin(route.arg), plan: () => viewPlan(route.arg), track: () => viewTrack(), datenschutz: () => viewPrivacy(), ops: () => typeof viewOps === 'function' ? viewOps() : '', wissen: () => typeof viewWissen === 'function' ? viewWissen(route.arg) : '' };
   v.innerHTML = viewBar() + (map[route.name] || viewHeute)();
   if (route.name === 'training' && route.arg) keepAwake(); else if ($('#timer').hidden && wakeLock) { try { wakeLock.release(); } catch (e) {} wakeLock = null; }
   if (route.name === 'verlauf') refreshPhotoCard();

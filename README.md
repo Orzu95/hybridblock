@@ -84,3 +84,10 @@ npx cap open android   # in Android Studio auf Run tippen
 - **Timer**: Im Wechsel springt die App nach jedem Satz zur nächsten Übung, die Pause (längste Pause der Gruppe) startet erst nach der Runde. Beim Füllsatz läuft die Pause der Hauptübung weiter.
 - **Plan-Editor, geplante Trainings, freies Training**: zwischen zwei Übungen „+ als Supersatz verbinden“, mehrfach verbinden ergibt Triple-Set oder Riesensatz, Modus umschaltbar.
 - Daten: Gruppen-Kennung `sup` und Modus `gm` (`ss`, `fill`, `fa` = Anker) am Plan-Eintrag bzw. als Override; heutige Änderungen in `sess.grp` und `sess.extra`; im freien Training `grp`/`gm` je Übung.
+
+## Wissen (geprüfte Studienlage)
+
+- Unter Einstellungen → Wissen: 321 Aussagen aus 19 Themenblöcken (Training, Ernährung, Steuerung und Erholung, Zielgruppen), jede mit Evidenzgrad A–D, Zahlen, Einschränkungen und Quelle mit Link.
+- Suche über Aussage, Unterthema, Schlagworte und Quelle; Filter nach Evidenzgrad.
+- „Warum?“ im Wochen-Check-in, der Supersatz-Dialog, die Zyklus-Hinweise und die SpoWi-Kennzahlen verlinken auf die passenden Einträge. In der SpoWi-Ansicht zeigt jeder Eintrag zusätzlich die Praxisregel, Studientyp und Effektgröße.
+- Daten: `www/evidence.json` (aus `docs/evidenz/wissensbasis.csv` erzeugt). Alle 265 Quellen wurden gegen Crossref und PubMed geprüft, die Korrekturen stehen in `docs/evidenz/KORREKTUREN.md`. Inhalte bisher nur auf Deutsch.
