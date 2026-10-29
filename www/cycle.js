@@ -28,7 +28,7 @@ function amenorrhea() { if (!cycOn() || cyc().status !== 'normal') return null; 
 /* ---------- Einbindung in Bereitschaft, Session-Hinweise, Ernährung ---------- */
 function cycleComp(d) { if (!cycOn()) return []; const e = cycDay(d); if (!(e.flow > 0 || e.cramps > 0)) return [];
   const v = clamp(100 - (e.cramps || 0) * 35 - ((e.flow || 0) >= 3 ? 15 : 0), 0, 100);
-  return [{ k: $t('Zyklus'), v, w: .25, txt: [e.flow > 0 ? $t('Periode ') + FLOW_OPTS()[e.flow][1] : '', e.cramps > 0 ? $t('Krämpfe ') + CRAMP_OPTS()[e.cramps][1] : ''].filter(Boolean).join(', ') }]; }
+  return [{ k: $t('Zyklus'), v, w: .25, txt: [e.flow > 0 ? $t('Periode: ') + FLOW_OPTS()[e.flow][1] : '', e.cramps > 0 ? $t('Krämpfe: ') + CRAMP_OPTS()[e.cramps][1] : ''].filter(Boolean).join(', ') }]; }
 const _readinessBase = readiness;
 readiness = function (w, k) { const r = _readinessBase(w, k); const s = peekSess(w, k); const d = (s && s.date) || today(); if (cycleBad(d)) { r.rpeShift = -1; r.cycleBad = true; } return r; };
 function cycleFlags(w, k) { const s = peekSess(w, k); const d = (s && s.date) || today(); if (!cycleBad(d)) return '';

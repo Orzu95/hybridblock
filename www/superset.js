@@ -12,7 +12,7 @@
 
 const ssNewId = () => 'G' + Math.random().toString(36).slice(2, 6).toUpperCase();
 const ssName = (n, mode) => mode === 'fill' ? $t('Füllsatz') : n === 2 ? $t('Supersatz') : n === 3 ? $t('Triple-Set') : $t('Riesensatz');
-const ssRestTxt = sec => sec >= 60 ? fmt(sec / 60) + $t(' min') : sec + ' s';
+const ssRestTxt = sec => sec >= 60 ? fmt(sec / 60) + $t(' min') : sec + $t(' s');
 const ssExName = id => (LIB[id] || { name: id }).name;
 
 /* Gruppen bestimmen: liefert pro Index { gid, letter, pos, n, mode, label, names, rest } oder null */
@@ -26,7 +26,7 @@ function ssInfo(items, getG, getM, getRest) { const by = {}, order = [];
     mem.forEach((j, p) => { out[j] = { gid: g, letter, pos: p + 1, n: mem.length, mode: fill ? 'fill' : 'ss', label: letter + (p + 1), names: mem.map(q => ssExName(items[q].ex)), rest, idx: mem }; }); });
   return out; }
 function ssHeadText(g) { return g.mode === 'fill' ? '<b>' + $t('Füllsatz') + ' ' + g.letter + '</b> · ' + esc(g.names.slice(1).join(', ')) + $t(' in den Pausen von ') + esc(g.names[0])
-  : '<b>' + ssName(g.n, 'ss') + ' ' + g.letter + '</b> · ' + $t('im Wechsel ohne Pause, danach ') + ssRestTxt(g.rest) + $t(' Pause'); }
+  : '<b>' + ssName(g.n, 'ss') + ' ' + g.letter + '</b> · ' + $t('im Wechsel ohne Pause, Pause danach: ') + ssRestTxt(g.rest); }
 function ssHeadHTML(g) { return '<p class="ss-ph">' + ssHeadText(g) + '</p>'; }
 
 /* Plan-Einheit: heutige Zusatzübungen und Gruppen einrechnen, Gruppen zusammenrücken */
