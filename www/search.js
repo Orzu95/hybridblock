@@ -7,10 +7,11 @@ const SR_ACTIONS = () => [
   { g: $t('Aktion'), t: $t('Essen eintragen'), k: 'essen eintragen lebensmittel food log еда продукт', go: () => { closeSheet(); ui.day = today(); addSheet(); } },
   { g: $t('Aktion'), t: $t('Gewicht eintragen'), k: 'gewicht waage weight вес', go: () => { closeSheet(); location.hash = '#heute'; setTimeout(() => { const i = document.getElementById('wToday'); if (i) i.focus(); }, 200); } },
   { g: $t('Aktion'), t: $t('Ansicht wechseln (Basis, Plus, Labor)'), k: 'ansicht stufe spowi labor basis plus view level вид', go: () => lvSheet() },
-  { g: $t('Aktion'), t: $t('Lernkarten'), k: 'lernkarten lernen flashcards карточки', go: () => { LC.id = null; lcSheet(); } },
+  { g: $t('Aktion'), t: $t('Lernkarten'), k: 'lernkarten lernen flashcards карточки', go: () => { LC.id = null; LC.cat = null; LC.queue = null; LC.quiz = false; lcSheet(); } },
+  { g: $t('Aktion'), t: $t('Quiz starten'), k: 'quiz test fragen wissen викторина тест', go: () => { closeSheet(); qzStart(); } },
   { g: $t('Aktion'), t: $t('Sprache ändern'), k: 'sprache language english русский deutsch язык', go: () => srGoSetting($t('Sprache')) } ];
 const SR_PAGES = () => [['#heute', $t('Heute'), 'start home сегодня'], ['#training', $t('Training'), 'plan woche тренировки'], ['#essen', $t('Essen'), 'ernährung kalorien makros food еда'], ['#verlauf', $t('Verlauf'), 'fortschritt progress gewicht история'],
-  ['#mehr', $t('Einstellungen'), 'settings настройки'], ['#wissen', $t('Wissen'), 'studien evidenz knowledge знания'], ['#library', $t('Trainingspläne'), 'bibliothek pläne library планы'], ['#datenschutz', $t('Datenschutz'), 'privacy конфиденциальность']].map(p => ({ g: $t('Seite'), t: p[1], k: p[2], go: () => { closeSheet(); location.hash = p[0]; } }));
+  ['#mehr', $t('Einstellungen'), 'settings настройки'], ['#wissen', $t('Wissen'), 'studien evidenz knowledge знания'], ['#lernen', $t('Quiz und Lernen'), 'lernen quiz lernkarten learn обучение'], ['#library', $t('Trainingspläne'), 'bibliothek pläne library планы'], ['#datenschutz', $t('Datenschutz'), 'privacy конфиденциальность']].map(p => ({ g: $t('Seite'), t: p[1], k: p[2], go: () => { closeSheet(); location.hash = p[0]; } }));
 function srGoSetting(h2) { closeSheet(); const go = () => { const el = [...document.querySelectorAll('#view .card h2')].find(x => x.textContent.trim() === h2); if (el) { const c = el.closest('.card'); c.scrollIntoView({ behavior: 'smooth', block: 'start' }); c.style.transition = 'box-shadow .3s'; c.style.boxShadow = '0 0 0 3px var(--ember)'; setTimeout(() => { c.style.boxShadow = ''; }, 1600); } };
   if (route.name === 'mehr') go(); else { location.hash = '#mehr'; setTimeout(go, 350); } }
 function srIndex() { const out = [...SR_ACTIONS(), ...SR_PAGES()];
@@ -18,7 +19,7 @@ function srIndex() { const out = [...SR_ACTIONS(), ...SR_PAGES()];
   if (typeof GLOSS !== 'undefined') GLOSS.forEach(x => out.push({ g: $t('Begriff'), t: glT(x.t), k: (x.p[LANG] || '') + ' ' + x.p.de + ' ' + glT(x.d), go: () => glSheet(x.id) }));
   Object.keys(LIB).forEach(id => { const e = LIB[id]; if (!e || !e.name) return; out.push({ g: $t('Übung'), t: e.name, k: id + ' ' + (e.de || ''), go: () => exInfoSheet(id) }); });
   if (typeof LIBRARY !== 'undefined') Object.keys(LIBRARY).forEach(id => { const p = LIBRARY[id]; out.push({ g: $t('Plan'), t: $t(p.name), k: $t(p.desc || ''), go: () => { closeSheet(); location.hash = '#library/' + id; } }); });
-  if (EVID) EVID.items.forEach(x => out.push({ g: $t('Wissen'), t: x.u, k: x.a + ' ' + x.k.join(' ') + ' ' + x.id, sub: x.a, go: () => evSheet([x.id]) }));
+  if (EVID) EVID.items.forEach(x => out.push({ g: $t('Wissen'), t: x.sl ? x.sl.h : x.u, k: x.u + ' ' + x.a + ' ' + x.k.join(' ') + ' ' + x.id, sub: x.sl ? x.sl.fd : x.a, go: () => evSheet([x.id]) }));
   return out; }
 const srNorm = s => String(s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/ß/g, 'ss');
 function srFind(q) { const words = srNorm(q).split(/\s+/).filter(Boolean); if (!words.length) return []; const all = srIndex(); const res = [];
