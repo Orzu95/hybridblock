@@ -91,3 +91,13 @@ npx cap open android   # in Android Studio auf Run tippen
 - Suche über Aussage, Unterthema, Schlagworte und Quelle; Filter nach Evidenzgrad.
 - „Warum?“ im Wochen-Check-in, der Supersatz-Dialog, die Zyklus-Hinweise und die SpoWi-Kennzahlen verlinken auf die passenden Einträge. In der SpoWi-Ansicht zeigt jeder Eintrag zusätzlich die Praxisregel, Studientyp und Effektgröße.
 - Daten: `www/evidence.json` (aus `docs/evidenz/wissensbasis.csv` erzeugt). Alle 265 Quellen wurden gegen Crossref und PubMed geprüft, die Korrekturen stehen in `docs/evidenz/KORREKTUREN.md`. Inhalte bisher nur auf Deutsch.
+
+## Einführung, Fakt des Tages, Lernkarten, Geräte-Erklärung
+
+- Beim ersten Start ein kurzer Rundgang in 8 Schritten (überspringbar, unter Einstellungen → Einführung wiederholbar).
+- SpoWi-Fakt des Tages aus der Wissensbasis (Grad A/B, passend zum Ziel): als Karte auf „Heute“, als Pop-up einmal am Tag oder aus.
+- Lernkarten unter Wissen: Thema sehen, umdrehen, „Wusste ich“ / „Neu für mich“ (Leitner-System mit 5 Stufen).
+- Mein Studio: „?“ neben jedem Gerät öffnet eine Skizze (eigene Zeichnungen), Erklärung, andere Namen und Übungen damit.
+- Wasser: eigene Menge in ml oder Tagesmenge setzen.
+- Fett: Start-Ziel 25 % der Kalorien oder 0,8 g/kg (der höhere Wert), nie unter 20 % der Kalorien (ERN-109).
+

@@ -47,7 +47,7 @@ async function pushPlan(uid, plan) { const now = new Date().toISOString();
 function setPlan(plan, fromCoach) { S.plan = JSON.parse(JSON.stringify(plan)); S.plan.sessions.forEach(x => { const cur = S.settings.dayMap[x.k]; if (cur === undefined || (fromCoach && !S.meta.daysSet)) S.settings.dayMap[x.k] = plan.dayMap && plan.dayMap[x.k] != null ? plan.dayMap[x.k] : (cur ?? ''); });
   const tg = plan.targets; if (tg && tg.at && tg.at !== S.meta.targetsAt) { S.meta.targetsAt = tg.at; const st = S.settings;
     ['protein', 'fat', 'goalRate', 'targetWeight'].forEach(k => { if (num(tg[k]) != null) st[k] = String(tg[k]); });
-    if (num(tg.kcal) != null) { st.startKcal = String(tg.kcal); const p = num(st.protein) || 200, f = num(st.fat) || 70; const c = { date: today(), kcal: num(tg.kcal), p, f, c: Math.max(0, Math.round((num(tg.kcal) - 4 * p - 9 * f) / 4)), tdee: null, coach: true };
+    if (num(tg.kcal) != null) { st.startKcal = String(tg.kcal); const p = num(st.protein) || 200, f = fatG(num(tg.kcal), num(st.fat) || 70); const c = { date: today(), kcal: num(tg.kcal), p, f, c: Math.max(0, Math.round((num(tg.kcal) - 4 * p - 9 * f) / 4)), tdee: null, coach: true };
       S.checkins = S.checkins.filter(x => x.date !== c.date).concat([c]); } }
   applyPlan(); }
 async function pullAll(opts) { opts = opts || {}; if (!AUTH || VIEW) return { changed: false }; let changed = false;
@@ -90,7 +90,7 @@ const r50 = n => Math.round(n / 50) * 50, r5 = n => Math.round(n / 5) * 5;
 function onbCalc(d) { const wt = num(d.weight), h = num(d.height), age = num(d.age), tw = num(d.target) || wt; if (!wt || !h || !age) return null;
   const bmr = 10 * wt + 6.25 * h - 5 * age + (d.sex === 'w' ? -161 : 5); const tdee = r50(bmr * (num(d.act) || 1.45));
   const rate = tw < wt - 0.5 ? Math.min(1, Math.round(wt * 0.006 * 10) / 10) : 0; const floor = d.sex === 'w' ? 1400 : 1800;
-  const kcal = Math.max(floor, r50(tdee - rate * 1100)); const base = Math.min(wt, tw); const protein = r5(2 * base), fat = r5(0.7 * base);
+  const kcal = Math.max(floor, r50(tdee - rate * 1100)); const base = Math.min(wt, tw); const protein = r5(2 * base), fat = r5(Math.max(0.8 * base, 0.25 * kcal / 9)); /* 25 % der Kalorien oder 0,8 g/kg, je nachdem was höher ist */
   return { tdee, rate, floor, kcal, protein, fat, hfmax: Math.round(208 - 0.7 * age) }; }
 function viewStart(arg) { if (arg && ONB.step === 'welcome' && ['code', 'login', 'profile', 'forgot'].includes(arg)) ONB.step = arg;
   const lang = '<div class="seg langseg">' + [['de', $t('Deutsch')], ['en', $t('English')], ['ru', $t('Русский')]].map(l => '<button class="' + (LANG === l[0] ? 'on' : '') + '" data-act="setLang" data-v="' + l[0] + '" type="button">' + l[1] + '</button>').join('') + '</div>';
