@@ -282,10 +282,10 @@ function render(scrollTop) { prioSync();
   if (!S.meta.onboarded && route.name !== 'start' && route.name !== 'datenschutz' && !VIEW) { location.hash = '#start'; return; }
   document.body.classList.toggle('onb-mode', route.name === 'start');
   if (!VIEW) maybeAdvance();
-  const tabName = route.name === 'frei' ? 'training' : ['mehr', 'admin', 'plan', 'start', 'datenschutz', 'ops', 'wissen'].includes(route.name) ? '' : ['library', 'workout', 'track'].includes(route.name) ? 'training' : route.name;
+  const tabName = route.name === 'frei' ? 'training' : ['mehr', 'admin', 'plan', 'start', 'datenschutz', 'ops', 'wissen'].includes(route.name) ? '' : ['library', 'workout', 'track', 'planend'].includes(route.name) ? 'training' : route.name;
   document.querySelectorAll('#tabbar a').forEach(a => a.classList.toggle('on', a.dataset.r === tabName));
   const v = $('#view'); const y = window.scrollY;
-  const map = { training: () => route.arg ? viewSession(route.arg) : viewTraining(), frei: () => viewFree(route.arg), essen: viewEssen, verlauf: viewProgress, mehr: viewMehr, start: () => viewStart(route.arg), library: () => route.arg ? viewLibPlan(route.arg) : viewLibrary(), workout: () => viewWorkout(route.arg), admin: () => viewAdmin(route.arg), plan: () => viewPlan(route.arg), track: () => viewTrack(), datenschutz: () => viewPrivacy(), ops: () => typeof viewOps === 'function' ? viewOps() : '', wissen: () => typeof viewWissen === 'function' ? viewWissen(route.arg) : '', lernen: () => typeof viewLernen === 'function' ? viewLernen(route.arg) : '' };
+  const map = { planend: () => viewPlanEnd(), training: () => route.arg ? viewSession(route.arg) : viewTraining(), frei: () => viewFree(route.arg), essen: viewEssen, verlauf: viewProgress, mehr: viewMehr, start: () => viewStart(route.arg), library: () => route.arg ? viewLibPlan(route.arg) : viewLibrary(), workout: () => viewWorkout(route.arg), admin: () => viewAdmin(route.arg), plan: () => viewPlan(route.arg), track: () => viewTrack(), datenschutz: () => viewPrivacy(), ops: () => typeof viewOps === 'function' ? viewOps() : '', wissen: () => typeof viewWissen === 'function' ? viewWissen(route.arg) : '', lernen: () => typeof viewLernen === 'function' ? viewLernen(route.arg) : '' };
   v.innerHTML = viewBar() + (map[route.name] || viewHeute)();
   if (route.name === 'training' && route.arg) keepAwake(); else if ($('#timer').hidden && wakeLock) { try { wakeLock.release(); } catch (e) {} wakeLock = null; }
   if (route.name === 'verlauf') refreshPhotoCard();
@@ -358,7 +358,7 @@ function viewTraining() {
   const frees = S.activities.filter(a => a.week === w && a.week);
   const warn = scheduleWarnings();
   const vol = weekVolume(w), pv = plannedVolume(w);
-  const finishBtn = w === cw && !weekDone(w) && cw < NW() ? (ui.confirmFinish ? $t('<div class="row"><span class="grow small">Offene Einheiten werden als übersprungen markiert.</span><button class="btn sm" data-act="finishNo" type="button">Abbrechen</button><button class="btn dark sm" data-act="finishYes" type="button">Ja, abschließen</button></div>') : $t('<button class="btn block" data-act="finish" type="button">Woche ') + w + $t(' abschließen und weiter</button>')) : '';
+  const finishBtn = w === cw && !weekDone(w) && cw < NW() ? (ui.confirmFinish ? $t('<div class="row"><span class="grow small">Offene Einheiten werden als übersprungen markiert.</span><button class="btn sm" data-act="finishNo" type="button">Abbrechen</button><button class="btn dark sm" data-act="finishYes" type="button">Ja, abschließen</button></div>') : $t('<button class="btn block" data-act="finish" type="button">Woche ') + w + $t(' abschließen und weiter</button>')) : w === cw && cw === NW() ? (weekDone(w) ? note('green', $t('Letzte Woche geschafft. Zeit für die Bilanz und deinen nächsten Plan.'), $t('<a class="btn sm dark" href="#planend">Abschluss</a>')) : $t('<a class="btn block" href="#planend">Plan abschließen</a>')) : '';
   return pageTop($t('Woche ') + w, PH_LABEL[phase(w)], n + $t(' von ') + ORDER.length + $t(' Einheiten erledigt') + (w !== cw ? $t(' · aktuell Woche ') + cw : '')) +
   '<div class="stack"><div class="weeks">' + weeks + '</div>' +
   $t('<div class="legend"><span><i class="ph-b1"></i>Einstieg</span><span><i class="ph-b2"></i>Aufbau</span><span><i class="ph-b3"></i>Intensiv</span><span><i class="ph-dl"></i>Deload</span><span><i class="ph-test"></i>Test</span></div>') +
@@ -1140,27 +1140,31 @@ function saveMealTemplate(d, meal) { const es = ((S.days[d] || {}).entries || []
 
 /* ======================= ÜBUNGSANLEITUNGEN (RepDB) ======================= */
 const REPDB_BASE = 'https://exercise-dataset.com/';
-const REPDB_L = LANG === 'en' ? 'en' : 'de', REPDB_KEY = 'hb_repdb_v2_' + REPDB_L; try { localStorage.removeItem('hb_repdb_v1'); } catch (e) {}
-let REPDB_CACHE = null; try { REPDB_CACHE = JSON.parse(localStorage.getItem(REPDB_KEY) || 'null'); } catch (e) {}
+const REPDB_L = LANG === 'en' ? 'en' : 'de', REPDB_KEY = 'hb_repdb_v3_' + REPDB_L; try { localStorage.removeItem('hb_repdb_v1'); localStorage.removeItem('hb_repdb_v2_' + REPDB_L); } catch (e) {}
+const REPDB_G = () => (typeof REPDB_GUESS !== 'undefined' ? REPDB_GUESS : {});
+function repdbResolve(sub) { const m = sub.__map || {}; Object.keys(REPDB_G()).forEach(id => { if (REPDB[id]) return; const g = m[id] || REPDB_G()[id].find(s => sub[s]); if (g) { REPDB[id] = g; m[id] = g; } }); sub.__map = m; return sub; }
+let REPDB_CACHE = null; try { REPDB_CACHE = JSON.parse(localStorage.getItem(REPDB_KEY) || 'null'); if (REPDB_CACHE) repdbResolve(REPDB_CACHE); } catch (e) {}
 let repdbLoading = null;
 function loadRepdb() { if (REPDB_CACHE) return Promise.resolve(REPDB_CACHE); if (repdbLoading) return repdbLoading;
-  repdbLoading = fetchJson(REPDB_BASE + $t('exercises.json'), 25000).then(j => { const want = new Set(Object.values(REPDB)); const sub = {};
+  repdbLoading = fetchJson(REPDB_BASE + $t('exercises.json'), 25000).then(j => { const want = new Set(Object.values(REPDB).concat(...Object.values(REPDB_G()))); const sub = {};
     (j.exercises || []).forEach(x => { if (want.has(x.id)) sub[x.id] = { name: x['name_' + REPDB_L], desc: x['description_' + REPDB_L], steps: x['instructions_' + REPDB_L] || [], tips: x['tips_' + REPDB_L] || [], prim: x.primary_muscles || [], sec: x.secondary_muscles || [], img: (x.images && x.images.flat) || {} }; });
-    REPDB_CACHE = sub; try { localStorage.setItem(REPDB_KEY, JSON.stringify(sub)); } catch (e) {} repdbLoading = null; return sub; }).catch(e => { repdbLoading = null; throw e; });
+    REPDB_CACHE = repdbResolve(sub); try { localStorage.setItem(REPDB_KEY, JSON.stringify(sub)); } catch (e) {} repdbLoading = null; return sub; }).catch(e => { repdbLoading = null; throw e; });
   return repdbLoading; }
 const RM_DE = { quadriceps: $t('Quadrizeps'), gluteus_maximus: $t('Großer Gesäßmuskel'), gluteus_medius: $t('Mittlerer Gesäßmuskel'), hamstrings: $t('Beinbeuger'), erector_spinae: $t('Rückenstrecker'), calves: $t('Waden'), gastrocnemius: $t('Zwillingswadenmuskel'), soleus: $t('Schollenmuskel'), adductors: $t('Adduktoren'), abductors: $t('Abduktoren'), hip_flexors: $t('Hüftbeuger'), pectoralis_major: $t('Großer Brustmuskel'), upper_chest: $t('Obere Brust'), chest: $t('Brust'), anterior_deltoid: $t('Vordere Schulter'), lateral_deltoid: $t('Seitliche Schulter'), posterior_deltoid: $t('Hintere Schulter'), deltoids: $t('Schultern'), triceps: $t('Trizeps'), biceps: $t('Bizeps'), brachialis: $t('Oberarmmuskel'), brachioradialis: $t('Oberarm-Speichenmuskel'), forearms: $t('Unterarme'), latissimus_dorsi: $t('Latissimus'), lats: $t('Latissimus'), rhomboids: $t('Rautenmuskeln'), trapezius: $t('Trapezmuskel'), upper_back: $t('Oberer Rücken'), lower_back: $t('Unterer Rücken'), rectus_abdominis: $t('Gerader Bauchmuskel'), abs: $t('Bauch'), obliques: $t('Schräge Bauchmuskeln'), core: $t('Rumpf'), serratus_anterior: $t('Sägemuskel'), rotator_cuff: $t('Rotatorenmanschette'), teres_major: $t('Großer Rundmuskel') };
 const rmName = k => RM_DE[k] || k.replace(/_/g, ' ');
-function repdbImg(rid) { const r = REPDB_CACHE && REPDB_CACHE[rid]; if (!r) return null; const i = r.img; return { a: i.start || i.main, b: i.peak || null }; }
-function exThumb(exId) { const rid = REPDB[exId]; const im = rid && repdbImg(rid); if (!im || !im.a) return ''; return '<button class="thumb" type="button" data-act="exInfo" data-ex="' + exId + $t('" aria-label="Anleitung"><img src="') + REPDB_BASE + im.a + '" alt="" loading="lazy" decoding="async"></button>'; }
-function demoHTML(im) { return '<div class="demo' + (im.b ? $t(' two') : '') + '"><img src="' + REPDB_BASE + im.a + $t('" alt="Startposition">') + (im.b ? '<img class="b" src="' + REPDB_BASE + im.b + $t('" alt="Endposition">') : '') + '</div>'; }
-async function exInfoSheet(exId) { const ex = LIB[exId]; const rid = REPDB[exId]; const mus = Object.keys(ex.muscles).filter(m => ex.muscles[m] >= 1).map(m => MUSCLES[m]);
+const EX_OWN = typeof EX_IMG7 !== 'undefined' ? EX_IMG7 : [];
+const ownImg = exId => EX_OWN.includes(exId) ? { a: 'ex/' + exId + '-a.webp', b: 'ex/' + exId + '-b.webp' } : null;
+function repdbImg(rid) { const r = REPDB_CACHE && REPDB_CACHE[rid]; if (!r) return null; const i = r.img; const a = i.start || i.main; return { a: a && REPDB_BASE + a, b: i.peak ? REPDB_BASE + i.peak : null }; }
+function exThumb(exId) { const rid = REPDB[exId]; const im = ownImg(exId) || (rid && repdbImg(rid)); if (!im || !im.a) return ''; return '<button class="thumb" type="button" data-act="exInfo" data-ex="' + exId + $t('" aria-label="Anleitung"><img src="') + im.a + '" alt="" loading="lazy" decoding="async"></button>'; }
+function demoHTML(im) { return '<div class="demo' + (im.b ? $t(' two') : '') + '"><img src="' + im.a + $t('" alt="Startposition">') + (im.b ? '<img class="b" src="' + im.b + $t('" alt="Endposition">') : '') + '</div>'; }
+async function exInfoSheet(exId) { const ex = LIB[exId]; let rid = REPDB[exId]; if (!rid && REPDB_G()[exId] && !REPDB_CACHE) { try { await loadRepdb(); rid = REPDB[exId]; } catch (e) {} } else if (!rid && REPDB_CACHE) rid = REPDB[exId]; const own = ownImg(exId); const mus = Object.keys(ex.muscles).filter(m => ex.muscles[m] >= 1).map(m => MUSCLES[m]);
   const head = sheetHead(esc(ex.name)) + '<div class="row" style="margin-top:8px">' + mus.map(m => '<span class="tag on-white" style="background:var(--fog)">' + m + '</span>').join('') + '<button class="btn sm" data-act="exHist" data-ex="' + exId + '" type="button">' + ICON.chart + $t('Verlauf</button></div>');
   const local = (ex.note ? '<p style="margin-top:12px">' + esc(ex.note) + '</p>' : '') + (S.exNotes[exId] ? $t('<p class="small"><b>Deine Notiz:</b> ') + esc(S.exNotes[exId]) + '</p>' : '');
   const cues = LANG === 'ru' && typeof CUES_RU !== 'undefined' && CUES_RU[exId] ? $t('<h3 style="margin:16px 0 6px">Ausführung</h3><ol class="rules">') + CUES_RU[exId].map(x => '<li>' + esc(x) + '</li>').join('') + '</ol>' : '';
-  if (!rid) { openSheet(head + local + cues + $t('<p class="small muted" style="margin-top:12px">Für diese Übung gibt es in der Übungsdatenbank keine Bilder.</p>')); return; }
+  if (!rid) { openSheet(head + (own ? demoHTML(own) : '') + local + cues + (own ? '' : $t('<p class="small muted" style="margin-top:12px">Für diese Übung gibt es in der Übungsdatenbank keine Bilder.</p>'))); return; }
   openSheet(head + $t('<div id="exinfo"><p class="muted" style="margin-top:12px">Lade Anleitung …</p></div>'));
   try { const db = await loadRepdb(); let r = db[rid]; const box = $('#exinfo'); if (!box) return; if (!r) { box.innerHTML = local + cues; return; }
-    const im = repdbImg(rid);
+    const im = own || repdbImg(rid);
     if (LANG === 'ru') r = Object.assign({}, r, { desc: '', steps: (typeof CUES_RU !== 'undefined' && CUES_RU[exId]) || [], tips: [] });
     box.innerHTML = (im && im.a ? demoHTML(im) : '') + local + (r.desc ? '<p style="margin-top:12px">' + esc(r.desc) + '</p>' : '') +
       (r.steps.length ? $t('<h3 style="margin:16px 0 6px">Ausführung</h3><ol class="rules">') + r.steps.map(x => '<li>' + esc(x) + '</li>').join('') + '</ol>' : '') +
