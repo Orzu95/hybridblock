@@ -106,7 +106,7 @@ function substituteEx(id) { if (!LIB[id]) return null; const seen = new Set([id]
 function chronIndex(w, k) { return (w - 1) * ORDER.length + ORDER.indexOf(k); }
 const curWeek = () => Math.max(1, Math.min(12, S.block.week || 1));
 function markStarted(w, k) { const s = sess(w, k); if (!s.date) s.date = today(); if (!S.block.startedOn) S.block.startedOn = today(); }
-const dayLabel = k => { const d = S.settings.dayMap[k]; return d === '' || d == null || d < 0 ? $t('freier Tag') : WD_LONG[d]; };
+function dayLabel(k) { const d = S.settings.dayMap[k]; return d === '' || d == null || d < 0 ? $t('freier Tag') : WD_LONG[d]; }
 function sessionsOnDow(dow) { return ORDER.filter(k => +S.settings.dayMap[k] === dow && S.settings.dayMap[k] !== ''); }
 function countsAsActivity(w, k) { return S.activities.find(a => a.countsAs === k && a.week === w); }
 function sessProgress(w, k) { const s = peekSess(w, k);
