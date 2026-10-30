@@ -4,7 +4,7 @@
    Quiz: 2–5 geschlossene Fragen (Auswahl oder Stimmt/Stimmt nicht), 60 % aus gelernten Karten, 40 % zufällig, um Lücken zu finden.
    Schwierigkeit und Tiefe der Erklärung folgen der Ansicht (Basis · Plus · Labor). Falsche Antwort → Erklärung → passende Lernkarte. */
 const LRN = () => { const L = (S.learn = S.learn || { seen: [], box: {}, day: null }); L.qs = L.qs || {}; L.qa = L.qa || {}; L.qn = L.qn || 0; return L; };
-const factMode = () => { const m = S.settings.fact; return m || (LANG === 'de' ? 'card' : 'off'); };
+const factMode = () => { const m = S.settings.fact; return m || 'card'; };
 const GOAL_CATS = { fat: ['FAT', 'ERN', 'NRG', 'REC'], muscle: ['HYP', 'KRA', 'PER', 'ERN'], strength: ['KRA', 'PER', 'HYP'], endurance: ['CAR', 'CON', 'REG'], hybrid: ['HYB', 'CON', 'CAR', 'HYP'], health: ['EIN', 'REG', 'ERN', 'WAR'], athletic: ['PLY', 'KRA', 'WAR', 'LOD'] };
 const hashStr = s => { let h = 2166136261; for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); } return h >>> 0; };
 const lrnLv = () => typeof viewLv === 'function' ? viewLv() : 2;
@@ -110,7 +110,7 @@ function viewLernen(arg) { if (arg === 'quiz') return viewQuiz();
   const tiles = EV_THEMES.map(t => t[1].filter(c => EVID.cats[c])).flat().map(c => { const [k, n] = lcKnown(c); return '<button class="evtile" data-act="lcOpen" data-cat="' + c + '" type="button" style="' + evVars(c) + ';border:0;font:inherit;text-align:left;cursor:pointer">' + evIc(c, 36) + '<b>' + esc(evCat(c)) + '</b><span class="lrnbar"><i style="width:' + Math.round(k / n * 100) + '%"></i></span><span class="small muted">' + k + ' / ' + n + '</span></button>'; }).join('');
   const cards = '<div class="card"><div class="row" style="align-items:center"><h2 class="grow" style="margin:0">' + $t('Lernkarten') + '</h2><button class="btn sm fog" data-act="lcOpen" data-cat="" type="button">' + $t('Alle mischen') + '</button></div><p class="small muted" style="margin:4px 0 0">' + $t('Frage lesen, überlegen, umdrehen. Was du schon weißt, kommt seltener.') + '</p><div class="evtiles">' + tiles + '</div></div>';
   const more = '<a class="card" href="#wissen" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit"><div class="grow"><h2 style="margin:0">' + $t('Wissen') + '</h2><p class="small muted" style="margin:2px 0 0">' + $t('Alle 321 Einträge mit Quellen durchsuchen.') + '</p></div><span class="muted">›</span></a>';
-  return pageTop($t('Quiz und Lernen'), '', $t('Kurz üben, was die Studienlage sagt.')) + '<div class="stack">' + (LANG !== 'de' ? note('sky', $t('Die Inhalte gibt es bisher nur auf Deutsch.')) : '') + hero + stats + gapC + cards + more + '</div>'; }
+  return pageTop($t('Quiz und Lernen'), '', $t('Kurz üben, was die Studienlage sagt.')) + '<div class="stack">' + hero + stats + gapC + cards + more + '</div>'; }
 
 (function () { const st = document.createElement('style'); st.textContent =
   '.fct{background:var(--ct)}.fct-tag{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--cc)}.fct-h{display:flex;gap:12px;align-items:flex-start;margin-top:12px}.fct-t{margin:0;font-weight:800;font-size:19px;line-height:1.25}' +
@@ -134,7 +134,7 @@ function viewLernen(arg) { if (arg === 'quiz') return viewQuiz();
 /* Einbindung: Heute (Fakt), Einstellungen (Fakt-Modus), Wissen (Verweis), Routing */
 const _viewHeuteLrn = viewHeute; viewHeute = function () { const h = _viewHeuteLrn.apply(this, arguments); const c = factCard(); if (!c) return h; const i = h.lastIndexOf('</div>'); return i < 0 ? h + c : h.slice(0, i) + c + h.slice(i); };
 const _viewMehrLrn = viewMehr; viewMehr = function () { const h = _viewMehrLrn(); if (VIEW) return h; const m = factMode();
-  const card = '<div class="card"><h2>' + $t('Fakt des Tages') + '</h2><p class="small muted">' + $t('Jeden Tag eine kurze, geprüfte Aussage aus der Wissensbasis, passend zu deinem Ziel.') + (LANG !== 'de' ? ' ' + $t('Die Inhalte gibt es bisher nur auf Deutsch.') : '') + '</p><div class="seg" style="margin-top:10px">' +
+  const card = '<div class="card"><h2>' + $t('Fakt des Tages') + '</h2><p class="small muted">' + $t('Jeden Tag eine kurze, geprüfte Aussage aus der Wissensbasis, passend zu deinem Ziel.') + '</p><div class="seg" style="margin-top:10px">' +
     [['card', $t('Karte auf Heute')], ['popup', $t('Pop-up')], ['off', $t('Aus')]].map(o => '<button class="' + (m === o[0] ? 'on' : '') + '" data-act="factMode" data-v="' + o[0] + '" type="button">' + o[1] + '</button>').join('') + '</div></div>';
   const i = h.indexOf('<a class="card" href="#wissen"'); if (i < 0) return h; const j = h.indexOf('</a>', i) + 4; return h.slice(0, j) + card + h.slice(j); };
 const _viewWissenLrn = viewWissen; viewWissen = function (arg) { const h = _viewWissenLrn(arg); const btn = '<a class="card" href="#lernen" style="display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit"><span class="qzhf" style="flex:0 0 44px">' + qzFlask(.55).replace(/width="120" height="120"/, 'width="44" height="44"') + '</span><div class="grow"><h2 style="margin:0">' + $t('Quiz und Lernen') + '</h2><p class="small muted" style="margin:2px 0 0">' + $t('Lernkarten und kurze Quizze zu diesen Themen.') + '</p></div><span class="muted">›</span></a>';

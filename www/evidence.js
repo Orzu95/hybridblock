@@ -1,5 +1,5 @@
 /* ======================= WISSEN: geprüfte Evidenz-Wissensbasis (evidence.json) ======================= */
-/* 321 Einträge aus 19 Themenblöcken. Quellen gegen Crossref/PubMed geprüft (docs/evidenz/KORREKTUREN.md). Inhalte derzeit nur auf Deutsch. */
+/* 321 Einträge aus 19 Themenblöcken. Quellen gegen Crossref/PubMed geprüft (docs/evidenz/KORREKTUREN.md). Folien-Inhalte auf EN/RU über evidence-en.json / evidence-ru.json, Studiendetails nur Deutsch. */
 let EVID = null, EVID_LOADING = null;
 const EV_THEMES = [['Training', ['HYP', 'KRA', 'PER', 'WAR', 'PLY', 'CON', 'HYB', 'CAR']], ['Ernährung', ['ERN', 'FAT', 'REC', 'BLK', 'NRG', 'SUP']], ['Steuerung und Erholung', ['LOD', 'REG', 'BES']], ['Zielgruppen', ['FRA', 'EIN']]];
 const EV_GRADE = { A: 'Meta-Analysen oder mehrere übereinstimmende Studien', B: 'Einzelne kontrollierte Studie oder systematisches Review', C: 'Beobachtungsstudie, kleine Studie oder Mechanismus', D: 'Expertenkonsens, Positionspapier oder Evidenzlücke' };
@@ -40,13 +40,17 @@ const EV_REV = { vol: ['HYP-101', 'HYP-102', 'HYP-115'], stall: ['PER-116', 'PER
   '.sln{width:36px;height:36px;border-radius:50%;border:0;background:var(--fog);font-size:20px;font-weight:800;cursor:pointer}' +
   '.evsec{margin-top:14px}.evsec h3{font-size:13px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);margin:0 0 4px}.evtags{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}.evtags span{font-size:12px;font-weight:700;background:var(--fog);border-radius:8px;padding:2px 8px}';
   document.head.appendChild(st); })();
-function loadEvid() { if (EVID) return Promise.resolve(EVID); if (!EVID_LOADING) EVID_LOADING = fetch('evidence.json').then(r => r.json()).then(j => { EVID = j; EVID.by = {}; j.items.forEach(x => EVID.by[x.id] = x); return EVID; }).catch(e => { EVID_LOADING = null; throw e; }); return EVID_LOADING; }
+/* Übersetzte Folien (Titel, Kernzahl, Stichpunkte, Quizfrage) kommen als Overlay pro Sprache; Studiendetails bleiben Deutsch */
+function evOverlay(j, o) { if (!o) return; Object.keys(o.cats || {}).forEach(c => { if (j.cats[c]) j.cats[c] = o.cats[c]; });
+  j.items.forEach(x => { const t = o.items && o.items[x.id]; if (!t) return; if (t.u) x.u = t.u; if (t.sl && x.sl) { const d = x.sl.q.d; x.sl = Object.assign({}, x.sl, t.sl); x.sl.q = Object.assign({}, t.sl.q, { d }); } }); j.lang = LANG; }
+function loadEvid() { if (EVID) return Promise.resolve(EVID); if (!EVID_LOADING) { const ov = LANG !== 'de' ? fetch('evidence-' + LANG + '.json').then(r => r.ok ? r.json() : null).catch(() => null) : Promise.resolve(null);
+  EVID_LOADING = Promise.all([fetch('evidence.json').then(r => r.json()), ov]).then(([j, o]) => { evOverlay(j, o); EVID = j; EVID.by = {}; j.items.forEach(x => EVID.by[x.id] = x); return EVID; }).catch(e => { EVID_LOADING = null; throw e; }); } return EVID_LOADING; }
 const evCat = c => EVID && EVID.cats[c] ? $t(EVID.cats[c]) : c;
 const evG = g => '<span class="evg g' + g + '" title="' + esc($t(EV_GRADE[g] || '')) + '">' + g + '</span>';
 /* Knopf, der einen oder mehrere Einträge öffnet; funktioniert auch, bevor die Daten geladen sind */
 function evBtn(ids, label) { ids = [].concat(ids).filter(Boolean); if (!ids.length) return ''; return '<button class="evbtn" data-act="evOpen" data-ids="' + ids.join(',') + '" type="button">ⓘ ' + (label || (ids.length > 1 ? $t('Studienlage') + ' (' + ids.length + ')' : $t('Studienlage'))) + '</button>'; }
 function evRow(x) { const t = x.sl ? x.sl.h : x.a; return '<button class="evrow" data-act="evOpen" data-ids="' + x.id + '" type="button">' + evIc(x.c, 34) + '<span class="grow"><span class="t">' + esc(t) + '</span><span class="small muted">' + esc(evCat(x.c)) + ' · ' + $t('Grad ') + x.e + '</span></span></button>'; }
-function evMatch(x, q) { const s = (x.a + ' ' + x.u + ' ' + x.k.join(' ') + ' ' + x.q + ' ' + x.id + ' ' + x.p).toLowerCase(); return q.split(/\s+/).filter(Boolean).every(w => s.includes(w)); }
+function evMatch(x, q) { const s = (x.a + ' ' + x.u + ' ' + x.k.join(' ') + ' ' + x.q + ' ' + x.id + ' ' + x.p + (x.sl ? ' ' + x.sl.h + ' ' + x.sl.fd + ' ' + x.sl.b.join(' ') : '')).toLowerCase(); return q.split(/\s+/).filter(Boolean).every(w => s.includes(w)); }
 function evList(q, cat, g) { if (!EVID) return '<p class="muted">' + $t('Lade …') + '</p>'; let it = EVID.items; if (cat) it = it.filter(x => x.c === cat); if (g) it = it.filter(x => x.e === g); if (q) it = it.filter(x => evMatch(x, q.toLowerCase()));
   if (!it.length) return '<p class="muted">' + $t('Keine Einträge gefunden.') + '</p>'; const more = it.length > 80; return it.slice(0, 80).map(evRow).join('') + (more ? '<p class="small muted">' + $t('Die ersten 80 Treffer. Suche genauer für weniger.') + '</p>' : ''); }
 function viewWissen(arg) { if (!EVID) { loadEvid().then(() => { if (route.name === 'wissen') render(); }).catch(() => {}); }
@@ -61,7 +65,7 @@ function viewWissen(arg) { if (!EVID) { loadEvid().then(() => { if (route.name =
   else body = EV_THEMES.map(t => '<div class="card"><h2>' + $t(t[0]) + '</h2><div class="evtiles">' + t[1].filter(c => EVID.cats[c]).map(c => { const n = EVID.items.filter(x => x.c === c); const a = n.filter(x => x.e === 'A').length;
       return '<a class="evtile" href="#wissen/' + c + '" style="' + evVars(c) + '">' + evIc(c, 40) + '<b>' + esc(evCat(c)) + '</b><span class="small muted">' + n.length + $t(' Aussagen') + ' · ' + a + $t(' mit Grad A') + '</span></a>'; }).join('') + '</div></div>').join('');
   return back + pageTop(cat ? esc(evCat(cat)) : $t('Wissen'), '', cat ? '' : $t('Geprüfte Aussagen aus der Sportwissenschaft, jede mit Quelle')) + '<div class="stack">' +
-    (LANG !== 'de' ? note('sky', $t('Die Studieninhalte gibt es bisher nur auf Deutsch.')) : '') + search + body +
+    search + body +
     '<p class="small muted" style="margin:0 4px">' + $t('Stand: ') + (EVID ? EVID.at.split('-').reverse().join('.') : '–') + ' · ' + (EVID ? EVID.items.length : '–') + $t(' Einträge. Alle Quellen wurden gegen Crossref und PubMed geprüft. Kein Ersatz für ärztlichen Rat.') + '</p></div>'; }
 function evSheet(ids) { if (!EVID) { openSheet(sheetHead($t('Studienlage')) + '<p class="muted">' + $t('Lade …') + '</p>'); loadEvid().then(() => evSheet(ids)).catch(() => openSheet(sheetHead($t('Studienlage')) + '<p>' + $t('Wissensbasis nicht erreichbar.') + '</p>')); return; }
   const xs = ids.map(i => EVID.by[i]).filter(Boolean); if (!xs.length) return;
@@ -81,7 +85,8 @@ function evDotsInit() { const el = document.getElementById('sld'); if (!el) retu
 /* Studiendetails: je nach Ansicht mehr oder weniger Tiefe (Basis: Aussage + Quelle, Plus: + Zahlen und Grenzen, Labor: alles) */
 function evDetails(x) { const lv = typeof viewLv === 'function' ? viewLv() : 3; const sec = (h, t) => t && t !== 'nicht berichtet' ? '<div class="evsec"><h3>' + h + '</h3><p class="small">' + esc(t) + '</p></div>' : '';
   openSheet(sheetHead(esc(evCat(x.c))) +
-    '<div class="row" style="margin-top:10px;flex-wrap:nowrap;align-items:flex-start">' + evG(x.e) + '<div class="grow"><p style="margin:0;font-weight:700">' + esc(x.a) + '</p><p class="small muted" style="margin:4px 0 0">' + esc(x.u) + ' · ' + $t('Grad ') + x.e + ': ' + esc($t(EV_GRADE[x.e])) + '</p></div></div>' +
+    '<div class="row" style="margin-top:10px;flex-wrap:nowrap;align-items:flex-start">' + evG(x.e) + '<div class="grow"><p style="margin:0;font-weight:700">' + esc(LANG !== 'de' && x.sl ? x.sl.h : x.a) + '</p><p class="small muted" style="margin:4px 0 0">' + esc(x.u) + ' · ' + $t('Grad ') + x.e + ': ' + esc($t(EV_GRADE[x.e])) + '</p></div></div>' +
+    (LANG !== 'de' ? '<p class="small muted" style="margin:10px 0 0">' + $t('Die Studiendetails darunter (Zahlen, Methodik, Quelle) gibt es bisher nur auf Deutsch.') + '</p>' : '') +
     (lv >= 2 ? sec($t('Zahlen'), x.z) + sec($t('Einschränkungen'), x.n) : '') +
     (lv >= 3 ? sec($t('So nutzt die App das'), x.p.replace(/^WENN /, 'Wenn ').replace(/ DANN /, ', dann ')) + sec($t('Studientyp und Effekt'), x.t + (x.f && x.f !== 'nicht berichtet' ? ' · ' + x.f : '')) : '') +
     '<div class="evtags">' + x.g.map(z => '<span>' + esc($t(z)) + '</span>').join('') + '</div>' +

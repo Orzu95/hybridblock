@@ -32,7 +32,7 @@ button,input,select,textarea{font:inherit;color:inherit}
 /* Kopf */
 .top{display:flex;align-items:flex-start;gap:12px;margin-bottom:20px}
 .top .grow{flex:1;min-width:0}
-.top h1{hyphens:auto;-webkit-hyphens:auto;overflow-wrap:break-word}
+.top h1{hyphens:auto;-webkit-hyphens:auto;overflow-wrap:break-word}.top h1.long{font-size:25px}.top h1.xlong{font-size:21px}
 html[lang=ru] .tabbar a{font-size:10.5px;letter-spacing:-.01em}
 .top .sub{font-size:14px;color:var(--muted);margin-top:4px}
 .iconbtn{width:44px;height:44px;border-radius:var(--r);border:0;background:var(--fog);display:grid;place-items:center;cursor:pointer;flex:0 0 44px;color:var(--graphite);text-decoration:none}
