@@ -61,7 +61,7 @@ const EQS = (() => {
 })();
 
 /* Geräte-Illustrationen (Canva-KI, eigener Stil: grau, Akzent #FF5A1F nur am beweglichen Teil). Fehlende Geräte nutzen die alte Skizze. */
-const EQ_IMG = 'abdm abm assist band bb bench bike box cable calfm chestpress db dipbar dipm ez ghd hack htm inclm kb latm latpd legcurl_l legcurl_s legext legpress nordic pendulum preacher pullbar rack rings rope shoulderm smith trapbar'.split(' ');
+const EQ_IMG = 'abdm abm abwheel assist band bb bench bike box cable calfm chestpress db dipbar dipm ez ghd hack htm inclm kb latm latpd legcurl_l legcurl_s legext legpress medball nordic pecdeck pendulum preacher pullbar rack rings rope rower rowm shoulderm sled smith trapbar'.split(' ');
 const EQ_INFO = {
   bb: ['Olympia-Stange, Hantelstange', 'Die lange Stange (meist 20 kg, 2,2 m) für Scheiben. Grundlage für Kniebeuge, Kreuzheben, Bankdrücken und Rudern.'],
   rack: ['Power Rack, Kniebeugenständer, Squat-Stand', 'Gestell mit Ablagen für die Langhantel und Sicherheitsstreben. Damit kannst du schwer kniebeugen und bankdrücken, ohne dass dir jemand die Stange reicht.'],
