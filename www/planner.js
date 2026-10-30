@@ -74,7 +74,7 @@ const BY_TXT = { hb: $t('Hybridblock Coach'), coach: $t('Dein Coach'), community
 const SEX_TXT = { both: $t('Für alle'), w: $t('Empfohlen für Frauen'), m: $t('Empfohlen für Männer') };
 const DIFF_TXT = [$t('Leicht'), $t('Mittel'), $t('Schwer')];
 function planDiff(p) { const lv = { beginner: 1, intermediate: 2, advanced: 3 }; const L = (p.level || ['intermediate']).map(x => lv[x] || 2); let s = L.reduce((a, b) => a + b, 0) / L.length;
-  let sets = 0, rpe = [], ss = []; try { ss = p.sessions ? p.sessions() : []; } catch (e) {} ss.forEach(x => (x.add || []).forEach(a => { sets += +a.sets || 0; if (a.type === 'main' && a.rpe != null) rpe.push(a.rpe); }));
+  let sets = 0, rpe = [], ss = []; try { ss = p.sessions ? p.sessions() : []; } catch (e) {} ss.forEach(x => (x.add || []).filter(a => typeof itemOn !== 'function' || itemOn(a, 1)).forEach(a => { sets += +a.sets || 0; if (a.type === 'main' && a.rpe != null) rpe.push(a.rpe); }));
   let cmin = 0; ss.forEach(x => { const c = x.cardio && x.cardio.weeks && x.cardio.weeks[0]; if (c && c.min) cmin += c.min; });
   const d = p.days || 3; s += (d >= 5 ? .5 : 0) + (d >= 6 ? .5 : 0) - (d <= 3 ? .5 : 0); s += (sets >= 70 ? .5 : 0) + (sets >= 100 ? .5 : 0) - (sets && sets < 40 ? .5 : 0); s += cmin >= 300 ? 1 : 0;
   if (rpe.length && rpe.reduce((a, b) => a + b, 0) / rpe.length >= 8.5) s += .5;

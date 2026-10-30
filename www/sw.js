@@ -1,5 +1,5 @@
 /* Hybridblock Service Worker: App offline, Schriften gecacht, Open Food Facts immer live */
-const VERSION = 'hb-v33';
+const VERSION = 'hb-v34';
 const SHELL = ['./', './index.html', './app.css', './app.js', './cloud.js', './i18n.js', './lang-en.js', './lang-ru.js', './cues-ru.js', './data.js', './connect.js', './track.js', './privacy.js', './cycle.js', './review.js', './spowi.js', './food.js', './account.js', './ops.js', './superset.js', './equipment.js', './evidence.js', './evidence.json', './evidence-en.json', './evidence-ru.json', './learn.js', './tour.js', './days.js', './plandays.js', './glossary.js', './confirm.js', './results.js', './week.js', './levels.js', './search.js', './privacypolicy.html', './vendor/leaflet/leaflet.js', './vendor/leaflet/leaflet.css', './plans7.js', './library.js', './planner.js', './bodymap.js', './vendor/fflate.min.js', './vendor/zxing.min.js', './manifest.webmanifest', './icons/icon-192.png', './icons/icon-512.png'];
 self.addEventListener('install', e => { e.waitUntil(caches.open(VERSION).then(c => c.addAll(SHELL)).then(() => self.skipWaiting())); });
 self.addEventListener('activate', e => { e.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(k => k !== VERSION).map(k => caches.delete(k)))).then(() => self.clients.claim())); });

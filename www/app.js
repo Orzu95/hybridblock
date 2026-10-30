@@ -79,7 +79,8 @@ function applyOv(x, o, w) { const y = Object.assign({}, x); ['ex', 'reps', 'note
 function planForP(plan, w, k) { const s = plan && plan.sessions.find(x => x.k === k); if (!s || s.kind !== 'gym') return []; const ov = s.ov || {};
   let list = s.base && BASE_FN[s.base] ? BASE_FN[s.base](w) : [];
   list = list.filter(x => !(ov[x.slot] && ov[x.slot].del)).map(x => ov[x.slot] ? applyOv(x, ov[x.slot], w) : x);
-  return list.concat((s.add || []).filter(it => LIB[it.ex]).map(it => scaleItem(it, w))); }
+  return list.concat((s.add || []).filter(it => LIB[it.ex] && itemOn(it, w)).map(it => scaleItem(it, w))); }
+const itemOn = (it, w) => (!it.on || (w >= it.on[0] && w <= it.on[1])) && (!it.par || w % 2 === (it.par === 'odd' ? 1 : 0));
 function planFor(w, k) { const list = planForP(S.plan, w, k); return typeof sessAdjust === 'function' ? sessAdjust(w, k, list) : list; }
 const isGym = k => !!SESS[k] && SESS[k].kind === 'gym';
 const isCardio = k => !!SESS[k] && SESS[k].kind !== 'gym';
@@ -114,7 +115,8 @@ function countsAsActivity(w, k) { return S.activities.find(a => a.countsAs === k
 function sessProgress(w, k) { const s = peekSess(w, k);
   if (s && s.skipped) return { done: true, skipped: true, f: 0, t: 0 };
   if (isCardio(k)) { const d = (s && s.cardio && num(s.cardio.dur) != null) || !!countsAsActivity(w, k); return { done: d, f: d ? 1 : 0, t: 1 }; }
-  let t = 0, f = 0; planFor(w, k).forEach(p => { t += p.sets; const lg = s && s.logs[p.slot]; if (lg) f += (lg.sets || []).filter(x => x && x.done).length; });
+  const pl = planFor(w, k); if (!pl.length && SESS[k] && (SESS[k].add || []).some(it => it.on)) return { done: true, skipped: true, off: true, f: 0, t: 0 };
+  let t = 0, f = 0; pl.forEach(p => { t += p.sets; const lg = s && s.logs[p.slot]; if (lg) f += (lg.sets || []).filter(x => x && x.done).length; });
   return { done: t > 0 && f / t >= 0.8, f, t }; }
 function weekDone(w) { return ORDER.length > 0 && ORDER.every(k => sessProgress(w, k).done); }
 function lastDate(w) { let d = null; ORDER.forEach(k => { const s = peekSess(w, k); if (s && s.date && (!d || s.date > d)) d = s.date; const a = countsAsActivity(w, k); if (a && (!d || a.date > d)) d = a.date; }); return d; }
@@ -307,7 +309,7 @@ function viewHeute() {
   const open = ORDER.filter(k => !sessProgress(w, k).done);
   let train = '';
   planned.forEach(k => { const pr = sessProgress(w, k); const s = SESS[k];
-    train += '<a class="li" href="#training/' + sKey(w, k) + '">' + badge(k) + '<div class="grow"><b>' + s.title + '</b><small>' + esc(sessSub(w, k)) + '</small></div><span class="tag"><span class="dot ' + (pr.done ? 'green' : pr.f ? 'amber' : 'mist') + '"></span>' + (pr.skipped ? $t('übersprungen') : pr.done ? $t('erledigt') : pr.f ? pr.f + '/' + pr.t : $t('offen')) + '</span></a>'; });
+    train += '<a class="li" href="#training/' + sKey(w, k) + '">' + badge(k) + '<div class="grow"><b>' + s.title + '</b><small>' + esc(sessSub(w, k)) + '</small></div><span class="tag"><span class="dot ' + (pr.done ? 'green' : pr.f ? 'amber' : 'mist') + '"></span>' + (pr.off ? $t('entfällt diese Woche') : pr.skipped ? $t('übersprungen') : pr.done ? $t('erledigt') : pr.f ? pr.f + '/' + pr.t : $t('offen')) + '</span></a>'; });
   const others = open.filter(k => !planned.includes(k));
   const trainCard = !ORDER.length ? noPlanCard() : $t('<div class="card flush"><div class="meal-h"><b>Training · Woche ') + w + '</b><span class="tag">' + PH_LABEL[phase(w)] + '</span></div>' +
     (train ? (S.settings.mode === 'rotation' ? $t('<div class="lbl" style="padding:0 20px">Als Nächstes</div>') : '') + '<div class="list">' + train + '</div>' : '<div style="padding:0 20px 14px" class="muted">' + (S.settings.mode === 'rotation' ? $t('Woche ') + w + $t(' ist komplett.') : $t('Heute ist kein Training eingeplant.')) + '</div>') +
@@ -352,7 +354,7 @@ function viewTraining() {
   const weeks = Array.from({ length: NW() }, (_, i) => { const x = i + 1; return '<button class="wk' + (x === w ? $t(' on') : '') + (x === cw ? $t(' cur') : '') + (weekDone(x) ? $t(' done') : '') + '" data-act="week" data-w="' + x + '" type="button" aria-label="Woche ' + x + '"><b>' + x + '</b><i class="ph-' + phase(x) + '"></i></button>'; }).join('');
   const rows = ORDER.map(k => { const s = SESS[k], pr = sessProgress(w, k); const sub = sessSub(w, k);
     const se = peekSess(w, k); const when = se && se.date ? fmtDay(se.date) : dayLabel(k);
-    return '<a class="li" href="#training/' + sKey(w, k) + '">' + badge(k) + '<div class="grow"><b>' + s.title + '</b><small>' + esc(when + (sub ? ' · ' + sub : '')) + '</small></div><span class="tag"><span class="dot ' + (pr.done ? 'green' : pr.f ? 'amber' : 'mist') + '"></span>' + (pr.skipped ? $t('übersprungen') : pr.done ? $t('erledigt') : pr.f ? pr.f + '/' + pr.t : $t('offen')) + '</span></a>'; }).join('');
+    return '<a class="li" href="#training/' + sKey(w, k) + '">' + badge(k) + '<div class="grow"><b>' + s.title + '</b><small>' + esc(when + (sub ? ' · ' + sub : '')) + '</small></div><span class="tag"><span class="dot ' + (pr.done ? 'green' : pr.f ? 'amber' : 'mist') + '"></span>' + (pr.off ? $t('entfällt diese Woche') : pr.skipped ? $t('übersprungen') : pr.done ? $t('erledigt') : pr.f ? pr.f + '/' + pr.t : $t('offen')) + '</span></a>'; }).join('');
   const frees = S.activities.filter(a => a.week === w && a.week);
   const warn = scheduleWarnings();
   const vol = weekVolume(w), pv = plannedVolume(w);
