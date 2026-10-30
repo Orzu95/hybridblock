@@ -19,7 +19,7 @@ const CONFIRM = () => ({
   saveFood: [$t('Lebensmittel gespeichert')], editFood: null, saveTpl: [$t('Vorlage gespeichert')], delTpl: [$t('Vorlage gelöscht')], recSave: [$t('Rezept gespeichert')], recDel: [$t('Rezept gelöscht')],
   delActYes: [$t('Aktivität gelöscht')], goalsSave: [$t('Ziele gespeichert')], peSave: [$t('Plan gespeichert'), 1], woDel: [$t('Training gelöscht')], woRemove: [$t('Training gelöscht')],
   photoDel: [$t('Foto gelöscht')], checkin: [$t('Check-in abgeschlossen'), 1], revYes: [$t('Übernommen')], revNo: [$t('Abgelehnt')], revHide: [$t('Ausgeblendet')],
-  ssSave: [$t('Supersatz gespeichert')], ssDelExtra: [$t('Übung entfernt')], ssUnlink: [$t('Supersatz aufgelöst')], inviteDel: [$t('Einladung gelöscht')], removeClient: [$t('Athlet entfernt')], libUseYes: [$t('Plan übernommen'), 1],
+  ssSave: [$t('Superset gespeichert')], ssDelExtra: [$t('Übung entfernt')], ssUnlink: [$t('Superset aufgelöst')], inviteDel: [$t('Einladung gelöscht')], removeClient: [$t('Athlet entfernt')], libUseYes: [$t('Plan übernommen'), 1],
   skip: [$t('Einheit übersprungen')], unskip: [$t('Einheit wieder offen')], dobackswap: [$t('Originalübung zurück')], noExReset: [$t('Zurückgesetzt')],
   freeDelEx: [$t('Übung entfernt')], woFromAct: [$t('Als Training gespeichert')], woNew: null, export: [$t('Sicherung erstellt')], hrmForget: [$t('Gurt entfernt')], peSessDelYes: [$t('Einheit gelöscht')], trDiscard: [$t('Verworfen')], useZepp: [$t('Übernommen')] });
 document.addEventListener('click', e => { const b = e.target.closest('[data-act]'); if (!b) return; const a = b.dataset.act; const c = CONFIRM()[a]; if (!c) return; const n0 = TOAST_N;

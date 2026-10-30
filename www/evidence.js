@@ -119,5 +119,5 @@ document.addEventListener('input', e => { if (e.target.id !== 'ev-q') return; ui
   if (l) l.innerHTML = evList(ui.wq, route.arg && EVID && EVID.cats[route.arg] ? route.arg : null, ui.wg || ''); else if (ui.wq) { const pos = e.target.selectionStart; render(); const i = document.getElementById('ev-q'); if (i) { i.focus(); try { i.setSelectionRange(pos, pos); } catch (er) {} } } });
 window.addEventListener('hashchange', () => { if (route.name !== 'wissen') { ui.wq = ''; ui.wg = ''; } });
 if (route.name === 'wissen') render();
-/* Supersatz-Dialog: Studienlage zu Supersätzen und Satzpausen */
-if (typeof ssSheet === 'function') { const _sss = ssSheet; ssSheet = function () { _sss.apply(this, arguments); const s = document.querySelector('#sheetCard .on-white'); if (s && !s.querySelector('.evbtn')) s.insertAdjacentHTML('beforeend', '<div>' + evBtn(['HYP-114', 'HYP-109', 'HYP-113'], $t('Studienlage zu Supersätzen')) + '</div>'); }; }
+/* Superset-Dialog: Studienlage zu Supersets und Satzpausen */
+if (typeof ssSheet === 'function') { const _sss = ssSheet; ssSheet = function () { _sss.apply(this, arguments); const s = document.querySelector('#sheetCard .on-white'); if (s && !s.querySelector('.evbtn')) s.insertAdjacentHTML('beforeend', '<div>' + evBtn(['HYP-114', 'HYP-109', 'HYP-113'], $t('Studienlage zu Supersets')) + '</div>'); }; }

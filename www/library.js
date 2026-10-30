@@ -9,7 +9,7 @@ L('assist_squat', $t('Kniebeuge mit Halt'), { q: 1, g: .5 }, ['bw_squat'], $t('A
 L('split_squat', $t('Split Squat'), { q: 1, g: 1 }, ['bss', 'rev_lunge']);
 L('shrimp', $t('Shrimp Squat'), { q: 1, g: 1 }, ['bss'], $t('Hinteres Bein mit der Hand halten, Knie sanft absetzen.'));
 L('dl', $t('Kreuzheben (LH)'), { g: 1, h: .75, b: .5 }, ['trap', 'rdl']);
-L('rdl', $t('Rumänisches Kreuzheben (LH)'), { h: 1, g: .5 }, ['rdl_db', 'hyper45']);
+L('rdl', $t('Romanian Deadlift (LH)'), { h: 1, g: .5 }, ['rdl_db', 'hyper45']);
 L('sl_rdl', $t('Einbeiniges Kreuzheben'), { h: 1, g: .75 }, ['rdl_db', 'rdl']);
 L('ghr', $t('Glute Ham Raise'), { h: 1, g: .25 }, ['nordic', 'curl_lying']);
 L('kb_swing', $t('Kettlebell Swing'), { g: 1, h: .5 }, ['hyper45', 'rdl_db'], $t('Explosiv aus der Hüfte, Rücken neutral, Arme locker.'));
@@ -18,10 +18,10 @@ L('push_press', $t('Push Press'), { fd: 1, sd: .5, t: .5, q: .25 }, ['ohp', 'db_
 L('cg_bench', $t('Enges Bankdrücken'), { t: 1, ch: .5, fd: .25 }, ['dip', 'tri_pd']);
 L('incl_bb', $t('Schrägbankdrücken (LH)'), { ch: 1, fd: .5, t: .5 }, ['incl', 'incl_machine']);
 L('bb_row', $t('Langhantelrudern'), { b: 1, rd: .5, bi: .5 }, ['row', 'cable_row', 'db_row']);
-L('inv_row', $t('Rudern im Hang (Inverted Row)'), { b: 1, rd: .5, bi: .5 }, ['row', 'cable_row'], $t('Körper gestreckt, Brust zur Stange.'));
+L('inv_row', $t('Inverted Row'), { b: 1, rd: .5, bi: .5 }, ['row', 'cable_row'], $t('Körper gestreckt, Brust zur Stange.'));
 L('ring_row', $t('Ringrudern schräg'), { b: 1, rd: .5, bi: .5 }, ['inv_row'], $t('Je aufrechter du stehst, desto leichter.'));
 L('neg_pu', $t('Negative Klimmzüge'), { b: 1, bi: .5 }, ['assisted_pu', 'latpd'], $t('Oben starten, 3–5 s ablassen.'));
-L('scap_pu', $t('Schulterblatt-Klimmzug'), { b: .5 }, ['neg_pu'], $t('Arme gestreckt, nur die Schulterblätter nach unten ziehen.'));
+L('scap_pu', $t('Scapula Pull-Up'), { b: .5 }, ['neg_pu'], $t('Arme gestreckt, nur die Schulterblätter nach unten ziehen.'));
 L('pushup', $t('Liegestütz'), { ch: 1, t: .5, fd: .5 }, ['db_bench', 'machine_press']);
 L('incl_pushup', $t('Liegestütz erhöht'), { ch: 1, t: .5, fd: .5 }, ['pushup'], $t('Hände auf Bank oder Tisch. Je höher, desto leichter.'));
 L('knee_pushup', $t('Liegestütz auf Knien'), { ch: 1, t: .5, fd: .5 }, ['incl_pushup']);
@@ -30,13 +30,13 @@ L('pp_pushup', $t('Pseudo-Planche-Liegestütz'), { ch: 1, fd: 1, t: .5 }, ['push
 L('dip_neg', $t('Negative Dips'), { ch: 1, t: 1, fd: .5 }, ['dip_assist', 'dip'], $t('Oben starten, 3–5 s ablassen.'));
 L('support_hold', $t('Stütz am Barren'), { t: .5, ch: .25 }, ['dip_neg'], $t('Arme gestreckt, Schultern tief. Zeit in Sekunden.'));
 L('bench_dip', $t('Dips an der Bank'), { t: 1, ch: .25 }, ['dip_neg'], $t('Füße weiter vorne = schwerer.'));
-L('skull', $t('SZ-Trizepsdrücken liegend'), { t: 1 }, ['tri_oh', 'db_oh_ext']);
+L('skull', $t('Skull Crusher (SZ)'), { t: 1 }, ['tri_oh', 'db_oh_ext']);
 L('pecdeck', $t('Butterfly-Maschine'), { ch: 1 }, ['cable_fly']);
-L('cable_fly', $t('Kabel-Flys'), { ch: 1 }, ['pecdeck']);
-L('plank', $t('Unterarmstütz'), { ab: 1 }, ['ab_wheel'], $t('Zeit in Sekunden. Becken leicht einrollen.'));
+L('cable_fly', $t('Cable Flys'), { ch: 1 }, ['pecdeck']);
+L('plank', $t('Plank'), { ab: 1 }, ['ab_wheel'], $t('Zeit in Sekunden. Becken leicht einrollen.'));
 L('ab_wheel', $t('Ab-Wheel Rollout'), { ab: 1 }, ['plank', 'crunch']);
 L('pallof', $t('Pallof Press'), { ab: .5 }, ['carry'], $t('Kabel oder Band seitlich, Arme strecken, nicht verdrehen lassen.'));
-L('sled_push', $t('Schlitten schieben'), { q: 1, g: .5 }, ['farmer'], $t('Strecke in Metern.'));
+L('sled_push', $t('Sled Push'), { q: 1, g: .5 }, ['farmer'], $t('Strecke in Metern.'));
 L('row_erg', $t('Rudergerät-Intervall'), {}, ['bike_int'], $t('Strecke in Metern, gleichmäßig hart.'));
 L('bike_int', $t('Rad- oder Seil-Intervall'), {}, ['row_erg'], $t('Zeit in Sekunden, etwa 80 % HFmax.'));
 L('jump_rope', $t('Seilspringen'), { c: .5 }, ['bike_int'], $t('Zeit in Sekunden.'));
@@ -51,7 +51,7 @@ L('band_abd', $t('Abduktion mit Band (sitzend)'), { g: .75 }, ['abduct'], $t('Ba
 L('cable_kick', $t('Kickback am Kabel'), { g: 1 }, ['sl_ht', 'hyper45'], $t('Pro Bein. Bein nach hinten oben, ohne ins Hohlkreuz zu gehen.'));
 L('pull_through', $t('Cable Pull-Through'), { g: 1, h: .5 }, ['kb_swing', 'rdl_db'], $t('Hüfte nach hinten schieben, oben Po anspannen.'));
 L('sumo_dl', $t('Sumo-Kreuzheben'), { g: 1, q: .5, h: .5, b: .25 }, ['trap', 'dl'], $t('Breiter Stand, Knie über den Füßen, Brust hoch.'));
-L('db_rdl_b', $t('Rumänisches Kreuzheben B-Stance'), { h: 1, g: 1 }, ['sl_rdl', 'rdl_db'], $t('Hinterer Fuß nur zur Balance auf der Spitze, Last auf dem vorderen Bein.'));
+L('db_rdl_b', $t('Romanian Deadlift B-Stance'), { h: 1, g: 1 }, ['sl_rdl', 'rdl_db'], $t('Hinterer Fuß nur zur Balance auf der Spitze, Last auf dem vorderen Bein.'));
 
 Object.assign(REPDB, { squat: 'squat', box_squat: 'box-squat', bw_squat: 'bodyweight-squat', split_squat: 'split-squat', dl: 'deadlift', rdl: 'romanian-deadlift', sl_rdl: 'single-leg-romanian-deadlift', kb_swing: 'kettlebell-swing',
   ohp: 'seated-barbell-overhead-press', push_press: 'push-press', cg_bench: 'close-grip-bench-press', incl_bb: 'incline-bench-press', bb_row: 'barbell-row', inv_row: 'inverted-row', ring_row: 'ring-row', neg_pu: 'negative-pull-ups', scap_pu: 'scapular-pull-ups',
@@ -60,9 +60,9 @@ Object.assign(REPDB, { squat: 'squat', box_squat: 'box-squat', bw_squat: 'bodywe
 
 /* ---------- Geräte ---------- */
 const EQUIP = { bb: $t('Langhantel'), rack: $t('Squat-Rack'), bench: $t('Hantelbank'), db: $t('Kurzhanteln'), ez: $t('SZ-Stange'), kb: $t('Kettlebell'), trapbar: $t('Trap Bar'), cable: $t('Kabelzug'), smith: $t('Multipresse'),
-  legpress: $t('Beinpresse'), hack: $t('Hackenschmidt'), pendulum: $t('Pendulum-Squat'), legext: $t('Beinstrecker'), legcurl_s: $t('Beinbeuger sitzend'), legcurl_l: $t('Beinbeuger liegend'), calfm: $t('Wadenmaschine'), htm: $t('Hip-Thrust-Maschine'), abdm: $t('Abduktoren-Maschine'),
+  legpress: $t('Beinpresse'), hack: $t('Hackenschmidt'), pendulum: $t('Pendulum-Squat'), legext: $t('Beinstrecker'), legcurl_s: $t('Leg Curl sitzend'), legcurl_l: $t('Leg Curl liegend'), calfm: $t('Wadenmaschine'), htm: $t('Hip-Thrust-Maschine'), abdm: $t('Abduktoren-Maschine'),
   chestpress: $t('Brustpresse'), inclm: $t('Schrägbank-Maschine'), shoulderm: $t('Schulterpresse'), latm: $t('Seitheben-Maschine'), latpd: $t('Latzug'), rowm: $t('Rudermaschine / T-Bar'), pecdeck: $t('Butterfly'), dipm: $t('Dip-Maschine'), assist: $t('Gravitron'),
-  abm: $t('Bauchmaschine'), ghd: $t('Hyperextension-Bank'), preacher: $t('Scott-Bank'), pullbar: $t('Klimmzugstange'), dipbar: $t('Dip-Barren'), rings: $t('Ringe / TRX'), band: $t('Widerstandsband'), box: $t('Plyo-Box'), medball: $t('Medizinball'), abwheel: $t('Ab-Wheel'), sled: $t('Schlitten'), rower: $t('Rudergerät'), bike: $t('Rad / Air-Bike'), rope: $t('Springseil'), nordic: $t('Nordic-Halterung') };
+  abm: $t('Bauchmaschine'), ghd: $t('Hyperextension-Bank'), preacher: $t('Scott-Bank'), pullbar: $t('Klimmzugstange'), dipbar: $t('Dip-Barren'), rings: $t('Ringe / TRX'), band: $t('Widerstandsband'), box: $t('Plyo-Box'), medball: $t('Medizinball'), abwheel: $t('Ab-Wheel'), sled: $t('Sled'), rower: $t('Rudergerät'), bike: $t('Rad / Air-Bike'), rope: $t('Springseil'), nordic: $t('Nordic-Halterung') };
 const EQ_GROUP = [[$t('Freie Gewichte'), ['bb', 'rack', 'bench', 'db', 'ez', 'kb', 'trapbar']], [$t('Kabel und Maschinen'), ['cable', 'smith', 'legpress', 'hack', 'pendulum', 'legext', 'legcurl_s', 'legcurl_l', 'calfm', 'htm', 'abdm', 'chestpress', 'inclm', 'shoulderm', 'latm', 'latpd', 'rowm', 'pecdeck', 'dipm', 'assist', 'abm', 'ghd', 'preacher']],
   [$t('Körpergewicht und Zubehör'), ['pullbar', 'dipbar', 'rings', 'band', 'box', 'medball', 'abwheel', 'nordic', 'sled']], [$t('Cardio'), ['rower', 'bike', 'rope']]];
 const EX_EQ = { fs: ['bb', 'rack'], squat: ['bb', 'rack'], box_squat: ['bb', 'rack', 'box'], pend: ['pendulum'], hack: ['hack'], legpress: ['legpress'], goblet: ['db'], trap: ['trapbar'], dl: ['bb'], rdl: ['bb'], rdl_db: ['db'], sl_rdl: [],
@@ -193,25 +193,25 @@ const LIBRARY = {
     ev: { g: 'C', pros: ['Hohes Volumen und Nähe zum Versagen fördern Hypertrophie', 'Abwechslung von schwer und Pump'], cons: ['Sehr hohes Volumen, ohne Deload', 'Riesensätze schwer im vollen Studio', 'Für Einsteiger und im Defizit ungeeignet'] },
     sessions: () => { const A = [W(8, '8', 8), W(7, '6', 8), W(10, '4', 8), W(3, '10', 8)], B = [W(3, '10', 8), W(3, '8', 8), W(3, '6', 8), W(3, '12', 8)];
       const g = (p, items) => items.map((it, i) => X(p + i, it[0], 3, it[1], 9, i === items.length - 1 ? 150 : 0, 'dp', it[2] || '', 'G'));
-      return [{ k: 'A', kind: 'gym', title: 'Beine', sub: 'Kniebeuge, Frontkniebeuge, Riesensatz', add: [X('s_a1', 'squat', 8, '8', 8, 180, 'main', 'Letzter Satz so viele wie möglich.', '', A), X('s_a2', 'fs', 3, '10', 8, 150, 'dp', '', '', B), ...g('s_ag', [['curl_lying', '10', '2 s halten oben'], ['hack', '10', '5 s ablassen'], ['legext', '10', '2 s halten oben'], ['legpress', '8+8+8', 'eng, weit, mittel']])] },
-        { k: 'B', kind: 'gym', title: 'Brust', sub: 'Schrägbank, Dips, Riesensatz', add: [X('s_b1', 'incl_bb', 8, '8', 8, 180, 'main', 'Letzter Satz so viele wie möglich.', '', A), X('s_b2', 'bench', 3, '10', 8, 150, 'dp', 'Original: Negativbank.', '', B), ...g('s_bg', [['pecdeck', '10+10', 'Drop-Satz'], ['incl', '8+8', 'neutral, dann normal'], ['dip', '8+8', '5 s ablassen'], ['cable_fly', '8+8', '2 s halten, dann schnell']])] },
-        { k: 'C', kind: 'gym', title: 'Rücken und Bizeps', sub: 'Kreuzheben, Klimmzüge, Riesensatz', add: [X('s_c1', 'dl', 8, '8', 8, 210, 'main', 'Letzter Satz so viele wie möglich.', '', A), X('s_c2', 'pullup_w', 3, '10', 8, 150, 'dp', 'Neutraler Griff.', '', B), ...g('s_cg', [['latpd', '8+8+8', 'langsam, Pause unten, Dehnung oben'], ['cable_row', '8+8+8', ''], ['db_row', '8+8+8', ''], ['curl', '8+8+8', 'voll, halb, unten']])] },
+      return [{ k: 'A', kind: 'gym', title: 'Beine', sub: 'Kniebeuge, Frontkniebeuge, Giant Set', add: [X('s_a1', 'squat', 8, '8', 8, 180, 'main', 'Letzter Satz so viele wie möglich.', '', A), X('s_a2', 'fs', 3, '10', 8, 150, 'dp', '', '', B), ...g('s_ag', [['curl_lying', '10', '2 s halten oben'], ['hack', '10', '5 s ablassen'], ['legext', '10', '2 s halten oben'], ['legpress', '8+8+8', 'eng, weit, mittel']])] },
+        { k: 'B', kind: 'gym', title: 'Brust', sub: 'Schrägbank, Dips, Giant Set', add: [X('s_b1', 'incl_bb', 8, '8', 8, 180, 'main', 'Letzter Satz so viele wie möglich.', '', A), X('s_b2', 'bench', 3, '10', 8, 150, 'dp', 'Original: Negativbank.', '', B), ...g('s_bg', [['pecdeck', '10+10', 'Drop-Satz'], ['incl', '8+8', 'neutral, dann normal'], ['dip', '8+8', '5 s ablassen'], ['cable_fly', '8+8', '2 s halten, dann schnell']])] },
+        { k: 'C', kind: 'gym', title: 'Rücken und Bizeps', sub: 'Kreuzheben, Klimmzüge, Giant Set', add: [X('s_c1', 'dl', 8, '8', 8, 210, 'main', 'Letzter Satz so viele wie möglich.', '', A), X('s_c2', 'pullup_w', 3, '10', 8, 150, 'dp', 'Neutraler Griff.', '', B), ...g('s_cg', [['latpd', '8+8+8', 'langsam, Pause unten, Dehnung oben'], ['cable_row', '8+8+8', ''], ['db_row', '8+8+8', ''], ['curl', '8+8+8', 'voll, halb, unten']])] },
         { k: 'D', kind: 'gym', title: 'Schulter und Trizeps', sub: 'Push Press, Riesensätze', add: [X('s_d1', 'push_press', 8, '8', 8, 180, 'main', 'Letzter Satz so viele wie möglich.', '', A), X('s_d2', 'ohp', 3, '10', 8, 150, 'dp', 'Original: Nackendrücken.', '', B), ...g('s_dg', [['lat', '8+8', 'voll, dann Teilwiederholungen'], ['rev_fly', '10+10', ''], ['db_ohp', '8+8', '']]), X('s_d3', 'cg_bench', 8, '8', 8, 150, 'dp', '', '', A), ...g('s_dh', [['tri_pd', '8+8', ''], ['tri_oh', '8+8', ''], ['skull', '8+8', '']])] }]; } },
-  fl4: { name: 'Fat-Loss 4', desc: 'Kurzes Krafttraining plus Zirkel aus Druck/Zug, Bein, Rumpf und Cardio.',
+  fl4: { name: 'Fat-Loss 4', desc: 'Kurzes Krafttraining plus Circuit aus Druck/Zug, Bein, Rumpf und Cardio.',
     goals: ['fat', 'health'], level: ['intermediate'], days: 3, minutes: 45, place: 'gym', weeks: 12, author: 'Nick Tumminello (T Nation)',
     src: [{ t: 'The Fat-Loss 4 Workout Protocol (T Nation)', u: 'https://archive.t-nation.com/workouts/the-fat-loss-4-workout-protocol/' }],
     who: 'Für Fortgeschrittene mit wenig Zeit, die im Defizit Kraft halten wollen.', prereq: 'Grundtechnik, Cardio-Gerät oder Springseil.',
-    struct: '3 Tage (Push, Beine/Hüfte, Pull). Erst 2 Kraftübungen mit 4–5×6–8, dann 6–8 Runden FL4-Zirkel: 30 s Ober-, 30 s Unterkörper, 30 s Rumpf, je 15 s Pause, 90 s Cardio bei 80 % HFmax, 1 min Pause.',
-    ev: { g: 'B', pros: ['Schwere Sätze erhalten Kraft im Defizit', 'Zeiteffizient, hoher Verbrauch'], cons: ['Zirkel bringen für Muskelaufbau wenig', 'Kalorienverbrauch durch Training ist klein gegenüber der Ernährung'] },
-    sessions: () => { const fl = (p, a, b, c) => [X(p + '1', a, 6, '30', 7.5, 15, 'time', 'FL4-Zirkel: 30 s, 15 s Pause.', 'K'), X(p + '2', b, 6, '30', 7.5, 15, 'time', '', 'K'), X(p + '3', c, 6, '30', 7.5, 15, 'time', '', 'K'), X(p + '4', 'bike_int', 6, '90', null, 60, 'time', '90 s bei etwa 80 % HFmax. Danach musst du einen ganzen Satz sprechen können.', 'K')];
-      return [{ k: 'A', kind: 'gym', title: 'Push + FL4', sub: 'Drücken, dann Zirkel', add: [X('t_a1', 'db_bench', 4, '6–8', 8, 120, 'dp'), X('t_a2', 'db_ohp', 4, '6–8', 8, 120, 'dp'), ...fl('t_ak', 'pushup', 'goblet', 'plank')] },
-        { k: 'B', kind: 'gym', title: 'Beine + FL4', sub: 'Kreuzheben, dann Zirkel', add: [X('t_b1', 'trap', 5, '4–6', 8, 150, 'main'), X('t_b2', 'bss', 3, '6–8', 8, 90, 'dp', 'Pro Bein.'), ...fl('t_bk', 'row', 'stepup', 'rev_crunch')] },
-        { k: 'C', kind: 'gym', title: 'Pull + FL4', sub: 'Klimmzüge, dann Zirkel', add: [X('t_c1', 'chinup', 4, '6–8', 8, 120, 'dp'), X('t_c2', 'db_row', 3, '6–8', 8, 90, 'dp', 'Pro Arm.'), ...fl('t_ck', 'db_ohp', 'rdl_db', 'pallof')] }]; } },
+    struct: '3 Tage (Push, Beine/Hüfte, Pull). Erst 2 Kraftübungen mit 4–5×6–8, dann 6–8 Runden FL4-Circuit: 30 s Ober-, 30 s Unterkörper, 30 s Rumpf, je 15 s Pause, 90 s Cardio bei 80 % HFmax, 1 min Pause.',
+    ev: { g: 'B', pros: ['Schwere Sätze erhalten Kraft im Defizit', 'Zeiteffizient, hoher Verbrauch'], cons: ['Circuits bringen für Muskelaufbau wenig', 'Kalorienverbrauch durch Training ist klein gegenüber der Ernährung'] },
+    sessions: () => { const fl = (p, a, b, c) => [X(p + '1', a, 6, '30', 7.5, 15, 'time', 'FL4-Circuit: 30 s, 15 s Pause.', 'K'), X(p + '2', b, 6, '30', 7.5, 15, 'time', '', 'K'), X(p + '3', c, 6, '30', 7.5, 15, 'time', '', 'K'), X(p + '4', 'bike_int', 6, '90', null, 60, 'time', '90 s bei etwa 80 % HFmax. Danach musst du einen ganzen Satz sprechen können.', 'K')];
+      return [{ k: 'A', kind: 'gym', title: 'Push + FL4', sub: 'Drücken, dann Circuit', add: [X('t_a1', 'db_bench', 4, '6–8', 8, 120, 'dp'), X('t_a2', 'db_ohp', 4, '6–8', 8, 120, 'dp'), ...fl('t_ak', 'pushup', 'goblet', 'plank')] },
+        { k: 'B', kind: 'gym', title: 'Beine + FL4', sub: 'Kreuzheben, dann Circuit', add: [X('t_b1', 'trap', 5, '4–6', 8, 150, 'main'), X('t_b2', 'bss', 3, '6–8', 8, 90, 'dp', 'Pro Bein.'), ...fl('t_bk', 'row', 'stepup', 'rev_crunch')] },
+        { k: 'C', kind: 'gym', title: 'Pull + FL4', sub: 'Klimmzüge, dann Circuit', add: [X('t_c1', 'chinup', 4, '6–8', 8, 120, 'dp'), X('t_c2', 'db_row', 3, '6–8', 8, 90, 'dp', 'Pro Arm.'), ...fl('t_ck', 'db_ohp', 'rdl_db', 'pallof')] }]; } },
   bwrr: { name: 'Bodyweight Recommended Routine', desc: 'Ganzkörper mit Körpergewicht, Progression über schwerere Varianten statt Gewicht.',
     goals: ['muscle', 'strength', 'health'], level: ['beginner', 'intermediate'], days: 3, minutes: 50, place: 'minimal', weeks: 12, author: 'r/bodyweightfitness',
     src: [{ t: 'Recommended Routine (r/bodyweightfitness Wiki)', u: 'https://www.reddit.com/r/bodyweightfitness/wiki/kb/recommended_routine/' }, { t: 'Recommended Routine (Liftosaur)', u: 'https://www.liftosaur.com/programs/recommended-routine' }],
     who: 'Für Einsteiger bis frühe Fortgeschrittene, die zuhause oder im Park trainieren.', prereq: 'Stange für Klimmzüge und Rudern, idealerweise Barren oder Ringe.',
-    struct: '3× pro Woche dasselbe Ganzkörper-Training: drei Supersatz-Paare (Klimmzug + Kniebeuge, Dips + Hüftstreckung, Rudern + Liegestütz), dann Rumpf. 3×5–8, bei 3×8 die nächste schwerere Variante. Varianten findest du bei jeder Übung unter „Varianten“.',
+    struct: '3× pro Woche dasselbe Ganzkörper-Training: drei Superset-Paare (Klimmzug + Kniebeuge, Dips + Hüftstreckung, Rudern + Liegestütz), dann Rumpf. 3×5–8, bei 3×8 die nächste schwerere Variante. Varianten findest du bei jeder Übung unter „Varianten“.',
     ev: { g: 'A', pros: ['Ganzkörper 3× pro Woche, ausgewogene Zug-Druck-Balance', 'Varianten-Progression funktioniert für Muskelaufbau ähnlich wie Gewicht, solange nah am Versagen trainiert wird'], cons: ['Beine bekommen auf Dauer zu wenig Reiz', 'Für maximale Kraft weniger geeignet als Langhantel'] },
     sessions: () => { const rr = s => ({ k: s, kind: 'gym', title: 'Ganzkörper ' + s, sub: 'Paare, dann Rumpf', add: [X(s + '_r1', 'neg_pu', 3, '5–8', 8.5, 90, 'bw', 'Leichter oder schwerer unter „Varianten“.', 'P1'), X(s + '_r2', 'bw_squat', 3, '5–8', 8.5, 90, 'bw', '', 'P1'), X(s + '_r3', 'dip_neg', 3, '5–8', 8.5, 90, 'bw', '', 'P2'), X(s + '_r4', 'sl_rdl', 3, '5–8', 8.5, 90, 'bw', 'Pro Bein.', 'P2'), X(s + '_r5', 'inv_row', 3, '5–8', 8.5, 90, 'bw', '', 'P3'), X(s + '_r6', 'pushup', 3, '5–8', 8.5, 90, 'bw', '', 'P3'), X(s + '_r7', 'plank', 3, '20–30', null, 60, 'time', 'Jede Einheit +5 s, ab 30 s: Ab-Wheel.', 'R'), X(s + '_r8', 'pallof', 3, '8–12', 8, 60, 'dp', '', 'R'), X(s + '_r9', 'hyper45', 3, '8–12', 8, 60, 'dp', 'Ohne Bank: Rückenstrecken am Boden.', 'R')] });
       return [rr('A'), rr('B'), rr('C')]; } },
@@ -267,7 +267,7 @@ LIBRARY.curves = { name: 'Strong Curves Einstieg', desc: 'Ganzkörper 3× pro Wo
 LIBRARY.lowerfb = { name: 'Ganzkörper Beine & Po', desc: 'Ganzkörper 4× pro Woche. Gesäß und Beine bekommen das meiste Volumen, der Oberkörper genug für Kraft und Form, Arme keine eigenen Sätze.', focus: 'lower',
   goals: ['muscle', 'fat', 'health'], level: ['beginner', 'intermediate'], days: 4, minutes: 60, place: 'gym', weeks: 12, author: 'Hybridblock (eigener Plan)',
   src: [{ t: 'Schoenfeld et al. 2017, Dosis-Wirkung Volumen', u: 'https://pubmed.ncbi.nlm.nih.gov/27433992/' }, { t: 'Plotkin et al. 2023: Hip Thrust vs. Kniebeuge', u: 'https://pubmed.ncbi.nlm.nih.gov/37877099/' }, { t: 'Roberts et al. 2020: Krafttraining bei Frauen und Männern', u: 'https://pubmed.ncbi.nlm.nih.gov/32218059/' }],
-  who: 'Für Frauen, die Po und Beine gezielt aufbauen und trotzdem ganzkörperlich trainieren wollen.', prereq: 'Saubere Technik in Kniebeuge, Hip Thrust und Rumänischem Kreuzheben, Fitnessstudio.',
+  who: 'Für Frauen, die Po und Beine gezielt aufbauen und trotzdem ganzkörperlich trainieren wollen.', prereq: 'Saubere Technik in Kniebeuge, Hip Thrust und Romanian Deadlift, Fitnessstudio.',
   struct: '4 Ganzkörper-Einheiten. Pro Woche etwa 18–22 Sätze für das Gesäß (Hip Thrust, Kreuzheben-Varianten, Ausfallschritte, Abduktion, Kickback), 10–12 für Oberschenkel vorne und hinten, 9–12 für Rücken, 6–9 für Brust und Schultern. Arme arbeiten bei Zug und Druck mit. RPE-Steuerung, Deload in Woche 4 und 8.',
   ev: { g: 'B', pros: ['10–20 harte Sätze pro Muskel und Woche sind für Muskelaufbau gut belegt', 'Hip Thrust und Kniebeuge zusammen treffen Po und Oberschenkel', 'Jeder Muskel 2× pro Woche, Einheiten bleiben kurz'], cons: ['Oberkörper nur auf mittlerem Volumen', 'Hohes Bein-Volumen braucht gute Erholung, im starken Defizit eher auf 3 Einheiten reduzieren'] },
   sessions: () => [

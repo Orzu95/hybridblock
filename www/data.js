@@ -22,7 +22,7 @@ L('hack',$t('Hack Squat'),{q:1,g:.5},['pend','legpress']);
 L('legpress',$t('Beinpresse'),{q:1,g:.5},['pend','hack']);
 L('goblet',$t('Goblet Squat'),{q:1,g:.5},['pend','fs']);
 L('trap',$t('Trap-Bar-Kreuzheben (hohe Griffe)'),{g:1,h:.5,q:.5},['rdl_db','hyper45','glute_bridge']);
-L('rdl_db',$t('Rumänisches Kreuzheben (KH)'),{h:1,g:.5},['hyper45','trap']);
+L('rdl_db',$t('Romanian Deadlift (KH)'),{h:1,g:.5},['hyper45','trap']);
 L('hyper45',$t('45°-Hyperextension'),{g:1,h:.5},['rdl_db','glute_bridge']);
 L('glute_bridge',$t('Glute Bridge (Langhantel)'),{g:1},['ht','ht_machine']);
 L('ht',$t('Hip Thrust'),{g:1,h:.25},['ht_machine','glute_bridge']);
@@ -32,13 +32,13 @@ L('sissy',$t('Sissy Squat'),{q:1},['legext']);
 L('bss',$t('Bulgarian Split Squat'),{q:1,g:1},['rev_lunge','stepup']);
 L('rev_lunge',$t('Reverse Lunge (KH)'),{q:1,g:1},['bss','stepup']);
 L('stepup',$t('Step-up (KH)'),{q:1,g:.5},['bss','rev_lunge']);
-L('curl_seated',$t('Beinbeuger sitzend'),{h:1},['curl_lying','nordic'],$t('Sitzend schlägt liegend beim Muskelaufbau (Maeo 2021): Hüfte gebeugt = Hamstrings gedehnt.'));
-L('curl_lying',$t('Beinbeuger liegend'),{h:1},['curl_seated','nordic']);
+L('curl_seated',$t('Leg Curl sitzend'),{h:1},['curl_lying','nordic'],$t('Sitzend schlägt liegend beim Muskelaufbau (Maeo 2021): Hüfte gebeugt = Hamstrings gedehnt.'));
+L('curl_lying',$t('Leg Curl liegend'),{h:1},['curl_seated','nordic']);
 L('nordic',$t('Nordic Curl (assistiert)'),{h:1},['curl_seated','curl_lying'],$t('Langsam ablassen, mit Band oder Händen abfangen.'));
-L('calf_st',$t('Wadenheben stehend'),{c:1},['calf_lp','calf_smith']);
-L('calf_lp',$t('Wadenheben an der Beinpresse'),{c:1},['calf_st','calf_smith']);
-L('calf_smith',$t('Wadenheben Multipresse'),{c:1},['calf_st','calf_lp']);
-L('calf_se',$t('Wadenheben sitzend'),{c:1},['calf_lp','calf_st']);
+L('calf_st',$t('Calf Raise stehend'),{c:1},['calf_lp','calf_smith']);
+L('calf_lp',$t('Calf Raise an der Beinpresse'),{c:1},['calf_st','calf_smith']);
+L('calf_smith',$t('Calf Raise Multipresse'),{c:1},['calf_st','calf_lp']);
+L('calf_se',$t('Calf Raise sitzend'),{c:1},['calf_lp','calf_st']);
 /* Druck */
 L('bench',$t('Bankdrücken (LH)'),{ch:1,t:.5,fd:.5},['db_bench','smith_bench','machine_press']);
 L('db_bench',$t('KH-Bankdrücken'),{ch:1,t:.5,fd:.5},['bench','machine_press']);
@@ -96,7 +96,7 @@ L('squat_jump',$t('Squat Jump'),{},['box']);
 L('mb_chest',$t('Medball-Brustpass'),{},['mb_wall']);
 L('mb_wall',$t('Medball-Wurf gegen Wand'),{},['mb_chest']);
 L('mb_toss',$t('Medball-Scoop-Toss'),{},['broad']);
-L('broad',$t('Standweitsprung'),{},['mb_toss']);
+L('broad',$t('Broad Jump'),{},['mb_toss']);
 
 /* Zuordnung zu RepDB (repdb.co, Free Tier): Bilder und Anleitungen werden zur Laufzeit geladen, nicht mitgeliefert */
 const REPDB = {"fs":"front-squat","hack":"hack-squat","legpress":"leg-press","goblet":"goblet-squat","rdl_db":"dumbbell-romanian-deadlift","hyper45":"back-extension","glute_bridge":"barbell-glute-bridge","ht":"hip-thrust","ht_machine":"hip-thrust","legext":"leg-extension","bss":"bulgarian-split-squat","rev_lunge":"reverse-lunge","stepup":"step-ups","curl_seated":"seated-leg-curl","curl_lying":"leg-curl","nordic":"nordic-hamstring-curl","calf_st":"standing-calf-raise","calf_smith":"smith-machine-calf-raise","calf_se":"seated-calf-raise","calf_lp":"machine-calf-raise","bench":"bench-press","db_bench":"db-bench-press","smith_bench":"smith-machine-bench-press","machine_press":"chest-press-machine","dip_w":"dips","dip":"dips","dip_assist":"assisted-dips","dip_machine":"plate-loaded-seated-dip-machine","incl":"incline-db-press","db_ohp":"seated-db-press","machine_ohp":"machine-shoulder-press","pullup_w":"weighted-pull-up","chinup_w":"chin-ups","latpd_heavy":"lat-pulldown","pullup":"pull-up","neutral_pu":"neutral-grip-pull-ups","chinup":"chin-ups","latpd":"lat-pulldown","assisted_pu":"assisted-pull-ups","row":"chest-supported-db-row","cable_row":"seated-cable-row","tbar_cs":"t-bar-row","face":"face-pull","rev_fly":"dumbbell-reverse-fly","lat":"lateral-raise","lat_cable":"cable-lateral-raise","incline_curl":"incline-db-curl","curl":"ez-bar-curl","db_curl":"seated-dumbbell-curl","cable_curl":"cable-curl","preacher":"preacher-curl","hammer":"hammer-curl","tri_oh":"cable-overhead-tricep-extension","db_oh_ext":"overhead-tricep-extension","tri_pd":"tricep-pushdown","crunch":"cable-crunch","machine_crunch":"machine-seated-crunch","decline_crunch":"decline-crunch","hlr":"hanging-leg-raise","captain":"captains-chair-knee-raise","rev_crunch":"reverse-crunches","carry":"suitcase-carry","farmer":"dumbbell-farmers-walk","box":"box-jump","squat_jump":"jump-squat"};
@@ -241,7 +241,7 @@ const ACT_TYPES = [
   { id:'treppen', name:$t('Treppen steigen'), short:$t('Trep'), cardio:true, dist:false, g:'indoor', gps:false, m:'none', hc:'stairClimbing', met:8 },
   { id:'seil', name:$t('Seilspringen'), short:$t('Seil'), cardio:true, dist:false, g:'indoor', gps:false, m:'none', hc:'jumpRope', met:11 },
   { id:'hiit', name:$t('HIIT'), short:$t('HIIT'), cardio:true, dist:false, g:'indoor', gps:false, m:'none', hc:'highIntensityIntervalTraining', met:8 },
-  { id:'zirkel', name:$t('Zirkel / Functional'), short:$t('Zirk'), cardio:true, dist:false, g:'indoor', gps:false, m:'none', hc:'crossTraining', met:8 },
+  { id:'zirkel', name:$t('Circuit / Functional'), short:$t('Circ'), cardio:true, dist:false, g:'indoor', gps:false, m:'none', hc:'crossTraining', met:8 },
   { id:'kurs', name:$t('Fitnesskurs'), short:$t('Kurs'), cardio:true, dist:false, g:'indoor', gps:false, m:'none', hc:'exerciseClass', met:6 },
   { id:'tanzen', name:$t('Tanzen'), short:$t('Tanz'), cardio:true, dist:false, g:'indoor', gps:false, m:'none', hc:'dance', met:5.5 },
   { id:'fussball', name:$t('Fußball'), short:$t('Ball'), cardio:true, dist:true, run:true, g:'ball', gps:true, m:'none', hc:'soccer', met:7 },

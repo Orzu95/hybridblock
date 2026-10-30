@@ -94,7 +94,7 @@ function cardioSpecS(s, w) { const c = s && s.cardio;
   if (s && s.kind === 'hiit') { const h = hiit(w); return { mode: h.mode, reps: h.reps, dur: h.dur, rest: 3, warm: 10, cool: 5, hi: true, min: h.min, title: h.title, sub: h.sub }; }
   return { mode: 'z2', min: Z2MIN[w - 1], std: true }; }
 function cardioTitle(sp) { if (sp.title) return $t(sp.title); if (sp.mode === 'int') return sp.reps + ' × ' + fmt(sp.dur) + (sp.run ? $t(' min laufen') : $t(' min')); return sp.min + (sp.run ? $t(' min am Stück laufen') : $t(' min Z2')); }
-function cardioSub(sp) { if (sp.sub) return $t(sp.sub); if (sp.mode === 'int') return sp.run ? fmt(sp.rest) + $t(' min gehen dazwischen, 5 min zügig gehen zum Auf- und Abwärmen') : fmt(sp.rest) + $t(' min locker zwischen den Intervallen'); return sp.run ? $t('Locker, du kannst dich dabei unterhalten.') : $t('Du kannst in ganzen Sätzen reden.'); }
+function cardioSub(sp) { if (sp.sub) return $t(sp.sub); if (sp.mode === 'int') return sp.run ? fmt(sp.rest) + $t(' min gehen dazwischen, 5 min zügig gehen für Warm-up und Cool-down') : fmt(sp.rest) + $t(' min locker zwischen den Intervallen'); return sp.run ? $t('Locker, du kannst dich dabei unterhalten.') : $t('Du kannst in ganzen Sätzen reden.'); }
 function sessSub(w, k) { const s = SESS[k]; if (s.cardio) return cardioTitle(cardioSpec(w, k)); if (s.kind === 'hiit') return hiit(w).title; if (s.kind === 'z2') return Z2MIN[w - 1] + $t(' min · ') + s.sub; return s.sub; }
 const RE_SESS = /^w(\d+)-([A-Z])$/;
 applyPlan();
@@ -755,16 +755,16 @@ function exHistSheet(exId, metric, period) { const ex = LIB[exId]; let all = exH
   openSheet(sheetHead(esc(ex.name)) + (S.exNotes[exId] ? $t('<p class="small" style="margin-top:6px"><b>Notiz:</b> ') + esc(S.exNotes[exId]) + '</p>' : '') +
     '<div class="seg">' + avail.map(m => seg(m, EX_METRICS[m][0], metric, 'exMetric')).join('') + '</div>' +
     '<div class="seg" style="margin-top:-6px">' + [['all', $t('Alles')], ['3m', $t('3 Monate')], ['1m', $t('1 Monat')]].map(p => seg(p[0], p[1], period, 'exPeriod')).join('') + '</div>' +
-    $t('<div class="stats" style="grid-template-columns:repeat(3,minmax(0,1fr))"><div class="stat"><div class="k">Bestwert</div><div class="v" style="font-size:22px">') + (best != null ? fmt(best, mDec) : '–') + '</div><div class="s">' + mUnit + '</div></div>' +
+    $t('<div class="stats" style="grid-template-columns:repeat(3,minmax(0,1fr))"><div class="stat"><div class="k">PR</div><div class="v" style="font-size:22px">') + (best != null ? fmt(best, mDec) : '–') + '</div><div class="s">' + mUnit + '</div></div>' +
     $t('<div class="stat"><div class="k">Zuletzt</div><div class="v" style="font-size:22px">') + (last != null ? fmt(last, mDec) : '–') + '</div><div class="s">' + mUnit + '</div></div>' +
     $t('<div class="stat"><div class="k">Veränderung</div><div class="v ') + (chg > 0 ? 't-green' : chg < 0 ? 't-red' : '') + '" style="font-size:22px">' + (chg != null ? (chg > 0 ? '+' : '') + fmt(chg, 0) + ' %' : '–') + $t('</div><div class="s">seit ') + (period === 'all' ? $t('Start') : $t('Beginn')) + '</div></div></div>' +
     '<div class="card" style="margin-top:12px;padding:16px">' + chart + '</div>' +
-    (metric === 'e1' ? $t('<p class="small muted">e1RM = Gewicht × (1 + (Wdh. + Wdh. in Reserve) / 30). Ohne RPE-Eintrag wird die Plan-RPE angenommen.</p>') : '') +
+    (metric === 'e1' ? $t('<p class="small muted">e1RM = Gewicht × (1 + (Wdh. + RIR) / 30). Ohne RPE-Eintrag wird die Plan-RPE angenommen.</p>') : '') +
     (rows ? $t('<h3 style="margin:16px 0 4px">Alle Einheiten</h3><div class="plist">') + rows + '</div>' : '')); }
 function prCheck(exId, w, k, set) { const x = { w: num(set.w), r: num(set.r), rpe: num(set.rpe) }; if (!x.w || x.w <= 0 || !x.r) return;
   const key = sKey(w, k); const before = exHistory(exId).filter(o => !(o.label.startsWith(SESS[k].title) && o.wk === w)).reduce((m, o) => Math.max(m, o.e1 || 0), 0);
   const spec = planFor(w, k).find(p => (sess(w, k).logs[p.slot] || {}).ex === exId); const v = e1rm(x.w, x.r, Math.min(10, x.rpe ?? (spec && spec.rpe) ?? 8));
-  if (before > 0 && v > before * 1.005) setTimeout(() => toast($t('Neuer Rekord: e1RM ') + fmt(v, 0) + $t(' kg (vorher ') + fmt(before, 0) + ')'), 400); }
+  if (before > 0 && v > before * 1.005) setTimeout(() => toast($t('Neuer PR: e1RM ') + fmt(v, 0) + $t(' kg (vorher ') + fmt(before, 0) + ')'), 400); }
 /* Kraftkurven: Hauptübungen des Plans, sonst die am häufigsten geloggten Übungen mit Gewicht */
 function keyLifts() { const ids = []; GYM().forEach(k => planFor(1, k).forEach(p => { if (p.type === 'main' && LIB[p.ex] && !ids.includes(p.ex)) ids.push(p.ex); }));
   if (S.plan.tpl === 'hybrid') ['dip_w', 'trap'].forEach(id => { if (ids.length < 4 && !ids.includes(id)) ids.push(id); });
@@ -830,7 +830,7 @@ function viewMehr() { const st = S.settings; const f = (k, lab, type, extra) => 
   (S.plan.tpl !== 'hybrid' ? '</div>' : '') + (S.plan.tpl !== 'hybrid' ? '' : $t('<div class="card"><h2>Regeln und Evidenz</h2><ul class="rules">') +
   '<li><b>' + $t('Schwerpunkt') + (PRIORITY.length ? ' ' + PRIORITY.map(m => MUSCLES[m]).join(', ') : '') + ':</b> ' + $t('12–20 Sätze pro Woche, auf 2–3 Tage verteilt. Mehr Volumen bringt mehr Wachstum, aber mit abnehmendem Ertrag (Schoenfeld 2017, Pelland 2024).</li>') +
   $t('<li><b>Intensität:</b> Isolationsübungen bis RPE 9–10. Je näher am Versagen, desto mehr Hypertrophie, für Kraft spielt es kaum eine Rolle (Robinson 2024). Hauptübungen bleiben bei RPE 6–8.</li>') +
-  $t('<li><b>Gedehnte Position:</b> Beinbeuger sitzend statt liegend (Maeo 2021), Curls mit gestrecktem Arm, Teilwiederholungen in der Dehnung bei den Waden (Kassiano 2023).</li>') +
+  $t('<li><b>Gedehnte Position:</b> Leg Curl sitzend statt liegend (Maeo 2021), Curls mit gestrecktem Arm, Teilwiederholungen in der Dehnung bei den Waden (Kassiano 2023).</li>') +
   $t('<li><b>Nordic Curls:</b> zweimal 4–8 langsame Wiederholungen in Gym B. Exzentrisches Hamstring-Training senkt das Risiko für Zerrungen deutlich (van Dyk 2019).</li><li><b>Dips:</b> zweimal pro Woche. In Gym B schwer mit Zusatzgewicht, in Gym C mit Körpergewicht und mehr Wiederholungen.</li>') +
   $t('<li><b>Im Defizit:</b> Ziel ist Muskeln halten und leicht aufbauen. Die Rest-Muskulatur läuft bewusst auf Erhaltungsvolumen.</li>') +
   $t('<li><b>Cardio und Kraft:</b> getrennte Tage oder mindestens 3–6 h Abstand. Laufen stört den Beinaufbau stärker als Rad oder Rudern (Schumann 2022).</li>') +
@@ -849,7 +849,7 @@ function tick() { const left = Math.max(0, Math.round((TM.end - Date.now()) / 10
     if (TM.queue.length) { const nx = TM.queue.shift(); startTimer(nx.sec, nx.label, TM.queue); } else { $('#timer').classList.add('end'); $('#tmLabel').textContent = $t('Weiter geht’s'); setTimeout(() => { if (Date.now() >= TM.end) showTimer(false); }, 6000); } } }
 function intervalQueue(w, k) { const sp = k ? cardioSpec(w, k) : hiit(w);
   if (sp.seq || sp.run) { const q = [{ sec: (sp.warm || 5) * 60, label: $t('Zügig gehen zum Aufwärmen') }]; const seq = sp.seq || Array.from({ length: sp.reps }, (_, i) => [sp.dur, i < sp.reps - 1 ? sp.rest : 0]);
-    seq.forEach((x, i) => { q.push({ sec: Math.round(x[0] * 60), label: $t('Laufen ') + (i + 1) + $t(' von ') + seq.length }); if (x[1]) q.push({ sec: Math.round(x[1] * 60), label: $t('Gehen') }); }); q.push({ sec: (sp.cool || 5) * 60, label: $t('Gehen zum Abwärmen') }); return q; }
+    seq.forEach((x, i) => { q.push({ sec: Math.round(x[0] * 60), label: $t('Laufen ') + (i + 1) + $t(' von ') + seq.length }); if (x[1]) q.push({ sec: Math.round(x[1] * 60), label: $t('Gehen') }); }); q.push({ sec: (sp.cool || 5) * 60, label: $t('Gehen als Cool-down') }); return q; }
   const h = sp; const q = [{ sec: (sp.warm || 10) * 60, label: $t('Aufwärmen, locker') }]; for (let i = 1; i <= h.reps; i++) { q.push({ sec: h.dur * 60, label: $t('Intervall ') + i + $t(' von ') + h.reps + $t(': hart') }); if (i < h.reps) q.push({ sec: (h.rest || 3) * 60, label: $t('Pause, locker') }); } q.push({ sec: (h.cool || 5) * 60, label: $t('Auslaufen') }); return q; }
 
 /* ======================= EVENTS ======================= */
@@ -1118,7 +1118,7 @@ function weekReport(w) { const days = []; ORDER.forEach(k => { const s = peekSes
     st($t('Einheiten'), done + $t(' von ') + ORDER.length) + st($t('Gewicht (Trend)'), t1 != null && t2 != null ? (t2 - t1 <= 0 ? '−' : '+') + fmt(Math.abs(t2 - t1), 1) + $t(' kg') : '–') +
     $t('<div class="stat" style="background:var(--paper)"><div class="k">Schwerpunkt-Sätze</div><div class="small" style="font-weight:700;line-height:1.5;margin-top:4px">') + PRIORITY.map(m => MUSCLES[m] + ' ' + fmt(vol[m], 0)).join('<br>') + '</div></div>' + st($t('Belastung'), load ? fmt(load, 0) : '–', $t('Dauer × RPE')) +
     st($t('Ø Schritte'), avgH('steps') != null ? fmt(avgH('steps'), 0) : '–') + st($t('Ø Schlaf'), avgH('sleepMin') != null ? fmtMin(avgH('sleepMin')) : '–') + '</div>' +
-    (prs.length ? $t('<p style="margin-top:12px"><b>Neue Rekorde:</b> ') + esc(prs.join(', ')) + '</p>' : '') + '</div>'; }
+    (prs.length ? $t('<p style="margin-top:12px"><b>Neue PRs:</b> ') + esc(prs.join(', ')) + '</p>' : '') + '</div>'; }
 
 /* Scheibenrechner und Aufwärmsätze */
 function ownedPlates() { const l = String(S.settings.plates || '25,20,15,10,5,2.5,1.25').split(/[,; ]+/).map(num).filter(x => x > 0).sort((a, b) => b - a); return l.length ? l : [25, 20, 15, 10, 5, 2.5, 1.25]; }

@@ -11,7 +11,7 @@
   document.head.appendChild(st); })();
 
 const ssNewId = () => 'G' + Math.random().toString(36).slice(2, 6).toUpperCase();
-const ssName = (n, mode) => mode === 'fill' ? $t('Füllsatz') : n === 2 ? $t('Supersatz') : n === 3 ? $t('Triple-Set') : $t('Riesensatz');
+const ssName = (n, mode) => mode === 'fill' ? $t('Füllsatz') : n === 2 ? $t('Superset') : n === 3 ? $t('Triple-Set') : $t('Giant Set');
 const ssRestTxt = sec => sec >= 60 ? fmt(sec / 60) + $t(' min') : sec + $t(' s');
 const ssExName = id => (LIB[id] || { name: id }).name;
 
@@ -63,7 +63,7 @@ function ssMark(h, g, extraBtns) { if (g) { h = h.replace('<div class="ex" ', '<
   return extraBtns ? h.replace('<div class="ex-actions">', '<div class="ex-actions">' + extraBtns) : h; }
 const _exCardSS = exCard;
 exCard = function (w, k, spec) { const g = spec.ss;
-  const btns = '<button class="btn sm" data-act="ssOpen" data-w="' + w + '" data-k="' + k + '" data-slot="' + spec.slot + '" type="button">' + (g ? $t('Supersatz ändern') : $t('Supersatz')) + '</button>' +
+  const btns = '<button class="btn sm" data-act="ssOpen" data-w="' + w + '" data-k="' + k + '" data-slot="' + spec.slot + '" type="button">' + (g ? $t('Superset ändern') : $t('Superset')) + '</button>' +
     (spec.xtra ? '<button class="btn sm" data-act="ssDelExtra" data-w="' + w + '" data-k="' + k + '" data-slot="' + spec.slot + '" type="button">' + $t('Entfernen') + '</button>' : '');
   return ssMark(_exCardSS(w, k, spec), g, btns); };
 const _viewSessionSS = viewSession;
@@ -80,7 +80,7 @@ function ssLinkBar(kind, a, idx, items, getG, getM) { if (idx < 0 || idx >= item
   getG = getG || (x => x.gid); getM = getM || (x => x.ss ? (x.ss.mode === 'fill' ? 'fill' : 'ss') : '');
   const info = kind === 'pe' ? items.map(x => x.ss || null) : ssInfo(items, getG, getM); const g = info[idx], g2 = info[idx + 1]; const on = !!(g && g2 && g.gid === g2.gid);
   const d = ' data-kind="' + kind + '" data-a="' + a + '" data-idx="' + idx + '"';
-  let h = '<div class="ss-link"><button class="ss-lbtn' + (on ? ' on' : '') + '" data-act="ssLink"' + d + ' type="button">' + (on ? '⛓ ' + $t('verbunden · lösen') : '+ ' + $t('als Supersatz verbinden')) + '</button>';
+  let h = '<div class="ss-link"><button class="ss-lbtn' + (on ? ' on' : '') + '" data-act="ssLink"' + d + ' type="button">' + (on ? '⛓ ' + $t('verbunden · lösen') : '+ ' + $t('als Superset verbinden')) + '</button>';
   if (on && g.pos === 1) h += '<button class="ss-lbtn" data-act="ssLinkMode"' + d + ' type="button">' + (g.mode === 'fill' ? $t('Modus: in der Pause') : $t('Modus: im Wechsel')) + '</button>';
   return h + '</div>'; }
 function ssLinkCompute(gs, idx) { const out = gs.slice(); const a = out[idx], b = out[idx + 1];
@@ -109,11 +109,11 @@ function ssApplyLink(kind, a, idx, modeToggle) {
 function ssSheet() { const o = ui.ss; const list = planFor(o.w, o.k); const me = list.find(x => x.slot === o.slot); if (!me) return closeSheet();
   const others = list.filter(x => x.slot !== o.slot); const xtraSel = [...o.sel].some(sl => (list.find(x => x.slot === sl) || {}).xtra) || me.xtra;
   const seg = (act, cur, opts) => '<div class="seg">' + opts.map(p => '<button class="' + (cur === p[0] ? 'on' : '') + '" data-act="' + act + '" data-v="' + p[0] + '" type="button">' + p[1] + '</button>').join('') + '</div>';
-  openSheet(sheetHead($t('Supersatz')) + '<div class="on-white" style="margin-top:8px"><p class="small"><b>' + esc(ssExName(actualEx(o.w, o.k, me))) + '</b> ' + $t('verbinden mit:') + '</p>' +
+  openSheet(sheetHead($t('Superset')) + '<div class="on-white" style="margin-top:8px"><p class="small"><b>' + esc(ssExName(actualEx(o.w, o.k, me))) + '</b> ' + $t('verbinden mit:') + '</p>' +
     others.map(x => { const on = o.sel.has(x.slot); return '<button class="ss-pick' + (on ? ' on' : '') + '" data-act="ssTog" data-slot="' + x.slot + '" type="button"><span class="ck">' + (on ? '✓' : '') + '</span><span class="grow"><b>' + esc(ssExName(actualEx(o.w, o.k, x))) + '</b><br><span class="small" style="opacity:.8">' + x.sets + ' × ' + esc(x.reps) + (x.ss && x.slot !== o.slot && !on ? ' · ' + $t('schon in ') + x.ss.label.replace(/\d+$/, '') : '') + (x.xtra ? ' · ' + $t('nur heute') : '') + '</span></span></button>'; }).join('') +
     '<button class="btn block" style="margin-top:8px" data-act="ssAddNew" type="button">' + $t('+ Neue Übung dazunehmen') + '</button>' +
     '<p class="small" style="margin:14px 0 6px;font-weight:700">' + $t('Ablauf') + '</p>' + seg('ssMode', o.mode, [['ss', $t('Im Wechsel')], ['fill', $t('In der Pause')]]) +
-    '<p class="small muted" style="margin-top:6px">' + (o.mode === 'fill' ? $t('Füllsatz: Die anderen Übungen machst du in der Pause von ') + '<b>' + esc(ssExName(actualEx(o.w, o.k, me))) + '</b>' + $t('. Der Pausen-Timer läuft dabei weiter.') : $t('Supersatz (2), Triple-Set (3) oder Riesensatz (4+): alle Übungen direkt nacheinander, Pause erst nach der Runde. Die App springt zum nächsten Satz.')) + '</p>' +
+    '<p class="small muted" style="margin-top:6px">' + (o.mode === 'fill' ? $t('Füllsatz: Die anderen Übungen machst du in der Pause von ') + '<b>' + esc(ssExName(actualEx(o.w, o.k, me))) + '</b>' + $t('. Der Pausen-Timer läuft dabei weiter.') : $t('Superset (2), Triple-Set (3) oder Giant Set (4+): alle Übungen direkt nacheinander, Pause erst nach der Runde. Die App springt zum nächsten Satz.')) + '</p>' +
     '<p class="small" style="margin:14px 0 6px;font-weight:700">' + $t('Gilt für') + '</p>' + seg('ssScope', o.scope, [['today', $t('Nur heute')], ['always', $t('Dauerhaft im Plan')]]) +
     (o.scope === 'always' && xtraSel ? '<p class="small muted" style="margin-top:6px">' + $t('Neu dazugenommene Übungen kommen dann fest in diese Einheit.') + '</p>' : '') +
     '<div class="row" style="margin-top:16px">' + (me.ss ? '<button class="btn" data-act="ssUnlink" type="button">' + $t('Verbindung lösen') + '</button>' : '') + '<div class="grow"></div><button class="btn brand" data-act="ssSave" type="button"' + (o.sel.size ? '' : ' disabled') + '>' + $t('Speichern') + '</button></div></div>'); }
