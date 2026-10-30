@@ -1716,6 +1716,7 @@ I18N.ru = {
 "Open Food Facts ist gerade nicht erreichbar (": "Open Food Facts сейчас недоступен (",
 "Open Food Facts ist gerade nicht erreichbar. Du kannst das Produkt selbst anlegen.": "Open Food Facts сейчас недоступен. Можешь создать продукт вручную.",
 "Open Food Facts nicht erreichbar.": "Open Food Facts недоступен.",
+"Orange: hier packst du an oder das bewegt sich.": "Оранжевым: за что берёшься или что движется.",
 "Original nur als Buch, hier nach öffentlicher Zusammenfassung umgesetzt": "Оригинал только в книге, здесь по открытому описанию",
 "Original: 10 Wiederholungen gesamt, jede Woche +2.": "Оригинал: 10 повторений всего, каждую неделю +2.",
 "Original: 3-Board-Press.": "Оригинал: жим с 3 досками.",

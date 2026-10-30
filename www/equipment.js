@@ -60,6 +60,8 @@ const EQS = (() => {
   };
 })();
 
+/* Geräte-Illustrationen (Canva-KI, eigener Stil: grau, Akzent #FF5A1F nur am beweglichen Teil). Fehlende Geräte nutzen die alte Skizze. */
+const EQ_IMG = 'abdm abm assist band bb bench bike box cable calfm chestpress db dipbar dipm ez ghd hack htm inclm kb latm latpd legcurl_l legcurl_s legext legpress nordic pendulum preacher pullbar rack rings rope shoulderm smith trapbar'.split(' ');
 const EQ_INFO = {
   bb: ['Olympia-Stange, Hantelstange', 'Die lange Stange (meist 20 kg, 2,2 m) für Scheiben. Grundlage für Kniebeuge, Kreuzheben, Bankdrücken und Rudern.'],
   rack: ['Power Rack, Kniebeugenständer, Squat-Stand', 'Gestell mit Ablagen für die Langhantel und Sicherheitsstreben. Damit kannst du schwer kniebeugen und bankdrücken, ohne dass dir jemand die Stange reicht.'],
@@ -106,13 +108,13 @@ const EQ_INFO = {
 };
 (function () { const st = document.createElement('style'); st.textContent =
   '.eqw{display:inline-flex;align-items:center;gap:2px}.eqq{width:22px;height:22px;border-radius:50%;border:1px solid var(--rule);background:var(--paper);color:var(--graphite);font:inherit;font-size:12px;font-weight:800;cursor:pointer;padding:0;line-height:22px;flex:0 0 22px}.on-white .eqq,#sheetCard .eqq{background:var(--fog)}' +
-  '.eqsvg{display:block;width:100%;max-width:320px;margin:10px auto 6px;background:var(--fog);border-radius:16px;padding:10px}.eqsvg *{fill:none;stroke:var(--charcoal);stroke-width:3;stroke-linecap:round;stroke-linejoin:round}' +
+  '.eqimg{display:block;width:100%;max-width:320px;margin:10px auto 6px;border-radius:16px;background:#fff}.eqsvg{display:block;width:100%;max-width:320px;margin:10px auto 6px;background:var(--fog);border-radius:16px;padding:10px}.eqsvg *{fill:none;stroke:var(--charcoal);stroke-width:3;stroke-linecap:round;stroke-linejoin:round}' +
   '.eqsvg .a{stroke:var(--ember)}.eqsvg .a2{stroke:var(--ember);fill:var(--ember)}.eqsvg .a3{stroke:var(--ember);opacity:.45}.eqsvg .f{fill:var(--charcoal)}.eqsvg .f2{fill:var(--rule);stroke:var(--charcoal)}.eqsvg .p{fill:var(--rule)}.eqsvg .pad{fill:var(--paper)}.eqsvg .pad.a2{fill:var(--ember)}';
   document.head.appendChild(st); })();
 function eqExamples(e) { return Object.keys(LIB).filter(id => exEq(id).includes(e) && !LIB[id].cardio).slice(0, 6).map(id => LIB[id].name); }
 function eqInfoSheet(e) { const inf = EQ_INFO[e]; if (!inf) return; const miss = (S.settings.missingEq || []).includes(e); const ex = eqExamples(e);
   openSheet(sheetHead(esc(EQUIP[e] || e)) + '<div class="on-white">' +
-    (EQS[e] ? '<svg class="eqsvg" viewBox="0 0 160 100" role="img" aria-label="' + esc(EQUIP[e] || e) + '">' + EQS[e] + '</svg><p class="small muted" style="text-align:center;margin:0">' + $t('Skizze. Orange: hier packst du an oder das bewegt sich.') + '</p>' : '') +
+    (EQ_IMG.includes(e) ? '<img class="eqimg" src="eq/' + e + '.webp" alt="' + esc(EQUIP[e] || e) + '" loading="lazy" decoding="async"><p class="small muted" style="text-align:center;margin:0">' + $t('Orange: hier packst du an oder das bewegt sich.') + '</p>' : EQS[e] ? '<svg class="eqsvg" viewBox="0 0 160 100" role="img" aria-label="' + esc(EQUIP[e] || e) + '">' + EQS[e] + '</svg><p class="small muted" style="text-align:center;margin:0">' + $t('Skizze. Orange: hier packst du an oder das bewegt sich.') + '</p>' : '') +
     '<p style="margin-top:12px">' + esc($t(inf[1])) + '</p>' +
     '<p class="small muted" style="margin-top:6px">' + $t('Auch genannt: ') + esc($t(inf[0])) + '</p>' +
     (ex.length ? '<h3 style="margin:14px 0 4px">' + $t('Übungen damit') + '</h3><p class="small">' + ex.map(esc).join(' · ') + '</p>' : '') +

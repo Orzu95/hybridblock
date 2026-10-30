@@ -1716,6 +1716,7 @@ I18N.en = {
 "Open Food Facts ist gerade nicht erreichbar (": "Open Food Facts is unreachable right now (",
 "Open Food Facts ist gerade nicht erreichbar. Du kannst das Produkt selbst anlegen.": "Open Food Facts is unreachable right now. You can create the product yourself.",
 "Open Food Facts nicht erreichbar.": "Open Food Facts unreachable.",
+"Orange: hier packst du an oder das bewegt sich.": "Orange: where you grip or what moves.",
 "Original nur als Buch, hier nach öffentlicher Zusammenfassung umgesetzt": "Original only as a book; implemented here from a public summary",
 "Original: 10 Wiederholungen gesamt, jede Woche +2.": "Original: 10 reps total, +2 each week.",
 "Original: 3-Board-Press.": "Original: 3-board press.",
