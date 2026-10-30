@@ -112,7 +112,7 @@ const LIBRARY = {
     src: [{ t: 'Schoenfeld et al. 2017, Dosis-Wirkung Volumen', u: 'https://pubmed.ncbi.nlm.nih.gov/27433992/' }, { t: 'Helgerud et al. 2007, 4×4-Intervalle', u: 'https://pubmed.ncbi.nlm.nih.gov/17414804/' }],
     who: 'Für Leute mit Krafterfahrung, die gleichzeitig abnehmen, VO₂max steigern und Kraft halten wollen.',
     prereq: 'Sicherer Umgang mit Kniebeuge, Kreuzheben und Bankdrücken. Fitnessstudio.',
-    struct: '3 Krafteinheiten (Unterkörper + Zug, Oberkörper, Ganzkörper), 1× HIIT 4×4, 1× Z2. Schwerpunkt Waden, Hamstrings, Bizeps, Bauch mit 12–20 Sätzen pro Woche. RPE-Autoregulation, Deload in Woche 4 und 8, Testwoche 12.',
+    struct: '3 Krafteinheiten (Unterkörper + Zug, Oberkörper, Ganzkörper), 1× HIIT 4×4, 1× Z2. Deine Schwerpunkt-Muskeln bekommen 12–20 Sätze pro Woche. RPE-Autoregulation, Deload in Woche 4 und 8, Testwoche 12.',
     ev: { g: 'A', pros: ['Volumen und Nähe zum Versagen nach aktueller Meta-Forschung', '4×4-Intervalle steigern die VO₂max stärker als moderates Dauertraining', 'Kraft und Cardio an getrennten Tagen begrenzt den Interferenzeffekt'], cons: ['5 Einheiten pro Woche brauchen Zeit und Erholung', 'Im Defizit nur moderat Kraftzuwachs'] } },
   gk3: { goals: ['muscle', 'fat', 'health'], level: ['beginner'], days: 4, minutes: 55, place: 'gym', weeks: 12, author: 'Hybridblock (eigener Plan)',
     src: [{ t: 'ACSM Position Stand Progression Models 2009', u: 'https://pubmed.ncbi.nlm.nih.gov/19204579/' }],

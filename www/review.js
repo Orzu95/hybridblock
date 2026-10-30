@@ -23,7 +23,7 @@ function e1Week(exId, w) { if (isLite(w)) return null; let best = null; ORDER.fo
 function prevValid(exId, w, n) { const out = []; for (let x = w - 1; x >= 1 && out.length < n; x--) { const v = e1Week(exId, x); if (v) out.push(v); } return out; }
 function blockWeekLoad(w) { let L = 0, n = 0; ORDER.forEach(k => { const l = sessLoad(w, k); if (l && l.load) { L += l.load; n++; } }); S.activities.filter(a => a.week === w).forEach(a => { const l = actLoad(a); if (l && l.load) { L += l.load; n++; } }); return n ? L : null; }
 function slotOf(exId, w) { for (const k of GYM()) { const p = planFor(w, k).find(x => x.ex === exId || actualEx(w, k, x) === exId); if (p) return { k, slot: p.slot, ex: p.ex }; } return null; }
-function focusMuscles() { const q = S.settings.q || {}; if (S.plan.tpl === 'hybrid') return ['c', 'h', 'bi', 'ab']; const fo = q.focus || (S.settings.sex === 'w' ? 'lower' : 'balanced'); if (fo === 'lower') return ['g', 'q', 'h']; return Object.keys(MUSCLES); }
+function focusMuscles() { const q = S.settings.q || {}; if (prioSync().length) return PRIORITY.slice(); const fo = q.focus || (S.settings.sex === 'w' ? 'lower' : 'balanced'); if (fo === 'lower') return ['g', 'q', 'h']; return Object.keys(MUSCLES); }
 const goalOf = () => (S.settings.q && S.settings.q.goal) || (S.plan.tpl === 'hybrid' ? 'hybrid' : 'muscle');
 
 /* ---------- Auswertung ---------- */

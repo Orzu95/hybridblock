@@ -2,9 +2,13 @@
 'use strict';
 
 /* ---------- Muskeln ----------
-   Schwerpunkt (mehr Volumen + näher am Versagen): Waden, Hamstrings, Bizeps, Bauch */
+   Schwerpunkt (mehr Volumen + näher am Versagen) wählt jede Person selbst (S.settings.prio), es gibt keine festen Defizit-Muskeln */
 const MUSCLES = { c:$t('Waden'), h:$t('Hamstrings'), bi:$t('Bizeps'), ab:$t('Bauch'), q:$t('Quads'), g:$t('Glutes'), ch:$t('Brust'), t:$t('Trizeps'), fd:$t('Schulter vorn'), sd:$t('Schulter seitlich'), rd:$t('Schulter hinten'), b:$t('Rücken') };
-const PRIORITY = ['c','h','bi','ab'];
+const PRIORITY = [];
+/* Schwerpunkt pro Person: eigene Wahl, sonst aus dem Fokus im Fragebogen (Unterkörper → Glutes, Quads, Hamstrings), sonst keiner */
+function prioMuscles() { const st = (typeof S !== 'undefined' && S && S.settings) || {}; if (Array.isArray(st.prio)) return st.prio.filter(m => MUSCLES[m]).slice(0, 4);
+  const fo = (st.q || {}).focus; return fo === 'lower' ? ['g', 'q', 'h'] : fo === 'upper' ? ['ch', 'b', 'sd'] : []; }
+function prioSync() { const p = prioMuscles(); PRIORITY.splice(0, PRIORITY.length, ...p); return PRIORITY; }
 /* Zielbereich direkte + anteilige Sätze pro Woche (im Defizit) */
 const VOL_TARGET = { prio:[12,20], other:[6,14] };
 
@@ -183,7 +187,7 @@ const KIND_LABEL = { gym:'Kraft', hiit:'HIIT', z2:'Z2 Grundlage' };
    Ein Plan ist reine Daten: Einheiten mit Basis-Template (base) und/oder eigenen Übungen (add),
    Anpassungen pro Slot in ov. Deload- und Testwochen werden für eigene Übungen automatisch leichter. */
 const PLAN_TPL = {
-  hybrid: { name:'Hybridblock', desc:'3× Kraft, 1× HIIT, 1× Z2. Schwerpunkt Waden, Hamstrings, Bizeps, Bauch.',
+  hybrid: { name:'Hybridblock', desc:'3× Kraft, 1× HIIT, 1× Z2. Schwerpunkt-Muskeln wählst du selbst.',
     sessions: () => [ { k:'A', kind:'gym', base:'A' }, { k:'B', kind:'gym', base:'B' }, { k:'H', kind:'hiit' }, { k:'C', kind:'gym', base:'C' }, { k:'Z', kind:'z2' } ] },
   gk3: { name:'Ganzkörper 3×', desc:'Einsteigerfreundlich: drei Ganzkörper-Einheiten mit Maschinen und Kurzhanteln, dazu Z2.',
     sessions: () => [

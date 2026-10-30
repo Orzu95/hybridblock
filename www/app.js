@@ -26,6 +26,8 @@ function loadState(raw) { const d = JSON.parse(raw); const def = DEFAULTS(); con
     for (const old in ren) if (se.logs[old] && !se.logs[ren[old]] && old !== ren[old]) { se.logs[ren[old]] = se.logs[old]; delete se.logs[old]; } }
   return s; }
 try { const raw = localStorage.getItem(KEY); if (raw) S = loadState(raw); } catch (e) { console.warn(e); }
+/* Bestehende Hybridblock-Installationen behalten ihren bisherigen Schwerpunkt (früher fest eingebaut), neue Nutzer wählen selbst */
+try { if (S && S.settings && S.settings.prio === undefined && S.plan && S.plan.tpl === 'hybrid' && S.meta && S.meta.onboarded) S.settings.prio = ['c', 'h', 'bi', 'ab']; } catch (e) {}
 let saveT;
 function persist() { if (typeof VIEW !== 'undefined' && VIEW) return; try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) { toast($t('Speichern fehlgeschlagen. Ist der Speicher voll?')); } }
 function save() { if (typeof VIEW !== 'undefined' && VIEW) return; S.meta.modAt = Date.now(); clearTimeout(saveT); saveT = setTimeout(() => { persist(); if (typeof cloudDirty === 'function') cloudDirty(); }, 250); }
@@ -273,7 +275,7 @@ const ui = { week: null, day: today(), foodTab: 'presets', meal: 'Frühstück', 
 let RESET_TOKEN = null;
 function parseHash() { const h = (location.hash || '#heute').slice(1).split('/'); if (h[0] === 'reset' && h[1]) { RESET_TOKEN = h[1]; try { history.replaceState(null, '', '#start/reset'); } catch (e) {} route = { name: 'start', arg: 'reset' }; return; } route = { name: h[0] || 'heute', arg: h[1] || null }; }
 window.addEventListener('hashchange', () => { parseHash(); render(true); });
-function render(scrollTop) {
+function render(scrollTop) { prioSync();
   if (!S.meta.onboarded && route.name !== 'start' && route.name !== 'datenschutz' && !VIEW) { location.hash = '#start'; return; }
   document.body.classList.toggle('onb-mode', route.name === 'start');
   if (!VIEW) maybeAdvance();
@@ -823,9 +825,10 @@ function viewMehr() { const st = S.settings; const f = (k, lab, type, extra) => 
   $t('<div class="card"><h2>App-Version</h2><p>') + (HEALTH.native ? $t('Android-App') : $t('Web-App')) + $t(' · Build ') + (BUILD.local != null ? BUILD.local : '–') + '</p>' + (HEALTH.native ? '<div class="row" style="margin-top:12px">' + (updateAvailable() ? '<a class="btn brand" href="' + APK_URL + $t('">Build ') + BUILD.remote + $t(' laden</a>') : $t('<button class="btn" data-act="checkUpdate" type="button">Nach Updates suchen</button>')) + '</div>' : $t('<p class="small muted">Die Web-App aktualisiert sich beim Öffnen von selbst.</p>')) + '</div>' +
   (NOTIF.p ? $t('<div class="card"><h2>Erinnerungen</h2><p>Pausen-Timer als Benachrichtigung, auch bei gesperrtem Bildschirm. Dazu optionale tägliche Erinnerungen. Leer lassen = aus.</p>') +
     (st.notif ? '<div class="fields" style="margin-top:12px">' + f('remWeigh', $t('Wiegen um'), 'time', ' style="width:140px"') + f('remTrain', $t('Training um'), 'time', ' style="width:140px"') + f('remMeal', $t('Essen nachtragen um'), 'time', ' style="width:140px"') + $t('</div><p class="small muted">Trainings-Erinnerungen kommen an deinen festen Wochentagen.</p>') : $t('<button class="btn brand" style="margin-top:12px" data-act="notifSetup" type="button">Benachrichtigungen einrichten</button>')) + '</div>' : '') +
+  '<div class="card"><h2>' + $t('Schwerpunkt-Muskeln') + '</h2><p class="small muted">' + $t('Bis zu 4 Muskeln, die mehr Volumen bekommen (12–20 statt 6–14 Sätze pro Woche). Wähle deine eigenen Schwachstellen, ohne Auswahl gibt es keinen Schwerpunkt.') + '</p><div class="row" style="flex-wrap:wrap;gap:6px;margin-top:8px">' + Object.keys(MUSCLES).map(m => '<button class="lcchip' + (PRIORITY.includes(m) ? ' on' : '') + '" data-act="prioTog" data-m="' + m + '" type="button">' + esc(MUSCLES[m]) + '</button>').join('') + '</div></div>' +
   $t('<div class="card"><h2>Quellen und Lizenzen</h2><ul class="rules small"><li>Übungsdaten von <a href="https://repdb.co" target="_blank" rel="noopener">RepDB (repdb.co)</a>, Free Tier, zur Laufzeit geladen.</li><li>Körperkarte: <a href="https://github.com/melihcolpan/MuscleMap" target="_blank" rel="noopener">MuscleMap</a> von Melih Colpan, MIT-Lizenz.</li><li>Lebensmittel: <a href="https://openfoodfacts.org" target="_blank" rel="noopener">Open Food Facts</a>, Daten unter ODbL.</li><li>Barcode: ZXing (Apache 2.0) · ZIP-Import: fflate (MIT) · Health Connect: @capgo/capacitor-health (MPL 2.0).</li></ul></div>') +
   (S.plan.tpl !== 'hybrid' ? '</div>' : '') + (S.plan.tpl !== 'hybrid' ? '' : $t('<div class="card"><h2>Regeln und Evidenz</h2><ul class="rules">') +
-  $t('<li><b>Schwerpunkt Waden, Hamstrings, Bizeps, Bauch:</b> 12–20 Sätze pro Woche, auf 2–3 Tage verteilt. Mehr Volumen bringt mehr Wachstum, aber mit abnehmendem Ertrag (Schoenfeld 2017, Pelland 2024).</li>') +
+  '<li><b>' + $t('Schwerpunkt') + (PRIORITY.length ? ' ' + PRIORITY.map(m => MUSCLES[m]).join(', ') : '') + ':</b> ' + $t('12–20 Sätze pro Woche, auf 2–3 Tage verteilt. Mehr Volumen bringt mehr Wachstum, aber mit abnehmendem Ertrag (Schoenfeld 2017, Pelland 2024).</li>') +
   $t('<li><b>Intensität:</b> Isolationsübungen bis RPE 9–10. Je näher am Versagen, desto mehr Hypertrophie, für Kraft spielt es kaum eine Rolle (Robinson 2024). Hauptübungen bleiben bei RPE 6–8.</li>') +
   $t('<li><b>Gedehnte Position:</b> Beinbeuger sitzend statt liegend (Maeo 2021), Curls mit gestrecktem Arm, Teilwiederholungen in der Dehnung bei den Waden (Kassiano 2023).</li>') +
   $t('<li><b>Nordic Curls:</b> zweimal 4–8 langsame Wiederholungen in Gym B. Exzentrisches Hamstring-Training senkt das Risiko für Zerrungen deutlich (van Dyk 2019).</li><li><b>Dips:</b> zweimal pro Woche. In Gym B schwer mit Zusatzgewicht, in Gym C mit Körpergewicht und mehr Wiederholungen.</li>') +
@@ -902,7 +905,8 @@ document.addEventListener('pointermove', e => { if (e.target.closest && e.target
 document.addEventListener('pointerdown', e => { if (e.target.closest && e.target.closest('.chart')) chartHover(e); });
 document.addEventListener('pointerout', e => { const b = e.target.closest && e.target.closest('.chart'); if (b && !b.contains(e.relatedTarget)) chartLeave(b); });
 
-document.addEventListener('click', async e => { const b = e.target.closest('[data-act]'); if (!b) return; const a = b.dataset.act; const r = sessFromRoute();
+document.addEventListener('click', async e => { const b = e.target.closest('[data-act]'); if (!b) return; const a = b.dataset.act;
+  if (a === 'prioTog') { const p = prioSync().slice(), m = b.dataset.m, i = p.indexOf(m); if (i >= 0) p.splice(i, 1); else if (p.length < 4) p.push(m); else { toast($t('Höchstens 4 Schwerpunkt-Muskeln')); return; } S.settings.prio = p; save(); render(); return; } const r = sessFromRoute();
   switch (a) {
     case 'plus': plusMenu(); break;
     case 'week': ui.week = +b.dataset.w; ui.confirmFinish = false; render(); break;
