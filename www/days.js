@@ -2,7 +2,7 @@
 /* dayUnits(d): alle Einheiten eines Tages (Plan-Einheiten und freie Aktivitäten) mit Belastung, RPE und Ziel-Link. */
 function unitHref(u) { return typeof resultHref === 'function' ? resultHref(u) : u.href; }
 function dayUnits(d) { const out = [];
-  for (let w = 1; w <= 12; w++) ORDER.forEach(k => { const s = peekSess(w, k); if (!s || s.date !== d || s.skipped) return; const L = sessLoad(w, k);
+  for (let w = 1; w <= NW(); w++) ORDER.forEach(k => { const s = peekSess(w, k); if (!s || s.date !== d || s.skipped) return; const L = sessLoad(w, k);
     const done = isCardio(k) ? !!(s.cardio && num(s.cardio.dur)) : (!!s.end || Object.values(s.logs || {}).some(l => (l.sets || []).some(x => x.done)));
     if (!done && !L) return; out.push({ type: 'plan', w, k, title: SESS[k].title, sub: SESS[k].sub || '', kind: isCardio(k) ? 'cardio' : 'kraft', load: L ? L.load : null, rpe: L ? L.rpe : null, dur: L ? L.dur : null, href: '#training/' + sKey(w, k) }); });
   S.activities.filter(a => a.date === d).forEach(a => { const L = actLoad(a); const t = ACT_MAP[a.type] || {}; out.push({ type: 'act', id: a.id, title: a.title || t.name || $t('Aktivität'), sub: t.name || '', kind: t.cardio ? 'cardio' : 'kraft', load: L ? L.load : null, rpe: L ? L.rpe : null, dur: L ? L.dur : num(a.dur), href: '#frei/' + a.id }); });

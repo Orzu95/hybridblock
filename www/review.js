@@ -51,11 +51,11 @@ function analyzeWeek(w) { const facts = [], sugs = []; const lifts = keyLifts().
   /* ---------- Regeln ---------- */
   const drops = perf.filter(p => p.ch <= -0.03);
   if (drops.length >= Math.min(2, perf.length) && drops.length && fatigue && ph !== 'dl') {
-    const nx = w + 1; if (nx <= 12 && phase(nx) !== 'dl') sugs.push({ id: 'deload', kind: 'deload', w: nx, ev: 'deload', t: $t('Deload in Woche ') + nx + $t(' vorziehen'), why: $t('Leistung gefallen bei ') + drops.map(p => LIB[p.id].name).join(', ') + $t(' und Ermüdung erhöht. Eine leichtere Woche baut Ermüdung ab, danach geht es weiter.') });
+    const nx = w + 1; if (nx <= NW() && phase(nx) !== 'dl') sugs.push({ id: 'deload', kind: 'deload', w: nx, ev: 'deload', t: $t('Deload in Woche ') + nx + $t(' vorziehen'), why: $t('Leistung gefallen bei ') + drops.map(p => LIB[p.id].name).join(', ') + $t(' und Ermüdung erhöht. Eine leichtere Woche baut Ermüdung ab, danach geht es weiter.') });
     else sugs.push({ id: 'vol', kind: 'vol', w: nx, f: 0.7, ev: 'deload', t: $t('Volumen nächste Woche um 30 % senken'), why: $t('Leistung gefallen und Ermüdung erhöht.') }); }
   else if (drops.length && deficit && rate != null && rate < 0) {
     sugs.push({ id: 'diet', kind: 'dietbreak', weeks: 1, ev: 'dietbreak', t: $t('Eine Woche auf Erhaltungskalorien'), why: $t('Im Kaloriendefizit fällt die Kraft bei ') + drops.map(p => LIB[p.id].name).join(', ') + $t('. Eine Woche ohne Defizit gibt Leistung und Erholung Luft.') }); }
-  perf.filter(p => p.stall && !fatigue).slice(0, 2).forEach(p => { const so = slotOf(p.id, w + 1 <= 12 ? w + 1 : w); if (!so) return; const used = new Set(); GYM().forEach(k => planFor(w, k).forEach(x => used.add(x.ex)));
+  perf.filter(p => p.stall && !fatigue).slice(0, 2).forEach(p => { const so = slotOf(p.id, w + 1 <= NW() ? w + 1 : w); if (!so) return; const used = new Set(); GYM().forEach(k => planFor(w, k).forEach(x => used.add(x.ex)));
     const alt = (LIB[p.id].alts || []).concat((SCALE[p.id] || {}).e || []).find(a => LIB[a] && !used.has(a) && exAvailable(a)); if (!alt) return;
     sugs.push({ id: 'swap_' + so.slot, kind: 'swap', k: so.k, slot: so.slot, old: p.id, to: alt, ev: 'stall', t: LIB[p.id].name + ' → ' + LIB[alt].name, why: $t('Seit 2 Wochen kein Fortschritt bei normaler Ermüdung. Ein Übungswechsel setzt einen neuen Reiz, die alte Übung kann später zurückkommen.') }); });
   if (L && Lref && L > Lref * 1.3 && prevL.length >= 2) sugs.push({ id: 'spike', kind: 'info', ev: 'spike', t: $t('Belastung nächste Woche nicht weiter steigern'), why: $t('Die Wochenbelastung lag ') + Math.round((L / Lref - 1) * 100) + $t(' % über den Vorwochen. Zusätzliche Cardio-Einheiten oder Spiele lieber locker halten.') });
@@ -64,7 +64,7 @@ function analyzeWeek(w) { const facts = [], sugs = []; const lifts = keyLifts().
   if (ovr != null && ovr >= 1.5 && !drops.length) sugs.push({ id: 'rpe', kind: 'info', ev: 'rpe', t: $t('Lasten etwas vorsichtiger wählen'), why: $t('Die Sätze lagen im Schnitt ') + fmt(ovr, 1) + $t(' RPE über dem Ziel. Die App schlägt nächste Woche schon leichtere Gewichte vor; nimm die Vorschläge ernst.') });
   /* Fortschritt bei normaler Ermüdung: Schwerpunkt-Muskeln +1 Satz */
   const goal = goalOf(); const progressing = perf.length && perf.every(p => p.ch > -0.01) && !fatigue && adh >= 0.8;
-  if (progressing && ['muscle', 'hybrid', 'fat'].includes(goal) && w < 12 && !isLite(w + 1)) { const pv = plannedVolume(w + 1); const adj = S.plan.setAdj || {}; const cap = goal === 'fat' ? 14 : 18;
+  if (progressing && ['muscle', 'hybrid', 'fat'].includes(goal) && w < NW() && !isLite(w + 1)) { const pv = plannedVolume(w + 1); const adj = S.plan.setAdj || {}; const cap = goal === 'fat' ? 14 : 18;
     focusMuscles().filter(m => pv[m] < cap).sort((a, b) => pv[a] - pv[b]).slice(0, 2).forEach(m => { let hit = null;
       GYM().forEach(k => planFor(w + 1, k).forEach(p => { if (!hit && LIB[p.ex] && (LIB[p.ex].muscles[m] || 0) >= 1 && p.type !== 'main' && p.sets < 5 && !adj[p.slot]) hit = { k, slot: p.slot, ex: p.ex, sets: p.sets }; }));
       if (hit) sugs.push({ id: 'set_' + hit.slot, kind: 'set', k: hit.k, slot: hit.slot, n: 1, m, from: w + 1, ev: 'vol', t: LIB[hit.ex].name + ': ' + hit.sets + ' → ' + (hit.sets + 1) + $t(' Sätze'), why: MUSCLES[m] + $t(' liegt bei ') + fmt(pv[m], 0) + $t(' Sätzen pro Woche. Du machst Fortschritte bei normaler Ermüdung, ein Satz mehr ist gut verkraftbar.') }); }); }
@@ -78,7 +78,7 @@ function analyzeWeek(w) { const facts = [], sugs = []; const lifts = keyLifts().
 function applySug(plan, s) { plan = plan || S.plan; const sess = plan.sessions.find(x => x.k === s.k);
   if (s.kind === 'set' && sess) { plan.setAdj = plan.setAdj || {}; const o = plan.setAdj[s.slot] || { n: 0, from: s.from || 1 }; plan.setAdj[s.slot] = { n: o.n + (s.n || 1), from: Math.min(o.from, s.from || 1) }; }
   if (s.kind === 'swap' && sess) { const it = (sess.add || []).find(x => x.slot === s.slot); if (it) it.ex = s.to; else { sess.ov = sess.ov || {}; sess.ov[s.slot] = Object.assign({}, sess.ov[s.slot] || {}, { ex: s.to }); } }
-  if (s.kind === 'deload') { const P = Array.from({ length: 12 }, (_, i) => phaseOf(plan, i + 1)); P[s.w - 1] = 'dl'; plan.phases = P; }
+  if (s.kind === 'deload') { const P = Array.from({ length: plan.weeks || 12 }, (_, i) => phaseOf(plan, i + 1)); P[s.w - 1] = 'dl'; plan.phases = P; }
   if (s.kind === 'vol') { plan.volAdj = plan.volAdj || {}; plan.volAdj[s.w] = s.f; }
   if (s.kind === 'dietbreak') plan.dietBreak = { from: today(), until: addDays(today(), 7 * (s.weeks || 1)) };
   return plan; }
@@ -111,7 +111,7 @@ function reviewCard(key, opts) { opts = opts || {}; const r = (opts.R || reviews
   const open = r.sugs.filter(s => s.st === 'open').length;
   return '<div class="card rev" id="rev-' + esc(key) + '"><div class="row"><div class="grow"><div class="lbl">' + $t('Wochen-Check-in') + '</div><h2 style="margin:2px 0 6px">' + $t('Deine Woche ') + r.w + '</h2></div>' + (open && !opts.coach ? '<span class="tag"><span class="dot red"></span>' + open + $t(' offen') + '</span>' : '') + '</div>' +
     '<ul class="rev-facts">' + r.facts.map(f => '<li>' + esc(f.t) + '</li>').join('') + '</ul>' +
-    '<div class="lbl" style="margin-top:12px">' + $t('Vorschläge für Woche ') + Math.min(12, r.w + 1) + '</div>' + r.sugs.map(s => sugHTML(key, s, opts.coach, opts.uid)).join('') +
+    '<div class="lbl" style="margin-top:12px">' + $t('Vorschläge für Woche ') + Math.min(NW(), r.w + 1) + '</div>' + r.sugs.map(s => sugHTML(key, s, opts.coach, opts.uid)).join('') +
     (!opts.coach && typeof hasCoach === 'function' && hasCoach() ? '<p class="small muted" style="margin-top:8px">' + $t('Dein Coach sieht diese Vorschläge auch und kann sie für dich übernehmen.') + '</p>' : '') +
     (!opts.coach && !opts.full ? '<button class="btn sm" data-act="revHide" data-key="' + esc(key) + '" type="button" style="margin-top:10px">' + $t('Ausblenden') + '</button>' : '') + '</div>'; }
 function whySheet(ev) { const e = REV_EV[ev]; if (!e) return; openSheet(sheetHead($t('Warum?')) + '<p>' + esc(e.txt) + '</p><p class="small" style="margin-top:10px"><b>' + $t('Evidenzgrad ') + e.g + '</b> · ' + $t('vorläufig, wird mit der geprüften Wissensbank aktualisiert') + '</p><ul class="small" style="margin-top:8px">' + e.src.map(s => '<li><a href="' + s[1] + '" target="_blank" rel="noopener">' + esc(s[0]) + '</a></li>').join('') + '</ul>'); }

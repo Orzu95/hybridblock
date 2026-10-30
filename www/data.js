@@ -204,7 +204,8 @@ const PLAN_TPL = {
   blank: { name:'Leerer Plan', desc:'Zwei leere Kraft-Einheiten, du baust alles selbst.',
     sessions: () => [ { k:'A', kind:'gym', title:'Einheit A', sub:'', add:[] }, { k:'B', kind:'gym', title:'Einheit B', sub:'', add:[] } ] } };
 const TPL_DAYMAP = { hybrid: DEFAULT_DAYMAP, gk3: { A:1, B:3, Z:4, C:5 }, blank: { A:1, B:4 } };
-function makePlan(tpl) { const T = PLAN_TPL[tpl] || PLAN_TPL.hybrid; return { tpl: PLAN_TPL[tpl] ? tpl : 'hybrid', name: T.name, phases: T.phases || null, sessions: JSON.parse(JSON.stringify(T.sessions())), dayMap: Object.assign({}, TPL_DAYMAP[tpl] || DEFAULT_DAYMAP), note:'', targets:null, v:1 }; }
+const NW = () => (typeof S !== 'undefined' && S && S.plan && S.plan.weeks) || 12;
+function makePlan(tpl) { const T = PLAN_TPL[tpl] || PLAN_TPL.hybrid; return { tpl: PLAN_TPL[tpl] ? tpl : 'hybrid', name: T.name, phases: T.phases || null, weeks: T.weeks || 12, sessions: JSON.parse(JSON.stringify(T.sessions())), dayMap: Object.assign({}, TPL_DAYMAP[tpl] || DEFAULT_DAYMAP), note:'', targets:null, v:1 }; }
 const SESSION_LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
 /* ---------- Freie Aktivitäten ---------- */

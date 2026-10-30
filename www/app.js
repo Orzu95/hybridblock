@@ -72,7 +72,7 @@ function resolveSessions(plan) { return Object.fromEntries(plan.sessions.map(x =
 function applyPlan() { ORDER = S.plan.sessions.map(x => x.k); SESS = resolveSessions(S.plan); S.plan.sessions.forEach(x => { if (!(x.k in S.settings.dayMap)) S.settings.dayMap[x.k] = ''; }); }
 const isLite = w => { const p = phase(w); return p === 'dl' || p === 'test'; };
 function scaleItem(it, w) { const x = Object.assign({ note: '', sup: '', type: 'dp', rest: 90 }, it);
-  if (it.wk && it.wk.length) { const e = it.wk[(w - 1) % it.wk.length]; if (e) { if (e.sets != null) x.sets = e.sets; if (e.reps != null) x.reps = e.reps; if (e.rpe !== undefined) x.rpe = e.rpe; if (e.note) x.note = e.note; } delete x.wk; return x; }
+  if (it.wk && it.wk.length) { const e = it.wk[(w - 1) % it.wk.length]; if (e) { if (e.sets != null) x.sets = e.sets; if (e.reps != null) x.reps = e.reps; if (e.rpe !== undefined) x.rpe = e.rpe; if (e.note) x.note = it.note ? $t(e.note) + ' ' + $t(it.note) : e.note; } delete x.wk; return x; }
   if (isLite(w)) { x.sets = Math.max(1, Math.ceil(x.sets / 2)); if (x.rpe != null) x.rpe = Math.max(5, x.rpe - 2); } return x; }
 function applyOv(x, o, w) { const y = Object.assign({}, x); ['ex', 'reps', 'note', 'sup', 'gm', 'type'].forEach(f => { if (o[f] != null && o[f] !== '') y[f] = o[f]; }); if (y.sup === '-') y.sup = ''; if (o.rest != null) y.rest = o.rest;
   if (o.sets != null) y.sets = isLite(w) ? Math.min(o.sets, x.sets) : o.sets; if (o.rpe != null && !isLite(w)) y.rpe = o.rpe; return y; }
@@ -106,7 +106,7 @@ function actualEx(w, k, spec) { const c = chosenEx(w, k, spec); return exAvailab
 function substituteEx(id) { if (!LIB[id]) return null; const seen = new Set([id]); const q = [...(LIB[id].alts || []), ...((SCALE[id] || {}).e || []), ...((SCALE[id] || {}).h || [])];
   while (q.length) { const x = q.shift(); if (seen.has(x) || !LIB[x]) continue; seen.add(x); if (exAvailable(x)) return x; (LIB[x].alts || []).forEach(y => q.push(y)); } return null; }
 function chronIndex(w, k) { return (w - 1) * ORDER.length + ORDER.indexOf(k); }
-const curWeek = () => Math.max(1, Math.min(12, S.block.week || 1));
+const curWeek = () => Math.max(1, Math.min(NW(), S.block.week || 1));
 function markStarted(w, k) { const s = sess(w, k); if (!s.date) s.date = today(); if (!S.block.startedOn) S.block.startedOn = today(); }
 function dayLabel(k) { const d = S.settings.dayMap[k]; return d === '' || d == null || d < 0 ? $t('freier Tag') : WD_LONG[d]; }
 function sessionsOnDow(dow) { return ORDER.filter(k => +S.settings.dayMap[k] === dow && S.settings.dayMap[k] !== ''); }
@@ -119,7 +119,7 @@ function sessProgress(w, k) { const s = peekSess(w, k);
 function weekDone(w) { return ORDER.length > 0 && ORDER.every(k => sessProgress(w, k).done); }
 function lastDate(w) { let d = null; ORDER.forEach(k => { const s = peekSess(w, k); if (s && s.date && (!d || s.date > d)) d = s.date; const a = countsAsActivity(w, k); if (a && (!d || a.date > d)) d = a.date; }); return d; }
 /* nächste Woche erst am Tag nach der letzten Einheit, damit „Heute“ am Trainingstag „erledigt“ zeigt */
-function maybeAdvance() { const w = curWeek(); if (w >= 12 || !weekDone(w)) return; const ld = lastDate(w); if (ld && ld >= today()) return;
+function maybeAdvance() { const w = curWeek(); if (w >= NW() || !weekDone(w)) return; const ld = lastDate(w); if (ld && ld >= today()) return;
   S.block.week = w + 1; ui.week = null; save(); setTimeout(() => toast($t('Woche ') + w + $t(' geschafft. Weiter mit Woche ') + (w + 1) + '.'), 300); }
 function scheduleWarnings() { const m = S.settings.dayMap, out = []; const d = k => (m[k] === '' || m[k] == null) ? null : +m[k];
   ORDER.filter(isHiit).forEach(hk => ORDER.filter(g => legDay(g)).forEach(g => { if (d(hk) != null && d(g) != null && (d(hk) + 1) % 7 === d(g)) out.push(SESS[hk].title + $t(' liegt am Tag vor ') + SESS[g].title + $t('. Die Beine sind dann nicht frisch.')); }));
@@ -164,7 +164,7 @@ function history(w, k, exId) {
     if (found.length) return { w: ww, k: kk, items: found };
   }
   return null; }
-function lastAny(exId) { for (let w = 12; w >= 1; w--) for (let i = ORDER.length - 1; i >= 0; i--) { const h = history(w, ORDER[i], exId); if (h) return h; } return null; }
+function lastAny(exId) { for (let w = NW(); w >= 1; w--) for (let i = ORDER.length - 1; i >= 0; i--) { const h = history(w, ORDER[i], exId); if (h) return h; } return null; }
 function bestE1rm(h) { let best = null;
   h.items.forEach(it => it.sets.forEach(s => { if (!s.w || !s.r) return; const rpe = s.rpe ?? (it.spec && it.spec.rpe) ?? 8; const v = e1rm(s.w, s.r, Math.min(10, rpe)); if (!best || v > best) best = v; }));
   return best; }
@@ -176,6 +176,7 @@ function planSuggestion(w, k, spec, exId, rd) {
   const h = history(w, k, exId) || archiveHistory(exId); const rng = repRange(spec.reps);
   if (spec.type === 'time') { const rr = repRange(spec.reps); return { txt: $t('Zeit pro Satz: ') + spec.reps + $t(' s. Gleichmäßig, Technik vor Tempo.'), cls: 'first', reps: rr && rr.lo }; }
   if (spec.type === 'power') return { txt: $t('Jede Wiederholung maximal schnell. Qualität vor Menge.'), cls: 'first' };
+  if (spec.type === 'free') return { txt: $t('Konditionsblock: Ablauf steht im Hinweis. Trag die Zeit oder Runden als Wiederholungen ein.'), cls: 'first' };
   if (spec.type === 'bo') {
     const top = (sess(w, k).logs.bench_top ? loggedSets(sess(w, k).logs.bench_top) : []).find(s => s.w);
     const pct = phase(w) === 'b3' ? .85 : .9;
@@ -348,14 +349,14 @@ function viewTraining() {
   if (!ORDER.length) return noPlanView();
   const cw = curWeek(); if (!ui.week) ui.week = cw; const w = ui.week;
   let n = 0; ORDER.forEach(k => { if (sessProgress(w, k).done) n++; });
-  const weeks = Array.from({ length: 12 }, (_, i) => { const x = i + 1; return '<button class="wk' + (x === w ? $t(' on') : '') + (x === cw ? $t(' cur') : '') + (weekDone(x) ? $t(' done') : '') + '" data-act="week" data-w="' + x + '" type="button" aria-label="Woche ' + x + '"><b>' + x + '</b><i class="ph-' + phase(x) + '"></i></button>'; }).join('');
+  const weeks = Array.from({ length: NW() }, (_, i) => { const x = i + 1; return '<button class="wk' + (x === w ? $t(' on') : '') + (x === cw ? $t(' cur') : '') + (weekDone(x) ? $t(' done') : '') + '" data-act="week" data-w="' + x + '" type="button" aria-label="Woche ' + x + '"><b>' + x + '</b><i class="ph-' + phase(x) + '"></i></button>'; }).join('');
   const rows = ORDER.map(k => { const s = SESS[k], pr = sessProgress(w, k); const sub = sessSub(w, k);
     const se = peekSess(w, k); const when = se && se.date ? fmtDay(se.date) : dayLabel(k);
     return '<a class="li" href="#training/' + sKey(w, k) + '">' + badge(k) + '<div class="grow"><b>' + s.title + '</b><small>' + esc(when + (sub ? ' · ' + sub : '')) + '</small></div><span class="tag"><span class="dot ' + (pr.done ? 'green' : pr.f ? 'amber' : 'mist') + '"></span>' + (pr.skipped ? $t('übersprungen') : pr.done ? $t('erledigt') : pr.f ? pr.f + '/' + pr.t : $t('offen')) + '</span></a>'; }).join('');
   const frees = S.activities.filter(a => a.week === w && a.week);
   const warn = scheduleWarnings();
   const vol = weekVolume(w), pv = plannedVolume(w);
-  const finishBtn = w === cw && !weekDone(w) && cw < 12 ? (ui.confirmFinish ? $t('<div class="row"><span class="grow small">Offene Einheiten werden als übersprungen markiert.</span><button class="btn sm" data-act="finishNo" type="button">Abbrechen</button><button class="btn dark sm" data-act="finishYes" type="button">Ja, abschließen</button></div>') : $t('<button class="btn block" data-act="finish" type="button">Woche ') + w + $t(' abschließen und weiter</button>')) : '';
+  const finishBtn = w === cw && !weekDone(w) && cw < NW() ? (ui.confirmFinish ? $t('<div class="row"><span class="grow small">Offene Einheiten werden als übersprungen markiert.</span><button class="btn sm" data-act="finishNo" type="button">Abbrechen</button><button class="btn dark sm" data-act="finishYes" type="button">Ja, abschließen</button></div>') : $t('<button class="btn block" data-act="finish" type="button">Woche ') + w + $t(' abschließen und weiter</button>')) : '';
   return pageTop($t('Woche ') + w, PH_LABEL[phase(w)], n + $t(' von ') + ORDER.length + $t(' Einheiten erledigt') + (w !== cw ? $t(' · aktuell Woche ') + cw : '')) +
   '<div class="stack"><div class="weeks">' + weeks + '</div>' +
   $t('<div class="legend"><span><i class="ph-b1"></i>Einstieg</span><span><i class="ph-b2"></i>Aufbau</span><span><i class="ph-b3"></i>Intensiv</span><span><i class="ph-dl"></i>Deload</span><span><i class="ph-test"></i>Test</span></div>') +
@@ -629,7 +630,7 @@ async function hcSync(full) { const H = HEALTH.plugin; if (!H || HEALTH.busy) re
   toast(errs.length ? $t('Teilweise synchronisiert. Fehlt: ') + errs.join(', ') : $t('Daten aktualisiert') + (nw ? ' · ' + nw + $t(' neue Workouts') : '')); render(); }
 /* Workout aus Uhr: an Plan-Einheit hängen oder als freie Aktivität anlegen */
 function importWorkout(x) { if (S.healthMeta.ignored.includes(x.key) || S.activities.some(a => a.key === x.key)) return null; if (!x.dur || x.dur < 5) return null;
-  for (let w = 1; w <= 12; w++) for (const k of GYM()) { const s = peekSess(w, k); if (s && s.date === x.date && x.type === 'kraft' && !s.watch) { s.watch = { dur: x.dur, kcal: x.kcal, key: x.key, start: x.start || null, end: x.end || null }; S.healthMeta.ignored.push(x.key); return { created: false, tkey: sKey(w, k), start: x.start, end: x.end }; } }
+  for (let w = 1; w <= NW(); w++) for (const k of GYM()) { const s = peekSess(w, k); if (s && s.date === x.date && x.type === 'kraft' && !s.watch) { s.watch = { dur: x.dur, kcal: x.kcal, key: x.key, start: x.start || null, end: x.end || null }; S.healthMeta.ignored.push(x.key); return { created: false, tkey: sKey(w, k), start: x.start, end: x.end }; } }
   const a = { id: uid(), key: x.key, type: x.type, title: x.title, date: x.date, week: curWeek(), dur: Math.round(x.dur), dist: x.dist != null ? Math.round(x.dist * 100) / 100 : null, kcal: x.kcal != null ? Math.round(x.kcal) : null, avgHr: x.avgHr || null, src: x.src, srcId: x.srcId || null, start: x.start || null, end: x.end || null };
   S.activities.push(a); return { created: true, tkey: a.id, start: x.start, end: x.end }; }
 
@@ -714,7 +715,7 @@ function sleepCard() { const pts = []; for (let i = 13; i >= 0; i--) { const d =
     $t('<div class="stats" style="grid-template-columns:repeat(2,minmax(0,1fr));margin-top:12px"><div class="stat" style="background:var(--paper)"><div class="k">Schlafschuld 7 Tage</div><div class="v" style="font-size:22px">') + (debt ? fmtMin(debt.debt) : '–') + $t('</div><div class="s">bei ') + fmt(sleepNeed() / 60, 1) + $t(' h Bedarf</div></div>') +
     $t('<div class="stat" style="background:var(--paper)"><div class="k">Regelmäßigkeit</div><div class="v" style="font-size:22px">') + (cons ? '±' + fmt((cons.sdBed + cons.sdWake) / 2, 0) + $t(' min') : '–') + '</div><div class="s">' + (cons ? $t('Ø ins Bett ') + hm(cons.bed) + $t(', auf ') + hm(cons.wake) : $t('braucht Zubett- und Aufstehzeiten')) + '</div></div></div>' +
     $t('<p class="small muted">Regelmäßige Schlafzeiten hängen mit besserer Erholung zusammen. Weniger als ±30 min Schwankung ist ein gutes Ziel.</p></div>'); }
-function exListCard() { const ids = new Set(); for (let w = 1; w <= 12; w++) ORDER.forEach(k => { const s = peekSess(w, k); if (s && s.logs) Object.values(s.logs).forEach(lg => { if (loggedSets(lg).length) ids.add(lg.ex); }); });
+function exListCard() { const ids = new Set(); for (let w = 1; w <= NW(); w++) ORDER.forEach(k => { const s = peekSess(w, k); if (s && s.logs) Object.values(s.logs).forEach(lg => { if (loggedSets(lg).length) ids.add(lg.ex); }); });
   S.activities.forEach(a => (a.exercises || []).forEach(e => { if (loggedSets(e).length) ids.add(e.ex); }));
   S.archive.forEach(ar => Object.values(ar.sessions || {}).forEach(s => Object.values(s.logs || {}).forEach(lg => { if (loggedSets(lg).length) ids.add(lg.ex); })));
   const list = [...ids].filter(id => LIB[id]).map(id => { const h = exHistory(id); const last = h[h.length - 1]; const m = h.some(o => o.e1) ? 'e1' : 'reps'; const v = h.map(o => o[m]).filter(x => x != null);
@@ -722,7 +723,7 @@ function exListCard() { const ids = new Set(); for (let w = 1; w <= 12; w++) ORD
   return $t('<div class="card flush"><div class="meal-h"><b>Alle Übungen</b><span class="small muted">') + list.length + '</span></div>' + (list.length ? '<div class="list">' + list.map(x => '<button class="li" data-act="exHist" data-ex="' + x.id + '" type="button"><div class="grow"><b>' + esc(LIB[x.id].name) + '</b><small>' + x.n + $t(' Einheiten · ') + (x.m === 'e1' ? $t('e1RM ') + fmt(x.cur, 0) + $t(' kg') : fmt(x.cur, 0) + $t(' Wdh.')) + '</small></div>' + (x.chg != null ? '<span class="tag"><span class="dot ' + (x.chg >= 0 ? 'green' : 'red') + '"></span>' + (x.chg > 0 ? '+' : '') + fmt(x.chg, 0) + ' %</span>' : '') + '<span class="chev">›</span></button>').join('') + '</div>' : $t('<p class="small muted" style="padding:0 20px 18px">Sobald du Sätze loggst, erscheint hier jede Übung mit ihrem Verlauf.</p>')) + '</div>'; }
 /* ---------- Verlauf pro Übung ---------- */
 function exHistory(exId) { const out = [];
-  for (let w = 1; w <= 12; w++) ORDER.forEach(k => { const s = peekSess(w, k); if (!s || !s.logs) return; const sets = [];
+  for (let w = 1; w <= NW(); w++) ORDER.forEach(k => { const s = peekSess(w, k); if (!s || !s.logs) return; const sets = [];
     for (const slot in s.logs) { const lg = s.logs[slot]; if (lg.ex !== exId) continue; const spec = planFor(w, k).find(p => p.slot === slot);
       loggedSets(lg).filter(x => x.done || x.r != null).forEach(x => sets.push({ ...x, rpe: x.rpe ?? (spec && spec.rpe) ?? null })); }
     if (sets.length) out.push({ d: s.date || null, wk: w, label: SESS[k].title + $t(' · Woche ') + w, sets, ord: s.date || ('0000-' + pad(chronIndex(w, k))) }); });
@@ -771,7 +772,7 @@ function keyLifts() { const ids = []; GYM().forEach(k => planFor(1, k).forEach(p
   if (ids.length < 4) { const cnt = {}; Object.values(S.sessions).forEach(s => Object.values(s.logs || {}).forEach(lg => { if (loggedSets(lg).some(x => x.w > 0)) cnt[lg.ex] = (cnt[lg.ex] || 0) + 1; }));
     Object.keys(cnt).sort((a, b) => cnt[b] - cnt[a]).forEach(id => { if (ids.length < 4 && LIB[id] && !ids.includes(id)) ids.push(id); }); }
   return ids.slice(0, 4); }
-function liftSeries(exId) { const out = []; for (let w = 1; w <= 12; w++) ORDER.forEach(k => { const s = peekSess(w, k); if (!s) return; let best = null;
+function liftSeries(exId) { const out = []; for (let w = 1; w <= NW(); w++) ORDER.forEach(k => { const s = peekSess(w, k); if (!s) return; let best = null;
   for (const slot in s.logs) { const lg = s.logs[slot]; if (lg.ex !== exId) continue; const spec = planFor(w, k).find(p => p.slot === slot);
     loggedSets(lg).forEach(x => { if (!x.w || !x.r) return; const v = e1rm(x.w, x.r, Math.min(10, x.rpe ?? (spec && spec.rpe) ?? 8)); if (!best || v > best) best = v; }); }
   if (best) out.push({ x: out.length, d: s.date || null, v: best, wk: w }); }); return out; }
@@ -807,7 +808,7 @@ function chartLeave(box) { box.querySelector('.tip').style.display = 'none'; con
 /* ======================= EINSTELLUNGEN ======================= */
 function viewMehr() { const st = S.settings; const f = (k, lab, type, extra) => '<div class="field"><label for="st-' + k + '">' + lab + '</label><input id="st-' + k + '" type="' + (type || 'number') + '" inputmode="decimal" step="any" data-st="' + k + '" value="' + esc(st[k]) + '"' + (extra || '') + '></div>';
   const sel = k => '<div class="field"><label for="dm-' + k + '">' + SESS[k].title + '</label><select id="dm-' + k + '" data-dm="' + k + $t('"><option value="">ohne festen Tag</option>') + [1, 2, 3, 4, 5, 6, 0].map(d => '<option value="' + d + '"' + (String(st.dayMap[k]) === String(d) ? $t(' selected') : '') + '>' + WD_LONG[d] + '</option>').join('') + '</select></div>';
-  let rows = ''; for (let w = 1; w <= 12; w++) { const b = S.body['w' + pad(w)] || {}; const c = (k, ph) => '<td><input id="b-' + w + k + '" type="number" inputmode="decimal" step="any" data-bw="' + w + '" data-bf="' + k + '" value="' + esc(b[k]) + '" placeholder="' + ph + '"></td>'; rows += $t('<tr><td>Woche ') + w + '</td>' + c('waist', $t('cm')) + c('arm', $t('cm')) + c('thigh', $t('cm')) + c('calf', $t('cm')) + c('vo2', '') + '</tr>'; }
+  let rows = ''; for (let w = 1; w <= NW(); w++) { const b = S.body['w' + pad(w)] || {}; const c = (k, ph) => '<td><input id="b-' + w + k + '" type="number" inputmode="decimal" step="any" data-bw="' + w + '" data-bf="' + k + '" value="' + esc(b[k]) + '" placeholder="' + ph + '"></td>'; rows += $t('<tr><td>Woche ') + w + '</td>' + c('waist', $t('cm')) + c('arm', $t('cm')) + c('thigh', $t('cm')) + c('calf', $t('cm')) + c('vo2', '') + '</tr>'; }
   const warn = scheduleWarnings(); const base = rhrBaseline(); const hm = S.healthMeta;
   const healthCard = connectCard();
   return '<a href="#heute" class="back">' + ICON.back + $t('Heute</a><div class="top"><div class="grow"><h1><span class="t-ember">Einstellungen</span> und Daten</h1></div></div><div class="stack">') + accountCard() + studioCard() +
@@ -912,11 +913,11 @@ document.addEventListener('click', async e => { const b = e.target.closest('[dat
     case 'week': ui.week = +b.dataset.w; ui.confirmFinish = false; render(); break;
     case 'finish': ui.confirmFinish = true; render(); break;
     case 'finishNo': ui.confirmFinish = false; render(); break;
-    case 'finishYes': { const w = curWeek(); ORDER.forEach(k => { if (!sessProgress(w, k).done) sess(w, k).skipped = true; }); S.block.week = Math.min(12, w + 1); ui.week = S.block.week; ui.confirmFinish = false; save(); render(); toast($t('Weiter mit Woche ') + S.block.week); break; }
+    case 'finishYes': { const w = curWeek(); ORDER.forEach(k => { if (!sessProgress(w, k).done) sess(w, k).skipped = true; }); S.block.week = Math.min(NW(), w + 1); ui.week = S.block.week; ui.confirmFinish = false; save(); render(); toast($t('Weiter mit Woche ') + S.block.week); break; }
     case 'skip': sess(+b.dataset.w, b.dataset.k).skipped = true; save(); location.hash = '#training'; break;
     case 'unskip': delete sess(+b.dataset.w, b.dataset.k).skipped; save(); render(); break;
     case 'wkMinus': S.block.week = Math.max(1, curWeek() - 1); ui.week = null; save(); render(); break;
-    case 'wkPlus': S.block.week = Math.min(12, curWeek() + 1); ui.week = null; save(); render(); break;
+    case 'wkPlus': S.block.week = Math.min(NW(), curWeek() + 1); ui.week = null; save(); render(); break;
     case 'done': {
       if (b.dataset.aid) { const act = findAct(b.dataset.aid); const ex = act.exercises[+b.dataset.idx]; const i = +b.dataset.i; ex.sets[i] = ex.sets[i] || {}; const set = ex.sets[i];
         if (set.done) set.done = false; else { set.t = Date.now(); for (let j = i - 1; j >= 0; j--) { const p = ex.sets[j]; if (p && p.done) { if (!set.w) set.w = p.w; if (!set.r) set.r = p.r; break; } } set.done = true; if (!(typeof ssAfterSet === 'function' && ssAfterSet('free', { act, idx: +b.dataset.idx, i }))) startTimer(ex.rest || 90, LIB[ex.ex].name + $t(': Pause')); }
@@ -1060,7 +1061,7 @@ function sessLoad(w, k) { const s = peekSess(w, k); if (!s || s.skipped) return 
   if (isCardio(k)) { const c = s.cardio || {}; const d = num(c.dur), r = num(c.rpe); return d ? { load: r ? d * r : null, dur: d, rpe: r, missing: !r } : null; }
   const e = s.end || {}; const d = num(e.dur) ?? (s.watch && num(s.watch.dur) ? Math.round(s.watch.dur) : null) ?? autoDur(s); const r = num(e.rpe); if (!d) return null; return { load: r ? d * r : null, dur: d, rpe: r, missing: !r }; }
 function actLoad(a) { const d = num(a.dur), r = num(a.rpe); if (!d) return null; if (a.countsAs) { const s = peekSess(a.week, a.countsAs); if (s && s.cardio && num(s.cardio.dur)) return null; } return { load: r ? d * r : null, dur: d, rpe: r, missing: !r }; }
-function dailyLoad(d) { let load = 0, missing = 0, n = 0; for (let w = 1; w <= 12; w++) ORDER.forEach(k => { const s = peekSess(w, k); if (!s || s.date !== d) return; const L = sessLoad(w, k); if (!L) return; n++; if (L.load != null) load += L.load; else missing++; });
+function dailyLoad(d) { let load = 0, missing = 0, n = 0; for (let w = 1; w <= NW(); w++) ORDER.forEach(k => { const s = peekSess(w, k); if (!s || s.date !== d) return; const L = sessLoad(w, k); if (!L) return; n++; if (L.load != null) load += L.load; else missing++; });
   S.activities.filter(a => a.date === d).forEach(a => { const L = actLoad(a); if (!L) return; n++; if (L.load != null) load += L.load; else missing++; }); return { load, missing, n }; }
 function weekLoad(endD) { const arr = []; let miss = 0; for (let i = 6; i >= 0; i--) { const x = dailyLoad(addDays(endD, -i)); arr.push(x.load); miss += x.missing; } const tot = arr.reduce((a, b) => a + b, 0), m = tot / 7; const sd = Math.sqrt(arr.reduce((a, b) => a + (b - m) ** 2, 0) / 7); return { tot, mono: sd > 0 && tot > 0 ? m / sd : null, miss }; }
 
@@ -1173,7 +1174,7 @@ const mix = (a, b, p) => { const A = hex2rgb(a), B = hex2rgb(b); return '#' + A.
 function slugValues(mode, w) { const out = {}; const set = (slug, v) => { out[slug] = Math.max(out[slug] || 0, v); };
   if (mode === 'vol') { const v = weekVolume(w); for (const m in SLUG_OF) { const hi = PRIORITY.includes(m) ? VOL_TARGET.prio[0] : VOL_TARGET.other[1]; SLUG_OF[m].forEach(s => set(s, clamp(v[m] / hi, 0, 1))); } set('deltoids', clamp(Math.max(v.fd, v.sd, v.rd) / VOL_TARGET.other[1], 0, 1)); return { vals: out, raw: v }; }
   const last = {}; const note = (d, exId, n) => { if (!d || n < 2) return; const ex = LIB[exId]; if (!ex) return; for (const m in ex.muscles) if (ex.muscles[m] >= .5 && (!last[m] || d > last[m])) last[m] = d; };
-  for (let ww = 1; ww <= 12; ww++) GYM().forEach(k => { const s = peekSess(ww, k); if (s && s.logs) Object.values(s.logs).forEach(lg => note(s.date, lg.ex, (lg.sets || []).filter(x => x && x.done).length)); });
+  for (let ww = 1; ww <= NW(); ww++) GYM().forEach(k => { const s = peekSess(ww, k); if (s && s.logs) Object.values(s.logs).forEach(lg => note(s.date, lg.ex, (lg.sets || []).filter(x => x && x.done).length)); });
   S.activities.forEach(a => (a.exercises || []).forEach(e => note(a.date, e.ex, (e.sets || []).filter(x => x && x.done).length)));
   const days = m => last[m] ? daysBetween(last[m], today()) : null;
   const byM = {}; Object.keys(MUSCLES).forEach(m => byM[m] = days(m));
