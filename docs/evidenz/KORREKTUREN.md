@@ -21,3 +21,8 @@
 | HYB-108 | quellen | Villarroel López et al. 2026, Preprints.org; Davids 2025, St | Tibana et al. 2026, Preprints.org (Preprint, nicht begutacht | Crossref: Erstautor des Preprints ist Tibana |
 | HYB-113 | quellen | Buoite Stella et al. 2026, European Journal of Applied Physi | Buoite Stella et al. 2026, European Journal of Applied Physi | Crossref: Erstautor des Preprints ist Tibana |
 | FRA-106 | quellen | Davenport et al. 2018, British Journal of Sports Medicine; A | Mottola et al. 2018, British Journal of Sports Medicine (Kan | Crossref: Erstautorin der Leitlinie ist Mottola |
+| PSY-104 | doi_oder_link | (leer) | 10.1093/her/cyr005 | Crossref: Williams et al. 2011 (zweite Quelle der Zeile) belegt |
+| PSY-111 | doi_oder_link | (leer) | 10.1371/journal.pone.0263408 | Crossref: Lochbaum et al. 2022, PLoS One |
+| TST-108 | doi_oder_link | PubMed-Link | 10.1123/ijspp.2013-0413 | Crossref: Gathercole et al. 2015, IJSPP |
+| SPD-106 | doi_oder_link | (leer) | 10.3390/app16105129 | Crossref: Repullo et al. 2026, Applied Sciences existiert |
+| TST-116 | doi_oder_link | (leer) | (leer) | Lehrbuch (McGuigan 2016), kein DOI; Čović 2016 in Crossref nicht eindeutig auffindbar |

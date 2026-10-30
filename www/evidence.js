@@ -1,7 +1,7 @@
 /* ======================= WISSEN: geprüfte Evidenz-Wissensbasis (evidence.json) ======================= */
-/* 321 Einträge aus 19 Themenblöcken. Quellen gegen Crossref/PubMed geprüft (docs/evidenz/KORREKTUREN.md). Folien-Inhalte auf EN/RU über evidence-en.json / evidence-ru.json, Studiendetails nur Deutsch. */
+/* 384 Einträge aus 23 Themenblöcken. Quellen gegen Crossref/PubMed geprüft (docs/evidenz/KORREKTUREN.md). Folien-Inhalte auf EN/RU über evidence-en.json / evidence-ru.json, Studiendetails nur Deutsch. */
 let EVID = null, EVID_LOADING = null;
-const EV_THEMES = [['Training', ['HYP', 'KRA', 'PER', 'WAR', 'PLY', 'CON', 'HYB', 'CAR']], ['Ernährung', ['ERN', 'FAT', 'REC', 'BLK', 'NRG', 'SUP']], ['Steuerung und Erholung', ['LOD', 'REG', 'BES']], ['Zielgruppen', ['FRA', 'EIN']]];
+const EV_THEMES = [['Training', ['HYP', 'KRA', 'PER', 'WAR', 'PLY', 'SPD', 'CON', 'HYB', 'CAR']], ['Ernährung', ['ERN', 'FAT', 'REC', 'BLK', 'NRG', 'SUP']], ['Steuerung und Erholung', ['LOD', 'TST', 'REG', 'BES']], ['Gesundheit und Kopf', ['GES', 'PSY']], ['Zielgruppen', ['FRA', 'EIN']]];
 const EV_GRADE = { A: 'Meta-Analysen oder mehrere übereinstimmende Studien', B: 'Einzelne kontrollierte Studie oder systematisches Review', C: 'Beobachtungsstudie, kleine Studie oder Mechanismus', D: 'Expertenkonsens, Positionspapier oder Evidenzlücke' };
 const EV_WORD = { A: 'Stark belegt', B: 'Gut belegt', C: 'Erste Hinweise', D: 'Expertenmeinung' };
 /* Farbe und Symbol je Themenblock (eigene Zeichnungen, 24er Raster, Strichstärke 2) */
@@ -12,7 +12,9 @@ const EVC = { HYP: ['#ff5406', 'M5 19c-1.5-4 0-9 3-12l2-3 3 1.5-1.5 3.5c3.5-.5 7
   REC: ['#2f9e44', 'M19.5 12A7.5 7.5 0 0 1 6 16.5M4.5 12A7.5 7.5 0 0 1 18 7.5M18 3.5v4h-4M6 20.5v-4h4'], BLK: ['#6aa500', 'M12 20V8M7 13l5-5 5 5M5 4h14'],
   NRG: ['#0ea5e9', 'M5 7h12a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2zM21 10.5v3M7 10v4M10.5 10v4'], SUP: ['#bd4be5', 'M10.5 4.5a4.95 4.95 0 0 1 7 7l-6 6a4.95 4.95 0 0 1-7-7zM8 8l6 6'],
   LOD: ['#00a9dd', 'M4 17a8 8 0 1 1 16 0M12 17l4-5M12 17h0'], REG: ['#3b5bdb', 'M19.5 14.5A8 8 0 1 1 9.5 4.5a6.5 6.5 0 0 0 10 10z'], BES: ['#72a2c5', 'M12 7.5v9M7.5 12h9M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z'],
-  FRA: ['#d6336c', 'M17 9a5 5 0 1 1-10 0 5 5 0 0 1 10 0zM12 14v7M9 18h6'], EIN: ['#0b7285', 'M12 21v-8M12 13c0-4-3-6-7-6 0 4 3 6 7 6zM12 11c0-3 2-5 6-5 0 3-2 5-6 5z'] };
+  FRA: ['#d6336c', 'M17 9a5 5 0 1 1-10 0 5 5 0 0 1 10 0zM12 14v7M9 18h6'], SPD: ['#f76707', 'M13 4l-2 6h6l-8 10 2-7H5zM3 8h4M2 12h3'], TST: ['#1c7ed6', 'M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.7 3h10.6a2 2 0 0 0 1.7-3l-5-9V3M8 15h8'],
+  GES: ['#e03131', 'M12 3l7 3v5c0 5-3 8.5-7 10-4-1.5-7-5-7-10V6zM9 12h6M12 9v6'], PSY: ['#ae3ec9', 'M9 4a4 4 0 0 0-4 4c-1.5.5-2 2-2 3s.5 2.5 2 3a4 4 0 0 0 4 4h1V4zM15 4a4 4 0 0 1 4 4c1.5.5 2 2 2 3s-.5 2.5-2 3a4 4 0 0 1-4 4h-1V4z'],
+  EIN: ['#0b7285', 'M12 21v-8M12 13c0-4-3-6-7-6 0 4 3 6 7 6zM12 11c0-3 2-5 6-5 0 3-2 5-6 5z'] };
 const evCol = c => (EVC[c] || ['#6b6b6b'])[0];
 const evRgb = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16));
 /* CSS-Variablen je Thema: Grundfarbe, zarte Fläche, dunkle Variante (ohne color-mix, damit ältere WebViews mitspielen) */

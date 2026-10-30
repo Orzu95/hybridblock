@@ -1347,6 +1347,7 @@ I18N.ru = {
 "Gestern übernehmen": "Как вчера",
 "Gesundheit": "Здоровье",
 "Gesundheit und Fitness": "Здоровье и фитнес",
+"Gesundheit und Kopf": "Здоровье и голова",
 "Gesundheitsdaten synchronisieren": "Синхронизировать данные здоровья",
 "Gesäß anspannen, kein Hohlkreuz.": "Напряги ягодицы, без прогиба в пояснице.",
 "Gesäß fest, kein Hohlkreuz.": "Ягодицы напряжены, без прогиба в пояснице.",

@@ -1347,6 +1347,7 @@ I18N.en = {
 "Gestern übernehmen": "Copy yesterday",
 "Gesundheit": "Health",
 "Gesundheit und Fitness": "Health and fitness",
+"Gesundheit und Kopf": "Health and Mind",
 "Gesundheitsdaten synchronisieren": "Sync health data",
 "Gesäß anspannen, kein Hohlkreuz.": "Squeeze the glutes, no arched back.",
 "Gesäß fest, kein Hohlkreuz.": "Glutes tight, no arched back.",
