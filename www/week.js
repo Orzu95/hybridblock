@@ -13,7 +13,7 @@ const dIdx = d => (parseISO(d).getDay() + 6) % 7;
 const wkOpen = o => o.st === 'open' || o.st === 'part';
 const wkLeg = (w, k) => isGym(k) && legDay(k, w);
 const wkHard = (w, k) => { if (isHiit(k)) return true; const L = sessLoad(w, k); if (L && L.rpe != null) return L.rpe >= 7; return wkLeg(w, k); };
-function sessDate(w, k) { const s = peekSess(w, k); if (s && s.date) return s.date; const a = countsAsActivity(w, k); return a ? a.date : null; }
+function sessDate(w, k) { return sessDoneDate(w, k); }
 
 /* Wochenmuster: Abstand jeder Einheit zum ersten Trainingstag (Mo = 0) */
 function wkPattern() { const rot = S.settings.mode === 'rotation', dm = S.settings.dayMap, n = ORDER.length; let mi = ORDER.map(k => rot || dm[k] === '' || dm[k] == null ? null : (+dm[k] + 6) % 7);
@@ -232,3 +232,6 @@ document.addEventListener('click', e => { const b = e.target.closest('[data-act]
   else if (a === 'wkVbNo') { const W = WK(curWeek()); W.vb = W.vb || {}; W.vb[b.dataset.m] = 'no'; save(); render(); }
 });
 if (route.name === 'training' || route.name === 'heute') render();
+/* Einheit, die durch eine Aktivität erledigt wurde, steht am Tag dieser Aktivität (z. B. HIIT am Mi geplant, am Fr draußen gelaufen) */
+function syncSessDates() { let ch = false; (S.activities || []).forEach(a => { if (!a.countsAs || !a.week || !a.date) return; const s = peekSess(a.week, a.countsAs); if (s && s.date !== a.date) { s.date = a.date; ch = true; } }); if (ch) save(); return ch; }
+try { if (syncSessDates()) render(); } catch (e) { console.warn(e); }

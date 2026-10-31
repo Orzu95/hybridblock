@@ -76,16 +76,41 @@ function decPoly(str) { const pts = []; let i = 0, la = 0, lg = 0; const d = () 
 function bodyKg() { const ds = Object.keys(S.days).sort().reverse(); for (const d of ds) { const w = num(S.days[d].weight); if (w) return w; } return num(S.settings.startWeight) || 80; }
 const kcalOf = (type, sec) => Math.round(((ACT_MAP[type] || ACT_MAP.sonst).met || 5) * bodyKg() * sec / 3600);
 
+/* ---------- Intervall-Protokolle ---------- */
+function ivPresets() { return [
+  { id: '4x4', name: $t('4 × 4 min, 3 min Pause (norwegisch)'), reps: 4, on: 240, off: 180 },
+  { id: '4x3', name: $t('4 × 3 min, 3 min Pause'), reps: 4, on: 180, off: 180 },
+  { id: '5x3', name: $t('5 × 3 min, 2 min Pause'), reps: 5, on: 180, off: 120 },
+  { id: '6x2', name: $t('6 × 2 min, 1 min Pause'), reps: 6, on: 120, off: 60 },
+  { id: '8x1', name: $t('8 × 1 min, 1 min Pause'), reps: 8, on: 60, off: 60 },
+  { id: '3030', name: $t('10 × 30/30 s'), reps: 10, on: 30, off: 30 },
+  { id: '4015', name: $t('10 × 40/20 s'), reps: 10, on: 40, off: 20 },
+  { id: 'tabata', name: $t('Tabata 8 × 20/10 s'), reps: 8, on: 20, off: 10 },
+  { id: 'sprint', name: $t('6 × 15 s Sprint, 2 min Pause'), reps: 6, on: 15, off: 120 } ]; }
+function ivOpts() { const o = ui.trIv = ui.trIv || {}; const c = S.settings.trCustom || {}; ['reps', 'on', 'off', 'cool'].forEach(k => { if (o[k] == null) o[k] = c[k] != null ? c[k] : { reps: 6, on: 60, off: 60, cool: 5 }[k]; }); return o; }
+function ivPlanWarm(ctx) { const q = ctx ? intervalQueue(ctx.w, ctx.k) : null; return q && q[0] && q[0].k === 'warm' ? Math.round(q[0].sec / 60) : 10; }
+/* Ablauf bauen; Aufwärmen 0 min = direkt nach 10 s Countdown los */
+function ivBuild(sel, ctx) { const o = ivOpts(); let q;
+  if (sel === 'plan' && ctx) q = intervalQueue(ctx.w, ctx.k).map(x => ({ ...x, hi: x.k === 'hi' }));
+  else { const p = sel === 'custom' ? { reps: Math.max(1, Math.round(num(o.reps) || 1)), on: Math.max(5, Math.round(num(o.on) || 60)), off: Math.max(0, Math.round(num(o.off) || 0)) } : ivPresets().find(x => x.id === sel); if (!p) return null;
+    q = [{ sec: 600, label: $t('Aufwärmen, locker'), k: 'warm' }];
+    for (let i = 1; i <= p.reps; i++) { q.push({ sec: p.on, label: $t('Intervall ') + i + $t(' von ') + p.reps + $t(': hart'), k: 'hi', hi: true, n: i }); if (i < p.reps && p.off) q.push({ sec: p.off, label: $t('Pause, locker'), k: 'rest' }); }
+    const cool = sel === 'custom' ? Math.max(0, num(o.cool) || 0) : 5; if (cool) q.push({ sec: Math.round(cool * 60), label: $t('Auslaufen'), k: 'cool' }); }
+  const wm = o.warm != null && o.warm !== '' ? Math.max(0, num(o.warm) || 0) : null;
+  if (q[0] && q[0].k === 'warm') { if (wm === 0) q[0] = { sec: 10, label: $t('Gleich geht’s los'), k: 'cd' }; else if (wm) q[0].sec = Math.round(wm * 60); }
+  return q; }
+function ivLabel(x) { return x.k === 'hi' ? $t('Intervall ') + (x.n || '') : x.k === 'warm' ? $t('Aufwärmen') : x.k === 'cool' ? $t('Auslaufen') : $t('Pause'); }
+
 /* ---------- Aufzeichnung ---------- */
 let TR = { active: false };
 function trOpts() { const o = S.settings.tr = S.settings.tr || {}; if (o.voice == null) o.voice = true; if (o.map == null) o.map = true; if (o.auto == null) o.auto = true; if (o.every == null) o.every = 1; if (o.hcw == null) o.hcw = true; return o; }
 const movingSec = () => !TR.active ? 0 : (TR.runMs + (TR.paused ? 0 : Date.now() - TR.resumeAt)) / 1000;
 function trNew(type, ctx) { const t = ACT_MAP[type] || ACT_MAP.joggen; return { active: true, type: t.id, ctx: ctx || null, gps: !!t.gps, startAt: Date.now(), resumeAt: Date.now(), runMs: 0, paused: false, pts: [], dist: 0, elevUp: 0, altRef: null,
-  hr: [], laps: [], splits: [], nextSplit: 1, lastPt: null, recent: [], acc: null, q: null, qi: -1, qLeft: 0, zone: null, lastAlert: 0, out: 0, nextVoiceMin: 0, manualPause: false }; }
+  hr: [], laps: [], splits: [], ivs: [], qDist0: 0, qT0: Date.now(), nextSplit: 1, lastPt: null, recent: [], acc: null, q: null, qi: -1, qLeft: 0, zone: null, lastAlert: 0, out: 0, nextVoiceMin: 0, manualPause: false }; }
 async function trStart(type, ctx) { if (TR.active) return; const o = trOpts(); TR = trNew(type, ctx);
-  TR.zone = ui.trZone != null ? ui.trZone : null; if (ctx && isCardio(ctx.k)) { const sp = cardioSpec(ctx.w, ctx.k); if (sp.mode === 'int') { TR.q = intervalQueue(ctx.w, ctx.k).map(x => ({ ...x, hi: /hart|Laufen |hard|Run |Бег /i.test(x.label) })); } else if (TR.zone == null && Z2K() === ctx.k) TR.zone = 1; }
-  if (ui.trIntervals === '4x4' && !TR.q) TR.q = intervalQueue(curWeek(), null).map(x => ({ ...x, hi: /hart|hard|Интерв/i.test(x.label) }));
-  if (TR.q) { TR.qi = 0; TR.qAt = 0; TR.qLeft = TR.q[0].sec; }
+  TR.zone = ui.trZone != null ? ui.trZone : null; if (ctx && isCardio(ctx.k) && cardioSpec(ctx.w, ctx.k).mode !== 'int' && TR.zone == null && Z2K() === ctx.k) TR.zone = 1;
+  if (ui.trIntervals) TR.q = ivBuild(ui.trIntervals, ctx);
+  if (TR.q) { TR.qi = 0; TR.qAt = 0; TR.qLeft = TR.q[0].sec; if (ui.trIntervals === 'custom') { const o = ivOpts(); S.settings.trCustom = { reps: o.reps, on: o.on, off: o.off, cool: o.cool }; save(); } }
   try { const LN = NP('LocalNotifications'); if (LN) await LN.requestPermissions(); } catch (e) {}
   if (TR.gps) await gpsStart(); keepAwake(); trPersist(); clearInterval(TR_TICK.iv); TR_TICK.iv = setInterval(trTick, 1000);
   if (!hrFresh() && S.settings.hrm && HRM.state !== 'connecting') hrmConnect(false);
@@ -125,14 +150,25 @@ function trLap() { if (!TR.active) return; const sec = movingSec(); const prev =
   say($t('Runde ') + lap.n + '. ' + sayDur(lap.lsec) + (lap.ldist > 50 ? ', ' + fmt(lap.ldist / 1000, 2) + $t(' Kilometer') : '') + '.'); buzz(); toast($t('Runde ') + lap.n + ': ' + fmtClock(lap.lsec)); }
 function trTick(fromGps) { if (!TR.active) return; const o = trOpts();
   /* Intervalle nach Uhrzeit statt Takt zählen, damit sie bei ausgeschaltetem Bildschirm nicht nachgehen */
-  if (TR.q && TR.qi >= 0 && TR.qi < TR.q.length) { const el = movingSec() - (TR.qAt || 0); const left = Math.ceil(TR.q[TR.qi].sec - el); if (left !== TR.qLeft && left > 0 && left <= 3) buzz([30]); TR.qLeft = left;
-    if (left <= 0) { TR.qAt = (TR.qAt || 0) + TR.q[TR.qi].sec; TR.qi++; if (TR.qi < TR.q.length) { TR.qLeft = TR.q[TR.qi].sec; say(TR.q[TR.qi].label); buzz([200, 100, 200]); } else { say($t('Intervalle geschafft. Locker ausrollen oder beenden.')); buzz([300, 100, 300]); } } }
+  if (TR.q && TR.qi >= 0 && TR.qi < TR.q.length) { const cur = TR.q[TR.qi]; const el = movingSec() - (TR.qAt || 0); const left = Math.ceil(cur.sec - el); if (left !== TR.qLeft && left > 0) ivCountdown(left, cur.sec, TR.q[TR.qi + 1], cur); TR.qLeft = left;
+    if (left <= 0) qAdvance(cur.sec); }
   /* Zeitansage ohne Strecke (Indoor, Ballsport): alle 5 min */
   if (!TR.paused && o.voice && !TR.gps) { const min = Math.floor(movingSec() / 60); if (min >= 5 && min % 5 === 0 && min !== TR.nextVoiceMin) { TR.nextVoiceMin = min; say(min + $t(' Minuten') + (hrFresh() ? '. ' + $t('Puls ') + HRM.bpm : '') + '.'); } }
   /* Zielzone: nach 20 s außerhalb eine Ansage, höchstens alle 60 s */
   if (!TR.paused && TR.zone != null && hrFresh() && movingSec() > 300) { const z = hrZone(HRM.bpm); if (z !== TR.zone) { if (!TR.outSince) TR.outSince = Date.now(); } else TR.outSince = 0;
     if (TR.outSince && Date.now() - TR.outSince >= 20000 && Date.now() - TR.lastAlert > 60000) { TR.lastAlert = Date.now(); TR.outSince = 0; buzz([150, 80, 150, 80, 150]); say(z > TR.zone ? $t('Puls zu hoch. Etwas langsamer.') : $t('Puls zu niedrig. Etwas schneller.')); } }
   if (Date.now() - (TR.savedAt || 0) > 15000) trPersist(); if (!fromGps) trLive(false); }
+/* Abschnitt abschließen: Zeit, Strecke, Pace und Puls pro Intervall merken */
+function qClose(sec) { const cur = TR.q && TR.q[TR.qi]; if (!cur || cur.k === 'cd' || sec < 3) return null; const hrs = TR.hr.filter(h => h[0] >= TR.qT0).map(h => h[1]);
+  const r = { k: cur.k, n: cur.n || null, sec: Math.round(sec), plan: cur.sec, dist: TR.gps ? Math.round(TR.dist - TR.qDist0) : null, hr: hrs.length ? Math.round(hrs.reduce((a, b) => a + b, 0) / hrs.length) : null, hrMax: hrs.length ? Math.max(...hrs) : null };
+  TR.ivs.push(r); return r; }
+function qAdvance(sec) { const done = qClose(sec); TR.qAt = (TR.qAt || 0) + sec; TR.qi++; TR.qDist0 = TR.dist; TR.qT0 = Date.now();
+  const res = done && done.k === 'hi' && done.dist > 30 ? '. ' + (ACT_MAP[TR.type].m === 'speed' ? fmt(done.dist / done.sec * 3.6, 1) + $t(' km/h') : $t('Pace ') + sayPace(done.sec / done.dist * 1000)) : '';
+  if (TR.qi < TR.q.length) { TR.qLeft = TR.q[TR.qi].sec; say(TR.q[TR.qi].label + res); buzz([200, 100, 200]); } else { say($t('Intervalle geschafft. Locker ausrollen oder beenden.') + res); buzz([300, 100, 300]); } trLive(true); }
+/* Abschnitt vorzeitig beenden (z. B. schon aufgewärmt): vor einem harten Intervall kommt ein 10-s-Countdown */
+function trNext() { if (!TR.active || !TR.q || TR.qi < 0 || TR.qi >= TR.q.length) return; const cur = TR.q[TR.qi], nx = TR.q[TR.qi + 1];
+  if (cur.k !== 'cd' && nx && nx.k === 'hi') TR.q.splice(TR.qi + 1, 0, { sec: 10, label: $t('Gleich geht’s los'), k: 'cd' });
+  qAdvance(Math.max(0, movingSec() - (TR.qAt || 0))); }
 function trPersist() { try { const snap = Object.assign({}, TR, { watch: null }); localStorage.setItem(TR_KEY, JSON.stringify(snap)); TR.savedAt = Date.now(); } catch (e) {} }
 
 /* ---------- Live-Anzeige ---------- */
@@ -141,7 +177,9 @@ function trLive(full) { if (route.name !== 'track') { trBar(); return; } const s
   const sec = movingSec(); set('tr-time', fmtClock(sec)); set('tr-dist', fmt(TR.dist / 1000, 2)); set('tr-cur', speedTxt(TR.type, curSpeed())); set('tr-avg', speedTxt(TR.type, sec > 0 ? TR.dist / sec : 0));
   const hr = hrFresh() ? HRM.bpm : null; set('tr-hr', hr || '–'); const hb = document.getElementById('tr-hrbox'); if (hb) { const z = hr ? hrZone(hr) : -1; hb.style.background = z >= 0 ? ZONES[z].c : ''; hb.classList.toggle('lit', z >= 0); set('tr-zone', z >= 0 ? ZONES[z].k + ' · ' + ZONES[z].n : $t('kein Puls')); }
   set('tr-gps', !TR.gps ? $t('ohne GPS') : TR.acc == null ? $t('GPS sucht …') : '± ' + Math.round(TR.acc) + ' m'); set('tr-elev', Math.round(TR.elevUp) + ' m');
-  if (TR.q) { const cur = TR.q[TR.qi]; set('tr-qlab', cur ? cur.label : $t('Intervalle fertig')); set('tr-qleft', cur ? fmtClock(TR.qLeft) : ''); set('tr-qn', cur ? (TR.qi + 1) + ' / ' + TR.q.length : ''); const qb = document.getElementById('tr-q'); if (qb) qb.classList.toggle('hi', !!(cur && cur.hi)); }
+  if (TR.q) { const cur = TR.q[TR.qi]; set('tr-qlab', cur ? cur.label : $t('Intervalle fertig')); set('tr-qleft', cur ? fmtClock(TR.qLeft) : ''); const nHi = TR.q.filter(x => x.k === 'hi').length, dHi = TR.ivs.filter(x => x.k === 'hi').length; set('tr-qn', nHi ? dHi + ' / ' + nHi : '');
+    const nb = document.getElementById('tr-qnext'); if (nb) { nb.hidden = !cur; nb.textContent = !cur ? '' : cur.k === 'warm' ? $t('Aufwärmen beenden') : cur.k === 'cd' ? $t('Sofort starten') : $t('Abschnitt beenden'); }
+    const lh = TR.ivs.filter(x => x.k === 'hi' && x.dist > 30).pop(); set('tr-qlast', lh ? $t('Letztes Intervall: ') + speedTxt(TR.type, lh.dist / lh.sec) + ' ' + speedUnit(TR.type) : ''); const qb = document.getElementById('tr-q'); if (qb) qb.classList.toggle('hi', !!(cur && cur.hi)); }
   const pb = document.getElementById('tr-pausebtn'); if (pb && full) pb.outerHTML = pauseBtn(); const st = document.getElementById('tr-state'); if (st) st.textContent = TR.paused === 'auto' ? $t('Auto-Pause') : TR.paused ? $t('Pausiert') : '';
   if (TR.map && (TR.mapDirty || full)) { TR.mapDirty = false; const ll = TR.pts.map(p => [p[0], p[1]]); TR.line.setLatLngs(ll); if (ll.length) { const last = ll[ll.length - 1]; TR.dot.setLatLng(last); if (!TR.userPanned) TR.map.setView(last, Math.max(TR.map.getZoom(), 15), { animate: false }); } } }
 const pauseBtn = () => '<button id="tr-pausebtn" class="btn ' + (TR.paused ? 'brand' : '') + '" data-act="' + (TR.paused ? 'trResume' : 'trPause') + '" type="button">' + (TR.paused ? $t('Weiter') : $t('Anhalten')) + '</button>';
@@ -158,7 +196,12 @@ function typeSelect(cur) { return '<select id="tr-type" data-trtype="1">' + ACT_
 function viewTrack() { const o = trOpts();
   if (!TR.active) { const type = ui.trType || S.settings.trLast || 'joggen'; const t = ACT_MAP[type] || ACT_MAP.joggen; const ctx = ui.trCtx;
     const zoneSel = $t('<select id="tr-zonesel" data-trzone="1"><option value="">keine</option>') + ZONES.map((z, i) => '<option value="' + i + '"' + (String(ui.trZone) === String(i) ? $t(' selected') : '') + '>' + z.k + ' · ' + z.n + '</option>').join('') + '</select>';
-    const ivSel = ctx ? '' : $t('<div class="field"><label for="tr-iv">Intervalle</label><select id="tr-iv" data-triv="1"><option value="">keine</option><option value="4x4"') + (ui.trIntervals === '4x4' ? $t(' selected') : '') + $t('>4×4 (norwegisch)</option></select></div>');
+    const sp = ctx && isCardio(ctx.k) ? cardioSpec(ctx.w, ctx.k) : null; const cur = ui.trIntervals || ''; const io = ivOpts();
+    const opt = (v, lab) => '<option value="' + v + '"' + (cur === v ? ' selected' : '') + '>' + esc(lab) + '</option>';
+    const numF = (k, lab, ph) => '<div class="field"><label for="tr-iv-' + k + '">' + lab + '</label><input id="tr-iv-' + k + '" type="number" inputmode="numeric" min="0" style="width:110px" data-trivf="' + k + '" value="' + esc(io[k] != null ? io[k] : '') + '" placeholder="' + ph + '"></div>';
+    const ivSel = '<div class="field" style="flex:1 1 100%"><label for="tr-iv">' + $t('Intervalle') + '</label><select id="tr-iv" data-triv="1">' + opt('', $t('keine')) + (sp && sp.mode === 'int' ? opt('plan', $t('Aus dem Plan: ') + cardioTitle(sp)) : '') + ivPresets().map(p => opt(p.id, p.name)).join('') + opt('custom', $t('Frei gestalten')) + '</select></div>' +
+      (cur === 'custom' ? numF('reps', $t('Anzahl'), '6') + numF('on', $t('Belastung (s)'), '60') + numF('off', $t('Pause (s)'), '60') + numF('cool', $t('Auslaufen (min)'), '5') : '') +
+      (cur ? numF('warm', $t('Aufwärmen (min)'), String(cur === 'plan' ? ivPlanWarm(ctx) : 10)) + '<p class="small muted" style="flex:1 1 100%;margin:0">' + $t('Schon warm, z. B. nach dem Fußball? Aufwärmen auf 0 setzen, dann startet das erste Intervall nach 10 s Countdown. Unterwegs kannst du jeden Abschnitt vorzeitig beenden.') + '</p>' : '');
     const tog = (k, lab) => '<button class="trtog' + (o[k] ? ' on' : '') + '" data-act="trOpt" data-k="' + k + '" type="button">' + (o[k] ? '✓ ' : '') + lab + '</button>';
     return '<a href="' + (ctx ? '#training/' + sKey(ctx.w, ctx.k) : '#training') + '" class="back">' + ICON.back + $t('Training</a>') + pageTop($t('Aufzeichnen'), '', ctx ? esc(SESS[ctx.k].title) + $t(' · Woche ') + ctx.w : $t('Laufen, Rad, Schwimmen und mehr, mit GPS und Live-Puls')) + '<div class="stack">' +
       $t('<div class="card"><div class="fields"><div class="field" style="flex:1 1 100%"><label for="tr-type">Sportart</label>') + typeSelect(t.id) + '</div>' +
@@ -171,7 +214,7 @@ function viewTrack() { const o = trOpts();
   const t = ACT_MAP[TR.type]; const mapOn = TR.gps && o.map;
   return '<div class="trk">' + '<div class="row trk-top"><b class="grow">' + esc(t.name) + '</b><span class="trchip" id="tr-gps"></span>' + hrChip() + '</div>' +
     '<div class="trk-time" id="tr-time">0:00</div><div class="trk-state" id="tr-state"></div>' +
-    (TR.q ? '<div class="trk-q" id="tr-q"><div class="row"><span class="grow" id="tr-qlab"></span><span id="tr-qn" class="small"></span></div><div class="trk-qleft" id="tr-qleft"></div></div>' : '') +
+    (TR.q ? '<div class="trk-q" id="tr-q"><div class="row"><span class="grow" id="tr-qlab"></span><span id="tr-qn" class="small"></span></div><div class="trk-qleft" id="tr-qleft"></div><div class="small" id="tr-qlast"></div><button class="btn sm" id="tr-qnext" data-act="trNext" type="button" style="margin-top:8px"></button></div>' : '') +
     '<div class="trk-grid">' + (TR.gps ? '<div><b id="tr-dist">0,00</b><span>' + $t('km') + '</span></div>' : '') +
     (TR.gps ? '<div><b id="tr-cur">–</b><span>' + (t.m === 'speed' ? $t('km/h aktuell') : $t('Pace aktuell ') + speedUnit(TR.type)) + '</span></div><div><b id="tr-avg">–</b><span>' + (t.m === 'speed' ? $t('Ø km/h') : $t('Ø Pace ') + speedUnit(TR.type)) + '</span></div><div><b id="tr-elev">0 m</b><span>' + $t('Höhenmeter') + '</span></div>' : '') +
     '<div id="tr-hrbox" class="trk-hr"><b id="tr-hr">–</b><span id="tr-zone"></span></div></div>' +
@@ -192,14 +235,15 @@ function trStopSheet() { const sec = movingSec(); const t = ACT_MAP[TR.type]; co
     $t('<button class="btn brand block" data-act="trSave" type="button" style="margin-top:14px">Speichern</button>') +
     $t('<div class="row" style="margin-top:8px"><button class="btn grow" data-act="closeSheet" type="button">Weiter trainieren</button><button class="btn grow" data-act="trDiscard" type="button">Verwerfen</button></div>')); }
 async function trSave() { if (!TR.active) return; const md = document.getElementById('tr-mdist'), rp = document.getElementById('tr-rpe'), ti = document.getElementById('tr-title');
+  if (TR.q && TR.qi >= 0 && TR.qi < TR.q.length) qClose(movingSec() - (TR.qAt || 0));
   if (!TR.paused) TR.runMs += Date.now() - TR.resumeAt; TR.paused = 'manual'; const end = Date.now(); const sec = TR.runMs / 1000; clearInterval(TR_TICK.iv); await gpsStop();
   const t = ACT_MAP[TR.type]; const mdist = md ? num(md.value) : null; const distKm = TR.dist > 20 ? TR.dist / 1000 : mdist; const rpe = rp ? num(rp.value) : null;
   const hrs = TR.hr.map(h => h[1]); const avgHr = hrs.length ? Math.round(hrs.reduce((a, b) => a + b, 0) / hrs.length) : null; const maxHr = hrs.length ? Math.max(...hrs) : null;
   const thin = TR.pts.filter((p, i) => i === 0 || i === TR.pts.length - 1 || i % Math.max(1, Math.ceil(TR.pts.length / 4000)) === 0);
   const a = { id: uid(), key: 'gps:' + TR.startAt, type: TR.type, title: ti && ti.value.trim() ? ti.value.trim() : null, date: iso(new Date(TR.startAt)), week: TR.ctx ? TR.ctx.w : curWeek(), dur: Math.max(1, Math.round(sec / 60)),
     dist: distKm != null ? Math.round(distKm * 100) / 100 : null, kcal: kcalOf(TR.type, sec), avgHr, maxHr, rpe: rpe != null ? String(rpe) : '', src: 'gps', start: TR.startAt, end,
-    route: thin.length > 1 ? encPoly(thin) : null, routeT: thin.length > 1 ? thin.map(p => Math.round((p[2] - TR.startAt) / 1000)) : null, elev: Math.round(TR.elevUp) || null, splits: TR.splits, laps: TR.laps.map(l => ({ n: l.n, sec: Math.round(l.lsec), dist: Math.round(l.ldist) })), moving: Math.round(sec) };
-  if (TR.ctx) { const s = sess(TR.ctx.w, TR.ctx.k); a.countsAs = TR.ctx.k; s.cardio = Object.assign(s.cardio || {}, { dur: String(a.dur), avg: avgHr ? String(avgHr) : '', max: maxHr ? String(maxHr) : '', perf: a.dist ? fmt(a.dist, 2) + ' km' : '', rpe: a.rpe }); markStarted(TR.ctx.w, TR.ctx.k); }
+    route: thin.length > 1 ? encPoly(thin) : null, routeT: thin.length > 1 ? thin.map(p => Math.round((p[2] - TR.startAt) / 1000)) : null, elev: Math.round(TR.elevUp) || null, splits: TR.splits, laps: TR.laps.map(l => ({ n: l.n, sec: Math.round(l.lsec), dist: Math.round(l.ldist) })), ivs: (TR.ivs || []).length ? TR.ivs : undefined, moving: Math.round(sec) };
+  if (TR.ctx) { const s = sess(TR.ctx.w, TR.ctx.k); a.countsAs = TR.ctx.k; s.date = a.date; s.cardio = Object.assign(s.cardio || {}, { dev: t.gps ? $t('Draußen') : t.name, dur: String(a.dur), avg: avgHr ? String(avgHr) : '', max: maxHr ? String(maxHr) : '', perf: a.dist ? fmt(a.dist, 2) + ' km' : '', rpe: a.rpe }); markStarted(TR.ctx.w, TR.ctx.k); }
   S.activities.push(a);
   if (TR.hr.length > 5) { const raw = TR.hr.map(h => [(h[0] - TR.startAt) / 1000, h[1]]); S.hrTraces[a.id] = { start: TR.startAt, end, pts: downsample(raw), src: 'live' }; }
   S.settings.trLast = TR.type; const full = TR; TR = { active: false }; try { localStorage.removeItem(TR_KEY); } catch (e) {} save(); closeSheet(); trBar();
@@ -221,6 +265,12 @@ function splitsCard(a) { const sp = a.splits || []; if (!sp.length && !(a.laps |
   const rows = sp.map(s => '<tr><td>' + fmt(s.n * s.len / 1000, s.len === 1000 ? 0 : 1) + '</td><td>' + fmtClock(s.sec) + '</td><td>' + speedTxt(t, s.len / Math.max(1, s.sec)) + '</td><td>' + (s.hr || '–') + '</td></tr>').join('');
   const laps = (a.laps || []).map(l => '<tr><td>' + $t('Runde ') + l.n + '</td><td>' + fmtClock(l.sec) + '</td><td>' + (l.dist > 50 ? fmt(l.dist / 1000, 2) + ' km' : '–') + '</td><td></td></tr>').join('');
   return $t('<div class="card"><h2>Abschnitte</h2><table class="tbl small" style="width:100%;margin-top:8px"><tr><th>km</th><th>Zeit</th><th>') + (ACT_MAP[t] && ACT_MAP[t].m === 'speed' ? $t('km/h') : $t('Pace')) + $t('</th><th>Puls</th></tr>') + rows + laps + '</table></div>'; }
+function ivsCard(a) { const v = (a.ivs || []).filter(x => x.sec >= 3); if (!v.some(x => x.k === 'hi')) return ''; const t = a.type, sp = ACT_MAP[t] && ACT_MAP[t].m === 'speed', gd = v.some(x => x.dist > 30);
+  const hi = v.filter(x => x.k === 'hi' && x.dist > 30); const avg = hi.length ? hi.reduce((s, x) => s + x.dist, 0) / hi.reduce((s, x) => s + x.sec, 0) : 0;
+  const rows = v.map(x => '<tr' + (x.k === 'hi' ? ' style="font-weight:700"' : ' class="muted"') + '><td>' + esc(ivLabel(x)) + '</td><td>' + fmtClock(x.sec) + (x.plan && x.sec < x.plan - 5 ? '*' : '') + '</td>' + (gd ? '<td>' + (x.dist > 30 ? (x.dist >= 1000 ? fmt(x.dist / 1000, 2) + ' km' : x.dist + ' m') : '–') + '</td><td>' + (x.dist > 30 ? speedTxt(t, x.dist / x.sec) : '–') + '</td>' : '') + '<td>' + (x.hr || '–') + (x.hrMax ? ' / ' + x.hrMax : '') + '</td></tr>').join('');
+  return '<div class="card"><h2>' + $t('Intervalle') + '</h2>' + (avg ? '<p class="small">' + $t('Ø harte Intervalle: ') + '<b>' + speedTxt(t, avg) + ' ' + speedUnit(t) + '</b></p>' : '') +
+    '<table class="tbl small" style="width:100%;margin-top:8px"><tr><th></th><th>' + $t('Zeit') + '</th>' + (gd ? '<th>' + $t('Strecke') + '</th><th>' + (sp ? $t('km/h') : $t('Pace')) + '</th>' : '') + '<th>' + $t('Puls Ø / max') + '</th></tr>' + rows + '</table>' +
+    (v.some(x => x.plan && x.sec < x.plan - 5) ? '<p class="small muted" style="margin-top:6px">' + $t('* vorzeitig beendet') + '</p>' : '') + '</div>'; }
 function routeMapsInit() { document.querySelectorAll('[data-route]').forEach(el => { if (el._map || !window.L) return; const a = findAct(el.dataset.route); if (!a || !a.route) return; const ll = decPoly(a.route); if (ll.length < 2) return;
   const m = L.map(el, { zoomControl: false, dragging: true, scrollWheelZoom: false }); L.tileLayer(TILE_URL, { maxZoom: 19, attribution: TILE_ATTR }).addTo(m); const line = L.polyline(ll, { color: '#ff5406', weight: 4 }).addTo(m);
   L.circleMarker(ll[0], { radius: 6, color: '#fff', weight: 2, fillColor: '#00b33f', fillOpacity: 1 }).addTo(m); L.circleMarker(ll[ll.length - 1], { radius: 6, color: '#fff', weight: 2, fillColor: '#ff3400', fillOpacity: 1 }).addTo(m);
@@ -234,7 +284,7 @@ async function gpxExport(id) { const a = findAct(id); if (!a || !a.route) return
   const blob = new Blob([xml], { type: 'application/gpx+xml' }); const u = URL.createObjectURL(blob); const l = document.createElement('a'); l.href = u; l.download = name; document.body.appendChild(l); l.click(); l.remove(); setTimeout(() => URL.revokeObjectURL(u), 4000); }
 /* viewFree um Karte und Abschnitte erweitern */
 const _viewFreeBase = viewFree;
-viewFree = function (id) { const html = _viewFreeBase(id); const a = findAct(id); if (!a || (!a.route && !(a.splits || []).length)) return html; const extra = routeCard(a) + splitsCard(a); const i = html.indexOf('<div class="stack">'); return i < 0 ? html + extra : html.slice(0, i + 19) + extra + html.slice(i + 19); };
+viewFree = function (id) { const html = _viewFreeBase(id); const a = findAct(id); if (!a || (!a.route && !(a.splits || []).length && !(a.ivs || []).length)) return html; const extra = ivsCard(a) + routeCard(a) + splitsCard(a); const i = html.indexOf('<div class="stack">'); return i < 0 ? html + extra : html.slice(0, i + 19) + extra + html.slice(i + 19); };
 
 /* ---------- Unterbrochene Aufzeichnung wiederherstellen ---------- */
 function trRecover() { let snap = null; try { snap = JSON.parse(localStorage.getItem(TR_KEY) || 'null'); } catch (e) {} if (!snap || !snap.active || TR.active) return;
@@ -249,11 +299,12 @@ async function trRecoverGo(andSave) { let snap = null; try { snap = JSON.parse(l
 /* ---------- Ereignisse ---------- */
 document.addEventListener('click', e => { const b = e.target.closest('[data-act]'); if (!b) return;
   switch (b.dataset.act) {
-    case 'trOpen': ui.trCtx = b.dataset.w ? { w: +b.dataset.w, k: b.dataset.k } : null; ui.trType = b.dataset.type || (ui.trCtx ? (isHiit(ui.trCtx.k) ? 'joggen' : S.settings.trLast || 'joggen') : null); ui.trZone = null; ui.trIntervals = null; closeSheet(); location.hash = '#track'; break;
+    case 'trOpen': ui.trCtx = b.dataset.w ? { w: +b.dataset.w, k: b.dataset.k } : null; ui.trType = b.dataset.type || (ui.trCtx ? (isHiit(ui.trCtx.k) ? 'joggen' : S.settings.trLast || 'joggen') : null); ui.trZone = null; ui.trIv = {}; ui.trIntervals = ui.trCtx && isCardio(ui.trCtx.k) && cardioSpec(ui.trCtx.w, ui.trCtx.k).mode === 'int' ? 'plan' : null; closeSheet(); location.hash = '#track'; break;
     case 'trStart': { const sel = document.getElementById('tr-type'); trStart(sel ? sel.value : 'joggen', ui.trCtx); break; }
     case 'trPause': trPause(false); break;
     case 'trResume': trResume(); break;
     case 'trLap': trLap(); break;
+    case 'trNext': trNext(); break;
     case 'trStop': trStopSheet(); break;
     case 'trSave': trSave(); break;
     case 'trDiscard': if (b.dataset.sure || !TR.active || TR.dist < 200 && movingSec() < 120) trDiscard(); else { b.dataset.sure = '1'; b.textContent = $t('Wirklich verwerfen?'); } break;
@@ -269,7 +320,8 @@ document.addEventListener('click', e => { const b = e.target.closest('[data-act]
 document.addEventListener('change', e => { const t = e.target;
   if (t.dataset.trtype) { ui.trType = t.value; render(); return; }
   if (t.dataset.trzone) { ui.trZone = t.value === '' ? null : +t.value; return; }
-  if (t.dataset.triv) { ui.trIntervals = t.value || null; return; }
+  if (t.dataset.triv) { ui.trIntervals = t.value || null; ivOpts().warm = null; render(); return; }
+  if (t.dataset.trivf) { ivOpts()[t.dataset.trivf] = t.value; return; }
 });
 const _renderBase = render;
 render = function (top) { _renderBase(top); try { trAfterRender(); routeMapsInit(); } catch (e) { console.warn(e); } };

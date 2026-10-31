@@ -375,7 +375,7 @@ function volBars(v, pv) { const max = 24; return '<div class="vol">' + Object.ke
 function viewSession(key) {
   const m = key.match(RE_SESS); if (!m || !SESS[m[2]]) return $t('<p>Einheit nicht gefunden.</p>');
   const w = +m[1], k = m[2]; ui.week = w; const d = SESS[k]; const se = peekSess(w, k);
-  const head = '<a href="#training" class="back">' + ICON.back + $t('Woche ') + w + '</a>' + pageTop(d.title, d.sub, PH_LABEL[phase(w)] + ' · ' + (se && se.date ? $t('gestartet ') + fmtDay(se.date) : $t('geplant ') + dayLabel(k)));
+  const head = '<a href="#training" class="back">' + ICON.back + $t('Woche ') + w + '</a>' + pageTop(d.title, d.sub, PH_LABEL[phase(w)] + ' · ' + (sessDoneDate(w, k) ? (sessProgress(w, k).done ? $t('erledigt ') : $t('gestartet ')) + fmtDay(sessDoneDate(w, k)) : $t('geplant ') + dayLabel(k)));
   if (isCardio(k)) return head + cardioView(w, k);
   const s = sess(w, k), c = s.check || {}, rd = readiness(w, k);
   const check = $t('<div class="card"><h2 style="margin-bottom:12px">Check-in nach dem Aufwärmen</h2><div class="fields">') +
@@ -441,7 +441,8 @@ function cardioView(w, k) {
   else if (hk) { const h = hiit(w); title = h.title; sub = h.sub;
     zones = h.mode === 'int' ? $t('<span class="tag"><span class="dot red"></span>Letzte 2 min je Intervall ab ') + hi + $t(' bpm</span><span class="tag"><span class="dot green"></span>Pausen locker</span>') : h.mode === 'z2' ? '<span class="tag"><span class="dot green"></span>Z2 ' + z2[0] + '–' + z2[1] + $t(' bpm</span>') : $t('<span class="tag"><span class="dot red"></span>Zeit unter „Leistung“ eintragen</span>'); }
   else { title = Z2MIN[w - 1] + $t(' min Z2'); sub = $t('Du kannst in ganzen Sätzen reden.'); zones = '<span class="tag"><span class="dot green"></span>Z2 ' + z2[0] + '–' + z2[1] + $t(' bpm</span>'); }
-  const devs = hk ? ['', $t('Air-Bike'), $t('Incline-Laufband'), $t('Ergometer'), $t('Rudergerät')] : ['', $t('Rudergerät'), $t('Rad / Ergometer'), $t('Schwimmen'), $t('Incline Walk'), $t('Stepper'), $t('Joggen')];
+  const devs = hk ? ['', $t('Air-Bike'), $t('Incline-Laufband'), $t('Laufband'), $t('Ergometer'), $t('Rudergerät'), $t('Draußen')] : ['', $t('Rudergerät'), $t('Rad / Ergometer'), $t('Schwimmen'), $t('Incline Walk'), $t('Stepper'), $t('Joggen'), $t('Draußen')];
+  const devVal = c.dev || (act ? (act.src === 'gps' && ACT_MAP[act.type] && ACT_MAP[act.type].gps ? $t('Draußen') : ACT_MAP[act.type] ? ACT_MAP[act.type].name : '') : ''); if (devVal && !devs.includes(devVal)) devs.push(devVal);
   const f = (id, lab, ph, type) => '<div class="field"><label for="c-' + id + '">' + lab + '</label><input id="c-' + id + '" ' + (type === 'text' ? 'type="text" style="width:170px"' : 'type="number" inputmode="decimal"') + ' data-cw="' + w + '" data-ck2="' + k + '" data-cf="' + id + '" value="' + esc(c[id]) + '" placeholder="' + ph + '"></div>';
   const z = zeppWorkoutFor(s.date || today(), k);
   return '<div class="stack">' + (act ? note('green', $t('Erledigt durch ') + esc(ACT_MAP[act.type].name) + $t(' am ') + fmtDay(act.date) + '.', '<a class="btn sm" href="#frei/' + act.id + $t('">Ansehen</a>')) : '') +
@@ -450,11 +451,16 @@ function cardioView(w, k) {
     '<div class="card"><div class="big">' + esc(title) + '</div><div class="muted">' + esc(sub) + '</div><div class="zones">' + zones + '</div>' +
     (sp.mode === 'int' ? '<button class="btn" data-act="intervals" data-w="' + w + '" data-k="' + k + $t('" type="button">Nur Intervall-Timer</button>') : '') + '<button class="btn brand" data-act="trOpen" data-w="' + w + '" data-k="' + k + $t('" type="button">Mit GPS und Puls aufzeichnen</button>') + '</div>' +
     '<div class="card"><div class="fields">' +
-    $t('<div class="field"><label for="c-dev">Gerät</label><select id="c-dev" data-cw="') + w + '" data-ck2="' + k + '" data-cf="dev">' + devs.map(o => '<option' + (c.dev === o ? $t(' selected') : '') + '>' + o + '</option>').join('') + '</select></div>' +
+    $t('<div class="field"><label for="c-dev">Gerät</label><select id="c-dev" data-cw="') + w + '" data-ck2="' + k + '" data-cf="dev">' + devs.map(o => '<option' + (devVal === o ? ' selected' : '') + '>' + o + '</option>').join('') + '</select></div>' +
     f('dur', $t('Dauer (min)'), 'min') + f('avg', $t('Ø Puls'), $t('bpm')) + f('max', $t('Max. Puls'), $t('bpm')) + f('perf', hk ? $t('Leistung') : $t('Distanz'), hk ? 'z. B. 280 W' : $t('z. B. 6 km'), 'text') + f('rpe', $t('RPE'), '1–10') +
     '</div>' + (num(c.dur) && num(c.rpe) ? $t('<p class="small" style="margin-top:10px">Belastung: <b>') + fmt(num(c.dur) * num(c.rpe), 0) + $t('</b> (Dauer × RPE)</p>') : $t('<p class="small muted" style="margin-top:10px">Mit Dauer und RPE berechnet die App deine Tagesbelastung.</p>')) + finBtn(w, k) + '</div>' +
+    (sp.mode === 'int' ? (act && (act.ivs || []).some(x => x.k === 'hi') ? ivsCard(act) : ivEntryCard(w, k, sp, c)) : '') +
     traceCard(act && S.hrTraces[act.id] ? act.id : sKey(w, k), act && act.start ? { start: act.start, end: act.end } : s.timerStart ? { start: s.timerStart, end: s.timerStart + (s.timerDur || 0) * 1000 } : null, sp.mode === 'int' && !!sp.hi) +
     (s.skipped ? '<button class="btn block" data-act="unskip" data-w="' + w + '" data-k="' + k + $t('" type="button">Wieder öffnen</button>') : '<button class="btn block" style="background:var(--fog)" data-act="skip" data-w="' + w + '" data-k="' + k + $t('" type="button">Einheit überspringen</button>')) + '</div>'; }
+/* Intervalle einzeln eintragen (Laufband, Air-Bike …): vorher als Ziel oder nachher als Ergebnis */
+function ivEntryCard(w, k, sp, c) { const n = ivCount(sp); if (!n) return ''; const iv = c.iv || [];
+  return '<div class="card"><h2>' + $t('Intervalle einzeln') + '</h2><p class="small muted">' + $t('Tempo, Geschwindigkeit oder Watt pro Intervall. Vorher als Ziel oder nachher als Ergebnis eintragen.') + '</p><div class="fields" style="margin-top:10px">' +
+    Array.from({ length: n }, (_, i) => '<div class="field"><label for="c-iv' + i + '">' + $t('Intervall ') + (i + 1) + '</label><input id="c-iv' + i + '" type="text" style="width:130px" data-ivw="' + w + '" data-ivk="' + k + '" data-ivi="' + i + '" value="' + esc(iv[i]) + '" placeholder="' + $t('z. B. 3:55 /km') + '"></div>').join('') + '</div></div>'; }
 function zeppWorkoutFor(d, k) { return S.activities.find(a => a.date === d && a.src && a.src !== 'manual' && !a.countsAs && ACT_MAP[a.type] && ACT_MAP[a.type].cardio && isCardio(k)); }
 
 /* ======================= FREIES TRAINING / AKTIVITÄT ======================= */
@@ -846,14 +852,18 @@ let wakeLock = null;
 async function keepAwake() { try { if ('wakeLock' in navigator && !wakeLock) { wakeLock = await navigator.wakeLock.request('screen'); wakeLock.addEventListener('release', () => wakeLock = null); } } catch (e) {} }
 function beep() { try { TM.ctx = TM.ctx || new (window.AudioContext || window.webkitAudioContext)(); const o = TM.ctx.createOscillator(), g = TM.ctx.createGain(); o.frequency.value = 880; g.gain.value = .15; o.connect(g); g.connect(TM.ctx.destination); o.start(); o.stop(TM.ctx.currentTime + .25); } catch (e) {} }
 function showTimer(on) { $('#timer').hidden = !on; document.body.classList.toggle('timing', on); }
-function startTimer(sec, label, queue) { if (!sec) return; TM.total = sec; TM.end = Date.now() + sec * 1000; TM.queue = queue || []; $('#tmLabel').textContent = label || $t('Pause'); showTimer(true); $('#timer').classList.remove('end'); clearInterval(TM.iv); TM.iv = setInterval(tick, 250); tick(); keepAwake(); }
-function tick() { const left = Math.max(0, Math.round((TM.end - Date.now()) / 1000)); $('#tmTime').textContent = Math.floor(left / 60) + ':' + pad(left % 60); $('#tmBar').style.width = Math.max(0, 100 - left / TM.total * 100) + '%';
+function startTimer(sec, label, queue, seg) { if (!sec) return; TM.seg = seg || null; TM.lastLeft = null; TM.total = sec; TM.end = Date.now() + sec * 1000; TM.queue = queue || []; $('#tmLabel').textContent = label || $t('Pause'); const nb = $('#tmNext'); if (nb) { nb.hidden = !(queue && queue.length); nb.textContent = seg && seg.k === 'warm' ? $t('Aufwärmen beenden') : seg && seg.k === 'cd' ? $t('Sofort starten') : $t('Weiter ›'); } showTimer(true); $('#timer').classList.remove('end'); clearInterval(TM.iv); TM.iv = setInterval(tick, 250); tick(); keepAwake(); }
+function tick() { const left = Math.max(0, Math.round((TM.end - Date.now()) / 1000)); if (left !== TM.lastLeft) { TM.lastLeft = left; ivCountdown(left, TM.total, TM.queue[0], TM.seg); } $('#tmTime').textContent = Math.floor(left / 60) + ':' + pad(left % 60); $('#tmBar').style.width = Math.max(0, 100 - left / TM.total * 100) + '%';
   if (left <= 0) { clearInterval(TM.iv); if (navigator.vibrate) navigator.vibrate([300, 150, 300]); beep();
-    if (TM.queue.length) { const nx = TM.queue.shift(); startTimer(nx.sec, nx.label, TM.queue); } else { $('#timer').classList.add('end'); $('#tmLabel').textContent = $t('Weiter geht’s'); setTimeout(() => { if (Date.now() >= TM.end) showTimer(false); }, 6000); } } }
+    if (TM.queue.length) { const nx = TM.queue.shift(); startTimer(nx.sec, nx.label, TM.queue, nx); if (typeof say === 'function') say(nx.label); } else { $('#timer').classList.add('end'); $('#tmLabel').textContent = $t('Weiter geht’s'); setTimeout(() => { if (Date.now() >= TM.end) showTimer(false); }, 6000); } } }
 function intervalQueue(w, k) { const sp = k ? cardioSpec(w, k) : hiit(w);
-  if (sp.seq || sp.run) { const q = [{ sec: (sp.warm || 5) * 60, label: $t('Zügig gehen zum Aufwärmen') }]; const seq = sp.seq || Array.from({ length: sp.reps }, (_, i) => [sp.dur, i < sp.reps - 1 ? sp.rest : 0]);
-    seq.forEach((x, i) => { q.push({ sec: Math.round(x[0] * 60), label: $t('Laufen ') + (i + 1) + $t(' von ') + seq.length }); if (x[1]) q.push({ sec: Math.round(x[1] * 60), label: $t('Gehen') }); }); q.push({ sec: (sp.cool || 5) * 60, label: $t('Gehen als Cool-down') }); return q; }
-  const h = sp; const q = [{ sec: (sp.warm || 10) * 60, label: $t('Aufwärmen, locker') }]; for (let i = 1; i <= h.reps; i++) { q.push({ sec: h.dur * 60, label: $t('Intervall ') + i + $t(' von ') + h.reps + $t(': hart') }); if (i < h.reps) q.push({ sec: (h.rest || 3) * 60, label: $t('Pause, locker') }); } q.push({ sec: (h.cool || 5) * 60, label: $t('Auslaufen') }); return q; }
+  if (sp.seq || sp.run) { const q = [{ sec: (sp.warm || 5) * 60, label: $t('Zügig gehen zum Aufwärmen'), k: 'warm' }]; const seq = sp.seq || Array.from({ length: sp.reps }, (_, i) => [sp.dur, i < sp.reps - 1 ? sp.rest : 0]);
+    seq.forEach((x, i) => { q.push({ sec: Math.round(x[0] * 60), label: $t('Laufen ') + (i + 1) + $t(' von ') + seq.length, k: 'hi', n: i + 1 }); if (x[1]) q.push({ sec: Math.round(x[1] * 60), label: $t('Gehen'), k: 'rest' }); }); q.push({ sec: (sp.cool || 5) * 60, label: $t('Gehen als Cool-down'), k: 'cool' }); return q; }
+  const h = sp; const q = [{ sec: (sp.warm || 10) * 60, label: $t('Aufwärmen, locker'), k: 'warm' }]; for (let i = 1; i <= h.reps; i++) { q.push({ sec: h.dur * 60, label: $t('Intervall ') + i + $t(' von ') + h.reps + $t(': hart'), k: 'hi', n: i }); if (i < h.reps) q.push({ sec: (h.rest || 3) * 60, label: $t('Pause, locker'), k: 'rest' }); } q.push({ sec: (h.cool || 5) * 60, label: $t('Auslaufen'), k: 'cool' }); return q; }
+/* Anzahl harter Intervalle einer Einheit (für das Eintragen pro Intervall) */
+function ivCount(sp) { return sp.seq ? sp.seq.length : sp.reps || 0; }
+/* tatsächliches Datum einer Einheit: Datum der zugeordneten Aktivität geht vor */
+function sessDoneDate(w, k) { const a = countsAsActivity(w, k); if (a && a.date) return a.date; const s = peekSess(w, k); return s && s.date || null; }
 
 /* ======================= EVENTS ======================= */
 function sessFromRoute() { const m = route.name === 'training' && route.arg && route.arg.match(RE_SESS); return m && SESS[m[2]] ? { w: +m[1], k: m[2] } : null; }
@@ -878,11 +888,12 @@ document.addEventListener('input', e => { const t = e.target;
   if (t.dataset.sdate) { if (t.value) { sess(+t.dataset.sw, t.dataset.sk).date = t.value; save(); } return; }
   if (t.id === 'rc-name' || t.id === 'rc-por') { if (ui.recipe) { ui.recipe[t.id === 'rc-name' ? 'name' : 'portions'] = t.value; } return; }
   if (t.dataset.ck) { const s = sess(+t.dataset.sw, t.dataset.sk); s.check[t.dataset.ck] = t.value; save(); return; }
+  if (t.dataset.ivi) { const w = +t.dataset.ivw, k = t.dataset.ivk; const s = sess(w, k); s.cardio = s.cardio || {}; s.cardio.iv = s.cardio.iv || []; s.cardio.iv[+t.dataset.ivi] = t.value; save(); return; }
   if (t.dataset.cf) { const w = +t.dataset.cw, k = t.dataset.ck2; const s = sess(w, k); s.cardio = s.cardio || {}; s.cardio[t.dataset.cf] = t.value; if (t.dataset.cf === 'dur' && t.value) markStarted(w, k); save(); return; }
   if (t.id === 'exq') { const q = t.value.toLowerCase(); $('#exlist').innerHTML = exItems(Object.values(LIB).filter(x => x.name.toLowerCase().includes(q)), t.dataset.aid); return; }
   if (t.dataset.aid && t.dataset.idx != null && t.dataset.f) { const a = findAct(t.dataset.aid); const ex = a.exercises[+t.dataset.idx]; const i = +t.dataset.i; ex.sets[i] = ex.sets[i] || {}; ex.sets[i][t.dataset.f] = t.value; save(); return; }
   if (t.dataset.aid && t.dataset.af) { const a = findAct(t.dataset.aid); if (!a) return; const f = t.dataset.af;
-    if (f === 'countsZ') { a.countsAs = t.checked ? Z2K() : undefined; if (t.checked) a.week = a.week || curWeek(); }
+    if (f === 'countsZ') { a.countsAs = t.checked ? Z2K() : undefined; if (t.checked) { a.week = a.week || curWeek(); const zs = sess(a.week, a.countsAs); zs.date = a.date; } }
     else { a[f] = t.value; if (f === 'type' && ACT_MAP[t.value].strength && !a.exercises) a.exercises = []; } save(); return; }
   if (t.dataset.slot) { const r = sessFromRoute(); if (!r) return; const spec = planFor(r.w, r.k).find(p => p.slot === t.dataset.slot); const s = sess(r.w, r.k);
     const lg = s.logs[spec.slot] || (s.logs[spec.slot] = { ex: actualEx(r.w, r.k, spec), sets: [] }); const i = +t.dataset.i; for (let j = 0; j <= i; j++) lg.sets[j] = lg.sets[j] || {}; lg.sets[i][t.dataset.f] = t.value; save(); return; }
@@ -937,8 +948,8 @@ document.addEventListener('click', async e => { const b = e.target.closest('[dat
       if (s.logs[spec.slot]) s.logs[spec.slot].ex = actualEx(r.w, r.k, spec); save(); closeSheet(); softPatch('ex-' + spec.slot, exCard(r.w, r.k, spec)); toast(LIB[ex].name + (ui.swapScope === 'always' ? $t(', dauerhaft') : $t(', nur heute'))); break; }
     case 'backswap': { const w = +b.dataset.w, k = b.dataset.k; const s = sess(w, k); if (planFor(w, k).some(p => p.slot === 'fs')) s.swaps.fs = 'pend'; if (planFor(w, k).some(p => p.slot === 'trap')) s.swaps.trap = 'glute_bridge';
       ['fs', 'trap'].forEach(sl => { if (s.logs[sl]) s.logs[sl].ex = s.swaps[sl]; }); save(); render(); toast($t('Für heute getauscht')); break; }
-    case 'intervals': { const q = intervalQueue(+b.dataset.w, b.dataset.k); const s = sess(+b.dataset.w, b.dataset.k); s.timerStart = Date.now(); s.timerDur = q.reduce((a, x) => a + x.sec, 0); markStarted(+b.dataset.w, b.dataset.k); save(); startTimer(1, $t('Los'), q); break; }
-    case 'useZepp': { const act = findAct(b.dataset.id); const w = +b.dataset.w, k = b.dataset.k; act.countsAs = k; act.week = w; markStarted(w, k); const s = sess(w, k); s.cardio = Object.assign(s.cardio || {}, { dur: String(act.dur), avg: act.avgHr ? String(act.avgHr) : (s.cardio && s.cardio.avg) || '' }); save(); render(); toast($t('Von der Uhr übernommen')); break; }
+    case 'intervals': { const q = intervalQueue(+b.dataset.w, b.dataset.k); const s = sess(+b.dataset.w, b.dataset.k); s.timerStart = Date.now(); s.timerDur = q.reduce((a, x) => a + x.sec, 0); markStarted(+b.dataset.w, b.dataset.k); save(); startTimer(1, $t('Los'), q, { k: 'cd' }); break; }
+    case 'useZepp': { const act = findAct(b.dataset.id); const w = +b.dataset.w, k = b.dataset.k; act.countsAs = k; act.week = w; markStarted(w, k); const s = sess(w, k); s.date = act.date; s.cardio = Object.assign(s.cardio || {}, { dur: String(act.dur), avg: act.avgHr ? String(act.avgHr) : (s.cardio && s.cardio.avg) || '' }); save(); render(); toast($t('Von der Uhr übernommen')); break; }
     case 'checkin': { if (!checkinDue()) break; const c = doCheckin(); toast($t('Neues Ziel: ') + fmt(c.kcal, 0) + $t(' kcal')); render(); break; }
     case 'dprev': ui.day = addDays(ui.day, -1); render(); break;
     case 'dnext': if (ui.day < today()) { ui.day = addDays(ui.day, 1); render(); } break;
@@ -1022,6 +1033,11 @@ async function exportBackup() { const txt = JSON.stringify(S); const name = 'hyb
   try { await navigator.clipboard.writeText(txt); toast($t('Sicherung in die Zwischenablage kopiert')); } catch (e) { $('#backupBox').innerHTML = $t('<p class="small muted">Text markieren und kopieren:</p><textarea readonly style="background:var(--paper)">') + esc(txt) + '</textarea>'; } }
 $('#tmMinus').addEventListener('click', () => { TM.end -= 15000; tick(); });
 $('#tmPlus').addEventListener('click', () => { TM.end += 30000; TM.total += 30; tick(); });
+if ($('#tmNext')) $('#tmNext').addEventListener('click', () => { if (!TM.queue.length) return; if ((!TM.seg || TM.seg.k !== 'cd') && TM.queue[0].k === 'hi') TM.queue.unshift({ sec: 10, label: $t('Gleich geht’s los'), k: 'cd' }); TM.end = Date.now(); tick(); });
+/* Countdown vor dem nächsten Abschnitt: vor einem harten Intervall 10 s Ansage, dann 5 … 1; sonst 3 kurze Töne */
+function ivCountdown(left, total, next, cur) { if (!next || left <= 0) return; const v = typeof say === 'function' && trOpts().voice;
+  if (next.k === 'hi') { if (left === 10 && total > 15 && v) say($t('Noch 10 Sekunden')); if (left <= 5) { if (v) say(String(left)); else beep(); if (navigator.vibrate) navigator.vibrate(40); } }
+  else if (left <= 3) { beep(); if (navigator.vibrate) navigator.vibrate(30); } }
 $('#tmStop').addEventListener('click', () => { clearInterval(TM.iv); TM.queue = []; showTimer(false); restCancel(); });
 document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') { if (!$('#timer').hidden) keepAwake(); autoSync(); checkUpdate(false); autoPull(); } });
 function autoSync() { if (VIEW || !HEALTH.native || S.healthMeta.source !== 'hc') return; const ls = S.healthMeta.lastSync ? Date.parse(S.healthMeta.lastSync) : 0; if (Date.now() - ls > 30 * 60 * 1000) hcSync(false); }

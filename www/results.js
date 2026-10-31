@@ -102,7 +102,7 @@ function viewActResult(a) { const t = ACT_MAP[a.type] || ACT_MAP.sonst; const m 
     (tiles ? '<div class="rk-grid">' + tiles + '</div>' : '') +
     (!num(a.rpe) ? '<div class="card"><h2>' + $t('Wie anstrengend war es?') + '</h2><p class="small muted">' + $t('RPE 1 = sehr locker, 10 = maximal. Erst damit zählt die Einheit in deine Belastung.') + '</p>' + rpeChips(a.rpe, 'resRpeA', 'data-aid="' + a.id + '"') + '</div>' : '') +
     effectCard(a.id, num(a.rpe), num(a.dur)) + strength +
-    (typeof routeCard === 'function' ? routeCard(a) : '') + (typeof splitsCard === 'function' ? splitsCard(a) : '') + traceCard(a.id, a.start ? { start: a.start, end: a.end } : null, a.type === 'hiit') +
+    (typeof ivsCard === 'function' ? ivsCard(a) : '') + (typeof routeCard === 'function' ? routeCard(a) : '') + (typeof splitsCard === 'function' ? splitsCard(a) : '') + traceCard(a.id, a.start ? { start: a.start, end: a.end } : null, a.type === 'hiit') +
     (a.note ? '<div class="card"><h2>' + $t('Notiz') + '</h2><p style="margin:6px 0 0">' + esc(a.note) + '</p></div>' : '') +
     '<div class="row" style="gap:8px"><button class="btn grow fog" data-act="resEditA" data-aid="' + a.id + '" type="button">' + $t('Bearbeiten') + '</button></div></div>'; }
 function sessDone(w, k) { const s = peekSess(w, k); if (!s || s.skipped) return false; if (s.end && s.end.fin) return true; return s.date && s.date < today() && sessProgress(w, k).done; }
@@ -118,8 +118,11 @@ function viewSessResult(w, k) { const s = peekSess(w, k); const d = SESS[k]; con
     '<div class="stack" style="margin-top:8px"><div class="rhead"><div class="t">' + esc(s.date ? fmtDay(s.date) : '') + ' · ' + $t('Woche ') + w + ' · ' + esc(PH_LABEL[phase(w)]) + '</div><h1>' + esc(d.title) + '</h1><div class="small" style="opacity:.8">' + esc(d.sub || '') + '</div><div class="big">✓ <small>' + $t('abgeschlossen') + '</small></div></div>' +
     (tiles ? '<div class="rk-grid">' + tiles + '</div>' : '') +
     (!L.rpe ? '<div class="card"><h2>' + $t('Wie anstrengend war es?') + '</h2><p class="small muted">' + $t('Session-RPE etwa 30 Minuten nach dem Training: 1 = sehr locker, 10 = maximal.') + '</p>' + rpeChips(null, 'resRpeS', 'data-w="' + w + '" data-k="' + k + '"') + '</div>' : '') +
-    effectCard(sKey(w, k), L.rpe, L.dur) + prs + exs + traceCard(sKey(w, k), cardio ? null : gymWindow(s), SESS[k].kind === 'hiit') +
+    effectCard(sKey(w, k), L.rpe, L.dur) + (cardio ? sessIvCard(w, k) : '') + prs + exs + traceCard(sKey(w, k), cardio ? null : gymWindow(s), SESS[k].kind === 'hiit') +
     '<div class="row" style="gap:8px"><button class="btn grow fog" data-act="resEditS" data-w="' + w + '" data-k="' + k + '" type="button">' + $t('Bearbeiten') + '</button><button class="btn grow fog" data-act="finReopen" data-w="' + w + '" data-k="' + k + '" type="button">' + $t('Weiter trainieren') + '</button></div></div>'; }
+function sessIvCard(w, k) { const act = countsAsActivity(w, k); if (act && (act.ivs || []).some(x => x.k === 'hi') && typeof ivsCard === 'function') return ivsCard(act);
+  const iv = ((peekSess(w, k) || {}).cardio || {}).iv || []; if (!iv.some(x => x && String(x).trim())) return '';
+  return '<div class="card"><h2>' + $t('Intervalle') + '</h2>' + iv.map((x, i) => x && String(x).trim() ? '<div class="row" style="margin-top:6px"><span class="grow">' + $t('Intervall ') + (i + 1) + '</span><b>' + esc(x) + '</b></div>' : '').join('') + '</div>'; }
 function resultHref(u) { return u.type === 'plan' ? '#training/' + sKey(u.w, u.k) : '#frei/' + u.id; }
 
 /* ---------- Einbindung ---------- */
