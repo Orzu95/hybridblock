@@ -26,3 +26,7 @@
 | TST-108 | doi_oder_link | PubMed-Link | 10.1123/ijspp.2013-0413 | Crossref: Gathercole et al. 2015, IJSPP |
 | SPD-106 | doi_oder_link | (leer) | 10.3390/app16105129 | Crossref: Repullo et al. 2026, Applied Sciences existiert |
 | TST-116 | doi_oder_link | (leer) | (leer) | Lehrbuch (McGuigan 2016), kein DOI; Čović 2016 in Crossref nicht eindeutig auffindbar |
+| ALG-103 | quellen | Kemmler et al. 2024 | Beia et al. 2024 (Sports) | Crossref: Erstautorin Beia, Kemmler Letztautor |
+| ALG-114 | quellen | Duan et al. 2022 | Le et al. 2022 (Frontiers in Physiology) | Crossref: Erstautor Le |
+| ALG-116 | quellen/doi_oder_link | Medellin Ruiz et al. 2020, 10.3390/app10238532 | Esco & Flatt 2014, PubMed 25177179; Grad B | Ursprüngliche DOI behandelt HRV-gesteuertes Training, nicht die 60-s-LnRMSSD-Messung |
+| ALG-119 | quellen/doi_oder_link | Shcherbina et al. 2017, 10.3390/jpm7020003 | Gløersen et al. 2018, 10.3389/fphys.2018.01425 | Ursprüngliche DOI behandelt Puls/Kalorien am Handgelenk, nicht GPS-Genauigkeit |
