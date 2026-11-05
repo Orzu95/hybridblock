@@ -1,0 +1,2 @@
+-- 7.2 Chat zwischen Coach und Athlet (angewendet am 05.11.2026): Tabelle messages mit RLS, nur read_at änderbar und nur vom Empfänger; privater Storage-Bucket "chat" (Pfad coach_id/athlete_id/datei)
+-- Vollständiges SQL siehe Supabase-Migration "coach_chat_messages".
