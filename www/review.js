@@ -10,6 +10,7 @@ const REV_EV = {
   spike: { g: 'C', txt: $t('Starke Sprünge in der Wochenbelastung gehen mit mehr Überlastungsbeschwerden einher. Die genaue Grenze (Verhältnis akut zu chronisch) ist umstritten.'), src: [['Gabbett 2016, Br J Sports Med', pm('Gabbett 2016 training-injury prevention paradox')], ['Impellizzeri et al. 2020, Kritik am ACWR', pm('Impellizzeri 2020 acute chronic workload ratio conceptual issues')]] },
   adhere: { g: 'B', txt: $t('Wichtiger als der perfekte Plan ist einer, den man durchhält. Bei gleichem Wochenvolumen ist die Verteilung auf 2 oder mehr Tage ähnlich wirksam.'), src: [['Schoenfeld et al. 2019, Frequenz-Meta-Analyse', pm('Schoenfeld 2019 resistance training frequency hypertrophy meta-analysis')]] },
   dietbreak: { g: 'C', txt: $t('Geplante Wochen auf Erhaltungskalorien während einer Diät können Leistung und Durchhalten verbessern. Für den Fettabbau insgesamt ist die Datenlage gemischt.'), src: [['Byrne et al. 2018, MATADOR-Studie', pm('Byrne 2018 intermittent energy restriction MATADOR')], ['Peos et al. 2021, ICECAP-Studie', pm('Peos 2021 intermittent dieting ICECAP')]] },
+  maint: { g: 'C', txt: $t('Nach einer Diät hilft eine geplante Erhaltungsphase, das neue Gewicht zu halten. Ob langsam oder schnell abgenommen wurde, macht für den Rückfall langfristig kaum einen Unterschied.'), src: [['Purcell et al. 2014, Lancet Diabetes Endocrinol', 'https://doi.org/10.1016/S2213-8587(14)70200-1']] },
   rpe: { g: 'B', txt: $t('RPE-Steuerung passt die Last an die Tagesform an. Liegen die Sätze regelmäßig deutlich über dem Ziel, ist die Last zu hoch gewählt.'), src: [['Helms et al. 2018, RPE-basierte Steuerung', pm('Helms 2018 RPE autoregulation powerlifters')]] } };
 
 Object.keys(REV_RULE).forEach(k => { if (REV_EV[k]) REV_EV[k].g = RULES[REV_RULE[k]].g; });
@@ -56,6 +57,9 @@ function analyzeWeek(w) { const facts = [], sugs = []; const lifts = keyLifts().
     else sugs.push({ id: 'vol', kind: 'vol', w: nx, f: 0.7, ev: 'deload', t: $t('Volumen nächste Woche um 30 % senken'), why: $t('Leistung gefallen und Ermüdung erhöht.') }); }
   else if (drops.length && deficit && rate != null && rate < 0) {
     sugs.push({ id: 'diet', kind: 'dietbreak', weeks: 1, ev: 'dietbreak', t: $t('Eine Woche auf Erhaltungskalorien'), why: $t('Im Kaloriendefizit fällt die Kraft bei ') + drops.map(p => LIB[p.id].name).join(', ') + $t('. Eine Woche ohne Defizit gibt Leistung und Erholung Luft.') }); }
+  /* Ziel erreicht → Erhaltungsphase vorschlagen */
+  const tgtW = num(S.settings.targetWeight); if (ser.length && tgtW != null && (num(S.settings.goalRate) || 0) > 0 && !(S.plan && S.plan.maint) && ser[ser.length - 1].trend <= tgtW + 0.3)
+    sugs.push({ id: 'maint', kind: 'maint', wt: tgtW, ev: 'maint', t: $t('Ziel erreicht: auf Erhaltung umstellen'), why: $tf('Dein Trendgewicht liegt bei {v} kg, dein Ziel bei {z} kg. Die App hebt die Kalorien jetzt Woche für Woche bis zu deinem gemessenen Bedarf an (höchstens 300 kcal pro Woche) und hält dein Gewicht danach in einem Bereich von ±1 kg.', { v: fmt(ser[ser.length - 1].trend, 1), z: fmt(tgtW, 1) }) });
   perf.filter(p => p.stall && !fatigue).slice(0, 2).forEach(p => { const so = slotOf(p.id, w + 1 <= NW() ? w + 1 : w); if (!so) return; const used = new Set(); GYM().forEach(k => planFor(w, k).forEach(x => used.add(x.ex)));
     const alt = (LIB[p.id].alts || []).concat((SCALE[p.id] || {}).e || []).find(a => LIB[a] && !used.has(a) && exAvailable(a)); if (!alt) return;
     sugs.push({ id: 'swap_' + so.slot, kind: 'swap', k: so.k, slot: so.slot, old: p.id, to: alt, ev: 'stall', t: LIB[p.id].name + ' → ' + LIB[alt].name, why: $t('Seit 2 Wochen kein Fortschritt bei normaler Ermüdung. Ein Übungswechsel setzt einen neuen Reiz, die alte Übung kann später zurückkommen.') }); });
@@ -81,6 +85,7 @@ function applySug(plan, s) { plan = plan || S.plan; const sess = plan.sessions.f
   if (s.kind === 'swap' && sess) { const it = (sess.add || []).find(x => x.slot === s.slot); if (it) it.ex = s.to; else { sess.ov = sess.ov || {}; sess.ov[s.slot] = Object.assign({}, sess.ov[s.slot] || {}, { ex: s.to }); } }
   if (s.kind === 'deload') { const P = Array.from({ length: plan.weeks || 12 }, (_, i) => phaseOf(plan, i + 1)); P[s.w - 1] = 'dl'; plan.phases = P; }
   if (s.kind === 'vol') { plan.volAdj = plan.volAdj || {}; plan.volAdj[s.w] = s.f; }
+  if (s.kind === 'maint') plan.maint = { from: today(), w: s.wt };
   if (s.kind === 'dietbreak') plan.dietBreak = { from: today(), until: addDays(today(), 7 * (s.weeks || 1)) };
   return plan; }
 function phaseOf(plan, w) { const keep = S.plan; S.plan = plan; const r = phase(w); S.plan = keep; return r; }

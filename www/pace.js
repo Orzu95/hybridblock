@@ -33,6 +33,7 @@ function paceCard(where) { const st = S.settings, o = paceSelf(); const P = pace
     return '<button class="pace-opt' + (on ? ' on' : '') + '" data-act="paceSet" data-kg="' + x.kg + '" data-w="' + where + '" type="button"><b>' + esc($t(PACE_LV[x.i])) + (c.lvl !== 'ok' ? ' ⚠︎' : '') + '</b><span>' + fmt(x.pct, 2) + $t(' % · ') + fmt(x.kg, 2) + $t(' kg pro Woche') + '</span><span class="muted">' + $tf('ca. {k} kcal pro Tag unter Bedarf', { k: fmt(x.kcal, 0) }) + '</span></button>'; };
   return '<div class="pace"><div class="lbl">' + $t('Abnehmtempo') + '</div><p class="small muted" style="margin:2px 0 8px">' + $tf('Stufen für dich ({g}). Die App rechnet in % deines Gewichts, weil das mit dem Körper mitwächst.', { g: $t(PACE_GRP[P.g].t) }) + '</p>' +
     '<div class="pace-opts">' + opts.map(btn).join('') + '</div>' +
+    (st.paceChanged && S.checkins.length && series().length >= 7 ? note('ember', $t('Neues Tempo gewählt. Beim nächsten Check-in rechnet die App damit, ohne die übliche 300-kcal-Bremse.'), '<button class="btn brand sm" data-act="paceNow" type="button">' + $t('Jetzt neu berechnen') + '</button>') : '') +
     (chk.lvl !== 'ok' ? note(chk.lvl === 'hard' ? 'amber' : 'sky', esc(chk.txt)) : '') +
     '<div style="margin-top:6px">' + ruleBtn(PACE_RULES, $t('Warum diese Stufen?')) + '</div></div>'; }
 /* Hinweis im Verlauf: in den ersten 3 Wochen nicht bewerten, danach Trend gegen die Grenzen prüfen */
@@ -40,6 +41,7 @@ function paceNote(ser, rate) { if (!ser.length || !(num(S.settings.goalRate) > 0
   if (days < RV('loss_early')) return note('sky', $t('Die ersten 3 Wochen sind vor allem Wasser und Glykogen. Das Tempo bewertet die App erst ab Woche 3.'), ruleBtn(['loss_early'], $t('Warum?')));
   if (rate == null || rate >= 0) return ''; const c = paceCheck(-rate); if (c.lvl === 'ok') return '';
   return note('amber', $tf('Dein Trend: −{v} kg pro Woche.', { v: fmt(-rate, 2) }) + ' ' + esc(c.txt), ruleBtn([c.rule], $t('Warum?'))); }
-document.addEventListener('click', e => { const b = e.target.closest('[data-act="paceSet"]'); if (!b) return; const st = S.settings, kg = num(b.dataset.kg);
-  st.goalRate = String(kg); const tdee = num(st.tdee0); if (tdee && (b.dataset.w === 'onb' || !S.checkins.length)) st.startKcal = String(Math.max(num(st.floor) || 0, Math.round((tdee - kg * PACE_KCAL) / 50) * 50));
+document.addEventListener('click', e => { if (e.target.closest('[data-act="paceNow"]')) { const c = doCheckin(); toast($t('Neues Ziel: ') + fmt(c.kcal, 0) + $t(' kcal')); render(); return; }
+  const b = e.target.closest('[data-act="paceSet"]'); if (!b) return; const st = S.settings, kg = num(b.dataset.kg);
+  if (Math.abs((num(st.goalRate) || 0) - kg) > 0.001 && S.checkins.length) st.paceChanged = true; if (S.plan && S.plan.maint) delete S.plan.maint; st.goalRate = String(kg); const tdee = num(st.tdee0); if (tdee && (b.dataset.w === 'onb' || !S.checkins.length)) st.startKcal = String(Math.max(num(st.floor) || 0, Math.round((tdee - kg * PACE_KCAL) / 50) * 50));
   save(); render(); });
