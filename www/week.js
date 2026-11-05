@@ -23,7 +23,7 @@ function wkPattern() { const rot = S.settings.mode === 'rotation', dm = S.settin
   const off = {}; seq.forEach(o => off[o.k] = o.m - first); return { seq: seq.map(o => o.k), off, first, rot }; }
 /* Wochenanfang: erste Einheit dieser Woche; sonst der letzte Muster-Starttag, frühestens der Tag nach der Vorwoche */
 function wkAnchor(w, P) { for (const k of P.seq) { const d = sessDate(w, k); if (d) return addDays(d, -P.off[k]); }
-  if (w === 1 && !S.block.startedOn) return today();
+  if (w === 1 && !S.block.startedOn) return S.block.startAt && S.block.startAt > today() ? S.block.startAt : today();
   const pl = w > 1 ? lastDate(w - 1) : null, base = pl ? addDays(pl, 1) : today(); if (P.rot) return base > today() ? base : today();
   let lw = today(); for (let i = 0; i < 7 && dIdx(lw) !== P.first; i++) lw = addDays(lw, -1); return lw >= base ? lw : base; }
 function wkOk(ev, d, it) { const at = x => ev[x] || [];

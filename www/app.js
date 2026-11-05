@@ -334,7 +334,7 @@ function viewHeute() {
   const acts = todaysActs.length ? $t('<div class="card flush"><div class="meal-h"><b>Aktivitäten heute</b></div><div class="list">') + todaysActs.map(actRow).join('') + '</div></div>' : '';
   const due = checkinDue();
   return pageTop(WD_LONG[d.getDay()] + ',', LANG === 'de' ? d.getDate() + '. ' + MON[d.getMonth()] : d.toLocaleDateString(LOCALE, { day: 'numeric', month: 'long' }), S.block.startedOn ? $t('Block seit ') + fmtDay(S.block.startedOn) : $t('Dein Block startet mit der ersten Einheit.')) +
-  '<div class="stack">' + updateNote() + (typeof gymDueCard === 'function' ? gymDueCard() : '') + heuteExtras() +
+  '<div class="stack">' + updateNote() + (typeof gymDueCard === 'function' ? gymDueCard() : '') + (typeof coachStartNote === 'function' ? coachStartNote() : '') + heuteExtras() +
   (due ? note('ember', $t('<b>Wöchentlicher Check-in fällig.</b> Bedarf und Kalorienziel werden aus deinem Gewichtstrend neu berechnet.'), $t('<button class="btn brand sm" data-act="checkin" type="button">Check-in</button>')) : '') +
   readinessCard(t) + trainCard + healthStrip(t) +
   (w > 1 && !ORDER.some(k => sessProgress(w, k).done) && weekDone(w - 1) ? note('green', $t('<b>Woche ') + (w - 1) + $t(' geschafft.</b> Dein Wochenbericht ist fertig.'), '<button class="btn sm" data-act="showReport" data-w="' + (w - 1) + $t('" type="button">Ansehen</button>')) : '') +

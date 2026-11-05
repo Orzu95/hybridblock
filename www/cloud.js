@@ -44,7 +44,11 @@ async function pushState() { if (!AUTH || VIEW) return; if (SYNC.busy) { cloudDi
 async function pushPlan(uid, plan) { const now = new Date().toISOString();
   await api('/rest/v1/plans?on_conflict=user_id', { method: $t('POST'), headers: { Prefer: 'resolution=merge-duplicates,return=minimal' }, body: JSON.stringify({ user_id: uid, plan, updated_at: now, updated_by: AUTH.uid }) }); return now; }
 /* Plan übernehmen: Wochentage für neue Einheiten aus dem Plan, Ernährungsziele vom Coach als Check-in */
-function setPlan(plan, fromCoach) { S.plan = JSON.parse(JSON.stringify(plan)); if (fromCoach) S.plan.by = 'coach'; S.plan.sessions.forEach(x => { const cur = S.settings.dayMap[x.k]; if (cur === undefined || (fromCoach && !S.meta.daysSet)) S.settings.dayMap[x.k] = plan.dayMap && plan.dayMap[x.k] != null ? plan.dayMap[x.k] : (cur ?? ''); });
+function setPlan(plan, fromCoach) {
+  if (fromCoach && plan.assign && plan.assign.at && plan.assign.at !== S.meta.assignAt) { if (Object.keys(S.sessions).length) S.archive.push({ plan: S.plan, sessions: S.sessions, block: S.block, until: today() });
+    S.sessions = {}; S.swaps = {}; S.block = { week: 1, startedOn: null, startAt: plan.assign.startAt || null }; S.meta.assignAt = plan.assign.at; S.meta.daysSet = false; ui.week = null; }
+  if (fromCoach && (plan.sessions || []).some(x => x.draft)) plan = Object.assign({}, plan, { sessions: plan.sessions.filter(x => !x.draft) });
+  S.plan = JSON.parse(JSON.stringify(plan)); if (fromCoach) S.plan.by = 'coach'; S.plan.sessions.forEach(x => { const cur = S.settings.dayMap[x.k]; if (cur === undefined || (fromCoach && !S.meta.daysSet)) S.settings.dayMap[x.k] = plan.dayMap && plan.dayMap[x.k] != null ? plan.dayMap[x.k] : (cur ?? ''); });
   const tg = plan.targets; if (tg && tg.at && tg.at !== S.meta.targetsAt) { S.meta.targetsAt = tg.at; const st = S.settings;
     ['protein', 'fat', 'goalRate', 'targetWeight'].forEach(k => { if (num(tg[k]) != null) st[k] = String(tg[k]); });
     if (num(tg.kcal) != null) { st.startKcal = String(tg.kcal); const p = num(st.protein) || 200, f = fatG(num(tg.kcal), num(st.fat) || 70); const c = { date: today(), kcal: num(tg.kcal), p, f, c: Math.max(0, Math.round((num(tg.kcal) - 4 * p - 9 * f) / 4)), tdee: null, coach: true };
@@ -202,11 +206,12 @@ function clientRow(c) { const s = c.summary || {}; const dot = !c.updated_at ? '
   return '<a class="li" href="#admin/' + c.id + '"><span class="badge gym">' + esc(cname(c).slice(0, 1).toUpperCase()) + '</span><div class="grow"><b>' + esc(cname(c)) + '</b>' + (openReq(c.id) ? $t('<span class="prio req">wartet auf Plan</span>') : '') + '<small>' + esc(bits.join(' · ')) + '</small></div><span class="tag"><span class="dot ' + dot + '"></span>' + esc(ago(c.updated_at)) + '</span></a>'; }
 function viewAdmin(arg) { if (!isAdmin()) return '<a href="#mehr" class="back">' + ICON.back + $t('Einstellungen</a><p>Nur für Coach-Konten.</p>');
   if (ADMIN.clients == null && !ADMIN.loading) loadClients().then(() => { if (route.name === 'admin') render(); });
+  if (arg === 'vorlagen') return viewTemplates();
   if (arg) return viewClient(arg);
   const list = ADMIN.clients || []; const inv = ADMIN.invites || [];
   return '<a href="#heute" class="back">' + ICON.back + $t('Heute</a>') + pageTop($t('Team'), '', list.length ? list.length + (list.length === 1 ? $t(' Athlet') : $t(' Athleten')) : $t('Lade deine Athleten und schick Einladungen.')) + '<div class="stack">' +
     (ADMIN.err ? note('red', esc(ADMIN.err), $t('<button class="btn sm" data-act="adminReload" type="button">Neu laden</button>')) : '') +
-    $t('<div class="row"><button class="btn brand" data-act="inviteNew" type="button">+ Athlet einladen</button><a class="btn fog" href="#plan/me">Mein Plan</a><div class="grow"></div><button class="iconbtn" data-act="adminReload" type="button" aria-label="Neu laden">') + ICON.sync + '</button></div>' +
+    $t('<div class="row"><button class="btn brand" data-act="inviteNew" type="button">+ Athlet einladen</button><a class="btn fog" href="#admin/vorlagen">Vorlagen</a><a class="btn fog" href="#plan/me">Mein Plan</a><div class="grow"></div><button class="iconbtn" data-act="adminReload" type="button" aria-label="Neu laden">') + ICON.sync + '</button></div>' +
     (ADMIN.clients == null ? $t('<p class="muted">Lade …</p>') : list.length ? '<div class="card flush"><div class="list">' + list.map(clientRow).join('') + '</div></div>' : $t('<div class="card"><h2>Noch keine Athleten</h2><p>Erstell eine Einladung. Dein Athlet installiert die App, wählt „Einladungscode“ und gibt den Code ein. Danach siehst du ihn hier.</p></div>')) +
     (inv.length ? $t('<div class="section-h"><h2>Offene Einladungen</h2></div><div class="card flush"><div class="list">') + inv.map(i => '<div class="li" style="cursor:default"><div class="grow"><b class="num" style="letter-spacing:.06em">' + esc(i.code) + '</b><small>' + esc((i.name || '') + $t(' · gültig bis ') + fmtDay(i.expires_at.slice(0, 10))) + '</small></div><button class="btn sm" data-act="inviteShare" data-code="' + esc(i.code) + '" data-name="' + esc(i.name || '') + $t('" type="button">Teilen</button><button class="btn sm danger" data-act="inviteDel" data-code="') + esc(i.code) + $t('" type="button">Löschen</button></div>')).join('') + '</div></div>' : '') +
     '</div>'; }
@@ -223,7 +228,7 @@ function viewClient(uid) { const c = (ADMIN.clients || []).find(x => x.id === ui
     $t('<div class="card"><h2>Fortschritt ansehen</h2><p>Öffnet Training, Verlauf und Ernährung deines Athleten so, wie er sie sieht. Nur lesen.</p><div class="row" style="margin-top:12px"><button class="btn brand" data-act="viewAs" data-uid="') + uid + $t('" data-to="#verlauf" type="button">Verlauf</button><button class="btn" data-act="viewAs" data-uid="') + uid + $t('" data-to="#training" type="button">Training</button><button class="btn" data-act="viewAs" data-uid="') + uid + $t('" data-to="#essen" type="button">Ernährung</button></div></div>') +
     (openReq(uid) ? '' : reqCard(uid)) +
     $t('<div class="card"><h2>Plan</h2><p>Übungen, Sätze, Wiederholungen, RPE, Einheiten und Ernährungsziele festlegen. Dein Athlet bekommt die Änderung beim nächsten Öffnen der App.</p><div class="row" style="margin-top:12px"><a class="btn brand" href="#plan/') + uid + $t('">Plan bearbeiten</a><button class="btn" data-act="coachLib" data-uid="') + uid + $t('" type="button">Aus Bibliothek</button>') + (ADMIN.reqs && ADMIN.reqs[uid] ? '<button class="btn" data-act="coachGen" data-uid="' + uid + $t('" type="button">Aus Fragebogen erstellen</button>') : '') + '</div></div>' +
-    $t('<div class="card"><h2>Konto</h2><div class="row" style="margin-top:8px"><button class="btn" data-act="resetPw" data-uid="') + uid + $t('" type="button">Passwort zurücksetzen</button><button class="btn danger" data-act="removeClient" data-uid="') + uid + $t('" type="button">Aus dem Team entfernen</button></div></div></div>'); }
+    (typeof notesCard === 'function' ? notesCard(uid) : '') + $t('<div class="card"><h2>Konto</h2><div class="row" style="margin-top:8px"><button class="btn" data-act="resetPw" data-uid="') + uid + $t('" type="button">Passwort zurücksetzen</button><button class="btn danger" data-act="removeClient" data-uid="') + uid + $t('" type="button">Aus dem Team entfernen</button></div></div></div>'); }
 const INV_MODES = [['free', $t('Frei dem Athleten überlassen'), $t('Er entscheidet selbst: fertigen Plan wählen, Plan aus seinen Angaben erstellen lassen, selbst planen oder ohne festen Plan trainieren.')],
   ['library', $t('Nach einem fertigen Plan'), $t('Er wählt aus der Plan-Bibliothek, mit Empfehlung passend zu Ziel, Erfahrung und Zeit.')],
   ['coach', $t('Plan vom Coach'), $t('Er beantwortet Fragen zu Ziel, Erfahrung, Tagen und Einschränkungen. Du bekommst eine Benachrichtigung und erstellst den Plan.')]];
@@ -246,8 +251,9 @@ async function shareInvite(code, name) { const txt = inviteText(code, name); try
 
 /* ======================= PLAN-EDITOR ======================= */
 const PE = { uid: null, draft: null, name: '', loading: false, dirty: false, confirm: null };
-function planTarget(arg) { return arg === 'me' || !arg || (AUTH && arg === AUTH.uid) ? 'me' : arg; }
+function planTarget(arg) { if (typeof isTplUid === 'function' && isTplUid(arg)) return arg; return arg === 'me' || !arg || (AUTH && arg === AUTH.uid) ? 'me' : arg; }
 async function openPlanEditor(arg) { const who = planTarget(arg); if (PE.uid === who && PE.draft) return;
+  if (isTplUid(who)) { await openTplEditor(who); if (route.name === 'plan') render(); return; }
   PE.uid = who; PE.dirty = false; PE.confirm = null; PE.draft = null;
   if (who === 'me') { PE.draft = JSON.parse(JSON.stringify(S.plan)); PE.name = ''; return; }
   PE.loading = true; try { const r = await api('/rest/v1/plans?user_id=eq.' + who + '&select=plan'); let plan = r && r[0] && r[0].plan;
@@ -259,8 +265,8 @@ function peItems(i) { const s = peSess(i); return planForP(PE.draft, 1, s.k); }
 function peIsAdd(s, slot) { return (s.add || []).find(a => a.slot === slot); }
 const TYPE_TXT = { main: 'Hauptübung', bo: 'Back-off', dp: 'Übung', bw: 'Körpergewicht', power: 'Power', carry: 'Carry' };
 function viewPlan(arg) { const who = planTarget(arg); if (PE.uid !== who || !PE.draft) { openPlanEditor(arg).then(() => { if (route.name === 'plan') render(); }); return $t('<p class="muted">Lade Plan …</p>'); }
-  const p = PE.draft; const forClient = who !== 'me'; const backHref = forClient ? '#admin/' + who : isAdmin() ? '#admin' : '#mehr';
-  const tg = p.targets || {}; const tgOn = !!p.targets;
+  const p = PE.draft; const isTpl = isTplUid(who); const forClient = who !== 'me' && !isTpl; const backHref = isTpl ? '#admin/vorlagen' : forClient ? '#admin/' + who : isAdmin() ? '#admin' : '#mehr';
+  const tg = p.targets || {}; const tgOn = !!p.targets; const PEH = typeof peHistPrep === 'function' ? peHistPrep(p) : {};
   const tgf = (k, lab) => '<div class="field"><label for="pt-' + k + '">' + lab + '</label><input id="pt-' + k + '" type="number" inputmode="decimal" step="any" data-pt="' + k + '" value="' + esc(tg[k]) + '"' + (tgOn ? '' : $t(' disabled')) + '></div>';
   const sessCards = p.sessions.map((s, i) => { const def = sessDef(s) || {}; const items = s.kind === 'gym' ? peItems(i) : [];
     const hidden = s.base && s.ov ? Object.keys(s.ov).filter(sl => s.ov[sl].del) : [];
@@ -271,18 +277,18 @@ function viewPlan(arg) { const who = planTarget(arg); if (PE.uid !== who || !PE.
         '<button class="btn sm" data-act="peDel" data-si="' + i + '" data-slot="' + it.slot + $t('" type="button" aria-label="Übung entfernen">✕</button></div>') +
         $t('<div class="pe-f"><label>Sätze') + inp('sets', 64, '3') + $t('</label><label>Wdh.') + inp('reps', 86, '8–12', 'text') + $t('</label><label>RPE') + inp('rpe', 64, '8') + $t('</label><label>Pause s') + inp('rest', 76, '90') + '</label>' +
         '<label class="pe-chk"><input type="checkbox" data-pe="main" data-si="' + i + '" data-slot="' + it.slot + '"' + (it.type === 'main' ? $t(' checked') : '') + $t('> Haupt</label></div>') +
-        '<input class="pe-note" type="text" data-pe="note" data-si="' + i + '" data-slot="' + it.slot + '" value="' + esc(it.note || '') + $t('" placeholder="Hinweis für den Athleten (optional)"></div>') + (typeof ssLinkBar === 'function' ? ssLinkBar('pe', i, items.indexOf(it), items) : ''); }).join('');
+        '<input class="pe-note" type="text" data-pe="note" data-si="' + i + '" data-slot="' + it.slot + '" value="' + esc(it.note || '') + $t('" placeholder="Hinweis für den Athleten (optional)">') + (PEH[it.ex] || '') + '</div>' + (typeof ssLinkBar === 'function' ? ssLinkBar('pe', i, items.indexOf(it), items) : ''); }).join('');
     return '<div class="card pe-sess"><div class="row pe-tr"><span class="badge ' + s.kind + ' sm">' + (s.kind === 'z2' ? 'Z2' : s.kind === 'hiit' ? 'H' : s.k) + '</span><input class="grow pe-title" type="text" data-pes="title" data-si="' + i + '" value="' + esc(s.title || '') + '" placeholder="' + esc($t(def.title || $t('Einheit'))) + $t('" aria-label="Name der Einheit"></div>') +
       '<div class="row pe-ctl"><span class="small muted grow">' + esc($t(KIND_LABEL[s.kind] || '')) + (s.base ? ' · ' + esc($t('Vorlage')) + ' ' + esc($t(TPL_SESS[s.base].title)) : '') + '</span><button class="btn sm" data-act="peMove" data-si="' + i + $t('" data-v="-1" type="button" aria-label="Nach oben"') + (i === 0 ? $t(' disabled') : '') + '>↑</button><button class="btn sm" data-act="peMove" data-si="' + i + $t('" data-v="1" type="button" aria-label="Nach unten"') + (i === p.sessions.length - 1 ? $t(' disabled') : '') + '>↓</button>' +
       (PE.confirm === 'del' + i ? '<button class="btn sm dark" data-act="peSessDelYes" data-si="' + i + $t('" type="button">Wirklich?</button>') : '<button class="btn sm danger" data-act="peSessDel" data-si="' + i + $t('" type="button">Löschen</button>')) + '</div>' +
-      '<input class="pe-sub" type="text" data-pes="sub" data-si="' + i + '" value="' + esc(s.sub || '') + '" placeholder="' + esc($t(def.sub || $t('Kurzbeschreibung'))) + $t('" aria-label="Untertitel">') +
+      (forClient || isTpl ? peDraftToggle(i) : '') + '<input class="pe-sub" type="text" data-pes="sub" data-si="' + i + '" value="' + esc(s.sub || '') + '" placeholder="' + esc($t(def.sub || $t('Kurzbeschreibung'))) + $t('" aria-label="Untertitel">') +
       (s.kind === 'gym' ? '<div class="pe-list">' + (rows || $t('<p class="small muted">Noch keine Übungen.</p>')) + '</div>' +
         (hidden.length ? '<p class="small muted" style="margin-top:8px">' + hidden.length + $t(' Übung(en) aus der Vorlage ausgeblendet. <button class="linkbtn" data-act="peRestore" data-si="') + i + $t('" type="button">Wiederherstellen</button></p>') : '') +
         '<button class="btn block" style="margin-top:10px" data-act="pePickEx" data-si="' + i + $t('" data-slot="" type="button">+ Übung</button>')
         : '<p class="small muted" style="margin-top:8px">' + (s.kind === 'hiit' ? $t('Intervalle nach Phase: 4×3 min, dann 4×4 min, Deload als Z2, am Ende 2000-m-Test.') : $t('Zone-2-Dauer nach Woche: 40–50 min, in Deload-Wochen kürzer.')) + '</p>') + '</div>'; }).join('');
-  return '<a href="' + backHref + '" class="back">' + ICON.back + (forClient ? esc(PE.name || $t('Athlet')) : isAdmin() ? $t('Team') : $t('Einstellungen')) + '</a>' +
-    pageTop(...(forClient ? [$t('Plan'), $t('für ') + esc(PE.name)] : $tp('Mein', 'Plan')), esc($t(p.name)) + ' · ' + p.sessions.length + $t(' Einheiten pro Woche · 12 Wochen mit Deload in Woche 4 und 8')) + '<div class="stack">' +
-    (!forClient && hasCoach() ? note('sky', $t('Du hast einen Coach. Er kann deinen Plan jederzeit überschreiben.')) : '') +
+  return '<a href="' + backHref + '" class="back">' + ICON.back + (isTpl ? $t('Vorlagen') : forClient ? esc(PE.name || $t('Athlet')) : isAdmin() ? $t('Team') : $t('Einstellungen')) + '</a>' +
+    pageTop(...(isTpl ? [$t('Vorlage'), esc(PE.name || '')] : forClient ? [$t('Plan'), $t('für ') + esc(PE.name)] : $tp('Mein', 'Plan')), esc($t(p.name)) + ' · ' + p.sessions.length + $t(' Einheiten pro Woche · 12 Wochen mit Deload in Woche 4 und 8')) + '<div class="stack">' + (typeof peBar === 'function' ? peBar() : '') +
+    (!forClient && !isTpl && hasCoach() ? note('sky', $t('Du hast einen Coach. Er kann deinen Plan jederzeit überschreiben.')) : '') +
     $t('<div class="card"><div class="fields"><div class="field" style="flex:1 1 100%"><label for="pe-name">Name des Plans</label><input id="pe-name" type="text" data-pep="name" value="') + esc($t(p.name)) + '" style="width:100%"></div>' +
     $t('<div class="field" style="flex:1 1 100%"><label for="pe-tpl">Vorlage</label><div class="row"><select id="pe-tpl" class="grow">') + Object.keys(PLAN_TPL).map(k => '<option value="' + k + '"' + (p.tpl === k ? $t(' selected') : '') + '>' + esc($t(PLAN_TPL[k].name)) + '</option>').join('') + '<option value="gen"' + (p.tpl === 'gen' ? $t(' selected') : '') + $t('>Aus Angaben erstellen</option></select>') +
     (PE.confirm === 'tpl' ? $t('<button class="btn sm dark" data-act="peTplYes" type="button">Ersetzen</button><button class="btn sm" data-act="peTplNo" type="button">Abbrechen</button>') : $t('<button class="btn sm" data-act="peTpl" type="button">Übernehmen</button>')) + '</div></div>' +
@@ -292,7 +298,7 @@ function viewPlan(arg) { const who = planTarget(arg); if (PE.uid !== who || !PE.
     $t('<div class="row"><button class="btn fog" data-act="peAddSess" data-v="gym" type="button">+ Kraft-Einheit</button><button class="btn fog" data-act="peAddSess" data-v="hiit" type="button">+ HIIT</button><button class="btn fog" data-act="peAddSess" data-v="z2" type="button">+ Z2</button></div>') +
     '<div class="card"><label class="row" style="gap:10px"><input type="checkbox" data-pep="targetsOn"' + (tgOn ? $t(' checked') : '') + $t('> <h2 style="margin:0">Ernährungsziele vorgeben</h2></label><p class="small muted">Leer gelassene Felder bleiben beim Athleten wie sie sind. Die adaptive Anpassung beim wöchentlichen Check-in läuft danach weiter.</p>') +
     '<div class="fields" style="margin-top:12px">' + tgf('kcal', $t('Kalorien')) + tgf('protein', $t('Protein (g)')) + tgf('fat', $t('Fett (g)')) + tgf('goalRate', $t('kg pro Woche')) + tgf('targetWeight', $t('Zielgewicht')) + '</div></div>' +
-    $t('<div class="row pe-save"><button class="btn" data-act="peDiscard" type="button">Verwerfen</button><div class="grow"></div><button class="btn brand" data-act="peSave" type="button"') + (PE.dirty ? '' : $t(' disabled')) + '>' + (forClient ? $t('Speichern und senden') : $t('Speichern')) + '</button></div></div>'; }
+    $t('<div class="row pe-save"><button class="btn" data-act="peDiscard" type="button">Verwerfen</button><div class="grow"></div><button class="btn brand" data-act="peSave" type="button"') + (PE.dirty ? '' : $t(' disabled')) + '>' + (isTpl ? $t('Vorlage speichern') : forClient ? $t('Speichern und senden') : $t('Speichern')) + '</button></div></div>'; }
 function peSetField(i, slot, f, val) { const s = peSess(i); const add = peIsAdd(s, slot);
   const parsed = f === 'sets' || f === 'rest' ? (num(val) != null ? Math.max(f === 'sets' ? 1 : 0, Math.round(num(val))) : null) : f === 'rpe' ? (num(val) != null ? Math.max(5, Math.min(10, num(val))) : null) : val;
   if (add && add.wk && ['sets', 'reps', 'rpe'].includes(f)) delete add.wk;
@@ -304,10 +310,10 @@ function pePickSheet(i, slot, q) { q = (q || '').toLowerCase(); const items = Ob
   ui.pePick = { i, slot };
   openSheet(sheetHead(slot ? $t('Übung ersetzen') : $t('Übung hinzufügen')) + $t('<div class="on-white" style="margin-top:12px"><input id="peq" type="search" placeholder="Übung oder Muskel suchen" style="width:100%" value="') + esc(q) + '"></div><div class="plist" id="pelist" style="margin-top:8px">' + peExItems(items) + '</div>'); }
 const peExItems = items => items.map(e => '<div class="it" data-act="pePick" data-ex="' + e.id + '"><div class="grow"><b>' + esc(e.name) + '</b><small>' + Object.keys(e.muscles).filter(m => e.muscles[m] >= 1).map(m => MUSCLES[m]).join(', ') + '</small></div>' + (isPrio(e.id) ? $t('<span class="prio">Schwerpunkt</span>') : '') + '</div>').join('');
-async function peSave() { const p = PE.draft; if (p.targets) { p.targets.at = new Date().toISOString(); } p.v = (p.v || 1) + 1; delete p.waiting; delete p.free;
+async function peSave() { if (isTplUid(PE.uid)) return tplEditorSave(); const p = PE.draft; if (p.targets) { p.targets.at = new Date().toISOString(); } p.v = (p.v || 1) + 1; delete p.waiting; delete p.free;
   try { if (PE.uid === 'me') { if (PE.switching || !S.plan.sessions.length) { switchPlan(p); PE.switching = false; } else setPlan(p, false); S.meta.daysSet = true; if (AUTH) { S.meta.planAt = await pushPlan(AUTH.uid, S.plan); } save(); toast($t('Plan gespeichert')); }
     else { await pushPlan(PE.uid, p); const rq = openReq(PE.uid); if (rq) { try { await api('/rest/v1/plan_requests?id=eq.' + rq.id, { method: $t('PATCH'), body: JSON.stringify({ status: 'done', done_at: new Date().toISOString() }) }); rq.status = 'done'; } catch (e2) {} } toast($t('Plan gespeichert. ') + (PE.name || $t('Dein Athlet')) + $t(' bekommt ihn beim nächsten Öffnen.')); }
-    PE.dirty = false; render(); } catch (e) { toast($t('Speichern fehlgeschlagen: ') + errTxt(e)); } }
+    PE.dirty = false; peDraftClear(); render(); } catch (e) { toast($t('Speichern fehlgeschlagen: ') + errTxt(e)); } }
 
 /* ======================= EINSTELLUNGEN: KONTO & SPRACHE ======================= */
 function accountCard() { if (VIEW) return '';
