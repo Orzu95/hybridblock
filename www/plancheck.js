@@ -45,7 +45,7 @@ function checkPlan(plan, ctx) { ctx = ctx || {}; const sc = chkScan(plan), F = [
       F.push({ key: 'vol_low:' + m, rule: isP ? 'vol_prio' : 'vol_other', sev: goal === 'muscle' && v < lo / 2 ? 'bad' : 'warn', title: v < 1 ? $tf('{m} wird nicht trainiert', { m: mus(m) }) : $tf('{m}: wenig Volumen', { m: mus(m) }),
         txt: v < 1 ? $t('Kein harter Satz pro Woche für diese Muskelgruppe.') : $tf('Etwa {v} harte Sätze pro Woche. Belegt sind mindestens {lo}.', { v: fmt(chkR(v)), lo }), ch: chkAddSets(sc, m, need) }); });
     Object.keys(MUSCLES).forEach(m => { const v = sc.vol[m], hi = RV('vol_prio')[1]; if (v <= hi + .5) return;
-      F.push({ key: 'vol_high:' + m, rule: 'vol_prio', sev: 'warn', title: $tf('{m}: sehr viel Volumen', { m: mus(m) }), txt: $tf('Etwa {v} harte Sätze pro Woche. Mehr als {hi} lohnen sich laut Studienlage nur in kurzen Spezialisierungsphasen.', { v: fmt(chkR(v)), hi }), ch: chkCutSets(sc, m, v - hi) }); });
+      F.push({ key: 'vol_high:' + m, rule: 'vol_prio', sev: 'tip', title: $tf('{m}: sehr viel Volumen', { m: mus(m) }), txt: $tf('Etwa {v} harte Sätze pro Woche. Mehr als {hi} lohnen sich laut Studienlage nur in kurzen Spezialisierungsphasen.', { v: fmt(chkR(v)), hi }), ch: chkCutSets(sc, m, v - hi) }); });
     /* 2. Sätze pro Muskel und Einheit */
     const cap = RV('sess_cap');
     gymKs.forEach(k => Object.keys(MUSCLES).forEach(m => { const v = sc.sv[k][m]; if (v <= cap + .5) return; const s = sessOf(k);
