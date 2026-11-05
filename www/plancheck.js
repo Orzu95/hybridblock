@@ -10,7 +10,8 @@ function chkGoal(plan, ctx) { if (ctx.goal) return ctx.goal; if (plan.gen && pla
 function chkSessTitle(s) { const d = sessDef(s) || {}; return $t(s.title || d.title || $t('Einheit')); }
 /* Plan einmal durchrechnen: Wochenvolumen (Mittel der normalen Wochen), Volumen pro Einheit, Entlastungswochen, Beintage */
 function chkScan(plan) { const prev = S.plan; S.plan = plan; const r = { vol: {}, sv: {}, weeks: [], lite: [], items: {}, leg: {}, pat: { push: 0, pull: 0, knee: 0, hip: 0 } };
-  try { const nw = NW(); for (let w = 1; w <= nw; w++) { const l = isLite(w); r.lite.push(l); if (!l) r.weeks.push(w); } if (!r.weeks.length) r.weeks = [1];
+  try { const nw = NW(); const wl = w => plan.sessions.reduce((a, s) => a + (s.kind === 'gym' ? planForP(plan, w, s.k).reduce((b, it) => b + (+it.sets || 0) * (it.rpe != null ? it.rpe : 8), 0) : 0), 0);
+    let prevL = null; for (let w = 1; w <= nw; w++) { const l = isLite(w), L = wl(w); r.lite.push(l || (prevL != null && L <= prevL * 0.7)); if (!l) r.weeks.push(w); prevL = L; } if (!r.weeks.length) r.weeks = [1];
     Object.keys(MUSCLES).forEach(m => r.vol[m] = 0); const n = r.weeks.length;
     plan.sessions.forEach((s, si) => { if (s.kind !== 'gym') return; r.sv[s.k] = {}; Object.keys(MUSCLES).forEach(m => r.sv[s.k][m] = 0);
       r.weeks.forEach(w => planForP(plan, w, s.k).forEach(it => { const ex = LIB[it.ex]; if (!ex || !chkHard(it)) return; for (const m in ex.muscles) { const x = (+it.sets || 0) * ex.muscles[m] / n; r.vol[m] += x; r.sv[s.k][m] += x; }
@@ -82,9 +83,9 @@ function checkPlan(plan, ctx) { ctx = ctx || {}; const sc = chkScan(plan), F = [
 
 /* ---------- Anzeige ---------- */
 function chkPlanOf(where) { return where === 'gen' ? ui.genPlan : where === 'pe' ? (PE && PE.draft) : null; }
-function chkCtxOf(where) { if (where === 'pe') { const me = PE.uid === 'me'; return { me, dayMap: me ? S.settings.dayMap : null }; } return { me: !ui.libFor }; }
+function chkCtxOf(where) { if (where === 'lib') return { goal: ui.chkLibGoal }; if (where === 'pe') { const me = PE.uid === 'me'; return { me, dayMap: me ? S.settings.dayMap : null }; } return { me: !ui.libFor }; }
 function chkFindingHTML(f, where) { const gm = gradeMode(f.g), hide = where + '|' + f.key;
-  const btns = f.ign ? '<span class="tag">' + $t('bewusst so gewählt') + '</span><button class="btn sm" data-act="chkUnign" data-w="' + where + '" data-key="' + esc(f.key) + '" type="button">' + $t('Doch berücksichtigen') + '</button>'
+  const btns = where === 'lib' ? '' : f.ign ? '<span class="tag">' + $t('bewusst so gewählt') + '</span><button class="btn sm" data-act="chkUnign" data-w="' + where + '" data-key="' + esc(f.key) + '" type="button">' + $t('Doch berücksichtigen') + '</button>'
     : gm === 'info' ? '' : (f.ch || f.dl ? '<button class="btn sm brand" data-act="chkFix" data-w="' + where + '" data-key="' + esc(f.key) + '" type="button">' + $t('Übernehmen') + '</button>' : '') +
       (f.sev === 'tip' ? '' : '<button class="btn sm" data-act="chkIgn" data-w="' + where + '" data-key="' + esc(f.key) + '" type="button">' + $t('Ignorieren') + '</button>') +
       '<button class="btn sm" data-act="chkLater" data-v="' + esc(hide) + '" type="button">' + $t('Später') + '</button>';
@@ -93,16 +94,16 @@ function chkFindingHTML(f, where) { const gm = gradeMode(f.g), hide = where + '|
     (gm === 'info' ? '<p class="small muted" style="margin:4px 0 0">' + $t('Nur zur Information: eine Setzung der App, keine Studienlage.') + '</p>' : '') +
     (f.ch && !f.ign && gm !== 'info' ? '<p class="small muted" style="margin:4px 0 0">' + $t('Vorschlag: ') + chkChTxt(f.ch) + '</p>' : '') +
     (f.dl && !f.ign ? '<p class="small muted" style="margin:4px 0 0">' + $t('Vorschlag: nach spätestens 8 harten Wochen eine Deload-Woche einbauen.') + '</p>' : '') +
-    '<div class="row" style="gap:6px;margin-top:8px;flex-wrap:wrap">' + btns + ruleBtn([f.rule], $t('Warum?')) + (f.ign ? '' : '<button class="linkbtn small" data-act="chkHide" data-rule="' + f.rule + '" type="button">' + $t('Diese Art Hinweis nicht mehr zeigen') + '</button>') + '</div></div>'; }
+    '<div class="row" style="gap:6px;margin-top:8px;flex-wrap:wrap">' + btns + ruleBtn([f.rule], $t('Warum?')) + (f.ign || where === 'lib' ? '' : '<button class="linkbtn small" data-act="chkHide" data-rule="' + f.rule + '" type="button">' + $t('Diese Art Hinweis nicht mehr zeigen') + '</button>') + '</div></div>'; }
 function chkCard(plan, where) { if (!plan || !plan.sessions) return ''; const r = checkPlan(plan, chkCtxOf(where)); const open = ui.chkOpen === where;
   const hidR = S.settings.chkHide || {}, later = ui.chkLater || [];
   const vis = r.items.filter(f => !hidR[f.rule] && !later.includes(where + '|' + f.key) && !(evStrict() && (f.g === 'C' || f.g === 'D')));
   const nHid = r.items.length - vis.length, nOpen = r.items.filter(f => !f.ign && f.sev !== 'tip' && f.g !== 'D').length;
   const sum = !r.gym ? $t('Kein Krafttraining im Plan, geprüft werden nur Entlastung und Tagesverteilung.') + ' ' : '';
   const head = '<div class="row" style="flex-wrap:nowrap;align-items:flex-start"><div class="grow"><h2 style="margin:0">' + $t('Plan-Prüfung') + '</h2><div class="small muted" style="margin-top:2px">' + esc($t(PLAN_GRADE_TXT[r.g])) +
-    (nOpen ? ' · ' + $tf('{n} Hinweise', { n: nOpen }) : '') + '</div></div><span class="grade g' + r.g + '" title="' + esc($t(PLAN_GRADE_TXT[r.g])) + '">' + r.g + '</span></div>';
+    (nOpen ? ' · ' + (nOpen === 1 ? $t('1 Hinweis') : $tf('{n} Hinweise', { n: nOpen })) : '') + '</div></div><span class="grade g' + r.g + '" title="' + esc($t(PLAN_GRADE_TXT[r.g])) + '">' + r.g + '</span></div>';
   if (!open) return '<div class="card chk-card">' + head + '<button class="btn sm" style="margin-top:10px" data-act="chkOpen" data-v="' + where + '" type="button">' + $t('Plan prüfen') + '</button></div>';
-  return '<div class="card chk-card">' + head + '<p class="small muted" style="margin-top:8px">' + sum + $t('Geprüft gegen die Regeln aus der Wissensbank. Du entscheidest, was du übernimmst. Nichts wird automatisch geändert.') + '</p>' +
+  return '<div class="card chk-card">' + head + '<p class="small muted" style="margin-top:8px">' + sum + (where === 'lib' ? $t('Diese Note berechnet die App aus den Regeln der Wissensbank. Anpassen kannst du den Plan mit „Vorher anpassen“.') : $t('Geprüft gegen die Regeln aus der Wissensbank. Du entscheidest, was du übernimmst. Nichts wird automatisch geändert.')) + '</p>' + (r.gym ? planHeatmap(r.vol) : '') +
     (vis.length ? vis.map(f => chkFindingHTML(f, where)).join('') : '<p style="margin-top:8px">' + $t('Keine Hinweise. Der Plan hält alle Regeln ein.') + '</p>') +
     (nHid ? '<p class="small muted" style="margin-top:8px">' + $tf('{n} Hinweise ausgeblendet.', { n: nHid }) + ' <button class="linkbtn" data-act="chkShowAll" type="button">' + $t('Wieder zeigen') + '</button></p>' : '') +
     '<div class="row" style="margin-top:10px">' + ruleBtn(['vol_prio', 'vol_other', 'sess_cap', 'conc_gap', 'conc_legs', 'deload_freq', 'balance'], $t('Alle Prüfregeln')) + '<div class="grow"></div><button class="btn sm" data-act="chkOpen" data-v="" type="button">' + $t('Schließen') + '</button></div></div>'; }
@@ -122,3 +123,19 @@ document.addEventListener('click', e => { const b = e.target.closest('[data-act]
 /* Deload-Vorschlag: „Übernehmen“ setzt nach spätestens 8 harten Wochen eine Deload-Woche */
 function chkDeloadFix(plan) { const prev = S.plan; S.plan = plan; let ph; try { ph = Array.from({ length: NW() }, (_, i) => phase(i + 1)); } finally { S.plan = prev; }
   let run = 0; const lim = RV('deload_freq'); ph = ph.map(p => { const lite = p === 'dl' || p === 'test'; if (lite) { run = 0; return p; } if (++run > lim) { run = 0; return 'dl'; } return p; }); plan.phases = ph; }
+
+/* ---------- 8.4b: Muskel-Heatmap des Plans (harte Sätze pro Woche) ---------- */
+const PH_SLUG = { c: ['calves'], h: ['hamstring'], bi: ['biceps'], ab: ['abs', 'obliques'], q: ['quadriceps'], g: ['gluteal'], ch: ['chest'], t: ['triceps'], b: ['upperBack', 'trapezius'] };
+const PH_COL = v => v <= 0.05 ? null : v < RV('vol_other')[0] ? '#ffd2bb' : v < RV('vol_prio')[0] ? '#ff9a66' : v <= RV('vol_prio')[1] + .5 ? '#ff5406' : '#a83200';
+function planHeatmap(vol) { if (typeof BODY === 'undefined') return ''; const vals = {}; for (const m in PH_SLUG) PH_SLUG[m].forEach(s => vals[s] = Math.max(vals[s] || 0, vol[m] || 0)); vals.deltoids = Math.max(vol.fd || 0, vol.sd || 0, vol.rd || 0);
+  const base = '#e3e3e3', skin = '#efefef', MS = new Set(Object.keys(vals));
+  const side = key => { const s = BODY[key]; let g = ''; for (const slug in s.parts) { const fill = MS.has(slug) ? (PH_COL(vals[slug]) || base) : skin; s.parts[slug].forEach(d => { g += '<path d="' + d + '" fill="' + fill + '" stroke="#ffffff" stroke-width="2"/>'; }); }
+    return '<svg viewBox="' + s.vb + '" role="img" aria-label="' + esc($t('Muskelkarte')) + '">' + g + '</svg>'; };
+  const lo = RV('vol_other')[0], p = RV('vol_prio');
+  const leg = '<div class="clegend"><span><i style="background:#ffd2bb"></i>' + $tf('unter {n}', { n: lo }) + '</span><span><i style="background:#ff9a66"></i>' + lo + '–' + p[0] + '</span><span><i style="background:#ff5406"></i>' + p[0] + '–' + p[1] + '</span><span><i style="background:#a83200"></i>' + $tf('über {n}', { n: p[1] }) + '</span></div>';
+  const list = Object.keys(MUSCLES).filter(m => vol[m] > 0.05).sort((a, b) => vol[b] - vol[a]).map(m => '<span class="chip">' + esc(MUSCLES[m]) + ' ' + fmt(chkR(vol[m])) + '</span>').join('');
+  return '<div class="lbl" style="margin-top:10px">' + $t('Harte Sätze pro Muskel und Woche') + '</div><div class="bodymap">' + side('front') + side('back') + '</div>' + leg + (list ? '<div class="chips small-chips" style="margin-top:8px">' + list + '</div>' : ''); }
+
+/* ---------- 8.4b: Grade der Bibliothek berechnen statt von Hand vergeben (Handwert bleibt als ev.hand) ---------- */
+function libRegrade() { Object.keys(LIBRARY).forEach(id => { const p = LIBRARY[id]; if (!p.ev) return; try { if (p.ev.hand == null) p.ev.hand = p.ev.g; p.ev.g = checkPlan(makePlan(id), { goal: p.goals[0] }).g; } catch (e) {} }); }
+try { libRegrade(); } catch (e) {}
