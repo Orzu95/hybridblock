@@ -1,5 +1,5 @@
 /* ======================= WISSEN: geprüfte Evidenz-Wissensbasis (evidence.json) ======================= */
-/* 409 Einträge aus 24 Themenblöcken. Quellen gegen Crossref/PubMed geprüft (docs/evidenz/KORREKTUREN.md). Folien-Inhalte auf EN/RU über evidence-en.json / evidence-ru.json, Studiendetails nur Deutsch. */
+/* 421 Einträge aus 24 Themenblöcken. Quellen gegen Crossref/PubMed geprüft (docs/evidenz/KORREKTUREN.md). Folien-Inhalte auf EN/RU über evidence-en.json / evidence-ru.json, Studiendetails nur Deutsch. */
 let EVID = null, EVID_LOADING = null;
 const EV_THEMES = [['Training', ['HYP', 'KRA', 'PER', 'WAR', 'PLY', 'SPD', 'CON', 'HYB', 'CAR']], ['Ernährung', ['ERN', 'FAT', 'REC', 'BLK', 'NRG', 'SUP']], ['Steuerung und Erholung', ['LOD', 'TST', 'ALG', 'REG', 'BES']], ['Gesundheit und Kopf', ['GES', 'PSY']], ['Zielgruppen', ['FRA', 'EIN']]];
 const EV_GRADE = { A: 'Meta-Analysen oder mehrere übereinstimmende Studien', B: 'Einzelne kontrollierte Studie oder systematisches Review', C: 'Beobachtungsstudie, kleine Studie oder Mechanismus', D: 'Expertenkonsens, Positionspapier oder Evidenzlücke' };

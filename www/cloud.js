@@ -89,7 +89,7 @@ const ACT_LEVELS = [['1.3', $t('Sitzend (Büro, wenig Bewegung)')], ['1.45', $t(
 const r50 = n => Math.round(n / 50) * 50, r5 = n => Math.round(n / 5) * 5;
 function onbCalc(d) { const wt = num(d.weight), h = num(d.height), age = num(d.age), tw = num(d.target) || wt; if (!wt || !h || !age) return null;
   const bmr = 10 * wt + 6.25 * h - 5 * age + (d.sex === 'w' ? -161 : 5); const tdee = r50(bmr * (num(d.act) || 1.45));
-  const rate = tw < wt - 0.5 ? Math.min(1, Math.round(wt * 0.006 * 10) / 10) : 0; const floor = d.sex === 'w' ? 1400 : 1800;
+  const po = typeof paceOpts === 'function' ? paceOpts({ weight: wt, height: h, age }) : []; const rate = tw < wt - 0.5 ? (po[1] ? po[1].kg : Math.min(1, Math.round(wt * 0.006 * 10) / 10)) : 0; const floor = d.sex === 'w' ? 1400 : 1800;
   const kcal = Math.max(floor, r50(tdee - rate * 1100)); const base = Math.min(wt, tw); const protein = r5(RV('protein') * base), fat = r5(Math.max(0.8 * base, 0.25 * kcal / 9)); /* 25 % der Kalorien oder 0,8 g/kg, je nachdem was höher ist */
   return { tdee, rate, floor, kcal, protein, fat, hfmax: Math.round(RV('hfmax').a - RV('hfmax').b * age) }; }
 function viewStart(arg) { if (arg && ONB.step === 'welcome' && ['code', 'login', 'profile', 'forgot'].includes(arg)) ONB.step = arg;
@@ -126,8 +126,8 @@ function viewStart(arg) { if (arg && ONB.step === 'welcome' && ['code', 'login',
   else if (ONB.step === 'summary') { const st = S.settings;
     const g = (k, lab) => '<div class="field"><label for="os-' + k + '">' + lab + '</label><input id="os-' + k + '" type="number" inputmode="decimal" step="any" data-st="' + k + '" value="' + esc(st[k]) + '"></div>';
     body = back('days') + head(...$tp('Deine', 'Startwerte'), $t('Die App passt den Bedarf wöchentlich an deinen echten Gewichtsverlauf an. Das hier ist nur der Anfang.')) +
-      '<div class="card"><div class="fields">' + g('startKcal', $t('Kalorien pro Tag')) + g('protein', $t('Protein (g)')) + g('fat', $t('Fett (g)')) + g('goalRate', $t('Ziel kg pro Woche')) + g('tdee0', $t('Geschätzter Bedarf')) + g('hfmax', $t('Maximalpuls')) + '</div>' +
-      $t('<p class="small muted" style="margin-top:12px">Bedarf nach Mifflin-St Jeor × Alltagsfaktor. Abnehmen mit etwa 0,6 % des Körpergewichts pro Woche, Protein 2 g pro kg Zielgewicht. Maximalpuls nach Tanaka (208 − 0,7 × Alter): hat deine Uhr einen höheren Wert gemessen, nimm den.</p>') +
+      '<div class="card"><div class="fields">' + g('startKcal', $t('Kalorien pro Tag')) + g('protein', $t('Protein (g)')) + g('fat', $t('Fett (g)')) + g('goalRate', $t('Ziel kg pro Woche')) + g('tdee0', $t('Geschätzter Bedarf')) + g('hfmax', $t('Maximalpuls')) + '</div>' + (typeof paceCard === 'function' ? '<div style="margin-top:14px">' + paceCard('onb') + '</div>' : '') +
+      $t('<p class="small muted" style="margin-top:12px">Bedarf nach Mifflin-St Jeor × Alltagsfaktor. Protein 2 g pro kg Zielgewicht. Maximalpuls nach Tanaka (208 − 0,7 × Alter): hat deine Uhr einen höheren Wert gemessen, nimm den.</p>') +
       $t('<button class="btn brand block" style="margin-top:16px" data-act="onbFinish" type="button">Los geht’s</button></div>'); }
   else if (ONB.step === 'goals') body = back('profile') + head(...$tp('Dein', 'Ziel'), $t('Damit passt der Plan zu dir: Ziel, Erfahrung, Zeit und wo du trainierst.')) +
     '<div class="card">' + goalsFields(S.settings.q || {}) + $t('<button class="btn fog block" style="margin-top:14px" data-act="onbStudio" type="button">Geräte in meinem Studio festlegen (optional)</button>') + err +

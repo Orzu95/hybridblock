@@ -30,3 +30,10 @@
 | ALG-114 | quellen | Duan et al. 2022 | Le et al. 2022 (Frontiers in Physiology) | Crossref: Erstautor Le |
 | ALG-116 | quellen/doi_oder_link | Medellin Ruiz et al. 2020, 10.3390/app10238532 | Esco & Flatt 2014, PubMed 25177179; Grad B | Ursprüngliche DOI behandelt HRV-gesteuertes Training, nicht die 60-s-LnRMSSD-Messung |
 | ALG-119 | quellen/doi_oder_link | Shcherbina et al. 2017, 10.3390/jpm7020003 | Gløersen et al. 2018, 10.3389/fphys.2018.01425 | Ursprüngliche DOI behandelt Puls/Kalorien am Handgelenk, nicht GPS-Genauigkeit |
+
+## Block FAT-120 bis FAT-131 (Gemini-Recherche Abnehmtempo, 05.11.2026)
+- Alle 15 DOIs über Crossref geprüft, alle existieren und passen zu Titel und Autor.
+- Nicht übernommen, weil Dubletten: FAT-201 (Garthe 2011 = FAT-102), FAT-202 (Murphy & Koehler = FAT-104), FAT-210 (IOC REDs 2023 = FRA-117).
+- Neu nummeriert: FAT-203…215 → FAT-120…131 (fortlaufend im Block FAT).
+- Grade angepasst: ISSN-Positionspapier 2026 (FAT-120) A → B (Positionspapier, keine eigene Metaanalyse); Heymsfield 2014 (FAT-123) A → B (kritisches Review mit Modellrechnung).
+- Jahr Johansson (FAT-126) auf Druckjahr 2014 gesetzt (online 2013).

@@ -411,3 +411,7 @@ body:not(.spowi) .sw-only{display:none!important}
 .chk-f.chk-tip{border-left:3px solid var(--sky);padding-left:10px}
 .chk-f.chk-ign{opacity:.7}
 .chk-f .linkbtn{font-weight:600;color:var(--muted)}
+/* Abnehmtempo */
+.pace-opts{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.pace-opt{display:flex;flex-direction:column;gap:2px;text-align:left;padding:10px 12px;border-radius:12px;border:1.5px solid var(--rule);background:var(--paper);font:inherit;color:inherit;cursor:pointer}
+.pace-opt span{font-size:13px}.pace-opt.on{border-color:var(--ember);box-shadow:inset 0 0 0 1px var(--ember)}

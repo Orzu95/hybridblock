@@ -17,7 +17,7 @@ const RULES = /*RULES*/{
   "watch_kcal": {"n": "Kalorien der Uhr", "v": "fließen nicht ins Tagesziel", "u": "", "ev": ["ALG-113", "ALG-114"], "g": "A", "s": "Das Ziel kommt nur aus Essen und Gewichtstrend"},
   "fat_min": {"n": "Fett mindestens", "v": 20, "u": "% der Kalorien", "ev": ["ERN-109"], "g": "C", "s": "Untergrenze für das Fettziel", "chk": [{"id": "ERN-109", "lo": 20}]},
   "protein": {"n": "Protein", "v": 2, "u": "g pro kg Zielgewicht", "ev": ["BLK-108", "NRG-115"], "g": "A", "s": "Startwert im Onboarding", "chk": [{"id": "BLK-108", "lo": 1.62, "hi": 2.2}]},
-  "loss_rate": {"n": "Abnehmtempo", "v": [0.5, 1], "u": "% Körpergewicht pro Woche", "ev": ["FAT-101", "FAT-102"], "g": "A", "s": "Bereich für das Abnehmziel", "chk": [{"id": "FAT-102", "hi": 1.0}]},
+  "loss_rate": {"n": "Abnehmtempo", "v": [0.5, 1], "u": "% Körpergewicht pro Woche", "ev": ["FAT-101", "FAT-102", "FAT-120"], "g": "A", "s": "Kern der Tempo-Stufen; die App rechnet in % des Körpergewichts und zeigt kg und kcal dazu", "chk": [{"id": "FAT-102", "hi": 1.0}]},
   "hfmax": {"n": "Maximalpuls ohne Messung", "v": {"a": 208, "b": 0.7}, "u": "", "ev": ["CAR-110"], "g": "A", "s": "Pulszonen, bis du einen gemessenen Wert einträgst", "chk": [{"id": "CAR-110", "key": "a", "lo": 208, "hi": 208}, {"id": "CAR-110", "key": "b", "lo": 0.7, "hi": 0.7}], "d": "208 − 0,7 × Alter (Tanaka)"},
   "stall": {"n": "Stillstand", "v": "2 Wochen ohne neues e1RM", "u": "", "ev": ["PER-116", "HYP-110"], "g": "B", "s": "Vorschlag Übungstausch im Wochen-Check-in"},
   "deload": {"n": "Deload", "v": "5–7 Tage weniger Volumen und Intensität", "u": "", "ev": ["PER-113", "PER-112"], "g": "B", "s": "Vorschlag im Wochen-Check-in bei Ermüdung"},
@@ -33,7 +33,12 @@ const RULES = /*RULES*/{
   "conc_gap": {"n": "Kraft und Ausdauer am selben Tag", "v": 3, "u": "Stunden Abstand, sonst Kraft zuerst", "ev": ["CON-105", "HYB-109", "CON-107"], "g": "A", "s": "Plan-Prüfung: Tipp, wenn beides am selben Tag liegt", "chk": [{"id": "CON-105", "lo": 3, "hi": 3}]},
   "conc_legs": {"n": "Schwerer Beintag und harte Ausdauer", "v": 24, "u": "Stunden Abstand", "ev": ["HYB-107"], "g": "B", "s": "Plan-Prüfung: Hinweis, wenn beides an aufeinanderfolgenden Tagen liegt", "chk": [{"id": "HYB-107", "lo": 24, "hi": 24}]},
   "deload_freq": {"n": "Deload spätestens nach", "v": 8, "u": "Wochen hartem Training", "ev": ["PER-113"], "g": "C", "s": "Plan-Prüfung: Hinweis bei längeren Phasen ohne Entlastung", "chk": [{"id": "PER-113", "hi": 8}]},
-  "balance": {"n": "Druck und Zug, Knie und Hüfte im Gleichgewicht", "v": [0.67, 1.5], "d": "zwischen 2 : 3 und 3 : 2", "u": "", "ev": [], "own": true, "g": "D", "s": "Plan-Prüfung: nur Information, die Wissensbank hat dazu keinen eigenen Eintrag"}
+  "balance": {"n": "Druck und Zug, Knie und Hüfte im Gleichgewicht", "v": [0.67, 1.5], "d": "zwischen 2 : 3 und 3 : 2", "u": "", "ev": [], "own": true, "g": "D", "s": "Plan-Prüfung: nur Information, die Wissensbank hat dazu keinen eigenen Eintrag"},
+  "loss_lean": {"n": "Abnehmtempo bei BMI unter 25", "v": 0.7, "u": "% Körpergewicht pro Woche, darüber ein Hinweis", "ev": ["FAT-102", "FAT-121"], "g": "B", "s": "Tempo-Auswahl: schlanke Menschen verlieren bei schnellerem Tempo mehr Muskeln", "chk": [{"id": "FAT-102", "hi": 0.7}]},
+  "loss_cap_kg": {"n": "Abnehmtempo höchstens", "v": 1.5, "u": "kg pro Woche, auch bei hohem Körpergewicht", "ev": ["FAT-125", "FAT-126"], "g": "B", "s": "Tempo-Auswahl: darüber steigt das Gallenstein-Risiko, das gehört in ärztliche Begleitung", "chk": [{"id": "FAT-125", "hi": 1.5}]},
+  "kcal_floor": {"n": "Kalorienziel nie unter", "v": 1200, "u": "kcal pro Tag ohne fachliche Begleitung", "ev": ["FAT-120", "FAT-126"], "g": "B", "s": "Tempo-Auswahl: Hinweis, wenn das Ziel darunter fallen würde"},
+  "loss_early": {"n": "Tempo bewerten erst ab", "v": 21, "u": "Tagen, vorher ist es vor allem Wasser", "ev": ["FAT-123"], "g": "B", "s": "Verlauf: in den ersten 3 Wochen keine Tempo-Warnung", "chk": [{"id": "FAT-123", "lo": 21, "hi": 21}]},
+  "loss_older": {"n": "Abnehmen ab 65", "v": [0.2, 0.5], "u": "% Körpergewicht pro Woche, nur bei BMI ab 30, mit Krafttraining", "grp": "Ältere", "ev": ["FAT-130", "FAT-129"], "g": "B", "s": "Tempo-Auswahl: kleinere Stufen, darüber ein Hinweis", "chk": [{"id": "FAT-130", "lo": 0.2, "hi": 0.5}]}
 }/*END*/;
 const RV = id => RULES[id].v;
 /* Wochen-Check-in: Vorschlagstyp → Regel */
