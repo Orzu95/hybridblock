@@ -39,7 +39,8 @@ const RULES = /*RULES*/{
   "kcal_floor": {"n": "Kalorienziel nie unter", "v": 1200, "u": "kcal pro Tag ohne fachliche Begleitung", "ev": ["FAT-120", "FAT-126"], "g": "B", "s": "Tempo-Auswahl: Hinweis, wenn das Ziel darunter fallen würde"},
   "loss_early": {"n": "Tempo bewerten erst ab", "v": 21, "u": "Tagen, vorher ist es vor allem Wasser", "ev": ["FAT-123"], "g": "B", "s": "Verlauf: in den ersten 3 Wochen keine Tempo-Warnung", "chk": [{"id": "FAT-123", "lo": 21, "hi": 21}]},
   "loss_older": {"n": "Abnehmen ab 65", "v": [0.2, 0.5], "u": "% Körpergewicht pro Woche, nur bei BMI ab 30, mit Krafttraining", "grp": "Ältere", "ev": ["FAT-130", "FAT-129"], "g": "B", "s": "Tempo-Auswahl: kleinere Stufen, darüber ein Hinweis", "chk": [{"id": "FAT-130", "lo": 0.2, "hi": 0.5}]},
-  "maintain": {"n": "Nach dem Ziel: Erhaltungsphase", "v": "Kalorien schrittweise auf den gemessenen Bedarf, Gewicht in ±1 kg halten", "u": "", "ev": ["FAT-131"], "g": "C", "s": "Wochen-Check-in schlägt das vor, sobald das Trendgewicht das Ziel erreicht; bis dahin rechnet der Check-in ab dem Ziel ohne Defizit"}
+  "maintain": {"n": "Nach dem Ziel: Erhaltungsphase", "v": "Kalorien schrittweise auf den gemessenen Bedarf, Gewicht in ±1 kg halten", "u": "", "ev": ["FAT-131"], "g": "C", "s": "Wochen-Check-in schlägt das vor, sobald das Trendgewicht das Ziel erreicht; bis dahin rechnet der Check-in ab dem Ziel ohne Defizit"},
+  "next_gap": {"n": "Dieselbe Muskelgruppe wieder schwer frühestens nach", "v": 48, "u": "Stunden", "ev": ["KRA-109", "HYP-106"], "g": "A", "s": "Gym ohne Plan: Vorschlag, wann die nächste Einheit für dieselben Muskeln dran ist", "chk": [{"id": "KRA-109", "lo": 48, "hi": 48}]}
 }/*END*/;
 const RV = id => RULES[id].v;
 /* Wochen-Check-in: Vorschlagstyp → Regel */
