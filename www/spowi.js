@@ -44,9 +44,9 @@ function decoupling(a) { const tr = S.hrTraces[a.id]; if (!a.route || !a.routeT 
 
 /* ---------- Kennzahlen im Verlauf ---------- */
 function spowiProgressCard() { const lm = loadMetrics(); const id = intensityDist(); const hv = hrvMetrics(); const base = rhrBaseline(); const bw = (() => { const ser = series(); return ser.length ? ser[ser.length - 1].trend : null; })();
-  const lifts = keyLifts().filter(x => LIB[x]).map(x => { const h = exHistory(x); let best = 0; h.forEach(o => o.sets.forEach(st => { if (st.w > 0 && st.r) best = Math.max(best, e1rm(st.w, st.r, Math.min(10, st.rpe ?? 8))); })); return best ? [LIB[x].name, best] : null; }).filter(Boolean);
+  const lifts = keyLifts().filter(x => LIB[x]).map(x => { const h = exHistory(x); let best = 0; h.forEach(o => o.sets.forEach(st => { if (st.w > 0 && st.r) best = Math.max(best, e1rmEst(st.w, st.r, Math.min(10, st.rpe ?? 8))); })); return best ? [LIB[x].name, best] : null; }).filter(Boolean);
   const rows = [
-    swRow($t('ACWR (7 zu 28 Tage)'), lm.acwr != null ? fmt(lm.acwr, 2) : '–', $t('0,8–1,3 gilt oft als Bereich mit wenig Risiko; das Konzept ist umstritten')),
+    swRow($t('ACWR (7 zu 28 Tage)'), lm.acwr != null ? fmt(lm.acwr, 2) : '–', $t('Nur Information: sagt Verletzungen kaum voraus, methodisch umstritten')),
     swRow($t('Akute Last 7 Tage'), fmt(lm.acute, 0), $t('Summe Minuten × Session-RPE')),
     swRow($t('Chronische Last (Ø Woche, 28 Tage)'), fmt(lm.chronic, 0), ''),
     swRow($t('Monotonie'), lm.mono != null ? fmt(lm.mono, 2) : '–', $t('über 2 erhöht nach Foster')),

@@ -111,7 +111,7 @@ function viewSessResult(w, k) { const s = peekSess(w, k); const d = SESS[k]; con
     cardio && num(c.avg) ? kpi(c.avg, $t('Ø Puls'), 'bpm') : '', cardio && num(c.max) ? kpi(c.max, $t('Max. Puls'), 'bpm') : '', cardio && c.perf ? kpi(esc(c.perf), $t('Leistung')) : '',
     L.rpe ? kpi(fmt(L.rpe), $t('Session-RPE')) : '', L.load ? kpi(fmt(L.load, 0), $t('Belastung')) : ''].filter(Boolean).join('');
   const exs = cardio ? '' : '<div class="card"><h2>' + $t('Übungen') + '</h2>' + planFor(w, k).map(spec => { const lg = (s.logs || {})[spec.slot]; const ds = lg ? loggedSets(lg).filter(x => x.done) : []; const ex = LIB[lg ? lg.ex : spec.ex] || {};
-      const best = ds.reduce((mx, x) => x.w > 0 && x.r ? Math.max(mx, e1rm(x.w, x.r, Math.min(10, x.rpe ?? spec.rpe ?? 8))) : mx, 0);
+      const best = ds.reduce((mx, x) => x.w > 0 && x.r ? Math.max(mx, e1rmEst(x.w, x.r, Math.min(10, x.rpe ?? spec.rpe ?? 8))) : mx, 0);
       return '<div style="margin-top:12px"><div class="row"><b class="grow">' + esc(ex.name || spec.ex) + '</b>' + (best ? '<span class="small muted">e1RM ' + fmt(best, 0) + ' kg</span>' : '') + '</div><div class="rset">' + (ds.length ? ds.map(x => '<span>' + (x.w > 0 ? fmt(x.w) + ' × ' : '') + (x.r ?? '–') + (x.rpe != null ? ' @' + fmt(x.rpe) : '') + '</span>').join('') : '<span class="muted">' + $t('nicht gemacht') + '</span>') + '</div></div>'; }).join('') + '</div>';
   const prs = st.prs.length ? '<div class="card"><h2>' + $t('Neue PRs') + '</h2>' + st.prs.map(p => '<div class="row" style="margin-top:6px"><span class="grow">🏆 ' + esc(p.name) + '</span><b>' + fmt(p.v, 0) + ' kg e1RM</b></div>').join('') + '</div>' : '';
   return '<a href="#training" class="back">' + ICON.back + $t('Woche ') + w + '</a>' +

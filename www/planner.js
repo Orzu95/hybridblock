@@ -176,8 +176,8 @@ function sessStats(w, k) { const s = peekSess(w, k) || {}; let sets = 0, total =
   planFor(w, k).forEach(p => { total += p.sets; });
   Object.keys(s.logs || {}).forEach(slot => { const lg = s.logs[slot]; const spec = planFor(w, k).find(p => p.slot === slot); const done = loggedSets(lg).filter(x => x.done);
     sets += done.length; done.forEach(x => { if (x.r) reps += x.r; if (x.w > 0 && x.r) vol += x.w * x.r; });
-    const best = done.reduce((m, x) => x.w > 0 && x.r ? Math.max(m, e1rm(x.w, x.r, Math.min(10, x.rpe ?? (spec && spec.rpe) ?? 8))) : m, 0);
-    if (best > 0 && LIB[lg.ex]) { const before = exHistory(lg.ex).filter(o => !(o.label.startsWith(SESS[k].title) && o.wk === w)).reduce((m, o) => Math.max(m, ...o.sets.filter(x => x.w > 0 && x.r).map(x => e1rm(x.w, x.r, Math.min(10, x.rpe ?? 8)))), 0);
+    const best = done.reduce((m, x) => x.w > 0 && x.r ? Math.max(m, e1rmEst(x.w, x.r, Math.min(10, x.rpe ?? (spec && spec.rpe) ?? 8))) : m, 0);
+    if (best > 0 && LIB[lg.ex]) { const before = exHistory(lg.ex).filter(o => !(o.label.startsWith(SESS[k].title) && o.wk === w)).reduce((m, o) => Math.max(m, ...o.sets.filter(x => x.w > 0 && x.r).map(x => e1rmEst(x.w, x.r, Math.min(10, x.rpe ?? 8)))), 0);
       if (before > 0 && best > before * 1.005) prs.push({ name: LIB[lg.ex].name, v: best, before }); } });
   return { sets, total, vol, reps, prs, load: sessLoad(w, k) }; }
 function finSheet(w, k, fresh) { const st = sessStats(w, k); const L = st.load || {}; const cardio = isCardio(k);

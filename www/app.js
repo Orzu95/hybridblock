@@ -155,6 +155,10 @@ function readiness(w, k) {
 
 /* ======================= VERLAUF & AUTOREGULATION ======================= */
 const e1rm = (w, r, rpe) => w * (1 + (r + (10 - rpe)) / 30);
+/* e1RM für Anzeige, Verlauf und PRs: Mittel aus Epley, Brzycki und Wathen; nur Sätze bis 10 Wdh., darüber ist die Schätzung zu ungenau (ALG-101, ALG-102) */
+const E1RM_MAXREPS = 10;
+const e1rmEst = (w, r, rpe) => { if (!w || !r || r > E1RM_MAXREPS) return 0; const n = r + (10 - (rpe ?? 8)); if (n <= 1) return w;
+  return (w * (1 + n / 30) + w * 36 / (37 - n) + 100 * w / (48.8 + 53.8 * Math.exp(-0.075 * n))) / 3; };
 const loadFor = (est, reps, rpe) => est / (1 + (reps + (10 - rpe)) / 30);
 function loggedSets(log) { return ((log && log.sets) || []).map(x => ({ w: num(x && x.w), r: num(x && x.r), rpe: num(x && x.rpe), done: !!(x && x.done) })).filter(x => x.w != null || x.r != null); }
 function history(w, k, exId) {
@@ -212,6 +216,10 @@ function setSuggestion(w, k, spec, exId, i, base, rd, rawSets) {
   const rng = repRange(spec.reps); const tgt = spec.rpe != null ? spec.rpe + (spec.type === 'main' ? rd.rpeShift : 0) : null;
   if (!prev) return { load: base.load ?? null, reps: base.reps ?? (rng && rng.lo), why: '' };
   if (prev.w == null) return { load: null, reps: prev.r, why: '' };
+  if (spec.type === 'main' && prev.rpe != null && (prev.rpe < 7 || prev.r > 12)) { const inc = incFor(exId);
+    /* Weit weg vom Versagen (> 3 RIR) oder > 12 Wdh. ist die Selbsteinschätzung ungenau (ALG-104, ALG-105): nur ein kleiner Schritt statt Hochrechnung */
+    const load = tgt != null && prev.rpe <= tgt - 1.5 ? prev.w + inc : prev.w; const reps = parseInt(spec.reps, 10) || prev.r;
+    return { load, reps, why: load > prev.w ? $t('Weit weg vom Versagen ist die Einschätzung ungenau, also nur ein kleiner Schritt mehr') : '' }; }
   if (spec.type === 'main' && prev.rpe != null) {
     const reps = parseInt(spec.reps, 10) || prev.r; const load = r25(loadFor(e1rm(prev.w, prev.r, prev.rpe), reps, tgt));
     return { load, reps, why: load > prev.w ? $t('Letzter Satz leichter als Ziel, also mehr') : load < prev.w ? $t('Letzter Satz schwerer als Ziel, also weniger') : '' }; }
@@ -741,7 +749,7 @@ function exHistory(exId) { const out = [];
     if (sets.length) out.push({ d: s.date || null, wk: +m[1], label: $t(ar.plan.name || $t('Früherer Plan')) + $t(' · Woche ') + m[1], sets, ord: s.date || (ar.until || '0000') }); } });
   out.sort((x, y) => x.ord < y.ord ? -1 : 1);
   out.forEach((o, i) => { o.x = i; const ws = o.sets.filter(x => x.w != null && x.r);
-    o.e1 = ws.filter(x => x.w > 0).reduce((m, x) => Math.max(m, e1rm(x.w, x.r, Math.min(10, x.rpe ?? 8))), 0) || null;
+    o.e1 = ws.filter(x => x.w > 0).reduce((m, x) => Math.max(m, e1rmEst(x.w, x.r, Math.min(10, x.rpe ?? 8))), 0) || null;
     o.top = ws.length ? Math.max(...ws.map(x => x.w)) : null;
     o.vol = o.sets.reduce((a, x) => a + (x.w > 0 && x.r ? x.w * x.r : 0), 0) || null;
     o.reps = o.sets.reduce((a, x) => a + (x.r || 0), 0) || null; });
@@ -768,11 +776,11 @@ function exHistSheet(exId, metric, period) { const ex = LIB[exId]; let all = exH
     $t('<div class="stat"><div class="k">Zuletzt</div><div class="v" style="font-size:22px">') + (last != null ? fmt(last, mDec) : '–') + '</div><div class="s">' + mUnit + '</div></div>' +
     $t('<div class="stat"><div class="k">Veränderung</div><div class="v ') + (chg > 0 ? 't-green' : chg < 0 ? 't-red' : '') + '" style="font-size:22px">' + (chg != null ? (chg > 0 ? '+' : '') + fmt(chg, 0) + ' %' : '–') + $t('</div><div class="s">seit ') + (period === 'all' ? $t('Start') : $t('Beginn')) + '</div></div></div>' +
     '<div class="card" style="margin-top:12px;padding:16px">' + chart + '</div>' +
-    (metric === 'e1' ? $t('<p class="small muted">e1RM = Gewicht × (1 + (Wdh. + RIR) / 30). Ohne RPE-Eintrag wird die Plan-RPE angenommen.</p>') : '') +
+    (metric === 'e1' ? $t('<p class="small muted">e1RM = Mittel aus den Formeln von Epley, Brzycki und Wathen, mit Wiederholungen im Tank (RIR). Nur Sätze bis 10 Wiederholungen zählen, darüber ist die Schätzung zu ungenau. Ohne RPE-Eintrag wird die Plan-RPE angenommen. Beim Kreuzheben liegt die Schätzung oft 9–14 % unter dem echten Maximum.</p>') : '') +
     (rows ? $t('<h3 style="margin:16px 0 4px">Alle Einheiten</h3><div class="plist">') + rows + '</div>' : '')); }
 function prCheck(exId, w, k, set) { const x = { w: num(set.w), r: num(set.r), rpe: num(set.rpe) }; if (!x.w || x.w <= 0 || !x.r) return;
   const key = sKey(w, k); const before = exHistory(exId).filter(o => !(o.label.startsWith(SESS[k].title) && o.wk === w)).reduce((m, o) => Math.max(m, o.e1 || 0), 0);
-  const spec = planFor(w, k).find(p => (sess(w, k).logs[p.slot] || {}).ex === exId); const v = e1rm(x.w, x.r, Math.min(10, x.rpe ?? (spec && spec.rpe) ?? 8));
+  const spec = planFor(w, k).find(p => (sess(w, k).logs[p.slot] || {}).ex === exId); const v = e1rmEst(x.w, x.r, Math.min(10, x.rpe ?? (spec && spec.rpe) ?? 8));
   if (before > 0 && v > before * 1.005) setTimeout(() => toast($t('Neuer PR: e1RM ') + fmt(v, 0) + $t(' kg (vorher ') + fmt(before, 0) + ')'), 400); }
 /* Kraftkurven: Hauptübungen des Plans, sonst die am häufigsten geloggten Übungen mit Gewicht */
 function keyLifts() { const ids = []; GYM().forEach(k => planFor(1, k).forEach(p => { if (p.type === 'main' && LIB[p.ex] && !ids.includes(p.ex)) ids.push(p.ex); }));
@@ -782,7 +790,7 @@ function keyLifts() { const ids = []; GYM().forEach(k => planFor(1, k).forEach(p
   return ids.slice(0, 4); }
 function liftSeries(exId) { const out = []; for (let w = 1; w <= NW(); w++) ORDER.forEach(k => { const s = peekSess(w, k); if (!s) return; let best = null;
   for (const slot in s.logs) { const lg = s.logs[slot]; if (lg.ex !== exId) continue; const spec = planFor(w, k).find(p => p.slot === slot);
-    loggedSets(lg).forEach(x => { if (!x.w || !x.r) return; const v = e1rm(x.w, x.r, Math.min(10, x.rpe ?? (spec && spec.rpe) ?? 8)); if (!best || v > best) best = v; }); }
+    loggedSets(lg).forEach(x => { if (!x.w || !x.r) return; const v = e1rmEst(x.w, x.r, Math.min(10, x.rpe ?? (spec && spec.rpe) ?? 8)); if (!best || v > best) best = v; }); }
   if (best) out.push({ x: out.length, d: s.date || null, v: best, wk: w }); }); return out; }
 const CHARTS = {};
 function lineChart(id, pts, ser, o) {
