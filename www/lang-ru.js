@@ -2685,7 +2685,7 @@ I18N.ru = {
 "Pulskurve geladen": "Кривая пульса загружена",
 "Pulszonen, bis du einen gemessenen Wert einträgst": "Пульсовые зоны, пока ты не введёшь измеренное значение",
 "Pump-Sätze zum Abschluss.": "Подходы на памп в конце.",
-"Punkte pro Einheit dieser Woche: grün erledigt, gelb angefangen, rot verpasst, grau offen. Umsetzung = erledigte Einheiten der letzten Wochen.": "Точки — тренировки этой недели: зелёная — выполнена, жёлтая — начата, красная — пропущена, серая — впереди. Выполнение — доля выполненных тренировок за последние недели.",
+"Punkte pro Einheit dieser Woche: grün erledigt, gelb angefangen oder verschoben, rot ausgelassen, grau offen. Umsetzung = erledigte Einheiten der letzten Wochen.": "Точки — тренировки этой недели: зелёная — выполнена, жёлтая — начата или перенесена, красная — пропущена, серая — впереди. Выполнение — доля выполненных тренировок за последние недели.",
 "Push + FL4": "Жим + FL4",
 "Push A": "Жим A",
 "Push B": "Жим B",

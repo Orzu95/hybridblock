@@ -2685,7 +2685,7 @@ I18N.en = {
 "Pulskurve geladen": "Heart-rate curve loaded",
 "Pulszonen, bis du einen gemessenen Wert einträgst": "Heart rate zones until you enter a measured value",
 "Pump-Sätze zum Abschluss.": "Pump sets to finish.",
-"Punkte pro Einheit dieser Woche: grün erledigt, gelb angefangen, rot verpasst, grau offen. Umsetzung = erledigte Einheiten der letzten Wochen.": "Dots for this week’s sessions: green done, yellow started, red missed, grey open. Completion = sessions done in recent weeks.",
+"Punkte pro Einheit dieser Woche: grün erledigt, gelb angefangen oder verschoben, rot ausgelassen, grau offen. Umsetzung = erledigte Einheiten der letzten Wochen.": "Dots for this week’s sessions: green done, yellow started or moved, red skipped, grey open. Completion = sessions done in recent weeks.",
 "Push + FL4": "Push + FL4",
 "Push A": "Push A",
 "Push B": "Push B",
