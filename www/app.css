@@ -452,3 +452,6 @@ body.mode-coach .modebar button.on{color:var(--iris)}
 .wkseg{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch}
 .wkseg button{flex:0 0 auto;min-width:40px}
 .wkseg button.own::after{content:"•";color:var(--iris);margin-left:2px}
+/* Gemeinsame Trainings */
+.appt{padding:10px 0;border-top:1px solid var(--rule)}.appt:first-of-type{border-top:0}
+.ap-confirmed{color:var(--verdant)}.ap-proposed{color:var(--amber)}.ap-declined,.ap-cancelled{color:var(--signal)}.ap-done{color:var(--muted)}

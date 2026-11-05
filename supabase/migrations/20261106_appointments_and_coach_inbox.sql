@@ -1,0 +1,3 @@
+-- 7.4 Gemeinsame Trainings (appointments) und Einträge des Coaches für den Athleten (coach_inbox), angewendet am 06.11.2026.
+-- RLS: nur Coach und eigener Athlet; Termine anlegen nur der Coach, Status ändern beide; coach_inbox schreibt nur der Coach, der Athlet setzt nur applied_at.
+-- Vollständiges SQL siehe Supabase-Migration "appointments_and_coach_inbox".

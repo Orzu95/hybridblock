@@ -235,7 +235,7 @@ function setSuggestion(w, k, spec, exId, i, base, rd, rawSets) {
 function addVol(v, exId, n) { const ex = LIB[exId]; if (!ex) return; for (const m in ex.muscles) v[m] += n * ex.muscles[m]; }
 function weekVolume(w) { const v = {}; Object.keys(MUSCLES).forEach(m => v[m] = 0);
   GYM().forEach(k => { const s = peekSess(w, k); if (!s) return; for (const slot in s.logs) { const lg = s.logs[slot]; addVol(v, lg.ex, (lg.sets || []).filter(x => x && x.done).length); } });
-  S.activities.filter(a => a.week === w && a.exercises).forEach(a => a.exercises.forEach(e => addVol(v, e.ex, (e.sets || []).filter(x => x && x.done).length)));
+  S.activities.filter(a => a.week === w && a.exercises && !a.coachFor).forEach(a => a.exercises.forEach(e => addVol(v, e.ex, (e.sets || []).filter(x => x && x.done).length)));
   return v; }
 function plannedVolume(w) { const v = {}; Object.keys(MUSCLES).forEach(m => v[m] = 0); GYM().forEach(k => planFor(w, k).forEach(p => addVol(v, p.ex, p.sets))); return v; }
 
@@ -336,7 +336,7 @@ function viewHeute() {
   const acts = todaysActs.length ? $t('<div class="card flush"><div class="meal-h"><b>Aktivitäten heute</b></div><div class="list">') + todaysActs.map(actRow).join('') + '</div></div>' : '';
   const due = checkinDue();
   return pageTop(WD_LONG[d.getDay()] + ',', LANG === 'de' ? d.getDate() + '. ' + MON[d.getMonth()] : d.toLocaleDateString(LOCALE, { day: 'numeric', month: 'long' }), S.block.startedOn ? $t('Block seit ') + fmtDay(S.block.startedOn) : $t('Dein Block startet mit der ersten Einheit.')) +
-  '<div class="stack">' + updateNote() + (typeof gymDueCard === 'function' ? gymDueCard() : '') + (typeof coachStartNote === 'function' ? coachStartNote() : '') + heuteExtras() +
+  '<div class="stack">' + updateNote() + (typeof gymDueCard === 'function' ? gymDueCard() : '') + (typeof apptHeuteCard === 'function' ? apptHeuteCard() : '') + (typeof coachStartNote === 'function' ? coachStartNote() : '') + heuteExtras() +
   (due ? note('ember', $t('<b>Wöchentlicher Check-in fällig.</b> Bedarf und Kalorienziel werden aus deinem Gewichtstrend neu berechnet.'), $t('<button class="btn brand sm" data-act="checkin" type="button">Check-in</button>')) : '') +
   readinessCard(t) + trainCard + healthStrip(t) +
   (w > 1 && !ORDER.some(k => sessProgress(w, k).done) && weekDone(w - 1) ? note('green', $t('<b>Woche ') + (w - 1) + $t(' geschafft.</b> Dein Wochenbericht ist fertig.'), '<button class="btn sm" data-act="showReport" data-w="' + (w - 1) + $t('" type="button">Ansehen</button>')) : '') +
@@ -403,7 +403,7 @@ function viewSession(key) {
     $t('<div class="field"><label for="ckr">Ruhepuls') + (rd.autoRhr ? $t(' (Uhr)') : '') + '</label><input id="ckr" type="number" inputmode="numeric" data-sw="' + w + '" data-sk="' + k + '" data-ck="rhr" value="' + esc(c.rhr) + '" placeholder="' + (rd.autoRhr ? fmt(rd.rhr, 0) : $t('bpm')) + '"></div>' +
     $t('<div class="field"><label for="cks">Schlaf') + (rd.autoSleep ? $t(' (Uhr: ') + fmtMin(rd.sleepMin) + ')' : '') + '</label><select id="cks" data-sw="' + w + '" data-sk="' + k + '" data-ck="sleep"><option value="">' + (rd.autoSleep ? $t('automatisch: ') + $t(rd.sleep) : '–') + '</option>' + ['gut', 'ok', 'schlecht'].map(o => '<option value="' + o + '"' + (c.sleep === o ? $t(' selected') : '') + '>' + $t(o) + '</option>').join('') + '</select></div></div></div>';
   const watch = s.watch ? note('sky', $t('Uhr: ') + fmt(s.watch.dur, 0) + $t(' min') + (s.watch.kcal ? ' · ' + fmt(s.watch.kcal, 0) + $t(' kcal') : '') + $t(' von der Uhr übernommen.')) : '';
-  return head + '<div class="stack">' + check + flagsHTML(w, k) + watch + planFor(w, k).map(spec => exCard(w, k, spec)).join('') + endCard(w, k) + (typeof chatSessBtn === 'function' ? chatSessBtn(w, k) : '') + traceCard(sKey(w, k), gymWindow(s), false) +
+  return head + '<div class="stack">' + (typeof apptSessBadge === 'function' ? apptSessBadge(w, k) : '') + check + flagsHTML(w, k) + watch + planFor(w, k).map(spec => exCard(w, k, spec)).join('') + endCard(w, k) + (typeof chatSessBtn === 'function' ? chatSessBtn(w, k) : '') + traceCard(sKey(w, k), gymWindow(s), false) +
     (s.skipped ? '<button class="btn block" data-act="unskip" data-w="' + w + '" data-k="' + k + $t('" type="button">Wieder öffnen</button>') : '<button class="btn block fog" data-act="skip" data-w="' + w + '" data-k="' + k + $t('" type="button" style="background:var(--fog)">Einheit überspringen</button>')) + '</div>'; }
 function endCard(w, k) { const s = sess(w, k); const e = s.end || {}; const ad = autoDur(s) || (s.watch && Math.round(s.watch.dur)); const L = sessLoad(w, k);
   return $t('<div class="card" id="endcard"><h2>Einheit abschließen</h2><p class="small muted">Etwa 30 Minuten nach dem Training: Wie hart war die ganze Einheit? 0 = Ruhe, 10 = maximal.</p><div class="fields" style="margin-top:12px">') +
@@ -490,7 +490,7 @@ function viewFree(id) { const a = S.activities.find(x => x.id === id); if (!a) r
   let ex = '';
   if (t.strength) { ex = (a.exercises || []).map((e, idx) => freeExCard(a, e, idx)).join('') + '<button class="btn block brand" data-act="freeAddEx" data-aid="' + a.id + $t('" type="button">+ Übung hinzufügen</button>') + ((a.exercises || []).length ? '<button class="btn block ' + (a.fin ? 'fog' : 'dark') + '" data-act="gymFinish" data-aid="' + a.id + '" type="button">' + (a.fin ? $t('Nächste Einheit und Vorlage') : $t('Training beenden')) + '</button>' : ''); }
   return '<a href="#training" class="back">' + ICON.back + $t('Training</a>') + pageTop(esc(a.title || t.name), '', fmtDay(a.date) + (a.src && a.src !== 'manual' ? ' · ' + esc(srcLabel(a)) : '')) +
-  '<div class="stack"><div class="card"><div class="fields">' +
+  '<div class="stack">' + (typeof coBanner === 'function' ? coBanner(a) : '') + '<div class="card"><div class="fields">' +
   $t('<div class="field"><label for="a-type">Art</label><select id="a-type" data-aid="') + a.id + '" data-af="type">' + ACT_TYPES.map(x => '<option value="' + x.id + '"' + (x.id === a.type ? $t(' selected') : '') + '>' + x.name + '</option>').join('') + '</select></div>' +
   f('date', $t('Datum'), '', 'date') + f('dur', $t('Dauer (min)'), 'min') + (t.dist ? f('dist', $t('Distanz (km)'), $t('km')) : '') + f('avgHr', $t('Ø Puls'), $t('bpm')) + f('kcal', $t('kcal (Uhr)'), 'kcal') + f('rpe', $t('RPE'), '1–10') +
   $t('<div class="field" style="flex:1 1 100%"><label for="a-note">Notiz</label><input id="a-note" type="text" data-aid="') + a.id + '" data-af="note" value="' + esc(a.note) + $t('" placeholder="optional"></div></div>') +
@@ -748,7 +748,7 @@ function sleepCard() { const pts = []; for (let i = 13; i >= 0; i--) { const d =
     $t('<div class="stat" style="background:var(--paper)"><div class="k">Regelmäßigkeit</div><div class="v" style="font-size:22px">') + (cons ? '±' + fmt((cons.sdBed + cons.sdWake) / 2, 0) + $t(' min') : '–') + '</div><div class="s">' + (cons ? $t('Ø ins Bett ') + hm(cons.bed) + $t(', auf ') + hm(cons.wake) : $t('braucht Zubett- und Aufstehzeiten')) + '</div></div></div>' +
     $t('<p class="small muted">Regelmäßige Schlafzeiten hängen mit besserer Erholung zusammen. Weniger als ±30 min Schwankung ist ein gutes Ziel.</p></div>'); }
 function exListCard() { const ids = new Set(); for (let w = 1; w <= NW(); w++) ORDER.forEach(k => { const s = peekSess(w, k); if (s && s.logs) Object.values(s.logs).forEach(lg => { if (loggedSets(lg).length) ids.add(lg.ex); }); });
-  S.activities.forEach(a => (a.exercises || []).forEach(e => { if (loggedSets(e).length) ids.add(e.ex); }));
+  S.activities.forEach(a => (a.coachFor ? [] : a.exercises || []).forEach(e => { if (loggedSets(e).length) ids.add(e.ex); }));
   S.archive.forEach(ar => Object.values(ar.sessions || {}).forEach(s => Object.values(s.logs || {}).forEach(lg => { if (loggedSets(lg).length) ids.add(lg.ex); })));
   const list = [...ids].filter(id => LIB[id]).map(id => { const h = exHistory(id); const last = h[h.length - 1]; const m = h.some(o => o.e1) ? 'e1' : 'reps'; const v = h.map(o => o[m]).filter(x => x != null);
     return { id, n: h.length, last, m, chg: v.length > 1 && v[0] ? (v[v.length - 1] - v[0]) / Math.abs(v[0]) * 100 : null, cur: v[v.length - 1] }; }).sort((a, b) => (b.last && b.last.ord || '') < (a.last && a.last.ord || '') ? -1 : 1);
@@ -759,7 +759,7 @@ function exHistory(exId) { const out = [];
     for (const slot in s.logs) { const lg = s.logs[slot]; if (lg.ex !== exId) continue; const spec = planFor(w, k).find(p => p.slot === slot);
       loggedSets(lg).filter(x => x.done || x.r != null).forEach(x => sets.push({ ...x, rpe: x.rpe ?? (spec && spec.rpe) ?? null })); }
     if (sets.length) out.push({ d: s.date || null, wk: w, label: SESS[k].title + $t(' · Woche ') + w, sets, ord: s.date || ('0000-' + pad(chronIndex(w, k))) }); });
-  S.activities.forEach(a => (a.exercises || []).forEach(e => { if (e.ex !== exId) return; const sets = loggedSets(e).filter(x => x.done || x.r != null); if (sets.length) out.push({ d: a.date, wk: a.week, label: $t('Freies Training'), sets, ord: a.date }); }));
+  S.activities.forEach(a => (a.coachFor ? [] : a.exercises || []).forEach(e => { if (e.ex !== exId) return; const sets = loggedSets(e).filter(x => x.done || x.r != null); if (sets.length) out.push({ d: a.date, wk: a.week, label: $t('Freies Training'), sets, ord: a.date }); }));
   S.archive.forEach(ar => { for (const key in ar.sessions || {}) { const m = key.match(RE_SESS); if (!m) continue; const s = ar.sessions[key]; const sets = [];
     for (const slot in s.logs || {}) { const lg = s.logs[slot]; if (lg.ex !== exId) continue; const spec = planForP(ar.plan, +m[1], m[2]).find(p => p.slot === slot); loggedSets(lg).filter(x => x.done || x.r != null).forEach(x => sets.push({ ...x, rpe: x.rpe ?? (spec && spec.rpe) ?? null })); }
     if (sets.length) out.push({ d: s.date || null, wk: +m[1], label: $t(ar.plan.name || $t('Früherer Plan')) + $t(' · Woche ') + m[1], sets, ord: s.date || (ar.until || '0000') }); } });
@@ -1223,7 +1223,7 @@ function slugValues(mode, w) { const out = {}; const set = (slug, v) => { out[sl
   if (mode === 'vol') { const v = weekVolume(w); for (const m in SLUG_OF) { const hi = PRIORITY.includes(m) ? VOL_TARGET.prio[0] : VOL_TARGET.other[1]; SLUG_OF[m].forEach(s => set(s, clamp(v[m] / hi, 0, 1))); } set('deltoids', clamp(Math.max(v.fd, v.sd, v.rd) / VOL_TARGET.other[1], 0, 1)); return { vals: out, raw: v }; }
   const last = {}; const note = (d, exId, n) => { if (!d || n < 2) return; const ex = LIB[exId]; if (!ex) return; for (const m in ex.muscles) if (ex.muscles[m] >= .5 && (!last[m] || d > last[m])) last[m] = d; };
   for (let ww = 1; ww <= NW(); ww++) GYM().forEach(k => { const s = peekSess(ww, k); if (s && s.logs) Object.values(s.logs).forEach(lg => note(s.date, lg.ex, (lg.sets || []).filter(x => x && x.done).length)); });
-  S.activities.forEach(a => (a.exercises || []).forEach(e => note(a.date, e.ex, (e.sets || []).filter(x => x && x.done).length)));
+  S.activities.forEach(a => (a.coachFor ? [] : a.exercises || []).forEach(e => note(a.date, e.ex, (e.sets || []).filter(x => x && x.done).length)));
   const days = m => last[m] ? daysBetween(last[m], today()) : null;
   const byM = {}; Object.keys(MUSCLES).forEach(m => byM[m] = days(m));
   const lvl = d => d == null ? null : d <= 1 ? 3 : d <= 3 ? 2 : d <= 7 ? 1 : 0;
