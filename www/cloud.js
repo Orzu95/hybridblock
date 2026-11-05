@@ -85,7 +85,7 @@ function makeSummary() { const w = curWeek(), ser = series(), last = ser[ser.len
 /* ======================= ANSICHT ALS KUNDE ======================= */
 function enterView(uid, name, state, to) { VIEW = { uid, name, own: S, back: '#admin/' + uid }; S = loadState(JSON.stringify(state)); applyPlan(); document.body.classList.add('viewing'); ui.week = null; location.hash = to || '#verlauf'; }
 function exitView() { if (!VIEW) return; const back = VIEW.back; S = VIEW.own; VIEW = null; applyPlan(); document.body.classList.remove('viewing'); ui.week = null; location.hash = back; }
-const viewBar = () => VIEW ? $t('<div class="viewbar"><span class="grow">Ansicht als Athlet: <b>') + esc(VIEW.name) + $t('</b> · nur lesen</span><a class="btn sm" href="#training">Training</a><a class="btn sm" href="#verlauf">Verlauf</a><a class="btn sm" href="#essen">Essen</a><button class="btn sm dark" data-act="viewExit" type="button">Zurück zum Coaching</button></div>') : (typeof modeBar === 'function' ? modeBar() : '');
+let viewBar = () => VIEW ? $t('<div class="viewbar"><span class="grow">Ansicht als Athlet: <b>') + esc(VIEW.name) + $t('</b> · nur lesen</span><a class="btn sm" href="#training">Training</a><a class="btn sm" href="#verlauf">Verlauf</a><a class="btn sm" href="#essen">Essen</a><button class="btn sm dark" data-act="viewExit" type="button">Zurück zum Coaching</button></div>') : (typeof modeBar === 'function' ? modeBar() : '');
 
 /* ======================= ONBOARDING ======================= */
 const ONB = { step: 'welcome', inv: null, data: {}, busy: false, err: '' };
