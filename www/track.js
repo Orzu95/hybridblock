@@ -3,7 +3,14 @@
    Browser: GPS nur bei eingeschaltetem Bildschirm, Pulsgurt über Web Bluetooth (Chrome). */
 const NP = name => { const C = window.Capacitor; if (!C || !C.isNativePlatform || !C.isNativePlatform()) return null; return (C.Plugins && C.Plugins[name]) || (C.registerPlugin ? C.registerPlugin(name) : null); };
 const HR_SVC = '0000180d-0000-1000-8000-00805f9b34fb', HR_CHR = '00002a37-0000-1000-8000-00805f9b34fb';
-const TILE_URL = 'https://tile.openstreetmap.org/{z}/{x}/{y}.png', TILE_ATTR = '© OpenStreetMap';
+/* Karten: Vektorkacheln von OpenFreeMap über MapLibre (nachgeladen, ca. 1 MB, erst wenn eine Karte gebraucht wird) */
+const MAP_STYLE = 'https://tiles.openfreemap.org/styles/liberty', MAP_ATTR = '<a href="https://openfreemap.org" target="_blank" rel="noopener">OpenFreeMap</a> © <a href="https://www.openmaptiles.org/" target="_blank" rel="noopener">OpenMapTiles</a> Data from <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>';
+let MLP = null;
+function mlLoad() { if (window.maplibregl && window.L && L.maplibreGL) return Promise.resolve(); if (MLP) return MLP;
+  const add = (tag, attrs) => new Promise((res, rej) => { const e = document.createElement(tag); Object.assign(e, attrs); e.onload = res; e.onerror = rej; document.head.appendChild(e); });
+  MLP = Promise.all([add('link', { rel: 'stylesheet', href: 'vendor/maplibre/maplibre-gl.css' }), add('script', { src: 'vendor/maplibre/maplibre-gl.js' }).then(() => add('script', { src: 'vendor/maplibre/leaflet-maplibre-gl.js' }))]).catch(e => { MLP = null; throw e; });
+  return MLP; }
+function baseLayer(m) { mlLoad().then(() => { if (!m._container || !m._container.isConnected) return; try { L.maplibreGL({ style: MAP_STYLE, interactive: false }).addTo(m); if (m.attributionControl) m.attributionControl.addAttribution(MAP_ATTR); } catch (e) { console.warn('map', e); } }).catch(e => console.warn('map', e)); }
 const TR_KEY = 'hb_track_live';
 
 /* ---------- Pulsgurt (Bluetooth-Standard „Heart Rate“) ---------- */
@@ -188,7 +195,7 @@ function trBar() { let el = document.getElementById('trbar'); if (!TR.active || 
   el.innerHTML = '<span class="dot"></span><b>' + esc(ACT_MAP[TR.type].name) + '</b> · ' + fmtClock(movingSec()) + (TR.gps ? ' · ' + fmt(TR.dist / 1000, 2) + ' km' : '') + (hrFresh() ? ' · ♥ ' + HRM.bpm : '') + (TR.paused ? $t(' · Pause') : ''); }
 function trMapInit() { const el = document.getElementById('tr-map'); if (!el || !window.L) return; if (TR.map) { try { TR.map.remove(); } catch (e) {} }
   TR.map = L.map(el, { zoomControl: false, attributionControl: true }).setView(TR.pts.length ? [TR.pts[TR.pts.length - 1][0], TR.pts[TR.pts.length - 1][1]] : [50.11, 8.68], TR.pts.length ? 16 : 5);
-  L.tileLayer(TILE_URL, { maxZoom: 19, attribution: TILE_ATTR }).addTo(TR.map); TR.line = L.polyline([], { color: '#ff5406', weight: 5 }).addTo(TR.map); TR.dot = L.circleMarker([0, 0], { radius: 7, color: '#fff', weight: 3, fillColor: '#ff5406', fillOpacity: 1 }).addTo(TR.map);
+  baseLayer(TR.map); TR.line = L.polyline([], { color: '#ff5406', weight: 5 }).addTo(TR.map); TR.dot = L.circleMarker([0, 0], { radius: 7, color: '#fff', weight: 3, fillColor: '#ff5406', fillOpacity: 1 }).addTo(TR.map);
   TR.map.on('dragstart', () => { TR.userPanned = true; }); TR.userPanned = false; trLive(true); }
 
 /* ---------- Seiten ---------- */
@@ -272,7 +279,7 @@ function ivsCard(a) { const v = (a.ivs || []).filter(x => x.sec >= 3); if (!v.so
     '<table class="tbl small" style="width:100%;margin-top:8px"><tr><th></th><th>' + $t('Zeit') + '</th>' + (gd ? '<th>' + $t('Strecke') + '</th><th>' + (sp ? $t('km/h') : $t('Pace')) + '</th>' : '') + '<th>' + $t('Puls Ø / max') + '</th></tr>' + rows + '</table>' +
     (v.some(x => x.plan && x.sec < x.plan - 5) ? '<p class="small muted" style="margin-top:6px">' + $t('* vorzeitig beendet') + '</p>' : '') + '</div>'; }
 function routeMapsInit() { document.querySelectorAll('[data-route]').forEach(el => { if (el._map || !window.L) return; const a = findAct(el.dataset.route); if (!a || !a.route) return; const ll = decPoly(a.route); if (ll.length < 2) return;
-  const m = L.map(el, { zoomControl: false, dragging: true, scrollWheelZoom: false }); L.tileLayer(TILE_URL, { maxZoom: 19, attribution: TILE_ATTR }).addTo(m); const line = L.polyline(ll, { color: '#ff5406', weight: 4 }).addTo(m);
+  const m = L.map(el, { zoomControl: false, dragging: true, scrollWheelZoom: false }); baseLayer(m); const line = L.polyline(ll, { color: '#ff5406', weight: 4 }).addTo(m);
   L.circleMarker(ll[0], { radius: 6, color: '#fff', weight: 2, fillColor: '#00b33f', fillOpacity: 1 }).addTo(m); L.circleMarker(ll[ll.length - 1], { radius: 6, color: '#fff', weight: 2, fillColor: '#ff3400', fillOpacity: 1 }).addTo(m);
   m.fitBounds(line.getBounds(), { padding: [20, 20] }); el._map = m; }); }
 function gpxOf(a) { const ll = decPoly(a.route || ''); const ts = a.routeT || []; const t0 = a.start || Date.parse(a.date);

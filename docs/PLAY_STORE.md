@@ -61,6 +61,6 @@ Google fragt nach dem Grund für `FOREGROUND_SERVICE_LOCATION`. Vorschlag:
 ## 6. Noch offen vor dem Start
 
 - [ ] Platzhalter in der Datenschutzerklärung ausfüllen, Impressum ergänzen
-- [ ] Kartenkacheln: Für viele Nutzer einen eigenen Kartendienst (z. B. MapTiler oder Stadia, beide mit Gratis-Kontingent) statt der OpenStreetMap-Server nutzen, deren Richtlinie keine großen Apps erlaubt
+- [x] Kartenkacheln: OpenFreeMap (Vektor, MapLibre) statt OpenStreetMap-Server. Später ggf. Protomaps auf eigenem EU-Speicher.
 - [ ] Build als .aab, Upload-Schlüssel für Play App Signing
 - [ ] Geschlossener Test mit 12 Testern über 14 Tage
