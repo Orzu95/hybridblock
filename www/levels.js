@@ -47,8 +47,8 @@ function loadDays() { let n = 0; for (let i = 0; i < 28; i++) if (dailyLoad(addD
 const pill = (cls, t) => '<span class="pill ' + cls + '">' + t + '</span>';
 const swR = (label, val, status, meaning) => '<div class="swr"><div class="grow"><div>' + label + '</div><div class="small muted">' + meaning + '</div></div><div style="text-align:right"><b class="v">' + val + '</b><br>' + status + '</div></div>';
 spowiProgressCard = function () { const lm = loadMetrics(); const id = intensityDist(); const hv = hrvMetrics(); const base = rhrBaseline(); const ld = loadDays(); const ser = series(); const bw = ser.length ? ser[ser.length - 1].trend : null;
-  const enough = ld.span >= 21; const acwr = enough && lm.acwr != null ? lm.acwr : null;
-  const aSt = acwr == null ? pill('na', $tf('noch {n} von 21 Tagen', { n: ld.span })) : acwr < RV('acwr_band')[0] ? pill('mid', $t('niedrig')) : acwr <= RV('acwr_band')[1] ? pill('ok', $t('im Rahmen')) : pill('mid', $t('gestiegen'));
+  const enough = ld.span >= RV('acwr_min_days'); const acwr = enough && lm.acwr != null ? lm.acwr : null;
+  const aSt = acwr == null ? pill('na', $tf('noch {n} von {m} Tagen', { n: ld.span, m: RV('acwr_min_days') })) : acwr < RV('acwr_band')[0] ? pill('mid', $t('niedrig')) : acwr <= RV('acwr_band')[1] ? pill('ok', $t('im Rahmen')) : pill('mid', $t('gestiegen'));
   const mSt = lm.mono == null ? pill('na', '–') : lm.mono < 1.5 ? pill('ok', $t('abwechslungsreich')) : lm.mono <= RV('monotony') ? pill('mid', $t('gleichförmig')) : pill('hi', $t('zu gleichförmig'));
   const lifts = keyLifts().filter(x => LIB[x]).map(x => { const h = exHistory(x); let best = 0; h.forEach(o => o.sets.forEach(st => { if (st.w > 0 && st.r) best = Math.max(best, e1rmEst(st.w, st.r, Math.min(10, st.rpe ?? 8))); })); return best ? [LIB[x].name, best] : null; }).filter(Boolean);
   const g1 = '<div class="swg"><h3>' + $t('Belastung') + '</h3>' +
