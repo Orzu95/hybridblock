@@ -90,7 +90,7 @@ const r50 = n => Math.round(n / 50) * 50, r5 = n => Math.round(n / 5) * 5;
 function onbCalc(d) { const wt = num(d.weight), h = num(d.height), age = num(d.age), tw = num(d.target) || wt; if (!wt || !h || !age) return null;
   const bmr = 10 * wt + 6.25 * h - 5 * age + (d.sex === 'w' ? -161 : 5); const tdee = r50(bmr * (num(d.act) || 1.45));
   const rate = tw < wt - 0.5 ? Math.min(1, Math.round(wt * 0.006 * 10) / 10) : 0; const floor = d.sex === 'w' ? 1400 : 1800;
-  const kcal = Math.max(floor, r50(tdee - rate * 1100)); const base = Math.min(wt, tw); const protein = r5(2 * base), fat = r5(Math.max(0.8 * base, 0.25 * kcal / 9)); /* 25 % der Kalorien oder 0,8 g/kg, je nachdem was höher ist */
+  const kcal = Math.max(floor, r50(tdee - rate * 1100)); const base = Math.min(wt, tw); const protein = r5(RV('protein') * base), fat = r5(Math.max(0.8 * base, 0.25 * kcal / 9)); /* 25 % der Kalorien oder 0,8 g/kg, je nachdem was höher ist */
   return { tdee, rate, floor, kcal, protein, fat, hfmax: Math.round(208 - 0.7 * age) }; }
 function viewStart(arg) { if (arg && ONB.step === 'welcome' && ['code', 'login', 'profile', 'forgot'].includes(arg)) ONB.step = arg;
   const lang = '<div class="seg langseg">' + [['de', $t('Deutsch')], ['en', $t('English')], ['ru', $t('Русский')]].map(l => '<button class="' + (LANG === l[0] ? 'on' : '') + '" data-act="setLang" data-v="' + l[0] + '" type="button">' + l[1] + '</button>').join('') + '</div>';

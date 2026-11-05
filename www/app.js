@@ -156,7 +156,7 @@ function readiness(w, k) {
 /* ======================= VERLAUF & AUTOREGULATION ======================= */
 const e1rm = (w, r, rpe) => w * (1 + (r + (10 - rpe)) / 30);
 /* e1RM für Anzeige, Verlauf und PRs: Mittel aus Epley, Brzycki und Wathen; nur Sätze bis 10 Wdh., darüber ist die Schätzung zu ungenau (ALG-101, ALG-102) */
-const E1RM_MAXREPS = 10;
+const E1RM_MAXREPS = RV('e1rm_maxreps');
 const e1rmEst = (w, r, rpe) => { if (!w || !r || r > E1RM_MAXREPS) return 0; const n = r + (10 - (rpe ?? 8)); if (n <= 1) return w;
   return (w * (1 + n / 30) + w * 36 / (37 - n) + 100 * w / (48.8 + 53.8 * Math.exp(-0.075 * n))) / 3; };
 const loadFor = (est, reps, rpe) => est / (1 + (reps + (10 - rpe)) / 30);
@@ -216,7 +216,7 @@ function setSuggestion(w, k, spec, exId, i, base, rd, rawSets) {
   const rng = repRange(spec.reps); const tgt = spec.rpe != null ? spec.rpe + (spec.type === 'main' ? rd.rpeShift : 0) : null;
   if (!prev) return { load: base.load ?? null, reps: base.reps ?? (rng && rng.lo), why: '' };
   if (prev.w == null) return { load: null, reps: prev.r, why: '' };
-  if (spec.type === 'main' && prev.rpe != null && (prev.rpe < 7 || prev.r > 12)) { const inc = incFor(exId);
+  if (spec.type === 'main' && prev.rpe != null && (prev.rpe < RV('autoreg').rpe || prev.r > RV('autoreg').reps)) { const inc = incFor(exId);
     /* Weit weg vom Versagen (> 3 RIR) oder > 12 Wdh. ist die Selbsteinschätzung ungenau (ALG-104, ALG-105): nur ein kleiner Schritt statt Hochrechnung */
     const load = tgt != null && prev.rpe <= tgt - 1.5 ? prev.w + inc : prev.w; const reps = parseInt(spec.reps, 10) || prev.r;
     return { load, reps, why: load > prev.w ? $t('Weit weg vom Versagen ist die Einschätzung ungenau, also nur ein kleiner Schritt mehr') : '' }; }
@@ -262,12 +262,13 @@ function series() {
   for (let d = wDates[0]; d <= end; d = addDays(d, 1)) {
     const wt = num(S.days[d] && S.days[d].weight); if (wt != null) trend = trend == null ? wt : trend + 0.1 * (wt - trend);
     const i = out.length; const intake = intakeFor(d);
-    if (i >= 13) { let sum = 0, n = 0; for (let j = i - 13; j <= i; j++) { const v = j === i ? intake : out[j].intake; if (v != null) { sum += v; n++; } }
-      if (n >= 9) { const dW = trend - out[i - 13].trend; const obs = sum / n - dW * 7700 / 13; const c = Math.max(est - 600, Math.min(est + 600, obs)); est = est + 0.1 * (c - est); } }
+    const TA = RV('tdee_adapt'), D1 = TA.days - 1;
+    if (i >= D1) { let sum = 0, n = 0; for (let j = i - D1; j <= i; j++) { const v = j === i ? intake : out[j].intake; if (v != null) { sum += v; n++; } }
+      if (n >= TA.minDays) { const dW = trend - out[i - D1].trend; const obs = sum / n - dW * 7700 / D1; const c = Math.max(est - 600, Math.min(est + 600, obs)); est = est + 0.1 * (c - est); } }
     out.push({ d, weight: wt, trend, intake, est: Math.max(1800, Math.min(5200, est)) }); }
   return out; }
 /* Fett nie unter 20 % der Kalorien (ERN-109: darunter sinkt bei Männern das Testosteron; Empfehlung 20–35 %) */
-const fatFloor = kcal => Math.ceil(0.2 * kcal / 9 / 5) * 5; const fatG = (kcal, f) => Math.max(f, fatFloor(kcal));
+const fatFloor = kcal => Math.ceil(RV('fat_min') / 100 * kcal / 9 / 5) * 5; const fatG = (kcal, f) => Math.max(f, fatFloor(kcal));
 function currentTargets() { const cs = S.checkins.filter(c => c.date <= today()).sort((a, b) => a.date < b.date ? -1 : 1);
   if (cs.length) { const l = cs[cs.length - 1]; const f = fatG(l.kcal, num(l.f) || 0); return f === l.f ? l : Object.assign({}, l, { f, c: Math.max(0, Math.round((l.kcal - 4 * l.p - 9 * f) / 4)) }); }
   const kcal = num(S.settings.startKcal) || 2400, p = num(S.settings.protein) || 200, f = fatG(kcal, num(S.settings.fat) || 70); return { date: null, kcal, p, f, c: Math.round((kcal - 4 * p - 9 * f) / 4), tdee: null }; }
@@ -721,7 +722,7 @@ function loadCard() { const pts = []; for (let i = 27; i >= 0; i--) { const d = 
   const wk = weekLoad(today()), prev = weekLoad(addDays(today(), -7));
   return $t('<div class="card"><h2>Belastung</h2>') + (pts.filter(p => p.load).length ? lineChart('cld', pts, [{ key: 'load', label: $t('Belastung'), bars: true, color: $t('var(--sky)') }], { unit: '', dec: 0, zero: true, noLegend: true }) : empty($t('Trag nach jeder Einheit Dauer und Session-RPE ein. Daraus entsteht deine Tagesbelastung.'))) +
     $t('<div class="stats" style="grid-template-columns:repeat(2,minmax(0,1fr));margin-top:12px"><div class="stat" style="background:var(--paper)"><div class="k">Letzte 7 Tage</div><div class="v" style="font-size:22px">') + fmt(wk.tot, 0) + '</div><div class="s">' + (prev.tot ? (wk.tot >= prev.tot ? '+' : '−') + fmt(Math.abs((wk.tot - prev.tot) / prev.tot * 100), 0) + $t(' % zur Vorwoche') : $t('Vorwoche ') + fmt(prev.tot, 0)) + '</div></div>' +
-    $t('<div class="stat sw-only" style="background:var(--paper)"><div class="k">Monotonie</div><div class="v" style="font-size:22px">') + (wk.mono != null ? fmt(wk.mono, 1) : '–') + '</div><div class="s">' + (wk.mono != null && wk.mono > 2 ? $t('hoch: Tage abwechslungsreicher gestalten') : $t('unter 2 ist gut')) + '</div></div></div>' +
+    $t('<div class="stat sw-only" style="background:var(--paper)"><div class="k">Monotonie</div><div class="v" style="font-size:22px">') + (wk.mono != null ? fmt(wk.mono, 1) : '–') + '</div><div class="s">' + (wk.mono != null && wk.mono > RV('monotony') ? $t('hoch: Tage abwechslungsreicher gestalten') : $t('unter 2 ist gut')) + '</div></div></div>' +
     (wk.tot ? '<p class="small" style="margin-top:8px">' + $t('Davon Kraft ') + fmt(wk.totS, 0) + ' · ' + $t('Ausdauer und Sport ') + fmt(wk.totE, 0) + '</p>' : '') +
     (wk.miss ? '<p class="small t-amber" style="font-weight:700">' + wk.miss + $t(' Einheit(en) der letzten 7 Tage ohne RPE.</p>') : '') +
     $t('<p class="small muted sw-only">Belastung = Minuten × Session-RPE (Foster). Monotonie = Mittelwert ÷ Streuung der Tageswerte. Über 2 steigt laut Foster das Risiko für Überlastung.</p></div>'); }
@@ -1062,11 +1063,11 @@ function hrvBaseline(d) { const l7 = [], l30 = []; for (let i = 1; i <= 30; i++)
   if (l7.length < 3 || l30.length < 7) return null; const m7 = l7.reduce((a, b) => a + b, 0) / l7.length, m30 = l30.reduce((a, b) => a + b, 0) / l30.length;
   const sd = Math.sqrt(l30.reduce((a, b) => a + (b - m30) ** 2, 0) / (l30.length - 1)) || 0.05; return { m7, sd }; }
 function dailyReadiness(d) { const h = S.health[d] || {}, dl = S.daily[d] || {}, comps = []; const need = sleepNeed();
-  if (h.sleepMin != null) comps.push({ k: $t('Schlaf'), v: clamp(h.sleepMin / need * 100, 0, 100), w: .3, txt: fmtMin(h.sleepMin) + $t(' von ') + fmtMin(need) });
-  const r = rhrOf(d), base = rhrBaseline(); if (r != null && base) comps.push({ k: $t('Ruhepuls'), v: clamp(85 - (r - base.v) * 7, 0, 100), w: .25, txt: fmt(r, 0) + $t(' bpm, Basis ') + base.v });
-  const hb = h.hrv > 0 ? hrvBaseline(d) : null; if (hb) { const z = (Math.log(h.hrv) - hb.m7) / hb.sd; comps.push({ k: $t('HRV'), v: clamp(70 + 20 * z, 0, 100), w: .2, txt: fmt(h.hrv, 0) + $t(' ms, Ø 7 Tage ') + fmt(Math.exp(hb.m7), 0) }); }
+  if (h.sleepMin != null) comps.push({ k: $t('Schlaf'), v: clamp(h.sleepMin / need * 100, 0, 100), w: RV('readiness').sleep, txt: fmtMin(h.sleepMin) + $t(' von ') + fmtMin(need) });
+  const r = rhrOf(d), base = rhrBaseline(); if (r != null && base) comps.push({ k: $t('Ruhepuls'), v: clamp(85 - (r - base.v) * 7, 0, 100), w: RV('readiness').rhr, txt: fmt(r, 0) + $t(' bpm, Basis ') + base.v });
+  const hb = h.hrv > 0 ? hrvBaseline(d) : null; if (hb) { const z = (Math.log(h.hrv) - hb.m7) / hb.sd; comps.push({ k: $t('HRV'), v: clamp(70 + 20 * z, 0, 100), w: RV('readiness').hrv, txt: fmt(h.hrv, 0) + $t(' ms, Ø 7 Tage ') + fmt(Math.exp(hb.m7), 0) }); }
   const feel = num(dl.feel), sore = num(dl.sore); if (feel != null || sore != null) { const p = []; if (feel != null) p.push((feel - 1) / 4 * 100); if (sore != null) p.push((5 - sore) / 4 * 100);
-    comps.push({ k: $t('Gefühl'), v: p.reduce((a, b) => a + b, 0) / p.length, w: .25, txt: [feel != null ? $t('Energie ') + feel + '/5' : '', sore != null ? $t('Muskelkater ') + sore + '/5' : ''].filter(Boolean).join(', ') }); }
+    comps.push({ k: $t('Gefühl'), v: p.reduce((a, b) => a + b, 0) / p.length, w: RV('readiness').feel, txt: [feel != null ? $t('Energie ') + feel + '/5' : '', sore != null ? $t('Muskelkater ') + sore + '/5' : ''].filter(Boolean).join(', ') }); }
   if (typeof cycleComp === 'function') comps.push(...cycleComp(d));
   if (!comps.length) return null; const W = comps.reduce((a, c) => a + c.w, 0); const score = Math.round(comps.reduce((a, c) => a + c.v * c.w, 0) / W);
   const level = score >= 67 ? 'green' : score >= 34 ? 'amber' : 'red';

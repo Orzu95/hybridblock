@@ -10,7 +10,7 @@ function prioMuscles() { const st = (typeof S !== 'undefined' && S && S.settings
   const fo = (st.q || {}).focus; return fo === 'lower' ? ['g', 'q', 'h'] : fo === 'upper' ? ['ch', 'b', 'sd'] : []; }
 function prioSync() { const p = prioMuscles(); PRIORITY.splice(0, PRIORITY.length, ...p); return PRIORITY; }
 /* Zielbereich direkte + anteilige Sätze pro Woche (im Defizit) */
-const VOL_TARGET = { prio:[12,20], other:[6,14] };
+const VOL_TARGET = { prio: RV('vol_prio'), other: RV('vol_other') };
 
 const LIB = {};
 function L(id, name, muscles, alts, note) { LIB[id] = { id, name, muscles, alts: alts || [], note: note || '' }; }

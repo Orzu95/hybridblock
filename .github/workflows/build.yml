@@ -27,6 +27,8 @@ jobs:
         run: echo "::notice::ANDROID_HOME=${ANDROID_HOME:-fehlt}"
       - name: Build-Nummer eintragen
         run: echo "{\"build\":${GITHUB_RUN_NUMBER},\"sha\":\"${GITHUB_SHA::7}\"}" > www/build.json
+      - name: Regel-Tabelle gegen Wissensbank prüfen
+        run: python3 tests/rules_check.py
       - run: npm ci
       - run: npx cap sync android
       - name: Signaturschlüssel entschlüsseln

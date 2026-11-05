@@ -23,7 +23,7 @@ const evIcSvg = (c, s) => '<svg viewBox="0 0 24 24" width="' + s + '" height="' 
 const evIc = (c, s) => '<span class="evic" style="--cc:' + evCol(c) + ';width:' + s + 'px;height:' + s + 'px;flex:0 0 ' + s + 'px">' + evIcSvg(c, Math.round(s * .58)) + '</span>';
 const ICON_BULB = '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/></svg>';
 /* Begründungen im Wochen-Check-in → passende Einträge */
-const EV_REV = { vol: ['HYP-101', 'HYP-102', 'HYP-115'], stall: ['PER-116', 'PER-115', 'HYP-110'], deload: ['PER-113', 'PER-112'], spike: ['ALG-122', 'LOD-109', 'LOD-110', 'LOD-111'], adhere: ['HYP-106', 'KRA-106', 'EIN-116'], dietbreak: ['FAT-111', 'FAT-110', 'BLK-115'], rpe: ['PER-106', 'PER-107', 'KRA-108'] };
+const EV_REV = Object.fromEntries(Object.keys(REV_RULE).map(k => [k, RULES[REV_RULE[k]].ev]));
 (function () { const st = document.createElement('style'); st.textContent =
   '.evg{display:inline-grid;place-items:center;min-width:26px;height:26px;border-radius:50%;font-weight:800;font-size:13px;color:#fff;background:var(--mist);flex:0 0 26px}.evg.gA{background:var(--verdant)}.evg.gB{background:var(--sky)}.evg.gC{background:var(--sunset)}.evg.gD{background:var(--mist)}' +
   '.evrow{display:flex;gap:10px;align-items:flex-start;width:100%;text-align:left;border:0;background:none;border-top:1px solid var(--rule);padding:12px 2px;font:inherit;color:inherit;cursor:pointer}.evrow:first-child{border-top:0}.evrow .t{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}' +
@@ -64,7 +64,7 @@ function viewWissen(arg) { if (!EVID) { loadEvid().then(() => { if (route.name =
   let body;
   if (!EVID) body = '<div class="card"><p class="muted">' + $t('Lade …') + '</p></div>';
   else if (cat || q || g) body = '<div class="card"><div id="ev-list">' + evList(q, cat, g) + '</div></div>';
-  else body = EV_THEMES.map(t => '<div class="card"><h2>' + $t(t[0]) + '</h2><div class="evtiles">' + t[1].filter(c => EVID.cats[c]).map(c => { const n = EVID.items.filter(x => x.c === c); const a = n.filter(x => x.e === 'A').length;
+  else body = '<button class="card" data-act="rulesOpen" type="button" style="display:block;width:100%;text-align:left"><h2>' + $t('So rechnet die App') + '</h2><p class="small muted">' + $t('Alle Zahlen, mit denen die App plant und rechnet, mit Evidenzgrad und Studien dazu.') + '</p></button>' + EV_THEMES.map(t => '<div class="card"><h2>' + $t(t[0]) + '</h2><div class="evtiles">' + t[1].filter(c => EVID.cats[c]).map(c => { const n = EVID.items.filter(x => x.c === c); const a = n.filter(x => x.e === 'A').length;
       return '<a class="evtile" href="#wissen/' + c + '" style="' + evVars(c) + '">' + evIc(c, 40) + '<b>' + esc(evCat(c)) + '</b><span class="small muted">' + n.length + $t(' Aussagen') + ' · ' + a + $t(' mit Grad A') + '</span></a>'; }).join('') + '</div></div>').join('');
   return back + pageTop(cat ? esc(evCat(cat)) : $t('Wissen'), '', cat ? '' : $t('Geprüfte Aussagen aus der Sportwissenschaft, jede mit Quelle')) + '<div class="stack">' +
     search + body +
@@ -101,7 +101,7 @@ function evDetails(x) { const lv = typeof viewLv === 'function' ? viewLv() : 3; 
 const _whySheetEv = whySheet;
 whySheet = function (ev) { const ids = EV_REV[ev]; if (!ids) return _whySheetEv(ev); const e = REV_EV[ev];
   const show = () => { const xs = ids.map(i => EVID.by[i]).filter(Boolean); const top = xs[0];
-    openSheet(sheetHead($t('Warum?')) + (e ? '<p>' + esc(e.txt) + '</p>' : '') + (top ? '<p class="small" style="margin-top:10px"><b>' + $t('Evidenzgrad ') + top.e + '</b> · ' + esc($t(EV_GRADE[top.e])) + '</p>' : '') +
+    openSheet(sheetHead($t('Warum?')) + (e ? '<p>' + esc(e.txt) + '</p>' : '') + (top ? (g => '<p class="small" style="margin-top:10px"><b>' + $t('Evidenzgrad ') + g + '</b> · ' + esc($t(EV_GRADE[g])) + '</p>')(REV_RULE[ev] ? RULES[REV_RULE[ev]].g : top.e) : '') +
       '<div style="margin-top:8px">' + xs.map(evRow).join('') + '</div>'); };
   if (EVID) show(); else { _whySheetEv(ev); loadEvid().then(show).catch(() => {}); } };
 

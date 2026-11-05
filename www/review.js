@@ -1,7 +1,7 @@
 /* ======================= WOCHEN-CHECK-IN: Rückblick und Vorschläge für die nächste Woche =======================
    Wertet Leistung (e1RM der Hauptübungen), Ermüdung (RPE über Ziel, Bereitschaft, Ruhepuls), Belastung (Dauer × RPE),
    Umsetzung und Gewicht aus und schlägt feste, begründete Änderungen vor. Nichts ändert sich ohne Bestätigung.
-   Schwellenwerte vorläufig aus der Literatur; sie werden durch die geprüften Wissens-Snippets ersetzt (REV_EV.id = Snippet-ID). */
+   Schwellen und Evidenzgrade kommen aus der Regel-Tabelle (rules.js, REV_RULE); die Texte hier sind nur die Kurzbegründung. */
 const pm = t => 'https://pubmed.ncbi.nlm.nih.gov/?term=' + encodeURIComponent(t);
 const REV_EV = {
   vol: { g: 'A', txt: $t('Mehr Sätze pro Muskel und Woche bringen mehr Muskelzuwachs, mit abnehmendem Zusatznutzen. 10–20 harte Sätze gelten als guter Bereich.'), src: [['Schoenfeld et al. 2017, J Sports Sci', 'https://pubmed.ncbi.nlm.nih.gov/27433992/']] },
@@ -12,6 +12,7 @@ const REV_EV = {
   dietbreak: { g: 'C', txt: $t('Geplante Wochen auf Erhaltungskalorien während einer Diät können Leistung und Durchhalten verbessern. Für den Fettabbau insgesamt ist die Datenlage gemischt.'), src: [['Byrne et al. 2018, MATADOR-Studie', pm('Byrne 2018 intermittent energy restriction MATADOR')], ['Peos et al. 2021, ICECAP-Studie', pm('Peos 2021 intermittent dieting ICECAP')]] },
   rpe: { g: 'B', txt: $t('RPE-Steuerung passt die Last an die Tagesform an. Liegen die Sätze regelmäßig deutlich über dem Ziel, ist die Last zu hoch gewählt.'), src: [['Helms et al. 2018, RPE-basierte Steuerung', pm('Helms 2018 RPE autoregulation powerlifters')]] } };
 
+Object.keys(REV_RULE).forEach(k => { if (REV_EV[k]) REV_EV[k].g = RULES[REV_RULE[k]].g; });
 const rkey = w => (S.block.startedOn || '0') + ':' + w;
 const reviews = () => (S.reviews = S.reviews || {});
 const mean = a => a.length ? a.reduce((x, y) => x + y, 0) / a.length : null;
@@ -58,7 +59,7 @@ function analyzeWeek(w) { const facts = [], sugs = []; const lifts = keyLifts().
   perf.filter(p => p.stall && !fatigue).slice(0, 2).forEach(p => { const so = slotOf(p.id, w + 1 <= NW() ? w + 1 : w); if (!so) return; const used = new Set(); GYM().forEach(k => planFor(w, k).forEach(x => used.add(x.ex)));
     const alt = (LIB[p.id].alts || []).concat((SCALE[p.id] || {}).e || []).find(a => LIB[a] && !used.has(a) && exAvailable(a)); if (!alt) return;
     sugs.push({ id: 'swap_' + so.slot, kind: 'swap', k: so.k, slot: so.slot, old: p.id, to: alt, ev: 'stall', t: LIB[p.id].name + ' → ' + LIB[alt].name, why: $t('Seit 2 Wochen kein Fortschritt bei normaler Ermüdung. Ein Übungswechsel setzt einen neuen Reiz, die alte Übung kann später zurückkommen.') }); });
-  if (L && Lref && L > Lref * 1.3 && prevL.length >= 2) sugs.push({ id: 'spike', kind: 'info', ev: 'spike', t: $t('Wochenbelastung deutlich gestiegen'), why: $t('Die Wochenbelastung lag ') + Math.round((L / Lref - 1) * 100) + $t(' % über den Vorwochen. Das ist nur ein Hinweis: Ob es zu viel war, zeigen Schlaf, Ruhepuls und dein Gefühl besser als diese Zahl.') });
+  if (L && Lref && L > Lref * RV('load_spike') && prevL.length >= 2) sugs.push({ id: 'spike', kind: 'info', ev: 'spike', t: $t('Wochenbelastung deutlich gestiegen'), why: $t('Die Wochenbelastung lag ') + Math.round((L / Lref - 1) * 100) + $t(' % über den Vorwochen. Das ist nur ein Hinweis: Ob es zu viel war, zeigen Schlaf, Ruhepuls und dein Gefühl besser als diese Zahl.') });
   const prevAdh = w > 1 ? ORDER.filter(k => { const p = sessProgress(w - 1, k); return p.done && !p.skipped; }).length / Math.max(1, ORDER.length) : 1;
   if (adh < 0.6 && prevAdh < 0.6 && ORDER.length >= 4) sugs.push({ id: 'days', kind: 'days', ev: 'adhere', t: $t('Plan mit weniger Trainingstagen'), why: $t('Zwei Wochen in Folge wurden weniger als 60 % der Einheiten geschafft. Ein Plan mit weniger Tagen und gleichem Wochenvolumen passt vermutlich besser.') });
   if (ovr != null && ovr >= 1.5 && !drops.length) sugs.push({ id: 'rpe', kind: 'info', ev: 'rpe', t: $t('Lasten etwas vorsichtiger wählen'), why: $t('Die Sätze lagen im Schnitt ') + fmt(ovr, 1) + $t(' RPE über dem Ziel. Die App schlägt nächste Woche schon leichtere Gewichte vor; nimm die Vorschläge ernst.') });
@@ -114,7 +115,7 @@ function reviewCard(key, opts) { opts = opts || {}; const r = (opts.R || reviews
     '<div class="lbl" style="margin-top:12px">' + $t('Vorschläge für Woche ') + Math.min(NW(), r.w + 1) + '</div>' + r.sugs.map(s => sugHTML(key, s, opts.coach, opts.uid)).join('') +
     (!opts.coach && typeof hasCoach === 'function' && hasCoach() ? '<p class="small muted" style="margin-top:8px">' + $t('Dein Coach sieht diese Vorschläge auch und kann sie für dich übernehmen.') + '</p>' : '') +
     (!opts.coach && !opts.full ? '<button class="btn sm" data-act="revHide" data-key="' + esc(key) + '" type="button" style="margin-top:10px">' + $t('Ausblenden') + '</button>' : '') + '</div>'; }
-function whySheet(ev) { const e = REV_EV[ev]; if (!e) return; openSheet(sheetHead($t('Warum?')) + '<p>' + esc(e.txt) + '</p><p class="small" style="margin-top:10px"><b>' + $t('Evidenzgrad ') + e.g + '</b> · ' + $t('vorläufig, wird mit der geprüften Wissensbank aktualisiert') + '</p><ul class="small" style="margin-top:8px">' + e.src.map(s => '<li><a href="' + s[1] + '" target="_blank" rel="noopener">' + esc(s[0]) + '</a></li>').join('') + '</ul>'); }
+function whySheet(ev) { const e = REV_EV[ev]; if (!e) return; openSheet(sheetHead($t('Warum?')) + '<p>' + esc(e.txt) + '</p><p class="small" style="margin-top:10px"><b>' + $t('Evidenzgrad ') + e.g + '</b> · ' + $t('aus der Regel-Tabelle der App') + '</p><ul class="small" style="margin-top:8px">' + e.src.map(s => '<li><a href="' + s[1] + '" target="_blank" rel="noopener">' + esc(s[0]) + '</a></li>').join('') + '</ul>'); }
 /* auf „Heute“ oben, solange offen und nicht ausgeblendet */
 const _heuteExtrasRev = heuteExtras;
 heuteExtras = function () { let h = _heuteExtrasRev(); if (VIEW) return h; try { const key = ensureReview(); const r = key && reviews()[key]; if (r && !r.hidden && r.sugs.some(s => s.st === 'open')) h = reviewCard(key) + h; } catch (e) { console.warn('review', e); } return h; };
