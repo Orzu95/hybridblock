@@ -15,7 +15,7 @@ for rid, r in rules.items():
         if k not in r: err.append(f'{rid}: Feld {k} fehlt')
     miss = [i for i in r.get('ev', []) if i not in ev]
     if miss: err.append(f'{rid}: unbekannte IDs {miss}')
-    if not r.get('ev'): err.append(f'{rid}: keine Einträge verknüpft')
+    if not r.get('ev') and not r.get('own'): err.append(f'{rid}: keine Einträge verknüpft')
     gs = [ev[i]['e'] for i in r.get('ev', []) if i in ev]
     want = 'D' if r.get('own') else (min(gs) if gs else None)
     if want and r.get('g') != want: err.append(f'{rid}: Grad {r.get("g")} angegeben, aus den Einträgen ergibt sich {want}')

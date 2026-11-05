@@ -188,7 +188,7 @@ function scorePlan(p, q) { let s = 0; const why = [];
   const hasGym = (p.sessions ? p.sessions() : []).some(x => x.kind === 'gym'); if (q.goal === 'fat' && hasGym) s += 15;
   const d = num(q.days); if (d) { const diff = Math.abs(p.days - d); s += diff === 0 ? 20 : diff === 1 ? 8 : -12 * diff; if (diff === 0) why.push(d + ' ' + $t('Tage pro Woche')); }
   const m = num(q.minutes); if (m) { if (p.minutes <= m + 5) { s += 10; } else s -= Math.min(25, (p.minutes - m) / 2); }
-  if (q.place === 'minimal' && p.place !== 'minimal') s -= 50; if (q.place === 'home' && p.place === 'gym') s -= 25; if (q.place === 'gym' && p.place === 'minimal') s -= 5;
+  if (q.place === 'minimal' && p.place !== 'minimal') s -= 50; if (q.place === 'home' && p.place === 'gym') s -= 25; if (q.place === 'gym' && p.place === 'minimal') s -= 20;
   const fo = q.focus || ((q.sex || (typeof S !== 'undefined' && S.settings.sex)) === 'w' ? 'lower' : 'balanced'); if (p.focus === 'lower') { if (fo === 'lower') { s += 22; why.push($t('Schwerpunkt Beine und Po')); } else s -= 20; }
   const old = num(q.age || (typeof S !== 'undefined' && S.settings.age)) >= 65; if (old && hasGym) { const gd = (p.sessions ? p.sessions() : []).filter(x => x.kind === 'gym').length; const fr = RV('older_freq'); if (gd >= fr[0] && gd <= fr[1]) { s += 8; why.push($t('2–3 Krafteinheiten, für 65+ am besten belegt')); } else if (gd > fr[1]) s -= 8; }
   if (p.ev.g === 'A') s += 6; return { s, why }; }
