@@ -29,9 +29,23 @@ const RV = id => RULES[id].v;
 /* Wochen-Check-in: Vorschlagstyp → Regel */
 const REV_RULE = { vol: 'vol_prio', stall: 'stall', deload: 'deload', spike: 'load_spike', adhere: 'adherence', dietbreak: 'dietbreak', rpe: 'rpe_drift' };
 
+/* ---------- 8.2: Evidenzgrad steuert das Verhalten ---------- */
+const RULE_GRADE_TXT = { A: 'gut belegt', B: 'belegt', C: 'erste Hinweise', D: 'Expertenmeinung' };
+const ruleGrade = id => RULES[id] ? RULES[id].g : null;
+const evStrict = () => !!(S && S.settings && S.settings.evStrict);
+/* A/B: normaler Vorschlag; C: Vorschlag mit Hinweis „erste Hinweise“; D: nur Information. Mit „Nur gut belegte Vorschläge“ werden C/D ausgeblendet. */
+const gradeMode = g => g === 'D' ? 'info' : g === 'C' ? 'weak' : 'normal';
+function gradeTag(g) { return g ? '<span class="tag" title="' + esc($t(RULE_GRADE_TXT[g])) + '">' + $t('Grad ') + g + ' · ' + esc($t(RULE_GRADE_TXT[g])) + '</span>' : ''; }
+function ruleBtn(ids, label) { ids = [].concat(ids).filter(id => RULES[id]); if (!ids.length) return ''; return '<button class="evbtn" data-act="ruleOpen" data-ids="' + ids.join(',') + '" type="button">ⓘ ' + (label || $t('Warum diese Zahl?')) + '</button>'; }
+function ruleRow(id) { const r = RULES[id]; return '<div class="card" style="margin-top:10px;padding:12px 14px"><div class="row" style="align-items:flex-start;gap:10px"><div class="grow"><b>' + esc($t(r.n)) + '</b><div>' + esc(ruleVal(r)) + (r.u ? ' ' + esc($t(r.u)) : '') + '</div><div class="small muted">' + esc($t(r.s)) + '</div></div><span class="tag">' + $t('Grad ') + r.g + '</span></div>' + (typeof evBtn === 'function' ? '<div style="margin-top:6px">' + evBtn(r.ev) + '</div>' : '') + '</div>'; }
+
 /* ---------- „So rechnet die App“: alle Regeln mit Grad und Studienlage ---------- */
 function ruleVal(r) { if (r.d) return $t(r.d); const v = r.v; if (Array.isArray(v)) return v.map(x => fmt(x, x % 1 ? 1 : 0)).join('–'); if (typeof v === 'number') return fmt(v, v % 1 ? 1 : 0);
   if (v && typeof v === 'object') return Object.values(v).map(x => typeof x === 'number' && x < 1 ? Math.round(x * 100) + ' %' : String(x)).join(' / '); return $t(v); }
 function rulesSheet() { openSheet(sheetHead($t('So rechnet die App')) + '<p class="small muted">' + $t('Jede Zahl, mit der die App rechnet, ist mit Einträgen der Wissensbank verknüpft. Der Grad zeigt, wie gut sie belegt ist; D heißt Expertenmeinung oder Setzung der App.') + '</p>' +
-  Object.keys(RULES).map(id => { const r = RULES[id]; return '<div class="card" style="margin-top:10px;padding:12px 14px"><div class="row" style="align-items:flex-start;gap:10px"><div class="grow"><b>' + esc($t(r.n)) + '</b><div>' + esc(ruleVal(r)) + (r.u ? ' ' + esc($t(r.u)) : '') + '</div><div class="small muted">' + esc($t(r.s)) + '</div></div><span class="tag">' + $t('Grad ') + r.g + '</span></div>' + (typeof evBtn === 'function' ? '<div style="margin-top:6px">' + evBtn(r.ev) + '</div>' : '') + '</div>'; }).join('')); }
-document.addEventListener('click', e => { const b = e.target.closest('[data-act="rulesOpen"]'); if (b) { e.preventDefault(); rulesSheet(); } });
+  '<div class="row" style="margin-top:12px"><button class="trtog' + (evStrict() ? ' on' : '') + '" data-act="evStrict" type="button">' + (evStrict() ? '✓ ' : '') + $t('Nur gut belegte Vorschläge (A/B)') + '</button></div><p class="small muted" style="margin-top:6px">' + $t('Eingeschaltet blendet der Wochen-Check-in Vorschläge mit Grad C oder D aus.') + '</p>' +
+  Object.keys(RULES).map(ruleRow).join('')); }
+document.addEventListener('click', e => { const b = e.target.closest('[data-act="rulesOpen"],[data-act="ruleOpen"],[data-act="evStrict"]'); if (!b) return; e.preventDefault(); e.stopPropagation();
+  if (b.dataset.act === 'rulesOpen') rulesSheet();
+  else if (b.dataset.act === 'ruleOpen') openSheet(sheetHead($t('Warum diese Zahl?')) + b.dataset.ids.split(',').map(ruleRow).join('') + '<div style="margin-top:12px"><button class="btn sm" data-act="rulesOpen" type="button">' + $t('Alle Regeln der App') + '</button></div>');
+  else { S.settings.evStrict = !evStrict(); save(); rulesSheet(); if (typeof render === 'function') render(); } }, true);

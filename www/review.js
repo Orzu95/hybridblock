@@ -103,11 +103,12 @@ function ensureReview() { const w = reviewTarget(); if (!w) return null; const k
 
 /* ---------- Anzeige ---------- */
 const ST_TXT = () => ({ yes: $t('übernommen'), no: $t('abgelehnt'), coach: $t('dein Coach entscheidet') });
-function sugHTML(key, s, coachMode, uid) { const done = s.st === 'yes' || s.st === 'no';
-  const btns = s.st === 'info' ? '' : done ? '<span class="tag">' + (ST_TXT()[s.st] || '') + (s.by === 'coach' ? $t(' · vom Coach') : '') + '</span>'
+function sugHTML(key, s, coachMode, uid) { const done = s.st === 'yes' || s.st === 'no'; const g = REV_RULE[s.ev] ? ruleGrade(REV_RULE[s.ev]) : null; const gm = gradeMode(g);
+  if (!done && gm !== 'normal' && evStrict()) return '';
+  const btns = s.st === 'info' || (gm === 'info' && !done) ? '' : done ? '<span class="tag">' + (ST_TXT()[s.st] || '') + (s.by === 'coach' ? $t(' · vom Coach') : '') + '</span>'
     : coachMode ? '<button class="btn sm brand" data-act="revCoach" data-uid="' + uid + '" data-key="' + esc(key) + '" data-id="' + s.id + '" data-v="1" type="button">' + $t('Übernehmen') + '</button><button class="btn sm" data-act="revCoach" data-uid="' + uid + '" data-key="' + esc(key) + '" data-id="' + s.id + '" data-v="0" type="button">' + $t('Ablehnen') + '</button>'
     : '<button class="btn sm brand" data-act="revYes" data-key="' + esc(key) + '" data-id="' + s.id + '" type="button">' + (s.kind === 'days' ? $t('Pläne ansehen') : $t('Übernehmen')) + '</button><button class="btn sm" data-act="revNo" data-key="' + esc(key) + '" data-id="' + s.id + '" type="button">' + $t('Ablehnen') + '</button>';
-  return '<div class="rev-sug"><div class="row" style="flex-wrap:nowrap;align-items:flex-start"><b class="grow">' + esc(s.t) + '</b><button class="btn sm sw-only" data-act="revWhy" data-ev="' + s.ev + '" type="button" aria-label="Warum?">' + $t('Warum?') + '</button></div><p class="small" style="margin:4px 0 8px">' + esc(s.why) + '</p><div class="row" style="gap:8px">' + btns + '</div></div>'; }
+  return '<div class="rev-sug"><div class="row" style="flex-wrap:nowrap;align-items:flex-start"><b class="grow">' + esc(s.t) + '</b><button class="btn sm" data-act="revWhy" data-ev="' + s.ev + '" type="button" aria-label="Warum?">' + $t('Warum?') + '</button></div><div style="margin-top:4px">' + gradeTag(g) + '</div><p class="small" style="margin:4px 0 8px">' + esc(s.why) + (gm === 'weak' && s.st !== 'info' ? ' ' + $t('Die Studienlage dazu ist noch dünn, probier es bewusst aus.') : gm === 'info' ? ' ' + $t('Nur zur Information, die Studienlage reicht für eine Empfehlung nicht.') : '') + '</p><div class="row" style="gap:8px">' + btns + '</div></div>'; }
 function reviewCard(key, opts) { opts = opts || {}; const r = (opts.R || reviews())[key]; if (!r) return '';
   const open = r.sugs.filter(s => s.st === 'open').length;
   return '<div class="card rev" id="rev-' + esc(key) + '"><div class="row"><div class="grow"><div class="lbl">' + $t('Wochen-Check-in') + '</div><h2 style="margin:2px 0 6px">' + $t('Deine Woche ') + r.w + '</h2></div>' + (open && !opts.coach ? '<span class="tag"><span class="dot red"></span>' + open + $t(' offen') + '</span>' : '') + '</div>' +
