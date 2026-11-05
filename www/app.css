@@ -448,3 +448,7 @@ body.mode-coach .modebar button.on{color:var(--iris)}
 .fchip{font-size:12px;font-weight:700;padding:2px 8px;border-radius:999px;background:var(--fog)}
 .f-plan,.f-warn{background:#ffe3d6;color:#a33200}.f-msg{background:#e6e5fb;color:var(--iris)}.f-checkin{background:#e1f4fb;color:#005f7d}.f-inactive{background:var(--fog);color:var(--muted)}
 .dash-li .qa{gap:6px;margin-top:8px}
+/* Plandauer und Wochenplanung */
+.wkseg{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.wkseg button{flex:0 0 auto;min-width:40px}
+.wkseg button.own::after{content:"•";color:var(--iris);margin-left:2px}
