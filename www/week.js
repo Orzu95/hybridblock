@@ -166,7 +166,7 @@ function wkVolHost(w, m) { const pl = wkPlan(w), t = today(); const legM = ['q',
 function wkVolCard(w) { if (w !== curWeek()) return ''; const gaps = wkVolGaps(w).map(g => ({ g, host: wkVolHost(w, g.m), ex: wkIsoFor(g.m, w) })).filter(x => x.host && x.ex).slice(0, 2); if (!gaps.length) return '';
   return '<div class="card"><h2>' + $t('Volumen-Ausgleich') + '</h2><p class="small muted">' + $t('Durch ausgelassene Übungen fehlen dir diese Woche Sätze. Vorschlag, ohne schwere Grundübung und ohne Beine vor einem Bein- oder HIIT-Tag:') + '</p>' +
     gaps.map(x => '<div class="wkvb"><div class="grow"><b>' + esc(MUSCLES[x.g.m]) + '</b> <span class="small muted">' + fmt(x.g.proj, 0) + $t(' von mindestens ') + x.g.min + $t(' Sätzen') + (x.g.prio ? ' · ' + $t('Schwerpunkt') : '') + '</span><br><span class="small">' + $tf('{n} Sätze {ex} an {s} ({d}) anhängen', { n: x.g.n, ex: LIB[x.ex].name, s: SESS[x.host.k].title, d: wkDay(x.host.date) }) + '</span></div><div class="row" style="gap:6px;flex-wrap:nowrap"><button class="btn sm fog" data-act="wkVbNo" data-m="' + x.g.m + '" type="button">' + $t('Nein') + '</button><button class="btn sm brand" data-act="wkVbOk" data-m="' + x.g.m + '" data-k="' + x.host.k + '" data-ex="' + x.ex + '" data-n="' + x.g.n + '" type="button">' + $t('Übernehmen') + '</button></div></div>').join('') +
-    '<div>' + evBtn(['HYP-101', 'HYP-102'], $t('Studienlage zum Volumen')) + '</div></div>'; }
+    '<div class="row" style="gap:8px;margin-top:6px">' + gradeTag(ruleGrade('vol_other')) + ruleBtn(['vol_prio', 'vol_other']) + '</div></div>'; }
 
 /* ---------- Einbindung ---------- */
 (function () { const st = document.createElement('style'); st.textContent =

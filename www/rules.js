@@ -23,7 +23,12 @@ const RULES = /*RULES*/{
   "deload": {"n": "Deload", "v": "5–7 Tage weniger Volumen und Intensität", "u": "", "ev": ["PER-113", "PER-112"], "g": "B", "s": "Vorschlag im Wochen-Check-in bei Ermüdung"},
   "adherence": {"n": "Trainingstage", "v": "Volumen auf 2+ Tage verteilt wirkt ähnlich", "u": "", "ev": ["HYP-106", "KRA-106", "EIN-116"], "g": "A", "s": "Vorschlag, Tage zu reduzieren statt Einheiten auszulassen"},
   "dietbreak": {"n": "Diätpause", "v": "1 Woche auf Erhaltung", "u": "", "ev": ["FAT-111", "FAT-110", "BLK-115"], "g": "A", "s": "Vorschlag im Check-in nach längerer Diät"},
-  "rpe_drift": {"n": "RPE regelmäßig über Ziel", "v": "Last senken", "u": "", "ev": ["PER-106", "PER-107", "KRA-108"], "g": "A", "s": "Vorschlag im Wochen-Check-in"}
+  "rpe_drift": {"n": "RPE regelmäßig über Ziel", "v": "Last senken", "u": "", "ev": ["PER-106", "PER-107", "KRA-108"], "g": "A", "s": "Vorschlag im Wochen-Check-in"},
+  "older_freq": {"n": "Krafttraining ab 65", "v": [2, 3], "u": "Einheiten pro Woche", "grp": "Ältere", "ev": ["EIN-106"], "g": "A", "s": "Plan-Empfehlung bevorzugt 2–3 Krafteinheiten", "chk": [{"id": "EIN-106", "lo": 2, "hi": 3}]},
+  "older_maintain": {"n": "Muskeln erhalten ab 65", "v": "mehr Volumen als bei Jüngeren nötig", "u": "", "grp": "Ältere", "ev": ["EIN-101"], "g": "B", "s": "Erklärt unter „Warum diese Zahl?“ beim Wochenvolumen"},
+  "older_protein_meal": {"n": "Protein pro Mahlzeit ab 65", "v": "rund zwei Drittel mehr als bei Jüngeren", "u": "", "grp": "Ältere", "ev": ["EIN-113", "EIN-112"], "g": "C", "s": "Erklärt unter „Warum diese Zahl?“ bei Bedarf und Kalorien"},
+  "beginner_vol": {"n": "Volumen für Einsteiger", "v": "gleiche Regel wie für alle: ab 10 Sätzen pro Muskel und Woche mehr Muskelaufbau", "u": "", "grp": "Einsteiger", "ev": ["EIN-109"], "g": "A", "s": "Keine eigene Sonderregel, weil die Studienlage keine nahelegt"},
+  "female_focus": {"n": "Planauswahl für Frauen", "v": "Ganzkörper mit Schwerpunkt Beine und Po, weniger Arm-Volumen", "u": "", "grp": "Frauen", "ev": ["FRA-111", "FRA-114"], "own": true, "g": "D", "s": "Plan-Empfehlung; eine Setzung der App, keine eigene Studienlage"}
 }/*END*/;
 const RV = id => RULES[id].v;
 /* Wochen-Check-in: Vorschlagstyp → Regel */
@@ -36,15 +41,22 @@ const evStrict = () => !!(S && S.settings && S.settings.evStrict);
 /* A/B: normaler Vorschlag; C: Vorschlag mit Hinweis „erste Hinweise“; D: nur Information. Mit „Nur gut belegte Vorschläge“ werden C/D ausgeblendet. */
 const gradeMode = g => g === 'D' ? 'info' : g === 'C' ? 'weak' : 'normal';
 function gradeTag(g) { return g ? '<span class="tag" title="' + esc($t(RULE_GRADE_TXT[g])) + '">' + $t('Grad ') + g + ' · ' + esc($t(RULE_GRADE_TXT[g])) + '</span>' : ''; }
-function ruleBtn(ids, label) { ids = [].concat(ids).filter(id => RULES[id]); if (!ids.length) return ''; return '<button class="evbtn" data-act="ruleOpen" data-ids="' + ids.join(',') + '" type="button">ⓘ ' + (label || $t('Warum diese Zahl?')) + '</button>'; }
-function ruleRow(id) { const r = RULES[id]; return '<div class="card" style="margin-top:10px;padding:12px 14px"><div class="row" style="align-items:flex-start;gap:10px"><div class="grow"><b>' + esc($t(r.n)) + '</b><div>' + esc(ruleVal(r)) + (r.u ? ' ' + esc($t(r.u)) : '') + '</div><div class="small muted">' + esc($t(r.s)) + '</div></div><span class="tag">' + $t('Grad ') + r.g + '</span></div>' + (typeof evBtn === 'function' ? '<div style="margin-top:6px">' + evBtn(r.ev) + '</div>' : '') + '</div>'; }
+function ruleBtn(ids, label) { ids = [].concat(ids).filter(id => RULES[id] && ruleFor(id)); if (!ids.length) return ''; return '<button class="evbtn" data-act="ruleOpen" data-ids="' + ids.join(',') + '" type="button">ⓘ ' + (label || $t('Warum diese Zahl?')) + '</button>'; }
+function ruleRow(id) { const r = RULES[id]; return '<div class="card" style="margin-top:10px;padding:12px 14px"><div class="row" style="align-items:flex-start;gap:10px"><div class="grow"><b>' + esc($t(r.n)) + '</b><div>' + esc(ruleVal(r)) + (r.u ? ' ' + esc($t(r.u)) : '') + '</div><div class="small muted">' + esc($t(r.s)) + '</div></div>' + (r.grp ? '<span class="tag">' + esc($t(GRP_TXT[r.grp] || r.grp)) + '</span> ' : '') + '<span class="tag">' + $t('Grad ') + r.g + '</span></div>' + (typeof evBtn === 'function' ? '<div style="margin-top:6px">' + evBtn(r.ev) + '</div>' : '') + '</div>'; }
+
+/* ---------- 8.3: Zielgruppen ---------- */
+const GRP_TXT = { 'Frauen': 'Frauen', 'Ältere': 'ab 65', 'Einsteiger': 'Einsteiger' };
+function myGroups() { const st = (typeof S !== 'undefined' && S && S.settings) || {}, q = st.q || {}; const g = []; if (st.sex === 'w') g.push('Frauen'); if (num(st.age) >= 65) g.push('Ältere'); if (q.level === 'beginner') g.push('Einsteiger'); return g; }
+const ruleFor = id => !RULES[id].grp || myGroups().includes(RULES[id].grp);
 
 /* ---------- „So rechnet die App“: alle Regeln mit Grad und Studienlage ---------- */
 function ruleVal(r) { if (r.d) return $t(r.d); const v = r.v; if (Array.isArray(v)) return v.map(x => fmt(x, x % 1 ? 1 : 0)).join('–'); if (typeof v === 'number') return fmt(v, v % 1 ? 1 : 0);
   if (v && typeof v === 'object') return Object.values(v).map(x => typeof x === 'number' && x < 1 ? Math.round(x * 100) + ' %' : String(x)).join(' / '); return $t(v); }
 function rulesSheet() { openSheet(sheetHead($t('So rechnet die App')) + '<p class="small muted">' + $t('Jede Zahl, mit der die App rechnet, ist mit Einträgen der Wissensbank verknüpft. Der Grad zeigt, wie gut sie belegt ist; D heißt Expertenmeinung oder Setzung der App.') + '</p>' +
   '<div class="row" style="margin-top:12px"><button class="trtog' + (evStrict() ? ' on' : '') + '" data-act="evStrict" type="button">' + (evStrict() ? '✓ ' : '') + $t('Nur gut belegte Vorschläge (A/B)') + '</button></div><p class="small muted" style="margin-top:6px">' + $t('Eingeschaltet blendet der Wochen-Check-in Vorschläge mit Grad C oder D aus.') + '</p>' +
-  Object.keys(RULES).map(ruleRow).join('')); }
+  (myGroups().length ? '<h3 style="margin-top:14px">' + $t('Für dich angepasst') + '</h3>' + (Object.keys(RULES).filter(id => RULES[id].grp && ruleFor(id)).map(ruleRow).join('') || '<p class="small muted">' + $t('Für deine Angaben gibt es keine Sonderregeln.') + '</p>') : '') +
+  '<h3 style="margin-top:14px">' + $t('Für alle') + '</h3>' + Object.keys(RULES).filter(id => !RULES[id].grp).map(ruleRow).join('') +
+  '<h3 style="margin-top:14px">' + $t('Für andere Gruppen') + '</h3>' + Object.keys(RULES).filter(id => RULES[id].grp && !ruleFor(id)).map(ruleRow).join('')); }
 document.addEventListener('click', e => { const b = e.target.closest('[data-act="rulesOpen"],[data-act="ruleOpen"],[data-act="evStrict"]'); if (!b) return; e.preventDefault(); e.stopPropagation();
   if (b.dataset.act === 'rulesOpen') rulesSheet();
   else if (b.dataset.act === 'ruleOpen') openSheet(sheetHead($t('Warum diese Zahl?')) + b.dataset.ids.split(',').map(ruleRow).join('') + '<div style="margin-top:12px"><button class="btn sm" data-act="rulesOpen" type="button">' + $t('Alle Regeln der App') + '</button></div>');
