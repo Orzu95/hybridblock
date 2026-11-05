@@ -82,7 +82,7 @@ function hbFlush() { if (!CHAT.held.length || coachBusy() || inQuiet()) return; 
 /* Anfragen-Benachrichtigung über denselben Weg (Kanal Coaching, Fokus-Modus, Ruhezeiten) */
 if (typeof notifyRequests === 'function') notifyRequests = function (open) { const seen = S.meta.seenReq || []; const fresh = open.filter(r => !seen.includes(r.id)); if (!fresh.length) return;
   fresh.forEach((r, i) => hbNotify('coaching', 300 + (i % 50), $t('Plan-Anfrage'), (r.intake && r.intake.name || $t('Ein Athlet')) + $t(' wartet auf seinen Plan.'))); S.meta.seenReq = seen.concat(fresh.map(r => r.id)).slice(-200); persist(); };
-function coachNotifCard() { return '<div class="card"><h2>' + $t('Benachrichtigungen') + '</h2><label class="row" style="gap:10px;margin-top:8px"><input type="checkbox" data-act="coachQuiet"' + (S.settings.coachQuiet ? ' checked' : '') + '> <span>' + $t('Ruhezeiten für Coaching-Meldungen (20–7 Uhr)') + '</span></label>' +
+function coachNotifCard() { return '<div class="card"><h2>' + $t('Benachrichtigungen') + '</h2><label class="row" style="gap:10px;margin-top:8px;flex-wrap:nowrap;align-items:flex-start"><input type="checkbox" data-act="coachQuiet"' + (S.settings.coachQuiet ? ' checked' : '') + '> <span>' + $t('Ruhezeiten für Coaching-Meldungen (20–7 Uhr)') + '</span></label>' +
   '<p class="small muted" style="margin-top:6px">' + $t('Während du selbst trainierst, hält die App Coaching-Meldungen zurück und schickt sie danach gesammelt. Meldungen zu deinem eigenen Training laufen über einen eigenen Kanal.') + '</p></div>'; }
 
 /* ---------- Abruf ---------- */

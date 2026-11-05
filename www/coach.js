@@ -7,7 +7,7 @@
 const clone = o => JSON.parse(JSON.stringify(o));
 const isTplUid = u => typeof u === 'string' && u.startsWith('tpl:');
 async function loadTpls() { ADMIN.tpls = await api('/rest/v1/coach_templates?coach_id=eq.' + AUTH.uid + '&select=id,name,descr,tags,plan,assigned,updated_at&order=updated_at.desc'); return ADMIN.tpls; }
-function tplsNeed() { if (ADMIN.tpls == null && !ADMIN.tplLoading && AUTH) { ADMIN.tplLoading = true; loadTpls().catch(e => { ADMIN.tplErr = errTxt(e); ADMIN.tpls = []; }).finally(() => { ADMIN.tplLoading = false; render(); }); } return ADMIN.tpls; }
+function tplsNeed() { if (ADMIN.tpls == null && !ADMIN.tplLoading && AUTH) { ADMIN.tplLoading = true; loadTpls().catch(e => { ADMIN.tplErr = errTxt(e); ADMIN.tpls = []; }).finally(() => { ADMIN.tplLoading = false; if (!document.querySelector('input:focus,textarea:focus')) render(); }); } return ADMIN.tpls; }
 const tplById = id => (ADMIN.tpls || []).find(t => t.id === id);
 function tplClean(p) { const c = clone(p); delete c.assign; delete c.targets; delete c.note; delete c.waiting; delete c.free; delete c.chk; return c; }
 const nextMonday = () => { let d = addDays(today(), 1); for (let i = 0; i < 7 && parseISO(d).getDay() !== 1; i++) d = addDays(d, 1); return d; };
