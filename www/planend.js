@@ -43,7 +43,7 @@ function viewPlanEnd() { const st = planEndStats(); const q = S.settings.q || {}
     (st.bw != null ? '<p class="small" style="margin-top:8px"><b>' + $t('Körpergewicht (Trend):') + '</b> ' + (st.bw >= 0 ? '+' : '') + fmt(st.bw, 1) + $t(' kg') + '</p>' : '') +
     (st.stalls.length ? '<p class="small" style="margin-top:8px"><b>' + $t('Stillstand:') + '</b> ' + esc(st.stalls.map(id => LIB[id].name).join(', ')) + '</p>' : '') +
     (st.low.length ? '<p class="small" style="margin-top:8px"><b>' + $t('Unter dem Wochen-Soll:') + '</b> ' + esc(st.low.map(x => MUSCLES[x.m] + ' (' + fmt(x.v, 0) + ')').join(', ')) + '</p>' : '') + '</div>' +
-    $t('<div class="card"><h2>Kurzer Zielabgleich</h2><p class="small muted">Stimmen Ziel, Tage, Zeit und Beschwerden noch? Die Empfehlungen und der neue Plan richten sich danach.</p><p class="small">') +
+    $t('<div class="card"><h2>Kurzer Zielabgleich</h2><p class="small muted">Stimmen Ziel, Tage, Zeit und Einschränkungen noch? Die Empfehlungen und der neue Plan richten sich danach.</p><p class="small">') +
     (q.goal ? esc([GOALS[q.goal], LEVELS[q.level] || '', q.days ? q.days + $t(' Tage') : '', q.minutes ? q.minutes + $t(' min') : ''].filter(Boolean).join(' · ')) : $t('Noch keine Angaben.')) + '</p>' +
     (up ? note('green', $t('Deine Ergebnisse sprechen für die Stufe „Fortgeschritten“.'), $t('<button class="btn sm" data-act="peLevelUp" type="button">Übernehmen</button>')) : '') +
     $t('<button class="btn block" data-act="peGoals" type="button">Angaben prüfen</button></div>') +

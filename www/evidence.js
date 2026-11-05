@@ -68,7 +68,7 @@ function viewWissen(arg) { if (!EVID) { loadEvid().then(() => { if (route.name =
       return '<a class="evtile" href="#wissen/' + c + '" style="' + evVars(c) + '">' + evIc(c, 40) + '<b>' + esc(evCat(c)) + '</b><span class="small muted">' + n.length + $t(' Aussagen') + ' · ' + a + $t(' mit Grad A') + '</span></a>'; }).join('') + '</div></div>').join('');
   return back + pageTop(cat ? esc(evCat(cat)) : $t('Wissen'), '', cat ? '' : $t('Geprüfte Aussagen aus der Sportwissenschaft, jede mit Quelle')) + '<div class="stack">' +
     search + body +
-    '<p class="small muted" style="margin:0 4px">' + $t('Stand: ') + (EVID ? EVID.at.split('-').reverse().join('.') : '–') + ' · ' + (EVID ? EVID.items.length : '–') + $t(' Einträge. Alle Quellen wurden gegen Crossref und PubMed geprüft. Kein Ersatz für ärztlichen Rat.') + '</p></div>'; }
+    '<p class="small muted" style="margin:0 4px">' + $t('Stand: ') + (EVID ? EVID.at.split('-').reverse().join('.') : '–') + ' · ' + (EVID ? EVID.items.length : '–') + $t(' Einträge. Alle Quellen wurden gegen Crossref und PubMed geprüft. Allgemeine Information, kein Ersatz für ärztlichen Rat und keine Einschätzung deines Einzelfalls.') + '</p></div>'; }
 function evSheet(ids) { if (!EVID) { openSheet(sheetHead($t('Studienlage')) + '<p class="muted">' + $t('Lade …') + '</p>'); loadEvid().then(() => evSheet(ids)).catch(() => openSheet(sheetHead($t('Studienlage')) + '<p>' + $t('Wissensbasis nicht erreichbar.') + '</p>')); return; }
   const xs = ids.map(i => EVID.by[i]).filter(Boolean); if (!xs.length) return;
   if (xs.length > 1) { openSheet(sheetHead($t('Studienlage')) + '<div style="margin-top:6px">' + xs.map(evRow).join('') + '</div>'); return; }

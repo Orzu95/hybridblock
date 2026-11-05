@@ -2,7 +2,7 @@
 const CONSENT_V = 1;
 const hasConsent = () => !!(S.meta.consent && S.meta.consent.v >= CONSENT_V);
 function consentSheet(then) { ui.consentThen = then || null;
-  openSheet(sheetHead($t('Deine Daten')) + $t('<p>Hybridblock verarbeitet Gesundheitsdaten: Puls, Schlaf, Gewicht, Trainings, Beschwerden und, wenn du aufzeichnest, deine GPS-Strecke. Dafür brauchen wir deine ausdrückliche Einwilligung.</p>') +
+  openSheet(sheetHead($t('Deine Daten')) + $t('<p>Hybridblock verarbeitet Gesundheitsdaten: Puls, Schlaf, Gewicht, Trainings, Einschränkungen und, wenn du aufzeichnest, deine GPS-Strecke. Dafür brauchen wir deine ausdrückliche Einwilligung.</p>') + $t('<p>Hybridblock ist kein Medizinprodukt und dient nicht der Diagnose, Behandlung, Heilung oder Vorbeugung von Krankheiten.</p>') +
     $t('<ul class="rules small" style="margin-top:10px"><li>Nur für die Funktionen der App. Keine Werbung, kein Tracking, kein Verkauf.</li><li>Gespeichert auf deinem Gerät und, mit Konto, auf einem Server in Frankfurt.</li><li>Mit Coach sieht dein Coach deinen Fortschritt.</li><li>Widerruf jederzeit: Einstellungen → Datenschutz → Daten löschen.</li></ul>') +
     $t('<p class="small" style="margin-top:10px"><a href="#datenschutz" data-act="closeSheet">Datenschutzerklärung lesen</a></p>') +
     $t('<button class="btn brand block" data-act="consentYes" type="button" style="margin-top:14px">Ich willige ein</button><button class="btn block" data-act="consentNo" type="button" style="margin-top:8px">Nicht einverstanden</button>')); }
