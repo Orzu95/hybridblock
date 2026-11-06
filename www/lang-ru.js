@@ -1301,6 +1301,7 @@ I18N.ru = {
 "Farmer's Walk, Handgelenk beugen/strecken, Reverse-Scott-Curl": "Прогулка фермера, сгибания/разгибания запястий, обратные сгибания на скамье Скотта",
 "Fat-Loss 4": "Fat-Loss 4",
 "Faustregel: kein HIIT am Tag vor Gym A oder Gym C, und zwischen zwei Gym-Tagen möglichst ein anderer Tag.": "Правило: без HIIT накануне тренировок ног, и по возможности день между двумя силовыми.",
+"Faustregel: keine harten Intervalle am Tag vor einem schweren Beintag, und zwischen zwei Krafttagen möglichst ein anderer Tag. Die App prüft das für deinen Plan und warnt oben.": "Правило: никаких интенсивных интервалов накануне тяжёлого дня ног, а между двумя силовыми днями по возможности другой день. Приложение проверяет это для твоего плана и предупреждает выше.",
 "Februar": "февраля",
 "Fehlende Geräte": "Нет оборудования",
 "Fehler:": "Ошибка:",

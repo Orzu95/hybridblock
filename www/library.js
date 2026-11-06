@@ -192,7 +192,10 @@ function scorePlan(p, q) { let s = 0; const why = [];
   const fo = q.focus || ((q.sex || (typeof S !== 'undefined' && S.settings.sex)) === 'w' ? 'lower' : 'balanced'); if (p.focus === 'lower') { if (fo === 'lower') { s += 22; why.push($t('Schwerpunkt Beine und Po')); } else s -= 20; }
   const old = num(q.age || (typeof S !== 'undefined' && S.settings.age)) >= 65; if (old && hasGym) { const gd = (p.sessions ? p.sessions() : []).filter(x => x.kind === 'gym').length; const fr = RV('older_freq'); if (gd >= fr[0] && gd <= fr[1]) { s += 8; why.push($t('2–3 Krafteinheiten, für 65+ am besten belegt')); } else if (gd > fr[1]) s -= 8; }
   if (p.ev.g === 'A') s += 6; return { s, why }; }
-function recommendPlans(q) { return Object.values(LIBRARY).filter(p => !p.module).map(p => Object.assign({ p }, scorePlan(p, q))).sort((a, b) => b.s - a.s); }
+/* Exklusive Pläne: nur für bestimmte Konten sichtbar (Hybridblock nur für Orzu) */
+const LIB_OWNER = { hybrid: ['577b4459-ed8f-42b6-b947-6c42d0ecb677'] };
+function libVisible(p) { const o = LIB_OWNER[typeof p === 'string' ? p : p.id]; return !o || (typeof AUTH !== 'undefined' && !!AUTH && o.includes(AUTH.uid)); }
+function recommendPlans(q) { return Object.values(LIBRARY).filter(p => !p.module && libVisible(p)).map(p => Object.assign({ p }, scorePlan(p, q))).sort((a, b) => b.s - a.s); }
 
 /* ---------- Plan-Generator aus Fragebogen ---------- */
 const PATTERNS = { squat: ['squat', 'fs', 'hack', 'pend', 'legpress', 'goblet', 'bss', 'bw_squat'], hinge: ['rdl', 'trap', 'rdl_db', 'hyper45', 'ht', 'sl_rdl', 'kb_swing'], hpush: ['bench', 'db_bench', 'machine_press', 'smith_bench', 'pushup', 'incl_pushup'],

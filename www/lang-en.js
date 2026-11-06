@@ -1301,6 +1301,7 @@ I18N.en = {
 "Farmer's Walk, Handgelenk beugen/strecken, Reverse-Scott-Curl": "Farmer's walk, wrist curls/extensions, reverse preacher curl",
 "Fat-Loss 4": "Fat-Loss 4",
 "Faustregel: kein HIIT am Tag vor Gym A oder Gym C, und zwischen zwei Gym-Tagen möglichst ein anderer Tag.": "Rule of thumb: no HIIT the day before leg-heavy sessions, and ideally another day between two gym days.",
+"Faustregel: keine harten Intervalle am Tag vor einem schweren Beintag, und zwischen zwei Krafttagen möglichst ein anderer Tag. Die App prüft das für deinen Plan und warnt oben.": "Rule of thumb: no hard intervals the day before a heavy leg day, and ideally a different day between two strength days. The app checks this for your plan and warns you above.",
 "Februar": "February",
 "Fehlende Geräte": "Missing equipment",
 "Fehler:": "Error:",

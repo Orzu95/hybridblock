@@ -9,7 +9,7 @@ const DEFAULTS = () => ({
   block: { week:1, startedOn:null },
   plan:null, meta:{}, sessions:{}, swaps:{}, days:{}, foods:{}, recent:[], checkins:[], body:{}, activities:[], health:{}, daily:{}, hrTraces:{}, exNotes:{}, mealTemplates:[], workouts:[], archive:[], healthMeta:{ lastSync:null, source:null, ignored:[] }
 });
-let S = DEFAULTS(); S.plan = makePlan('hybrid');
+let S = DEFAULTS(); S.plan = makePlan('gk3');
 function loadState(raw) { const d = JSON.parse(raw); const def = DEFAULTS(); const s = Object.assign(DEFAULTS(), d);
   s.settings = Object.assign(def.settings, d.settings || {}); s.settings.dayMap = Object.assign({}, DEFAULT_DAYMAP, (d.settings && d.settings.dayMap) || {});
   s.block = Object.assign({ week:1, startedOn:null }, d.block || {}); s.healthMeta = Object.assign({ lastSync:null, source:null, ignored:[] }, d.healthMeta || {});
@@ -18,7 +18,7 @@ function loadState(raw) { const d = JSON.parse(raw); const def = DEFAULTS(); con
   if (!d.v || d.v < 2) { delete s.settings.start; s.v = 2; }
   if (!s.meta || typeof s.meta !== 'object') s.meta = {}; if (!s.meta.onboarded && s.settings.vo2Start === undefined && Object.keys(s.sessions).length) s.settings.vo2Start = '39';
   if (!s.meta.onboarded && (Object.keys(s.sessions).length || Object.keys(s.days).length || s.activities.length)) s.meta.onboarded = true;
-  if (!s.plan || !Array.isArray(s.plan.sessions) || (!s.plan.sessions.length && !s.plan.free && !s.plan.waiting)) s.plan = makePlan('hybrid'); if (!s.meta || typeof s.meta !== 'object') s.meta = {};
+  if (!s.plan || !Array.isArray(s.plan.sessions) || (!s.plan.sessions.length && !s.plan.free && !s.plan.waiting)) s.plan = makePlan('gk3'); if (!s.meta || typeof s.meta !== 'object') s.meta = {};
   s.plan.sessions.forEach(x => { if (!(x.k in s.settings.dayMap)) s.settings.dayMap[x.k] = s.plan.dayMap && s.plan.dayMap[x.k] != null ? s.plan.dayMap[x.k] : ''; });
   /* alte Slot-Namen aus v1 auf neue Slots mappen, damit der Verlauf bleibt */
   const ren = { calf_st:'calf_a', legext:'legext', calf_se:'calf_c', curl:'bi_b', crunch:'ab_b', hlr:'ab_a', hammer:'bi_c', lat_c:'lat_c' };
@@ -845,7 +845,7 @@ function viewMehr() { const st = S.settings; const f = (k, lab, type, extra) => 
   const healthCard = connectCard();
   return '<a href="#heute" class="back">' + ICON.back + $t('Heute</a><div class="top"><div class="grow"><h1><span class="t-ember">Einstellungen</span> und Daten</h1></div></div><div class="stack">') + accountCard() + studioCard() +
   $t('<div class="card"><h2>Wochentage</h2><p style="margin-bottom:14px">Leg fest, an welchem Tag du welche Einheit machst. Der Block startet mit deiner ersten Einheit, egal an welchem Tag. Eine Woche ist geschafft, wenn alle Einheiten deines Plans erledigt sind.</p><div class="fields">') + ORDER.map(sel).join('') + '</div>' +
-  warn.map(x => '<p class="small t-amber" style="font-weight:700">' + esc(x) + '</p>').join('') + $t('<p class="small muted">Faustregel: kein HIIT am Tag vor Gym A oder Gym C, und zwischen zwei Gym-Tagen möglichst ein anderer Tag.</p>') +
+  warn.map(x => '<p class="small t-amber" style="font-weight:700">' + esc(x) + '</p>').join('') + $t('<p class="small muted">Faustregel: keine harten Intervalle am Tag vor einem schweren Beintag, und zwischen zwei Krafttagen möglichst ein anderer Tag. Die App prüft das für deinen Plan und warnt oben.</p>') +
   $t('<div class="field" style="margin-top:12px"><label for="st-mode">Modus</label><select id="st-mode" data-st="mode"><option value="days"') + (st.mode !== 'rotation' ? $t(' selected') : '') + $t('>Feste Wochentage</option><option value="rotation"') + (st.mode === 'rotation' ? $t(' selected') : '') + $t('>Reihenfolge (') + ORDER.map(k => SESS[k].title).join(', ') + $t(', egal welcher Tag)</option></select></div>') +
   $t('<div class="row" style="margin-top:10px"><span class="grow small">Aktuelle Trainingswoche: <b>') + curWeek() + '</b></span><button class="btn sm" data-act="wkMinus" type="button">−</button><button class="btn sm" data-act="wkPlus" type="button">+</button></div></div>' +
   healthCard + hrmCard() +

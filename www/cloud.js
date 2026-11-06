@@ -258,7 +258,7 @@ async function openPlanEditor(arg) { const who = planTarget(arg); if (PE.uid ===
   if (who === 'me') { PE.draft = JSON.parse(JSON.stringify(S.plan)); PE.name = ''; return; }
   PE.loading = true; try { const r = await api('/rest/v1/plans?user_id=eq.' + who + '&select=plan'); let plan = r && r[0] && r[0].plan;
     if (!plan) { const stt = ADMIN.states[who] || await loadClientState(who); plan = stt && stt.state && stt.state.plan; }
-    PE.draft = plan ? JSON.parse(JSON.stringify(plan)) : makePlan('hybrid'); const c = (ADMIN.clients || []).find(x => x.id === who); PE.name = c ? cname(c) : ''; }
+    PE.draft = plan ? JSON.parse(JSON.stringify(plan)) : makePlan('gk3'); const c = (ADMIN.clients || []).find(x => x.id === who); PE.name = c ? cname(c) : ''; }
   catch (e) { toast(errTxt(e)); PE.uid = null; } PE.loading = false; if (route.name === 'plan') render(); }
 function peSess(i) { return PE.draft.sessions[i]; }
 function peItems(i) { const s = peSess(i); return planForP(PE.draft, 1, s.k); }

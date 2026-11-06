@@ -18,7 +18,7 @@ function srIndex() { const out = [...SR_ACTIONS(), ...SR_PAGES()];
   try { const h = viewMehr(); const re = /<h2[^>]*>([\s\S]*?)<\/h2>/g; let m; const seen = new Set(); while ((m = re.exec(h))) { const t = m[1].replace(/<[^>]+>/g, '').trim(); if (!t || seen.has(t)) continue; seen.add(t); out.push({ g: $t('Einstellung'), t, k: '', go: () => srGoSetting(t) }); } } catch (e) {}
   if (typeof GLOSS !== 'undefined') GLOSS.forEach(x => out.push({ g: $t('Begriff'), t: glT(x.t), k: (x.p[LANG] || '') + ' ' + x.p.de + ' ' + glT(x.d), go: () => glSheet(x.id) }));
   Object.keys(LIB).forEach(id => { const e = LIB[id]; if (!e || !e.name) return; out.push({ g: $t('Übung'), t: e.name, k: id + ' ' + (e.de || ''), go: () => exInfoSheet(id) }); });
-  if (typeof LIBRARY !== 'undefined') Object.keys(LIBRARY).forEach(id => { const p = LIBRARY[id]; out.push({ g: $t('Plan'), t: $t(p.name), k: $t(p.desc || ''), go: () => { closeSheet(); location.hash = '#library/' + id; } }); });
+  if (typeof LIBRARY !== 'undefined') Object.keys(LIBRARY).forEach(id => { const p = LIBRARY[id]; if (typeof libVisible === 'function' && !libVisible(id)) return; out.push({ g: $t('Plan'), t: $t(p.name), k: $t(p.desc || ''), go: () => { closeSheet(); location.hash = '#library/' + id; } }); });
   if (EVID) EVID.items.forEach(x => out.push({ g: $t('Wissen'), t: x.sl ? x.sl.h : x.u, k: x.u + ' ' + x.a + ' ' + x.k.join(' ') + ' ' + x.id, sub: x.sl ? x.sl.fd : x.a, go: () => evSheet([x.id]) }));
   return out; }
 const srNorm = s => String(s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/ß/g, 'ss');

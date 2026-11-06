@@ -22,7 +22,7 @@ function planEndStats() { const W = NW(), cw = curWeek(); let tot = 0, done = 0;
 function planEndLevelUp(st) { const q = S.settings.q || {}; return q.level === 'beginner' && st.rate >= .75 && st.avgGain >= 5 ? 'intermediate' : null; }
 
 function recommendAfter(q, tpl) { const nxt = NEXT_PLANS[tpl] || [];
-  return Object.values(LIBRARY).filter(p => !p.module).map(p => { const r = scorePlan(p, q); let s = r.s; const why = r.why.slice();
+  return Object.values(LIBRARY).filter(p => !p.module && libVisible(p)).map(p => { const r = scorePlan(p, q); let s = r.s; const why = r.why.slice();
     if (nxt.includes(p.id)) { s += 25; why.unshift($t('Passt als nächster Schritt')); } if (q.place === 'gym' && p.place !== 'gym') s -= 15; if (p.id === tpl) { s -= 30; why.push($t('Gleicher Plan wie zuletzt')); }
     return { p, s, why }; }).sort((a, b) => b.s - a.s); }
 
