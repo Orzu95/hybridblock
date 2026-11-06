@@ -17,7 +17,7 @@ const _renderTabs = render;
 render = function () { const r = _renderTabs.apply(this, arguments); try { tabSync(); } catch (e) {} return r; };
 
 /* ---------- Termine ---------- */
-function viewTermine() { if (!isAdmin()) return '<p>' + $t('Nur für Coach-Konten.') + '</p>'; if (APPT.list == null) apptLoad().then(() => { if (route.name === 'termine') render(); });
+function viewTermine() { if (!isAdmin()) return '<p>' + $t('Nur für Coach-Konten.') + '</p>'; if (APPT.list == null) apptEnsure(['termine']);
   if (ADMIN.clients == null && !ADMIN.loading) loadClients().then(() => { if (route.name === 'termine') render(); });
   const L = (APPT.list || []).filter(a => a.status !== 'cancelled' && a.status !== 'declined'); const up = L.filter(a => a.date >= today()), past = L.filter(a => a.date < today()).reverse();
   const group = arr => { let d = ''; return arr.map(a => { const h = a.date !== d ? '<div class="lbl" style="margin-top:12px">' + esc(a.date === today() ? $t('Heute') : fmtDay(a.date)) + '</div>' : ''; d = a.date; return h + '<div class="card" style="padding:4px 14px">' + apptRow(a, true) + '</div>'; }).join(''); };
@@ -26,9 +26,9 @@ function viewTermine() { if (!isAdmin()) return '<p>' + $t('Nur für Coach-Konte
     (APPT.list == null ? '<p class="muted">' + $t('Lade …') + '</p>' : (up.length ? group(up) : '<p class="muted">' + $t('Noch nichts geplant.') + '</p>') + (past.length ? '<div class="section-h"><h2>' + $t('Letzte 14 Tage') + '</h2></div>' + group(past) : '')) + '</div>'; }
 
 /* ---------- Chats ---------- */
-let CHATS_LAST = null;
-async function chatsLoad() { try { const r = await api('/rest/v1/messages?coach_id=eq.' + AUTH.uid + '&select=athlete_id,sender,body,photo,created_at&order=created_at.desc&limit=300'); const by = {}; (r || []).forEach(m => { if (!by[m.athlete_id]) by[m.athlete_id] = m; }); CHATS_LAST = by; } catch (e) { CHATS_LAST = {}; } }
-function viewChats() { if (!isAdmin()) return '<p>' + $t('Nur für Coach-Konten.') + '</p>'; if (CHATS_LAST == null) chatsLoad().then(() => { if (route.name === 'chats') render(); });
+let CHATS_LAST = null, CHATS_LOADING = false;
+async function chatsLoad() { if (CHATS_LOADING) return; CHATS_LOADING = true; try { const r = await api('/rest/v1/messages?coach_id=eq.' + AUTH.uid + '&select=athlete_id,sender,body,photo,created_at&order=created_at.desc&limit=300'); const by = {}; (r || []).forEach(m => { if (!by[m.athlete_id]) by[m.athlete_id] = m; }); CHATS_LAST = by; } catch (e) { CHATS_LAST = {}; } finally { CHATS_LOADING = false; } }
+function viewChats() { if (!isAdmin()) return '<p>' + $t('Nur für Coach-Konten.') + '</p>'; if (CHATS_LAST == null && !CHATS_LOADING) chatsLoad().then(() => { if (CHATS_LAST != null && route.name === 'chats') render(); });
   if (ADMIN.clients == null && !ADMIN.loading) loadClients().then(() => { if (route.name === 'chats') render(); });
   const cl = (ADMIN.clients || []).slice().sort((a, b) => { const x = (CHATS_LAST || {})[a.id], y = (CHATS_LAST || {})[b.id]; return (y ? y.created_at : '') > (x ? x.created_at : '') ? 1 : -1; });
   return pageTop($t('Chats'), '', $t('Nachrichten mit deinen Athleten')) + '<div class="stack">' + (cl.length ? '<div class="card flush"><div class="list">' + cl.map(c => { const m = (CHATS_LAST || {})[c.id], n = chatUnreadFor(c.id);

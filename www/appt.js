@@ -7,6 +7,8 @@ const APPT_ST = { proposed: 'ausstehend', confirmed: 'bestätigt', declined: 'ab
 const apptMine = a => a.proposed_by === (AUTH && AUTH.uid);
 const apptWhen = a => fmtDay(a.date) + ' ' + a.start_t + (a.end_t ? '–' + a.end_t : '');
 const apptBadge = a => esc(apptWhen(a)) + (a.place ? ' · ' + esc(a.place) : '') + ' · <b class="ap-' + a.status + '">' + esc($t(APPT_ST[a.status] || a.status)) + '</b>';
+/* Einmal laden, danach höchstens einmal neu zeichnen (verhindert eine Endlosschleife beim Laden) */
+function apptEnsure(routes) { if (APPT.list != null || APPT.loading) return; apptLoad().then(() => { if (APPT.list != null && routes.includes(route.name)) render(); }); }
 async function apptLoad() { if (!AUTH || VIEW || !(isAdmin() || hasCoach()) || APPT.loading) return APPT.list; APPT.loading = true;
   try { const col = isAdmin() ? 'coach_id' : 'athlete_id'; APPT.list = await api('/rest/v1/appointments?' + col + '=eq.' + AUTH.uid + '&date=gte.' + addDays(today(), -14) + '&select=*&order=date.asc,start_t.asc') || [];
     if (!isAdmin()) { apptPins(); apptNotifyNew(); } apptReminders(); } catch (e) { APPT.list = APPT.list || []; } finally { APPT.loading = false; } return APPT.list; }
@@ -68,13 +70,13 @@ function apptRow(a, coachSide) { const c = coachSide && (ADMIN.clients || []).fi
   return '<div class="appt"><div><b>' + esc(who) + '</b>' + (a.title ? ' · ' + esc($t(a.title)) + (a.w ? ' · ' + $t('Woche ') + a.w : '') : '') + '</div><div class="small">' + apptBadge(a) + '</div>' + (a.note ? '<div class="small muted">' + esc(a.note) + '</div>' : '') + (a.reason ? '<div class="small muted">' + $t('Grund: ') + esc(a.reason) + '</div>' : '') +
     (act.length ? '<div class="row" style="gap:6px;margin-top:6px;flex-wrap:wrap">' + act.join('') + '</div>' : '') + '</div>'; }
 const apptUpcoming = (pred) => (APPT.list || []).filter(a => a.date >= today() && ['proposed', 'confirmed'].includes(a.status) && (!pred || pred(a)));
-function apptHeuteCard() { if (VIEW || isAdmin() || !hasCoach()) return ''; if (APPT.list == null) { apptLoad().then(() => { if (route.name === 'heute') render(); }); return ''; }
+function apptHeuteCard() { if (VIEW || isAdmin() || !hasCoach()) return ''; if (APPT.list == null) { apptEnsure(['heute']); return ''; }
   const L = apptUpcoming(a => a.date <= addDays(today(), 7)); if (!L.length) return '';
   return '<div class="card"><h2>' + $t('Gemeinsames Training') + '</h2>' + L.map(a => apptRow(a, false)).join('') + '</div>'; }
-function apptCoachCard() { if (!isAdmin()) return ''; if (APPT.list == null) { apptLoad().then(() => { if (route.name === 'admin' || route.name === 'heute') render(); }); return ''; }
+function apptCoachCard() { if (!isAdmin()) return ''; if (APPT.list == null) { apptEnsure(['admin', 'heute']); return ''; }
   const L = apptUpcoming(a => a.date <= addDays(today(), 6)); return '<div class="section-h"><h2>' + $t('Gemeinsame Trainings') + '</h2></div>' + (L.length ? '<div class="card">' + L.map(a => apptRow(a, true)).join('') + '</div>' : '<p class="small muted" style="margin:0 4px">' + $t('Diese Woche keine gemeinsamen Trainings. Planen kannst du sie in der Athletenansicht.') + '</p>'); }
 function apptClientCard(uid2) { const L = (APPT.list || []).filter(a => a.athlete_id === uid2 && a.date >= today() && ['proposed', 'confirmed'].includes(a.status));
-  if (APPT.list == null) apptLoad().then(() => { if (route.name === 'admin') render(); });
+  if (APPT.list == null) apptEnsure(['admin']);
   return '<div class="card"><h2>' + $t('Gemeinsam trainieren') + '</h2>' + (L.length ? L.map(a => apptRow(a, true)).join('') : '<p class="small muted">' + $t('Noch kein Termin geplant.') + '</p>') +
     '<div class="row" style="gap:6px;margin-top:10px;flex-wrap:wrap"><button class="btn brand sm" data-act="apNew" data-uid="' + uid2 + '" type="button">' + $t('+ Gemeinsames Training planen') + '</button><button class="btn sm" data-act="coBuild" data-uid="' + uid2 + '" type="button">' + $t('Plan gemeinsam erstellen') + '</button></div>' +
     '<p class="small muted" style="margin-top:8px">' + $t('„Plan gemeinsam erstellen“: Ihr geht im Gym Übung für Übung durch, du trägst Sätze und auf Wunsch Startgewichte ein. Daraus wird eine Einheit im Plan, ein Eintrag im Verlauf deines Athleten oder eine Vorlage.') + '</p></div>'; }
