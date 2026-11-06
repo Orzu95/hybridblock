@@ -456,3 +456,10 @@ body.mode-coach .modebar button.on{color:var(--iris)}
 .appt{padding:10px 0;border-top:1px solid var(--rule)}.appt:first-of-type{border-top:0}
 .ap-confirmed{color:var(--verdant)}.ap-proposed{color:var(--amber)}.ap-declined,.ap-cancelled{color:var(--signal)}.ap-done{color:var(--muted)}
 .ownbar{display:flex;align-items:center;gap:8px;background:#fff4d6;color:#5c3b00;border-radius:var(--r);padding:8px 12px;margin:-6px 0 14px;font-size:13.5px;font-weight:600}
+/* Coaching-Leiste */
+.tabbar a{position:relative}
+.tabcnt{position:absolute;top:2px;left:calc(50% + 6px);min-width:16px;height:16px;padding:0 4px;border-radius:8px;background:var(--signal);color:#fff;font-size:10px;font-weight:800;font-style:normal;display:grid;place-items:center}
+.tabcnt[hidden]{display:none}
+body.mode-coach .tabbar a.on{color:var(--iris)}
+body.mode-coach .coachfab{background:var(--iris)}
+body.mode-coach .tabbar .in{grid-template-columns:repeat(4,1fr) 64px}
