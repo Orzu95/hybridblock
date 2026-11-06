@@ -194,7 +194,7 @@ function scorePlan(p, q) { let s = 0; const why = [];
   if (p.ev.g === 'A') s += 6; return { s, why }; }
 /* Exklusive Pläne: nur für bestimmte Konten sichtbar (Hybridblock nur für Orzu) */
 const LIB_OWNER = { hybrid: ['577b4459-ed8f-42b6-b947-6c42d0ecb677'] };
-function libVisible(p) { const o = LIB_OWNER[typeof p === 'string' ? p : p.id]; return !o || (typeof AUTH !== 'undefined' && !!AUTH && o.includes(AUTH.uid)); }
+function libVisible(p) { const o = LIB_OWNER[typeof p === 'string' ? p : p.id]; if (o && typeof ui !== 'undefined' && ui.libNoExcl) return false; return !o || (typeof AUTH !== 'undefined' && !!AUTH && o.includes(AUTH.uid)); }
 function recommendPlans(q) { return Object.values(LIBRARY).filter(p => !p.module && libVisible(p)).map(p => Object.assign({ p }, scorePlan(p, q))).sort((a, b) => b.s - a.s); }
 
 /* ---------- Plan-Generator aus Fragebogen ---------- */

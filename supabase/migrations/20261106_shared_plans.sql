@@ -1,0 +1,6 @@
+-- Bibliothek in vier Reitern: geteilte Pläne (shared_plans) und Prüfer (plan_reviewers)
+-- Angewendet am 06.11.2026 über das Supabase-MCP (Migrationen shared_plans, shared_plans_reviewer_scope).
+-- Stufen: private, clients (nur Coaches), public, submitted, curated (nur Prüfer setzen curated).
+-- Athleten ohne Coach-Rolle: höchstens 2 Pläne in public/submitted/curated (Trigger shared_plans_guard).
+-- Bearbeitet der Besitzer einen kuratierten Plan, fällt er auf submitted zurück.
+-- Lesen: Besitzer; alle bei public/submitted/curated; Athleten des Coaches bei clients. Prüfer sehen keine privaten Pläne.
