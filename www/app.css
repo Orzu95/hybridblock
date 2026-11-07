@@ -472,3 +472,7 @@ body.mode-coach .tabbar .in{grid-template-columns:repeat(4,1fr) 64px}
 body.lgon .ex{scroll-margin-top:80px}
 .ex.lgnext{box-shadow:0 0 0 3px var(--ember);transition:box-shadow .3s}
 body.lgon .timer{display:none}
+/* Satztypen */
+.set .stbtn{border:0;background:transparent;font:inherit;font-weight:700;color:inherit;cursor:pointer;padding:0;display:flex;flex-direction:column;align-items:center;line-height:1;text-decoration:underline dotted rgba(0,0,0,.25)}
+.set .stbtn small{font-size:10px;font-weight:800;color:var(--ember);margin-top:2px}
+.setx{margin:-2px 0 6px 34px;color:var(--ember);font-weight:600}
