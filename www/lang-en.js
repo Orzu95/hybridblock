@@ -93,6 +93,8 @@ I18N.en = {
 "1.000 m Kraul am Stück, 30 min Dauerlauf, 1 h Radfahren; Sporttauglichkeit ärztlich abklären.": "1,000 m freestyle non-stop, 30 min continuous run, 1 h bike ride; get medical clearance for sport.",
 "10 @ 50 %, 10 @ 60 %, 10 @ 70 % TM": "10 @ 50%, 10 @ 60%, 10 @ 70% TM",
 "10 @ 50 %, 60 %, 70 % TM.": "10 @ 50%, 60%, 70% TM.",
+"10 Sekunden mehr": "10 seconds more",
+"10 Sekunden weniger": "10 seconds less",
 "10 m Anlauf, 10 m Höchsttempo.": "10 m run-up, 10 m at top speed.",
 "10 volle, dann 5 in der oberen Hälfte.": "10 full reps, then 5 in the top half.",
 "10 vom Boden, dann 10 ohne Absetzen.": "10 from the floor, then 10 without setting the bar down.",

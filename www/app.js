@@ -1055,8 +1055,8 @@ async function exportBackup() { const txt = JSON.stringify(S); const name = 'hyb
   try { const file = new File([txt], name, { type: 'application/json' }); if (navigator.canShare && navigator.canShare({ files: [file] })) { await navigator.share({ files: [file], title: $t('Hybridblock-Sicherung') }); return; } } catch (e) { if (e.name === 'AbortError') return; }
   if (!HEALTH.native) { const u = URL.createObjectURL(new Blob([txt], { type: 'application/json' })); const l = document.createElement('a'); l.href = u; l.download = name; document.body.appendChild(l); l.click(); l.remove(); setTimeout(() => URL.revokeObjectURL(u), 3000); return; }
   try { await navigator.clipboard.writeText(txt); toast($t('Sicherung in die Zwischenablage kopiert')); } catch (e) { $('#backupBox').innerHTML = $t('<p class="small muted">Text markieren und kopieren:</p><textarea readonly style="background:var(--paper)">') + esc(txt) + '</textarea>'; } }
-$('#tmMinus').addEventListener('click', () => { TM.end -= 15000; tick(); });
-$('#tmPlus').addEventListener('click', () => { TM.end += 30000; TM.total += 30; tick(); });
+$('#tmMinus').addEventListener('click', () => { TM.end -= 10000; tick(); });
+$('#tmPlus').addEventListener('click', () => { TM.end += 10000; TM.total += 10; tick(); });
 if ($('#tmNext')) $('#tmNext').addEventListener('click', () => { if (!TM.queue.length) return; if ((!TM.seg || TM.seg.k !== 'cd') && TM.queue[0].k === 'hi') TM.queue.unshift({ sec: 10, label: $t('Gleich geht’s los'), k: 'cd' }); TM.end = Date.now(); tick(); });
 /* Countdown vor dem nächsten Abschnitt: vor einem harten Intervall 10 s Ansage, dann 5 … 1; sonst 3 kurze Töne */
 function ivCountdown(left, total, next, cur) { if (!next || left <= 0) return; const v = typeof say === 'function' && trOpts().voice;

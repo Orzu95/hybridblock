@@ -463,3 +463,12 @@ body.mode-coach .modebar button.on{color:var(--iris)}
 body.mode-coach .tabbar a.on{color:var(--iris)}
 body.mode-coach .coachfab{background:var(--iris)}
 body.mode-coach .tabbar .in{grid-template-columns:repeat(4,1fr) 64px}
+/* Logger-Kopf */
+.lghead{position:sticky;top:0;z-index:25;display:flex;align-items:center;gap:10px;justify-content:space-between;background:var(--graphite);color:#fff;border-radius:var(--r);padding:8px 10px 8px 14px;margin:0 0 12px}
+.lg-l,.lg-rt{display:flex;flex-direction:column;line-height:1.1}.lg-rt{align-items:center;min-width:64px}
+.lg-k{font-size:12px;opacity:.7;font-weight:600}.lg-t{font-size:22px;font-weight:800;font-variant-numeric:tabular-nums}
+.lg-r{display:flex;align-items:center;gap:6px;opacity:.45}.lg-r.on{opacity:1}.lg-r.on .lg-t{color:var(--ember)}
+.lg-btn{border:0;background:rgba(255,255,255,.14);color:#fff;border-radius:var(--r);padding:10px 12px;font-weight:800;font-size:15px;cursor:pointer;min-width:52px}
+body.lgon .ex{scroll-margin-top:80px}
+.ex.lgnext{box-shadow:0 0 0 3px var(--ember);transition:box-shadow .3s}
+body.lgon .timer{display:none}
