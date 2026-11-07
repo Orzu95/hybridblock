@@ -518,3 +518,5 @@ body.lgon .timer{display:none}
 .nh-d.today{background:var(--graphite);color:#fff}.nh-d.fut{opacity:.35;cursor:default}
 .nh-dot{width:7px;height:7px;border-radius:50%;display:inline-block}.nh-dot.ok{background:var(--verdant)}.nh-dot.low{background:var(--sky)}.nh-dot.high{background:var(--signal)}.nh-dot.part{background:none;box-shadow:inset 0 0 0 1.5px var(--muted)}
 .nh-leg{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px;color:var(--muted)}.nh-leg span{display:flex;align-items:center;gap:6px}
+.mt-line{display:flex;align-items:center;gap:10px;margin-top:10px}.mt-line .meter{flex:1;height:6px}
+.mi-r{margin-top:10px}
