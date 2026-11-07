@@ -476,3 +476,8 @@ body.lgon .timer{display:none}
 .set .stbtn{border:0;background:transparent;font:inherit;font-weight:700;color:inherit;cursor:pointer;padding:0;display:flex;flex-direction:column;align-items:center;line-height:1;text-decoration:underline dotted rgba(0,0,0,.25)}
 .set .stbtn small{font-size:10px;font-weight:800;color:var(--ember);margin-top:2px}
 .setx{margin:-2px 0 6px 34px;color:var(--ember);font-weight:600}
+/* Reihenfolge */
+.ord-list{margin-top:12px;display:flex;flex-direction:column;gap:8px}
+.ord-row{display:flex;align-items:center;gap:8px;background:var(--fog);border-radius:14px;padding:10px 12px;font-weight:600}
+.ord-row.ss{box-shadow:inset 4px 0 0 var(--ember)}.ord-n{font-family:var(--f-micro);color:var(--muted);width:18px;text-align:center}
+.ord-row .btn[disabled],.pe-h .btn[disabled]{opacity:.3}
