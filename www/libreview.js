@@ -49,7 +49,7 @@ function viewCodePlan(c) { c = String(c || '').toUpperCase(); const back = '<a h
   if (!b) { if (!SP.codeLoading[c]) { SP.codeLoading[c] = true; codeFetch(c).then(x => { SP.code[c] = x || { missing: true }; }).catch(() => { SP.code[c] = { missing: true, err: true }; }).finally(() => { SP.codeLoading[c] = false; if (route.name === 'library') render(); }); } return back + '<p class="muted">' + $t('Lade …') + '</p>'; }
   if (b.missing) { delete SP.code[c]; return back + '<p>' + (b.err ? $t('Keine Verbindung. Versuch es gleich noch einmal.') : $t('Zu diesem Code gibt es keinen Plan. Vielleicht wurde der Link deaktiviert.')) + '</p>'; }
   const pl = planFromId('code:' + c), m = b.meta || {}; let acts = libActions('code:' + c); if (b.copy_lock) acts = acts.replace(/<button[^>]*data-act="libEdit"[^>]*>[\s\S]*?<\/button>/g, '');
-  return back + pageTop(esc(b.name), '', esc((m.by || '') + (m.by ? ' · ' : '') + (m.coach ? $t('Coach') : $t('Athlet')))) + '<div class="stack" style="margin-bottom:12px">' + note('sky', $tf('Geteilter Plan (Code {c}).', { c })) + (b.copy_lock ? note('sky', '🔒 ' + $t('Kopierschutz: Du kannst den Plan nutzen, aber nicht bearbeiten, speichern oder weitergeben.')) : '') +
+  return back + pageTop(esc(b.name), '', esc((m.by || '') + (m.by ? ' · ' : '') + (m.coach ? $t('Coach') : $t('Athlet')))) + '<div class="stack" style="margin-bottom:12px">' + note('sky', esc($tf('Geteilter Plan (Code {c}).', { c }))) + (b.copy_lock ? note('sky', '🔒 ' + $t('Kopierschutz: Du kannst den Plan nutzen, aber nicht bearbeiten, speichern oder weitergeben.')) : '') +
     '<div class="card"><p style="margin:0">' + esc(b.descr || $t('Ohne Beschreibung.')) + '</p></div></div>' + (typeof chkCard === 'function' ? chkCard(pl, 'lib') : '') + libPreviewHTML({}, pl, acts); }
 const _viewLibPlanRV = viewLibPlan;
 viewLibPlan = function (id) { id = String(id || ''); if (id.startsWith('code:')) return viewCodePlan(id.slice(5)); return _viewLibPlanRV.apply(this, arguments); };
@@ -75,3 +75,14 @@ document.addEventListener('click', async e => { const b = e.target.closest('[dat
   else if (a === 'rvGo') rvGo(b);
   else if (a === 'spResubmit') { try { await api('/rest/v1/shared_plans?id=eq.' + b.dataset.id, { method: 'PATCH', headers: { Prefer: 'return=minimal' }, body: JSON.stringify({ status: 'submitted' }) }); delete SP.body[b.dataset.id]; SP.list = null; toast($t('Erneut eingereicht')); render(); } catch (er) { toast(spErr(er)); } }
   else if (a === 'codeGo') { const v = ($('#code-in').value || '').trim().toUpperCase(); if (v.length !== 8) { toast($t('Der Code hat 8 Zeichen.')); return; } location.hash = '#library/code:' + v; } });
+/* Sicherheit: fremde Pläne (geteilt/Code) vor der Nutzung bereinigen – nur bekannte Arten, Schlüssel und Zahlen */
+const SAFE_KIND = new Set(['gym', 'z2', 'hiit', 'run', 'bike', 'row', 'swim', 'mob', 'rest', 'sport', 'walk', 'cardio', 'free']);
+function planSanitize(p) { if (!p || typeof p !== 'object') return p; const n = v => { const x = num(v); return x == null ? null : x; }; const s = v => v == null ? v : String(v).slice(0, 120);
+  p.name = s(p.name); p.weeks = Math.max(1, Math.min(52, n(p.weeks) || 12));
+  p.sessions = (Array.isArray(p.sessions) ? p.sessions : []).slice(0, 14).filter(x => x && typeof x === 'object').map(x => { x.k = /^[A-Z][A-Z0-9]{0,2}$/.test(x.k) ? x.k : 'X'; if (!SAFE_KIND.has(x.kind)) x.kind = 'gym'; x.title = s(x.title);
+    if (Array.isArray(x.add)) x.add = x.add.slice(0, 30).filter(i => i && typeof i === 'object').map(i => Object.assign(i, { slot: s(i.slot), ex: s(i.ex), sets: n(i.sets) || 1, reps: s(i.reps), rpe: i.rpe == null ? i.rpe : n(i.rpe), sup: i.sup == null ? i.sup : s(i.sup) }));
+    return x; });
+  if (p.wkPlans && typeof p.wkPlans === 'object') Object.keys(p.wkPlans).forEach(w => { if (!/^\d{1,2}$/.test(w)) delete p.wkPlans[w]; });
+  return p; }
+const _planFromIdSafe = planFromId;
+planFromId = function (id) { const p = _planFromIdSafe.apply(this, arguments); id = String(id); return id.startsWith('sp:') || id.startsWith('code:') ? planSanitize(p) : p; };

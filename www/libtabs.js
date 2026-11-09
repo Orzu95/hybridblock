@@ -18,7 +18,7 @@ function spGet(id) { if (SP.body[id] || SP.bodyLoading[id] || !myUid()) return; 
     .finally(() => { SP.bodyLoading[id] = false; if (route.name === 'library') render(); }); }
 const spMine = sp => sp.owner_id === myUid();
 const spPubCount = () => (SP.list || []).filter(x => spMine(x) && SP_PUB.includes(x.status)).length;
-function spGrade(sp) { return (sp.meta && sp.meta.grade) || '–'; }
+function spGrade(sp) { const g = sp.meta && sp.meta.grade; return /^[A-D]$/.test(g) ? g : '–'; }
 function spCard(sp) { const m = sp.meta || {}, g = spGrade(sp);
   const st = sp.status === 'curated' ? '<span class="tag" style="background:var(--green-soft,#e3f4ea)">' + esc($t(SP_ST.curated)) + '</span>' : '<span class="tag">' + esc($t(SP_ST[sp.status] || '')) + '</span>';
   const facts = [m.sess ? $tf('{n} Einheiten pro Woche', { n: m.sess }) : '', m.weeks ? $tf('{n} Wochen', { n: m.weeks }) : '', m.goal && GOALS[m.goal] ? GOALS[m.goal] : ''].filter(Boolean).join(' · ');
@@ -86,7 +86,7 @@ viewLibPlan = function (id) { id = String(id || ''); if (typeof VIEW !== 'undefi
 
 /* Speichern, Sichtbarkeit, Löschen */
 function spMeta(plan) { const r = typeof checkPlan === 'function' ? checkPlan(plan, {}) : { g: '–' }; const p = AUTH.profile || {};
-  return { by: p.display_name || p.username || '', coach: isAdmin(), grade: r.g, goal: r.goal, gym: r.gym, sess: (plan.sessions || []).length, weeks: plan.weeks || null, tpl: plan.tpl || null }; }
+  return { by: p.display_name || '', coach: isAdmin(), grade: r.g, goal: r.goal, gym: r.gym, sess: (plan.sessions || []).length, weeks: plan.weeks || null, tpl: plan.tpl || null }; }
 function spSheet(o) { const pubN = spPubCount() - (o.sp && SP_PUB.includes(o.sp.status) ? 1 : 0), full = !isAdmin() && pubN >= 2, cur = o.sp ? o.sp.status : 'private';
   const opt = (v, l, sub, dis) => '<label class="act-pick" style="' + (dis ? 'opacity:.5' : '') + '"><input type="radio" name="sp-st" value="' + v + '"' + (cur === v ? ' checked' : '') + (dis ? ' disabled' : '') + '> <span class="grow">' + esc($t(l)) + '<br><span class="small muted" style="font-weight:500">' + esc(sub) + '</span></span></label>';
   openSheet(sheetHead(o.sp ? $t('Sichtbarkeit und Name') : $t('Plan speichern')) + '<div class="on-white" style="margin-top:12px"><div class="fields"><div class="field"><label for="sp-name">' + $t('Name') + '</label><input id="sp-name" maxlength="80" value="' + esc(o.name) + '"></div>' +
@@ -97,13 +97,14 @@ function spSheet(o) { const pubN = spPubCount() - (o.sp && SP_PUB.includes(o.sp.
     spTargetFields(o.sp ? o.sp.meta : null) + (isAdmin() ? '<label class="row" style="gap:10px;margin-top:12px"><input type="checkbox" id="sp-lock"' + (o.sp && o.sp.copy_lock ? ' checked' : '') + '> <span class="small"><b>' + $t('Kopierschutz') + '</b><br>' + $t('Andere können den Plan nutzen, aber nicht bearbeiten, speichern oder weitergeben.') + '</span></label>' : '') +
     '<p class="small muted" style="margin-top:10px">' + esc($tf('Automatische Prüfung: {g}', { g: o.grade })) + ' · ' + $t('Persönliche Notizen, Ziele und Startdatum werden nicht mitgeschickt.') + (isAdmin() ? '' : ' ' + $t('Du kannst höchstens 2 Pläne veröffentlichen.')) + '</p>' +
     '<div class="row" style="margin-top:14px"><div class="grow"></div><button class="btn brand" data-act="spSaveGo" data-src="' + esc(o.src || '') + '" data-id="' + esc(o.sp ? o.sp.id : '') + '" type="button">' + $t('Speichern') + '</button></div>'); }
+function spClean(plan) { const c = tplClean(plan); ['startAt', 'maint', 'lock', 'sharedId', 'noPlan', 'paceChanged'].forEach(k => delete c[k]); return c; }
 function spSrcPlan(src) { if (src === 'cur') return S.plan; if (src.startsWith('ar:')) { const a = S.archive[+src.slice(3)]; return a && a.plan; } return null; }
 function spErr(e) { const t = errTxt(e) || ''; if (/Höchstens 2/.test(t)) return $t('Du kannst höchstens 2 Pläne veröffentlichen.'); if (/Zu viele/.test(t)) return $t('Zu viele gespeicherte Pläne. Lösche zuerst einen.'); return $t('Speichern fehlgeschlagen: ') + t; }
 async function spSaveGo(b) { const name = ($('#sp-name').value || '').trim(), descr = ($('#sp-descr').value || '').trim() || null, r = document.querySelector('input[name="sp-st"]:checked'), status = r ? r.value : 'private';
   if (!name) { toast($t('Bitte einen Namen eingeben.')); return; } b.disabled = true;
   try { if (b.dataset.id) { const id = b.dataset.id; const old = SP.body[id] || {}; await api('/rest/v1/shared_plans?id=eq.' + id, { method: 'PATCH', headers: { Prefer: 'return=minimal' }, body: JSON.stringify({ name, descr, status, copy_lock: spLockVal(), meta: Object.assign({}, old.meta || {}, spTargetVal()) }) }); delete SP.body[id]; SP.list = null; closeSheet(); toast($t('Gespeichert')); render(); return; }
     const plan = spSrcPlan(b.dataset.src); if (!plan) throw new Error($t('Plan nicht gefunden.'));
-    const row = await api('/rest/v1/shared_plans', { method: 'POST', headers: { Prefer: 'return=representation' }, body: JSON.stringify({ name, descr, status, copy_lock: spLockVal(), plan: tplClean(plan), meta: Object.assign(spMeta(plan), spTargetVal()) }) });
+    const row = await api('/rest/v1/shared_plans', { method: 'POST', headers: { Prefer: 'return=representation' }, body: JSON.stringify({ name, descr, status, copy_lock: spLockVal(), plan: spClean(plan), meta: Object.assign(spMeta(plan), spTargetVal()) }) });
     SP.list = null; closeSheet(); toast(status === 'private' ? $t('Gespeichert') : $t('Veröffentlicht')); ui.libTab = 'mine'; const nr = row && row[0]; location.hash = nr ? '#library/sp:' + nr.id : '#library';
   } catch (e) { b.disabled = false; toast(spErr(e)); } }
 document.addEventListener('click', e => { const b = e.target.closest('[data-act]'); if (!b) return; const a = b.dataset.act;
