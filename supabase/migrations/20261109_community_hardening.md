@@ -1,4 +1,4 @@
-NOCH NICHT ANGEWENDET – Supabase-Bestätigung am 09.11. automatisch abgebrochen.
+Angewendet am 09.11.2026 (Migrationen community_hardening, plan_reports_guard_setnull). FK-Löschungen setzen plan_id/reporter auf null, Meldung bleibt.
 Inhalt (Migration community_hardening, SQL in der Sitzung vom 09.11.):
 - check meta.grade ~ ^[A-D]$, Spalte mod_ground
 - shared_plans_guard neu: INSERT setzt hidden/mod_*/published_at zurück; Änderung an name/descr/meta/plan eines kuratierten Plans → submitted;
