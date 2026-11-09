@@ -1,0 +1,5 @@
+-- 09.11.2026 (über Supabase-MCP angewendet: shared_plans_review_share, shared_plans_share_flag)
+-- shared_plans: share_code (8 Zeichen, nur über shared_plan_share()/shared_plan_unshare() setzbar, Guard-Flag hb.share),
+-- copy_lock (nur Coaches, sonst false), review_state ('approved'|'rejected', nur Prüfer).
+-- shared_plan_by_code(text): security definer, für anon und authenticated, liefert Plan zum Code.
+-- Guard: Nicht-Prüfer können review_* nicht setzen; erneutes Einreichen setzt review_state zurück.
