@@ -522,3 +522,10 @@ body.lgon .timer{display:none}
 .mi-r{margin-top:10px}
 .sh-code{font-size:32px;font-weight:800;letter-spacing:.16em;text-align:center;margin:14px 0 6px}
 .sh-qr{width:200px;height:200px;margin:0 auto;background:#fff;border-radius:12px;padding:6px}.sh-qr svg{width:100%;height:100%}
+/* Community */
+.cm-stat{margin-top:8px;font-weight:600;color:var(--graphite)}.cm-star{color:var(--ember)}
+.cm-stars{display:flex;gap:2px}.cm-stars button{border:0;background:none;font-size:28px;line-height:1;color:var(--rule,#d8d8d8);cursor:pointer;padding:2px}
+.cm-stars button.on{color:var(--ember)}.cm-stars button[disabled]{cursor:default;opacity:.5}
+.lf{display:flex;flex-direction:column;gap:8px}.lf input[type=search]{border:0;background:var(--fog);border-radius:999px;padding:12px 16px;font:inherit;font-size:16px}
+.lf-row{display:flex;gap:8px;flex-wrap:wrap}.lf-sel{border:0;background:var(--fog);border-radius:999px;padding:9px 12px;font:inherit;font-size:14px;font-weight:600}
+.lf .chip-btn{background:var(--fog)}.lf .chip-btn.on{background:var(--graphite);color:#fff}

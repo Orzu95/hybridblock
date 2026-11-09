@@ -1,0 +1,5 @@
+-- 09.11.2026 über Supabase-MCP angewendet (Migration community_ratings_reports).
+-- shared_plans: hidden, mod_note, mod_at (nur Prüfer, Trigger shared_plans_mod_guard); sp_select blendet hidden für Fremde aus.
+-- plan_usage (eigene Zeilen), plan_ratings (nur nach Nutzung, nicht eigene; Trigger plan_ratings_guard),
+-- plan_stats() security definer: Anzahl/Ø Sterne, aktive Nutzer (30 Tage) erst ab 3.
+-- plan_reports: DSA-Meldungen mit good_faith, appeal nur Besitzer, 10/Tag, keine Doppelmeldung, Bearbeitung nur Prüfer.
