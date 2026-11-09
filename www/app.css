@@ -529,3 +529,5 @@ body.lgon .timer{display:none}
 .lf{display:flex;flex-direction:column;gap:8px}.lf input[type=search]{border:0;background:var(--fog);border-radius:999px;padding:12px 16px;font:inherit;font-size:16px}
 .lf-row{display:flex;gap:8px;flex-wrap:wrap}.lf-sel{border:0;background:var(--fog);border-radius:999px;padding:9px 12px;font:inherit;font-size:14px;font-weight:600}
 .lf .chip-btn{background:var(--fog)}.lf .chip-btn.on{background:var(--graphite);color:#fff}
+.libtabs{flex-wrap:wrap;overflow:visible}
+.sp-full .field{flex:1 1 100%;min-width:100%}

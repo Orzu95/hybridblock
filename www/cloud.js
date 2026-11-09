@@ -8,7 +8,7 @@ let AUTH = null; try { AUTH = JSON.parse(localStorage.getItem(AUTH_KEY) || 'null
 let VIEW = null; /* Admin schaut die Daten eines Kunden an (nur lesen) */
 const ERR_TXT = { invalid_code: $t('Code ungültig, schon benutzt oder abgelaufen.'), bad_username: $t('Benutzername: 3–24 Zeichen, nur a–z, 0–9, Punkt, Strich oder Unterstrich.'), short_password: $t('Passwort: mindestens 8 Zeichen.'),
   username_taken: $t('Dieser Benutzername ist schon vergeben.'), 'Invalid login credentials': $t('Benutzername oder Passwort falsch.'), forbidden: $t('Keine Berechtigung.'), not_logged_in: $t('Nicht angemeldet.'), Failed_fetch: $t('Keine Verbindung zum Server.') };
-const errTxt = e => { const m = (e && (e.body && e.body.error) || e && e.message) || String(e); if (/Failed to fetch|NetworkError|AbortError|Load failed/i.test(m) || (e && e.name === 'AbortError')) return ERR_TXT.Failed_fetch; return ERR_TXT[m] || m; };
+let errTxt = e => { const m = (e && (e.body && e.body.error) || e && e.message) || String(e); if (/Failed to fetch|NetworkError|AbortError|Load failed/i.test(m) || (e && e.name === 'AbortError')) return ERR_TXT.Failed_fetch; return ERR_TXT[m] || m; };
 function saveAuth() { try { if (AUTH) localStorage.setItem(AUTH_KEY, JSON.stringify(AUTH)); else localStorage.removeItem(AUTH_KEY); } catch (e) {} }
 async function sbFetch(path, opt, ms) { opt = opt || {}; const ac = new AbortController(); const t = setTimeout(() => ac.abort(), ms || 15000);
   try { const r = await fetch(SB.url + path, Object.assign({}, opt, { signal: ac.signal, headers: Object.assign({ apikey: SB.key, 'Content-Type': 'application/json' }, opt.headers || {}) }));
