@@ -520,3 +520,5 @@ body.lgon .timer{display:none}
 .nh-leg{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px;color:var(--muted)}.nh-leg span{display:flex;align-items:center;gap:6px}
 .mt-line{display:flex;align-items:center;gap:10px;margin-top:10px}.mt-line .meter{flex:1;height:6px}
 .mi-r{margin-top:10px}
+.sh-code{font-size:32px;font-weight:800;letter-spacing:.16em;text-align:center;margin:14px 0 6px}
+.sh-qr{width:200px;height:200px;margin:0 auto;background:#fff;border-radius:12px;padding:6px}.sh-qr svg{width:100%;height:100%}

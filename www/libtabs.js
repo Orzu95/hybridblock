@@ -10,7 +10,7 @@ const myUid = () => (AUTH && AUTH.uid) || null;
 function libTab() { return ui.libTab || 'cur'; }
 function spNeed() { const u = myUid(); if (SP.uid !== u) { SP.uid = u; SP.list = null; SP.body = {}; }
   if (SP.list == null && !SP.loading) { if (!u) { SP.list = []; return SP.list; } SP.loading = true;
-    api('/rest/v1/shared_plans?select=id,owner_id,name,descr,meta,status,published_at,updated_at,review_note&order=updated_at.desc&limit=300').then(r => { SP.list = r || []; }).catch(() => { SP.list = []; })
+    api('/rest/v1/shared_plans?select=id,owner_id,name,descr,meta,status,published_at,updated_at,review_note,review_state,copy_lock&order=updated_at.desc&limit=300').then(r => { SP.list = r || []; }).catch(() => { SP.list = []; })
       .finally(() => { SP.loading = false; if (route.name === 'library' && !document.querySelector('input:focus,textarea:focus')) render(); }); }
   return SP.list || []; }
 function spGet(id) { if (SP.body[id] || SP.bodyLoading[id] || !myUid()) return; SP.bodyLoading[id] = true;
@@ -92,21 +92,23 @@ function spSheet(o) { const pubN = spPubCount() - (o.sp && SP_PUB.includes(o.sp.
   openSheet(sheetHead(o.sp ? $t('Sichtbarkeit und Name') : $t('Plan speichern')) + '<div class="on-white" style="margin-top:12px"><div class="fields"><div class="field"><label for="sp-name">' + $t('Name') + '</label><input id="sp-name" maxlength="80" value="' + esc(o.name) + '"></div>' +
     '<div class="field"><label for="sp-descr">' + $t('Beschreibung') + '</label><textarea id="sp-descr" maxlength="600" rows="3" placeholder="' + esc($t('Für wen, Ziel, Aufbau')) + '">' + esc(o.descr || '') + '</textarea></div></div></div>' +
     '<div class="menu" style="margin-top:12px">' + opt('private', 'Privat', $t('Nur du siehst ihn unter „Meine Pläne“.')) + (isAdmin() ? opt('clients', 'Nur meine Athleten', $t('Deine Athleten sehen ihn unter „Meine Pläne“.')) : '') +
-    opt('public', 'Öffentlich', full ? $t('Du hast schon 2 Pläne veröffentlicht.') : $t('Alle sehen ihn unter „Community“ und „Alle“.'), full && cur !== 'public') + '</div>' +
+    opt('public', 'Öffentlich', full ? $t('Du hast schon 2 Pläne veröffentlicht.') : $t('Alle sehen ihn unter „Community“ und „Alle“.'), full && !SP_PUB.includes(cur)) +
+    opt('submitted', 'Öffentlich und zur Prüfung einreichen', full ? $t('Du hast schon 2 Pläne veröffentlicht.') : $t('Wir prüfen ihn. Nach der Freigabe steht er unter „Kuratiert“ mit dem Abzeichen „Geprüft“.'), full && !SP_PUB.includes(cur)) + '</div>' +
+    spTargetFields(o.sp ? o.sp.meta : null) + (isAdmin() ? '<label class="row" style="gap:10px;margin-top:12px"><input type="checkbox" id="sp-lock"' + (o.sp && o.sp.copy_lock ? ' checked' : '') + '> <span class="small"><b>' + $t('Kopierschutz') + '</b><br>' + $t('Andere können den Plan nutzen, aber nicht bearbeiten, speichern oder weitergeben.') + '</span></label>' : '') +
     '<p class="small muted" style="margin-top:10px">' + esc($tf('Automatische Prüfung: {g}', { g: o.grade })) + ' · ' + $t('Persönliche Notizen, Ziele und Startdatum werden nicht mitgeschickt.') + (isAdmin() ? '' : ' ' + $t('Du kannst höchstens 2 Pläne veröffentlichen.')) + '</p>' +
     '<div class="row" style="margin-top:14px"><div class="grow"></div><button class="btn brand" data-act="spSaveGo" data-src="' + esc(o.src || '') + '" data-id="' + esc(o.sp ? o.sp.id : '') + '" type="button">' + $t('Speichern') + '</button></div>'); }
 function spSrcPlan(src) { if (src === 'cur') return S.plan; if (src.startsWith('ar:')) { const a = S.archive[+src.slice(3)]; return a && a.plan; } return null; }
 function spErr(e) { const t = errTxt(e) || ''; if (/Höchstens 2/.test(t)) return $t('Du kannst höchstens 2 Pläne veröffentlichen.'); if (/Zu viele/.test(t)) return $t('Zu viele gespeicherte Pläne. Lösche zuerst einen.'); return $t('Speichern fehlgeschlagen: ') + t; }
 async function spSaveGo(b) { const name = ($('#sp-name').value || '').trim(), descr = ($('#sp-descr').value || '').trim() || null, r = document.querySelector('input[name="sp-st"]:checked'), status = r ? r.value : 'private';
   if (!name) { toast($t('Bitte einen Namen eingeben.')); return; } b.disabled = true;
-  try { if (b.dataset.id) { const id = b.dataset.id; await api('/rest/v1/shared_plans?id=eq.' + id, { method: 'PATCH', headers: { Prefer: 'return=minimal' }, body: JSON.stringify({ name, descr, status }) }); delete SP.body[id]; SP.list = null; closeSheet(); toast($t('Gespeichert')); render(); return; }
+  try { if (b.dataset.id) { const id = b.dataset.id; const old = SP.body[id] || {}; await api('/rest/v1/shared_plans?id=eq.' + id, { method: 'PATCH', headers: { Prefer: 'return=minimal' }, body: JSON.stringify({ name, descr, status, copy_lock: spLockVal(), meta: Object.assign({}, old.meta || {}, spTargetVal()) }) }); delete SP.body[id]; SP.list = null; closeSheet(); toast($t('Gespeichert')); render(); return; }
     const plan = spSrcPlan(b.dataset.src); if (!plan) throw new Error($t('Plan nicht gefunden.'));
-    const row = await api('/rest/v1/shared_plans', { method: 'POST', headers: { Prefer: 'return=representation' }, body: JSON.stringify({ name, descr, status, plan: tplClean(plan), meta: spMeta(plan) }) });
+    const row = await api('/rest/v1/shared_plans', { method: 'POST', headers: { Prefer: 'return=representation' }, body: JSON.stringify({ name, descr, status, copy_lock: spLockVal(), plan: tplClean(plan), meta: Object.assign(spMeta(plan), spTargetVal()) }) });
     SP.list = null; closeSheet(); toast(status === 'private' ? $t('Gespeichert') : $t('Veröffentlicht')); ui.libTab = 'mine'; const nr = row && row[0]; location.hash = nr ? '#library/sp:' + nr.id : '#library';
   } catch (e) { b.disabled = false; toast(spErr(e)); } }
 document.addEventListener('click', e => { const b = e.target.closest('[data-act]'); if (!b) return; const a = b.dataset.act;
   if (a === 'libTab') { ui.libTab = b.dataset.v; render(); }
-  else if (a === 'spSave') { const plan = spSrcPlan(b.dataset.src); if (!plan) return; if (LIB_OWNER[plan.tpl] && !(LIB_OWNER[plan.tpl] || []).includes(myUid())) { toast($t('Dieser Plan kann nicht geteilt werden.')); return; }
+  else if (a === 'spSave') { const plan = spSrcPlan(b.dataset.src); if (!plan) return; if ((LIB_OWNER[plan.tpl] && !(LIB_OWNER[plan.tpl] || []).includes(myUid())) || (plan.lock && plan.lock.by !== myUid())) { toast($t('Dieser Plan kann nicht geteilt werden.')); return; }
     spSheet({ src: b.dataset.src, name: $t(plan.name || ''), grade: typeof checkPlan === 'function' ? checkPlan(plan, {}).g : '–' }); }
   else if (a === 'spEdit') { const sp = SP.body[b.dataset.id]; if (sp) spSheet({ sp, name: sp.name, descr: sp.descr, grade: spGrade(sp) }); }
   else if (a === 'spSaveGo') spSaveGo(b);
