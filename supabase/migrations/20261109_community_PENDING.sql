@@ -1,0 +1,5 @@
+-- NOCH NICHT ANGEWENDET (Bestätigung in Supabase am 09.11. abgelaufen).
+-- Community: Moderation (hidden/mod_note), plan_usage, plan_ratings (nur nach Nutzung, nicht eigene), plan_stats() (aktive Nutzer erst ab 3),
+-- plan_reports (DSA-Meldungen, Einspruch 'appeal' nur für eigene Pläne, max. 10/Tag, nur Prüfer bearbeiten).
+-- Vollständiges SQL siehe Sitzung vom 09.11.2026; wird beim nächsten Durchgang erneut angewendet.
+-- Außerdem offen: delete from plans where user_id = (g73) and plan->>'tpl' = 'hybrid';
