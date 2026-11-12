@@ -46,11 +46,11 @@ function wkPlan(w) { const P = wkPattern(), A = wkAnchor(w, P), t = today(), W =
     if (d && !pr.done && d < t) { it.partFrom = d; }
     else if (d) { it.date = d; it.st = pr.done ? 'done' : 'today'; it.hard = wkHard(w, k); it.moved = d !== ideal; put(d, it); items.push(it); if (d !== ideal) track = false; prev = d; prevOff = it.off; return; }
     if (pr.done) { it.st = 'done'; items.push(it); return; }
-    it.st = it.partFrom ? 'part' : 'open'; let cand = ideal < t ? t : ideal; if (prev) { const g = addDays(prev, it.off - prevOff); if (g > cand) cand = g; }
+    it.st = it.partFrom ? 'part' : 'open'; const hold = typeof shHold === 'function' && shHold(); let cand = ideal < t && !hold ? t : ideal; if (prev && !hold) { const g = addDays(prev, it.off - prevOff); if (g > cand) cand = g; }
     if (s && s.post && cand <= s.post) cand = addDays(s.post, 1);
-    const pin = s && s.pin; if (pin) cand = pin < t ? t : pin;
+    const pin = (s && s.pin) || (typeof shFix === 'function' ? shFix(k, A, w) : null); if (pin) cand = pin < t ? t : pin;
     if (cand !== ideal) track = false; let dd = cand;
-    if (!track && !pin) for (let i = 0; i < 10; i++) { const x = addDays(cand, i); if (wkOk(ev, x, it)) { dd = x; break; } }
+    if (!track && !pin && !hold) for (let i = 0; i < 10; i++) { const x = addDays(cand, i); if (wkOk(ev, x, it)) { dd = x; break; } }
     it.date = dd; it.moved = dd !== ideal; it.hard = it.hiit || it.leg; put(dd, it); items.push(it); prev = dd; prevOff = it.off; });
   (W.z2 || []).forEach(d => put(d, { z2opt: true }));
   const end = addDays(A, 6); const dates = items.filter(o => o.date).map(o => o.date); const last = dates.length ? dates.reduce((a, b) => a > b ? a : b) : end;
@@ -198,7 +198,7 @@ const _viewTrainingWk = viewTraining; viewTraining = function () { let h = _view
   const i = h.indexOf('<div class="card flush"><div class="list">'); if (i < 0) return h; const j = h.indexOf('</a></div></div>', i); if (j < 0) return h;
   return h.slice(0, i) + wkDecisionCard(w) + wkOverview(w) + wkVolCard(w) + h.slice(j + 16); };
 const _viewHeuteWk = viewHeute; viewHeute = function () { const h = _viewHeuteWk.apply(this, arguments); if (!ORDER.length) return h; const w = curWeek(); const W = wkPeek(w); let add = '';
-  const pl = wkPlan(w); if (pl.over && !W.mode && S.settings.mode !== 'rotation') add = note('ember', '<b>' + $t('Die Woche wird knapp.') + '</b> ' + $t('Kompakt abschließen oder weiterlaufen lassen?'), '<a class="btn sm brand" href="#training">' + $t('Entscheiden') + '</a>');
+  const pl = wkPlan(w); if (pl.over && !W.mode && S.settings.mode !== 'rotation' && !(typeof shHold === 'function' && shHold())) add = note('ember', '<b>' + $t('Die Woche wird knapp.') + '</b> ' + $t('Kompakt abschließen oder weiterlaufen lassen?'), '<a class="btn sm brand" href="#training">' + $t('Entscheiden') + '</a>');
   const z = (W.z2 || []).includes(today()) ? note('green', '<b>' + $t('Heute optional: Z2 locker') + '</b> ' + $t('30–40 min, du kannst dich dabei unterhalten.'), '<button class="btn sm" data-act="pickActZ2" type="button">' + $t('Eintragen') + '</button>') : '';
   if (!add && !z) return h; const m = h.indexOf('<div class="card flush"><div class="meal-h"><b>'); return m < 0 ? h : h.slice(0, m) + add + z + h.slice(m); };
 

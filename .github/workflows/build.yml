@@ -27,6 +27,11 @@ jobs:
         run: echo "::notice::ANDROID_HOME=${ANDROID_HOME:-fehlt}"
       - name: Build-Nummer eintragen
         run: echo "{\"build\":${GITHUB_RUN_NUMBER},\"sha\":\"${GITHUB_SHA::7}\"}" > www/build.json
+      - name: Firebase für Push einbinden (nur wenn Secret gesetzt)
+        env:
+          GSJ: ${{ secrets.GOOGLE_SERVICES_JSON }}
+        run: |
+          if [ -n "$GSJ" ]; then printf '%s' "$GSJ" > android/app/google-services.json; echo '{"ready":true}' > www/push.json; echo "::notice::Push aktiv"; else echo '{"ready":false}' > www/push.json; echo "::notice::Push aus (Secret GOOGLE_SERVICES_JSON fehlt)"; fi
       - name: Regel-Tabelle gegen Wissensbank prüfen
         run: python3 tests/rules_check.py
       - run: npm ci
