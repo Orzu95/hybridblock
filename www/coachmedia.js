@@ -82,3 +82,26 @@ const _viewMehrCM = viewMehr;
 viewMehr = function () { const h = _viewMehrCM.apply(this, arguments); const hgt = num(S.settings.height); if (!hgt) return h; const ks = Object.keys(S.body || {}).filter(k => num((S.body[k] || {}).waist)).sort(); if (!ks.length) return h;
   const wst = num(S.body[ks[ks.length - 1]].waist); const r = Math.round(wst / hgt * 100) / 100; const txt = '<p class="small" style="margin:8px 0 0"><b>' + $t('Taille zu Größe (WHtR):') + '</b> ' + fmt(r, 2) + ' · ' + (r < 0.5 ? $t('unter 0,5, im empfohlenen Bereich') : $t('Ziel unter 0,5')) + '</p>';
   const i = h.indexOf('</tbody></table></div>'); return i < 0 ? h : h.slice(0, i + 22) + txt + h.slice(i + 22); };
+/* ---------- Gesundheits-Check (an PAR-Q+ angelehnt) im Fragebogen für den Coach. Keine Diagnose, nur Hinweis auf ärztliche Abklärung. ---------- */
+const PQ = () => [['heart', $t('Wurde bei dir eine Herzerkrankung oder Bluthochdruck festgestellt?')], ['chest', $t('Hast du Schmerzen in der Brust, in Ruhe, im Alltag oder beim Sport?')], ['dizzy', $t('Hast du in den letzten 12 Monaten wegen Schwindel das Gleichgewicht oder das Bewusstsein verloren?')],
+  ['chronic', $t('Wurde bei dir eine andere chronische Erkrankung festgestellt?')], ['meds', $t('Nimmst du verschreibungspflichtige Medikamente gegen eine chronische Erkrankung?')], ['joint', $t('Hast du ein Knochen-, Gelenk- oder Muskelproblem, das sich durch mehr Bewegung verschlechtern könnte?')], ['doc', $t('Hat dir eine Ärztin oder ein Arzt geraten, nur unter medizinischer Aufsicht zu trainieren?')]];
+function pqCard() { const q = S.settings.q = S.settings.q || {}; const a = q.parq = q.parq || {}; const yes = PQ().filter(x => a[x[0]] === 'y');
+  return '<div class="card"><h2>' + $t('Kurzer Gesundheits-Check') + '</h2><p class="small muted">' + $t('Freiwillig, hilft deinem Coach bei der Planung. Keine Diagnose.') + '</p>' +
+    PQ().map(x => '<div style="margin:10px 0"><p class="small" style="margin:0 0 6px">' + esc(x[1]) + '</p><div class="wkchs"><button class="wkch' + (a[x[0]] === 'n' ? ' on' : '') + '" data-act="pqAns" data-q="' + x[0] + '" data-v="n" type="button">' + $t('Nein') + '</button><button class="wkch' + (a[x[0]] === 'y' ? ' on' : '') + '" data-act="pqAns" data-q="' + x[0] + '" data-v="y" type="button">' + $t('Ja') + '</button></div></div>').join('') +
+    (yes.length ? note('ember', $t('Bitte lass vor dem Trainingsstart ärztlich abklären, welche Belastung für dich passt. Dein Coach sieht deine Angaben.')) : '') + '</div>'; }
+const _viewStartPQ = viewStart;
+viewStart = function () { const h = _viewStartPQ.apply(this, arguments); if (ONB.step !== 'intake') return h; const i = h.indexOf('<button class="btn brand block" data-act="onbIntake"'); return i < 0 ? h : h.slice(0, i) + pqCard() + h.slice(i); };
+const _reqCardPQ = reqCard;
+reqCard = function (uid2) { const h = _reqCardPQ.apply(this, arguments); const r = ADMIN.reqs && ADMIN.reqs[uid2]; const a = r && r.intake && r.intake.parq; if (!h || !a || !Object.keys(a).length) return h;
+  const yes = PQ().filter(x => a[x[0]] === 'y'); const box = yes.length ? note('ember', '<b>' + $t('Gesundheits-Check:') + '</b> ' + $t('Mindestens eine Frage mit Ja beantwortet. Vor dem Start ärztliche Abklärung empfehlen.') + '<ul class="small" style="margin:6px 0 0;padding-left:18px">' + yes.map(x => '<li>' + esc(x[1]) + '</li>').join('') + '</ul>') : note('green', '<b>' + $t('Gesundheits-Check:') + '</b> ' + $t('alle Fragen mit Nein beantwortet.'));
+  const i = h.lastIndexOf('</div>'); return h.slice(0, i) + box + h.slice(i); };
+/* Coach-Dashboard: offene Formchecks als „Braucht Aufmerksamkeit“ */
+CMX.unseen = {}; CMX.at = 0;
+async function cmUnseen() { if (!AUTH || Date.now() - CMX.at < 60000) return; CMX.at = Date.now(); try { const L = await api('/rest/v1/media_items?kind=eq.form&seen_at=is.null&owner_id=neq.' + AUTH.uid + '&select=owner_id'); const u = {}; (L || []).forEach(x => { u[x.owner_id] = (u[x.owner_id] || 0) + 1; }); CMX.unseen = u; if (route.name === 'admin' || route.name === 'heute') render(); } catch (e) {} }
+const _dashFlagsCM = dashFlags;
+dashFlags = function (c) { const f = _dashFlagsCM.apply(this, arguments); const n = CMX.unseen[c.id]; if (n) f.form = n === 1 ? $t('1 Formcheck offen') : $tf('{n} Formchecks offen', { n }); return f; };
+if (typeof DASH_TILES !== 'undefined' && !DASH_TILES.some(t => t[0] === 'form')) DASH_TILES.splice(DASH_TILES.length - 1, 0, ['form', 'Formchecks']);
+const _viewAdminCM = viewAdmin;
+viewAdmin = function () { if (typeof isAdmin === 'function' && isAdmin()) cmUnseen(); return _viewAdminCM.apply(this, arguments); };
+document.addEventListener('click', e => { const b = e.target.closest('[data-act]'); if (!b || b.dataset.act !== 'pqAns') return; const q = S.settings.q = S.settings.q || {}; q.parq = q.parq || {}; q.parq[b.dataset.q] = b.dataset.v; save(); render(); });
+(function () { const st = document.createElement('style'); st.textContent = '.fchip.f-form{background:var(--iris);color:#fff}'; document.head.appendChild(st); })();
