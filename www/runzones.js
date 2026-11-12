@@ -88,3 +88,12 @@ function tmHint(el) { if (!el) return; let h = el.parentNode.querySelector('.tm-
   h.textContent = v > 0 ? '= ' + fmtPace(3600 / v) + ' ' + $t('min/km') : $t('Tipp: 10 km/h = 6:00 min/km, 12 km/h = 5:00 min/km'); }
 document.addEventListener('input', e => { if (e.target.id === 'am-speed') tmHint(e.target); });
 document.addEventListener('focusin', e => { if (e.target.id === 'am-speed') tmHint(e.target); });
+/* Razor: Cardio-Formate als echte Einheiten (Intervalle statt Dauerlauf-Platzhalter, Z2-Dauer steigt über die Phasen) */
+const _makePlanRZ = makePlan;
+makePlan = function (tpl) { const p = _makePlanRZ.apply(this, arguments); if (tpl !== 'razor' || !p || !p.sessions) return p; const n = (p.sessions.find(s => s.cardio && s.cardio.weeks) || {}).cardio; const W = n ? n.weeks.length : (p.weeks || 12);
+  const ramp = (i, a, b) => Math.round(a + (b - a) * (W > 1 ? i / (W - 1) : 0));
+  p.sessions.forEach(s => { if (!s.cardio || !s.cardio.weeks) return; const sub0 = s.cardio.weeks[0] && s.cardio.weeks[0].sub;
+    if (/^AC/.test(s.k)) s.cardio.weeks = s.cardio.weeks.map((e, i) => ({ mode: 'int', reps: ramp(i, 10, 12), dur: 0.25, rest: 0.75, warm: 10, cool: 5, hi: true, title: $tf('{n} × 15 s Sprint', { n: ramp(i, 10, 12) }), sub: (e && e.sub) || sub0 }));
+    else if (/^BC/.test(s.k)) s.cardio.weeks = s.cardio.weeks.map((e, i) => ({ mode: 'int', reps: ramp(i, 10, 12), dur: 1, rest: 1, warm: 10, cool: 5, hi: true, title: $tf('{n} × 1 min zügig', { n: ramp(i, 10, 12) }), sub: (e && e.sub) || sub0 }));
+    else if (/^KC/.test(s.k)) s.cardio.weeks = s.cardio.weeks.map((e, i) => ({ mode: 'z2', min: ramp(i, 20, 35), sub: (e && e.sub) || sub0 })); });
+  return p; };

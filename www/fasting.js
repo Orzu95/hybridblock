@@ -65,3 +65,10 @@ document.addEventListener('click', e => { const b = e.target.closest('[data-act]
   else if (a === 'faProto') { FA().proto = b.dataset.v; save(); faSheet(); }
   else if (a === 'faSave') { const f = FA(); const el = document.getElementById('fa-start'); if (el && el.value) f.start = el.value; if (!f.on) { f.on = true; f.since = today(); } save(); closeSheet(); render(); toast($t('Essenspausen-Timer aktiv')); }
   else if (a === 'faOff') { FA().on = false; save(); render(); toast($t('Timer beendet')); } });
+/* Erinnerungen (Android): täglich zu Beginn und 30 Minuten vor Ende des Essensfensters. IDs 140–141, neutral formuliert. */
+async function faNotify() { const N = typeof NOTIF !== 'undefined' && NOTIF.p; if (!N) return; try { await N.cancel({ notifications: [{ id: 140 }, { id: 141 }] }); } catch (e) {}
+  const f = FA(); if (!f.on || f.remind === false || faHardLock()) return; try { const st = await N.checkPermissions(); if (st.display !== 'granted') return;
+    const s = faState(); const a = faHm(s.start), b = faHm(s.end) - 30; const at = m => ({ hour: Math.floor(((m % 1440) + 1440) % 1440 / 60), minute: ((m % 60) + 60) % 60 });
+    await N.schedule({ notifications: [{ id: 140, title: $t('Essensfenster offen'), body: $tf('Bis {e} Uhr. Plane eine eiweißreiche Mahlzeit ein.', { e: s.end }), schedule: { on: at(a), allowWhileIdle: true } }, { id: 141, title: $t('Essensfenster endet bald'), body: $tf('Noch etwa 30 Minuten bis {e} Uhr.', { e: s.end }), schedule: { on: at(b), allowWhileIdle: true } }] }); } catch (e) {} }
+document.addEventListener('click', e => { const b = e.target.closest('[data-act]'); if (b && /^fa(Save|Off|Proto)$/.test(b.dataset.act)) setTimeout(faNotify, 300); });
+setTimeout(faNotify, 5000);

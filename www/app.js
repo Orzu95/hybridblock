@@ -98,7 +98,7 @@ function cardioSpecS(s, w) { const c = s && s.cardio;
 function cardioTitle(sp) { if (sp.title) return $t(sp.title); if (sp.mode === 'int') return sp.reps + ' × ' + fmt(sp.dur) + (sp.run ? $t(' min laufen') : $t(' min')); return sp.min + (sp.run ? $t(' min am Stück laufen') : $t(' min Z2')); }
 function cardioSub(sp) { if (sp.sub) return $t(sp.sub); if (sp.mode === 'int') return sp.run ? fmt(sp.rest) + $t(' min gehen dazwischen, 5 min zügig gehen für Warm-up und Cool-down') : fmt(sp.rest) + $t(' min locker zwischen den Intervallen'); return sp.run ? $t('Locker, du kannst dich dabei unterhalten.') : $t('Du kannst in ganzen Sätzen reden.'); }
 function sessSub(w, k) { const s = SESS[k]; if (s.cardio) return cardioTitle(cardioSpec(w, k)); if (s.kind === 'hiit') return hiit(w).title; if (s.kind === 'z2') return z2Min(w) + $t(' min · ') + s.sub; return s.sub; }
-const RE_SESS = /^w(\d+)-([A-Z])$/;
+const RE_SESS = /^w(\d+)-([A-Z][A-Z0-9]{0,3})$/;
 applyPlan();
 function sess(w, k) { const key = sKey(w, k); return S.sessions[key] || (S.sessions[key] = { check: {}, logs: {}, swaps: {} }); }
 function peekSess(w, k) { return S.sessions[sKey(w, k)]; }
