@@ -83,3 +83,8 @@ trTick = function () { const r = _trTickRZ.apply(this, arguments);
 document.addEventListener('click', e => { const b = e.target.closest('[data-act]'); if (!b) return; const a = b.dataset.act;
   if (a === 'rzTake') { const s = S.meta.rzSuggest; if (s) { S.settings.runTest = { type: 'race', m: s.m, sec: s.sec, vdot: s.vdot, date: s.date, auto: true }; delete S.meta.rzSuggest; save(); render(); doneOverlay($t('Laufzonen aktualisiert'), 'VDOT ' + fmt(s.vdot, 1)); } }
   else if (a === 'rzDrop') { delete S.meta.rzSuggest; save(); render(); } });
+/* Laufband: km/h ↔ Pace direkt unter dem Geschwindigkeitsfeld */
+function tmHint(el) { if (!el) return; let h = el.parentNode.querySelector('.tm-hint'); if (!h) { h = document.createElement('div'); h.className = 'src tm-hint'; el.parentNode.appendChild(h); } const v = num(el.value);
+  h.textContent = v > 0 ? '= ' + fmtPace(3600 / v) + ' ' + $t('min/km') : $t('Tipp: 10 km/h = 6:00 min/km, 12 km/h = 5:00 min/km'); }
+document.addEventListener('input', e => { if (e.target.id === 'am-speed') tmHint(e.target); });
+document.addEventListener('focusin', e => { if (e.target.id === 'am-speed') tmHint(e.target); });

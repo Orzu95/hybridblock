@@ -121,7 +121,7 @@ async function trStart(type, ctx) { if (TR.active) return; const o = trOpts(); T
   try { const LN = NP('LocalNotifications'); if (LN) await LN.requestPermissions(); } catch (e) {}
   if (TR.gps) await gpsStart(); keepAwake(); trPersist(); clearInterval(TR_TICK.iv); TR_TICK.iv = setInterval(trTick, 1000);
   if (!hrFresh() && S.settings.hrm && HRM.state !== 'connecting') hrmConnect(false);
-  buzz([60]); say((ACT_MAP[TR.type].name) + $t(' gestartet') + (TR.q ? '. ' + TR.q[0].label : '')); render(); }
+  buzz([60]); say($tf('{a} gestartet', { a: ACT_MAP[TR.type].name }) + (TR.q ? '. ' + TR.q[0].label : '')); render(); }
 const TR_TICK = { iv: null };
 async function gpsStart() { const G = NP('BackgroundGeolocation');
   if (G) { try { TR.watch = await G.addWatcher({ backgroundTitle: $t('Training läuft'), backgroundMessage: ACT_MAP[TR.type].name + ' · Hybridblock', requestPermissions: true, stale: false, distanceFilter: 0 },
