@@ -97,3 +97,33 @@ makePlan = function (tpl) { const p = _makePlanRZ.apply(this, arguments); if (tp
     else if (/^BC/.test(s.k)) s.cardio.weeks = s.cardio.weeks.map((e, i) => ({ mode: 'int', reps: ramp(i, 10, 12), dur: 1, rest: 1, warm: 10, cool: 5, hi: true, title: $tf('{n} × 1 min zügig', { n: ramp(i, 10, 12) }), sub: (e && e.sub) || sub0 }));
     else if (/^KC/.test(s.k)) s.cardio.weeks = s.cardio.weeks.map((e, i) => ({ mode: 'z2', min: ramp(i, 20, 35), sub: (e && e.sub) || sub0 })); });
   return p; };
+/* Aerobe Entkopplung (Pa:HR): Verhältnis Tempo zu Puls in der ersten vs. zweiten Hälfte eines lockeren Laufs ab 30 min.
+   Unter 5 % gilt als Zeichen guter aerober Grundlage (Friel). Braucht GPS-Route mit Zeitstempeln und Pulskurve. */
+function decoupling(a) { if (!a || !a.route || !a.routeT || !(num(a.dur) >= 30)) return null; const at = ACT_MAP[a.type]; if (!at || !at.run) return null;
+  const tr = S.hrTraces[a.id] || (a.tkey && S.hrTraces[a.tkey]); if (!tr || !tr.pts || tr.pts.length < 20) return null; let pts; try { pts = decPoly(a.route); } catch (e) { return null; } const T = a.routeT; if (pts.length !== T.length || pts.length < 20) return null;
+  const cum = [0]; for (let i = 1; i < pts.length; i++) cum.push(cum[i - 1] + hav(pts[i - 1], pts[i])); const tEnd = T[T.length - 1], half = tEnd / 2, warm = Math.min(600, tEnd * 0.1);
+  const distAt = t => { let i = T.findIndex(x => x >= t); if (i <= 0) return i === 0 ? 0 : cum[cum.length - 1]; const f = (t - T[i - 1]) / Math.max(1, T[i] - T[i - 1]); return cum[i - 1] + (cum[i] - cum[i - 1]) * f; };
+  const hrAvg = (t0, t1) => { const v = tr.pts.filter(p => p[0] >= t0 && p[0] < t1).map(p => p[1]); return v.length >= 5 ? v.reduce((s, x) => s + x, 0) / v.length : null; };
+  const ef = (t0, t1) => { const h = hrAvg(t0, t1); const d = distAt(t1) - distAt(t0); return h && d > 200 ? (d / (t1 - t0)) / h : null; };
+  const e1 = ef(warm, half), e2 = ef(half, tEnd); if (!e1 || !e2) return null; return Math.round((e1 - e2) / e1 * 1000) / 10; }
+const _viewFreeDC = viewFree;
+viewFree = function (id) { const h = _viewFreeDC.apply(this, arguments); const a = S.activities.find(x => x.id === id); const d = decoupling(a); if (d == null) return h;
+  const card = '<div class="card"><div class="row" style="align-items:baseline"><h2 class="grow" style="margin:0">' + $t('Aerobe Entkopplung') + '</h2><span class="num" style="font-weight:800">' + fmt(d, 1) + ' %</span></div><p class="small muted" style="margin:6px 0 0">' +
+    (d < 5 ? $t('Unter 5 %: Tempo und Puls blieben stabil, ein gutes Zeichen für deine Grundlagenausdauer.') : $t('Ab 5 %: Der Puls stieg bei gleichem Tempo an. Häufig bei Hitze, zu schnellem Start oder wenn die Grundlage noch wächst.')) + '</p><p class="src" style="margin-top:6px">' + $t('Vergleich Tempo zu Puls in der ersten und zweiten Hälfte, ohne die ersten 10 Minuten. Am aussagekräftigsten bei lockeren, flachen Läufen ab 45 Minuten.') + '</p></div>';
+  const i = h.lastIndexOf('</div>'); return i < 0 ? h + card : h.slice(0, i) + card + h.slice(i); };
+/* ---------- HYROX-Simulation im Tracker: 8 × (1 km Lauf → Roxzone → Station), Laufabschnitte enden automatisch nach 1 km (GPS), Stationen per „Weiter“ ---------- */
+const HYROX_ST = () => [$t('SkiErg 1000 m'), $t('Sled Push 50 m'), $t('Sled Pull 50 m'), $t('Burpee Broad Jumps 80 m'), $t('Rudern 1000 m'), $t('Farmer’s Carry 200 m'), $t('Sandbag Lunges 100 m'), $t('Wall Balls 100')];
+const _ivPresetsHY = ivPresets; ivPresets = function () { return _ivPresetsHY.apply(this, arguments).concat([{ id: 'hyrox', name: $t('HYROX-Simulation: 8 × 1 km Lauf + Station') }]); };
+const _ivBuildHY = ivBuild;
+ivBuild = function (sel) { if (sel !== 'hyrox') return _ivBuildHY.apply(this, arguments); const q = [{ sec: 10, label: $t('Gleich geht’s los'), k: 'cd' }]; const st = HYROX_ST();
+  for (let i = 1; i <= 8; i++) { q.push({ sec: 7200, open: true, km: 1, k: 'run', n: i, label: $tf('Lauf {n} von 8: 1 km', { n: i }) }); q.push({ sec: 7200, open: true, k: 'rox', n: i, label: $t('Roxzone: zur Station') }); q.push({ sec: 7200, open: true, k: 'st', n: i, label: $tf('Station {n}: {s}', { n: i, s: st[i - 1] }) }); }
+  return q; };
+const _trTickHY = trTick;
+trTick = function () { const r = _trTickHY.apply(this, arguments); try { const cur = TR.active && TR.q && TR.q[TR.qi]; if (cur && cur.open) { if (cur.km && TR.gps && TR.dist - TR.qDist0 >= cur.km * 1000) trNext();
+    const el = document.getElementById('tr-qleft'); if (el) el.textContent = fmtClock(movingSec() - (TR.qAt || 0)) + (cur.km && TR.gps ? ' · ' + fmt((TR.dist - TR.qDist0) / 1000, 2) + ' km' : ''); } } catch (e) {} return r; };
+function hyroxCard(a) { const v = (a.ivs || []).filter(x => ['run', 'rox', 'st'].includes(x.k)); if (!v.length) return ''; const sum = k => v.filter(x => x.k === k).reduce((s, x) => s + x.sec, 0); const st = HYROX_ST();
+  return '<div class="card"><h2>' + $t('HYROX-Zwischenzeiten') + '</h2><div class="stats" style="margin:8px 0">' + [['run', $t('Laufen')], ['rox', $t('Roxzone')], ['st', $t('Stationen')]].map(([k, l]) => '<div class="stat"><div class="k">' + l + '</div><div class="v num" style="font-size:20px">' + fmtClock(sum(k)) + '</div></div>').join('') + '</div>' +
+    '<div class="tbl"><table><thead><tr><th>#</th><th>' + $t('Lauf') + '</th><th>' + $t('Roxzone') + '</th><th>' + $t('Station') + '</th></tr></thead><tbody>' + [1, 2, 3, 4, 5, 6, 7, 8].map(n => { const g = k => v.find(x => x.k === k && x.n === n); const R = g('run'), X = g('rox'), T = g('st'); if (!R && !X && !T) return '';
+      return '<tr><td>' + n + '</td><td class="num">' + (R ? fmtClock(R.sec) : '–') + '</td><td class="num">' + (X ? fmtClock(X.sec) : '–') + '</td><td class="num">' + (T ? fmtClock(T.sec) + '<br><span class="small muted">' + esc(st[n - 1]) + '</span>' : '–') + '</td></tr>'; }).join('') + '</tbody></table></div></div>'; }
+const _viewFreeHY = viewFree;
+viewFree = function (id) { const h = _viewFreeHY.apply(this, arguments); const a = S.activities.find(x => x.id === id); const c = a ? hyroxCard(a) : ''; if (!c) return h; const i = h.lastIndexOf('</div>'); return h.slice(0, i) + c + h.slice(i); };

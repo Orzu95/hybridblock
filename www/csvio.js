@@ -1,0 +1,40 @@
+/* Hybridblock – Trainingsverlauf als CSV exportieren und aus Strong, Hevy oder einer einfachen CSV importieren.
+   Import legt pro Training eine freie Krafteinheit an (zählt im Übungsverlauf, e1RM, Progression). Unbekannte Übungen werden gemeldet, nicht geraten. */
+'use strict';
+function csvParse(txt) { txt = String(txt || '').replace(/^﻿/, ''); const first = txt.split(/\r?\n/)[0] || ''; const sep = (first.match(/;/g) || []).length > (first.match(/,/g) || []).length ? ';' : ',';
+  const rows = []; let row = [], f = '', q = false; for (let i = 0; i < txt.length; i++) { const c = txt[i];
+    if (q) { if (c === '"') { if (txt[i + 1] === '"') { f += '"'; i++; } else q = false; } else f += c; continue; }
+    if (c === '"') q = true; else if (c === sep) { row.push(f); f = ''; } else if (c === '\n' || c === '\r') { if (c === '\r' && txt[i + 1] === '\n') i++; row.push(f); rows.push(row); row = []; f = ''; } else f += c; }
+  if (f || row.length) { row.push(f); rows.push(row); } return rows.filter(r => r.some(x => String(x).trim())); }
+const csvNorm = s => String(s || '').toLowerCase().replace(/\(.*?\)/g, ' ').replace(/[^a-z0-9äöüßа-яё]+/g, ' ').trim();
+let CSV_IDX = null;
+function csvIndex() { if (CSV_IDX) return CSV_IDX; const idx = []; const en = (typeof I18N !== 'undefined' && I18N.en) || {}; const rev = {}; for (const k in en) rev[en[k]] = k;
+  for (const id in LIB) { const n = LIB[id].name; const names = new Set([n, en[n], rev[n]].filter(Boolean)); names.forEach(x => idx.push([id, csvNorm(x)])); } return (CSV_IDX = idx); }
+const CSV_ALIAS = { 'bench press': 'bench', 'squat': 'squat', 'deadlift': 'deadlift', 'overhead press': 'ohp', 'pull up': 'pullup', 'chin up': 'chinup', 'lat pulldown': 'latpd', 'leg press': 'legpress', 'romanian deadlift': 'rdl', 'hip thrust': 'ht' };
+function csvMatch(name) { const n = csvNorm(name); if (!n) return null; if (CSV_ALIAS[n] && LIB[CSV_ALIAS[n]]) return CSV_ALIAS[n]; const idx = csvIndex(); const ex = idx.find(x => x[1] === n); if (ex) return ex[0];
+  const tk = new Set(n.split(' ')); let best = null, bs = 0; idx.forEach(([id, m]) => { const t2 = new Set(m.split(' ')); const inter = [...tk].filter(x => t2.has(x)).length; const s = inter / (tk.size + t2.size - inter); if (s > bs) { bs = s; best = id; } }); return bs >= 0.6 ? best : null; }
+function csvImport(txt, lb) { const rows = csvParse(txt); if (rows.length < 2) return { err: $t('Die Datei enthält keine Daten.') }; const H = rows[0].map(h => csvNorm(h)); const col = (...names) => names.map(n => H.indexOf(n)).find(i => i >= 0);
+  const fmt = H.includes('exercise title') ? 'hevy' : H.includes('exercise name') ? 'strong' : 'generic';
+  const c = { date: col('date', 'start time', 'datum'), title: col('workout name', 'title', 'training'), ex: col('exercise name', 'exercise title', 'exercise', 'übung'), w: col('weight kg', 'weight', 'gewicht', 'weight lbs'), r: col('reps', 'wdh', 'wiederholungen'), rpe: col('rpe'), type: col('set type'), dur: col('duration', 'duration seconds') };
+  if (c.date == null || c.ex == null || c.r == null) return { err: $t('Spalten nicht erkannt. Benötigt werden Datum, Übung und Wiederholungen.') };
+  const lbs = lb || H.includes('weight lbs'); const W = {}; const miss = {}; let nSets = 0;
+  rows.slice(1).forEach(r => { const raw = r[c.date] || ''; const d = (raw.match(/\d{4}-\d{2}-\d{2}/) || [])[0] || (() => { const m = raw.match(/(\d{1,2})\.(\d{1,2})\.(\d{4})/) || raw.match(/(\d{1,2}) (\w{3}) (\d{4})/); if (!m) return null; const dt = new Date(raw.replace(/,.*$/, '')); return isNaN(dt) ? null : iso(dt); })(); if (!d) return;
+    if (c.type != null && /warm/i.test(r[c.type] || '')) return; const reps = num(r[c.r]); if (!reps) return; const exName = r[c.ex]; const id = csvMatch(exName); if (!id) { miss[exName] = (miss[exName] || 0) + 1; return; }
+    let w = num(String(r[c.w] ?? '').replace(',', '.')); if (w != null && lbs) w = Math.round(w * 0.4536 * 4) / 4; const key = d + '|' + (c.title != null ? r[c.title] : '');
+    const wk = W[key] = W[key] || { date: d, title: c.title != null ? r[c.title] : $t('Import'), ex: {} }; const e = wk.ex[id] = wk.ex[id] || { ex: id, sets: [] }; e.sets.push({ w: w != null ? w : null, r: reps, rpe: c.rpe != null ? num(r[c.rpe]) : null, done: true }); nSets++; });
+  let nW = 0; Object.values(W).forEach(wk => { const k = 'imp:' + fmt + ':' + wk.date + ':' + wk.title; if (S.activities.some(a => a.key === k)) return; S.activities.push({ id: uid(), key: k, type: 'kraft', date: wk.date, title: wk.title || $t('Import'), dur: null, src: 'import', exercises: Object.values(wk.ex) }); nW++; });
+  S.activities.sort((a, b) => (a.date || '') < (b.date || '') ? -1 : 1); save(); return { fmt, nW, nSets, miss }; }
+function csvExport() { const rows = [['date', 'workout', 'exercise', 'set', 'weight_kg', 'reps', 'rpe']]; const q = v => /[",;\n]/.test(String(v ?? '')) ? '"' + String(v).replace(/"/g, '""') + '"' : String(v ?? '');
+  Object.keys(LIB).forEach(id => exHistory(id).forEach(o => o.sets.forEach((s, i) => rows.push([o.d || '', o.label, LIB[id].name, i + 1, s.w ?? '', s.r ?? '', s.rpe ?? '']))));
+  rows.splice(1, rows.length, ...rows.slice(1).sort((a, b) => a[0] < b[0] ? -1 : a[0] > b[0] ? 1 : 0)); const txt = rows.map(r => r.map(q).join(',')).join('\n'); const name = 'hybridblock-verlauf-' + today() + '.csv';
+  (async () => { try { const file = new File([txt], name, { type: 'text/csv' }); if (navigator.canShare && navigator.canShare({ files: [file] })) { await navigator.share({ files: [file], title: name }); return; } } catch (e) { if (e.name === 'AbortError') return; }
+    const u = URL.createObjectURL(new Blob([txt], { type: 'text/csv' })); const l = document.createElement('a'); l.href = u; l.download = name; document.body.appendChild(l); l.click(); l.remove(); setTimeout(() => URL.revokeObjectURL(u), 3000); toast($tf('{n} Sätze exportiert', { n: rows.length - 1 })); })(); }
+function csvSheet(res) { openSheet(sheetHead($t('Training importieren')) + (res ? (res.err ? note('ember', esc(res.err)) : note('green', $tf('{w} Trainings mit {s} Sätzen importiert ({f}).', { w: res.nW, s: res.nSets, f: res.fmt })) + (Object.keys(res.miss).length ? '<p class="small" style="margin:8px 0 4px"><b>' + $t('Nicht zugeordnet (übersprungen):') + '</b></p><p class="small muted">' + esc(Object.keys(res.miss).slice(0, 30).join(', ')) + '</p>' : '')) :
+  '<p class="small muted" style="margin-top:6px">' + $t('CSV-Export aus Strong, Hevy oder eine eigene Tabelle mit Datum, Übung, Gewicht und Wiederholungen. Jedes Training wird als freie Krafteinheit angelegt und zählt im Übungsverlauf. Aufwärmsätze werden übersprungen.') + '</p>') +
+  '<label class="small" style="display:flex;gap:8px;margin:10px 0"><input type="checkbox" id="csv-lb"> ' + $t('Gewichte sind in lb (Pfund)') + '</label><div class="row"><div class="grow"></div><button class="btn brand" data-act="csvPick" type="button">' + $t('CSV-Datei wählen') + '</button></div>'); }
+const _viewMehrCSV = viewMehr;
+viewMehr = function () { const h = _viewMehrCSV.apply(this, arguments); const i = h.indexOf('<div id="backupBox"></div>'); if (i < 0) return h;
+  return h.slice(0, i) + '<div class="row" style="margin-top:10px;gap:8px;flex-wrap:wrap"><button class="btn" data-act="csvExp" type="button">' + $t('Verlauf als CSV') + '</button><button class="btn" data-act="csvImp" type="button">' + $t('Aus Strong/Hevy importieren') + '</button></div>' + h.slice(i); };
+document.addEventListener('click', e => { const b = e.target.closest('[data-act]'); if (!b) return; const a = b.dataset.act;
+  if (a === 'csvExp') csvExport(); else if (a === 'csvImp') csvSheet();
+  else if (a === 'csvPick') { const lb = !!(document.getElementById('csv-lb') || {}).checked; const i = document.createElement('input'); i.type = 'file'; i.accept = '.csv,text/csv,text/plain'; i.onchange = () => { const f = i.files && i.files[0]; if (!f) return; const rd = new FileReader(); rd.onload = () => { const r = csvImport(rd.result, lb); csvSheet(r); render(); }; rd.readAsText(f); }; i.click(); } });

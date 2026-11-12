@@ -105,3 +105,22 @@ const _viewAdminCM = viewAdmin;
 viewAdmin = function () { if (typeof isAdmin === 'function' && isAdmin()) cmUnseen(); return _viewAdminCM.apply(this, arguments); };
 document.addEventListener('click', e => { const b = e.target.closest('[data-act]'); if (!b || b.dataset.act !== 'pqAns') return; const q = S.settings.q = S.settings.q || {}; q.parq = q.parq || {}; q.parq[b.dataset.q] = b.dataset.v; save(); render(); });
 (function () { const st = document.createElement('style'); st.textContent = '.fchip.f-form{background:var(--iris);color:#fff}'; document.head.appendChild(st); })();
+/* ---------- Kamera mit halbtransparenter Vorlage des letzten Fotos (gleiche Position, vergleichbare Fotos) ---------- */
+const CAM = { stream: null };
+async function camSave(blob) { const view = ui.photoView || 'vorne'; await PHOTOS.put({ id: uid(), date: today(), ts: Date.now(), view, blob }); toast($t('Foto gespeichert'));
+  if (S.settings.shareCheckin && cmHasCoach()) { try { const path = AUTH.uid + '/coach/checkin/' + today() + '-' + view + '-' + uid() + '.jpg'; await cmUpload(path, blob, 'image/jpeg'); await api('/rest/v1/media_items', { method: 'POST', headers: { Prefer: 'return=minimal' }, body: JSON.stringify({ kind: 'checkin', path, meta: { view, date: today() } }) }); toast($t('Foto mit deinem Coach geteilt')); } catch (x) { toast($t('Teilen mit dem Coach fehlgeschlagen.')); } }
+  await refreshPhotoCard(); }
+function camStop() { if (CAM.stream) { CAM.stream.getTracks().forEach(t => t.stop()); CAM.stream = null; } }
+async function camOpen() { const view = ui.photoView || 'vorne'; let last = null; try { const L = (await PHOTOS.all()).filter(p => p.view === view); last = L[L.length - 1] || null; } catch (e) {}
+  openSheet(sheetHead($tf('Foto: {v}', { v: $t(view[0].toUpperCase() + view.slice(1)) })) + '<div style="position:relative;margin-top:8px;border-radius:14px;overflow:hidden;background:#000;aspect-ratio:3/4"><video id="cam-v" autoplay playsinline muted style="width:100%;height:100%;object-fit:cover"></video>' +
+    (last ? '<img src="' + photoUrl(last) + '" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.35;pointer-events:none">' : '') + '</div>' +
+    '<p class="small muted" style="margin:8px 0">' + (last ? $t('Stell dich so hin, dass du mit dem letzten Foto übereinstimmst: gleicher Abstand, gleiches Licht, gleiche Haltung.') : $t('Gleicher Abstand, gutes Licht, entspannte Haltung. Dieses Foto wird die Vorlage für die nächsten.')) + '</p>' +
+    '<div class="row" style="gap:8px"><button class="btn" data-act="camGallery" type="button">' + $t('Aus Galerie') + '</button><div class="grow"></div><button class="btn brand" data-act="camShot" type="button">' + $t('Aufnehmen') + '</button></div>');
+  try { CAM.stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'user', width: { ideal: 1280 }, height: { ideal: 1706 } }, audio: false }); const v = document.getElementById('cam-v'); if (v) v.srcObject = CAM.stream; }
+  catch (e) { camStop(); closeSheet(); $('#filePhoto').click(); } }
+document.addEventListener('click', async e => { const b = e.target.closest('[data-act]'); if (!b) return; const a = b.dataset.act;
+  if (a === 'photoAdd' && navigator.mediaDevices && navigator.mediaDevices.getUserMedia) { e.stopImmediatePropagation(); e.preventDefault(); camOpen(); }
+  else if (a === 'camGallery') { camStop(); closeSheet(); $('#filePhoto').click(); }
+  else if (a === 'camShot') { const v = document.getElementById('cam-v'); if (!v || !v.videoWidth) return; const sc = Math.min(1, 1280 / Math.max(v.videoWidth, v.videoHeight)); const c = document.createElement('canvas'); c.width = Math.round(v.videoWidth * sc); c.height = Math.round(v.videoHeight * sc); c.getContext('2d').drawImage(v, 0, 0, c.width, c.height);
+    c.toBlob(async blob => { camStop(); closeSheet(); if (blob) await camSave(blob); }, 'image/jpeg', .85); }
+  else if (a === 'closeSheet') camStop(); }, true);
