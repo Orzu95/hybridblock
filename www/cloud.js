@@ -38,9 +38,9 @@ function cloudDirty() { if (!AUTH || VIEW) return; clearTimeout(SYNC.t); SYNC.t 
 const hasLocalData = st => !!(st && (Object.keys(st.sessions || {}).length || Object.keys(st.days || {}).length || (st.activities || []).length));
 function cloudCopy() { const c = JSON.parse(JSON.stringify(S)); return c; }
 async function pushState() { if (!AUTH || VIEW) return; if (SYNC.busy) { cloudDirty(); return; } SYNC.busy = true; const mod = S.meta.modAt || Date.now();
-  try { const now = new Date().toISOString(); S.meta.syncAt = now; S.meta.syncMod = mod;
+  const prevAt = S.meta.syncAt, prevMod = S.meta.syncMod; try { const now = new Date().toISOString(); S.meta.syncAt = now; S.meta.syncMod = mod;
     await api('/rest/v1/user_state?on_conflict=user_id', { method: $t('POST'), headers: { Prefer: 'resolution=merge-duplicates,return=minimal' }, body: JSON.stringify({ user_id: AUTH.uid, state: cloudCopy(), summary: makeSummary(), updated_at: now }) });
-    SYNC.err = null; persist(); } catch (e) { SYNC.err = errTxt(e); S.meta.syncMod = null; } finally { SYNC.busy = false; } }
+    SYNC.err = null; persist(); } catch (e) { SYNC.err = errTxt(e); S.meta.syncAt = prevAt; S.meta.syncMod = prevMod === mod ? null : prevMod; } finally { SYNC.busy = false; } }
 async function pushPlan(uid, plan) { const now = new Date().toISOString();
   await api('/rest/v1/plans?on_conflict=user_id', { method: $t('POST'), headers: { Prefer: 'resolution=merge-duplicates,return=minimal' }, body: JSON.stringify({ user_id: uid, plan, updated_at: now, updated_by: AUTH.uid }) }); return now; }
 /* Plan übernehmen: Wochentage für neue Einheiten aus dem Plan, Ernährungsziele vom Coach als Check-in */
@@ -216,7 +216,7 @@ function viewAdmin(arg) { if (!isAdmin()) return '<a href="#mehr" class="back">'
     (inv.length ? $t('<div class="section-h"><h2>Offene Einladungen</h2></div><div class="card flush"><div class="list">') + inv.map(i => '<div class="li" style="cursor:default"><div class="grow"><b class="num" style="letter-spacing:.06em">' + esc(i.code) + '</b><small>' + esc((i.name || '') + $t(' · gültig bis ') + fmtDay(i.expires_at.slice(0, 10))) + '</small></div><button class="btn sm" data-act="inviteShare" data-code="' + esc(i.code) + '" data-name="' + esc(i.name || '') + $t('" type="button">Teilen</button><button class="btn sm danger" data-act="inviteDel" data-code="') + esc(i.code) + $t('" type="button">Löschen</button></div>')).join('') + '</div></div>' : '') + (typeof coachNotifCard === 'function' ? coachNotifCard() : '') +
     '</div>'; }
 function viewClient(uid) { const c = (ADMIN.clients || []).find(x => x.id === uid); if (!c) return '<a href="#admin" class="back">' + ICON.back + $t('Team</a><p class="muted">') + (ADMIN.loading || ADMIN.clients == null ? $t('Lade …') : $t('Athlet nicht gefunden.')) + '</p>';
-  const s = c.summary || {}; const st = (k, v, sub) => '<div class="stat"><div class="k">' + k + '</div><div class="v" style="font-size:22px">' + v + '</div>' + (sub ? '<div class="s">' + sub + '</div>' : '') + '</div>';
+  const s = c.summary || {}; const st = (k, v, sub) => '<div class="stat"><div class="k">' + k + '</div><div class="v" style="font-size:22px">' + esc(v) + '</div>' + (sub ? '<div class="s">' + esc(sub) + '</div>' : '') + '</div>';
   const lost0 = s.start != null && s.trend != null ? s.start - s.trend : null; const lost = lost0 != null && Math.abs(lost0) < 0.05 ? 0 : lost0;
   return '<a href="#admin" class="back">' + ICON.back + $t('Team</a>') + pageTop(esc(cname(c)), '', '@' + esc(c.username) + $t(' · Plan: ') + esc($t(s.plan || '–')) + $t(' · Sync ') + esc(ago(c.updated_at))) + '<div class="stack">' +
     (typeof chatClientBtn === 'function' ? chatClientBtn(uid) : '') + (c.updated_at ? '' : note('amber', $t('Noch keine Daten hochgeladen. Sobald dein Athlet die App öffnet und online ist, erscheinen sie hier.'))) +

@@ -36,8 +36,8 @@ function dashRow(c) { const s = c.summary || {}, f = dashFlags(c), m = athMode(c
   const dot = !c.updated_at ? 'mist' : Date.now() - Date.parse(c.updated_at) > 3 * 864e5 ? 'amber' : 'green';
   const dots = (s.dots || []).map(d => '<i class="sd sd-' + d + '"></i>').join('');
   const chips = Object.keys(f).map(k => '<span class="fchip f-' + k + '">' + esc(f[k]) + '</span>').join('');
-  return '<div class="li dash-li"><span class="badge gym">' + esc(cname(c).slice(0, 1).toUpperCase()) + '</span><div class="grow" style="min-width:0"><a href="#admin/' + c.id + '" style="color:inherit;text-decoration:none"><b>' + esc(cname(c)) + '</b></a>' + (m ? ' <span class="tag">' + esc($t(ATH_MODE[m])) + '</span>' : '') +
-    '<small>' + (s.week ? $t('Woche ') + s.week + (s.nw ? '/' + s.nw : '') : $t('noch nicht gestartet')) + (qp != null ? ' · ' + $tf('Umsetzung {p} %', { p: qp }) : '') + ' · <span class="dot ' + dot + '"></span>' + esc(ago(c.updated_at)) + '</small>' +
+  return '<div class="li dash-li"><span class="badge gym">' + esc(cname(c).slice(0, 1).toUpperCase()) + '</span><div class="grow" style="min-width:0"><a href="#admin/' + esc(c.id) + '" style="color:inherit;text-decoration:none"><b>' + esc(cname(c)) + '</b></a>' + (m ? ' <span class="tag">' + esc($t(ATH_MODE[m])) + '</span>' : '') +
+    '<small>' + (s.week ? $t('Woche ') + esc(s.week) + (s.nw ? '/' + esc(s.nw) : '') : $t('noch nicht gestartet')) + (qp != null ? ' · ' + $tf('Umsetzung {p} %', { p: qp }) : '') + ' · <span class="dot ' + dot + '"></span>' + esc(ago(c.updated_at)) + '</small>' +
     (dots ? '<div class="sdots" aria-label="' + esc($t('Einheiten dieser Woche')) + '">' + dots + '</div>' : '') + (chips ? '<div class="fchips">' + chips + '</div>' : '') +
     '<div class="row qa"><a class="btn sm" href="#admin/' + c.id + '">' + $t('Check-in') + '</a><a class="btn sm" href="#chat/' + c.id + '">' + $t('Chat') + '</a><a class="btn sm" href="#plan/' + c.id + '">' + $t('Plan') + '</a></div></div></div>'; }
 const _viewAdminDash = viewAdmin;
