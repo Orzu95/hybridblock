@@ -34,13 +34,19 @@ async function logout() { try { if (AUTH) await api('/auth/v1/logout', { method:
 
 /* ======================= SYNC ======================= */
 const SYNC = { t: null, busy: false, err: null, pulled: false };
-function cloudDirty() { if (!AUTH || VIEW) return; clearTimeout(SYNC.t); SYNC.t = setTimeout(pushState, 4000); }
+function cloudDirty() { if (!AUTH || VIEW) return; clearTimeout(SYNC.t); SYNC.t = setTimeout(pushState, 12000); }
 const hasLocalData = st => !!(st && (Object.keys(st.sessions || {}).length || Object.keys(st.days || {}).length || (st.activities || []).length));
 function cloudCopy() { const c = JSON.parse(JSON.stringify(S)); return c; }
 async function pushState() { if (!AUTH || VIEW) return; if (SYNC.busy) { cloudDirty(); return; } SYNC.busy = true; const mod = S.meta.modAt || Date.now();
-  const prevAt = S.meta.syncAt, prevMod = S.meta.syncMod; try { const now = new Date().toISOString(); S.meta.syncAt = now; S.meta.syncMod = mod;
-    await api('/rest/v1/user_state?on_conflict=user_id', { method: $t('POST'), headers: { Prefer: 'resolution=merge-duplicates,return=minimal' }, body: JSON.stringify({ user_id: AUTH.uid, state: cloudCopy(), summary: makeSummary(), updated_at: now }) });
-    SYNC.err = null; persist(); } catch (e) { SYNC.err = errTxt(e); S.meta.syncAt = prevAt; S.meta.syncMod = prevMod === mod ? null : prevMod; } finally { SYNC.busy = false; } }
+  const prevAt = S.meta.syncAt, prevMod = S.meta.syncMod; let merged = null;
+  try { smStamp(); const base = '/rest/v1/user_state?user_id=eq.' + AUTH.uid;
+    /* Sync-Schutz: Ist der Stand in der Cloud neuer als unser letzter Sync, zuerst zusammenführen, dann hochladen */
+    if (!S.meta.forcePush) { const r = await api(base + '&select=updated_at'); const rAt = r && r[0] && r[0].updated_at;
+      if (rAt && (!S.meta.syncAt || Date.parse(rAt) > Date.parse(S.meta.syncAt) + 500)) { const st = await api(base + '&select=state,updated_at'); if (st && st[0] && st[0].state) merged = smMergeIn(st[0].state); } }
+    const res = await api('/rest/v1/user_state?on_conflict=user_id&select=updated_at', { method: $t('POST'), headers: { Prefer: 'resolution=merge-duplicates,return=representation' }, body: JSON.stringify({ user_id: AUTH.uid, state: cloudCopy(), summary: makeSummary(), updated_at: new Date().toISOString() }) });
+    S.meta.syncAt = (res && res[0] && res[0].updated_at) || new Date().toISOString(); S.meta.syncMod = mod; delete S.meta.forcePush;
+    SYNC.err = null; persist(); if (merged && merged.changed && !document.querySelector('input:focus,select:focus,textarea:focus')) render(); }
+  catch (e) { SYNC.err = errTxt(e); S.meta.syncAt = prevAt; S.meta.syncMod = prevMod === mod ? null : prevMod; } finally { SYNC.busy = false; } }
 async function pushPlan(uid, plan) { const now = new Date().toISOString();
   await api('/rest/v1/plans?on_conflict=user_id', { method: $t('POST'), headers: { Prefer: 'resolution=merge-duplicates,return=minimal' }, body: JSON.stringify({ user_id: uid, plan, updated_at: now, updated_by: AUTH.uid }) }); return now; }
 /* Plan übernehmen: Wochentage für neue Einheiten aus dem Plan, Ernährungsziele vom Coach als Check-in */
@@ -61,9 +67,9 @@ async function pullAll(opts) { opts = opts || {}; if (!AUTH || VIEW) return { ch
     const remote = st && st[0];
     if (remote && remote.state) { const rAt = Date.parse(remote.updated_at), lAt = S.meta.syncAt ? Date.parse(S.meta.syncAt) : 0; const unsynced = (S.meta.modAt || 0) > (S.meta.syncMod || 0);
       if (opts.first && hasLocalData(S) && !S.meta.syncAt && hasLocalData(remote.state)) return { conflict: remote };
-      if (rAt > lAt + 1000 && (!unsynced || rAt > (S.meta.modAt || 0))) { adoptRemote(remote); changed = true; } }
+      if (rAt > lAt + 1000) { const m = smMergeIn(remote.state); S.meta.syncAt = remote.updated_at; if (!unsynced && !m.localNewer) S.meta.syncMod = S.meta.modAt; else S.meta.modAt = Date.now(); S.meta.onboarded = true; persist(); changed = m.changed; } }
     const p = pl && pl[0];
-    if (p && (!S.meta.planAt || Date.parse(p.updated_at) > Date.parse(S.meta.planAt))) { const fromCoach = p.updated_by && p.updated_by !== AUTH.uid; setPlan(p.plan, fromCoach); S.meta.planAt = p.updated_at; persist(); changed = true; if (fromCoach && !opts.quiet) { setTimeout(() => toast($t('Dein Coach hat deinen Plan aktualisiert.')), 400); localNotify(310, $t('Neuer Plan'), $t('Dein Coach hat deinen Plan aktualisiert.')); } }
+    if (p && (!S.meta.planAt || Date.parse(p.updated_at) > Date.parse(S.meta.planAt)) && !(p.updated_by && p.updated_by !== AUTH.uid && route.name === 'training' && route.arg)) { const fromCoach = p.updated_by && p.updated_by !== AUTH.uid; setPlan(p.plan, fromCoach); S.meta.planAt = p.updated_at; persist(); changed = true; if (fromCoach && !opts.quiet) { setTimeout(() => toast($t('Dein Coach hat deinen Plan aktualisiert.')), 400); localNotify(310, $t('Neuer Plan'), $t('Dein Coach hat deinen Plan aktualisiert.')); } }
     if (!remote || (S.meta.modAt || 0) > (S.meta.syncMod || 0)) await pushState();
     SYNC.err = null; SYNC.pulled = true; } catch (e) { SYNC.err = errTxt(e); }
   return { changed }; }
@@ -360,7 +366,7 @@ document.addEventListener('click', async e => { const b = e.target.closest('[dat
       try { const user = normUser(d.user); const rr = await fnCall({ action: 'redeem', code: ONB.inv.code, username: user, password: d.pw, name: ONB.inv.name || String(d.user || '').trim(), lang: LANG }); ONB.mode = ONB.inv.mode === 'plan' && !ONB.inv.hasPlan ? 'free' : ONB.inv.mode; S.meta.mode = ONB.mode; await login(user, d.pw); ONB.data.pw = ONB.data.pw2 = ''; await afterAuth(); if (rr && rr.recovery && typeof recoverySheet === 'function') recoverySheet(rr.recovery, true); }
       catch (err) { ONB.err = errTxt(err); ONB.busy = false; render(); } break; }
     case 'onbLogin': { const d = ONB.data; ONB.busy = true; ONB.err = ''; render(); try { await login(d.user || '', d.pw || ''); ONB.data.pw = ''; await afterAuth(); } catch (err) { ONB.err = errTxt(err); ONB.busy = false; render(); } break; }
-    case 'onbConflict': { if (b.dataset.v === 'remote') adoptRemote(ONB.conflict); else { S.meta.syncAt = null; S.meta.modAt = Date.now(); await pushState(); } ONB.conflict = null; S.meta.onboarded = true; persist(); finishAuth(); break; }
+    case 'onbConflict': { if (b.dataset.v === 'remote') adoptRemote(ONB.conflict); else { S.meta.syncAt = null; S.meta.forcePush = true; S.meta.modAt = Date.now(); await pushState(); } ONB.conflict = null; S.meta.onboarded = true; persist(); finishAuth(); break; }
     case 'onbProfile': if (onbApplyProfile()) { ONB.step = 'goals'; } render(true); break;
     case 'onbFinish': S.meta.onboarded = true; S.meta.daysSet = true; save(); ONB.step = 'welcome'; location.hash = ONB.after === 'editor' ? '#plan/me' : '#heute'; ONB.after = null; toast($t('Viel Erfolg!')); break;
     case 'onbStudio': openSheet(sheetHead($t('Mein Studio')) + studioCard().replace('class="card"', 'class="card on-white" style="background:var(--paper);padding:0"')); break;
