@@ -2326,6 +2326,7 @@ I18N.en = {
 "Kurz auf der Box sitzen, Spannung halten.": "Sit briefly on the box, keep the tension.",
 "Kurz auf der Brust, kein Abfedern.": "Touch the chest briefly, no bouncing.",
 "Kurz üben, was die Studienlage sagt.": "Quick practice on what the research says.",
+"Kurz-Check": "Quick check",
 "Kurzbeschreibung": "Short description",
 "Kurze Beschreibung": "Short description",
 "Kurze Einheiten": "Short sessions",

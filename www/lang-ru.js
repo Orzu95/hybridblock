@@ -2326,6 +2326,7 @@ I18N.ru = {
 "Kurz auf der Box sitzen, Spannung halten.": "Коротко сядь на ящик, сохраняй напряжение.",
 "Kurz auf der Brust, kein Abfedern.": "Коротко коснись груди, без отбива.",
 "Kurz üben, was die Studienlage sagt.": "Коротко повторяем, что говорят исследования.",
+"Kurz-Check": "Кратко о технике",
 "Kurzbeschreibung": "Краткое описание",
 "Kurze Beschreibung": "Краткое описание",
 "Kurze Einheiten": "Короткие тренировки",
