@@ -77,7 +77,7 @@ document.addEventListener('click', async e => { const b = e.target.closest('[dat
   else if (a === 'codeGo') { const v = ($('#code-in').value || '').trim().toUpperCase(); if (v.length !== 8) { toast($t('Der Code hat 8 Zeichen.')); return; } location.hash = '#library/code:' + v; } });
 /* Sicherheit: fremde Pläne (geteilt/Code) vor der Nutzung bereinigen – nur bekannte Arten, Schlüssel und Zahlen */
 const SAFE_KIND = new Set(['gym', 'z2', 'hiit', 'run', 'bike', 'row', 'swim', 'mob', 'rest', 'sport', 'walk', 'cardio', 'free']);
-function planSanitize(p) { if (!p || typeof p !== 'object') return p; const n = v => { const x = num(v); return x == null ? null : x; }; const s = v => v == null ? v : String(v).slice(0, 120);
+function planSanitize(p) { if (!p || typeof p !== 'object') return p; const n = v => { const x = num(v); return x == null ? null : x; }; const s = v => v == null ? v : String(v).replace(/[<>"`]/g, '').slice(0, 120);
   p.name = s(p.name); p.weeks = Math.max(1, Math.min(52, n(p.weeks) || 12));
   p.sessions = (Array.isArray(p.sessions) ? p.sessions : []).slice(0, 14).filter(x => x && typeof x === 'object').map(x => { x.k = /^[A-Z][A-Z0-9]{0,2}$/.test(x.k) ? x.k : 'X'; if (!SAFE_KIND.has(x.kind)) x.kind = 'gym'; x.title = s(x.title);
     if (Array.isArray(x.add)) x.add = x.add.slice(0, 30).filter(i => i && typeof i === 'object').map(i => Object.assign(i, { slot: s(i.slot), ex: s(i.ex), sets: n(i.sets) || 1, reps: s(i.reps), rpe: i.rpe == null ? i.rpe : n(i.rpe), sup: i.sup == null ? i.sup : s(i.sup) }));

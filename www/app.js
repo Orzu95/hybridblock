@@ -68,7 +68,8 @@ const sKey = (w, k) => 'w' + pad(w) + '-' + k;
 let ORDER = [], SESS = {};
 const TPL_SESS = Object.fromEntries(SESSIONS.map(s => [s.k, s]));
 function sessDef(x) { return x.base ? TPL_SESS[x.base] : x.kind === 'hiit' ? TPL_SESS.H : x.kind === 'z2' ? TPL_SESS.Z : { title: $t('Einheit ') + x.k, sub: '' }; }
-function resolveSessions(plan) { return Object.fromEntries(plan.sessions.map(x => { const d = sessDef(x) || {}; return [x.k, Object.assign({}, x, { title: $t(x.title || d.title), sub: $t(x.sub != null && x.sub !== '' ? x.sub : x.cardio ? '' : (d.sub || '')) })]; })); }
+const hbClean = v => typeof v === 'string' ? v.replace(/[<>"`]/g, '') : v;
+function resolveSessions(plan) { return Object.fromEntries(plan.sessions.map(x => { const d = sessDef(x) || {}; return [x.k, Object.assign({}, x, { title: hbClean($t(x.title || d.title)), sub: hbClean($t(x.sub != null && x.sub !== '' ? x.sub : x.cardio ? '' : (d.sub || ''))) })]; })); }
 function applyPlan() { ORDER = S.plan.sessions.map(x => x.k); SESS = resolveSessions(S.plan); S.plan.sessions.forEach(x => { if (!(x.k in S.settings.dayMap)) S.settings.dayMap[x.k] = ''; }); }
 const isLite = w => { const p = phase(w); return p === 'dl' || p === 'test'; };
 function scaleItem(it, w) { const x = Object.assign({ note: '', sup: '', type: 'dp', rest: 90 }, it);
@@ -327,11 +328,11 @@ function viewHeute() {
   const open = ORDER.filter(k => !sessProgress(w, k).done);
   let train = '';
   planned.forEach(k => { const pr = sessProgress(w, k); const s = SESS[k];
-    train += '<a class="li" href="#training/' + sKey(w, k) + '">' + badge(k) + '<div class="grow"><b>' + s.title + '</b><small>' + esc(sessSub(w, k)) + '</small></div><span class="tag"><span class="dot ' + (pr.done ? 'green' : pr.f ? 'amber' : 'mist') + '"></span>' + (pr.off ? $t('entfällt diese Woche') : pr.skipped ? $t('übersprungen') : pr.done ? $t('erledigt') : pr.f ? pr.f + '/' + pr.t : $t('offen')) + '</span></a>'; });
+    train += '<a class="li" href="#training/' + sKey(w, k) + '">' + badge(k) + '<div class="grow"><b>' + esc(s.title) + '</b><small>' + esc(sessSub(w, k)) + '</small></div><span class="tag"><span class="dot ' + (pr.done ? 'green' : pr.f ? 'amber' : 'mist') + '"></span>' + (pr.off ? $t('entfällt diese Woche') : pr.skipped ? $t('übersprungen') : pr.done ? $t('erledigt') : pr.f ? pr.f + '/' + pr.t : $t('offen')) + '</span></a>'; });
   const others = open.filter(k => !planned.includes(k));
   const trainCard = !ORDER.length ? noPlanCard() : $t('<div class="card flush"><div class="meal-h"><b>Training · Woche ') + w + '</b><span class="tag">' + PH_LABEL[phase(w)] + '</span></div>' +
     (train ? (S.settings.mode === 'rotation' ? $t('<div class="lbl" style="padding:0 20px">Als Nächstes</div>') : '') + '<div class="list">' + train + '</div>' : '<div style="padding:0 20px 14px" class="muted">' + (S.settings.mode === 'rotation' ? $t('Woche ') + w + $t(' ist komplett.') : $t('Heute ist kein Training eingeplant.')) + '</div>') +
-    (others.length ? '<div style="padding:4px 20px 18px"><div class="lbl" style="margin-bottom:8px">' + (train ? $t('Diese Woche noch offen') : $t('Nachholen oder vorziehen')) + '</div><div class="row">' + others.map(k => '<a class="btn sm" href="#training/' + sKey(w, k) + '">' + SESS[k].title + (st.dayMap[k] === '' || st.dayMap[k] == null ? '' : ' <span class="muted">' + WD[st.dayMap[k]] + '</span>') + '</a>').join('') + '</div></div>' : '') + '</div>';
+    (others.length ? '<div style="padding:4px 20px 18px"><div class="lbl" style="margin-bottom:8px">' + (train ? $t('Diese Woche noch offen') : $t('Nachholen oder vorziehen')) + '</div><div class="row">' + others.map(k => '<a class="btn sm" href="#training/' + sKey(w, k) + '">' + esc(SESS[k].title) + (st.dayMap[k] === '' || st.dayMap[k] == null ? '' : ' <span class="muted">' + WD[st.dayMap[k]] + '</span>') + '</a>').join('') + '</div></div>' : '') + '</div>';
   const todaysActs = S.activities.filter(a => a.date === t);
   const acts = todaysActs.length ? $t('<div class="card flush"><div class="meal-h"><b>Aktivitäten heute</b></div><div class="list">') + todaysActs.map(actRow).join('') + '</div></div>' : '';
   const due = checkinDue();
@@ -373,7 +374,7 @@ function viewTraining() {
   const weeks = Array.from({ length: NW() }, (_, i) => { const x = i + 1; return '<button class="wk' + (x === w ? $t(' on') : '') + (x === cw ? $t(' cur') : '') + (weekDone(x) ? $t(' done') : '') + '" data-act="week" data-w="' + x + '" type="button" aria-label="Woche ' + x + '"><b>' + x + '</b><i class="ph-' + phase(x) + '"></i></button>'; }).join('');
   const rows = ORDER.map(k => { const s = SESS[k], pr = sessProgress(w, k); const sub = sessSub(w, k);
     const se = peekSess(w, k); const when = se && se.date ? fmtDay(se.date) : dayLabel(k);
-    return '<a class="li" href="#training/' + sKey(w, k) + '">' + badge(k) + '<div class="grow"><b>' + s.title + '</b><small>' + esc(when + (sub ? ' · ' + sub : '')) + '</small></div><span class="tag"><span class="dot ' + (pr.done ? 'green' : pr.f ? 'amber' : 'mist') + '"></span>' + (pr.off ? $t('entfällt diese Woche') : pr.skipped ? $t('übersprungen') : pr.done ? $t('erledigt') : pr.f ? pr.f + '/' + pr.t : $t('offen')) + '</span></a>'; }).join('');
+    return '<a class="li" href="#training/' + sKey(w, k) + '">' + badge(k) + '<div class="grow"><b>' + esc(s.title) + '</b><small>' + esc(when + (sub ? ' · ' + sub : '')) + '</small></div><span class="tag"><span class="dot ' + (pr.done ? 'green' : pr.f ? 'amber' : 'mist') + '"></span>' + (pr.off ? $t('entfällt diese Woche') : pr.skipped ? $t('übersprungen') : pr.done ? $t('erledigt') : pr.f ? pr.f + '/' + pr.t : $t('offen')) + '</span></a>'; }).join('');
   const frees = S.activities.filter(a => a.week === w && a.week);
   const warn = scheduleWarnings();
   const vol = weekVolume(w), pv = plannedVolume(w);
@@ -570,7 +571,8 @@ async function fetchJson(url, ms) { const ac = new AbortController(); const t = 
 /* Lebensmittelsuche: zuerst über die eigene Edge Function (Zwischenspeicher, kein CORS, schont das OFF-Suchlimit), dann direkt bei OFF */
 async function offQuery(q, size) { const enc = encodeURIComponent(q), F = 'code,product_name,product_name_de,product_name_en,product_name_ru,brands,nutriments,serving_quantity'; const errs = [];
   if (typeof SB !== 'undefined') { try { const ac = new AbortController(); const t = setTimeout(() => ac.abort(), 15000);
-      const r = await fetch(SB.url + '/functions/v1/food-search', { method: 'POST', headers: { 'Content-Type': 'application/json', apikey: SB.key }, body: JSON.stringify({ q, langs: OFF_LANGS, size }), signal: ac.signal }); clearTimeout(t);
+      let fh = { 'Content-Type': 'application/json', apikey: SB.key }; try { if (AUTH && typeof token === 'function') fh.Authorization = 'Bearer ' + await token(); } catch (e) {}
+      const r = await fetch(SB.url + '/functions/v1/food-search', { method: 'POST', headers: fh, body: JSON.stringify({ q, langs: OFF_LANGS, size }), signal: ac.signal }); clearTimeout(t);
       const j = await r.json(); if (r.ok && Array.isArray(j.hits)) return { list: j.hits, errs }; errs.push(j.error || ('HTTP ' + r.status)); } catch (e) { errs.push(e.name === 'AbortError' ? $t('Zeitüberschreitung') : e.message); } }
   const urls = ['https://search.openfoodfacts.org/search?q=' + enc + '&langs=' + OFF_LANGS + '&page_size=' + size + '&fields=' + F, 'https://world.openfoodfacts.org/cgi/search.pl?search_terms=' + enc + '&search_simple=1&action=process&json=1&page_size=' + size + '&fields=' + F];
   const CH = window.Capacitor && Capacitor.isNativePlatform && Capacitor.isNativePlatform() && Capacitor.Plugins && Capacitor.Plugins.CapacitorHttp;
@@ -839,7 +841,7 @@ function chartLeave(box) { box.querySelector('.tip').style.display = 'none'; con
 
 /* ======================= EINSTELLUNGEN ======================= */
 function viewMehr() { const st = S.settings; const f = (k, lab, type, extra) => '<div class="field"><label for="st-' + k + '">' + lab + '</label><input id="st-' + k + '" type="' + (type || 'number') + '" inputmode="decimal" step="any" data-st="' + k + '" value="' + esc(st[k]) + '"' + (extra || '') + '></div>';
-  const sel = k => '<div class="field"><label for="dm-' + k + '">' + SESS[k].title + '</label><select id="dm-' + k + '" data-dm="' + k + $t('"><option value="">ohne festen Tag</option>') + [1, 2, 3, 4, 5, 6, 0].map(d => '<option value="' + d + '"' + (String(st.dayMap[k]) === String(d) ? $t(' selected') : '') + '>' + WD_LONG[d] + '</option>').join('') + '</select></div>';
+  const sel = k => '<div class="field"><label for="dm-' + k + '">' + esc(SESS[k].title) + '</label><select id="dm-' + k + '" data-dm="' + k + $t('"><option value="">ohne festen Tag</option>') + [1, 2, 3, 4, 5, 6, 0].map(d => '<option value="' + d + '"' + (String(st.dayMap[k]) === String(d) ? $t(' selected') : '') + '>' + WD_LONG[d] + '</option>').join('') + '</select></div>';
   let rows = ''; for (let w = 1; w <= NW(); w++) { const b = S.body['w' + pad(w)] || {}; const c = (k, ph) => '<td><input id="b-' + w + k + '" type="number" inputmode="decimal" step="any" data-bw="' + w + '" data-bf="' + k + '" value="' + esc(b[k]) + '" placeholder="' + ph + '"></td>'; rows += $t('<tr><td>Woche ') + w + '</td>' + c('waist', $t('cm')) + c('arm', $t('cm')) + c('thigh', $t('cm')) + c('calf', $t('cm')) + c('vo2', '') + '</tr>'; }
   const warn = scheduleWarnings(); const base = rhrBaseline(); const hm = S.healthMeta;
   const healthCard = connectCard();

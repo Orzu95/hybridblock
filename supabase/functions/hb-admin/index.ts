@@ -91,6 +91,8 @@ Deno.serve(async (req) => {
     if (guardSelf()) return json({ error: 'self' }, 400);
     const { data: p } = await admin.from('profiles').select('id,username').eq('id', target).maybeSingle();
     if (!p || String(body.confirm || '').trim().toLowerCase() !== p.username) return json({ error: 'confirm_mismatch' }, 400);
+    try { await admin.rpc('delete_user_data', { p_uid: target }); } catch { /* Funktion fehlt noch */ }
+    try { for (const dir of [target + '/coach/form', target + '/coach/checkin', target + '/coach', target]) { const { data } = await admin.storage.from('media').list(dir, { limit: 1000 }); const files = (data || []).filter((f: any) => f.id).map((f: any) => dir + '/' + f.name); if (files.length) await admin.storage.from('media').remove(files); } } catch { /* kein Bucket */ }
     await admin.from('profiles').update({ coach_id: null }).eq('coach_id', target);
     await admin.from('plan_requests').delete().eq('user_id', target);
     await admin.from('plans').delete().eq('user_id', target);

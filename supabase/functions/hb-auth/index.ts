@@ -12,6 +12,11 @@ function randToken() { const b = new Uint8Array(32); crypto.getRandomValues(b); 
 async function sha(s: string) { const d = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(s)); return Array.from(new Uint8Array(d), x => x.toString(16).padStart(2, '0')).join(''); }
 const normCode = (c: string) => String(c || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
 
+/* Daten ohne Fremdschlüssel-Kaskade und Dateien im Bucket „media“ löschen (Prüfbericht 12.11.) */
+async function purgeUser(admin: any, uid: string) {
+  try { await admin.rpc('delete_user_data', { p_uid: uid }); } catch { /* Funktion fehlt noch */ }
+  try { for (const dir of [uid + '/coach/form', uid + '/coach/checkin', uid + '/coach', uid]) { const { data } = await admin.storage.from('media').list(dir, { limit: 1000 }); const files = (data || []).filter((f: any) => f.id).map((f: any) => dir + '/' + f.name); if (files.length) await admin.storage.from('media').remove(files); } } catch { /* kein Bucket */ }
+}
 Deno.serve(async (req) => {
   if (req.method === 'OPTIONS') return new Response('ok', { headers: CORS });
   if (req.method !== 'POST') return json({ error: 'method' }, 405);
@@ -141,7 +146,9 @@ Deno.serve(async (req) => {
   if (body.action === 'delete') {
     const u = await me(); if (!u) return json({ error: 'unauthorized' }, 401);
     const { data: p } = await admin.from('profiles').select('id,username').eq('id', u.id).maybeSingle();
-    if (p && String(body.confirm || '').trim().toLowerCase() !== p.username) return json({ error: 'confirm_mismatch' }, 400);
+    const conf = String(body.confirm || '').trim().toLowerCase();
+    if (p ? conf !== p.username : conf !== String(u.email || '').toLowerCase()) return json({ error: 'confirm_mismatch' }, 400);
+    await purgeUser(admin, u.id);
     await admin.from('profiles').update({ coach_id: null }).eq('coach_id', u.id);
     await admin.from('plan_requests').delete().eq('user_id', u.id);
     await admin.from('plans').delete().eq('user_id', u.id);

@@ -22,8 +22,14 @@ Deno.serve(async (req) => {
   } catch { return json({ error: 'bad_request' }, 400); }
   q = q.trim().toLowerCase().slice(0, 80); langs = langs.replace(/[^a-z,]/g, '').slice(0, 20);
   if (q.length < 2) return json({ hits: [], source: 'none' });
+  if (!['de,en', 'en,de', 'ru,en,de'].includes(langs)) langs = 'de,en'; size = Math.min(50, Math.max(20, Math.ceil(size / 10) * 10));
   const key = langs + '|' + size + '|' + q;
   const db = createClient(Deno.env.get('SUPABASE_URL')!, Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!, { auth: { persistSession: false } });
+  /* Rate-Limit: angemeldete Nutzer 60 Suchen pro Minute (nach Nutzer), ohne Konto 40 (nach IP); insgesamt 600 pro Minute. Fehlt die Zählfunktion, wird nicht blockiert. */
+  let who = 'ip:' + ((req.headers.get('x-forwarded-for') || '').split(',')[0].trim() || 'unknown'), max = 40;
+  const auth = req.headers.get('authorization') || '';
+  if (/^Bearer\s+ey/.test(auth)) { try { const { data } = await db.auth.getUser(auth.replace(/^Bearer\s+/, '')); if (data && data.user) { who = 'u:' + data.user.id; max = 60; } } catch { /* anonym */ } }
+  try { const { data: ok, error } = await db.rpc('food_search_hit', { p_key: who, p_max: max }); if (!error && ok === false) return json({ error: 'rate_limited' }, 429); } catch { /* ohne Limit weiter */ }
   const { data: c } = await db.from('food_search_cache').select('data,at').eq('key', key).maybeSingle();
   if (c && Date.now() - Date.parse(c.at) < TTL) return json({ hits: c.data, source: 'cache' });
   const enc = encodeURIComponent(q); const errs: string[] = []; let hits: unknown[] | null = null; let source = '';
