@@ -18,7 +18,10 @@ function spGet(id) { if (SP.body[id] || SP.bodyLoading[id] || !myUid()) return; 
     .finally(() => { SP.bodyLoading[id] = false; if (route.name === 'library') render(); }); }
 const spMine = sp => sp.owner_id === myUid();
 const spPubCount = () => (SP.list || []).filter(x => spMine(x) && SP_PUB.includes(x.status)).length;
-function spGrade(sp) { const g = sp.meta && sp.meta.grade; return /^[A-D]$/.test(g) ? g : '–'; }
+/* Note: Die Selbstangabe in meta.grade wird nicht blind geglaubt. Liegt der Plan selbst vor, rechnet die App die Note neu (Ergebnis gemerkt). */
+const SP_GR = {};
+function spGrade(sp) { const b = sp && SP.body && SP.body[sp.id]; const pl = b && b.plan; if (pl && typeof checkPlan === 'function') { const k = sp.id + '|' + (sp.updated_at || ''); if (!SP_GR[k]) { try { SP_GR[k] = checkPlan(typeof planSanitize === 'function' ? planSanitize(pl) : pl, {}).g; } catch (e) { SP_GR[k] = '–'; } } if (/^[A-D]$/.test(SP_GR[k])) return SP_GR[k]; }
+  const g = sp.meta && sp.meta.grade; return /^[A-D]$/.test(g) ? g : '–'; }
 function spCard(sp) { const m = sp.meta || {}, g = spGrade(sp);
   const st = sp.status === 'curated' ? '<span class="tag" style="background:var(--green-soft,#e3f4ea)">' + esc($t(SP_ST.curated)) + '</span>' : '<span class="tag">' + esc($t(SP_ST[sp.status] || '')) + '</span>';
   const facts = [m.sess ? $tf('{n} Einheiten pro Woche', { n: m.sess }) : '', m.weeks ? $tf('{n} Wochen', { n: m.weeks }) : '', m.goal && GOALS[m.goal] ? GOALS[m.goal] : ''].filter(Boolean).join(' · ');
