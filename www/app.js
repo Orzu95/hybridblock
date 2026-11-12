@@ -759,7 +759,7 @@ function exHistory(exId) { const out = [];
     for (const slot in s.logs) { const lg = s.logs[slot]; if (lg.ex !== exId) continue; const spec = planFor(w, k).find(p => p.slot === slot);
       loggedSets(lg).filter(x => x.done || x.r != null).forEach(x => sets.push({ ...x, rpe: x.rpe ?? (spec && spec.rpe) ?? null })); }
     if (sets.length) out.push({ d: s.date || null, wk: w, label: SESS[k].title + $t(' · Woche ') + w, sets, ord: s.date || ('0000-' + pad(chronIndex(w, k))) }); });
-  S.activities.forEach(a => (a.coachFor ? [] : a.exercises || []).forEach(e => { if (e.ex !== exId) return; const sets = loggedSets(e).filter(x => x.done || x.r != null); if (sets.length) out.push({ d: a.date, wk: a.week, label: $t('Freies Training'), sets, ord: a.date }); }));
+  S.activities.forEach(a => (a.coachFor ? [] : a.exercises || []).forEach(e => { if (e.ex !== exId) return; const sets = loggedSets(e).filter(x => x.done || x.r != null); if (sets.length) out.push({ d: a.date, wk: a.week, label: a.title || $t('Freies Training'), sets, ord: a.date }); }));
   S.archive.forEach(ar => { for (const key in ar.sessions || {}) { const m = key.match(RE_SESS); if (!m) continue; const s = ar.sessions[key]; const sets = [];
     for (const slot in s.logs || {}) { const lg = s.logs[slot]; if (lg.ex !== exId) continue; const spec = planForP(ar.plan, +m[1], m[2]).find(p => p.slot === slot); loggedSets(lg).filter(x => x.done || x.r != null).forEach(x => sets.push({ ...x, rpe: x.rpe ?? (spec && spec.rpe) ?? null })); }
     if (sets.length) out.push({ d: s.date || null, wk: +m[1], label: $t(ar.plan.name || $t('Früherer Plan')) + $t(' · Woche ') + m[1], sets, ord: s.date || (ar.until || '0000') }); } });

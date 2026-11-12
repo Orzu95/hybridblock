@@ -26,7 +26,7 @@ sessAdjust = function (w, k, list) { list = _sessAdjZ(w, k, list); const s = pee
 /* Zeitbudget-Karte in der Einheit */
 function zCard(w, k) { const s = peekSess(w, k) || {}; if (s.skipped || sessProgress(w, k).done) return '';
   const full = zEst(_sessAdjZ(w, k, planForP(S.plan, w, k))), now = zEst(planFor(w, k)); const b = s.budget;
-  const chips = Z_BUDGETS.filter(m => m < full - 4).map(m => '<button class="wkch' + (b === m ? ' on' : '') + '" data-act="zBud" data-w="' + w + '" data-k="' + k + '" data-v="' + m + '" type="button">' + m + ' min</button>').join('');
+  const chips = Z_BUDGETS.filter(m => m < full - 4).map(m => '<button class="wkch' + (b === m ? ' on' : '') + '" data-act="zBud" data-w="' + w + '" data-k="' + k + '" data-v="' + m + '" type="button">' + $tf('{m} min', { m }) + '</button>').join('');
   if (!chips && !b) return '';
   return '<div class="card" id="zcard"><div class="row" style="align-items:baseline"><h2 class="grow" style="margin:0">' + $t('Wenig Zeit heute?') + '</h2><span class="small muted num">' + $tf('ca. {m} min', { m: fmt(now, 0) }) + '</span></div>' +
     '<p class="small muted" style="margin:6px 0 10px">' + (b ? $tf('Auf {m} Minuten gekürzt: Hauptübungen bleiben, Gewicht und RIR bleiben gleich, nur Sätze fallen weg.', { m: b }) : $t('Wähle deine Zeit. Die App behält zuerst die Hauptübungen und deine Schwerpunkte und streicht hinten Sätze.')) + '</p>' +
@@ -94,8 +94,22 @@ heuteExtras = function () { const h = _heuteExtrasZ.apply(this, arguments); if (
 document.addEventListener('click', e => { const b = e.target.closest('[data-act]'); if (!b) return; const a = b.dataset.act;
   if (a === 'zBud') { const s = sess(+b.dataset.w, b.dataset.k); const v = +b.dataset.v; if (v) s.budget = v; else delete s.budget; save(); render(); toast(v ? $tf('Auf {m} Minuten gekürzt', { m: v }) : $t('Volle Einheit')); }
   else if (a === 'pauseOpen') pauseSheet();
-  else if (a === 'pauseGo') { pauseStart(b.dataset.v); closeSheet(); render(); doneOverlay($t('Pause eingetragen'), $t('Gute Besserung und erhol dich gut.')); }
+  else if (a === 'pauseGo') { pauseStart(b.dataset.v); closeSheet(); render(); doneOverlay($t('Pause eingetragen'), b.dataset.v === 'away' ? $t('Genieß die freie Zeit.') : $t('Gute Besserung und erhol dich gut.')); }
   else if (a === 'pauseCancel') { delete S.meta.pause; save(); render(); toast($t('Pause entfernt')); }
   else if (a === 'pauseEnd') pauseEndSheet();
   else if (a === 'pauseSev') pauseEndSheet(b.dataset.v);
   else if (a === 'pauseEndGo') { const r = pauseEnd(b.dataset.v || null); closeSheet(); render(); doneOverlay($t('Willkommen zurück'), r && r.wk > 0 ? $tf('Wiedereinstieg über etwa {w} Wochen.', { w: r.wk }) : $t('Es geht normal weiter.')); } });
+/* Wiedereinstieg: Gewichte wirklich absenken (nicht nur im Text) und Versagens-Hinweise ausblenden */
+const _planSuggestionRE = planSuggestion;
+planSuggestion = function (w, k, spec, exId) { const r = _planSuggestionRE.apply(this, arguments); const R = reState(); const s = peekSess(w, k); if (!R || (s && s.done) || !r || !(num(r.load) > 0) || R.lp >= 100) return r;
+  const inc = incFor(exId); const load = Math.max(inc, Math.round(r.load * R.lp / 100 / inc) * inc);
+  return Object.assign({}, r, { load, txt: $tf('Wiedereinstieg: {l} kg (etwa {p} % von {o} kg)', { l: fmt(load), p: R.lp, o: fmt(r.load) }), cls: 'hold' }); };
+const RE_FAIL = /Versagen|failure|отказ/i;
+const _sessAdjRE2 = sessAdjust;
+sessAdjust = function (w, k, list) { list = _sessAdjRE2.apply(this, arguments); const R = reState(); const s = peekSess(w, k); if (!R || (s && s.done)) return list;
+  return list.map(x => x.note && RE_FAIL.test(x.note) ? Object.assign({}, x, { note: '' }) : x); };
+/* Wiedereinstieg im Ausdauertraining: Intervalle und Tests werden zu lockeren Z2-Einheiten, Umfang nach Tabelle (R.run %) */
+const _cardioSpecRE = cardioSpec;
+cardioSpec = function (w, k) { const sp = _cardioSpecRE.apply(this, arguments); const R = reState(); const s = peekSess(w, k); if (!R || !sp || (s && s.done)) return sp;
+  const tot = sp.mode === 'z2' ? num(sp.min) || 30 : (num(sp.warm) || 10) + (num(sp.reps) || 0) * ((num(sp.dur) || 0) + (num(sp.rest) || 0)) + (num(sp.cool) || 5);
+  const min = Math.max(15, Math.round(tot * R.run / 100 / 5) * 5); return Object.assign({}, sp, { mode: 'z2', min, reps: null, dur: null, rest: null, hi: false, re: true, title: $tf('{m} min locker (Wiedereinstieg)', { m: min }) }); };

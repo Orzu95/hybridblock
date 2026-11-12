@@ -13,7 +13,7 @@ let ST_WARNED = false;
 const _persistST = persist;
 persist = function () { if (typeof VIEW !== 'undefined' && VIEW) return;
   if (S.archive && S.archive.length > 6) S.archive = S.archive.slice(-6);
-  if (AUTH && AUTH.uid) S.meta.owner = AUTH.uid;
+  if (AUTH && AUTH.uid && !S.meta.owner) S.meta.owner = AUTH.uid;
   let json; try { json = JSON.stringify(S); } catch (e) { return _persistST.apply(this, arguments); }
   try { localStorage.setItem(KEY, json); if (localStorage.getItem(ST_FLAG)) { localStorage.removeItem(ST_FLAG); ST_DB.del('state'); } return; }
   catch (e) { /* voll: in die Gerätedatenbank */ ST_DB.put('state', json).then(() => { try { localStorage.setItem(ST_FLAG, '1'); } catch (x) {} if (!ST_WARNED) { ST_WARNED = true; toast($t('Der Browserspeicher ist voll. Deine Daten werden jetzt in der Gerätedatenbank gesichert.')); } })
@@ -37,7 +37,13 @@ document.addEventListener('click', e => { const b = e.target.closest('[data-act]
   if (a === 'logoutWipe') { e.stopImmediatePropagation(); closeSheet(); (async () => { try { await syncNow(true); } catch (x) {} try { await logout(); } catch (x) {} try { await ST_DB.del('state'); } catch (x) {} wipeAll(); })(); } }, true);
 /* Beim Hochladen: Gehört der lokale Stand einem anderen Konto, nicht in dieses Konto hochladen */
 const _pushStateST = pushState;
-pushState = async function () { if (AUTH && S.meta.owner && S.meta.owner !== AUTH.uid) { SYNC.err = $t('Die Daten auf diesem Gerät gehören zu einem anderen Konto.'); return; } return _pushStateST.apply(this, arguments); };
+let ST_ASKED = false;
+pushState = async function () { if (AUTH && S.meta.owner && S.meta.owner !== AUTH.uid) { SYNC.err = $t('Die Daten auf diesem Gerät gehören zu einem anderen Konto.'); if (!ST_ASKED) { ST_ASKED = true; stOwnerSheet(); } return; } return _pushStateST.apply(this, arguments); };
+function stOwnerSheet() { openSheet(sheetHead($t('Daten eines anderen Kontos')) + '<p class="small" style="margin-top:8px">' + $t('Auf diesem Gerät liegen noch Daten eines anderen Kontos. Sie werden nicht in dein Konto hochgeladen, solange du nicht entscheidest.') + '</p>' +
+  '<div class="menu" style="margin-top:10px"><button class="act-pick" data-act="stOwnWipe" type="button"><span class="grow"><b>' + $t('Löschen und meine Cloud-Daten laden') + '</b><br><span class="small muted" style="font-weight:500">' + $t('Empfohlen, wenn das Gerät geteilt wird') + '</span></span></button><button class="act-pick" data-act="stOwnTake" type="button"><span class="grow">' + $t('Diese Daten in mein Konto übernehmen') + '</span></button></div>'); }
+document.addEventListener('click', e => { const b = e.target.closest('[data-act]'); if (!b) return;
+  if (b.dataset.act === 'stOwnTake') { S.meta.owner = AUTH.uid; S.meta.forcePush = true; save(); closeSheet(); pushState(); toast($t('Daten übernommen')); }
+  else if (b.dataset.act === 'stOwnWipe') { closeSheet(); (async () => { const a = AUTH; try { await ST_DB.del('state'); } catch (x) {} Object.keys(localStorage).filter(k => /^hb_state/.test(k) || k === KEY).forEach(k => localStorage.removeItem(k)); S = loadState('{}'); S.meta.owner = a.uid; S.meta.onboarded = true; try { await pullAll({}); } catch (x) {} save(); render(); toast($t('Deine Cloud-Daten sind geladen.')); })(); } });
 /* Quellen und Lizenzen ergänzen (Karte unter „Mehr“) */
 const LIC_MORE = () => ['<li>' + $t('Icons: Tabler Icons (MIT).') + '</li>', '<li>' + $t('Karten: Leaflet (BSD-2), MapLibre GL JS (BSD-3), Kartenkacheln von OpenFreeMap, Kartendaten © OpenStreetMap-Mitwirkende (ODbL).') + '</li>',
   '<li>' + $t('QR-Codes: qrcode-generator von Kazuhiko Arase (MIT) · App-Gerüst: Capacitor (MIT).') + '</li>', '<li>' + $t('Übungsbilder: exercise-dataset.com, zur Laufzeit geladen.') + '</li>',

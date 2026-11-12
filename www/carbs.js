@@ -25,13 +25,20 @@ function cbLevel(d) { const sc = cbUnits(d).map(cbScore); (S.activities || []).f
   if (!sc.length) return 0; const min = sc.reduce((a, x) => a + x.min, 0); if (min >= 240) return 4; const mx = Math.max(...sc.map(x => x.p)); const sum = sc.reduce((a, x) => a + x.p, 0);
   return sc.length >= 2 && sum >= 3 ? Math.max(3, mx) : mx; }
 function cbWeekDays(d) { const dt = new Date(d + 'T12:00'); const off = (dt.getDay() + 6) % 7; const mon = addDays(d, -off); return Array.from({ length: 7 }, (_, i) => addDays(mon, i)); }
-function cbDay(d, base) { const days = cbWeekDays(d); const lv = days.map(cbLevel); const f = lv.map(l => 1 + CB_KCAL[l]); const mean = f.reduce((a, b) => a + b, 0) / 7; const i = days.indexOf(d); let L = lv[i];
+/* Tageskalorien der Woche: Undulation um den Wochenschnitt; greifen Untergrenzen (Kohlenhydrate, Fett), wird der Überschuss
+   an den anderen Tagen wieder abgezogen, damit der Wochenschnitt wirklich gleich bleibt (Prüfbericht 12.11.). */
+function cbKcalWeek(days, lv, base, kg) { const f = lv.map(l => 1 + CB_KCAL[l]); const mean = f.reduce((a, b) => a + b, 0) / 7; const p = base.p, fatMin = Math.round(0.6 * kg), floorC = Math.round(Math.max(130, 2 * kg));
+  const floorK = 4 * p + 4 * floorC + 9 * fatMin; let k = f.map(x => Math.max(floorK, base.kcal * x / mean)); let ex = k.reduce((a, b) => a + b, 0) - 7 * base.kcal;
+  for (let it = 0; it < 5 && ex > 1; it++) { const slack = k.map(x => Math.max(0, x - floorK)); const tot = slack.reduce((a, b) => a + b, 0); if (tot <= 0) break; const cut = Math.min(ex, tot); k = k.map((x, i) => x - cut * slack[i] / tot); ex -= cut; }
+  return { k: k.map(Math.round), floorK, fatMin, floorC }; }
+function cbDay(d, base) { const days = cbWeekDays(d); const lv = days.map(cbLevel); const i = days.indexOf(d); const L = lv[i];
   const prevHigh = i > 0 ? lv[i - 1] >= 3 : cbLevel(addDays(d, -1)) >= 3; const kg = cbKg(); const prof = cbProfile(); if (!kg) return null;
-  let kcal = Math.round(base.kcal * f[i] / mean); const p = base.p; const fatMin = Math.round(0.6 * kg);
-  let gkg = CB_GKG[prof][L] + (L === 0 && prevHigh ? 0.75 : 0); let c = Math.round(gkg * kg); const floor = Math.round(Math.max(130, 2 * kg));
-  const room = Math.floor((kcal - 4 * p - 9 * fatMin) / 4); if (c > room) c = room; if (c < floor) { c = floor; }
-  let fat = Math.round((kcal - 4 * p - 4 * c) / 9); if (fat < fatMin) { fat = fatMin; kcal = 4 * p + 4 * c + 9 * fat; }
-  return { lv: L, name: CB_LV[L], kcal, p, c, f: fat, gkg: Math.round(c / kg * 10) / 10, prevHigh, prof, units: cbUnits(d) }; }
+  const W = cbKcalWeek(days, lv, base, kg); let kcal = W.k[i]; const p = base.p;
+  const gkg = CB_GKG[prof][L] + (L === 0 && prevHigh ? 0.75 : 0); let c = Math.round(gkg * kg);
+  const room = Math.floor((kcal - 4 * p - 9 * W.fatMin) / 4); if (c > room) c = room; if (c < W.floorC) c = W.floorC;
+  let fat = Math.round((kcal - 4 * p - 4 * c) / 9); if (fat < W.fatMin) { fat = W.fatMin; kcal = 4 * p + 4 * c + 9 * fat; }
+  const weekMean = Math.round(W.k.reduce((a, b) => a + b, 0) / 7);
+  return { lv: L, name: CB_LV[L], kcal, p, c, f: fat, gkg: Math.round(c / kg * 10) / 10, prevHigh, prof, units: cbUnits(d), weekMean }; }
 const _currentTargetsCB = currentTargets;
 let CB_RAW = 0;
 currentTargets = function () { const t = _currentTargetsCB.apply(this, arguments); if (CB_RAW || !cbOn() || !t || t.pause || S.settings.trackMode === 'p') return t;
@@ -39,8 +46,8 @@ currentTargets = function () { const t = _currentTargetsCB.apply(this, arguments
 function cbCard() { const t = currentTargets(); const r = t.cb;
   if (!r) return '<div class="card" id="cbcard"><div class="row" style="align-items:center;gap:10px"><div class="grow"><b>' + $t('Kohlenhydrate nach Training') + '</b><div class="small muted">' + $t('Mehr Kohlenhydrate an harten Tagen, weniger an Ruhetagen. Die Wochenkalorien bleiben gleich.') + '</div></div><button class="btn sm" data-act="cbOn" type="button">' + $t('Einschalten') + '</button></div></div>';
   const tip = r.lv >= 2 ? '<p class="small" style="margin:8px 0 0">' + $t('Vor dem Training: 1–4 Stunden vorher eine kohlenhydratreiche Mahlzeit. Einheiten über 60–90 Minuten: 30–60 g Kohlenhydrate pro Stunde. Danach eine Mahlzeit mit Eiweiß und Kohlenhydraten, bei zwei Einheiten am Tag möglichst bald.') + '</p>' : r.prevHigh ? '<p class="small" style="margin:8px 0 0">' + $t('Nach dem harten Tag gestern etwas mehr Kohlenhydrate, damit die Speicher wieder voll werden.') + '</p>' : '';
-  return '<div class="card" id="cbcard"><div class="row" style="align-items:baseline"><h2 class="grow" style="margin:0">' + esc(CB_NAME()[r.name]) + '</h2><span class="small muted num">' + fmt(r.gkg, 1) + ' g/kg</span></div>' +
-    '<p class="small muted" style="margin:6px 0 0">' + $tf('Heute {c} g Kohlenhydrate, {f} g Fett, {p} g Eiweiß, {k} kcal. Dein Wochenschnitt bleibt bei {w} kcal.', { c: fmt(r.c, 0), f: fmt(r.f, 0), p: fmt(r.p, 0), k: fmt(r.kcal, 0), w: fmt(t.kcalWeek, 0) }) + '</p>' + tip +
+  return '<div class="card" id="cbcard"><div class="row" style="align-items:baseline"><h2 class="grow" style="margin:0">' + esc(CB_NAME()[r.name]) + '</h2><span class="small muted num">' + fmt(r.gkg, 1) + ' ' + $t('g/kg') + '</span></div>' +
+    '<p class="small muted" style="margin:6px 0 0">' + $tf('Heute {c} g Kohlenhydrate, {f} g Fett, {p} g Eiweiß, {k} kcal. Dein Wochenschnitt bleibt bei {w} kcal.', { c: fmt(r.c, 0), f: fmt(r.f, 0), p: fmt(r.p, 0), k: fmt(r.kcal, 0), w: fmt(r.weekMean, 0) }) + '</p>' + tip +
     '<div class="row" style="margin-top:10px"><div class="grow"></div><button class="btn sm" style="background:var(--fog)" data-act="cbOff" type="button">' + $t('Ausschalten') + '</button></div></div>'; }
 const _viewEssenCB = viewEssen;
 viewEssen = function () { const h = _viewEssenCB.apply(this, arguments); if (S.settings.trackMode === 'p' || (typeof VIEW !== 'undefined' && VIEW) || (S.meta.pause && S.meta.pause.why !== 'away')) return h;

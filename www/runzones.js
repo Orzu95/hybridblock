@@ -44,7 +44,7 @@ function rzSet(type, m, sec) { if (!(m >= 1000 && sec >= 300)) { toast($t('Bitte
   S.settings.runTest = { type, m: Math.round(m), sec: Math.round(sec), vdot: Math.round(v * 10) / 10, date: today() }; save(); return true; }
 /* In Laufeinheiten: passende Pace anzeigen */
 const _cardioViewRZ = cardioView;
-cardioView = function (w, k) { const h = _cardioViewRZ.apply(this, arguments); const zs = rzZones(); if (!zs) return h; let hard = isHiit(k); try { const sp = cardioSpec(w, k); if (sp && sp.mode === 'int' && sp.hi) hard = true; } catch (e) {}
+cardioView = function (w, k) { const h = _cardioViewRZ.apply(this, arguments); const zs = rzZones(); if (!zs) return h; let hard = !(typeof reState === 'function' && reState()) && isHiit(k); try { const sp = cardioSpec(w, k); if (sp && sp.mode === 'int' && sp.hi) hard = true; } catch (e) {}
   const E = zs[0], I = zs[3]; const tip = hard ? $tf('Deine Pace: schnelle Abschnitte {i} /km, Erholung locker ab {e} /km.', { i: fmtPace(I.fast) + '–' + fmtPace(I.slow), e: fmtPace(E.fast) }) : $tf('Deine lockere Pace: {a}–{b} /km. Lieber zu langsam als zu schnell.', { a: fmtPace(E.fast), b: fmtPace(E.slow) });
   return note('green', tip, '<a class="btn sm" href="#mehr" data-act="rzGo">' + $t('Zonen') + '</a>') + h; };
 const _viewMehrRZ = viewMehr;
@@ -71,7 +71,7 @@ const _trSaveRZ = trSave;
 trSave = async function () { const n = (S.activities || []).length; const r = await _trSaveRZ.apply(this, arguments); try { const a = S.activities[S.activities.length - 1]; if (S.activities.length > n && a && a.src === 'gps') rzCheckRun(a); } catch (e) { console.warn('rz', e); } return r; };
 const _rzCardX = rzCard;
 rzCard = function () { const h = _rzCardX.apply(this, arguments); const s = S.meta.rzSuggest; if (!s) return h; const km = s.m / 1000;
-  const n = note('green', '<b>' + $tf('Neue Bestform: {km} km in {t} am {d}.', { km: fmt(km, 0), t: fmtClock(s.sec), d: fmtDay(s.date) }) + '</b> ' + $tf('Das entspricht VDOT {v}. Zonen damit aktualisieren?', { v: fmt(s.vdot, 1) }), '<button class="btn sm brand" data-act="rzTake" type="button">' + $t('Übernehmen') + '</button><button class="btn sm" data-act="rzDrop" type="button">' + $t('Nein') + '</button>');
+  const n = '<div class="note green" style="display:block;margin-top:10px"><b>' + $tf('Neue Bestform: {km} km in {t} am {d}', { km: fmt(km, 0), t: fmtClock(s.sec), d: fmtDay(s.date) }) + '</b><br>' + $tf('Das entspricht VDOT {v}. Zonen damit aktualisieren?', { v: fmt(s.vdot, 1) }) + '<div class="row" style="gap:8px;margin-top:8px"><button class="btn sm brand" data-act="rzTake" type="button">' + $t('Übernehmen') + '</button><button class="btn sm" data-act="rzDrop" type="button">' + $t('Nein') + '</button></div></div>';
   const i = h.indexOf('<h2'); const j = h.indexOf('</div>', h.indexOf('</h2>')); return j < 0 ? h + n : h.slice(0, j + 6) + n + h.slice(j + 6); };
 /* Pace-Ansage bei lockeren Läufen ohne Intervalle und ohne Pulszone: zu schnell oder zu langsam für die Zone „Locker“ */
 const _trTickRZ = trTick;
@@ -115,7 +115,7 @@ viewFree = function (id) { const h = _viewFreeDC.apply(this, arguments); const a
 const HYROX_ST = () => [$t('SkiErg 1000 m'), $t('Sled Push 50 m'), $t('Sled Pull 50 m'), $t('Burpee Broad Jumps 80 m'), $t('Rudern 1000 m'), $t('Farmer’s Carry 200 m'), $t('Sandbag Lunges 100 m'), $t('Wall Balls 100')];
 const _ivPresetsHY = ivPresets; ivPresets = function () { return _ivPresetsHY.apply(this, arguments).concat([{ id: 'hyrox', name: $t('HYROX-Simulation: 8 × 1 km Lauf + Station') }]); };
 const _ivBuildHY = ivBuild;
-ivBuild = function (sel) { if (sel !== 'hyrox') return _ivBuildHY.apply(this, arguments); const q = [{ sec: 10, label: $t('Gleich geht’s los'), k: 'cd' }]; const st = HYROX_ST();
+ivBuild = function (sel) { if (sel !== 'hyrox') return _ivBuildHY.apply(this, arguments); const wm = Math.max(0, num(ivOpts().warm) || 0); const q = [wm ? { sec: Math.round(wm * 60), label: $t('Aufwärmen, locker'), k: 'warm' } : { sec: 10, label: $t('Gleich geht’s los'), k: 'cd' }]; const st = HYROX_ST();
   for (let i = 1; i <= 8; i++) { q.push({ sec: 7200, open: true, km: 1, k: 'run', n: i, label: $tf('Lauf {n} von 8: 1 km', { n: i }) }); q.push({ sec: 7200, open: true, k: 'rox', n: i, label: $t('Roxzone: zur Station') }); q.push({ sec: 7200, open: true, k: 'st', n: i, label: $tf('Station {n}: {s}', { n: i, s: st[i - 1] }) }); }
   return q; };
 const _trTickHY = trTick;

@@ -4,6 +4,7 @@
    Eiweiß mindestens 1,6 g/kg, Hinweis ohne Krafttraining, neutrale Darstellung ohne Straf-Farben und ohne Gesundheitsversprechen. */
 'use strict';
 const FA_PROTO = { '12:12': 12, '14:10': 14, '16:8': 16, '18:6': 18 };
+const faSick = () => !!(S.meta.pause && S.meta.pause.from && S.meta.pause.why !== 'away');
 const FA = () => S.settings.fast || (S.settings.fast = {});
 function faKg() { return typeof curWeight === 'function' ? curWeight() : num(S.settings.startWeight); }
 function faHardLock() { const a = num(S.settings.age), h = num(S.settings.height), w = faKg(); if (a && a < 18) return true; if (h && w && w / Math.pow(h / 100, 2) < 18.5) return true; return false; }
@@ -22,7 +23,7 @@ currentTargets = function () { const t = _currentTargetsFA.apply(this, arguments
   const p = Math.round(1.6 * kg); return Object.assign({}, t, { p, c: Math.max(0, Math.round((t.kcal - 4 * p - 9 * t.f) / 4)) }); };
 function faGymRecent() { return Object.keys(S.sessions || {}).some(k => { const s = S.sessions[k]; const m = k.match(RE_SESS); return m && isGym(m[2]) && s && s.date && s.date >= addDays(today(), -7) && !s.skipped; }) || (S.activities || []).some(a => a.type === 'kraft' && a.date >= addDays(today(), -7)); }
 const FA_FLAGS = () => [$t('Starker Schwindel beim Aufstehen, Ohnmacht, Zittern oder kalter Schweiß'), $t('Erbrechen, anhaltende Übelkeit, starker Durchfall oder dunkler Urin'), $t('Ausbleibende oder unregelmäßige Periode'), $t('Kontrollverlust beim Essen nach der Pause, Schuldgefühle oder der Drang, die Pause immer weiter zu verlängern'), $t('Kraft oder Trainingsleistung lassen über Wochen nach')];
-function faCard() { const f = FA(); if (faHardLock()) return '';
+function faCard() { const f = FA(); if (faHardLock()) return ''; if (f.on && faSick()) return '<div class="card" id="facard"><b>' + $t('Essenspausen-Timer pausiert') + '</b><p class="small muted" style="margin:4px 0 0">' + $t('Während Krankheit oder Verletzung ohne feste Essenspausen essen. Der Timer läuft nach deinem Wiedereinstieg weiter.') + '</p></div>';
   if (!f.on) return '<div class="card" id="facard"><div class="row" style="align-items:center;gap:10px"><div class="grow"><b>' + $t('Essenspausen-Timer') + '</b><div class="small muted">' + $t('Optional: strukturiert deine Mahlzeiten in einem festen Zeitfenster. Dein Kalorien- und Eiweißziel bleibt gleich.') + '</div></div><button class="btn sm" data-act="faOpen" type="button">' + $t('Ansehen') + '</button></div></div>';
   const s = faState(); const capped = faProto() !== (f.proto || '14:10');
   const head = s.inWin ? '<h2 style="margin:0">' + $t('Essensfenster offen') + '</h2><p class="small muted" style="margin:4px 0 0">' + $tf('bis {e} Uhr, noch {l}', { e: s.end, l: fmtHM(s.left) }) + '</p>'
@@ -55,7 +56,7 @@ function faSheet() { const f = FA(); ui.faA = ui.faA || {};
 const _viewEssenFA = viewEssen;
 viewEssen = function () { const h = _viewEssenFA.apply(this, arguments); if ((typeof VIEW !== 'undefined' && VIEW)) return h; const c = faCard(); if (!c) return h; const m = h.indexOf('<div class="nr-search">'); return m < 0 ? h + c : h.slice(0, m) + c + h.slice(m); };
 const _heuteExtrasFA = heuteExtras;
-heuteExtras = function () { const h = _heuteExtrasFA.apply(this, arguments); if (VIEW || !FA().on || faHardLock()) return h; const s = faState();
+heuteExtras = function () { const h = _heuteExtrasFA.apply(this, arguments); if (VIEW || !FA().on || faHardLock() || faSick()) return h; const s = faState();
   return note('sky', s.inWin ? $tf('Essensfenster offen bis {e} Uhr.', { e: s.end }) : $tf('Essenspause, nächstes Essensfenster um {s} Uhr.', { s: s.start }), '<a class="btn sm" href="#essen">' + $t('Essen') + '</a>') + h; };
 document.addEventListener('change', e => { if (e.target.id === 'fa-start') { FA().start = e.target.value || '08:00'; save(); faSheet(); } });
 document.addEventListener('click', e => { const b = e.target.closest('[data-act]'); if (!b) return; const a = b.dataset.act;
@@ -67,7 +68,7 @@ document.addEventListener('click', e => { const b = e.target.closest('[data-act]
   else if (a === 'faOff') { FA().on = false; save(); render(); toast($t('Timer beendet')); } });
 /* Erinnerungen (Android): täglich zu Beginn und 30 Minuten vor Ende des Essensfensters. IDs 140–141, neutral formuliert. */
 async function faNotify() { const N = typeof NOTIF !== 'undefined' && NOTIF.p; if (!N) return; try { await N.cancel({ notifications: [{ id: 140 }, { id: 141 }] }); } catch (e) {}
-  const f = FA(); if (!f.on || f.remind === false || faHardLock()) return; try { const st = await N.checkPermissions(); if (st.display !== 'granted') return;
+  const f = FA(); if (!f.on || f.remind === false || faHardLock() || faSick()) return; try { const st = await N.checkPermissions(); if (st.display !== 'granted') return;
     const s = faState(); const a = faHm(s.start), b = faHm(s.end) - 30; const at = m => ({ hour: Math.floor(((m % 1440) + 1440) % 1440 / 60), minute: ((m % 60) + 60) % 60 });
     await N.schedule({ notifications: [{ id: 140, title: $t('Essensfenster offen'), body: $tf('Bis {e} Uhr. Plane eine eiweißreiche Mahlzeit ein.', { e: s.end }), schedule: { on: at(a), allowWhileIdle: true } }, { id: 141, title: $t('Essensfenster endet bald'), body: $tf('Noch etwa 30 Minuten bis {e} Uhr.', { e: s.end }), schedule: { on: at(b), allowWhileIdle: true } }] }); } catch (e) {} }
 document.addEventListener('click', e => { const b = e.target.closest('[data-act]'); if (b && /^fa(Save|Off|Proto)$/.test(b.dataset.act)) setTimeout(faNotify, 300); });
