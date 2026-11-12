@@ -35,8 +35,9 @@ Deno.serve(async (req) => {
   const token = (req.headers.get('authorization') || '').replace(/^Bearer /i, '');
   const db = createClient(Deno.env.get('SUPABASE_URL')!, Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!, { auth: { persistSession: false } });
   const { data: u } = await db.auth.getUser(token); const uid = u && u.user && u.user.id; if (!uid) return json({ error: 'auth' }, 401);
-  /* Bis die bezahlte Gemini-Stufe aktiv ist (keine Nutzung der Daten zum Training): nur für den Betreiber. Freischalten: Secret FOOD_AI_OPEN=1 */
-  if (Deno.env.get('FOOD_AI_OPEN') !== '1' && uid !== '577b4459-ed8f-42b6-b947-6c42d0ecb677') return json({ error: 'beta' }, 403);
+  /* Pilotphase (bezahlte Gemini-Stufe aktiv seit 12.11.2026): Betreiber und seine Athleten. Für alle: Secret FOOD_AI_OPEN=1 */
+  const OWNER = '577b4459-ed8f-42b6-b947-6c42d0ecb677';
+  if (Deno.env.get('FOOD_AI_OPEN') !== '1' && uid !== OWNER) { const { data: pr } = await db.from('profiles').select('coach_id').eq('id', uid).maybeSingle(); if (!pr || pr.coach_id !== OWNER) return json({ error: 'beta' }, 403); }
   let b: { mode?: string; text?: string; image?: string; lang?: string };
   try { b = await req.json(); } catch { return json({ error: 'bad_request' }, 400); }
   const mode = b.mode === 'photo' ? 'photo' : 'text'; const lang = ['de', 'en', 'ru'].includes(String(b.lang)) ? String(b.lang) : 'de';

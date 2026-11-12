@@ -13,9 +13,10 @@ const AI = { busy: false, items: [], meal: null, mode: 'text', text: '' };
   '.ai-it{display:flex;gap:8px;align-items:center;padding:10px 0;border-bottom:1px solid var(--rule)}.ai-it:last-child{border-bottom:0}.ai-it .grow{min-width:0}.ai-it input{width:72px;box-sizing:border-box;padding:8px 6px;text-align:right;font:inherit;border:1px solid var(--rule);border-radius:10px;background:var(--paper)}.ai-it .iconbtn{background:var(--fog)}' +
   '.ai-q{display:flex;gap:4px;margin-top:4px}.ai-q button{border:0;border-radius:999px;background:var(--fog);padding:4px 9px;font:inherit;font-size:12px;font-weight:700;cursor:pointer}.ai-unsure{color:var(--signal);font-weight:700}' +
   '.ai-wait{display:flex;align-items:center;gap:10px;padding:24px 0}.ai-spin{width:22px;height:22px;border-radius:50%;border:3px solid var(--fog);border-top-color:var(--ember);animation:aispin 0.9s linear infinite}@keyframes aispin{to{transform:rotate(360deg)}}'; document.head.appendChild(st); })();
-/* Freigabe: bis die bezahlte Gemini-Stufe aktiv ist nur für den Betreiber (Server prüft das ebenfalls). Danach AI_OPEN = true setzen. */
+/* Freigabe Pilotphase: Betreiber und seine Athleten (Server prüft das ebenfalls). Für alle: AI_OPEN = true und Secret FOOD_AI_OPEN=1. */
 const AI_OPEN = false;
-const aiAllowed = () => typeof AUTH !== 'undefined' && AUTH && (AI_OPEN || (typeof LIB_OWNER !== 'undefined' && (LIB_OWNER.hybrid || []).includes(AUTH.uid)));
+const AI_PILOT = '577b4459-ed8f-42b6-b947-6c42d0ecb677';
+const aiAllowed = () => typeof AUTH !== 'undefined' && AUTH && (AI_OPEN || AUTH.uid === AI_PILOT || (AUTH.profile && AUTH.profile.coach_id === AI_PILOT));
 const aiOk = () => !!(S.settings && S.settings.aiOk);
 function aiConsentSheet(next) { AI.next = next; openSheet(sheetHead($t('Mahlzeit per KI erkennen')) +
   '<p class="small" style="margin-top:8px">' + $t('Deine Beschreibung oder dein Foto wird zur Erkennung an Google (Gemini) geschickt und danach nicht gespeichert, weder von uns noch zum Training von Google-Modellen. Zurück kommen nur die erkannten Lebensmittel mit geschätzten Mengen.') + '</p>' +
