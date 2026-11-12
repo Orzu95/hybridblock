@@ -57,3 +57,29 @@ document.addEventListener('click', e => { const b = e.target.closest('[data-act]
   else if (a === 'rzSave') { const T = RZ_TESTS[ui.rzType || 't5k']; const dEl = document.getElementById('rz-d'), tEl = document.getElementById('rz-t');
     const m = T.dist || (num(dEl && dEl.value) || 0) * 1000; const sec = T.min ? T.min * 60 : rzParseTime(tEl && tEl.value);
     if (rzSet(ui.rzType || 't5k', m, sec)) { closeSheet(); render(); doneOverlay($t('Laufzonen berechnet'), 'VDOT ' + fmt(S.settings.runTest.vdot, 1)); } } });
+/* ---------- Ausbau: Bestform aus GPS-Läufen erkennen und Pace-Ansage ---------- */
+/* Schnellstes zusammenhängendes Stück über 3, 5 und 10 km aus Route und Zeitstempeln; nur flache Läufe (unter 10 Höhenmeter pro km) */
+function rzBestEffort(a) { if (!a || !a.route || !a.routeT || !(num(a.dist) >= 3)) return null; const at = ACT_MAP[a.type]; if (!at || !at.run || a.type === 'laufband') return null;
+  if (num(a.elev) && num(a.elev) / num(a.dist) > 10) return null; let pts; try { pts = decPoly(a.route); } catch (e) { return null; } const T = a.routeT; if (pts.length !== T.length || pts.length < 20) return null;
+  const cum = [0]; for (let i = 1; i < pts.length; i++) cum.push(cum[i - 1] + hav(pts[i - 1], pts[i]));
+  let best = null; [3000, 5000, 10000].forEach(D => { if (cum[cum.length - 1] < D) return; let j = 0, bestT = Infinity; for (let i = 0; i < pts.length; i++) { while (j < pts.length && cum[j] - cum[i] < D) j++; if (j >= pts.length) break; const t = T[j] - T[i]; if (t > 0 && t < bestT) bestT = t; }
+    if (!isFinite(bestT) || bestT < D / 6.5) return; const v = vdotOf(D, bestT); if (v > 15 && v < 85 && (!best || v > best.vdot)) best = { vdot: Math.round(v * 10) / 10, m: D, sec: bestT }; });
+  return best; }
+function rzCheckRun(a) { const b = rzBestEffort(a); if (!b) return; const t = rzTest(); if (t && b.vdot < t.vdot * 1.02) return;
+  S.meta.rzSuggest = Object.assign({ date: a.date, act: a.id }, b); save(); toast($tf('Neue Bestform erkannt: VDOT {v}. In den Einstellungen kannst du deine Laufzonen aktualisieren.', { v: fmt(b.vdot, 1) })); }
+const _trSaveRZ = trSave;
+trSave = async function () { const n = (S.activities || []).length; const r = await _trSaveRZ.apply(this, arguments); try { const a = S.activities[S.activities.length - 1]; if (S.activities.length > n && a && a.src === 'gps') rzCheckRun(a); } catch (e) { console.warn('rz', e); } return r; };
+const _rzCardX = rzCard;
+rzCard = function () { const h = _rzCardX.apply(this, arguments); const s = S.meta.rzSuggest; if (!s) return h; const km = s.m / 1000;
+  const n = note('green', '<b>' + $tf('Neue Bestform: {km} km in {t} am {d}.', { km: fmt(km, 0), t: fmtClock(s.sec), d: fmtDay(s.date) }) + '</b> ' + $tf('Das entspricht VDOT {v}. Zonen damit aktualisieren?', { v: fmt(s.vdot, 1) }), '<button class="btn sm brand" data-act="rzTake" type="button">' + $t('Übernehmen') + '</button><button class="btn sm" data-act="rzDrop" type="button">' + $t('Nein') + '</button>');
+  const i = h.indexOf('<h2'); const j = h.indexOf('</div>', h.indexOf('</h2>')); return j < 0 ? h + n : h.slice(0, j + 6) + n + h.slice(j + 6); };
+/* Pace-Ansage bei lockeren Läufen ohne Intervalle und ohne Pulszone: zu schnell oder zu langsam für die Zone „Locker“ */
+const _trTickRZ = trTick;
+trTick = function () { const r = _trTickRZ.apply(this, arguments);
+  try { const zs = rzZones(); const at = ACT_MAP[TR.type]; if (!zs || !TR.active || TR.paused || !TR.gps || TR.q || TR.zone != null || !at || !at.run || !trOpts().voice || !(S.settings.rzVoice ?? true)) return r;
+    const easy = !TR.ctx || !isHiit(TR.ctx.k); if (!easy || movingSec() < 300) return r; const v = curSpeed(); if (!(v > 0.5)) return r; const pace = 1000 / v; const E = zs[0];
+    const out = pace < E.fast - 10 ? 'fast' : pace > E.slow + 30 ? 'slow' : null; if (out !== TR.rzOut) { TR.rzOut = out; TR.rzSince = Date.now(); }
+    if (out && Date.now() - TR.rzSince > 30000 && Date.now() - (TR.rzSaid || 0) > 120000) { TR.rzSaid = Date.now(); say(out === 'fast' ? $tf('Etwas zu schnell für locker. Ziel {a} bis {b}.', { a: sayPace(E.fast), b: sayPace(E.slow) }) : $t('Etwas langsamer als deine lockere Zone. Das ist in Ordnung, wenn es sich gut anfühlt.')); } } catch (e) {} return r; };
+document.addEventListener('click', e => { const b = e.target.closest('[data-act]'); if (!b) return; const a = b.dataset.act;
+  if (a === 'rzTake') { const s = S.meta.rzSuggest; if (s) { S.settings.runTest = { type: 'race', m: s.m, sec: s.sec, vdot: s.vdot, date: s.date, auto: true }; delete S.meta.rzSuggest; save(); render(); doneOverlay($t('Laufzonen aktualisiert'), 'VDOT ' + fmt(s.vdot, 1)); } }
+  else if (a === 'rzDrop') { delete S.meta.rzSuggest; save(); render(); } });

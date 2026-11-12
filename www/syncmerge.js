@@ -5,7 +5,7 @@
 'use strict';
 const SM_MAPS = ['sessions', 'days', 'health', 'body', 'exNotes', 'daily', 'swaps', 'foods', 'hrTraces'];
 const SM_ARR = { activities: 'id', checkins: 'date', workouts: 'id', mealTemplates: 'id' };
-const SM_LOCAL = ['syncAt', 'syncMod', 'modAt', 'planAt', 'st', 'forcePush'];
+const SM_LOCAL = ['syncAt', 'syncMod', 'modAt', 'planAt', 'st', 'forcePush', 'owner'];
 let SMH = null;
 function smHash(v) { const s = v === undefined ? '~' : JSON.stringify(v); let h = 0x811c9dc5; for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); } return (h >>> 0).toString(36) + s.length.toString(36); }
 function smEach(s, fn) { if (!s) return; Object.keys(s).forEach(top => { const v = s[top];
