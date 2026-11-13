@@ -31,7 +31,7 @@ jobs:
         env:
           GSJ: ${{ secrets.GOOGLE_SERVICES_JSON }}
         run: |
-          if [ -n "$GSJ" ]; then printf '%s' "$GSJ" > android/app/google-services.json; echo '{"ready":true}' > www/push.json; echo "::notice::Push aktiv"; else echo '{"ready":false}' > www/push.json; echo "::notice::Push aus (Secret GOOGLE_SERVICES_JSON fehlt)"; fi
+          if [ -n "$GSJ" ] && printf '%s' "$GSJ" | python3 -c 'import json,sys; d=json.load(sys.stdin); assert d["client"][0]["client_info"]["android_client_info"]["package_name"]=="de.orzu.hybridblock"' 2>/dev/null; then printf '%s' "$GSJ" > android/app/google-services.json; echo '{"ready":true}' > www/push.json; echo "::notice::Push aktiv"; elif [ -n "$GSJ" ]; then rm -f android/app/google-services.json; echo '{"ready":false}' > www/push.json; echo "::warning::Push aus: GOOGLE_SERVICES_JSON ist kein gültiges JSON oder der Paketname passt nicht (de.orzu.hybridblock)"; else echo '{"ready":false}' > www/push.json; echo "::notice::Push aus (Secret GOOGLE_SERVICES_JSON fehlt)"; fi
       - name: Regel-Tabelle gegen Wissensbank prüfen
         run: python3 tests/rules_check.py
       - run: npm ci
