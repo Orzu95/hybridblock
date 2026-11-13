@@ -223,6 +223,6 @@ hbFilter('viewProgress', 'energy', function (__v) {
   const m = '<div class="stack">';
   const i = h.indexOf(m);
   if (i < 0) return h + energyCard();
-  const j = h.indexOf('<div class="card', h.indexOf('<div class="stats">', i));
+  const j = h.indexOf('<div class="card', hbAt(h, '<div class="stats">', 'energy', false, i));
   return j < 0 ? h.replace(m, m + energyCard()) : h.slice(0, j) + energyCard() + h.slice(j);
 });

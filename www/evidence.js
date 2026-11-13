@@ -501,7 +501,7 @@ hbFilter('viewMehr', 'evidence', function (__v) {
     '</h2><p class="small muted" style="margin:2px 0 0">' +
     $t('Was die Studienlage zu Training, Ernährung und Erholung sagt, mit Quellen.') +
     '</p></div><span class="muted">›</span></a>';
-  return h.replace('<div class="stack">', '<div class="stack">' + card);
+  return hbRep(h, '<div class="stack">', 'evidence', '<div class="stack">' + card);
 });
 if (typeof cycleFlags === 'function') {
   const _cf = cycleFlags;

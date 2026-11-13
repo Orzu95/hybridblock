@@ -289,7 +289,7 @@ viewLibrary = function () {
     }
     const cur = spNeed().filter(x => x.status === 'curated');
     const add = cur.length ? lsec('Von Coaches, von uns geprüft') + cur.map(spCard).join('') : '';
-    h = h.replace('<div class="stack">', '<div class="stack">' + libTabsHTML(tab));
+    h = hbRep(h, '<div class="stack">', 'libtabs', '<div class="stack">' + libTabsHTML(tab));
     const m = '<button class="btn block" data-act="blankPlan"';
     return h.includes(m) ? h.replace(m, add + m) : h + add;
   }

@@ -50,7 +50,7 @@ viewSession = function (key) {
   const h = _viewSessionLG.apply(this, arguments);
   const m = String(key || '').match(RE_SESS);
   if (!m || !SESS[m[2]] || !isGym(m[2])) return h;
-  const i = h.indexOf('<div class="stack">');
+  const i = hbAt(h, '<div class="stack">', 'logger');
   setTimeout(lgTick, 0);
   return i < 0 ? lgHead(+m[1], m[2]) + h : h.slice(0, i) + lgHead(+m[1], m[2]) + h.slice(i);
 };

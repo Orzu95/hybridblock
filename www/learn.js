@@ -666,7 +666,7 @@ hbFilter('viewHeute', 'learn', function (__v) {
   const h = __v;
   const c = factCard();
   if (!c) return h;
-  const i = h.lastIndexOf('</div>');
+  const i = hbAtLast(h, '</div>', 'learn');
   return i < 0 ? h + c : h.slice(0, i) + c + h.slice(i);
 });
 hbFilter('viewMehr', 'learn', function (__v) {
@@ -687,9 +687,9 @@ hbFilter('viewMehr', 'learn', function (__v) {
       .map(o => '<button class="' + (m === o[0] ? 'on' : '') + '" data-act="factMode" data-v="' + o[0] + '" type="button">' + o[1] + '</button>')
       .join('') +
     '</div></div>';
-  const i = h.indexOf('<a class="card" href="#wissen"');
+  const i = hbAt(h, '<a class="card" href="#wissen"', 'learn');
   if (i < 0) return h;
-  const j = h.indexOf('</a>', i) + 4;
+  const j = hbAt(h, '</a>', 'learn', false, i) + 4;
   return h.slice(0, j) + card + h.slice(j);
 });
 hbFilter('viewWissen', 'learn', function (__v, arg) {
@@ -702,7 +702,7 @@ hbFilter('viewWissen', 'learn', function (__v, arg) {
     '</h2><p class="small muted" style="margin:2px 0 0">' +
     $t('Lernkarten und kurze Quizze zu diesen Themen.') +
     '</p></div><span class="muted">›</span></a>';
-  const i = h.indexOf('<div class="card"><input id="ev-q"');
+  const i = hbAt(h, '<div class="card"><input id="ev-q"', 'learn');
   return i < 0 ? h : h.slice(0, i) + btn + h.slice(i);
 });
 const _renderLrn = render;

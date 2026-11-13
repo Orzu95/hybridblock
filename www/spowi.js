@@ -102,7 +102,7 @@ function trimpOf(tr) {
 hbFilter('viewProgress', 'spowi', function (__v) {
   const h = __v;
   if (!spowiOn()) return h;
-  const i = h.indexOf('<div class="stack">');
+  const i = hbAt(h, '<div class="stack">', 'spowi');
   return i < 0 ? h + spowiProgressCard() : h.slice(0, i + 19) + spowiProgressCard() + h.slice(i + 19);
 });
 
@@ -177,7 +177,7 @@ hbFilter('reviewCard', 'spowi', function (__v, key, opts) {
   if (!spowiOn()) return h;
   const r = ((opts && opts.R) || reviews())[key];
   if (!r) return h;
-  const i = h.lastIndexOf('</div>');
+  const i = hbAtLast(h, '</div>', 'spowi');
   return h.slice(0, i) + reviewMetrics(r) + h.slice(i);
 });
 
@@ -209,7 +209,7 @@ viewFree = function (id) {
     ' · ' +
     $t('Entkopplung nach Friel (Pa:HR)') +
     '</p></div>';
-  const i = h.indexOf('<div class="stack">');
+  const i = hbAt(h, '<div class="stack">', 'spowi');
   return i < 0 ? h + card : h.slice(0, i + 19) + card + h.slice(i + 19);
 };
 

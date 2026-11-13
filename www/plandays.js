@@ -73,7 +73,7 @@ viewStart = function (arg) {
   if (ONB.step !== 'days') return h;
   const hint = daysFitHint();
   if (!hint) return h;
-  const i = h.indexOf('<div class="card"><div class="fields">');
+  const i = hbAt(h, '<div class="card"><div class="fields">', 'plandays');
   return i < 0 ? h : h.slice(0, i) + hint + h.slice(i);
 };
 /* Auch in den Einstellungen bei „Wochentage“ */
@@ -84,7 +84,7 @@ hbFilter('viewMehr', 'plandays', function (__v) {
   if (!hint) return h;
   const m = h.indexOf('data-dm=');
   if (m < 0) return h;
-  const i = h.lastIndexOf('<div class="card"', m);
+  const i = hbAtLast(h, '<div class="card"', 'plandays');
   return i < 0 ? h : h.slice(0, i) + hint + h.slice(i);
 });
 document.addEventListener('click', e => {

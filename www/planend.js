@@ -156,7 +156,7 @@ function genFromResults(q, st) {
 /* Betreute Athleten wählen den Folgeplan nicht selbst: nach der Bilanz steht der Hinweis auf den Coach */
 hbFilter('viewPlanEnd', 'planend', function (h) {
   if (!hasCoach() || (typeof VIEW !== 'undefined' && VIEW)) return h;
-  const i = h.indexOf('<!--pe-next-->');
+  const i = hbAt(h, '<!--pe-next-->', 'planend');
   if (i < 0) return h;
   return (
     h.slice(0, i) +

@@ -194,7 +194,7 @@ hbFilter('viewMehr', 'tour', function (__v) {
     '</p></div><button class="btn sm brand" data-act="tourOpen" type="button">' +
     $t('Starten') +
     '</button></div>';
-  const i = h.indexOf('<div class="stack">');
+  const i = hbAt(h, '<div class="stack">', 'tour');
   return i < 0 ? h + card : h.slice(0, i + 19) + card + h.slice(i + 19);
 });
 setTimeout(tourMaybe, 600);

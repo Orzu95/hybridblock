@@ -23,3 +23,27 @@ function hbRun(name, self, args, base) {
   }
   return v;
 }
+
+/* Einfügepunkte: Filter suchen in fertigem HTML nach einem Anker (z. B. '<div class="nr-search">') und fügen dort ein.
+   hbAt / hbAtLast / hbRep melden einen fehlenden Anker im Fehlerprotokoll, statt still nichts zu tun; so fällt eine Markup-Änderung
+   im Smoke-Test auf. opt = true, wenn der Anker je nach Zustand fehlen darf. */
+function hbMiss(anchor, ctx) {
+  logErr('anker:' + ctx, 'Einfügepunkt fehlt: ' + String(anchor).slice(0, 80), 1);
+}
+function hbAt(h, anchor, ctx, opt, from) {
+  const i = String(h).indexOf(anchor, from || 0);
+  if (i < 0 && !opt) hbMiss(anchor, ctx);
+  return i;
+}
+function hbAtLast(h, anchor, ctx, opt) {
+  const i = String(h).lastIndexOf(anchor);
+  if (i < 0 && !opt) hbMiss(anchor, ctx);
+  return i;
+}
+function hbRep(h, anchor, ctx, to, opt) {
+  if (String(h).indexOf(anchor) < 0) {
+    if (!opt) hbMiss(anchor, ctx);
+    return h;
+  }
+  return h.replace(anchor, to);
+}

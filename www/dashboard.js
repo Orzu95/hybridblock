@@ -349,7 +349,7 @@ hbFilter('viewClient', 'dashboard', function (__v, uid) {
       .map(k => '<option value="' + k + '"' + (m === k ? ' selected' : '') + '>' + esc($t(ATH_MODE[k])) + '</option>')
       .join('') +
     '</select></div></div>';
-  const i = html.indexOf('<div class="stats">');
+  const i = hbAt(html, '<div class="stats">', 'dashboard');
   return i < 0 ? html + sel : html.slice(0, i) + sel + html.slice(i);
 });
 document.addEventListener('click', e => {

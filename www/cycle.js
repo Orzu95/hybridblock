@@ -223,7 +223,7 @@ hbFilter('readinessCard', 'cycle', function (__v, d) {
   let h = __v;
   const cf = cycleFields(d);
   if (cf) {
-    const i = h.lastIndexOf('</div></div>');
+    const i = hbAtLast(h, '</div></div>', 'cycle');
     if (i > 0) h = h.slice(0, i) + cf + h.slice(i);
   }
   return (d === today() ? redsCard() : '') + h;

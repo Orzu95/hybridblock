@@ -913,9 +913,9 @@ hbFilter('viewTraining', 'week', function (__v) {
   if (!ORDER.length) return h;
   const w = ui.week || curWeek();
   if (w !== curWeek()) return h;
-  const i = h.indexOf('<div class="card flush"><div class="list">');
+  const i = hbAt(h, '<div class="card flush"><div class="list">', 'week');
   if (i < 0) return h;
-  const j = h.indexOf('</a></div></div>', i);
+  const j = hbAt(h, '</a></div></div>', 'week', false, i);
   if (j < 0) return h;
   return h.slice(0, i) + wkDecisionCard(w) + wkOverview(w) + wkVolCard(w) + h.slice(j + 16);
 });
@@ -940,7 +940,7 @@ hbFilter('viewHeute', 'week', function (__v) {
       )
     : '';
   if (!add && !z) return h;
-  const m = h.indexOf('<div class="card flush"><div class="meal-h"><b>');
+  const m = hbAt(h, '<div class="card flush"><div class="meal-h"><b>', 'week');
   return m < 0 ? h : h.slice(0, m) + add + z + h.slice(m);
 });
 

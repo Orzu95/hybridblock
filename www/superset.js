@@ -179,10 +179,10 @@ function ssAfterSet(kind, o) {
 /* Karten markieren */
 function ssMark(h, g, extraBtns) {
   if (g) {
-    h = h.replace('<div class="ex" ', '<div class="ex ss-m ss-' + g.mode + (g.pos === 1 ? ' ss-first' : '') + (g.pos === g.n ? ' ss-last' : '') + '" ');
+    h = hbRep(h, '<div class="ex" ', 'superset', '<div class="ex ss-m ss-' + g.mode + (g.pos === 1 ? ' ss-first' : '') + (g.pos === g.n ? ' ss-last' : '') + '" ');
     if (g.pos === 1) h = h.replace(/(<div class="ex [^"]*" [^>]*>)/, '$1<div class="ss-h">' + ssHeadText(g) + '</div>');
   }
-  return extraBtns ? h.replace('<div class="ex-actions">', '<div class="ex-actions">' + extraBtns) : h;
+  return extraBtns ? hbRep(h, '<div class="ex-actions">', 'superset', '<div class="ex-actions">' + extraBtns) : h;
 }
 const _exCardSS = exCard;
 exCard = function (w, k, spec) {

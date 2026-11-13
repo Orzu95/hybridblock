@@ -864,7 +864,7 @@ hbFilter('viewHeute', 'results', function (__v) {
   const h = __v;
   const box = watchInbox();
   if (!box) return h;
-  const i = h.indexOf('<div class="stack">');
+  const i = hbAt(h, '<div class="stack">', 'results');
   return i < 0 ? h + box : h.slice(0, i + 19) + box + h.slice(i + 19);
 });
 

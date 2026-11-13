@@ -247,7 +247,7 @@ hbFilter('viewMehr', 'ops', function (__v) {
     '</h2><p class="small muted" style="margin:2px 0 0">' +
     $t('Alle Konten, Coaches, Einladungen und Sperren verwalten.') +
     '</p></div><span class="muted">›</span></a>';
-  return h.replace('<div class="stack">', '<div class="stack">' + card);
+  return hbRep(h, '<div class="stack">', 'ops', '<div class="stack">' + card);
 });
 document.addEventListener('click', async e => {
   const b = e.target.closest('[data-act]');

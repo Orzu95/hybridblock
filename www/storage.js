@@ -276,7 +276,7 @@ hbFilter('viewMehr', 'storage', function (__v) {
   const h = __v;
   const i = h.indexOf('MPL 2.0');
   if (i < 0) return h;
-  const j = h.indexOf('</li>', i);
+  const j = hbAt(h, '</li>', 'storage', false, i);
   return j < 0 ? h : h.slice(0, j + 5) + LIC_MORE() + h.slice(j + 5);
 });
 /* Sprachansage, wenn das GPS-Signal beim Aufzeichnen wegbleibt (z. B. Akkusparmodus) und wenn es zurückkommt */

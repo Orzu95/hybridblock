@@ -192,7 +192,7 @@ function cbCard() {
 hbFilter('viewEssen', 'carbs', function (__v) {
   const h = __v;
   if (S.settings.trackMode === 'p' || (typeof VIEW !== 'undefined' && VIEW) || (S.meta.pause && S.meta.pause.why !== 'away')) return h;
-  const m = h.indexOf('<div class="nr-search">');
+  const m = hbAt(h, '<div class="nr-search">', 'carbs');
   const card = cbCard();
   return m < 0 ? h + card : h.slice(0, m) + card + h.slice(m);
 });

@@ -193,7 +193,7 @@ viewSession = function (key) {
     '" type="button">⇅ ' +
     $t('Reihenfolge') +
     '</button></div>';
-  const i = h.indexOf('<div class="ex');
+  const i = hbAt(h, '<div class="ex', 'exorder');
   return i < 0 ? h : h.slice(0, i) + btn + h.slice(i);
 };
 

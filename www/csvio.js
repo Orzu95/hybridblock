@@ -233,7 +233,7 @@ function csvSheet(res) {
 }
 hbFilter('viewMehr', 'csvio', function (__v) {
   const h = __v;
-  const i = h.indexOf('<div id="backupBox"></div>');
+  const i = hbAt(h, '<div id="backupBox"></div>', 'csvio');
   if (i < 0) return h;
   return (
     h.slice(0, i) +

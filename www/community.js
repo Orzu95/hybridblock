@@ -310,7 +310,7 @@ async function rate(k, v) {
   }
 }
 const insTop = (h, add) => {
-  const m = h.indexOf('<div class="stack"');
+  const m = hbAt(h, '<div class="stack"', 'community');
   if (m < 0) return h + add;
   const e = h.indexOf('>', m) + 1;
   return h.slice(0, e) + add + h.slice(e);

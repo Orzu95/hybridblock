@@ -171,7 +171,7 @@ function tsCard() {
 hbFilter('viewHeute', 'today', function (h) {
   const c = tsCard();
   if (!c) return h;
-  const i = h.indexOf('<div class="stack">');
+  const i = hbAt(h, '<div class="stack">', 'today');
   return i < 0 ? h : h.slice(0, i + 19) + c + h.slice(i + 19);
 });
 document.addEventListener('click', e => {

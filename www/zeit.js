@@ -126,7 +126,7 @@ viewSession = function (key) {
   const w = +m[1],
     k = m[2];
   if (VIEW) return h;
-  const i = h.indexOf('<div class="stack">');
+  const i = hbAt(h, '<div class="stack">', 'zeit');
   if (!isGym(k)) return i < 0 ? h : h.slice(0, i + 19) + reNote(w, k) + h.slice(i + 19);
   return i < 0 ? h : h.slice(0, i + 19) + reNote(w, k) + zCard(w, k) + h.slice(i + 19);
 };

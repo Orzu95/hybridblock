@@ -172,7 +172,7 @@ viewPlan = function (arg) {
   const h = _viewPlanSH.apply(this, arguments);
   const who = planTarget(arg);
   if (!PE.draft || PE.uid !== who || who === 'me' || (typeof isTplUid === 'function' && isTplUid(who))) return h;
-  const i = h.indexOf('<div class="card pe-sess">');
+  const i = hbAt(h, '<div class="card pe-sess">', 'shift');
   return i < 0 ? h : h.slice(0, i) + shCard(PE.draft) + h.slice(i);
 };
 function shDirty() {

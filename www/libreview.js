@@ -75,7 +75,7 @@ hbFilter('spCard', 'libreview', function (__v, sp) {
       '<span class="tag" style="background:var(--amber-soft,#fff1d6)">' + esc($t('Nicht freigegeben')) + '</span>'
     );
   return tags
-    ? h.replace('<div class="row" style="gap:6px;margin-top:8px;flex-wrap:wrap">', '<div class="row" style="gap:6px;margin-top:8px;flex-wrap:wrap">' + tags)
+    ? hbRep(h, '<div class="row" style="gap:6px;margin-top:8px;flex-wrap:wrap">', 'libreview', '<div class="row" style="gap:6px;margin-top:8px;flex-wrap:wrap">' + tags)
     : h;
 });
 /* Reiter „Prüfen“ (nur Prüfer) */

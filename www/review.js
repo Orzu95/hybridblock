@@ -682,7 +682,7 @@ hbFilter('viewProgress', 'review', function (__v) {
     key = VIEW ? null : ensureReview();
   } catch (e) {}
   if (!key) return html;
-  const i = html.indexOf('<div class="stack">');
+  const i = hbAt(html, '<div class="stack">', 'review');
   return i < 0 ? html : html.slice(0, i + 19) + reviewCard(key, { full: true }) + html.slice(i + 19);
 });
 
@@ -709,7 +709,7 @@ hbFilter('viewClient', 'review', function (__v, uid) {
     }
   });
   const card = reviewCard(rv.key, { coach: true, uid, R: { [rv.key]: rv } });
-  const i = html.indexOf('<div class="stats">');
+  const i = hbAt(html, '<div class="stats">', 'review');
   return i < 0 ? html + card : html.slice(0, i) + card + html.slice(i);
 });
 async function coachDecide(uid, key, id, yes) {

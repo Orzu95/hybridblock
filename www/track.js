@@ -1389,7 +1389,7 @@ viewFree = function (id) {
   const a = findAct(id);
   if (!a || (!a.route && !(a.splits || []).length && !(a.ivs || []).length)) return html;
   const extra = ivsCard(a) + routeCard(a) + splitsCard(a);
-  const i = html.indexOf('<div class="stack">');
+  const i = hbAt(html, '<div class="stack">', 'track');
   return i < 0 ? html + extra : html.slice(0, i + 19) + extra + html.slice(i + 19);
 };
 

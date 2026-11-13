@@ -277,7 +277,7 @@ hbFilter('viewClient', 'coachmedia', function (__v, uid2) {
   }, 50);
   const card =
     '<div class="card"><h2>' + $t('Formchecks und Check-in-Fotos') + '</h2><div id="cm-box"><p class="small muted">' + $t('Lade …') + '</p></div></div>';
-  const i = h.lastIndexOf('</div>');
+  const i = hbAtLast(h, '</div>', 'coachmedia');
   return i < 0 ? h + card : h.slice(0, i) + card + h.slice(i);
 });
 /* Athlet: Karte im Training */
@@ -307,7 +307,7 @@ photoCard = async function () {
       'Neue Fotos auch mit meinem Coach teilen. Sie werden dann verschlüsselt in der Cloud (Frankfurt) gespeichert, nur du und dein Coach können sie sehen, und nach 90 Tagen gelöscht.'
     ) +
     '</span></label>';
-  const i = h.lastIndexOf('</div>');
+  const i = hbAtLast(h, '</div>', 'coachmedia');
   return h.slice(0, i) + row + h.slice(i);
 };
 document.addEventListener(
@@ -403,7 +403,7 @@ hbFilter('viewMehr', 'coachmedia', function (__v) {
     ' · ' +
     (r < 0.5 ? $t('unter 0,5, im empfohlenen Bereich') : $t('Ziel unter 0,5')) +
     '</p>';
-  const i = h.indexOf('</tbody></table></div>');
+  const i = hbAt(h, '</tbody></table></div>', 'coachmedia');
   return i < 0 ? h : h.slice(0, i + 22) + txt + h.slice(i + 22);
 });
 /* ---------- Gesundheits-Check (an PAR-Q+ angelehnt) im Fragebogen für den Coach. Keine Diagnose, nur Hinweis auf ärztliche Abklärung. ---------- */
@@ -456,7 +456,7 @@ const _viewStartPQ = viewStart;
 viewStart = function () {
   const h = _viewStartPQ.apply(this, arguments);
   if (ONB.step !== 'intake') return h;
-  const i = h.indexOf('<button class="btn brand block" data-act="onbIntake"');
+  const i = hbAt(h, '<button class="btn brand block" data-act="onbIntake"', 'coachmedia');
   return i < 0 ? h : h.slice(0, i) + pqCard() + h.slice(i);
 };
 hbFilter('reqCard', 'coachmedia', function (__v, uid2) {
@@ -477,7 +477,7 @@ hbFilter('reqCard', 'coachmedia', function (__v, uid2) {
           '</ul>'
       )
     : note('green', '<b>' + $t('Gesundheits-Check:') + '</b> ' + $t('alle Fragen mit Nein beantwortet.'));
-  const i = h.lastIndexOf('</div>');
+  const i = hbAtLast(h, '</div>', 'coachmedia');
   return h.slice(0, i) + box + h.slice(i);
 });
 /* Coach-Dashboard: offene Formchecks als „Braucht Aufmerksamkeit“ */

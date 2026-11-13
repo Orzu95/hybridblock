@@ -299,9 +299,9 @@ function loadBars(id) {
 }
 hbFilter('loadCard', 'days', function (__v) {
   const h = __v;
-  const i = h.indexOf('<div class="chart"');
+  const i = hbAt(h, '<div class="chart"', 'days');
   if (i < 0) return h;
-  const j = h.indexOf('<div class="stats"', i);
+  const j = hbAt(h, '<div class="stats"', 'days', false, i);
   if (j < 0) return h;
   return (
     h.slice(0, i) +

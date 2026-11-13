@@ -345,8 +345,8 @@ hbFilter('rzCard', 'runzones', function (__v) {
     '</button><button class="btn sm" data-act="rzDrop" type="button">' +
     $t('Nein') +
     '</button></div></div>';
-  const i = h.indexOf('<h2');
-  const j = h.indexOf('</div>', h.indexOf('</h2>'));
+  const i = hbAt(h, '<h2', 'runzones');
+  const j = h.indexOf('</div>', hbAt(h, '</h2>'), 'runzones');
   return j < 0 ? h + n : h.slice(0, j + 6) + n + h.slice(j + 6);
 });
 /* Pace-Ansage bei lockeren Läufen ohne Intervalle und ohne Pulszone: zu schnell oder zu langsam für die Zone „Locker“ */
@@ -515,7 +515,7 @@ viewFree = function (id) {
       'Vergleich Tempo zu Puls in der ersten und zweiten Hälfte, ohne die ersten 10 Minuten. Am aussagekräftigsten bei lockeren, flachen Läufen ab 45 Minuten.'
     ) +
     '</p></div>';
-  const i = h.lastIndexOf('</div>');
+  const i = hbAtLast(h, '</div>', 'runzones');
   return i < 0 ? h + card : h.slice(0, i) + card + h.slice(i);
 };
 /* ---------- HYROX-Simulation im Tracker: 8 × (1 km Lauf → Roxzone → Station), Laufabschnitte enden automatisch nach 1 km (GPS), Stationen per „Weiter“ ---------- */
@@ -610,6 +610,6 @@ viewFree = function (id) {
   const a = S.activities.find(x => x.id === id);
   const c = a ? hyroxCard(a) : '';
   if (!c) return h;
-  const i = h.lastIndexOf('</div>');
+  const i = hbAtLast(h, '</div>', 'runzones');
   return h.slice(0, i) + c + h.slice(i);
 };

@@ -278,7 +278,7 @@ hbFilter('viewEssen', 'fasting', function (__v) {
   if (typeof VIEW !== 'undefined' && VIEW) return h;
   const c = faCard();
   if (!c) return h;
-  const m = h.indexOf('<div class="nr-search">');
+  const m = hbAt(h, '<div class="nr-search">', 'fasting');
   return m < 0 ? h + c : h.slice(0, m) + c + h.slice(m);
 });
 hbFilter('heuteExtras', 'fasting', function (__v) {

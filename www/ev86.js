@@ -42,12 +42,12 @@ viewSession = function (key) {
   if (s && (s.kind === 'z2' || s.cardio)) add += ev86Row(EV86.z2, 'Studienlage zu Grundlagenausdauer und Intensitätsverteilung');
   if (typeof phase === 'function' && phase(w) === 'dl') add += ev86Row(EV86.dl, 'Studienlage zur Entlastungswoche');
   if (!add) return h;
-  const i = h.lastIndexOf('</div>');
+  const i = hbAtLast(h, '</div>', 'ev86');
   return i < 0 ? h + add : h.slice(0, i) + '<div style="margin:4px 4px 12px">' + add + '</div>' + h.slice(i);
 };
 hbFilter('viewEssen', 'ev86', function (__v) {
   const h = __v;
-  const i = h.lastIndexOf('</div>');
+  const i = hbAtLast(h, '</div>', 'ev86');
   const add = '<div style="margin:4px 4px 12px">' + ev86Row(EV86.food, 'Studienlage zu Protein und Kohlenhydraten') + '</div>';
   return i < 0 ? h + add : h.slice(0, i) + add + h.slice(i);
 });
