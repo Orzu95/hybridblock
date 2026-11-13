@@ -12,7 +12,7 @@ async function pushInit() { if (!AUTH || !AUTH.uid || VIEW || !(await pushReady(
   try { if (!PUSH_BOUND) { PUSH_BOUND = true;
       P.addListener('registration', t => pushSaveToken(t.value));
       P.addListener('registrationError', e => console.warn('push reg', e));
-      P.addListener('pushNotificationActionPerformed', a => { const d = (a && a.notification && a.notification.data) || {};
+      P.addListener('pushNotificationActionPerformed', a => { const d = (a && a.notification && a.notification.data) || {}; d.from = d.sender || d.from;
         const to = d.route === 'chat' ? (d.from && typeof isAdmin === 'function' && isAdmin() ? '#chat/' + d.from : '#chat') : d.route === 'admin' ? (d.from ? '#admin/' + d.from : '#admin') : '#' + (d.route || 'heute');
         setTimeout(() => { location.hash = to; if (typeof pullAll === 'function') pullAll({ quiet: true }).then(() => render()).catch(() => {}); }, 300); }); }
     let perm = await P.checkPermissions(); if (perm.receive === 'prompt' || perm.receive === 'prompt-with-rationale') perm = await P.requestPermissions();
