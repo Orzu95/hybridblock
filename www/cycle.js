@@ -2,7 +2,7 @@
 /* ======================= ZYKLUS (nur bei Geschlecht weiblich, freiwillig, eigene Einwilligung) =======================
    Steuerung nach Beschwerden statt nach Kalender: Studien zeigen über die Zyklusphasen nur triviale Leistungsunterschiede
    (McNulty 2020, Colenso-Semple 2023). Darum: an Tagen mit starken Beschwerden leichter oder Ersatztraining, sonst normal.
-   Bleibt die Periode über 90 Tage aus, Hinweis auf möglichen Energiemangel (RED-S) und kein weiteres Kaloriendefizit. */
+   Ist über 90 Tage keine Periode eingetragen: vorsichtiger Hinweis (keine Diagnose, ärztlich abklären) und kein weiteres Kaloriendefizit. */
 const isFemale = () => S.settings.sex === 'w';
 const cyc = () => (S.cycle = S.cycle || { days: {}, status: 'normal' });
 const cycOn = () => isFemale() && !!S.meta.cycleConsent;
@@ -143,7 +143,7 @@ hbFilter('doCheckin', 'cycle', function (__v) {
     c.c = Math.max(0, Math.round((c.kcal - 4 * c.p - 9 * c.f) / 4));
     c.hold = 'cycle';
     save();
-    setTimeout(() => toast($t('Kein Defizit, solange die Periode ausbleibt')), 300);
+    setTimeout(() => toast($t('Kein Defizit, solange keine Periode eingetragen ist')), 300);
   }
   return c;
 });
@@ -151,11 +151,12 @@ function redsCard() {
   const am = amenorrhea();
   if (!am) return '';
   return note(
-    'red',
-    $t('<b>Deine Periode ist seit ') +
-      am.days +
+    'ember',
+    '<b>' +
+      $tf('Seit {n} Tagen ist keine Periode eingetragen.', { n: am.days }) +
+      '</b> ' +
       $t(
-        ' Tagen ausgeblieben.</b> Bei viel Training und Kaloriendefizit kann das ein Zeichen für Energiemangel sein (RED-S). Das schadet auf Dauer Knochen, Hormonen und Leistung. Bitte ärztlich abklären lassen. Die App senkt deine Kalorien bis dahin nicht weiter.'
+        'Falls du nur nichts eingetragen hast, trag sie einfach nach. Ist sie wirklich ausgeblieben, kann das viele Gründe haben. Bei viel Training und wenig Essen kann auch zu wenig Energie dahinterstecken. Lass das bitte ärztlich abklären. Die App stellt keine Diagnose. Bis dahin plant sie kein Kaloriendefizit.'
       ) +
       '<br><button class="btn sm" data-act="cycStatusSheet" type="button" style="margin-top:8px">' +
       $t('Anderer Grund?') +
