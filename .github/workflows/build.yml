@@ -37,11 +37,12 @@ jobs:
       - run: npm ci
       - name: Globale Skripte prüfen (Syntax, doppelte Funktionen, Wrapper-Reihenfolge)
         run: node tests/globals_check.mjs
-      - name: Smoke-Test (alle Ansichten in DE, EN, RU)
+      - name: Smoke-Test (alle Ansichten in DE, EN, RU) und Ablauf-Test (Klick-Abläufe)
         run: |
           npm i --no-save playwright@1
           npx playwright install --with-deps chromium
           node tests/smoke.cjs
+          node tests/flows.cjs
       - run: npx cap sync android
       - name: Signaturschlüssel entschlüsseln
         env:
