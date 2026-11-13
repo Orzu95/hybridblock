@@ -345,7 +345,7 @@ hbFilter('rzCard', 'runzones', function (__v) {
     $t('Nein') +
     '</button></div></div>';
   const i = hbAt(h, '<h2', 'runzones');
-  const j = h.indexOf('</div>', hbAt(h, '</h2>'), 'runzones');
+  const j = h.indexOf('</div>', hbAt(h, '</h2>', 'runzones'));
   return j < 0 ? h + n : h.slice(0, j + 6) + n + h.slice(j + 6);
 });
 /* Pace-Ansage bei lockeren Läufen ohne Intervalle und ohne Pulszone: zu schnell oder zu langsam für die Zone „Locker“ */

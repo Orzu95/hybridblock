@@ -276,7 +276,7 @@ hbFilter('viewClient', 'coachmedia', function (__v, uid2) {
   }, 50);
   const card =
     '<div class="card"><h2>' + $t('Formchecks und Check-in-Fotos') + '</h2><div id="cm-box"><p class="small muted">' + $t('Lade …') + '</p></div></div>';
-  const i = hbAtLast(h, '</div>', 'coachmedia');
+  const i = hbAtLast(h, '</div>', 'coachmedia', true);
   return i < 0 ? h + card : h.slice(0, i) + card + h.slice(i);
 });
 /* Athlet: Karte im Training */

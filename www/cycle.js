@@ -355,8 +355,8 @@ async function cycHcImport(quiet) {
 }
 if (typeof hcSync === 'function') {
   const _hcSyncCyc = hcSync;
-  hcSync = async function (full) {
-    await _hcSyncCyc(full);
+  hcSync = async function (full, quiet) {
+    await _hcSyncCyc(full, quiet);
     if (cycOn() && cyc().hc) cycHcImport(true);
   };
 }

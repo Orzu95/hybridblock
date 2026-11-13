@@ -192,7 +192,7 @@ hbWrap('viewSession', 'exorder', function (__next, key) {
     '" type="button">⇅ ' +
     $t('Reihenfolge') +
     '</button></div>';
-  const i = hbAt(h, '<div class="ex', 'exorder');
+  const i = hbAt(h, '<div class="ex', 'exorder', true);
   return i < 0 ? h : h.slice(0, i) + btn + h.slice(i);
 });
 
