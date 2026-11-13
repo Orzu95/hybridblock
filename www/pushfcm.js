@@ -4,7 +4,7 @@
 'use strict';
 const PUSH = { st: null, tok: null, get p() { const C = window.Capacitor; return C && C.isNativePlatform && C.isNativePlatform() && C.Plugins && C.Plugins.PushNotifications; } };
 async function pushReady() { if (PUSH.st !== null) return PUSH.st; PUSH.st = false; if (!PUSH.p) return false;
-  try { const r = await fetch('push.json', { cache: 'no-store' }); if (r.ok) { const j = await r.json(); PUSH.st = !!j.ready; } } catch (e) {} return PUSH.st; }
+  try { const r = await fetch('push.json', { cache: 'no-store' }); if (r.ok) { const j = await r.json(); PUSH.st = !!j.ready; } } catch (e) { logErr('pushfcm:7', e, 1); } return PUSH.st; }
 async function pushSaveToken(token) { if (!AUTH || !AUTH.uid || !token) return; PUSH.tok = token;
   try { await api('/rest/v1/push_tokens?on_conflict=token', { method: 'POST', headers: { Prefer: 'resolution=merge-duplicates,return=minimal' }, body: JSON.stringify({ token, user_id: AUTH.uid, platform: 'android', lang: (typeof LANG !== 'undefined' && LANG) || 'de', updated_at: new Date().toISOString() }) }); } catch (e) { console.warn('push token', e); } }
 let PUSH_BOUND = false;
@@ -18,7 +18,7 @@ async function pushInit() { if (!AUTH || !AUTH.uid || VIEW || !(await pushReady(
     let perm = await P.checkPermissions(); if (perm.receive === 'prompt' || perm.receive === 'prompt-with-rationale') perm = await P.requestPermissions();
     if (perm.receive !== 'granted') return; if (typeof hbChannels === 'function') await hbChannels(); await P.register(); } catch (e) { console.warn('push', e); } }
 /* Beim Abmelden den Token dieses Geräts entfernen, damit das nächste Konto keine fremden Benachrichtigungen bekommt */
-async function pushDrop() { const t = PUSH.tok; if (!t || !AUTH) return; try { await api('/rest/v1/push_tokens?token=eq.' + encodeURIComponent(t), { method: 'DELETE' }); } catch (e) {} PUSH.tok = null; }
+async function pushDrop() { const t = PUSH.tok; if (!t || !AUTH) return; try { await api('/rest/v1/push_tokens?token=eq.' + encodeURIComponent(t), { method: 'DELETE' }); } catch (e) { logErr('pushfcm:21', e, 1); } PUSH.tok = null; }
 let PUSH_UID = null;
 const _pullAllPush = pullAll;
 pullAll = async function () { const r = await _pullAllPush.apply(this, arguments); if (AUTH && AUTH.uid && PUSH_UID !== AUTH.uid) { PUSH_UID = AUTH.uid; pushInit(); } return r; };

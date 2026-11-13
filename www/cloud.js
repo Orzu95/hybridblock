@@ -30,7 +30,7 @@ function normUser(u) { return String(u || '').trim().toLowerCase().replace(/ä/g
 function userHint(u) { const n = normUser(u); return u && n !== String(u).trim() ? $t('Anmeldename: ') + '<b>' + esc(n || '–') + '</b>' : ''; }
 async function login(username, password) { const j = await sbFetch('/auth/v1/token?grant_type=password', { method: 'POST', body: JSON.stringify({ email: normUser(username) + '@' + SB.domain, password }) }); setAuth(j); await loadProfile(); }
 async function loadProfile() { const r = await api('/rest/v1/profiles?id=eq.' + AUTH.uid + '&select=id,username,display_name,role,coach_id,lang'); AUTH.profile = r && r[0] || null; saveAuth(); return AUTH.profile; }
-async function logout() { try { if (AUTH) await api('/auth/v1/logout', { method: 'POST' }); } catch (e) {} AUTH = null; saveAuth(); S.meta.syncAt = null; S.meta.syncMod = null; S.meta.planAt = null; persist(); }
+async function logout() { try { if (AUTH) await api('/auth/v1/logout', { method: 'POST' }); } catch (e) { logErr('cloud:33', e, 1); } AUTH = null; saveAuth(); S.meta.syncAt = null; S.meta.syncMod = null; S.meta.planAt = null; persist(); }
 
 /* ======================= SYNC ======================= */
 const SYNC = { t: null, busy: false, err: null, pulled: false };
@@ -317,7 +317,7 @@ function pePickSheet(i, slot, q) { q = (q || '').toLowerCase(); const items = Ob
 const peExItems = items => items.map(e => '<div class="it" data-act="pePick" data-ex="' + e.id + '"><div class="grow"><b>' + esc(e.name) + '</b><small>' + Object.keys(e.muscles).filter(m => e.muscles[m] >= 1).map(m => MUSCLES[m]).join(', ') + '</small></div>' + (isPrio(e.id) ? $t('<span class="prio">Schwerpunkt</span>') : '') + '</div>').join('');
 async function peSave() { if (isTplUid(PE.uid)) return tplEditorSave(); const p = PE.draft; if (p.targets) { p.targets.at = new Date().toISOString(); } p.v = (p.v || 1) + 1; delete p.waiting; delete p.free;
   try { if (PE.uid === 'me') { if (PE.switching || !S.plan.sessions.length) { switchPlan(p); PE.switching = false; } else setPlan(p, false); S.meta.daysSet = true; if (AUTH) { S.meta.planAt = await pushPlan(AUTH.uid, S.plan); } save(); toast($t('Plan gespeichert')); }
-    else { await pushPlan(PE.uid, p); const rq = openReq(PE.uid); if (rq) { try { await api('/rest/v1/plan_requests?id=eq.' + rq.id, { method: 'PATCH', body: JSON.stringify({ status: 'done', done_at: new Date().toISOString() }) }); rq.status = 'done'; } catch (e2) {} } toast($t('Plan gespeichert. ') + (PE.name || $t('Dein Athlet')) + $t(' bekommt ihn beim nächsten Öffnen.')); }
+    else { await pushPlan(PE.uid, p); const rq = openReq(PE.uid); if (rq) { try { await api('/rest/v1/plan_requests?id=eq.' + rq.id, { method: 'PATCH', body: JSON.stringify({ status: 'done', done_at: new Date().toISOString() }) }); rq.status = 'done'; } catch (e2) { logErr('cloud:320', e2, 1); } } toast($t('Plan gespeichert. ') + (PE.name || $t('Dein Athlet')) + $t(' bekommt ihn beim nächsten Öffnen.')); }
     PE.dirty = false; peDraftClear(); render(); } catch (e) { toast($t('Speichern fehlgeschlagen: ') + errTxt(e)); } }
 
 /* ======================= EINSTELLUNGEN: KONTO & SPRACHE ======================= */

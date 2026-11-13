@@ -307,7 +307,7 @@ function render(scrollTop) { if (!HB_READY) return; prioSync();
   const v = $('#view'); const y = window.scrollY;
   const map = { planend: () => viewPlanEnd(), training: () => route.arg ? viewSession(route.arg) : viewTraining(), frei: () => viewFree(route.arg), essen: viewEssen, ernaehrung: () => (typeof viewNutriHist === 'function' ? viewNutriHist() : viewEssen()), verlauf: viewProgress, mehr: viewMehr, start: () => viewStart(route.arg), library: () => route.arg ? viewLibPlan(route.arg) : viewLibrary(), workout: () => viewWorkout(route.arg), admin: () => viewAdmin(route.arg), plan: () => viewPlan(route.arg), track: () => viewTrack(), datenschutz: () => viewPrivacy(), ops: () => typeof viewOps === 'function' ? viewOps() : '', wissen: () => typeof viewWissen === 'function' ? viewWissen(route.arg) : '', lernen: () => typeof viewLernen === 'function' ? viewLernen(route.arg) : '', chat: () => typeof viewChat === 'function' ? viewChat(route.arg) : '', termine: () => typeof viewTermine === 'function' ? viewTermine() : '', chats: () => typeof viewChats === 'function' ? viewChats() : '' };
   const coachHome = typeof cMode === 'function' && isAdmin() && !VIEW && cMode() === 'coach' && (route.name === 'heute' || !map[route.name]);
-  try { v.innerHTML = viewBar() + (coachHome ? viewAdmin() : (map[route.name] || viewHeute)()); } catch (err) { console.error(err); v.innerHTML = '<div class="card" data-view-error="1"><h2>' + $t('Diese Ansicht konnte nicht geladen werden') + '</h2><p class="small">' + $t('Deine Daten sind nicht verloren. Geh zurück auf „Heute“ oder lade die App neu.') + '</p><p class="src">' + esc(err && err.message || err) + '</p><a class="btn brand" href="#heute">' + $t('Zu „Heute“') + '</a></div>'; }
+  try { v.innerHTML = viewBar() + (coachHome ? viewAdmin() : (map[route.name] || viewHeute)()); } catch (err) { console.error(err); logErr('render:' + route.name, err, 1); v.innerHTML = '<div class="card" data-view-error="1"><h2>' + $t('Diese Ansicht konnte nicht geladen werden') + '</h2><p class="small">' + $t('Deine Daten sind nicht verloren. Geh zurück auf „Heute“ oder lade die App neu.') + '</p><p class="src">' + esc(err && err.message || err) + '</p><a class="btn brand" href="#heute">' + $t('Zu „Heute“') + '</a></div>'; }
   if (route.name === 'training' && route.arg) keepAwake(); else if ($('#timer').hidden && wakeLock) { try { wakeLock.release(); } catch (e) {} wakeLock = null; }
   if (route.name === 'verlauf') refreshPhotoCard();
   window.scrollTo(0, scrollTop ? 0 : y); }
@@ -556,7 +556,7 @@ async function fetchJson(url, ms) { const ac = new AbortController(); const t = 
 /* Lebensmittelsuche: zuerst über die eigene Edge Function (Zwischenspeicher, kein CORS, schont das OFF-Suchlimit), dann direkt bei OFF */
 async function offQuery(q, size) { const enc = encodeURIComponent(q), F = 'code,product_name,product_name_de,product_name_en,product_name_ru,brands,nutriments,serving_quantity'; const errs = [];
   if (typeof SB !== 'undefined') { try { const ac = new AbortController(); const t = setTimeout(() => ac.abort(), 15000);
-      let fh = { 'Content-Type': 'application/json', apikey: SB.key }; try { if (AUTH && typeof token === 'function') fh.Authorization = 'Bearer ' + await token(); } catch (e) {}
+      let fh = { 'Content-Type': 'application/json', apikey: SB.key }; try { if (AUTH && typeof token === 'function') fh.Authorization = 'Bearer ' + await token(); } catch (e) { logErr('app:559', e, 1); }
       const r = await fetch(SB.url + '/functions/v1/food-search', { method: 'POST', headers: fh, body: JSON.stringify({ q, langs: OFF_LANGS, size }), signal: ac.signal }); clearTimeout(t);
       const j = await r.json(); if (r.ok && Array.isArray(j.hits)) return { list: j.hits, errs }; errs.push(j.error || ('HTTP ' + r.status)); } catch (e) { errs.push(e.name === 'AbortError' ? $t('Zeitüberschreitung') : e.message); } }
   const urls = ['https://search.openfoodfacts.org/search?q=' + enc + '&langs=' + OFF_LANGS + '&page_size=' + size + '&fields=' + F, 'https://world.openfoodfacts.org/cgi/search.pl?search_terms=' + enc + '&search_simple=1&action=process&json=1&page_size=' + size + '&fields=' + F];
@@ -595,7 +595,7 @@ async function openScanner() { closeSheet(); const sc = $('#scanner'), v = $('#s
   msg.textContent = $t('Strichcode in den Rahmen halten');
   let native = false; if ('BarcodeDetector' in window) { try { const f = await BarcodeDetector.getSupportedFormats(); native = f.includes('ean_13'); } catch (e) { native = false; } }
   if (native) { v.srcObject = SCAN.stream; await v.play().catch(() => {}); const det = new BarcodeDetector({ formats: ['ean_13', 'ean_8', 'upc_a', 'upc_e'] });
-    SCAN.timer = setInterval(async () => { if (v.readyState < 2) return; try { const r = await det.detect(v); if (r.length) gotCode(r[0].rawValue); } catch (e) {} }, 180); }
+    SCAN.timer = setInterval(async () => { if (v.readyState < 2) return; try { const r = await det.detect(v); if (r.length) gotCode(r[0].rawValue); } catch (e) { logErr('app:598', e, 1); } }, 180); }
   else { try { await loadScript('vendor/zxing.min.js'); const hints = new Map(); hints.set(ZXing.DecodeHintType.POSSIBLE_FORMATS, [ZXing.BarcodeFormat.EAN_13, ZXing.BarcodeFormat.EAN_8, ZXing.BarcodeFormat.UPC_A, ZXing.BarcodeFormat.UPC_E]); hints.set(ZXing.DecodeHintType.TRY_HARDER, true);
       SCAN.reader = new ZXing.BrowserMultiFormatReader(hints, 200); SCAN.reader.decodeFromStream(SCAN.stream, v, (res) => { if (res) gotCode(res.getText()); }); }
     catch (e) { msg.textContent = $t('Scanner konnte nicht starten (') + e.message + $t('). Nummer unten eingeben.'); } } }
@@ -612,7 +612,7 @@ async function toggleTorch() { if (!SCAN.stream) return; const t = SCAN.stream.g
 const HEALTH = { get plugin() { const C = window.Capacitor; return C && C.isNativePlatform && C.isNativePlatform() && C.Plugins && C.Plugins.Health; }, get native() { return !!this.plugin; }, busy: false };
 const HC_READ = ['steps', 'heartRate', 'restingHeartRate', 'heartRateVariability', 'sleep', 'workouts', 'weight', 'calories', 'vo2Max'];
 async function hcConnect() { const H = HEALTH.plugin; if (!H) return;
-  try { const av = await H.isAvailable(); if (!av.available) { toast($t('Health Connect fehlt: ') + (av.reason || $t('bitte installieren'))); try { await H.openHealthConnectSettings(); } catch (e) {} return; }
+  try { const av = await H.isAvailable(); if (!av.available) { toast($t('Health Connect fehlt: ') + (av.reason || $t('bitte installieren'))); try { await H.openHealthConnectSettings(); } catch (e) { logErr('app:615', e, 1); } return; }
     const st = await H.requestAuthorization({ read: HC_READ, requestHistoryAccess: true }); S.healthMeta.granted = st.readAuthorized || []; S.healthMeta.denied = st.readDenied || []; S.healthMeta.source = 'hc'; save();
     if (!(st.readAuthorized || []).length) { toast($t('Keine Berechtigung erteilt.')); render(); return; }
     await hcSync(true); } catch (e) { toast($t('Verbinden fehlgeschlagen: ') + (e.message || e)); } }
@@ -983,7 +983,7 @@ document.addEventListener('click', async e => { const b = e.target.closest('[dat
     case 'recScan': ui.scanTarget = 'recipe'; ui.recipeKeep = ui.recipe; openScanner(); break;
     case 'plates': plateSheet(num(b.dataset.load), !!b.dataset.main, b.dataset.ex); break;
     case 'showReport': ui.week = +b.dataset.w; location.hash = '#training'; break;
-    case 'loadTrace': { toast($t('Lade Pulskurve …')); let ok2 = false; try { ok2 = await fetchTrace(b.dataset.tkey, +b.dataset.s, +b.dataset.e); } catch (err) {} toast(ok2 ? $t('Pulskurve geladen') : $t('Keine Pulsdaten für diesen Zeitraum gefunden.')); render(); break; }
+    case 'loadTrace': { toast($t('Lade Pulskurve …')); let ok2 = false; try { ok2 = await fetchTrace(b.dataset.tkey, +b.dataset.s, +b.dataset.e); } catch (err) { logErr('app:986', err, 1); } toast(ok2 ? $t('Pulskurve geladen') : $t('Keine Pulsdaten für diesen Zeitraum gefunden.')); render(); break; }
     case 'copyYesterday': { const y = addDays(ui.day, -1); ((S.days[y] || {}).entries || []).forEach(e => addEntry(ui.day, e.food, e.meal, e.qty, e.unit)); render(); toast($t('Von gestern übernommen')); break; }
     case 'saveTpl': { const t2 = saveMealTemplate(ui.day, b.dataset.meal); if (t2) toast($t('Vorlage gespeichert: ') + t2.name); break; }
     case 'useTpl': { const t2 = S.mealTemplates.find(x => x.id === b.dataset.id); if (!t2) break; t2.entries.forEach(e => { if (getFood(e.food)) addEntry(ui.day, e.food, ui.meal, e.qty, e.unit); }); closeSheet(); if (route.name !== 'essen') location.hash = '#essen'; else render(); toast($t('Vorlage eingefügt')); break; }
@@ -1163,7 +1163,7 @@ const ownImg = exId => EX_OWN.includes(exId) ? { a: 'ex/' + exId + '-a.webp', b:
 function repdbImg(rid) { const r = REPDB_CACHE && REPDB_CACHE[rid]; if (!r) return null; const i = r.img; const a = i.start || i.main; return { a: a && REPDB_BASE + a, b: i.peak ? REPDB_BASE + i.peak : null }; }
 function exThumb(exId) { const rid = REPDB[exId]; const im = ownImg(exId) || (rid && repdbImg(rid)); if (!im || !im.a) return ''; return '<button class="thumb" type="button" data-act="exInfo" data-ex="' + exId + $t('" aria-label="Anleitung"><img src="') + im.a + '" alt="" loading="lazy" decoding="async"></button>'; }
 function demoHTML(im) { return '<div class="demo' + (im.b ? $t(' two') : '') + '"><img src="' + im.a + $t('" alt="Startposition">') + (im.b ? '<img class="b" src="' + im.b + $t('" alt="Endposition">') : '') + '</div>'; }
-async function exInfoSheet(exId) { const ex = LIB[exId]; let rid = REPDB[exId]; if (!rid && REPDB_G()[exId] && !REPDB_CACHE) { try { await loadRepdb(); rid = REPDB[exId]; } catch (e) {} } else if (!rid && REPDB_CACHE) rid = REPDB[exId]; const own = ownImg(exId); const mus = Object.keys(ex.muscles).filter(m => ex.muscles[m] >= 1).map(m => MUSCLES[m]);
+async function exInfoSheet(exId) { const ex = LIB[exId]; let rid = REPDB[exId]; if (!rid && REPDB_G()[exId] && !REPDB_CACHE) { try { await loadRepdb(); rid = REPDB[exId]; } catch (e) { logErr('app:1166', e, 1); } } else if (!rid && REPDB_CACHE) rid = REPDB[exId]; const own = ownImg(exId); const mus = Object.keys(ex.muscles).filter(m => ex.muscles[m] >= 1).map(m => MUSCLES[m]);
   const head = sheetHead(esc(ex.name)) + '<div class="row" style="margin-top:8px">' + mus.map(m => '<span class="tag on-white" style="background:var(--fog)">' + m + '</span>').join('') + '<button class="btn sm" data-act="exHist" data-ex="' + exId + '" type="button">' + ICON.chart + $t('Verlauf</button></div>');
   const local = (ex.note ? '<p style="margin-top:12px">' + esc(ex.note) + '</p>' : '') + (S.exNotes[exId] ? $t('<p class="small"><b>Deine Notiz:</b> ') + esc(S.exNotes[exId]) + '</p>' : '');
   const cues = LANG === 'ru' && typeof CUES_RU !== 'undefined' && CUES_RU[exId] ? $t('<h3 style="margin:16px 0 6px">Ausführung</h3><ol class="rules">') + CUES_RU[exId].map(x => '<li>' + esc(x) + '</li>').join('') + '</ol>' : '';
@@ -1234,7 +1234,7 @@ async function refreshPhotoCard() { const el = $('#photocard'); if (el) el.outer
 /* ======================= ERINNERUNGEN (Android) ======================= */
 const NOTIF = { get p() { const C = window.Capacitor; return C && C.isNativePlatform && C.isNativePlatform() && C.Plugins && C.Plugins.LocalNotifications; } };
 async function notifSetup() { const N = NOTIF.p; if (!N) return; try { const st = await N.requestPermissions(); if (st.display !== 'granted') { toast($t('Benachrichtigungen nicht erlaubt.')); return; }
-    try { const ex = await N.checkExactNotificationSetting(); if (ex.exact_alarm !== 'granted') await N.changeExactNotificationSetting(); } catch (e) {}
+    try { const ex = await N.checkExactNotificationSetting(); if (ex.exact_alarm !== 'granted') await N.changeExactNotificationSetting(); } catch (e) { logErr('app:1237', e, 1); }
     S.settings.notif = true; save(); await rescheduleReminders(); toast($t('Erinnerungen aktiv')); render(); } catch (e) { toast($t('Einrichten fehlgeschlagen: ') + (e.message || e)); } }
 async function restNotify(sec, label) { const N = NOTIF.p; if (!N || !S.settings.notif) return; try { await N.cancel({ notifications: [{ id: 9001 }] }); await N.schedule({ notifications: [{ id: 9001, title: $t('Pause vorbei'), body: label || $t('Weiter geht’s'), schedule: { at: new Date(Date.now() + sec * 1000), allowWhileIdle: true } }] }); } catch (e) {} }
 async function restCancel() { const N = NOTIF.p; if (!N) return; try { await N.cancel({ notifications: [{ id: 9001 }] }); } catch (e) {} }
@@ -1279,7 +1279,7 @@ async function recSearch(q) { const box = $('#rc-res'); if (!box || !q) return; 
   const row = f => '<div class="it" data-act="recPick" data-id="' + esc(f.id) + '"><div class="grow"><b>' + esc(foodName(f)) + '</b><small>' + (f.needsFetch ? $t('Nährwerte werden beim Antippen geladen') : fmt(f.kcal, 0) + $t(' kcal pro ') + (f.base === '100g' ? $t('100 g') : $t('Stück'))) + '</small></div><span class="chev">›</span></div>';
   box.innerHTML = mine.map(row).join('') + $t('<p class="small muted">Suche in Open Food Facts …</p>');
   try { const rq = await offQuery(q, 20); const list = (rq.list || []).map(p => offMap(p, true)).filter(Boolean);
-    list.forEach(f => offCache[f.id] = f); if ($('#rc-res')) $('#rc-res').innerHTML = mine.map(row).join('') + list.map(row).join('') + (list.length || mine.length ? '' : $t('<p class="small muted">Nichts gefunden.</p>')); } catch (e) {} }
+    list.forEach(f => offCache[f.id] = f); if ($('#rc-res')) $('#rc-res').innerHTML = mine.map(row).join('') + list.map(row).join('') + (list.length || mine.length ? '' : $t('<p class="small muted">Nichts gefunden.</p>')); } catch (e) { logErr('app:1281', e, 1); } }
 function recipeQty(id) { const f = getFood(id); const units = unitsFor(f); const box = $('#rc-res'); if (!box) return;
   box.innerHTML = '<div class="card" style="padding:14px 18px"><b>' + esc(foodName(f)) + $t('</b><div class="fields on-white" style="margin-top:10px"><div class="field"><label for="rq-q">Menge</label><input id="rq-q" type="number" inputmode="decimal" step="any" value="') + (units[0] === 'g' ? 100 : 1) + $t('"></div><div class="field"><label for="rq-u">Einheit</label><select id="rq-u">') + units.map(u => '<option value="' + u + '">' + $t(u) + '</option>').join('') + '</select></div></div><div class="row" style="margin-top:10px"><div class="grow"></div><button class="btn brand sm" data-act="recAddItem" data-id="' + esc(id) + $t('" type="button">Hinzufügen</button></div></div>'); }
 function saveRecipe() { const r = ui.recipe; r.name = ($('#rc-name').value || '').trim() || $t('Rezept'); r.portions = num($('#rc-por').value) || 1; const t = recipeTotals(r); const por = r.portions; const id = r.id || ('rc_' + uid());
@@ -1293,9 +1293,9 @@ function goalEta() { const ser = series(); const rate = weeklyRate(ser); if (!se
 const REPO = 'Orzu95/hybridblock', PAGES = 'https://orzu95.github.io/hybridblock/', APK_URL = 'https://github.com/' + REPO + '/releases/latest/download/Hybridblock.apk';
 const BUILD = { local: null, remote: null, checked: 0 };
 async function checkUpdate(force) { if (!force && Date.now() - BUILD.checked < 60 * 60 * 1000) return; BUILD.checked = Date.now();
-  try { BUILD.local = (await fetchJson('build.json?t=' + Date.now(), 4000)).build; } catch (e) {}
+  try { BUILD.local = (await fetchJson('build.json?t=' + Date.now(), 4000)).build; } catch (e) { logErr('app:1296', e, 1); }
   if (!HEALTH.native) return;
-  try { const r = await fetchJson(PAGES + 'build.json?t=' + Date.now(), 7000); const had = updateAvailable(); BUILD.remote = r.build; if (updateAvailable() !== had) render(); } catch (e) {} }
+  try { const r = await fetchJson(PAGES + 'build.json?t=' + Date.now(), 7000); const had = updateAvailable(); BUILD.remote = r.build; if (updateAvailable() !== had) render(); } catch (e) { logErr('app:1298', e, 1); } }
 const updateAvailable = () => HEALTH.native && BUILD.remote != null && BUILD.local != null && BUILD.remote > BUILD.local;
 const updateNote = () => updateAvailable() ? note('ember', $t('<b>Update verfügbar</b> (Build ') + BUILD.remote + $t('). Herunterladen und über die alte Version installieren. Deine Daten bleiben erhalten.'), '<a class="btn brand sm" href="' + APK_URL + $t('">Laden</a>')) : '';
 

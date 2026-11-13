@@ -35,6 +35,13 @@ jobs:
       - name: Regel-Tabelle gegen Wissensbank prüfen
         run: python3 tests/rules_check.py
       - run: npm ci
+      - name: Globale Skripte prüfen (Syntax, doppelte Funktionen, Wrapper-Reihenfolge)
+        run: node tests/globals_check.mjs
+      - name: Smoke-Test (alle Ansichten in DE, EN, RU)
+        run: |
+          npm i --no-save playwright@1
+          npx playwright install --with-deps chromium
+          node tests/smoke.cjs
       - run: npx cap sync android
       - name: Signaturschlüssel entschlüsseln
         env:

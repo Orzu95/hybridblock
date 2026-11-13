@@ -56,7 +56,7 @@ viewLibPlan = function (id) { id = String(id || ''); if (id.startsWith('code:'))
 /* Teilen-Fenster */
 async function spShare(id) { let code; try { code = await api('/rest/v1/rpc/shared_plan_share', { method: 'POST', body: JSON.stringify({ p_id: id }) }); } catch (e) { toast(errTxt(e)); return; }
   if (SP.body[id]) SP.body[id].share_code = code; const link = PAGES + '#library/code:' + code; let qr = '';
-  try { if (typeof qrcode === 'undefined') await loadScript('vendor/qrcode.js'); const q = qrcode(0, 'M'); q.addData(link); q.make(); qr = q.createSvgTag({ cellSize: 5, margin: 2, scalable: true }); } catch (e) {}
+  try { if (typeof qrcode === 'undefined') await loadScript('vendor/qrcode.js'); const q = qrcode(0, 'M'); q.addData(link); q.make(); qr = q.createSvgTag({ cellSize: 5, margin: 2, scalable: true }); } catch (e) { logErr('libreview:59', e, 1); }
   openSheet(sheetHead($t('Plan teilen')) + '<p class="small muted" style="margin-top:6px">' + $t('Wer den Link oder Code hat, kann den Plan ansehen und nutzen, auch ohne Konto. Persönliche Daten sind nicht enthalten.') + '</p>' +
     '<div class="sh-code num">' + esc(code) + '</div><div class="sh-qr">' + qr + '</div><p class="small" style="word-break:break-all;text-align:center">' + esc(link) + '</p>' +
     '<div class="row" style="gap:8px;flex-wrap:wrap;margin-top:12px"><button class="btn brand" data-act="shSend" data-link="' + esc(link) + '" data-code="' + esc(code) + '" type="button">' + $t('Teilen') + '</button><button class="btn" data-act="shCopy" data-link="' + esc(link) + '" type="button">' + $t('Link kopieren') + '</button><div class="grow"></div><button class="btn" data-act="shOff" data-id="' + id + '" type="button">' + $t('Link deaktivieren') + '</button></div>'); }
@@ -68,7 +68,7 @@ async function rvGo(b) { const id = b.dataset.id, ok = b.dataset.v === 'ok', not
     delete SP.body[id]; SP.list = null; closeSheet(); toast(ok ? $t('Freigegeben') : $t('Abgelehnt')); render(); } catch (e) { b.disabled = false; toast(errTxt(e)); } }
 document.addEventListener('click', async e => { const b = e.target.closest('[data-act]'); if (!b) return; const a = b.dataset.act;
   if (a === 'spShare') spShare(b.dataset.id);
-  else if (a === 'shSend') { const txt = $tf('Trainingsplan in Hybridblock: {l} (Code {c})', { l: b.dataset.link, c: b.dataset.code }); try { if (navigator.share) { await navigator.share({ text: txt }); return; } } catch (er) { if (er.name === 'AbortError') return; } try { await navigator.clipboard.writeText(txt); toast($t('Kopiert')); } catch (er) {} }
+  else if (a === 'shSend') { const txt = $tf('Trainingsplan in Hybridblock: {l} (Code {c})', { l: b.dataset.link, c: b.dataset.code }); try { if (navigator.share) { await navigator.share({ text: txt }); return; } } catch (er) { if (er.name === 'AbortError') return; } try { await navigator.clipboard.writeText(txt); toast($t('Kopiert')); } catch (er) { logErr('libreview:71', er, 1); } }
   else if (a === 'shCopy') { try { await navigator.clipboard.writeText(b.dataset.link); toast($t('Link kopiert')); } catch (er) { toast(b.dataset.link); } }
   else if (a === 'shOff') { try { await api('/rest/v1/rpc/shared_plan_unshare', { method: 'POST', body: JSON.stringify({ p_id: b.dataset.id }) }); if (SP.body[b.dataset.id]) SP.body[b.dataset.id].share_code = null; closeSheet(); toast($t('Link deaktiviert')); render(); } catch (er) { toast(errTxt(er)); } }
   else if (a === 'rvOpen') rvSheet(b.dataset.id, b.dataset.v === 'ok');

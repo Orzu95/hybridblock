@@ -43,6 +43,9 @@ const COACH = `(() => { AUTH = { uid: 'c1', access_token: 'x', expires_at: 9e9, 
     /* Coach */
     await page.evaluate(COACH); for (const h of ['#heute', '#admin', '#admin/a1', '#termine', '#chats', '#library', '#mehr']) await visit(h, 'Coach');
     await page.evaluate(() => { PE.uid = 'a1'; PE.draft = JSON.parse(JSON.stringify(S.plan)); PE.name = 'Athlet'; }); await visit('#plan/a1', 'Coach');
+    const chk = await page.evaluate(() => ({ dict: Object.keys(I18N[LANG] || {}).length, other: Object.keys(I18N[LANG === 'en' ? 'ru' : 'en']).length, log: ERRLOG.list.map(x => x.ctx + ': ' + x.msg) }));
+    if (lang !== 'de' && chk.dict < 1000) fails.push(`[${lang}] Wörterbuch nicht geladen`); if (chk.other) fails.push(`[${lang}] fremdes Wörterbuch unnötig geladen`);
+    if (chk.log.length) fails.push(`[${lang}] Fehlerprotokoll: ${chk.log.join(' | ')}`);
     await ctx.close();
   }
   await browser.close(); server.close();

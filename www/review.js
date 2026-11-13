@@ -98,7 +98,7 @@ doCheckin = function () { const c = _doCheckinRev(); const db = S.plan && S.plan
 async function decide(key, id, yes) { const r = reviews()[key]; if (!r) return; const s = r.sugs.find(x => x.id === id); if (!s) return;
   if (yes && s.kind === 'days') { s.st = 'yes'; save(); location.hash = '#library'; return; }
   if (yes) { applySug(S.plan, s); applyPlan(); } s.st = yes ? 'yes' : 'no'; s.by = 'me'; save();
-  if (yes && typeof AUTH !== 'undefined' && AUTH && typeof pushPlan === 'function') { try { S.meta.planAt = await pushPlan(AUTH.uid, S.plan); persist(); } catch (e) {} }
+  if (yes && typeof AUTH !== 'undefined' && AUTH && typeof pushPlan === 'function') { try { S.meta.planAt = await pushPlan(AUTH.uid, S.plan); persist(); } catch (e) { logErr('review:101', e, 1); } }
   toast(yes ? $t('Übernommen') : $t('Abgelehnt')); render(); }
 
 /* ---------- Wann eine Woche ausgewertet wird ---------- */

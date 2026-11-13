@@ -27,4 +27,4 @@ document.addEventListener('click', e => { const b = e.target.closest('[data-act]
     save(); render(); doneOverlay(n > 1 ? $t('Z2-Einheiten hinzugefügt') : $t('Z2-Einheit hinzugefügt')); }
   else if (b.dataset.act === 'pdRotation') { S.settings.mode = 'rotation'; save(); render(); toast($t('Der Reihe nach, egal welcher Tag')); } });
 /* Beim Wechsel in den Schritt „Trainingstage“ einmal sinnvoll vorbelegen */
-document.addEventListener('click', e => { const b = e.target.closest('[data-act]'); if (!b) return; if (['onbPick', 'onbPath', 'onbGenAgain', 'libUseYes'].includes(b.dataset.act)) setTimeout(() => { try { autoSpreadDays(); save(); if (route.name === 'start') render(); } catch (er) {} }, 60); });
+document.addEventListener('click', e => { const b = e.target.closest('[data-act]'); if (!b) return; if (['onbPick', 'onbPath', 'onbGenAgain', 'libUseYes'].includes(b.dataset.act)) setTimeout(() => { try { autoSpreadDays(); save(); if (route.name === 'start') render(); } catch (er) { logErr('plandays:30', er, 1); } }, 60); });

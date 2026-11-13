@@ -98,7 +98,7 @@ function coFinishSheet(a) { const sets = (a.exercises || []).reduce((s, e) => s 
 async function coSend(a) { const ex = (a.exercises || []).map(e => ({ ex: e.ex, slot: e.slot || null, reps: e.reps, rpe: e.rpe ?? null, sets: (e.sets || []).filter(x => x && (x.done || x.r != null)).map(x => ({ w: x.w ?? null, r: x.r ?? null, rpe: x.rpe ?? null, done: true })) })).filter(e => e.sets.length);
   const kind = a.appt && a.k ? 'sess' : 'act'; const payload = { date: a.date, dur: num(a.dur) || (a.t0 ? Math.round((Date.now() - a.t0) / 60000) : null), w: a.w || null, k: a.k || null, title: a.title || null, note: a.note || null, ex };
   await api('/rest/v1/coach_inbox', { method: 'POST', headers: { Prefer: 'return=minimal' }, body: JSON.stringify({ athlete_id: a.coachFor, kind, payload }) });
-  if (a.appt) { const ap = (APPT.list || []).find(x => x.id === a.appt); if (ap) try { await apptPatch(ap, { status: 'done' }, { t: 'done' }); } catch (e) {} } a.sent = true; save(); }
+  if (a.appt) { const ap = (APPT.list || []).find(x => x.id === a.appt); if (ap) try { await apptPatch(ap, { status: 'done' }, { t: 'done' }); } catch (e) { logErr('appt:101', e, 1); } } a.sent = true; save(); }
 async function coToPlan(a) { const uid2 = a.coachFor; const r = await api('/rest/v1/plans?user_id=eq.' + uid2 + '&select=plan'); const plan = r && r[0] && r[0].plan ? r[0].plan : makePlan('blank');
   const k = nextKey(plan); const add = (a.exercises || []).map(e => { const done = (e.sets || []).filter(x => x && (x.done || x.r != null)); const reps = done.length ? (Math.min(...done.map(x => num(x.r) || 0)) + '–' + Math.max(...done.map(x => num(x.r) || 0))).replace(/^(\d+)–\1$/, '$1') : e.reps;
     return { slot: 'g_' + uid(), ex: e.ex, sets: Math.max(1, done.length || (e.sets || []).length), reps: reps || '8–12', rpe: num(e.rpe) || 8, rest: e.rest || 90, type: 'dp' }; });
@@ -110,7 +110,7 @@ async function inboxPull() { if (!AUTH || VIEW || isAdmin() || !hasCoach()) retu
       (p.ex || []).forEach(e => { const slot = (e.slot && spec.some(x => x.slot === e.slot)) ? e.slot : ((spec.find(x => x.ex === e.ex) || {}).slot || ('c_' + uid())); s.logs[slot] = { ex: e.ex, sets: e.sets }; });
       s.date = p.date; s.coach = true; if (p.dur) { s.end = s.end || {}; s.end.dur = String(p.dur); } }
     else { const a = { id: uid(), type: 'kraft', date: p.date || today(), week: curWeek(), src: 'coach', title: p.title || $t('Mit Coach'), dur: p.dur ? String(p.dur) : '', note: p.note || '', exercises: (p.ex || []).map(e => ({ ex: e.ex, reps: e.reps, rpe: e.rpe, sets: e.sets })) }; S.activities.push(a); }
-    await api('/rest/v1/coach_inbox?id=eq.' + m.id, { method: 'PATCH', headers: { Prefer: 'return=minimal' }, body: JSON.stringify({ applied_at: new Date().toISOString() }) }); } catch (e) {} }
+    await api('/rest/v1/coach_inbox?id=eq.' + m.id, { method: 'PATCH', headers: { Prefer: 'return=minimal' }, body: JSON.stringify({ applied_at: new Date().toISOString() }) }); } catch (e) { logErr('appt:108', e, 1); } }
   save(); toast($t('Dein Coach hat Training für dich eingetragen.')); render(); }
 
 /* ---------- Abruf ---------- */

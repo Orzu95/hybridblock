@@ -24,10 +24,10 @@ async function hrmConnect(pickNew) { const B = NP('BluetoothLe');
   if (B) { try { HRM.state = 'connecting'; hrmUi(); await B.initialize({ androidNeverForLocation: true });
       let dev = !pickNew && S.settings.hrm && S.settings.hrm.id ? S.settings.hrm : null;
       if (!dev) { const d = await B.requestDevice({ services: [HR_SVC] }); dev = { id: d.deviceId, name: d.name || $t('Pulsgurt') }; S.settings.hrm = dev; save(); }
-      for (const l of HRM.lsn) { try { await l.remove(); } catch (e) {} } HRM.lsn = [];
+      for (const l of HRM.lsn) { try { await l.remove(); } catch (e) { logErr('track:27', e, 1); } } HRM.lsn = [];
       HRM.lsn.push(await B.addListener('disconnected|' + dev.id, () => { HRM.state = 'lost'; hrmUi(); if (TR.active) setTimeout(() => { if (TR.active && HRM.state !== 'on') hrmConnect(false); }, 4000); }));
       HRM.lsn.push(await B.addListener('notification|' + dev.id + '|' + HR_SVC + '|' + HR_CHR, ev => onHr(parseHr(hexToBytes(ev && ev.value)))));
-      try { await B.disconnect({ deviceId: dev.id }); } catch (e) {}
+      try { await B.disconnect({ deviceId: dev.id }); } catch (e) { logErr('track:30', e, 1); }
       await B.connect({ deviceId: dev.id, timeout: 15000 }); await B.startNotifications({ deviceId: dev.id, service: HR_SVC, characteristic: HR_CHR });
       HRM.id = dev.id; HRM.name = dev.name; HRM.state = 'on'; hrmUi(); toast($t('Verbunden: ') + dev.name); }
     catch (e) { HRM.state = 'off'; hrmUi(); const msg = String((e && e.message) || e);
@@ -42,7 +42,7 @@ async function hrmConnect(pickNew) { const B = NP('BluetoothLe');
     catch (e) { HRM.state = 'off'; hrmUi(); } return; }
   toast($t('Bluetooth geht hier nicht. In der Android-App oder in Chrome klappt es.')); }
 async function hrmDisconnect(forget) { const B = NP('BluetoothLe');
-  try { if (B && HRM.id) { await B.stopNotifications({ deviceId: HRM.id, service: HR_SVC, characteristic: HR_CHR }).catch(() => {}); await B.disconnect({ deviceId: HRM.id }); } if (HRM.web && HRM.web.gatt.connected) HRM.web.gatt.disconnect(); } catch (e) {}
+  try { if (B && HRM.id) { await B.stopNotifications({ deviceId: HRM.id, service: HR_SVC, characteristic: HR_CHR }).catch(() => {}); await B.disconnect({ deviceId: HRM.id }); } if (HRM.web && HRM.web.gatt.connected) HRM.web.gatt.disconnect(); } catch (e) { logErr('track:45', e, 1); }
   HRM.state = 'off'; HRM.bpm = null; if (forget) { delete S.settings.hrm; save(); } hrmUi(); }
 function hrmUi() { if (route.name === 'track' && TR.active && HRM._last !== HRM.state) { HRM._last = HRM.state; render(); return; } HRM._last = HRM.state; const el = document.getElementById('hrmcard'); if (el) softPatch('hrmcard', hrmCard()); const ch = document.getElementById('tr-hrchip'); if (ch) ch.outerHTML = hrChip(); }
 function hrChip() { const st = HRM.state; return '<span id="tr-hrchip" class="trchip ' + (st === 'on' ? 'ok' : st === 'connecting' ? 'wait' : st === 'lost' ? 'bad' : '') + '">' +
@@ -129,7 +129,7 @@ async function gpsStart() { const G = NP('BackgroundGeolocation');
       TR.watchNative = true; } catch (e) { toast($t('GPS ließ sich nicht starten: ') + (e.message || e)); } return; }
   if (navigator.geolocation) { TR.watch = navigator.geolocation.watchPosition(p => onLoc(p.coords.latitude, p.coords.longitude, p.coords.accuracy, p.coords.altitude, p.timestamp), e => { if (e.code === 1) toast($t('Standort nicht erlaubt.')); }, { enableHighAccuracy: true, maximumAge: 0, timeout: 30000 });
     TR.watchNative = false; toast($t('Im Browser läuft GPS nur bei eingeschaltetem Bildschirm. Für längere Einheiten die Android-App nutzen.')); } }
-async function gpsStop() { if (TR.watch == null) return; try { if (TR.watchNative) await NP('BackgroundGeolocation').removeWatcher({ id: TR.watch }); else navigator.geolocation.clearWatch(TR.watch); } catch (e) {} TR.watch = null; }
+async function gpsStop() { if (TR.watch == null) return; try { if (TR.watchNative) await NP('BackgroundGeolocation').removeWatcher({ id: TR.watch }); else navigator.geolocation.clearWatch(TR.watch); } catch (e) { logErr('track:132', e, 1); } TR.watch = null; }
 function onLoc(lat, lng, acc, alt, t) { if (!TR.active || lat == null) return; TR.acc = acc; TR.fixAt = Date.now(); if (acc != null && acc > 35) return;
   const g = (ACT_MAP[TR.type] || {}).g || 'sonst'; const p = [lat, lng, t];
   TR.recent.push(p); while (TR.recent.length && t - TR.recent[0][2] > 12000) TR.recent.shift();

@@ -6,7 +6,7 @@ function planMigrate() { if (typeof AUTH === 'undefined' || !AUTH || !AUTH.uid |
   if (!p || p.tpl !== 'hybrid' || libVisible('hybrid')) return false;
   const done = Object.keys(S.sessions || {}).length; if (done) S.archive.push({ plan: p, sessions: S.sessions, block: S.block, until: today(), reason: 'exclusive' });
   S.plan = Object.assign(makePlan('blank'), { name: 'Noch kein Plan', noPlan: true }); S.sessions = {}; S.block = { week: 1, startedOn: null }; S.meta.needPlan = true;
-  try { applyPlan(); } catch (e) {} ui.week = null; save(); return true; }
+  try { applyPlan(); } catch (e) { logErr('planmig:9', e, 1); } ui.week = null; save(); return true; }
 let PM_DONE = false;
 const _renderPM = render;
 render = function () { if (!PM_DONE && typeof AUTH !== 'undefined' && AUTH && AUTH.uid) { PM_DONE = true; try { planMigrate(); } catch (e) { console.warn(e); } } return _renderPM.apply(this, arguments); };

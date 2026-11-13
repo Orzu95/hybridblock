@@ -43,7 +43,7 @@ function smMergeIn(remoteState) { smStamp(); const R = loadState(JSON.stringify(
     else if (smHash(vl) !== smHash(vr)) localNewer = true; });
   if (S.activities && S.activities.sort) S.activities.sort((a, b) => (a.date || '') < (b.date || '') ? -1 : (a.date || '') > (b.date || '') ? 1 : 0);
   if (S.checkins && S.checkins.sort) S.checkins.sort((a, b) => (a.date || '') < (b.date || '') ? -1 : 1);
-  if (changed) { try { applyPlan(); } catch (e) {} }
+  if (changed) { try { applyPlan(); } catch (e) { logErr('syncmerge:46', e, 1); } }
   smSnap(); return { changed, localNewer }; }
 const _persistSM = persist; persist = function () { try { smStamp(); } catch (e) { console.warn('smStamp', e); } return _persistSM.apply(this, arguments); };
 const _adoptRemoteSM = adoptRemote; adoptRemote = function () { const r = _adoptRemoteSM.apply(this, arguments); smSnap(); return r; };

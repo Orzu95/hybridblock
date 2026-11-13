@@ -52,15 +52,15 @@ function tplAssignSheet(id, only) { const t = tplById(id); if (!t) return; const
 async function tplAssignGo(id) { const t = tplById(id); if (!t) return; const picks = Array.from(document.querySelectorAll('#sheet [data-tplu]:checked')).map(x => ({ uid: x.dataset.tplu, startAt: (document.querySelector('#sheet [data-tpld="' + x.dataset.tplu + '"]') || {}).value || today() }));
   if (!picks.length) { toast($t('Wähle mindestens einen Athleten.')); return; } const at = new Date().toISOString(); let ok = 0;
   for (const p of picks) { const plan = clone(t.plan); plan.assign = { tpl: t.id, at, startAt: p.startAt }; plan.by = 'coach';
-    try { await pushPlan(p.uid, plan); ok++; const rq = openReq(p.uid); if (rq) { try { await api('/rest/v1/plan_requests?id=eq.' + rq.id, { method: 'PATCH', body: JSON.stringify({ status: 'done', done_at: at }) }); rq.status = 'done'; } catch (e2) {} }
+    try { await pushPlan(p.uid, plan); ok++; const rq = openReq(p.uid); if (rq) { try { await api('/rest/v1/plan_requests?id=eq.' + rq.id, { method: 'PATCH', body: JSON.stringify({ status: 'done', done_at: at }) }); rq.status = 'done'; } catch (e2) { logErr('coach:55', e2, 1); } }
       t.assigned = (t.assigned || []).filter(a => a.uid !== p.uid).concat({ uid: p.uid, at, startAt: p.startAt }); } catch (e) { toast(errTxt(e)); } }
-  try { await tplPatch(t, { assigned: t.assigned }); } catch (e) {} closeSheet(); toast($tf('{n} Athleten zugewiesen', { n: ok })); render(); }
+  try { await tplPatch(t, { assigned: t.assigned }); } catch (e) { logErr('coach:57', e, 1); } closeSheet(); toast($tf('{n} Athleten zugewiesen', { n: ok })); render(); }
 /* Vorlage geändert → auf Zugewiesene übertragen (ohne Neustart, Fortschritt bleibt) */
 function tplPropagateSheet(t) { const n = (t.assigned || []).length; if (!n) return;
   openSheet(sheetHead($t('Vorlage gespeichert')) + '<p style="margin-top:8px">' + $t('Die Änderung gilt für neue Zuweisungen.') + ' ' + $tf('Willst du sie auch an die {n} zugewiesenen Athleten senden?', { n }) + '</p><p class="small muted">' + $t('Ihr Fortschritt und die Planwoche bleiben erhalten. Was du bei einzelnen Athleten angepasst hast, wird dabei überschrieben.') + '</p>' +
     '<button class="btn brand block" style="margin-top:12px" data-act="tplProp" data-id="' + t.id + '" type="button">' + $t('An alle zugewiesenen senden') + '</button><button class="btn block fog" style="margin-top:8px" data-act="closeSheet" type="button">' + $t('Nur für neue Zuweisungen') + '</button>'); }
 async function tplPropagate(id) { const t = tplById(id); if (!t) return; let ok = 0;
-  for (const a of t.assigned || []) { const plan = clone(t.plan); plan.assign = { tpl: t.id, at: a.at, startAt: a.startAt }; plan.by = 'coach'; try { await pushPlan(a.uid, plan); ok++; } catch (e) {} }
+  for (const a of t.assigned || []) { const plan = clone(t.plan); plan.assign = { tpl: t.id, at: a.at, startAt: a.startAt }; plan.by = 'coach'; try { await pushPlan(a.uid, plan); ok++; } catch (e) { logErr('coach:63', e, 1); } }
   closeSheet(); toast($tf('An {n} Athleten gesendet', { n: ok })); }
 
 /* ---------- Plan-Editor im Vorlagen-Modus ---------- */
@@ -102,7 +102,7 @@ function peHistState() { const uid = PE.uid; if (uid === 'me') return S; if (!ui
   if (!(uid in ADMIN.stObj)) { if (!ADMIN.stLoading) { ADMIN.stLoading = true; (ADMIN.states[uid] ? Promise.resolve(ADMIN.states[uid]) : loadClientState(uid)).then(r => { ADMIN.stObj[uid] = r && r.state ? loadState(JSON.stringify(r.state)) : null; }).catch(() => { ADMIN.stObj[uid] = null; }).finally(() => { ADMIN.stLoading = false; if (route.name === 'plan') render(); }); } return null; }
   return ADMIN.stObj[uid]; }
 function peHistPrep(p) { const st = peHistState(); if (!st || !st.plan) return {}; const ids = new Set(), repsOf = {}; p.sessions.forEach((s, i) => { if (s.kind === 'gym') planForP(p, 1, s.k).forEach(it => { ids.add(it.ex); if (!repsOf[it.ex]) repsOf[it.ex] = it.reps; }); });
-  const out = {}; const keep = S, swap = st !== S; try { if (swap) { S = st; applyPlan(); } ids.forEach(id => { const h = exHistory(id); if (h.length) out[id] = h.slice(-3).reverse(); }); } catch (e) {} finally { if (swap) { S = keep; applyPlan(); } }
+  const out = {}; const keep = S, swap = st !== S; try { if (swap) { S = st; applyPlan(); } ids.forEach(id => { const h = exHistory(id); if (h.length) out[id] = h.slice(-3).reverse(); }); } catch (e) { logErr('coach:105', e, 1); } finally { if (swap) { S = keep; applyPlan(); } }
   const html = {}; for (const id in out) { const L = out[id]; const top = o => { const ws = o.sets.filter(x => x.w != null && x.r); const t = ws.length ? ws.reduce((b, x) => (+x.w > +b.w ? x : b), ws[0]) : o.sets[0]; return t ? (t.w != null ? fmt(+t.w) + '×' : '') + (t.r ?? '–') + (t.rpe != null ? ' @' + fmt(+t.rpe) : '') : '–'; };
     const nx = typeof gymNextFor === 'function' ? gymNextFor({ ex: id, reps: repsOf[id] || '', sets: L[0].sets }) : null;
     html[id] = '<div class="pe-hist small"><span class="muted">' + $t('Zuletzt:') + '</span> ' + L.map(o => '<b>' + top(o) + '</b>' + (o.d ? ' <span class="muted">' + fmtDay(o.d) + '</span>' : '')).join(' · ') + (L[0].e1 ? ' · e1RM ' + fmt(Math.round(L[0].e1 * 2) / 2) + ' kg' : '') + (nx && nx.load ? ' · <span class="t-green">' + $tf('nächstes Mal etwa {w} kg', { w: fmt(nx.load) }) + '</span>' : '') + '</div>'; }
@@ -134,7 +134,7 @@ document.addEventListener('click', async e => { const b = e.target.closest('[dat
       try { const t = await tplCreate(PE.draft, { name: v('tpl-name').trim(), descr: v('tpl-descr').trim(), tags: { goal: v('tpl-goal') || undefined, level: v('tpl-level') || undefined, days: num(v('tpl-days')) || undefined } }); closeSheet(); toast($t('Als Vorlage gespeichert: ') + t.name); } catch (er) { b.disabled = false; toast(errTxt(er)); } break; }
     case 'coachOwnOnly': S.settings.coachOwnOnly = b.checked; save(); render(); break;
     case 'peUndo': { const h = PE.hist || []; if (!h.length) break; PE.draft = JSON.parse(h.pop()); PE.lastJ = JSON.stringify(PE.draft); PE.dirty = true; render(); break; }
-    case 'peRestoreDraft': { try { const d = JSON.parse(localStorage.getItem(PE_KEY)); PE.draft = JSON.parse(d.j); PE.dirty = true; PE.lastJ = d.j; render(); } catch (er) {} break; }
+    case 'peRestoreDraft': { try { const d = JSON.parse(localStorage.getItem(PE_KEY)); PE.draft = JSON.parse(d.j); PE.dirty = true; PE.lastJ = d.j; render(); } catch (er) { logErr('coach:137', er, 1); } break; }
     case 'peDropDraft': peDraftClear(); render(); break;
     case 'peSessDraft': { const s = PE.draft.sessions[+b.dataset.si]; if (s) { if (b.checked) s.draft = true; else delete s.draft; PE.dirty = true; markPeDirty(); } break; }
     case 'noteAdd': { const ta = document.getElementById('note-new'); const body = ta && ta.value.trim(); if (!body) break; b.disabled = true;

@@ -6,6 +6,10 @@ let LANG = 'de'; try { const l = localStorage.getItem('hb_lang'); if (LANGS.incl
 document.documentElement.lang = LANG;
 const LOCALE = { de: 'de-DE', en: 'en-GB', ru: 'ru-RU' }[LANG];
 const I18N = { en: {}, ru: {} };
+/* Nur das Wörterbuch der gewählten Sprache laden (je rund 380 KB). document.write lädt es synchron vor den folgenden Skripten, die $t() schon beim Laden aufrufen. */
+if (LANG !== 'de') document.write('<script src="lang-' + LANG + '.js"><\/script>');
+/* Ein weiteres Wörterbuch nachladen, z. B. Englisch für den CSV-Import (englische Übungsnamen) */
+function loadLangFile(l) { return new Promise(res => { if (!I18N[l] || Object.keys(I18N[l]).length) return res(); const s = document.createElement('script'); s.src = 'lang-' + l + '.js'; s.onload = s.onerror = () => res(); document.head.appendChild(s); }); }
 function $tx(x) { const D = I18N[LANG]; const m = /^(\s*)([\s\S]*?)(\s*)$/.exec(x); if (!m[2]) return x; const v = D[m[2]]; return v != null ? m[1] + v + m[3] : x; }
 function $t(s) { if (LANG === 'de' || typeof s !== 'string' || !s) return s; const D = I18N[LANG]; if (!D) return s; if (D[s] != null) return D[s];
   let out;
