@@ -3,8 +3,7 @@
    Team-Liste mit Modus, Umsetzungsquote, Farbpunkten pro Einheit und Schnellaktionen. */
 'use strict';
 /* ---------- Athlet: Zusatzfelder in der Kurzfassung ---------- */
-const _makeSummaryDash = makeSummary;
-makeSummary = function () { const s = _makeSummaryDash(); try {
+hbFilter('makeSummary', 'dashboard', function (__v) { const s = __v; try {
   const w = curWeek(), nw = NW(); s.weeksLeft = nw - w; s.nw = nw;
   const q = [];
   for (let ww = Math.max(1, w - 3); ww <= w; ww++) { const tot = ORDER.length; const done = ORDER.filter(k => { const p = sessProgress(ww, k); return p.done && !p.skipped; }).length; q.push({ w: ww, done, total: tot }); }
@@ -17,12 +16,12 @@ makeSummary = function () { const s = _makeSummaryDash(); try {
   s.rpeHigh = !!(s.review && s.review.sugs.some(x => x.kind === 'rpe' && x.st === 'open'));
   s.revOpen = s.review ? s.review.sugs.filter(x => x.st === 'open' && x.kind !== 'keep').length : 0;
   s.pain = Object.keys((S.settings.q || {}).pain || {}).sort().join(',');
-} catch (e) {} return s; };
+} catch (e) {} return s; });
 
 /* ---------- Coach: Bewertung pro Athlet ---------- */
 const ATH_MODE = { online: 'Online', praesenz: 'Präsenz', hybrid: 'Hybrid' };
 const athMode = uid => (S.settings.athMode || {})[uid] || '';
-function dashFlags(c) { const s = c.summary || {}, f = {}; const days = x => x ? daysBetween(x.slice(0, 10), today()) : 999;
+function dashFlags__base(c) { const s = c.summary || {}, f = {}; const days = x => x ? daysBetween(x.slice(0, 10), today()) : 999;
   if (openReq(c.id) || (s.weeksLeft != null && s.weeksLeft <= 0)) f.plan = s.weeksLeft != null && s.weeksLeft <= 0 && !openReq(c.id) ? $t('Plan endet diese Woche') : $t('wartet auf Plan');
   if (s.revOpen) f.checkin = $tf('{n} Vorschläge zur Freigabe', { n: s.revOpen });
   const w = []; if (s.rpeHigh) w.push($t('RPE über Ziel')); if (s.readyLow) w.push($t('Bereitschaft niedrig')); if (s.sleepLow) w.push($t('wenig Schlaf')); if (s.rhrUp) w.push($t('Ruhepuls erhöht'));
@@ -30,6 +29,7 @@ function dashFlags(c) { const s = c.summary || {}, f = {}; const days = x => x ?
   if (typeof chatUnreadFor === 'function' && chatUnreadFor(c.id)) { const n = chatUnreadFor(c.id); f.msg = n === 1 ? $t('1 neue Nachricht') : $tf('{n} neue Nachrichten', { n }); }
   if (days(c.updated_at) >= 7 || (s.lastTrain && days(s.lastTrain) >= 7) || (!s.lastTrain && c.updated_at && days(c.created_at) >= 7)) f.inactive = $t('7 Tage inaktiv');
   return f; }
+function dashFlags() { return hbRun('dashFlags', this, arguments, dashFlags__base); }
 const DASH_TILES = [['plan', 'Plan nötig'], ['checkin', 'Check-in offen'], ['warn', 'Warnungen'], ['msg', 'Nachrichten'], ['inactive', '7 Tage inaktiv'], ['ok', 'Auf Kurs']];
 function quotaOf(s) { const q = (s.quota || []).filter(x => x.total); const last = q.length > 1 ? q.slice(0, -1) : q; const t = last.reduce((a, x) => a + x.total, 0); return t ? Math.round(last.reduce((a, x) => a + x.done, 0) / t * 100) : null; }
 function dashRow(c) { const s = c.summary || {}, f = dashFlags(c), m = athMode(c.id), qp = quotaOf(s);
@@ -63,11 +63,10 @@ viewAdmin = function (arg) { if (arg || !isAdmin()) return _viewAdminDash(arg); 
     (inv.length ? '<div class="section-h"><h2>' + $t('Offene Einladungen') + '</h2></div><div class="card flush"><div class="list">' + inv.map(i => '<div class="li" style="cursor:default"><div class="grow"><b class="num" style="letter-spacing:.06em">' + esc(i.code) + '</b><small>' + esc((i.name || '') + $t(' · gültig bis ') + fmtDay(i.expires_at.slice(0, 10))) + '</small></div><button class="btn sm" data-act="inviteShare" data-code="' + esc(i.code) + '" data-name="' + esc(i.name || '') + '" type="button">' + $t('Teilen') + '</button><button class="btn sm danger" data-act="inviteDel" data-code="' + esc(i.code) + '" type="button">' + $t('Löschen') + '</button></div>').join('') + '</div></div>' : '') +
     (typeof coachNotifCard === 'function' ? coachNotifCard() : '') + '</div></div>'; };
 /* Athletenansicht: Betreuungsmodus wählen, Körperkarte als gesehen markieren */
-const _viewClientDash = viewClient;
-viewClient = function (uid) { const html = _viewClientDash(uid); const c = (ADMIN.clients || []).find(x => x.id === uid); if (!c) return html;
+hbFilter('viewClient', 'dashboard', function (__v, uid) { const html = __v; const c = (ADMIN.clients || []).find(x => x.id === uid); if (!c) return html;
   const p = (c.summary || {}).pain; if (p !== undefined) { const sp = S.settings.seenPain = S.settings.seenPain || {}; if (sp[uid] !== p) { sp[uid] = p; setTimeout(save, 0); } }
   const m = athMode(uid); const sel = '<div class="card"><div class="row" style="gap:10px"><b class="grow">' + $t('Betreuung') + '</b><select data-act="athMode" data-uid="' + uid + '"><option value="">–</option>' + Object.keys(ATH_MODE).map(k => '<option value="' + k + '"' + (m === k ? ' selected' : '') + '>' + esc($t(ATH_MODE[k])) + '</option>').join('') + '</select></div></div>';
-  const i = html.indexOf('<div class="stats">'); return i < 0 ? html + sel : html.slice(0, i) + sel + html.slice(i); };
+  const i = html.indexOf('<div class="stats">'); return i < 0 ? html + sel : html.slice(0, i) + sel + html.slice(i); });
 document.addEventListener('click', e => { const b = e.target.closest('[data-act]'); if (!b) return;
   if (b.dataset.act === 'dashF') { ui.dashF = ui.dashF === b.dataset.v ? '' : b.dataset.v; render(); }
   else if (b.dataset.act === 'dashMode') { ui.dashMode = b.dataset.v; render(); } });

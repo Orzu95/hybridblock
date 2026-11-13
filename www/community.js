@@ -20,10 +20,8 @@ render = function () { const r = _renderCM.apply(this, arguments); try { usagePi
 const statOf = k => (CM.stats || {})[k] || null;
 function rankScore(k) { const s = statOf(k); const n = s ? s.n_ratings : 0, a = s && s.avg_stars ? +s.avg_stars : 0; return (5 * 3.5 + n * a) / (5 + n); }
 function statLine(k) { const s = statOf(k); if (!s) return ''; const bits = []; if (s.n_ratings) bits.push('<span class="cm-star">★</span> ' + fmt(+s.avg_stars, 1) + ' (' + s.n_ratings + ')'); if (s.active) bits.push($tf('{n} aktiv', { n: s.active })); return bits.length ? '<div class="small cm-stat">' + bits.join(' · ') + '</div>' : ''; }
-const _spCardCM = spCard;
-spCard = function (sp) { let h = _spCardCM.apply(this, arguments); const st = statLine('sp:' + sp.id); if (spMine(sp) && sp.hidden) h = h.replace('<div class="row" style="gap:6px;margin-top:8px;flex-wrap:wrap">', '<div class="row" style="gap:6px;margin-top:8px;flex-wrap:wrap"><span class="tag" style="background:var(--signal-soft,#fde3e1)">' + esc($t('Ausgeblendet')) + '</span>'); return st ? h.replace(/<\/a>$/, st + '</a>') : h; };
-const _libCardCM = libCard;
-libCard = function (p, why) { const h = _libCardCM.apply(this, arguments); const st = statLine('lib:' + p.id); return st ? h.replace(/<\/a>$/, st + '</a>') : h; };
+hbFilter('spCard', 'community', function (__v, sp) { let h = __v; const st = statLine('sp:' + sp.id); if (spMine(sp) && sp.hidden) h = h.replace('<div class="row" style="gap:6px;margin-top:8px;flex-wrap:wrap">', '<div class="row" style="gap:6px;margin-top:8px;flex-wrap:wrap"><span class="tag" style="background:var(--signal-soft,#fde3e1)">' + esc($t('Ausgeblendet')) + '</span>'); return st ? h.replace(/<\/a>$/, st + '</a>') : h; });
+hbFilter('libCard', 'community', function (__v, p, why) { const h = __v; const st = statLine('lib:' + p.id); return st ? h.replace(/<\/a>$/, st + '</a>') : h; });
 
 /* ---------- Suche und Filter (Alle, Community) ---------- */
 const GR = { A: 4, B: 3, C: 2, D: 1 };
@@ -91,12 +89,11 @@ viewLibMine = function () { cmNeed(); const h0 = _viewLibMineCM.apply(this, argu
   const st = r => r.status === 'open' ? $t('in Prüfung') : r.status === 'actioned' ? $t('Plan ausgeblendet') : r.status === 'reversed' ? $t('wieder eingeblendet') : $t('zurückgewiesen');
   return h + '<div class="section-h"><h2>' + $t('Meine Meldungen') + '</h2></div><div class="card flush"><div class="list">' + L.map(r => '<div class="li"><div class="grow"><b>' + esc($t(REP_R[r.reason] || r.reason)) + '</b><small>' + esc(fmtDay(r.created_at.slice(0, 10))) + ' · ' + esc(st(r)) + (r.decision_note ? ' · ' + esc(r.decision_note) : '') + '</small></div>' + (r.status === 'dismissed' && r.plan_id ? '<button class="btn sm" data-act="repOpen" data-appeal="2" data-id="' + r.plan_id + '" type="button">' + $t('Einspruch') + '</button>' : '') + '</div>').join('') + '</div></div>'; };
 /* Detailansichten: Bewertung, Melden, Ausgeblendet */
-const _viewSharedPlanCM = viewSharedPlan;
-viewSharedPlan = function (id) { let h = _viewSharedPlanCM.apply(this, arguments); const b = SP.body[id]; if (!b || b.missing) return h; const own = spMine(b); let add = '';
+hbFilter('viewSharedPlan', 'community', function (__v, id) { let h = __v; const b = SP.body[id]; if (!b || b.missing) return h; const own = spMine(b); let add = '';
   if (own && b.hidden) add += note('red', '<b>' + $t('Von der Moderation ausgeblendet.') + '</b> ' + (b.mod_ground ? esc($t(b.mod_ground === 'illegal' ? 'Grund: rechtswidriger Inhalt.' : 'Grund: Verstoß gegen die Nutzungsbedingungen.')) + ' ' : '') + esc(b.mod_note || '') + (b.mod_at ? ' (' + esc(fmtDay(String(b.mod_at).slice(0, 10))) + ')' : '') + '<br><span class="small">' + $t('Du kannst innerhalb von 6 Monaten kostenlos Einspruch einlegen. Außerdem stehen dir eine außergerichtliche Streitbeilegung (Art. 21 DSA) und der Rechtsweg offen. Die Entscheidung wurde von einem Menschen getroffen.') + '</span>', '<button class="btn sm" data-act="repOpen" data-appeal="1" data-id="' + id + '" type="button">' + $t('Einspruch einlegen') + '</button>');
   if (SP_PUB.includes(b.status) && !b.hidden) add += rateBox('sp:' + id, own);
   if (!own && myUid()) add += '<div class="row" style="justify-content:flex-end"><button class="btn sm" data-act="repOpen" data-id="' + id + '" type="button">⚑ ' + $t('Melden') + '</button></div>';
-  return insTop(h, add); };
+  return insTop(h, add); });
 const _viewLibPlanCM = viewLibPlan;
 viewLibPlan = function (id) { const h = _viewLibPlanCM.apply(this, arguments); id = String(id || ''); if (!LIBRARY[id] || LIBRARY[id].module || id === 'gen') return h; const box = rateBox('lib:' + id, false); return box ? insTop(h, box) : h; };
 document.addEventListener('click', e => { const b = e.target.closest('[data-act]'); if (!b) return; const a = b.dataset.act;

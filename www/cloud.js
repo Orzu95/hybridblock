@@ -36,7 +36,8 @@ async function logout() { try { if (AUTH) await api('/auth/v1/logout', { method:
 const SYNC = { t: null, busy: false, err: null, pulled: false };
 function cloudDirty() { if (!AUTH || VIEW) return; clearTimeout(SYNC.t); SYNC.t = setTimeout(pushState, 12000); }
 const hasLocalData = st => !!(st && (Object.keys(st.sessions || {}).length || Object.keys(st.days || {}).length || (st.activities || []).length));
-function cloudCopy() { const c = JSON.parse(JSON.stringify(S)); return c; }
+function cloudCopy__base() { const c = JSON.parse(JSON.stringify(S)); return c; }
+function cloudCopy() { return hbRun('cloudCopy', this, arguments, cloudCopy__base); }
 async function pushState() { if (!AUTH || VIEW) return; if (SYNC.busy) { cloudDirty(); return; } SYNC.busy = true; const mod = S.meta.modAt || Date.now();
   const prevAt = S.meta.syncAt, prevMod = S.meta.syncMod; let merged = null;
   try { smStamp(); const base = '/rest/v1/user_state?user_id=eq.' + AUTH.uid;
@@ -50,7 +51,7 @@ async function pushState() { if (!AUTH || VIEW) return; if (SYNC.busy) { cloudDi
 async function pushPlan(uid, plan) { const now = new Date().toISOString();
   await api('/rest/v1/plans?on_conflict=user_id', { method: 'POST', headers: { Prefer: 'resolution=merge-duplicates,return=minimal' }, body: JSON.stringify({ user_id: uid, plan, updated_at: now, updated_by: AUTH.uid }) }); return now; }
 /* Plan übernehmen: Wochentage für neue Einheiten aus dem Plan, Ernährungsziele vom Coach als Check-in */
-function setPlan(plan, fromCoach) {
+function setPlan__base(plan, fromCoach) {
   if (fromCoach && plan.assign && plan.assign.at && plan.assign.at !== S.meta.assignAt) { if (Object.keys(S.sessions).length) S.archive.push({ plan: S.plan, sessions: S.sessions, block: S.block, until: today() });
     S.sessions = {}; S.swaps = {}; S.block = { week: 1, startedOn: null, startAt: plan.assign.startAt || null }; S.meta.assignAt = plan.assign.at; S.meta.daysSet = false; ui.week = null; }
   if (fromCoach && (plan.sessions || []).some(x => x.draft)) plan = Object.assign({}, plan, { sessions: plan.sessions.filter(x => !x.draft) });
@@ -60,6 +61,7 @@ function setPlan(plan, fromCoach) {
     if (num(tg.kcal) != null) { st.startKcal = String(tg.kcal); const p = num(st.protein) || 200, f = fatG(num(tg.kcal), num(st.fat) || 70); const c = { date: today(), kcal: num(tg.kcal), p, f, c: Math.max(0, Math.round((num(tg.kcal) - 4 * p - 9 * f) / 4)), tdee: null, coach: true };
       S.checkins = S.checkins.filter(x => x.date !== c.date).concat([c]); } }
   applyPlan(); }
+function setPlan() { return hbRun('setPlan', this, arguments, setPlan__base); }
 async function pullAll(opts) { opts = opts || {}; if (!AUTH || VIEW) return { changed: false }; let changed = false;
   try { await loadProfile();
     const pl = await api('/rest/v1/plans?user_id=eq.' + AUTH.uid + '&select=plan,updated_at,updated_by');
@@ -79,7 +81,7 @@ let lastPull = 0;
 function autoPull() { if (!AUTH || VIEW || Date.now() - lastPull < 60 * 1000) return; lastPull = Date.now(); if (isAdmin()) loadClients().then(() => { if (route.name === 'heute' || route.name === 'admin') render(); }); pullAll({}).then(r => { if (r.changed && !document.querySelector('input:focus,select:focus,textarea:focus')) render(); }); }
 
 /* Kurzfassung für die Kundenliste des Coaches */
-function makeSummary() { const w = curWeek(), ser = series(), last = ser[ser.length - 1], tg = currentTargets(); let kc = 0, pr = 0, kn = 0;
+function makeSummary__base() { const w = curWeek(), ser = series(), last = ser[ser.length - 1], tg = currentTargets(); let kc = 0, pr = 0, kn = 0;
   for (let i = 0; i < 7; i++) { const d = addDays(today(), -i); const o = S.days[d]; if (o && o.entries && o.entries.length && o.complete !== false) { const t = dayTotals(d); kc += t.kcal; pr += t.p; kn++; } }
   let lastTrain = null; Object.values(S.sessions).forEach(s => { if (s.date && (s.logs && Object.keys(s.logs).length || s.cardio) && (!lastTrain || s.date > lastTrain)) lastTrain = s.date; }); S.activities.forEach(a => { if (!lastTrain || a.date > lastTrain) lastTrain = a.date; });
   const avgH = f => { const v = []; for (let i = 0; i < 7; i++) { const h = S.health[addDays(today(), -i)]; const x = h && (f === 'rhr' ? (h.rhr ?? h.rhrEst) : h[f]); if (x != null) v.push(x); } return v.length ? Math.round(v.reduce((a, b) => a + b, 0) / v.length) : null; };
@@ -87,6 +89,7 @@ function makeSummary() { const w = curWeek(), ser = series(), last = ser[ser.len
   return { name: S.settings.name || '', week: w, done: ORDER.filter(k => { const p = sessProgress(w, k); return p.done && !p.skipped; }).length, total: ORDER.length, lastTrain,
     trend: last ? Math.round(last.trend * 10) / 10 : null, rate: weeklyRate(ser), weight: wd.length ? num(S.days[wd[wd.length - 1]].weight) : null, start: num(S.settings.startWeight), target: num(S.settings.targetWeight),
     kcal7: kn ? Math.round(kc / kn) : null, prot7: kn ? Math.round(pr / kn) : null, logged7: kn, kcalT: tg.kcal, protT: tg.p, steps7: avgH('steps'), sleep7: avgH('sleepMin'), rhr7: avgH('rhr'), ready: dr ? dr.score : null, plan: S.plan.name, at: new Date().toISOString() }; }
+function makeSummary() { return hbRun('makeSummary', this, arguments, makeSummary__base); }
 
 /* ======================= ANSICHT ALS KUNDE ======================= */
 function enterView(uid, name, state, to) { VIEW = { uid, name, own: S, back: '#admin/' + uid }; S = loadState(JSON.stringify(state)); applyPlan(); document.body.classList.add('viewing'); ui.week = null; location.hash = to || '#verlauf'; }
@@ -221,7 +224,7 @@ function viewAdmin(arg) { if (!isAdmin()) return '<a href="#mehr" class="back">'
     (ADMIN.clients == null ? $t('<p class="muted">Lade …</p>') : list.length ? '<div class="card flush"><div class="list">' + list.map(clientRow).join('') + '</div></div>' : $t('<div class="card"><h2>Noch keine Athleten</h2><p>Erstell eine Einladung. Dein Athlet installiert die App, wählt „Einladungscode“ und gibt den Code ein. Danach siehst du ihn hier.</p></div>')) +
     (inv.length ? $t('<div class="section-h"><h2>Offene Einladungen</h2></div><div class="card flush"><div class="list">') + inv.map(i => '<div class="li" style="cursor:default"><div class="grow"><b class="num" style="letter-spacing:.06em">' + esc(i.code) + '</b><small>' + esc((i.name || '') + $t(' · gültig bis ') + fmtDay(i.expires_at.slice(0, 10))) + '</small></div><button class="btn sm" data-act="inviteShare" data-code="' + esc(i.code) + '" data-name="' + esc(i.name || '') + $t('" type="button">Teilen</button><button class="btn sm danger" data-act="inviteDel" data-code="') + esc(i.code) + $t('" type="button">Löschen</button></div>')).join('') + '</div></div>' : '') + (typeof coachNotifCard === 'function' ? coachNotifCard() : '') +
     '</div>'; }
-function viewClient(uid) { const c = (ADMIN.clients || []).find(x => x.id === uid); if (!c) return '<a href="#admin" class="back">' + ICON.back + $t('Team</a><p class="muted">') + (ADMIN.loading || ADMIN.clients == null ? $t('Lade …') : $t('Athlet nicht gefunden.')) + '</p>';
+function viewClient__base(uid) { const c = (ADMIN.clients || []).find(x => x.id === uid); if (!c) return '<a href="#admin" class="back">' + ICON.back + $t('Team</a><p class="muted">') + (ADMIN.loading || ADMIN.clients == null ? $t('Lade …') : $t('Athlet nicht gefunden.')) + '</p>';
   const s = c.summary || {}; const st = (k, v, sub) => '<div class="stat"><div class="k">' + k + '</div><div class="v" style="font-size:22px">' + esc(v) + '</div>' + (sub ? '<div class="s">' + esc(sub) + '</div>' : '') + '</div>';
   const lost0 = s.start != null && s.trend != null ? s.start - s.trend : null; const lost = lost0 != null && Math.abs(lost0) < 0.05 ? 0 : lost0;
   return '<a href="#admin" class="back">' + ICON.back + $t('Team</a>') + pageTop(esc(cname(c)), '', '@' + esc(c.username) + $t(' · Plan: ') + esc($t(s.plan || '–')) + $t(' · Sync ') + esc(ago(c.updated_at))) + '<div class="stack">' +
@@ -235,16 +238,18 @@ function viewClient(uid) { const c = (ADMIN.clients || []).find(x => x.id === ui
     (openReq(uid) ? '' : reqCard(uid)) +
     $t('<div class="card"><h2>Plan</h2><p>Übungen, Sätze, Wiederholungen, RPE, Einheiten und Ernährungsziele festlegen. Dein Athlet bekommt die Änderung beim nächsten Öffnen der App.</p><div class="row" style="margin-top:12px"><a class="btn brand" href="#plan/') + uid + $t('">Plan bearbeiten</a><button class="btn" data-act="coachLib" data-uid="') + uid + $t('" type="button">Aus Bibliothek</button>') + (ADMIN.reqs && ADMIN.reqs[uid] ? '<button class="btn" data-act="coachGen" data-uid="' + uid + $t('" type="button">Aus Fragebogen erstellen</button>') : '') + '</div></div>' +
     (typeof apptClientCard === 'function' ? apptClientCard(uid) : '') + (typeof notesCard === 'function' ? notesCard(uid) : '') + $t('<div class="card"><h2>Konto</h2><div class="row" style="margin-top:8px"><button class="btn" data-act="resetPw" data-uid="') + uid + $t('" type="button">Passwort zurücksetzen</button><button class="btn danger" data-act="removeClient" data-uid="') + uid + $t('" type="button">Aus dem Team entfernen</button></div></div></div>'); }
+function viewClient() { return hbRun('viewClient', this, arguments, viewClient__base); }
 const INV_MODES = [['free', $t('Frei dem Athleten überlassen'), $t('Er entscheidet selbst: fertigen Plan wählen, Plan aus seinen Angaben erstellen lassen, selbst planen oder ohne festen Plan trainieren.')],
   ['library', $t('Nach einem fertigen Plan'), $t('Er wählt aus der Plan-Bibliothek, mit Empfehlung passend zu Ziel, Erfahrung und Zeit.')],
   ['coach', $t('Plan vom Coach'), $t('Er beantwortet Fragen zu Ziel, Erfahrung, Tagen und Einschränkungen. Du bekommst eine Benachrichtigung und erstellst den Plan.')]];
-function reqCard(uid) { const r = ADMIN.reqs && ADMIN.reqs[uid]; if (!r) return ''; const q = r.intake || {}; const pain = q.pain || {};
+function reqCard__base(uid) { const r = ADMIN.reqs && ADMIN.reqs[uid]; if (!r) return ''; const q = r.intake || {}; const pain = q.pain || {};
   const row = (k, v) => v ? '<tr><td class="muted">' + k + '</td><td>' + esc(v) + '</td></tr>' : '';
   return '<div class="card' + (r.status === 'open' ? $t(' reqopen') : '') + $t('"><div class="row"><h2 class="grow">Fragebogen</h2><span class="tag"><span class="dot ') + (r.status === 'open' ? 'red' : 'green') + '"></span>' + (r.status === 'open' ? $t('wartet auf Plan') : $t('erledigt')) + '</span></div><p class="small muted">' + fmtDay(r.created_at.slice(0, 10)) + '</p>' +
     '<div class="tbl"><table><tbody>' + row($t('Ziel'), GOALS[q.goal]) + row($t('Erfahrung'), LEVELS[q.level]) + row($t('Tage pro Woche'), q.days) + row($t('Zeit pro Einheit'), q.minutes ? q.minutes + $t(' min') : '') + row($t('Ort'), PLACES[q.place]) +
     row($t('Alter, Größe'), [q.age && q.age + $t(' Jahre'), q.height && q.height + $t(' cm')].filter(Boolean).join(', ')) + row($t('Gewicht → Ziel'), q.weight ? q.weight + ' → ' + (q.target || '–') + $t(' kg') : '') + row($t('Sport nebenher'), q.sport) + row($t('Mag / mag nicht'), q.likes) + row($t('Fehlende Geräte'), (q.missingEq || []).map(e => EQUIP[e]).join(', ')) + '</tbody></table></div>' +
     (q.notes ? $t('<p style="margin-top:10px"><b>Nachricht:</b> ') + esc(q.notes) + '</p>' : '') +
     (Object.keys(pain).length ? $t('<h3 style="margin-top:14px">Einschränkungen</h3>') + painMapHTML(pain, false) + '<ul class="rules small">' + painSummary(pain) + $t('</ul><p class="small muted">Der Plan-Generator meidet bei diesen Stellen belastende Übungen. Prüfe trotzdem jede Übung selbst.</p>') : $t('<p class="small muted" style="margin-top:8px">Keine Einschränkungen angegeben.</p>')) + '</div>'; }
+function reqCard() { return hbRun('reqCard', this, arguments, reqCard__base); }
 function inviteSheet() { const mode = ui.invMode || 'free';
   openSheet(sheetHead($t('Athlet einladen')) + $t('<div class="fields on-white" style="margin-top:12px"><div class="field" style="flex:1 1 100%"><label for="iv-name">Name</label><input id="iv-name" type="text" placeholder="z. B. Max" style="width:100%" value="') + esc(ui.invName || '') + '"></div></div>' +
     $t('<h3 style="margin:16px 0 8px">Wie soll er trainieren?</h3><div class="stack">') + INV_MODES.map(m => '<button class="card pathcard' + (mode === m[0] ? $t(' sel') : '') + '" data-act="invMode" data-v="' + m[0] + '" type="button"><b>' + m[1] + '</b><span class="small muted">' + m[2] + '</span></button>').join('') + '</div>' +
@@ -321,7 +326,7 @@ async function peSave() { if (isTplUid(PE.uid)) return tplEditorSave(); const p 
     PE.dirty = false; peDraftClear(); render(); } catch (e) { toast($t('Speichern fehlgeschlagen: ') + errTxt(e)); } }
 
 /* ======================= EINSTELLUNGEN: KONTO & SPRACHE ======================= */
-function accountCard() { if (VIEW) return '';
+function accountCard__base() { if (VIEW) return '';
   const lang = $t('<div class="card"><h2>Sprache</h2><div class="seg langseg">') + [['de', $t('Deutsch')], ['en', $t('English')], ['ru', $t('Русский')]].map(l => '<button class="' + (LANG === l[0] ? 'on' : '') + '" data-act="setLang" data-v="' + l[0] + '" type="button">' + l[1] + '</button>').join('') + $t('</div><p class="small muted">Übungen, Lebensmittel-Vorlagen und alle Texte wechseln sofort. Deine Daten bleiben unverändert.</p></div>');
   if (!AUTH) return lang + $t('<div class="card"><h2>Konto und Coaching</h2><p>Mit Konto werden deine Daten in der Cloud gesichert und zwischen Geräten synchronisiert. Ein Coach kann dir Pläne schicken und deinen Fortschritt sehen.</p><div class="row" style="margin-top:14px"><a class="btn brand" href="#start/code">Einladungscode einlösen</a><a class="btn" href="#start/login">Anmelden</a></div></div>');
   const pr = AUTH.profile || {};
@@ -330,12 +335,14 @@ function accountCard() { if (VIEW) return '';
     '<div class="row" style="margin-top:12px"><button class="btn" data-act="syncNow" type="button">' + ICON.sync + $t('Jetzt synchronisieren</button>') + (pr.role === 'admin' ? $t('<a class="btn brand" href="#admin">Team öffnen</a>') : '') + $t('<a class="btn" href="#plan/me">Plan bearbeiten</a>') +
     (ui.confirmLogout ? $t('<button class="btn dark" data-act="logoutYes" type="button">Wirklich abmelden</button>') : $t('<button class="btn danger" data-act="logout" type="button">Abmelden</button>')) + '</div>' +
     (ui.confirmLogout ? $t('<p class="small muted">Deine Daten bleiben auf diesem Gerät. Synchronisiert wird erst wieder nach der Anmeldung.</p>') : '') + '</div>'; }
-function heuteExtras() { if (VIEW) return ''; let h = '';
+function accountCard() { return hbRun('accountCard', this, arguments, accountCard__base); }
+function heuteExtras__base() { if (VIEW) return ''; let h = '';
   if (isAdmin() && ADMIN.reqs) { const open = Object.values(ADMIN.reqs).filter(r => r.status === 'open'); if (open.length) h += note('ember', '<b>' + open.length + (open.length === 1 ? $t(' Athlet wartet') : $t(' Athleten warten')) + $t(' auf einen Plan.</b> ') + esc(open.map(r => (ADMIN.clients || []).find(c => c.id === r.user_id)).filter(Boolean).map(cname).join(', ')), '<a class="btn brand sm" href="#admin/' + open[0].user_id + $t('">Ansehen</a>')); }
   if (S.plan.note && hasCoach()) h += note('sky', $t('<b>Von deinem Coach:</b> ') + esc(S.plan.note));
   if (isAdmin()) { const n = ADMIN.clients ? ADMIN.clients.length : null; h += $t('<a class="card" href="#admin" style="text-decoration:none;color:inherit;display:flex;align-items:center;gap:14px"><span class="badge gym"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.6-3.6 3.2-5.5 6.5-5.5s5.9 1.9 6.5 5.5M16 4.8a3.5 3.5 0 0 1 0 6.4M18 14.8c2 .6 3.2 2.4 3.5 5.2"/></svg></span><div class="grow"><b>Team</b><div class="small muted">') + (n == null ? $t('Athleten, Pläne, Einladungen') : n + (n === 1 ? $t(' Athlet') : $t(' Athleten'))) + '</div></div><span class="chev">›</span></a>'; }
   if (SYNC.err && AUTH) h += note('amber', $t('Sync gerade nicht möglich (') + esc(SYNC.err) + $t('). Deine Daten sind lokal gespeichert.'), $t('<button class="btn sm" data-act="syncNow" type="button">Erneut</button>'));
   return h; }
+function heuteExtras() { return hbRun('heuteExtras', this, arguments, heuteExtras__base); }
 
 /* ======================= EVENTS ======================= */
 document.addEventListener('input', e => { const tt = e.target;

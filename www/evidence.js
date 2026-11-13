@@ -55,7 +55,7 @@ function evRow(x) { const t = x.sl ? x.sl.h : x.a; return '<button class="evrow"
 function evMatch(x, q) { const s = (x.a + ' ' + x.u + ' ' + x.k.join(' ') + ' ' + x.q + ' ' + x.id + ' ' + x.p + (x.sl ? ' ' + x.sl.h + ' ' + x.sl.fd + ' ' + x.sl.b.join(' ') : '')).toLowerCase(); return q.split(/\s+/).filter(Boolean).every(w => s.includes(w)); }
 function evList(q, cat, g) { if (!EVID) return '<p class="muted">' + $t('Lade …') + '</p>'; let it = EVID.items; if (cat) it = it.filter(x => x.c === cat); if (g) it = it.filter(x => x.e === g); if (q) it = it.filter(x => evMatch(x, q.toLowerCase()));
   if (!it.length) return '<p class="muted">' + $t('Keine Einträge gefunden.') + '</p>'; const more = it.length > 80; return it.slice(0, 80).map(evRow).join('') + (more ? '<p class="small muted">' + $t('Die ersten 80 Treffer. Suche genauer für weniger.') + '</p>' : ''); }
-function viewWissen(arg) { if (!EVID) { loadEvid().then(() => { if (route.name === 'wissen') render(); }).catch(() => {}); }
+function viewWissen__base(arg) { if (!EVID) { loadEvid().then(() => { if (route.name === 'wissen') render(); }).catch(() => {}); }
   const cat = arg && EVID && EVID.cats[arg] ? arg : null; const q = ui.wq || ''; const g = ui.wg || '';
   const back = cat ? '<a href="#wissen" class="back">' + ICON.back + $t('Wissen') + '</a>' : '<a href="#mehr" class="back">' + ICON.back + $t('Einstellungen') + '</a>';
   const seg = '<div class="seg" style="margin-top:10px">' + [['', $t('Alle')], ['A', 'A'], ['B', 'B'], ['C', 'C'], ['D', 'D']].map(o => '<button class="' + (g === o[0] ? 'on' : '') + '" data-act="evGrade" data-v="' + o[0] + '" type="button">' + o[1] + '</button>').join('') + '</div>';
@@ -69,6 +69,7 @@ function viewWissen(arg) { if (!EVID) { loadEvid().then(() => { if (route.name =
   return back + pageTop(cat ? esc(evCat(cat)) : $t('Wissen'), '', cat ? '' : $t('Geprüfte Aussagen aus der Sportwissenschaft, jede mit Quelle')) + '<div class="stack">' +
     search + body +
     '<p class="small muted" style="margin:0 4px">' + $t('Stand: ') + (EVID ? EVID.at.split('-').reverse().join('.') : '–') + ' · ' + (EVID ? EVID.items.length : '–') + $t(' Einträge. Jede Aussage ist mit ihrer Quelle verlinkt (DOI oder PubMed). Allgemeine Information, kein Ersatz für ärztlichen Rat und keine Einschätzung deines Einzelfalls.') + '</p></div>'; }
+function viewWissen() { return hbRun('viewWissen', this, arguments, viewWissen__base); }
 function evSheet(ids) { if (!EVID) { openSheet(sheetHead($t('Studienlage')) + '<p class="muted">' + $t('Lade …') + '</p>'); loadEvid().then(() => evSheet(ids)).catch(() => openSheet(sheetHead($t('Studienlage')) + '<p>' + $t('Wissensbasis nicht erreichbar.') + '</p>')); return; }
   const xs = ids.map(i => EVID.by[i]).filter(Boolean); if (!xs.length) return;
   if (xs.length > 1) { openSheet(sheetHead($t('Studienlage')) + '<div style="margin-top:6px">' + xs.map(evRow).join('') + '</div>'); return; }
@@ -106,9 +107,8 @@ whySheet = function (ev) { const ids = EV_REV[ev]; if (!ids) return _whySheetEv(
   if (EVID) show(); else { _whySheetEv(ev); loadEvid().then(show).catch(() => {}); } };
 
 /* Wissen-Karte in den Einstellungen, Studienlage im SpoWi-Verlauf */
-const _viewMehrEv = viewMehr;
-viewMehr = function () { const h = _viewMehrEv(); if (VIEW) return h; const card = '<a class="card" href="#wissen" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit"><div class="grow"><h2 style="margin:0">' + $t('Wissen') + '</h2><p class="small muted" style="margin:2px 0 0">' + $t('Was die Studienlage zu Training, Ernährung und Erholung sagt, mit Quellen.') + '</p></div><span class="muted">›</span></a>';
-  return h.replace('<div class="stack">', '<div class="stack">' + card); };
+hbFilter('viewMehr', 'evidence', function (__v) { const h = __v; if (VIEW) return h; const card = '<a class="card" href="#wissen" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit"><div class="grow"><h2 style="margin:0">' + $t('Wissen') + '</h2><p class="small muted" style="margin:2px 0 0">' + $t('Was die Studienlage zu Training, Ernährung und Erholung sagt, mit Quellen.') + '</p></div><span class="muted">›</span></a>';
+  return h.replace('<div class="stack">', '<div class="stack">' + card); });
 if (typeof cycleFlags === 'function') { const _cf = cycleFlags; cycleFlags = function (w, k) { const h = _cf(w, k); return h ? h + '<div style="margin:-4px 4px 0">' + evBtn(['FRA-103', 'FRA-105', 'FRA-104'], $t('Studienlage zu Zyklus und Training')) + '</div>' : h; }; }
 
 document.addEventListener('click', e => { const b = e.target.closest('[data-act]'); if (!b) return;

@@ -42,6 +42,6 @@ window.addEventListener('resize', () => { if (document.getElementById('tour')) t
 document.addEventListener('click', e => { const b = e.target.closest('[data-act]'); if (!b) return; const a = b.dataset.act;
   if (a === 'tourNext') tourGo(TOUR_I + 1); else if (a === 'tourPrev') tourGo(TOUR_I - 1); else if (a === 'tourEnd') tourEnd(); else if (a === 'tourOpen') tourOpen(); });
 /* Einstellungen: Einführung ganz oben */
-const _viewMehrTour = viewMehr; viewMehr = function () { const h = _viewMehrTour(); if (VIEW) return h; const card = '<div class="card" style="display:flex;align-items:center;gap:12px"><div class="grow"><h2 style="margin:0">' + $t('Einführung') + '</h2><p class="small muted" style="margin:2px 0 0">' + $t('Der Rundgang durch die App, jederzeit wiederholbar.') + '</p></div><button class="btn sm brand" data-act="tourOpen" type="button">' + $t('Starten') + '</button></div>';
-  const i = h.indexOf('<div class="stack">'); return i < 0 ? h + card : h.slice(0, i + 19) + card + h.slice(i + 19); };
+hbFilter('viewMehr', 'tour', function (__v) { const h = __v; if (VIEW) return h; const card = '<div class="card" style="display:flex;align-items:center;gap:12px"><div class="grow"><h2 style="margin:0">' + $t('Einführung') + '</h2><p class="small muted" style="margin:2px 0 0">' + $t('Der Rundgang durch die App, jederzeit wiederholbar.') + '</p></div><button class="btn sm brand" data-act="tourOpen" type="button">' + $t('Starten') + '</button></div>';
+  const i = h.indexOf('<div class="stack">'); return i < 0 ? h + card : h.slice(0, i + 19) + card + h.slice(i + 19); });
 setTimeout(tourMaybe, 600);

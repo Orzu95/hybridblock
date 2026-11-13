@@ -84,7 +84,7 @@ function bodyKg() { const ds = Object.keys(S.days).sort().reverse(); for (const 
 const kcalOf = (type, sec) => Math.round(((ACT_MAP[type] || ACT_MAP.sonst).met || 5) * bodyKg() * sec / 3600);
 
 /* ---------- Intervall-Protokolle ---------- */
-function ivPresets() { return [
+function ivPresets__base() { return [
   { id: '4x4', name: $t('4 × 4 min, 3 min Pause (norwegisch)'), reps: 4, on: 240, off: 180 },
   { id: '4x3', name: $t('4 × 3 min, 3 min Pause'), reps: 4, on: 180, off: 180 },
   { id: '5x3', name: $t('5 × 3 min, 2 min Pause'), reps: 5, on: 180, off: 120 },
@@ -94,6 +94,7 @@ function ivPresets() { return [
   { id: '4015', name: $t('10 × 40/20 s'), reps: 10, on: 40, off: 20 },
   { id: 'tabata', name: $t('Tabata 8 × 20/10 s'), reps: 8, on: 20, off: 10 },
   { id: 'sprint', name: $t('6 × 15 s Sprint, 2 min Pause'), reps: 6, on: 15, off: 120 } ]; }
+function ivPresets() { return hbRun('ivPresets', this, arguments, ivPresets__base); }
 function ivOpts() { const o = ui.trIv = ui.trIv || {}; const c = S.settings.trCustom || {}; ['reps', 'on', 'off', 'cool'].forEach(k => { if (o[k] == null) o[k] = c[k] != null ? c[k] : { reps: 6, on: 60, off: 60, cool: 5 }[k]; }); return o; }
 function ivPlanWarm(ctx) { const q = ctx ? intervalQueue(ctx.w, ctx.k) : null; return q && q[0] && q[0].k === 'warm' ? Math.round(q[0].sec / 60) : 10; }
 /* Ablauf bauen; Aufwärmen 0 min = direkt nach 10 s Countdown los */
@@ -155,7 +156,7 @@ function checkSplit() { const L = splitLen(); if (TR.dist < TR.nextSplit * L) re
     say((L === 1000 ? $t('Kilometer ') + km : fmt(km, 1) + $t(' Kilometer')) + '. ' + $t('Zeit ') + sayDur(sec) + '. ' + ((ACT_MAP[TR.type].m === 'speed') ? $t('Schnitt ') + fmt(TR.dist / sec * 3.6, 1) + $t(' km/h') : $t('Pace ') + sayPace(pace)) + (sp.hr ? '. ' + $t('Puls ') + sp.hr : '') + '.'); buzz(); } }
 function trLap() { if (!TR.active) return; const sec = movingSec(); const prev = TR.laps[TR.laps.length - 1] || { sec: 0, dist: 0 }; const lap = { n: TR.laps.length + 1, sec, dist: TR.dist, lsec: sec - prev.sec, ldist: TR.dist - prev.dist }; TR.laps.push(lap);
   say($t('Runde ') + lap.n + '. ' + sayDur(lap.lsec) + (lap.ldist > 50 ? ', ' + fmt(lap.ldist / 1000, 2) + $t(' Kilometer') : '') + '.'); buzz(); toast($t('Runde ') + lap.n + ': ' + fmtClock(lap.lsec)); }
-function trTick(fromGps) { if (!TR.active) return; const o = trOpts();
+function trTick__base(fromGps) { if (!TR.active) return; const o = trOpts();
   /* Intervalle nach Uhrzeit statt Takt zählen, damit sie bei ausgeschaltetem Bildschirm nicht nachgehen */
   if (TR.q && TR.qi >= 0 && TR.qi < TR.q.length) { const cur = TR.q[TR.qi]; const el = movingSec() - (TR.qAt || 0); const left = Math.ceil(cur.sec - el); if (left !== TR.qLeft && left > 0) ivCountdown(left, cur.sec, TR.q[TR.qi + 1], cur); TR.qLeft = left;
     if (left <= 0) qAdvance(cur.sec); }
@@ -165,10 +166,12 @@ function trTick(fromGps) { if (!TR.active) return; const o = trOpts();
   if (!TR.paused && TR.zone != null && hrFresh() && movingSec() > 300) { const z = hrZone(HRM.bpm); if (z !== TR.zone) { if (!TR.outSince) TR.outSince = Date.now(); } else TR.outSince = 0;
     if (TR.outSince && Date.now() - TR.outSince >= 20000 && Date.now() - TR.lastAlert > 60000) { TR.lastAlert = Date.now(); TR.outSince = 0; buzz([150, 80, 150, 80, 150]); say(z > TR.zone ? $t('Puls zu hoch. Etwas langsamer.') : $t('Puls zu niedrig. Etwas schneller.')); } }
   if (Date.now() - (TR.savedAt || 0) > 15000) trPersist(); if (!fromGps) trLive(false); }
+function trTick() { return hbRun('trTick', this, arguments, trTick__base); }
 /* Abschnitt abschließen: Zeit, Strecke, Pace und Puls pro Intervall merken */
-function qClose(sec) { const cur = TR.q && TR.q[TR.qi]; if (!cur || cur.k === 'cd' || sec < 3) return null; const hrs = TR.hr.filter(h => h[0] >= TR.qT0).map(h => h[1]);
+function qClose__base(sec) { const cur = TR.q && TR.q[TR.qi]; if (!cur || cur.k === 'cd' || sec < 3) return null; const hrs = TR.hr.filter(h => h[0] >= TR.qT0).map(h => h[1]);
   const r = { k: cur.k, n: cur.n || null, sec: Math.round(sec), plan: cur.sec, dist: TR.gps ? Math.round(TR.dist - TR.qDist0) : null, hr: hrs.length ? Math.round(hrs.reduce((a, b) => a + b, 0) / hrs.length) : null, hrMax: hrs.length ? Math.max(...hrs) : null };
   TR.ivs.push(r); return r; }
+function qClose() { return hbRun('qClose', this, arguments, qClose__base); }
 function qAdvance(sec) { const done = qClose(sec); TR.qAt = (TR.qAt || 0) + sec; TR.qi++; TR.qDist0 = TR.dist; TR.qT0 = Date.now();
   const res = done && done.k === 'hi' && done.dist > 30 ? '. ' + (ACT_MAP[TR.type].m === 'speed' ? fmt(done.dist / done.sec * 3.6, 1) + $t(' km/h') : $t('Pace ') + sayPace(done.sec / done.dist * 1000)) : '';
   if (TR.qi < TR.q.length) { TR.qLeft = TR.q[TR.qi].sec; say(TR.q[TR.qi].label + res); buzz([200, 100, 200]); } else { say($t('Intervalle geschafft. Locker ausrollen oder beenden.') + res); buzz([300, 100, 300]); } trLive(true); }
@@ -272,12 +275,13 @@ function splitsCard(a) { const sp = a.splits || []; if (!sp.length && !(a.laps |
   const rows = sp.map(s => '<tr><td>' + fmt(s.n * s.len / 1000, s.len === 1000 ? 0 : 1) + '</td><td>' + fmtClock(s.sec) + '</td><td>' + speedTxt(t, s.len / Math.max(1, s.sec)) + '</td><td>' + (s.hr || '–') + '</td></tr>').join('');
   const laps = (a.laps || []).map(l => '<tr><td>' + $t('Runde ') + l.n + '</td><td>' + fmtClock(l.sec) + '</td><td>' + (l.dist > 50 ? fmt(l.dist / 1000, 2) + ' km' : '–') + '</td><td></td></tr>').join('');
   return $t('<div class="card"><h2>Abschnitte</h2><table class="tbl small" style="width:100%;margin-top:8px"><tr><th>km</th><th>Zeit</th><th>') + (ACT_MAP[t] && ACT_MAP[t].m === 'speed' ? $t('km/h') : $t('Pace')) + $t('</th><th>Puls</th></tr>') + rows + laps + '</table></div>'; }
-function ivsCard(a) { const v = (a.ivs || []).filter(x => x.sec >= 3); if (!v.some(x => x.k === 'hi')) return ''; const t = a.type, sp = ACT_MAP[t] && ACT_MAP[t].m === 'speed', gd = v.some(x => x.dist > 30);
+function ivsCard__base(a) { const v = (a.ivs || []).filter(x => x.sec >= 3); if (!v.some(x => x.k === 'hi')) return ''; const t = a.type, sp = ACT_MAP[t] && ACT_MAP[t].m === 'speed', gd = v.some(x => x.dist > 30);
   const hi = v.filter(x => x.k === 'hi' && x.dist > 30); const avg = hi.length ? hi.reduce((s, x) => s + x.dist, 0) / hi.reduce((s, x) => s + x.sec, 0) : 0;
   const rows = v.map(x => '<tr' + (x.k === 'hi' ? ' style="font-weight:700"' : ' class="muted"') + '><td>' + esc(ivLabel(x)) + '</td><td>' + fmtClock(x.sec) + (x.plan && x.sec < x.plan - 5 ? '*' : '') + '</td>' + (gd ? '<td>' + (x.dist > 30 ? (x.dist >= 1000 ? fmt(x.dist / 1000, 2) + ' km' : x.dist + ' m') : '–') + '</td><td>' + (x.dist > 30 ? speedTxt(t, x.dist / x.sec) : '–') + '</td>' : '') + '<td>' + (x.hr || '–') + (x.hrMax ? ' / ' + x.hrMax : '') + '</td></tr>').join('');
   return '<div class="card"><h2>' + $t('Intervalle') + '</h2>' + (avg ? '<p class="small">' + $t('Ø harte Intervalle: ') + '<b>' + speedTxt(t, avg) + ' ' + speedUnit(t) + '</b></p>' : '') +
     '<table class="tbl small" style="width:100%;margin-top:8px"><tr><th></th><th>' + $t('Zeit') + '</th>' + (gd ? '<th>' + $t('Strecke') + '</th><th>' + (sp ? $t('km/h') : $t('Pace')) + '</th>' : '') + '<th>' + $t('Puls Ø / max') + '</th></tr>' + rows + '</table>' +
     (v.some(x => x.plan && x.sec < x.plan - 5) ? '<p class="small muted" style="margin-top:6px">' + $t('* vorzeitig beendet') + '</p>' : '') + '</div>'; }
+function ivsCard() { return hbRun('ivsCard', this, arguments, ivsCard__base); }
 function routeMapsInit() { document.querySelectorAll('[data-route]').forEach(el => { if (el._map || !window.L) return; const a = findAct(el.dataset.route); if (!a || !a.route) return; const ll = decPoly(a.route); if (ll.length < 2) return;
   const m = L.map(el, { zoomControl: false, dragging: true, scrollWheelZoom: false }); baseLayer(m); const line = L.polyline(ll, { color: '#ff5406', weight: 4 }).addTo(m);
   L.circleMarker(ll[0], { radius: 6, color: '#fff', weight: 2, fillColor: '#00b33f', fillOpacity: 1 }).addTo(m); L.circleMarker(ll[ll.length - 1], { radius: 6, color: '#fff', weight: 2, fillColor: '#ff3400', fillOpacity: 1 }).addTo(m);

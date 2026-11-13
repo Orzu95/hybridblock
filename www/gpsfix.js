@@ -34,8 +34,7 @@ const _onLocFix = onLoc;
 onLoc = function (lat, lng, acc, alt, t) { if (TR.active && lat != null && !TR.paused && (acc == null || acc <= 100)) { TR.raw = TR.raw || []; TR.raw.push([lat, lng, t || Date.now(), acc != null ? Math.round(acc) : null]); TR.rawN = (TR.rawN || 0) + 1; }
   return _onLocFix.apply(this, arguments); };
 /* Abschnittsgrenzen mit Uhrzeit speichern, Strecke für die Ansage aus der geglätteten Spur */
-const _qCloseFix = qClose;
-qClose = function (sec) { const t0 = TR.qT0, r = _qCloseFix.apply(this, arguments); if (r) { r.t0 = t0; r.t1 = Date.now(); if (TR.gps && (TR.raw || []).length > 1) { const c = gpsCum(TR.raw, (ACT_MAP[TR.type] || {}).g); if (c) r.dist = Math.round(cumAt(c, r.t1) - cumAt(c, r.t0)); } } return r; };
+hbFilter('qClose', 'gpsfix', function (__v, sec) { const t0 = TR.qT0, r = __v; if (r) { r.t0 = t0; r.t1 = Date.now(); if (TR.gps && (TR.raw || []).length > 1) { const c = gpsCum(TR.raw, (ACT_MAP[TR.type] || {}).g); if (c) r.dist = Math.round(cumAt(c, r.t1) - cumAt(c, r.t0)); } } return r; });
 /* Beim Speichern: Intervalle und Gesamtstrecke aus der geglätteten Spur, GPS-Qualität merken */
 const _trSaveFix = trSave;
 trSave = async function () { const raw = (TR.raw || []).slice(), key = 'gps:' + TR.startAt, g = (ACT_MAP[TR.type] || {}).g, gps = TR.gps, st = TR.startAt; const r = await _trSaveFix.apply(this, arguments);
@@ -51,8 +50,7 @@ function actRecalc(a) { const pts = actPts(a); if (!pts) return false; let t = a
   a.ivs = ivsRecalc(ivs, pts, (ACT_MAP[a.type] || {}).g); a.gpsQ = gpsQuality(pts, a.start, a.end || (a.start + (a.moving || 0) * 1000)); save(); return true; }
 
 /* --- Anzeige: Lücken markieren, Qualität und Hinweis --- */
-const _ivsCardFix = ivsCard;
-ivsCard = function (a) { let h = _ivsCardFix(a); if (!h) return h; const v = (a.ivs || []).filter(x => x.sec >= 3);
+hbFilter('ivsCard', 'gpsfix', function (__v, a) { let h = __v; if (!h) return h; const v = (a.ivs || []).filter(x => x.sec >= 3);
   let i = 0; h = h.replace(/<tr( style="font-weight:700"| class="muted")><td>([^<]*)<\/td>/g, (m, at, lab) => { const x = v[i++]; return x && x.gap ? '<tr' + at + '><td>' + lab + ' <span class="t-amber" title="' + esc($t('GPS-Lücke')) + '">⚠</span></td>' : m; });
   const q = a.gpsQ; let foot = '';
   if (v.some(x => x.gap)) foot += '<p class="small t-amber" style="margin-top:6px">' + $t('⚠ In diesem Abschnitt fehlte das GPS-Signal zeitweise. Strecke und Pace sind dort zu niedrig.') + '</p>';
@@ -60,5 +58,5 @@ ivsCard = function (a) { let h = _ivsCardFix(a); if (!h) return h; const v = (a.
     '<p class="small muted" style="margin-top:6px">' + $t('Meist schränkt Android die App bei ausgeschaltetem Bildschirm ein. Stell unter Einstellungen → Apps → Hybridblock → Akku auf „Nicht eingeschränkt“ und erlaube den Standort „Immer“ bzw. „Während der Nutzung“ mit genauer Position.') + '</p>';
   else if (q) foot += '<p class="small muted" style="margin-top:6px">' + $t('Aus der geglätteten GPS-Spur nach Zeitstempel berechnet.') + '</p>';
   if (a.route && (a.ivs || []).some(x => x.fix !== 2)) foot += '<button class="btn sm" style="margin-top:8px" data-act="ivRecalc" data-id="' + a.id + '" type="button">' + $t('Intervalle neu berechnen') + '</button>';
-  return h.replace(/<\/div>$/, foot + '</div>'); };
+  return h.replace(/<\/div>$/, foot + '</div>'); });
 document.addEventListener('click', e => { const b = e.target.closest('[data-act="ivRecalc"]'); if (!b) return; const a = findAct(b.dataset.id); if (a && actRecalc(a)) { toast($t('Intervalle neu berechnet')); render(); } else toast($t('Für diesen Lauf fehlen die GPS-Zeitstempel.')); });

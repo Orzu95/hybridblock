@@ -6,12 +6,12 @@ function consentSheet(then) { ui.consentThen = then || null;
     $t('<ul class="rules small" style="margin-top:10px"><li>Nur für die Funktionen der App. Keine Werbung, kein Tracking, kein Verkauf.</li><li>Gespeichert auf deinem Gerät und, mit Konto, auf einem Server in Frankfurt.</li><li>Mit Coach sieht dein Coach deinen Fortschritt.</li><li>Widerruf jederzeit: Einstellungen → Datenschutz → Daten löschen.</li></ul>') +
     $t('<p class="small" style="margin-top:10px"><a href="#datenschutz" data-act="closeSheet">Datenschutzerklärung lesen</a></p>') +
     $t('<button class="btn brand block" data-act="consentYes" type="button" style="margin-top:14px">Ich willige ein</button><button class="btn block" data-act="consentNo" type="button" style="margin-top:8px">Nicht einverstanden</button>')); }
-function privacyCard() { if (VIEW) return '';
+function privacyCard__base() { if (VIEW) return '';
   return $t('<div class="card"><h2>Datenschutz</h2><p class="small">') + (hasConsent() ? $t('Einwilligung erteilt am ') + new Date(S.meta.consent.at).toLocaleDateString(LOCALE) + '.' : $t('Noch keine Einwilligung erteilt.')) + '</p>' +
     $t('<div class="row" style="margin-top:12px"><a class="btn" href="#datenschutz">Datenschutzerklärung</a><button class="btn" data-act="export" type="button">Daten exportieren</button></div>') +
     $t('<div class="row" style="margin-top:8px"><button class="btn danger" data-act="wipeLocal" type="button">Daten auf diesem Gerät löschen</button>') + (AUTH ? $t('<button class="btn danger" data-act="deleteAccount" type="button">Konto löschen</button>') : '') + '</div></div>'; }
-const _accountCardBase = accountCard;
-accountCard = function () { return _accountCardBase() + privacyCard(); };
+function privacyCard() { return hbRun('privacyCard', this, arguments, privacyCard__base); }
+hbFilter('accountCard', 'privacy', function (__v) { return __v + privacyCard(); });
 let PRIV_HTML = null;
 function viewPrivacy() { if (PRIV_HTML == null) { fetch('privacypolicy.html').then(r => r.text()).then(t => { const m = t.match(/<main[^>]*>([\s\S]*)<\/main>/); PRIV_HTML = m ? m[1] : t; if (route.name === 'datenschutz') render(); }).catch(() => { PRIV_HTML = '<p>' + $t('Nicht erreichbar.') + '</p>'; }); }
   const html = PRIV_HTML || ''; const en = LANG !== 'de'; const part = html ? (en ? (html.split(/<section lang="en"[^>]*>/)[1] || html) : html.split(/<section lang="en"/)[0]) : '<p class="muted">…</p>';

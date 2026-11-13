@@ -83,14 +83,12 @@ function pauseCard() { const p = S.meta.pause; const d = daysBetween(p.from, tod
     '<div class="row" style="gap:8px;flex-wrap:wrap;margin-top:12px"><button class="btn brand" data-act="pauseEnd" type="button">' + $t('Ich bin wieder da') + '</button><button class="btn" data-act="pauseCancel" type="button">' + $t('Aus Versehen eingetragen') + '</button></div>' +
     '<p class="src" style="margin-top:10px">' + $t('Allgemeine Hinweise, keine ärztliche Beratung.') + '</p></div>'; }
 const _sessionsOnDowZ = sessionsOnDow; sessionsOnDow = function () { return pauseOn() ? [] : _sessionsOnDowZ.apply(this, arguments); };
-const _currentTargetsZ = currentTargets;
-currentTargets = function () { let t = _currentTargetsZ.apply(this, arguments); const p = S.meta.pause; if (!p || p.why === 'away' || !t) return t; t = Object.assign({}, t, { pause: true });
+hbFilter('currentTargets', 'zeit', function (__v) { let t = __v; const p = S.meta.pause; if (!p || p.why === 'away' || !t) return t; t = Object.assign({}, t, { pause: true });
   if (num(t.tdee) > t.kcal) t.kcal = Math.round(num(t.tdee));
   if (p.why === 'injury') { const ser = series(); const kg = ser.length ? ser[ser.length - 1].trend : num(S.settings.startWeight); if (kg && t.p < 2 * kg) t.p = Math.round(2 * kg); }
-  t.c = Math.max(0, Math.round((t.kcal - 4 * t.p - 9 * t.f) / 4)); return t; };
-const _heuteExtrasZ = heuteExtras;
-heuteExtras = function () { const h = _heuteExtrasZ.apply(this, arguments); if (VIEW) return h; if (pauseOn()) return pauseCard() + h;
-  return h + '<div class="row" style="justify-content:center;margin:2px 0 6px"><button class="btn sm" style="background:var(--fog)" data-act="pauseOpen" type="button">' + $t('Krank, verletzt oder im Urlaub?') + '</button></div>'; };
+  t.c = Math.max(0, Math.round((t.kcal - 4 * t.p - 9 * t.f) / 4)); return t; });
+hbFilter('heuteExtras', 'zeit', function (__v) { const h = __v; if (VIEW) return h; if (pauseOn()) return pauseCard() + h;
+  return h + '<div class="row" style="justify-content:center;margin:2px 0 6px"><button class="btn sm" style="background:var(--fog)" data-act="pauseOpen" type="button">' + $t('Krank, verletzt oder im Urlaub?') + '</button></div>'; });
 document.addEventListener('click', e => { const b = e.target.closest('[data-act]'); if (!b) return; const a = b.dataset.act;
   if (a === 'zBud') { const s = sess(+b.dataset.w, b.dataset.k); const v = +b.dataset.v; if (v) s.budget = v; else delete s.budget; save(); render(); toast(v ? $tf('Auf {m} Minuten gekürzt', { m: v }) : $t('Volle Einheit')); }
   else if (a === 'pauseOpen') pauseSheet();
@@ -100,16 +98,14 @@ document.addEventListener('click', e => { const b = e.target.closest('[data-act]
   else if (a === 'pauseSev') pauseEndSheet(b.dataset.v);
   else if (a === 'pauseEndGo') { const r = pauseEnd(b.dataset.v || null); closeSheet(); render(); doneOverlay($t('Willkommen zurück'), r && r.wk > 0 ? $tf('Wiedereinstieg über etwa {w} Wochen.', { w: r.wk }) : $t('Es geht normal weiter.')); } });
 /* Wiedereinstieg: Gewichte wirklich absenken (nicht nur im Text) und Versagens-Hinweise ausblenden */
-const _planSuggestionRE = planSuggestion;
-planSuggestion = function (w, k, spec, exId) { const r = _planSuggestionRE.apply(this, arguments); const R = reState(); const s = peekSess(w, k); if (!R || (s && s.done) || !r || !(num(r.load) > 0) || R.lp >= 100) return r;
+hbFilter('planSuggestion', 'zeit', function (__v, w, k, spec, exId) { const r = __v; const R = reState(); const s = peekSess(w, k); if (!R || (s && s.done) || !r || !(num(r.load) > 0) || R.lp >= 100) return r;
   const inc = incFor(exId); const load = Math.max(inc, Math.round(r.load * R.lp / 100 / inc) * inc);
-  return Object.assign({}, r, { load, txt: $tf('Wiedereinstieg: {l} kg (etwa {p} % von {o} kg)', { l: fmt(load), p: R.lp, o: fmt(r.load) }), cls: 'hold' }); };
+  return Object.assign({}, r, { load, txt: $tf('Wiedereinstieg: {l} kg (etwa {p} % von {o} kg)', { l: fmt(load), p: R.lp, o: fmt(r.load) }), cls: 'hold' }); });
 const RE_FAIL = /Versagen|failure|отказ/i;
 const _sessAdjRE2 = sessAdjust;
 sessAdjust = function (w, k, list) { list = _sessAdjRE2.apply(this, arguments); const R = reState(); const s = peekSess(w, k); if (!R || (s && s.done)) return list;
   return list.map(x => x.note && RE_FAIL.test(x.note) ? Object.assign({}, x, { note: '' }) : x); };
 /* Wiedereinstieg im Ausdauertraining: Intervalle und Tests werden zu lockeren Z2-Einheiten, Umfang nach Tabelle (R.run %) */
-const _cardioSpecRE = cardioSpec;
-cardioSpec = function (w, k) { const sp = _cardioSpecRE.apply(this, arguments); const R = reState(); const s = peekSess(w, k); if (!R || !sp || (s && s.done)) return sp;
+hbFilter('cardioSpec', 'zeit', function (__v, w, k) { const sp = __v; const R = reState(); const s = peekSess(w, k); if (!R || !sp || (s && s.done)) return sp;
   const tot = sp.mode === 'z2' ? num(sp.min) || 30 : (num(sp.warm) || 10) + (num(sp.reps) || 0) * ((num(sp.dur) || 0) + (num(sp.rest) || 0)) + (num(sp.cool) || 5);
-  const min = Math.max(15, Math.round(tot * R.run / 100 / 5) * 5); return Object.assign({}, sp, { mode: 'z2', min, reps: null, dur: null, rest: null, hi: false, re: true, title: $tf('{m} min locker (Wiedereinstieg)', { m: min }) }); };
+  const min = Math.max(15, Math.round(tot * R.run / 100 / 5) * 5); return Object.assign({}, sp, { mode: 'z2', min, reps: null, dur: null, rest: null, hi: false, re: true, title: $tf('{m} min locker (Wiedereinstieg)', { m: min }) }); });

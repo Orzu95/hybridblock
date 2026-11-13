@@ -14,9 +14,8 @@ function spRevNeed() { if (SP.rev != null || SP.revLoading || !myUid()) return !
   api('/rest/v1/plan_reviewers?select=user_id').then(r => { SP.rev = !!(r && r.length); }).catch(() => { SP.rev = false; }).finally(() => { SP.revLoading = false; if (SP.rev && !LIB_TABS.some(t => t[0] === 'rev')) LIB_TABS.push(['rev', 'Prüfen']); if (SP.rev && route.name === 'library') render(); }); return false; }
 const spRejected = sp => sp.status === 'public' && sp.review_state === 'rejected';
 /* Karten: Zielgruppe, Kopierschutz, „Nicht freigegeben“ */
-const _spCardRV = spCard;
-spCard = function (sp) { let h = _spCardRV.apply(this, arguments); const m = sp.meta || {}; const tags = [m.level && SP_LEVEL[m.level] ? $t(SP_LEVEL[m.level]) : '', m.place && SP_PLACE[m.place] ? $t(SP_PLACE[m.place]) : '', sp.copy_lock ? '🔒 ' + $t('Kopierschutz') : ''].filter(Boolean).map(t => '<span class="tag">' + esc(t) + '</span>').join('');
-  if (spMine(sp) && spRejected(sp)) h = h.replace('<span class="tag">' + esc($t(SP_ST.public)) + '</span>', '<span class="tag" style="background:var(--amber-soft,#fff1d6)">' + esc($t('Nicht freigegeben')) + '</span>'); return tags ? h.replace('<div class="row" style="gap:6px;margin-top:8px;flex-wrap:wrap">', '<div class="row" style="gap:6px;margin-top:8px;flex-wrap:wrap">' + tags) : h; };
+hbFilter('spCard', 'libreview', function (__v, sp) { let h = __v; const m = sp.meta || {}; const tags = [m.level && SP_LEVEL[m.level] ? $t(SP_LEVEL[m.level]) : '', m.place && SP_PLACE[m.place] ? $t(SP_PLACE[m.place]) : '', sp.copy_lock ? '🔒 ' + $t('Kopierschutz') : ''].filter(Boolean).map(t => '<span class="tag">' + esc(t) + '</span>').join('');
+  if (spMine(sp) && spRejected(sp)) h = h.replace('<span class="tag">' + esc($t(SP_ST.public)) + '</span>', '<span class="tag" style="background:var(--amber-soft,#fff1d6)">' + esc($t('Nicht freigegeben')) + '</span>'); return tags ? h.replace('<div class="row" style="gap:6px;margin-top:8px;flex-wrap:wrap">', '<div class="row" style="gap:6px;margin-top:8px;flex-wrap:wrap">' + tags) : h; });
 /* Reiter „Prüfen“ (nur Prüfer) */
 const _viewLibComRV = viewLibCom;
 viewLibCom = function () { if (libTab() !== 'rev') return _viewLibComRV.apply(this, arguments); const L = spNeed().filter(x => x.status === 'submitted');
@@ -29,15 +28,14 @@ const _viewLibMineRV = viewLibMine;
 viewLibMine = function () { return '<div class="card"><div class="lbl">' + $t('Plan per Code öffnen') + '</div><div class="row on-white" style="margin-top:6px;gap:8px"><input id="code-in" class="grow" maxlength="8" autocapitalize="characters" placeholder="' + esc($t('z. B. Q8BFEX3B')) + '" style="text-transform:uppercase;letter-spacing:.08em"><button class="btn" data-act="codeGo" type="button">' + $t('Öffnen') + '</button></div></div>' + _viewLibMineRV.apply(this, arguments); };
 
 /* Detailansicht: Prüfung, Ablehnung, Teilen, Kopierschutz */
-const _viewSharedPlanRV = viewSharedPlan;
-viewSharedPlan = function (id) { let h = _viewSharedPlanRV.apply(this, arguments); const b = SP.body[id]; if (!b || b.missing) return h; const own = spMine(b); spRevNeed();
+hbFilter('viewSharedPlan', 'libreview', function (__v, id) { let h = __v; const b = SP.body[id]; if (!b || b.missing) return h; const own = spMine(b); spRevNeed();
   let top = '';
   if (own && spRejected(b)) top += note('amber', '<b>' + $t('Nicht freigegeben.') + '</b> ' + esc(b.review_note || ''), '<button class="btn sm" data-act="spResubmit" data-id="' + id + '" type="button">' + $t('Überarbeitet, erneut einreichen') + '</button>');
   if (own && b.status === 'submitted') top += note('sky', $t('Zur Prüfung eingereicht. Du bekommst das Ergebnis hier angezeigt.'));
   if (own) top += '<div class="row" style="gap:8px;flex-wrap:wrap"><button class="btn" data-act="spShare" data-id="' + id + '" type="button">↗ ' + $t('Teilen per Link oder QR') + '</button>' + (b.share_code ? '<span class="small muted">' + $tf('Code aktiv: {c}', { c: b.share_code }) + '</span>' : '') + '</div>';
   if (SP.rev && !own && b.status === 'submitted') top += '<div class="card" style="box-shadow:inset 4px 0 0 var(--sky)"><b>' + $t('Prüfung') + '</b><p class="small muted" style="margin:4px 0 10px">' + $t('Prüfe Aufbau, Volumen und die automatische Note unten.') + '</p><div class="row" style="gap:8px"><button class="btn brand" data-act="rvOpen" data-v="ok" data-id="' + id + '" type="button">' + $t('Freigeben') + '</button><button class="btn" data-act="rvOpen" data-v="no" data-id="' + id + '" type="button">' + $t('Ablehnen') + '</button></div></div>';
   if (b.copy_lock && !own) { h = h.replace(/<button[^>]*data-act="libEdit"[^>]*>[\s\S]*?<\/button>/g, ''); top += note('sky', '🔒 ' + $t('Kopierschutz: Du kannst den Plan nutzen, aber in der App nicht bearbeiten, speichern oder weitergeben.')); }
-  const m = '<div class="stack" style="margin-bottom:12px">'; return top ? h.replace(m, m + top) : h; };
+  const m = '<div class="stack" style="margin-bottom:12px">'; return top ? h.replace(m, m + top) : h; });
 const _planFromIdRV = planFromId;
 planFromId = function (id) { id = String(id); if (id.startsWith('code:')) { const b = (SP.code || {})[id.slice(5)]; const p = clone(b.plan); p.name = b.name; p.sharedId = b.id; if (b.copy_lock) p.lock = { by: b.owner || 'other' }; return p; }
   const p = _planFromIdRV.apply(this, arguments); if (id.startsWith('sp:')) { const b = SP.body[id.slice(3)]; if (b && b.copy_lock && !spMine(b)) p.lock = { by: b.owner_id }; } return p; };

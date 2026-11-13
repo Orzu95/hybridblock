@@ -27,8 +27,7 @@ function storageCardBase() { const kb = Math.round(stUsage() / 1024); const max 
   return '<div class="card"><h2>' + $t('Speicher auf diesem Gerät') + '</h2><div class="row small" style="justify-content:space-between;margin-top:6px"><span>' + $t('Browserspeicher') + '</span><span class="num">' + fmt(kb, 0) + ' / ~' + fmt(max, 0) + ' KB</span></div>' +
     '<div class="meter" style="background:var(--paper);margin-top:4px"><i style="width:' + pct + '%;background:' + (pct > 80 ? 'var(--signal)' : 'var(--verdant)') + '"></i></div>' +
     '<p class="src" style="margin-top:8px">' + (idb ? $t('Der Browserspeicher ist voll. Deine Daten liegen sicher in der größeren Gerätedatenbank.') : $t('Wird der Browserspeicher voll, wechselt die App automatisch in die größere Gerätedatenbank. Mit Konto liegt zusätzlich alles in der Cloud.')) + '</p></div>'; }
-const _privacyCardST = privacyCard;
-privacyCard = function () { const h = _privacyCardST.apply(this, arguments); return h ? h + storageCard() : h; };
+hbFilter('privacyCard', 'storage', function (__v) { const h = __v; return h ? h + storageCard() : h; });
 /* Abmelden: fragen, ob die Daten auf dem Gerät bleiben */
 document.addEventListener('click', e => { const b = e.target.closest('[data-act]'); if (!b) return; const a = b.dataset.act;
   if (a === 'logoutYes' && !b.dataset.keep) { e.stopImmediatePropagation(); e.preventDefault();
@@ -49,11 +48,9 @@ document.addEventListener('click', e => { const b = e.target.closest('[data-act]
 const LIC_MORE = () => ['<li>' + $t('Icons: Tabler Icons (MIT).') + '</li>', '<li>' + $t('Karten: Leaflet (BSD-2), MapLibre GL JS (BSD-3), Kartenkacheln von OpenFreeMap, Kartendaten © OpenStreetMap-Mitwirkende (ODbL).') + '</li>',
   '<li>' + $t('QR-Codes: qrcode-generator von Kazuhiko Arase (MIT) · App-Gerüst: Capacitor (MIT).') + '</li>', '<li>' + $t('Übungsbilder: exercise-dataset.com, zur Laufzeit geladen.') + '</li>',
   '<li>' + $t('Laufzonen: Formeln nach Daniels und Gilbert (1979). Mahlzeiten-Erkennung: Google Gemini API.') + '</li>'].join('');
-const _viewMehrLIC = viewMehr;
-viewMehr = function () { const h = _viewMehrLIC.apply(this, arguments); const i = h.indexOf('MPL 2.0'); if (i < 0) return h; const j = h.indexOf('</li>', i); return j < 0 ? h : h.slice(0, j + 5) + LIC_MORE() + h.slice(j + 5); };
+hbFilter('viewMehr', 'storage', function (__v) { const h = __v; const i = h.indexOf('MPL 2.0'); if (i < 0) return h; const j = h.indexOf('</li>', i); return j < 0 ? h : h.slice(0, j + 5) + LIC_MORE() + h.slice(j + 5); });
 /* Sprachansage, wenn das GPS-Signal beim Aufzeichnen wegbleibt (z. B. Akkusparmodus) und wenn es zurückkommt */
-const _trTickST = trTick;
-trTick = function () { const r = _trTickST.apply(this, arguments);
-  try { if (TR.active && TR.gps && !TR.paused && TR.fixAt && !TR.gpsLost && Date.now() - TR.fixAt > 30000) { TR.gpsLost = Date.now(); buzz([200, 100, 200]); say($t('GPS-Signal verloren.')); } } catch (e) {} return r; };
+hbFilter('trTick', 'storage', function (__v) { const r = __v;
+  try { if (TR.active && TR.gps && !TR.paused && TR.fixAt && !TR.gpsLost && Date.now() - TR.fixAt > 30000) { TR.gpsLost = Date.now(); buzz([200, 100, 200]); say($t('GPS-Signal verloren.')); } } catch (e) {} return r; });
 const _onLocST = onLoc;
 onLoc = function () { const lost = TR.active && TR.gpsLost; const r = _onLocST.apply(this, arguments); if (lost && TR.active && TR.fixAt && Date.now() - TR.fixAt < 2000) { TR.gpsLost = 0; say($t('GPS-Signal wieder da.')); } return r; };

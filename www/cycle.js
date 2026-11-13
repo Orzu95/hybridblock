@@ -29,13 +29,11 @@ function amenorrhea() { if (!cycOn() || cyc().status !== 'normal') return null; 
 function cycleComp(d) { if (!cycOn()) return []; const e = cycDay(d); if (!(e.flow > 0 || e.cramps > 0)) return [];
   const v = clamp(100 - (e.cramps || 0) * 35 - ((e.flow || 0) >= 3 ? 15 : 0), 0, 100);
   return [{ k: $t('Zyklus'), v, w: .25, txt: [e.flow > 0 ? $t('Periode: ') + FLOW_OPTS()[e.flow][1] : '', e.cramps > 0 ? $t('Krämpfe: ') + CRAMP_OPTS()[e.cramps][1] : ''].filter(Boolean).join(', ') }]; }
-const _readinessBase = readiness;
-readiness = function (w, k) { const r = _readinessBase(w, k); const s = peekSess(w, k); const d = (s && s.date) || today(); if (cycleBad(d)) { r.rpeShift = -1; r.cycleBad = true; } return r; };
+hbFilter('readiness', 'cycle', function (__v, w, k) { const r = __v; const s = peekSess(w, k); const d = (s && s.date) || today(); if (cycleBad(d)) { r.rpeShift = -1; r.cycleBad = true; } return r; });
 function cycleFlags(w, k) { const s = peekSess(w, k); const d = (s && s.date) || today(); if (!cycleBad(d)) return '';
   return note('amber', $t('<b>Starke Regelbeschwerden heute.</b> Die RPE-Ziele sind schon eine Stufe leichter. Schwere Kniebeugen und Kreuzheben kannst du unter „Varianten“ gegen eine Maschine tauschen. Oder heute Ersatz und die Einheit an einem anderen Tag nachholen.') +
     '<div class="row" style="margin-top:8px;gap:8px"><button class="btn sm brand" data-act="trOpen" data-type="gehen" type="button">' + $t('Lockeres Cardio') + '</button><button class="btn sm" data-act="pickAct" data-type="mobility" type="button">' + $t('Mobility') + '</button></div>'); }
-const _doCheckinBase = doCheckin;
-doCheckin = function () { const c = _doCheckinBase(); const am = amenorrhea(); if (am && c.kcal < c.tdee) { c.kcal = Math.round(c.tdee / 50) * 50; c.c = Math.max(0, Math.round((c.kcal - 4 * c.p - 9 * c.f) / 4)); c.hold = 'cycle'; save(); setTimeout(() => toast($t('Kein Defizit, solange die Periode ausbleibt')), 300); } return c; };
+hbFilter('doCheckin', 'cycle', function (__v) { const c = __v; const am = amenorrhea(); if (am && c.kcal < c.tdee) { c.kcal = Math.round(c.tdee / 50) * 50; c.c = Math.max(0, Math.round((c.kcal - 4 * c.p - 9 * c.f) / 4)); c.hold = 'cycle'; save(); setTimeout(() => toast($t('Kein Defizit, solange die Periode ausbleibt')), 300); } return c; });
 function redsCard() { const am = amenorrhea(); if (!am) return '';
   return note('red', $t('<b>Deine Periode ist seit ') + am.days + $t(' Tagen ausgeblieben.</b> Bei viel Training und Kaloriendefizit kann das ein Zeichen für Energiemangel sein (RED-S). Das schadet auf Dauer Knochen, Hormonen und Leistung. Bitte ärztlich abklären lassen. Die App senkt deine Kalorien bis dahin nicht weiter.') + '<br><button class="btn sm" data-act="cycStatusSheet" type="button" style="margin-top:8px">' + $t('Anderer Grund?') + '</button>'); }
 
@@ -47,8 +45,7 @@ function cycleFields(d) { if (!isFemale()) return '';
   let hint = ''; if (info && info.next) { const until = dDiff(d, info.next); if (until >= 0 && until <= 2) { const p1 = cyclePattern(1); hint = $t('Periode erwartet in etwa ') + until + $t(' Tagen.') + (p1 && p1.bad ? ' ' + $t('An Tag 1 ging es dir bisher meist schlechter, plane dafür ruhig etwas Leichtes ein.') : ''); } }
   if (pat && pat.bad && !(e.cramps >= 2)) hint = $t('Zyklustag ') + info.cd + $t(': In früheren Zyklen war dieser Tag für dich eher schwer. Wenn es heute auch so ist, trag es ein, dann passt die App das Training an.');
   return sel('flow', $t('Periode'), FLOW_OPTS()) + sel('cramps', $t('Krämpfe / Beschwerden'), CRAMP_OPTS()) + (hint ? '<p class="small muted" style="flex:1 1 100%;margin:0">' + esc(hint) + '</p>' : '') + (info ? '<p class="small muted" style="flex:1 1 100%;margin:0">' + $t('Zyklustag ') + info.cd + (info.mean ? $t(' · Ø Zyklus ') + info.mean + $t(' Tage') : '') + '</p>' : ''); }
-const _readinessCardBase = readinessCard;
-readinessCard = function (d) { let h = _readinessCardBase(d); const cf = cycleFields(d); if (cf) { const i = h.lastIndexOf('</div></div>'); if (i > 0) h = h.slice(0, i) + cf + h.slice(i); } return (d === today() ? redsCard() : '') + h; };
+hbFilter('readinessCard', 'cycle', function (__v, d) { let h = __v; const cf = cycleFields(d); if (cf) { const i = h.lastIndexOf('</div></div>'); if (i > 0) h = h.slice(0, i) + cf + h.slice(i); } return (d === today() ? redsCard() : '') + h; });
 
 /* ---------- Einstellungen ---------- */
 function cycleCard() { if (VIEW || !isFemale()) return ''; const c = cyc();
@@ -60,8 +57,7 @@ function cycleCard() { if (VIEW || !isFemale()) return ''; const c = cyc();
     (hasCoach() ? '<div class="row" style="margin-top:10px"><button class="trtog' + (S.settings.cycleShare ? ' on' : '') + '" data-act="cycShare" type="button">' + (S.settings.cycleShare ? '✓ ' : '') + $t('Mit meinem Coach teilen') + '</button></div><p class="small muted">' + (S.settings.cycleShare ? $t('Dein Coach sieht deine Zyklusdaten.') : $t('Dein Coach sieht deine Zyklusdaten nicht. Er sieht nur, dass das Training angepasst wurde.')) + '</p>' : '') +
     (NPh ? $t('<div class="row" style="margin-top:10px"><button class="btn" data-act="cycHc" type="button">Aus Health Connect übernehmen</button></div><p class="small muted">Liest Periode und Blutungsstärke, z. B. aus Samsung Health, Fitbit, Garmin oder Zyklus-Apps, die dort schreiben.</p>') : '') +
     $t('<div class="row" style="margin-top:10px"><button class="btn danger" data-act="cycOff" type="button">Zyklusdaten löschen und ausschalten</button></div></div>'); }
-const _accountCardCyc = accountCard;
-accountCard = function () { return _accountCardCyc() + cycleCard(); };
+hbFilter('accountCard', 'cycle', function (__v) { return __v + cycleCard(); });
 
 /* ---------- Einwilligung ---------- */
 function cycConsentSheet() { openSheet(sheetHead($t('Zyklus berücksichtigen')) + $t('<p>Zyklusdaten sind besonders persönlich. Dafür brauchen wir eine eigene Einwilligung.</p><ul class="rules small" style="margin-top:10px"><li>Nur damit die App dein Training an Beschwerden anpasst und auf ein Ausbleiben der Periode hinweist.</li><li>Gespeichert auf deinem Gerät und, mit Konto, in einem eigenen Bereich, den nur du lesen kannst.</li><li>Dein Coach sieht sie nur, wenn du das ausdrücklich einschaltest.</li><li>Jederzeit löschbar unter Einstellungen → Zyklus.</li></ul>') +
@@ -80,8 +76,7 @@ async function cycHcImport(quiet) { const P = typeof NP === 'function' ? NP('HbH
 if (typeof hcSync === 'function') { const _hcSyncCyc = hcSync; hcSync = async function (full) { await _hcSyncCyc(full); if (cycOn() && cyc().hc) cycHcImport(true); }; }
 
 /* ---------- Cloud: Zyklus getrennt und nur für die Person selbst ---------- */
-const _cloudCopyCyc = cloudCopy;
-cloudCopy = function () { const c = _cloudCopyCyc(); if (!S.settings.cycleShare) delete c.cycle; return c; };
+hbFilter('cloudCopy', 'cycle', function (__v) { const c = __v; if (!S.settings.cycleShare) delete c.cycle; return c; });
 const _adoptRemoteCyc = adoptRemote;
 adoptRemote = function (remote) { const keep = S.cycle; _adoptRemoteCyc(remote); if (keep && !(remote.state && remote.state.cycle)) { S.cycle = keep; persist(); } };
 async function pushPrivate() { if (!AUTH || VIEW || !S.cycle) return; try { await api('/rest/v1/private_state?on_conflict=user_id', { method: 'POST', headers: { Prefer: 'resolution=merge-duplicates,return=minimal' }, body: JSON.stringify({ user_id: AUTH.uid, data: { cycle: S.cycle }, updated_at: new Date().toISOString() }) }); S.meta.privAt = Date.now(); persist(); } catch (e) { console.warn('private push', e); } }

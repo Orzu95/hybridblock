@@ -39,19 +39,17 @@ function cbDay(d, base) { const days = cbWeekDays(d); const lv = days.map(cbLeve
   let fat = Math.round((kcal - 4 * p - 4 * c) / 9); if (fat < W.fatMin) { fat = W.fatMin; kcal = 4 * p + 4 * c + 9 * fat; }
   const weekMean = Math.round(W.k.reduce((a, b) => a + b, 0) / 7);
   return { lv: L, name: CB_LV[L], kcal, p, c, f: fat, gkg: Math.round(c / kg * 10) / 10, prevHigh, prof, units: cbUnits(d), weekMean }; }
-const _currentTargetsCB = currentTargets;
 let CB_RAW = 0;
-currentTargets = function () { const t = _currentTargetsCB.apply(this, arguments); if (CB_RAW || !cbOn() || !t || t.pause || S.settings.trackMode === 'p') return t;
-  const d = (typeof route !== 'undefined' && route.name === 'essen' && ui.day) || today(); try { const ck = d + '|' + t.kcal + '|' + t.p + '|' + (S.meta.modAt || 0); const r = CB_C.k === ck ? CB_C.r : (CB_C.k = ck, CB_C.r = cbDay(d, t)); if (!r) return t; return Object.assign({}, t, { kcal: r.kcal, p: r.p, c: r.c, f: r.f, cb: r, kcalWeek: t.kcal }); } catch (e) { console.warn('carbs', e); return t; } };
+hbFilter('currentTargets', 'carbs', function (__v) { const t = __v; if (CB_RAW || !cbOn() || !t || t.pause || S.settings.trackMode === 'p') return t;
+  const d = (typeof route !== 'undefined' && route.name === 'essen' && ui.day) || today(); try { const ck = d + '|' + t.kcal + '|' + t.p + '|' + (S.meta.modAt || 0); const r = CB_C.k === ck ? CB_C.r : (CB_C.k = ck, CB_C.r = cbDay(d, t)); if (!r) return t; return Object.assign({}, t, { kcal: r.kcal, p: r.p, c: r.c, f: r.f, cb: r, kcalWeek: t.kcal }); } catch (e) { console.warn('carbs', e); return t; } });
 function cbCard() { const t = currentTargets(); const r = t.cb;
   if (!r) return '<div class="card" id="cbcard"><div class="row" style="align-items:center;gap:10px"><div class="grow"><b>' + $t('Kohlenhydrate nach Training') + '</b><div class="small muted">' + $t('Mehr Kohlenhydrate an harten Tagen, weniger an Ruhetagen. Die Wochenkalorien bleiben gleich.') + '</div></div><button class="btn sm" data-act="cbOn" type="button">' + $t('Einschalten') + '</button></div></div>';
   const tip = r.lv >= 2 ? '<p class="small" style="margin:8px 0 0">' + $t('Vor dem Training: 1–4 Stunden vorher eine kohlenhydratreiche Mahlzeit. Einheiten über 60–90 Minuten: 30–60 g Kohlenhydrate pro Stunde. Danach eine Mahlzeit mit Eiweiß und Kohlenhydraten, bei zwei Einheiten am Tag möglichst bald.') + '</p>' : r.prevHigh ? '<p class="small" style="margin:8px 0 0">' + $t('Nach dem harten Tag gestern etwas mehr Kohlenhydrate, damit die Speicher wieder voll werden.') + '</p>' : '';
   return '<div class="card" id="cbcard"><div class="row" style="align-items:baseline"><h2 class="grow" style="margin:0">' + esc(CB_NAME()[r.name]) + '</h2><span class="small muted num">' + fmt(r.gkg, 1) + ' ' + $t('g/kg') + '</span></div>' +
     '<p class="small muted" style="margin:6px 0 0">' + $tf('Heute {c} g Kohlenhydrate, {f} g Fett, {p} g Eiweiß, {k} kcal. Dein Wochenschnitt bleibt bei {w} kcal.', { c: fmt(r.c, 0), f: fmt(r.f, 0), p: fmt(r.p, 0), k: fmt(r.kcal, 0), w: fmt(r.weekMean, 0) }) + '</p>' + tip +
     '<div class="row" style="margin-top:10px"><div class="grow"></div><button class="btn sm" style="background:var(--fog)" data-act="cbOff" type="button">' + $t('Ausschalten') + '</button></div></div>'; }
-const _viewEssenCB = viewEssen;
-viewEssen = function () { const h = _viewEssenCB.apply(this, arguments); if (S.settings.trackMode === 'p' || (typeof VIEW !== 'undefined' && VIEW) || (S.meta.pause && S.meta.pause.why !== 'away')) return h;
-  const m = h.indexOf('<div class="nr-search">'); const card = cbCard(); return m < 0 ? h + card : h.slice(0, m) + card + h.slice(m); };
+hbFilter('viewEssen', 'carbs', function (__v) { const h = __v; if (S.settings.trackMode === 'p' || (typeof VIEW !== 'undefined' && VIEW) || (S.meta.pause && S.meta.pause.why !== 'away')) return h;
+  const m = h.indexOf('<div class="nr-search">'); const card = cbCard(); return m < 0 ? h + card : h.slice(0, m) + card + h.slice(m); });
 document.addEventListener('click', e => { const b = e.target.closest('[data-act]'); if (!b) return; const a = b.dataset.act;
   if (a === 'cbOn') { S.settings.carbCycle = true; save(); render(); toast($t('Kohlenhydrate richten sich jetzt nach deinem Training.')); }
   else if (a === 'cbOff') { S.settings.carbCycle = false; save(); render(); toast($t('Wieder gleiche Ziele an allen Tagen.')); } });

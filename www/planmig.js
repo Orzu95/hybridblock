@@ -12,9 +12,7 @@ const _renderPM = render;
 render = function () { if (!PM_DONE && typeof AUTH !== 'undefined' && AUTH && AUTH.uid) { PM_DONE = true; try { planMigrate(); } catch (e) { console.warn(e); } } return _renderPM.apply(this, arguments); };
 const _switchPlanPM = switchPlan;
 switchPlan = function () { S.meta.needPlan = false; return _switchPlanPM.apply(this, arguments); };
-const _setPlanPM = setPlan;
-setPlan = function () { const r = _setPlanPM.apply(this, arguments); if (S.plan && !S.plan.noPlan) { S.meta.needPlan = false; save(); } return r; };
-const _heuteExtrasPM = heuteExtras;
-heuteExtras = function () { const h = _heuteExtrasPM.apply(this, arguments); if (!S.meta.needPlan || (typeof VIEW !== 'undefined' && VIEW)) return h;
+hbFilter('setPlan', 'planmig', function (__v) { const r = __v; if (S.plan && !S.plan.noPlan) { S.meta.needPlan = false; save(); } return r; });
+hbFilter('heuteExtras', 'planmig', function (__v) { const h = __v; if (!S.meta.needPlan || (typeof VIEW !== 'undefined' && VIEW)) return h;
   return '<div class="card" style="box-shadow:inset 4px 0 0 var(--ember)"><h2 style="margin:0">' + $t('Such dir einen Trainingsplan aus') + '</h2><p class="small" style="margin:6px 0 12px">' + $t('Du hast noch keinen eigenen Plan. Wähle einen aus der Bibliothek oder lass dir einen passenden erstellen.') + '</p>' +
-    '<div class="row" style="gap:8px;flex-wrap:wrap"><a class="btn brand" href="#library">' + $t('Zur Bibliothek') + '</a><button class="btn" data-act="genPlan" type="button">' + $t('Plan erstellen lassen') + '</button></div></div>' + h; };
+    '<div class="row" style="gap:8px;flex-wrap:wrap"><a class="btn brand" href="#library">' + $t('Zur Bibliothek') + '</a><button class="btn" data-act="genPlan" type="button">' + $t('Plan erstellen lassen') + '</button></div></div>' + h; });

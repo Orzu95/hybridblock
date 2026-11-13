@@ -16,11 +16,12 @@ function nrChips(d) { const o = S.days[d] || {}; const ml = num(o.water) || 0, g
   return '<div class="nr-chips"><div class="nr-chip"><button class="nr-cb" data-act="nrWater" type="button">💧 <b class="num">' + fmt(ml / 1000, 1) + ' / ' + fmt(goal / 1000, 1) + ' l</b></button><button class="nr-plus" data-act="water" data-v="250" type="button" aria-label="' + esc($t('250 ml dazu')) + '">＋</button></div>' +
     '<button class="nr-chip nr-cb" data-act="nrWeight" type="button">⚖ <b class="num">' + (w ? fmt(w, 1) + ' kg' : $t('Gewicht')) + '</b> ✎</button>' +
     (o.complete === false ? '<button class="nr-chip nr-cb t-amber" data-act="nrWeight" type="button">' + $t('Tag unvollständig') + '</button>' : '') + '</div>'; }
-function nrMeal(m, es) { const k = es.reduce((a, e) => a + e.kcal, 0), p = es.reduce((a, e) => a + (e.p || 0), 0);
+function nrMeal__base(m, es) { const k = es.reduce((a, e) => a + e.kcal, 0), p = es.reduce((a, e) => a + (e.p || 0), 0);
   return '<div class="card nr-meal"><div class="nr-mh"><div class="grow"><b>' + esc($t(m)) + '</b><div class="small muted num">' + (es.length ? fmt(k, 0) + ' kcal · ' + fmt(p, 0) + ' g ' + $t('Protein') : $t('Noch nichts eingetragen')) + '</div></div>' +
     '<button class="nr-more" data-act="mealMenu" data-meal="' + m + '" type="button" aria-label="' + esc($t('Mahlzeit-Optionen')) + '">⋯</button><button class="nr-add" data-act="add" data-meal="' + m + '" type="button" aria-label="' + esc($tf('Zu {m} hinzufügen', { m: $t(m) })) + '">＋</button></div>' +
     es.map(e => '<div class="entry" data-act="edit" data-uid="' + e.uid + '"><div class="grow" style="min-width:0"><div class="nm">' + esc(entryName(e)) + '</div><div class="small muted">' + fmt(e.qty) + ' ' + $t(e.unit) + '</div></div><div class="k num">' + fmt(e.kcal, 0) + ' kcal<small>' + fmt(e.p, 0) + ' g ' + $t('Protein') + '</small></div></div>').join('') + '</div>'; }
-function viewEssen() { const d = ui.day, o = S.days[d] || { entries: [] }, tot = dayTotals(d), tg = currentTargets();
+function nrMeal() { return hbRun('nrMeal', this, arguments, nrMeal__base); }
+function viewEssen__base() { const d = ui.day, o = S.days[d] || { entries: [] }, tot = dayTotals(d), tg = currentTargets();
   const hidM = S.settings.hiddenMeals || []; const meals = MEALS.filter(m => !hidM.includes(m) || (o.entries || []).some(e => e.meal === m)).map(m => nrMeal(m, (o.entries || []).filter(e => e.meal === m))).join('');
   const head = '<div class="top"><div class="grow"><h1>' + $t('Essen') + '</h1><div class="sub">' + (d === today() ? $t('Heute') : fmtDay(d)) + '</div></div><a class="iconbtn" href="#mehr" aria-label="' + esc($t('Einstellungen')) + '">' + ICON.gear + '</a></div>';
   const empty = !(o.entries || []).length;
@@ -32,14 +33,14 @@ function viewEssen() { const d = ui.day, o = S.days[d] || { entries: [] }, tot =
     (empty ? '<div class="nr-quick"><button class="chip-btn" data-act="template" type="button">' + $t('Meal-Prep-Tag') + '</button>' + (((S.days[addDays(d, -1)] || {}).entries || []).length ? '<button class="chip-btn" data-act="copyYesterday" type="button">' + $t('Gestern übernehmen') + '</button>' : '') + '</div>' : '') +
     (typeof foodUndoNote === 'function' ? foodUndoNote() : '') + meals + (typeof foodExtras === 'function' ? foodExtras(d) : '') +
     (microRow(d) ? '<details class="card nr-det"><summary><b>' + $t('Nährwerte des Tages') + '</b></summary>' + microRow(d) + '</details>' : '') + '</div>'; }
+function viewEssen() { return hbRun('viewEssen', this, arguments, viewEssen__base); }
 function nrWaterSheet() { openSheet(sheetHead($t('Wasser')) + '<div style="margin-top:8px">' + waterCard(ui.day) + '</div>'); }
 function nrWeightSheet() { const d = ui.day, o = S.days[d] || {}; openSheet(sheetHead($t('Gewicht und Tag')) + '<div class="on-white" style="margin-top:12px"><div class="field"><label for="wDay">' + $t('Gewicht') + '</label><input id="wDay" type="number" inputmode="decimal" step="0.1" data-day="' + d + '" data-f="weight" value="' + esc(o.weight) + '" placeholder="kg"></div></div>' +
   '<label class="row" style="gap:10px;margin-top:12px"><input type="checkbox" id="complete" data-day="' + d + '" data-f="complete"' + (o.complete === false ? '' : ' checked') + '> ' + $t('Tag vollständig geloggt') + '</label><p class="small muted">' + $t('Nur vollständig geloggte Tage fließen in die Bedarfsberechnung. Hast du etwas vergessen, nimm den Haken raus.') + '</p>' +
   '<div class="row" style="margin-top:12px"><div class="grow"></div><button class="btn brand" data-act="nrDone" type="button">' + $t('Fertig') + '</button></div>'); }
 /* „Als Vorlage speichern“ wandert ins ⋯-Menü der Mahlzeit */
-const _mealMenuNR = mealMenu;
-mealMenu = function (m) { const r = _mealMenuNR.apply(this, arguments); const n = ((dayObj(ui.day).entries) || []).filter(e => e.meal === m).length; const menu = document.querySelector('#sheetCard .menu');
-  if (n && menu) menu.insertAdjacentHTML('afterbegin', '<button class="act-pick" data-act="saveTpl" data-meal="' + m + '" type="button"><span class="grow">☆ ' + $t('Als Vorlage speichern') + '<br><span class="small muted" style="font-weight:500">' + $t('Diese Mahlzeit später mit einem Tipp eintragen') + '</span></span></button>'); return r; };
+hbFilter('mealMenu', 'nutri', function (__v, m) { const r = __v; const n = ((dayObj(ui.day).entries) || []).filter(e => e.meal === m).length; const menu = document.querySelector('#sheetCard .menu');
+  if (n && menu) menu.insertAdjacentHTML('afterbegin', '<button class="act-pick" data-act="saveTpl" data-meal="' + m + '" type="button"><span class="grow">☆ ' + $t('Als Vorlage speichern') + '<br><span class="small muted" style="font-weight:500">' + $t('Diese Mahlzeit später mit einem Tipp eintragen') + '</span></span></button>'); return r; });
 document.addEventListener('click', e => { const b = e.target.closest('[data-act]'); if (!b) return; const a = b.dataset.act;
   if (a === 'nrWater') nrWaterSheet(); else if (a === 'nrWeight') nrWeightSheet(); else if (a === 'nrDone') { closeSheet(); render(); } });
 
@@ -48,11 +49,9 @@ function lastUse(id) { const ds = Object.keys(S.days).sort().reverse(); for (con
 function defaultUse(id) { const f = getFood(id); if (!f) return null; const lu = lastUse(id); if (lu) return lu; const u = unitsFor(f)[0]; return { q: u === 'g' ? (f.pieceG && f.src === 'off' ? f.pieceG : 100) : 1, u }; }
 function nrDayLine(extra) { const tg = currentTargets(), t = dayTotals(ui.day); const p = S.settings.trackMode === 'p';
   return p ? $tf('Tag: {a} / {b} g Protein', { a: fmt(t.p + (extra ? extra.p : 0), 0), b: fmt(tg.p, 0) }) : $tf('Tag: {a} / {b} kcal', { a: fmt(t.kcal + (extra ? extra.kcal : 0), 0), b: fmt(tg.kcal, 0) }) + (extra && extra.kcal ? ' <span class="muted">(' + (extra.kcal >= 0 ? '+' : '') + fmt(extra.kcal, 0) + ')</span>' : ''); }
-const _foodRowNR = foodRow;
-foodRow = function (f) { const h = _foodRowNR.apply(this, arguments); if (!f || f.needsFetch) return h; const u = defaultUse(f.id);
-  return h.replace('<span class="chev">›</span>', '<button class="nr-qadd" data-act="nrQuick" data-id="' + esc(f.id) + '" type="button" aria-label="' + esc($tf('{q} {u} eintragen', { q: fmt(u.q), u: $t(u.u) })) + '"><small>' + fmt(u.q) + ' ' + esc($t(u.u)) + '</small>＋</button>'); };
-const _addSheetNR = addSheet;
-addSheet = function () { const r = _addSheetNR.apply(this, arguments); const c = document.getElementById('sheetCard'); const h = c && c.querySelector('.scanbar'); if (h && !c.querySelector('#nrDay')) h.insertAdjacentHTML('beforebegin', '<div class="nr-dayline" id="nrDay">' + nrDayLine() + '</div>'); return r; };
+hbFilter('foodRow', 'nutri', function (__v, f) { const h = __v; if (!f || f.needsFetch) return h; const u = defaultUse(f.id);
+  return h.replace('<span class="chev">›</span>', '<button class="nr-qadd" data-act="nrQuick" data-id="' + esc(f.id) + '" type="button" aria-label="' + esc($tf('{q} {u} eintragen', { q: fmt(u.q), u: $t(u.u) })) + '"><small>' + fmt(u.q) + ' ' + esc($t(u.u)) + '</small>＋</button>'); });
+hbFilter('addSheet', 'nutri', function (__v) { const r = __v; const c = document.getElementById('sheetCard'); const h = c && c.querySelector('.scanbar'); if (h && !c.querySelector('#nrDay')) h.insertAdjacentHTML('beforebegin', '<div class="nr-dayline" id="nrDay">' + nrDayLine() + '</div>'); return r; });
 /* Reihenfolge der Reiter: „Zuletzt“ zuerst und Standard, wenn es schon Einträge gibt */
 document.addEventListener('click', e => { const b = e.target.closest('[data-act="add"]'); if (b && !ui.nrTabSet && (S.recent || []).length) { ui.foodTab = 'recent'; ui.nrTabSet = true; } }, true);
 const _qtySheetNR = qtySheet;
@@ -63,10 +62,9 @@ qtySheet = function (id, entry) { ui.nrEdit = entry ? entry.uid : null; ui.nrId 
 function nrChipsFill(id) { const el = document.getElementById('nrChips'), f = getFood(id); if (!el || !f) return; const u = ($('#qu') || {}).value || unitsFor(f)[0]; const lu = lastUse(id);
   const base = u === 'g' || u === 'ml' ? [50, 100, 150, 200, 250] : [0.5, 1, 2, 3]; const L = lu && lu.u === u && !base.includes(num(lu.q)) ? [num(lu.q)].concat(base) : base;
   el.innerHTML = L.map(q => '<button class="chip-btn' + (num(($('#qq') || {}).value) === q ? ' on' : '') + '" data-act="nrQty" data-v="' + q + '" type="button">' + fmt(q) + (lu && lu.u === u && num(lu.q) === q ? ' ↺' : '') + '</button>').join(''); }
-const _updatePrevNR = updatePrev;
-updatePrev = function (id) { const r = _updatePrevNR.apply(this, arguments); const el = $('#qprev'), f = getFood(id); if (!el || !f) return r; const q = num($('#qq') && $('#qq').value) || 0, u = $('#qu') && $('#qu').value; const m = macrosFor(f, q, u);
+hbFilter('updatePrev', 'nutri', function (__v, id) { const r = __v; const el = $('#qprev'), f = getFood(id); if (!el || !f) return r; const q = num($('#qq') && $('#qq').value) || 0, u = $('#qu') && $('#qu').value; const m = macrosFor(f, q, u);
   const old = ui.nrEdit ? ((dayObj(ui.day).entries || []).find(x => x.uid === ui.nrEdit) || {}) : {}; const ex = { kcal: m.kcal - (old.kcal || 0), p: m.p - (old.p || 0) };
-  el.insertAdjacentHTML('beforeend', '<div class="nr-prevday">' + nrDayLine(ex) + '</div>'); nrChipsFill(id); return r; };
+  el.insertAdjacentHTML('beforeend', '<div class="nr-prevday">' + nrDayLine(ex) + '</div>'); nrChipsFill(id); return r; });
 document.addEventListener('input', e => { if ((e.target.id === 'qq' || e.target.id === 'qu') && ui.nrId) updatePrev(ui.nrId); });
 document.addEventListener('change', e => { if (e.target.id === 'qu' && ui.nrId) updatePrev(ui.nrId); });
 /* Mahlzeit beim Bearbeiten ändern: Wert vor dem Speichern merken, danach setzen */
@@ -102,8 +100,7 @@ function nhTrends() { const n = ui.nhWin || 7; const pts = []; let sum = { kcal:
     (k ? '<h3 style="margin-top:14px">' + $t('Ø pro Tag') + '</h3>' + (md !== 'p' ? bar('kcal', av(sum.kcal), av(sum.tk), 'var(--ember)') : '') + bar($t('Protein'), av(sum.p), av(sum.tp), 'var(--plum)') + (md === 'full' ? bar($t('KH'), av(sum.c), av(sum.tc), 'var(--sky)') + bar($t('Fett'), av(sum.f), av(sum.tf), 'var(--verdant)') : '') : '') +
     (sum.wn ? '<p class="small" style="margin-top:12px">💧 ' + $tf('Ø {l} l Wasser an {n} Tagen', { l: fmt(sum.w / sum.wn / 1000, 1), n: sum.wn }) + '</p>' : '') + '</div>'; }
 function viewNutriHist() { return '<a href="#essen" class="back">' + ICON.back + $t('Essen') + '</a>' + pageTop($t('Rückblick'), '', $t('Kalender und Trends deiner Ernährung')) + '<div class="stack">' + nhCalendar() + nhTrends() + '</div>'; }
-const _viewEssenNH = viewEssen;
-viewEssen = function () { const h = _viewEssenNH.apply(this, arguments); return h.replace('<a class="iconbtn" href="#mehr"', '<a class="iconbtn" href="#ernaehrung" aria-label="' + esc($t('Rückblick')) + '">' + NH_ICON + '</a><a class="iconbtn" href="#mehr"'); };
+hbFilter('viewEssen', 'nutri', function (__v) { const h = __v; return h.replace('<a class="iconbtn" href="#mehr"', '<a class="iconbtn" href="#ernaehrung" aria-label="' + esc($t('Rückblick')) + '">' + NH_ICON + '</a><a class="iconbtn" href="#mehr"'); });
 const NH_ICON = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>';
 document.addEventListener('click', e => { const b = e.target.closest('[data-act]'); if (!b) return; const a = b.dataset.act;
   if (a === 'nhMon') { ui.nhMonth = b.dataset.v; render(); } else if (a === 'nhWin') { ui.nhWin = +b.dataset.v; render(); } else if (a === 'nhDay') { ui.day = b.dataset.d; location.hash = '#essen'; } });

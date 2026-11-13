@@ -18,7 +18,7 @@ function rzZones() { const t = rzTest(); if (!t) return null; const hf = rzHfmax
   return RZ.map(z => { const out = { k: z.k, n: z.n, d: z.d, fast: rzPace(t.vdot, z.hi), slow: rzPace(t.vdot, z.lo) };
     if (z.hr && hf) { if (rhr) out.bpm = [Math.round(rhr + (hf - rhr) * z.hrr[0]), Math.round(rhr + (hf - rhr) * z.hrr[1])]; else out.bpm = [Math.round(hf * z.hr[0]), Math.round(hf * z.hr[1])]; }
     return out; }); }
-function rzCard() { const t = rzTest(); const zs = rzZones();
+function rzCard__base() { const t = rzTest(); const zs = rzZones();
   if (!t) return '<div class="card" id="rzcard"><h2>' + $t('Deine Laufzonen') + '</h2><p class="small muted" style="margin:6px 0 12px">' + $t('Mach einen kurzen Lauftest oder trag eine aktuelle Bestzeit ein. Die App berechnet daraus deine Pace für lockere Läufe, Schwelle und Intervalle.') + '</p><button class="btn brand" data-act="rzOpen" type="button">' + $t('Lauftest eintragen') + '</button></div>';
   const age = daysBetween(t.date, today()); const old = age > 56;
   return '<div class="card" id="rzcard"><div class="row" style="align-items:baseline"><h2 class="grow" style="margin:0">' + $t('Deine Laufzonen') + '</h2><span class="small muted num">VDOT ' + fmt(t.vdot, 1) + '</span></div>' +
@@ -28,6 +28,7 @@ function rzCard() { const t = rzTest(); const zs = rzZones();
     '<p class="src" style="margin-top:8px">' + $t('Berechnet nach Daniels und Gilbert. Puls nach Herzfrequenzreserve, wenn ein Ruhepuls vorliegt, sonst in % vom Maximalpuls. Hitze, Wind und Steigung machen dich langsamer: dann nach Puls oder Gefühl laufen.') + '</p>' +
     (old ? note('ember', '<b>' + $t('Zeit für einen neuen Test.') + '</b> ' + $t('Dein letzter Test ist über 8 Wochen alt. Alle 4–8 Wochen neu testen hält die Zonen aktuell.')) : '') +
     '<div class="row" style="margin-top:10px;gap:8px;flex-wrap:wrap"><button class="btn" data-act="rzOpen" type="button">' + $t('Neuen Test eintragen') + '</button></div></div>'; }
+function rzCard() { return hbRun('rzCard', this, arguments, rzCard__base); }
 function rzSheet(type) { type = type || ui.rzType || 't5k'; ui.rzType = type; const T = RZ_TESTS[type];
   const runs = (S.activities || []).filter(a => { const at = ACT_MAP[a.type]; return at && at.run && num(a.dist) >= 1 && num(a.dur) > 0 && a.date >= addDays(today(), -60); }).slice(-5).reverse();
   openSheet(sheetHead($t('Lauftest eintragen')) +
@@ -43,12 +44,10 @@ function rzSet(type, m, sec) { if (!(m >= 1000 && sec >= 300)) { toast($t('Bitte
   if (!(v > 15 && v < 90)) { toast($t('Das Ergebnis wirkt unrealistisch. Bitte Distanz und Zeit prüfen.')); return false; }
   S.settings.runTest = { type, m: Math.round(m), sec: Math.round(sec), vdot: Math.round(v * 10) / 10, date: today() }; save(); return true; }
 /* In Laufeinheiten: passende Pace anzeigen */
-const _cardioViewRZ = cardioView;
-cardioView = function (w, k) { const h = _cardioViewRZ.apply(this, arguments); const zs = rzZones(); if (!zs) return h; let hard = !(typeof reState === 'function' && reState()) && isHiit(k); try { const sp = cardioSpec(w, k); if (sp && sp.mode === 'int' && sp.hi) hard = true; } catch (e) {}
+hbFilter('cardioView', 'runzones', function (__v, w, k) { const h = __v; const zs = rzZones(); if (!zs) return h; let hard = !(typeof reState === 'function' && reState()) && isHiit(k); try { const sp = cardioSpec(w, k); if (sp && sp.mode === 'int' && sp.hi) hard = true; } catch (e) {}
   const E = zs[0], I = zs[3]; const tip = hard ? $tf('Deine Pace: schnelle Abschnitte {i} /km, Erholung locker ab {e} /km.', { i: fmtPace(I.fast) + '–' + fmtPace(I.slow), e: fmtPace(E.fast) }) : $tf('Deine lockere Pace: {a}–{b} /km. Lieber zu langsam als zu schnell.', { a: fmtPace(E.fast), b: fmtPace(E.slow) });
-  return note('green', tip, '<a class="btn sm" href="#mehr" data-act="rzGo">' + $t('Zonen') + '</a>') + h; };
-const _viewMehrRZ = viewMehr;
-viewMehr = function () { const h = _viewMehrRZ.apply(this, arguments); const i = h.indexOf('<div class="card"><h2>' + $t('Training') + '</h2>'); return i < 0 ? h + rzCard() : h.slice(0, i) + rzCard() + h.slice(i); };
+  return note('green', tip, '<a class="btn sm" href="#mehr" data-act="rzGo">' + $t('Zonen') + '</a>') + h; });
+hbFilter('viewMehr', 'runzones', function (__v) { const h = __v; const i = h.indexOf('<div class="card"><h2>' + $t('Training') + '</h2>'); return i < 0 ? h + rzCard() : h.slice(0, i) + rzCard() + h.slice(i); });
 document.addEventListener('click', e => { const b = e.target.closest('[data-act]'); if (!b) return; const a = b.dataset.act;
   if (a === 'rzOpen') rzSheet();
   else if (a === 'rzType') rzSheet(b.dataset.v);
@@ -69,17 +68,15 @@ function rzCheckRun(a) { const b = rzBestEffort(a); if (!b) return; const t = rz
   S.meta.rzSuggest = Object.assign({ date: a.date, act: a.id }, b); save(); toast($tf('Neue Bestform erkannt: VDOT {v}. In den Einstellungen kannst du deine Laufzonen aktualisieren.', { v: fmt(b.vdot, 1) })); }
 const _trSaveRZ = trSave;
 trSave = async function () { const n = (S.activities || []).length; const r = await _trSaveRZ.apply(this, arguments); try { const a = S.activities[S.activities.length - 1]; if (S.activities.length > n && a && a.src === 'gps') rzCheckRun(a); } catch (e) { console.warn('rz', e); } return r; };
-const _rzCardX = rzCard;
-rzCard = function () { const h = _rzCardX.apply(this, arguments); const s = S.meta.rzSuggest; if (!s) return h; const km = s.m / 1000;
+hbFilter('rzCard', 'runzones', function (__v) { const h = __v; const s = S.meta.rzSuggest; if (!s) return h; const km = s.m / 1000;
   const n = '<div class="note green" style="display:block;margin-top:10px"><b>' + $tf('Neue Bestform: {km} km in {t} am {d}', { km: fmt(km, 0), t: fmtClock(s.sec), d: fmtDay(s.date) }) + '</b><br>' + $tf('Das entspricht VDOT {v}. Zonen damit aktualisieren?', { v: fmt(s.vdot, 1) }) + '<div class="row" style="gap:8px;margin-top:8px"><button class="btn sm brand" data-act="rzTake" type="button">' + $t('Übernehmen') + '</button><button class="btn sm" data-act="rzDrop" type="button">' + $t('Nein') + '</button></div></div>';
-  const i = h.indexOf('<h2'); const j = h.indexOf('</div>', h.indexOf('</h2>')); return j < 0 ? h + n : h.slice(0, j + 6) + n + h.slice(j + 6); };
+  const i = h.indexOf('<h2'); const j = h.indexOf('</div>', h.indexOf('</h2>')); return j < 0 ? h + n : h.slice(0, j + 6) + n + h.slice(j + 6); });
 /* Pace-Ansage bei lockeren Läufen ohne Intervalle und ohne Pulszone: zu schnell oder zu langsam für die Zone „Locker“ */
-const _trTickRZ = trTick;
-trTick = function () { const r = _trTickRZ.apply(this, arguments);
+hbFilter('trTick', 'runzones', function (__v) { const r = __v;
   try { const zs = rzZones(); const at = ACT_MAP[TR.type]; if (!zs || !TR.active || TR.paused || !TR.gps || TR.q || TR.zone != null || !at || !at.run || !trOpts().voice || !(S.settings.rzVoice ?? true)) return r;
     const easy = !TR.ctx || !isHiit(TR.ctx.k); if (!easy || movingSec() < 300) return r; const v = curSpeed(); if (!(v > 0.5)) return r; const pace = 1000 / v; const E = zs[0];
     const out = pace < E.fast - 10 ? 'fast' : pace > E.slow + 30 ? 'slow' : null; if (out !== TR.rzOut) { TR.rzOut = out; TR.rzSince = Date.now(); }
-    if (out && Date.now() - TR.rzSince > 30000 && Date.now() - (TR.rzSaid || 0) > 120000) { TR.rzSaid = Date.now(); say(out === 'fast' ? $tf('Etwas zu schnell für locker. Ziel {a} bis {b}.', { a: sayPace(E.fast), b: sayPace(E.slow) }) : $t('Etwas langsamer als deine lockere Zone. Das ist in Ordnung, wenn es sich gut anfühlt.')); } } catch (e) {} return r; };
+    if (out && Date.now() - TR.rzSince > 30000 && Date.now() - (TR.rzSaid || 0) > 120000) { TR.rzSaid = Date.now(); say(out === 'fast' ? $tf('Etwas zu schnell für locker. Ziel {a} bis {b}.', { a: sayPace(E.fast), b: sayPace(E.slow) }) : $t('Etwas langsamer als deine lockere Zone. Das ist in Ordnung, wenn es sich gut anfühlt.')); } } catch (e) {} return r; });
 document.addEventListener('click', e => { const b = e.target.closest('[data-act]'); if (!b) return; const a = b.dataset.act;
   if (a === 'rzTake') { const s = S.meta.rzSuggest; if (s) { S.settings.runTest = { type: 'race', m: s.m, sec: s.sec, vdot: s.vdot, date: s.date, auto: true }; delete S.meta.rzSuggest; save(); render(); doneOverlay($t('Laufzonen aktualisiert'), 'VDOT ' + fmt(s.vdot, 1)); } }
   else if (a === 'rzDrop') { delete S.meta.rzSuggest; save(); render(); } });
@@ -89,14 +86,13 @@ function tmHint(el) { if (!el) return; let h = el.parentNode.querySelector('.tm-
 document.addEventListener('input', e => { if (e.target.id === 'am-speed') tmHint(e.target); });
 document.addEventListener('focusin', e => { if (e.target.id === 'am-speed') tmHint(e.target); });
 /* Razor: Cardio-Formate als echte Einheiten (Intervalle statt Dauerlauf-Platzhalter, Z2-Dauer steigt über die Phasen) */
-const _makePlanRZ = makePlan;
-makePlan = function (tpl) { const p = _makePlanRZ.apply(this, arguments); if (tpl !== 'razor' || !p || !p.sessions) return p; const n = (p.sessions.find(s => s.cardio && s.cardio.weeks) || {}).cardio; const W = n ? n.weeks.length : (p.weeks || 12);
+hbFilter('makePlan', 'runzones', function (__v, tpl) { const p = __v; if (tpl !== 'razor' || !p || !p.sessions) return p; const n = (p.sessions.find(s => s.cardio && s.cardio.weeks) || {}).cardio; const W = n ? n.weeks.length : (p.weeks || 12);
   const ramp = (i, a, b) => Math.round(a + (b - a) * (W > 1 ? i / (W - 1) : 0));
   p.sessions.forEach(s => { if (!s.cardio || !s.cardio.weeks) return; const sub0 = s.cardio.weeks[0] && s.cardio.weeks[0].sub;
     if (/^AC/.test(s.k)) s.cardio.weeks = s.cardio.weeks.map((e, i) => ({ mode: 'int', reps: ramp(i, 10, 12), dur: 0.25, rest: 0.75, warm: 10, cool: 5, hi: true, title: $tf('{n} × 15 s Sprint', { n: ramp(i, 10, 12) }), sub: (e && e.sub) || sub0 }));
     else if (/^BC/.test(s.k)) s.cardio.weeks = s.cardio.weeks.map((e, i) => ({ mode: 'int', reps: ramp(i, 10, 12), dur: 1, rest: 1, warm: 10, cool: 5, hi: true, title: $tf('{n} × 1 min zügig', { n: ramp(i, 10, 12) }), sub: (e && e.sub) || sub0 }));
     else if (/^KC/.test(s.k)) s.cardio.weeks = s.cardio.weeks.map((e, i) => ({ mode: 'z2', min: ramp(i, 20, 35), sub: (e && e.sub) || sub0 })); });
-  return p; };
+  return p; });
 /* Aerobe Entkopplung (Pa:HR): Verhältnis Tempo zu Puls in der ersten vs. zweiten Hälfte eines lockeren Laufs ab 30 min.
    Unter 5 % gilt als Zeichen guter aerober Grundlage (Friel). Braucht GPS-Route mit Zeitstempeln und Pulskurve. */
 function decoupling(a) { if (!a || !a.route || !a.routeT || !(num(a.dur) >= 30)) return null; const at = ACT_MAP[a.type]; if (!at || !at.run) return null;
@@ -113,14 +109,13 @@ viewFree = function (id) { const h = _viewFreeDC.apply(this, arguments); const a
   const i = h.lastIndexOf('</div>'); return i < 0 ? h + card : h.slice(0, i) + card + h.slice(i); };
 /* ---------- HYROX-Simulation im Tracker: 8 × (1 km Lauf → Roxzone → Station), Laufabschnitte enden automatisch nach 1 km (GPS), Stationen per „Weiter“ ---------- */
 const HYROX_ST = () => [$t('SkiErg 1000 m'), $t('Sled Push 50 m'), $t('Sled Pull 50 m'), $t('Burpee Broad Jumps 80 m'), $t('Rudern 1000 m'), $t('Farmer’s Carry 200 m'), $t('Sandbag Lunges 100 m'), $t('Wall Balls 100')];
-const _ivPresetsHY = ivPresets; ivPresets = function () { return _ivPresetsHY.apply(this, arguments).concat([{ id: 'hyrox', name: $t('HYROX-Simulation: 8 × 1 km Lauf + Station') }]); };
+hbFilter('ivPresets', 'runzones', function (__v) { return __v.concat([{ id: 'hyrox', name: $t('HYROX-Simulation: 8 × 1 km Lauf + Station') }]); });
 const _ivBuildHY = ivBuild;
 ivBuild = function (sel) { if (sel !== 'hyrox') return _ivBuildHY.apply(this, arguments); const wm = Math.max(0, num(ivOpts().warm) || 0); const q = [wm ? { sec: Math.round(wm * 60), label: $t('Aufwärmen, locker'), k: 'warm' } : { sec: 10, label: $t('Gleich geht’s los'), k: 'cd' }]; const st = HYROX_ST();
   for (let i = 1; i <= 8; i++) { q.push({ sec: 7200, open: true, km: 1, k: 'run', n: i, label: $tf('Lauf {n} von 8: 1 km', { n: i }) }); q.push({ sec: 7200, open: true, k: 'rox', n: i, label: $t('Roxzone: zur Station') }); q.push({ sec: 7200, open: true, k: 'st', n: i, label: $tf('Station {n}: {s}', { n: i, s: st[i - 1] }) }); }
   return q; };
-const _trTickHY = trTick;
-trTick = function () { const r = _trTickHY.apply(this, arguments); try { const cur = TR.active && TR.q && TR.q[TR.qi]; if (cur && cur.open) { if (cur.km && TR.gps && TR.dist - TR.qDist0 >= cur.km * 1000) trNext();
-    const el = document.getElementById('tr-qleft'); if (el) el.textContent = fmtClock(movingSec() - (TR.qAt || 0)) + (cur.km && TR.gps ? ' · ' + fmt((TR.dist - TR.qDist0) / 1000, 2) + ' km' : ''); } } catch (e) {} return r; };
+hbFilter('trTick', 'runzones', function (__v) { const r = __v; try { const cur = TR.active && TR.q && TR.q[TR.qi]; if (cur && cur.open) { if (cur.km && TR.gps && TR.dist - TR.qDist0 >= cur.km * 1000) trNext();
+    const el = document.getElementById('tr-qleft'); if (el) el.textContent = fmtClock(movingSec() - (TR.qAt || 0)) + (cur.km && TR.gps ? ' · ' + fmt((TR.dist - TR.qDist0) / 1000, 2) + ' km' : ''); } } catch (e) {} return r; });
 function hyroxCard(a) { const v = (a.ivs || []).filter(x => ['run', 'rox', 'st'].includes(x.k)); if (!v.length) return ''; const sum = k => v.filter(x => x.k === k).reduce((s, x) => s + x.sec, 0); const st = HYROX_ST();
   return '<div class="card"><h2>' + $t('HYROX-Zwischenzeiten') + '</h2><div class="stats" style="margin:8px 0">' + [['run', $t('Laufen')], ['rox', $t('Roxzone')], ['st', $t('Stationen')]].map(([k, l]) => '<div class="stat"><div class="k">' + l + '</div><div class="v num" style="font-size:20px">' + fmtClock(sum(k)) + '</div></div>').join('') + '</div>' +
     '<div class="tbl"><table><thead><tr><th>#</th><th>' + $t('Lauf') + '</th><th>' + $t('Roxzone') + '</th><th>' + $t('Station') + '</th></tr></thead><tbody>' + [1, 2, 3, 4, 5, 6, 7, 8].map(n => { const g = k => v.find(x => x.k === k && x.n === n); const R = g('run'), X = g('rox'), T = g('st'); if (!R && !X && !T) return '';

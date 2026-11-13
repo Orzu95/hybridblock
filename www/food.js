@@ -4,11 +4,12 @@ function foodUndoNote() { if (!FOOD_UNDO || FOOD_UNDO.d !== ui.day) return ''; r
 function foodExtras(d) { const hid = S.settings.hiddenMeals || []; const o = S.days[d] || { entries: [] };
   const hidH = hid.length ? '<p class="small muted" style="margin:0 4px">' + $t('Ausgeblendet: ') + hid.map(m => esc($t(m))).join(', ') + ' · <a href="#" data-act="mealShowAll">' + $t('wieder einblenden') + '</a></p>' : '';
   return hidH + ((o.entries || []).length ? '<button class="btn block" data-act="dayClear" type="button" style="background:var(--fog)">' + $t('Alle Einträge dieses Tages löschen') + '</button>' : ''); }
-function mealMenu(m) { const o = dayObj(ui.day); const n = (o.entries || []).filter(e => e.meal === m).length; const hid = (S.settings.hiddenMeals || []).includes(m);
+function mealMenu__base(m) { const o = dayObj(ui.day); const n = (o.entries || []).filter(e => e.meal === m).length; const hid = (S.settings.hiddenMeals || []).includes(m);
   openSheet(sheetHead(esc($t(m))) + '<div class="menu" style="margin-top:12px">' +
     (n ? '<button class="act-pick" data-act="mealClear" data-meal="' + m + '" type="button"><span class="grow">' + $t('Alle Einträge löschen') + '<br><span class="small muted" style="font-weight:500">' + n + $t(' Lebensmittel in dieser Mahlzeit') + '</span></span></button>' : '') +
     (n ? '<button class="act-pick" data-act="mealMove" data-meal="' + m + '" type="button"><span class="grow">' + $t('In andere Mahlzeit verschieben') + '</span></button>' : '') +
     '<button class="act-pick" data-act="mealHide" data-meal="' + m + '" type="button"><span class="grow">' + (hid ? $t('Mahlzeit wieder anzeigen') : $t('Mahlzeit ausblenden')) + '<br><span class="small muted" style="font-weight:500">' + (hid ? '' : $t('Z. B. wenn du Frühstück meistens auslässt. Gilt für alle Tage, jederzeit umkehrbar.')) + '</span></span></button></div>'); }
+function mealMenu() { return hbRun('mealMenu', this, arguments, mealMenu__base); }
 function moveSheet(m) { openSheet(sheetHead($t('Verschieben nach')) + '<div class="menu" style="margin-top:12px">' + MEALS.filter(x => x !== m).map(x => '<button class="act-pick" data-act="mealMoveTo" data-from="' + m + '" data-to="' + x + '" type="button"><span class="grow">' + esc($t(x)) + '</span></button>').join('') + '</div>'); }
 document.addEventListener('click', e => { const b = e.target.closest('[data-act]'); if (!b) return; const a = b.dataset.act;
   switch (a) {

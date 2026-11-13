@@ -7,11 +7,10 @@ function stSummary(v) { if (!v || !v.st) return ''; const f = x => x == null || 
   if (v.st === 'myo') { const m = (v.myo || []).filter(x => x !== '' && x != null); return $t('Myo-Reps') + (m.length ? ': ' + m.map(f).join(' + ') : ''); }
   if (v.st === 'lp') return v.lp ? $tf('+{n} Teilwiederholungen in der Dehnung', { n: f(v.lp) }) : $t('Teilwiederholungen in der Dehnung');
   if (v.st === 'lr') return $t('L') + ' ' + f(v.rl) + ' / ' + $t('R') + ' ' + f(v.rr); return ''; }
-const _setRowsST = setRows;
-setRows = function (prefix, spec, raw, sugg, showRpe, tgt, isCarry, dataAttrs) { const h = _setRowsST.apply(this, arguments); const parts = h.split(/(?=<div class="set(?: done)?">)/); let i = -1;
+hbFilter('setRows', 'settypes', function (__v, prefix, spec, raw, sugg, showRpe, tgt, isCarry, dataAttrs) { const h = __v; const parts = h.split(/(?=<div class="set(?: done)?">)/); let i = -1;
   return parts.map(p => { if (!/^<div class="set(?: done)?">/.test(p)) return p; i++; const v = raw[i] || {}, T = ST_TYPES[v.st || ''] || ST_TYPES[''];
     p = p.replace('<span class="n">' + (i + 1) + '</span>', '<button class="n stbtn' + (v.st ? ' on' : '') + '" type="button" data-act="setType" ' + dataAttrs + ' data-i="' + i + '" aria-label="' + esc($tf('Satz {n}: Art wählen', { n: i + 1 })) + '">' + (i + 1) + (T[1] ? '<small>' + T[1] + '</small>' : '') + '</button>');
-    const sum = stSummary(v); if (!sum) return p; const k = p.indexOf('</button></div>', p.indexOf('data-act="done"')); if (k < 0) return p; const e = k + 15; return p.slice(0, e) + '<div class="setx small">' + esc(sum) + '</div>' + p.slice(e); }).join(''); };
+    const sum = stSummary(v); if (!sum) return p; const k = p.indexOf('</button></div>', p.indexOf('data-act="done"')); if (k < 0) return p; const e = k + 15; return p.slice(0, e) + '<div class="setx small">' + esc(sum) + '</div>' + p.slice(e); }).join(''); });
 /* Satz-Objekt zum Knopf finden */
 function stSet(c, create) { if (c.aid) { const a = findAct(c.aid); const ex = a && a.exercises && a.exercises[c.idx]; if (!ex) return null; if (create) ex.sets[c.i] = ex.sets[c.i] || {}; return ex.sets[c.i]; }
   const s = sess(c.w, c.k); const spec = planFor(c.w, c.k).find(p => p.slot === c.slot); const lg = s.logs[c.slot] || (create ? (s.logs[c.slot] = { ex: spec ? actualEx(c.w, c.k, spec) : '', sets: [] }) : null); if (!lg) return null;

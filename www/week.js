@@ -181,7 +181,7 @@ function wkVolCard(w) { if (w !== curWeek()) return ''; const gaps = wkVolGaps(w
   '.wku .badge.act{font-size:10px;overflow:hidden}.ex.exom{opacity:.75}.ex.exom .row{align-items:center}';
   document.head.appendChild(st); })();
 /* Früher beendet zählt als erledigt */
-const _sessProgressWk = sessProgress; sessProgress = function (w, k) { const r = _sessProgressWk(w, k); if (r.done) return r; const s = peekSess(w, k); return s && !s.skipped && s.end && s.end.fin ? Object.assign({}, r, { done: true, early: true }) : r; };
+hbFilter('sessProgress', 'week', function (__v, w, k) { const r = __v; if (r.done) return r; const s = peekSess(w, k); return s && !s.skipped && s.end && s.end.fin ? Object.assign({}, r, { done: true, early: true }) : r; });
 /* Heute: was heute laut Wochenplan dran ist */
 const _sessionsOnDowWk = sessionsOnDow; sessionsOnDow = function (dow) { if (!ORDER.length || dow !== new Date().getDay()) return _sessionsOnDowWk(dow); const w = curWeek(); const t = today(); return wkPlan(w).items.filter(o => o.date === t && o.st !== 'skipped' && o.st !== 'merged').map(o => o.k); };
 const _dayLabelWk = dayLabel; dayLabel = function (k) { try { const w = curWeek(); const it = wkPlan(w).items.find(o => o.k === k); if (it && it.date && (wkOpen(it) || it.st === 'today')) return wkDay(it.date); } catch (e) {} return _dayLabelWk(k); };
@@ -194,13 +194,13 @@ const _sessAdjWk = sessAdjust; sessAdjust = function (w, k, list) { list = _sess
 const _exCardWk = exCard; exCard = function (w, k, spec) { if (spec.om) { const nm = LIB[actualEx(w, k, spec)] ? LIB[actualEx(w, k, spec)].name : spec.ex;
     return '<div class="ex exom" id="ex-' + spec.slot + '"><div class="row" style="flex-wrap:nowrap;gap:10px"><div class="grow"><b>' + esc(nm) + '</b><div class="small muted">' + $t('Ausgelassen') + ' · ' + esc(OMIT_WHY()[spec.om] || '') + '</div></div><button class="btn sm" data-act="wkUnomit" data-w="' + w + '" data-k="' + k + '" data-slot="' + spec.slot + '" type="button">' + $t('Doch machen') + '</button></div></div>'; }
   const h = _exCardWk(w, k, spec); return h.replace('<div class="ex-actions">', '<div class="ex-actions"><button class="btn sm" data-act="wkOmitOpen" data-w="' + w + '" data-k="' + k + '" data-slot="' + spec.slot + '" type="button">' + $t('Auslassen') + '</button>'); };
-const _viewTrainingWk = viewTraining; viewTraining = function () { let h = _viewTrainingWk(); if (!ORDER.length) return h; const w = ui.week || curWeek(); if (w !== curWeek()) return h;
+hbFilter('viewTraining', 'week', function (__v) { let h = __v; if (!ORDER.length) return h; const w = ui.week || curWeek(); if (w !== curWeek()) return h;
   const i = h.indexOf('<div class="card flush"><div class="list">'); if (i < 0) return h; const j = h.indexOf('</a></div></div>', i); if (j < 0) return h;
-  return h.slice(0, i) + wkDecisionCard(w) + wkOverview(w) + wkVolCard(w) + h.slice(j + 16); };
-const _viewHeuteWk = viewHeute; viewHeute = function () { const h = _viewHeuteWk.apply(this, arguments); if (!ORDER.length) return h; const w = curWeek(); const W = wkPeek(w); let add = '';
+  return h.slice(0, i) + wkDecisionCard(w) + wkOverview(w) + wkVolCard(w) + h.slice(j + 16); });
+hbFilter('viewHeute', 'week', function (__v) { const h = __v; if (!ORDER.length) return h; const w = curWeek(); const W = wkPeek(w); let add = '';
   const pl = wkPlan(w); if (pl.over && !W.mode && S.settings.mode !== 'rotation' && !(typeof shHold === 'function' && shHold())) add = note('ember', '<b>' + $t('Die Woche wird knapp.') + '</b> ' + $t('Kompakt abschließen oder weiterlaufen lassen?'), '<a class="btn sm brand" href="#training">' + $t('Entscheiden') + '</a>');
   const z = (W.z2 || []).includes(today()) ? note('green', '<b>' + $t('Heute optional: Z2 locker') + '</b> ' + $t('30–40 min, du kannst dich dabei unterhalten.'), '<button class="btn sm" data-act="pickActZ2" type="button">' + $t('Eintragen') + '</button>') : '';
-  if (!add && !z) return h; const m = h.indexOf('<div class="card flush"><div class="meal-h"><b>'); return m < 0 ? h : h.slice(0, m) + add + z + h.slice(m); };
+  if (!add && !z) return h; const m = h.indexOf('<div class="card flush"><div class="meal-h"><b>'); return m < 0 ? h : h.slice(0, m) + add + z + h.slice(m); });
 
 document.addEventListener('click', e => { const b = e.target.closest('[data-act]'); if (!b) return; const a = b.dataset.act;
   /* „Einheit überspringen“ und „Einheit beenden“ mit Grund abfangen */

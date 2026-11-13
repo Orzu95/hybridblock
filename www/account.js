@@ -36,13 +36,12 @@ viewStart = function (arg) {
   return '<div class="onb">' + body + '</div>'; };
 
 /* Konto-Karte: Wiederherstellung, E-Mail, Passwort ändern */
-const _accountCardAcc = accountCard;
-accountCard = function () { const h = _accountCardAcc(); if (!AUTH || VIEW) return h; loadCaps(); if (!REC) { REC = { has: null, email: '' }; loadRec(); }
+hbFilter('accountCard', 'account', function (__v) { const h = __v; if (!AUTH || VIEW) return h; loadCaps(); if (!REC) { REC = { has: null, email: '' }; loadRec(); }
   const mail = AUTH_CAPS && AUTH_CAPS.email;
   return h + '<div class="card"><h2>' + $t('Passwort und Wiederherstellung') + '</h2>' +
     '<p class="small">' + (REC.has === false ? '<b class="t-amber">' + $t('Du hast noch keinen Wiederherstellungscode.') + '</b> ' + $t('Erzeuge einen, damit du dein Passwort selbst zurücksetzen kannst.') : $t('Mit dem Wiederherstellungscode setzt du dein Passwort selbst zurück. Hast du ihn verloren, erzeuge einen neuen; der alte gilt dann nicht mehr.')) + '</p>' +
     '<div class="row" style="margin-top:10px"><button class="btn' + (REC.has === false ? ' brand' : '') + '" data-act="accRecNew" type="button">' + (REC.has === false ? $t('Code erzeugen') : $t('Neuen Code erzeugen')) + '</button><button class="btn" data-act="pwChange" type="button">' + $t('Passwort ändern') + '</button></div>' +
-    (mail ? '<div class="field" style="margin-top:14px"><label for="acc-mail">' + $t('E-Mail für Passwort-Links (freiwillig)') + '</label><div class="row" style="flex-wrap:nowrap"><input id="acc-mail" type="email" autocomplete="email" value="' + esc(REC.email || '') + '" placeholder="name@beispiel.de" style="flex:1;min-width:0"><button class="btn sm" data-act="accRecMail" type="button">' + $t('Speichern') + '</button></div></div><p class="small muted">' + $t('Wird nur für Links zum Zurücksetzen genutzt. Leer lassen und speichern entfernt sie.') + '</p>' : '') + '</div>'; };
+    (mail ? '<div class="field" style="margin-top:14px"><label for="acc-mail">' + $t('E-Mail für Passwort-Links (freiwillig)') + '</label><div class="row" style="flex-wrap:nowrap"><input id="acc-mail" type="email" autocomplete="email" value="' + esc(REC.email || '') + '" placeholder="name@beispiel.de" style="flex:1;min-width:0"><button class="btn sm" data-act="accRecMail" type="button">' + $t('Speichern') + '</button></div></div><p class="small muted">' + $t('Wird nur für Links zum Zurücksetzen genutzt. Leer lassen und speichern entfernt sie.') + '</p>' : '') + '</div>'; });
 
 document.addEventListener('click', async e => { const b = e.target.closest('[data-act]'); if (!b) return; const a = b.dataset.act; const d = ONB.data;
   const rd = id => ((document.getElementById(id) || {}).value || '');

@@ -22,12 +22,13 @@ const spPubCount = () => (SP.list || []).filter(x => spMine(x) && SP_PUB.include
 const SP_GR = {};
 function spGrade(sp) { const b = sp && SP.body && SP.body[sp.id]; const pl = b && b.plan; if (pl && typeof checkPlan === 'function') { const k = sp.id + '|' + (sp.updated_at || ''); if (!SP_GR[k]) { try { SP_GR[k] = checkPlan(typeof planSanitize === 'function' ? planSanitize(pl) : pl, {}).g; } catch (e) { SP_GR[k] = '–'; } } if (/^[A-D]$/.test(SP_GR[k])) return SP_GR[k]; }
   const g = sp.meta && sp.meta.grade; return /^[A-D]$/.test(g) ? g : '–'; }
-function spCard(sp) { const m = sp.meta || {}, g = spGrade(sp);
+function spCard__base(sp) { const m = sp.meta || {}, g = spGrade(sp);
   const st = sp.status === 'curated' ? '<span class="tag" style="background:var(--green-soft,#e3f4ea)">' + esc($t(SP_ST.curated)) + '</span>' : '<span class="tag">' + esc($t(SP_ST[sp.status] || '')) + '</span>';
   const facts = [m.sess ? $tf('{n} Einheiten pro Woche', { n: m.sess }) : '', m.weeks ? $tf('{n} Wochen', { n: m.weeks }) : '', m.goal && GOALS[m.goal] ? GOALS[m.goal] : ''].filter(Boolean).join(' · ');
   return '<a class="card libcard" href="#library/sp:' + sp.id + '"><div class="row" style="flex-wrap:nowrap;align-items:flex-start"><div class="grow"><h2 style="margin:0">' + esc(sp.name) + '</h2><div class="small muted" style="margin-top:2px">' +
     esc(spMine(sp) ? $t('Von dir') : (m.by || $t('Unbekannt')) + ' · ' + (m.coach ? $t('Coach') : $t('Athlet'))) + '</div></div><span class="grade g' + g + '" title="' + esc($t('Automatische Prüfung gegen die Studienlage')) + '">' + g + '</span></div>' +
     (sp.descr ? '<p class="small" style="margin-top:8px">' + esc(sp.descr) + '</p>' : '') + '<div class="row" style="gap:6px;margin-top:8px;flex-wrap:wrap">' + st + '</div>' + (facts ? '<div class="small muted" style="margin-top:8px">' + esc(facts) + '</div>' : '') + '</a>'; }
+function spCard() { return hbRun('spCard', this, arguments, spCard__base); }
 function libTabsHTML(tab) { return '<div class="seg libtabs" style="margin-top:0">' + LIB_TABS.map(([k, l]) => '<button class="' + (tab === k ? 'on' : '') + '" data-act="libTab" data-v="' + k + '" type="button">' + esc($t(l)) + '</button>').join('') + '</div>'; }
 function libHead() { return '<a href="' + (ui.libFor ? '#admin/' + ui.libFor : '#training') + '" class="back">' + ICON.back + (ui.libFor ? $t('Athlet') : $t('Training')) + '</a>' + pageTop($t('Trainingspläne'), '', $t('Eigene, geprüfte und geteilte Pläne')); }
 function goalSeg() { const filt = ui.libGoal || ''; return '<div class="seg">' + [['', $t('Alle')], ...Object.keys(GOALS).map(g => [g, GOALS[g]])].map(g => '<button class="' + (filt === g[0] ? 'on' : '') + '" data-act="libGoal" data-v="' + g[0] + '" type="button">' + esc(g[1]) + '</button>').join('') + '</div>'; }
@@ -70,13 +71,14 @@ planFromId = function (id) { id = String(id);
   if (id.startsWith('sp:')) { const b = SP.body[id.slice(3)]; const p = clone(b.plan); p.name = b.name; p.sharedId = b.id; return p; }
   if (id.startsWith('ar:')) { const a = S.archive[+id.slice(3)]; const p = clone(a.plan); delete p.assign; return p; }
   return _planFromIdLT(id); };
-function viewSharedPlan(id) { const back = '<a href="#library" class="back">' + ICON.back + $t('Bibliothek</a>'); const b = SP.body[id]; if (!b) { spGet(id); return back + '<p class="muted">' + $t('Lade …') + '</p>'; }
+function viewSharedPlan__base(id) { const back = '<a href="#library" class="back">' + ICON.back + $t('Bibliothek</a>'); const b = SP.body[id]; if (!b) { spGet(id); return back + '<p class="muted">' + $t('Lade …') + '</p>'; }
   if (b.missing) return back + '<p>' + $t('Plan nicht gefunden.') + '</p>'; const pl = planFromId('sp:' + id), m = b.meta || {}, own = spMine(b); ui.chkLibGoal = m.goal;
   const st = b.status === 'curated' ? note('green', '<b>' + $t('Von uns geprüft.') + '</b>' + (b.review_note ? ' ' + esc(b.review_note) : '')) : SP_PUB.includes(b.status) ? note('amber', $t('Noch nicht von uns geprüft. Die Note kommt aus der automatischen Prüfung.')) : '';
   const ownActs = own ? '<div class="row" style="gap:8px;flex-wrap:wrap"><button class="btn" data-act="spEdit" data-id="' + id + '" type="button">' + $t('Sichtbarkeit und Name') + '</button><div class="grow"></div>' +
     (ui.spDel === id ? '<button class="btn dark" data-act="spDelYes" data-id="' + id + '" type="button">' + $t('Ja, löschen') + '</button>' : '<button class="btn" data-act="spDel" data-id="' + id + '" type="button">' + $t('Löschen') + '</button>') + '</div>' : '';
   return back + pageTop(esc(b.name), '', esc(own ? $t('Von dir') : (m.by || '') + ' · ' + (m.coach ? $t('Coach') : $t('Athlet')))) + '<div class="stack" style="margin-bottom:12px">' + st + '<div class="card"><div class="row" style="flex-wrap:nowrap;gap:10px;align-items:flex-start"><p class="grow" style="margin:0;min-width:0">' + esc(b.descr || $t('Ohne Beschreibung.')) + '</p><span class="tag" style="flex:0 0 auto;white-space:nowrap">' + esc($t(SP_ST[b.status] || '')) + '</span></div></div></div>' +
     (typeof chkCard === 'function' ? chkCard(pl, 'lib') : '') + libPreviewHTML({}, pl, ownActs + libActions('sp:' + id)); }
+function viewSharedPlan() { return hbRun('viewSharedPlan', this, arguments, viewSharedPlan__base); }
 function viewArPlan(i) { const a = S.archive[i]; const back = '<a href="#library" class="back">' + ICON.back + $t('Bibliothek</a>'); if (!a || !a.plan) return back + '<p>' + $t('Plan nicht gefunden.') + '</p>'; const pl = planFromId('ar:' + i);
   return back + pageTop(esc($t(a.plan.name || '')), '', a.until ? $tf('Bis {d}', { d: fmtDay(a.until) }) : '') + (typeof chkCard === 'function' ? chkCard(pl, 'lib') : '') +
     libPreviewHTML({}, pl, (myUid() ? '<button class="btn block" style="margin-bottom:8px" data-act="spSave" data-src="ar:' + i + '" type="button">' + $t('Speichern oder veröffentlichen') + '</button>' : '') + libActions('ar:' + i)); }

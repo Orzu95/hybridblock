@@ -8,8 +8,7 @@ render = function (top) { document.body.classList.toggle('spowi', spowiOn()); _r
 document.body.classList.toggle('spowi', !!(typeof S !== 'undefined' && S && S.settings && S.settings.spowi));
 
 /* ---------- Einstellung ---------- */
-const _accountCardSw = accountCard;
-accountCard = function () { return _accountCardSw() + spowiCard(); };
+hbFilter('accountCard', 'spowi', function (__v) { return __v + spowiCard(); });
 
 /* ---------- Hilfsrechnungen ---------- */
 const swMean = a => a.length ? a.reduce((x, y) => x + y, 0) / a.length : null;
@@ -36,8 +35,7 @@ function trimpOf(tr) { if (!tr || !tr.pts || tr.pts.length < 5) return null; con
 /* aerobe Entkopplung: Geschwindigkeit pro Herzschlag in 1. gegen 2. Hälfte (Friel); unter 5 % gilt als stabil */
 
 /* ---------- Kennzahlen im Verlauf ---------- */
-const _viewProgressSw = viewProgress;
-viewProgress = function () { const h = _viewProgressSw(); if (!spowiOn()) return h; const i = h.indexOf('<div class="stack">'); return i < 0 ? h + spowiProgressCard() : h.slice(0, i + 19) + spowiProgressCard() + h.slice(i + 19); };
+hbFilter('viewProgress', 'spowi', function (__v) { const h = __v; if (!spowiOn()) return h; const i = h.indexOf('<div class="stack">'); return i < 0 ? h + spowiProgressCard() : h.slice(0, i + 19) + spowiProgressCard() + h.slice(i + 19); });
 
 /* ---------- Messwerte im Wochen-Check-in ---------- */
 function reviewMetrics(r) { const m = r.m; if (!m) return ''; const vol = m.vol || {};
@@ -48,8 +46,7 @@ function reviewMetrics(r) { const m = r.m; if (!m) return ''; const vol = m.vol 
     '<table class="tbl small" style="width:100%;margin-top:8px">' + swRow($t('RPE-Abweichung Ø'), m.ovr != null ? (m.ovr >= 0 ? '+' : '') + fmt(m.ovr, 1) : '–', m.nOver + $t(' Sätze mit RPE')) + swRow($t('Bereitschaft Ø'), m.rdm != null ? m.rdm + ' %' : '–', '') + swRow($t('Tage Ruhepuls ≥ Basis + 5'), m.rhrHi, '') +
     swRow($t('Wochenlast'), m.L != null ? fmt(m.L, 0) : '–', m.Lref != null ? $t('Vorwochen Ø ') + fmt(m.Lref, 0) : '') + swRow($t('Verhältnis zu den Vorwochen'), m.acwr != null ? fmt(m.acwr, 2) : '–', $t('Vorschlag ab 1,3')) + swRow($t('Monotonie'), m.mono != null ? fmt(m.mono, 1) : '–', m.strain != null ? $t('Strain ') + fmt(m.strain, 0) : '') + swRow($t('Umsetzung'), m.adh + ' %', '') + '</table>' +
     (vrows ? '<div class="lbl" style="margin-top:10px">' + $t('Harte Sätze pro Muskel') + '</div><table class="tbl small" style="width:100%">' + vrows + '</table><p class="src">' + $t('Hilfsmuskeln zählen anteilig. Bereich 10–20 Sätze nach Schoenfeld et al. 2017.') + '</p>' : '') + '</details>'; }
-const _reviewCardSw = reviewCard;
-reviewCard = function (key, opts) { let h = _reviewCardSw(key, opts); if (!spowiOn()) return h; const r = ((opts && opts.R) || reviews())[key]; if (!r) return h; const i = h.lastIndexOf('</div>'); return h.slice(0, i) + reviewMetrics(r) + h.slice(i); };
+hbFilter('reviewCard', 'spowi', function (__v, key, opts) { let h = __v; if (!spowiOn()) return h; const r = ((opts && opts.R) || reviews())[key]; if (!r) return h; const i = h.lastIndexOf('</div>'); return h.slice(0, i) + reviewMetrics(r) + h.slice(i); });
 
 /* ---------- Aktivität: TRIMP, aerobe Entkopplung ---------- */
 const _viewFreeSw = viewFree;

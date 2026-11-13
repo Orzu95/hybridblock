@@ -132,13 +132,13 @@ function viewLernen(arg) { if (arg === 'quiz') return viewQuiz();
   document.head.appendChild(st); })();
 
 /* Einbindung: Heute (Fakt), Einstellungen (Fakt-Modus), Wissen (Verweis), Routing */
-const _viewHeuteLrn = viewHeute; viewHeute = function () { const h = _viewHeuteLrn.apply(this, arguments); const c = factCard(); if (!c) return h; const i = h.lastIndexOf('</div>'); return i < 0 ? h + c : h.slice(0, i) + c + h.slice(i); };
-const _viewMehrLrn = viewMehr; viewMehr = function () { const h = _viewMehrLrn(); if (VIEW) return h; const m = factMode();
+hbFilter('viewHeute', 'learn', function (__v) { const h = __v; const c = factCard(); if (!c) return h; const i = h.lastIndexOf('</div>'); return i < 0 ? h + c : h.slice(0, i) + c + h.slice(i); });
+hbFilter('viewMehr', 'learn', function (__v) { const h = __v; if (VIEW) return h; const m = factMode();
   const card = '<div class="card"><h2>' + $t('Fakt des Tages') + '</h2><p class="small muted">' + $t('Jeden Tag eine kurze, geprüfte Aussage aus der Wissensbasis, passend zu deinem Ziel.') + '</p><div class="seg" style="margin-top:10px">' +
     [['card', $t('Karte auf Heute')], ['popup', $t('Pop-up')], ['off', $t('Aus')]].map(o => '<button class="' + (m === o[0] ? 'on' : '') + '" data-act="factMode" data-v="' + o[0] + '" type="button">' + o[1] + '</button>').join('') + '</div></div>';
-  const i = h.indexOf('<a class="card" href="#wissen"'); if (i < 0) return h; const j = h.indexOf('</a>', i) + 4; return h.slice(0, j) + card + h.slice(j); };
-const _viewWissenLrn = viewWissen; viewWissen = function (arg) { const h = _viewWissenLrn(arg); const btn = '<a class="card" href="#lernen" style="display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit"><span class="qzhf" style="flex:0 0 44px">' + qzFlask(.55).replace(/width="120" height="120"/, 'width="44" height="44"') + '</span><div class="grow"><h2 style="margin:0">' + $t('Quiz und Lernen') + '</h2><p class="small muted" style="margin:2px 0 0">' + $t('Lernkarten und kurze Quizze zu diesen Themen.') + '</p></div><span class="muted">›</span></a>';
-  const i = h.indexOf('<div class="card"><input id="ev-q"'); return i < 0 ? h : h.slice(0, i) + btn + h.slice(i); };
+  const i = h.indexOf('<a class="card" href="#wissen"'); if (i < 0) return h; const j = h.indexOf('</a>', i) + 4; return h.slice(0, j) + card + h.slice(j); });
+hbFilter('viewWissen', 'learn', function (__v, arg) { const h = __v; const btn = '<a class="card" href="#lernen" style="display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit"><span class="qzhf" style="flex:0 0 44px">' + qzFlask(.55).replace(/width="120" height="120"/, 'width="44" height="44"') + '</span><div class="grow"><h2 style="margin:0">' + $t('Quiz und Lernen') + '</h2><p class="small muted" style="margin:2px 0 0">' + $t('Lernkarten und kurze Quizze zu diesen Themen.') + '</p></div><span class="muted">›</span></a>';
+  const i = h.indexOf('<div class="card"><input id="ev-q"'); return i < 0 ? h : h.slice(0, i) + btn + h.slice(i); });
 const _renderLrn = render; render = function () { const r = _renderLrn.apply(this, arguments); setTimeout(factPopup, 700); return r; };
 window.addEventListener('hashchange', () => { if (route.name !== 'lernen' || route.arg !== 'quiz') { if (QZ && QZ.i >= QZ.items.length) QZ = null; } });
 document.addEventListener('click', e => { const b = e.target.closest('[data-act]'); if (!b) return; const a = b.dataset.act; const L = LRN();

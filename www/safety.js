@@ -35,8 +35,7 @@ viewBar = function () { const h = _viewBarSafe(); if (typeof VIEW !== 'undefined
   if (route.name === 'frei' && route.arg) { const a = findAct(route.arg); if (a && a.coachFor) return h; }
   return own ? h + '<div class="ownbar"><span class="grow">' + $t('Das ist dein eigenes Training, nicht das eines Athleten.') + '</span><button class="btn sm" data-act="cmode" data-v="own" type="button">' + $t('Zu „Mein Training“') + '</button></div>' : h; };
 /* Bibliothek ohne Athlet im Coaching-Modus: Hinweis, für wen gewählt wird */
-const _libCtxLineSafe = libCtxLine;
-libCtxLine = function () { const h = _libCtxLineSafe(); if (ui.libFor || !isAdmin()) return h; return note('amber', '<b>' + $t('Du wählst einen Plan für dich selbst.') + '</b> ' + $t('Für einen Athleten gehst du über Team → Athlet → „Aus Bibliothek“.')) + h; };
+hbFilter('libCtxLine', 'safety', function (__v) { const h = __v; if (ui.libFor || !isAdmin()) return h; return note('amber', '<b>' + $t('Du wählst einen Plan für dich selbst.') + '</b> ' + $t('Für einen Athleten gehst du über Team → Athlet → „Aus Bibliothek“.')) + h; });
 
 /* 4. Planwechsel rückgängig machen (7 Tage) */
 function undoSwitchCard() { if (typeof VIEW !== 'undefined' && VIEW) return ''; const ar = S.archive[S.archive.length - 1]; if (!ar || !ar.plan || !ar.until || ar.undoHidden) return ''; if (daysBetween(ar.until, today()) > 7) return '';
@@ -44,8 +43,7 @@ function undoSwitchCard() { if (typeof VIEW !== 'undefined' && VIEW) return ''; 
   return note('amber', $tf('Plan am {d} von „{a}“ auf „{b}“ gewechselt.', { d: fmtDay(ar.until), a: $t(ar.plan.name || ''), b: $t(S.plan.name || '') }), '<div class="row" style="gap:6px;flex-wrap:wrap"><button class="btn sm brand" data-act="undoSwitch" type="button">' + $t('Rückgängig') + '</button><button class="btn sm" data-act="undoSwitchHide" type="button">' + $t('Passt so') + '</button></div>'); }
 function undoSwitch() { const ar = S.archive.pop(); if (!ar) return; S.plan = ar.plan; S.sessions = ar.sessions || {}; S.block = ar.block || { week: 1, startedOn: null }; if (ar.dayMap) S.settings.dayMap = ar.dayMap; S.meta.daysSet = ar.daysSet != null ? ar.daysSet : true;
   applyPlan(); ui.week = null; save(); if (AUTH) pushPlan(AUTH.uid, S.plan).then(t => { S.meta.planAt = t; persist(); }).catch(() => {}); toast($tf('„{p}“ ist wieder dein Plan, mit deinem Fortschritt.', { p: $t(S.plan.name || '') })); render(); }
-const _heuteExtrasSafe = heuteExtras;
-heuteExtras = function () { return undoSwitchCard() + _heuteExtrasSafe(); };
+hbFilter('heuteExtras', 'safety', function (__v) { return undoSwitchCard() + __v; });
 document.addEventListener('click', e => { const b = e.target.closest('[data-act]'); if (!b) return;
   if (b.dataset.act === 'undoSwitch') undoSwitch();
   else if (b.dataset.act === 'undoSwitchHide') { const ar = S.archive[S.archive.length - 1]; if (ar) { ar.undoHidden = true; save(); render(); } } });

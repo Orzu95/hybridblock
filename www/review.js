@@ -90,11 +90,9 @@ function applySug(plan, s) { plan = plan || S.plan; const sess = plan.sessions.f
   return plan; }
 function phaseOf(plan, w) { const keep = S.plan; S.plan = plan; const r = phase(w); S.plan = keep; return r; }
 /* Satz-Anpassung und Volumenfaktor in die Planberechnung einhängen */
-const _planForPRev = planForP;
-planForP = function (plan, w, k) { const list = _planForPRev(plan, w, k); if (!plan) return list; const adj = plan.setAdj || {}, f = plan.volAdj && plan.volAdj[w];
-  return list.map(p => { let sets = p.sets; const a = adj[p.slot]; if (a && !isLite(w) && w >= (a.from || 1)) sets += a.n || 0; if (f) sets = Math.max(1, Math.round(sets * f)); return sets !== p.sets ? Object.assign({}, p, { sets }) : p; }); };
-const _doCheckinRev = doCheckin;
-doCheckin = function () { const c = _doCheckinRev(); const db = S.plan && S.plan.dietBreak; if (db && today() >= db.from && today() <= db.until && c.kcal < c.tdee) { c.kcal = Math.round(c.tdee / 50) * 50; c.c = Math.max(0, Math.round((c.kcal - 4 * c.p - 9 * c.f) / 4)); c.hold = 'dietbreak'; save(); } return c; };
+hbFilter('planForP', 'review', function (__v, plan, w, k) { const list = __v; if (!plan) return list; const adj = plan.setAdj || {}, f = plan.volAdj && plan.volAdj[w];
+  return list.map(p => { let sets = p.sets; const a = adj[p.slot]; if (a && !isLite(w) && w >= (a.from || 1)) sets += a.n || 0; if (f) sets = Math.max(1, Math.round(sets * f)); return sets !== p.sets ? Object.assign({}, p, { sets }) : p; }); });
+hbFilter('doCheckin', 'review', function (__v) { const c = __v; const db = S.plan && S.plan.dietBreak; if (db && today() >= db.from && today() <= db.until && c.kcal < c.tdee) { c.kcal = Math.round(c.tdee / 50) * 50; c.c = Math.max(0, Math.round((c.kcal - 4 * c.p - 9 * c.f) / 4)); c.hold = 'dietbreak'; save(); } return c; });
 async function decide(key, id, yes) { const r = reviews()[key]; if (!r) return; const s = r.sugs.find(x => x.id === id); if (!s) return;
   if (yes && s.kind === 'days') { s.st = 'yes'; save(); location.hash = '#library'; return; }
   if (yes) { applySug(S.plan, s); applyPlan(); } s.st = yes ? 'yes' : 'no'; s.by = 'me'; save();
@@ -114,28 +112,25 @@ function sugHTML(key, s, coachMode, uid) { const done = s.st === 'yes' || s.st =
     : coachMode ? '<button class="btn sm brand" data-act="revCoach" data-uid="' + uid + '" data-key="' + esc(key) + '" data-id="' + s.id + '" data-v="1" type="button">' + $t('Übernehmen') + '</button><button class="btn sm" data-act="revCoach" data-uid="' + uid + '" data-key="' + esc(key) + '" data-id="' + s.id + '" data-v="0" type="button">' + $t('Ablehnen') + '</button>'
     : '<button class="btn sm brand" data-act="revYes" data-key="' + esc(key) + '" data-id="' + s.id + '" type="button">' + (s.kind === 'days' ? $t('Pläne ansehen') : $t('Übernehmen')) + '</button><button class="btn sm" data-act="revNo" data-key="' + esc(key) + '" data-id="' + s.id + '" type="button">' + $t('Ablehnen') + '</button>';
   return '<div class="rev-sug"><div class="row" style="flex-wrap:nowrap;align-items:flex-start"><b class="grow">' + esc(s.t) + '</b><button class="btn sm" data-act="revWhy" data-ev="' + s.ev + '" type="button" aria-label="Warum?">' + $t('Warum?') + '</button></div><div style="margin-top:4px">' + gradeTag(g) + '</div><p class="small" style="margin:4px 0 8px">' + esc(s.why) + (gm === 'weak' && s.st !== 'info' ? ' ' + $t('Die Studienlage dazu ist noch dünn, probier es bewusst aus.') : gm === 'info' ? ' ' + $t('Nur zur Information, die Studienlage reicht für eine Empfehlung nicht.') : '') + '</p><div class="row" style="gap:8px">' + btns + '</div></div>'; }
-function reviewCard(key, opts) { opts = opts || {}; const r = (opts.R || reviews())[key]; if (!r) return '';
+function reviewCard__base(key, opts) { opts = opts || {}; const r = (opts.R || reviews())[key]; if (!r) return '';
   const open = r.sugs.filter(s => s.st === 'open').length;
   return '<div class="card rev" id="rev-' + esc(key) + '"><div class="row"><div class="grow"><div class="lbl">' + $t('Wochen-Check-in') + '</div><h2 style="margin:2px 0 6px">' + $t('Deine Woche ') + r.w + '</h2></div>' + (open && !opts.coach ? '<span class="tag"><span class="dot red"></span>' + open + $t(' offen') + '</span>' : '') + '</div>' +
     '<ul class="rev-facts">' + r.facts.map(f => '<li>' + esc(f.t) + '</li>').join('') + '</ul>' +
     '<div class="lbl" style="margin-top:12px">' + $t('Vorschläge für Woche ') + Math.min(NW(), r.w + 1) + '</div>' + r.sugs.map(s => sugHTML(key, s, opts.coach, opts.uid)).join('') +
     (!opts.coach && typeof hasCoach === 'function' && hasCoach() ? '<p class="small muted" style="margin-top:8px">' + $t('Dein Coach sieht diese Vorschläge auch und kann sie für dich übernehmen.') + '</p>' : '') +
     (!opts.coach && !opts.full ? '<button class="btn sm" data-act="revHide" data-key="' + esc(key) + '" type="button" style="margin-top:10px">' + $t('Ausblenden') + '</button>' : '') + '</div>'; }
+function reviewCard() { return hbRun('reviewCard', this, arguments, reviewCard__base); }
 function whySheet(ev) { const e = REV_EV[ev]; if (!e) return; openSheet(sheetHead($t('Warum?')) + '<p>' + esc(e.txt) + '</p><p class="small" style="margin-top:10px"><b>' + $t('Evidenzgrad ') + e.g + '</b> · ' + $t('aus der Regel-Tabelle der App') + '</p><ul class="small" style="margin-top:8px">' + e.src.map(s => '<li><a href="' + s[1] + '" target="_blank" rel="noopener">' + esc(s[0]) + '</a></li>').join('') + '</ul>'); }
 /* auf „Heute“ oben, solange offen und nicht ausgeblendet */
-const _heuteExtrasRev = heuteExtras;
-heuteExtras = function () { let h = _heuteExtrasRev(); if (VIEW) return h; try { const key = ensureReview(); const r = key && reviews()[key]; if (r && !r.hidden && r.sugs.some(s => s.st === 'open')) h = reviewCard(key) + h; } catch (e) { console.warn('review', e); } return h; };
+hbFilter('heuteExtras', 'review', function (__v) { let h = __v; if (VIEW) return h; try { const key = ensureReview(); const r = key && reviews()[key]; if (r && !r.hidden && r.sugs.some(s => s.st === 'open')) h = reviewCard(key) + h; } catch (e) { console.warn('review', e); } return h; });
 /* im Verlauf: letzter Check-in immer erreichbar */
-const _viewProgressRev = viewProgress;
-viewProgress = function () { const html = _viewProgressRev(); let key = null; try { key = VIEW ? null : ensureReview(); } catch (e) {} if (!key) return html; const i = html.indexOf('<div class="stack">'); return i < 0 ? html : html.slice(0, i + 19) + reviewCard(key, { full: true }) + html.slice(i + 19); };
+hbFilter('viewProgress', 'review', function (__v) { const html = __v; let key = null; try { key = VIEW ? null : ensureReview(); } catch (e) {} if (!key) return html; const i = html.indexOf('<div class="stack">'); return i < 0 ? html : html.slice(0, i + 19) + reviewCard(key, { full: true }) + html.slice(i + 19); });
 
 /* ---------- Coach ---------- */
-const _makeSummaryRev = makeSummary;
-makeSummary = function () { const s = _makeSummaryRev(); try { const key = ensureReview(); const r = key && reviews()[key]; if (r) s.review = { key, w: r.w, facts: r.facts, sugs: r.sugs }; } catch (e) {} return s; };
-const _viewClientRev = viewClient;
-viewClient = function (uid) { const html = _viewClientRev(uid); const c = (ADMIN.clients || []).find(x => x.id === uid); const rv = c && c.summary && c.summary.review; if (!rv) return html;
+hbFilter('makeSummary', 'review', function (__v) { const s = __v; try { const key = ensureReview(); const r = key && reviews()[key]; if (r) s.review = { key, w: r.w, facts: r.facts, sugs: r.sugs }; } catch (e) {} return s; });
+hbFilter('viewClient', 'review', function (__v, uid) { const html = __v; const c = (ADMIN.clients || []).find(x => x.id === uid); const rv = c && c.summary && c.summary.review; if (!rv) return html;
   const dec = (ADMIN.decided || {})[uid] || {}; rv.sugs.forEach(s => { if (dec[rv.key + ':' + s.id]) { s.st = dec[rv.key + ':' + s.id]; s.by = 'coach'; } });
-  const card = reviewCard(rv.key, { coach: true, uid, R: { [rv.key]: rv } }); const i = html.indexOf('<div class="stats">'); return i < 0 ? html + card : html.slice(0, i) + card + html.slice(i); };
+  const card = reviewCard(rv.key, { coach: true, uid, R: { [rv.key]: rv } }); const i = html.indexOf('<div class="stats">'); return i < 0 ? html + card : html.slice(0, i) + card + html.slice(i); });
 async function coachDecide(uid, key, id, yes) { const c = (ADMIN.clients || []).find(x => x.id === uid); const rv = c && c.summary && c.summary.review; const s = rv && rv.sugs.find(x => x.id === id); if (!s) return;
   try { const r = await api('/rest/v1/plans?user_id=eq.' + uid + '&select=plan'); const plan = r && r[0] && r[0].plan; if (!plan) { toast($t('Plan des Athleten nicht gefunden.')); return; }
     if (yes && s.kind !== 'days') applySug(plan, s); plan.revDecisions = Object.assign({}, plan.revDecisions || {}, { [key + ':' + id]: yes ? 'yes' : 'no' }); await pushPlan(uid, plan);

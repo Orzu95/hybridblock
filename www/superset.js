@@ -104,7 +104,7 @@ function ssApplyLink(kind, a, idx, modeToggle) {
   list.forEach((x, j) => { if (nx[j] === eff[j]) return; x.grp = nx[j]; x.gm = nx[j] ? (keepMode === 'fill' ? (nx.indexOf(nx[j]) === j ? 'fa' : 'fill') : 'ss') : ''; }); }
 
 /* Sheet in der laufenden Einheit */
-function ssSheet() { const o = ui.ss; const list = planFor(o.w, o.k); const me = list.find(x => x.slot === o.slot); if (!me) return closeSheet();
+function ssSheet__base() { const o = ui.ss; const list = planFor(o.w, o.k); const me = list.find(x => x.slot === o.slot); if (!me) return closeSheet();
   const others = list.filter(x => x.slot !== o.slot); const xtraSel = [...o.sel].some(sl => (list.find(x => x.slot === sl) || {}).xtra) || me.xtra;
   const seg = (act, cur, opts) => '<div class="seg">' + opts.map(p => '<button class="' + (cur === p[0] ? 'on' : '') + '" data-act="' + act + '" data-v="' + p[0] + '" type="button">' + p[1] + '</button>').join('') + '</div>';
   openSheet(sheetHead($t('Superset')) + '<div class="on-white" style="margin-top:8px"><p class="small"><b>' + esc(ssExName(actualEx(o.w, o.k, me))) + '</b> ' + $t('verbinden mit:') + '</p>' +
@@ -115,6 +115,7 @@ function ssSheet() { const o = ui.ss; const list = planFor(o.w, o.k); const me =
     '<p class="small" style="margin:14px 0 6px;font-weight:700">' + $t('Gilt für') + '</p>' + seg('ssScope', o.scope, [['today', $t('Nur heute')], ['always', $t('Dauerhaft im Plan')]]) +
     (o.scope === 'always' && xtraSel ? '<p class="small muted" style="margin-top:6px">' + $t('Neu dazugenommene Übungen kommen dann fest in diese Einheit.') + '</p>' : '') +
     '<div class="row" style="margin-top:16px">' + (me.ss ? '<button class="btn" data-act="ssUnlink" type="button">' + $t('Verbindung lösen') + '</button>' : '') + '<div class="grow"></div><button class="btn brand" data-act="ssSave" type="button"' + (o.sel.size ? '' : ' disabled') + '>' + $t('Speichern') + '</button></div></div>'); }
+function ssSheet() { return hbRun('ssSheet', this, arguments, ssSheet__base); }
 function ssOpen(w, k, slot) { const list = planFor(w, k); const me = list.find(x => x.slot === slot); const mem = me && me.ss ? list.filter(x => x.ss && x.ss.gid === me.ss.gid) : [];
   ui.ss = { w, k, slot, sel: new Set(mem.map(x => x.slot).filter(sl => sl !== slot)), mode: me && me.ss ? me.ss.mode : 'ss', scope: 'today' }; ssSheet(); }
 function ssStore(members, mode) { const o = ui.ss; const list = planFor(o.w, o.k); const s = sess(o.w, o.k); const me = list.find(x => x.slot === o.slot);

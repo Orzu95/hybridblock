@@ -54,10 +54,9 @@ function aiFoodId(x) { const nm = x.name.trim().toLowerCase(); const own = Objec
 function aiSave() { const d = ui.day || today(); const n = AI.items.length; AI.items.forEach(x => { const id = aiFoodId(x); addEntry(d, id, AI.meal, Math.round(x.grams), 'g'); const o = S.days[d]; const e = o && o.entries[o.entries.length - 1]; if (e) e.ai = AI.mode; });
   AI.items = []; AI.text = ''; save(); closeSheet(); render(); doneOverlay($tf('{n} Lebensmittel eingetragen', { n }), $t(AI.meal)); }
 /* Einstieg: oben im Hinzufügen-Sheet */
-const _addSheetAI = addSheet;
-addSheet = function () { const r = _addSheetAI.apply(this, arguments); if (!aiAllowed()) return r; const card = document.getElementById('sheetCard'); if (!card || card.querySelector('.ai-row')) return r; const head = card.querySelector('.row');
+hbFilter('addSheet', 'aifood', function (__v) { const r = __v; if (!aiAllowed()) return r; const card = document.getElementById('sheetCard'); if (!card || card.querySelector('.ai-row')) return r; const head = card.querySelector('.row');
   const row = '<div class="ai-row"><button class="btn" data-act="aiText" type="button">' + aiSvg('spark') + ' ' + $t('Beschreiben') + '</button><button class="btn" data-act="aiPhoto" type="button">' + aiSvg('cam') + ' ' + $t('Foto') + '</button></div>';
-  const anchor = card.querySelector('.scanbar'); if (anchor) anchor.insertAdjacentHTML('afterend', row); else if (head) head.insertAdjacentHTML('afterend', row); else card.insertAdjacentHTML('afterbegin', row); return r; };
+  const anchor = card.querySelector('.scanbar'); if (anchor) anchor.insertAdjacentHTML('afterend', row); else if (head) head.insertAdjacentHTML('afterend', row); else card.insertAdjacentHTML('afterbegin', row); return r; });
 document.addEventListener('input', e => { const i = e.target.dataset && e.target.dataset.aig; if (i == null) return; const x = AI.items[+i]; if (!x) return; const v = num(e.target.value); if (v > 0) x.grams = Math.min(3000, v); });
 document.addEventListener('change', e => { if (e.target.dataset && e.target.dataset.aig != null) aiResult(); });
 document.addEventListener('click', e => { const b = e.target.closest('[data-act]'); if (!b) return; const a = b.dataset.act;

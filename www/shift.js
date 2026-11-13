@@ -15,14 +15,12 @@ wkDecisionCard = function (w) { if (!shHold()) return _wkDecisionCardSH.apply(th
   return note('sky', '<b>' + $t('Dein Coach plant Verschiebungen.') + '</b> ' + (late ? (late === 1 ? $t('1 Einheit ist offen geblieben. Dein Coach sieht das und plant sie neu ein.') : $tf('{n} Einheiten sind offen geblieben. Dein Coach sieht das und plant sie neu ein.', { n: late })) : $t('Die App verschiebt deine Einheiten nicht selbst. Fällt eine aus, sag deinem Coach Bescheid.'))); };
 
 /* Kurzfassung für den Coach: verschobene und überfällige Einheiten dieser Woche */
-const _makeSummarySH = makeSummary;
-makeSummary = function () { const s = _makeSummarySH.apply(this, arguments); try { if (ORDER.length && shMode() !== 'auto') { const w = curWeek(), pl = wkPlan(w);
-  s.moved = pl.items.filter(o => o.moved && wkOpen(o)).length; const late = pl.items.filter(o => wkOpen(o) && (o.date < today() || o.date > pl.end)); s.late = late.length; s.lateList = late.map(o => ({ key: sKey(w, o.k), k: o.k, d: o.date })); s.shift = shMode(); } } catch (e) { console.warn('shift', e); } return s; };
-const _dashFlagsSH = dashFlags;
-dashFlags = function (c) { const f = _dashFlagsSH.apply(this, arguments); const s = c.summary || {};
+hbFilter('makeSummary', 'shift', function (__v) { const s = __v; try { if (ORDER.length && shMode() !== 'auto') { const w = curWeek(), pl = wkPlan(w);
+  s.moved = pl.items.filter(o => o.moved && wkOpen(o)).length; const late = pl.items.filter(o => wkOpen(o) && (o.date < today() || o.date > pl.end)); s.late = late.length; s.lateList = late.map(o => ({ key: sKey(w, o.k), k: o.k, d: o.date })); s.shift = shMode(); } } catch (e) { console.warn('shift', e); } return s; });
+hbFilter('dashFlags', 'shift', function (__v, c) { const f = __v; const s = c.summary || {};
   if (s.shift === 'inform' && s.moved) f.warn = (f.warn ? f.warn + ', ' : '') + (s.moved === 1 ? $t('1 Einheit verschoben') : $tf('{n} Einheiten verschoben', { n: s.moved }));
   if (s.shift === 'coach' && s.late) f.plan = s.late === 1 ? $t('1 Einheit zum Umplanen') : $tf('{n} Einheiten zum Umplanen', { n: s.late });
-  return f; };
+  return f; });
 
 /* Coach: Karte im Plan-Editor des Athleten */
 function shLate() { const c = (ADMIN.clients || []).find(x => x.id === PE.uid); const s = c && c.summary || {}; return s.shift === 'coach' ? (s.lateList || []) : []; }

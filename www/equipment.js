@@ -121,8 +121,8 @@ function eqInfoSheet(e) { const inf = EQ_INFO[e]; if (!inf) return; const miss =
     '<button class="btn block ' + (miss ? 'brand' : 'fog') + '" style="margin-top:16px" data-act="eqInfoToggle" data-eq="' + e + '" type="button">' + (miss ? $t('Doch vorhanden') : $t('Gibt es in meinem Studio nicht')) + '</button>' + (ui.eqBack ? '<button class="btn block" style="margin-top:8px" data-act="eqBack" type="button">' + $t('Zurück zur Liste') + '</button>' : '') + '</div>'); }
 /* „?“ neben jedes Gerät in „Mein Studio“ und „Gerät fehlt?“ */
 const eqAddHelp = h => h.replace(/(<button class="chip[^"]*" data-act="eqToggle" data-eq="([a-z_]+)"[^>]*>[\s\S]*?<\/button>)/g, (m0, btn, e) => EQ_INFO[e] ? '<span class="eqw">' + btn + '<button class="eqq" data-act="eqInfo" data-eq="' + e + '" type="button" aria-label="' + $t('Was ist das?') + '">?</button></span>' : btn);
-const _studioCardEq = studioCard; studioCard = function () { return eqAddHelp(_studioCardEq.apply(this, arguments)); };
-const _eqBlockEq = eqBlock; eqBlock = function () { return eqAddHelp(_eqBlockEq.apply(this, arguments)); };
+hbFilter('studioCard', 'equipment', function (__v) { return eqAddHelp(__v); });
+hbFilter('eqBlock', 'equipment', function (__v) { return eqAddHelp(__v); });
 document.addEventListener('click', e => { const b = e.target.closest('[data-act]'); if (!b) return;
   if (b.dataset.act === 'eqBack') { e.stopPropagation(); const h = ui.eqBack; ui.eqBack = null; if (h) { $('#sheetCard').innerHTML = h; const miss = S.settings.missingEq || []; $('#sheetCard').querySelectorAll('[data-act=eqToggle]').forEach(x => { const m = miss.includes(x.dataset.eq); x.classList.toggle('on', !m); x.textContent = (m ? '✕ ' : '✓ ') + (EQUIP[x.dataset.eq] || ''); }); } }
   else if (b.dataset.act === 'eqInfo') { e.stopPropagation(); ui.eqBack = document.getElementById('sheet') && !document.getElementById('sheet').hidden ? document.getElementById('sheetCard').innerHTML : null; eqInfoSheet(b.dataset.eq); }

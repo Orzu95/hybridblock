@@ -18,9 +18,8 @@ function faState(now) { now = now || new Date(); const f = FA(); const fastH = F
   const since = ((cur - end) % 1440 + 1440) % 1440; const until = ((st - cur) % 1440 + 1440) % 1440; return { inWin, since, until, end: hmTxt(end), start: hmTxt(st), fastH, hour: Math.floor(since / 60) + 1 }; }
 const fmtHM = m => Math.floor(m / 60) + ':' + String(m % 60).padStart(2, '0') + ' h';
 /* Eiweiß mindestens 1,6 g/kg, solange der Timer aktiv ist */
-const _currentTargetsFA = currentTargets;
-currentTargets = function () { const t = _currentTargetsFA.apply(this, arguments); if (!FA().on || !t) return t; const kg = faKg(); if (!kg || t.p >= 1.6 * kg) return t;
-  const p = Math.round(1.6 * kg); return Object.assign({}, t, { p, c: Math.max(0, Math.round((t.kcal - 4 * p - 9 * t.f) / 4)) }); };
+hbFilter('currentTargets', 'fasting', function (__v) { const t = __v; if (!FA().on || !t) return t; const kg = faKg(); if (!kg || t.p >= 1.6 * kg) return t;
+  const p = Math.round(1.6 * kg); return Object.assign({}, t, { p, c: Math.max(0, Math.round((t.kcal - 4 * p - 9 * t.f) / 4)) }); });
 function faGymRecent() { return Object.keys(S.sessions || {}).some(k => { const s = S.sessions[k]; const m = k.match(RE_SESS); return m && isGym(m[2]) && s && s.date && s.date >= addDays(today(), -7) && !s.skipped; }) || (S.activities || []).some(a => a.type === 'kraft' && a.date >= addDays(today(), -7)); }
 const FA_FLAGS = () => [$t('Starker Schwindel beim Aufstehen, Ohnmacht, Zittern oder kalter Schweiß'), $t('Erbrechen, anhaltende Übelkeit, starker Durchfall oder dunkler Urin'), $t('Ausbleibende oder unregelmäßige Periode'), $t('Kontrollverlust beim Essen nach der Pause, Schuldgefühle oder der Drang, die Pause immer weiter zu verlängern'), $t('Kraft oder Trainingsleistung lassen über Wochen nach')];
 function faCard() { const f = FA(); if (faHardLock()) return ''; if (f.on && faSick()) return '<div class="card" id="facard"><b>' + $t('Essenspausen-Timer pausiert') + '</b><p class="small muted" style="margin:4px 0 0">' + $t('Während Krankheit oder Verletzung ohne feste Essenspausen essen. Der Timer läuft nach deinem Wiedereinstieg weiter.') + '</p></div>';
@@ -53,11 +52,9 @@ function faSheet() { const f = FA(); ui.faA = ui.faA || {};
     '<div class="fields on-white" style="margin-top:10px"><div class="field"><label for="fa-start">' + $t('Essensfenster beginnt um') + '</label><input id="fa-start" type="time" value="' + esc(f.start || '08:00') + '"></div></div>' +
     '<p class="src">' + $tf('Dein Essensfenster: {a} bis {b} Uhr. Ein früheres Fenster (Ende bis etwa 17–19 Uhr) ist für viele günstiger als spätes Essen.', { a: f.start || '08:00', b: hmTxt(faHm(f.start || '08:00') + (24 - FA_PROTO[p]) * 60) }) + '</p>' +
     '<div class="row" style="margin-top:12px"><div class="grow"></div><button class="btn brand" data-act="faSave" type="button">' + (f.on ? $t('Speichern') : $t('Timer starten')) + '</button></div>'); }
-const _viewEssenFA = viewEssen;
-viewEssen = function () { const h = _viewEssenFA.apply(this, arguments); if ((typeof VIEW !== 'undefined' && VIEW)) return h; const c = faCard(); if (!c) return h; const m = h.indexOf('<div class="nr-search">'); return m < 0 ? h + c : h.slice(0, m) + c + h.slice(m); };
-const _heuteExtrasFA = heuteExtras;
-heuteExtras = function () { const h = _heuteExtrasFA.apply(this, arguments); if (VIEW || !FA().on || faHardLock() || faSick()) return h; const s = faState();
-  return note('sky', s.inWin ? $tf('Essensfenster offen bis {e} Uhr.', { e: s.end }) : $tf('Essenspause, nächstes Essensfenster um {s} Uhr.', { s: s.start }), '<a class="btn sm" href="#essen">' + $t('Essen') + '</a>') + h; };
+hbFilter('viewEssen', 'fasting', function (__v) { const h = __v; if ((typeof VIEW !== 'undefined' && VIEW)) return h; const c = faCard(); if (!c) return h; const m = h.indexOf('<div class="nr-search">'); return m < 0 ? h + c : h.slice(0, m) + c + h.slice(m); });
+hbFilter('heuteExtras', 'fasting', function (__v) { const h = __v; if (VIEW || !FA().on || faHardLock() || faSick()) return h; const s = faState();
+  return note('sky', s.inWin ? $tf('Essensfenster offen bis {e} Uhr.', { e: s.end }) : $tf('Essenspause, nächstes Essensfenster um {s} Uhr.', { s: s.start }), '<a class="btn sm" href="#essen">' + $t('Essen') + '</a>') + h; });
 document.addEventListener('change', e => { if (e.target.id === 'fa-start') { FA().start = e.target.value || '08:00'; save(); faSheet(); } });
 document.addEventListener('click', e => { const b = e.target.closest('[data-act]'); if (!b) return; const a = b.dataset.act;
   if (a === 'faOpen') { ui.faA = {}; faSheet(); }

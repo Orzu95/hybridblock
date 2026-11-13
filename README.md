@@ -101,3 +101,44 @@ npx cap open android   # in Android Studio auf Run tippen
 - Wasser: eigene Menge in ml oder Tagesmenge setzen.
 - Fett: Start-Ziel 25 % der Kalorien oder 0,8 g/kg (der höhere Wert), nie unter 20 % der Kalorien (ERN-109).
 
+
+## Architektur für Entwickler
+
+**Aufbau.** Die App ist eine Web-App ohne Framework und ohne Build-Schritt. `www/index.html` lädt rund 75 klassische Skripte nacheinander; alle teilen sich einen globalen Namensraum. Capacitor verpackt denselben Ordner als Android-App. Das Backend ist Supabase (Postgres mit Row Level Security, Edge Functions in `supabase/functions/`).
+
+**Ladereihenfolge.** Die Reihenfolge der `<script>`-Tags in `index.html` ist verbindlich:
+
+1. `csp.js`, `i18n.js` (lädt nur das Wörterbuch der gewählten Sprache), `errlog.js`, `hooks.js`
+2. Daten und Regeln (`rules.js`, `data.js`, …), dann `app.js` (Zustand `S`, Router, Basisansichten) und `cloud.js` (Konto, Sync, Coach)
+3. Funktionsmodule (Training, Ernährung, Coach, Wissen …)
+4. `boot.js` als letztes: setzt `HB_READY` und zeichnet zum ersten Mal. Vorher zeichnet `render()` nicht.
+
+Neue Dateien müssen in `index.html` **und** in die `SHELL`-Liste in `sw.js`; bei jeder Änderung die `VERSION` in `sw.js` hochzählen.
+
+**Zustand.** Alles liegt im Objekt `S` (`S.settings`, `S.plan`, `S.sessions`, `S.days`, `S.activities`, `S.meta` …). `save()` schreibt lokal (localStorage, bei Platzmangel IndexedDB) und stößt den Sync an. `syncmerge.js` führt Stände pro Eintrag zusammen. `VIEW` ist gesetzt, wenn ein Coach die Daten eines Athleten nur ansieht.
+
+**Ansichten.** `render()` in `app.js` wählt nach `route.name` eine `view…()`-Funktion, die HTML als String liefert. Nutzertexte immer durch `esc()` schicken. Klicks laufen über `data-act`-Attribute und delegierte Listener.
+
+**Erweitern statt überschreiben.** Module erweitern Basisfunktionen über Filter (`hooks.js`):
+
+```js
+hbFilter('viewEssen', 'carbs', function (html) { /* … */ return html; });
+```
+
+Die Basisfunktion heißt `viewEssen__base`; `viewEssen()` ruft sie auf und reicht das Ergebnis durch alle Filter in Ladereihenfolge. Ein fehlerhafter Filter wird übersprungen und protokolliert. `node tests/globals_check.mjs --list` zeigt, wer was erweitert. Bei `currentTargets` ist die Reihenfolge fachlich wichtig: Energie-Untergrenze (`energy.js`) → Pause (`zeit.js`) → Kohlenhydrat-Stufen (`carbs.js`) → Eiweiß-Minimum beim Essenspausen-Timer (`fasting.js`).
+
+Rund 90 ältere Erweiterungen nutzen noch das Alias-Muster (`const _x = fn; fn = function () { … _x(…) … }`), weil sie vor dem Aufruf eingreifen, Argumente ändern oder asynchron sind. Neue Erweiterungen bitte als Filter schreiben.
+
+**Fachregeln.** Zahlen stehen in `rules.js` (`RV('…')`) mit Evidenzgrad und Quellen; `tests/rules_check.py` gleicht sie mit der Wissensbank `evidence.json` ab.
+
+**Übersetzungen.** Deutsch ist Quellsprache. Jeder sichtbare Text läuft durch `$t()` oder `$tf()` (mit Platzhaltern). `lang-en.js` und `lang-ru.js` werden erzeugt, nicht von Hand bearbeitet.
+
+**Fehler.** `logErr(ctx, e)` schreibt ins Fehlerprotokoll auf dem Gerät (Datenschutz → Speicher). Leere `catch`-Blöcke nur für wirklich erwartbare Fehler.
+
+**Tests (laufen auch im Build):**
+
+- `node tests/globals_check.mjs`: Syntax, doppelte globale Funktionen, Wrapper- und Filter-Reihenfolge
+- `node tests/smoke.cjs`: öffnet jede Ansicht in DE, EN und RU als Athlet und als Coach (braucht `playwright`)
+- `python3 tests/rules_check.py`: Regel-Tabelle gegen Wissensbank
+
+**Datenbank.** `supabase/schema.sql` ist ein Snapshot der Live-Datenbank (nur zum Lesen). Änderungen laufen über `supabase/migrations/`. Clients ohne Anmeldung haben keine Tabellenrechte; Rate-Limits der Edge Functions zählt die RPC `rate_hit`.

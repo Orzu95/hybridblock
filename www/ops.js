@@ -39,10 +39,9 @@ function opsInviteSheet(role) { openSheet(sheetHead(role === 'admin' ? $t('Coach
   (role === 'client' && OPS.coaches.length ? '<div class="field"><label for="ops-icoach">' + $t('Coach') + '</label><select id="ops-icoach"><option value="">' + $t('ohne Coach') + '</option>' + OPS.coaches.map(c => '<option value="' + c.id + '">@' + esc(c.username) + '</option>').join('') + '</select></div>' : '') +
   '<p class="small muted">' + (role === 'admin' ? $t('Der Code erstellt ein Coach-Konto. Der Coach kann danach selbst Athleten einladen.') : $t('Ohne Coach trainiert die Person selbstständig.')) + '</p>' +
   '<button class="btn brand block" data-act="opsInviteGo" data-role="' + role + '" type="button">' + $t('Code erstellen') + '</button></div>'); }
-const _viewMehrOps = viewMehr;
-viewMehr = function () { const h = _viewMehrOps(); if (!AUTH || VIEW) return h; if (OPS.is === null) { OPS.is = false; checkOperator(); }
+hbFilter('viewMehr', 'ops', function (__v) { const h = __v; if (!AUTH || VIEW) return h; if (OPS.is === null) { OPS.is = false; checkOperator(); }
   if (!OPS.is) return h; const card = '<a class="card" href="#ops" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit"><div class="grow"><h2 style="margin:0">' + $t('Betreiber-Konsole') + '</h2><p class="small muted" style="margin:2px 0 0">' + $t('Alle Konten, Coaches, Einladungen und Sperren verwalten.') + '</p></div><span class="muted">›</span></a>';
-  return h.replace('<div class="stack">', '<div class="stack">' + card); };
+  return h.replace('<div class="stack">', '<div class="stack">' + card); });
 document.addEventListener('click', async e => { const b = e.target.closest('[data-act]'); if (!b) return; const a = b.dataset.act; if (!a.startsWith('ops')) return;
   const done = async msg => { toast(msg); closeSheet(); await opsLoad(); };
   try { switch (a) {

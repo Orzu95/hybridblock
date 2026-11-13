@@ -7,9 +7,8 @@
 function applyOrd(list, ord) { if (!ord || !ord.length || !list.length) return list; const pos = new Map(ord.map((sl, i) => [sl, i]));
   const idx = [], known = []; list.forEach((x, i) => { if (pos.has(x.slot)) { idx.push(i); known.push(x); } }); if (known.length < 2) return list;
   known.sort((a, b) => pos.get(a.slot) - pos.get(b.slot)); const out = list.slice(); idx.forEach((i, j) => { out[i] = known[j]; }); return out; }
-const _planForPOrd = planForP;
-planForP = function (plan, w, k) { const list = _planForPOrd.apply(this, arguments); const s = plan && plan.sessions && plan.sessions.find(x => x.k === k); if (!s || !s.ord) return list;
-  if (plan.wkPlans && plan.wkPlans[w] && plan.wkPlans[w][k]) return list; return applyOrd(list, s.ord); };
+hbFilter('planForP', 'exorder', function (__v, plan, w, k) { const list = __v; const s = plan && plan.sessions && plan.sessions.find(x => x.k === k); if (!s || !s.ord) return list;
+  if (plan.wkPlans && plan.wkPlans[w] && plan.wkPlans[w][k]) return list; return applyOrd(list, s.ord); });
 const _sessAdjustOrd = sessAdjust;
 sessAdjust = function (w, k, list) { list = _sessAdjustOrd.apply(this, arguments); const s = peekSess(w, k); return s && s.ord ? applyOrd(list, s.ord) : list; };
 /* Blöcke: Supersatz-Mitglieder bleiben zusammen */
@@ -70,8 +69,7 @@ function ssxSheet() { const o = ui.ssx; if (!o) return; const names = o.exIds.ma
     '<div class="row" style="margin-top:14px"><button class="btn" data-act="ssxNo" type="button">' + $t('Nur hier') + '</button><div class="grow"></div><button class="btn brand" data-act="ssxGo" type="button">' + $t('Übernehmen') + '</button></div>'); }
 function sessTitleOf(k) { const s = SESS[k] || {}; return $t('Einheit') + ' ' + k + (s.title ? ' · ' + $t(s.title) : ''); }
 /* Hinweis im Supersatz-Fenster bei „Dauerhaft im Plan“ */
-const _ssSheetOrd = ssSheet;
-ssSheet = function () { const r = _ssSheetOrd.apply(this, arguments); if (ui.ss && ui.ss.scope === 'always') { const c = document.getElementById('sheetCard'); if (c && !c.querySelector('[data-orignote]')) c.insertAdjacentHTML('beforeend', '<div data-orignote>' + ORIG_NOTE() + '</div>'); } return r; };
+hbFilter('ssSheet', 'exorder', function (__v) { const r = __v; if (ui.ss && ui.ss.scope === 'always') { const c = document.getElementById('sheetCard'); if (c && !c.querySelector('[data-orignote]')) c.insertAdjacentHTML('beforeend', '<div data-orignote>' + ORIG_NOTE() + '</div>'); } return r; });
 
 document.addEventListener('click', e => { const b = e.target.closest('[data-act]'); if (!b) return; const a = b.dataset.act;
   if (a === 'ordOpen') ordOpen(+b.dataset.w, b.dataset.k);

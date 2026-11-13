@@ -18,9 +18,8 @@ function eaEaten() { const ffm = ffmKg(); if (!ffm) return null; const v = []; f
 function eaFloorKcal() { const ffm = ffmKg(); if (!ffm || S.settings.eaGuard === false) return null; return Math.round(eaMin() * ffm + exAvg7()); }
 const eaLvl = v => v >= 30 ? 'green' : v >= (S.settings.sex === 'w' ? 30 : 20) ? 'amber' : 'red';
 
-const _currentTargetsEA = currentTargets;
-currentTargets = function () { const t = _currentTargetsEA.apply(this, arguments); const fl = eaFloorKcal(); if (fl == null || !t || t.kcal >= fl) return t;
-  return Object.assign({}, t, { kcal: fl, c: Math.max(0, Math.round((fl - 4 * (t.p || 0) - 9 * (t.f || 0)) / 4)), eaRaised: fl - t.kcal }); };
+hbFilter('currentTargets', 'energy', function (__v) { const t = __v; const fl = eaFloorKcal(); if (fl == null || !t || t.kcal >= fl) return t;
+  return Object.assign({}, t, { kcal: fl, c: Math.max(0, Math.round((fl - 4 * (t.p || 0) - 9 * (t.f || 0)) / 4)), eaRaised: fl - t.kcal }); });
 
 function energyCard() { const b = bfLast(), ffm = ffmKg(), w = curWeight();
   const head = '<div class="row" style="flex-wrap:nowrap"><h2 class="grow" style="margin:0">' + $t('Körperfett und Energie') + '</h2><button class="btn sm" data-act="bfSheet" type="button">' + (b ? $t('Neuer Wert') : $t('Eintragen')) + '</button></div>';
@@ -47,5 +46,4 @@ document.addEventListener('click', e => { const b = e.target.closest('[data-act]
   else if (a === 'bfSave') { const v = num($('#bf-v').value); if (v == null || v < 3 || v > 60) { toast($t('Bitte einen Wert zwischen 3 und 60 % eintragen.')); return; } const d = $('#bf-d').value || today();
     S.settings.bfLog = (S.settings.bfLog || []).filter(x => x.d !== d).concat({ d, v, m: $('#bf-m').value }); save(); closeSheet(); render(); }
   else if (a === 'eaGuard') { S.settings.eaGuard = b.checked; save(); render(); } });
-const _viewProgressEA = viewProgress;
-viewProgress = function () { const h = _viewProgressEA.apply(this, arguments); const m = '<div class="stack">'; const i = h.indexOf(m); if (i < 0) return h + energyCard(); const j = h.indexOf('<div class="card', h.indexOf('<div class="stats">', i)); return j < 0 ? h.replace(m, m + energyCard()) : h.slice(0, j) + energyCard() + h.slice(j); };
+hbFilter('viewProgress', 'energy', function (__v) { const h = __v; const m = '<div class="stack">'; const i = h.indexOf(m); if (i < 0) return h + energyCard(); const j = h.indexOf('<div class="card', h.indexOf('<div class="stats">', i)); return j < 0 ? h.replace(m, m + energyCard()) : h.slice(0, j) + energyCard() + h.slice(j); });

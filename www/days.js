@@ -42,8 +42,8 @@ function loadBars(id) { const days = []; for (let i = 27; i >= 0; i--) { const d
     x.us.forEach(u => { const v = u.load || (u.dur ? u.dur * 5 : 0); if (!v) return; const y1 = Y(acc + v), y0 = Y(acc); g += '<rect x="' + x0 + '" y="' + y1 + '" width="' + bw + '" height="' + Math.max(1.5, y0 - y1 - 1) + '" rx="3" fill="' + RPE_COL(u.rpe) + '"/>'; acc += v; });
     if (x.us.length) g += '<rect data-act="dayOpen" data-d="' + x.d + '" x="' + cx + '" y="' + T + '" width="' + bwid + '" height="' + (H - T - B) + '" fill="transparent" style="cursor:pointer"><title>' + fmtDay(x.d) + ': ' + x.us.map(u => u.title + (u.load ? ' (' + fmt(u.load, 0) + ')' : '')).join(', ') + '</title></rect>'; });
   return '<div class="chart"><svg viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="' + $t('Belastung der letzten 28 Tage') + '">' + g + '</svg></div>' + RPE_LEG(); }
-const _loadCardDays = loadCard; loadCard = function () { const h = _loadCardDays(); const i = h.indexOf('<div class="chart"'); if (i < 0) return h; const j = h.indexOf('<div class="stats"', i); if (j < 0) return h;
-  return h.slice(0, i) + loadBars('cld') + '<p class="small muted" style="margin-top:6px">' + $t('Tippe einen Balken an, um die Einheit zu öffnen.') + '</p>' + h.slice(j); };
+hbFilter('loadCard', 'days', function (__v) { const h = __v; const i = h.indexOf('<div class="chart"'); if (i < 0) return h; const j = h.indexOf('<div class="stats"', i); if (j < 0) return h;
+  return h.slice(0, i) + loadBars('cld') + '<p class="small muted" style="margin-top:6px">' + $t('Tippe einen Balken an, um die Einheit zu öffnen.') + '</p>' + h.slice(j); });
 
 document.addEventListener('click', e => { const b = e.target.closest('[data-act]'); if (!b) return;
   if (b.dataset.act === 'dayOpen') openDay(b.dataset.d);

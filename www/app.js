@@ -77,11 +77,12 @@ function scaleItem(it, w) { const x = Object.assign({ note: '', sup: '', type: '
   if (isLite(w)) { x.sets = Math.max(1, Math.ceil(x.sets / 2)); if (x.rpe != null) x.rpe = Math.max(5, x.rpe - 2); } return x; }
 function applyOv(x, o, w) { const y = Object.assign({}, x); ['ex', 'reps', 'note', 'sup', 'gm', 'type'].forEach(f => { if (o[f] != null && o[f] !== '') y[f] = o[f]; }); if (y.sup === '-') y.sup = ''; if (o.rest != null) y.rest = o.rest;
   if (o.sets != null) y.sets = isLite(w) ? Math.min(o.sets, x.sets) : o.sets; if (o.rpe != null && !isLite(w)) y.rpe = o.rpe; return y; }
-function planForP(plan, w, k) { const s = plan && plan.sessions.find(x => x.k === k); if (!s || s.kind !== 'gym') return []; const ov = s.ov || {};
+function planForP__base(plan, w, k) { const s = plan && plan.sessions.find(x => x.k === k); if (!s || s.kind !== 'gym') return []; const ov = s.ov || {};
   const wo = plan.wkPlans && plan.wkPlans[w] && plan.wkPlans[w][k]; if (wo) return (wo.add || []).filter(it => LIB[it.ex]).map(it => Object.assign({ note: '', sup: '', type: 'dp', rest: 90 }, it));
   let list = s.base && BASE_FN[s.base] ? BASE_FN[s.base](w) : [];
   list = list.filter(x => !(ov[x.slot] && ov[x.slot].del)).map(x => ov[x.slot] ? applyOv(x, ov[x.slot], w) : x);
   return list.concat((s.add || []).filter(it => LIB[it.ex] && itemOn(it, w)).map(it => scaleItem(it, w))); }
+function planForP() { return hbRun('planForP', this, arguments, planForP__base); }
 const itemOn = (it, w) => (!it.on || (w >= it.on[0] && w <= it.on[1])) && (!it.par || w % 2 === (it.par === 'odd' ? 1 : 0));
 function planFor(w, k) { const list = planForP(S.plan, w, k); return typeof sessAdjust === 'function' ? sessAdjust(w, k, list) : list; }
 const isGym = k => !!SESS[k] && SESS[k].kind === 'gym';
@@ -91,7 +92,8 @@ const GYM = () => ORDER.filter(isGym);
 const Z2K = () => ORDER.find(k => SESS[k].kind === 'z2');
 /* beinlastige Einheit: Hauptübung oder mehrere Übungen für Quads/Hamstrings/Glutes */
 function legDay(k, w) { if (!isGym(k)) return false; const l = planFor(w || curWeek(), k); return l.some(p => p.type === 'main' && LIB[p.ex] && ((LIB[p.ex].muscles.q || 0) >= 1 || (LIB[p.ex].muscles.g || 0) >= 1)) || l.filter(p => LIB[p.ex] && ((LIB[p.ex].muscles.q || 0) + (LIB[p.ex].muscles.h || 0) >= 1)).length >= 3; }
-function cardioSpec(w, k) { return cardioSpecS(SESS[k], w); }
+function cardioSpec__base(w, k) { return cardioSpecS(SESS[k], w); }
+function cardioSpec() { return hbRun('cardioSpec', this, arguments, cardioSpec__base); }
 function cardioSpecS(s, w) { const c = s && s.cardio;
   if (c && c.weeks && c.weeks.length) { const i = c.clamp ? Math.min(w, c.weeks.length) - 1 : (w - 1) % c.weeks.length; let e = c.weeks[i]; if (typeof e === 'number') e = { mode: 'z2', min: e }; return Object.assign({ mode: s.kind === 'hiit' ? 'int' : 'z2' }, e); }
   if (s && s.kind === 'hiit') { const h = hiit(w); return { mode: h.mode, reps: h.reps, dur: h.dur, rest: 3, warm: 10, cool: 5, hi: true, min: h.min, title: h.title, sub: h.sub }; }
@@ -114,12 +116,13 @@ function markStarted(w, k) { const s = sess(w, k); if (!s.date) s.date = today()
 function dayLabel(k) { const d = S.settings.dayMap[k]; return d === '' || d == null || d < 0 ? $t('freier Tag') : WD_LONG[d]; }
 function sessionsOnDow(dow) { return ORDER.filter(k => +S.settings.dayMap[k] === dow && S.settings.dayMap[k] !== ''); }
 function countsAsActivity(w, k) { return S.activities.find(a => a.countsAs === k && a.week === w); }
-function sessProgress(w, k) { const s = peekSess(w, k);
+function sessProgress__base(w, k) { const s = peekSess(w, k);
   if (s && s.skipped) return { done: true, skipped: true, f: 0, t: 0 };
   if (isCardio(k)) { const d = (s && s.cardio && num(s.cardio.dur) != null) || !!countsAsActivity(w, k); return { done: d, f: d ? 1 : 0, t: 1 }; }
   const pl = planFor(w, k); if (!pl.length && SESS[k] && (SESS[k].add || []).some(it => it.on)) return { done: true, skipped: true, off: true, f: 0, t: 0 };
   let t = 0, f = 0; pl.forEach(p => { const lg = s && s.logs[p.slot]; t += Math.max(1, p.sets + ((lg && lg.extra) || 0)); if (lg) f += (lg.sets || []).filter(x => x && x.done).length; });
   return { done: t > 0 && f / t >= 0.8, f, t }; }
+function sessProgress() { return hbRun('sessProgress', this, arguments, sessProgress__base); }
 function weekDone(w) { return ORDER.length > 0 && ORDER.every(k => sessProgress(w, k).done); }
 function lastDate(w) { let d = null; ORDER.forEach(k => { const s = peekSess(w, k); if (s && s.date && (!d || s.date > d)) d = s.date; const a = countsAsActivity(w, k); if (a && (!d || a.date > d)) d = a.date; }); return d; }
 /* nächste Woche erst am Tag nach der letzten Einheit, damit „Heute“ am Trainingstag „erledigt“ zeigt */
@@ -142,7 +145,7 @@ function sleepQuality(min) { if (min == null) return null; return min < 360 ? 's
 
 /* ======================= READINESS ======================= */
 function lastBack(w, k) { for (let j = chronIndex(w, k) - 1; j >= 0; j--) { const ww = Math.floor(j / ORDER.length) + 1, kk = ORDER[j % ORDER.length]; if (!isGym(kk)) continue; const s = peekSess(ww, kk); const v = s && num(s.check && s.check.back); if (v != null) return v; } return null; }
-function readiness(w, k) {
+function readiness__base(w, k) {
   const s = peekSess(w, k) || { check: {} }, c = s.check || {}, d = s.date || today(), h = S.health[d] || {};
   const back = num(c.back), pb = lastBack(w, k);
   const rhr = num(c.rhr) ?? rhrOf(d), base = rhrBaseline();
@@ -154,6 +157,7 @@ function readiness(w, k) {
   const dr = dailyReadiness(d);
   const y = addDays(d, -1); const runPrev = legDay(k, w) ? S.activities.find(a => (a.date === y || a.date === d) && ACT_MAP[a.type] && ACT_MAP[a.type].run && (num(a.dur) || 0) >= 20) : null;
   return { backRed, backAmber, rhrHigh, sleepBad, rpeShift: (rhrHigh || sleepBad || (dr && dr.score < 50)) ? -1 : 0, dr, back, pb, rhr, base, sleep, sleepMin: h.sleepMin, runPrev, autoRhr: num(c.rhr) == null && rhr != null, autoSleep: !c.sleep && !!sleep }; }
+function readiness() { return hbRun('readiness', this, arguments, readiness__base); }
 
 /* ======================= VERLAUF & AUTOREGULATION ======================= */
 const e1rm = (w, r, rpe) => w * (1 + (r + (10 - rpe)) / 30);
@@ -179,7 +183,7 @@ function bestE1rm(h) { let best = null;
 function incFor(exId) { return /fs|pend|hack|legpress|trap|ht|glute|row|bss|rev_lunge|rdl|hyper|calf|tbar|goblet|stepup/.test(exId) ? 5 : 2.5; }
 const isPrio = exId => { const m = LIB[exId] && LIB[exId].muscles; if (!m) return false; return PRIORITY.some(p => m[p] >= 1); };
 
-function planSuggestion(w, k, spec, exId, rd) {
+function planSuggestion__base(w, k, spec, exId, rd) {
   const tgt = spec.rpe != null ? spec.rpe + (spec.type === 'main' ? rd.rpeShift : 0) : null;
   const h = prevLog(w, k, exId) || archiveHistory(exId); const rng = repRange(spec.reps);
   if (spec.type === 'time') { const rr = repRange(spec.reps); return { txt: $t('Zeit pro Satz: ') + spec.reps + $t(' s. Gleichmäßig, Technik vor Tempo.'), cls: 'first', reps: rr && rr.lo }; }
@@ -211,6 +215,7 @@ function planSuggestion(w, k, spec, exId, rd) {
   if (hitTop) return { load: top + inc, reps: rng && rng.lo, txt: fmt(top + inc) + $t(' kg (+') + fmt(inc) + $t('), zurück auf ') + (rng ? rng.lo : '') + $t(' Reps'), cls: '' };
   const minR = Math.min(...sets.map(s => s.r || 0));
   return { load: top, reps: Math.min(rng ? rng.hi : minR + 1, minR + 1), txt: fmt(top) + $t(' kg halten, ein Rep mehr pro Satz'), cls: 'hold' }; }
+function planSuggestion() { return hbRun('planSuggestion', this, arguments, planSuggestion__base); }
 
 function setSuggestion(w, k, spec, exId, i, base, rd, rawSets) {
   const raw = rawSets || (((sess(w, k).logs[spec.slot]) || {}).sets) || [];
@@ -247,10 +252,11 @@ const OFF_LANGS = [LANG, 'en', 'de'].filter((x, i, a) => a.indexOf(x) === i).joi
 const foodName = f => (f.names && (f.names[LANG] || f.names.en || f.names.de || f.names.ru)) || f.name;
 function entryName(e) { const f = getFood(e.food); return f && f.src !== 'quick' ? foodName(f) : e.name; }
 function unitsFor(f) { const u = []; if (f.base === '100g') { u.push('g'); if (f.pieceG) u.push('Stk'); } else { u.push('Stk'); if (f.pieceG) u.push('g'); } return u; }
-function macrosFor(f, qty, unit) { let factor;
+function macrosFor__base(f, qty, unit) { let factor;
   if (f.base === '100g') { const g = unit === 'g' ? qty : qty * (f.pieceG || 0); factor = g / 100; }
   else { factor = unit === 'Stk' ? qty : qty / (f.pieceG || 1); }
   const m = { kcal: f.kcal * factor, p: f.p * factor, f: f.f * factor, c: f.c * factor }; if (f.fib != null) m.fib = f.fib * factor; if (f.sug != null) m.sug = f.sug * factor; if (f.salt != null) m.salt = f.salt * factor; return m; }
+function macrosFor() { return hbRun('macrosFor', this, arguments, macrosFor__base); }
 function dayObj(d) { return S.days[d] || (S.days[d] = { entries: [] }); }
 function dayTotals(d) { const o = S.days[d]; const t = { kcal: 0, p: 0, f: 0, c: 0 }; if (!o || !o.entries) return t; o.entries.forEach(e => { t.kcal += e.kcal; t.p += e.p; t.f += e.f; t.c += e.c; }); return t; }
 function intakeFor(d) { if (S.settings.trackMode === 'p') return null; const o = S.days[d]; if (!o || !o.entries || !o.entries.length || o.complete === false) return null; return dayTotals(d).kcal; }
@@ -271,9 +277,10 @@ function series() {
   return out; }
 /* Fett nie unter 20 % der Kalorien (ERN-109: darunter sinkt bei Männern das Testosteron; Empfehlung 20–35 %) */
 const fatFloor = kcal => Math.ceil(RV('fat_min') / 100 * kcal / 9 / 5) * 5; const fatG = (kcal, f) => Math.max(f, fatFloor(kcal));
-function currentTargets() { const cs = S.checkins.filter(c => c.date <= today()).sort((a, b) => a.date < b.date ? -1 : 1);
+function currentTargets__base() { const cs = S.checkins.filter(c => c.date <= today()).sort((a, b) => a.date < b.date ? -1 : 1);
   if (cs.length) { const l = cs[cs.length - 1]; const f = fatG(l.kcal, num(l.f) || 0); return f === l.f ? l : Object.assign({}, l, { f, c: Math.max(0, Math.round((l.kcal - 4 * l.p - 9 * f) / 4)) }); }
   const kcal = num(S.settings.startKcal) || 2400, p = num(S.settings.protein) || 200, f = fatG(kcal, num(S.settings.fat) || 70); return { date: null, kcal, p, f, c: Math.round((kcal - 4 * p - 9 * f) / 4), tdee: null }; }
+function currentTargets() { return hbRun('currentTargets', this, arguments, currentTargets__base); }
 function checkinDue() { const ser = series(); if (ser.length < 7) return false; const last = S.checkins[S.checkins.length - 1]; return !last || daysBetween(last.date, today()) >= 7; }
 function weeklyRate(ser) { if (ser.length < 8) return null; return ser[ser.length - 1].trend - ser[ser.length - 8].trend; }
 /* Tempo für den Check-in: Ziel erreicht → kein Defizit mehr; Erhaltungsphase → Gewicht im Bereich ±1 kg halten */
@@ -283,12 +290,13 @@ function effRate(trend) { const st = S.settings, m = S.plan && S.plan.maint, tgt
 const TRACK_TXT = { full: 'Alles (Kalorien und Makros)', pk: 'Kalorien und Protein', p: 'Nur Protein' };
 function trackModeField() { const md = S.settings.trackMode || 'full'; return '<div class="field" style="margin-top:12px"><label for="st-track">' + $t('Was trackst du?') + '</label><select id="st-track" data-st="trackMode">' + Object.keys(TRACK_TXT).map(k => '<option value="' + k + '"' + (md === k ? ' selected' : '') + '>' + esc($t(TRACK_TXT[k])) + '</option>').join('') + '</select></div>' +
   (md === 'p' ? '<p class="small muted" style="margin-top:6px">' + $t('Ohne Kalorien kann die App deinen Bedarf nicht aus echten Daten berechnen. Der Check-in schaut dann nur auf Gewichtstrend und Protein, das Kalorienziel bleibt beim Startwert.') + '</p>' : ''); }
-function doCheckin() { const ser = series(); const last = ser[ser.length - 1]; const prev = currentTargets(); const st = S.settings;
+function doCheckin__base() { const ser = series(); const last = ser[ser.length - 1]; const prev = currentTargets(); const st = S.settings;
   let kcal = Math.round((last.est - effRate(last.trend) * 7700 / 7) / 50) * 50;
   kcal = Math.max(num(st.floor) || 2000, kcal); if (st.paceChanged) delete st.paceChanged; else kcal = Math.max(prev.kcal - 300, Math.min(prev.kcal + 300, kcal));
   const p = num(st.protein) || 200, f = fatG(kcal, num(st.fat) || 70);
   const c = { date: today(), tdee: Math.round(last.est), kcal, p, f, c: Math.max(0, Math.round((kcal - 4 * p - 9 * f) / 4)), rate: weeklyRate(ser), trend: last.trend };
   S.checkins = S.checkins.filter(x => x.date !== c.date).concat([c]); save(); return c; }
+function doCheckin() { return hbRun('doCheckin', this, arguments, doCheckin__base); }
 
 /* ======================= ROUTER ======================= */
 let route = { name: 'heute', arg: null };
@@ -323,7 +331,7 @@ const note = (dot, html, btn) => '<div class="note-card"><span class="dot ' + do
 const badge = k => { const s = SESS[k]; return '<span class="badge ' + s.kind + '">' + (s.kind === 'z2' ? 'Z2' : s.kind === 'hiit' ? 'H' : k) + '</span>'; };
 
 /* ======================= HEUTE ======================= */
-function viewHeute() {
+function viewHeute__base() {
   const t = today(), d = new Date(), w = curWeek(), st = S.settings;
   const ser = series(), last = ser[ser.length - 1], rate = weeklyRate(ser), tg = currentTargets(), tot = dayTotals(t);
   const planned = S.settings.mode === 'rotation' ? ORDER.filter(k => !sessProgress(w, k).done).slice(0, 1) : sessionsOnDow(d.getDay());
@@ -347,6 +355,7 @@ function viewHeute() {
   $t('<div class="grow"></div><div style="text-align:right"><div class="lbl">Trend</div><div class="big num">') + (last ? fmt(last.trend) + $t(' kg') : '–') + '</div><div class="small ' + (rate != null && rate < 0 ? 't-green' : 'muted') + '" style="font-weight:700">' + (rate != null ? (rate <= 0 ? '−' : '+') + fmt(Math.abs(rate), 2) + $t(' kg pro Woche') : $t('Trend ab 8 Tagen')) + '</div></div></div></div>' +
   $t('<a class="card" href="#essen" style="text-decoration:none;color:inherit;display:block"><div class="row" style="margin-bottom:12px"><h2 class="grow">Ernährung</h2><span class="small muted">Ziel ') + fmt(tg.kcal, 0) + $t(' kcal</span></div>') + rings(tot, tg) + '</a>' +
   acts + '</div>'; }
+function viewHeute() { return hbRun('viewHeute', this, arguments, viewHeute__base); }
 function healthStrip(d) { const h = S.health[d] || {}, y = S.health[addDays(d, -1)] || {}; const base = rhrBaseline(); const rhr = rhrOf(d);
   const steps = h.steps, goal = num(S.settings.stepGoal) || 9000; const src = h.src || S.healthMeta.source;
   const conn = HEALTH.native ? $t('<button class="iconbtn" type="button" data-act="hcSync" aria-label="Gesundheitsdaten synchronisieren" style="background:var(--paper)">') + ICON.sync + '</button>' : '';
@@ -369,7 +378,7 @@ function actRow(a) { const t = ACT_MAP[a.type] || ACT_MAP.sonst; const bits = []
   return '<a class="li" href="#frei/' + a.id + '"><span class="badge act sm">' + actIco(t) + '</span><div class="grow"><b>' + esc(a.title || t.name) + '</b><small>' + esc(fmtDay(a.date) + (bits.length ? ' · ' + bits.join(' · ') : '')) + (a.countsAs ? $t(' · zählt als ') + SESS[a.countsAs].title : '') + (a.src && a.src !== 'manual' ? ' · ' + esc(srcLabel(a)) : '') + '</small></div><span class="chev">›</span></a>'; }
 
 /* ======================= TRAINING ======================= */
-function viewTraining() {
+function viewTraining__base() {
   if (!ORDER.length) return noPlanView();
   const cw = curWeek(); if (!ui.week) ui.week = cw; const w = ui.week;
   let n = 0; ORDER.forEach(k => { if (sessProgress(w, k).done) n++; });
@@ -391,6 +400,7 @@ function viewTraining() {
   (frees.length ? '<div class="card flush"><div class="list">' + frees.map(actRow).join('') + '</div></div>' : $t('<p class="muted small" style="margin:0 4px">Spontan joggen, schwimmen oder frei trainieren? Über das Plus unten rechts eintragen.</p>')) +
   (weekDone(w) || w < cw ? weekReport(w) : '') + bodyCard(w) +
   $t('<div class="card"><h2>Volumen Woche ') + w + $t('</h2><p class="small muted" style="margin-bottom:14px">Erledigte Sätze pro Muskel, Hilfsmuskeln anteilig. Lila = Schwerpunkt, grau hinterlegt = Zielbereich. In Klammern: geplant.</p>') + volBars(vol, pv) + '<div style="margin-top:10px">' + ruleBtn(['vol_prio', 'vol_other', 'beginner_vol', 'older_maintain']) + '</div></div></div>'; }
+function viewTraining() { return hbRun('viewTraining', this, arguments, viewTraining__base); }
 function volBars(v, pv) { const max = 24; return '<div class="vol">' + Object.keys(MUSCLES).map(m => { const p = PRIORITY.includes(m), tr = p ? VOL_TARGET.prio : VOL_TARGET.other;
   return '<span>' + MUSCLES[m] + '</span><div class="b"><u style="left:' + (tr[0] / max * 100) + '%;width:' + ((tr[1] - tr[0]) / max * 100) + '%"></u><i class="' + (p ? 'p' : '') + '" style="width:' + Math.min(100, v[m] / max * 100) + '%"></i></div><span class="num small">' + fmt(v[m], 0) + ' <span class="muted">(' + fmt(pv[m], 0) + ')</span></span>'; }).join('') + '</div>'; }
 
@@ -425,7 +435,7 @@ function flagsHTML(w, k) { const r = readiness(w, k); let h = '';
   if (r.runPrev) h += note('sky', '<b>' + esc(ACT_MAP[r.runPrev.type].name) + ' ' + (r.runPrev.date === today() ? $t('heute') : $t('gestern')) + $t('.</b> Laufen belastet die Beine stärker als Rad oder Rudern. Die Hauptübung nach RPE steuern, nicht nach der Plan-Last.'));
   return '<div id="flags" class="stack">' + h + '</div>'; }
 
-function setRows(prefix, spec, raw, sugg, showRpe, tgt, isCarry, dataAttrs) { let rows = '';
+function setRows__base(prefix, spec, raw, sugg, showRpe, tgt, isCarry, dataAttrs) { let rows = '';
   for (let i = 0; i < spec.sets; i++) { const v = raw[i] || {}; const sg = sugg(i);
     const wPh = sg.load != null ? fmt(sg.load) : $t('kg'), rPh = sg.reps != null ? String(sg.reps) : (isCarry === 'time' ? 's' : isCarry ? 'm' : $t('Reps'));
     rows += '<div class="set' + (v.done ? $t(' done') : '') + '"><span class="n">' + (i + 1) + '</span>' +
@@ -434,6 +444,7 @@ function setRows(prefix, spec, raw, sugg, showRpe, tgt, isCarry, dataAttrs) { le
       (showRpe ? '<input id="' + prefix + i + '-rpe" type="number" inputmode="decimal" step="0.5" ' + dataAttrs + ' data-i="' + i + '" data-f="rpe" value="' + esc(v.rpe) + '" placeholder="' + (tgt != null ? fmt(tgt) : $t('RPE')) + '" aria-label="Satz ' + (i + 1) + ' RPE">' : '<span></span>') +
       '<button class="chk" type="button" data-act="done" ' + dataAttrs + ' data-i="' + i + '" aria-label="Satz ' + (i + 1) + ' erledigt">' + ICON.check + '</button></div>'; }
   return $t('<div class="sets"><div class="sethead"><span>#</span><span>kg</span><span>') + (isCarry === 'time' ? $t('Sek.') : isCarry ? $t('Meter') : $t('Reps')) + '</span><span>' + (showRpe ? $t('<button class="rpehelp" type="button" data-act="rpeHelp">RPE ?</button>') : '') + '</span><span></span></div>' + rows + '</div>'; }
+function setRows() { return hbRun('setRows', this, arguments, setRows__base); }
 function exCard(w, k, spec0) {
   const s = sess(w, k); const lg = s.logs[spec0.slot]; const raw = (lg && lg.sets) || []; const extra = (lg && lg.extra) || 0; const spec = extra ? Object.assign({}, spec0, { sets: spec0.sets + extra }) : spec0;
   const exId = actualEx(w, k, spec), ex = LIB[exId], rd = readiness(w, k);
@@ -455,7 +466,7 @@ function exCard(w, k, spec0) {
 function exActions(exId, plates, load, isMain, slot, extra) { return '<div class="ex-actions">' + (slot ? '<button class="btn sm" data-act="addSet" data-slot="' + slot + $t('" type="button">+ Satz</button>') + (extra !== false ? '<button class="btn sm" data-act="remSet" data-slot="' + slot + $t('" type="button">− Satz</button>') : '') : '') + (plates ? '<button class="btn sm" data-act="plates" data-load="' + (load || '') + '" data-main="' + (isMain ? 1 : '') + '" data-ex="' + exId + $t('" type="button">Scheiben') + (isMain ? $t(' & Aufwärmen') : '') + '</button>' : '') +
   '<input class="exnote grow" id="exn-' + exId + '-' + (plates ? 'p' : 'n') + '" type="text" data-exnote="' + exId + '" value="' + esc(S.exNotes[exId]) + $t('" placeholder="Notiz, z. B. Sitz auf Stufe 4" aria-label="Notiz zur Übung"></div>'); }
 
-function cardioView(w, k) {
+function cardioView__base(w, k) {
   const s = sess(w, k); const c = s.cardio || {}; const hf = num(S.settings.hfmax) || 186; const z2 = [Math.round(hf * .65), Math.round(hf * .75)], hi = Math.round(hf * .9);
   const rd = readiness(w, k); let title, sub, zones; const act = countsAsActivity(w, k);
   const hk = isHiit(k), sp = cardioSpec(w, k); if (SESS[k].cardio) { title = cardioTitle(sp); sub = cardioSub(sp);
@@ -479,6 +490,7 @@ function cardioView(w, k) {
     (sp.mode === 'int' ? (act && (act.ivs || []).some(x => x.k === 'hi') ? ivsCard(act) : ivEntryCard(w, k, sp, c)) : '') +
     traceCard(act && S.hrTraces[act.id] ? act.id : sKey(w, k), act && act.start ? { start: act.start, end: act.end } : s.timerStart ? { start: s.timerStart, end: s.timerStart + (s.timerDur || 0) * 1000 } : null, sp.mode === 'int' && !!sp.hi) +
     (s.skipped ? '<button class="btn block" data-act="unskip" data-w="' + w + '" data-k="' + k + $t('" type="button">Wieder öffnen</button>') : '<button class="btn block" style="background:var(--fog)" data-act="skip" data-w="' + w + '" data-k="' + k + $t('" type="button">Einheit überspringen</button>')) + '</div>'; }
+function cardioView() { return hbRun('cardioView', this, arguments, cardioView__base); }
 /* Intervalle einzeln eintragen (Laufband, Air-Bike …): vorher als Ziel oder nachher als Ergebnis */
 function ivEntryCard(w, k, sp, c) { const n = ivCount(sp); if (!n) return ''; const iv = c.iv || [];
   return '<div class="card"><h2>' + $t('Intervalle einzeln') + '</h2><p class="small muted">' + $t('Tempo, Geschwindigkeit oder Watt pro Intervall. Vorher als Ziel oder nachher als Ergebnis eintragen.') + '</p><div class="fields" style="margin-top:10px">' +
@@ -517,8 +529,9 @@ let searchAbort = null;
 function openSheet(html) { $('#sheetCard').innerHTML = '<div class="grab"></div>' + html; $('#sheet').hidden = false; }
 function closeSheet() { $('#sheet').hidden = true; $('#sheetCard').innerHTML = ''; }
 const sheetHead = t => '<div class="row"><h2 class="grow">' + t + $t('</h2><button class="btn sm" style="background:var(--fog)" data-act="closeSheet" type="button">Schließen</button></div>');
-function foodRow(f) { const per = f.base === '100g' ? $t('100 g') : $t('Stück'); return '<div class="it" data-act="pick" data-id="' + esc(f.id) + '"><div class="grow"><b>' + esc(foodName(f)) + '</b><small>' + (f.brand ? esc(f.brand) + ' · ' : '') + (f.needsFetch ? $t('Nährwerte werden beim Antippen geladen') : fmt(f.kcal, 0) + $t(' kcal · ') + fmt(f.p, 1) + $t(' g Protein pro ') + per) + '</small></div><span class="chev">›</span></div>'; }
-function addSheet() {
+function foodRow__base(f) { const per = f.base === '100g' ? $t('100 g') : $t('Stück'); return '<div class="it" data-act="pick" data-id="' + esc(f.id) + '"><div class="grow"><b>' + esc(foodName(f)) + '</b><small>' + (f.brand ? esc(f.brand) + ' · ' : '') + (f.needsFetch ? $t('Nährwerte werden beim Antippen geladen') : fmt(f.kcal, 0) + $t(' kcal · ') + fmt(f.p, 1) + $t(' g Protein pro ') + per) + '</small></div><span class="chev">›</span></div>'; }
+function foodRow() { return hbRun('foodRow', this, arguments, foodRow__base); }
+function addSheet__base() {
   const tabs = [['recent', $t('Zuletzt')], ['presets', $t('Meal-Prep')], ['rec', $t('Rezepte')], ['tpl', $t('Vorlagen')], ['quick', $t('Schnell')], ['new', $t('Neu')]];
   let body = '';
   if (ui.foodTab === 'presets') { const custom = Object.values(S.foods).filter(f => f.src === 'custom' || f.src === 'recipe'); body = '<div class="plist">' + PRESET_FOODS.map(f => foodRow(getFood(f.id))).join('') + custom.map(foodRow).join('') + '</div>'; }
@@ -530,14 +543,16 @@ function addSheet() {
   else body = foodForm(null);
   openSheet(sheetHead(esc($t(ui.meal))) + '<div class="scanbar" style="margin-top:12px"><button class="btn brand" data-act="scan" type="button">' + ICON.scan + $t('Barcode scannen') + '</button><button class="btn' + (ui.foodTab === 'search' ? ' dark' : '') + '" style="' + (ui.foodTab === 'search' ? '' : 'background:var(--fog)') + '" data-act="ftab" data-t="search" type="button">' + ICON.search + $t('Suchen') + '</button></div><div class="seg">' + tabs.map(t => '<button class="' + (ui.foodTab === t[0] ? 'on' : '') + '" data-act="ftab" data-t="' + t[0] + '" type="button">' + t[1] + '</button>').join('') + '</div>' + body);
   if (ui.foodTab === 'search') setTimeout(() => { const q = $('#q'); if (q) q.focus(); }, 60); }
+function addSheet() { return hbRun('addSheet', this, arguments, addSheet__base); }
 function qtySheet(id, entry) { const f = getFood(id); if (!f) return; const units = unitsFor(f); const unit = entry ? entry.unit : units[0]; const qty = entry ? entry.qty : (unit === 'g' ? (f.pieceG && f.src === 'off' ? f.pieceG : 100) : 1);
   openSheet(sheetHead(esc(foodName(f))) + (f.brand ? '<p class="small muted">' + esc(f.brand) + (f.code ? ' · ' + esc(f.code) : '') + '</p>' : '') +
     $t('<div class="fields on-white" style="margin:14px 0"><div class="field"><label for="qq">Menge</label><input id="qq" type="number" inputmode="decimal" step="any" value="') + qty + $t('"></div><div class="field"><label for="qu">Einheit</label><select id="qu">') + units.map(u => '<option value="' + u + '"' + (u === unit ? $t(' selected') : '') + '>' + $t(u) + '</option>').join('') + '</select></div>' +
     (entry ? '' : $t('<div class="field"><label for="qm">Mahlzeit</label><select id="qm">') + MEALS.map(m => '<option value="' + m + '"' + (m === ui.meal ? $t(' selected') : '') + '>' + $t(m) + '</option>').join('') + '</select></div>') + '</div>' +
     '<div id="qprev" class="card" style="padding:14px 18px"></div><div class="row" style="margin-top:14px">' + (entry ? '<button class="btn danger" style="background:var(--fog)" data-act="delEntry" data-uid="' + entry.uid + $t('" type="button">Löschen</button>') : '') + '<div class="grow"></div><button class="btn sm" style="background:var(--fog)" data-act="editFood" data-id="' + esc(id) + $t('" type="button">Nährwerte bearbeiten</button><button class="btn brand" data-act="') + (entry ? 'saveEntry' : 'confirmAdd') + '" data-id="' + esc(id) + '"' + (entry ? ' data-uid="' + entry.uid + '"' : '') + ' type="button">' + (entry ? $t('Speichern') : $t('Hinzufügen')) + '</button></div>');
   updatePrev(id); }
-function updatePrev(id) { const f = getFood(id); const q = num($('#qq') && $('#qq').value) || 0, u = $('#qu') && $('#qu').value; const m = macrosFor(f, q, u); const el = $('#qprev');
+function updatePrev__base(id) { const f = getFood(id); const q = num($('#qq') && $('#qq').value) || 0, u = $('#qu') && $('#qu').value; const m = macrosFor(f, q, u); const el = $('#qprev');
   if (el) el.innerHTML = '<div class="row" style="justify-content:space-between"><span><b class="num">' + fmt(m.kcal, 0) + $t('</b> kcal</span><span><span class="dot plum"></span> ') + fmt(m.p, 1) + ' g P</span><span><span class="dot sky"></span> ' + fmt(m.c, 1) + $t(' g KH</span><span><span class="dot green"></span> ') + fmt(m.f, 1) + ' g F</span></div>'; }
+function updatePrev() { return hbRun('updatePrev', this, arguments, updatePrev__base); }
 function foodForm(f, code) { f = f || { base: '100g', code: code || '' }; const v = k => esc(f[k] ?? '');
   return (code && !f.id ? $t('<p class="muted" style="margin-top:12px">Barcode ') + esc(code) + $t(' ist nicht in Open Food Facts. Trag die Werte von der Packung ein. Beim nächsten Scan kennt die App das Produkt.</p>') : '') +
     $t('<div class="fields on-white" style="margin-top:12px"><div class="field" style="flex:1 1 100%"><label for="ff-name">Name</label><input id="ff-name" type="text" value="') + v('name') + '"></div>' +
@@ -546,11 +561,12 @@ function foodForm(f, code) { f = f || { base: '100g', code: code || '' }; const 
     $t('<div class="field"><label for="ff-pg">Gramm pro Stück/Portion</label><input id="ff-pg" type="number" inputmode="decimal" step="any" value="') + v('pieceG') + $t('" placeholder="optional"></div>') +
     '<input type="hidden" id="ff-code" value="' + v('code') + '"></div>' +
     '<div class="row" style="margin-top:16px"><div class="grow"></div><button class="btn brand" data-act="saveFood" data-id="' + esc(f.id || '') + $t('" type="button">Speichern</button></div>'); }
-function offMap(p, partial) { const n = p.nutriments || {}; let kcal = num(n['energy-kcal_100g']); if (kcal == null && num(n.energy_100g) != null) kcal = num(n.energy_100g) / 4.184;
+function offMap__base(p, partial) { const n = p.nutriments || {}; let kcal = num(n['energy-kcal_100g']); if (kcal == null && num(n.energy_100g) != null) kcal = num(n.energy_100g) / 4.184;
   const brand = Array.isArray(p.brands) ? (p.brands[0] || '') : String(p.brands || '').split(',')[0];
   const names = {}; ['de', 'en', 'ru'].forEach(l => { const v = p['product_name_' + l]; if (v && String(v).trim()) names[l] = String(v).trim(); }); const name = (names[LANG] || (p.product_name && String(p.product_name).trim()) || names.de || names.en || names.ru || '').toString().trim();
   if (kcal == null && !(partial && name && p.code)) return null;
   return { id: 'off_' + p.code, code: String(p.code), name: name || $t('Ohne Namen'), names, brand: brand.trim(), base: '100g', kcal, p: num(n.proteins_100g) || 0, f: num(n.fat_100g) || 0, c: num(n.carbohydrates_100g) || 0, pieceG: num(p.serving_quantity) || null, src: 'off', needsFetch: kcal == null, fib: num(n.fiber_100g), sug: num(n.sugars_100g), salt: num(n.salt_100g) }; }
+function offMap() { return hbRun('offMap', this, arguments, offMap__base); }
 const offCache = {};
 async function fetchJson(url, ms) { const ac = new AbortController(); const t = setTimeout(() => ac.abort(), ms || 9000); try { const r = await fetch(url, { signal: ac.signal }); if (!r.ok && r.status !== 404) throw new Error('HTTP ' + r.status); return await r.json(); } finally { clearTimeout(t); } }
 /* Lebensmittelsuche: zuerst über die eigene Edge Function (Zwischenspeicher, kein CORS, schont das OFF-Suchlimit), dann direkt bei OFF */
@@ -658,7 +674,7 @@ async function importZeppFiles(files) { const stat = { steps: 0, sleep: 0, hr: 0
   toast(parts.length ? $t('Importiert: ') + parts.join(', ') : $t('In den Dateien wurden keine bekannten Zepp-Daten gefunden.')); }
 
 /* ======================= VERLAUF ======================= */
-function viewProgress() {
+function viewProgress__base() {
   const ser = series(), st = S.settings; const last = ser[ser.length - 1];
   const cur = last ? last.trend : num(st.startWeight); const lost = num(st.startWeight) - cur; const pct = Math.max(0, Math.min(1, lost / (num(st.startWeight) - num(st.targetWeight))));
   const vos = Object.keys(S.health).sort().map(d => S.health[d].vo2).filter(x => x != null).concat(Object.keys(S.body).sort().map(k => num(S.body[k].vo2)).filter(x => x != null)); const v0 = num(st.vo2Start); const v2 = vos.length ? vos[vos.length - 1] : v0;
@@ -686,12 +702,13 @@ function viewProgress() {
     $t('<div class="card"><h2>Kraft (geschätztes 1RM)</h2>') + lifts.map(l => '<div style="margin-top:12px"><div class="lbl">' + l.name + '</div>' + (l.pts.length > 1 ? lineChart('cl-' + l.id, l.pts, [{ key: 'v', label: 'e1RM', color: $t('var(--iris)') }], { unit: $t('kg'), dec: 0, height: 130, noLegend: true }) : empty(l.pts.length ? $t('Ab der zweiten Einheit gibt es eine Kurve. Aktuell ') + fmt(l.pts[0].v, 0) + $t(' kg.') : $t('Noch keine Sätze mit RPE geloggt.'))) + '</div>').join('') + '</div>' +
     exListCard() +
     $t('<div class="card"><h2>Check-ins</h2>') + (S.checkins.length ? $t('<div class="tbl"><table><thead><tr><th>Datum</th><th>Trend</th><th>kg/Woche</th><th>Bedarf</th><th>Ziel</th></tr></thead><tbody>') + S.checkins.slice().reverse().map(c => '<tr><td>' + fmtDay(c.date) + '</td><td class="num">' + fmt(c.trend) + '</td><td class="num">' + (c.rate != null ? fmt(c.rate, 2) : '–') + '</td><td class="num">' + fmt(c.tdee, 0) + '</td><td class="num">' + fmt(c.kcal, 0) + '</td></tr>').join('') + '</tbody></table></div>' : empty($t('Der erste Check-in ist nach 7 Tagen mit Gewicht möglich.'))) + '</div></div>'; }
+function viewProgress() { return hbRun('viewProgress', this, arguments, viewProgress__base); }
 const empty = t => '<p class="small muted">' + esc(t) + '</p>';
 function readinessHistCard() { const pts = []; for (let i = 27; i >= 0; i--) { const d = addDays(today(), -i); const r = dailyReadiness(d); pts.push({ d, score: r ? r.score : null }); }
   return $t('<div class="card"><h2>Bereitschaft</h2>') + (pts.filter(p => p.score != null).length > 1 ? lineChart('crd', pts, [{ key: 'score', label: $t('Bereitschaft'), color: $t('var(--iris)'), dotsToo: true }], { unit: '%', dec: 0, ref: 67, refLabel: $t('grün ab 67'), noLegend: true, zero: true }) : empty($t('Ab zwei Tagen mit Schlaf, Ruhepuls oder deinem Energie-Eintrag erscheint die Kurve.'))) +
     '<div style="margin-top:8px">' + ruleBtn(['readiness', 'hrv_ln']) + '</div>' +
     $t('<p class="small muted sw-only">Gewichtet aus Schlaf gegen deinen Bedarf (30 %), Ruhepuls gegen deine Basis (25 %), HRV gegen dein 7-Tage-Mittel (20 %) und deinem Gefühl (25 %). Fehlt ein Wert, zählen die anderen anteilig.</p>') + $t('<p class="small muted sw-only">Die Gewichtung ist eine Setzung der App, keine Studienlage (Grad D). Nach schwerem Krafttraining hinkt die Erholung der Muskeln der HRV hinterher, dann zählt dein Gefühl besonders.</p></div>'); }
-function loadCard() { const pts = []; for (let i = 27; i >= 0; i--) { const d = addDays(today(), -i); pts.push({ d, load: dailyLoad(d).load || null }); }
+function loadCard__base() { const pts = []; for (let i = 27; i >= 0; i--) { const d = addDays(today(), -i); pts.push({ d, load: dailyLoad(d).load || null }); }
   const wk = weekLoad(today()), prev = weekLoad(addDays(today(), -7));
   return $t('<div class="card"><h2>Belastung</h2>') + (pts.filter(p => p.load).length ? lineChart('cld', pts, [{ key: 'load', label: $t('Belastung'), bars: true, color: $t('var(--sky)') }], { unit: '', dec: 0, zero: true, noLegend: true }) : empty($t('Trag nach jeder Einheit Dauer und Session-RPE ein. Daraus entsteht deine Tagesbelastung.'))) +
     $t('<div class="stats" style="grid-template-columns:repeat(2,minmax(0,1fr));margin-top:12px"><div class="stat" style="background:var(--paper)"><div class="k">Letzte 7 Tage</div><div class="v" style="font-size:22px">') + fmt(wk.tot, 0) + '</div><div class="s">' + (prev.tot ? (wk.tot >= prev.tot ? '+' : '−') + fmt(Math.abs((wk.tot - prev.tot) / prev.tot * 100), 0) + $t(' % zur Vorwoche') : $t('Vorwoche ') + fmt(prev.tot, 0)) + '</div></div>' +
@@ -700,6 +717,7 @@ function loadCard() { const pts = []; for (let i = 27; i >= 0; i--) { const d = 
     (wk.miss ? '<p class="small t-amber" style="font-weight:700">' + wk.miss + $t(' Einheit(en) der letzten 7 Tage ohne RPE.</p>') : '') +
     '<div style="margin-top:8px">' + ruleBtn(['load_spike', 'acwr_band', 'monotony']) + '</div>' +
     $t('<p class="small muted sw-only">Belastung = Minuten × Session-RPE (Foster). Monotonie = Mittelwert ÷ Streuung der Tageswerte. Über 2 steigt laut Foster das Risiko für Überlastung.</p></div>'); }
+function loadCard() { return hbRun('loadCard', this, arguments, loadCard__base); }
 function sleepCard() { const pts = []; for (let i = 13; i >= 0; i--) { const d = addDays(today(), -i); const h = S.health[d] || {}; const staged = h.deep != null || h.rem != null || h.light != null;
     pts.push({ d, deep: staged ? (h.deep || 0) / 60 : null, rem: staged ? (h.rem || 0) / 60 : null, light: staged ? (h.light || 0) / 60 : (h.sleepMin != null ? h.sleepMin / 60 : null), awake: (h.awake || 0) / 60 || null }); }
   const has = pts.some(p => p.light != null || p.deep != null); const debt = sleepDebt(today()), cons = sleepConsistency(today());
@@ -798,7 +816,7 @@ function chartHover(e) { const box = e.target.closest('.chart'); if (!box) retur
 function chartLeave(box) { box.querySelector('.tip').style.display = 'none'; const xl = box.querySelector('line[id$="-x"]'); if (xl) xl.setAttribute('visibility', 'hidden'); }
 
 /* ======================= EINSTELLUNGEN ======================= */
-function viewMehr() { const st = S.settings; const f = (k, lab, type, extra) => '<div class="field"><label for="st-' + k + '">' + lab + '</label><input id="st-' + k + '" type="' + (type || 'number') + '" inputmode="decimal" step="any" data-st="' + k + '" value="' + esc(st[k]) + '"' + (extra || '') + '></div>';
+function viewMehr__base() { const st = S.settings; const f = (k, lab, type, extra) => '<div class="field"><label for="st-' + k + '">' + lab + '</label><input id="st-' + k + '" type="' + (type || 'number') + '" inputmode="decimal" step="any" data-st="' + k + '" value="' + esc(st[k]) + '"' + (extra || '') + '></div>';
   const sel = k => '<div class="field"><label for="dm-' + k + '">' + esc(SESS[k].title) + '</label><select id="dm-' + k + '" data-dm="' + k + $t('"><option value="">ohne festen Tag</option>') + [1, 2, 3, 4, 5, 6, 0].map(d => '<option value="' + d + '"' + (String(st.dayMap[k]) === String(d) ? $t(' selected') : '') + '>' + WD_LONG[d] + '</option>').join('') + '</select></div>';
   let rows = ''; for (let w = 1; w <= NW(); w++) { const b = S.body['w' + pad(w)] || {}; const c = (k, ph) => '<td><input id="b-' + w + k + '" type="number" inputmode="decimal" step="any" data-bw="' + w + '" data-bf="' + k + '" value="' + esc(b[k]) + '" placeholder="' + ph + '"></td>'; rows += $t('<tr><td>Woche ') + w + '</td>' + c('waist', $t('cm')) + c('arm', $t('cm')) + c('thigh', $t('cm')) + c('calf', $t('cm')) + c('vo2', '') + '</tr>'; }
   const warn = scheduleWarnings(); const base = rhrBaseline(); const hm = S.healthMeta;
@@ -829,6 +847,7 @@ function viewMehr() { const st = S.settings; const f = (k, lab, type, extra) => 
   $t('<li><b>Cardio und Kraft:</b> getrennte Tage oder mindestens 3–6 h Abstand. Laufen stört den Beinaufbau stärker als Rad oder Rudern (Schumann 2022).</li>') +
   $t('<li><b>Rücken-Ampel:</b> ab 4/10 oder schlechter als beim letzten Mal: Pendulum statt Front Squat, Glute Bridge statt Trap Bar.</li>') +
   $t('<li><b>Ruhepuls +5 über Basis oder wenig Schlaf (unter 6 h):</b> Top-Sätze RPE −1, HIIT wird zu Z2.</li></ul></div></div>')); }
+function viewMehr() { return hbRun('viewMehr', this, arguments, viewMehr__base); }
 
 /* ======================= TIMER ======================= */
 const TM = { end: 0, total: 0, iv: null, ctx: null, queue: [] };
@@ -1053,13 +1072,14 @@ function dailyReadiness(d) { const h = S.health[d] || {}, dl = S.daily[d] || {},
 function legRecent(d) { const a = addDays(d, -1), b = addDays(d, -2); for (let w = 1; w <= NW(); w++) for (const k of GYM()) { const s = peekSess(w, k); if (s && (s.date === a || s.date === b) && legDay(k, w)) return true; } return false; }
 const LVL_COLOR = { green: 'var(--verdant)', amber: 'var(--sunset)', red: 'var(--signal)' };
 function scoreRing(score, level, size) { const C = 2 * Math.PI * 40, pct = score / 100; return '<svg viewBox="0 0 100 100" width="' + size + '" height="' + size + '" aria-hidden="true"><circle cx="50" cy="50" r="40" fill="none" stroke="var(--paper)" stroke-width="12"/><circle cx="50" cy="50" r="40" fill="none" stroke="' + LVL_COLOR[level] + '" stroke-width="12" stroke-linecap="round" stroke-dasharray="' + (C * pct).toFixed(1) + ' ' + C.toFixed(1) + '" transform="rotate(-90 50 50)"/><text x="50" y="57" text-anchor="middle" font-size="24" font-weight="800" fill="var(--graphite)" font-family="Nunito Sans, sans-serif">' + score + '</text></svg>'; }
-function readinessCard(d) { const r = dailyReadiness(d); const dl = S.daily[d] || {};
+function readinessCard__base(d) { const r = dailyReadiness(d); const dl = S.daily[d] || {};
   const sel = (f, lab, opts) => '<div class="field"><label for="dl-' + f + '">' + lab + '</label><select id="dl-' + f + '" data-daily="' + f + '" data-d="' + d + '"><option value="">–</option>' + opts.map(o => '<option value="' + o[0] + '"' + (String(dl[f]) === String(o[0]) ? $t(' selected') : '') + '>' + o[1] + '</option>').join('') + '</select></div>';
   const lvlTxt = { green: $t('Bereit'), amber: $t('Eingeschränkt'), red: $t('Erholung zuerst') };
   return '<div class="card"><div class="row" style="align-items:center;gap:16px">' + (r ? scoreRing(r.score, r.level, 92) : '<div class="badge mute" style="width:92px;height:92px;flex-basis:92px;font-size:14px">–</div>') +
     $t('<div class="grow"><div class="lbl">Bereitschaft heute</div><h2 style="margin:2px 0 4px">') + (r ? lvlTxt[r.level] : $t('Noch keine Daten')) + '</h2><div class="small">' + (r ? esc(r.rec) : $t('Trag unten ein, wie du dich fühlst. Mit den Daten deiner Uhr kommen Schlaf, Ruhepuls und HRV dazu.')) + '</div></div></div>' +
     (r ? '<div class="comps">' + r.comps.map(c => '<div class="comp"><span class="dot" style="background:' + LVL_COLOR[c.v >= 67 ? 'green' : c.v >= 34 ? 'amber' : 'red'] + '"></span><b>' + c.k + '</b><span class="num">' + Math.round(c.v) + '</span><small>' + esc(c.txt) + '</small></div>').join('') + '</div>' + (r.leg ? '<p class="small muted" style="margin-top:8px">' + $t('Beintag in den letzten 48 Stunden: Die HRV erholt sich schneller als die Muskeln. Muskelkater und Gefühl zählen heute mehr.') + ' ' + ruleBtn('hrv_leg') + '</p>' : '') : '') +
     '<div class="fields" style="margin-top:14px">' + sel('feel', $t('Energie'), [[5, $t('sehr gut')], [4, $t('gut')], [3, $t('normal')], [2, $t('müde')], [1, $t('erschöpft')]]) + sel('sore', $t('Muskelkater'), [[1, $t('keiner')], [2, $t('leicht')], [3, $t('mittel')], [4, $t('stark')], [5, $t('sehr stark')]]) + '</div></div>'; }
+function readinessCard() { return hbRun('readinessCard', this, arguments, readinessCard__base); }
 
 /* Belastung = Dauer (min) × Session-RPE (Foster 2001) */
 function autoDur(s) { const ts = []; Object.values(s.logs || {}).forEach(lg => (lg.sets || []).forEach(x => { if (x && x.t) ts.push(x.t); })); if (ts.length < 2) return null; return Math.round((Math.max(...ts) - Math.min(...ts)) / 60000) + 5; }
@@ -1133,10 +1153,11 @@ function weekReport(w) { const days = []; ORDER.forEach(k => { const s = peekSes
 function ownedPlates() { const l = String(S.settings.plates || '25,20,15,10,5,2.5,1.25').split(/[,; ]+/).map(num).filter(x => x > 0).sort((a, b) => b - a); return l.length ? l : [25, 20, 15, 10, 5, 2.5, 1.25]; }
 function platesFor(total, bar) { let per = (total - bar) / 2; if (per <= 0) return { plates: [], rest: 0 }; const P = ownedPlates(); const out = []; P.forEach(p => { while (per >= p - 1e-6) { out.push(p); per -= p; } }); return { plates: out, rest: Math.round(per * 100) / 100 }; }
 function barFor(exId) { return exId === 'trap' ? (num(S.settings.trapBarKg) || 25) : (num(S.settings.barKg) || 20); }
-function plateBody(load, isMain, barOverride) { const bar = barOverride || num(S.settings.barKg) || 20; const pl = platesFor(load || 0, bar);
+function plateBody__base(load, isMain, barOverride) { const bar = barOverride || num(S.settings.barKg) || 20; const pl = platesFor(load || 0, bar);
   const row = (lab, kg, reps) => { const p = platesFor(kg, bar); return '<div class="it" style="cursor:default"><div class="grow"><b>' + lab + '</b><small>' + (p.plates.length ? $t('pro Seite: ') + p.plates.map(x => fmt(x, 2)).join(' + ') : $t('nur Stange')) + '</small></div><div class="end"><b class="num" style="color:var(--graphite)">' + fmt(kg, 1) + $t(' kg</b>') + (reps ? '<br>× ' + reps : '') + '</div></div>'; };
   let warm = ''; if (isMain && load > bar) { const steps = [[0, 10], [.4, 5], [.6, 3], [.75, 2], [.85, 1]]; const seen = new Set(); warm = $t('<h3 style="margin:16px 0 4px">Aufwärmen</h3><div class="plist">') + steps.map(([f, r]) => { const kg = f ? Math.max(bar, r25(load * f)) : bar; if (seen.has(kg)) return ''; seen.add(kg); return row(f ? Math.round(f * 100) + ' %' : $t('Leere Stange'), kg, r); }).join('') + $t('</div><p class="small muted">Pausen beim Aufwärmen kurz halten, ab 75 % etwa 1–2 min.</p>'); }
   return '<div class="big num" style="margin-top:8px">' + (load ? fmt(load, 1) + $t(' kg') : '–') + '</div><p class="muted" style="margin-top:4px">' + (pl.plates.length ? $t('Pro Seite: <b>') + pl.plates.map(x => fmt(x, 2)).join(' + ') + '</b>' : $t('Nur Stange')) + (pl.rest ? $t(' · Rest ') + fmt(pl.rest, 2) + $t(' kg nicht steckbar') : '') + '</p>' + warm; }
+function plateBody() { return hbRun('plateBody', this, arguments, plateBody__base); }
 function plateSheet(load, isMain, exId) { const bar = barFor(exId); ui.plate = { isMain, exId };
   openSheet(sheetHead($t('Scheiben') + (isMain ? $t(' und Aufwärmen') : '')) + $t('<div class="fields on-white" style="margin-top:12px"><div class="field"><label for="pl-kg">Zielgewicht (kg)</label><input id="pl-kg" type="number" inputmode="decimal" step="0.5" value="') + (load || '') + $t('"></div><div class="field"><label for="pl-bar">Stange (kg)</label><input id="pl-bar" type="number" inputmode="decimal" step="0.5" value="') + bar + '"></div></div><div id="plBody">' + plateBody(load, isMain, bar) + $t('</div><p class="src">Scheiben, die du hast, unter Einstellungen → Training festlegen.</p>')); }
 
@@ -1255,9 +1276,10 @@ function stallInfo(exId, w) { if (phase(w) === 'dl' || phase(w) === 'test') retu
 /* ======================= ERNÄHRUNG: Rezepte, Schnell-Eintrag, Wasser, Mikros ======================= */
 function microTotals(d) { const o = S.days[d]; const t = { fib: 0, sug: 0, salt: 0, cov: 0, n: 0 }; if (!o || !o.entries) return t;
   o.entries.forEach(e => { t.n++; if (e.fib != null || e.sug != null || e.salt != null) { t.cov++; t.fib += e.fib || 0; t.sug += e.sug || 0; t.salt += e.salt || 0; } }); return t; }
-function microRow(d) { const m = microTotals(d); if (!m.n) return ''; const bar = (v, goal, good) => { const p = Math.min(100, v / goal * 100); return '<div class="meter" style="background:var(--paper)"><i style="width:' + p + '%;background:' + (good ? $t('var(--verdant)') : v > goal ? $t('var(--signal)') : $t('var(--sunset)')) + '"></i></div>'; };
+function microRow__base(d) { const m = microTotals(d); if (!m.n) return ''; const bar = (v, goal, good) => { const p = Math.min(100, v / goal * 100); return '<div class="meter" style="background:var(--paper)"><i style="width:' + p + '%;background:' + (good ? $t('var(--verdant)') : v > goal ? $t('var(--signal)') : $t('var(--sunset)')) + '"></i></div>'; };
   return $t('<div class="micro"><div><div class="k">Ballaststoffe</div><b class="num">') + fmt(m.fib, 0) + '</b> / 30 g' + bar(m.fib, 30, true) + $t('</div><div><div class="k">Zucker</div><b class="num">') + fmt(m.sug, 0) + '</b> g' + bar(m.sug, 50, false) + $t('</div><div><div class="k">Salz</div><b class="num">') + fmt(m.salt, 1) + '</b> / 6 g' + bar(m.salt, 6, false) + '</div></div>' +
     (m.cov < m.n ? '<p class="src" style="margin-top:6px">' + (m.n - m.cov) + $t(' von ') + m.n + $t(' Einträgen ohne diese Angaben.</p>') : ''); }
+function microRow() { return hbRun('microRow', this, arguments, microRow__base); }
 function waterCard(d) { const o = S.days[d] || {}; const ml = num(o.water) || 0, goal = num(S.settings.waterGoal) || 3000; const p = Math.min(100, ml / goal * 100);
   return $t('<div class="card"><div class="row"><h2 class="grow">Wasser</h2><span class="num" style="font-weight:800">') + fmt(ml / 1000, 2) + ' / ' + fmt(goal / 1000, 1) + $t(' l') + '</span></div><div class="meter" style="background:var(--paper);height:10px"><i style="width:' + p + '%;background:var(--sky)"></i></div>' +
     $t('<div class="row" style="margin-top:12px"><button class="btn sm" data-act="water" data-v="250" type="button">+ 250 ml</button><button class="btn sm" data-act="water" data-v="500" type="button">+ 500 ml</button><button class="btn sm" data-act="water" data-v="-250" type="button" aria-label="250 ml abziehen">− 250</button></div>') +

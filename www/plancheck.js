@@ -95,7 +95,7 @@ function chkFindingHTML(f, where) { const gm = gradeMode(f.g), hide = where + '|
     (f.ch && !f.ign && gm !== 'info' ? '<p class="small muted" style="margin:4px 0 0">' + $t('Vorschlag: ') + chkChTxt(f.ch) + '</p>' : '') +
     (f.dl && !f.ign ? '<p class="small muted" style="margin:4px 0 0">' + $t('Vorschlag: nach spätestens 8 harten Wochen eine Deload-Woche einbauen.') + '</p>' : '') +
     '<div class="row" style="gap:6px;margin-top:8px;flex-wrap:wrap">' + btns + ruleBtn([f.rule], $t('Warum?')) + (f.ign || where === 'lib' ? '' : '<button class="linkbtn small" data-act="chkHide" data-rule="' + f.rule + '" type="button">' + $t('Diese Art Hinweis nicht mehr zeigen') + '</button>') + '</div></div>'; }
-function chkCard(plan, where) { if (!plan || !plan.sessions) return ''; const r = checkPlan(plan, chkCtxOf(where)); const open = ui.chkOpen === where;
+function chkCard__base(plan, where) { if (!plan || !plan.sessions) return ''; const r = checkPlan(plan, chkCtxOf(where)); const open = ui.chkOpen === where;
   const hidR = S.settings.chkHide || {}, later = ui.chkLater || [];
   const vis = r.items.filter(f => !hidR[f.rule] && !later.includes(where + '|' + f.key) && !(evStrict() && (f.g === 'C' || f.g === 'D')));
   const nHid = r.items.length - vis.length, nOpen = r.items.filter(f => !f.ign && f.sev !== 'tip' && f.g !== 'D').length;
@@ -107,6 +107,7 @@ function chkCard(plan, where) { if (!plan || !plan.sessions) return ''; const r 
     (vis.length ? vis.map(f => chkFindingHTML(f, where)).join('') : '<p style="margin-top:8px">' + $t('Keine Hinweise. Der Plan hält alle Regeln ein.') + '</p>') +
     (nHid ? '<p class="small muted" style="margin-top:8px">' + $tf('{n} Hinweise ausgeblendet.', { n: nHid }) + ' <button class="linkbtn" data-act="chkShowAll" type="button">' + $t('Wieder zeigen') + '</button></p>' : '') +
     '<div class="row" style="margin-top:10px">' + ruleBtn(['vol_prio', 'vol_other', 'sess_cap', 'conc_gap', 'conc_legs', 'deload_freq', 'balance'], $t('Alle Prüfregeln')) + '<div class="grow"></div><button class="btn sm" data-act="chkOpen" data-v="" type="button">' + $t('Schließen') + '</button></div></div>'; }
+function chkCard() { return hbRun('chkCard', this, arguments, chkCard__base); }
 
 document.addEventListener('click', e => { const b = e.target.closest('[data-act]'); if (!b) return; const a = b.dataset.act; if (!a.startsWith('chk')) return;
   const where = b.dataset.w, plan = where ? chkPlanOf(where) : null; const dirty = () => { if (where === 'pe') PE.dirty = true; };
