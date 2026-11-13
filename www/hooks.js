@@ -6,6 +6,20 @@
    HB_FILTERS zeigt in der Konsole, wer was erweitert. */
 'use strict';
 const HB_FILTERS = {};
-function hbFilter(name, src, fn) { (HB_FILTERS[name] = HB_FILTERS[name] || []).push({ src, fn }); }
-function hbRun(name, self, args, base) { let v = base.apply(self, args); const L = HB_FILTERS[name]; if (!L) return v; const rest = Array.prototype.slice.call(args);
-  for (let i = 0; i < L.length; i++) { try { v = L[i].fn.apply(self, [v].concat(rest)); } catch (e) { logErr('filter:' + name + ':' + L[i].src, e); } } return v; }
+function hbFilter(name, src, fn) {
+  (HB_FILTERS[name] = HB_FILTERS[name] || []).push({ src, fn });
+}
+function hbRun(name, self, args, base) {
+  let v = base.apply(self, args);
+  const L = HB_FILTERS[name];
+  if (!L) return v;
+  const rest = Array.prototype.slice.call(args);
+  for (let i = 0; i < L.length; i++) {
+    try {
+      v = L[i].fn.apply(self, [v].concat(rest));
+    } catch (e) {
+      logErr('filter:' + name + ':' + L[i].src, e);
+    }
+  }
+  return v;
+}

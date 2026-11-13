@@ -1,3 +1,4 @@
+'use strict';
 /* ======================= REGEL-TABELLE: jede Zahl, mit der die App rechnet, mit ihren Wissensbank-Einträgen =======================
    Einzige Quelle für Schwellen und Konstanten. Pro Regel: v = Wert, ev = Eintrags-IDs, g = Evidenzgrad (höchster Grad, den ein
    verknüpfter Eintrag direkt stützt; own = App-Setzung, dann immer D), n = Name, s = was die App damit tut.

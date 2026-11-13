@@ -1,0 +1,9 @@
+# Erzeugte oder reine Daten-Dateien
+www/lang-*.js
+www/cues*.js
+www/rules.js
+www/plans7.js
+www/data.js
+www/bodymap.js
+www/vendor/
+www/*.json

@@ -1,3 +1,4 @@
+'use strict';
 /* Körperkarte: Pfade aus MuscleMap von Melih Colpan (https://github.com/melihcolpan/MuscleMap), MIT-Lizenz.
    Aus dem Swift-Quellcode in JSON übertragen, Untergruppen weggelassen, sonst unverändert.
 

@@ -1,3 +1,4 @@
+'use strict';
 /* Plan-Bibliothek: Hybridblock-Coach-Pläne (aus geprüften Destillaten, Etappe 7). Automatisch erzeugt. */
 function libNewEx() {
   L("sprint_acc", $t("Beschleunigungssprints"), {q:.5,g:.5,h:.5}, ["sprint_fly"]);
