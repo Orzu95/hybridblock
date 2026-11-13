@@ -32,7 +32,10 @@ function genFromResults(q, st) { const g = generatePlan(q); const stall = new Se
     const mu = (LIB[it.ex] || {}).muscles || {}; const m = Object.keys(mu).find(x => mu[x] >= 1 && low.has(x) && (per[x] || 0) < 2); if (m && it.sets < 5) { it.sets += 1; per[m] = (per[m] || 0) + 1; added++; } }));
   g.fromResults = { swapped, added }; return g; }
 
-function viewPlanEnd() { const st = planEndStats(); const q = S.settings.q || {}; const up = planEndLevelUp(st); const meta = LIBRARY[S.plan.tpl];
+/* Betreute Athleten wählen den Folgeplan nicht selbst: nach der Bilanz steht der Hinweis auf den Coach */
+hbFilter('viewPlanEnd', 'planend', function (h) { if (!hasCoach() || (typeof VIEW !== 'undefined' && VIEW)) return h; const i = h.indexOf('<!--pe-next-->'); if (i < 0) return h;
+  return h.slice(0, i) + '<div class="card"><h2>' + $t('Dein Coach plant den nächsten Abschnitt') + '</h2><p class="small muted" style="margin:6px 0 0">' + $t('Dein Coach sieht deine Bilanz und stellt dir den nächsten Plan ein. Bis dahin kannst du unter Training frei trainieren.') + '</p><div class="row" style="margin-top:12px;gap:8px"><div class="grow"></div><a class="btn sm" href="#training">' + $t('Zum Training') + '</a>' + (typeof chatOn === 'function' && chatOn() ? '<a class="btn brand sm" href="#chat">' + $t('Nachricht an Coach') + '</a>' : '') + '</div></div></div>'; });
+function viewPlanEnd__base() { const st = planEndStats(); const q = S.settings.q || {}; const up = planEndLevelUp(st); const meta = LIBRARY[S.plan.tpl];
   const pct = x => (x >= 0 ? '+' : '') + fmt(x, 1) + ' %';
   const lifts = st.lifts.slice(0, 6).map(x => '<li><b>' + esc(LIB[x.id].name) + ':</b> ' + fmt(x.a, 0) + ' → ' + fmt(x.b, 0) + $t(' kg e1RM') + ' (' + pct(x.pct) + ')</li>').join('');
   const rec = q.goal ? recommendAfter(q, S.plan.tpl).slice(0, 3) : [];
@@ -43,7 +46,7 @@ function viewPlanEnd() { const st = planEndStats(); const q = S.settings.q || {}
     (st.bw != null ? '<p class="small" style="margin-top:8px"><b>' + $t('Körpergewicht (Trend):') + '</b> ' + (st.bw >= 0 ? '+' : '') + fmt(st.bw, 1) + $t(' kg') + '</p>' : '') +
     (st.stalls.length ? '<p class="small" style="margin-top:8px"><b>' + $t('Stillstand:') + '</b> ' + esc(st.stalls.map(id => LIB[id].name).join(', ')) + '</p>' : '') +
     (st.low.length ? '<p class="small" style="margin-top:8px"><b>' + $t('Unter dem Wochen-Soll:') + '</b> ' + esc(st.low.map(x => MUSCLES[x.m] + ' (' + fmt(x.v, 0) + ')').join(', ')) + '</p>' : '') + '</div>' +
-    $t('<div class="card"><h2>Kurzer Zielabgleich</h2><p class="small muted">Stimmen Ziel, Tage, Zeit und Einschränkungen noch? Die Empfehlungen und der neue Plan richten sich danach.</p><p class="small">') +
+    '<!--pe-next-->' + $t('<div class="card"><h2>Kurzer Zielabgleich</h2><p class="small muted">Stimmen Ziel, Tage, Zeit und Einschränkungen noch? Die Empfehlungen und der neue Plan richten sich danach.</p><p class="small">') +
     (q.goal ? esc([GOALS[q.goal], LEVELS[q.level] || '', q.days ? q.days + $t(' Tage') : '', q.minutes ? q.minutes + $t(' min') : ''].filter(Boolean).join(' · ')) : $t('Noch keine Angaben.')) + '</p>' +
     (up ? note('green', $t('Deine Ergebnisse sprechen für die Stufe „Fortgeschritten“.'), $t('<button class="btn sm" data-act="peLevelUp" type="button">Übernehmen</button>')) : '') +
     $t('<button class="btn block" data-act="peGoals" type="button">Angaben prüfen</button></div>') +
@@ -62,3 +65,5 @@ document.addEventListener('click', e => { const b = e.target.closest('[data-act]
     case 'peCopy': { PE.uid = 'me'; PE.draft = JSON.parse(JSON.stringify(Object.assign({}, S.plan, { mods: S.plan.mods }))); PE.dirty = true; PE.confirm = null; PE.switching = true; location.hash = '#plan/me'; break; }
     case 'peDeload': { const W = NW(); const P = Array.from({ length: W }, (_, i) => phase(i + 1)); P.push('dl'); S.plan.phases = P; S.plan.weeks = W + 1; S.block.week = W + 1; save(); toast($t('Übergangswoche angehängt')); location.hash = '#training'; break; }
   } });
+
+function viewPlanEnd() { return hbRun('viewPlanEnd', this, arguments, viewPlanEnd__base); }

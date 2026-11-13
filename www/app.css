@@ -532,3 +532,4 @@ body.lgon .timer{display:none}
 .libtabs{flex-wrap:wrap;overflow:visible}
 .sp-full .field{flex:1 1 100%;min-width:100%}
 .sh-opts{display:flex;flex-direction:column;gap:6px}.sh-opt{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;border:1.5px solid var(--rule);border-radius:12px;cursor:pointer}.sh-opt.on{border-color:var(--ink)}.sh-opt input{margin-top:3px}.sh-opt span{display:flex;flex-direction:column;gap:2px;min-width:0}
+.ts-card .ts-load{display:flex;align-items:flex-end;gap:6px;height:44px;margin-top:14px}.ts-load i{flex:1;background:var(--fog);border-radius:4px 4px 0 0;min-height:3px}.ts-load i.now{background:var(--ink)}.ts-cap{display:flex;justify-content:space-between;margin-top:4px}
