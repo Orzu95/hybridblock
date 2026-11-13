@@ -366,15 +366,14 @@ hbFilter('cloudCopy', 'cycle', function (__v) {
   if (!S.settings.cycleShare) delete c.cycle;
   return c;
 });
-const _adoptRemoteCyc = adoptRemote;
-adoptRemote = function (remote) {
+hbWrap('adoptRemote', 'cycle', function (__next, remote) {
   const keep = S.cycle;
-  _adoptRemoteCyc(remote);
+  __next(remote);
   if (keep && !(remote.state && remote.state.cycle)) {
     S.cycle = keep;
     persist();
   }
-};
+});
 async function pushPrivate() {
   if (!AUTH || VIEW || !S.cycle) return;
   try {
@@ -415,20 +414,18 @@ async function pullPrivate() {
     return false;
   }
 }
-const _pushStateCyc = pushState;
-pushState = async function () {
-  await _pushStateCyc();
+hbWrap('pushState', 'cycle', async function (__next) {
+  await __next();
   if (S.cycle && (S.meta.modAt || 0) > (S.meta.privAt || 0)) await pushPrivate();
-};
-const _pullAllCyc = pullAll;
-pullAll = async function (opts) {
-  const r = await _pullAllCyc(opts);
+});
+hbWrap('pullAll', 'cycle', async function (__next, opts) {
+  const r = await __next(opts);
   if (r && !r.conflict && AUTH && !VIEW && isFemale()) {
     const ch = await pullPrivate();
     if (ch) r.changed = true;
   }
   return r;
-};
+});
 
 /* ---------- Ereignisse ---------- */
 document.addEventListener('change', e => {

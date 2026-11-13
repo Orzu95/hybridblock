@@ -96,18 +96,16 @@ async function pushDrop() {
   PUSH.tok = null;
 }
 let PUSH_UID = null;
-const _pullAllPush = pullAll;
-pullAll = async function () {
-  const r = await _pullAllPush.apply(this, arguments);
+hbWrap('pullAll', 'pushfcm', async function (__next) {
+  const r = await __next.apply(this, Array.prototype.slice.call(arguments, 1));
   if (AUTH && AUTH.uid && PUSH_UID !== AUTH.uid) {
     PUSH_UID = AUTH.uid;
     pushInit();
   }
   return r;
-};
-const _logoutPush = logout;
-logout = async function () {
+});
+hbWrap('logout', 'pushfcm', async function (__next) {
   await pushDrop();
   PUSH_UID = null;
-  return _logoutPush.apply(this, arguments);
-};
+  return __next.apply(this, Array.prototype.slice.call(arguments, 1));
+});

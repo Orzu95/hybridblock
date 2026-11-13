@@ -318,10 +318,9 @@ function rzCheckRun(a) {
   save();
   toast($tf('Neue Bestform erkannt: VDOT {v}. In den Einstellungen kannst du deine Laufzonen aktualisieren.', { v: fmt(b.vdot, 1) }));
 }
-const _trSaveRZ = trSave;
-trSave = async function () {
+hbWrap('trSave', 'runzones', async function (__next) {
   const n = (S.activities || []).length;
-  const r = await _trSaveRZ.apply(this, arguments);
+  const r = await __next.apply(this, Array.prototype.slice.call(arguments, 1));
   try {
     const a = S.activities[S.activities.length - 1];
     if (S.activities.length > n && a && a.src === 'gps') rzCheckRun(a);
@@ -329,7 +328,7 @@ trSave = async function () {
     console.warn('rz', e);
   }
   return r;
-};
+});
 hbFilter('rzCard', 'runzones', function (__v) {
   const h = __v;
   const s = S.meta.rzSuggest;
@@ -494,9 +493,8 @@ function decoupling(a) {
   if (!e1 || !e2) return null;
   return { pct: Math.round(((e1 - e2) / e1) * 1000) / 10, ef1: e1 * 60, ef2: e2 * 60 };
 }
-const _viewFreeDC = viewFree;
-viewFree = function (id) {
-  const h = _viewFreeDC.apply(this, arguments);
+hbWrap('viewFree', 'runzones', function (__next, id) {
+  const h = __next.apply(this, Array.prototype.slice.call(arguments, 1));
   const a = S.activities.find(x => x.id === id);
   const dc = decoupling(a);
   if (dc == null) return h;
@@ -517,7 +515,7 @@ viewFree = function (id) {
     '</p></div>';
   const i = hbAtLast(h, '</div>', 'runzones');
   return i < 0 ? h + card : h.slice(0, i) + card + h.slice(i);
-};
+});
 /* ---------- HYROX-Simulation im Tracker: 8 × (1 km Lauf → Roxzone → Station), Laufabschnitte enden automatisch nach 1 km (GPS), Stationen per „Weiter“ ---------- */
 const HYROX_ST = () => [
   $t('SkiErg 1000 m'),
@@ -532,9 +530,8 @@ const HYROX_ST = () => [
 hbFilter('ivPresets', 'runzones', function (__v) {
   return __v.concat([{ id: 'hyrox', name: $t('HYROX-Simulation: 8 × 1 km Lauf + Station') }]);
 });
-const _ivBuildHY = ivBuild;
-ivBuild = function (sel) {
-  if (sel !== 'hyrox') return _ivBuildHY.apply(this, arguments);
+hbWrap('ivBuild', 'runzones', function (__next, sel) {
+  if (sel !== 'hyrox') return __next.apply(this, Array.prototype.slice.call(arguments, 1));
   const wm = Math.max(0, num(ivOpts().warm) || 0);
   const q = [wm ? { sec: Math.round(wm * 60), label: $t('Aufwärmen, locker'), k: 'warm' } : { sec: 10, label: $t('Gleich geht’s los'), k: 'cd' }];
   const st = HYROX_ST();
@@ -544,7 +541,7 @@ ivBuild = function (sel) {
     q.push({ sec: 7200, open: true, k: 'st', n: i, label: $tf('Station {n}: {s}', { n: i, s: st[i - 1] }) });
   }
   return q;
-};
+});
 hbFilter('trTick', 'runzones', function (__v) {
   const r = __v;
   try {
@@ -604,12 +601,11 @@ function hyroxCard(a) {
     '</tbody></table></div></div>'
   );
 }
-const _viewFreeHY = viewFree;
-viewFree = function (id) {
-  const h = _viewFreeHY.apply(this, arguments);
+hbWrap('viewFree', 'runzones', function (__next, id) {
+  const h = __next.apply(this, Array.prototype.slice.call(arguments, 1));
   const a = S.activities.find(x => x.id === id);
   const c = a ? hyroxCard(a) : '';
   if (!c) return h;
   const i = hbAtLast(h, '</div>', 'runzones');
   return h.slice(0, i) + c + h.slice(i);
-};
+});

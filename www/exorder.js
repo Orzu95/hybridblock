@@ -180,9 +180,8 @@ function ordRestore() {
   toast($t('Einheit auf die Vorlage zurückgesetzt'));
   render();
 }
-const _viewSessionOrd = viewSession;
-viewSession = function (key) {
-  const h = _viewSessionOrd.apply(this, arguments);
+hbWrap('viewSession', 'exorder', function (__next, key) {
+  const h = __next.apply(this, Array.prototype.slice.call(arguments, 1));
   const m = String(key || '').match(RE_SESS);
   if (!m || !SESS[m[2]] || !isGym(m[2]) || (typeof VIEW !== 'undefined' && VIEW)) return h;
   const btn =
@@ -195,7 +194,7 @@ viewSession = function (key) {
     '</button></div>';
   const i = hbAt(h, '<div class="ex', 'exorder');
   return i < 0 ? h : h.slice(0, i) + btn + h.slice(i);
-};
+});
 
 /* ---------- Plan-Editor: ↑ ↓ pro Übung ---------- */
 function peOrdMove(si, slot, d) {
@@ -265,8 +264,7 @@ function ssTransferCands(w, k, exIds, anchorEx) {
   });
   return out;
 }
-const _ssStoreOrd = ssStore;
-ssStore = function (members, mode) {
+hbWrap('ssStore', 'exorder', function (__next, members, mode) {
   const o = ui.ss ? Object.assign({}, ui.ss) : null;
   let info = null;
   if (o && o.scope === 'always' && members.length >= 2) {
@@ -275,7 +273,7 @@ ssStore = function (members, mode) {
     const anchorEx = (L.find(x => x.slot === o.slot) || {}).ex;
     info = { w: o.w, k: o.k, exIds, anchorEx, mode };
   }
-  const r = _ssStoreOrd.apply(this, arguments);
+  const r = __next.apply(this, Array.prototype.slice.call(arguments, 1));
   if (info && info.exIds.length >= 2) {
     const c = ssTransferCands(info.w, info.k, info.exIds, info.anchorEx);
     if (c.length) {
@@ -284,7 +282,7 @@ ssStore = function (members, mode) {
     }
   }
   return r;
-};
+});
 function ssxSheet() {
   const o = ui.ssx;
   if (!o) return;

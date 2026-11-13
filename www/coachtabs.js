@@ -70,14 +70,13 @@ function tabSync() {
     }
   }
 }
-const _renderTabs = render;
-render = function () {
-  const r = _renderTabs.apply(this, arguments);
+hbWrap('render', 'coachtabs', function (__next) {
+  const r = __next.apply(this, Array.prototype.slice.call(arguments, 1));
   try {
     tabSync();
   } catch (e) {}
   return r;
-};
+});
 
 /* ---------- Termine ---------- */
 function viewTermine() {

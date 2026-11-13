@@ -21,7 +21,7 @@ files.forEach((f, idx) => {
     bad++;
     return;
   }
-  if (f !== 'hooks.js') for (const m of src.matchAll(/hbFilter\('([\w$]+)', '([\w$-]+)'/g)) filters.push({ target: m[1], f, idx });
+  if (f !== 'hooks.js') for (const m of src.matchAll(/hb(?:Filter|Wrap)\('([\w$]+)', '([\w$-]+)'/g)) filters.push({ target: m[1], f, idx });
   for (const n of ast.body) {
     if (n.type === 'FunctionDeclaration') {
       const k = n.id.name;

@@ -149,21 +149,19 @@ function smMergeIn(remoteState) {
   smSnap();
   return { changed, localNewer };
 }
-const _persistSM = persist;
-persist = function () {
+hbWrap('persist', 'syncmerge', function (__next) {
   try {
     smStamp();
   } catch (e) {
     console.warn('smStamp', e);
   }
-  return _persistSM.apply(this, arguments);
-};
-const _adoptRemoteSM = adoptRemote;
-adoptRemote = function () {
-  const r = _adoptRemoteSM.apply(this, arguments);
+  return __next.apply(this, Array.prototype.slice.call(arguments, 1));
+});
+hbWrap('adoptRemote', 'syncmerge', function (__next) {
+  const r = __next.apply(this, Array.prototype.slice.call(arguments, 1));
   smSnap();
   return r;
-};
+});
 smSnap();
 /* Beim Verlassen der App ausstehenden Upload sofort senden (der Upload wartet sonst 12 s) */
 document.addEventListener('visibilitychange', () => {

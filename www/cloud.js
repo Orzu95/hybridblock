@@ -131,7 +131,7 @@ async function loadProfile() {
   saveAuth();
   return AUTH.profile;
 }
-async function logout() {
+async function logout__base() {
   try {
     if (AUTH) await api('/auth/v1/logout', { method: 'POST' });
   } catch (e) {
@@ -143,6 +143,9 @@ async function logout() {
   S.meta.syncMod = null;
   S.meta.planAt = null;
   persist();
+}
+function logout() {
+  return hbRun('logout', this, arguments, logout__base);
 }
 
 /* ======================= SYNC ======================= */
@@ -160,7 +163,7 @@ function cloudCopy__base() {
 function cloudCopy() {
   return hbRun('cloudCopy', this, arguments, cloudCopy__base);
 }
-async function pushState() {
+async function pushState__base() {
   if (!AUTH || VIEW) return;
   if (SYNC.busy) {
     cloudDirty();
@@ -202,7 +205,10 @@ async function pushState() {
     SYNC.busy = false;
   }
 }
-async function pushPlan(uid, plan) {
+function pushState() {
+  return hbRun('pushState', this, arguments, pushState__base);
+}
+async function pushPlan__base(uid, plan) {
   const now = new Date().toISOString();
   await api('/rest/v1/plans?on_conflict=user_id', {
     method: 'POST',
@@ -210,6 +216,9 @@ async function pushPlan(uid, plan) {
     body: JSON.stringify({ user_id: uid, plan, updated_at: now, updated_by: AUTH.uid })
   });
   return now;
+}
+function pushPlan() {
+  return hbRun('pushPlan', this, arguments, pushPlan__base);
 }
 /* Plan übernehmen: Wochentage für neue Einheiten aus dem Plan, Ernährungsziele vom Coach als Check-in */
 function setPlan__base(plan, fromCoach) {
@@ -249,7 +258,7 @@ function setPlan__base(plan, fromCoach) {
 function setPlan() {
   return hbRun('setPlan', this, arguments, setPlan__base);
 }
-async function pullAll(opts) {
+async function pullAll__base(opts) {
   opts = opts || {};
   if (!AUTH || VIEW) return { changed: false };
   let changed = false;
@@ -297,7 +306,10 @@ async function pullAll(opts) {
   }
   return { changed };
 }
-function adoptRemote(remote) {
+function pullAll() {
+  return hbRun('pullAll', this, arguments, pullAll__base);
+}
+function adoptRemote__base(remote) {
   const keepAuthMeta = { planAt: S.meta.planAt };
   S = loadState(JSON.stringify(remote.state));
   S.meta.syncAt = remote.updated_at;
@@ -307,6 +319,9 @@ function adoptRemote(remote) {
   S.meta.onboarded = true;
   applyPlan();
   persist();
+}
+function adoptRemote() {
+  return hbRun('adoptRemote', this, arguments, adoptRemote__base);
 }
 async function syncNow(silent) {
   if (!AUTH) return;
@@ -454,7 +469,7 @@ function onbCalc(d) {
     fat = r5(Math.max(0.8 * base, (0.25 * kcal) / 9)); /* 25 % der Kalorien oder 0,8 g/kg, je nachdem was höher ist */
   return { tdee, rate, floor, kcal, protein, fat, hfmax: Math.round(RV('hfmax').a - RV('hfmax').b * age) };
 }
-function viewStart(arg) {
+function viewStart__base(arg) {
   if (arg && ONB.step === 'welcome' && ['code', 'login', 'profile', 'forgot'].includes(arg)) ONB.step = arg;
   const lang =
     '<div class="seg langseg">' +
@@ -758,6 +773,9 @@ function viewStart(arg) {
   }
   return '<div class="onb">' + body + '</div>';
 }
+function viewStart() {
+  return hbRun('viewStart', this, arguments, viewStart__base);
+}
 function onbLibCard(p, why) {
   return (
     '<button class="card libcard" data-act="onbLibOpen" data-id="' +
@@ -1060,7 +1078,7 @@ function clientRow(c) {
     '</span></a>'
   );
 }
-function viewAdmin(arg) {
+function viewAdmin__base(arg) {
   if (!isAdmin()) return '<a href="#mehr" class="back">' + ICON.back + $t('Einstellungen</a><p>Nur für Coach-Konten.</p>');
   if (ADMIN.clients == null && !ADMIN.loading)
     loadClients().then(() => {
@@ -1116,6 +1134,9 @@ function viewAdmin(arg) {
     (typeof coachNotifCard === 'function' ? coachNotifCard() : '') +
     '</div>'
   );
+}
+function viewAdmin() {
+  return hbRun('viewAdmin', this, arguments, viewAdmin__base);
 }
 function viewClient__base(uid) {
   const c = (ADMIN.clients || []).find(x => x.id === uid);
@@ -1369,7 +1390,7 @@ function peIsAdd(s, slot) {
   return (s.add || []).find(a => a.slot === slot);
 }
 const TYPE_TXT = { main: 'Hauptübung', bo: 'Back-off', dp: 'Übung', bw: 'Körpergewicht', power: 'Power', carry: 'Carry' };
-function viewPlan(arg) {
+function viewPlan__base(arg) {
   const who = planTarget(arg);
   if (PE.uid !== who || !PE.draft) {
     openPlanEditor(arg).then(() => {
@@ -1626,6 +1647,9 @@ function viewPlan(arg) {
     '</button></div></div>'
   );
 }
+function viewPlan() {
+  return hbRun('viewPlan', this, arguments, viewPlan__base);
+}
 function peSetField(i, slot, f, val) {
   const s = peSess(i);
   const add = peIsAdd(s, slot);
@@ -1690,7 +1714,7 @@ const peExItems = items =>
         '</div>'
     )
     .join('');
-async function peSave() {
+async function peSave__base() {
   if (isTplUid(PE.uid)) return tplEditorSave();
   const p = PE.draft;
   if (p.targets) {
@@ -1730,6 +1754,9 @@ async function peSave() {
   } catch (e) {
     toast($t('Speichern fehlgeschlagen: ') + errTxt(e));
   }
+}
+function peSave() {
+  return hbRun('peSave', this, arguments, peSave__base);
 }
 
 /* ======================= EINSTELLUNGEN: KONTO & SPRACHE ======================= */

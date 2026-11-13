@@ -75,13 +75,17 @@ hbFilter('spCard', 'libreview', function (__v, sp) {
       '<span class="tag" style="background:var(--amber-soft,#fff1d6)">' + esc($t('Nicht freigegeben')) + '</span>'
     );
   return tags
-    ? hbRep(h, '<div class="row" style="gap:6px;margin-top:8px;flex-wrap:wrap">', 'libreview', '<div class="row" style="gap:6px;margin-top:8px;flex-wrap:wrap">' + tags)
+    ? hbRep(
+        h,
+        '<div class="row" style="gap:6px;margin-top:8px;flex-wrap:wrap">',
+        'libreview',
+        '<div class="row" style="gap:6px;margin-top:8px;flex-wrap:wrap">' + tags
+      )
     : h;
 });
 /* Reiter „Prüfen“ (nur Prüfer) */
-const _viewLibComRV = viewLibCom;
-viewLibCom = function () {
-  if (libTab() !== 'rev') return _viewLibComRV.apply(this, arguments);
+hbWrap('viewLibCom', 'libreview', function (__next) {
+  if (libTab() !== 'rev') return __next.apply(this, Array.prototype.slice.call(arguments, 1));
   const L = spNeed().filter(x => x.status === 'submitted');
   return (
     note('sky', $t('Eingereichte Pläne. Prüfe Aufbau und automatische Note, dann freigeben oder mit Begründung ablehnen.')) +
@@ -91,19 +95,17 @@ viewLibCom = function () {
         ? L.map(spCard).join('')
         : '<p class="small muted" style="margin:0 4px">' + $t('Nichts zu prüfen.') + '</p>')
   );
-};
-const _viewLibraryRV = viewLibrary;
-viewLibrary = function () {
+});
+hbWrap('viewLibrary', 'libreview', function (__next) {
   spRevNeed();
   if (libTab() === 'rev' && !SP.rev) ui.libTab = 'cur';
-  let h = _viewLibraryRV.apply(this, arguments);
+  let h = __next.apply(this, Array.prototype.slice.call(arguments, 1));
   const n = (SP.list || []).filter(x => x.status === 'submitted').length;
   if (SP.rev && n) h = h.replace('data-v="rev" type="button">' + esc($t('Prüfen')), 'data-v="rev" type="button">' + esc($t('Prüfen')) + ' (' + n + ')');
   return h;
-};
+});
 /* Meine Pläne: Code eingeben */
-const _viewLibMineRV = viewLibMine;
-viewLibMine = function () {
+hbWrap('viewLibMine', 'libreview', function (__next) {
   return (
     '<div class="card"><div class="lbl">' +
     $t('Plan per Code öffnen') +
@@ -112,9 +114,9 @@ viewLibMine = function () {
     '" style="text-transform:uppercase;letter-spacing:.08em"><button class="btn" data-act="codeGo" type="button">' +
     $t('Öffnen') +
     '</button></div></div>' +
-    _viewLibMineRV.apply(this, arguments)
+    __next.apply(this, Array.prototype.slice.call(arguments, 1))
   );
-};
+});
 
 /* Detailansicht: Prüfung, Ablehnung, Teilen, Kopierschutz */
 hbFilter('viewSharedPlan', 'libreview', function (__v, id) {
@@ -162,8 +164,7 @@ hbFilter('viewSharedPlan', 'libreview', function (__v, id) {
   const m = '<div class="stack" style="margin-bottom:12px">';
   return top ? h.replace(m, m + top) : h;
 });
-const _planFromIdRV = planFromId;
-planFromId = function (id) {
+hbWrap('planFromId', 'libreview', function (__next, id) {
   id = String(id);
   if (id.startsWith('code:')) {
     const b = (SP.code || {})[id.slice(5)];
@@ -173,13 +174,13 @@ planFromId = function (id) {
     if (b.copy_lock) p.lock = { by: b.owner || 'other' };
     return p;
   }
-  const p = _planFromIdRV.apply(this, arguments);
+  const p = __next.apply(this, Array.prototype.slice.call(arguments, 1));
   if (id.startsWith('sp:')) {
     const b = SP.body[id.slice(3)];
     if (b && b.copy_lock && !spMine(b)) p.lock = { by: b.owner_id };
   }
   return p;
-};
+});
 /* Plan über Code laden (auch ohne Konto) */
 SP.code = {};
 SP.codeLoading = {};
@@ -238,12 +239,11 @@ function viewCodePlan(c) {
     libPreviewHTML({}, pl, acts)
   );
 }
-const _viewLibPlanRV = viewLibPlan;
-viewLibPlan = function (id) {
+hbWrap('viewLibPlan', 'libreview', function (__next, id) {
   id = String(id || '');
   if (id.startsWith('code:')) return viewCodePlan(id.slice(5));
-  return _viewLibPlanRV.apply(this, arguments);
-};
+  return __next.apply(this, Array.prototype.slice.call(arguments, 1));
+});
 /* Teilen-Fenster */
 async function spShare(id) {
   let code;
@@ -451,9 +451,8 @@ function planSanitize(p) {
     });
   return p;
 }
-const _planFromIdSafe = planFromId;
-planFromId = function (id) {
-  const p = _planFromIdSafe.apply(this, arguments);
+hbWrap('planFromId', 'libreview', function (__next, id) {
+  const p = __next.apply(this, Array.prototype.slice.call(arguments, 1));
   id = String(id);
   return id.startsWith('sp:') || id.startsWith('code:') ? planSanitize(p) : p;
-};
+});

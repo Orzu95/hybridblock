@@ -153,10 +153,9 @@ function dashRow(c) {
     '</a></div></div></div>'
   );
 }
-const _viewAdminDash = viewAdmin;
-viewAdmin = function (arg) {
-  if (arg || !isAdmin()) return _viewAdminDash(arg);
-  _viewAdminDash(); /* lädt Liste, Einladungen */
+hbWrap('viewAdmin', 'dashboard', function (__next, arg) {
+  if (arg || !isAdmin()) return __next(arg);
+  __next(); /* lädt Liste, Einladungen */
   const all = ADMIN.clients || [],
     inv = ADMIN.invites || [];
   const F = all.map(c => ({ c, f: dashFlags(c) }));
@@ -324,7 +323,7 @@ viewAdmin = function (arg) {
     (typeof coachNotifCard === 'function' ? coachNotifCard() : '') +
     '</div></div>'
   );
-};
+});
 /* Athletenansicht: Betreuungsmodus wählen, Körperkarte als gesehen markieren */
 hbFilter('viewClient', 'dashboard', function (__v, uid) {
   const html = __v;

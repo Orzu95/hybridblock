@@ -335,11 +335,10 @@ document.addEventListener(
   },
   true
 );
-const _qtySheetNR = qtySheet;
-qtySheet = function (id, entry) {
+hbWrap('qtySheet', 'nutri', function (__next, id, entry) {
   ui.nrEdit = entry ? entry.uid : null;
   ui.nrId = id;
-  const r = _qtySheetNR.apply(this, arguments);
+  const r = __next.apply(this, Array.prototype.slice.call(arguments, 1));
   const c = document.getElementById('sheetCard');
   if (!c) return r;
   const f = getFood(id);
@@ -357,7 +356,7 @@ qtySheet = function (id, entry) {
     );
   updatePrev(id);
   return r;
-};
+});
 function nrChipsFill(id) {
   const el = document.getElementById('nrChips'),
     f = getFood(id);

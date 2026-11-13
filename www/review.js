@@ -644,7 +644,7 @@ function reviewCard__base(key, opts) {
 function reviewCard() {
   return hbRun('reviewCard', this, arguments, reviewCard__base);
 }
-function whySheet(ev) {
+function whySheet__base(ev) {
   const e = REV_EV[ev];
   if (!e) return;
   openSheet(
@@ -660,6 +660,9 @@ function whySheet(ev) {
       e.src.map(s => '<li><a href="' + s[1] + '" target="_blank" rel="noopener">' + esc(s[0]) + '</a></li>').join('') +
       '</ul>'
   );
+}
+function whySheet() {
+  return hbRun('whySheet', this, arguments, whySheet__base);
 }
 /* auf „Heute“ oben, solange offen und nicht ausgeblendet */
 hbFilter('heuteExtras', 'review', function (__v) {
@@ -755,13 +758,12 @@ function syncCoachDecisions() {
   });
   if (ch) persist();
 }
-const _applyPlanRev = applyPlan;
-applyPlan = function () {
-  _applyPlanRev();
+hbWrap('applyPlan', 'review', function (__next) {
+  __next();
   try {
     syncCoachDecisions();
   } catch (e) {}
-};
+});
 
 /* ---------- Ereignisse ---------- */
 document.addEventListener('click', e => {

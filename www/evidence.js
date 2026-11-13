@@ -461,10 +461,9 @@ function evDetails(x) {
 }
 
 /* Wochen-Check-in: „Warum?“ zeigt jetzt die geprüften Einträge */
-const _whySheetEv = whySheet;
-whySheet = function (ev) {
+hbWrap('whySheet', 'evidence', function (__next, ev) {
   const ids = EV_REV[ev];
-  if (!ids) return _whySheetEv(ev);
+  if (!ids) return __next(ev);
   const e = REV_EV[ev];
   const show = () => {
     const xs = ids.map(i => EVID.by[i]).filter(Boolean);
@@ -484,12 +483,12 @@ whySheet = function (ev) {
   };
   if (EVID) show();
   else {
-    _whySheetEv(ev);
+    __next(ev);
     loadEvid()
       .then(show)
       .catch(() => {});
   }
-};
+});
 
 /* Wissen-Karte in den Einstellungen, Studienlage im SpoWi-Verlauf */
 hbFilter('viewMehr', 'evidence', function (__v) {

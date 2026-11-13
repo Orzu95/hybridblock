@@ -23,9 +23,8 @@ const SH_MODES = () => [
 const SH_WD = () => [$t('Mo'), $t('Di'), $t('Mi'), $t('Do'), $t('Fr'), $t('Sa'), $t('So')];
 
 /* Athlet: Hinweis statt „Woche wird knapp“, wenn der Coach entscheidet */
-const _wkDecisionCardSH = wkDecisionCard;
-wkDecisionCard = function (w) {
-  if (!shHold()) return _wkDecisionCardSH.apply(this, arguments);
+hbWrap('wkDecisionCard', 'shift', function (__next, w) {
+  if (!shHold()) return __next.apply(this, Array.prototype.slice.call(arguments, 1));
   if (w !== curWeek()) return '';
   const pl = wkPlan(w);
   const late = pl.items.filter(o => wkOpen(o) && (o.date < today() || o.date > pl.end)).length;
@@ -40,7 +39,7 @@ wkDecisionCard = function (w) {
           : $tf('{n} Einheiten sind offen geblieben. Dein Coach sieht das und plant sie neu ein.', { n: late })
         : $t('Die App verschiebt deine Einheiten nicht selbst. Fällt eine aus, sag deinem Coach Bescheid.'))
   );
-};
+});
 
 /* Kurzfassung für den Coach: verschobene und überfällige Einheiten dieser Woche */
 hbFilter('makeSummary', 'shift', function (__v) {
@@ -167,14 +166,13 @@ function shCard(p) {
     '</div>'
   );
 }
-const _viewPlanSH = viewPlan;
-viewPlan = function (arg) {
-  const h = _viewPlanSH.apply(this, arguments);
+hbWrap('viewPlan', 'shift', function (__next, arg) {
+  const h = __next.apply(this, Array.prototype.slice.call(arguments, 1));
   const who = planTarget(arg);
   if (!PE.draft || PE.uid !== who || who === 'me' || (typeof isTplUid === 'function' && isTplUid(who))) return h;
   const i = hbAt(h, '<div class="card pe-sess">', 'shift');
   return i < 0 ? h : h.slice(0, i) + shCard(PE.draft) + h.slice(i);
-};
+});
 function shDirty() {
   PE.dirty = true;
   if (typeof markPeDirty === 'function') markPeDirty();

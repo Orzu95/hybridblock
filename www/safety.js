@@ -6,14 +6,13 @@
    4. Jeder Planwechsel lässt sich 7 Tage lang rückgängig machen (inkl. Wochentagen). */
 'use strict';
 /* 2. Schreibsperre */
-const _pushPlanSafe = pushPlan;
-pushPlan = async function (uid2, plan) {
+hbWrap('pushPlan', 'safety', async function (__next, uid2, plan) {
   if (typeof VIEW !== 'undefined' && VIEW && AUTH && uid2 === AUTH.uid) {
     toast($t('In der Athletenansicht kannst du deinen eigenen Plan nicht ändern.'));
     throw new Error($t('In der Athletenansicht kannst du deinen eigenen Plan nicht ändern.'));
   }
-  return _pushPlanSafe(uid2, plan);
-};
+  return __next(uid2, plan);
+});
 /* 1. Planwechsel in der Athletenansicht → Plan-Editor des Athleten */
 function planForAthlete(plan) {
   const uid2 = VIEW.uid,
@@ -30,8 +29,7 @@ function planForAthlete(plan) {
     toast($tf('Plan für {n} vorbereitet. Prüfen und „Speichern und senden“.', { n: name }));
   }, 30);
 }
-const _switchPlanSafe = switchPlan;
-switchPlan = function (plan) {
+hbWrap('switchPlan', 'safety', function (__next, plan) {
   if (typeof VIEW !== 'undefined' && VIEW) {
     planForAthlete(plan);
     return;
@@ -40,7 +38,7 @@ switchPlan = function (plan) {
     ds = S.meta.daysSet,
     n0 = S.archive.length,
     old = S.plan;
-  _switchPlanSafe(plan);
+  __next(plan);
   const ar = S.archive[S.archive.length - 1];
   if (S.archive.length > n0 && ar && ar.plan === old) {
     ar.dayMap = dm;
@@ -48,18 +46,16 @@ switchPlan = function (plan) {
     ar.at = Date.now();
     save();
   }
-};
+});
 /* Bibliothek in der Athletenansicht: Auswahl gilt für den Athleten */
-const _viewLibrarySafe = viewLibrary;
-viewLibrary = function () {
+hbWrap('viewLibrary', 'safety', function (__next) {
   if (typeof VIEW !== 'undefined' && VIEW) ui.libFor = VIEW.uid;
-  return _viewLibrarySafe();
-};
-const _viewLibPlanSafe = viewLibPlan;
-viewLibPlan = function (id) {
+  return __next();
+});
+hbWrap('viewLibPlan', 'safety', function (__next, id) {
   if (typeof VIEW !== 'undefined' && VIEW) ui.libFor = VIEW.uid;
-  return _viewLibPlanSafe(id);
-};
+  return __next(id);
+});
 document.addEventListener(
   'click',
   e => {
@@ -76,8 +72,7 @@ document.addEventListener(
   true
 );
 /* Plan-Editor „Mein Plan“ in der Athletenansicht verhindern */
-const _viewPlanSafe = viewPlan;
-viewPlan = function (arg) {
+hbWrap('viewPlan', 'safety', function (__next, arg) {
   if (typeof VIEW !== 'undefined' && VIEW && planTarget(arg) === 'me') {
     const uid2 = VIEW.uid;
     exitView();
@@ -86,8 +81,8 @@ viewPlan = function (arg) {
     }, 20);
     return '<p class="muted">' + $t('Lade …') + '</p>';
   }
-  return _viewPlanSafe(arg);
-};
+  return __next(arg);
+});
 
 /* 3. Coaching-Modus: eigene Seiten deutlich kennzeichnen */
 const OWN_ROUTES = ['training', 'essen', 'verlauf', 'frei', 'track', 'planend', 'workout', 'lernen'];

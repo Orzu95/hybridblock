@@ -72,14 +72,13 @@ function usagePing() {
       S.meta.usePing = null;
     });
 }
-const _renderCM = render;
-render = function () {
-  const r = _renderCM.apply(this, arguments);
+hbWrap('render', 'community', function (__next) {
+  const r = __next.apply(this, Array.prototype.slice.call(arguments, 1));
   try {
     usagePing();
   } catch (e) {}
   return r;
-};
+});
 /* Kennzahlen */
 const statOf = k => (CM.stats || {})[k] || null;
 function rankScore(k) {
@@ -211,10 +210,9 @@ function viewLibAll() {
   cmNeed();
   return goalSeg() + lfBar('all') + '<div id="lib-list" class="stack">' + lfList('all') + '</div>';
 }
-const _viewLibComCM = viewLibCom;
-viewLibCom = function () {
+hbWrap('viewLibCom', 'community', function (__next) {
   cmNeed();
-  if (libTab() === 'rev') return modView() + _viewLibComCM.apply(this, arguments);
+  if (libTab() === 'rev') return modView() + __next.apply(this, Array.prototype.slice.call(arguments, 1));
   return (
     note('sky', $t('Pläne aus der Community, noch nicht von uns geprüft. Die Note kommt aus der automatischen Prüfung gegen die Studienlage.')) +
     lfBar('com') +
@@ -222,7 +220,7 @@ viewLibCom = function () {
     (SP.list == null ? '<p class="muted">' + $t('Lade …') + '</p>' : lfList('com')) +
     '</div>'
   );
-};
+});
 function lfUpdate() {
   const el = document.getElementById('lib-list');
   if (el) el.innerHTML = lfList(libTab() === 'com' ? 'com' : 'all');
@@ -531,7 +529,6 @@ async function modDo(b) {
   }
 }
 /* Meine Meldungen (Rückmeldung an Meldende) */
-const _viewLibMineCM = viewLibMine;
 function usageToggle() {
   return (
     '<label class="row small" style="gap:10px;margin:4px 4px 0;align-items:flex-start"><input type="checkbox" data-act="usageTog"' +
@@ -541,9 +538,9 @@ function usageToggle() {
     '</span></label>'
   );
 }
-viewLibMine = function () {
+hbWrap('viewLibMine', 'community', function (__next) {
   cmNeed();
-  const h0 = _viewLibMineCM.apply(this, arguments) + (myUid() ? usageToggle() : '');
+  const h0 = __next.apply(this, Array.prototype.slice.call(arguments, 1)) + (myUid() ? usageToggle() : '');
   const h = h0;
   const L = CM.myReports || [];
   if (!L.length) return h;
@@ -577,7 +574,7 @@ viewLibMine = function () {
     ).join('') +
     '</div></div>'
   );
-};
+});
 /* Detailansichten: Bewertung, Melden, Ausgeblendet */
 hbFilter('viewSharedPlan', 'community', function (__v, id) {
   let h = __v;
@@ -611,14 +608,13 @@ hbFilter('viewSharedPlan', 'community', function (__v, id) {
       '</button></div>';
   return insTop(h, add);
 });
-const _viewLibPlanCM = viewLibPlan;
-viewLibPlan = function (id) {
-  const h = _viewLibPlanCM.apply(this, arguments);
+hbWrap('viewLibPlan', 'community', function (__next, id) {
+  const h = __next.apply(this, Array.prototype.slice.call(arguments, 1));
   id = String(id || '');
   if (!LIBRARY[id] || LIBRARY[id].module || id === 'gen') return h;
   const box = rateBox('lib:' + id, false);
   return box ? insTop(h, box) : h;
-};
+});
 document.addEventListener('click', e => {
   const b = e.target.closest('[data-act]');
   if (!b) return;
@@ -646,13 +642,12 @@ document.addEventListener('click', e => {
   else if (a === 'modDo') modDo(b);
 });
 /* Prüfen-Reiter zählt offene Meldungen mit */
-const _viewLibraryCM = viewLibrary;
-viewLibrary = function () {
-  const h = _viewLibraryCM.apply(this, arguments);
+hbWrap('viewLibrary', 'community', function (__next) {
+  const h = __next.apply(this, Array.prototype.slice.call(arguments, 1));
   const n = (CM.reports || []).length;
   if (!SP.rev || !n) return h;
   return h.replace(/(data-v="rev" type="button">[^<(]*)(\((\d+)\))?/, (m0, a, b2, c) => a.trim() + ' (' + ((+c || 0) + n) + ')');
-};
+});
 
 /* Datenbank-Fehlermeldungen übersetzen */
 const DB_ERR = [

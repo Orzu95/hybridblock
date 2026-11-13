@@ -398,7 +398,7 @@ function archiveHistory(exId) {
   return null;
 }
 /* neuer Plan: bisherige Einheiten wandern ins Archiv, damit Verlauf und Vorschläge erhalten bleiben */
-function switchPlan(plan) {
+function switchPlan__base(plan) {
   if (Object.keys(S.sessions).length) S.archive.push({ plan: S.plan, sessions: S.sessions, block: S.block, until: today() });
   S.sessions = {};
   S.swaps = {};
@@ -418,6 +418,9 @@ function switchPlan(plan) {
         persist();
       })
       .catch(() => {});
+}
+function switchPlan() {
+  return hbRun('switchPlan', this, arguments, switchPlan__base);
 }
 
 /* ======================= BIBLIOTHEK ======================= */
@@ -511,7 +514,7 @@ function libQuery() {
   const q = st.q || {};
   return { goal: q.goal, level: q.level, days: q.days, minutes: q.minutes, place: q.place, focus: q.focus, pain: q.pain || {} };
 }
-function viewLibrary() {
+function viewLibrary__base() {
   const q = libQuery();
   const filt = ui.libGoal || '';
   const ctx = libCtxLine();
@@ -559,6 +562,9 @@ function viewLibrary() {
         )) +
     $t('<button class="btn block" data-act="blankPlan" type="button">Leeren Plan selbst bauen</button></div>')
   );
+}
+function viewLibrary() {
+  return hbRun('viewLibrary', this, arguments, viewLibrary__base);
 }
 function libCtxLine__base() {
   if (ui.libFor) {
@@ -705,7 +711,7 @@ function libActions(id) {
       : '')
   );
 }
-function viewLibPlan(id) {
+function viewLibPlan__base(id) {
   if (id === 'gen') return viewGenPlan();
   if (LIBRARY[id] && !libVisible(id)) {
     setTimeout(() => {
@@ -725,6 +731,9 @@ function viewLibPlan(id) {
     (typeof chkCard === 'function' && !p.module ? chkCard(pl, 'lib') : '') +
     libPreviewHTML(p, pl, libActions(id))
   );
+}
+function viewLibPlan() {
+  return hbRun('viewLibPlan', this, arguments, viewLibPlan__base);
 }
 function viewGenPlan() {
   const q = libQuery();
@@ -800,8 +809,11 @@ function viewGenPlan() {
     '</div>'
   );
 }
-function planFromId(id) {
+function planFromId__base(id) {
   return id === 'gen' ? JSON.parse(JSON.stringify(ui.genPlan || generatePlan(libQuery()))) : makePlan(id);
+}
+function planFromId() {
+  return hbRun('planFromId', this, arguments, planFromId__base);
 }
 /* Angaben für Empfehlung und Generator */
 function goalsFields(q) {

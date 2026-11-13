@@ -705,12 +705,11 @@ hbFilter('viewWissen', 'learn', function (__v, arg) {
   const i = hbAt(h, '<div class="card"><input id="ev-q"', 'learn');
   return i < 0 ? h : h.slice(0, i) + btn + h.slice(i);
 });
-const _renderLrn = render;
-render = function () {
-  const r = _renderLrn.apply(this, arguments);
+hbWrap('render', 'learn', function (__next) {
+  const r = __next.apply(this, Array.prototype.slice.call(arguments, 1));
   setTimeout(factPopup, 700);
   return r;
-};
+});
 window.addEventListener('hashchange', () => {
   if (route.name !== 'lernen' || route.arg !== 'quiz') {
     if (QZ && QZ.i >= QZ.items.length) QZ = null;

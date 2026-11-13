@@ -162,7 +162,7 @@ const exclusiveMine = () =>
 const lsec = t => '<div class="section-h"><h2>' + esc($t(t)) + '</h2></div>';
 const lempty = t => '<p class="small muted" style="margin:0 4px">' + esc($t(t)) + '</p>';
 
-function viewLibMine() {
+function viewLibMine__base() {
   const L = spNeed(),
     mine = L.filter(spMine),
     fromCoach = L.filter(x => !spMine(x) && x.status === 'clients');
@@ -255,7 +255,10 @@ function viewLibMine() {
     )
   );
 }
-function viewLibCom() {
+function viewLibMine() {
+  return hbRun('viewLibMine', this, arguments, viewLibMine__base);
+}
+function viewLibCom__base() {
   const L = spNeed()
     .filter(x => x.status === 'public' || x.status === 'submitted')
     .sort((a, b) => ((b.published_at || '') > (a.published_at || '') ? 1 : -1));
@@ -268,13 +271,15 @@ function viewLibCom() {
         : lempty('Noch keine Pläne veröffentlicht. Unter „Meine Pläne“ kannst du deinen teilen.'))
   );
 }
+function viewLibCom() {
+  return hbRun('viewLibCom', this, arguments, viewLibCom__base);
+}
 
 const _coachLibOwnLT = coachLibOwn;
 coachLibOwn = function () {
   return '';
 };
-const _viewLibraryLT = viewLibrary;
-viewLibrary = function () {
+hbWrap('viewLibrary', 'libtabs', function (__next) {
   const tab = libTab();
   if (tab === 'cur') {
     const own = S.settings.coachOwnOnly;
@@ -282,7 +287,7 @@ viewLibrary = function () {
     ui.libNoExcl = true;
     let h;
     try {
-      h = _viewLibraryLT();
+      h = __next();
     } finally {
       ui.libNoExcl = false;
       S.settings.coachOwnOnly = own;
@@ -304,11 +309,10 @@ viewLibrary = function () {
     $t('<button class="btn block" data-act="blankPlan" type="button">Leeren Plan selbst bauen</button>') +
     '</div>'
   );
-};
+});
 
 /* Plan-Quellen: geteilte Pläne (sp:id) und frühere Pläne (ar:Index) */
-const _planFromIdLT = planFromId;
-planFromId = function (id) {
+hbWrap('planFromId', 'libtabs', function (__next, id) {
   id = String(id);
   if (id.startsWith('sp:')) {
     const b = SP.body[id.slice(3)];
@@ -323,8 +327,8 @@ planFromId = function (id) {
     delete p.assign;
     return p;
   }
-  return _planFromIdLT(id);
-};
+  return __next(id);
+});
 function viewSharedPlan__base(id) {
   const back = '<a href="#library" class="back">' + ICON.back + $t('Bibliothek</a>');
   const b = SP.body[id];
@@ -393,14 +397,13 @@ function viewArPlan(i) {
     )
   );
 }
-const _viewLibPlanLT = viewLibPlan;
-viewLibPlan = function (id) {
+hbWrap('viewLibPlan', 'libtabs', function (__next, id) {
   id = String(id || '');
   if (typeof VIEW !== 'undefined' && VIEW) ui.libFor = VIEW.uid;
   if (id.startsWith('sp:')) return viewSharedPlan(id.slice(3));
   if (id.startsWith('ar:')) return viewArPlan(+id.slice(3));
-  return _viewLibPlanLT(id);
-};
+  return __next(id);
+});
 
 /* Speichern, Sichtbarkeit, Löschen */
 function spMeta(plan) {

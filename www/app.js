@@ -97,13 +97,16 @@ try {
     S.settings.prio = ['c', 'h', 'bi', 'ab'];
 } catch (e) {}
 let saveT;
-function persist() {
+function persist__base() {
   if (typeof VIEW !== 'undefined' && VIEW) return;
   try {
     localStorage.setItem(KEY, JSON.stringify(S));
   } catch (e) {
     toast($t('Speichern fehlgeschlagen. Ist der Speicher voll?'));
   }
+}
+function persist() {
+  return hbRun('persist', this, arguments, persist__base);
 }
 function save() {
   if (typeof VIEW !== 'undefined' && VIEW) return;
@@ -167,12 +170,15 @@ const fmtDay = s => {
 };
 const fmtMin = m => (m == null ? '–' : Math.floor(m / 60) + ':' + pad(Math.round(m % 60)) + (LANG === 'ru' ? ' ч' : ' h'));
 const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
-function toast(t) {
+function toast__base(t) {
   const el = $('#toast');
   el.textContent = t;
   el.classList.add('show');
   clearTimeout(toast.t);
   toast.t = setTimeout(() => el.classList.remove('show'), 2200);
+}
+function toast() {
+  return hbRun('toast', this, arguments, toast__base);
 }
 function repRange(r) {
   const m = String(r).match(/(\d+)\s*[–-]\s*(\d+)/);
@@ -219,12 +225,15 @@ function resolveSessions(plan) {
     })
   );
 }
-function applyPlan() {
+function applyPlan__base() {
   ORDER = S.plan.sessions.map(x => x.k);
   SESS = resolveSessions(S.plan);
   S.plan.sessions.forEach(x => {
     if (!(x.k in S.settings.dayMap)) S.settings.dayMap[x.k] = '';
   });
+}
+function applyPlan() {
+  return hbRun('applyPlan', this, arguments, applyPlan__base);
 }
 const isLite = w => {
   const p = phase(w);
@@ -372,12 +381,18 @@ function markStarted(w, k) {
   if (!s.date) s.date = today();
   if (!S.block.startedOn) S.block.startedOn = today();
 }
-function dayLabel(k) {
+function dayLabel__base(k) {
   const d = S.settings.dayMap[k];
   return d === '' || d == null || d < 0 ? $t('freier Tag') : WD_LONG[d];
 }
-function sessionsOnDow(dow) {
+function dayLabel() {
+  return hbRun('dayLabel', this, arguments, dayLabel__base);
+}
+function sessionsOnDow__base(dow) {
   return ORDER.filter(k => +S.settings.dayMap[k] === dow && S.settings.dayMap[k] !== '');
+}
+function sessionsOnDow() {
+  return hbRun('sessionsOnDow', this, arguments, sessionsOnDow__base);
 }
 function countsAsActivity(w, k) {
   return S.activities.find(a => a.countsAs === k && a.week === w);
@@ -967,7 +982,7 @@ window.addEventListener('hashchange', () => {
 });
 /* Gezeichnet wird erst, wenn alle Module geladen sind (boot.js setzt HB_READY). Vorher wären Ansichten halb erweitert oder Funktionen noch nicht definiert. */
 let HB_READY = false;
-function render(scrollTop) {
+function render__base(scrollTop) {
   if (!HB_READY) return;
   prioSync();
   if (!S.meta.onboarded && route.name !== 'start' && route.name !== 'datenschutz' && !VIEW) {
@@ -1035,6 +1050,9 @@ function render(scrollTop) {
   }
   if (route.name === 'verlauf') refreshPhotoCard();
   window.scrollTo(0, scrollTop ? 0 : y);
+}
+function render() {
+  return hbRun('render', this, arguments, render__base);
 }
 function softPatch(id, html) {
   const el = document.getElementById(id);
@@ -1492,7 +1510,7 @@ function volBars(v, pv) {
   );
 }
 
-function viewSession(key) {
+function viewSession__base(key) {
   const m = key.match(RE_SESS);
   if (!m || !SESS[m[2]]) return $t('<p>Einheit nicht gefunden.</p>');
   const w = +m[1],
@@ -1583,6 +1601,9 @@ function viewSession(key) {
         $t('" type="button" style="background:var(--fog)">Einheit überspringen</button>')) +
     '</div>'
   );
+}
+function viewSession() {
+  return hbRun('viewSession', this, arguments, viewSession__base);
 }
 function endCard(w, k) {
   const s = sess(w, k);
@@ -1761,7 +1782,7 @@ function setRows__base(prefix, spec, raw, sugg, showRpe, tgt, isCarry, dataAttrs
 function setRows() {
   return hbRun('setRows', this, arguments, setRows__base);
 }
-function exCard(w, k, spec0) {
+function exCard__base(w, k, spec0) {
   const s = sess(w, k);
   const lg = s.logs[spec0.slot];
   const raw = (lg && lg.sets) || [];
@@ -1848,6 +1869,9 @@ function exCard(w, k, spec0) {
     exActions(exId, spec.type === 'main' || spec.type === 'bo', base.load, spec.type === 'main', spec.slot, extra) +
     '</div>'
   );
+}
+function exCard() {
+  return hbRun('exCard', this, arguments, exCard__base);
 }
 function exActions(exId, plates, load, isMain, slot, extra) {
   return (
@@ -2066,7 +2090,7 @@ function zeppWorkoutFor(d, k) {
 }
 
 /* ======================= FREIES TRAINING / AKTIVITÄT ======================= */
-function viewFree(id) {
+function viewFree__base(id) {
   const a = S.activities.find(x => x.id === id);
   if (!a) return '<a href="#training" class="back">' + ICON.back + $t('Training</a><p>Aktivität nicht gefunden.</p>');
   const t = ACT_MAP[a.type] || ACT_MAP.sonst;
@@ -2168,7 +2192,10 @@ function viewFree(id) {
     '</div>'
   );
 }
-function freeExCard(a, e, idx) {
+function viewFree() {
+  return hbRun('viewFree', this, arguments, viewFree__base);
+}
+function freeExCard__base(a, e, idx) {
   const ex = LIB[e.ex];
   const spec = { slot: 'f' + idx, sets: e.sets.length, reps: e.reps || '8–12', rpe: e.rpe ?? 8, type: 'dp' };
   const h = lastAny(e.ex);
@@ -2234,6 +2261,9 @@ function freeExCard(a, e, idx) {
     $t('" placeholder="Notiz zur Übung" aria-label="Notiz zur Übung"></div></div>')
   );
 }
+function freeExCard() {
+  return hbRun('freeExCard', this, arguments, freeExCard__base);
+}
 function newActivity(type, dateStr) {
   const a = { id: uid(), type, date: dateStr || today(), week: curWeek(), src: 'manual' };
   if (ACT_MAP[type].strength) a.exercises = [];
@@ -2258,9 +2288,12 @@ function guessMeal() {
 
 /* ---------- Sheets ---------- */
 let searchAbort = null;
-function openSheet(html) {
+function openSheet__base(html) {
   $('#sheetCard').innerHTML = '<div class="grab"></div>' + html;
   $('#sheet').hidden = false;
+}
+function openSheet() {
+  return hbRun('openSheet', this, arguments, openSheet__base);
 }
 function closeSheet() {
   $('#sheet').hidden = true;
@@ -2361,7 +2394,7 @@ function addSheet__base() {
 function addSheet() {
   return hbRun('addSheet', this, arguments, addSheet__base);
 }
-function qtySheet(id, entry) {
+function qtySheet__base(id, entry) {
   const f = getFood(id);
   if (!f) return;
   const units = unitsFor(f);
@@ -2400,6 +2433,9 @@ function qtySheet(id, entry) {
       '</button></div>'
   );
   updatePrev(id);
+}
+function qtySheet() {
+  return hbRun('qtySheet', this, arguments, qtySheet__base);
 }
 function updatePrev__base(id) {
   const f = getFood(id);
@@ -6561,7 +6597,7 @@ async function compressImage(file, max) {
   c.getContext('2d').drawImage(src, 0, 0, c.width, c.height);
   return new Promise(res => c.toBlob(b => res(b), 'image/jpeg', 0.82));
 }
-async function photoCard() {
+async function photoCard__base() {
   let list = [];
   try {
     list = await PHOTOS.all();
@@ -6643,6 +6679,9 @@ async function photoCard() {
       : '') +
     $t('<p class="src" style="margin-top:8px">Fotos bleiben nur auf diesem Gerät und sind nicht in der Sicherung enthalten.</p></div>')
   );
+}
+function photoCard() {
+  return hbRun('photoCard', this, arguments, photoCard__base);
 }
 async function refreshPhotoCard() {
   const el = $('#photocard');

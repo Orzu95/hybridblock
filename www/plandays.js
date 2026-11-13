@@ -67,15 +67,14 @@ function daysFitHint() {
     );
   return '';
 }
-const _viewStartPd = viewStart;
-viewStart = function (arg) {
-  const h = _viewStartPd(arg);
+hbWrap('viewStart', 'plandays', function (__next, arg) {
+  const h = __next(arg);
   if (ONB.step !== 'days') return h;
   const hint = daysFitHint();
   if (!hint) return h;
   const i = hbAt(h, '<div class="card"><div class="fields">', 'plandays');
   return i < 0 ? h : h.slice(0, i) + hint + h.slice(i);
-};
+});
 /* Auch in den Einstellungen bei „Wochentage“ */
 hbFilter('viewMehr', 'plandays', function (__v) {
   const h = __v;

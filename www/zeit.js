@@ -118,9 +118,8 @@ function reNote(w, k) {
         : '')
   );
 }
-const _viewSessionZ = viewSession;
-viewSession = function (key) {
-  const h = _viewSessionZ.apply(this, arguments);
+hbWrap('viewSession', 'zeit', function (__next, key) {
+  const h = __next.apply(this, Array.prototype.slice.call(arguments, 1));
   const m = key && key.match(RE_SESS);
   if (!m) return h;
   const w = +m[1],
@@ -129,7 +128,7 @@ viewSession = function (key) {
   const i = hbAt(h, '<div class="stack">', 'zeit');
   if (!isGym(k)) return i < 0 ? h : h.slice(0, i + 19) + reNote(w, k) + h.slice(i + 19);
   return i < 0 ? h : h.slice(0, i + 19) + reNote(w, k) + zCard(w, k) + h.slice(i + 19);
-};
+});
 /* ---------- Pausenstatus (Master-Tabelle aus der Recherche „Pausen- und Wiedereinstiegslogik“, PAUSE-101 ff.) ----------
    l = Start-Last in % vom Stand vor der Pause, s = Anteil der Sätze, r = RIR mehr, run = Laufumfang in % der Wochen-km, wk = Wochen bis 100 %, doc = Freigabe nötig */
 const RE_TAB = {
@@ -360,10 +359,9 @@ function pauseCard() {
     '</p></div>'
   );
 }
-const _sessionsOnDowZ = sessionsOnDow;
-sessionsOnDow = function () {
-  return pauseOn() ? [] : _sessionsOnDowZ.apply(this, arguments);
-};
+hbWrap('sessionsOnDow', 'zeit', function (__next) {
+  return pauseOn() ? [] : __next.apply(this, Array.prototype.slice.call(arguments, 1));
+});
 hbFilter('currentTargets', 'zeit', function (__v) {
   let t = __v;
   const p = S.meta.pause;

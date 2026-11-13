@@ -34,11 +34,10 @@ function doneOverlay(title, sub, ms) {
 }
 /* Zähler: hat eine Aktion schon selbst eine Meldung gezeigt? */
 let TOAST_N = 0;
-const _toastCf = toast;
-toast = function () {
+hbWrap('toast', 'confirm', function (__next) {
   TOAST_N++;
-  return _toastCf.apply(this, arguments);
-};
+  return __next.apply(this, Array.prototype.slice.call(arguments, 1));
+});
 const CONFIRM = () => ({
   saveEntry: [$t('Eingetragen')],
   confirmAdd: [$t('Eingetragen')],
@@ -101,9 +100,8 @@ document.addEventListener('click', e => {
 });
 
 /* Freie Aktivität: klarer Abschluss */
-const _viewFreeCf = viewFree;
-viewFree = function (id) {
-  const h = _viewFreeCf(id);
+hbWrap('viewFree', 'confirm', function (__next, id) {
+  const h = __next(id);
   const a = S.activities.find(x => x.id === id);
   if (!a) return h;
   const btn =
@@ -114,7 +112,7 @@ viewFree = function (id) {
     '</button>';
   const i = h.lastIndexOf(ui.confirmDel === a.id ? '<div class="row"><span class="grow small">' : '<button class="btn block danger"');
   return i < 0 ? h + btn : h.slice(0, i) + btn + h.slice(i);
-};
+});
 document.addEventListener('click', e => {
   const b = e.target.closest('[data-act=actDone]');
   if (!b) return;

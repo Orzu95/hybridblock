@@ -22,8 +22,7 @@ function planMigrate() {
   return true;
 }
 let PM_DONE = false;
-const _renderPM = render;
-render = function () {
+hbWrap('render', 'planmig', function (__next) {
   if (!PM_DONE && typeof AUTH !== 'undefined' && AUTH && AUTH.uid) {
     PM_DONE = true;
     try {
@@ -32,13 +31,12 @@ render = function () {
       console.warn(e);
     }
   }
-  return _renderPM.apply(this, arguments);
-};
-const _switchPlanPM = switchPlan;
-switchPlan = function () {
+  return __next.apply(this, Array.prototype.slice.call(arguments, 1));
+});
+hbWrap('switchPlan', 'planmig', function (__next) {
   S.meta.needPlan = false;
-  return _switchPlanPM.apply(this, arguments);
-};
+  return __next.apply(this, Array.prototype.slice.call(arguments, 1));
+});
 hbFilter('setPlan', 'planmig', function (__v) {
   const r = __v;
   if (S.plan && !S.plan.noPlan) {

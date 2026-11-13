@@ -26,16 +26,14 @@ const KB_LOG = [
 const KB_VER = KB_LOG[0].d;
 const kbNewer = since => KB_LOG.filter(x => !since || x.d > since);
 /* Stempel setzen */
-const _switchPlanKB = switchPlan;
-switchPlan = function (plan) {
+hbWrap('switchPlan', 'kbver', function (__next, plan) {
   if (plan) plan.kb = KB_VER;
-  return _switchPlanKB.apply(this, arguments);
-};
-const _peSaveKB = peSave;
-peSave = function () {
+  return __next.apply(this, Array.prototype.slice.call(arguments, 1));
+});
+hbWrap('peSave', 'kbver', function (__next) {
   if (PE && PE.draft) PE.draft.kb = KB_VER;
-  return _peSaveKB.apply(this, arguments);
-};
+  return __next.apply(this, Array.prototype.slice.call(arguments, 1));
+});
 hbFilter('doCheckin', 'kbver', function (__v) {
   const c = __v;
   if (c && typeof c === 'object') {
@@ -88,9 +86,8 @@ hbFilter('ruleRow', 'kbver', function (__v, id) {
       '</span><b>'
   );
 });
-const _rulesSheetKB = rulesSheet;
-rulesSheet = function () {
-  _rulesSheetKB();
+hbWrap('rulesSheet', 'kbver', function (__next) {
+  __next();
   const el = document.querySelector('#sheet .small.muted');
   if (!el) return;
   el.insertAdjacentHTML(
@@ -108,4 +105,4 @@ rulesSheet = function () {
       ).join('') +
       '</details>'
   );
-};
+});

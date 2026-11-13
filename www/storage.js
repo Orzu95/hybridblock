@@ -47,8 +47,7 @@ const ST_DB = {
 };
 const ST_FLAG = 'hb_state_in_idb';
 let ST_WARNED = false;
-const _persistST = persist;
-persist = function () {
+hbWrap('persist', 'storage', function (__next) {
   if (typeof VIEW !== 'undefined' && VIEW) return;
   if (S.archive && S.archive.length > 6) S.archive = S.archive.slice(-6);
   if (AUTH && AUTH.uid && !S.meta.owner) S.meta.owner = AUTH.uid;
@@ -56,7 +55,7 @@ persist = function () {
   try {
     json = JSON.stringify(S);
   } catch (e) {
-    return _persistST.apply(this, arguments);
+    return __next.apply(this, Array.prototype.slice.call(arguments, 1));
   }
   try {
     localStorage.setItem(KEY, json);
@@ -78,7 +77,7 @@ persist = function () {
       })
       .catch(() => toast($t('Speichern fehlgeschlagen. Ist der Speicher voll?')));
   }
-};
+});
 /* Beim Start: Liegt ein neuerer Stand in der Gerätedatenbank, diesen nehmen */
 (async () => {
   try {
@@ -199,9 +198,8 @@ document.addEventListener(
   true
 );
 /* Beim Hochladen: Gehört der lokale Stand einem anderen Konto, nicht in dieses Konto hochladen */
-const _pushStateST = pushState;
 let ST_ASKED = false;
-pushState = async function () {
+hbWrap('pushState', 'storage', async function (__next) {
   if (AUTH && S.meta.owner && S.meta.owner !== AUTH.uid) {
     SYNC.err = $t('Die Daten auf diesem Gerät gehören zu einem anderen Konto.');
     if (!ST_ASKED) {
@@ -210,8 +208,8 @@ pushState = async function () {
     }
     return;
   }
-  return _pushStateST.apply(this, arguments);
-};
+  return __next.apply(this, Array.prototype.slice.call(arguments, 1));
+});
 function stOwnerSheet() {
   openSheet(
     sheetHead($t('Daten eines anderen Kontos')) +
@@ -291,13 +289,12 @@ hbFilter('trTick', 'storage', function (__v) {
   } catch (e) {}
   return r;
 });
-const _onLocST = onLoc;
-onLoc = function () {
+hbWrap('onLoc', 'storage', function (__next) {
   const lost = TR.active && TR.gpsLost;
-  const r = _onLocST.apply(this, arguments);
+  const r = __next.apply(this, Array.prototype.slice.call(arguments, 1));
   if (lost && TR.active && TR.fixAt && Date.now() - TR.fixAt < 2000) {
     TR.gpsLost = 0;
     say($t('GPS-Signal wieder da.'));
   }
   return r;
-};
+});

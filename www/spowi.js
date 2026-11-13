@@ -4,11 +4,10 @@
    Erklärungen der Berechnungen und zusätzliche Kennzahlen (ACWR, Monotonie, Strain, TRIMP, aerobe Entkopplung,
    Intensitätsverteilung, ln rMSSD, relative Kraft). Elemente mit der Klasse sw-only sind nur dann sichtbar. */
 const spowiOn = () => !!(S && S.settings && S.settings.spowi);
-const _renderSw = render;
-render = function (top) {
+hbWrap('render', 'spowi', function (__next, top) {
   document.body.classList.toggle('spowi', spowiOn());
-  _renderSw(top);
-};
+  __next(top);
+});
 document.body.classList.toggle('spowi', !!(typeof S !== 'undefined' && S && S.settings && S.settings.spowi));
 
 /* ---------- Einstellung ---------- */
@@ -182,9 +181,8 @@ hbFilter('reviewCard', 'spowi', function (__v, key, opts) {
 });
 
 /* ---------- Aktivität: TRIMP, aerobe Entkopplung ---------- */
-const _viewFreeSw = viewFree;
-viewFree = function (id) {
-  const h = _viewFreeSw(id);
+hbWrap('viewFree', 'spowi', function (__next, id) {
+  const h = __next(id);
   if (!spowiOn()) return h;
   const a = findAct(id);
   if (!a) return h;
@@ -211,7 +209,7 @@ viewFree = function (id) {
     '</p></div>';
   const i = hbAt(h, '<div class="stack">', 'spowi');
   return i < 0 ? h + card : h.slice(0, i + 19) + card + h.slice(i + 19);
-};
+});
 
 /* ---------- Abschluss-Fenster: harte Sätze und Ø RPE ---------- */
 function spowiFinTiles(w, k) {

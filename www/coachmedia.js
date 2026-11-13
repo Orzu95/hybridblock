@@ -124,9 +124,8 @@ function cmPick(accept, cb) {
   i.click();
 }
 /* Button an der Übung */
-const _exCardCM = exCard;
-exCard = function (w, k, spec) {
-  const h = _exCardCM.apply(this, arguments);
+hbWrap('exCard', 'coachmedia', function (__next, w, k, spec) {
+  const h = __next.apply(this, Array.prototype.slice.call(arguments, 1));
   if (!cmHasCoach() || spec.om) return h;
   return h.replace(
     '<div class="ex-actions">',
@@ -142,7 +141,7 @@ exCard = function (w, k, spec) {
       $t('Formcheck') +
       '</button>'
   );
-};
+});
 /* Liste und Detail (Athlet und Coach) */
 async function cmList(owner) {
   return (
@@ -294,9 +293,8 @@ hbFilter('viewTraining', 'coachmedia', function (__v) {
   return h + '<div class="card"><h2>' + $t('Meine Formchecks') + '</h2><div id="cm-mine"><p class="small muted">' + $t('Lade …') + '</p></div></div>';
 });
 /* Check-in-Fotos mit dem Coach teilen (Einwilligung) */
-const _photoCardCM = photoCard;
-photoCard = async function () {
-  const h = await _photoCardCM.apply(this, arguments);
+hbWrap('photoCard', 'coachmedia', async function (__next) {
+  const h = await __next.apply(this, Array.prototype.slice.call(arguments, 1));
   if (!cmHasCoach()) return h;
   const on = !!S.settings.shareCheckin;
   const row =
@@ -309,7 +307,7 @@ photoCard = async function () {
     '</span></label>';
   const i = hbAtLast(h, '</div>', 'coachmedia');
   return h.slice(0, i) + row + h.slice(i);
-};
+});
 document.addEventListener(
   'change',
   e => {
@@ -452,13 +450,12 @@ function pqCard() {
     '</div>'
   );
 }
-const _viewStartPQ = viewStart;
-viewStart = function () {
-  const h = _viewStartPQ.apply(this, arguments);
+hbWrap('viewStart', 'coachmedia', function (__next) {
+  const h = __next.apply(this, Array.prototype.slice.call(arguments, 1));
   if (ONB.step !== 'intake') return h;
   const i = hbAt(h, '<button class="btn brand block" data-act="onbIntake"', 'coachmedia');
   return i < 0 ? h : h.slice(0, i) + pqCard() + h.slice(i);
-};
+});
 hbFilter('reqCard', 'coachmedia', function (__v, uid2) {
   const h = __v;
   const r = ADMIN.reqs && ADMIN.reqs[uid2];
@@ -505,11 +502,10 @@ hbFilter('dashFlags', 'coachmedia', function (__v, c) {
   return f;
 });
 if (typeof DASH_TILES !== 'undefined' && !DASH_TILES.some(t => t[0] === 'form')) DASH_TILES.splice(DASH_TILES.length - 1, 0, ['form', 'Formchecks']);
-const _viewAdminCM = viewAdmin;
-viewAdmin = function () {
+hbWrap('viewAdmin', 'coachmedia', function (__next) {
   if (typeof isAdmin === 'function' && isAdmin()) cmUnseen();
-  return _viewAdminCM.apply(this, arguments);
-};
+  return __next.apply(this, Array.prototype.slice.call(arguments, 1));
+});
 document.addEventListener('click', e => {
   const b = e.target.closest('[data-act]');
   if (!b || b.dataset.act !== 'pqAns') return;

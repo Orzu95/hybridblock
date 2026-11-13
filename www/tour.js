@@ -163,13 +163,12 @@ function tourMaybe() {
   if (!$('#sheet').hidden) return;
   tourOpen();
 }
-const _renderTour = render;
-render = function () {
-  const r = _renderTour.apply(this, arguments);
+hbWrap('render', 'tour', function (__next) {
+  const r = __next.apply(this, Array.prototype.slice.call(arguments, 1));
   setTimeout(tourMaybe, 300);
   if (document.getElementById('tour')) setTimeout(tourDraw, 60);
   return r;
-};
+});
 window.addEventListener('resize', () => {
   if (document.getElementById('tour')) tourDraw();
 });

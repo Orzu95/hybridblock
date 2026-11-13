@@ -386,7 +386,7 @@ function ivPlanWarm(ctx) {
   return q && q[0] && q[0].k === 'warm' ? Math.round(q[0].sec / 60) : 10;
 }
 /* Ablauf bauen; Aufwärmen 0 min = direkt nach 10 s Countdown los */
-function ivBuild(sel, ctx) {
+function ivBuild__base(sel, ctx) {
   const o = ivOpts();
   let q;
   if (sel === 'plan' && ctx) q = intervalQueue(ctx.w, ctx.k).map(x => ({ ...x, hi: x.k === 'hi' }));
@@ -410,6 +410,9 @@ function ivBuild(sel, ctx) {
     else if (wm) q[0].sec = Math.round(wm * 60);
   }
   return q;
+}
+function ivBuild() {
+  return hbRun('ivBuild', this, arguments, ivBuild__base);
 }
 function ivLabel(x) {
   return x.k === 'hi' ? $t('Intervall ') + (x.n || '') : x.k === 'warm' ? $t('Aufwärmen') : x.k === 'cool' ? $t('Auslaufen') : $t('Pause');
@@ -547,7 +550,7 @@ async function gpsStop() {
   }
   TR.watch = null;
 }
-function onLoc(lat, lng, acc, alt, t) {
+function onLoc__base(lat, lng, acc, alt, t) {
   if (!TR.active || lat == null) return;
   TR.acc = acc;
   TR.fixAt = Date.now();
@@ -588,6 +591,9 @@ function onLoc(lat, lng, acc, alt, t) {
   autoPause(g);
   checkSplit();
   if (TR.q) trTick(true);
+}
+function onLoc() {
+  return hbRun('onLoc', this, arguments, onLoc__base);
 }
 /* Auto-Pause: steht man ca. 8 s, ruht die Uhr; ab Bewegung läuft sie weiter. Nicht bei Intervallen (Gehpausen gehören dazu). */
 function autoPause(g) {
@@ -1086,7 +1092,7 @@ function trStopSheet() {
       )
   );
 }
-async function trSave() {
+async function trSave__base() {
   if (!TR.active) return;
   const md = document.getElementById('tr-mdist'),
     rp = document.getElementById('tr-rpe'),
@@ -1161,6 +1167,9 @@ async function trSave() {
   say($t('Training gespeichert.'));
   location.hash = '#frei/' + a.id;
   if (trOpts().hcw) hcWriteWorkout(a, full);
+}
+function trSave() {
+  return hbRun('trSave', this, arguments, trSave__base);
 }
 async function hcWriteWorkout(a, full) {
   const P = NP('HbHealth');
@@ -1383,15 +1392,14 @@ async function gpxExport(id) {
   setTimeout(() => URL.revokeObjectURL(u), 4000);
 }
 /* viewFree um Karte und Abschnitte erweitern */
-const _viewFreeBase = viewFree;
-viewFree = function (id) {
-  const html = _viewFreeBase(id);
+hbWrap('viewFree', 'track', function (__next, id) {
+  const html = __next(id);
   const a = findAct(id);
   if (!a || (!a.route && !(a.splits || []).length && !(a.ivs || []).length)) return html;
   const extra = ivsCard(a) + routeCard(a) + splitsCard(a);
   const i = hbAt(html, '<div class="stack">', 'track');
   return i < 0 ? html + extra : html.slice(0, i + 19) + extra + html.slice(i + 19);
-};
+});
 
 /* ---------- Unterbrochene Aufzeichnung wiederherstellen ---------- */
 function trRecover() {
@@ -1546,16 +1554,15 @@ document.addEventListener('change', e => {
     return;
   }
 });
-const _renderBase = render;
-render = function (top) {
-  _renderBase(top);
+hbWrap('render', 'track', function (__next, top) {
+  __next(top);
   try {
     trAfterRender();
     routeMapsInit();
   } catch (e) {
     console.warn(e);
   }
-};
+});
 document.addEventListener('visibilitychange', () => {
   if (!document.hidden && TR.active) trLive(true);
 });

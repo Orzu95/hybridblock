@@ -50,12 +50,11 @@ const SEARCH_SVG =
   document.head.appendChild(st);
 })();
 /* Zentrierte Fenster: openPop statt openSheet */
-const _openSheetLv = openSheet;
-openSheet = function (h) {
+hbWrap('openSheet', 'levels', function (__next, h) {
   const sh = document.getElementById('sheet');
   if (sh) sh.classList.remove('center');
-  return _openSheetLv(h);
-};
+  return __next(h);
+});
 function openPop(h) {
   openSheet(h);
   const sh = document.getElementById('sheet');
@@ -161,15 +160,14 @@ function lvApply() {
     if (tile) tile.style.display = lv < need ? 'none' : '';
   });
 }
-const _renderLv = render;
-render = function () {
-  const r = _renderLv.apply(this, arguments);
+hbWrap('render', 'levels', function (__next) {
+  const r = __next.apply(this, Array.prototype.slice.call(arguments, 1));
   try {
     lvApply();
     topButtons();
   } catch (e) {}
   return r;
-};
+});
 
 /* SpoWi-Kennzahlen verständlicher: Gruppen, Ampel, ein Satz Bedeutung. Zu wenig Daten = kein Wert. */
 function loadDays() {

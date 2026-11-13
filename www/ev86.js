@@ -30,9 +30,8 @@ function ev86Info(ex) {
   if (!c || !sh || sh.hidden || !c.querySelector('[data-ex="' + ex + '"]') || c.querySelector('[data-ev86]')) return;
   c.insertAdjacentHTML('beforeend', '<div data-ev86>' + ev86Row(EV86.rom, 'Studienlage zum Bewegungsumfang') + '</div>');
 }
-const _viewSessionEV = viewSession;
-viewSession = function (key) {
-  const h = _viewSessionEV.apply(this, arguments);
+hbWrap('viewSession', 'ev86', function (__next, key) {
+  const h = __next.apply(this, Array.prototype.slice.call(arguments, 1));
   const m = String(key || '').match(RE_SESS);
   if (!m) return h;
   const w = +m[1],
@@ -44,7 +43,7 @@ viewSession = function (key) {
   if (!add) return h;
   const i = hbAtLast(h, '</div>', 'ev86');
   return i < 0 ? h + add : h.slice(0, i) + '<div style="margin:4px 4px 12px">' + add + '</div>' + h.slice(i);
-};
+});
 hbFilter('viewEssen', 'ev86', function (__v) {
   const h = __v;
   const i = hbAtLast(h, '</div>', 'ev86');

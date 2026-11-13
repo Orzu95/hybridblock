@@ -706,13 +706,12 @@ function resultHref(u) {
 }
 
 /* ---------- Einbindung ---------- */
-const _viewFreeRes = viewFree;
-viewFree = function (id) {
+hbWrap('viewFree', 'results', function (__next, id) {
   const a = S.activities.find(x => x.id === id);
-  if (!a) return _viewFreeRes(id);
+  if (!a) return __next(id);
   const imported = a.src && a.src !== 'manual' && num(a.dur);
   if ((a.done || imported) && ui.editAct !== id) return viewActResult(a);
-  let h = _viewFreeRes(id);
+  let h = __next(id);
   h = patchBaseFields(h, a);
   const t = ACT_MAP[a.type] || {};
   if (!t.strength) {
@@ -721,17 +720,16 @@ viewFree = function (id) {
   }
   if (ui.editAct === id) h = h.replace(/data-act="actDone"([^>]*)>[^<]*</, 'data-act="actDone"$1>' + $t('Änderungen speichern') + '<');
   return h;
-};
-const _viewSessionRes = viewSession;
-viewSession = function (arg) {
+});
+hbWrap('viewSession', 'results', function (__next, arg) {
   const m = /^w(\d+)-(.+)$/.exec(arg || '');
   if (m) {
     const w = +m[1],
       k = m[2];
     if (SESS[k] && sessDone(w, k) && ui.editSess !== arg) return viewSessResult(w, k);
   }
-  return _viewSessionRes(arg);
-};
+  return __next(arg);
+});
 window.addEventListener('hashchange', () => {
   if (route.name !== 'frei') ui.editAct = null;
   if (route.name !== 'training' || !route.arg || route.arg !== ui.editSess) ui.editSess = null;

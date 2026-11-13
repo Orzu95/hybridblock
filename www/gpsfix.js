@@ -120,15 +120,14 @@ function gpsQuality(pts, t0, t1) {
 }
 
 /* --- Aufzeichnung: alle Punkte mit Messzeit und Genauigkeit merken --- */
-const _onLocFix = onLoc;
-onLoc = function (lat, lng, acc, alt, t) {
+hbWrap('onLoc', 'gpsfix', function (__next, lat, lng, acc, alt, t) {
   if (TR.active && lat != null && !TR.paused && (acc == null || acc <= 100)) {
     TR.raw = TR.raw || [];
     TR.raw.push([lat, lng, t || Date.now(), acc != null ? Math.round(acc) : null]);
     TR.rawN = (TR.rawN || 0) + 1;
   }
-  return _onLocFix.apply(this, arguments);
-};
+  return __next.apply(this, Array.prototype.slice.call(arguments, 1));
+});
 /* Abschnittsgrenzen mit Uhrzeit speichern, Strecke für die Ansage aus der geglätteten Spur */
 hbFilter('qClose', 'gpsfix', function (__v, sec) {
   const t0 = TR.qT0,
@@ -144,14 +143,13 @@ hbFilter('qClose', 'gpsfix', function (__v, sec) {
   return r;
 });
 /* Beim Speichern: Intervalle und Gesamtstrecke aus der geglätteten Spur, GPS-Qualität merken */
-const _trSaveFix = trSave;
-trSave = async function () {
+hbWrap('trSave', 'gpsfix', async function (__next) {
   const raw = (TR.raw || []).slice(),
     key = 'gps:' + TR.startAt,
     g = (ACT_MAP[TR.type] || {}).g,
     gps = TR.gps,
     st = TR.startAt;
-  const r = await _trSaveFix.apply(this, arguments);
+  const r = await __next.apply(this, Array.prototype.slice.call(arguments, 1));
   try {
     const a = (S.activities || []).find(x => x.key === key);
     if (a && gps && raw.length > 1) {
@@ -165,7 +163,7 @@ trSave = async function () {
     console.warn(e);
   }
   return r;
-};
+});
 
 /* --- Gespeicherte Läufe: aus der Route neu berechnen (Grenzen aus der Reihenfolge der Abschnitte) --- */
 function actPts(a) {

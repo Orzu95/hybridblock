@@ -45,15 +45,14 @@ function lgTick() {
   if (rt) rt.textContent = on ? Math.floor(left / 60) + ':' + pad(left % 60) : '–:–';
 }
 setInterval(lgTick, 500);
-const _viewSessionLG = viewSession;
-viewSession = function (key) {
-  const h = _viewSessionLG.apply(this, arguments);
+hbWrap('viewSession', 'logger', function (__next, key) {
+  const h = __next.apply(this, Array.prototype.slice.call(arguments, 1));
   const m = String(key || '').match(RE_SESS);
   if (!m || !SESS[m[2]] || !isGym(m[2])) return h;
   const i = hbAt(h, '<div class="stack">', 'logger');
   setTimeout(lgTick, 0);
   return i < 0 ? lgHead(+m[1], m[2]) + h : h.slice(0, i) + lgHead(+m[1], m[2]) + h.slice(i);
-};
+});
 /* Satz erledigt → war es der letzte der Übung, zur nächsten offenen Übung scrollen */
 document.addEventListener('click', e => {
   const b = e.target.closest('[data-act]');

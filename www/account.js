@@ -59,14 +59,13 @@ function recoverySheet(code, fresh) {
 }
 
 /* Anmeldeseite: Passwort vergessen, Reset per Link */
-const _viewStartAcc = viewStart;
-viewStart = function (arg) {
+hbWrap('viewStart', 'account', function (__next, arg) {
   if (arg === 'reset' && RESET_TOKEN && ONB.step !== 'reset') {
     ONB.step = 'reset';
     ONB.err = '';
   }
   if (ONB.step !== 'forgot' && ONB.step !== 'reset') {
-    const h = _viewStartAcc(arg);
+    const h = __next(arg);
     return ONB.step === 'login'
       ? h.replace(
           '<!--forgot-->',
@@ -153,7 +152,7 @@ viewStart = function (arg) {
       $t('Hast du einen Coach, kann er dein Passwort zurücksetzen. Sonst wende dich an den Support.') +
       '</p></div>';
   return '<div class="onb">' + body + '</div>';
-};
+});
 
 /* Konto-Karte: Wiederherstellung, E-Mail, Passwort ändern */
 hbFilter('accountCard', 'account', function (__v) {
@@ -370,13 +369,12 @@ document.addEventListener('click', async e => {
     }
   }
 });
-const _logoutAcc = logout;
-logout = async function () {
+hbWrap('logout', 'account', async function (__next) {
   REC = null;
   if (typeof OPS !== 'undefined') {
     OPS.is = null;
     OPS.users = null;
     OPS.stats = null;
   }
-  return _logoutAcc();
-};
+  return __next();
+});

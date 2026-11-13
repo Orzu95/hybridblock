@@ -9,19 +9,34 @@ const HB_FILTERS = {};
 function hbFilter(name, src, fn) {
   (HB_FILTERS[name] = HB_FILTERS[name] || []).push({ src, fn });
 }
+/* Für Erweiterungen, die vor dem Aufruf eingreifen, Argumente ändern, den Aufruf auslassen oder asynchron sind:
+   hbWrap('switchPlan', 'safety', function (next, id) { if (!ok(id)) return; return next(id); });
+   next ruft die Basisfunktion samt aller früher geladenen Erweiterungen auf. */
+function hbWrap(name, src, fn) {
+  (HB_FILTERS[name] = HB_FILTERS[name] || []).push({ src, fn, around: true });
+}
+/* Führt Basis und Erweiterungen in Ladereihenfolge aus: Erweiterung i sieht das Ergebnis von Basis + Erweiterungen 0 … i−1. */
 function hbRun(name, self, args, base) {
-  let v = base.apply(self, args);
   const L = HB_FILTERS[name];
-  if (!L) return v;
-  const rest = Array.prototype.slice.call(args);
-  for (let i = 0; i < L.length; i++) {
-    try {
-      v = L[i].fn.apply(self, [v].concat(rest));
-    } catch (e) {
-      logErr('filter:' + name + ':' + L[i].src, e);
+  if (!L) return base.apply(self, args);
+  const call = function (i, a) {
+    if (i < 0) return base.apply(self, a);
+    const x = L[i];
+    if (x.around) {
+      const next = function () {
+        return call(i - 1, arguments);
+      };
+      return x.fn.apply(self, [next].concat(Array.prototype.slice.call(a)));
     }
-  }
-  return v;
+    let v = call(i - 1, a);
+    try {
+      v = x.fn.apply(self, [v].concat(Array.prototype.slice.call(a)));
+    } catch (e) {
+      logErr('filter:' + name + ':' + x.src, e);
+    }
+    return v;
+  };
+  return call(L.length - 1, args);
 }
 
 /* Einfügepunkte: Filter suchen in fertigem HTML nach einem Anker (z. B. '<div class="nr-search">') und fügen dort ein.

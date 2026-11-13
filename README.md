@@ -127,7 +127,17 @@ hbFilter('viewEssen', 'carbs', function (html) { /* … */ return html; });
 
 Die Basisfunktion heißt `viewEssen__base`; `viewEssen()` ruft sie auf und reicht das Ergebnis durch alle Filter in Ladereihenfolge. Ein fehlerhafter Filter wird übersprungen und protokolliert. `node tests/globals_check.mjs --list` zeigt, wer was erweitert. Bei `currentTargets` ist die Reihenfolge fachlich wichtig: Energie-Untergrenze (`energy.js`) → Pause (`zeit.js`) → Kohlenhydrat-Stufen (`carbs.js`) → Eiweiß-Minimum beim Essenspausen-Timer (`fasting.js`).
 
-Rund 90 ältere Erweiterungen nutzen noch das Alias-Muster (`const _x = fn; fn = function () { … _x(…) … }`), weil sie vor dem Aufruf eingreifen, Argumente ändern oder asynchron sind. Neue Erweiterungen bitte als Filter schreiben.
+Erweiterungen, die vor dem Aufruf eingreifen, Argumente ändern, den Aufruf auslassen oder asynchron sind, melden sich mit `hbWrap` an und bekommen `next` als erstes Argument:
+
+```js
+hbWrap('switchPlan', 'safety', function (next, id) { if (!ok(id)) return; return next(id); });
+```
+
+Nur noch 9 Stellen nutzen das alte Alias-Muster (`const _x = fn; fn = function () { … }`): `sessAdjust`, `exInfoSheet`, `coachLibOwn`, `errTxt`, `viewBar`. Neue Erweiterungen bitte nur über `hbFilter` oder `hbWrap`.
+
+**Einfügepunkte.** Filter suchen im fertigen HTML nach einem Anker und fügen dort ein. Dafür `hbAt`, `hbAtLast` und `hbRep` aus `hooks.js` nehmen: Fehlt der Anker, steht das im Fehlerprotokoll und der Smoke-Test schlägt fehl.
+
+**Formatierung.** `npx prettier --write "www/*.js"` (Einstellungen in `.prettierrc.json`, Daten-Dateien sind ausgenommen). Alle Skripte laufen im Strict-Modus.
 
 **Fachregeln.** Zahlen stehen in `rules.js` (`RV('…')`) mit Evidenzgrad und Quellen; `tests/rules_check.py` gleicht sie mit der Wissensbank `evidence.json` ab.
 

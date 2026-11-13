@@ -179,13 +179,17 @@ function ssAfterSet(kind, o) {
 /* Karten markieren */
 function ssMark(h, g, extraBtns) {
   if (g) {
-    h = hbRep(h, '<div class="ex" ', 'superset', '<div class="ex ss-m ss-' + g.mode + (g.pos === 1 ? ' ss-first' : '') + (g.pos === g.n ? ' ss-last' : '') + '" ');
+    h = hbRep(
+      h,
+      '<div class="ex" ',
+      'superset',
+      '<div class="ex ss-m ss-' + g.mode + (g.pos === 1 ? ' ss-first' : '') + (g.pos === g.n ? ' ss-last' : '') + '" '
+    );
     if (g.pos === 1) h = h.replace(/(<div class="ex [^"]*" [^>]*>)/, '$1<div class="ss-h">' + ssHeadText(g) + '</div>');
   }
   return extraBtns ? hbRep(h, '<div class="ex-actions">', 'superset', '<div class="ex-actions">' + extraBtns) : h;
 }
-const _exCardSS = exCard;
-exCard = function (w, k, spec) {
+hbWrap('exCard', 'superset', function (__next, w, k, spec) {
   const g = spec.ss;
   const btns =
     '<button class="btn sm" data-act="ssOpen" data-w="' +
@@ -208,11 +212,10 @@ exCard = function (w, k, spec) {
         $t('Entfernen') +
         '</button>'
       : '');
-  return ssMark(_exCardSS(w, k, spec), g, btns);
-};
-const _viewSessionSS = viewSession;
-viewSession = function (key) {
-  const h = _viewSessionSS(key);
+  return ssMark(__next(w, k, spec), g, btns);
+});
+hbWrap('viewSession', 'superset', function (__next, key) {
+  const h = __next(key);
   const m = key.match(RE_SESS);
   if (!m || !SESS[m[2]] || isCardio(m[2])) return h;
   return h.replace(
@@ -225,15 +228,14 @@ viewSession = function (key) {
       $t('+ Übung hinzufügen (nur heute)') +
       '</button><div class="card" id="endcard">'
   );
-};
-const _freeExCardSS = freeExCard;
-freeExCard = function (a, e, idx) {
+});
+hbWrap('freeExCard', 'superset', function (__next, a, e, idx) {
   const g = ssInfo(
     a.exercises,
     x => x.grp,
     x => x.gm
   )[idx];
-  let h = _freeExCardSS(a, e, idx);
+  let h = __next(a, e, idx);
   if (g) h = h.replace('data-act="exInfo" data-ex="' + e.ex + '">', 'data-act="exInfo" data-ex="' + e.ex + '"><span class="sup">' + g.label + '</span>');
   h = ssMark(h, g, '');
   return (
@@ -247,7 +249,7 @@ freeExCard = function (a, e, idx) {
       x => x.gm
     )
   );
-};
+});
 
 /* Verbinden-Leiste zwischen zwei Zeilen (Plan-Editor, geplantes Training, freies Training) */
 function ssLinkBar(kind, a, idx, items, getG, getM) {
@@ -454,7 +456,7 @@ function ssOpen(w, k, slot) {
   ui.ss = { w, k, slot, sel: new Set(mem.map(x => x.slot).filter(sl => sl !== slot)), mode: me && me.ss ? me.ss.mode : 'ss', scope: 'today' };
   ssSheet();
 }
-function ssStore(members, mode) {
+function ssStore__base(members, mode) {
   const o = ui.ss;
   const list = planFor(o.w, o.k);
   const s = sess(o.w, o.k);
@@ -506,6 +508,9 @@ function ssStore(members, mode) {
   save();
   closeSheet();
   render();
+}
+function ssStore() {
+  return hbRun('ssStore', this, arguments, ssStore__base);
 }
 
 /* Klicks. Capture-Phase, damit die Übungsauswahl mit eigenem Ziel nicht im freien Training landet */

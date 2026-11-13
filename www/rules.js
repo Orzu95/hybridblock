@@ -72,11 +72,14 @@ const ruleFor = id => !RULES[id].grp || myGroups().includes(RULES[id].grp);
 /* ---------- „So rechnet die App“: alle Regeln mit Grad und Studienlage ---------- */
 function ruleVal(r) { if (r.d) return $t(r.d); const v = r.v; if (Array.isArray(v)) return v.map(x => fmt(x, x % 1 ? 1 : 0)).join('–'); if (typeof v === 'number') return fmt(v, v % 1 ? 1 : 0);
   if (v && typeof v === 'object') return Object.values(v).map(x => typeof x === 'number' && x < 1 ? Math.round(x * 100) + ' %' : String(x)).join(' / '); return $t(v); }
-function rulesSheet() { openSheet(sheetHead($t('So rechnet die App')) + '<p class="small muted">' + $t('Jede Zahl, mit der die App rechnet, ist mit Einträgen der Wissensbank verknüpft. Der Grad zeigt, wie gut sie belegt ist; D heißt Expertenmeinung oder Setzung der App.') + '</p>' +
+function rulesSheet__base() { openSheet(sheetHead($t('So rechnet die App')) + '<p class="small muted">' + $t('Jede Zahl, mit der die App rechnet, ist mit Einträgen der Wissensbank verknüpft. Der Grad zeigt, wie gut sie belegt ist; D heißt Expertenmeinung oder Setzung der App.') + '</p>' +
   '<div class="row" style="margin-top:12px"><button class="trtog' + (evStrict() ? ' on' : '') + '" data-act="evStrict" type="button">' + (evStrict() ? '✓ ' : '') + $t('Nur gut belegte Vorschläge (A/B)') + '</button></div><p class="small muted" style="margin-top:6px">' + $t('Eingeschaltet blendet der Wochen-Check-in Vorschläge mit Grad C oder D aus.') + '</p>' +
   (myGroups().length ? '<h3 style="margin-top:14px">' + $t('Für dich angepasst') + '</h3>' + (Object.keys(RULES).filter(id => RULES[id].grp && ruleFor(id)).map(ruleRow).join('') || '<p class="small muted">' + $t('Für deine Angaben gibt es keine Sonderregeln.') + '</p>') : '') +
   '<h3 style="margin-top:14px">' + $t('Für alle') + '</h3>' + Object.keys(RULES).filter(id => !RULES[id].grp).map(ruleRow).join('') +
   '<h3 style="margin-top:14px">' + $t('Für andere Gruppen') + '</h3>' + Object.keys(RULES).filter(id => RULES[id].grp && !ruleFor(id)).map(ruleRow).join('')); }
+function rulesSheet() {
+  return hbRun('rulesSheet', this, arguments, rulesSheet__base);
+}
 document.addEventListener('click', e => { const b = e.target.closest('[data-act="rulesOpen"],[data-act="ruleOpen"],[data-act="evStrict"]'); if (!b) return; e.preventDefault(); e.stopPropagation();
   if (b.dataset.act === 'rulesOpen') rulesSheet();
   else if (b.dataset.act === 'ruleOpen') openSheet(sheetHead($t('Warum diese Zahl?')) + b.dataset.ids.split(',').map(ruleRow).join('') + '<div style="margin-top:12px"><button class="btn sm" data-act="rulesOpen" type="button">' + $t('Alle Regeln der App') + '</button></div>');

@@ -293,7 +293,7 @@ function wkUndoCompact(w) {
   save();
 }
 const wkDay = d => (d === today() ? $t('heute') : d === addDays(today(), 1) ? $t('morgen') : fmtDay(d));
-function wkDecisionCard(w) {
+function wkDecisionCard__base(w) {
   if (w !== curWeek() || S.settings.mode === 'rotation') return '';
   const W = wkPeek(w);
   const pl = wkPlan(w);
@@ -368,6 +368,9 @@ function wkDecisionCard(w) {
     $t('Weiterlaufen lassen') +
     '</button></div></div>'
   );
+}
+function wkDecisionCard() {
+  return hbRun('wkDecisionCard', this, arguments, wkDecisionCard__base);
 }
 
 /* ---------- Wochenübersicht mit Tagen, Pausen und freien Aktivitäten ---------- */
@@ -836,24 +839,22 @@ hbFilter('sessProgress', 'week', function (__v, w, k) {
   return s && !s.skipped && s.end && s.end.fin ? Object.assign({}, r, { done: true, early: true }) : r;
 });
 /* Heute: was heute laut Wochenplan dran ist */
-const _sessionsOnDowWk = sessionsOnDow;
-sessionsOnDow = function (dow) {
-  if (!ORDER.length || dow !== new Date().getDay()) return _sessionsOnDowWk(dow);
+hbWrap('sessionsOnDow', 'week', function (__next, dow) {
+  if (!ORDER.length || dow !== new Date().getDay()) return __next(dow);
   const w = curWeek();
   const t = today();
   return wkPlan(w)
     .items.filter(o => o.date === t && o.st !== 'skipped' && o.st !== 'merged')
     .map(o => o.k);
-};
-const _dayLabelWk = dayLabel;
-dayLabel = function (k) {
+});
+hbWrap('dayLabel', 'week', function (__next, k) {
   try {
     const w = curWeek();
     const it = wkPlan(w).items.find(o => o.k === k);
     if (it && it.date && (wkOpen(it) || it.st === 'today')) return wkDay(it.date);
   } catch (e) {}
-  return _dayLabelWk(k);
-};
+  return __next(k);
+});
 const _sessAdjWk = sessAdjust;
 sessAdjust = function (w, k, list) {
   list = _sessAdjWk(w, k, list);
@@ -870,8 +871,7 @@ sessAdjust = function (w, k, list) {
     list = list.map(x => (x.sets && !x.om ? Object.assign({}, x, { sets: Math.max(1, x.sets - 1), rpe: x.rpe != null ? Math.max(5, x.rpe - 1) : x.rpe }) : x));
   return list;
 };
-const _exCardWk = exCard;
-exCard = function (w, k, spec) {
+hbWrap('exCard', 'week', function (__next, w, k, spec) {
   if (spec.om) {
     const nm = LIB[actualEx(w, k, spec)] ? LIB[actualEx(w, k, spec)].name : spec.ex;
     return (
@@ -894,7 +894,7 @@ exCard = function (w, k, spec) {
       '</button></div></div>'
     );
   }
-  const h = _exCardWk(w, k, spec);
+  const h = __next(w, k, spec);
   return h.replace(
     '<div class="ex-actions">',
     '<div class="ex-actions"><button class="btn sm" data-act="wkOmitOpen" data-w="' +
@@ -907,7 +907,7 @@ exCard = function (w, k, spec) {
       $t('Auslassen') +
       '</button>'
   );
-};
+});
 hbFilter('viewTraining', 'week', function (__v) {
   let h = __v;
   if (!ORDER.length) return h;

@@ -233,17 +233,16 @@ function peGenQuery() {
 }
 
 /* ---------- Automatische Prüfung beim Speichern ---------- */
-const _peSaveWk = peSave;
-peSave = async function () {
-  if (typeof checkPlan !== 'function') return _peSaveWk();
+hbWrap('peSave', 'planweeks', async function (__next) {
+  if (typeof checkPlan !== 'function') return __next();
   const j = JSON.stringify(PE.draft);
-  if (PE.chkOkJ === j) return _peSaveWk();
+  if (PE.chkOkJ === j) return __next();
   const r = checkPlan(PE.draft, chkCtxOf('pe'));
   const open = r.items.filter(f => !f.ign && f.sev !== 'tip' && f.g !== 'D');
   if (!open.length) {
     PE.chkOkJ = j;
     toast($tf('Geprüft: Note {g}', { g: r.g }));
-    return _peSaveWk();
+    return __next();
   }
   openSheet(
     sheetHead($t('Plan geprüft')) +
@@ -264,7 +263,7 @@ peSave = async function () {
       $t('So speichern') +
       '</button>'
   );
-};
+});
 
 /* ---------- Ereignisse ---------- */
 document.addEventListener('change', e => {
