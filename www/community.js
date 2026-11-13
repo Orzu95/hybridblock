@@ -41,7 +41,7 @@ function lfBar(scope) { const f = ui.lf || {}; const sel = (id, opts, v) => '<se
     '<div class="lf-row">' + (scope === 'all' ? '<button class="chip-btn' + (f.rev ? ' on' : '') + '" data-act="lfRev" type="button">✓ ' + $t('Von uns geprüft') + '</button>' : '') +
     sel('lf-ev', [['', $t('Evidenz: alle')], ['A', $t('Evidenz A')], ['B', $t('Evidenz ab B')], ['C', $t('Evidenz ab C')]], f.ev) +
     sel('lf-sort', [['rank', $t('Ranking')], ['act', $t('Aktive Nutzer')], ['new', $t('Neueste')], ['ev', $t('Evidenz')]], f.sort) + '</div></div>'; }
-viewLibAll = function () { cmNeed(); return goalSeg() + lfBar('all') + '<div id="lib-list" class="stack">' + lfList('all') + '</div>'; };
+function viewLibAll() { cmNeed(); return goalSeg() + lfBar('all') + '<div id="lib-list" class="stack">' + lfList('all') + '</div>'; }
 const _viewLibComCM = viewLibCom;
 viewLibCom = function () { cmNeed(); if (libTab() === 'rev') return modView() + _viewLibComCM.apply(this, arguments);
   return note('sky', $t('Pläne aus der Community, noch nicht von uns geprüft. Die Note kommt aus der automatischen Prüfung gegen die Studienlage.')) + lfBar('com') + '<div id="lib-list" class="stack">' + (SP.list == null ? '<p class="muted">' + $t('Lade …') + '</p>' : lfList('com')) + '</div>'; };

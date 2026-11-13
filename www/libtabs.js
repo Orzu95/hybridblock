@@ -49,9 +49,6 @@ function viewLibMine() { const L = spNeed(), mine = L.filter(spMine), fromCoach 
   if (!ui.libFor) { const ar = S.archive.map((a, i) => ({ a, i })).filter(x => x.a.plan && x.a.plan.sessions).reverse().slice(0, 6);
     if (ar.length) h += lsec('Frühere Pläne') + ar.map(({ a, i }) => '<a class="card libcard" href="#library/ar:' + i + '"><b>' + esc($t(a.plan.name || '')) + '</b><div class="small muted">' + (a.until ? $tf('bis {d}', { d: fmtDay(a.until) }) + ' · ' : '') + $tf('{n} Einheiten erledigt', { n: Object.keys(a.sessions || {}).length }) + '</div></a>').join(''); }
   return h + $t('<div class="card"><div class="row"><div class="grow"><h2 style="margin:0">Plan erstellen lassen</h2><p class="small">Aus Ziel, Erfahrung, Tagen, Zeit, Geräten und Einschränkungen.</p></div><button class="btn brand sm" data-act="genPlan" type="button">Erstellen</button></div></div>'); }
-function viewLibAll() { const filt = ui.libGoal || ''; const L = spNeed().filter(x => SP_PUB.includes(x.status) || spMine(x)).filter(x => !filt || (x.meta || {}).goal === filt);
-  const lib = Object.values(LIBRARY).filter(p => !p.module && libVisible(p) && (!filt || p.goals.includes(filt)));
-  return goalSeg() + lib.map(p => libCard(p)).join('') + (L.length ? lsec('Geteilte Pläne') + L.map(spCard).join('') : ''); }
 function viewLibCom() { const L = spNeed().filter(x => x.status === 'public' || x.status === 'submitted').sort((a, b) => (b.published_at || '') > (a.published_at || '') ? 1 : -1);
   return note('sky', $t('Pläne aus der Community, noch nicht von uns geprüft. Die Note kommt aus der automatischen Prüfung gegen die Studienlage.')) +
     (SP.list == null ? lempty('Lade …') : L.length ? L.map(spCard).join('') : lempty('Noch keine Pläne veröffentlicht. Unter „Meine Pläne“ kannst du deinen teilen.')); }

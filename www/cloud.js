@@ -6,31 +6,31 @@ const SB = { url: 'https://eumwznaujhcradwvsblw.supabase.co', key: 'sb_publishab
 const AUTH_KEY = 'hb_auth_v1';
 let AUTH = null; try { AUTH = JSON.parse(localStorage.getItem(AUTH_KEY) || 'null'); } catch (e) {}
 let VIEW = null; /* Admin schaut die Daten eines Kunden an (nur lesen) */
-const ERR_TXT = { invalid_code: $t('Code ungültig, schon benutzt oder abgelaufen.'), bad_username: $t('Benutzername: 3–24 Zeichen, nur a–z, 0–9, Punkt, Strich oder Unterstrich.'), short_password: $t('Passwort: mindestens 8 Zeichen.'),
+const ERR_TXT = { rate_limited: $t('Zu viele Versuche. Bitte warte eine Minute.'), invalid_code: $t('Code ungültig, schon benutzt oder abgelaufen.'), bad_username: $t('Benutzername: 3–24 Zeichen, nur a–z, 0–9, Punkt, Strich oder Unterstrich.'), short_password: $t('Passwort: mindestens 8 Zeichen.'),
   username_taken: $t('Dieser Benutzername ist schon vergeben.'), 'Invalid login credentials': $t('Benutzername oder Passwort falsch.'), forbidden: $t('Keine Berechtigung.'), not_logged_in: $t('Nicht angemeldet.'), Failed_fetch: $t('Keine Verbindung zum Server.') };
 let errTxt = e => { const m = (e && (e.body && e.body.error) || e && e.message) || String(e); if (/Failed to fetch|NetworkError|AbortError|Load failed/i.test(m) || (e && e.name === 'AbortError')) return ERR_TXT.Failed_fetch; return ERR_TXT[m] || m; };
 function saveAuth() { try { if (AUTH) localStorage.setItem(AUTH_KEY, JSON.stringify(AUTH)); else localStorage.removeItem(AUTH_KEY); } catch (e) {} }
 async function sbFetch(path, opt, ms) { opt = opt || {}; const ac = new AbortController(); const t = setTimeout(() => ac.abort(), ms || 15000);
   try { const r = await fetch(SB.url + path, Object.assign({}, opt, { signal: ac.signal, headers: Object.assign({ apikey: SB.key, 'Content-Type': 'application/json' }, opt.headers || {}) }));
     const txt = await r.text(); let j = null; try { j = txt ? JSON.parse(txt) : null; } catch (e) {}
-    if (!r.ok) { const err = new Error((j && (j.error_description || j.msg || j.message || j.error)) || ($t('HTTP ') + r.status)); err.status = r.status; err.body = j; throw err; }
+    if (!r.ok) { const err = new Error((j && (j.error_description || j.msg || j.message || j.error)) || ('HTTP ' + r.status)); err.status = r.status; err.body = j; throw err; }
     return j; } finally { clearTimeout(t); } }
 function setAuth(j) { const keep = AUTH && AUTH.uid === j.user.id ? AUTH.profile : null; AUTH = { access_token: j.access_token, refresh_token: j.refresh_token, expires_at: j.expires_at || Math.floor(Date.now() / 1000 + (j.expires_in || 3600)), uid: j.user.id, profile: keep }; saveAuth(); }
 let refreshing = null;
 async function token() { if (!AUTH) throw new Error('not_logged_in');
-  if (Date.now() / 1000 > AUTH.expires_at - 90) { if (!refreshing) refreshing = sbFetch('/auth/v1/token?grant_type=refresh_token', { method: $t('POST'), body: JSON.stringify({ refresh_token: AUTH.refresh_token }) })
+  if (Date.now() / 1000 > AUTH.expires_at - 90) { if (!refreshing) refreshing = sbFetch('/auth/v1/token?grant_type=refresh_token', { method: 'POST', body: JSON.stringify({ refresh_token: AUTH.refresh_token }) })
       .then(setAuth).catch(e => { if (e.status === 400 || e.status === 401) { AUTH = null; saveAuth(); } throw e; }).finally(() => { refreshing = null; }); await refreshing; }
   return AUTH.access_token; }
-async function api(path, opt) { opt = opt || {}; const tk = await token(); return sbFetch(path, Object.assign({}, opt, { headers: Object.assign({ Authorization: $t('Bearer ') + tk }, opt.headers || {}) })); }
-async function fnCall(body, withAuth) { const h = withAuth ? { Authorization: $t('Bearer ') + await token() } : {}; return sbFetch('/functions/v1/hb-auth', { method: $t('POST'), body: JSON.stringify(body), headers: h }, 25000); }
+async function api(path, opt) { opt = opt || {}; const tk = await token(); return sbFetch(path, Object.assign({}, opt, { headers: Object.assign({ Authorization: 'Bearer ' + tk }, opt.headers || {}) })); }
+async function fnCall(body, withAuth) { const h = withAuth ? { Authorization: 'Bearer ' + await token() } : {}; return sbFetch('/functions/v1/hb-auth', { method: 'POST', body: JSON.stringify(body), headers: h }, 25000); }
 const isAdmin = () => !!(AUTH && AUTH.profile && AUTH.profile.role === 'admin');
 const hasCoach = () => !!(AUTH && AUTH.profile && AUTH.profile.coach_id);
 /* Benutzername normalisieren: Lourenço → lourenco, Max Müller → max.mueller */
 function normUser(u) { return String(u || '').trim().toLowerCase().replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue').replace(/ß/g, 'ss').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/\s+/g, '.').replace(/[^a-z0-9._-]/g, ''); }
 function userHint(u) { const n = normUser(u); return u && n !== String(u).trim() ? $t('Anmeldename: ') + '<b>' + esc(n || '–') + '</b>' : ''; }
-async function login(username, password) { const j = await sbFetch('/auth/v1/token?grant_type=password', { method: $t('POST'), body: JSON.stringify({ email: normUser(username) + '@' + SB.domain, password }) }); setAuth(j); await loadProfile(); }
+async function login(username, password) { const j = await sbFetch('/auth/v1/token?grant_type=password', { method: 'POST', body: JSON.stringify({ email: normUser(username) + '@' + SB.domain, password }) }); setAuth(j); await loadProfile(); }
 async function loadProfile() { const r = await api('/rest/v1/profiles?id=eq.' + AUTH.uid + '&select=id,username,display_name,role,coach_id,lang'); AUTH.profile = r && r[0] || null; saveAuth(); return AUTH.profile; }
-async function logout() { try { if (AUTH) await api('/auth/v1/logout', { method: $t('POST') }); } catch (e) {} AUTH = null; saveAuth(); S.meta.syncAt = null; S.meta.syncMod = null; S.meta.planAt = null; persist(); }
+async function logout() { try { if (AUTH) await api('/auth/v1/logout', { method: 'POST' }); } catch (e) {} AUTH = null; saveAuth(); S.meta.syncAt = null; S.meta.syncMod = null; S.meta.planAt = null; persist(); }
 
 /* ======================= SYNC ======================= */
 const SYNC = { t: null, busy: false, err: null, pulled: false };
@@ -43,12 +43,12 @@ async function pushState() { if (!AUTH || VIEW) return; if (SYNC.busy) { cloudDi
     /* Sync-Schutz: Ist der Stand in der Cloud neuer als unser letzter Sync, zuerst zusammenführen, dann hochladen */
     if (!S.meta.forcePush) { const r = await api(base + '&select=updated_at'); const rAt = r && r[0] && r[0].updated_at;
       if (rAt && (!S.meta.syncAt || Date.parse(rAt) > Date.parse(S.meta.syncAt) + 500)) { const st = await api(base + '&select=state,updated_at'); if (st && st[0] && st[0].state) merged = smMergeIn(st[0].state); } }
-    const res = await api('/rest/v1/user_state?on_conflict=user_id&select=updated_at', { method: $t('POST'), headers: { Prefer: 'resolution=merge-duplicates,return=representation' }, body: JSON.stringify({ user_id: AUTH.uid, state: cloudCopy(), summary: makeSummary(), updated_at: new Date().toISOString() }) });
+    const res = await api('/rest/v1/user_state?on_conflict=user_id&select=updated_at', { method: 'POST', headers: { Prefer: 'resolution=merge-duplicates,return=representation' }, body: JSON.stringify({ user_id: AUTH.uid, state: cloudCopy(), summary: makeSummary(), updated_at: new Date().toISOString() }) });
     S.meta.syncAt = (res && res[0] && res[0].updated_at) || new Date().toISOString(); S.meta.syncMod = mod; delete S.meta.forcePush;
     SYNC.err = null; persist(); if (merged && merged.changed && !document.querySelector('input:focus,select:focus,textarea:focus')) render(); }
   catch (e) { SYNC.err = errTxt(e); S.meta.syncAt = prevAt; S.meta.syncMod = prevMod === mod ? null : prevMod; } finally { SYNC.busy = false; } }
 async function pushPlan(uid, plan) { const now = new Date().toISOString();
-  await api('/rest/v1/plans?on_conflict=user_id', { method: $t('POST'), headers: { Prefer: 'resolution=merge-duplicates,return=minimal' }, body: JSON.stringify({ user_id: uid, plan, updated_at: now, updated_by: AUTH.uid }) }); return now; }
+  await api('/rest/v1/plans?on_conflict=user_id', { method: 'POST', headers: { Prefer: 'resolution=merge-duplicates,return=minimal' }, body: JSON.stringify({ user_id: uid, plan, updated_at: now, updated_by: AUTH.uid }) }); return now; }
 /* Plan übernehmen: Wochentage für neue Einheiten aus dem Plan, Ernährungsziele vom Coach als Check-in */
 function setPlan(plan, fromCoach) {
   if (fromCoach && plan.assign && plan.assign.at && plan.assign.at !== S.meta.assignAt) { if (Object.keys(S.sessions).length) S.archive.push({ plan: S.plan, sessions: S.sessions, block: S.block, until: today() });
@@ -181,7 +181,7 @@ function onbApplyProfile() { const d = ONB.data, st = S.settings; const c = onbC
   if (num(d.rhr)) st.rhrBase = String(num(d.rhr)); if (num(d.vo2)) { st.vo2Start = String(num(d.vo2)); setHealth(today(), { vo2: num(d.vo2) }, 'manual'); }
   const o = dayObj(today()); if (num(o.weight) == null) { o.weight = String(num(d.weight)); o.weightSrc = 'manual'; }
   const tg = S.plan.targets; if (tg) { ['protein', 'fat', 'goalRate', 'targetWeight'].forEach(k => { if (num(tg[k]) != null) st[k] = String(tg[k]); }); if (num(tg.kcal) != null) st.startKcal = String(tg.kcal); }
-  if (AUTH && st.name) api('/rest/v1/profiles?id=eq.' + AUTH.uid, { method: $t('PATCH'), body: JSON.stringify({ display_name: st.name }) }).catch(() => {});
+  if (AUTH && st.name) api('/rest/v1/profiles?id=eq.' + AUTH.uid, { method: 'PATCH', body: JSON.stringify({ display_name: st.name }) }).catch(() => {});
   save(); return true; }
 function prefillOnb() { const st = S.settings, d = ONB.data; if (d._filled) return; d._filled = true; d.name = d.name || st.name || (AUTH && AUTH.profile && AUTH.profile.display_name) || ''; d.sex = d.sex || st.sex || 'm'; d.age = d.age || st.age || ''; d.height = d.height || st.height || ''; d.weight = d.weight || ''; d.target = d.target || ''; d.act = d.act || '1.45'; }
 async function afterAuth() { const r = await pullAll({ first: true, quiet: true }); if (r.conflict) { ONB.conflict = r.conflict; ONB.step = 'conflict'; render(); return; } finishAuth(); }
@@ -250,7 +250,7 @@ function inviteSheet() { const mode = ui.invMode || 'free';
     $t('<h3 style="margin:16px 0 8px">Wie soll er trainieren?</h3><div class="stack">') + INV_MODES.map(m => '<button class="card pathcard' + (mode === m[0] ? $t(' sel') : '') + '" data-act="invMode" data-v="' + m[0] + '" type="button"><b>' + m[1] + '</b><span class="small muted">' + m[2] + '</span></button>').join('') + '</div>' +
     (mode === 'coach' ? $t('<div class="fields on-white" style="margin-top:12px"><div class="field" style="flex:1 1 100%"><label for="iv-tpl">Plan bis deiner fertig ist (optional)</label><select id="iv-tpl" style="width:100%"><option value="">Keiner, nur freies Training</option>') + Object.keys(PLAN_TPL).filter(k => k !== 'blank').map(k => '<option value="' + k + '">' + esc($t(PLAN_TPL[k].name)) + '</option>').join('') + $t('<option value="mine">Kopie meines Plans</option></select></div></div>') : '') +
     $t('<p class="small muted" style="margin-top:12px">Der Code ist 30 Tage gültig und funktioniert einmal. Den Plan kannst du später jederzeit ändern.</p><div class="row" style="margin-top:14px"><div class="grow"></div><button class="btn brand" data-act="inviteCreate" type="button">Code erstellen</button></div>')); }
-function genCode() { const A = $t('ABCDEFGHJKLMNPQRSTUVWXYZ23456789'); const b = new Uint8Array(6); crypto.getRandomValues(b); return $t('HB-') + Array.from(b, x => A[x % A.length]).join(''); }
+function genCode() { const A = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'; const b = new Uint8Array(10); crypto.getRandomValues(b); return 'HB-' + Array.from(b, x => A[x % A.length]).join(''); }
 const inviteText = (code, name) => (name ? $t('Hallo ') + name + '! ' : '') + $t('Installiere Hybridblock. Android: ') + APK_URL + $t(' · Browser: ') + PAGES + $t(' · Beim Start „Ich habe einen Einladungscode“ wählen und ') + code + $t(' eingeben.');
 async function shareInvite(code, name) { const txt = inviteText(code, name); try { if (navigator.share) { await navigator.share({ text: txt }); return; } } catch (e) { if (e.name === 'AbortError') return; }
   try { await navigator.clipboard.writeText(txt); toast($t('Einladung kopiert')); } catch (e) { openSheet(sheetHead($t('Einladung')) + '<textarea readonly style="margin-top:12px">' + esc(txt) + '</textarea>'); } }
@@ -266,8 +266,6 @@ async function openPlanEditor(arg) { const who = planTarget(arg); if (PE.uid ===
     if (!plan) { const stt = ADMIN.states[who] || await loadClientState(who); plan = stt && stt.state && stt.state.plan; }
     PE.draft = plan ? JSON.parse(JSON.stringify(plan)) : makePlan('gk3'); const c = (ADMIN.clients || []).find(x => x.id === who); PE.name = c ? cname(c) : ''; }
   catch (e) { toast(errTxt(e)); PE.uid = null; } PE.loading = false; if (route.name === 'plan') render(); }
-function peSess(i) { return PE.draft.sessions[i]; }
-function peItems(i) { const s = peSess(i); return planForP(PE.draft, 1, s.k); }
 function peIsAdd(s, slot) { return (s.add || []).find(a => a.slot === slot); }
 const TYPE_TXT = { main: 'Hauptübung', bo: 'Back-off', dp: 'Übung', bw: 'Körpergewicht', power: 'Power', carry: 'Carry' };
 function viewPlan(arg) { const who = planTarget(arg); if (PE.uid !== who || !PE.draft) { openPlanEditor(arg).then(() => { if (route.name === 'plan') render(); }); return $t('<p class="muted">Lade Plan …</p>'); }
@@ -319,7 +317,7 @@ function pePickSheet(i, slot, q) { q = (q || '').toLowerCase(); const items = Ob
 const peExItems = items => items.map(e => '<div class="it" data-act="pePick" data-ex="' + e.id + '"><div class="grow"><b>' + esc(e.name) + '</b><small>' + Object.keys(e.muscles).filter(m => e.muscles[m] >= 1).map(m => MUSCLES[m]).join(', ') + '</small></div>' + (isPrio(e.id) ? $t('<span class="prio">Schwerpunkt</span>') : '') + '</div>').join('');
 async function peSave() { if (isTplUid(PE.uid)) return tplEditorSave(); const p = PE.draft; if (p.targets) { p.targets.at = new Date().toISOString(); } p.v = (p.v || 1) + 1; delete p.waiting; delete p.free;
   try { if (PE.uid === 'me') { if (PE.switching || !S.plan.sessions.length) { switchPlan(p); PE.switching = false; } else setPlan(p, false); S.meta.daysSet = true; if (AUTH) { S.meta.planAt = await pushPlan(AUTH.uid, S.plan); } save(); toast($t('Plan gespeichert')); }
-    else { await pushPlan(PE.uid, p); const rq = openReq(PE.uid); if (rq) { try { await api('/rest/v1/plan_requests?id=eq.' + rq.id, { method: $t('PATCH'), body: JSON.stringify({ status: 'done', done_at: new Date().toISOString() }) }); rq.status = 'done'; } catch (e2) {} } toast($t('Plan gespeichert. ') + (PE.name || $t('Dein Athlet')) + $t(' bekommt ihn beim nächsten Öffnen.')); }
+    else { await pushPlan(PE.uid, p); const rq = openReq(PE.uid); if (rq) { try { await api('/rest/v1/plan_requests?id=eq.' + rq.id, { method: 'PATCH', body: JSON.stringify({ status: 'done', done_at: new Date().toISOString() }) }); rq.status = 'done'; } catch (e2) {} } toast($t('Plan gespeichert. ') + (PE.name || $t('Dein Athlet')) + $t(' bekommt ihn beim nächsten Öffnen.')); }
     PE.dirty = false; peDraftClear(); render(); } catch (e) { toast($t('Speichern fehlgeschlagen: ') + errTxt(e)); } }
 
 /* ======================= EINSTELLUNGEN: KONTO & SPRACHE ======================= */
@@ -380,7 +378,7 @@ document.addEventListener('click', async e => { const b = e.target.closest('[dat
     case 'painToggle': { const q = S.settings.q = Object.assign({}, S.settings.q || {}); q.pain = Object.assign({}, q.pain || {}); if (q.pain[b.dataset.r]) delete q.pain[b.dataset.r]; else q.pain[b.dataset.r] = {}; save(); render(); break; }
     case 'onbIntake': { ONB.busy = true; render(); const q = S.settings.q || {}; const st = S.settings;
       const intake = Object.assign({}, q, { name: st.name, sex: st.sex, age: st.age, height: st.height, weight: st.startWeight, target: st.targetWeight, kcal: st.startKcal, at: new Date().toISOString(), lang: LANG, missingEq: st.missingEq || [] });
-      try { if (AUTH) await api('/rest/v1/plan_requests', { method: $t('POST'), headers: { Prefer: 'return=minimal' }, body: JSON.stringify({ user_id: AUTH.uid, coach_id: AUTH.profile && AUTH.profile.coach_id, intake }) });
+      try { if (AUTH) await api('/rest/v1/plan_requests', { method: 'POST', headers: { Prefer: 'return=minimal' }, body: JSON.stringify({ user_id: AUTH.uid, coach_id: AUTH.profile && AUTH.profile.coach_id, intake }) });
         S.meta.requested = intake.at; if (!S.plan.sessions.length || !hasPlanFromCoach()) switchPlan({ tpl: 'none', name: 'Plan in Arbeit', sessions: [], waiting: true, dayMap: {}, note: '', targets: null, v: 1 });
         ONB.busy = false; toast($t('An deinen Coach gesendet')); onbAfterPlan(); } catch (err) { ONB.busy = false; ONB.err = errTxt(err); render(); } break; }
     case 'syncNow': toast($t('Synchronisiere …')); await syncNow(false); render(); break;
@@ -394,11 +392,11 @@ document.addEventListener('click', async e => { const b = e.target.closest('[dat
     case 'inviteNew': inviteSheet(); break;
     case 'invMode': ui.invMode = b.dataset.v; ui.invName = ($('#iv-name') || {}).value || ''; inviteSheet(); break;
     case 'inviteCreate': { const name = ($('#iv-name').value || '').trim(); const mode = ui.invMode || 'free'; const tpl = mode === 'coach' ? (($('#iv-tpl') || {}).value || '') : ''; const plan = !tpl ? null : tpl === 'mine' ? JSON.parse(JSON.stringify(S.plan)) : makePlan(tpl); if (tpl === 'mine') { plan.note = ''; plan.targets = null; } ui.invName = ''; ui.invMode = null;
-      const code = genCode(); try { await api('/rest/v1/invites', { method: $t('POST'), headers: { Prefer: 'return=minimal' }, body: JSON.stringify({ code, coach_id: AUTH.uid, role: 'client', name, plan, mode }) });
+      const code = genCode(); try { await api('/rest/v1/invites', { method: 'POST', headers: { Prefer: 'return=minimal' }, body: JSON.stringify({ code, coach_id: AUTH.uid, role: 'client', name, plan, mode }) });
         await loadClients(); openSheet(sheetHead($t('Einladung erstellt')) + '<div class="codebox num">' + esc(code) + '</div><p class="muted">' + esc(inviteText(code, name)) + '</p><div class="row" style="margin-top:14px"><div class="grow"></div><button class="btn brand" data-act="inviteShare" data-code="' + esc(code) + '" data-name="' + esc(name) + $t('" type="button">Teilen</button></div>')); render(); }
       catch (err) { toast($t('Fehler: ') + errTxt(err)); } break; }
     case 'inviteShare': shareInvite(b.dataset.code, b.dataset.name); break;
-    case 'inviteDel': try { await api('/rest/v1/invites?code=eq.' + encodeURIComponent(b.dataset.code), { method: $t('DELETE') }); await loadClients(); render(); toast($t('Einladung gelöscht')); } catch (err) { toast(errTxt(err)); } break;
+    case 'inviteDel': try { await api('/rest/v1/invites?code=eq.' + encodeURIComponent(b.dataset.code), { method: 'DELETE' }); await loadClients(); render(); toast($t('Einladung gelöscht')); } catch (err) { toast(errTxt(err)); } break;
     case 'resetPw': openSheet(sheetHead($t('Passwort zurücksetzen')) + $t('<p class="muted">Neues Passwort für deinen Athleten. Gib es ihm danach weiter.</p><div class="on-white" style="margin-top:12px"><input id="rp-pw" type="text" value="') + genCode().slice(3).toLowerCase() + genCode().slice(3, 6).toLowerCase() + '" style="width:100%"></div><div class="row" style="margin-top:14px"><div class="grow"></div><button class="btn brand" data-act="resetPwGo" data-uid="' + b.dataset.uid + $t('" type="button">Setzen</button></div>')); break;
     case 'resetPwGo': try { await fnCall({ action: 'reset', user_id: b.dataset.uid, password: $('#rp-pw').value }, true); closeSheet(); toast($t('Passwort geändert')); } catch (err) { toast(errTxt(err)); } break;
     case 'removeClient': if (ui.confirmRemove !== b.dataset.uid) { ui.confirmRemove = b.dataset.uid; b.textContent = $t('Wirklich entfernen?'); break; } try { await fnCall({ action: 'remove', user_id: b.dataset.uid }, true); ui.confirmRemove = null; await loadClients(); location.hash = '#admin'; toast($t('Entfernt')); } catch (err) { toast(errTxt(err)); } break;

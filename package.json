@@ -20,6 +20,7 @@
     "@capgo/capacitor-health": "8.11.13"
   },
   "devDependencies": {
-    "@capacitor/cli": "8.5.3"
+    "@capacitor/cli": "8.5.3",
+    "acorn": "^8.19.0"
   }
 }

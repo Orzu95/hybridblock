@@ -24,8 +24,8 @@ function wkEmpty(p, w) { p.wkPlans = p.wkPlans || {}; p.wkPlans[w] = {}; p.sessi
 function wkReset(p, w) { if (p.wkPlans) { delete p.wkPlans[w]; if (!Object.keys(p.wkPlans).length) delete p.wkPlans; } }
 /* Lese-Zugriff (nichts anlegen) und Schreib-Zugriff (beim ersten Ändern wird der Standard dieser Woche übernommen) */
 function peSessR(i) { const s = PE.draft.sessions[i]; if (PE.wk && s && s.kind === 'gym' && PE.draft.wkPlans && PE.draft.wkPlans[PE.wk] && PE.draft.wkPlans[PE.wk][s.k]) return PE.draft.wkPlans[PE.wk][s.k]; return s; }
-peSess = function (i) { const s = PE.draft.sessions[i]; if (PE.wk && s && s.kind === 'gym') return wkEntry(PE.draft, PE.wk, s.k, true); return s; };
-peItems = function (i) { const s = PE.draft.sessions[i]; return planForP(PE.draft, PE.wk || 1, s.k); };
+function peSess(i) { const s = PE.draft.sessions[i]; if (PE.wk && s && s.kind === 'gym') return wkEntry(PE.draft, PE.wk, s.k, true); return s; }
+function peItems(i) { const s = PE.draft.sessions[i]; return ssAnnotate(planForP(PE.draft, PE.wk || 1, s.k)); }
 
 /* ---------- Bausteine im Plan-Editor ---------- */
 function peWeeksCard() { if (PE.wkFor !== PE.uid) { PE.wk = 0; PE.wkFor = PE.uid; ui.peWeeksAsk = false; } const p = PE.draft; const n = p.weeks || 12; const w = PE.wk || 0;

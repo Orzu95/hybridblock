@@ -38,7 +38,8 @@ const groupBy = (arr, f) => { const o = {}; arr.forEach(x => { const k = f(x); (
 const sid = x => x.sourceId || x.sourceName || '?';
 
 /* Ersetzt den alten Zepp-Abgleich: gleiche Ergebnisfelder, aber pro Tag nur eine Quelle */
-async function hcSync(full) { const H = HEALTH.plugin; if (!H || HEALTH.busy) return; HEALTH.busy = true; const m = hcMeta();
+/* quiet = stiller Abgleich im Hintergrund (hcauto.js): kein Toast, neu gezeichnet wird nur, wenn gerade nichts eingegeben wird und kein Sheet offen ist */
+async function hcSync(full, quiet) { const H = HEALTH.plugin; if (!H || HEALTH.busy) return; HEALTH.busy = true; const m = hcMeta(); try {
   const days = full || !m.lastSync ? 60 : 10; const end = new Date(); const start = new Date(); start.setHours(0, 0, 0, 0); start.setDate(start.getDate() - days + 1);
   const range = { startDate: start.toISOString(), endDate: end.toISOString() }; const errs = []; const grant = m.granted && m.granted.length ? m.granted : HC_READ; const ok = t => grant.includes(t);
   const loc = s => iso(new Date(s)); const safe = async (name, fn) => { try { await fn(); } catch (e) { errs.push(name); console.warn(name, e); } };
@@ -80,7 +81,8 @@ async function hcSync(full) { const H = HEALTH.plugin; if (!H || HEALTH.busy) re
       if (res && res.created) nw++; if (res && res.start && Date.now() - res.start < 4 * 864e5 && !S.hrTraces[res.tkey]) toFetch.push(res); }); });
   if (ok('heartRate')) for (const res of toFetch.slice(0, 6)) await safe($t('Pulskurve'), () => fetchTrace(res.tkey, res.start, res.end));
   m.lastSync = new Date().toISOString(); m.source = 'hc'; save(); HEALTH.busy = false;
-  toast(errs.length ? $t('Teilweise synchronisiert. Fehlt: ') + errs.join(', ') : $t('Daten aktualisiert') + (nw ? ' · ' + nw + $t(' neue Trainings') : '')); render(); }
+  if (quiet) { const a = document.activeElement; const typing = a && /^(INPUT|TEXTAREA|SELECT)$/.test(a.tagName); const sh = document.querySelector('#sheet:not([hidden])'); if (!typing && !sh) render(); return; }
+  toast(errs.length ? $t('Teilweise synchronisiert. Fehlt: ') + errs.join(', ') : $t('Daten aktualisiert') + (nw ? ' · ' + nw + $t(' neue Trainings') : '')); render(); } finally { HEALTH.busy = false; } }
 /* Überlappung mit schon vorhandenem Training (z. B. Uhr und Strava schreiben denselben Lauf) */
 function overlapsExisting(st, en, key) { if (!st || !en) return false; return S.activities.some(a => { if (a.key === key || !a.start || !a.end) return false; const ov = Math.min(en, a.end) - Math.max(st, a.start); return ov > 0.5 * Math.min(en - st, a.end - a.start); }); }
 

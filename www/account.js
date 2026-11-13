@@ -4,7 +4,7 @@ Object.assign(ERR_TXT, { recover_failed: $t('Benutzername oder Wiederherstellung
 let AUTH_CAPS = null; /* { email: bool } vom Server */
 let REC = null; /* eigener Eintrag aus account_recovery: { has, email } */
 function loadCaps() { if (AUTH_CAPS) return; AUTH_CAPS = { email: false, loading: true }; fnCall({ action: 'caps' }).then(r => { AUTH_CAPS = { email: !!r.email }; if (route.name === 'start' || route.name === 'mehr') render(); }).catch(() => { AUTH_CAPS = { email: false }; }); }
-async function loadRec() { if (!AUTH) return; try { const r = await api('/rest/v1/account_recovery?user_id=eq.' + AUTH.uid + '&select=email,code_hash'); const x = r && r[0]; REC = { has: !!(x && x.code_hash), email: x && x.email || '' }; } catch (e) { REC = { has: null, email: '', err: true }; } if (route.name === 'mehr') render(); }
+async function loadRec() { if (!AUTH) return; try { const r = await fnCall({ action: 'rec_info' }, true); REC = { has: !!(r && r.has), email: r && r.email || '' }; } catch (e) { REC = { has: null, email: '', err: true }; } if (route.name === 'mehr') render(); }
 
 function recoverySheet(code, fresh) {
   openSheet(sheetHead($t('Dein Wiederherstellungscode')) + '<p class="muted" style="margin-top:8px">' + (fresh ? $t('Damit setzt du dein Passwort selbst zurück, falls du es vergisst. Er wird nur dieses eine Mal angezeigt.') : $t('Dein alter Code gilt nicht mehr. Der neue wird nur dieses eine Mal angezeigt.')) + '</p>' +

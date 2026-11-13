@@ -8,9 +8,6 @@ render = function (top) { document.body.classList.toggle('spowi', spowiOn()); _r
 document.body.classList.toggle('spowi', !!(typeof S !== 'undefined' && S && S.settings && S.settings.spowi));
 
 /* ---------- Einstellung ---------- */
-function spowiCard() { if (VIEW) return ''; const on = spowiOn();
-  return $t('<div class="card"><h2>SpoWi-Ansicht</h2><p class="small">Für alle, die es genau wissen wollen: Evidenzgrade, Quellen, Berechnungswege und zusätzliche Kennzahlen wie ACWR, Monotonie, TRIMP, aerobe Entkopplung und Intensitätsverteilung.</p>') +
-    '<div class="row" style="margin-top:12px"><button class="trtog' + (on ? ' on' : '') + '" data-act="spowiToggle" type="button">' + (on ? '✓ ' : '') + $t('SpoWi-Ansicht') + '</button></div></div>'; }
 const _accountCardSw = accountCard;
 accountCard = function () { return _accountCardSw() + spowiCard(); };
 
@@ -37,26 +34,8 @@ function trimpOf(tr) { if (!tr || !tr.pts || tr.pts.length < 5) return null; con
   let ban = 0, edw = 0; for (let i = 1; i < tr.pts.length; i++) { const dt = (tr.pts[i][0] - tr.pts[i - 1][0]) / 60; if (dt <= 0 || dt > 5) continue; const hr = tr.pts[i][1]; const hrr = clamp((hr - rest) / (hf - rest), 0, 1); ban += dt * hrr * k[0] * Math.exp(k[1] * hrr); const r = hr / hf; edw += dt * (r >= .9 ? 5 : r >= .8 ? 4 : r >= .7 ? 3 : r >= .6 ? 2 : r >= .5 ? 1 : 0); }
   return { ban: Math.round(ban), edw: Math.round(edw) }; }
 /* aerobe Entkopplung: Geschwindigkeit pro Herzschlag in 1. gegen 2. Hälfte (Friel); unter 5 % gilt als stabil */
-function decoupling(a) { const tr = S.hrTraces[a.id]; if (!a.route || !a.routeT || !tr || tr.pts.length < 10) return null; const ll = decPoly(a.route), ts = a.routeT; if (ll.length < 20) return null;
-  const T = ts[ts.length - 1], half = T / 2; let d1 = 0, d2 = 0; for (let i = 1; i < ll.length; i++) { const d = hav(ll[i - 1], ll[i]); if (ts[i] <= half) d1 += d; else d2 += d; }
-  const h1 = swMean(tr.pts.filter(p => p[0] <= half).map(p => p[1])), h2 = swMean(tr.pts.filter(p => p[0] > half).map(p => p[1])); if (!h1 || !h2 || !d1 || !d2) return null;
-  const ef1 = d1 / half / h1, ef2 = d2 / (T - half) / h2; return { pct: (ef1 - ef2) / ef1 * 100, ef1: ef1 * 60, ef2: ef2 * 60 }; }
 
 /* ---------- Kennzahlen im Verlauf ---------- */
-function spowiProgressCard() { const lm = loadMetrics(); const id = intensityDist(); const hv = hrvMetrics(); const base = rhrBaseline(); const bw = (() => { const ser = series(); return ser.length ? ser[ser.length - 1].trend : null; })();
-  const lifts = keyLifts().filter(x => LIB[x]).map(x => { const h = exHistory(x); let best = 0; h.forEach(o => o.sets.forEach(st => { if (st.w > 0 && st.r) best = Math.max(best, e1rmEst(st.w, st.r, Math.min(10, st.rpe ?? 8))); })); return best ? [LIB[x].name, best] : null; }).filter(Boolean);
-  const rows = [
-    swRow($t('ACWR (7 zu 28 Tage)'), lm.acwr != null ? fmt(lm.acwr, 2) : '–', $t('Nur Information: sagt Verletzungen kaum voraus, methodisch umstritten')),
-    swRow($t('Akute Last 7 Tage'), fmt(lm.acute, 0), $t('Summe Minuten × Session-RPE')),
-    swRow($t('Chronische Last (Ø Woche, 28 Tage)'), fmt(lm.chronic, 0), ''),
-    swRow($t('Monotonie'), lm.mono != null ? fmt(lm.mono, 2) : '–', $t('über 2 erhöht nach Foster')),
-    swRow($t('Strain'), lm.strain != null ? fmt(lm.strain, 0) : '–', $t('Last × Monotonie')),
-    hv ? swRow($t('ln rMSSD (Ø 7 Tage)'), fmt(hv.ln, 2), $t('Variationskoeffizient ') + fmt(hv.cv, 1) + ' %') : '',
-    base ? swRow($t('Ruhepuls-Basis'), base.v + $t(' bpm'), base.auto ? $t('Median der letzten Tage') : $t('manuell')) : '',
-    id ? swRow($t('Intensitätsverteilung 28 Tage'), Math.round(id.low * 100) + ' / ' + Math.round(id.mid * 100) + ' / ' + Math.round(id.high * 100) + ' %', $t('locker / mittel / hart (3 Zonen) · ') + id.type + (id.pi != null ? ' · PI ' + fmt(id.pi, 2) : '')) : '',
-    ...lifts.map(l => swRow(esc(l[0]) + $t(' e1RM (bestes)'), fmt(l[1], 0) + $t(' kg'), bw ? fmt(l[1] / bw, 2) + $t(' × Körpergewicht') : ''))].join('');
-  return '<div class="card sw-card"><div class="row"><h2 class="grow">' + $t('SpoWi-Kennzahlen') + '</h2><span class="tag">SpoWi</span></div><table class="tbl small" style="width:100%;margin-top:8px">' + rows + '</table>' +
-    '<p class="src" style="margin-top:10px">' + $t('Methoden: ') + swRef('Foster 2001 (sRPE)', 'Foster 2001 new approach monitoring exercise training') + ' · ' + swRef('Gabbett 2016 (ACWR)', 'Gabbett 2016 training-injury prevention paradox') + ' · ' + swRef('Impellizzeri 2020 (Kritik)', 'Impellizzeri 2020 acute chronic workload ratio') + ' · ' + swRef('Treff 2019 (Polarisationsindex)', 'Treff 2019 polarization index') + ' · ' + swRef('Plews 2012 (HRV)', 'Plews 2012 heart rate variability training adaptation') + ' · ' + $t('e1RM nach Epley mit RPE-Korrektur') + '</p></div>'; }
 const _viewProgressSw = viewProgress;
 viewProgress = function () { const h = _viewProgressSw(); if (!spowiOn()) return h; const i = h.indexOf('<div class="stack">'); return i < 0 ? h + spowiProgressCard() : h.slice(0, i + 19) + spowiProgressCard() + h.slice(i + 19); };
 
@@ -77,7 +56,7 @@ const _viewFreeSw = viewFree;
 viewFree = function (id) { const h = _viewFreeSw(id); if (!spowiOn()) return h; const a = findAct(id); if (!a) return h; const tr = S.hrTraces[a.id]; const tp = trimpOf(tr); const dc = decoupling(a); if (!tp && !dc) return h;
   const card = '<div class="card sw-card"><div class="row"><h2 class="grow">' + $t('Kennzahlen') + '</h2><span class="tag">SpoWi</span></div><table class="tbl small" style="width:100%;margin-top:8px">' +
     (tp ? swRow($t('TRIMP nach Banister'), tp.ban, $t('mit Ruhepuls-Basis und HFmax')) + swRow($t('TRIMP nach Edwards'), tp.edw, $t('Minuten × Zone (50–100 % HFmax)')) : '') +
-    (dc ? swRow($t('Aerobe Entkopplung'), (dc.pct >= 0 ? '+' : '') + fmt(dc.pct, 1) + ' %', dc.pct < 5 ? $t('unter 5 %: stabile Grundlage') : $t('über 5 %: Grundlagenausdauer noch ausbaufähig')) + swRow($t('Effizienz (m pro Herzschlag)'), fmt(dc.ef1, 2) + ' → ' + fmt(dc.ef2, 2), $t('1. gegen 2. Hälfte')) : '') + '</table>' +
+    (dc ? swRow($t('Effizienz (m pro Herzschlag)'), fmt(dc.ef1, 2) + ' → ' + fmt(dc.ef2, 2), $t('1. gegen 2. Hälfte')) : '') + '</table>' +
     '<p class="src" style="margin-top:8px">' + swRef('Banister 1991 (TRIMP)', 'Banister TRIMP training impulse') + ' · ' + swRef('Edwards 1993', 'Edwards heart rate training load zones') + ' · ' + $t('Entkopplung nach Friel (Pa:HR)') + '</p></div>';
   const i = h.indexOf('<div class="stack">'); return i < 0 ? h + card : h.slice(0, i + 19) + card + h.slice(i + 19); };
 

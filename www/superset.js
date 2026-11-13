@@ -88,9 +88,7 @@ function ssLinkCompute(gs, idx) { const out = gs.slice(); const a = out[idx], b 
     if (left.length < 2) left.forEach(j => out[j] = ''); if (right.length < 2) right.forEach(j => out[j] = ''); else right.forEach(j => out[j] = nid); }
   else { const id = a || b || ssNewId(); out.forEach((g, j) => { if (b && g === b) out[j] = id; }); out[idx] = id; out[idx + 1] = id; }
   return out; }
-/* Plan-Editor: Übungen nach Gruppen ordnen und beschriften */
-const _peItemsSS = peItems;
-peItems = function (i) { return ssAnnotate(_peItemsSS(i)); };
+/* Plan-Editor: Übungen nach Gruppen ordnen und beschriften geschieht in peItems (planweeks.js) über ssAnnotate */
 function peSetGroup(si, it, g, m) { const s = peSess(si); const add = peIsAdd(s, it.slot);
   if (add) { add.sup = g; add.gm = g ? m : ''; } else { s.ov = s.ov || {}; const o = s.ov[it.slot] = s.ov[it.slot] || {}; o.sup = g || '-'; if (g && m) o.gm = m; else delete o.gm; } PE.dirty = true; }
 function ssApplyLink(kind, a, idx, modeToggle) {

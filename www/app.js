@@ -163,7 +163,7 @@ const e1rmEst = (w, r, rpe) => { if (!w || !r || r > E1RM_MAXREPS) return 0; con
   return (w * (1 + n / 30) + w * 36 / (37 - n) + 100 * w / (48.8 + 53.8 * Math.exp(-0.075 * n))) / 3; };
 const loadFor = (est, reps, rpe) => est / (1 + (reps + (10 - rpe)) / 30);
 function loggedSets(log) { return ((log && log.sets) || []).map(x => ({ w: num(x && x.w), r: num(x && x.r), rpe: num(x && x.rpe), done: !!(x && x.done) })).filter(x => x.w != null || x.r != null); }
-function history(w, k, exId) {
+function prevLog(w, k, exId) {
   for (let j = chronIndex(w, k) - 1; j >= 0; j--) {
     const ww = Math.floor(j / ORDER.length) + 1, kk = ORDER[j % ORDER.length]; const s = peekSess(ww, kk); if (!s || !s.logs) continue;
     const found = [];
@@ -172,7 +172,7 @@ function history(w, k, exId) {
     if (found.length) return { w: ww, k: kk, items: found };
   }
   return null; }
-function lastAny(exId) { for (let w = NW(); w >= 1; w--) for (let i = ORDER.length - 1; i >= 0; i--) { const h = history(w, ORDER[i], exId); if (h) return h; } return null; }
+function lastAny(exId) { for (let w = NW(); w >= 1; w--) for (let i = ORDER.length - 1; i >= 0; i--) { const h = prevLog(w, ORDER[i], exId); if (h) return h; } return null; }
 function bestE1rm(h) { let best = null;
   h.items.forEach(it => it.sets.forEach(s => { if (!s.w || !s.r) return; const rpe = s.rpe ?? (it.spec && it.spec.rpe) ?? 8; const v = e1rm(s.w, s.r, Math.min(10, rpe)); if (!best || v > best) best = v; }));
   return best; }
@@ -181,7 +181,7 @@ const isPrio = exId => { const m = LIB[exId] && LIB[exId].muscles; if (!m) retur
 
 function planSuggestion(w, k, spec, exId, rd) {
   const tgt = spec.rpe != null ? spec.rpe + (spec.type === 'main' ? rd.rpeShift : 0) : null;
-  const h = history(w, k, exId) || archiveHistory(exId); const rng = repRange(spec.reps);
+  const h = prevLog(w, k, exId) || archiveHistory(exId); const rng = repRange(spec.reps);
   if (spec.type === 'time') { const rr = repRange(spec.reps); return { txt: $t('Zeit pro Satz: ') + spec.reps + $t(' s. Gleichmäßig, Technik vor Tempo.'), cls: 'first', reps: rr && rr.lo }; }
   if (spec.type === 'power') return { txt: $t('Jede Wiederholung maximal schnell. Qualität vor Menge.'), cls: 'first' };
   if (spec.type === 'free') return { txt: $t('Konditionsblock: Ablauf steht im Hinweis. Trag die Zeit oder Runden als Wiederholungen ein.'), cls: 'first' };
@@ -296,7 +296,9 @@ const ui = { week: null, day: today(), foodTab: 'presets', meal: 'Frühstück', 
 let RESET_TOKEN = null;
 function parseHash() { const h = (location.hash || '#heute').slice(1).split('/'); if (h[0] === 'reset' && h[1]) { RESET_TOKEN = h[1]; try { history.replaceState(null, '', '#start/reset'); } catch (e) {} route = { name: 'start', arg: 'reset' }; return; } route = { name: h[0] || 'heute', arg: h[1] || null }; }
 window.addEventListener('hashchange', () => { parseHash(); render(true); });
-function render(scrollTop) { prioSync();
+/* Gezeichnet wird erst, wenn alle Module geladen sind (boot.js setzt HB_READY). Vorher wären Ansichten halb erweitert oder Funktionen noch nicht definiert. */
+let HB_READY = false;
+function render(scrollTop) { if (!HB_READY) return; prioSync();
   if (!S.meta.onboarded && route.name !== 'start' && route.name !== 'datenschutz' && !VIEW) { location.hash = '#start'; return; }
   document.body.classList.toggle('onb-mode', route.name === 'start');
   if (!VIEW) maybeAdvance();
@@ -305,7 +307,7 @@ function render(scrollTop) { prioSync();
   const v = $('#view'); const y = window.scrollY;
   const map = { planend: () => viewPlanEnd(), training: () => route.arg ? viewSession(route.arg) : viewTraining(), frei: () => viewFree(route.arg), essen: viewEssen, ernaehrung: () => (typeof viewNutriHist === 'function' ? viewNutriHist() : viewEssen()), verlauf: viewProgress, mehr: viewMehr, start: () => viewStart(route.arg), library: () => route.arg ? viewLibPlan(route.arg) : viewLibrary(), workout: () => viewWorkout(route.arg), admin: () => viewAdmin(route.arg), plan: () => viewPlan(route.arg), track: () => viewTrack(), datenschutz: () => viewPrivacy(), ops: () => typeof viewOps === 'function' ? viewOps() : '', wissen: () => typeof viewWissen === 'function' ? viewWissen(route.arg) : '', lernen: () => typeof viewLernen === 'function' ? viewLernen(route.arg) : '', chat: () => typeof viewChat === 'function' ? viewChat(route.arg) : '', termine: () => typeof viewTermine === 'function' ? viewTermine() : '', chats: () => typeof viewChats === 'function' ? viewChats() : '' };
   const coachHome = typeof cMode === 'function' && isAdmin() && !VIEW && cMode() === 'coach' && (route.name === 'heute' || !map[route.name]);
-  try { v.innerHTML = viewBar() + (coachHome ? viewAdmin() : (map[route.name] || viewHeute)()); } catch (err) { console.error(err); v.innerHTML = '<div class="card"><h2>' + $t('Diese Ansicht konnte nicht geladen werden') + '</h2><p class="small">' + $t('Deine Daten sind nicht verloren. Geh zurück auf „Heute“ oder lade die App neu.') + '</p><p class="src">' + esc(err && err.message || err) + '</p><a class="btn brand" href="#heute">' + $t('Zu „Heute“') + '</a></div>'; }
+  try { v.innerHTML = viewBar() + (coachHome ? viewAdmin() : (map[route.name] || viewHeute)()); } catch (err) { console.error(err); v.innerHTML = '<div class="card" data-view-error="1"><h2>' + $t('Diese Ansicht konnte nicht geladen werden') + '</h2><p class="small">' + $t('Deine Daten sind nicht verloren. Geh zurück auf „Heute“ oder lade die App neu.') + '</p><p class="src">' + esc(err && err.message || err) + '</p><a class="btn brand" href="#heute">' + $t('Zu „Heute“') + '</a></div>'; }
   if (route.name === 'training' && route.arg) keepAwake(); else if ($('#timer').hidden && wakeLock) { try { wakeLock.release(); } catch (e) {} wakeLock = null; }
   if (route.name === 'verlauf') refreshPhotoCard();
   window.scrollTo(0, scrollTop ? 0 : y); }
@@ -436,7 +438,7 @@ function exCard(w, k, spec0) {
   const s = sess(w, k); const lg = s.logs[spec0.slot]; const raw = (lg && lg.sets) || []; const extra = (lg && lg.extra) || 0; const spec = extra ? Object.assign({}, spec0, { sets: spec0.sets + extra }) : spec0;
   const exId = actualEx(w, k, spec), ex = LIB[exId], rd = readiness(w, k);
   const base = planSuggestion(w, k, spec, exId, rd); const tgt = spec.rpe != null ? spec.rpe + (spec.type === 'main' ? rd.rpeShift : 0) : null;
-  const h = history(w, k, exId);
+  const h = prevLog(w, k, exId);
   const histTxt = h ? $t('Zuletzt Woche ') + h.w + ': ' + h.items.flatMap(it => it.sets).map(x => (x.w != null ? fmt(x.w) + ' × ' : '') + (x.r ?? '–') + (x.rpe != null ? ' @' + fmt(x.rpe) : '')).join(', ') : '';
   const isCarry = spec.type === 'carry' ? true : spec.type === 'time' ? 'time' : false, showRpe = spec.rpe != null && spec.type !== 'power' && spec.type !== 'time';
   const sugg = i => setSuggestion(w, k, spec, exId, i, base, rd);
@@ -508,23 +510,6 @@ function freeExCard(a, e, idx) { const ex = LIB[e.ex]; const spec = { slot: 'f' 
 function newActivity(type, dateStr) { const a = { id: uid(), type, date: dateStr || today(), week: curWeek(), src: 'manual' }; if (ACT_MAP[type].strength) a.exercises = []; S.activities.push(a); save(); return a; }
 
 /* ======================= ESSEN ======================= */
-function viewEssen() {
-  const d = ui.day, o = S.days[d] || { entries: [] }, tot = dayTotals(d), tg = currentTargets(); const left = tg.kcal - tot.kcal;
-  const hidM = S.settings.hiddenMeals || []; const meals = MEALS.filter(m => !hidM.includes(m) || (o.entries || []).some(e => e.meal === m)).map(m => { const es = (o.entries || []).filter(e => e.meal === m); const k = es.reduce((a, e) => a + e.kcal, 0);
-    return '<div class="card flush"><div class="meal-h"><b>' + $t(m) + '</b><span class="small muted num">' + fmt(k, 0) + $t(' kcal</span>') + (es.length ? '<button class="btn sm" data-act="saveTpl" data-meal="' + m + '" type="button" aria-label="' + $t(m) + $t(' als Vorlage speichern" title="Als Vorlage speichern">☆</button>') : '') + '<button class="btn sm" data-act="add" data-meal="' + m + $t('" type="button">+ Hinzufügen</button>') + '<button class="btn sm" data-act="mealMenu" data-meal="' + m + '" type="button" aria-label="' + $t('Mahlzeit-Optionen') + '">⋯</button></div>' +
-      es.map(e => '<div class="entry" data-act="edit" data-uid="' + e.uid + '"><div class="grow" style="min-width:0"><div class="nm">' + esc(entryName(e)) + '</div><div class="small muted">' + fmt(e.qty) + ' ' + $t(e.unit) + '</div></div><div class="k num">' + fmt(e.kcal, 0) + $t(' kcal<small>') + fmt(e.p, 0) + $t(' g Protein</small></div></div>')).join('') + (es.length ? '<div style="height:8px"></div>' : '') + '</div>'; }).join('');
-  const pOnly = S.settings.trackMode === 'p', pl = tg.p - tot.p;
-  const head = '<div class="top"><div class="grow"><h1>' + (pOnly ? (pl >= 0 ? '<span class="t-green">' + $tf('Noch {n} g Protein', { n: fmt(pl, 0) }) + '</span>' : '<span class="t-green">' + $t('Protein-Ziel erreicht') + '</span>') : left >= 0 ? '<span class="t-green">' + fmt(left, 0) + $t(' kcal</span> übrig') : '<span class="t-red">' + fmt(-left, 0) + $t(' kcal</span> über dem Ziel')) + '</h1><div class="sub">' + (d === today() ? $t('Heute') : fmtDay(d)) + (pOnly ? $t(' · Ziel ') + fmt(tg.p, 0) + $t(' g Protein') + '</div></div><a class="iconbtn" href="#mehr" aria-label="' + $t('Einstellungen') + '">' : $t(' · Ziel ') + fmt(tg.kcal, 0) + $t(' kcal</div></div><a class="iconbtn" href="#mehr" aria-label="Einstellungen">')) + ICON.gear + '</a></div>';
-  return head + '<div class="stack">' +
-  $t('<div class="daynav"><button class="iconbtn" data-act="dprev" type="button" aria-label="Vortag">‹</button><div class="grow">') + (d === today() ? $t('Heute') : fmtDay(d)) + $t('</div><button class="iconbtn" data-act="dnext" type="button" aria-label="Nächster Tag"') + (d >= today() ? $t(' disabled') : '') + '>›</button></div>' +
-  (checkinDue() ? note('ember', $t('<b>Check-in fällig:</b> neues Kalorienziel aus deinem Trend berechnen.'), $t('<button class="btn brand sm" data-act="checkin" type="button">Check-in</button>')) : '') +
-  '<div class="card">' + rings(tot, tg) + microRow(d) + '</div>' + waterCard(d) +
-  '<div class="scanbar"><button class="btn brand" data-act="scan" type="button">' + ICON.scan + $t('Barcode scannen</button><button class="btn" style="background:var(--fog)" data-act="add" data-meal="') + guessMeal() + '" type="button">' + ICON.search + $t('Suchen</button></div>') +
-  ((o.entries || []).length ? '' : $t('<div class="scanbar"><button class="btn" style="background:var(--fog)" data-act="template" type="button">Meal-Prep-Tag</button>') + (((S.days[addDays(d, -1)] || {}).entries || []).length ? $t('<button class="btn" style="background:var(--fog)" data-act="copyYesterday" type="button">Gestern übernehmen</button>') : '') + '</div>') +
-  (typeof foodUndoNote === 'function' ? foodUndoNote() : '') + meals + (typeof foodExtras === 'function' ? foodExtras(d) : '') +
-  $t('<div class="card"><div class="row"><div class="field"><label for="wDay">Gewicht</label><input id="wDay" type="number" inputmode="decimal" step="0.1" data-day="') + d + '" data-f="weight" value="' + esc(o.weight) + $t('" placeholder="kg"></div><div class="grow"></div>') +
-  '<label class="row" style="gap:10px"><input type="checkbox" id="complete" data-day="' + d + '" data-f="complete"' + (o.complete === false ? '' : $t(' checked')) + $t('> Tag vollständig geloggt</label></div>') +
-  $t('<p class="small muted">Nur vollständig geloggte Tage fließen in die Bedarfsberechnung. Hast du etwas vergessen, nimm den Haken raus.</p></div></div>'); }
 function guessMeal() { const h = new Date().getHours(); const g = h < 11 ? 'Frühstück' : h < 15 ? 'Mittag' : h < 18 ? 'Snack' : 'Abend'; const hid = S.settings.hiddenMeals || []; if (!hid.includes(g)) return g; const i = MEALS.indexOf(g); return MEALS.slice(i).concat(MEALS.slice(0, i)).find(m => !hid.includes(m)) || g; }
 
 /* ---------- Sheets ---------- */
@@ -567,7 +552,7 @@ function offMap(p, partial) { const n = p.nutriments || {}; let kcal = num(n['en
   if (kcal == null && !(partial && name && p.code)) return null;
   return { id: 'off_' + p.code, code: String(p.code), name: name || $t('Ohne Namen'), names, brand: brand.trim(), base: '100g', kcal, p: num(n.proteins_100g) || 0, f: num(n.fat_100g) || 0, c: num(n.carbohydrates_100g) || 0, pieceG: num(p.serving_quantity) || null, src: 'off', needsFetch: kcal == null, fib: num(n.fiber_100g), sug: num(n.sugars_100g), salt: num(n.salt_100g) }; }
 const offCache = {};
-async function fetchJson(url, ms) { const ac = new AbortController(); const t = setTimeout(() => ac.abort(), ms || 9000); try { const r = await fetch(url, { signal: ac.signal }); if (!r.ok && r.status !== 404) throw new Error($t('HTTP ') + r.status); return await r.json(); } finally { clearTimeout(t); } }
+async function fetchJson(url, ms) { const ac = new AbortController(); const t = setTimeout(() => ac.abort(), ms || 9000); try { const r = await fetch(url, { signal: ac.signal }); if (!r.ok && r.status !== 404) throw new Error('HTTP ' + r.status); return await r.json(); } finally { clearTimeout(t); } }
 /* Lebensmittelsuche: zuerst über die eigene Edge Function (Zwischenspeicher, kein CORS, schont das OFF-Suchlimit), dann direkt bei OFF */
 async function offQuery(q, size) { const enc = encodeURIComponent(q), F = 'code,product_name,product_name_de,product_name_en,product_name_ru,brands,nutriments,serving_quantity'; const errs = [];
   if (typeof SB !== 'undefined') { try { const ac = new AbortController(); const t = setTimeout(() => ac.abort(), 15000);
@@ -631,33 +616,6 @@ async function hcConnect() { const H = HEALTH.plugin; if (!H) return;
     const st = await H.requestAuthorization({ read: HC_READ, requestHistoryAccess: true }); S.healthMeta.granted = st.readAuthorized || []; S.healthMeta.denied = st.readDenied || []; S.healthMeta.source = 'hc'; save();
     if (!(st.readAuthorized || []).length) { toast($t('Keine Berechtigung erteilt.')); render(); return; }
     await hcSync(true); } catch (e) { toast($t('Verbinden fehlgeschlagen: ') + (e.message || e)); } }
-async function hcSync(full) { const H = HEALTH.plugin; if (!H || HEALTH.busy) return; HEALTH.busy = true; const t0 = Date.now();
-  const days = full || !S.healthMeta.lastSync ? 60 : 10; const end = new Date(); const start = new Date(); start.setHours(0, 0, 0, 0); start.setDate(start.getDate() - days + 1);
-  const range = { startDate: start.toISOString(), endDate: end.toISOString() }; const errs = []; const grant = S.healthMeta.granted && S.healthMeta.granted.length ? S.healthMeta.granted : HC_READ; const ok = t => grant.includes(t);
-  const loc = s => iso(new Date(s));
-  const safe = async (name, fn) => { try { await fn(); } catch (e) { errs.push(name); console.warn(name, e); } };
-  await safe($t('Schritte'), async () => { if (!ok('steps')) return; const r = await H.queryAggregated({ dataType: 'steps', bucket: 'day', aggregation: 'sum', ...range }); (r.samples || []).forEach(x => setHealth(loc(x.startDate), { steps: Math.round(x.value) }, 'hc')); });
-  await safe($t('Kalorien'), async () => { if (!ok('calories')) return; const r = await H.queryAggregated({ dataType: 'calories', bucket: 'day', aggregation: 'sum', ...range }); (r.samples || []).forEach(x => setHealth(loc(x.startDate), { kcal: Math.round(x.value) }, 'hc')); });
-  await safe($t('Puls'), async () => { if (!ok('heartRate')) return; const r = await H.queryAggregated({ dataType: 'heartRate', bucket: 'day', aggregation: ['average', 'min', 'max'], ...range });
-    (r.samples || []).forEach(x => { const v = x.values || {}; const d = loc(x.startDate); setHealth(d, { hrAvg: v.average != null ? Math.round(v.average) : null, hrMin: v.min != null ? Math.round(v.min) : null, hrMax: v.max != null ? Math.round(v.max) : null }, 'hc'); }); });
-  await safe($t('Ruhepuls'), async () => { if (!ok('restingHeartRate')) return; const r = await H.readSamples({ dataType: 'restingHeartRate', limit: 500, ascending: true, ...range }); (r.samples || []).forEach(x => setHealth(loc(x.startDate), { rhr: Math.round(x.value) }, 'hc')); });
-  await safe($t('HRV'), async () => { if (!ok('heartRateVariability')) return; const r = await H.readSamples({ dataType: 'heartRateVariability', limit: 2000, ascending: true, ...range }); const by = {};
-    (r.samples || []).forEach(x => { if (x.value > 0) (by[loc(x.startDate)] = by[loc(x.startDate)] || []).push(x.value); }); Object.keys(by).forEach(d => setHealth(d, { hrv: Math.round(median(by[d])) }, 'hc')); });
-  /* ohne Ruhepuls-Records: Tagesminimum als Schätzung (gleiche Methode jeden Tag, darum als Vergleich brauchbar) */
-  Object.keys(S.health).forEach(d => { const h = S.health[d]; if (h.rhr == null && h.hrMin != null) h.rhrEst = h.hrMin; });
-  await safe($t('Schlaf'), async () => { if (!ok('sleep')) return; const r = await H.readSamples({ dataType: 'sleep', limit: 300, ascending: true, ...range }); const agg = {};
-    (r.samples || []).forEach(x => { const d = loc(x.endDate); const a = agg[d] || (agg[d] = { sleepMin: 0, deep: 0, rem: 0, light: 0, awake: 0, main: 0, bed: null, wake: null });
-      let asleep = x.value; if (x.stages && x.stages.length) { asleep = 0; x.stages.forEach(st => { const m = st.durationMinutes || 0; if (st.stage === 'deep') a.deep += m; else if (st.stage === 'rem') a.rem += m; else if (st.stage === 'light') a.light += m; else if (st.stage === 'awake') a.awake += m; if (st.stage !== 'awake' && st.stage !== 'inBed') asleep += m; }); }
-      a.sleepMin += asleep; if (asleep > a.main) { a.main = asleep; a.bed = Date.parse(x.startDate); a.wake = Date.parse(x.endDate); } });
-    Object.keys(agg).forEach(d => { const a = agg[d]; setHealth(d, { sleepMin: Math.round(a.sleepMin), deep: Math.round(a.deep) || null, rem: Math.round(a.rem) || null, light: Math.round(a.light) || null, awake: Math.round(a.awake) || null, bed: a.bed, wake: a.wake }, 'hc'); }); });
-  await safe($t('Gewicht'), async () => { if (!ok('weight')) return; const r = await H.readSamples({ dataType: 'weight', limit: 200, ascending: true, ...range }); (r.samples || []).forEach(x => { const d = loc(x.startDate); const o = dayObj(d); if (num(o.weight) == null) { o.weight = String(Math.round(x.value * 10) / 10); o.weightSrc = 'hc'; } }); });
-  await safe($t('VO2max'), async () => { if (!ok('vo2Max')) return; const r = await H.readSamples({ dataType: 'vo2Max', limit: 100, ascending: true, ...range }); (r.samples || []).forEach(x => setHealth(loc(x.startDate), { vo2: Math.round(x.value * 10) / 10 }, 'hc')); });
-  let nw = 0; const toFetch = []; await safe($t('Workouts'), async () => { if (!ok('workouts')) return; const r = await H.queryWorkouts({ limit: 200, ascending: true, ...range });
-    (r.workouts || []).forEach(x => { const res = importWorkout({ key: 'hc:' + (x.platformId || x.startDate), date: loc(x.startDate), type: HC_TYPE[x.workoutType] || 'sonst', title: null, dur: x.duration / 60, dist: x.totalDistance ? x.totalDistance / 1000 : null, kcal: x.totalEnergyBurned || null, src: 'hc', start: Date.parse(x.startDate), end: Date.parse(x.endDate) });
-      if (res && res.created) nw++; if (res && res.start && Date.now() - res.start < 4 * 864e5 && !S.hrTraces[res.tkey]) toFetch.push(res); }); });
-  if (ok('heartRate')) for (const res of toFetch.slice(0, 6)) await safe($t('Pulskurve'), () => fetchTrace(res.tkey, res.start, res.end));
-  S.healthMeta.lastSync = new Date().toISOString(); S.healthMeta.source = 'hc'; save(); HEALTH.busy = false;
-  toast(errs.length ? $t('Teilweise synchronisiert. Fehlt: ') + errs.join(', ') : $t('Daten aktualisiert') + (nw ? ' · ' + nw + $t(' neue Workouts') : '')); render(); }
 /* Workout aus Uhr: an Plan-Einheit hängen oder als freie Aktivität anlegen */
 function importWorkout(x) { if (S.healthMeta.ignored.includes(x.key) || S.activities.some(a => a.key === x.key)) return null; if (!x.dur || x.dur < 5) return null;
   for (let w = 1; w <= NW(); w++) for (const k of GYM()) { const s = peekSess(w, k); if (s && s.date === x.date && x.type === 'kraft' && !s.watch) { s.watch = { dur: x.dur, kcal: x.kcal, key: x.key, start: x.start || null, end: x.end || null }; S.healthMeta.ignored.push(x.key); return { created: false, tkey: sKey(w, k), start: x.start, end: x.end }; } }
@@ -1289,11 +1247,6 @@ async function rescheduleReminders() { const N = NOTIF.p; if (!N || !S.settings.
   if (list.length) { try { await N.schedule({ notifications: list }); } catch (e) { toast($t('Erinnerungen konnten nicht geplant werden.')); } } }
 
 /* ======================= TRAININGSKALENDER ======================= */
-function heatmapCard() { const weeks = 18; const end = today(); const endD = parseISO(end); const startMon = addDays(end, -((endD.getDay() + 6) % 7) - (weeks - 1) * 7);
-  let max = 1; const cells = []; for (let i = 0; i < weeks * 7; i++) { const d = addDays(startMon, i); if (d > end) { cells.push(null); continue; } const L = dailyLoad(d); const v = L.load || (L.n ? 1 : 0); max = Math.max(max, v); cells.push({ d, v, n: L.n }); }
-  let g = ''; const cs = 16, gap = 3; cells.forEach((c, i) => { const x = Math.floor(i / 7) * (cs + gap), y = (i % 7) * (cs + gap); if (!c) return; const fill = c.n ? mix('#e9e9e9', '#ff5406', .25 + .75 * Math.min(1, c.v / max)) : '#ececec'; g += '<rect x="' + x + '" y="' + y + '" width="' + cs + '" height="' + cs + '" rx="4" fill="' + fill + '"><title>' + fmtDay(c.d) + (c.n ? ': ' + c.n + $t(' Einheit(en)') + (c.v > 1 ? $t(', Belastung ') + fmt(c.v, 0) : '') : $t(': frei')) + '</title></rect>'; });
-  const W = weeks * (cs + gap), H = 7 * (cs + gap); const n = cells.filter(c => c && c.n).length;
-  return $t('<div class="card"><div class="row"><h2 class="grow">Trainingstage</h2><span class="tag">') + n + $t(' in ') + weeks + $t(' Wochen</span></div><div style="overflow-x:auto;margin-top:8px"><svg viewBox="0 0 ') + W + ' ' + H + $t('" style="width:100%;min-width:300px;display:block" role="img" aria-label="Kalender der Trainingstage">') + g + $t('</svg></div><div class="clegend"><span>Zeilen: Mo bis So · dunkler = höhere Belastung</span></div></div>'); }
 
 /* ======================= STILLSTAND ======================= */
 function stallInfo(exId, w) { if (phase(w) === 'dl' || phase(w) === 'test') return null; const h = exHistory(exId).filter(o => o.e1); if (h.length < 4) return null;

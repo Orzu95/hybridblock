@@ -14,7 +14,7 @@ function openDay(d) { const us = dayUnits(d); if (!us.length) { toast($t('An die
   openSheet(sheetHead(esc(fmtDay(d))) + '<div class="on-white" style="margin-top:8px">' + us.map(u => '<a class="evcat" href="' + unitHref(u) + '" data-act="closeSheetNav" style="text-decoration:none;background:var(--fog)"><span class="evg" style="background:' + RPE_COL(u.rpe) + '">' + (u.kind === 'kraft' ? 'K' : 'C') + '</span><span class="grow"><b>' + esc(u.title) + '</b><br><span class="small muted">' + [u.dur ? fmt(u.dur, 0) + ' min' : '', u.rpe != null ? 'RPE ' + fmt(u.rpe) : '', u.load ? $t('Belastung ') + fmt(u.load, 0) : ''].filter(Boolean).join(' · ') + '</span></span><span class="muted">›</span></a>').join('') + '</div>'); }
 
 /* Trainingskalender: Zeilen = Wochen (älteste oben), Spalten = Mo bis So */
-heatmapCard = function () { const end = today(); const mon = d => addDays(d, -((parseISO(d).getDay() + 6) % 7));
+function heatmapCard() { const end = today(); const mon = d => addDays(d, -((parseISO(d).getDay() + 6) % 7));
   const firsts = [S.block.startedOn, ...S.activities.map(a => a.date), ...Object.values(S.sessions).map(s => s.date)].filter(Boolean).sort();
   let start = mon(firsts.length ? firsts[0] : end); const minStart = addDays(mon(end), -11 * 7), maxStart = addDays(mon(end), -3 * 7); if (start < minStart) start = minStart; if (start > maxStart) start = maxStart;
   const weeks = Math.round(daysBetween(start, mon(end)) / 7) + 1; let max = 1; const rows = [];
@@ -27,7 +27,7 @@ heatmapCard = function () { const end = today(); const mon = d => addDays(d, -((
         (c.future ? '' : '<text x="' + (x + cs / 2) + '" y="' + (y + cs / 2 + 4) + '" text-anchor="middle" font-size="11" font-weight="700" fill="' + (c.n && c.v / max > .45 ? '#fff' : 'var(--muted)') + '" pointer-events="none">' + parseISO(c.d).getDate() + '</text>') + '</g>'; }); });
   const n = rows.flat().filter(c => c.n).length;
   return '<div class="card"><div class="row"><h2 class="grow">' + $t('Trainingstage') + '</h2><span class="tag">' + n + $t(' Tage in ') + weeks + $t(' Wochen') + '</span></div><svg viewBox="0 0 ' + W + ' ' + H + '" style="width:100%;max-width:440px;display:block;margin-top:10px" role="img" aria-label="' + $t('Kalender der Trainingstage') + '">' + g + '</svg>' +
-    '<p class="small muted" style="margin-top:8px">' + $t('Dunkler = höhere Belastung. Tippe einen Tag an, um die Einheit zu öffnen.') + '</p></div>'; };
+    '<p class="small muted" style="margin-top:8px">' + $t('Dunkler = höhere Belastung. Tippe einen Tag an, um die Einheit zu öffnen.') + '</p></div>'; }
 const WD_SHORT_MO = () => [$t('Mo'), $t('Di'), $t('Mi'), $t('Do'), $t('Fr'), $t('Sa'), $t('So')];
 
 /* Belastung 28 Tage: gestapelte Balken je Einheit, Farbe nach Intensität, antippbar */

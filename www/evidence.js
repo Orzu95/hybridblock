@@ -109,7 +109,6 @@ whySheet = function (ev) { const ids = EV_REV[ev]; if (!ids) return _whySheetEv(
 const _viewMehrEv = viewMehr;
 viewMehr = function () { const h = _viewMehrEv(); if (VIEW) return h; const card = '<a class="card" href="#wissen" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit"><div class="grow"><h2 style="margin:0">' + $t('Wissen') + '</h2><p class="small muted" style="margin:2px 0 0">' + $t('Was die Studienlage zu Training, Ernährung und Erholung sagt, mit Quellen.') + '</p></div><span class="muted">›</span></a>';
   return h.replace('<div class="stack">', '<div class="stack">' + card); };
-if (typeof spowiProgressCard === 'function') { const _spc = spowiProgressCard; spowiProgressCard = function () { const h = _spc(); return h ? h.replace(/<\/div>\s*$/, '<div>' + evBtn(['LOD-107', 'LOD-109', 'LOD-110', 'LOD-108', 'LOD-105'], $t('Studienlage zu den Kennzahlen')) + '</div></div>') : h; }; }
 if (typeof cycleFlags === 'function') { const _cf = cycleFlags; cycleFlags = function (w, k) { const h = _cf(w, k); return h ? h + '<div style="margin:-4px 4px 0">' + evBtn(['FRA-103', 'FRA-105', 'FRA-104'], $t('Studienlage zu Zyklus und Training')) + '</div>' : h; }; }
 
 document.addEventListener('click', e => { const b = e.target.closest('[data-act]'); if (!b) return;

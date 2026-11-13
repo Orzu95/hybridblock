@@ -105,9 +105,9 @@ function decoupling(a) { if (!a || !a.route || !a.routeT || !(num(a.dur) >= 30))
   const distAt = t => { let i = T.findIndex(x => x >= t); if (i <= 0) return i === 0 ? 0 : cum[cum.length - 1]; const f = (t - T[i - 1]) / Math.max(1, T[i] - T[i - 1]); return cum[i - 1] + (cum[i] - cum[i - 1]) * f; };
   const hrAvg = (t0, t1) => { const v = tr.pts.filter(p => p[0] >= t0 && p[0] < t1).map(p => p[1]); return v.length >= 5 ? v.reduce((s, x) => s + x, 0) / v.length : null; };
   const ef = (t0, t1) => { const h = hrAvg(t0, t1); const d = distAt(t1) - distAt(t0); return h && d > 200 ? (d / (t1 - t0)) / h : null; };
-  const e1 = ef(warm, half), e2 = ef(half, tEnd); if (!e1 || !e2) return null; return Math.round((e1 - e2) / e1 * 1000) / 10; }
+  const e1 = ef(warm, half), e2 = ef(half, tEnd); if (!e1 || !e2) return null; return { pct: Math.round((e1 - e2) / e1 * 1000) / 10, ef1: e1 * 60, ef2: e2 * 60 }; }
 const _viewFreeDC = viewFree;
-viewFree = function (id) { const h = _viewFreeDC.apply(this, arguments); const a = S.activities.find(x => x.id === id); const d = decoupling(a); if (d == null) return h;
+viewFree = function (id) { const h = _viewFreeDC.apply(this, arguments); const a = S.activities.find(x => x.id === id); const dc = decoupling(a); if (dc == null) return h; const d = dc.pct;
   const card = '<div class="card"><div class="row" style="align-items:baseline"><h2 class="grow" style="margin:0">' + $t('Aerobe Entkopplung') + '</h2><span class="num" style="font-weight:800">' + fmt(d, 1) + ' %</span></div><p class="small muted" style="margin:6px 0 0">' +
     (d < 5 ? $t('Unter 5 %: Tempo und Puls blieben stabil, ein gutes Zeichen für deine Grundlagenausdauer.') : $t('Ab 5 %: Der Puls stieg bei gleichem Tempo an. Häufig bei Hitze, zu schnellem Start oder wenn die Grundlage noch wächst.')) + '</p><p class="src" style="margin-top:6px">' + $t('Vergleich Tempo zu Puls in der ersten und zweiten Hälfte, ohne die ersten 10 Minuten. Am aussagekräftigsten bei lockeren, flachen Läufen ab 45 Minuten.') + '</p></div>';
   const i = h.lastIndexOf('</div>'); return i < 0 ? h + card : h.slice(0, i) + card + h.slice(i); };

@@ -5,6 +5,15 @@ const json = (b: unknown, s = 200) => new Response(JSON.stringify(b), { status: 
 const ALPHA = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
 const rnd = (n: number, a = ALPHA) => { const b = new Uint8Array(n); crypto.getRandomValues(b); return Array.from(b, x => a[x % a.length]).join(''); };
 
+/* Daten ohne Fremdschlüssel-Kaskade und Dateien in den Buckets „chat“ und „media“ löschen (wie in hb-auth) */
+async function purgeUser(admin: any, uid: string) {
+  /* Chat-Fotos (Bucket „chat“, Pfad coach/athlet/datei) einsammeln, bevor die Nachrichten gelöscht werden */
+  try { const { data: ph } = await admin.from('messages').select('photo').or('athlete_id.eq.' + uid + ',coach_id.eq.' + uid).not('photo', 'is', null).limit(5000);
+    const paths = (ph || []).map((r: any) => r.photo).filter(Boolean); for (let i = 0; i < paths.length; i += 100) await admin.storage.from('chat').remove(paths.slice(i, i + 100)); } catch { /* weiter */ }
+  try { await admin.rpc('delete_user_data', { p_uid: uid }); } catch { /* Funktion fehlt noch */ }
+  try { for (const dir of [uid + '/coach/form', uid + '/coach/checkin', uid + '/coach', uid]) { const { data } = await admin.storage.from('media').list(dir, { limit: 1000 }); const files = (data || []).filter((f: any) => f.id).map((f: any) => dir + '/' + f.name); if (files.length) await admin.storage.from('media').remove(files); } } catch { /* kein Bucket */ }
+}
+
 Deno.serve(async (req) => {
   if (req.method === 'OPTIONS') return new Response('ok', { headers: CORS });
   if (req.method !== 'POST') return json({ error: 'method' }, 405);
@@ -53,7 +62,7 @@ Deno.serve(async (req) => {
   }
 
   if (body.action === 'invite') {
-    const role = body.role === 'admin' ? 'admin' : 'client'; const code = 'HB-' + rnd(6);
+    const role = body.role === 'admin' ? 'admin' : 'client'; const code = 'HB-' + rnd(10);
     const { error } = await admin.from('invites').insert({ code, coach_id: role === 'client' && body.coach_id ? String(body.coach_id) : me.id, role, name: String(body.name || '').slice(0, 60), mode: role === 'admin' ? 'free' : (body.mode || 'free') });
     if (error) return json({ error: 'invite_failed', detail: error.message }, 400);
     return json({ ok: true, code });
@@ -91,8 +100,7 @@ Deno.serve(async (req) => {
     if (guardSelf()) return json({ error: 'self' }, 400);
     const { data: p } = await admin.from('profiles').select('id,username').eq('id', target).maybeSingle();
     if (!p || String(body.confirm || '').trim().toLowerCase() !== p.username) return json({ error: 'confirm_mismatch' }, 400);
-    try { await admin.rpc('delete_user_data', { p_uid: target }); } catch { /* Funktion fehlt noch */ }
-    try { for (const dir of [target + '/coach/form', target + '/coach/checkin', target + '/coach', target]) { const { data } = await admin.storage.from('media').list(dir, { limit: 1000 }); const files = (data || []).filter((f: any) => f.id).map((f: any) => dir + '/' + f.name); if (files.length) await admin.storage.from('media').remove(files); } } catch { /* kein Bucket */ }
+    await purgeUser(admin, target);
     await admin.from('profiles').update({ coach_id: null }).eq('coach_id', target);
     await admin.from('plan_requests').delete().eq('user_id', target);
     await admin.from('plans').delete().eq('user_id', target);
