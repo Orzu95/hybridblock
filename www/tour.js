@@ -42,7 +42,7 @@ const TOUR = () => [
     d: $t('Findet alles in der App: Einstellungen, Übungen, Pläne, Fachbegriffe und Studien.')
   },
   {
-    sel: '.top a[href="#mehr"]',
+    sel: '.top a[href="#mehr"], #dk-set',
     route: 'heute',
     t: $t('Einstellungen'),
     d: $t('Mein Studio, Uhr verbinden, Ziele, Sprache und diese Einführung zum Wiederholen.')
@@ -60,14 +60,17 @@ let TOUR_I = 0,
     '#tour .tbub{position:fixed;left:16px;right:16px;max-width:380px;margin:0 auto;background:var(--paper);border-radius:20px;padding:18px;box-shadow:0 18px 50px rgba(0,0,0,.3);pointer-events:auto;transition:top .28s ease}' +
     '#tour .tbub h2{margin:0 0 6px;font-size:20px}#tour .tbub p{margin:0;color:var(--graphite)}#tour .tarr{position:absolute;width:16px;height:16px;background:var(--paper);transform:rotate(45deg)}' +
     '#tour .tfoot{display:flex;align-items:center;gap:8px;margin-top:14px}#tour .tdots{display:flex;gap:5px;flex:1}#tour .tdots i{width:7px;height:7px;border-radius:50%;background:var(--rule)}#tour .tdots i.on{background:var(--ember);width:18px;border-radius:4px}' +
+    '@media (min-width:768px){#tour .tskip{left:auto!important;right:24px;top:auto!important;bottom:24px}#tour .tbub{left:calc(88px + 16px)}}@media (min-width:1200px){#tour .tbub{left:calc(236px + 16px)}}' +
     '#tour .tskip{position:fixed;z-index:2;top:max(14px,env(safe-area-inset-top));left:16px;border:0;background:rgba(255,255,255,.92);border-radius:999px;padding:8px 14px;font:inherit;font-weight:700;cursor:pointer;pointer-events:auto}';
   document.head.appendChild(st);
 })();
 function tourVisible(sel) {
-  const el = sel && document.querySelector(sel);
-  if (!el) return null;
-  const r = el.getBoundingClientRect();
-  return r.width && r.height ? r : null;
+  if (!sel) return null;
+  for (const el of document.querySelectorAll(sel)) {
+    const r = el.getBoundingClientRect();
+    if (r.width && r.height) return r;
+  }
+  return null;
 }
 function tourDraw() {
   const el = document.getElementById('tour');
@@ -99,6 +102,29 @@ function tourDraw() {
       'px;height:' +
       (r.height + pad * 2) +
       'px"></div>';
+    const vw = window.innerWidth;
+    const side = vw >= 768 && r.width < 320 && vw - r.right > 440;
+    if (side) {
+      const bt = Math.max(16, Math.min(vh - 200, r.top + r.height / 2 - 60));
+      el.innerHTML =
+        html +
+        '<div class="tbub" style="left:' +
+        (r.right + pad + 16) +
+        'px;right:auto;margin:0;width:380px;top:' +
+        bt +
+        'px"><div class="tarr" style="left:-7px;top:' +
+        Math.max(14, Math.min(150, r.top + r.height / 2 - bt - 8)) +
+        'px"></div><h2>' +
+        esc(s.t) +
+        '</h2><p>' +
+        esc(s.d) +
+        '</p>' +
+        foot +
+        '</div><button class="tskip" data-act="tourEnd" type="button">' +
+        $t('Überspringen') +
+        '</button>';
+      return;
+    }
     const below = r.top < vh / 2;
     const top = below ? r.bottom + pad + 14 : null;
     const bottom = below ? null : vh - r.top + pad + 14;
@@ -161,6 +187,7 @@ function tourMaybe() {
   } catch (e) {}
   if (!S.meta.onboarded || S.meta.tourDone || route.name === 'start' || route.name === 'datenschutz' || document.getElementById('tour')) return;
   if (!$('#sheet').hidden) return;
+  if (typeof hasConsent === 'function' && !hasConsent()) return;
   tourOpen();
 }
 hbWrap('render', 'tour', function (__next) {
