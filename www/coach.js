@@ -44,6 +44,44 @@ const nextMonday = () => {
 const gymCount = p => (p.sessions || []).filter(s => s.kind === 'gym').length;
 
 /* ---------- Vorlagen-Liste ---------- */
+const tplFolders = () => Array.from(new Set((ADMIN.tpls || []).map(t => (t.tags || {}).folder).filter(Boolean))).sort((a, b) => a.localeCompare(b));
+function tplFolderInput(id, v) {
+  return (
+    '<input id="' +
+    id +
+    '" list="' +
+    id +
+    '-l" type="text" maxlength="40" value="' +
+    esc(v || '') +
+    '" placeholder="' +
+    esc($t('z. B. Hypertrophie, Fußball, Einsteiger')) +
+    '" style="width:100%"><datalist id="' +
+    id +
+    '-l">' +
+    tplFolders()
+      .map(f => '<option value="' + esc(f) + '">')
+      .join('') +
+    '</datalist>'
+  );
+}
+function tplFolderSheet(id) {
+  const t = tplById(id);
+  if (!t) return;
+  openSheet(
+    sheetHead($t('Ordner')) +
+      '<p class="muted" style="margin-top:6px"><b>' +
+      esc(t.name) +
+      '</b></p><div class="field" style="margin-top:10px">' +
+      tplFolderInput('tpl-mv', (t.tags || {}).folder) +
+      '</div><p class="small muted" style="margin-top:6px">' +
+      $t('Leer lassen = ohne Ordner.') +
+      '</p><button class="btn brand block" style="margin-top:12px" data-act="tplMove" data-id="' +
+      t.id +
+      '" type="button">' +
+      $t('Speichern') +
+      '</button>'
+  );
+}
 function tplTags(t) {
   const g = t.tags || {};
   return [g.goal && GOALS[g.goal], g.level && LEVELS[g.level], g.days && $tf('{n} Tage', { n: g.days })]
@@ -71,7 +109,12 @@ function viewTemplates() {
       ' ' +
       esc(ago(t.updated_at)) +
       '</p>' +
-      (tplTags(t) ? '<div class="chips small-chips" style="margin-top:6px">' + tplTags(t) + '</div>' : '') +
+      (tplTags(t) || (t.tags || {}).folder
+        ? '<div class="chips small-chips" style="margin-top:6px">' +
+          ((t.tags || {}).folder ? '<span class="chip">📁 ' + esc(t.tags.folder) + '</span>' : '') +
+          tplTags(t) +
+          '</div>'
+        : '') +
       '</div></div>' +
       '<div class="row" style="margin-top:10px;gap:6px;flex-wrap:wrap"><button class="btn sm brand" data-act="tplAssign" data-id="' +
       t.id +
@@ -82,6 +125,11 @@ function viewTemplates() {
       '">' +
       $t('Bearbeiten') +
       '</a>' +
+      '<button class="btn sm" data-act="tplFolder" data-id="' +
+      t.id +
+      '" type="button">' +
+      $t('Ordner') +
+      '</button>' +
       '<button class="btn sm" data-act="tplDup" data-id="' +
       t.id +
       '" type="button">' +
@@ -109,10 +157,27 @@ function viewTemplates() {
     '<div class="row"><button class="btn brand" data-act="tplNew" type="button">' +
     $t('+ Neue Vorlage') +
     '</button></div>' +
+    (L && tplFolders().length
+      ? '<div class="row" style="gap:6px;flex-wrap:wrap">' +
+        [['', $t('Alle')]]
+          .concat(tplFolders().map(f => [f, f]))
+          .concat([['-', $t('Ohne Ordner')]])
+          .map(
+            ([v, l]) =>
+              '<button class="chip' + ((ui.tplF || '') === v ? ' on' : '') + '" data-act="tplF" data-v="' + esc(v) + '" type="button">' + esc(l) + '</button>'
+          )
+          .join('') +
+        '</div>'
+      : '') +
     (L == null
       ? ''
       : L.length
-        ? L.map(card).join('')
+        ? L.filter(t => {
+            const f = (t.tags || {}).folder || '';
+            return !ui.tplF || (ui.tplF === '-' ? !f : f === ui.tplF);
+          })
+            .map(card)
+            .join('') || '<p class="muted">' + $t('Keine Vorlagen in diesem Ordner.') + '</p>'
         : '<div class="card"><h2>' +
           $t('Noch keine Vorlagen') +
           '</h2><p>' +
@@ -160,6 +225,11 @@ function tplSaveSheet() {
       $t('Niveau') +
       '</label>' +
       sel('tpl-level', LEVELS, tg.level) +
+      '</div>' +
+      '<div class="field" style="flex:1 1 100%"><label for="tpl-folder">' +
+      $t('Ordner') +
+      '</label>' +
+      tplFolderInput('tpl-folder', '') +
       '</div>' +
       '<div class="field"><label for="tpl-days">' +
       $t('Krafttage pro Woche') +
@@ -218,6 +288,15 @@ function tplAssignSheet(id, only) {
       '<p class="muted" style="margin-top:6px"><b>' +
       esc(t.name) +
       '</b></p>' +
+      (cl.length > 1
+        ? '<div class="row" style="gap:8px;margin-top:10px;align-items:center;flex-wrap:wrap"><button class="btn sm" data-act="tplAll" type="button">' +
+          $t('Alle auswählen') +
+          '</button><span class="small muted">' +
+          $t('Startdatum für alle') +
+          '</span><input type="date" data-act="tplAllDate" value="' +
+          def +
+          '" style="width:150px"></div>'
+        : '') +
       (cl.length
         ? '<div class="card flush" style="margin-top:10px"><div class="list">' + cl.map(row).join('') + '</div></div>'
         : '<p>' + $t('Noch keine Athleten im Team.') + '</p>') +
@@ -641,6 +720,36 @@ document.addEventListener('click', async e => {
       b.disabled = true;
       await tplPropagate(b.dataset.id);
       break;
+    case 'tplFolder':
+      tplFolderSheet(b.dataset.id);
+      break;
+    case 'tplMove': {
+      const t = tplById(b.dataset.id);
+      if (!t) break;
+      const f = String((document.getElementById('tpl-mv') || {}).value || '')
+        .trim()
+        .slice(0, 40);
+      try {
+        await tplPatch(t, { tags: Object.assign({}, t.tags || {}, { folder: f || undefined }) });
+        closeSheet();
+        render();
+      } catch (er) {
+        toast(errTxt(er));
+      }
+      break;
+    }
+    case 'tplF':
+      ui.tplF = b.dataset.v;
+      render();
+      break;
+    case 'tplAll': {
+      const bx = Array.from(document.querySelectorAll('#sheet [data-tplu]'));
+      const all = bx.every(x => x.checked);
+      bx.forEach(x => {
+        x.checked = !all;
+      });
+      break;
+    }
     case 'tplDup': {
       const t = tplById(b.dataset.id);
       if (!t) break;
@@ -698,7 +807,12 @@ document.addEventListener('click', async e => {
         const t = await tplCreate(PE.draft, {
           name: v('tpl-name').trim(),
           descr: v('tpl-descr').trim(),
-          tags: { goal: v('tpl-goal') || undefined, level: v('tpl-level') || undefined, days: num(v('tpl-days')) || undefined }
+          tags: {
+            goal: v('tpl-goal') || undefined,
+            level: v('tpl-level') || undefined,
+            days: num(v('tpl-days')) || undefined,
+            folder: v('tpl-folder').trim().slice(0, 40) || undefined
+          }
         });
         closeSheet();
         toast($t('Als Vorlage gespeichert: ') + t.name);
@@ -788,4 +902,12 @@ document.addEventListener('input', e => {
     PE.dirty = true;
     markPeDirty();
   }
+});
+
+document.addEventListener('change', e => {
+  const t = e.target;
+  if (t && t.dataset && t.dataset.act === 'tplAllDate' && t.value)
+    document.querySelectorAll('#sheet [data-tpld]').forEach(x => {
+      x.value = t.value;
+    });
 });

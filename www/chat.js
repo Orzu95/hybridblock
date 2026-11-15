@@ -64,7 +64,7 @@ async function chatLoad(pair) {
         pair.coach_id +
         '&athlete_id=eq.' +
         pair.athlete_id +
-        '&select=id,sender,body,photo,ref,created_at,read_at&order=created_at.desc&limit=150'
+        '&select=id,sender,body,photo,audio,ref,created_at,read_at&order=created_at.desc&limit=150'
     );
     CHAT.list[k] = (r || []).reverse();
   } finally {
@@ -131,9 +131,13 @@ async function chatUnread() {
     if (cb) cb.outerHTML = modeBar();
   }
 }
-async function chatSend(pair, body, photo) {
+async function chatSend(pair, body, photo, audio) {
   const ref = ui.chatRef || null;
-  const row = Object.assign({ coach_id: pair.coach_id, athlete_id: pair.athlete_id, body: body || null, photo: photo || null }, ref ? { ref } : {});
+  const row = Object.assign(
+    { coach_id: pair.coach_id, athlete_id: pair.athlete_id, body: body || null, photo: photo || null },
+    audio ? { audio } : {},
+    ref ? { ref } : {}
+  );
   const r = await api('/rest/v1/messages', { method: 'POST', headers: { Prefer: 'return=representation' }, body: JSON.stringify(row) });
   const k = chatKey(pair);
   CHAT.list[k] = (CHAT.list[k] || []).concat(r[0]);
@@ -206,7 +210,7 @@ function viewChat(arg) {
         if (route.name === 'chat') render();
       });
   const back = coachSide ? '#admin/' + arg : '#heute',
-    name = coachSide ? (c ? cname(c) : $t('Athlet')) : $t('Dein Coach');
+    name = coachSide ? (c ? cname(c) : $t('Athlet')) : (typeof ccCoachName === 'function' && ccCoachName()) || $t('Dein Coach');
   let lastDay = '';
   const lastMine = (L || []).filter(m => m.sender === AUTH.uid).slice(-1)[0];
   const msgs = (L || [])
@@ -221,7 +225,9 @@ function viewChat(arg) {
         '<div class="chat-m' +
         (mine ? ' me' : '') +
         '">' +
-        (m.ref ? '<div class="chat-ref">' + esc(chatRefTxt(m.ref)) + '</div>' : '') +
+        (m.ref && m.ref.auto && coachSide ? '<div class="chat-auto">' + esc($t('automatische Nachricht')) + '</div>' : '') +
+        (m.ref && chatRefTxt(m.ref) ? '<div class="chat-ref">' + esc(chatRefTxt(m.ref)) + '</div>' : '') +
+        (m.audio ? '<div class="chat-audio"><audio controls preload="none" data-chataudio="' + esc(m.audio) + '"></audio></div>' : '') +
         (m.photo ? '<img class="chat-img" data-chatphoto="' + esc(m.photo) + '" alt="' + esc($t('Foto')) + '" loading="lazy">' : '') +
         (m.body ? '<div class="chat-b">' + esc(m.body) + '</div>' : '') +
         '<div class="chat-t">' +
@@ -233,6 +239,7 @@ function viewChat(arg) {
     .join('');
   setTimeout(() => {
     chatFillPhotos();
+    if (typeof chatFillAudio === 'function') chatFillAudio();
     const box = document.getElementById('chatlist');
     if (box && !ui.chatKeepScroll) window.scrollTo(0, document.body.scrollHeight);
     ui.chatKeepScroll = false;
@@ -265,6 +272,7 @@ function viewChat(arg) {
     '<input type="file" accept="image/*" data-act="chatPhoto" data-p="' +
     (arg || '') +
     '" hidden></label>' +
+    (typeof voiceBtn === 'function' ? voiceBtn(arg) : '') +
     '<textarea id="chat-text" rows="1" placeholder="' +
     esc($t('Nachricht')) +
     '" style="flex:1;font-family:var(--f);font-size:16px;resize:none;min-height:44px;max-height:140px">' +

@@ -43,6 +43,8 @@ jobs:
           npx playwright install --with-deps chromium
           node tests/smoke.cjs
           node tests/flows.cjs
+          node tests/coach.cjs de
+          node tests/coach.cjs ru
       - run: npx cap sync android
       - name: Signaturschlüssel entschlüsseln
         env:

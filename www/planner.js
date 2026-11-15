@@ -1199,7 +1199,10 @@ function sessStats(w, k) {
   });
   return { sets, total, vol, reps, prs, load: sessLoad(w, k) };
 }
-function finSheet(w, k, fresh) {
+function finSheet() {
+  return hbRun('finSheet', this, arguments, finSheet__base);
+}
+function finSheet__base(w, k, fresh) {
   const st = sessStats(w, k);
   const L = st.load || {};
   const cardio = isCardio(k);
