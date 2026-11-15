@@ -117,6 +117,9 @@ function srGoSetting(h2) {
   }
 }
 function srIndex() {
+  return hbRun('srIndex', this, arguments, srIndex__base);
+}
+function srIndex__base() {
   const out = [...SR_ACTIONS(), ...SR_PAGES()];
   try {
     const h = viewMehr();
