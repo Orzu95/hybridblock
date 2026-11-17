@@ -50,13 +50,105 @@ unclear: true if the input is not food or you cannot identify anything.
 ${mode === 'text' ? 'User text: """' + text.slice(0, 600) + '"""' : ''}`;
 }
 
+/* Vertex AI (Google Cloud): läuft über das Startguthaben und in der EU. Secret VERTEX_SERVICE_ACCOUNT = JSON des Dienstkontos
+   (Rolle „Vertex AI-Nutzer“). Ohne dieses Secret wird wie bisher die Gemini API aus AI Studio (GEMINI_API_KEY) genutzt. */
+const VLOC = Deno.env.get('VERTEX_LOCATION') || 'europe-west3';
+const b64u = (b: ArrayBuffer | string) =>
+  btoa(typeof b === 'string' ? b : String.fromCharCode(...new Uint8Array(b)))
+    .replace(/=+$/, '')
+    .replace(/\+/g, '-')
+    .replace(/\//g, '_');
+let VTOK: { v: string; exp: number } | null = null;
+function vertexSA() {
+  const raw = Deno.env.get('VERTEX_SERVICE_ACCOUNT');
+  if (!raw) return null;
+  try {
+    let t = raw.trim();
+    if (!t.startsWith('{')) t = '{' + t;
+    if (!t.endsWith('}')) t = t.replace(/,\s*$/, '') + '}';
+    const sa = JSON.parse(t);
+    return sa.client_email && sa.private_key && sa.project_id ? sa : null;
+  } catch (e) {
+    console.error('VERTEX_SERVICE_ACCOUNT ist kein gültiges JSON: ' + (e as Error).message);
+    return null;
+  }
+}
+async function vertexToken(sa: { client_email: string; private_key: string }) {
+  if (VTOK && VTOK.exp > Date.now() + 60_000) return VTOK.v;
+  const now = Math.floor(Date.now() / 1000);
+  const head = b64u(JSON.stringify({ alg: 'RS256', typ: 'JWT' }));
+  const claim = b64u(
+    JSON.stringify({ iss: sa.client_email, scope: 'https://www.googleapis.com/auth/cloud-platform', aud: 'https://oauth2.googleapis.com/token', iat: now, exp: now + 3600 })
+  );
+  const pem = sa.private_key.replace(/-----[^-]+-----/g, '').replace(/\\n/g, '').replace(/\s+/g, '');
+  const der = Uint8Array.from(atob(pem), c => c.charCodeAt(0));
+  const key = await crypto.subtle.importKey('pkcs8', der, { name: 'RSASSA-PKCS1-v1_5', hash: 'SHA-256' }, false, ['sign']);
+  const sig = await crypto.subtle.sign('RSASSA-PKCS1-v1_5', key, new TextEncoder().encode(head + '.' + claim));
+  const r = await fetch('https://oauth2.googleapis.com/token', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: 'grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer&assertion=' + head + '.' + claim + '.' + b64u(sig)
+  });
+  const j = await r.json();
+  if (!j.access_token) throw new Error('oauth ' + r.status + ' ' + JSON.stringify(j).slice(0, 200));
+  VTOK = { v: j.access_token, exp: Date.now() + (j.expires_in || 3600) * 1000 };
+  return VTOK.v;
+}
+async function callGemini(body: unknown, signal: AbortSignal) {
+  const sa = vertexSA();
+  if (sa) {
+    const at = await vertexToken(sa);
+    const url = (loc: string) =>
+      'https://' +
+      (loc === 'global' ? '' : loc + '-') +
+      'aiplatform.googleapis.com/v1/projects/' +
+      sa.project_id +
+      '/locations/' +
+      loc +
+      '/publishers/google/models/' +
+      MODEL +
+      ':generateContent';
+    const go = (loc: string) =>
+      fetch(url(loc), { method: 'POST', signal, headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + at }, body: JSON.stringify(body) });
+    let r = await go(VLOC);
+    /* Modell in der EU-Region nicht verfügbar → globaler Endpunkt */
+    if (r.status === 404 && VLOC !== 'global') {
+      console.warn('vertex: ' + MODEL + ' nicht in ' + VLOC + ', nutze global');
+      r = await go('global');
+    }
+    return r;
+  }
+  const key = Deno.env.get('GEMINI_API_KEY')!;
+  return fetch('https://generativelanguage.googleapis.com/v1beta/models/' + MODEL + ':generateContent', {
+    method: 'POST',
+    signal,
+    headers: { 'Content-Type': 'application/json', 'x-goog-api-key': key },
+    body: JSON.stringify(body)
+  });
+}
+
 Deno.serve(async req => {
   if (req.method === 'OPTIONS') return new Response('ok', { headers: CORS });
   if (req.method !== 'POST') return json({ error: 'method' }, 405);
-  const key = Deno.env.get('GEMINI_API_KEY');
-  if (!key) return json({ error: 'not_configured' }, 503);
+  if (!Deno.env.get('GEMINI_API_KEY') && !Deno.env.get('VERTEX_SERVICE_ACCOUNT')) return json({ error: 'not_configured' }, 503);
   const token = (req.headers.get('authorization') || '').replace(/^Bearer /i, '');
   const db = createClient(Deno.env.get('SUPABASE_URL')!, Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!, { auth: { persistSession: false } });
+  /* Betriebstest: mit dem geheimen Hook-Header eine Mini-Anfrage an Gemini, ohne Nutzer und ohne Tageslimit */
+  const hs = req.headers.get('x-hook-secret');
+  if (hs) {
+    const { data: ok } = await db.rpc('push_hook_ok', { p_secret: hs });
+    if (!ok) return json({ error: 'forbidden' }, 403);
+    try {
+      const r = await callGemini(
+        { contents: [{ role: 'user', parts: [{ text: 'Reply with the single word OK.' }] }], generationConfig: { maxOutputTokens: 20 } },
+        AbortSignal.timeout(20000)
+      );
+      const j = await r.text();
+      return json({ ping: r.status, via: vertexSA() ? 'vertex' : 'aistudio', model: MODEL, out: j.slice(0, 400) });
+    } catch (e) {
+      return json({ ping: 0, error: String(e).slice(0, 300) });
+    }
+  }
   const { data: u } = await db.auth.getUser(token);
   const uid = u && u.user && u.user.id;
   if (!uid) return json({ error: 'auth' }, 401);
@@ -87,19 +179,17 @@ Deno.serve(async req => {
   const ac = new AbortController();
   const t = setTimeout(() => ac.abort(), 25000);
   try {
-    const r = await fetch('https://generativelanguage.googleapis.com/v1beta/models/' + MODEL + ':generateContent', {
-      method: 'POST',
-      signal: ac.signal,
-      headers: { 'Content-Type': 'application/json', 'x-goog-api-key': key },
-      body: JSON.stringify({
+    const r = await callGemini(
+      {
         contents: [{ role: 'user', parts }],
         generationConfig: { temperature: 0.2, responseMimeType: 'application/json', responseSchema: SCHEMA, maxOutputTokens: 1500 }
-      })
-    });
+      },
+      ac.signal
+    );
     const j = await r.json();
     if (!r.ok) {
       console.error('gemini', r.status, JSON.stringify(j).slice(0, 500));
-      return json({ error: 'ai_failed', status: r.status }, 502);
+      return json({ error: r.status === 402 || r.status === 429 || r.status === 503 ? 'ai_unavailable' : 'ai_failed', status: r.status }, 502);
     }
     const out =
       j.candidates &&
