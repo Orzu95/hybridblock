@@ -1,5 +1,5 @@
 /* Hybridblock Service Worker: App offline, Schriften gecacht, Open Food Facts immer live */
-const VERSION = 'hb-v114';
+const VERSION = 'hb-v115';
 const SHELL = [
   './',
   './index.html',
@@ -91,6 +91,7 @@ const SHELL = [
   './cockpit.js',
   './queue.js',
   './macro.js',
+  './planwide.js',
   './boot.js',
   './syncmerge.js',
   './hcauto.js',
