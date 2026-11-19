@@ -640,3 +640,38 @@ body.mode-coach .tabbar a.on::after{background:var(--iris)}
 }
 @media (min-width:1024px) and (max-width:1399px){.tt-grid.has-side{grid-template-columns:minmax(0,1fr) 270px}.tt-tiles{grid-template-columns:repeat(4,minmax(0,1fr))}}
 @media (min-width:1024px) and (max-width:1599px){.tt-grid.has-side .tt td:nth-child(n+5):nth-child(-n+7),.tt-grid.has-side .tt th:nth-child(n+5):nth-child(-n+7){display:none}.tt-grid.has-side .tt-why{max-width:220px}.tt-grid.has-side .tt-ib{width:28px}}
+/* Athleten-Cockpit (D3) */
+@media (min-width:1200px){
+  body.dk-ck .wrap{max-width:1680px}
+  .ck-head{margin-bottom:16px}
+  .ck-name{font-size:30px;margin:4px 0 0;line-height:1.15}
+  .ck-lim{display:flex;flex-wrap:wrap;gap:6px;align-items:center;padding:8px 12px;border-radius:12px;background:#fff1ec;color:var(--signal);font-size:13px}
+  .ck-lim span{padding:2px 8px;border-radius:999px;background:var(--paper);font-weight:600}
+  .ck-grid{display:grid;grid-template-columns:300px minmax(0,1fr) 380px;gap:20px;align-items:start}
+  .ck-left .stats{grid-template-columns:1fr 1fr}
+  .ck-left .stat .v{font-size:18px!important}
+  .ck-tabs{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:14px;border-bottom:1px solid var(--rule)}
+  .ck-tab{border:0;background:none;font:inherit;font-weight:600;font-size:14px;color:var(--muted);padding:10px 12px;border-bottom:2px solid transparent;margin-bottom:-1px;cursor:pointer;display:inline-flex;gap:6px;align-items:center}
+  .ck-tab:hover{color:var(--charcoal)}
+  .ck-tab.on{color:var(--charcoal);border-bottom-color:var(--iris)}
+  .ck-tab i{font-style:normal;font-size:11px;min-width:18px;padding:1px 5px;border-radius:999px;background:var(--fog);color:var(--muted)}
+  .ck-tab i:empty{display:none}
+  .ck-chat{position:sticky;top:16px;height:calc(100vh - 32px);display:flex;flex-direction:column;border-radius:18px;background:var(--fog);padding:12px}
+  .ck-chat-h{display:flex;flex-direction:column;gap:2px;padding:2px 4px 10px;border-bottom:1px solid var(--rule)}
+  .ck-chat>.stack{flex:1;min-height:0;display:flex;flex-direction:column;gap:8px;margin-top:8px}
+  .ck-chat .chat-list{flex:1;min-height:0;overflow-y:auto;padding-right:4px}
+  .ck-chat .chat-in{position:static;background:none;padding:0}
+  .ck-chat .chat-in textarea{background:var(--paper)}
+  .ck-sp{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:6px 0;border-top:1px solid var(--rule);color:var(--iris)}
+  .ck-sp:first-of-type{border-top:0}
+  .ck-sp div{display:flex;flex-direction:column;color:var(--charcoal);font-size:13px}
+  .ck-sp div span{color:var(--muted);font-size:12px}
+  .ck-sp svg{width:120px;height:32px;flex:none}
+}
+@media (min-width:1200px) and (max-width:1499px){.ck-grid{grid-template-columns:260px minmax(0,1fr) 320px}}
+@media (min-width:1200px){
+  .ck-chat .chat-in .row{flex-wrap:wrap!important}
+  .ck-chat #chat-text{flex:1 1 100%!important;order:-1;min-height:64px!important}
+  .ck-chat .chat-in [data-act="chatSend"]{margin-left:auto}
+}
+@media (min-width:1200px){.ck-tabs{flex-wrap:nowrap;overflow-x:auto}.ck-tab{font-size:13px;padding:9px 10px;white-space:nowrap}}
