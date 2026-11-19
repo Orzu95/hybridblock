@@ -873,7 +873,35 @@ function series() {
 /* Fett nie unter 20 % der Kalorien (ERN-109: darunter sinkt bei Männern das Testosteron; Empfehlung 20–35 %) */
 const fatFloor = kcal => Math.ceil(((RV('fat_min') / 100) * kcal) / 9 / 5) * 5;
 const fatG = (kcal, f) => Math.max(f, fatFloor(kcal));
+let MACRO_RAW = 0;
 function currentTargets__base() {
+  const t = currentTargets__core();
+  return MACRO_RAW ? t : macroApply(t, S.settings.macro);
+}
+/* Eigene Makro-Aufteilung: zwei Makros fest in Gramm, das dritte (rest) gleicht bis zum Kalorienziel aus.
+   Fett nie unter dem Mindestwert, kein Makro unter 0. */
+function macroApply(t, m) {
+  if (!t || !m || !m.rest) return t;
+  const kc = t.kcal;
+  let p = num(m.p),
+    f = num(m.f),
+    c = num(m.c);
+  if (m.rest === 'c') {
+    p = p ?? t.p;
+    f = fatG(kc, f ?? t.f);
+    c = Math.max(0, Math.round((kc - 4 * p - 9 * f) / 4));
+  } else if (m.rest === 'f') {
+    p = p ?? t.p;
+    c = c ?? t.c;
+    f = Math.max(fatFloor(kc), Math.round((kc - 4 * p - 4 * c) / 9));
+  } else {
+    f = fatG(kc, f ?? t.f);
+    c = c ?? t.c;
+    p = Math.max(0, Math.round((kc - 9 * f - 4 * c) / 4));
+  }
+  return Object.assign({}, t, { p, f, c, own: true });
+}
+function currentTargets__core() {
   const cs = S.checkins.filter(c => c.date <= today()).sort((a, b) => (a.date < b.date ? -1 : 1));
   if (cs.length) {
     const l = cs[cs.length - 1];

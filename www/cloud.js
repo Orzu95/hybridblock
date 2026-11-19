@@ -242,6 +242,9 @@ function setPlan__base(plan, fromCoach) {
   if (tg && tg.at && tg.at !== S.meta.targetsAt) {
     S.meta.targetsAt = tg.at;
     const st = S.settings;
+    /* Coach gibt eine neue Aufteilung vor: eigene Anpassung des Athleten zurücksetzen */
+    if (tg.macro && tg.macro.rest) st.macro = Object.assign({}, tg.macro, { by: 'coach' });
+    else if (num(tg.protein) != null || num(tg.fat) != null) delete st.macro;
     ['protein', 'fat', 'goalRate', 'targetWeight'].forEach(k => {
       if (num(tg[k]) != null) st[k] = String(tg[k]);
     });
