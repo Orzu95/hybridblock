@@ -45,6 +45,7 @@ jobs:
           node tests/flows.cjs
           node tests/coach.cjs de
           node tests/coach.cjs ru
+          node tests/teamtab.cjs de && node tests/teamtab.cjs ru
       - run: npx cap sync android
       - name: Signaturschlüssel entschlüsseln
         env:
