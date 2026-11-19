@@ -97,6 +97,22 @@ const C = '11111111-1111-1111-1111-111111111111';
   await page.mouse.click(5, 5);
   await page.keyboard.press('Control+z'); await page.waitForTimeout(300);
   ok((await ev(i => peItems(i)[0].slot, g[1])) !== before, 'Strg+Z nimmt zurück');
+  /* Speichern rechts oben, Bestätigung als Popup */
+  ok(await ev(() => !!document.querySelector('.pw-side .pe-save [data-act="peSave"]')), 'Speichern in der rechten Spalte');
+  await ev(() => { PE.dirty = true; render(); }); await page.waitForTimeout(200);
+  await page.keyboard.press('Control+s'); await page.waitForTimeout(500);
+  ok(await ev(() => !!document.getElementById('doneov')), 'Popup nach Speichern (Strg+S)');
+  /* zweisprachige Suche */
+  const hits = async q => { await page.fill('#pw-q', q); await page.waitForTimeout(500); return ev(() => [...document.querySelectorAll('.pw-ex')].map(x => x.dataset.pwex)); };
+  let h1 = await hits('shoulder press');
+  if (!h1.includes('db_ohp')) { await page.waitForTimeout(1500); h1 = await hits('shoulder press'); }
+  ok(h1.includes('db_ohp') && h1.includes('machine_ohp') && h1.includes('ohp'), 'shoulder press findet Schulterdrücken', h1.slice(0, 8));
+  ok((await hits('military press')).includes('ohp'), 'military press findet LH-Schulterdrücken');
+  ok((await hits('schulterdrücken')).includes('db_ohp'), 'schulterdrücken findet KH-Schulterdrücken');
+  ok((await hits('bench press')).includes('bench'), 'bench press findet Bankdrücken');
+  ok((await hits('kreuzheben')).some(x => /dl/.test(x)), 'kreuzheben findet Deadlift-Varianten');
+  ok((await hits('dumbbell')).includes('db_bench'), 'dumbbell findet KH-Übungen');
+  await page.fill('#pw-q', ''); await page.waitForTimeout(200);
   /* schmal */
   await page.setViewportSize({ width: 1100, height: 900 }); await page.waitForTimeout(400);
   ok(await ev(() => !document.querySelector('.pw-grid') && !document.body.classList.contains('dk-pe')), 'unter 1200 px einspaltig');

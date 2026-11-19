@@ -138,7 +138,7 @@ function srIndex__base() {
   Object.keys(LIB).forEach(id => {
     const e = LIB[id];
     if (!e || !e.name) return;
-    out.push({ g: $t('Übung'), t: e.name, k: id + ' ' + (e.de || ''), go: () => exInfoSheet(id) });
+    out.push({ g: $t('Übung'), t: e.name, k: id + ' ' + (typeof exHay === 'function' ? exHay(e) : ''), go: () => exInfoSheet(id) });
   });
   if (typeof LIBRARY !== 'undefined')
     Object.keys(LIBRARY).forEach(id => {

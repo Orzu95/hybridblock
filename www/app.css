@@ -773,3 +773,11 @@ body.mode-coach .tabbar a.on::after{background:var(--iris)}
   .pw-week .pe-f .pe-chk{grid-column:1/-1;flex-direction:row;align-items:center;gap:6px;font-size:12px}
   .pw-week .pe-note{font-size:13px;padding:7px 10px;margin-top:6px}
 }
+@media (min-width:768px){.pe-save{bottom:12px;border-radius:16px;padding:10px 14px;box-shadow:0 6px 24px rgba(0,0,0,.08)}}
+@media (min-width:1200px){
+  .pw-side .pe-save.pw-save{position:static;box-shadow:none;background:var(--fog);border-radius:20px;padding:14px;flex-wrap:wrap;gap:8px;margin:0}
+  .pw-side .pe-save.pw-save .btn.brand{flex:1 1 100%;order:-1}
+  .pw-side .pe-save.pw-save .grow{display:none}
+}
+/* Bestätigungen: Erfolgsmeldungen mit Haken */
+.toast.ok::before{content:'✓';display:inline-grid;place-items:center;width:20px;height:20px;border-radius:50%;background:var(--verdant);color:#fff;font-size:12px;margin-right:8px;vertical-align:-3px}

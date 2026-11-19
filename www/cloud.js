@@ -1686,9 +1686,7 @@ function nextKey(p) {
 }
 function pePickSheet(i, slot, q) {
   q = (q || '').toLowerCase();
-  const items = Object.values(LIB).filter(
-    e => !q || e.name.toLowerCase().includes(q) || Object.keys(e.muscles).some(m => MUSCLES[m].toLowerCase().includes(q))
-  );
+  const items = exSearch(Object.values(LIB), q);
   ui.pePick = { i, slot };
   openSheet(
     sheetHead(slot ? $t('Übung ersetzen') : $t('Übung hinzufügen')) +
@@ -1933,7 +1931,7 @@ document.addEventListener('input', e => {
     const el = $('#pelist');
     if (el)
       el.innerHTML = peExItems(
-        Object.values(LIB).filter(x => x.name.toLowerCase().includes(q) || Object.keys(x.muscles).some(m => MUSCLES[m].toLowerCase().includes(q)))
+        exSearch(Object.values(LIB), q)
       );
     return;
   }

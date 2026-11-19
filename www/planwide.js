@@ -17,10 +17,11 @@ function pwSel() {
 function pwLibList() {
   const q = PW.q.trim().toLowerCase(),
     m = PW.m;
-  const L = Object.values(LIB)
-    .filter(e => (!m || (e.muscles[m] || 0) >= 1) && (!q || e.name.toLowerCase().includes(q) || Object.keys(e.muscles).some(k => MUSCLES[k].toLowerCase().includes(q))))
-    .sort((a, b) => (isPrio(b.id) ? 1 : 0) - (isPrio(a.id) ? 1 : 0) || a.name.localeCompare(b.name))
-    .slice(0, 120);
+  const base = Object.values(LIB).filter(e => !m || (e.muscles[m] || 0) >= 1);
+  const L = (q
+    ? exSearch(base, q)
+    : base.sort((a, b) => (isPrio(b.id) ? 1 : 0) - (isPrio(a.id) ? 1 : 0) || a.name.localeCompare(b.name))
+  ).slice(0, 120);
   if (!L.length) return '<p class="small muted" style="margin:8px 4px">' + $t('Keine Übung gefunden.') + '</p>';
   return L.map(
     e =>
@@ -163,9 +164,15 @@ function pwArrange() {
   if (nc && nc.parentNode === app) side.appendChild(nc);
   side.insertAdjacentHTML(
     'beforeend',
-    '<p class="small muted" style="margin:4px">' + $t('Strg+Z nimmt die letzte Änderung zurück. Ungespeicherte Änderungen bleiben als Entwurf auf diesem Gerät.') + '</p>'
+    '<p class="small muted" style="margin:4px">' + $t('Strg+S speichert, Strg+Z nimmt die letzte Änderung zurück. Ungespeicherte Änderungen bleiben als Entwurf auf diesem Gerät.') + '</p>'
   );
   grid.appendChild(side);
+  /* Speichern / Verwerfen oben rechts statt als Leiste mitten über dem Wochenraster */
+  const sv = app.querySelector('.pe-save');
+  if (sv) {
+    sv.classList.add('pw-save');
+    side.insertBefore(sv, side.firstChild);
+  }
 }
 hbWrap('render', 'planwide', function (__next) {
   const q = document.getElementById('pw-q');
@@ -291,6 +298,14 @@ document.addEventListener('drop', e => {
   PW.sel = t.i;
   render();
   if (typeof peTrack === 'function') setTimeout(peTrack, 0);
+});
+/* Strg+S / Cmd+S speichert den Plan */
+document.addEventListener('keydown', e => {
+  if (route.name !== 'plan' || !(e.ctrlKey || e.metaKey) || e.key.toLowerCase() !== 's') return;
+  e.preventDefault();
+  const b = document.querySelector('[data-act=peSave]');
+  if (b && !b.disabled) b.click();
+  else toast($t('Keine ungespeicherten Änderungen'), 'soft');
 });
 /* Strg+Z / Cmd+Z: letzte Änderung zurück (nutzt den vorhandenen Verlauf des Editors) */
 document.addEventListener('keydown', e => {

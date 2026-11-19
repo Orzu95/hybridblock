@@ -175,7 +175,7 @@ function toast__base(t) {
   el.textContent = t;
   el.classList.add('show');
   clearTimeout(toast.t);
-  toast.t = setTimeout(() => el.classList.remove('show'), 2200);
+  toast.t = setTimeout(() => el.classList.remove("show"), 3200);
 }
 function toast() {
   return hbRun('toast', this, arguments, toast__base);
@@ -4335,7 +4335,7 @@ function actSheet() {
 }
 function exPickSheet(aid, q) {
   q = (q || '').toLowerCase();
-  const items = Object.values(LIB).filter(e => !q || e.name.toLowerCase().includes(q));
+  const items = exSearch(Object.values(LIB), q);
   openSheet(
     sheetHead($t('Übung wählen')) +
       $t('<div class="on-white" style="margin-top:12px"><input id="exq" type="search" placeholder="Übung suchen" style="width:100%" value="') +
@@ -4475,7 +4475,7 @@ document.addEventListener('input', e => {
   if (t.id === 'exq') {
     const q = t.value.toLowerCase();
     $('#exlist').innerHTML = exItems(
-      Object.values(LIB).filter(x => x.name.toLowerCase().includes(q)),
+      exSearch(Object.values(LIB), q),
       t.dataset.aid
     );
     return;

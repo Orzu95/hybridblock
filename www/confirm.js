@@ -34,9 +34,25 @@ function doneOverlay(title, sub, ms) {
 }
 /* Zähler: hat eine Aktion schon selbst eine Meldung gezeigt? */
 let TOAST_N = 0;
-hbWrap('toast', 'confirm', function (__next) {
+/* Erfolgsmeldungen (gespeichert, gesendet, zugewiesen, übernommen, erledigt …) kommen als Popup mit Haken in der Mitte,
+   Fehler und kleine Rückmeldungen bleiben als Leiste unten. toast(text, 'soft') erzwingt die Leiste
+   (z. B. für das automatische Speichern einzelner Felder). */
+const TOAST_ERR = /fehlgeschlagen|fehler|nicht möglich|konnte nicht|bitte|failed|error|could not|please|не удалось|ошибк|пожалуйста|невозможно/i;
+const TOAST_BIG = /gespeichert|gesendet|versendet|verschickt|zugewiesen|übernommen|erledigt|abgeschlossen|veröffentlicht|eingeladen|saved|sent|assigned|applied|completed|published|done\b|сохран|отправлен|назначен|применен|принят|выполнен|опубликован|готово/i;
+const TOAST_OK = /hinzugefügt|gelöscht|entfernt|eingetragen|kopiert|verschoben|added|deleted|removed|logged|copied|moved|добавлен|удален|скопирован|перенесен/i;
+hbWrap('toast', 'confirm', function (__next, t, kind) {
   TOAST_N++;
-  return __next.apply(this, Array.prototype.slice.call(arguments, 1));
+  const s = String(t == null ? '' : t);
+  const el = document.getElementById('toast');
+  if (el) el.classList.remove('ok');
+  if (kind !== 'soft' && !TOAST_ERR.test(s) && TOAST_BIG.test(s) && typeof doneOverlay === 'function') {
+    const i = s.search(/[.:!]\s/);
+    doneOverlay(i > 0 ? s.slice(0, i) : s.replace(/[.!]$/, ''), i > 0 ? s.slice(i + 1).trim() : '', 1900);
+    return;
+  }
+  const r = __next.apply(this, Array.prototype.slice.call(arguments, 1));
+  if (el && !TOAST_ERR.test(s) && (TOAST_OK.test(s) || TOAST_BIG.test(s))) el.classList.add('ok');
+  return r;
 });
 const CONFIRM = () => ({
   saveEntry: [$t('Eingetragen')],
@@ -148,6 +164,6 @@ document.addEventListener('change', e => {
   else if (t.dataset.f === 'complete') msg = t.checked ? $t('Tag als vollständig markiert') : $t('Tag als unvollständig markiert');
   if (msg)
     setTimeout(() => {
-      if (TOAST_N === n0) toast(msg);
+      if (TOAST_N === n0) toast(msg, 'soft');
     }, 250);
 });
