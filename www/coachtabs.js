@@ -51,7 +51,9 @@ function tabSync() {
       route.name === 'admin'
         ? route.arg === 'vorlagen'
           ? 'cvorlagen'
-          : 'cteam'
+          : route.arg === 'pruefen'
+            ? 'cpruefen'
+            : 'cteam'
         : route.name === 'plan' && typeof isTplUid === 'function' && isTplUid(route.arg)
           ? 'cvorlagen'
           : route.name === 'termine'

@@ -151,7 +151,7 @@ async function cmList(owner) {
 const cmCount = c => (c.comments || []).length;
 function cmRow(it) {
   const m = it.meta || {};
-  const nm = it.kind === 'form' ? (LIB[m.ex] ? LIB[m.ex].name : m.name || $t('Übung')) : $tf('Check-in-Foto: {p}', { p: $t(m.view || '') });
+  const nm = it.kind === 'form' ? (LIB[m.ex] ? LIB[m.ex].name : m.name || $t('Übung')) : $tf('Check-in-Foto: {p}', { p: $t(m.view ? m.view[0].toUpperCase() + m.view.slice(1) : '') });
   return (
     '<button class="act-pick" data-act="cmOpen" data-id="' +
     esc(it.id) +
