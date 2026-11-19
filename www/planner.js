@@ -509,9 +509,32 @@ function libCard__base(p, why) {
 function libCard() {
   return hbRun('libCard', this, arguments, libCard__base);
 }
+/* Angaben für Empfehlung/Generator: eigene, oder beim Coach die des Athleten (aus seinem Stand bzw. Aufnahmebogen),
+   ergänzt um das, was der Coach hier nur für diese Auswahl einträgt (ui.libQ, wird nicht beim Athleten gespeichert). */
+function libAth() {
+  const id = ui.libFor;
+  if (!id) return null;
+  if (ADMIN.states[id] === undefined && !(ui.libLoad || {})[id]) {
+    ui.libLoad = Object.assign({}, ui.libLoad, { [id]: 1 });
+    loadClientState(id)
+      .catch(() => {
+        ADMIN.states[id] = null;
+      })
+      .finally(() => {
+        if (route.name === 'library') render();
+      });
+  }
+  const st = ADMIN.states[id];
+  return { loading: st === undefined, settings: (st && st.state && st.state.settings) || {} };
+}
+function libQ0() {
+  const A = libAth();
+  if (!A) return S.settings.q || {};
+  const intake = ((ADMIN.reqs && ADMIN.reqs[ui.libFor]) || {}).intake || {};
+  return Object.assign({}, intake, A.settings.q || {}, (ui.libQ || {})[ui.libFor] || {});
+}
 function libQuery() {
-  const st = S.settings;
-  const q = st.q || {};
+  const q = libQ0();
   return { goal: q.goal, level: q.level, days: q.days, minutes: q.minutes, place: q.place, focus: q.focus, pain: q.pain || {} };
 }
 function viewLibrary__base() {
@@ -535,10 +558,28 @@ function viewLibrary__base() {
     (ui.libFor && S.settings.coachOwnOnly
       ? ''
       : (rec.length
-          ? $t('<div class="section-h"><h2>Für dich empfohlen</h2></div>') + rec.map(r => libCard(r.p, r.why)).join('')
-          : $t(
-              '<div class="card"><p>Sag der App dein Ziel, deine Erfahrung und wie oft du trainieren kannst, dann bekommst du Empfehlungen.</p><button class="btn brand" style="margin-top:12px" data-act="libAsk" type="button">Angaben machen</button></div>'
-            )) +
+          ? (ui.libFor
+              ? '<div class="section-h"><h2>' +
+                esc($tf('Für {n} empfohlen', { n: libForName() })) +
+                '</h2><button class="linkbtn" data-act="libAsk" type="button">' +
+                $t('Angaben ändern') +
+                '</button></div>'
+              : $t('<div class="section-h"><h2>Für dich empfohlen</h2></div>')) + rec.map(r => libCard(r.p, r.why)).join('')
+          : ui.libFor
+            ? libAth() && libAth().loading
+              ? '<div class="card"><p class="muted" style="margin:0">' + esc($tf('Lade die Angaben von {n} …', { n: libForName() })) + '</p></div>'
+              : '<div class="card"><p>' +
+                esc($tf('{n} hat noch kein Ziel, keine Erfahrung und keine Trainingstage angegeben. Trag sie hier für die Empfehlung ein, dann schlägt die App passende Pläne vor.', { n: libForName() })) +
+                '</p><div class="row" style="gap:8px;margin-top:12px;flex-wrap:wrap"><button class="btn brand" data-act="libAsk" type="button">' +
+                esc($tf('Angaben für {n} eintragen', { n: libForName() })) +
+                '</button><a class="btn" href="#chat/' +
+                ui.libFor +
+                '">' +
+                $t('Im Chat nachfragen') +
+                '</a></div></div>'
+            : $t(
+                '<div class="card"><p>Sag der App dein Ziel, deine Erfahrung und wie oft du trainieren kannst, dann bekommst du Empfehlungen.</p><button class="btn brand" style="margin-top:12px" data-act="libAsk" type="button">Angaben machen</button></div>'
+              )) +
         $t(
           '<div class="card"><div class="row"><div class="grow"><h2 style="margin:0">Plan erstellen lassen</h2><p class="small">Aus Ziel, Erfahrung, Tagen, Zeit, Geräten und Einschränkungen.</p></div><button class="btn brand sm" data-act="genPlan" type="button">Erstellen</button></div></div>'
         ) +
@@ -565,6 +606,10 @@ function viewLibrary__base() {
 }
 function viewLibrary() {
   return hbRun('viewLibrary', this, arguments, viewLibrary__base);
+}
+function libForName() {
+  const c = (ADMIN.clients || []).find(x => x.id === ui.libFor);
+  return c ? cname(c) : $t('deinen Athleten');
 }
 function libCtxLine__base() {
   if (ui.libFor) {
@@ -739,13 +784,13 @@ function viewGenPlan() {
   const q = libQuery();
   if (!q.goal) {
     setTimeout(goalsSheet, 50);
-    return '<a href="#library" class="back">' + ICON.back + $t('Bibliothek</a><p class="muted">Erst deine Angaben machen.</p>');
+    return '<a href="#library" class="back">' + ICON.back + (ui.libFor ? $t('Bibliothek') + '</a><p class="muted">' + esc($tf('Erst die Angaben für {n} eintragen.', { n: libForName() })) + '</p>' : $t('Bibliothek</a><p class="muted">Erst deine Angaben machen.</p>'));
   }
   ui.genPlan = ui.genPlan || generatePlan(q);
   const g = ui.genPlan;
   const meta = {
     desc:
-      $t('Aus deinen Angaben erstellt: ') +
+      (ui.libFor ? $tf('Aus den Angaben von {n} erstellt: ', { n: libForName() }) : $t('Aus deinen Angaben erstellt: ')) +
       GOALS[g.gen.goal] +
       ', ' +
       LEVELS[g.gen.level] +
@@ -753,7 +798,7 @@ function viewGenPlan() {
       g.gen.days +
       $t(' Tage, ') +
       g.gen.minutes +
-      $t(' min. Übungen passend zu deinen Geräten') +
+      (ui.libFor ? $t(' min. Übungen passend zu den Geräten des Athleten') : $t(' min. Übungen passend zu deinen Geräten')) +
       (Object.keys(q.pain || {}).length ? $t(', Einschränkungen berücksichtigt') : '') +
       '.' +
       (g.fromResults
@@ -816,8 +861,8 @@ function planFromId() {
   return hbRun('planFromId', this, arguments, planFromId__base);
 }
 /* Angaben für Empfehlung und Generator */
-function goalsFields(q) {
-  q = Object.assign({ focus: S.settings.sex === 'w' ? 'lower' : 'balanced' }, q);
+function goalsFields(q, sex) {
+  q = Object.assign({ focus: (sex || S.settings.sex) === 'w' ? 'lower' : 'balanced' }, q);
   const sel = (k, lab, opts) =>
     '<div class="field"><label for="q-' +
     k +
@@ -866,20 +911,33 @@ function goalsFields(q) {
   );
 }
 function goalsSheet() {
-  const q = S.settings.q || {};
+  const q = libQ0();
+  const forA = !!ui.libFor;
   openSheet(
-    sheetHead($t('Deine Angaben')) +
+    sheetHead(forA ? $tf('Angaben für {n}', { n: libForName() }) : $t('Deine Angaben')) +
       '<div class="on-white" style="margin-top:12px">' +
-      goalsFields(q) +
-      $t(
-        '</div><p class="small muted">Welche Geräte fehlen, legst du unter Einstellungen → Mein Studio fest.</p><div class="row" style="margin-top:14px"><div class="grow"></div><button class="btn brand" data-act="goalsSave" type="button">Fertig</button></div>'
-      )
+      goalsFields(q, forA ? libAth().settings.sex : null) +
+      (forA
+        ? '</div><p class="small muted">' +
+          esc($t('Gilt nur für diese Planauswahl. Die Angaben und Geräte des Athleten bleiben unverändert.')) +
+          '</p><div class="row" style="margin-top:14px"><div class="grow"></div><button class="btn brand" data-act="goalsSave" type="button">' +
+          $t('Fertig') +
+          '</button></div>'
+        : $t(
+            '</div><p class="small muted">Welche Geräte fehlen, legst du unter Einstellungen → Mein Studio fest.</p><div class="row" style="margin-top:14px"><div class="grow"></div><button class="btn brand" data-act="goalsSave" type="button">Fertig</button></div>'
+          ))
   );
 }
 
 /* ======================= EVENTS ======================= */
 document.addEventListener('input', e => {
   const t = e.target;
+  if (t.dataset.q && ui.libFor && route.name === 'library') {
+    ui.libQ = Object.assign({}, ui.libQ);
+    ui.libQ[ui.libFor] = Object.assign({}, (ui.libQ || {})[ui.libFor], { [t.dataset.q]: t.value });
+    ui.genPlan = null;
+    return;
+  }
   if (t.dataset.q) {
     S.settings.q = Object.assign({}, S.settings.q || {});
     S.settings.q[t.dataset.q] = t.value;
@@ -1000,7 +1058,7 @@ document.addEventListener('click', e => {
       render();
       break;
     case 'genPlan':
-      if (!(S.settings.q || {}).goal) {
+      if (!libQuery().goal) {
         goalsSheet();
         ui.afterGoals = 'gen';
         break;
@@ -1307,5 +1365,20 @@ document.addEventListener('click', e => {
       else softPatch('endcard', endCard(w, k));
       break;
     }
+  }
+});
+
+/* Coach erstellt einen Plan für einen Athleten: Geräte und ausgeschlossene Übungen des Athleten verwenden */
+hbWrap('generatePlan', 'libfor', function (__next) {
+  const A = route.name === 'library' && ui.libFor ? libAth() : null;
+  if (!A) return __next.apply(this, Array.prototype.slice.call(arguments, 1));
+  const keep = { m: S.settings.missingEq, n: S.settings.noEx };
+  S.settings.missingEq = A.settings.missingEq || [];
+  S.settings.noEx = A.settings.noEx || [];
+  try {
+    return __next.apply(this, Array.prototype.slice.call(arguments, 1));
+  } finally {
+    S.settings.missingEq = keep.m;
+    S.settings.noEx = keep.n;
   }
 });

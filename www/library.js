@@ -989,7 +989,10 @@ function pickEx(pattern, q, used) {
   if (x) used.add(x);
   return x;
 }
-function generatePlan(q) {
+function generatePlan() {
+  return hbRun('generatePlan', this, arguments, generatePlan__base);
+}
+function generatePlan__base(q) {
   const days = Math.max(2, Math.min(6, num(q.days) || 3));
   const goal = q.goal || 'health';
   const lvl = q.level || 'beginner';
