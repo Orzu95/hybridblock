@@ -5380,6 +5380,12 @@ I18N.en = {
 "Schritte Ø": "Steps avg",
 "Readiness": "Readiness",
 "Sync": "Sync",
-"Ungelesen": "Unread"
+"Ungelesen": "Unread",
+"Seit wann?": "Since when?",
+"Voraussichtlich bis (optional)": "Expected until (optional)",
+"{a} bis {b}": "{a} to {b}",
+"Zeitraum ändern": "Change dates",
+"Dein eingetragener Zeitraum ist vorbei. Bist du wieder fit?": "The period you entered is over. Are you back in shape?",
+"Zeitraum gespeichert": "Dates saved"
 };
 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').forEach(l => { I18N.en['Einheit ' + l] = "Session " + l; });

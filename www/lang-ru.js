@@ -5380,6 +5380,12 @@ I18N.ru = {
 "Schritte Ø": "Шаги, в среднем",
 "Readiness": "Готовность",
 "Sync": "Синхронизация",
-"Ungelesen": "Непрочитанные"
+"Ungelesen": "Непрочитанные",
+"Seit wann?": "С какого дня?",
+"Voraussichtlich bis (optional)": "Примерно до (необязательно)",
+"{a} bis {b}": "{a} – {b}",
+"Zeitraum ändern": "Изменить период",
+"Dein eingetragener Zeitraum ist vorbei. Bist du wieder fit?": "Указанный период закончился. Ты снова в форме?",
+"Zeitraum gespeichert": "Период сохранён"
 };
 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').forEach(l => { I18N.ru['Einheit ' + l] = "\u0422\u0440\u0435\u043d\u0438\u0440\u043e\u0432\u043a\u0430 " + l; });

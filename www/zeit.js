@@ -224,15 +224,49 @@ const flagsBox = () =>
     .join('') +
   '</ul></details>';
 const pauseOn = () => !!(S.meta.pause && S.meta.pause.from);
-function pauseStart(why) {
-  S.meta.pause = { why, from: today() };
+/* Beginn bis 60 Tage rückwirkend, Ende optional (geplanter Urlaub oder „voraussichtlich bis“) */
+const pzMin = () => addDays(today(), -60);
+const pzEnd = p => (p.to && p.to < today() ? p.to : today());
+const pzDays = p => Math.max(1, daysBetween(p.from, pzEnd(p)) + (p.to && p.to < today() ? 1 : 0));
+const pzOver = p => !!(p && p.to && p.to < today());
+function pzDates(from, to) {
+  const t = today();
+  return (
+    '<div class="row" style="gap:10px;flex-wrap:wrap;margin-top:10px"><label class="small grow" style="min-width:140px">' +
+    $t('Seit wann?') +
+    '<input type="date" id="pz-from" value="' +
+    esc(from || t) +
+    '" min="' +
+    pzMin() +
+    '" max="' +
+    t +
+    '"></label><label class="small grow" style="min-width:140px">' +
+    $t('Voraussichtlich bis (optional)') +
+    '<input type="date" id="pz-to" value="' +
+    esc(to || '') +
+    '" min="' +
+    esc(from || t) +
+    '"></label></div>'
+  );
+}
+function pzRead() {
+  const t = today();
+  const f = (document.getElementById('pz-from') || {}).value || t;
+  let to = (document.getElementById('pz-to') || {}).value || '';
+  const from = f > t ? t : f < pzMin() ? pzMin() : f;
+  if (to && to < from) to = '';
+  return { from, to };
+}
+function pauseStart(why, from, to) {
+  S.meta.pause = { why, from: from || today() };
+  if (to) S.meta.pause.to = to;
   delete S.meta.reentry;
   save();
 }
 function pauseEnd(sev) {
   const p = S.meta.pause;
   if (!p) return;
-  const d = Math.max(1, daysBetween(p.from, today()));
+  const d = pzDays(p);
   delete S.meta.pause;
   const key = p.why === 'away' ? 'away' : sev || (p.why === 'sick' ? 'mild' : 'light');
   const r = reLookup(key, d);
@@ -258,7 +292,7 @@ function gateText(why, sev, d) {
 function pauseEndSheet(sev) {
   const p = S.meta.pause;
   if (!p) return;
-  const d = Math.max(1, daysBetween(p.from, today()));
+  const d = pzDays(p);
   const opts =
     p.why === 'sick'
       ? [
@@ -319,7 +353,8 @@ function pauseSheet() {
         'Für mehrere Tage ohne Training. Die App blendet das Training auf „Heute“ aus, hält dein Kalorienziel bei Krankheit oder Verletzung auf Erhaltung und plant danach einen sanften Wiedereinstieg.'
       ) +
       '</p>' +
-      '<div class="menu">' +
+      pzDates() +
+      '<div class="menu" style="margin-top:10px">' +
       Object.entries(P_WHY())
         .map(([k, v]) => '<button class="act-pick" data-act="pauseGo" data-v="' + k + '" type="button"><span class="grow">' + esc(v) + '</span></button>')
         .join('') +
@@ -329,6 +364,7 @@ function pauseSheet() {
 function pauseCard() {
   const p = S.meta.pause;
   const d = daysBetween(p.from, today());
+  const over = pzOver(p);
   const food =
     p.why === 'injury'
       ? $t(
@@ -341,9 +377,12 @@ function pauseCard() {
     '<div class="card" style="box-shadow:inset 4px 0 0 var(--sky)"><div class="row" style="align-items:baseline"><h2 class="grow" style="margin:0">' +
     esc(P_WHY()[p.why] || '') +
     '</h2><span class="small muted">' +
-    $tf('seit {d}', { d: fmtDay(p.from) }) +
-    (d ? ' · ' + $tf('{n} Tage', { n: d }) : '') +
-    '</span></div>' +
+    (p.to ? $tf('{a} bis {b}', { a: fmtDay(p.from), b: fmtDay(p.to) }) : $tf('seit {d}', { d: fmtDay(p.from) })) +
+    (d && !p.to ? ' · ' + $tf('{n} Tage', { n: d }) : '') +
+    ' · <button class="linkbtn" data-act="pauseEdit" type="button">' +
+    $t('Zeitraum ändern') +
+    '</button></span></div>' +
+    (over ? '<p class="small" style="margin:8px 0 0"><b>' + $t('Dein eingetragener Zeitraum ist vorbei. Bist du wieder fit?') + '</b></p>' : '') +
     '<p class="small" style="margin:8px 0 12px">' +
     esc(P_TIP()[p.why] || '') +
     '</p>' +
@@ -401,7 +440,8 @@ document.addEventListener('click', e => {
     toast(v ? $tf('Auf {m} Minuten gekürzt', { m: v }) : $t('Volle Einheit'));
   } else if (a === 'pauseOpen') pauseSheet();
   else if (a === 'pauseGo') {
-    pauseStart(b.dataset.v);
+    const z = pzRead();
+    pauseStart(b.dataset.v, z.from, z.to);
     closeSheet();
     render();
     doneOverlay($t('Pause eingetragen'), b.dataset.v === 'away' ? $t('Genieß die freie Zeit.') : $t('Gute Besserung und erhol dich gut.'));
@@ -410,6 +450,29 @@ document.addEventListener('click', e => {
     save();
     render();
     toast($t('Pause entfernt'));
+  } else if (a === 'pauseEdit') {
+    const p = S.meta.pause;
+    if (!p) return;
+    openSheet(
+      sheetHead($t('Zeitraum ändern')) +
+        pzDates(p.from, p.to) +
+        '<div class="row" style="margin-top:14px;gap:8px"><button class="btn brand" data-act="pauseEditGo" type="button">' +
+        $t('Speichern') +
+        '</button><button class="btn" data-act="closeSheet" type="button">' +
+        $t('Abbrechen') +
+        '</button></div>'
+    );
+  } else if (a === 'pauseEditGo') {
+    const p = S.meta.pause;
+    if (!p) return;
+    const z = pzRead();
+    p.from = z.from;
+    if (z.to) p.to = z.to;
+    else delete p.to;
+    save();
+    closeSheet();
+    render();
+    toast($t('Zeitraum gespeichert'));
   } else if (a === 'pauseEnd') pauseEndSheet();
   else if (a === 'pauseSev') pauseEndSheet(b.dataset.v);
   else if (a === 'pauseEndGo') {

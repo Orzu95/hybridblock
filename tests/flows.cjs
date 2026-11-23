@@ -129,6 +129,28 @@ const ok = (cond, label, info) => { steps++; if (!cond) fails.push(label + (info
   ok(!(await page.$('#view [data-view-error]')) && (await ev(() => ORDER.length)) > 0, 'Training mit neuem Plan');
 
   /* 7. Konto und Sync mit nachgestelltem Server: speichern lädt hoch, Coach speichert Plan, Abmelden */
+  /* Krankmeldung rückwirkend und Zeitraum ändern */
+  await go('#heute');
+  await ev(() => document.querySelector('[data-act=pauseOpen]').click());
+  await page.waitForTimeout(150);
+  await ev(() => { document.getElementById('pz-from').value = addDays(today(), -4); });
+  await ev(() => document.querySelector('[data-act=pauseGo][data-v=sick]').click());
+  await page.waitForTimeout(300);
+  ok(await ev(() => S.meta.pause && S.meta.pause.from === addDays(today(), -4)), 'Krankmeldung rückwirkend', await ev(() => S.meta.pause));
+  ok(await ev(() => /4/.test(document.querySelector('#view').textContent) && !!document.querySelector('[data-act=pauseEdit]')), 'Karte zeigt Tage und „Zeitraum ändern“');
+  await ev(() => document.querySelector('[data-act=pauseEdit]').click());
+  await page.waitForTimeout(150);
+  await ev(() => { document.getElementById('pz-from').value = addDays(today(), -9); document.getElementById('pz-to').value = addDays(today(), -1); });
+  await ev(() => document.querySelector('[data-act=pauseEditGo]').click());
+  await page.waitForTimeout(300);
+  ok(await ev(() => S.meta.pause.from === addDays(today(), -9) && S.meta.pause.to === addDays(today(), -1)), 'Zeitraum geändert');
+  ok(await ev(() => !!document.querySelector('#view .card [data-act=pauseEnd]') && /vorbei|over|закончился/.test(document.querySelector('#view').textContent)), 'abgelaufener Zeitraum fragt nach');
+  await ev(() => document.querySelector('[data-act=pauseEnd]').click()); await page.waitForTimeout(150);
+  await ev(() => document.querySelector('[data-act=pauseSev][data-v=mild]').click()); await page.waitForTimeout(150);
+  await ev(() => document.querySelector('[data-act=pauseEndGo]').click()); await page.waitForTimeout(300);
+  ok(await ev(() => !S.meta.pause && S.meta.reentry && S.meta.reentry.days === 9 && S.meta.reentry.wk === 2.5), 'Wiedereinstieg aus 9 Krankheitstagen', await ev(() => S.meta.reentry));
+  await ev(() => { delete S.meta.reentry; save(); });
+
   const net = await ev(async () => {
     const calls = []; const realApi = api;
     AUTH = { uid: 'u1', access_token: 'x', refresh_token: 'y', expires_at: 9e9, profile: { role: 'admin', username: 'coach', id: 'u1' } };
