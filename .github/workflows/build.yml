@@ -48,6 +48,7 @@ jobs:
           node tests/coach.cjs ru
           node tests/teamtab.cjs de && node tests/teamtab.cjs ru
           node tests/cockpit.cjs de && node tests/cockpit.cjs ru
+          node tests/msgs.cjs de && node tests/msgs.cjs ru
           node tests/queue.cjs de && node tests/queue.cjs ru
           node tests/macro.cjs de && node tests/macro.cjs ru
           node tests/planwide.cjs de && node tests/planwide.cjs ru

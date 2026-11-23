@@ -191,7 +191,10 @@ function chatFillPhotos() {
 /* ---------- Ansicht ---------- */
 const chatRefTxt = r =>
   r && r.t === 'sess' ? $tf('zu „{s}“ · Woche {w}', { s: $t(r.title || ''), w: r.w }) : r && r.t === 'ex' ? $tf('zu {e}', { e: r.title || '' }) : '';
-function viewChat(arg) {
+function viewChat() {
+  return hbRun('viewChat', this, arguments, viewChat__base);
+}
+function viewChat__base(arg) {
   if (!AUTH) return '<a href="#heute" class="back">' + ICON.back + $t('Heute') + '</a><p>' + $t('Für den Chat musst du angemeldet sein.') + '</p>';
   const pair = chatPair(arg);
   if (!pair) return '<a href="#heute" class="back">' + ICON.back + $t('Heute') + '</a><p>' + $t('Du hast noch keinen Coach verbunden.') + '</p>';

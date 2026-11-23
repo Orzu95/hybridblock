@@ -143,6 +143,9 @@ async function chatsLoad() {
   }
 }
 function viewChats() {
+  return hbRun('viewChats', this, arguments, viewChats__base);
+}
+function viewChats__base() {
   if (!isAdmin()) return '<p>' + $t('Nur für Coach-Konten.') + '</p>';
   if (CHATS_LAST == null && !CHATS_LOADING)
     chatsLoad().then(() => {
