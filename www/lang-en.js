@@ -5386,6 +5386,9 @@ I18N.en = {
 "{a} bis {b}": "{a} to {b}",
 "Zeitraum ändern": "Change dates",
 "Dein eingetragener Zeitraum ist vorbei. Bist du wieder fit?": "The period you entered is over. Are you back in shape?",
-"Zeitraum gespeichert": "Dates saved"
+"Zeitraum gespeichert": "Dates saved",
+"Uhr-Daten trennen": "Separate watch data",
+"{n} doppelte Einheiten zusammengeführt (Uhr + App)": "Merged {n} duplicate sessions (watch + app)",
+"Getrennt. Die Uhr-Einheit steht wieder als freie Aktivität drin.": "Separated. The watch session is back as a free activity."
 };
 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').forEach(l => { I18N.en['Einheit ' + l] = "Session " + l; });

@@ -1604,7 +1604,8 @@ function viewSession__base(key) {
   const watch = s.watch
     ? note(
         'sky',
-        $t('Uhr: ') + fmt(s.watch.dur, 0) + $t(' min') + (s.watch.kcal ? ' · ' + fmt(s.watch.kcal, 0) + $t(' kcal') : '') + $t(' von der Uhr übernommen.')
+        $t('Uhr: ') + fmt(s.watch.dur, 0) + $t(' min') + (s.watch.kcal ? ' · ' + fmt(s.watch.kcal, 0) + $t(' kcal') : '') + $t(' von der Uhr übernommen.'),
+        s.watch.act && typeof wbSplitBtn === 'function' ? wbSplitBtn('data-w="' + w + '" data-k="' + k + '"') : ''
       )
     : '';
   return (
@@ -2007,7 +2008,7 @@ function cardioView__base(w, k) {
       ? note(
           'green',
           $t('Erledigt durch ') + esc(ACT_MAP[act.type].name) + $t(' am ') + fmtDay(act.date) + '.',
-          '<a class="btn sm" href="#frei/' + act.id + $t('">Ansehen</a>')
+          '<a class="btn sm" href="#frei/' + act.id + $t('">Ansehen</a>') + (act.wb && typeof wbSplitBtn === 'function' ? ' ' + wbSplitBtn('data-aid="' + act.id + '"') : '')
         )
       : '') +
     (hk && rd.rhrHigh

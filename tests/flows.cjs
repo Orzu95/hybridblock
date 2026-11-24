@@ -129,6 +129,43 @@ const ok = (cond, label, info) => { steps++; if (!cond) fails.push(label + (info
   ok(!(await page.$('#view [data-view-error]')) && (await ev(() => ORDER.length)) > 0, 'Training mit neuem Plan');
 
   /* 7. Konto und Sync mit nachgestelltem Server: speichern lädt hoch, Coach speichert Plan, Abmelden */
+  /* Uhr-Einheit + App-Einheit zusammenführen (freier Modus auf der Uhr) */
+  const wb = await ev(() => {
+    const d = addDays(today(), -2), base = parseISO(d).getTime() + 18 * 36e5;
+    const gk = GYM()[GYM().length - 1], ck = ORDER.find(k => !isGym(k));
+    const gs = sess(2, gk); gs.date = d;
+    const slot = planFor(2, gk)[0].slot;
+    gs.logs[slot] = { sets: [{ w: '60', r: '8', done: true, t: base + 10 * 6e4 }, { w: '60', r: '8', done: true, t: base + 70 * 6e4 }] };
+    const g = { id: 'wbg', key: 'hc:wbg', type: 'sonst', date: d, week: curWeek(), dur: 82, kcal: 610, src: 'hc', start: base, end: base + 82 * 6e4 };
+    S.hrTraces.wbg = { start: base, end: base + 82 * 6e4, pts: [[0, 100], [60, 140]], src: 'hc' };
+    let c = null;
+    if (ck) {
+      const cs = sess(2, ck); cs.date = d; cs.timerStart = base - 3 * 36e5; cs.timerDur = 25 * 60; cs.cardio = { dur: '25' };
+      c = { id: 'wbc', key: 'hc:wbc', type: 'laufband', date: d, week: curWeek(), dur: 31, kcal: 300, src: 'hc', avgHr: 162, start: base - 3 * 36e5 - 3 * 6e4, end: base - 3 * 36e5 + 28 * 6e4 };
+    }
+    const far = { id: 'wbx', key: 'hc:wbx', type: 'joggen', date: d, week: curWeek(), dur: 40, dist: 7, src: 'hc', start: base - 9 * 36e5, end: base - 9 * 36e5 + 40 * 6e4 };
+    S.activities.push(g, far); if (c) S.activities.push(c);
+    save(); WB.at = 0; render();
+    return { gk, ck, d };
+  });
+  await page.waitForTimeout(300);
+  const r1 = await ev(o => ({ gw: peekSess(2, o.gk).watch, gAct: S.activities.some(a => a.id === 'wbg'), tr: !!S.hrTraces[sKey(2, o.gk)], c: S.activities.find(a => a.id === 'wbc'), far: S.activities.find(a => a.id === 'wbx') }), wb);
+  ok(r1.gw && r1.gw.dur === 82 && r1.gw.kcal === 610 && !r1.gAct && r1.tr, 'freie Uhr-Einheit hängt an der Gym-Einheit', r1.gw);
+  if (wb.ck) ok(r1.c && r1.c.countsAs === wb.ck, 'Laufband von der Uhr zählt als Intervall-Einheit', r1.c);
+  ok(r1.far && !r1.far.countsAs, 'Lauf zu anderer Uhrzeit bleibt eigene Einheit');
+  ok((await ev(d => document.querySelectorAll('#view').length && S.activities.filter(a => a.date === d && !a.countsAs).length, wb.d)) === 1, 'nur noch eine freie Aktivität am Tag');
+  await go('#training/' + 'w2-' + wb.gk); await page.waitForTimeout(250);
+  const hasSplit = await ev(() => !!document.querySelector('[data-act=wbSplit]'));
+  ok(hasSplit, 'Einheit zeigt „Uhr-Daten trennen“');
+  if (hasSplit) {
+    await ev(() => document.querySelector('[data-act=wbSplit]').click()); await page.waitForTimeout(300);
+    const r2 = await ev(o => ({ gw: peekSess(2, o.gk).watch, a: S.activities.find(a => a.id === 'wbg') }), wb);
+    ok(!r2.gw && r2.a && r2.a.wbNo, 'Trennen stellt die freie Aktivität wieder her', r2);
+  }
+  await ev(() => { WB.at = 0; render(); });
+  ok(await ev(o => !peekSess(2, o.gk).watch, wb), 'getrennte Einheit wird nicht erneut zusammengeführt');
+  await ev(o => { S.activities = S.activities.filter(a => !/^wb/.test(a.id)); delete S.sessions[sKey(2, o.gk)]; if (o.ck) delete S.sessions[sKey(2, o.ck)]; save(); }, wb);
+
   /* Krankmeldung rückwirkend und Zeitraum ändern */
   await go('#heute');
   await ev(() => document.querySelector('[data-act=pauseOpen]').click());

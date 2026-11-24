@@ -5386,6 +5386,9 @@ I18N.ru = {
 "{a} bis {b}": "{a} – {b}",
 "Zeitraum ändern": "Изменить период",
 "Dein eingetragener Zeitraum ist vorbei. Bist du wieder fit?": "Указанный период закончился. Ты снова в форме?",
-"Zeitraum gespeichert": "Период сохранён"
+"Zeitraum gespeichert": "Период сохранён",
+"Uhr-Daten trennen": "Отделить данные часов",
+"{n} doppelte Einheiten zusammengeführt (Uhr + App)": "Объединено дублей тренировок (часы + приложение): {n}",
+"Getrennt. Die Uhr-Einheit steht wieder als freie Aktivität drin.": "Разделено. Тренировка с часов снова отображается как свободная активность."
 };
 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').forEach(l => { I18N.ru['Einheit ' + l] = "\u0422\u0440\u0435\u043d\u0438\u0440\u043e\u0432\u043a\u0430 " + l; });
