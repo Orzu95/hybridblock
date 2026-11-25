@@ -5389,6 +5389,19 @@ I18N.en = {
 "Zeitraum gespeichert": "Dates saved",
 "Uhr-Daten trennen": "Separate watch data",
 "{n} doppelte Einheiten zusammengeführt (Uhr + App)": "Merged {n} duplicate sessions (watch + app)",
-"Getrennt. Die Uhr-Einheit steht wieder als freie Aktivität drin.": "Separated. The watch session is back as a free activity."
+"Getrennt. Die Uhr-Einheit steht wieder als freie Aktivität drin.": "Separated. The watch session is back as a free activity.",
+"Scanner schließen": "Close scanner",
+"Taschenlampe": "Flashlight",
+"Nummer eintippen": "Enter number",
+"Barcode-Nummer": "Barcode number",
+"Woche {n}": "Week {n}",
+"Satz {n}": "Set {n}",
+"Satz {n} kg": "Set {n} kg",
+"Satz {n} RPE": "Set {n} RPE",
+"Satz {n} erledigt": "Set {n} done",
+"Körperkarte vorne": "Body map, front",
+"Körperkarte hinten": "Body map, back",
+"Community": "Community",
+"Impellizzeri 2020 (Kritik)": "Impellizzeri 2020 (critique)"
 };
 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').forEach(l => { I18N.en['Einheit ' + l] = "Session " + l; });

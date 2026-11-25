@@ -321,7 +321,7 @@ function spowiProgressCard() {
     ' · ' +
     swRef('Gabbett 2016 (ACWR)', 'Gabbett 2016 training-injury prevention paradox') +
     ' · ' +
-    swRef('Impellizzeri 2020 (Kritik)', 'Impellizzeri 2020 acute chronic workload ratio conceptual issues') +
+    swRef($t('Impellizzeri 2020 (Kritik)'), 'Impellizzeri 2020 acute chronic workload ratio conceptual issues') +
     ' · ' +
     swRef('Plews 2012 (HRV)', 'Plews 2012 heart rate variability elite endurance') +
     '</p>' +

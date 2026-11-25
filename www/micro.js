@@ -142,7 +142,7 @@ hbFilter('nrMeal', 'micro', function (__v, m, es) {
     fmt(v, 0) +
     ' / ' +
     fmt(g, 0) +
-    (pOnly ? ' g' : ' kcal') +
+    (pOnly ? ' ' + $t('g') : ' ' + $t('kcal')) +
     '</span></div>';
   const j = h.indexOf('</button></div>', h.indexOf('nr-add'));
   return j < 0 ? h : h.slice(0, j + 15) + line + h.slice(j + 15);

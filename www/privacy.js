@@ -54,8 +54,8 @@ function viewPrivacy() {
       });
   }
   const html = PRIV_HTML || '';
-  const en = LANG !== 'de';
-  const part = html ? (en ? html.split(/<section lang="en"[^>]*>/)[1] || html : html.split(/<section lang="en"/)[0]) : '<p class="muted">…</p>';
+  const sec = l => (html.match(new RegExp('<section lang="' + l + '"[^>]*>([\\s\\S]*?)</section>')) || [])[1];
+  const part = html ? (LANG === 'ru' && sec('ru')) || (LANG !== 'de' && sec('en')) || sec('de') || html : '<p class="muted">…</p>';
   return (
     '<a href="#mehr" class="back">' + ICON.back + $t('Einstellungen</a>') + '<div class="card privacy">' + part.replace(/<\/?section[^>]*>/g, '') + '</div>'
   );

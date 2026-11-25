@@ -1298,7 +1298,7 @@ function finSheet__base(w, k, fresh) {
     '%"></i></div>' +
     '<p class="small muted" style="margin-top:8px">' +
     (next
-      ? $t('Als Nächstes: ') + '<b>' + esc(SESS[next].title) + '</b> · ' + esc(dayLabel(next))
+      ? $t('Als Nächstes: ') + '<b>' + esc($t(SESS[next].title)) + '</b> · ' + esc(dayLabel(next))
       : w < NW()
         ? $t('Alle Einheiten dieser Woche erledigt. Stark!')
         : $t('Block geschafft. Stark!')) +

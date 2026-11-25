@@ -57,7 +57,7 @@ function pwLib() {
       .join('') +
     '</div><p class="small muted" style="margin:8px 0 6px">' +
     (s
-      ? esc($tf('„+“ fügt zu {s} hinzu. Oder in eine Einheit ziehen.', { s: (s.title || $t('Einheit ') + s.k).trim() }))
+      ? esc($tf('„+“ fügt zu {s} hinzu. Oder in eine Einheit ziehen.', { s: (s.title ? $t(s.title) : $t('Einheit ') + s.k).trim() }))
       : esc($t('Leg zuerst eine Kraft-Einheit an.'))) +
     '</p><div class="pw-list" id="pw-list">' +
     pwLibList() +
@@ -233,7 +233,7 @@ document.addEventListener('click', e => {
     card.classList.add('pw-on');
     const p = document.querySelector('.pw-lib p.small');
     const s = PE.draft.sessions[PW.sel];
-    if (p && s) p.textContent = $tf('„+“ fügt zu {s} hinzu. Oder in eine Einheit ziehen.', { s: (s.title || $t('Einheit ') + s.k).trim() });
+    if (p && s) p.textContent = $tf('„+“ fügt zu {s} hinzu. Oder in eine Einheit ziehen.', { s: (s.title ? $t(s.title) : $t('Einheit ') + s.k).trim() });
   }
 });
 let pwT = null;
