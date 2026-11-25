@@ -1,6 +1,6 @@
 # Hybridblock – Russische Übersetzung: Stand und Lücken
 
-Stand 25.11.2026, App-Version hb-v120. Diese Datei löst die alte Korrekturseite „Hybridblock Russisch-Korrektur“ (674 Texte, Oktober) ab. Dort sind keine offenen Korrekturen gespeichert.
+Stand 26.11.2026, App-Version hb-v121 (Runde 1 von Codex eingearbeitet, siehe Abschnitt 5). Diese Datei löst die alte Korrekturseite „Hybridblock Russisch-Korrektur“ (674 Texte, Oktober) ab. Dort sind keine offenen Korrekturen gespeichert.
 
 ## 1. Zahlen
 
@@ -112,3 +112,15 @@ GPT liefert eine einzige Markdown-Datei `ru-korrekturen.md` mit genau diesen Abs
 6. `## F. Datenschutzerklärung RU` — vollständiger HTML-Abschnitt `<section lang="ru" id="ru">…</section>`.
 7. `## G. Manifest` — russische Beschreibung (eine Zeile).
 8. `## H. Offene Fragen` — Stellen, bei denen Kontext fehlt oder die Bedeutung unklar ist, mit Schlüssel und Begründung.
+
+## 5. Runde 1 erledigt (hb-v121, PR #1)
+
+Eingearbeitet: 368 Wörterbuch-Korrekturen, 167 Wissensbank-Einträge (`u` und `sl`), Technik-Hinweise für 80 Übungen (`cues.js`) und 32 (`cues-ru.js`), Push-Texte, russische Datenschutzerklärung, alle Code-Stellen aus 2.1 und die Geschlechtsformen aus 2.2. Diese Einträge nicht erneut liefern, außer es gibt einen echten Fehler.
+
+Hinweis zum Format: In Runde 1 kam bei vielen Quizfragen `"d": {}` statt einer Zahl. Das Feld `sl.q.d` nie ändern oder mitliefern.
+
+## 6. Runde 2: offen
+
+1. **Wörterbuch, Satz für Satz:** alle Einträge in `www/lang-ru.js`, die in Runde 1 nicht geändert wurden (rund 5.000). Prüfung gegen DE und den Kontext im Code (Knopf, Überschrift, Hinweis, Dialog, Fehlermeldung).
+2. **Wissensbank, fachlich:** alle 546 Einträge in `www/evidence-ru.json` gegen `www/evidence.json` (Aussage `a`, Praxisregel `p`, Zahlen `z`, Effekt `f`, Unsicherheit `n`) und, wo nötig, gegen die verlinkte Quelle (`l`, DOI bzw. PubMed). Kernfragen: Stimmen Zahlen, Einheiten, Richtung des Effekts und Evidenzgrad? Ist die Quizfrage eindeutig, und ist genau eine Antwort richtig?
+3. **Technik-Hinweise:** Widersprüche bei `dip`, `dip_w`, `dip_assist`, `ham_walk`, `towel_curl`, `mb_wall` nur auflisten, nicht entscheiden (Orzu entscheidet).
