@@ -4,6 +4,13 @@
 'use strict';
 const KB_LOG = [
   {
+    d: '2026-11-26',
+    t: [
+      '22 Einträge gegen die Originalstudien geprüft und präzisiert (u. a. Diet Breaks, Refeeds, ACWR, Muskelgedächtnis, Laufen nach der Geburt)',
+      'Quizfragen allgemein formuliert statt nach einzelnen Studien gefragt'
+    ]
+  },
+  {
     d: '2026-11-07',
     t: [
       'HRV zählt nach einem Beintag nur halb, Gefühl und Muskelkater mehr',

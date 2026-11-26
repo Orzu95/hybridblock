@@ -5402,6 +5402,8 @@ I18N.en = {
 "Körperkarte vorne": "Body map, front",
 "Körperkarte hinten": "Body map, back",
 "Community": "Community",
-"Impellizzeri 2020 (Kritik)": "Impellizzeri 2020 (critique)"
+"Impellizzeri 2020 (Kritik)": "Impellizzeri 2020 (critique)",
+"22 Einträge gegen die Originalstudien geprüft und präzisiert (u. a. Diet Breaks, Refeeds, ACWR, Muskelgedächtnis, Laufen nach der Geburt)": "22 entries checked against the original studies and made more precise (incl. diet breaks, refeeds, ACWR, muscle memory, running after giving birth)",
+"Quizfragen allgemein formuliert statt nach einzelnen Studien gefragt": "Quiz questions now ask about general knowledge instead of single studies"
 };
 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').forEach(l => { I18N.en['Einheit ' + l] = "Session " + l; });

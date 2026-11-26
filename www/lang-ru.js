@@ -5402,6 +5402,8 @@ I18N.ru = {
 "Körperkarte vorne": "Карта тела, вид спереди",
 "Körperkarte hinten": "Карта тела, вид сзади",
 "Community": "Сообщество",
-"Impellizzeri 2020 (Kritik)": "Impellizzeri 2020 (критика)"
+"Impellizzeri 2020 (Kritik)": "Impellizzeri 2020 (критика)",
+"22 Einträge gegen die Originalstudien geprüft und präzisiert (u. a. Diet Breaks, Refeeds, ACWR, Muskelgedächtnis, Laufen nach der Geburt)": "22 записи сверены с исходными исследованиями и уточнены (в том числе диетические перерывы, рефиды, ACWR, мышечная память, бег после родов)",
+"Quizfragen allgemein formuliert statt nach einzelnen Studien gefragt": "Вопросы викторины теперь проверяют общие знания, а не результаты отдельных исследований"
 };
 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').forEach(l => { I18N.ru['Einheit ' + l] = "\u0422\u0440\u0435\u043d\u0438\u0440\u043e\u0432\u043a\u0430 " + l; });
