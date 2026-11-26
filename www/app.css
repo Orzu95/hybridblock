@@ -821,3 +821,11 @@ body.mode-coach .tabbar a.on::after{background:var(--iris)}
   .m3-kv span{color:var(--muted)}
   .m3-kv b{text-align:right}
 }
+
+/* D7: Athleten-Desktop, Essen und Training in 2 Spalten */
+@media (min-width:1200px){
+  body.dk-ath .wrap{max-width:1280px}
+  .d7{display:grid;grid-template-columns:minmax(0,1fr) 400px;gap:20px;align-items:start}
+  .d7-r{position:sticky;top:16px;max-height:calc(100vh - 32px);overflow-y:auto;padding-right:2px}
+  .d7-essen .d7-l .nr-meal{margin:0}
+}
