@@ -1,5 +1,5 @@
 /* Hybridblock Service Worker: App offline, Schriften gecacht, Open Food Facts immer live */
-const VERSION = 'hb-v121';
+const VERSION = 'hb-v122';
 const SHELL = [
   './',
   './index.html',
