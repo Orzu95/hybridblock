@@ -4441,9 +4441,9 @@ document.addEventListener('input', e => {
     }
     return;
   }
-  if (t.id === 'rc-name' || t.id === 'rc-por') {
+  if (t.id === 'rc-name' || t.id === 'rc-por' || t.id === 'rc-cook') {
     if (ui.recipe) {
-      ui.recipe[t.id === 'rc-name' ? 'name' : 'portions'] = t.value;
+      ui.recipe[t.id === 'rc-name' ? 'name' : t.id === 'rc-por' ? 'portions' : 'cooked'] = t.value;
     }
     return;
   }
@@ -5115,7 +5115,7 @@ document.addEventListener('click', async e => {
       break;
     case 'recEdit': {
       const f2 = S.foods[b.dataset.id];
-      ui.recipe = { id: f2.id, name: f2.name, portions: f2.portions, items: (f2.items || []).slice() };
+      ui.recipe = { id: f2.id, name: f2.name, portions: f2.portions, cooked: f2.cooked || '', items: (f2.items || []).slice() };
       recipeSheet();
       break;
     }
@@ -6959,7 +6959,10 @@ function recipeSheet() {
       $t('" placeholder="z. B. Hähnchen-Köfte"></div>') +
       $t('<div class="field"><label for="rc-por">Ergibt Portionen/Stück</label><input id="rc-por" type="number" inputmode="numeric" value="') +
       esc(r.portions) +
-      '" placeholder="z. B. 36"></div></div>' +
+      '" placeholder="z. B. 36"></div>' +
+      $t('<div class="field"><label for="rc-cook">Gewicht gekocht (g, optional)</label><input id="rc-cook" type="number" inputmode="numeric" value="') +
+      esc(r.cooked || '') +
+      '" placeholder="z. B. 1850"></div></div>' +
       $t('<h3 style="margin:16px 0 4px">Zutaten</h3><div class="plist">') +
       (items || $t('<p class="small muted">Noch keine Zutaten.</p>')) +
       '</div>' +
@@ -6983,7 +6986,12 @@ function recipeSheet() {
       $t(' g KH · ') +
       fmt(t.f / por, 1) +
       ' g F' +
-      (t.g ? $t('<br><span class="small muted">Portion ≈ ') + fmt(t.g / por, 0) + $t(' g roh</span>') : '') +
+      (num(r.cooked)
+        ? $t('<br><span class="small muted">Portion ≈ ') + fmt(num(r.cooked) / por, 0) + $t(' g gekocht') + (t.g ? ' · ' + fmt(t.g / por, 0) + ' ' + $t('g roh') : '') + '</span>'
+        : t.g
+          ? $t('<br><span class="small muted">Portion ≈ ') + fmt(t.g / por, 0) + $t(' g roh</span>')
+          : '') +
+      $t('<p class="small muted" style="margin:8px 0 0">Mit dem gekochten Gewicht kannst du später einfach die Gramm auf dem Teller eintragen.</p>') +
       '</div>' +
       '<div class="row" style="margin-top:14px">' +
       (r.id && S.foods[r.id] ? $t('<button class="btn danger" style="background:var(--fog)" data-act="recDel" type="button">Löschen</button>') : '') +
@@ -7039,6 +7047,7 @@ function saveRecipe() {
   const r = ui.recipe;
   r.name = ($('#rc-name').value || '').trim() || $t('Rezept');
   r.portions = num($('#rc-por').value) || 1;
+  r.cooked = $('#rc-cook') ? num($('#rc-cook').value) || null : r.cooked || null;
   const t = recipeTotals(r);
   const por = r.portions;
   const id = r.id || 'rc_' + uid();
@@ -7053,10 +7062,11 @@ function saveRecipe() {
     fib: t.fib / por,
     sug: t.sug / por,
     salt: t.salt / por,
-    pieceG: t.g ? Math.round(t.g / por) : null,
+    pieceG: r.cooked ? Math.round(r.cooked / por) : t.g ? Math.round(t.g / por) : null,
     src: 'recipe',
     items: r.items,
-    portions: por
+    portions: por,
+    cooked: r.cooked || null
   };
   save();
   return id;

@@ -1,5 +1,5 @@
 const LANG = process.argv[2] || 'de';
-/* Desktop D7 Teil 1 (Essen und Training in 2 Spalten). Aufruf: node tests/d7.cjs de|ru
+/* Desktop D7 Teil 1 (Essen und Training in 2 Spalten) und Teil 2 (Wochenplaner, Tag kopieren, Rezept mit Kochgewicht, Verlauf 2×2). Aufruf: node tests/d7.cjs de|ru
    Basis: Ablauf-Test: spielt die wichtigsten Abläufe mit echten Klicks durch (ohne Backend) und prüft, was danach gespeichert ist.
    Ergänzt tests/smoke.cjs, das nur das Anzeigen aller Ansichten prüft. Aufruf: node tests/flows.cjs */
 const http = require('http');
@@ -49,9 +49,48 @@ const ok = (cond, label, info) => { steps++; if (!cond) fails.push(label + (info
   ok(await ev(() => !!document.querySelector('.d7-essen .d7-r .nr-hero')), 'nach Tageswechsel weiter 2 Spalten');
   await go('#training'); await page.waitForTimeout(400);
   ok(await ev(() => !!document.querySelector('.d7-training .d7-r .vol') && !!document.querySelector('.d7-l .wkcard')), 'Training: Woche links, Volumen rechts');
-  await go('#verlauf'); await page.waitForTimeout(300);
+
+  /* Teil 2: Wochenplaner */
+  ok(await ev(() => document.querySelectorAll('.d7p .d7p-row').length === 2), 'Wochenplaner zeigt 2 Wochen');
+  await ev(() => document.querySelector('[data-act="d7pN"][data-v="3"]').click()); await page.waitForTimeout(300);
+  ok(await ev(() => document.querySelectorAll('.d7p .d7p-row').length === 3 && S.settings.d7wk === 3), 'Umschalten auf 3 Wochen');
+  ok(await ev(() => document.querySelectorAll('.d7p .d7p-row')[1].querySelectorAll('.d7p-u').length === ORDER.length), 'Folgewoche hat alle Einheiten');
+  const dd = await ev(() => {
+    const c = document.querySelector('.d7p-row .d7p-u[draggable=true]');
+    const row = c.closest('.d7p-row');
+    const cells = [...row.querySelectorAll('.d7p-c.drop')].filter(x => !x.contains(c));
+    const t = cells[cells.length - 1];
+    c.id = 'dragme'; t.id = 'dropme';
+    return { k: c.dataset.d7k, w: +c.dataset.d7w, d: t.dataset.d7d };
+  });
+  await page.dragAndDrop('#dragme', '#dropme'); await page.waitForTimeout(400);
+  ok(await ev(x => (peekSess(x.w, x.k) || {}).pin === x.d, dd), 'Ziehen setzt den Tag', dd);
+  ok(await ev(x => !!document.querySelector('.d7p-c[data-d7d="' + x.d + '"] [data-d7k="' + x.k + '"]'), dd), 'Einheit erscheint am neuen Tag');
+  await ev(() => document.querySelector('[data-act="d7pReset"]').click()); await page.waitForTimeout(300);
+  ok(await ev(x => !(peekSess(x.w, x.k) || {}).pin, dd), 'Zurücksetzen entfernt den Tag');
+  /* Teil 2: Tag kopieren */
+  await ev(() => { ui.day = today(); }); await go('#essen'); await page.waitForTimeout(400);
+  ok(await ev(() => !!document.querySelector('.d7-l [data-act="d7cOpen"]')), 'Knopf Tag kopieren');
+  await ev(() => { const f = PRESET_FOODS[0].id; addEntry(today(), f, 'Mittag', 150, 'g'); render(); }); await page.waitForTimeout(300);
+  await ev(() => document.querySelector('[data-act="d7cOpen"]').click()); await page.waitForTimeout(300);
+  const tgt = await ev(() => addDays(today(), 2));
+  await page.fill('#d7c-to', tgt);
+  await ev(() => document.querySelector('[data-act="d7cTo"]').click()); await page.waitForTimeout(300);
+  ok(await ev(x => ((S.days[x] || {}).entries || []).length >= 1, tgt), 'Einträge auf Zieltag kopiert');
+  /* Rezept mit Kochgewicht */
+  await ev(() => { const f = PRESET_FOODS[0].id; ui.recipe = { id: null, name: 'Test-Topf', portions: '4', items: [{ food: f, qty: 1000, unit: 'g' }] }; recipeSheet(); }); await page.waitForTimeout(300);
+  ok(await ev(() => !!document.getElementById('rc-cook')), 'Feld Gewicht gekocht');
+  await page.fill('#rc-cook', '2000');
+  await ev(() => document.querySelector('[data-act="recSave"]').click()); await page.waitForTimeout(300);
+  ok(await ev(() => { const r = Object.values(S.foods).find(f => f.name === 'Test-Topf'); return r && r.pieceG === 500 && r.cooked === 2000 && unitsFor(r).includes('g'); }), 'Rezept: Portion = Kochgewicht / Portionen');
+  await ev(() => closeSheet());
+  await go('#verlauf'); await page.waitForTimeout(400);
+  ok(await ev(() => document.querySelectorAll('.d7v .d7v-g>.card').length >= 3 && document.querySelectorAll('.d7v-s .card').length >= 3), 'Verlauf 2×2 mit Studienlage');
   ok(await ev(() => !document.querySelector('.d7') && !document.body.classList.contains('dk-ath')), 'Verlauf unverändert');
+  await go('#heute');
   await page.setViewportSize({ width: 1100, height: 900 });
+  await go('#verlauf'); await page.waitForTimeout(300);
+  ok(await ev(() => !document.querySelector('.d7v')), 'Verlauf unter 1200 px ohne Raster');
   await go('#essen'); await page.waitForTimeout(400);
   ok(await ev(() => !document.querySelector('.d7') && !document.body.classList.contains('dk-ath')), 'unter 1200 px einspaltig');
   ok(!errs.length, 'keine JS-Fehler', errs);
