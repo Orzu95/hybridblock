@@ -5432,7 +5432,7 @@ I18N.ru = {
 " g gekocht": " г в готовом виде",
 "<p class=\"small muted\" style=\"margin:8px 0 0\">Mit dem gekochten Gewicht kannst du später einfach die Gramm auf dem Teller eintragen.</p>": "<p class=\"small muted\" style=\"margin:8px 0 0\">С весом после готовки потом можно просто вносить граммы на тарелке.</p>",
 "{n} erledigt": "Выполнено: {n}",
-"{n} Sätze geplant": "Подходов запланировано: {n}",
+"{n} Sätze geplant": "Подходов в плане: {n}",
 "{n} Ausdauer": "Кардио: {n}",
 "{n} harte Tage": "Тяжёлых дней: {n}"
 };
