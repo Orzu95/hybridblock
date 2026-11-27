@@ -5444,6 +5444,8 @@ I18N.en = {
 "Sätze × Wdh. @ RPE. Hervorgehoben = anders als die Vorwoche. Klick auf eine Woche, um nur sie zu bearbeiten.": "Sets × reps @ RPE. Highlighted = different from the previous week. Click a week to edit only that week.",
 "Werte aus {s} übernommen": "Values copied from {s}",
 "{n} Übungen hinzugefügt": "{n} exercises added",
-"Ortszeit": "Local time"
+"Ortszeit": "Local time",
+"Urlaub": "Vacation",
+"kein Training geplant": "no training planned"
 };
 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').forEach(l => { I18N.en['Einheit ' + l] = "Session " + l; });

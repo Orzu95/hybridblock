@@ -263,10 +263,33 @@ function pauseStart(why, from, to) {
   delete S.meta.reentry;
   save();
 }
+/* Abwesenheiten (krank, verletzt, Urlaub) als Zeiträume merken, damit die Woche diese Tage richtig benennt */
+function pauseLog(p, end) {
+  if (!p || !p.from) return;
+  const L = (S.meta.pauses = S.meta.pauses || []);
+  const to = p.to && p.to < end ? p.to : end;
+  if (!L.some(x => x.from === p.from && x.why === p.why)) L.push({ why: p.why, from: p.from, to });
+  if (L.length > 40) L.splice(0, L.length - 40);
+}
+function pzPeriods() {
+  const L = (S.meta.pauses || []).slice();
+  const re = S.meta.reentry;
+  if (re && re.from && re.days > 0 && re.why) {
+    const from = addDays(re.from, -re.days);
+    if (!L.some(x => x.from === from && x.why === re.why)) L.push({ why: re.why, from, to: addDays(re.from, -1) });
+  }
+  const p = S.meta.pause;
+  if (p && p.from) L.push({ why: p.why, from: p.from, to: p.to && p.to < today() ? p.to : today(), now: true });
+  return L;
+}
+function pzOn(d) {
+  return pzPeriods().find(x => d >= x.from && d <= x.to) || null;
+}
 function pauseEnd(sev) {
   const p = S.meta.pause;
   if (!p) return;
   const d = pzDays(p);
+  pauseLog(p, addDays(today(), -1));
   delete S.meta.pause;
   const key = p.why === 'away' ? 'away' : sev || (p.why === 'sick' ? 'mild' : 'light');
   const r = reLookup(key, d);

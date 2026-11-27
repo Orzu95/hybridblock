@@ -337,6 +337,10 @@ function cardioSub(sp) {
 function sessSub(w, k) {
   const s = SESS[k];
   if (s.cardio) return cardioTitle(cardioSpec(w, k));
+  if (s.kind === 'hiit' || s.kind === 'z2') {
+    const sp = cardioSpec(w, k);
+    if (sp && sp.re) return cardioTitle(sp) + (s.kind === 'z2' && s.sub ? ' · ' + $t(s.sub) : '');
+  }
   if (s.kind === 'hiit') return hiit(w).title;
   if (s.kind === 'z2') return z2Min(w) + $t(' min · ') + s.sub;
   return s.sub;
@@ -1945,7 +1949,8 @@ function cardioView__base(w, k) {
   const act = countsAsActivity(w, k);
   const hk = isHiit(k),
     sp = cardioSpec(w, k);
-  if (SESS[k].cardio) {
+  /* Wiedereinstieg: die angepasste Einheit (kürzer, locker) gilt auch für Standard-Z2 und Intervalle ohne eigenen Plan */
+  if (SESS[k].cardio || (sp && sp.re)) {
     title = cardioTitle(sp);
     sub = cardioSub(sp);
     zones =

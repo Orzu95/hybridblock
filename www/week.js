@@ -462,6 +462,7 @@ function wkOverview(w) {
           '" type="button">✕</button></div>'
         : '');
     const pause = !units.length && !acts.length;
+    const pz = pause && typeof pzOn === 'function' ? pzOn(d) : null;
     rows +=
       '<div class="wkd' +
       (d === t ? ' tod' : '') +
@@ -473,7 +474,15 @@ function wkOverview(w) {
       '.' +
       (parseISO(d).getMonth() + 1) +
       '.</span></div><div class="grow">' +
-      (pause
+      (pz
+        ? '<div class="wkpause wkpz wkpz-' +
+          esc(pz.why) +
+          '"><b>' +
+          esc(pz.why === 'away' ? $t('Urlaub') : P_WHY()[pz.why] || $t('Pause')) +
+          '</b><span class="small muted">' +
+          esc(pz.why === 'away' ? '' : $t('kein Training geplant')) +
+          '</span></div>'
+        : pause
         ? '<button class="wkpause" data-act="wkPause" data-w="' +
           w +
           '" data-d="' +
@@ -823,7 +832,7 @@ function wkVolCard(w) {
     '.wkcard .meal-h{display:flex;justify-content:space-between;align-items:center}.wkd{display:flex;gap:12px;padding:8px 16px;border-top:1px solid var(--rule);align-items:flex-start}.wkd.tod{background:#fff4ee}.wkd.past{opacity:.75}' +
     '.wkdl{flex:0 0 40px;text-align:center;padding-top:6px}.wkdl b{display:block;font-size:15px}.wkdl span{font-size:12px;color:var(--muted)}.wkd.tod .wkdl b{color:var(--ember)}' +
     '.wku{display:flex;gap:12px;align-items:center;padding:6px 0;text-decoration:none;color:var(--graphite);min-width:0}.wku .grow{min-width:0}.wku small{display:block;color:var(--muted);font-size:13px;margin-top:1px}' +
-    '.wkpause{display:flex;gap:10px;align-items:center;width:100%;border:0;background:none;font:inherit;color:var(--graphite);padding:10px 0;cursor:pointer;text-align:left}.wkpause b{font-size:16px;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px;text-decoration-color:var(--verdant)}' +
+    '.wkpause{display:flex;gap:10px;align-items:center;width:100%;border:0;background:none;font:inherit;color:var(--graphite);padding:10px 0;cursor:pointer;text-align:left}.wkpause b{font-size:16px;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px;text-decoration-color:var(--verdant)}.wkpz{cursor:default}.wkpz b{text-decoration:none;padding:2px 10px;border-radius:10px;background:var(--fog)}.wkpz-sick b{background:color-mix(in srgb,var(--sky,#5aa9e6) 22%,transparent)}.wkpz-injury b{background:color-mix(in srgb,var(--amber,#f5a623) 26%,transparent)}' +
     '.wkdec{border:2px solid var(--ember)}.wkopt{background:var(--fog);border-radius:16px;padding:12px 14px;margin-top:10px}.wkoh{margin:0;font-weight:800}.wkprev{margin:4px 0 8px;padding-left:18px;font-size:14px}.wkprev li{margin:3px 0}' +
     '.wkr{display:flex;flex-direction:column;align-items:flex-start;gap:2px;width:100%;text-align:left;border:2px solid transparent;background:var(--fog);border-radius:16px;padding:12px 14px;font:inherit;color:inherit;cursor:pointer}.wkr span{font-size:14px;color:var(--muted)}.wkr.on{border-color:var(--ember)}' +
     '.wkz2{background:#e9f7ee;border-radius:16px;padding:12px 14px}.wkvb{display:flex;flex-direction:column;gap:8px;align-items:stretch;padding:12px 0;border-top:1px solid var(--rule)}.wkvb .row{justify-content:flex-end}.wkvb:first-of-type{border-top:0}' +

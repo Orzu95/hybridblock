@@ -5444,6 +5444,8 @@ I18N.ru = {
 "Sätze × Wdh. @ RPE. Hervorgehoben = anders als die Vorwoche. Klick auf eine Woche, um nur sie zu bearbeiten.": "Подходы × повторы @ RPE. Выделено — отличается от прошлой недели. Нажми на неделю, чтобы редактировать только её.",
 "Werte aus {s} übernommen": "Значения взяты из {s}",
 "{n} Übungen hinzugefügt": "Добавлено упражнений: {n}",
-"Ortszeit": "Местное время"
+"Ortszeit": "Местное время",
+"Urlaub": "Отпуск",
+"kein Training geplant": "тренировок нет"
 };
 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').forEach(l => { I18N.ru['Einheit ' + l] = "\u0422\u0440\u0435\u043d\u0438\u0440\u043e\u0432\u043a\u0430 " + l; });
