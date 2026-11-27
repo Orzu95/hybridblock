@@ -35,6 +35,9 @@ hbFilter('makeSummary', 'cockpit', function (s) {
     }
     if (Object.values(sp).some(a => a.some(v => v != null))) s.sp = sp;
   } catch (e) {}
+  try {
+    s.tz = Intl.DateTimeFormat().resolvedOptions().timeZone || undefined;
+  } catch (e) {}
   return s;
 });
 function ckSpark(a, lab, fmtV) {
@@ -83,6 +86,7 @@ function ckHead(c) {
   if (s.plan) bits.push($t('Plan: ') + esc($t(s.plan)) + (s.week ? ' · ' + $t('Woche ') + esc(s.week) + (s.nw ? '/' + esc(s.nw) : '') : ''));
   if (s.target != null) bits.push($t('Ziel ') + esc(fmt(s.target, 1)) + $t(' kg') + (s.trend != null ? ' (' + $t('jetzt ') + esc(fmt(s.trend, 1)) + $t(' kg') + ')' : ''));
   bits.push($t('Sync ') + esc(ago(c.updated_at)));
+  if (s.tz && typeof m3LocalTime === 'function' && m3LocalTime(s.tz)) bits.push($t('Ortszeit') + ' ' + m3LocalTime(s.tz));
   return (
     '<div class="ck-head"><a href="#admin" class="back">' +
     ICON.back +

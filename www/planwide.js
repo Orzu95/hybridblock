@@ -6,7 +6,7 @@
 'use strict';
 const PW_MQ = window.matchMedia ? window.matchMedia('(min-width:1200px)') : { matches: false };
 const pwOn = () => !!(PW_MQ.matches && route && route.name === 'plan' && PE.draft && PE.uid === planTarget(route.arg));
-const PW = { q: '', m: '', sel: 0 };
+const PW = { q: '', m: '', sel: 0, multi: new Set(), last: '' };
 function pwGymIdx() {
   return (PE.draft.sessions || []).map((s, i) => (s.kind === 'gym' ? i : -1)).filter(i => i >= 0);
 }
@@ -27,6 +27,12 @@ function pwLibList() {
     e =>
       '<div class="pw-ex" draggable="true" data-pwex="' +
       e.id +
+      '"><input type="checkbox" class="pw-ck" data-pwck="' +
+      e.id +
+      '"' +
+      (PW.multi.has(e.id) ? ' checked' : '') +
+      ' aria-label="' +
+      esc($tf('{n} auswählen', { n: e.name })) +
       '"><div class="grow"><b>' +
       esc(e.name) +
       '</b><small>' +
@@ -59,9 +65,80 @@ function pwLib() {
     (s
       ? esc($tf('„+“ fügt zu {s} hinzu. Oder in eine Einheit ziehen.', { s: (s.title ? $t(s.title) : $t('Einheit ') + s.k).trim() }))
       : esc($t('Leg zuerst eine Kraft-Einheit an.'))) +
-    '</p><div class="pw-list" id="pw-list">' +
+    '</p><div id="pw-multi">' +
+    pwMultiBar() +
+    '</div><div class="pw-list" id="pw-list">' +
     pwLibList() +
     '</div></div></aside>'
+  );
+}
+function pwMultiBar() {
+  const n = PW.multi.size;
+  if (!n) return '';
+  return (
+    '<div class="pw-mbar"><b>' +
+    esc($tf('{n} ausgewählt', { n })) +
+    '</b><button class="btn sm brand" data-act="pwMultiAdd" type="button">' +
+    esc($t('Hinzufügen')) +
+    '</button><button class="btn sm fog" data-act="pwMultiClr" type="button">' +
+    esc($t('Auswahl leeren')) +
+    '</button></div>'
+  );
+}
+/* 4 Wochen nebeneinander: gewählte Kraft-Einheit über vier Wochen ab der gewählten Woche */
+function pwCompare() {
+  const si = pwSel();
+  if (si < 0) return '';
+  const p = PE.draft,
+    ss = p.sessions[si],
+    n = p.weeks || 12;
+  const w0 = Math.max(1, Math.min(PE.wk || 1, n - 3)),
+    ws = [];
+  for (let w = w0; w <= Math.min(n, w0 + 3); w++) ws.push(w);
+  const keep = S.plan;
+  let cols;
+  try {
+    S.plan = p;
+    cols = ws.map(w => ({ w, ph: phase(w), its: planForP(p, w, ss.k) }));
+  } finally {
+    S.plan = keep;
+  }
+  const exs = [];
+  cols.forEach(c => c.its.forEach(it => !exs.includes(it.ex) && exs.push(it.ex)));
+  const cell = (c, ex, prev) => {
+    const it = c.its.find(x => x.ex === ex);
+    if (!it) return '<td class="muted">–</td>';
+    const v = it.sets + '×' + (it.reps || '') + (it.rpe != null ? ' @' + fmt(it.rpe) : '');
+    const pv = prev && prev.its.find(x => x.ex === ex);
+    const ch = pv && pv.sets + '×' + (pv.reps || '') + (pv.rpe != null ? ' @' + fmt(pv.rpe) : '') !== v;
+    return '<td' + (ch ? ' class="pw-ch"' : '') + '>' + esc(v) + '</td>';
+  };
+  return (
+    '<div class="card pw-cmp"><div class="row" style="margin-bottom:8px"><h2 class="grow" style="margin:0">' +
+    esc($tf('{s}: 4 Wochen im Vergleich', { s: (ss.title ? $t(ss.title) : $t('Einheit ') + ss.k).trim() })) +
+    '</h2></div><div class="tbl"><table><thead><tr><th>' +
+    $t('Übung') +
+    '</th>' +
+    cols
+      .map(
+        c =>
+          '<th><button class="btn sm ' +
+          (PE.wk === c.w ? 'dark' : 'fog') +
+          '" data-act="peWk" data-v="' +
+          c.w +
+          '" type="button">' +
+          $t('Woche ') +
+          c.w +
+          '</button><div class="small muted">' +
+          esc(PH_LABEL[c.ph] || '') +
+          '</div></th>'
+      )
+      .join('') +
+    '</tr></thead><tbody>' +
+    exs.map(ex => '<tr><td>' + esc((LIB[ex] || {}).name || ex) + '</td>' + cols.map((c, i) => cell(c, ex, cols[i - 1])).join('') + '</tr>').join('') +
+    '</tbody></table></div><p class="small muted" style="margin:8px 0 0">' +
+    $t('Sätze × Wdh. @ RPE. Hervorgehoben = anders als die Vorwoche. Klick auf eine Woche, um nur sie zu bearbeiten.') +
+    '</p></div>'
   );
 }
 /* Übung in Einheit i einfügen (wie „+ Übung“ im Editor), optional vor Slot */
@@ -70,10 +147,38 @@ function pwInsert(i, ex, before) {
   if (!s || PE.draft.sessions[i].kind !== 'gym') return false;
   s.add = s.add || [];
   const slot = 'x_' + uid();
-  s.add.push({ slot, ex, sets: 3, reps: '8–12', rpe: 8, rest: 90, type: 'dp', note: '', sup: '' });
+  const it = { slot, ex, sets: 3, reps: '8–12', rpe: 8, rest: 90, type: 'dp', note: '', sup: '' };
+  const prev = pwLastVals(ex);
+  PW.last = '';
+  if (prev) {
+    ['sets', 'reps', 'rpe', 'rest'].forEach(f => {
+      if (prev.it[f] != null && prev.it[f] !== '') it[f] = prev.it[f];
+    });
+    PW.last = prev.from;
+  }
+  s.add.push(it);
   if (before) pwOrder(i, slot, before);
   PE.dirty = true;
   return slot;
+}
+/* Letzte Werte: dieselbe Übung kommt im Plan schon vor (diese Woche, sonst Standardwoche) → Sätze, Wdh., RPE, Pause übernehmen */
+function pwLastVals(ex) {
+  const p = PE.draft,
+    keep = S.plan;
+  try {
+    S.plan = p;
+    for (const w of [PE.wk || 1, 1]) {
+      for (const ss of p.sessions || []) {
+        if (ss.kind !== 'gym') continue;
+        const it = planForP(p, w, ss.k).find(x => x.ex === ex);
+        if (it) return { it, from: (ss.title ? $t(ss.title) : $t('Einheit ') + ss.k).trim() };
+      }
+    }
+  } catch (e) {
+  } finally {
+    S.plan = keep;
+  }
+  return null;
 }
 /* Reihenfolge: slot vor `before` setzen (before = '' → ans Ende) */
 function pwOrder(i, slot, before) {
@@ -153,6 +258,7 @@ function pwArrange() {
   const main = document.createElement('section');
   main.className = 'pw-main';
   main.appendChild(app);
+  week.insertAdjacentHTML('afterend', pwCompare());
   grid.appendChild(main);
   const side = document.createElement('aside');
   side.className = 'pw-side';
@@ -217,7 +323,34 @@ document.addEventListener('click', e => {
     if (si < 0) return toast($t('Leg zuerst eine Kraft-Einheit an.'));
     pwInsert(si, b.dataset.ex);
     render();
-    toast($tf('{n} hinzugefügt', { n: (LIB[b.dataset.ex] || {}).name || '' }));
+    toast(
+      $tf('{n} hinzugefügt', { n: (LIB[b.dataset.ex] || {}).name || '' }) + (PW.last ? ' · ' + $tf('Werte aus {s} übernommen', { s: PW.last }) : '')
+    );
+    return;
+  }
+  if (b && b.dataset.act === 'pwMultiAdd') {
+    const si = pwSel();
+    if (si < 0) return toast($t('Leg zuerst eine Kraft-Einheit an.'));
+    const ids = [...PW.multi];
+    ids.forEach(id => pwInsert(si, id));
+    PW.multi.clear();
+    render();
+    toast($tf('{n} Übungen hinzugefügt', { n: ids.length }));
+    return;
+  }
+  if (b && b.dataset.act === 'pwMultiClr') {
+    PW.multi.clear();
+    document.querySelectorAll('.pw-ck:checked').forEach(x => (x.checked = false));
+    const mb = document.getElementById('pw-multi');
+    if (mb) mb.innerHTML = '';
+    return;
+  }
+  if (e.target.classList && e.target.classList.contains('pw-ck')) {
+    const id = e.target.dataset.pwck;
+    if (e.target.checked) PW.multi.add(id);
+    else PW.multi.delete(id);
+    const mb = document.getElementById('pw-multi');
+    if (mb) mb.innerHTML = pwMultiBar();
     return;
   }
   if (b && b.dataset.act === 'pwMus') {
@@ -293,7 +426,10 @@ document.addEventListener('drop', e => {
   pwDrag = null;
   if (!t) return;
   e.preventDefault();
-  if (d.ex) pwInsert(t.i, d.ex, t.before);
+  if (d.ex) {
+    pwInsert(t.i, d.ex, t.before);
+    if (PW.last) toast($tf('Werte aus {s} übernommen', { s: PW.last }), 'soft');
+  }
   else if (d.slot !== t.before) pwMove(d.from, d.slot, t.i, t.before);
   PW.sel = t.i;
   render();

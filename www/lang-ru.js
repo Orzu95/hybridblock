@@ -5174,7 +5174,7 @@ I18N.ru = {
 "{n} aktiv": "активных: {n}",
 "{n} anstehende gemeinsame Trainings": "Предстоящих совместных тренировок: {n}",
 "{n} ausgewählt": "Выбрано: {n}",
-"{n} auswählen": "Выбрать: {n}",
+"{n} auswählen": "Выбрать {n}",
 "{n} eintragen": "Записать: {n}",
 "{n} h Schlaf": "{n} ч сна",
 "{n} hat den Check-in-Fragebogen, fällig seit {d}, noch nicht beantwortet.": "{n}: анкета чек-ина, которую нужно было заполнить к {d}, ещё не заполнена.",
@@ -5434,6 +5434,16 @@ I18N.ru = {
 "{n} erledigt": "Выполнено: {n}",
 "{n} Sätze geplant": "Подходов в плане: {n}",
 "{n} Ausdauer": "Кардио: {n}",
-"{n} harte Tage": "Тяжёлых дней: {n}"
+"{n} harte Tage": "Тяжёлых дней: {n}",
+"Aufnahme verwerfen": "Удалить запись",
+"Aufnahme beenden": "Остановить запись",
+"Geteilte Medien": "Общие медиафайлы",
+"von dir": "от тебя",
+"Auswahl leeren": "Снять выбор",
+"{s}: 4 Wochen im Vergleich": "{s}: 4 недели рядом",
+"Sätze × Wdh. @ RPE. Hervorgehoben = anders als die Vorwoche. Klick auf eine Woche, um nur sie zu bearbeiten.": "Подходы × повторы @ RPE. Выделено — отличается от прошлой недели. Нажми на неделю, чтобы редактировать только её.",
+"Werte aus {s} übernommen": "Значения взяты из {s}",
+"{n} Übungen hinzugefügt": "Добавлено упражнений: {n}",
+"Ortszeit": "Местное время"
 };
 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').forEach(l => { I18N.ru['Einheit ' + l] = "\u0422\u0440\u0435\u043d\u0438\u0440\u043e\u0432\u043a\u0430 " + l; });

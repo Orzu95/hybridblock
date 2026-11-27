@@ -159,6 +159,55 @@ function m3Chat(uid) {
   );
 }
 
+/* Ortszeit des Athleten (Zeitzone kommt mit der Zusammenfassung); mit Abstand zur eigenen Zeit */
+function m3LocalTime(tz) {
+  if (!tz) return null;
+  try {
+    const now = new Date();
+    const t = now.toLocaleTimeString(LOCALE, { timeZone: tz, hour: '2-digit', minute: '2-digit' });
+    const off = z => {
+      const p = new Intl.DateTimeFormat('en-US', { timeZone: z, hourCycle: 'h23', year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric' }).formatToParts(now);
+      const g = k => +p.find(x => x.type === k).value;
+      return Date.UTC(g('year'), g('month') - 1, g('day'), g('hour'), g('minute')) / 60000;
+    };
+    const d = Math.round((off(tz) - off(Intl.DateTimeFormat().resolvedOptions().timeZone)) / 60);
+    const city = tz.split('/').pop().replace(/_/g, ' ');
+    return esc(t) + ' <span class="muted" style="font-weight:400">' + esc(city) + (d ? ' · ' + (d > 0 ? '+' : '−') + Math.abs(d) + ' h' : '') + '</span>';
+  } catch (e) {
+    return null;
+  }
+}
+/* Geteilte Medien: Fotos und Sprachnachrichten aus dem geladenen Verlauf */
+function m3Media(uid) {
+  const p = chatPair(uid);
+  const L = (p && CHAT.list[chatKey(p)]) || [];
+  const ph = L.filter(m => m.photo).slice(-9).reverse(),
+    au = L.filter(m => m.audio).slice(-4).reverse();
+  if (!ph.length && !au.length) return '';
+  return (
+    '<div class="card m3-media"><h2>' +
+    $t('Geteilte Medien') +
+    '</h2>' +
+    (ph.length
+      ? '<div class="m3-ph">' +
+        ph.map(m => '<img data-chatphoto="' + esc(m.photo) + '" alt="' + esc($t('Foto')) + ' ' + esc(fmtDay(m.created_at.slice(0, 10))) + '" title="' + esc(fmtDay(m.created_at.slice(0, 10))) + '" loading="lazy">').join('') +
+        '</div>'
+      : '') +
+    au
+      .map(
+        m =>
+          '<div class="m3-au"><small class="muted">' +
+          esc(fmtDay(m.created_at.slice(0, 10))) +
+          (m.sender === AUTH.uid ? ' · ' + esc($t('von dir')) : '') +
+          '</small><audio controls preload="none" data-chataudio="' +
+          esc(m.audio) +
+          '"></audio></div>'
+      )
+      .join('') +
+    '</div>'
+  );
+}
+
 /* Rechts: Spickzettel */
 function m3Side(uid) {
   const c = m3Client(uid);
@@ -181,7 +230,8 @@ function m3Side(uid) {
     kv('Schlaf Ø', s.sleep7 != null ? esc(fmtMin(s.sleep7)) : null) +
     kv('Schritte Ø', s.steps7 != null ? esc(fmt(s.steps7, 0)) : null) +
     kv('Readiness', s.ready != null ? esc(s.ready) : null) +
-    kv('Sync', c.updated_at ? esc(ago(c.updated_at)) : null);
+    kv('Sync', c.updated_at ? esc(ago(c.updated_at)) : null) +
+    kv('Ortszeit', m3LocalTime(s.tz));
   if (ADMIN.notes == null || ADMIN.notes[uid] === undefined) M3.notesWait = uid;
   return (
     '<aside class="m3-side stack"><div class="card"><h2>' +
@@ -200,6 +250,7 @@ function m3Side(uid) {
     '">' +
     $t('Cockpit öffnen') +
     '</a></div>' +
+    m3Media(uid) +
     notesCard(uid) +
     '</aside>'
   );

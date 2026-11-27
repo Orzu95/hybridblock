@@ -113,6 +113,23 @@ const C = '11111111-1111-1111-1111-111111111111';
   ok((await hits('kreuzheben')).some(x => /dl/.test(x)), 'kreuzheben findet Deadlift-Varianten');
   ok((await hits('dumbbell')).includes('db_bench'), 'dumbbell findet KH-Übungen');
   await page.fill('#pw-q', ''); await page.waitForTimeout(200);
+  /* Reste D5: 4 Wochen im Vergleich, letzte Werte, Mehrfachauswahl */
+  ok(await ev(() => document.querySelectorAll('.pw-cmp thead th').length === 5), '4 Wochen im Vergleich');
+  const lv = await ev(() => {
+    const i = pwSel(), k = PE.draft.sessions[i].k;
+    const other = PE.draft.sessions.find((s, j) => s.kind === 'gym' && j !== i);
+    const src = planForP(PE.draft, 1, other.k)[0];
+    PE.draft.sessions[i].add = (PE.draft.sessions[i].add || []).filter(x => x.ex !== src.ex);
+    return { ex: src.ex, sets: src.sets, reps: src.reps, i };
+  });
+  await page.fill('#pw-q', ''); await ev(x => { PW.q = ''; render(); }, null); await page.waitForTimeout(300);
+  await ev(x => { pwInsert(x.i, x.ex); render(); }, lv); await page.waitForTimeout(200);
+  ok(await ev(x => { const it = (PE.draft.sessions[x.i].add || []).filter(a => a.ex === x.ex).pop(); return it && it.sets === x.sets && String(it.reps) === String(x.reps); }, lv), 'letzte Werte übernommen', lv);
+  const nb = await ev(() => peItems(pwSel()).length);
+  await ev(() => { const c = document.querySelectorAll('.pw-ck'); c[3].click(); c[4].click(); c[5].click(); }); await page.waitForTimeout(150);
+  ok(await ev(() => !!document.querySelector('.pw-mbar') && PW.multi.size === 3), 'Mehrfachauswahl zählt');
+  await ev(() => document.querySelector('[data-act="pwMultiAdd"]').click()); await page.waitForTimeout(300);
+  ok((await ev(() => peItems(pwSel()).length)) === nb + 3 && (await ev(() => PW.multi.size === 0)), 'drei Übungen auf einmal hinzugefügt');
   /* schmal */
   await page.setViewportSize({ width: 1100, height: 900 }); await page.waitForTimeout(400);
   ok(await ev(() => !document.querySelector('.pw-grid') && !document.body.classList.contains('dk-pe')), 'unter 1200 px einspaltig');

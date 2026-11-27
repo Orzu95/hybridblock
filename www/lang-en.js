@@ -5434,6 +5434,16 @@ I18N.en = {
 "{n} erledigt": "{n} done",
 "{n} Sätze geplant": "{n} sets planned",
 "{n} Ausdauer": "{n} endurance",
-"{n} harte Tage": "{n} hard days"
+"{n} harte Tage": "{n} hard days",
+"Aufnahme verwerfen": "Discard recording",
+"Aufnahme beenden": "Stop recording",
+"Geteilte Medien": "Shared media",
+"von dir": "from you",
+"Auswahl leeren": "Clear selection",
+"{s}: 4 Wochen im Vergleich": "{s}: 4 weeks side by side",
+"Sätze × Wdh. @ RPE. Hervorgehoben = anders als die Vorwoche. Klick auf eine Woche, um nur sie zu bearbeiten.": "Sets × reps @ RPE. Highlighted = different from the previous week. Click a week to edit only that week.",
+"Werte aus {s} übernommen": "Values copied from {s}",
+"{n} Übungen hinzugefügt": "{n} exercises added",
+"Ortszeit": "Local time"
 };
 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').forEach(l => { I18N.en['Einheit ' + l] = "Session " + l; });

@@ -54,7 +54,7 @@ const C = '11111111-1111-1111-1111-111111111111';
     const mk = (i, name, sum, upd) => ({ id: 'a000000' + i + '-0000-0000-0000-000000000000', username: name.toLowerCase(), display_name: name, summary: sum, updated_at: upd || now, created_at: old });
     const base = { week: 3, nw: 8, weeksLeft: 5, plan: 'Grundlage', lastTrain: addDays(today(), -1), logged7: 6, kcal7: 2300, kcalT: 2400, prot7: 150, protT: 160, quota: [{ w: 2, done: 3, total: 3 }, { w: 3, done: 1, total: 3 }], dots: ['g', 'o', 'o'] };
     ADMIN.clients = [
-      mk(1, 'Anna Berg', Object.assign({}, base, { done: 1, total: 3, hab: { p: 86, of: 14, list: [{ k: 'steps', n: 8000, d: 6, of: 7 }] }, cf: { due: today(), open: false, over: false, hist: [{ d: today(), a: [] }] }, fz: [], pain: 'knee,shoulder', target: 60, sp: { w: Array.from({ length: 28 }, (_, i) => 66 - i * 0.07), sl: Array.from({ length: 28 }, (_, i) => 420 + (i % 5) * 10), st: Array.from({ length: 28 }, (_, i) => 8000 + (i % 7) * 400), r: Array.from({ length: 28 }, () => 52) }, trend: 64.2, rate: -0.3, sleep7: 450, rhr7: 52, steps7: 9100, ready: 78 })),
+      mk(1, 'Anna Berg', Object.assign({}, base, { tz: 'America/New_York', done: 1, total: 3, hab: { p: 86, of: 14, list: [{ k: 'steps', n: 8000, d: 6, of: 7 }] }, cf: { due: today(), open: false, over: false, hist: [{ d: today(), a: [] }] }, fz: [], pain: 'knee,shoulder', target: 60, sp: { w: Array.from({ length: 28 }, (_, i) => 66 - i * 0.07), sl: Array.from({ length: 28 }, (_, i) => 420 + (i % 5) * 10), st: Array.from({ length: 28 }, (_, i) => 8000 + (i % 7) * 400), r: Array.from({ length: 28 }, () => 52) }, trend: 64.2, rate: -0.3, sleep7: 450, rhr7: 52, steps7: 9100, ready: 78 })),
       mk(2, 'Ben Kurz', Object.assign({}, base, { readyLow: true, sleepLow: true, hab: { p: 30, of: 14, list: [] }, cf: { due: today(), open: true, over: true, hist: [] } })),
       mk(3, 'Clara Ost', Object.assign({}, base, { weeksLeft: 0 })),
       mk(4, 'Dario Neu', null, old),
@@ -90,6 +90,15 @@ const C = '11111111-1111-1111-1111-111111111111';
   ok(await ev(() => document.querySelector('.m3-li.on') && /Anna/.test(document.querySelector('.m3-li.on').textContent)), 'aktives Gespräch markiert');
   ok(await ev(() => /Knie zwickt/.test(document.querySelector('.m3-chat').textContent)), 'Verlauf geladen');
   ok(await ev(() => !document.querySelector('.m3-chat .back')), 'kein Zurück-Link in der Mitte');
+  ok(await ev(() => document.querySelector('.m3-side').textContent.includes($t('Ortszeit')) && /New York/.test(document.querySelector('.m3-side').textContent)), 'Ortszeit im Spickzettel');
+  await ev(() => { const p = chatPair('a0000001-0000-0000-0000-000000000000'); const L = CHAT.list[chatKey(p)]; L.push({ id: 'ph1', sender: 'a0000001-0000-0000-0000-000000000000', photo: 'x/y/p.jpg', body: '', created_at: new Date().toISOString() }, { id: 'au1', sender: AUTH.uid, audio: 'x/y/a.webm', body: '', created_at: new Date().toISOString() }); render(); }); await page.waitForTimeout(300);
+  ok(await ev(() => !!document.querySelector('.m3-media .m3-ph img') && document.querySelectorAll('.m3-media .m3-au').length === 1), 'geteilte Medien im Spickzettel');
+  if (await ev(() => typeof MediaRecorder !== 'undefined')) {
+    await ev(() => { VOICE.pend = { blob: new Blob(['x'], { type: 'audio/webm' }), type: 'audio/webm', dur: 3, p: null, url: URL.createObjectURL(new Blob(['x'])) }; voiceTick(); }); await page.waitForTimeout(100);
+    ok(await ev(() => !!document.querySelector('.vprev audio') && !!document.querySelector('[data-act="voiceSend"]')), 'Sprachnachricht vorhören vor dem Senden');
+    await ev(() => document.querySelector('[data-act="voiceDrop"]').click()); await page.waitForTimeout(100);
+    ok(await ev(() => !document.querySelector('.vprev') && VOICE.pend === null), 'Aufnahme verwerfen');
+  }
   ok(await ev(() => !!document.querySelector('.m3-side .ck-lim') && !!document.querySelector('.m3-side #note-new') && document.querySelectorAll('.m3-side .m3-kv').length >= 6), 'Spickzettel mit Einschränkungen, Kennzahlen, Notizen');
   /* Baustein einfügen */
   await ev(() => document.querySelector('[data-act="m3Snip"][data-i="0"]').click()); await page.waitForTimeout(150);

@@ -1,25 +1,38 @@
 /* Hybridblock – Sprachnachrichten im Coach-Chat: antippen = Aufnahme starten, nochmal antippen = senden (höchstens 2 Minuten).
    Speicherort wie Chat-Fotos (privater Bucket „chat“, Pfad <coach>/<athlet>/…); Abspielen über Blob-URL (CSP media-src blob:). */
 'use strict';
-const VOICE = { rec: null, chunks: [], t0: 0, iv: null, p: null, urls: {} };
+const VOICE = { rec: null, chunks: [], t0: 0, iv: null, p: null, urls: {}, pend: null };
+/* Am Desktop (ab 1200 px) erst anhören, dann senden */
+const voicePrev = () => !!(window.matchMedia && window.matchMedia('(min-width:1200px)').matches);
 const VOICE_MAX = 120;
 const voiceOk = () => typeof MediaRecorder !== 'undefined' && !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia);
 function voiceBtn(arg) {
   if (!voiceOk()) return '';
   const on = !!VOICE.rec;
   const s = on ? Math.floor((Date.now() - VOICE.t0) / 1000) : 0;
+  const pd = VOICE.pend;
   return (
+    '<span id="voicebtn" class="vwrap">' +
+    (pd
+      ? '<span class="vprev"><audio controls preload="metadata" src="' +
+        pd.url +
+        '"></audio><button class="btn sm brand" data-act="voiceSend" type="button">' +
+        esc($t('Senden')) +
+        '</button><button class="btn sm fog" data-act="voiceDrop" type="button" aria-label="' +
+        esc($t('Aufnahme verwerfen')) +
+        '">✕</button></span>'
+      : '') +
     '<button class="iconbtn' +
     (on ? ' rec-on' : '') +
-    '" id="voicebtn" data-act="voiceRec" data-p="' +
+    '" data-act="voiceRec" data-p="' +
     esc(arg || '') +
     '" type="button" aria-label="' +
-    esc(on ? $t('Aufnahme senden') : $t('Sprachnachricht aufnehmen')) +
+    esc(on ? (voicePrev() ? $t('Aufnahme beenden') : $t('Aufnahme senden')) : $t('Sprachnachricht aufnehmen')) +
     '">' +
     (on
       ? '<span style="font-size:13px;font-weight:800">■ ' + Math.floor(s / 60) + ':' + pad(s % 60) + '</span>'
       : '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>') +
-    '</button>'
+    '</button></span>'
   );
 }
 function voiceTick() {
@@ -59,21 +72,34 @@ function voiceStop(send) {
     if (!send || dur < 1) return;
     const type = (rec.mimeType || 'audio/webm').split(';')[0];
     const blob = new Blob(VOICE.chunks, { type });
-    const pair = chatPair(p || null);
-    if (!pair) return;
-    toast($t('Sprachnachricht wird gesendet …'));
-    try {
-      const ext = type.includes('mp4') ? '.m4a' : type.includes('ogg') ? '.ogg' : '.webm';
-      const path = pair.coach_id + '/' + pair.athlete_id + '/' + uid() + ext;
-      await api('/storage/v1/object/chat/' + path, { method: 'POST', headers: { 'Content-Type': type }, body: blob });
-      ui.chatRef = Object.assign({}, ui.chatRef || {}, { dur });
-      await chatSend(pair, null, null, path);
-    } catch (e) {
-      toast($t('Senden fehlgeschlagen: ') + errTxt(e));
+    if (voicePrev()) {
+      voiceDrop();
+      VOICE.pend = { blob, type, dur, p, url: URL.createObjectURL(blob) };
+      voiceTick();
+      return;
     }
-    render();
+    await voiceUpload(blob, type, dur, p);
   };
   rec.stop();
+}
+function voiceDrop() {
+  if (VOICE.pend) URL.revokeObjectURL(VOICE.pend.url);
+  VOICE.pend = null;
+}
+async function voiceUpload(blob, type, dur, p) {
+  const pair = chatPair(p || null);
+  if (!pair) return;
+  toast($t('Sprachnachricht wird gesendet …'));
+  try {
+    const ext = type.includes('mp4') ? '.m4a' : type.includes('ogg') ? '.ogg' : '.webm';
+    const path = pair.coach_id + '/' + pair.athlete_id + '/' + uid() + ext;
+    await api('/storage/v1/object/chat/' + path, { method: 'POST', headers: { 'Content-Type': type }, body: blob });
+    ui.chatRef = Object.assign({}, ui.chatRef || {}, { dur });
+    await chatSend(pair, null, null, path);
+  } catch (e) {
+    toast($t('Senden fehlgeschlagen: ') + errTxt(e));
+  }
+  render();
 }
 async function voiceUrl(path) {
   if (VOICE.urls[path]) return VOICE.urls[path];
@@ -95,11 +121,25 @@ function chatFillAudio() {
   });
 }
 document.addEventListener('click', e => {
-  const b = e.target.closest && e.target.closest('[data-act="voiceRec"]');
+  const b = e.target.closest && e.target.closest('[data-act="voiceRec"],[data-act="voiceSend"],[data-act="voiceDrop"]');
   if (!b) return;
+  if (b.dataset.act === 'voiceSend') {
+    const pd = VOICE.pend;
+    if (!pd) return;
+    VOICE.pend = null;
+    voiceUpload(pd.blob, pd.type, pd.dur, pd.p).finally(() => URL.revokeObjectURL(pd.url));
+    voiceTick();
+    return;
+  }
+  if (b.dataset.act === 'voiceDrop') {
+    voiceDrop();
+    voiceTick();
+    return;
+  }
   if (VOICE.rec) voiceStop(true);
   else voiceStart(b.dataset.p || null);
 });
 window.addEventListener('hashchange', () => {
   if (VOICE.rec && !location.hash.startsWith('#chat')) voiceStop(false);
+  if (VOICE.pend && !location.hash.startsWith('#chat') && !location.hash.startsWith('#admin')) voiceDrop();
 });
