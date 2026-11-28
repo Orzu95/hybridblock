@@ -5446,6 +5446,9 @@ I18N.ru = {
 "{n} Übungen hinzugefügt": "Добавлено упражнений: {n}",
 "Ortszeit": "Местное время",
 "Urlaub": "Отпуск",
-"kein Training geplant": "тренировок нет"
+"kein Training geplant": "тренировок нет",
+"Studiendesign": "Дизайн исследования",
+"Teilnehmende": "Участники",
+"Was die Studie nicht zeigt": "Чего исследование не показывает"
 };
 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').forEach(l => { I18N.ru['Einheit ' + l] = "\u0422\u0440\u0435\u043d\u0438\u0440\u043e\u0432\u043a\u0430 " + l; });

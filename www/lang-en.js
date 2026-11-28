@@ -5446,6 +5446,9 @@ I18N.en = {
 "{n} Übungen hinzugefügt": "{n} exercises added",
 "Ortszeit": "Local time",
 "Urlaub": "Vacation",
-"kein Training geplant": "no training planned"
+"kein Training geplant": "no training planned",
+"Studiendesign": "Study design",
+"Teilnehmende": "Participants",
+"Was die Studie nicht zeigt": "What the study does not show"
 };
 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').forEach(l => { I18N.en['Einheit ' + l] = "Session " + l; });
