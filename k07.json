@@ -1,0 +1,1130 @@
+[
+{
+"id": "EIN-109",
+"karte": {
+"kopf": "Erwachsene · 15 Studien zusammengefasst",
+"titel": "Mehr Sätze pro Woche lassen Muskeln messbar stärker wachsen",
+"titel_hervor": "messbar stärker wachsen",
+"setup": "15 Studien verglichen, wie stark Muskeln bei weniger als 5, bei 5 bis 9 und bei 10 oder mehr Sätzen pro Woche wachsen.",
+"zahl": {
+"label": "Mehr Muskelwachstum bei hohem Umfang",
+"wert": "+3,9 %",
+"alltag": "+0,37 % pro zusätzlichem Wochensatz"
+},
+"kern": [
+"Zehn oder mehr Sätze pro Muskelgruppe und Woche brachten den größten Zuwachs.",
+"Jeder zusätzliche Wochensatz steigerte das Muskelwachstum im Schnitt leicht.",
+"Bei älteren Einsteigerinnen reichten anfangs oft auch wenige Sätze pro Übung."
+],
+"grenze": "Wo genau die sinnvolle Obergrenze für gebrechliche Ältere liegt, ist bisher nicht abschließend geklärt.",
+"fuer_dich": "Du willst Muskeln aufbauen? Starte mit 4–6 Wochensätzen pro Muskelgruppe und steigere dich langsam auf 10 oder mehr.",
+"labor": {
+"design": "Systematisches Review mit Meta-Analyse zu Wochensatz-Volumen (<5, 5–9, ≥10 Sätze)",
+"teilnehmer": "15 Studien mit 34 Trainingsgruppen (Einsteiger, Trainierte, Ältere)",
+"ergebnis": "+0,023 ES (+0,37 %) pro Wochensatz (p = 0,002); hoch vs. niedrig ES-Diff. 0,241 (+3,9 %; p = 0,03)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Reicht für maximalen Muskelaufbau ein einzelner Satz pro Muskel in der Woche oder bringen mehrere Sätze sichtbar mehr?",
+"richtig": "Mehrere Sätze pro Woche bringen mehr Muskelwachstum",
+"falsch": [
+"Ein einzelner Satz bringt das Maximum an Muskelmasse",
+"Mehr als drei Sätze pro Woche bremsen das Wachstum",
+"Die Satzzahl hat keinen Einfluss auf den Muskelaufbau"
+],
+"warum": "Zwischen Wochensätzen und Muskelaufbau besteht eine klare Abstufung, bei der zehn oder mehr Sätze pro Muskelgruppe am besten abschnitten."
+},
+"plus": {
+"frage": "Du bist Einsteiger, regenerierst gut und willst gezielt Muskeln aufbauen. Wie entwickelst du dein Satzvolumen pro Muskelgruppe sinnvoll?",
+"richtig": "Mit 4–6 Sätzen starten und langsam auf 10+ steigern",
+"falsch": [
+"Sofort in Woche eins mit 20 Sätzen einsteigen",
+"Dauerhaft bei 2 Sätzen pro Woche bleiben",
+"Das Volumen jede Woche ohne Pause verdoppeln"
+],
+"warum": "Ein moderater Start schont die Erholung, und eine schrittweise Steigerung Richtung zehn oder mehr Wochensätze schöpft das Wachstum besser aus."
+},
+"labor": {
+"frage": "Eine Meta-Analyse über 15 Studien prüfte die Dosis-Wirkungs-Beziehung zwischen Wochensätzen und Hypertrophie. Welches Muster zeigte sich?",
+"richtig": "Abgestufter Anstieg bis in den Bereich ab 10 Wochensätzen",
+"falsch": [
+"Starker Abfall der Hypertrophie ab 5 Wochensätzen",
+"Kein linearer Zusammenhang zwischen Sätzen und Wachstum",
+"Vorteil höherer Volumina trat nur bei Profisportlern auf"
+],
+"warum": "Jeder zusätzliche Wochensatz steigerte die Hypertrophie im Mittel signifikant, mit den größten Effekten bei zehn oder mehr Sätzen."
+}
+}
+},
+{
+"id": "EIN-110",
+"karte": {
+"kopf": "Ältere Erwachsene · Fachleitlinie",
+"titel": "Ab 50 schwindet die Kraft meist schneller als die Muskelmasse",
+"titel_hervor": "schneller als die Muskelmasse",
+"setup": "Fachgesellschaften werteten Daten zum altersbedingten Muskelabbau aus und legten Kriterien zur Erkennung fest.",
+"zahl": {
+"label": "Jährlicher Kraftverlust ab 50 Jahren",
+"wert": "−1,5 bis −5 %",
+"alltag": "Beinmuskelmasse: −1 bis −2 % pro Jahr"
+},
+"kern": [
+"Zur Früherkennung steht heute zuerst die Muskelkraft im Fokus, nicht die Masse.",
+"Einfache Tests wie schnelles Stuhlaufstehen liefern erste wichtige Hinweise.",
+"Geringe Muskelmasse und Alltagsfunktion zeigen erst, wie stark der Abbau ist."
+],
+"grenze": "Es handelt sich um einen Expertenkonsens; Grenzwerte schwanken je nach Bevölkerungsgruppe.",
+"fuer_dich": "Du bist über 50 oder brauchst fürs 5-fache Aufstehen über 15 Sekunden? Starte ein gezieltes Kraft- und Balancetraining.",
+"labor": {
+"design": "Europäische Konsens-Leitlinie (EWGSOP2) zur Definition und Diagnostik der Sarkopenie",
+"teilnehmer": "Ältere Erwachsene (Grenzwerte für Männer und Frauen ab 50 bzw. 65 Jahren)",
+"ergebnis": "Ab 50 J.: −1 bis −2 % Beinmuskelmasse/Jahr, −1,5 bis −5 % Kraft/Jahr"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Woran merken Fachleute altersbedingten Muskelschwund heute als Erstes?",
+"richtig": "An nachlassender Muskelkraft im Alltag",
+"falsch": [
+"An einer plötzlichen Gewichtszunahme",
+"Nur durch eine teure Röntgenaufnahme",
+"An stärkeren Schmerzen in den Gelenken"
+],
+"warum": "Ab 50 nimmt die Kraft oft schneller ab als die Muskelmasse, weshalb geringe Kraft heute das erste Warnsignal ist."
+},
+"plus": {
+"frage": "Eine 68-jährige Person merkt, dass fünfmaliges Aufstehen vom Stuhl deutlich schwerer und langsamer wird. Was ist ein sinnvoller nächster Schritt?",
+"richtig": "Progressives Kraft- und Balancetraining aufbauen",
+"falsch": [
+"Anstrengung meiden und öfter sitzen bleiben",
+"Nur noch leichtes Dehnen im Sitzen durchführen",
+"Ausschließlich lange Spaziergänge im Flachen machen"
+],
+"warum": "Langsames Aufstehen deutet auf nachlassende Beinkraft hin – gezieltes Kraft- und Gleichgewichtstraining wirkt dem Abbau entgegen."
+},
+"labor": {
+"frage": "Nach der europäischen Konsens-Leitlinie für Sarkopenie erfolgt die Einordnung stufenweise. In welcher Reihenfolge werden die Kriterien geprüft?",
+"richtig": "Erst geringe Kraft, dann geringe Masse, dann Funktion",
+"falsch": [
+"Erst geringe Masse, dann Gehgeschwindigkeit, dann Kraft",
+"Erst Körpergewicht, dann Muskelmasse, dann Ausdauer",
+"Nur über die Bildgebung ohne funktionelle Krafttests"
+],
+"warum": "Geringe Muskelkraft leitet den Verdacht ein, geringe Muskelmasse bestätigt ihn und die physische Funktion bestimmt den Schweregrad."
+}
+}
+},
+{
+"id": "EIN-111",
+"karte": {
+"kopf": "Erwachsene ab 65 · Fachleitlinie",
+"titel": "Gegen Muskelabbau im Alter ersetzen Pillen kein Krafttraining",
+"titel_hervor": "ersetzen Pillen kein Krafttraining",
+"setup": "Eine internationale Fachleitlinie bewertete, wie gut Training, Ernährung, Vitamin D und Hormone gegen Muskelabbau im Alter helfen.",
+"zahl": null,
+"kern": [
+"Für isoliertes Vitamin D ohne Training fehlt ein klarer Nachweis gegen Abbau.",
+"Auch Hormone oder Medikamente zeigen ohne Krafttraining keine gesicherte Wirkung.",
+"Fachleute setzen zuerst auf Krafttraining zusammen mit genug Eiweiß im Essen."
+],
+"grenze": "Bei echtem Mangel können Nährstoffe unterstützen, große Langzeitstudien zu isolierten Mitteln fehlen bisher.",
+"fuer_dich": "Du willst ab 65 Muskelabbau vorbeugen? Setze zuerst auf Krafttraining und genug Eiweiß statt auf isolierte Präparate.",
+"labor": {
+"design": "Klinische Praxisleitlinie (ICFSR), Evidenzbewertung nach GRADE-Methodik",
+"teilnehmer": "Zielgruppe: Erwachsene ab 65 Jahren",
+"ergebnis": ""
+}
+},
+"quiz": {
+"basis": {
+"frage": "Reicht es im Alter aus, Vitamin-D-Kapseln zu schlucken, um Muskelschwund ohne Sport aufzuhalten?",
+"richtig": "Nein – ohne Krafttraining fehlt dafür ein Beleg",
+"falsch": [
+"Ja – Vitamin D ersetzt Krafttraining vollständig",
+"Ja – ab 65 wirken Kapseln besser als Bewegung",
+"Nein – nur Hormonpräparate halten Muskeln allein"
+],
+"warum": "Für isoliertes Vitamin D oder Hormone ohne Krafttraining gibt es keine belastbare Evidenz gegen altersbedingten Muskelabbau."
+},
+"plus": {
+"frage": "Ein 70-jähriger Verwandter fragt dich nach einem Mittel aus der Apotheke gegen schwindende Muskeln. Was empfiehlst du als Basis?",
+"richtig": "Progressives Krafttraining und eiweißreiche Kost",
+"falsch": [
+"Hochdosiertes Vitamin D als alleinige Maßnahme",
+"Hormonpräparate vor dem ersten Trainingsversuch",
+"Reines Ausdauertraining ohne zusätzliches Eiweiß"
+],
+"warum": "Internationale Fachleitlinien nennen progressives Krafttraining kombiniert mit ausreichend Protein klar als erste Wahl."
+},
+"labor": {
+"frage": "Wie bewertet die klinische Praxisleitlinie nach GRADE-Methodik pharmakologische und isolierte Mikronährstoff-Gaben zur Sarkopenie-Therapie?",
+"richtig": "Keine belastbare Evidenz ohne begleitendes Krafttraining",
+"falsch": [
+"Starke Empfehlung für isoliertes Vitamin D als Erstlinie",
+"Hormone sind Krafttraining statistisch klar überlegen",
+"Belegt durch große mehrjährige RCTs ohne Trainingsanteil"
+],
+"warum": "Robuste RCTs, die einen eigenständigen Nutzen isolierter Vitamin-D- oder Hormongaben auf Sarkopenie-Endpunkte zeigen, fehlen bislang."
+}
+}
+},
+{
+"id": "EIN-112",
+"karte": {
+"kopf": "Erwachsene ab 65 · Expertenempfehlung",
+"titel": "Ab 65 liegt der Eiweißbedarf deutlich über dem Standardwert",
+"titel_hervor": "deutlich über dem Standardwert",
+"setup": "Eine Expertengruppe wertete Stoffwechsel- und Beobachtungsstudien aus, um den täglichen Eiweißbedarf im höheren Alter abzuleiten.",
+"zahl": null,
+"kern": [
+"Für gesunde Ältere gelten 1,0 bis 1,2 g Eiweiß pro Kilo Körpergewicht als Basis.",
+"Mit regelmäßigem Training steigt die Empfehlung auf 1,2 bis 1,5 g pro Kilo.",
+"Die übliche Grundempfehlung von 0,8 g pro Kilo reicht im Alter meist nicht aus."
+],
+"grenze": "Die Werte beruhen vor allem auf Kurzzeit- und Beobachtungsdaten; große mehrjährige Interventionsstudien sind noch rar.",
+"fuer_dich": "Du bist über 65? Plane täglich 1,0–1,2 g Eiweiß pro Kilo Körpergewicht ein, an Krafttrainingstagen besser 1,2–1,5 g.",
+"labor": {
+"design": "Positionspapier (PROT-AGE) auf Basis von Stoffwechselstudien und Kohorten",
+"teilnehmer": "Gesunde und körperlich aktive Erwachsene über 65 Jahre",
+"ergebnis": ""
+}
+},
+"quiz": {
+"basis": {
+"frage": "Braucht der Körper im Alter ab 65 eher weniger oder mehr Eiweiß pro Kilo Körpergewicht als jüngere Erwachsene?",
+"richtig": "Eher mehr, um Muskeln und Kraft zu erhalten",
+"falsch": [
+"Deutlich weniger, weil man sich ruhiger bewegt",
+"Genau gleich wenig wie im jungen Erwachsenenalter",
+"Ab 65 braucht man fast nur noch Kohlenhydrate"
+],
+"warum": "Fachleute empfehlen ab 65 eine höhere Eiweißzufuhr als den allgemeinen Basiswert, damit Muskeln und Funktion besser erhalten bleiben."
+},
+"plus": {
+"frage": "Du bist 67 und gehst dreimal pro Woche ins Krafttraining. Wie ordnest du dein tägliches Proteinziel sinnvoll ein?",
+"richtig": "Etwas höher ansetzen als bei inaktiven Älteren",
+"falsch": [
+"Am unteren Standardwert für junge Erwachsene bleiben",
+"An Trainingstagen weniger Protein essen als sonst",
+"Protein nur nach dem Ausdauertraining erhöhen"
+],
+"warum": "Während für gesunde Ältere 1,0–1,2 g/kg empfohlen werden, steigt der Richtwert bei regelmäßigem Training auf 1,2–1,5 g/kg pro Tag."
+},
+"labor": {
+"frage": "Worauf stützen sich die erhöhten Protein-Empfehlungen für Menschen über 65 (1,0–1,5 g/kg/Tag gegenüber 0,8 g/kg RDA) bisher vorwiegend?",
+"richtig": "Auf Kurzzeit-Stoffwechselstudien und Kohortendaten",
+"falsch": [
+"Auf großen zehnjährigen randomisierten Doppelblindstudien",
+"Ausschließlich auf Tierversuchen ohne Humandaten",
+"Auf Daten von Leistungssportlern unter 30 Jahren"
+],
+"warum": "Die Empfehlungen basieren überwiegend auf Stoffwechsel- und Beobachtungsstudien, da große mehrjährige Interventionsstudien noch begrenzt sind."
+}
+}
+},
+{
+"id": "EIN-113",
+"karte": {
+"kopf": "Junge & ältere Männer · Stoffwechseldaten",
+"titel": "Ältere Männer brauchen pro Mahlzeit rund zwei Drittel mehr Eiweiß",
+"titel_hervor": "rund zwei Drittel mehr Eiweiß",
+"setup": "Stoffwechseldaten von Männern um 22 und um 71 Jahre zeigten, ab welcher Eiweißmenge pro Portion der Muskelaufbau maximal anspringt.",
+"zahl": {
+"label": "Höherer Eiweißbedarf pro Mahlzeit",
+"wert": "+67 %",
+"alltag": "0,40 statt 0,24 g pro kg Körpergewicht"
+},
+"kern": [
+"Im Ruhezustand lief der Grundumsatz im Muskel bei Jung und Alt noch ähnlich.",
+"Auf kleine Eiweißportionen reagierten ältere Muskeln aber deutlich träger.",
+"Bei 80 kg entsprechen 0,40 g pro Kilo rund 32 g Eiweiß pro Hauptmahlzeit."
+],
+"grenze": "Gemessen wurde in Ruhe mit isoliertem Eiweiß nur an Männern – gemischte Mahlzeiten und Frauen können abweichen.",
+"fuer_dich": "Du bist über 65 und isst drei Mahlzeiten? Plane je mindestens 0,40 g Eiweiß pro Kilo Körpergewicht pro Portion ein.",
+"labor": {
+"design": "Retrospektive Dosis-Wirkungs-Analyse (0–40 g Proteinbolus in Ruhe)",
+"teilnehmer": "Ältere Männer (~71 Jahre) im Vergleich zu jüngeren Männern (~22 Jahre)",
+"ergebnis": "MPS-Plateau: 0,40 vs. 0,24 g/kg KG (p = 0,055) bzw. 0,60 vs. 0,25 g/kg Magermasse (p < 0,01)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du bist um die 70 und isst über den Tag verteilt viele winzige Eiweiß-Häppchen. Warum ist das für deine Muskeln ungünstiger als ordentliche Portionen?",
+"richtig": "Ältere Muskeln brauchen größere Portionen als Reiz",
+"falsch": [
+"Kleine Portionen werden im Magen gar nicht verdaut",
+"Ältere Muskeln reagieren schon auf winzige Mengen voll",
+"Eiweiß wirkt im Alter nur noch vor dem Schlafen"
+],
+"warum": "Im höheren Alter sprechen Muskeln träger auf kleine Eiweißmengen an und brauchen pro Mahlzeit deutlich größere Portionen."
+},
+"plus": {
+"frage": "Du bist 68 und planst deine drei Hauptmahlzeiten für den Muskelerhalt. Wie verteilst du dein Eiweiß über den Tag am geschicktesten?",
+"richtig": "Gleichmäßig mit kräftiger Portion je Hauptmahlzeit",
+"falsch": [
+"Morgens fast nichts und abends alles auf einmal",
+"Sechs winzige Snacks mit je wenig Eiweiß essen",
+"Nur rund um das Training etwas Eiweiß einplanen"
+],
+"warum": "Drei ausgewogene Mahlzeiten mit jeweils genug Eiweiß überschreiten die höhere Reizschwelle im Alter deutlich zuverlässiger."
+},
+"labor": {
+"frage": "Stoffwechseldaten in Ruhe verglichen die Muskelproteinsynthese nach Protein-Boli bei Männern um 22 und 71 Jahre. Was zeigte sich beim Plateau?",
+"richtig": "Ältere brauchten rund zwei Drittel mehr Protein pro kg",
+"falsch": [
+"Die basale Syntheserate war bei Älteren halb so hoch",
+"Beide Altersgruppen erreichten das Plateau bei gleicher Dosis",
+"Ältere erreichten ihr Maximum schon bei kleinerer Dosis"
+],
+"warum": "Trotz ähnlicher Ruhewerte lag das Plateau bei Älteren wegen anaboler Resistenz bei 0,40 statt 0,24 g/kg Körpergewicht."
+}
+}
+},
+{
+"id": "EIN-114",
+"karte": {
+"kopf": "Trainierende · 49 Studien zusammengefasst",
+"titel": "Mehr Eiweiß bringt mehr Muskeln – bis rund 1,6 Gramm pro Kilo",
+"titel_hervor": "rund 1,6 Gramm pro Kilo",
+"setup": "49 Vergleichsstudien mit 1.863 Erwachsenen untersuchten zusätzliches Eiweiß während mindestens 6 Wochen regelmäßigem Krafttraining.",
+"zahl": {
+"label": "Zusätzlicher Kraftgewinn durch mehr Eiweiß",
+"wert": "+2,49 kg",
+"alltag": "+0,30 kg mehr fettfreie Masse"
+},
+"kern": [
+"Über 1,62 g Eiweiß pro Kilo und Tag hinaus wuchs die Muskelmasse nicht weiter.",
+"Bereits Trainierte profitierten bei der fettfreien Masse stärker als Einsteiger.",
+"Mit steigendem Alter fiel der Zusatznutzen durch extra Eiweiß etwas kleiner aus."
+],
+"grenze": "Die genaue Obergrenze schwankt individuell stark und liegt statistisch zwischen 1,03 und 2,20 g pro Kilo.",
+"fuer_dich": "Du trainierst mindestens zweimal pro Woche Kraft? Peile bis zu 1,6 g Eiweiß pro Kilo an – mehr bringt meist kaum extra.",
+"labor": {
+"design": "Systematisches Review mit Meta-Analyse (≥6 Wo., ≥2x/Wo. Krafttraining + Protein)",
+"teilnehmer": "49 RCTs mit insgesamt 1.863 gesunden Erwachsenen",
+"ergebnis": "+2,49 kg 1RM (95 % KI 0,64–4,33); +0,30 kg FFM (KI 0,09–0,52); Breakpoint 1,62 g/kg/Tag (KI 1,03–2,20)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Stimmt der Gym-Spruch „Je mehr Eiweiß-Shakes, desto mehr Muskeln“ unbegrenzt?",
+"richtig": "Nein – ab einer gewissen Menge bringt mehr kaum extra",
+"falsch": [
+"Ja – jede zusätzliche Portion lässt Muskeln weiter wachsen",
+"Nein – zusätzliches Eiweiß hilft beim Krafttraining gar nicht",
+"Ja – besonders bei Anfängern gibt es keine Obergrenze"
+],
+"warum": "Mehr Eiweiß unterstützt Kraft- und Muskelaufbau spürbar, aber oberhalb von rund 1,6 g pro Kilo pro Tag zeigte sich im Schnitt kein weiterer Zuwachs."
+},
+"plus": {
+"frage": "Du machst dreimal pro Woche Krafttraining und deckst über deine Ernährung schon rund 1,6 g Protein pro Kilo ab. Lohnt sich ein zusätzlicher Shake für mehr Masse?",
+"richtig": "Für zusätzlichen Muskelaufbau meist nicht nötig",
+"falsch": [
+"Unbedingt, da erst ab 2,5 g/kg Muskeln wachsen",
+"Ja, weil Pulver besser wirkt als normales Essen",
+"Nur wenn du alle Kohlenhydrate komplett streichst"
+],
+"warum": "Ab etwa 1,62 g Gesamtprotein pro Kilo Körpergewicht pro Tag flacht der zusätzliche Nutzen für fettfreie Masse im Schnitt ab."
+},
+"labor": {
+"frage": "Eine Meta-Analyse über 49 RCTs untersuchte Protein-Supplementierung bei Krafttraining. Wie veränderte sich der Nutzen auf die fettfreie Masse mit dem Alter?",
+"richtig": "Der Zusatznutzen fiel mit steigendem Alter etwas geringer aus",
+"falsch": [
+"Der Zusatznutzen verdoppelte sich ab dem 50. Lebensjahr",
+"Das Alter hatte statistisch keinerlei Einfluss auf die FFM",
+"Nur ältere Einsteiger zeigten überhaupt einen Massegewinn"
+],
+"warum": "In der Meta-Regression zeigte sich ein leicht negativer Alterseffekt auf die fettfreie Masse (−0,01 kg pro Lebensjahr), bei breitem Breakpoint-KI."
+}
+}
+},
+{
+"id": "EIN-115",
+"karte": {
+"kopf": "Ältere Erwachsene · 17 Studien ausgewertet",
+"titel": "Einzelnes Leucin lässt Muskeln im Alter langfristig nicht wachsen",
+"titel_hervor": "langfristig nicht wachsen",
+"setup": "17 Vergleichsstudien mit 1.418 Älteren prüften, ob isoliertes Leucin allein oder kombiniert mit Vitamin D Muskeln und Kraft stärkt.",
+"zahl": {
+"label": "Mehr Handkraft bei Leucin plus Vitamin D",
+"wert": "+2,17 kg",
+"alltag": "alleiniges Leucin: kein klarer Effekt"
+},
+"kern": [
+"Kurzfristig regte Leucin zwar das Bausignal im Muskel messbar an.",
+"Ohne vollständiges Eiweiß blieb langfristig aber mehr Masse und Kraft aus.",
+"In Kombination mit Vitamin D verbesserten sich Handkraft und Gehtempo leicht."
+],
+"grenze": "Als reines Startsignal fehlen isoliertem Leucin die übrigen Bausteine aus komplettem Eiweiß für echten Muskelaufbau.",
+"fuer_dich": "Deine Mahlzeit enthält wenig Eiweiß? Ergänze lieber vollständige Eiweißquellen statt einzelner Leucin-Präparate.",
+"labor": {
+"design": "Systematische Reviews mit Meta-Analyse zu akuter MPS und Langzeiteffekten von Leucin",
+"teilnehmer": "17 RCTs mit 1.418 älteren Erwachsenen (Langzeit-Analyse)",
+"ergebnis": "Leucin allein: Magermasse WMD 0,03 kg (p = 0,92); mit Vit. D: Handkraft +2,17 kg (p = 0,027), Gang +0,03 m/s"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Reicht es im Alter, einen einzelnen Eiweißbaustein wie Leucin als Pulver zu nehmen, um mehr Muskeln und Kraft aufzubauen?",
+"richtig": "Meist nicht – es fehlen die übrigen Eiweißbausteine",
+"falsch": [
+"Ja – Leucin allein baut zuverlässig Muskelmasse auf",
+"Ja – ein einzelner Baustein wirkt stärker als echtes Essen",
+"Nein – Leucin bremst den Muskelaufbau im Alter direkt"
+],
+"warum": "Leucin gibt zwar kurzfristig ein Startsignal, aber ohne vollständiges Eiweiß blieben langfristig mehr Muskelmasse und Kraft aus."
+},
+"plus": {
+"frage": "Eine 68-jährige Person isst eine sehr eiweißarme Mahlzeit und will sie für die Muskeln aufwerten. Was ist sinnvoller?",
+"richtig": "Eine vollständige Eiweißquelle ergänzen",
+"falsch": [
+"Nur reines Leucin-Pulver in Wasser einrühren",
+"Die Mahlzeit einfach mit mehr Zucker ergänzen",
+"Auf das Eiweiß verzichten und später doppelt essen"
+],
+"warum": "Für echten Muskelaufbau braucht der Körper alle neun essenziellen Aminosäuren, nicht nur isoliertes Leucin."
+},
+"labor": {
+"frage": "Meta-Analysen verglichen akute und langfristige Effekte von Leucin bei Älteren (17 RCTs). Welcher Widerspruch zeigte sich?",
+"richtig": "Akute MPS stieg, aber langfristig fehlte Masse- und Kraftgewinn",
+"falsch": [
+"Akute MPS sank, langfristig wuchs die Muskelmasse aber stark",
+"Isoliertes Leucin steigerte die Beinpresse, nicht die Handkraft",
+"Auch kombiniert mit Vitamin D zeigte sich keinerlei Krafteffekt"
+],
+"warum": "Isoliertes Leucin stimulierte zwar akut die Proteinsynthese, brachte langfristig aber keinen signifikanten Gewinn bei Magermasse oder Kraft."
+}
+}
+},
+{
+"id": "EIN-116",
+"karte": {
+"kopf": "Studio-Neumitglieder · Verlaufsstudie",
+"titel": "Im unbetreuten Studio brechen fast zwei Drittel vor Monat drei ab",
+"titel_hervor": "fast zwei Drittel",
+"setup": "Über 5.200 neue Fitnessstudio-Mitglieder wurden ein Jahr lang begleitet und mit Daten aus betreuten Seniorengruppen verglichen.",
+"zahl": {
+"label": "Abbruch vor dem dritten Monat",
+"wert": "63 %",
+"alltag": "weniger als 4 % blieben ein ganzes Jahr"
+},
+"kern": [
+"Nach sechs Monaten hatten bereits rund 86 % das unbetreute Training beendet.",
+"Wer pausiert, kehrt am ehesten im ersten Monat danach wieder zurück.",
+"In betreuten Gruppen für Ältere blieben 63 bis 84 % ein ganzes Jahr dabei."
+],
+"grenze": "Beobachtungsdaten aus normalen Studios zeigen Zusammenhänge, erklären aber nicht jeden persönlichen Grund fürs Aufhören.",
+"fuer_dich": "Du fängst neu an? Plane in den ersten 12 Wochen zwei feste Termine pro Woche und starte nach Ausfällen sofort neu.",
+"labor": {
+"design": "Beobachtungsstudie / Survival-Analyse (12 Monate) plus Review betreuter Gruppen",
+"teilnehmer": "5.240 Studio-Neumitglieder (Ø 31 J.) sowie 1.370 Ältere (9 Studien)",
+"ergebnis": "Unbetreut: 63 % Dropout <3 Mon., 3,7 % >12 Mon., 38 % Rückkehr; betreute Ältere: 63–84 % nach 1 Jahr"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Wann geben die meisten Menschen ein neu gestartetes, unbetreutes Training im Fitnessstudio wieder auf?",
+"richtig": "Schon innerhalb der ersten drei Monate",
+"falsch": [
+"Meist erst nach genau einem vollen Jahr",
+"Fast alle bleiben das erste Jahr problemlos dabei",
+"Vor allem zwischen dem neunten und zwölften Monat"
+],
+"warum": "In einer großen Auswertung brachen 63 % der unbetreuten Neumitglieder schon vor dem dritten Monat ab, bevor eine feste Routine entstand."
+},
+"plus": {
+"frage": "Du bist seit drei Wochen nicht mehr beim Training gewesen und merkst, wie die Motivation schwindet. Wann ist der beste Zeitpunkt für die Rückkehr?",
+"richtig": "Sofort noch in diesem Monat wieder einsteigen",
+"falsch": [
+"Bis zum nächsten Monatsersten oder Neujahr warten",
+"Erst ein strenges Abnehmziel auf der Waage setzen",
+"Den Plan erst umbauen, wenn volle Lust zurückkommt"
+],
+"warum": "Die Rückkehrchance ist im ersten Monat nach einem Ausfall am höchsten und sinkt danach deutlich ab."
+},
+"labor": {
+"frage": "Eine Survival-Analyse von über 5.200 unbetreuten Studio-Neumitgliedern wurde Daten aus betreuten Gruppen Älterer gegenübergestellt. Was fiel auf?",
+"richtig": "Betreute Gruppen hatten nach einem Jahr weit höhere Haltequoten",
+"falsch": [
+"Unbetreute Studios hielten über die Hälfte der Mitglieder ein Jahr",
+"Ältere brachen betreute Gruppen schneller ab als junge Studionutzer",
+"Nach sechs Monaten hörte im unbetreuten Studio fast niemand mehr auf"
+],
+"warum": "Während im unbetreuten Studio unter 4 % ein Jahr durchhielten, blieben in betreuten Gruppen für Ältere 63 bis 84 % über ein Jahr aktiv."
+}
+}
+},
+{
+"id": "EIN-117",
+"karte": {
+"kopf": "Alle Erwachsenen · Weltweite Leitlinie",
+"titel": "Zwei Krafttage und Ausdauer bilden die Basis für Gesundheit",
+"titel_hervor": "Zwei Krafttage und Ausdauer",
+"setup": "Die Weltgesundheitsorganisation wertete systematische Übersichtsarbeiten aus, um Bewegungsziele für Erwachsene und Ältere festzulegen.",
+"zahl": {
+"label": "Weniger Stürze ab 65 mit Balance & Kraft",
+"wert": "ca. 30 %",
+"alltag": ""
+},
+"kern": [
+"Empfohlen sind 150 bis 300 Minuten lockere Ausdauer plus zweimal Kraft pro Woche.",
+"Ab 65 sollte an mindestens drei Tagen gezieltes Gleichgewichts- und Krafttraining dazu.",
+"Schon weniger Bewegung als das Ziel bringt klare Vorteile gegenüber reinem Sitzen."
+],
+"grenze": "Die Leitlinie nennt allgemeine Zielbereiche – persönliche Fitness und Vorerkrankungen erfordern eigene Anpassungen.",
+"fuer_dich": "Du willst gesundheitlich vorsorgen? Plane 150 Minuten lockere Ausdauer und zweimal Kraft pro Woche, ab 65 plus Balance.",
+"labor": {
+"design": "WHO-Leitlinie (2020) auf Basis systematischer Reviews und Meta-Analysen",
+"teilnehmer": "Erwachsene aller Altersgruppen sowie Ältere ab 65 Jahren",
+"ergebnis": "ca. 30 % Reduktion der Sturzrate durch multikomponentielles Kraft- und Balancetraining ab 65 J."
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du schaffst zeitlich nicht das volle Wochenziel für Ausdauer und Kraft. Bringt weniger Bewegung trotzdem etwas für deine Gesundheit?",
+"richtig": "Ja – schon weniger Bewegung bringt klare Vorteile",
+"falsch": [
+"Nein – unter dem Zielwert entsteht keinerlei Nutzen",
+"Nur wenn du alles an einem einzigen Tag nachholst",
+"Nein – dann lohnt sich erst ab 65 wieder ein Start"
+],
+"warum": "Auch Aktivitätsmengen unterhalb der empfohlenen Zielwerte bringen bereits deutliche gesundheitliche Vorteile gegenüber Inaktivität."
+},
+"plus": {
+"frage": "Du planst für deine 67-jährigen Eltern einen gesunden Wochenplan. Was sollte im Vergleich zu Jüngeren zusätzlich regelmäßig dabei sein?",
+"richtig": "Mindestens dreimal pro Woche Balance und Kraft",
+"falsch": [
+"Krafttraining streichen und nur locker spazieren",
+"Täglich hochintensive Sprints ohne Ruhetag",
+"Gleichgewichtstraining nur einmal im Monat üben"
+],
+"warum": "Ab 65 empfehlen Leitlinien zusätzlich an mindestens drei Tagen vielseitiges Kraft- und Gleichgewichtstraining, um Stürzen vorzubeugen."
+},
+"labor": {
+"frage": "Weltweite Bewegungsleitlinien auf Basis systematischer Reviews empfehlen Älteren ab 65 multikomponentielles Training. Welcher Effekt sticht dabei hervor?",
+"richtig": "Die Sturzrate sinkt im Schnitt um rund ein Drittel",
+"falsch": [
+"Ausdauertraining wird dadurch vollständig überflüssig",
+"Ein Einstieg erfordert zuvor zwingend eine Klinikprüfung",
+"Der Nutzen zeigt sich erst ab zehn Wochenstunden Sport"
+],
+"warum": "Multikomponentielles Kraft- und Balancetraining senkt die Sturzrate bei Älteren im Mittel um etwa 30 %, und beschwerdefreie Inaktive können schrittweise starten."
+}
+}
+},
+{
+"id": "EIN-118",
+"karte": {
+"kopf": "Erwachsene · 16 Langzeitstudien ausgewertet",
+"titel": "Schon 30 bis 60 Minuten Kraft pro Woche senken das Krankheitsrisiko",
+"titel_hervor": "30 bis 60 Minuten Kraft",
+"setup": "16 Langzeitstudien untersuchten, wie Krafttraining allein und mit Ausdauer mit Herz-, Krebs-, Diabetes- und Sterberisiko zusammenhängt.",
+"zahl": {
+"label": "Geringeres Risiko bei 30–60 Min./Woche",
+"wert": "−10 bis −17 %",
+"alltag": "mit Ausdauer kombiniert: −40 %"
+},
+"kern": [
+"Der Schutzeffekt galt für Herz-Kreislauf, Krebs und Diabetes unabhängig von Ausdauer.",
+"Kraft und Ausdauer zusammen senkten das Sterberisiko im Schnitt sogar um 40 %.",
+"Schon ein anstrengender Satz pro Übung zwei- bis dreimal wöchentlich stärkt spürbar."
+],
+"grenze": "Warum sehr viel Krafttraining keinen Zusatzvorteil zeigte, bleibt offen; ein einzelner Satz schöpft die Kraft nicht voll aus.",
+"fuer_dich": "Du hast kaum Zeit? Trainiere 2–3 Mal pro Woche je 15–30 Minuten mit einem harten Satz pro Hauptübung bei RPE 8–9.",
+"labor": {
+"design": "Systematisches Review mit Meta-Analyse von 16 Kohortenstudien plus Minimaldosis-Review",
+"teilnehmer": "16 epidemiologische Kohortenstudien mit Erwachsenen",
+"ergebnis": "30–60 Min./Wo.: −10–17 % Risiko (CVD RR 0,83; Krebs RR 0,88); Kraft + Ausdauer RR 0,60 (CVD RR 0,54)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Lohnt sich Krafttraining für deine Gesundheit überhaupt, wenn du nur eine halbe bis ganze Stunde pro Woche Zeit dafür hast?",
+"richtig": "Ja – genau dort lag der größte Gesundheitsschutz",
+"falsch": [
+"Nein – gesundheitliche Effekte starten erst ab 5 Stunden",
+"Nur wenn du gar kein Ausdauertraining daneben machst",
+"Nein – Krafttraining schützt nur Muskeln, nicht das Herz"
+],
+"warum": "Schon 30 bis 60 Minuten Krafttraining pro Woche senkten das Risiko für Herz-Kreislauf-Erkrankungen, Krebs, Diabetes und Sterblichkeit spürbar."
+},
+"plus": {
+"frage": "Du hast beruflich extrem wenig Zeit, willst aber Kraft aufbauen und gesund bleiben. Welches Minimalprogramm ist am wirksamsten?",
+"richtig": "2–3x kurz mit je 1 hartem Satz (RPE 8–9) pro Übung",
+"falsch": [
+"1x im Monat zwei Stunden bis zur Erschöpfung trainieren",
+"2–3x kurz mit ganz lockeren Sätzen bei RPE 3–4",
+"Krafttraining ganz streichen, bis mehr Zeit da ist"
+],
+"warum": "Zwei bis drei kurze Einheiten mit einem anstrengenden Satz pro Hauptübung bringen 30 bis 60 Minuten zusammen und steigern die Kraft messbar."
+},
+"labor": {
+"frage": "Eine Meta-Analyse von 16 Kohortenstudien untersuchte den Zusammenhang zwischen Krafttrainingsdauer und Sterberisiko. Welche Kurvenform zeigte sich?",
+"richtig": "J-förmig: Maximum bei 30–60 Min., ohne Zusatzvorteil bei sehr viel",
+"falsch": [
+"Streng linear: je mehr Stunden Kraft, desto tiefer das Risiko",
+"Kein eigenständiger Effekt ohne gleichzeitiges Ausdauertraining",
+"Ein Schutzeffekt trat nur bei Herz-Kreislauf, nicht bei Krebs auf"
+],
+"warum": "Die größte Risikoreduktion lag bei 30 bis 60 Minuten pro Woche, und sehr hohe Umfänge brachten keinen zusätzlichen Mortalitätsvorteil."
+}
+}
+},
+{
+"id": "ERN-101",
+"karte": {
+"kopf": "Krafttrainierende · 49 Studien zusammengefasst",
+"titel": "Über 1,6 Gramm Eiweiß pro Kilo bringen kaum noch mehr Muskeln",
+"titel_hervor": "kaum noch mehr Muskeln",
+"setup": "Forschende werteten 49 Krafttrainings-Studien aus und prüften, ab welcher täglichen Eiweißmenge der Zuwachs an Muskelmasse und Kraft abflacht.",
+"zahl": {
+"label": "Grenze für messbaren Mehrwert",
+"wert": "1,62 g/kg",
+"alltag": ""
+},
+"kern": [
+"Bis etwa 1,62 Gramm pro Kilo Körpergewicht steigen Muskelmasse und Kraft spürbar",
+"Wer schon länger trainiert, profitiert im Schnitt stärker von mehr Eiweiß",
+"Im höheren Alter reagiert der Körper oft schwächer auf dieselbe Eiweißmenge"
+],
+"grenze": "Die Studien nutzten verschiedene Messverfahren und der genaue Bedarf schwankt von Mensch zu Mensch.",
+"fuer_dich": "Du trainierst für Muskelaufbau und isst genug Kalorien? Peile etwa 1,6 Gramm Eiweiß pro Kilo Körpergewicht am Tag an.",
+"labor": {
+"design": "Meta-Analyse aus 49 Interventionsstudien zu Proteinsupplementierung und Krafttraining",
+"teilnehmer": "1.863 Teilnehmende (Einsteiger, Trainierte und Ältere)",
+"ergebnis": "Breakpoint 1,62 g/kg/Tag für fettfreie Masse (oberes Konfidenzintervall 2,2 g/kg/Tag)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du machst Krafttraining für mehr Muskeln. Stimmt es, dass extrem viel Eiweiß auch extrem viel mehr Muskeln bringt?",
+"richtig": "Nein, ab einer bestimmten Menge flacht der zusätzliche Nutzen ab",
+"falsch": [
+"Ja, je mehr Eiweiß du isst, desto schneller wachsen die Muskeln",
+"Nein, Eiweiß hilft nur beim Abnehmen und nicht beim Muskelaufbau",
+"Ja, besonders Einsteiger brauchen doppelt so viel wie Fortgeschrittene"
+],
+"warum": "Bis rund 1,6 Gramm pro Kilo Körpergewicht steigen Muskeln und Kraft deutlich, darüber hinaus bringt mehr Eiweiß im Schnitt keinen messbaren Vorteil."
+},
+"plus": {
+"frage": "Du trainierst im Kalorienüberschuss und schaffst 1,6 bis 1,8 g Protein pro kg Körpergewicht. Solltest du auf 3 g/kg erhöhen?",
+"richtig": "Meist nicht nötig, da der Zusatznutzen ab etwa 1,6 g/kg abflacht",
+"falsch": [
+"Ja, erst ab 2,5 g/kg startet der Muskelaufbau überhaupt richtig",
+"Ja, sonst verlierst du trotz Krafttraining direkt wieder Kraft",
+"Nein, über 1,6 g/kg baut der Körper sogar weniger Muskeln auf"
+],
+"warum": "In großen Auswertungen lag die Grenze für messbare Zusatzgewinne bei 1,62 g/kg, mit 2,2 g/kg als oberer Sicherheitsgrenze."
+},
+"labor": {
+"frage": "In einer Meta-Analyse aus 49 Krafttrainings-Studien wurde die Dosis-Wirkungs-Beziehung von Protein untersucht. Wie beeinflussten Alter und Trainingserfahrung den Effekt?",
+"richtig": "Mehr Erfahrung verstärkte den Nutzen, höheres Alter schwächte ihn ab",
+"falsch": [
+"Beide Faktoren hatten keinerlei messbaren Einfluss auf den Effekt",
+"Höheres Alter verstärkte den Nutzen, mehr Erfahrung schwächte ihn ab",
+"Nur Einsteiger profitierten, bei Trainierten gab es keinen Effekt"
+],
+"warum": "Anabole Resistenz im Alter dämpft die Wirkung von zusätzlichem Protein, während fortgeschrittene Trainingserfahrung den Nutzen erhöht."
+}
+}
+},
+{
+"id": "ERN-102",
+"karte": {
+"kopf": "Trainierende im Defizit · Übersichtsarbeit",
+"titel": "Mehr Eiweiß hilft beim Abnehmen, die Muskeln zu schützen",
+"titel_hervor": "die Muskeln zu schützen",
+"setup": "Eine Übersichtsarbeit fasste Untersuchungen zusammen, wie verschiedene Eiweißmengen bei einer Diät mit Krafttraining den Muskelerhalt beeinflussen.",
+"zahl": null,
+"kern": [
+"In einer Diät bremst der Körper den Muskelaufbau stärker als sonst",
+"Viel Eiweiß plus Krafttraining hält diesen Rückgang deutlich kleiner",
+"Bei sehr strengen Diäten lässt die Schutzwirkung allerdings spürbar nach"
+],
+"grenze": "Einzelne neuere Untersuchungen an Freizeitsportlern fanden keinen klaren Unterschied zwischen mittlerer und sehr hoher Eiweißmenge.",
+"fuer_dich": "Du willst abnehmen, ohne deine hart erarbeitete Muskulatur zu verlieren? Kombiniere Krafttraining mit 1,6 bis 2,4 Gramm Eiweiß pro Kilo am Tag.",
+"labor": {
+"design": "Übersichtsarbeit zu Proteinbedarf und Muskelproteinsynthese im Energiedefizit",
+"teilnehmer": "Trainierte und Freizeitsportler (u. a. 10-Tage-Diät mit n=24)",
+"ergebnis": "MPS-Abfall bei 40 % Defizit: 0,061 auf 0,045 %/h (1,2 g/kg) vs. 0,059 auf 0,051 %/h (2,4 g/kg; mit Krafttraining 0,067 %/h)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du isst weniger Kalorien, um abzunehmen, und gehst nebenbei ins Krafttraining. Warum ist Eiweiß jetzt besonders wichtig?",
+"richtig": "Es hilft dem Körper, beim Abnehmen mehr Muskeln zu behalten",
+"falsch": [
+"Es verbrennt Körperfett ganz ohne Kaloriendefizit",
+"Es verhindert, dass du überhaupt Hunger bekommst",
+"Es ersetzt das Krafttraining in der Diät vollständig"
+],
+"warum": "Im Kaloriendefizit baut der Körper leichter Muskeln ab – mehr Eiweiß zusammen mit Krafttraining schützt die Muskelmasse."
+},
+"plus": {
+"frage": "Du startest eine Diät und willst deine Muskelmasse halten. Wie solltest du dein Proteinziel im Vergleich zum Aufbau anpassen?",
+"richtig": "Eher anheben auf etwa 1,6 bis 2,4 g/kg und weiter Kraft trainieren",
+"falsch": [
+"Deutlich senken, weil du im Defizit weniger Protein verwerten kannst",
+"Unverändert lassen und das Krafttraining durch reines Cardio ersetzen",
+"Nur an trainingsfreien Tagen erhöhen und an Trainingstagen halbieren"
+],
+"warum": "Ein höheres Proteinziel zwischen 1,6 und 2,4 g/kg dämpft im Defizit zusammen mit Krafttraining den Rückgang der Muskelproteinsynthese."
+},
+"labor": {
+"frage": "In einer 10-tägigen Diät mit 40 % Energiedefizit wurde die Muskelproteinsynthese bei 1,2 vs. 2,4 g/kg Protein gemessen. Was zeigte sich?",
+"richtig": "Der Abfall fiel bei 2,4 g/kg geringer aus und stieg mit Krafttraining an",
+"falsch": [
+"Beide Proteinmengen führten zu einem identischen Abfall ohne Reizwirkung",
+"Die höhere Menge verhinderte den Abfall nur ohne Krafttraining",
+"Bei 1,2 g/kg blieb die Muskelproteinsynthese höher als bei 2,4 g/kg"
+],
+"warum": "Bei 2,4 g/kg sank die Synthese weniger stark als bei 1,2 g/kg, und erst in Kombination mit Krafttraining übertraf sie den Ausgangswert."
+}
+}
+},
+{
+"id": "ERN-103",
+"karte": {
+"kopf": "Trainierende & Ältere · Übersichtsarbeit",
+"titel": "Vier verteilte Eiweiß-Mahlzeiten nutzen mehr als wenige große",
+"titel_hervor": "Vier verteilte Eiweiß-Mahlzeiten",
+"setup": "Eine Übersichtsarbeit prüfte, wie gut der Körper Eiweiß nutzt, wenn es über den Tag verteilt oder auf wenige große Mahlzeiten gebündelt wird.",
+"zahl": null,
+"kern": [
+"Etwa vier Mahlzeiten alle drei bis vier Stunden setzen regelmäßig Aufbaureize",
+"Die alte Grenze von 20 Gramm pro Mahlzeit gilt nur für schnelle Shakes nüchtern",
+"Gemischte Mahlzeiten verdauen langsamer und geben Eiweiß über Stunden ab"
+],
+"grenze": "Direkte Langzeitstudien im Kalorienüberschuss, die verschiedene Verteilungen vergleichen, fehlen noch.",
+"fuer_dich": "Du isst bisher fast dein ganzes Eiweiß erst am Abend? Teile deine Tagesmenge lieber auf vier Mahlzeiten im Abstand von drei bis vier Stunden auf.",
+"labor": {
+"design": "Übersichtsarbeit zu Proteinverteilung, Portionsgröße und Absorptionskinetik",
+"teilnehmer": "Erwachsene, Trainierte und Ältere aus ausgewerteten Einzelstudien",
+"ergebnis": "Optimalbereich ca. 0,4 bis 0,55 g/kg pro Mahlzeit auf ≥4 Mahlzeiten (1,6–2,2 g/kg/Tag)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Oft heißt es, der Körper könne pro Mahlzeit höchstens 20 Gramm Eiweiß aufnehmen und der Rest gehe verloren. Was stimmt?",
+"richtig": "Das gilt so nicht, normale Mahlzeiten werden langsamer über Stunden genutzt",
+"falsch": [
+"Das stimmt genau, jedes Gramm über 20 Gramm wird sofort ausgeschieden",
+"Das stimmt nur beim Frühstück, abends nimmt der Körper mehr auf",
+"Nein, der Körper braucht mindestens 80 Gramm pro Mahlzeit für einen Effekt"
+],
+"warum": "Die 20-bis-25-Gramm-Grenze stammt aus Tests mit schnellen Shakes auf nüchternen Magen – gemischte Mahlzeiten werden deutlich langsamer verdaut."
+},
+"plus": {
+"frage": "Du erreichst dein Tagesziel von rund 2 g/kg Protein bisher mit nur zwei sehr großen Mahlzeiten. Was wäre für den Muskelaufbau meist günstiger?",
+"richtig": "Die Menge auf etwa vier Mahlzeiten alle drei bis vier Stunden verteilen",
+"falsch": [
+"Alles auf eine einzige große Mahlzeit nach dem Training bündeln",
+"Die Gesamtmenge halbieren, damit pro Mahlzeit höchstens 20 g ankommen",
+"Jede Stunde einen kleinen Shake trinken, auch mitten in der Nacht"
+],
+"warum": "Mindestens vier Mahlzeiten mit etwa 0,4 bis 0,55 g/kg Protein setzen über den Tag hinweg gleichmäßige anabole Reize."
+},
+"labor": {
+"frage": "Welche methodische Einschränkung schränkt die Aussagekraft der gängigen 20–25-g-Obergrenze für die tägliche Sporternährung ein?",
+"richtig": "Sie wurde mit isolierten Proteinen nüchtern getestet, nicht mit Mischkost",
+"falsch": [
+"Sie wurde ausschließlich an Ausdauersportlern während Marathons gemessen",
+"Sie basiert nur auf Selbstauskünften statt auf Labormessungen",
+"Sie wurde ausschließlich mit pflanzlichem Erbsenprotein erhoben"
+],
+"warum": "Gemischte Mahlzeiten verzögern die Verdauung und dämpfen die Aminosäureoxidation; zudem fehlen direkte hyperkalorische Langzeitstudien."
+}
+}
+},
+{
+"id": "ERN-104",
+"karte": {
+"kopf": "Erwachsene · 16 Studien zusammengefasst",
+"titel": "Tierisches Eiweiß bringt unter 50 Jahren nur leicht mehr Muskeln",
+"titel_hervor": "nur leicht mehr Muskeln",
+"setup": "Eine Auswertung von 16 kontrollierten Studien verglich tierisches und pflanzliches Eiweiß hinsichtlich Muskelmasse und Maximalkraft.",
+"zahl": {
+"label": "Mehr Magermasse unter 50 Jahren",
+"wert": "+0,41 kg",
+"alltag": ""
+},
+"kern": [
+"Bei der Maximalkraft gab es über alle Altersgruppen keinen klaren Unterschied",
+"Ab 50 Jahren verschwand auch der kleine Vorteil bei der Muskelmasse",
+"Pflanzenproteine enthalten meist etwas weniger Leucin und werden langsamer aufgenommen"
+],
+"grenze": "Die meisten Studien verglichen nur Milch- mit Sojaprotein; bei Senioren zeigten Einzelmahlzeiten im Labor stärkere Unterschiede.",
+"fuer_dich": "Du isst hauptsächlich pflanzliches Eiweiß? Plane pro Mahlzeit etwas größere Portionen oder kombiniere Quellen wie Erbse und Reis.",
+"labor": {
+"design": "Meta-Analyse aus 16 randomisierten kontrollierten Studien (tierisch vs. pflanzlich)",
+"teilnehmer": "Erwachsene unter und über 50 Jahre aus 16 gepoolten RCTs",
+"ergebnis": "WMD +0,41 kg Magermasse (95 % KI 0,08 bis 0,74) und +0,50 % bei <50 Jahren; Kraft kein Effekt"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Kannst du mit pflanzlichem Eiweiß genauso stark werden wie mit tierischem Eiweiß?",
+"richtig": "Ja, bei der Maximalkraft zeigte sich im Schnitt kein klarer Unterschied",
+"falsch": [
+"Nein, ohne tierisches Eiweiß steigt die Kraft fast gar nicht",
+"Ja, pflanzliches Eiweiß macht im Schnitt sogar deutlich stärker",
+"Nein, pflanzliches Eiweiß funktioniert nur bei Menschen über 50 Jahren"
+],
+"warum": "Über alle Altersgruppen hinweg brachte tierisches Eiweiß keinen signifikanten Vorteil für die Maximalkraft."
+},
+"plus": {
+"frage": "Deine Mahlzeit besteht nur aus einer einzelnen pflanzlichen Proteinquelle. Wie kannst du den etwas geringeren Leucinanteil ausgleichen?",
+"richtig": "Die Portion auf 30 bis 40 g erhöhen oder Quellen wie Erbse und Reis mischen",
+"falsch": [
+"Die Mahlzeit komplett durch schnelle Kohlenhydrate ersetzen",
+"Die Portion halbieren, damit der Körper sie besser aufnehmen kann",
+"Zusätzlich viel Fett essen, um den Leucinanteil zu verdoppeln"
+],
+"warum": "Pflanzliche Proteine haben im Schnitt weniger Leucin und geringere Absorption – größere Portionen oder Kombinationen gleichen das aus."
+},
+"labor": {
+"frage": "In einer Meta-Analyse aus 16 RCTs wurde tierisches gegen pflanzliches Protein verglichen. Welcher Altersunterschied zeigte sich?",
+"richtig": "Ein kleiner Magermasse-Vorteil für tierisches Protein nur unter 50 Jahren",
+"falsch": [
+"Ein starker Kraftvorteil für tierisches Protein in allen Altersgruppen",
+"Ein deutlicher Vorteil für pflanzliches Protein bei Personen über 50 Jahren",
+"Ein großer Magermasse-Vorteil für tierisches Protein erst ab 65 Jahren"
+],
+"warum": "Unter 50 Jahren lag der Vorteil bei +0,41 kg Magermasse, ab 50 Jahren verschwand der Gruppenunterschied – bei allerdings meist Milch-vs.-Soja-Designs."
+}
+}
+},
+{
+"id": "ERN-105",
+"karte": {
+"kopf": "Junge Männer · 12-Wochen-Studie",
+"titel": "Veganer bauten in 12 Wochen genauso viel Beinmuskeln auf",
+"titel_hervor": "genauso viel Beinmuskeln",
+"setup": "38 junge Männer – je zur Hälfte Veganer und Mischköstler – trainierten zwölf Wochen zweimal pro Woche bei gleicher Eiweißmenge von 1,6 g/kg.",
+"zahl": {
+"label": "Zuwachs an Beinmagermasse (beide)",
+"wert": "+1,2 kg",
+"alltag": "in 12 Wochen"
+},
+"kern": [
+"Auch der Querschnitt des Oberschenkelmuskels wuchs in beiden Gruppen ähnlich stark",
+"In der Beinpresse steigerten beide Gruppen ihre Maximalkraft ohne klaren Unterschied",
+"Die vegane Gruppe nutzte mehr Eiweißpulver, um die tägliche Menge zu erreichen"
+],
+"grenze": "Untersucht wurden nur 38 junge Männer, und die Gruppengröße war für sehr kleine Kraftunterschiede knapp bemessen.",
+"fuer_dich": "Du ernährst dich vegan und willst Muskeln aufbauen? Achte auf 1,6 Gramm Eiweiß pro Kilo und nutze bei Bedarf pflanzliches Proteinpulver.",
+"labor": {
+"design": "Kontrollierte Interventionsstudie über 12 Wochen (2x/Woche Krafttraining, 1,6 g/kg Protein)",
+"teilnehmer": "38 junge Männer (19 Veganer, 19 Omnivoren)",
+"ergebnis": "Beinmagermasse +1,2 ± 1,0 kg (VEG) vs. +1,2 ± 0,8 kg (OMN), kein signifikanter Gruppenunterschied"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Zwei Gruppen junger Männer trainierten zwölf Wochen gleich hart – eine aß vegan, die andere Mischkost, beide mit gleich viel Eiweiß. Was passierte?",
+"richtig": "Beide Gruppen bauten im Schnitt gleich viel Beinmuskulatur auf",
+"falsch": [
+"Die vegane Gruppe baute nur halb so viel Muskulatur auf",
+"Die Mischkost-Gruppe verlor Muskeln durch zu viel tierisches Fett",
+"Keine der beiden Gruppen baute in zwölf Wochen messbar Muskeln auf"
+],
+"warum": "Bei gleicher Eiweißmenge von 1,6 Gramm pro Kilo legten beide Gruppen im Schnitt 1,2 Kilo Beinmagermasse zu."
+},
+"plus": {
+"frage": "Du lebst vegan und willst dein Ziel von 1,6 g/kg Protein erreichen, ohne zu viele Kalorien zu essen. Was half in der Praxis am besten?",
+"richtig": "Den Alltag gezielt mit pflanzlichem Proteinisolat wie Soja ergänzen",
+"falsch": [
+"Einfach deutlich mehr Nüsse und Öle essen, um Protein zu sparen",
+"Das Proteinziel halbieren, weil veganes Protein doppelt wirkt",
+"Nur noch vor dem Training essen und die restliche Zeit fasten"
+],
+"warum": "Um 1,6 g/kg bei stabilen Kalorien zu schaffen, nutzte die vegane Gruppe im Schnitt mehr pflanzliches Proteinisolat als die Mischkost-Gruppe."
+},
+"labor": {
+"frage": "In einer 12-wöchigen Studie mit 38 jungen Männern wurden vegane und omnivore Kost bei 1,6 g/kg Protein verglichen. Welche Grenze hat das Design?",
+"richtig": "Nur junge Männer, hoher Isolat-Anteil und knappe Power für kleine Krafteffekte",
+"falsch": [
+"Die beiden Gruppen trainierten nach völlig unterschiedlichen Trainingsplänen",
+"Die vegane Gruppe erhielt deutlich weniger Gesamteiweiß pro Tag",
+"Es wurden ausschließlich Fragebögen statt Muskelmessungen verwendet"
+],
+"warum": "Die vegane Gruppe brauchte im Schnitt 58 g Sojaisolat pro Tag, und die Stichprobe war primär auf Hypertrophie statt kleine Kraftdifferenzen ausgelegt."
+}
+}
+},
+{
+"id": "ERN-106",
+"karte": {
+"kopf": "Krafttrainierende · 15 Langzeitstudien",
+"titel": "Normales Krafttraining braucht keine strikte Kohlenhydrat-Menge",
+"titel_hervor": "keine strikte Kohlenhydrat-Menge",
+"setup": "Eine systematische Auswertung prüfte 15 Langzeit- und 7 Kurzzeitstudien dazu, wie stark die Kohlenhydratmenge Kraft und Muskelaufbau beeinflusst.",
+"zahl": {
+"label": "Langzeitstudien ohne Unterschied",
+"wert": "13 von 15",
+"alltag": ""
+},
+"kern": [
+"Bei bis zu zehn Sätzen pro Muskelgruppe machten mehr Kohlenhydrate kaum einen Unterschied",
+"In allen sieben Kurzzeitstudien zeigte sich im gesättigten Zustand kein klarer Vorteil",
+"Wichtiger als die genaue Kohlenhydratmenge bleiben genug Kalorien und Eiweiß"
+],
+"grenze": "Bei sehr hohem Volumen über zehn Sätzen pro Muskelgruppe oder zwei Einheiten am Tag können Kohlenhydrate doch helfen.",
+"fuer_dich": "Du trainierst normal mit bis zu zehn Sätzen pro Muskelgruppe? Wähle deine Kohlenhydrate flexibel nach Vorliebe, etwa 3 bis 5 Gramm pro Kilo.",
+"labor": {
+"design": "Systematisches Review (15 Langzeit-, 7 Kurzzeitstudien) plus Folge-Meta-Analyse (k=11)",
+"teilnehmer": "Krafttrainierende (Folge-Meta-Analyse: n=227)",
+"ergebnis": "13/15 Langzeitstudien ohne Unterschied; Folge-Meta-Analyse SMD = 0,15 (p=0,230)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du gehst normal ins Krafttraining und isst vorher regulär. Brauchst du riesige Mengen Nudeln oder Reis, um Muskeln aufzubauen?",
+"richtig": "Nein, bei normalem Training macht die genaue Kohlenhydratmenge kaum Unterschied",
+"falsch": [
+"Ja, ohne sehr viele Kohlenhydrate wachsen Muskeln überhaupt nicht",
+"Nein, Kohlenhydrate verhindern sogar den Muskelaufbau beim Krafttraining",
+"Ja, mindestens die Hälfte jeder Mahlzeit muss reiner Zucker sein"
+],
+"warum": "In 13 von 15 Langzeitstudien machte die Höhe der Kohlenhydratzufuhr bei normalem Krafttraining keinen klaren Unterschied für Kraft oder Muskeln."
+},
+"plus": {
+"frage": "Dein Kraftplan umfasst bis zu 10 Sätze pro Muskelgruppe und du trainierst nicht nüchtern. Wie solltest du deine Kohlenhydrate planen?",
+"richtig": "Flexibel nach Vorliebe im Bereich von etwa 3 bis 5 g/kg am Tag",
+"falsch": [
+"Streng bei mindestens 10 g/kg, sonst bricht deine Kraftleistung ein",
+"Komplett auf null streichen, weil Fette beim Krafttraining besser wirken",
+"Nur nach dem Training essen und den restlichen Tag komplett meiden"
+],
+"warum": "Bis etwa 10 Sätze pro Muskelgruppe im gefütterten Zustand bietet ein flexibler Korridor von 3 bis 5 g/kg keinen Nachteil für Kraft oder Hypertrophie."
+},
+"labor": {
+"frage": "Ein systematisches Review fand bei bis zu 10 Sätzen pro Muskelgruppe kaum Vorteile höherer Kohlenhydratzufuhr. Wann bleibt die Lage unsicher?",
+"richtig": "Bei sehr hohem Volumen über 10 Sätzen oder zweimal täglichem Training",
+"falsch": [
+"Bei sehr kurzen Einheiten unter 20 Minuten mit geringer Last",
+"Bei Trainingsanfängern, die nur einmal pro Woche trainieren",
+"Bei reinem Dehntraining ohne Kraftbelastung"
+],
+"warum": "Für sehr hohes Volumen oder Doppeleinheiten fehlen noch sauber kontrollierte, isokalorische Studien mit sensorisch abgeglichenen Placebos."
+}
+}
+},
+{
+"id": "ERN-107",
+"karte": {
+"kopf": "Krafttrainierende · 21 Studien zusammengefasst",
+"titel": "Kohlenhydrate vor langem Krafttraining bringen spürbar mehr Arbeit",
+"titel_hervor": "spürbar mehr Arbeit",
+"setup": "Eine Auswertung von 21 Crossover-Studien testete, ob Kohlenhydrate kurz vor oder während des Krafttrainings das geschaffte Trainingsvolumen steigern.",
+"zahl": null,
+"kern": [
+"Besonders ab 45 Minuten Trainingsdauer schafften Teilnehmende deutlich mehr Volumen",
+"Auch nach mindestens acht Stunden ohne Essen halfen Kohlenhydrate merklich weiter",
+"Je mehr Sätze bis ans Limit gingen, desto größer fiel der Nutzen aus"
+],
+"grenze": "Das höhere Volumen führte zu mehr Laktat nach dem Training, was die Erholung bis zur nächsten Einheit verlängern kann.",
+"fuer_dich": "Dein Krafttraining dauert über 45 Minuten oder du trainierst morgens nüchtern? Iss kurz davor oder währenddessen etwas leicht verdauliche Kohlenhydrate.",
+"labor": {
+"design": "Meta-Analyse aus 21 Crossover-Studien (akute Kohlenhydratzufuhr vs. Kontrolle)",
+"teilnehmer": "226 Teilnehmende im Krafttraining",
+"ergebnis": "Gesamtvolumen SMD = 0,61; bei >45 min SMD = 1,02; nach ≥8 h Fasten SMD = 0,39; Laktat SMD = 0,58"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du gehst morgens nach einer langen Nacht ohne Frühstück ins Krafttraining. Wann lohnt sich ein kleiner Kohlenhydrat-Snack davor besonders?",
+"richtig": "Wenn du nüchtern startest oder deine Einheit länger als 45 Minuten dauert",
+"falsch": [
+"Nur wenn du weniger als 15 Minuten trainierst und kaum schwitzt",
+"Nie, weil Essen vor dem Training die Kraftleistung meist halbiert",
+"Nur wenn du statt Krafttraining einen lockeren Spaziergang machst"
+],
+"warum": "Nach mindestens acht Stunden ohne Essen oder bei Einheiten über 45 Minuten helfen Kohlenhydrate, insgesamt mehr Arbeit im Training zu schaffen."
+},
+"plus": {
+"frage": "Du planst eine intensive 70-Minuten-Krafteinheit mit vielen Sätzen nah am Muskelversagen. Was hilft dir akut am ehesten fürs Volumen?",
+"richtig": "Kohlenhydrate kurz vor oder während der Einheit zuführen",
+"falsch": [
+"Mindestens acht Stunden vor dem Training gar nichts essen",
+"Die Kohlenhydrate komplett streichen und nur Wasser trinken",
+"Ausschließlich direkt vor der Einheit viel Fett essen"
+],
+"warum": "Bei Einheiten über 45 Minuten und Sätzen bis zum Muskelversagen steigern akute Kohlenhydrate das absolvierte Trainingsvolumen deutlich."
+},
+"labor": {
+"frage": "In einer Meta-Analyse aus 21 Crossover-Studien steigerten akute Kohlenhydrate das Trainingsvolumen. Wovon hing die Effektstärke kaum ab?",
+"richtig": "Von der exakten Kohlenhydratdosis und der relativen Trainingslast",
+"falsch": [
+"Von der Dauer der Trainingseinheit über oder unter 45 Minuten",
+"Von der Anzahl der Sätze bis zum Muskelversagen",
+"Davon, ob die Einheit nach mindestens acht Stunden Fasten stattfand"
+],
+"warum": "Dauer (>45 min), Fasten (≥8 h) und Sätze bis zum Versagen verstärkten den Effekt, während genaue Dosis und relative Last kaum eine Rolle spielten."
+}
+}
+},
+{
+"id": "ERN-108",
+"karte": {
+"kopf": "Ausdauersportler · Experten-Empfehlung",
+"titel": "Für hartes Ausdauertraining bleiben volle Kohlenhydrat-Speicher zentral",
+"titel_hervor": "volle Kohlenhydrat-Speicher zentral",
+"setup": "Ein Fachgremium fasste die Studienlage zum Energie- und Kohlenhydratbedarf bei mittlerem bis intensivem Ausdauertraining zusammen.",
+"zahl": null,
+"kern": [
+"Muskeln und Leber liefern bei hohem Tempo den Großteil der schnellen Energie",
+"Fettreiche Diäten mit wenig Kohlenhydraten steigerten die Ausdauerleistung nicht",
+"Dauerhaft zu wenig Kohlenhydrate kann Entzündungen fördern und Eisenwerte stören"
+],
+"grenze": "Es handelt sich um Experten-Richtwerte ohne eigene statistische Gesamtauswertung – der echte Bedarf hängt stark vom Trainingsumfang ab.",
+"fuer_dich": "Du trainierst oft und intensiv Ausdauer? Passe deine Kohlenhydrate an das Pensum an und fülle die Speicher bei kurzen Pausen direkt nach dem Training auf.",
+"labor": {
+"design": "Positionspapier und Expertenkonsens zur Sporternährung",
+"teilnehmer": "Ausdauer- und Hybridathleten (Praxisrichtwerte aus Fachliteratur)",
+"ergebnis": ""
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du trainierst regelmäßig für schnelle Läufe oder lange Radtouren. Stimmt es, dass extrem wenig Kohlenhydrate dich dabei schneller machen?",
+"richtig": "Nein, bei mittlerem bis hohem Tempo brauchen Muskeln gut gefüllte Speicher",
+"falsch": [
+"Ja, ohne Kohlenhydrate läuft der Körper bei hohem Tempo deutlich schneller",
+"Ja, der Körper speichert gar keine Kohlenhydrate in den Muskeln",
+"Nein, aber nur weil Kohlenhydrate direkt in Muskelmasse umgewandelt werden"
+],
+"warum": "Bei intensiver Ausdauer sind die Glykogenspeicher in Muskeln und Leber entscheidend; sehr kohlenhydratarme Diäten steigerten die Leistung nicht."
+},
+"plus": {
+"frage": "Du hast heute zwei intensive Ausdauereinheiten mit nur wenigen Stunden Pause dazwischen. Worauf solltest du direkt nach der ersten Einheit achten?",
+"richtig": "Rasch Kohlenhydrate nachlegen, um die Glykogenspeicher schnell zu füllen",
+"falsch": [
+"Bis zur zweiten Einheit komplett fasten, um den Fettstoffwechsel zu trainieren",
+"Ausschließlich Fett und Eiweiß essen und Kohlenhydrate erst abends nehmen",
+"Nur reines Wasser trinken, weil die Speicher sich von selbst auffüllen"
+],
+"warum": "Bei kurzen Erholungsfenstern zwischen zwei Einheiten empfiehlt das Positionspapier 1,0 bis 1,2 g Kohlenhydrate pro Kilo und Stunde direkt nach dem Ende."
+},
+"labor": {
+"frage": "Welche Risiken nennt der Expertenkonsens für Ausdauersportler bei chronisch niedriger Kohlenhydrat- und Energieverfügbarkeit?",
+"richtig": "Erhöhte Entzündungsmarker und Störungen im Eisenstoffwechsel",
+"falsch": [
+"Eine dauerhafte Verdopplung der Leberglykogenspeicher",
+"Einen automatischen Anstieg der maximalen Sprintleistung",
+"Einen verringerten Proteinbedarf unter das Niveau von Nichtsportlern"
+],
+"warum": "Chronisch niedrige Kohlenhydrat- und Energieverfügbarkeit kann Entzündungsmarker erhöhen und den Eisenstoffwechsel über Hepcidin und Ferritin stören."
+}
+}
+},
+{
+"id": "ERN-109",
+"karte": {
+"kopf": "Männer · 6 und 11 Studien im Vergleich",
+"titel": "Sehr wenig Fett gibt erste Hinweise auf leicht tieferes Testosteron",
+"titel_hervor": "leicht tieferes Testosteron",
+"setup": "Zwei große Auswertungen verglichen stark fettarme mit fettreicherer Ernährung und maßen die Wirkung auf männliche Sexualhormone.",
+"zahl": null,
+"kern": [
+"Ältere kleine Studien sahen bei unter 20 Prozent Fettanteil etwas tieferes Testosteron",
+"Eine neuere, größere Auswertung randomisierter Studien fand keinen klaren Unterschied",
+"Ein moderater Fettanteil von 20 bis 35 Prozent gilt daher als sinnvolle Untergrenze"
+],
+"grenze": "Die Studienlage ist widersprüchlich und teils sehr alt – einige Tests senkten Fett extrem bis auf unter sieben Prozent.",
+"fuer_dich": "Du kürzt in einer Diät gerade stark beim Fett? Bleibe im Alltag möglichst über 20 Prozent deiner Gesamtkalorien, um auf der sicheren Seite zu sein.",
+"labor": {
+"design": "Zwei Meta-Analysen (k=6 meist nicht-randomisiert vs. k=11 RCTs), Low-Fat vs. High-Fat",
+"teilnehmer": "206 Männer (Ø 46 Jahre) bzw. 888 Teilnehmende in 11 RCTs",
+"ergebnis": "Whittaker 2021: Gesamttestosteron SMD = −0,38, frei SMD = −0,37; Soltani 2025: +0,49 ng/dL (n. s.)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du streichst beim Abnehmen fast alles Fett aus deinem Essen. Kann das für den Hormonhaushalt zum Problem werden?",
+"richtig": "Es gibt erste Hinweise darauf, ein moderater Fettanteil ist meist sinnvoller",
+"falsch": [
+"Nein, der Körper braucht Nahrungsfette überhaupt nicht für Hormone",
+"Ja, schon ein Tag ohne Fett legt die Hormonproduktion lahm",
+"Nein, je weniger Fett du isst, desto höher steigt dein Testosteron"
+],
+"warum": "Einzelne Studien zeigen bei sehr wenig Fett unter 20 Prozent der Kalorien leicht tiefere Werte, auch wenn neuere Analysen kaum einen Unterschied fanden."
+},
+"plus": {
+"frage": "Du stellst deine Makros für eine Diät ein und willst das Fett möglichst niedrig halten. Welche Untergrenze ist als Richtwert sinnvoll?",
+"richtig": "Dauerhaft möglichst nicht unter etwa 20 Prozent der Gesamtkalorien fallen",
+"falsch": [
+"Auf höchstens 5 Prozent der Kalorien senken, damit mehr Platz für Carbs bleibt",
+"Mindestens 60 Prozent der Kalorien aus Fett beziehen",
+"Fett an Trainingstagen komplett streichen und nur sonntags essen"
+],
+"warum": "Ein Zielbereich von 20 bis 35 Prozent der Gesamtenergie vermeidet extreme Fettrestriktionen, bei denen teils niedrigere Testosteronwerte beobachtet wurden."
+},
+"labor": {
+"frage": "Warum widersprechen sich die beiden Meta-Analysen zum Einfluss von Low-Fat-Diäten auf Testosteron bei Männern?",
+"richtig": "Die ältere Analyse nutzte meist nicht-randomisierte Studien mit teils extremer Restriktion",
+"falsch": [
+"Die neuere Analyse untersuchte ausschließlich Frauen nach den Wechseljahren",
+"Die ältere Analyse dauerte zehn Jahre, die neuere nur zwei Tage",
+"Die neuere Analyse schloss nur Leistungssportler im Kalorienüberschuss ein"
+],
+"warum": "Fünf der sechs Studien von 1979–2005 waren nicht randomisiert und gingen teils bis 6,8 % Fett, während 11 neuere RCTs keinen klaren Effekt zeigten."
+}
+}
+},
+{
+"id": "ERN-110",
+"karte": {
+"kopf": "Krafttrainierende · 49 Studien zusammengefasst",
+"titel": "Die Tagesmenge an Eiweiß zählt mehr als der genaue Shake-Zeitpunkt",
+"titel_hervor": "Tagesmenge an Eiweiß zählt mehr",
+"setup": "Auswertungen von 49 Studien prüften, ob Eiweiß direkt vor oder nach dem Krafttraining mehr bringt, wenn die Tagesmenge insgesamt stimmt.",
+"zahl": null,
+"kern": [
+"Ein hektischer Shake direkt in der Umkleide brachte im Schnitt keinen klaren Vorteil",
+"Entscheidend für Muskeln und Kraft ist die gesamte Eiweißmenge über 24 Stunden",
+"Regelmäßige Mahlzeiten alle drei bis vier Stunden decken das Training gut mit ab"
+],
+"grenze": "Bei zwei harten Einheiten am selben Tag bleibt rasches Nachfüllen nach dem Training für die Energiespeicher dennoch wichtig.",
+"fuer_dich": "Du hast deinen Shake nach dem Training vergessen? Kein Stress – iss einfach innerhalb der nächsten ein bis zwei Stunden eine normale Mahlzeit mit Eiweiß.",
+"labor": {
+"design": "Meta-Analyse (k=49) plus Positionspapier zum Nährstoff-Timing rund ums Training",
+"teilnehmer": "1.863 Teilnehmende aus 49 Krafttrainings-Studien",
+"ergebnis": "Kein signifikanter Zusatzeffekt von Pre-/Post-Timing bei ausreichender 24-h-Proteinzufuhr"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du bist mit dem Krafttraining fertig, kommst aber erst eine Stunde später zum Essen. War das Training deshalb umsonst?",
+"richtig": "Nein, entscheidend ist vor allem, wie viel Eiweiß du über den Tag isst",
+"falsch": [
+"Ja, nach 20 Minuten schließt sich das Fenster und Muskeln wachsen nicht",
+"Ja, ohne sofortigen Shake baut der Körper die Muskeln direkt wieder ab",
+"Nein, aber du musst die doppelte Menge essen, um das aufzuholen"
+],
+"warum": "Wenn deine tägliche Eiweißmenge stimmt, macht die exakte Minute rund ums Training für Muskeln und Kraft im Schnitt keinen messbaren Unterschied."
+},
+"plus": {
+"frage": "Du schaffst dein Tagesproteinziel über regelmäßige Mahlzeiten alle 3 bis 4 Stunden. Wie streng musst du deinen Post-Workout-Shake timen?",
+"richtig": "Entspannt innerhalb von etwa zwei Stunden rund ums Training essen reicht",
+"falsch": [
+"Spätestens fünf Minuten nach dem letzten Satz trinken, sonst verlierst du Gains",
+"Unbedingt während des Aufwärmens und noch einmal direkt danach trinken",
+"Nach dem Training gar kein Protein essen, sondern erst am nächsten Morgen"
+],
+"warum": "Bei gedecktem Tagesbedarf reicht eine Mahlzeit mit 20 bis 40 g Protein und Kohlenhydraten flexibel im Zeitfenster um das Training herum."
+},
+"labor": {
+"frage": "In gepoolten Analysen zeigt direktes Protein-Timing nach dem Krafttraining kaum Hypertrophievorteile. In welcher Situation bleibt enges Timing trotzdem relevant?",
+"richtig": "Bei mehreren Einheiten am selben Tag zur raschen Glykogenauffüllung",
+"falsch": [
+"Bei einer einzelnen kurzen Krafteinheit pro Woche im Kalorienüberschuss",
+"Bei Trainingsanfängern, die ohnehin sehr viel Protein über den Tag essen",
+"Bei lockeren Spaziergängen ohne nennenswerten Energieverbrauch"
+],
+"warum": "Für Hypertrophie zählt primär die 24-Stunden-Proteinmenge, während enges Timing vor allem bei kurzen Pausen zwischen zwei Einheiten fürs Glykogen hilft."
+}
+}
+}
+]

@@ -1,0 +1,1114 @@
+[
+{
+"id": "BES-116",
+"karte": {
+"kopf": "Sportler · 15 Studien zusammengefasst",
+"titel": "Nordic Hamstrings halbierten Verletzungen der Oberschenkelrückseite",
+"titel_hervor": "halbierten Verletzungen",
+"setup": "Über 8.400 Sportler aus verschiedenen Sportarten nahmen Nordic Hamstrings in ihr Training auf und wurden mit Gruppen ohne diese Übung verglichen.",
+"zahl": {
+"label": "Weniger Hamstring-Verletzungen",
+"wert": "−51 %",
+"alltag": "pro 1.000 Trainings- und Spielstunden"
+},
+"kern": [
+"Der Schutz zeigte sich über verschiedene Sportarten und Leistungsstufen hinweg.",
+"Die Übung verlängert nachweislich die Muskelfasern der Oberschenkelrückseite.",
+"Hohe Satzmengen bremsten oft das Dranbleiben wegen starkem Muskelkater."
+],
+"grenze": "In vielen Studien zogen nur 21 bis 48 % das volle Programm durch – ohne Dranbleiben fehlt der Schutzeffekt.",
+"fuer_dich": "Du läufst, sprintest oder spielst Teamsport? Bau Nordic Hamstrings langsam auf und halte sie danach mit kleinem Wochenpensum drin.",
+"labor": {
+"design": "Systematisches Review mit Meta-Analyse (7 RCTs, 1 Non-RCT, 7 Kohorten), NHE vs. Kontrolle",
+"teilnehmer": "15 Studien, 8.459 Sportler aus verschiedenen Sportarten und Niveaus",
+"ergebnis": "Verletzungsrate −51 % (IRR 0,490; 95 % KI 0,291–0,827; p = 0,008); Faszikellänge SMD 0,97"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Zerrungen an der Oberschenkelrückseite gehören zu den häufigsten Sportverletzungen. Was zeigte sich bei über 8.400 Sportlern, die gezielt kniende Bremsübungen (Nordic Hamstrings) machten?",
+"richtig": "Die Verletzungsrate sank im Schnitt um rund die Hälfte",
+"falsch": [
+"Die Verletzungsrate blieb trotz Training fast unverändert",
+"Nur Profifußballer profitierten, andere Sportarten gar nicht",
+"Die Übung erhöhte das Risiko für Muskelrisse deutlich"
+],
+"warum": "Über 15 Studien verringerte die Nordic Hamstring Exercise die Verletzungsrate pro 1.000 Stunden um 51 %."
+},
+"plus": {
+"frage": "Du willst Nordic Hamstrings zur Vorbeugung in deinen Lauf- oder Hybridplan einbauen, aber hoher Muskelkater schreckt dich ab. Was hilft beim Dranbleiben?",
+"richtig": "Nach kurzem Aufbau auf eine kleine Erhaltungsdosis von einmal pro Woche gehen",
+"falsch": [
+"Von Anfang an täglich maximale Sätze bis zum Muskelversagen machen",
+"Die Übung nach drei Wochen Aufbau wieder ganz aus dem Plan streichen",
+"Stattdessen nur passiv dehnen, weil das denselben Schutz bietet"
+],
+"warum": "In Studien scheiterte die Umsetzung oft am Muskelkater zu hoher Volumina – nach dem Aufbau reicht meist eine niedrigere Erhaltungsdosis."
+},
+"labor": {
+"frage": "Eine Meta-Analyse (15 Studien, n = 8.459) fand eine Halbierung der Hamstring-Verletzungen durch Nordic Hamstrings (IRR 0,49). Welches praktische Problem fiel in den RCTs besonders auf?",
+"richtig": "Die langfristige Compliance lag teils nur bei 21 bis 48 %",
+"falsch": [
+"Die Faszikellänge der Hamstrings verkürzte sich messbar",
+"Der Effekt war statistisch nicht signifikant (p > 0,05)",
+"Es wurden keinerlei randomisierte Studien eingeschlossen"
+],
+"warum": "Trotz starker Wirksamkeit (p = 0,008) drückte Muskelkater bei hochvolumigen Protokollen die Umsetzungsrate in RCTs oft unter 50 %."
+}
+}
+},
+{
+"id": "BES-117",
+"karte": {
+"kopf": "Trainierte Sportler · Kontrollstudie",
+"titel": "Maximalsprints fordern die Oberschenkelrückseite stärker als Übungen",
+"titel_hervor": "stärker als Übungen",
+"setup": "Trainierte Sportler absolvierten geplantes Maximalsprint-Training bis 50 Meter im Vergleich zu isolierten Kraftübungen wie Nordic Hamstrings.",
+"zahl": {
+"label": "Muskelaktivität isolierter Übungen",
+"wert": "< 75 %",
+"alltag": "gemessen am maximalen Sprint"
+},
+"kern": [
+"Maximalsprints verlängerten die Muskelfasern stärker als isolierte Bremsübungen.",
+"Sprints verbesserten neben der Muskelansteuerung auch die Laufmechanik.",
+"Unvorbereitete Sprints ohne Aufbau sind selbst ein Hauptauslöser für Zerrungen."
+],
+"grenze": "Sprints wirken nur gut vorbereitet und langsam gesteigert schützend; direkte Verletzungszahlen wurden hier nicht gemessen.",
+"fuer_dich": "Du läufst oder spielst Teamsport? Ergänze dein Beintraining langsam um geplante Sprints statt unvorbereiteter Vollsprints.",
+"labor": {
+"design": "Kontrollierte Interventionsstudie, Maximalsprint-Training (bis 50 m) vs. isolierte Übungen",
+"teilnehmer": "Trainierte Sportler (Ø Maximalgeschwindigkeit 8,2 ± 0,5 m/s)",
+"ergebnis": "Isolierte Übungen inkl. NHE erreichten < 75 % der maximalen Sprint-EMG-Aktivität"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Reichen Kraftübungen im Gym allein aus, um die Oberschenkelrückseite auf volles Sprinttempo vorzubereiten?",
+"richtig": "Nein, erst geplante Sprints fordern den Muskel so stark wie im Lauf",
+"falsch": [
+"Ja, isolierte Kraftübungen aktivieren den Muskel stärker als jeder Sprint",
+"Ja, beim Sprinten arbeitet die Oberschenkelrückseite kaum mit",
+"Nein, aber langsames Joggen erzeugt dieselbe Spannung wie Sprints"
+],
+"warum": "Isolierte Übungen erreichten weniger als drei Viertel der Muskelaktivität eines maximalen Sprints."
+},
+"plus": {
+"frage": "Du machst schon Nordic Hamstrings für die Hamstrings und möchtest in deiner Sportart gut vorbereitet sprinten. Was solltest du beachten?",
+"richtig": "Sprints langsam und geplant ins Training aufnehmen statt plötzlicher Spitzen",
+"falsch": [
+"Ab sofort alle Kraftübungen streichen und täglich voll sprinten",
+"Sprints im Training meiden und nur im Wettkampf maximal beschleunigen",
+"Ohne Vorbereitung direkt mit zehn maximalen 50-Meter-Sprints starten"
+],
+"warum": "Geplante, schrittweise gesteigerte Sprints schützen durch hohe Spezifität, während unvorbereitete Sprintspitzen selbst Zerrungen auslösen."
+},
+"labor": {
+"frage": "In kontrollierten Untersuchungen wurden Maximalsprints bis 50 m mit isolierten exzentrischen Hamstring-Übungen verglichen. Welchen spezifischen Vorteil zeigten die Sprints?",
+"richtig": "Größerer Zuwachs der Faszikellänge und höhere EMG-Aktivität über 75 %",
+"falsch": [
+"Keinerlei Risiko für Muskelverletzungen auch bei abruptem Einstieg",
+"Geringere Muskelaktivierung bei gleichzeitig höherem Gelenkschutz",
+"Vollständiger Ersatz aller anderen Kraftübungen für den Unterkörper"
+],
+"warum": "Nur Maximalsprints erreichten über 75 % der maximalen Sprint-EMG-Aktivität, vergrößerten die Faszikellänge stärker und schulten die Sprintmechanik."
+}
+}
+},
+{
+"id": "BES-118",
+"karte": {
+"kopf": "Sportler · 10 Studien & Fachleute-Konsens",
+"titel": "Alter und alte Verletzungen sind die größten Risiken für die Wade",
+"titel_hervor": "Alter und alte Verletzungen",
+"setup": "10 Studien mit 5.397 Sportlern untersuchten Risikofaktoren für Wadenverletzungen; zusätzlich bewerteten 20 Fachleute sinnvolle Vorsorge.",
+"zahl": {
+"label": "Mittlere Ausfallzeit nach Verletzung",
+"wert": "39 Tage",
+"alltag": "Spanne von 2 bis 102 Tagen"
+},
+"kern": [
+"Ein allgemein bewiesenes Schutzprogramm aus Zufallsstudien gibt es bisher nicht.",
+"Fachleute raten, Lauf- und Sprungumfänge nicht sprunghaft zu steigern.",
+"Sie empfehlen Wadenheben mit gestrecktem und gebeugtem Knie, auch einbeinig."
+],
+"grenze": "Die Übungsempfehlungen stammen aus Fachkonsens, weil belastbare Zufallsstudien zur Wadenvorsorge bisher fehlen.",
+"fuer_dich": "Über 30 oder früher Wadenprobleme? Steigere Laufumfänge behutsam und kräftige die Waden gestreckt und gebeugt.",
+"labor": {
+"design": "Systematisches Review zu Risikofaktoren (k = 10) plus qualitativer Expertenkonsens",
+"teilnehmer": "5.397 Athleten (518 Wadenverletzungen) sowie 20 internationale Experten",
+"ergebnis": "Mittlere Ausfallzeit 39 ± 18 Tage (Spanne 2–102; Grad 1: 17,2, Grad 2: 24,7, Grad 3: 48,0 Tage)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "In einem Überblick aus zehn Studien mit über 5.000 Sportlern wurde untersucht, wer sich am ehesten die Wade zerrt. Was waren die stärksten Risikofaktoren?",
+"richtig": "Höheres Alter und eine frühere Wadenverletzung",
+"falsch": [
+"Besonders junges Alter und sehr kurze Laufstrecken",
+"Regelmäßiges Wadenheben mit zusätzlichem Gewicht",
+"Ein zu langsamer Aufbau des wöchentlichen Laufpensums"
+],
+"warum": "Über 518 erfasste Wadenverletzungen hinweg waren höheres Lebensalter und eine frühere Verletzung am klarsten mit neuen Problemen verknüpft."
+},
+"plus": {
+"frage": "Du bist über 30, hattest schon einmal eine Wadenzerrung und willst dein Lauftraining ausbauen. Welche Vorsorge empfehlen Sportfachleute?",
+"richtig": "Umfänge langsam steigern und Waden gestreckt sowie gebeugt kräftigen",
+"falsch": [
+"Das Laufpensum zügig verdoppeln und Krafttraining weglassen",
+"Nur mit gestrecktem Knie trainieren und einbeinige Übungen meiden",
+"Sich allein auf ein bewiesenes Standard-Dehnprogramm verlassen"
+],
+"warum": "Fachleute betonen gleichmäßiges Belastungsmanagement sowie gezieltes Kräftigen beider Wadenmuskeln bis zur einbeinigen Ausführung."
+},
+"labor": {
+"frage": "Ein systematisches Review (k = 10, n = 5.397) und ein Expertenkonsens (n = 20) befassten sich mit der Prävention von Wadenmuskelzerrungen. Wie ist die aktuelle Studienlage zu bewerten?",
+"richtig": "Bisher fehlen robuste RCTs für ein universelles Präventionsprogramm",
+"falsch": [
+"Dutzende große RCTs belegen ein einziges Standardprogramm eindeutig",
+"Risikofaktoren wie Alter und Vorverletzung wurden kaum untersucht",
+"Wadenverletzungen führen im Schnitt zu weniger als drei Tagen Pause"
+],
+"warum": "Für präventive Übungsprotokolle besteht eine Evidenzlücke aus RCTs; Empfehlungen stützen sich auf Risikofaktor-Daten und Expertenkonsens."
+}
+}
+},
+{
+"id": "BLK-101",
+"karte": {
+"kopf": "Krafttrainierende · Fachmeinung & Übersicht",
+"titel": "Für Muskelaufbau empfehlen Fachleute einen kleinen Überschuss",
+"titel_hervor": "einen kleinen Überschuss",
+"setup": "Fachleute werteten Studien zum Energiebedarf im Krafttraining aus und leiteten Richtwerte für die Aufbauphase ab.",
+"zahl": null,
+"kern": [
+"Als Startwert nennen Fachleute etwa 250 bis 500 kcal extra pro Tag.",
+"So sollen Muskeln wachsen, ohne unnötig viel Körperfett aufzubauen.",
+"Der genaue Bedarf schwankt je nach Volumen, Alltagsbewegung und Anlage."
+],
+"grenze": "Kein direkter Studientest verschiedener Überschüsse, sondern eine Einschätzung von Fachleuten.",
+"fuer_dich": "Du startest eine Aufbauphase? Beginne mit 250 bis 500 kcal über deinem Erhaltungsbedarf und beobachte dein Gewicht.",
+"labor": {
+"design": "Narratives Review und Expertenkonsens zur Energiebilanz im Muskelaufbau",
+"teilnehmer": "",
+"ergebnis": ""
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du trainierst mit Gewichten und willst Muskeln aufbauen. Wie groß sollte der tägliche Kalorienüberschuss laut Fachleuten anfangs sein?",
+"richtig": "Moderat, also nur ein kleines Plus über dem Bedarf",
+"falsch": [
+"Möglichst groß, damit der Muskel schneller wächst",
+"Null, weil Muskeln am besten im Defizit wachsen",
+"Doppelt so hoch wie der normale Tagesbedarf"
+],
+"warum": "Ein moderates Plus von etwa 250 bis 500 kcal pro Tag soll Muskelaufbau fördern und gleichzeitig die Fettzunahme begrenzen."
+},
+"plus": {
+"frage": "Dein Trainingsziel ist Aufbau und dein Erhaltungsbedarf ist bekannt. Wie groß setzt du deinen täglichen Überschuss als Startwert an?",
+"richtig": "Ein moderates Plus von einigen hundert Kalorien pro Tag",
+"falsch": [
+"Ein sehr hohes Plus von über tausend Kalorien pro Tag",
+"Genau auf Erhaltung ohne jedes Kalorienplus am Tag",
+"Nur an Trainingstagen ein winziges Plus einplanen"
+],
+"warum": "Fachleute empfehlen rund +250 bis +500 kcal pro Tag als Startpunkt für ein günstiges Verhältnis von Muskel- zu Fettaufbau."
+},
+"labor": {
+"frage": "Fachübersichten nennen rund +250 bis +500 kcal pro Tag als Startwert für den Muskelaufbau. Warum gilt diese Spanne nur als grobe Orientierung?",
+"richtig": "Weil Volumen, Alltagsbewegung und Veranlagung stark schwanken",
+"falsch": [
+"Weil Frauen und Männer völlig gegensätzliche Werte brauchen",
+"Weil der Körper kaum mehr als 100 Extra-Kalorien verwerten kann",
+"Weil Extra-Kalorien am Abend schlechter im Muskel ankommen"
+],
+"warum": "Der energetische Bedarf für Hypertrophie variiert individuell durch Trainingsvolumen, NEAT-Anpassung und genetische Partitionierung."
+}
+}
+},
+{
+"id": "BLK-102",
+"karte": {
+"kopf": "Einsteiger & Mittelstufe · Leitlinie",
+"titel": "Am Anfang des Trainings darf das Gewicht etwas flotter steigen",
+"titel_hervor": "etwas flotter steigen",
+"setup": "Fachleute werteten Wachstumsmodelle und Beobachtungen aus, um ein sinnvolles Zunahmetempo für wenig erfahrene Krafttrainierende abzuleiten.",
+"zahl": null,
+"kern": [
+"In den ersten Jahren empfehlen Leitlinien 10 bis 20 % mehr Kalorien.",
+"Als Zieltempo gelten etwa 0,25 bis 0,5 % mehr Gewicht pro Woche.",
+"Im Monat entspricht das rund 1 bis 2 % bei begrenzter Fettzunahme."
+],
+"grenze": "Beruht auf Modellen und Beobachtungen – lange Vergleichsstudien über mehr als sechs Monate fehlen bisher.",
+"fuer_dich": "Du trainierst seit weniger als drei Jahren und willst aufbauen? Steuere über den Wochenschnitt 0,25 bis 0,5 % Zunahme an.",
+"labor": {
+"design": "Narratives Review und Praxis-Leitlinie auf Basis von Wachstumsmodellen und Beobachtungsdaten",
+"teilnehmer": "",
+"ergebnis": ""
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du hast erst vor einigen Monaten mit Krafttraining angefangen und willst Muskeln aufbauen. Wie sollte sich dein Gewicht im Aufbau entwickeln?",
+"richtig": "Langsam und stetig, etwa ein bis zwei Prozent im Monat",
+"falsch": [
+"Möglichst rasch, etwa fünf bis zehn Prozent im Monat",
+"Gar nicht, weil Muskeln kaum eigenes Gewicht mitbringen",
+"Sprunghaft an einzelnen Tagen, sonst wächst kein Muskel"
+],
+"warum": "Bei Einsteigern gilt eine langsame Zunahme von rund 1 bis 2 % im Monat als guter Mittelweg zwischen Muskel- und Fettaufbau."
+},
+"plus": {
+"frage": "Du trainierst seit anderthalb Jahren regelmäßig und startest in den Aufbau. Woran richtest du deine Kalorien nach einigen Wochen aus?",
+"richtig": "Am Wochenschnitt, mit einer langsamen, stetigen Zunahme",
+"falsch": [
+"An einzelnen Tageswerten, mit möglichst schneller Zunahme",
+"Nur am Bauchumfang, während die Waage stehen bleiben soll",
+"Am Muskelkater, ohne das Körpergewicht im Blick zu behalten"
+],
+"warum": "Leitlinien empfehlen für Einsteiger und Mittelstufe einen Überschuss von 10–20 %, nachgeregelt auf rund 0,25–0,5 % Zunahme im Wochenschnitt."
+},
+"labor": {
+"frage": "Leitlinien empfehlen für Einsteiger und Mittelstufe 0,25 bis 0,5 % Gewichtszunahme pro Woche. Auf welcher Datenbasis beruht diese Empfehlung?",
+"richtig": "Auf theoretischen Wachstumsmodellen und Beobachtungen",
+"falsch": [
+"Auf großen Langzeit-RCTs über mehr als zwei Jahre",
+"Auf direkten Muskelbiopsien von tausenden Anfängern",
+"Auf Meta-Analysen reiner Ausdauersportler im Aufbau"
+],
+"warum": "Bisher fehlen langfristige Dosis-Wirkungs-RCTs über mehr als 6 Monate bei Einsteigern, weshalb die Empfehlung vorläufig bleibt."
+}
+}
+},
+{
+"id": "BLK-103",
+"karte": {
+"kopf": "Weit Fortgeschrittene · Leitlinie",
+"titel": "Mit viel Erfahrung reicht ein sehr kleiner Überschuss",
+"titel_hervor": "sehr kleiner Überschuss",
+"setup": "Fachleute leiteten aus Studien und Trainingspraxis ab, wie langsam weit fortgeschrittene Kraftsportler im Aufbau zunehmen sollten.",
+"zahl": null,
+"kern": [
+"Nach über drei Jahren Training raten Leitlinien zu 5 bis 10 % Kalorienplus.",
+"Das Zieltempo liegt bei rund 0,25 % mehr Gewicht pro Woche.",
+"Weil Muskeln langsam wachsen, zählen Gewichtstrends über mehrere Wochen."
+],
+"grenze": "Bei sehr Erfahrenen ist echter Muskelzuwachs so klein, dass selbst genaue Messgeräte an Grenzen stoßen.",
+"fuer_dich": "Du trainierst seit über drei Jahren und willst aufbauen? Bleib bei 5 bis 10 % Plus und prüfe den Trend über mehrere Wochen.",
+"labor": {
+"design": "Narratives Review und Leitlinie für weit fortgeschrittene Kraftsportler (> 3 Jahre Training)",
+"teilnehmer": "",
+"ergebnis": ""
+}
+},
+"quiz": {
+"basis": {
+"frage": "Jemand trainiert schon seit vielen Jahren intensiv mit Gewichten. Wie unterscheidet sich eine sinnvolle Aufbauphase im Vergleich zu Anfängern?",
+"richtig": "Der Kalorienüberschuss sollte spürbar kleiner ausfallen",
+"falsch": [
+"Der Kalorienüberschuss sollte deutlich größer ausfallen",
+"Es braucht genauso viel Überschuss wie am ersten Tag",
+"Erfahrene sollten dafür das Krafttraining stark kürzen"
+],
+"warum": "Je erfahrener man ist, desto langsamer wachsen Muskeln – ein kleineres Kalorienplus bremst unnötige Fettzunahme."
+},
+"plus": {
+"frage": "Du trainierst seit vier Jahren konstant und planst eine Aufbauphase. Wie schnell sollte dein Körpergewicht im Schnitt steigen?",
+"richtig": "Sehr langsam, deutlich langsamer als bei Einsteigern",
+"falsch": [
+"Zügig, weil erfahrene Muskeln viel mehr Energie brauchen",
+"Gar nicht, weil Fortgeschrittene nur im Defizit aufbauen",
+"Genauso schnell wie im allerersten Trainingsjahr"
+],
+"warum": "Bei weit Fortgeschrittenen empfehlen Leitlinien nur +5 bis +10 % Kalorien für etwa 0,25 % Gewichtszunahme pro Woche."
+},
+"labor": {
+"frage": "Warum ist es bei weit fortgeschrittenen Kraftsportlern selbst mit DXA oder Ultraschall schwer, Muskelaufbau kurzfristig nachzuweisen?",
+"richtig": "Der reale Muskelzuwachs liegt nahe der Messfehlergrenze",
+"falsch": [
+"DXA und Ultraschall können Muskelgewebe gar nicht erfassen",
+"Muskeln lagern bei Erfahrenen kein Wasser mehr ein",
+"Fortgeschrittene bauen Muskeln nur noch im Oberkörper auf"
+],
+"warum": "Die reale Aufbaurate ist bei sehr Trainierten so gering, dass sie kurzfristig kaum von Messfehlern und Gewichtsschwankungen trennbar ist."
+}
+}
+},
+{
+"id": "BLK-104",
+"karte": {
+"kopf": "Trainierte · Vergleichsstudie über 8 Wochen",
+"titel": "Ein großer Überschuss brachte vor allem mehr Fett, kaum mehr Muskel",
+"titel_hervor": "vor allem mehr Fett",
+"setup": "Trainierte machten acht Wochen Krafttraining bei Erhaltungskalorien, 5 % oder 15 % Überschuss; gemessen wurden Muskeldicke, Hautfalten und Kraft.",
+"zahl": null,
+"kern": [
+"Mit 15 % Überschuss nahm die Hautfaltendicke als Fettmaß klar stärker zu.",
+"Für das allgemeine Muskelwachstum gab es dadurch keinen klaren Vorteil.",
+"Nur beim Bankdrücken und leicht beim Bizeps zeigten sich kleine Vorteile."
+],
+"grenze": "Nur 17 Personen beendeten die Studie und acht Wochen sind kurz – langfristige Unterschiede bleiben offen.",
+"fuer_dich": "Dein Gewicht steigt über zwei Wochen um mehr als 0,6 %? Dann senke die täglichen Kalorien um 100 bis 200 kcal.",
+"labor": {
+"design": "Randomisierte kontrollierte Studie, 8 Wochen, 3x/Woche Training; Erhaltung vs. +5 % vs. +15 %",
+"teilnehmer": "17 trainierte Personen ausgewertet (21 randomisiert)",
+"ergebnis": "Masse zu Hautfalten BF10=14,3 (R²=0,49); Bizeps BF10=1,4; HIGH vs. MAIN: Hautfalten BF10=4,2, Bankdrücken-1RM BF10=14,5"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Wer schon trainiert ist, isst im Aufbau sehr viel über dem Bedarf statt nur ein kleines Plus. Was passiert laut ersten Hinweisen vor allem?",
+"richtig": "Man legt vor allem mehr Körperfett zu, kaum mehr Muskeln",
+"falsch": [
+"Die Muskeln wachsen dreimal so schnell wie bei kleinem Plus",
+"Der Körper verbrennt alle Extra-Kalorien von selbst wieder",
+"Die Kraft geht durch das viele Essen sofort deutlich zurück"
+],
+"warum": "In einer achtwöchigen Vergleichsstudie stieg bei hohem Überschuss vor allem die Hautfaltendicke, ohne generellen Muskelvorteil."
+},
+"plus": {
+"frage": "Du bist erfahren im Gym und merkst, dass dein Gewicht im Aufbau zwei Wochen lang deutlich zu schnell steigt. Was ist der sinnvollste nächste Schritt?",
+"richtig": "Die täglichen Kalorien etwas senken, um Fett zu bremsen",
+"falsch": [
+"Die Kalorien weiter erhöhen, bis das Gewicht noch schneller steigt",
+"Sofort eine strenge Diät mit halbierten Kalorien starten",
+"Das Krafttraining für zwei Wochen komplett aussetzen"
+],
+"warum": "Steigt das Gewicht bei Trainierten rascher als etwa 0,3 % pro Woche, nimmt meist vor allem Fett zu – 100 bis 200 kcal weniger bremsen das ab."
+},
+"labor": {
+"frage": "Trainierte absolvierten 8 Wochen Krafttraining bei Erhaltung, +5 % oder +15 % Überschuss (n=17 ausgewertet). Was schränkt die Aussagekraft ein?",
+"richtig": "Die kleine Stichprobe und die kurze Studiendauer von 8 Wochen",
+"falsch": [
+"Dass die Teilnehmer gar kein Krafttraining durchgeführt haben",
+"Dass nur Ausdauerwerte und keine Hautfalten gemessen wurden",
+"Dass die Erhaltungsgruppe deutlich mehr Protein gegessen hat"
+],
+"warum": "Durch Dropouts blieben nur 17 Personen über 8 Wochen; zudem gab es beim Bankdrücken-1RM und Bizeps Hinweise auf Vorteile höherer Zunahme."
+}
+}
+},
+{
+"id": "BLK-105",
+"karte": {
+"kopf": "Leistungssportler · Kontrollierte Studie",
+"titel": "Starkes Zunehmen brachte fünfmal so viel Fett und bremste Sprints",
+"titel_hervor": "fünfmal so viel Fett",
+"setup": "Leistungssportler nahmen acht bis zwölf Wochen entweder aggressiv oder moderat zu; verglichen wurden Muskelmasse, Fett, Kraft und Sprintleistung.",
+"zahl": {
+"label": "Fettzunahme bei starkem Überschuss",
+"wert": "+15 %",
+"alltag": "5-mal mehr als mit moderatem Plus (+3 %)"
+},
+"kern": [
+"Beide Gruppen bauten gleich viel fettfreie Masse und 6 bis 12 % Kraft auf.",
+"Mit starkem Überschuss stieg das Gewicht 3,9 % statt 1,5 % – meist Fett.",
+"Das zusätzliche Körperfett verschlechterte die Sprintleistung messbar."
+],
+"grenze": "Untersucht wurden Leistungssportler – wie stark sich der Sprintverlust bei Freizeitsportlern zeigt, kann variieren.",
+"fuer_dich": "Du trainierst Kraft und willst gleichzeitig schnell laufen? Halte dein Zunahmetempo im Aufbau bei rund 0,2 % pro Woche.",
+"labor": {
+"design": "Randomisierte kontrollierte Studie, 8–12 Wochen, aggressive (3585 kcal) vs. moderate Zufuhr (2964 kcal)",
+"teilnehmer": "Leistungssportler",
+"ergebnis": "Fettmasse +15±4 % vs. +3±3 %; Gewicht +3,9±0,6 % vs. +1,5±0,4 %; 1RM-Kraft +6–12 %; FFM identisch"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Zwei Gruppen von Sportlern trainieren gleich, eine isst im Aufbau viel mehr als die andere. Was passiert im Schnitt mit Fett und Tempo?",
+"richtig": "Viel mehr Fett und langsamere Sprints bei ähnlichen Muskeln",
+"falsch": [
+"Doppelt so viele Muskeln und spürbar schnellere Sprints",
+"Gleich viel Fett, aber viel mehr Kraft in den Beinen",
+"Weniger Fett, weil der Körper das Extra-Essen schnell verbrennt"
+],
+"warum": "Bei gleichem Zuwachs an fettfreier Masse stieg die Fettmasse etwa fünfmal stärker an und bremste die Sprintleistung."
+},
+"plus": {
+"frage": "Du machst Krafttraining und läufst regelmäßig schnelle Einheiten. Wie gestaltest du deine Aufbauphase, damit dein Tempo nicht leidet?",
+"richtig": "Sehr langsam zunehmen, damit die Fettmasse kaum ansteigt",
+"falsch": [
+"Schnell viel Masse aufbauen und das Laufen ignorieren",
+"Auf Krafttraining verzichten und nur noch Sprints üben",
+"Einen extremen Überschuss wählen für maximale Beinkraft"
+],
+"warum": "Steigt die Fettmasse stärker als die Kraft, sinkt das Kraft-Last-Verhältnis und bremst Beschleunigung und Sprints."
+},
+"labor": {
+"frage": "Leistungssportler erhielten randomisiert rund 3585 kcal oder 2964 kcal pro Tag im Krafttraining. Was war das zentrale Ergebnis?",
+"richtig": "Gleicher Zuwachs an fettfreier Masse, aber fünffache Fettzunahme",
+"falsch": [
+"Signifikant mehr fettfreie Masse bei gleichbleibender Fettmasse",
+"Kein Unterschied bei Körpergewicht, Fettmasse oder Sprints",
+"Starker Kraftverlust in der Gruppe mit höherer Energiezufuhr"
+],
+"warum": "Beide Gruppen steigerten die 1RM-Kraft um 6–12 % bei gleichem FFM-Zuwachs, aber die höhere Zufuhr führte zu +15 % statt +3 % Fettmasse."
+}
+}
+},
+{
+"id": "BLK-106",
+"karte": {
+"kopf": "Trainierte & Einsteiger · Kleine Kurzzeitstudien",
+"titel": "Extremer Überschuss brachte kurz mehr Masse, aber neunmal mehr Fett",
+"titel_hervor": "neunmal mehr Fett",
+"setup": "In zwei kurzen Studien bekamen Gruppen extrem hohe Kalorienüberschüsse im Vergleich zu moderaten Mengen; gemessen wurden Muskel- und Fettmasse.",
+"zahl": {
+"label": "Fettzunahme bei extremem Überschuss",
+"wert": "+7,4 %",
+"alltag": "9-mal mehr als mit kleinem Plus (+0,8 %)"
+},
+"kern": [
+"In einer Vier-Wochen-Studie wuchs die Muskelmasse mit 2,7 % statt 1,1 % mehr.",
+"Gleichzeitig nahm das Körperfett aber bis zu neunmal so stark zu.",
+"Auch mehr Körperprotein hing eng mit einer starken Fettzunahme zusammen."
+],
+"grenze": "Sehr kleine Gruppen über nur vier bis sechs Wochen – mehr Wasser und Kohlenhydrate im Muskel können das Ergebnis verzerren.",
+"fuer_dich": "Du willst möglichst schnell Masse aufbauen? Bedenke, dass ein Überschuss über 20 % vor allem viel extra Körperfett mitbringt.",
+"labor": {
+"design": "Zwei Kurzzeit-RCTs: 4 Wochen (67,5 vs. 50,1 kcal/kg) sowie 6 Wochen (+40 % vs. +10 % Überschuss)",
+"teilnehmer": "11 bzw. 23 Personen in zwei kleinen Kurzzeitstudien",
+"ergebnis": "Muskel +2,7 % vs. +1,1 % (p=0,03); Fett +7,4 % vs. +0,8 % (p<0,01); Körperprotein +0,44 kg (r=0,82 mit Fett)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Manche essen im Aufbau extrem viel über ihrem Bedarf. Was zeigen erste Kurzzeitstudien zu diesem Ansatz?",
+"richtig": "Etwas mehr Masse, aber vor allem ein drastischer Anstieg an Fett",
+"falsch": [
+"Nur reiner Muskelaufbau ohne nennenswerte Fettzunahme",
+"Gar kein Gewichtsanstieg trotz tausender Extra-Kalorien",
+"Sofortiger Muskelabbau durch die vielen Extra-Kalorien"
+],
+"warum": "Kurzzeitstudien fanden zwar etwas mehr Muskelmasse oder Körperprotein, doch das Körperfett stieg dabei bis zum Neunfachen stärker."
+},
+"plus": {
+"frage": "Du überlegst, für schnelleren Muskelaufbau einen extremen Überschuss von über 20 % zu essen. Womit musst du realistisch rechnen?",
+"richtig": "Dass jeder kleine Muskelvorteil viel zusätzliches Fett kostet",
+"falsch": [
+"Dass dein Körperfett durch mehr Training unverändert bleibt",
+"Dass die Muskeln doppelt so schnell ohne Fett wachsen",
+"Dass du dadurch kaum noch Protein aus der Nahrung brauchst"
+],
+"warum": "Bei extremen Überschüssen ging das Plus an Muskel- oder Körperprotein eng mit einer stark erhöhten Fettzunahme einher."
+},
+"labor": {
+"frage": "Eine 4-wöchige Pilotstudie (n=11) fand bei sehr hohem Überschuss mehr Muskelzuwachs als bei moderatem. Warum ist das vorsichtig zu deuten?",
+"richtig": "Kleine Gruppe, kurze Dauer und mögliche Wasser- und Glykogeneffekte",
+"falsch": [
+"Weil die Vergleichsgruppe gar kein Krafttraining absolviert hat",
+"Weil beide Gruppen exakt dieselbe Kalorienmenge gegessen haben",
+"Weil die Messungen erst ein Jahr nach Studienende stattfanden"
+],
+"warum": "Bei n=11 über 4 Wochen können intramuskuläres Glykogen und Wasser die fettfreie Masse stark verzerren; andere Studien widersprechen."
+}
+}
+},
+{
+"id": "BLK-107",
+"karte": {
+"kopf": "Trainierte · Kontrollierte Studie (30 Personen)",
+"titel": "800 Extra-Kalorien nur aus Eiweiß machten kaum fetter",
+"titel_hervor": "machten kaum fetter",
+"setup": "30 Krafttrainierende aßen acht Wochen normal oder rund 800 kcal zusätzlich nur über extrem viel Eiweiß (4,4 g/kg); gemessen wurden Fett und Muskelmasse.",
+"zahl": null,
+"kern": [
+"Trotz rund 800 Extra-Kalorien am Tag nahm die Fettmasse nicht messbar zu.",
+"Gleichzeitig brachte das extreme Eiweiß auch keinen klaren Muskelvorteil.",
+"Eiweiß verbraucht viel Energie bei der Verdauung und wird kaum zu Fett."
+],
+"grenze": "Nur acht Wochen lang und ohne gezielt gesteigertes Trainingsvolumen – der Effekt über längere Zeit bleibt offen.",
+"fuer_dich": "Dein Eiweißziel von 1,6 bis 2,2 g/kg ist schon voll? Deck den restlichen Aufbau-Überschuss lieber mit Kohlenhydraten und Fetten.",
+"labor": {
+"design": "Randomisierte kontrollierte Studie, 8 Wochen; 4,4 vs. 1,8 g/kg/Tag Protein (~800 kcal/Tag Überschuss)",
+"teilnehmer": "30 Krafttrainierende (Männer und Frauen)",
+"ergebnis": "Fettmasse −0,2±2,2 vs. +0,3±4,7 kg (n.s.); FFM +1,9±2,4 vs. +1,3±2,0 kg (n.s.)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Trainierte essen acht Wochen lang rund 800 Kalorien täglich extra – aber fast nur aus Eiweiß. Was passiert mit ihrem Körperfett?",
+"richtig": "Es steigt im Schnitt kaum bis gar nicht messbar an",
+"falsch": [
+"Es wächst genauso schnell wie bei Zucker und Fett",
+"Es verdoppelt sich bereits nach wenigen Wochen",
+"Es verschwindet fast ganz ohne weiteres Training"
+],
+"warum": "Eiweiß hat einen hohen Verdauungsverbrauch und wird im Körper nur schlecht in Speicherfett umgewandelt."
+},
+"plus": {
+"frage": "In der Aufbauphase erreichst du schon dein Proteinziel, aber dein Gewicht steigt nicht. Womit füllst du den Überschuss am besten auf?",
+"richtig": "Vor allem mit Kohlenhydraten und etwas mehr Fett",
+"falsch": [
+"Mit noch viel mehr Protein bis über 4 g/kg am Tag",
+"Gar nicht, weil das Protein allein für Aufbau reicht",
+"Nur mit reinem Eiweißpulver vor dem Schlafengehen"
+],
+"warum": "Reines Protein-Overfeeding bremst durch hohe Thermogenese den Gewichtsanstieg und bringt oberhalb des Bedarfs keinen klaren Muskelvorteil."
+},
+"labor": {
+"frage": "In einer 8-Wochen-RCT (n=30) aßen Krafttrainierende 4,4 vs. 1,8 g/kg/Tag Protein (~800 kcal Plus). Wie fiel der Gruppenvergleich aus?",
+"richtig": "Weder Fettmasse noch fettfreie Masse unterschieden sich signifikant",
+"falsch": [
+"Die Hochprotein-Gruppe baute signifikant mehr Fett und weniger Muskeln auf",
+"Die Hochprotein-Gruppe verdoppelte ihre fettfreie Masse gegenüber der Kontrolle",
+"Beide Gruppen verloren trotz Kalorienüberschuss deutlich an Muskelmasse"
+],
+"warum": "Weder Fettmasse (−0,2 vs. +0,3 kg) noch fettfreie Masse (+1,9 vs. +1,3 kg) unterschieden sich signifikant, vermutlich wegen Thermogenese und NEAT."
+}
+}
+},
+{
+"id": "BLK-108",
+"karte": {
+"kopf": "Krafttrainierende · 49 Studien zusammengefasst",
+"titel": "Mehr Eiweiß lohnt sich beim Muskelaufbau bis etwa 1,6 Gramm je Kilo",
+"titel_hervor": "bis etwa 1,6 Gramm",
+"setup": "49 Studien mit 1863 Krafttrainierenden wurden ausgewertet, um zu prüfen, ab welcher Eiweißmenge zusätzliches Eiweiß keinen weiteren Muskelvorteil bringt.",
+"zahl": {
+"label": "Plateau für mehr Muskelmasse im Schnitt",
+"wert": "1,62 g/kg/Tag",
+"alltag": ""
+},
+"kern": [
+"Mehr Eiweiß brachte im Schnitt +0,30 kg fettfreie Masse, Trainierten +0,75 kg.",
+"Auch die Maximalkraft stieg im Schnitt um rund 2,5 kg stärker an.",
+"Weil der Wert ein Durchschnitt ist, empfehlen Fachleute bis 2,2 g/kg Puffer."
+],
+"grenze": "Der Grenzwert ist ein Gruppenmittelwert – im höheren Alter fällt der messbare Muskelvorteil kleiner aus.",
+"fuer_dich": "Du planst deine Ernährung für den Aufbau? Peile 1,6 bis 2,2 g/kg Protein an und fülle die restlichen Kalorien vor allem mit Kohlenhydraten.",
+"labor": {
+"design": "Systematisches Review mit Meta-Analyse und Breakpoint-Analyse (49 Studien zu Krafttraining und Protein)",
+"teilnehmer": "1863 Personen (Einsteiger, Trainierte, Frauen, Ältere)",
+"ergebnis": "Knickpunkt 1,62 g/kg/Tag; FFM +0,30 kg (Trainierte +0,75 kg); 1RM +2,49 kg; Faser-CSA +310 µm²"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du machst Krafttraining und erhöhst dein Eiweiß immer weiter. Was zeigen große Auswertungen dazu?",
+"richtig": "Ab einem Punkt bringt noch mehr Eiweiß kaum mehr Nutzen",
+"falsch": [
+"Je mehr Eiweiß du isst, desto endlos mehr Muskeln wachsen",
+"Zusätzliches Eiweiß hat beim Krafttraining gar keinen Nutzen",
+"Nur Einsteiger profitieren von ausreichend Eiweiß im Essen"
+],
+"warum": "Über 49 Studien hinweg erreichte der Zusatznutzen für Muskelmasse bei rund 1,6 g/kg pro Tag im Schnitt ein Plateau."
+},
+"plus": {
+"frage": "Du willst deine Makros für die Aufbauphase sinnvoll aufteilen. Wie verbindest du Protein und deinen Kalorienüberschuss am besten?",
+"richtig": "Genügend Protein einplanen, Überschuss eher aus Kohlenhydraten",
+"falsch": [
+"Möglichst extrem viel Protein essen und Kohlenhydrate streichen",
+"Wenig Protein essen und den gesamten Überschuss aus Fett holen",
+"Protein nur an Trainingstagen essen, an Ruhetagen weglassen"
+],
+"warum": "Mit 1,6 bis 2,2 g/kg Protein bist du oberhalb des Plateaus abgesichert; Kohlenhydrate liefern dann die Energie fürs Training."
+},
+"labor": {
+"frage": "Eine Meta-Analyse über 49 Krafttrainingsstudien (n=1863) ermittelte ein Protein-Plateau bei 1,62 g/kg/Tag. Warum wird oft bis 2,2 g/kg empfohlen?",
+"richtig": "Weil 1,62 g/kg ein Gruppenmittelwert mit Streuung ist",
+"falsch": [
+"Weil erst ab 2,2 g/kg überhaupt Muskelprotein entsteht",
+"Weil die Meta-Analyse nur Ausdauersportler eingeschlossen hat",
+"Weil ältere Menschen zwingend die dreifache Menge brauchen"
+],
+"warum": "Der Knickpunkt von 1,62 g/kg/Tag ist ein Durchschnitt; der Sicherheitskorridor bis 2,2 g/kg deckt individuelle Unterschiede ab."
+}
+}
+},
+{
+"id": "BLK-109",
+"karte": {
+"kopf": "Rechenmodell & Krafttraining · Übersicht",
+"titel": "Erst sehr schlank zu werden bringt im Krafttraining wohl keinen Bonus",
+"titel_hervor": "wohl keinen Bonus",
+"setup": "Ein Rechenmodell aus Überfütterungsstudien ohne Sport wurde mit Daten von Krafttrainierenden verglichen, um den Einfluss des Körperfetts zu prüfen.",
+"zahl": null,
+"kern": [
+"Ohne Training legten Schlanke anteilig mehr fettfreie Masse zu als andere.",
+"Bei regelmäßigem Krafttraining fehlt dafür bisher ein belastbarer Beleg.",
+"Im gesunden Normalbereich braucht es vor dem Aufbau keine strenge Diät."
+],
+"grenze": "Das alte Rechenmodell stammt aus Studien ohne Krafttraining – für Kraftsportler fehlen klare Langzeitbelege.",
+"fuer_dich": "Dein Körperfett liegt im normalen Bereich und du willst aufbauen? Starte direkt, statt erst krampfhaft tief herunterzudiäten.",
+"labor": {
+"design": "Mathematisches Partitionierungsmodell (ohne Training) im Abgleich mit Regressionsdaten zu Krafttraining",
+"teilnehmer": "",
+"ergebnis": "Passiv ohne Training: 60–70 % vs. 30–40 % FFM-Anteil; bei Krafttraining kein robuster Vorteil < 12 % KFA"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Im Fitnessstudio heißt es oft, man müsse erst sehr dünn sein, damit Muskeln gut wachsen. Was sagt der aktuelle Wissensstand dazu?",
+"richtig": "Für Krafttrainierende gibt es dafür keine guten Belege",
+"falsch": [
+"Nur mit extrem wenig Körperfett wachsen Muskeln wirklich",
+"Wer etwas mehr Körperfett hat, baut gar keine Muskeln auf",
+"Eine lange Diät vor dem Aufbau verdoppelt den Muskelaufbau"
+],
+"warum": "Der Zusammenhang stammt aus alten Studien ohne Krafttraining; bei Trainierenden zeigt sich kein klarer Vorteil extrem niedriger Fettwerte."
+},
+"plus": {
+"frage": "Dein Körperfett liegt im gesunden Normalbereich und du möchtest Muskeln aufbauen. Wie gehst du am sinnvollsten vor?",
+"richtig": "Direkt mit einer kontrollierten Aufbauphase beginnen",
+"falsch": [
+"Erst extrem tief abnehmen für eine bessere Verteilung",
+"Gar nicht trainieren, bis der Körperfettanteil halbiert ist",
+"Erst lange fasten, damit Muskeln Kalorien besser nutzen"
+],
+"warum": "Ohne belastbaren Beleg für einen Vorteil extrem niedriger KFA-Werte kannst du im gesunden Normalbereich direkt in den Aufbau starten."
+},
+"labor": {
+"frage": "Ein bekanntes mathematisches Modell sagt voraus, dass Schlanke bei Zunahme anteilig mehr fettfreie Masse aufbauen. Wo liegt seine Grenze?",
+"richtig": "Es basiert auf Studien ohne progressives Krafttraining",
+"falsch": [
+"Es gilt ausschließlich für professionelle Bodybuilder",
+"Es hat den Energiegehalt von Körperfett falsch berechnet",
+"Es berücksichtigt nur kurzfristige Wasserschwankungen"
+],
+"warum": "Das Modell entstand aus passiven Überfütterungs- und Hungerstudien; Regressionsanalysen bei Krafttrainierenden bestätigen keinen Vorteil unter 12 % KFA."
+}
+}
+},
+{
+"id": "BLK-110",
+"karte": {
+"kopf": "Krafttrainierende · 59 Studien zusammengefasst",
+"titel": "Ab rund 500 kcal Defizit stoppt im Schnitt der Muskelaufbau",
+"titel_hervor": "stoppt im Schnitt der Muskelaufbau",
+"setup": "59 Krafttrainingsstudien mit 1495 Teilnehmenden verglichen Muskel- und Kraftaufbau im Kaloriendefizit mit ausgeglichener oder positiver Energiebilanz.",
+"zahl": {
+"label": "Defizit, ab dem Muskelaufbau stoppte",
+"wert": "~500 kcal",
+"alltag": "pro Tag im Schnitt"
+},
+"kern": [
+"Mit jeder 100 kcal mehr Defizit sank der gemessene Muskelzuwachs weiter.",
+"Die Kraft wuchs im Defizit dagegen fast genauso gut weiter wie ohne Diät.",
+"Für klaren Muskelaufbau braucht der Körper mindestens Erhaltungskalorien."
+],
+"grenze": "Viele Direktvergleiche untersuchten ältere oder untrainierte Menschen – bei schlanken Trainierten bremst ein Defizit wohl noch früher.",
+"fuer_dich": "Dein Hauptziel ist maximaler Muskelaufbau? Vermeide ein dauerhaftes Defizit und iss mindestens auf Erhaltung oder leicht darüber.",
+"labor": {
+"design": "Meta-Analyse und Meta-Regression (59 Studien, 8–20 Wochen), Krafttraining im Defizit vs. Erhaltung/Überschuss",
+"teilnehmer": "1495 Personen (Direktvergleiche oft 60±11 Jahre, untrainiert)",
+"ergebnis": "Direktvergleich FFM ES −0,57 (p=0,02), Kraft −0,31 (n.s.); Regression −0,031 ES je 100 kcal Defizit (ES=0 bei ~500 kcal)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du machst Krafttraining, isst aber jeden Tag deutlich weniger, als du verbrauchst. Was passiert im Schnitt mit Muskeln und Kraft?",
+"richtig": "Die Kraft wächst meist weiter, der Muskelaufbau wird stark gebremst",
+"falsch": [
+"Sowohl Kraft als auch Muskelmasse wachsen im Defizit am schnellsten",
+"Die Kraft bricht sofort ein, während die Muskeln weiter wachsen",
+"Weder Kraft noch Muskelmasse reagieren auf ein Kaloriendefizit"
+],
+"warum": "Eine Auswertung von 59 Studien zeigte, dass ein Defizit den Muskelaufbau deutlich hemmt, während Kraftzuwächse weitgehend erhalten bleiben."
+},
+"plus": {
+"frage": "Dein oberstes Ziel ist maximaler Muskelaufbau, doch du bleibst nebenbei in einem spürbaren Kaloriendefizit. Was solltest du ändern?",
+"richtig": "Kalorien mindestens auf Erhaltung oder leicht darüber anheben",
+"falsch": [
+"Das Defizit vergrößern, damit die Muskeln besser sichtbar werden",
+"Genau so weitermachen, da ein Defizit den Aufbau kaum stört",
+"Auf Krafttraining verzichten und nur noch locker joggen"
+],
+"warum": "Ab rund 500 kcal täglichem Defizit kam der Muskelaufbau im Schnitt zum Stillstand – für Aufbau braucht es mindestens Erhaltungskalorien."
+},
+"labor": {
+"frage": "Eine Meta-Regression (59 Studien, n=1495) fand, dass der FFM-Zuwachs bei rund 500 kcal/Tag Defizit auf null fiel. Was schränkt die Übertragbarkeit auf schlanke Athleten ein?",
+"richtig": "Viele Direktvergleiche untersuchten ältere oder untrainierte Personen",
+"falsch": [
+"Die Meta-Analyse enthielt ausschließlich professionelle Kraftsportler",
+"In keiner der Studien wurde das Körpergewicht oder die Kraft gemessen",
+"Alle untersuchten Diäten dauerten lediglich wenige Tage"
+],
+"warum": "In den Direktvergleichen waren die Gruppen im Schnitt 60 Jahre alt und oft untrainiert; bei schlanken Trainierten dürfte ein Defizit noch früher bremsen."
+}
+}
+},
+{
+"id": "BLK-111",
+"karte": {
+"kopf": "Einsteiger & Trainierte · Studienübersicht",
+"titel": "Muskeln aufbauen und Fett abbauen klappt oft auch gleichzeitig",
+"titel_hervor": "klappt oft auch gleichzeitig",
+"setup": "Eine Übersichtsarbeit fasste Krafttrainingsstudien zusammen, in denen Teilnehmende ohne Kalorienüberschuss und mit viel Eiweiß trainierten.",
+"zahl": null,
+"kern": [
+"Auch bereits trainierte Menschen konnten Muskeln aufbauen und Fett abbauen.",
+"Entscheidend waren planmäßiges Krafttraining und viel Eiweiß am Tag.",
+"Schlaf, Trainingsstand und Ausgangskörperfett bestimmen, wie gut es klappt."
+],
+"grenze": "Bei sehr schlanken, weit fortgeschrittenen Sportlern ist ohne Kalorienüberschuss kaum noch Muskelzuwachs drin.",
+"fuer_dich": "Du willst Muskeln aufbauen, ohne Fett zuzulegen? Bleib bei Erhaltungskalorien bis minus 10 % und iss 1,6 bis 2,4 g/kg Protein.",
+"labor": {
+"design": "Narratives Review zu Körperrekomposition unter progressivem Krafttraining ohne Kalorienüberschuss",
+"teilnehmer": "Einsteiger, Trainierte und Frauen aus Einzelstudien",
+"ergebnis": "Einzelstudien: FFM +0,8 bis +5,0 kg bei gleichzeitigem Fettverlust von −0,2 bis −1,4 kg"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Stimmt der Mythos, dass nur reine Anfänger gleichzeitig Muskeln aufbauen und Körperfett abbauen können?",
+"richtig": "Nein, mit gutem Training und viel Eiweiß klappt das auch Trainierten",
+"falsch": [
+"Ja, nach dem ersten Trainingsjahr ist das biologisch unmöglich",
+"Ja, das klappt überhaupt nur mit einem hohen Kalorienüberschuss",
+"Nein, aber es funktioniert ausschließlich ganz ohne Krafttraining"
+],
+"warum": "Eine Studienübersicht zeigt, dass gleichzeitiger Muskelaufbau und Fettabbau bei progressivem Training und viel Eiweiß auch bei Trainierten vorkommt."
+},
+"plus": {
+"frage": "Du hast einen mittleren Körperfettanteil und möchtest gleichzeitig Muskeln aufbauen und etwas Fett verlieren. Wie stellst du deine Ernährung ein?",
+"richtig": "Ungefähr auf Erhaltungskalorien bleiben und viel Protein essen",
+"falsch": [
+"In ein hartes Defizit gehen und dabei am Protein sparen",
+"In einen großen Überschuss gehen bei normalem Eiweißanteil",
+"Ohne auf Protein zu achten einfach seltener am Tag essen"
+],
+"warum": "Auf Erhaltungsniveau oder im leichten Defizit unterstützt eine hohe Proteinzufuhr (1,6–2,4 g/kg) mit progressivem Training die Rekomposition."
+},
+"labor": {
+"frage": "Übersichtsarbeiten belegen Körperrekomposition in Einzelstudien auch bei Trainierten. Bei welcher Gruppe stößt dieser Effekt am ehesten an Grenzen?",
+"richtig": "Bei sehr schlanken, weit fortgeschrittenen Athleten",
+"falsch": [
+"Bei Wiedereinsteigern nach einer längeren Trainingspause",
+"Bei Personen mit moderatem Körperfettanteil und gutem Schlaf",
+"Bei Frauen mit regelmäßigem progressivem Krafttraining"
+],
+"warum": "Das Ausmaß hängt von Trainingsstatus, Ausgangskörperfett und Schlaf ab – sehr schlanke, weit Fortgeschrittene brauchen meist einen Überschuss."
+}
+}
+},
+{
+"id": "BLK-112",
+"karte": {
+"kopf": "Krafttrainierende · Fachmeinung",
+"titel": "Für die beste Dauer einer Aufbauphase fehlen bisher Studien",
+"titel_hervor": "fehlen bisher Studien",
+"setup": "Fachleute prüften die Literatur zur Planung von Aufbauphasen und leiteten aus üblichen Zunahmeraten eine sinnvolle Mindestdauer ab.",
+"zahl": null,
+"kern": [
+"Es gibt keine Vergleichsstudien zwischen kurzen und langen Aufbauzyklen.",
+"Weil Muskeln langsam wachsen, planen Fachleute meist 12 bis 24 Wochen.",
+"In Phasen unter acht Wochen überdecken Wasserschwankungen echte Fortschritte."
+],
+"grenze": "Reiner Expertenkonsens – ob sechs Monate Aufbau besser sind als zwölf, wurde bisher nicht direkt getestet.",
+"fuer_dich": "Du planst eine Aufbauphase? Gib dir mindestens 12 bis 24 Wochen Zeit und stoppe erst bei deinem Zielgewicht oder deiner Fettgrenze.",
+"labor": {
+"design": "Narratives Review und Expertenkonsens zur Periodisierung und Dauer von Aufbauphasen",
+"teilnehmer": "",
+"ergebnis": ""
+}
+},
+"quiz": {
+"basis": {
+"frage": "Warum raten Fachleute davon ab, eine Aufbauphase schon nach vier bis sechs Wochen wieder zu beenden?",
+"richtig": "So kurz lässt sich echter Muskelaufbau kaum von Wasser trennen",
+"falsch": [
+"Weil Muskeln in den ersten sechs Wochen überhaupt nicht wachsen",
+"Weil eine kurze Aufbauphase den Stoffwechsel dauerhaft schädigt",
+"Weil Studien genau zwölf Wochen als einzig wirksame Dauer belegen"
+],
+"warum": "Bei langsamem Zunahmetempo sind die Muskelzuwächse nach wenigen Wochen noch so klein, dass normale Wasserschwankungen sie überdecken."
+},
+"plus": {
+"frage": "Du willst eine saubere Aufbauphase in deine Jahresplanung einbauen. Welcher Zeitrahmen ist in der Praxis am sinnvollsten?",
+"richtig": "Mehrere Monate einplanen, bis Zielgewicht oder Fettgrenze passen",
+"falsch": [
+"Nur wenige Wochen Aufbau im ständigen Wechsel mit kurzen Diäten",
+"Maximal einen Monat, da danach kein Muskelwachstum mehr passiert",
+"Genau ein ganzes Jahr, unabhängig vom Körperfettanteil"
+],
+"warum": "Fachleute empfehlen mindestens 12 bis 24 Wochen, bis entweder das Zielgewicht oder eine persönliche Obergrenze beim Körperfett erreicht ist."
+},
+"labor": {
+"frage": "Wie gut ist die Empfehlung mehrwöchiger bis mehrmonatiger Aufbauphasen wissenschaftlich durch Interventionsstudien abgesichert?",
+"richtig": "Gar nicht durch direkte RCTs, sie beruht auf Expertenkonsens",
+"falsch": [
+"Durch zahlreiche Meta-Analysen, die kurze und lange Zyklen testen",
+"Durch Doppelblindstudien an tausenden Profi-Bodybuildern",
+"Durch eindeutige Hormonmessungen über mehrjährige Zyklen"
+],
+"warum": "Es fehlen kontrollierte Studien, die kurze und lange Aufbauzyklen direkt vergleichen; die Empfehlung folgt aus praktischen Zunahmeraten."
+}
+}
+},
+{
+"id": "BLK-113",
+"karte": {
+"kopf": "Diätende & Trainierte · Übersicht & Fachmeinung",
+"titel": "Langsames Hochschrauben nach einer Diät zeigt bisher keinen Vorteil",
+"titel_hervor": "bisher keinen Vorteil",
+"setup": "Fachleute prüften, ob ein langsames schrittweises Erhöhen der Kalorien nach einer Diät besser abschneidet als die direkte Rückkehr auf Erhaltung.",
+"zahl": null,
+"kern": [
+"Für schrittweises Hochfahren fehlt bisher ein klinischer Beleg für Vorteile.",
+"Wer zu langsam steigert, bleibt unnötig lange im Energiemangel stecken.",
+"Stoffwechsel und Hormone brauchen nach harter Diät oft zwei bis fünf Monate."
+],
+"grenze": "Bisher erst wenig direkt erforscht – eine erste 15-Wochen-Studie sah keinen Unterschied, weitere Studien fehlen.",
+"fuer_dich": "Deine Diät ist vorbei und du willst aufbauen? Hebe deine Kalorien direkt auf dein neues Erhaltungs- oder Aufbauziel an.",
+"labor": {
+"design": "Narratives Review zur Post-Diät-Erholung; Verweis auf vorläufige 15-Wochen-RCT (Reverse Dieting vs. direkt)",
+"teilnehmer": "",
+"ergebnis": "Vorläufige RCT (15 Wochen): kein signifikanter Unterschied bei der Gewichtszunahme"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Nach einer Diät raten manche dazu, die Kalorien über viele Wochen nur winzig anzuheben, damit man nicht sofort zunimmt. Was zeigt der Wissensstand?",
+"richtig": "Einen echten Vorteil dieses langsamen Wegs gibt es bisher nicht",
+"falsch": [
+"Ohne langsames Hochfahren nimmt man sofort alles wieder zu",
+"Nur so schaltet sich der Stoffwechsel überhaupt wieder ein",
+"Dadurch verliert man auch nach der Diät weiter viel Körperfett"
+],
+"warum": "Bisher fehlt klinische Evidenz für einen Vorteil – zu langsames Anheben verlängert vor allem das Energiedefizit unnötig."
+},
+"plus": {
+"frage": "Du beendest eine harte Diät und wechselst in den Aufbau. Wie passt du deine Kalorien am sinnvollsten an?",
+"richtig": "Direkt auf den neuen Erhaltungsbedarf oder Zielüberschuss gehen",
+"falsch": [
+"Wochenlang jede Woche nur um winzige Schritte vorsichtig steigern",
+"Noch einen Monat im vollen Defizit bleiben zur Gewöhnung",
+"Sofort das Doppelte essen, um die Hormone über Nacht zu heben"
+],
+"warum": "Eine direkte Rückkehr auf Erhaltung oder den Zielüberschuss beendet niedrige Energieverfügbarkeit schneller, ohne belegten Nachteil."
+},
+"labor": {
+"frage": "Welcher physiologische Nachteil droht, wenn die Kalorienzufuhr nach einer strengen Diät über viele Wochen nur in 50-bis-100-kcal-Schritten erhöht wird?",
+"richtig": "Niedrige Energieverfügbarkeit und gedrückte Hormone dauern länger an",
+"falsch": [
+"Der Ruheumsatz steigt dabei schneller als bei direkter Rückkehr",
+"Die Proteinaufnahme im Darm wird durch kleine Schritte blockiert",
+"Die Schilddrüsenhormone schießen sofort gefährlich nach oben"
+],
+"warum": "Solange die Zufuhr im Defizit bleibt, verlängert sich unnötig die Unterdrückung von Leptin, T3 und Ruheumsatz, die ohnehin 2–5 Monate zur Erholung brauchen."
+}
+}
+},
+{
+"id": "BLK-114",
+"karte": {
+"kopf": "Krafttrainierende · Fachmeinung",
+"titel": "Für lange Pausen vor der Diät oder kurze Mini-Diäten fehlen Belege",
+"titel_hervor": "fehlen Belege",
+"setup": "Fachleute sichteten die Studienlage zu Erhaltungspausen nach dem Aufbau und zu kurzen Zwischendiäten, um Praxisregeln von Belegen zu trennen.",
+"zahl": null,
+"kern": [
+"Es gibt keine kontrollierten Studien, die eine lange Erhaltungspause belegen.",
+"Auch kurze Mini-Diäten mitten im Aufbau stammen nur aus der Coaching-Praxis.",
+"In den ersten zwei Wochen nach einem Wechsel schwanken vor allem Wasserwerte."
+],
+"grenze": "Bisher gar nicht direkt in Studien getestet – ob Übergangspausen messbare Vorteile bringen, ist unbekannt.",
+"fuer_dich": "Deine Aufbauphase endet und du willst abnehmen? Starte dein Defizit direkt oder nutze ein bis zwei Wochen zum Einpendeln der Waage.",
+"labor": {
+"design": "Narratives Review und Expertenkonsens zu Phasenübergängen (Aufbau zu Diät) und Mini-Cuts",
+"teilnehmer": "",
+"ergebnis": ""
+}
+},
+"quiz": {
+"basis": {
+"frage": "Oft heißt es, man müsse nach einer Aufbauphase erst wochenlang das Gewicht halten, damit die neuen Muskeln „einrasten“. Was ist dran?",
+"richtig": "Dafür gibt es bisher keine Belege aus wissenschaftlichen Studien",
+"falsch": [
+"Das ist eindeutig bewiesen, sonst verliert man alle Muskeln",
+"Ohne vier Wochen Pause kann der Körper kein Fett abbauen",
+"Studien zeigen, dass erst nach sechs Monaten Diät erlaubt ist"
+],
+"warum": "Die Idee des „Einrastens“ durch lange Erhaltungsphasen stammt aus der Coaching-Praxis und wurde bisher nicht in kontrollierten Studien geprüft."
+},
+"plus": {
+"frage": "Du beendest deinen Aufbau und möchtest in eine Diät wechseln. Wie gestaltest du den Übergang am sinnvollsten?",
+"richtig": "Direkt ins Defizit starten oder sich kurz einpendeln",
+"falsch": [
+"Zwingend zwei Monate auf Erhaltung bleiben vor dem Start",
+"Das Protein stark senken, um schneller leichter zu werden",
+"Erst mehrere Tage fasten, damit sich der Körper umstellt"
+],
+"warum": "Du kannst das Defizit direkt starten; optional helfen 1–2 Wochen auf Erhaltung nur dabei, Wasserverschiebungen und Verbrauch sauber abzulesen."
+},
+"labor": {
+"frage": "Welchen wissenschaftlichen Status haben Konzepte wie mehrwöchige Erhaltungsphasen nach dem Aufbau oder 4- bis 6-wöchige Mini-Cuts?",
+"richtig": "Es sind ungeprüfte Coaching-Heuristiken ohne direkte RCT-Evidenz",
+"falsch": [
+"Sie sind durch große Meta-Analysen als überlegen nachgewiesen",
+"Sie wurden in Studien als schädlich für die Muskelmasse widerlegt",
+"Sie sind nur für ältere Untrainierte durch RCTs belegt"
+],
+"warum": "Weder für das Set-Point-Einrasten noch für Mini-Cuts gibt es kontrollierte Studien; frühe Gewichtssprünge beim Wechsel sind meist Glykogen und Wasser."
+}
+}
+},
+{
+"id": "BLK-115",
+"karte": {
+"kopf": "Krafttrainierende · Zwei Vergleichsstudien",
+"titel": "Diätpausen retteten nicht mehr Muskeln, machten aber weniger Hunger",
+"titel_hervor": "machten aber weniger Hunger",
+"setup": "Krafttrainierende machten in zwei Studien entweder eine Diät am Stück oder schoben einwöchige Pausen auf Erhaltungskalorien ein.",
+"zahl": null,
+"kern": [
+"Fettverlust, Muskelmasse und Ruheumsatz waren in beiden Gruppen gleich.",
+"Mit Pausen berichteten Teilnehmende über weniger Hunger und Kontrollverlust.",
+"Eine Studie sah etwas mehr Kraftausdauer, bei rund 25 % längerer Diät."
+],
+"grenze": "Getestet wurden einwöchige Pausen bei Krafttrainierenden – längere Pausen könnten anders wirken.",
+"fuer_dich": "Dein Hunger in der Diät wird zu stark oder deine Kraftausdauer bricht ein? Dann schieb eine Woche auf Erhaltungskalorien ein.",
+"labor": {
+"design": "Zwei RCTs: 12 vs. 15 Wochen (3x1 Wo Pause) und 6 vs. 8 Wochen (2x1 Wo Pause, 25 % Defizit)",
+"teilnehmer": "Krafttrainierende Männer und Frauen (zweite Studie n=38 Frauen)",
+"ergebnis": "Kein Unterschied bei Fett (p=0,19), FFM und RMR (p>0,05); weniger Ess-Enthemmung (p<0,01) und Hunger"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du machst eine Diät mit Krafttraining und schiebst zwischendurch einzelne Wochen ohne Defizit ein. Was bringt das laut Studien vor allem?",
+"richtig": "Weniger Hunger und leichteres Durchhalten, nicht mehr Fettabbau",
+"falsch": [
+"Deutlich mehr Fettabbau und einen viel schnelleren Stoffwechsel",
+"Einen starken Verlust an Muskeln durch das ständige Auf und Ab",
+"Eine kürzere Gesamtdauer, bis das Wunschgewicht erreicht ist"
+],
+"warum": "In Vergleichsstudien blieben Fettverlust, Muskelerhalt und Ruheumsatz gleich, doch Hunger und Ess-Enthemmung fielen mit Pausen geringer aus."
+},
+"plus": {
+"frage": "Deine Diät läuft gut, der Hunger ist erträglich und deine Leistung im Gym stabil. Wann lohnen sich einwöchige Diet Breaks trotzdem?",
+"richtig": "Erst wenn starker Hunger oder sinkende Kraftausdauer auftreten",
+"falsch": [
+"Schon ab Woche zwei, weil sonst der Ruheumsatz stark einbricht",
+"Möglichst oft, weil du damit schneller mehr Fett verlierst",
+"Sofort, weil sonst die gesamte Muskelmasse verloren geht"
+],
+"warum": "Da einwöchige Pausen die Diät um rund ein Viertel verlängern und keinen Stoffwechselvorteil zeigten, lohnen sie vor allem bei Hunger oder Leistungsabfall."
+},
+"labor": {
+"frage": "Zwei RCTs verglichen bei Krafttrainierenden kontinuierliche Diäten mit einwöchigen Erhaltungspausen (gleiche Defizitwochen). Was zeigte sich?",
+"richtig": "Keine Unterschiede bei FFM, Fett und Ruheumsatz, aber weniger Appetit",
+"falsch": [
+"Signifikant höherer Ruheumsatz und besserer Muskelerhalt durch Pausen",
+"Deutlich größerer Fettverlust trotz gleicher Anzahl an Defizitwochen",
+"Schlechtere Muskelausdauer und stärkerer Kontrollverlust beim Essen"
+],
+"warum": "Beide RCTs fanden bei Körperzusammensetzung und RMR keinen signifikanten Unterschied (p > 0,05), aber Vorteile bei Hunger, Enthemmung und Muskelausdauer."
+}
+}
+},
+{
+"id": "CAR-101",
+"karte": {
+"kopf": "Ausdauertraining · Übersichtsarbeit",
+"titel": "Umfang schafft mehr Zellkraftwerke, hartes Tempo macht sie stärker",
+"titel_hervor": "hartes Tempo macht sie stärker",
+"setup": "Eine Übersichtsarbeit verglich, wie Trainingsumfang und -intensität die Energieversorgung in der Muskulatur verändern.",
+"zahl": null,
+"kern": [
+"Mehr Trainingsstunden erhöhen vor allem die Anzahl der Kraftwerke im Muskel.",
+"Sehr intensive Intervalle steigern am stärksten, wie viel Leistung diese liefern.",
+"Ab etwa drei bis fünf gleichen Einheiten pro Woche flacht der Mengen-Zuwachs ab."
+],
+"grenze": "Kein einheitlicher Zahlenwert zur Effektgröße berichtet; es geht um Muskelzellen, nicht um Wettkampfzeiten.",
+"fuer_dich": "Du willst deine Ausdauer gezielt ausbauen? Kombiniere drei bis fünf lockere Einheiten pro Woche mit sehr intensiven Intervallen.",
+"labor": {
+"design": "Systematisches Review zu Volumen- und Intensitätseffekten (MICT 50–75 % vs. HIIT ≥90 % Wmax)",
+"teilnehmer": "",
+"ergebnis": ""
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du möchtest deine Ausdauer verbessern und fragst dich, ob lockere lange Einheiten oder kurze sehr anstrengende Abschnitte besser wirken. Was stimmt?",
+"richtig": "Beide lösen unterschiedliche Anpassungen im Muskel aus",
+"falsch": [
+"Nur lange lockere Einheiten verbessern die Ausdauer",
+"Kurze harte Einheiten ersetzen jedes Grundlagentraining",
+"Ab zwei Einheiten pro Woche passiert im Muskel nichts mehr"
+],
+"warum": "Viel Umfang erhöht vor allem die Anzahl der Energie-Kraftwerke im Muskel, hohes Tempo steigert ihre Leistungsfähigkeit."
+},
+"plus": {
+"frage": "Du trainierst viermal pro Woche im gleichen lockeren Tempo bei mittlerer Leistung. Was bringt dir für die Muskelanpassung den größten nächsten Reiz?",
+"richtig": "Sehr intensive Intervalle nahe der Spitzenleistung ergänzen",
+"falsch": [
+"Noch eine identische lockere Einheit pro Woche anhängen",
+"Die lockeren Einheiten alle durch Ruhetage ersetzen",
+"Das Tempo leicht senken und deutlich kürzer trainieren"
+],
+"warum": "Bei gleichbleibendem lockerem Tempo entsteht ab 3 bis 5 Einheiten ein Plateau, während harte Intervalle ab 90 % Leistung die Atmungsfunktion stark anregen."
+},
+"labor": {
+"frage": "In einer systematischen Übersicht wurden Muskelanpassungen nach moderatem Ausdauertraining und hochintensiven Intervallen verglichen. Welcher Mechanismus zeigte sich?",
+"richtig": "Menge und Atmungsfunktion reagieren über getrennte Signalwege",
+"falsch": [
+"Beide Größen steigen ausschließlich durch mehr Trainingsumfang",
+"Nur hochintensive Intervalle erhöhen die Mitochondrienmenge",
+"Bei gleicher Intensität wächst der Gehalt unbegrenzt weiter"
+],
+"warum": "Mitochondrienmenge und Atmungsfunktion werden getrennt reguliert (u. a. Calcium- vs. AMPK-Weg), wobei die Menge ab 3 bis 5 gleichen Einheiten abflacht."
+}
+}
+},
+{
+"id": "CAR-102",
+"karte": {
+"kopf": "Ausdauersportler · Kontrollierte Studie",
+"titel": "Reines Grundlagentraining brachte fitten Sportlern keinen Sprung",
+"titel_hervor": "fitten Sportlern keinen Sprung",
+"setup": "48 gut trainierte Ausdauersportler trainierten 9 Wochen lang entweder rein locker, an der Schwelle oder gemischt mit harten Intervallen.",
+"zahl": {
+"label": "Plus an Sauerstoffaufnahme (Tempomix)",
+"wert": "+11,7 %",
+"alltag": ""
+},
+"kern": [
+"Mit reinem lockeren Training stieg die maximale Sauerstoffaufnahme nicht messbar an.",
+"Auch die Durchhaltezeit bis zur Erschöpfung verbesserte sich dort nicht weiter.",
+"Erst der Mix mit rund einem Fünftel bis Viertel hartem Training brachte klare Zuwächse."
+],
+"grenze": "Die Teilnehmer trainierten vorher schon viel locker – für Einsteiger gilt das Ergebnis nicht automatisch.",
+"fuer_dich": "Du trainierst schon lange viel locker und trittst auf der Stelle? Baue rund ein Fünftel bis Viertel harte Intervalle ein.",
+"labor": {
+"design": "RCT, 9 Wochen, Vergleich HVT vs. Schwellentraining (THR) vs. polarisiert (POL)",
+"teilnehmer": "48 gut trainierte Ausdauersportler (VO2peak 62,6 ± 7,1 ml/kg/min)",
+"ergebnis": "HVT und THR ohne signifikante Änderung (p > 0,05); POL +11,7 % VO2peak"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du bist bereits sehr fit und trainierst zwei Monate lang ausschließlich in einem gemütlichen Ausdauertempo. Was passiert meist mit deiner Spitzenleistung?",
+"richtig": "Sie stagniert, weil dem Körper ein neuer starker Reiz fehlt",
+"falsch": [
+"Sie steigt allein durch mehr lockere Stunden deutlich an",
+"Sie bricht innerhalb weniger Wochen stark ein",
+"Sie wächst schneller als mit eingestreuten harten Abschnitten"
+],
+"warum": "Bei bereits gut trainierten Sportlern reicht rein lockeres Training über 9 Wochen meist nicht für einen neuen Anpassungsreiz."
+},
+"plus": {
+"frage": "Du hast schon eine hohe Ausdauerbasis (VO2peak über 52) und planst neun Wochen reines Zone-2-Volumen. Wie passt du den Block für mehr Fortschritt an?",
+"richtig": "Rund ein Fünftel bis Viertel als harte Intervalle einplanen",
+"falsch": [
+"Den Umfang auf reine Schwellenläufe ohne Intervalle umstellen",
+"Ausschließlich noch länger und noch langsamer trainieren",
+"Das Grundlagentraining streichen und täglich maximal sprinten"
+],
+"warum": "Reines Volumen- und Schwellentraining brachte keinen signifikanten Zuwachs, während der Mix mit 20 bis 26 % hartem Training die VO2peak um 11,7 % hob."
+},
+"labor": {
+"frage": "48 gut trainierte Ausdauersportler (10–20 Std./Woche) wurden 9 Wochen randomisiert auf HVT, Schwellen- oder polarisiertes Training verteilt. Warum stagnierte die HVT-Gruppe?",
+"richtig": "Sie trainierten vorab schon ähnlich, ein neuer Reiz fehlte",
+"falsch": [
+"Neun Wochen sind für jede VO2peak-Änderung viel zu kurz",
+"Das Wochenvolumen der HVT-Gruppe war niedriger als zuvor",
+"Reines Grundlagentraining senkt das Schlagvolumen deutlich"
+],
+"warum": "Die Athleten hatten vorab schon stark volumenbetont trainiert; ohne neue Intensitätsreize blieben Schlagvolumen und VO2peak unverändert (p > 0,05)."
+}
+}
+}
+]

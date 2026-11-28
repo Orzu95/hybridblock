@@ -1,0 +1,1130 @@
+[
+{
+"id": "GES-109",
+"karte": {
+"kopf": "11 Männer mit Diabetes · Kleiner Vergleich",
+"titel": "Bei Typ-2-Diabetes deuten erste Daten auf Vorteile am Nachmittag hin",
+"titel_hervor": "Vorteile am Nachmittag",
+"setup": "Elf Männer mit Typ-2-Diabetes absolvierten intensives Intervalltraining einmal morgens und einmal nachmittags, während ein Sensor den Blutzucker maß.",
+"zahl": null,
+"kern": [
+"Nachmittags-Intervalle senkten den 24-Stunden-Blutzucker günstiger als frühes Training.",
+"Morgendliche harte Intervalle ließen den Blutzucker direkt danach teils kurz ansteigen.",
+"Bei gesunden Menschen spielte die Trainingsuhrzeit laut anderen Studien kaum eine Rolle."
+],
+"grenze": "Nur elf Männer ohne Insulintherapie getestet – für Frauen, Insulinpflichtige und Langzeitfolgen reichen die Daten noch nicht.",
+"fuer_dich": "Steigt dein Blutzucker bei Typ-2-Diabetes nach frühem HIIT an? Teste den Nachmittag und stimme Änderungen bei Bedarf ärztlich ab.",
+"labor": {
+"design": "Randomisierte Crossover-Studie mit 24-Std.-CGM, morgendliches vs. nachmittägliches HIIT",
+"teilnehmer": "11 Männer mit Typ-2-Diabetes ohne Insulintherapie (45–68 Jahre)",
+"ergebnis": "Nachmittags-HIIT senkte 24-Std.-Glukose stärker als Morgen-HIIT (akuter Anstieg); Effektstärke nicht berichtet"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du hast einen gesunden Stoffwechsel und überlegst, ob hartes Training morgens schlecht für deinen Blutzucker ist. Was deuten die bisherigen Daten an?",
+"richtig": "Bei Gesunden spielte die Uhrzeit kaum eine Rolle – anders evtl. bei Diabetes",
+"falsch": [
+"Morgendlicher Sport treibt den Blutzucker bei allen Menschen gefährlich hoch",
+"Nur Training genau um Mitternacht wirkt positiv auf den Blutzucker",
+"Sport am Morgen bringt bei Diabetes grundsätzlich bessere Werte als nachmittags"
+],
+"warum": "Nur eine kleine Studie an elf Männern mit Typ-2-Diabetes zeigte Vorteile am Nachmittag; bei Stoffwechselgesunden war die Tageszeit kaum entscheidend."
+},
+"plus": {
+"frage": "Du hast Typ-2-Diabetes (ohne Insulin) und bemerkst am Sensor, dass intensives HIIT am Morgen deinen Blutzucker kurz hochtreibt. Was kannst du ausprobieren?",
+"richtig": "Die intensiven Intervalle probeweise auf den Nachmittag verlegen",
+"falsch": [
+"Die Intervalle am Morgen noch härter machen, bis der Wert abfällt",
+"Jede Form von Bewegung dauerhaft einstellen, um Spitzen zu meiden",
+"Abends direkt vor dem Schlafengehen maximal hart trainieren"
+],
+"warum": "Erste Hinweise deuten darauf hin, dass Nachmittags-HIIT den 24-Stunden-Blutzucker bei Typ-2-Diabetes günstiger senkt – im Zweifel ärztlich abstimmen."
+},
+"labor": {
+"frage": "Eine Crossover-Studie (n=11 Männer mit Typ-2-Diabetes, 24-h-CGM) fand günstigere Blutzuckerwerte nach Nachmittags- statt Morgen-HIIT. Wie ist die Beweiskraft einzuordnen?",
+"richtig": "Gering: sehr kleine, unverblindete Männergruppe ohne Insulintherapie",
+"falsch": [
+"Sehr hoch: große doppelblinde Langzeitstudie mit Frauen und Männern",
+"Gering, weil der Blutzucker nur einmal pro Woche im Labor gemessen wurde",
+"Eindeutig auf stoffwechselgesunde Leistungssportler übertragbar"
+],
+"warum": "Die kleine Stichprobe (n=11, nur Männer ohne Insulin) ohne Verblindung liefert nur erste Hinweise (Evidenz C), anders als bei Gesunden."
+}
+}
+},
+{
+"id": "GES-110",
+"karte": {
+"kopf": "Frauen nach Wechseljahren · 8-Monats-Studie",
+"titel": "Schweres Krafttraining stärkte geschwächte Knochen unter Aufsicht",
+"titel_hervor": "stärkte geschwächte Knochen",
+"setup": "Frauen nach den Wechseljahren mit geringer Knochendichte trainierten acht Monate lang entweder schwer unter Aufsicht oder locker zu Hause.",
+"zahl": {
+"label": "Zuwachs Knochendichte Lendenwirbelsäule",
+"wert": "+2,9 %",
+"alltag": "Leichtes Heimprogramm: −1,2 %"
+},
+"kern": [
+"Schon zwei halbstündige Einheiten pro Woche mit schweren Grundübungen reichten aus.",
+"Auch am Oberschenkelhals blieben die Knochen stabil, während sie im Heimprogramm abbauten.",
+"Unter enger Anleitung gab es in acht Monaten nur einen leichten Muskelkrampf im Rücken."
+],
+"grenze": "Die Sicherheit galt unter enger fachlicher Aufsicht – bei Wirbelbrüchen gelten hohe Stöße und starkes Beugen unter Last als riskant.",
+"fuer_dich": "Willst du deine Knochen stärken? Starte schweres Grundübungs-Training nach ärztlicher Freigabe und lass die Technik fachlich anleiten.",
+"labor": {
+"design": "RCT über 8 Monate, supervisiertes HiRIT (2×30 Min./Wo., 5×5 >85 % 1RM + Impact) vs. leichtes Heimprogramm",
+"teilnehmer": "Postmenopausale Frauen mit Osteopenie oder Osteoporose",
+"ergebnis": "LWS-BMD +2,9 % vs. −1,2 % (p<0,001); Oberschenkelhals +0,3 % vs. −1,9 % (p=0,004); Compliance 92 %"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Oft heißt es, Frauen nach den Wechseljahren mit geringerer Knochendichte dürften nur ganz sanft turnen und keine schweren Gewichte heben. Was zeigte eine 8-Monats-Studie?",
+"richtig": "Unter guter Anleitung stärkten schwere Grundübungen die Knochen deutlich",
+"falsch": [
+"Schweres Heben führte in der Trainingsgruppe sofort zu vielen Brüchen",
+"Das leichte Heimprogramm baute mehr Knochendichte auf als schwere Gewichte",
+"Knochendichte lässt sich nach den Wechseljahren durch Training nicht halten"
+],
+"warum": "Mit enger fachlicher Betreuung stieg die Knochendichte an der Wirbelsäule durch schweres Kraft- und Stoßtraining spürbar an, während sie beim leichten Programm sank."
+},
+"plus": {
+"frage": "Eine Frau nach den Wechseljahren mit niedriger Knochendichte (ohne Wirbelbrüche) will mit Krafttraining gegensteuern. Wie sollte der Einstieg aussehen?",
+"richtig": "Ärztlich abklären und 2-mal wöchentlich schwer unter Fachaufsicht trainieren",
+"falsch": [
+"Alleine daheim sofort mit maximalen Sprüngen und rundem Rücken starten",
+"Ausschließlich leichte Gymnastik ohne nennenswertes Gewicht ausführen",
+"Jeden Tag zwei Stunden isolierte Armübungen an Maschinen absolvieren"
+],
+"warum": "Progressives schweres Grundübungs-Training (Kniebeuge, Kreuzheben, Überkopfdrücken) zeigte starke Knocheneffekte, braucht aber gute Anleitung und Freigabe."
+},
+"labor": {
+"frage": "In einer 8-Monats-RCT steigerte supervisiertes HiRIT (>85 % 1RM + Impact) die BMD an LWS und Femurhals bei sehr hoher Sicherheit. Wann gelten Einschränkungen?",
+"richtig": "Ohne enge Supervision sowie bei bestehenden Wirbelkörperfrakturen",
+"falsch": [
+"Bei allen Frauen über 50, weil die Trainingsbeteiligung sehr gering war",
+"Nur am Oberschenkelhals, da die Lendenwirbelsäule gar nicht reagierte",
+"Wenn das Training länger als vier Wochen hintereinander durchgeführt wird"
+],
+"warum": "Die Sicherheit beruhte auf engmaschiger Betreuung; bei bestehenden Wirbelbrüchen raten Leitlinien von hohen Stoßbelastungen und endgradiger Flexion ab."
+}
+}
+},
+{
+"id": "GES-111",
+"karte": {
+"kopf": "Frauen vor Wechseljahren · 6 Studien vereint",
+"titel": "Kurzes tägliches Hüpfen stärkt die Hüftknochen, aber nicht den Rücken",
+"titel_hervor": "stärkt die Hüftknochen",
+"setup": "Sechs kontrollierte Studien prüften, wie kurze Sprung- oder Hüpfeinheiten von oft nur drei bis fünf Minuten die Knochendichte von Frauen verändern.",
+"zahl": null,
+"kern": [
+"Am Oberschenkelhals und der Hüfte stieg die Knochendichte durch die Stöße deutlich an.",
+"An der Lendenwirbelsäule brachte reines Springen dagegen keinen messbaren Zuwachs.",
+"Für den Hüfteffekt war eine sehr hohe Häufigkeit nötig – idealerweise fast täglich."
+],
+"grenze": "Nach den Wechseljahren wirkt reines Springen ohne schweres Krafttraining oft schwächer, und die Wirbelsäule profitiert kaum.",
+"fuer_dich": "Willst du vor den Wechseljahren Hüfte und Rücken stärken? Hüpf fast täglich 3–5 Minuten und ergänze schweres Krafttraining für den Rücken.",
+"labor": {
+"design": "Meta-Analyse aus 6 RCTs, kurze High-Impact-Sprungeinheiten (<30 Min., oft 3–5 Min., 50–120 Stöße)",
+"teilnehmer": "Prämenopausale Frauen aus 6 RCTs",
+"ergebnis": "Oberschenkelhals-BMD SMD 0,64 (p=0,001); Trochanter SMD 0,36 (p=0,04); Lendenwirbelsäule SMD 0,04 (n. s.)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du machst als Frau vor den Wechseljahren fast jeden Tag ein paar Minuten kleine Sprünge für starke Knochen. Welcher Bereich profitiert davon klar – und welcher nicht?",
+"richtig": "Die Hüftknochen werden stärker, die Lendenwirbelsäule aber kaum",
+"falsch": [
+"Vor allem die Wirbelsäule wird stärker, die Hüfte reagiert kaum",
+"Hüfte und Wirbelsäule gewinnen durch kurzes Hüpfen exakt gleich viel",
+"Erst ab einer Stunde Springen pro Tag zeigt sich überhaupt ein Effekt"
+],
+"warum": "In sechs Studien stärkten kurze tägliche Sprungeinheiten die Knochendichte an Oberschenkelhals und Hüfte, erreichten die Lendenwirbelsäule aber nicht."
+},
+"plus": {
+"frage": "Du bist eine Frau vor den Wechseljahren und möchtest mit minimalem Zeitaufwand sowohl Hüfte als auch Lendenwirbelsäule knochenstark halten. Wie kombinierst du?",
+"richtig": "Fast täglich kurz springen plus schweres Krafttraining für den Rücken",
+"falsch": [
+"Einmal pro Woche kurz hüpfen und Krafttraining komplett weglassen",
+"Nur kurzes Seilspringen, weil es auch die Lendenwirbelsäule optimal stärkt",
+"Ausschließlich Schwimmen, weil es die Gelenke ohne Stöße schont"
+],
+"warum": "High-Impact-Sprünge liefern einen starken Reiz für die Hüfte, während die Lendenwirbelsäule gezieltes axiales Krafttraining benötigt."
+},
+"labor": {
+"frage": "Eine Meta-Analyse (6 RCTs) prüfte kurze High-Impact-Einheiten (<30 Min.) bei prämenopausalen Frauen. Was begrenzt die Wirkung von reinem Sprungtraining?",
+"richtig": "Kein LWS-Effekt (SMD 0,04) und geringere Wirkung nach der Menopause",
+"falsch": [
+"Am Oberschenkelhals zeigte sich keine statistisch signifikante Veränderung",
+"Eine Einheit pro Woche reichte bereits für den maximalen Hüfteffekt",
+"Postmenopausale Frauen profitierten ohne Krafttraining am allerstärksten"
+],
+"warum": "Die Stoßreize reichten mechanisch nicht bis zur LWS durch, erforderten hohe Frequenz und wirken bei Östrogenmangel ohne schweres Krafttraining schwächer."
+}
+}
+},
+{
+"id": "GES-112",
+"karte": {
+"kopf": "Straßenradfahrer · 31 Studien ausgewertet",
+"titel": "Rund zwei Drittel der Viel-Radfahrer haben geschwächte Knochen",
+"titel_hervor": "Rund zwei Drittel",
+"setup": "Eine Auswertung aus 31 Studien prüfte die Knochendichte an Wirbelsäule, Becken und Hüfte bei jugendlichen und erwachsenen Straßenradfahrern.",
+"zahl": {
+"label": "Profi- & Master-Radfahrer mit Knochenschwund",
+"wert": "ca. 66 %",
+"alltag": "Über 7 Jahre sogar 84–90 % betroffen"
+},
+"kern": [
+"Auf dem Sattel fehlt den Knochen der nötige Druck- und Stoßreiz zum Starkbleiben.",
+"Besonders betroffen waren Lendenwirbelsäule, Becken und Oberschenkelhals.",
+"Einmal verlorene Knochendichte baut sich nach der Radkarriere oft nicht ganz neu auf."
+],
+"grenze": "Die 31 Studien waren sehr unterschiedlich aufgebaut und stammen vor allem von sehr ambitionierten Radfahrern, nicht von Alltagsradlern.",
+"fuer_dich": "Trainierst du vor allem auf dem Rad oder im Wasser? Plane fest mindestens 2-mal pro Woche schweres Kraft- oder kurzes Sprungtraining ein.",
+"labor": {
+"design": "Systematisches Review aus 31 heterogenen Studien (Querschnitt, Längsschnitt, Interventionen) zur BMD",
+"teilnehmer": "Jugendliche, erwachsene Profi- und Master-Straßenradfahrer",
+"ergebnis": "Osteopenie bei ca. 66 %; in 7-Jahres-Längsschnittdaten 84,2–89,5 % Osteopenie/Osteoporose an LWS, Becken, Hüfte"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du fährst sehr viel Rennrad und trainierst stundenlang im Sattel. Stärkt das deine Knochen ähnlich gut wie Laufen oder Krafttraining?",
+"richtig": "Nein, auf dem Rad fehlt der Stoßreiz – viele Viel-Radfahrer verlieren Knochendichte",
+"falsch": [
+"Ja, kräftiges Treten auf dem Rad macht Becken und Rücken extrem knochenstark",
+"Ja, solange du im Jahr genug Kilometer fährst, bleiben alle Knochen stabil",
+"Nein, aber das betrifft erst Rentner, nicht jugendliche oder erwachsene Sportler"
+],
+"warum": "In 31 Studien fehlte Straßenradfahrern der knochenaufbauende Stoßreiz – rund zwei Drittel der Profis und Master-Fahrer hatten geschwächte Knochen."
+},
+"plus": {
+"frage": "Dein Ausdauertraining besteht fast nur aus Straßenradfahren oder Schwimmen. Was solltest du für gesunde Knochen fest in deine Trainingswoche einbauen?",
+"richtig": "Mindestens zweimal pro Woche schweres Kraft- oder kurzes Sprungtraining",
+"falsch": [
+"Noch mehr lockere Grundlageneinheiten im Sattel mit höherer Trittfrequenz",
+"Nur mehr Dehnen nach den Ausfahrten, um die Wirbelsäule zu stärken",
+"Erst nach dem Karriereende mit Ausgleichstraining für die Knochen starten"
+],
+"warum": "Gewichtsgestützte Sportarten reizen den Knochen kaum; da verlorene Dichte sich oft nicht ganz erholt, braucht es rechtzeitig Kraft- oder Sprungreize."
+},
+"labor": {
+"frage": "Ein Review aus 31 Studien zeigte bei 66 % bis knapp 90 % der Straßenradfahrer Osteopenie oder Osteoporose. Welche Erklärung nennen die Daten dafür?",
+"richtig": "Lange gewichtsgestützte Haltung im Sattel plus viel Sitzen/Liegen in Pausen",
+"falsch": [
+"Zu hohe mechanische Stoßbelastungen durch unebenen Straßenbelag",
+"Reversible Anpassung, die sich nach Trainingsende immer komplett erholt",
+"Der Verlust beschränkte sich ausschließlich auf die Unterarmknochen"
+],
+"warum": "Fehlende axiale Stoßreize auf dem Rad und lange ruhige Erholungsphasen fördern Knochenabbau an LWS, Becken und Femurhals."
+}
+}
+},
+{
+"id": "GES-113",
+"karte": {
+"kopf": "Grundlagenforschung · Laborversuch",
+"titel": "Erste Hinweise: Mehrere kurze Knochenreize am Tag wirken wohl besser",
+"titel_hervor": "Mehrere kurze Knochenreize",
+"setup": "In einem Grundlagenversuch wurde dieselbe Anzahl mechanischer Belastungen auf Knochen entweder am Stück oder in mehreren Blöcken über den Tag verteilt.",
+"zahl": null,
+"kern": [
+"Knochenzellen stumpfen nach wenigen Dutzend Reizen ab und reagieren dann kaum noch.",
+"Mehrstündige Pausen von vier bis acht Stunden machten die Zellen wieder empfänglich.",
+"Aufgeteilte Belastungen regten im Versuch mehr Knochenaufbau an als ein langer Block."
+],
+"grenze": "Präklinische Grundlagenforschung – in kurzen Studien am Menschen über acht Wochen war dieser Unterschied noch nicht klar messbar.",
+"fuer_dich": "Willst du deine Knochen mit Sprüngen gezielt reizen? Teile sie auf 2–4 kurze Einheiten mit 4–8 Stunden Pause dazwischen auf.",
+"labor": {
+"design": "Experimentelle präklinische Mechanismusstudie, 4×90 oder 6×60 Zyklen mit Pausen vs. 1×360 Zyklen am Stück",
+"teilnehmer": "Präklinisches Modell (Grundlagenforschung an Knochenzellen)",
+"ergebnis": "Signifikant stärkerer Knochenaufbau bei aufgeteilten Reizen (Effektstärke nicht berichtet); Human-Kurzzeitdaten teils n. s."
+}
+},
+"quiz": {
+"basis": {
+"frage": "Erste Grundlagenversuche legen nahe, dass Knochen nach einigen Dutzend Sprüngen erst mal abstumpfen. Was könnte für den Knochenreiz deshalb besser sein?",
+"richtig": "Lieber mehrere ganz kurze Sprung-Einheiten mit Stunden Pause dazwischen",
+"falsch": [
+"Hunderte Sprünge direkt hintereinander ohne jede Unterbrechung machen",
+"Einmal im Monat eine extrem lange Einheit mit tausend Sprüngen planen",
+"Zwischen den einzelnen Sprüngen jeweils nur zwei Sekunden warten"
+],
+"warum": "Knochenzellen brauchen nach wenigen Dutzend Stößen erst mehrere Stunden Pause, um wieder voll auf neue Reize zu reagieren."
+},
+"plus": {
+"frage": "Du baust kurze Sprungreize für deine Knochengesundheit in deinen Tag ein. Wie teilst du dein tägliches Volumen auf Basis von Mechanismusdaten sinnvoll auf?",
+"richtig": "In zwei bis vier kurze Mini-Einheiten mit 4 bis 8 Stunden Abstand",
+"falsch": [
+"Alle Sprünge in einem langen Block abends direkt vor dem Schlafengehen",
+"Zwei Einheiten im Abstand von zehn Minuten für doppelte Wirkung",
+"Nur an einem Tag pro Woche möglichst viele Sprünge am Stück sammeln"
+],
+"warum": "Mehrstündige Pausen stellen die Empfindlichkeit der Knochenzellen wieder her – erste Hinweise sprechen deshalb für verteilte Micro-Sessions."
+},
+"labor": {
+"frage": "In einer experimentellen Mechanismusstudie erzeugten aufgeteilte Belastungszyklen (z. B. 4×90) mehr Knochenaufbau als 1×360 am Stück. Was schränkt die Übertragung ein?",
+"richtig": "Präklinisches Modell; humane 8-Wochen-Studien zeigten teils keinen Unterschied",
+"falsch": [
+"Die Gesamtanzahl der täglichen Lastzyklen war in den Gruppen ungleich",
+"Knochenzellen stumpften im Versuch erst nach mehreren Tausend Zyklen ab",
+"Die Pausen zwischen den Blöcken dauerten jeweils mehrere Tage"
+],
+"warum": "Das Prinzip der Osteozyten-Desensibilisierung stammt aus dem präklinischen Modell (Evidenz C) und war in kurzen Humanstudien noch nicht eindeutig."
+}
+}
+},
+{
+"id": "GES-114",
+"karte": {
+"kopf": "34 junge Erwachsene · Kontrollierte Studie",
+"titel": "Lockeres Training verschlimmerte einen leichten Schnupfen nicht",
+"titel_hervor": "verschlimmerte einen leichten Schnupfen nicht",
+"setup": "34 gesunde junge Erwachsene mit künstlich ausgelöstem Schnupfen trainierten jeden zweiten Tag 40 Minuten locker Ausdauer oder ruhten sich aus.",
+"zahl": null,
+"kern": [
+"Weder die Stärke der Erkältung noch die Dauer unterschieden sich zwischen beiden Gruppen.",
+"Das galt nur für milde Beschwerden oberhalb des Halses wie Schnupfen oder Halskratzen.",
+"Für hartes Training, Wettkämpfe oder andere Viren gilt diese Entwarnung nicht."
+],
+"grenze": "Geprüft wurde nur ein milder Schnupfenvirus bei jungen Gesunden – auf Fieber, Grippe oder intensiven Sport ist das nicht übertragbar.",
+"fuer_dich": "Nur leichter Schnupfen ohne Fieber? Trainiere höchstens locker (20–30 % leichter) – bei Beschwerden pausieren und ärztlich abklären.",
+"labor": {
+"design": "Kontrollierte Interventionsstudie (10 Tage), 40 Min. Ausdauer (70 % HRR) alle 2 Tage vs. Ruhe bei HRV-16",
+"teilnehmer": "34 moderat trainierte Erwachsene (18–29 Jahre)",
+"ergebnis": "Kein signifikanter Unterschied in Symptomschwere und Krankheitsdauer zwischen Trainings- und Kontrollgruppe"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du hast nur leichten Schnupfen und etwas Niesen, fühlst dich sonst fit und hast kein Fieber. Verschlimmert eine lockere Trainingseinheit die Erkältung automatisch?",
+"richtig": "Bei mildem Schnupfen oberhalb des Halses meist nicht, solange es locker bleibt",
+"falsch": [
+"Ja, schon ein Spaziergang verdoppelt die Dauer jedes Schnupfens",
+"Nein, du kannst auch mit Fieber und Gliederschmerzen voll trainieren",
+"Im Gegenteil: Hartes Schwitzen heilt jede Erkältung über Nacht"
+],
+"warum": "In einer Studie mit leichtem Schnupfen verlängerte oder verschlimmerte lockeres Ausdauertraining den Verlauf nicht – für Fieber oder harten Sport gilt das aber nicht."
+},
+"plus": {
+"frage": "Du spürst leichtes Halskratzen und Schnupfen (kein Fieber, keine Gliederschmerzen), willst aber nicht komplett pausieren. Wie passt du deine Einheit verantwortungsvoll an?",
+"richtig": "Dauer und Intensität deutlich drosseln und bei Verschlechterung stoppen",
+"falsch": [
+"Dein geplantes schweres Intervalltraining unverändert durchziehen",
+"Besonders hart trainieren, um die Erkältung einfach auszuschwitzen",
+"Die Belastung verdoppeln, solange die Symptome nur im Kopf sitzen"
+],
+"warum": "Bei milden Symptomen oberhalb des Halses ist moderates, reduziertes Training (ca. 20–30 % leichter, max. 40 Min.) vertretbar; bei Verschlechterung pausieren."
+},
+"labor": {
+"frage": "In einer kontrollierten Studie (n=34, 18–29 Jahre) verschlechterte moderates Training (70 % HRR) eine experimentelle Rhinovirus-Infektion nicht. Was begrenzt die Übertragbarkeit?",
+"richtig": "Nur junges Kollektiv, nur moderates Tempo und nur ein milder Erreger",
+"falsch": [
+"Die Probanden hatten hohes Fieber und starke Gliederschmerzen",
+"Die Trainingsgruppe erholte sich doppelt so schnell wie die Ruhegruppe",
+"Die Ergebnisse gelten genauso für Wettkämpfe und echte Grippeviren"
+],
+"warum": "Untersucht wurde allein ein experimenteller Rhinovirus bei moderater Intensität – auf HIIT, Wettkämpfe oder andere Viren wie Influenza nicht übertragbar."
+}
+}
+},
+{
+"id": "GES-115",
+"karte": {
+"kopf": "Sportmediziner · Experten-Leitlinie",
+"titel": "Experten warnen: Sport mit Fieber gefährdet Herz und Leistung stark",
+"titel_hervor": "gefährdet Herz und Leistung",
+"setup": "Ein internationales Fachgremium wertete Registerdaten und medizinische Mechanismen zum Sporttreiben während akuter Infekte mit Fieber aus.",
+"zahl": {
+"label": "Häufigere Rennabbrüche mit Infektsymptomen",
+"wert": "2- bis 3-fach",
+"alltag": "1/3 der Trainingsausfälle durch Infekte"
+},
+"kern": [
+"Bei Fieber oder Symptomen unterhalb des Halses drohen Herzmuskelentzündung und Herztod.",
+"Warnzeichen sind Fieber, Gliederschmerzen, starker Husten, Magen-Darm oder hoher Puls.",
+"Im Spitzensport gehen rund ein Drittel aller verpassten Einheiten auf Infekte zurück."
+],
+"grenze": "Aus ethischen Gründen gibt es keine Versuche mit fiebernden Sportlern – die Warnung basiert auf Registerdaten und Fachwissen.",
+"fuer_dich": "Hast du Fieber, Gliederschmerzen, starken Husten oder Magen-Darm? Sofort vollständig pausieren und Beschwerden ärztlich abklären.",
+"labor": {
+"design": "Internationales sportmedizinisches Konsensus-Statement auf Basis von Registerdaten und Pathophysiologie",
+"teilnehmer": "Breiten- und Spitzensportler (Register- und Beobachtungsdaten)",
+"ergebnis": "2- bis 3-fach höhere Abbruchrate im Wettkampf bei systemischen Symptomen; 33 % Trainingsausfall durch Infekte"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du hast Fieber, Gliederschmerzen oder starken Husten, aber dein Trainingsplan sieht heute eine wichtige Einheit vor. Was ist die richtige Entscheidung?",
+"richtig": "Sofort vollständig pausieren und Beschwerden ärztlich abklären",
+"falsch": [
+"Trotzdem locker trainieren, um den Kreislauf in Schwung zu halten",
+"Ein Fiebermittel nehmen und das Training normal durchziehen",
+"Nur die Hälfte des Gewichts nehmen, dann ist Fieber ungefährlich"
+],
+"warum": "Bei Fieber oder Symptomen unterhalb des Halses bricht die Leistung ein und es drohen schwere Herzkomplikationen – deshalb vollständig pausieren."
+},
+"plus": {
+"frage": "Kurz vor einem Wettkampf entwickelst du leichtes Fieber, einen erhöhten Ruhepuls und allgemeines Krankheitsgefühl. Was spricht klar gegen einen Start?",
+"richtig": "Hohes Komplikationsrisiko fürs Herz und viel häufigere Abbrüche",
+"falsch": [
+"Nur das Risiko, etwas Muskelkater in den Tagen danach zu bekommen",
+"Nichts, solange du vor dem Start ausreichend Wasser trinkst",
+"Es droht lediglich eine leicht verlängerte Regenerationszeit"
+],
+"warum": "Systemische Symptome erhöhen die Abbruchrate um das 2- bis 3-Fache und bergen ernste Risiken bis hin zur Herzmuskelentzündung – Start absagen und ärztlich abklären."
+},
+"labor": {
+"frage": "Internationale Sportmedizin-Leitlinien stufen Training bei Fieber oder systemischen Symptomen als strikte Kontraindikation ein. Warum liegt hier Evidenzgrad D vor?",
+"richtig": "Wegen fehlender RCTs aus Ethikgründen; Basis sind Pathophysiologie und Register",
+"falsch": [
+"Weil kontrollierte Studien keinen Schaden durch Sport mit Fieber fanden",
+"Weil Infekte im Leistungssport fast nie zu Trainingsausfällen führen",
+"Weil erst ab mehr als 40 °C Körpertemperatur Herzrisiken bestehen"
+],
+"warum": "Belastungs-RCTs an fiebernden Sportlern sind ethisch unvertretbar – die klare Warnung beruht auf Mechanismen (z. B. Myokard-Replikation) und Registerdaten."
+}
+}
+},
+{
+"id": "GES-116",
+"karte": {
+"kopf": "Sportmediziner · Experten-Leitlinie",
+"titel": "Nach einem Infekt bleibt die Leistung oft noch einige Tage schwächer",
+"titel_hervor": "noch einige Tage schwächer",
+"setup": "Ein internationales Fachgremium fasste den Forschungsstand zur Leistungsfähigkeit und zur sicheren Rückkehr ins Training nach Atemwegsinfekten zusammen.",
+"zahl": {
+"label": "Länger gedämpfte Leistung nach Genesung",
+"wert": "2–4 Tage",
+"alltag": "Auch wenn Symptome schon weg sind"
+},
+"kern": [
+"Wer nach Fieber zu früh wieder hart trainiert, riskiert eher einen Rückfall.",
+"Für eine feste Anzahl an Pausentagen nach Fieber fehlen bisher randomisierte Studien.",
+"Waren Hals und Körper zugleich betroffen, dauert die Rückkehr meist spürbar länger."
+],
+"grenze": "Expertenkonsens ohne randomisierte Studien zu exakten Stufenplänen – der richtige Zeitpunkt hängt vom eigenen Verlauf ab.",
+"fuer_dich": "Bist du nach Fieber wieder symptomfrei? Gönn dir 2–4 extra Ruhetage, steigere langsam und kläre ungewöhnliche Beschwerden ärztlich ab.",
+"labor": {
+"design": "Internationales sportmedizinisches Konsensus-Statement zur Rückkehr ins Training nach Infekten",
+"teilnehmer": "Sporttreibende nach oberen und systemischen Atemwegsinfekten",
+"ergebnis": "2–4 Tage anhaltende Leistungsminderung nach klinischer Genesung; keine RCT-Evidenz für starre Stufenschemata"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Dein fieberhafter Infekt ist heute gerade abgeklungen und du fühlst dich wieder gesund. Solltest du direkt am selben Tag wieder mit voller Härte einsteigen?",
+"richtig": "Nein, lieber noch ein paar Tage schonen und dann langsam steigern",
+"falsch": [
+"Ja, sobald das Fieber weg ist, ist die volle Bestform sofort zurück",
+"Ja, eine sehr harte Einheit am ersten Tag bringt die Fitness schneller zurück",
+"Nein, nach jedem Schnupfen ist mindestens ein voller Monat Pause nötig"
+],
+"warum": "Auch nach Abklingen der Symptome bleibt die Leistung oft noch zwei bis vier Tage gedämpft – ein zu früher harter Einstieg erhöht das Rückfallrisiko."
+},
+"plus": {
+"frage": "Du bist nach einem Infekt mit Fieber wieder symptomfrei und willst zurück ins Training. Woran orientierst du deinen Wiedereinstieg am vernünftigsten?",
+"richtig": "Erst einige Extra-Ruhetage, dann stufenweise bei stabilem Ruhepuls steigern",
+"falsch": [
+"Direkt mit 100 % Volumen starten, um verpasste Einheiten aufzuholen",
+"Den Ruhepuls ignorieren und nach Gefühl sofort Intervalle laufen",
+"Auf ein wissenschaftlich exakt bewiesenes 1-Tages-Schema vertrauen"
+],
+"warum": "Experten empfehlen 2–4 zusätzliche Ruhetage und eine schrittweise Steigerung bei normalem Ruhepuls und ausbleibenden Symptomen."
+},
+"labor": {
+"frage": "Ein internationales Sportmedizin-Konsensuspapier beschreibt die Rückkehr ins Training nach Atemwegsinfekten. Wie ist die Evidenz für exakte Pausentage nach Fieber?",
+"richtig": "Keine randomisierte Evidenz für starre Schemata; Expertenkonsens leitet",
+"falsch": [
+"Große RCTs belegen eine starre Pause von exakt einem Tag pro Fiebertag",
+"Nach Symptomende ist die Leistungsfähigkeit sofort wieder auf Ausgangsniveau",
+"Kombinierte Symptome ober- und unterhalb des Halses verkürzen die Rückkehr"
+],
+"warum": "Zwar hält die Leistungsminderung 2–4 Tage an, doch für feste Stufenpläne nach Fieber fehlen RCTs (Evidenz D); kombinierte Symptome verzögern die Rückkehr."
+}
+}
+},
+{
+"id": "HYB-101",
+"karte": {
+"kopf": "Freizeitathleten · Wettkampf-Simulation",
+"titel": "Im Hybrid-Wettkampf läuft man deutlich länger als an Stationen",
+"titel_hervor": "deutlich länger als an Stationen",
+"setup": "Elf Freizeitathleten absolvierten einen simulierten Hybrid-Wettkampf, während Puls, Blutlaktat und Anstrengung gemessen wurden.",
+"zahl": {
+"label": "Anteil der Zeit am oberen Pulslimit",
+"wert": "79,5 %",
+"alltag": "fast vier Fünftel des Rennens"
+},
+"kern": [
+"Das Laufen dauerte im Schnitt rund 51 Minuten, die Stationen rund 33 Minuten",
+"Blutlaktat und gefühlte Härte erreichten an den Stationen die höchsten Werte",
+"Besonders hart fielen die abschließenden Wall Balls und die Schlitten-Stationen aus"
+],
+"grenze": "Erste Hinweise aus nur 11 Personen in einer Simulation – im echten Rennen können Werte abweichen.",
+"fuer_dich": "Du trainierst für einen Hybrid-Wettkampf? Plane gut die Hälfte deiner Zeit für Ausdauer und den Rest für Kraftausdauer ein.",
+"labor": {
+"design": "Beobachtungsstudie bei simuliertem Open-Wettkampf (8 × 1 km + 8 Stationen)",
+"teilnehmer": "11 Freizeitathleten (27 % Frauen)",
+"ergebnis": "Lauf 51,2 vs. Stationen 32,8 min (p=0,003); Max-Laktat 8,5 vs. 7,7 mmol/L (p=0,006)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Ein Fitness-Wettkampf wechselt zwischen acht Läufen und acht Kraftstationen. Wofür brauchen die meisten Teilnehmer deutlich mehr Zeit?",
+"richtig": "Für die acht Laufabschnitte zusammen",
+"falsch": [
+"Für die acht Kraftstationen zusammen",
+"Für die Pausen zwischen den Stationen",
+"Beides dauert fast genau gleich lang"
+],
+"warum": "In einer Wettkampf-Simulation entfielen im Schnitt rund 51 Minuten aufs Laufen und nur knapp 33 Minuten auf die Stationen."
+},
+"plus": {
+"frage": "Du baust deinen Trainingsplan für einen Hybrid-Wettkampf aus Laufen und Kraftstationen. Wie verteilst du deine spezifische Trainingszeit sinnvoll?",
+"richtig": "Etwas mehr Ausdauer und Laufen, knapp die Hälfte Kraftausdauer",
+"falsch": [
+"Fast ausschließlich schweres Maximalkrafttraining für die Stationen",
+"Fast ausschließlich lockere Dauerläufe ohne Stationsübungen",
+"Zu drei Vierteln Kraftstationen und nur einen kurzen Lauf pro Woche"
+],
+"warum": "Das Laufen macht über die Hälfte der Rennzeit aus, während an den Stationen die höchsten Laktat- und RPE-Werte entstehen."
+},
+"labor": {
+"frage": "Bei elf Freizeitathleten wurden in einem simulierten Hybrid-Wettkampf Herzfrequenz, Blutlaktat und RPE gemessen. Wo traten die höchsten Laktat- und RPE-Werte auf?",
+"richtig": "An den Übungsstationen, besonders bei den letzten Wall Balls",
+"falsch": [
+"Auf den Laufabschnitten durch das hohe Dauerlauftempo",
+"In der Wechselzone beim zügigen Übergang zur nächsten Station",
+"Gleichmäßig verteilt ohne Unterschied zwischen Laufen und Stationen"
+],
+"warum": "Hohe lokale Muskelarbeit an den Stationen trieb das Laktat im Mittel auf 8,5 mmol/L und die RPE auf 18, jeweils höher als beim Laufen."
+}
+}
+},
+{
+"id": "HYB-102",
+"karte": {
+"kopf": "Wettkampf-Daten · 7 Saisons ausgewertet",
+"titel": "Rund die Hälfte der Hybrid-Wettkampfzeit geht fürs Laufen drauf",
+"titel_hervor": "Rund die Hälfte",
+"setup": "Fast 40.000 Ergebnisse aus sieben Saisons von Profi- und Elite-Hybridrennen wurden nach Lauf- und Stationszeiten ausgewertet.",
+"zahl": {
+"label": "Anteil des Laufens an der Gesamtzeit",
+"wert": "≈ 50 %",
+"alltag": "rund die halbe Wettkampfzeit"
+},
+"kern": [
+"In sieben Saisons wurden die Top 100 rund ein Fünftel schneller",
+"Die Laufzeit sagt die Gesamtplatzierung am zuverlässigsten voraus",
+"Bei langsameren Athleten kosten schwere Kraftstationen überproportional viel Zeit"
+],
+"grenze": "Auswertung reiner Ergebnislisten ohne Labormessungen – die genauen Ursachen bleiben offen.",
+"fuer_dich": "Dein Laufanteil liegt über der Hälfte der Gesamtzeit? Baue zuerst mehr Ausdauer auf und schließe dann gezielt Kraftlücken.",
+"labor": {
+"design": "Retrospektive Querschnitts- und Längsschnittanalyse über 7 Saisons",
+"teilnehmer": "39.696 Ergebnisse (11.842 Frauen, 27.854 Männer)",
+"ergebnis": "Top-100-Zeit −19 % (Männer) bzw. −21 % (Frauen); CV von >10 % auf <5 %"
+}
+},
+"quiz": {
+"basis": {
+"frage": "In einem Wettkampf mit acht Kilometern Laufen und acht Kraftstationen: Welcher Teil entscheidet im Schnitt am verlässlichsten über deinen Gesamtplatz?",
+"richtig": "Wie schnell du die acht Laufabschnitte absolvierst",
+"falsch": [
+"Wie schnell du eine einzelne Lieblingsstation schaffst",
+"Wie zügig du durch die Wechselzonen gehst",
+"Wie stark du direkt auf dem ersten Kilometer startest"
+],
+"warum": "Über fast 40.000 ausgewertete Rennen wich der Laufrang am wenigsten vom Gesamtrang ab und machte konstant rund die Hälfte der Zeit aus."
+},
+"plus": {
+"frage": "Du wertest deine letzten Wettkampf-Splits aus: Deine Laufzeit liegt klar über der Hälfte deiner Gesamtzeit, die Stationen waren ordentlich. Was priorisierst du?",
+"richtig": "Mehr aerobes Laufvolumen im Trainingsplan einbauen",
+"falsch": [
+"Laufen reduzieren und nur noch schwere Schlitten-Einheiten machen",
+"Mehr kurze Sprints statt längerer Ausdauerläufe trainieren",
+"Die Wechselzeiten üben, weil dort die meisten Minuten liegen"
+],
+"warum": "Liegt der Laufanteil über rund 52 Prozent, steckt im Ausdaueraufbau meist das größte Zeitpotenzial."
+},
+"labor": {
+"frage": "Fast 40.000 Profi- und Elite-Ergebnisse aus sieben Saisons wurden retrospektiv analysiert. Wie unterschieden sich Laufen und Kraftstationen bei Rangverschiebungen?",
+"richtig": "Kraftstationen sorgten für stärkere Rangsprünge als das Laufen",
+"falsch": [
+"Das Laufen erzeugte deutlich größere Rangsprünge als Stationen",
+"Zwischen beiden Bereichen gab es kaum Unterschiede im Feld",
+"Rangverschiebungen traten nur bei den schnellsten Top-100 auf"
+],
+"warum": "Kraftbetonte Stationen führten zu deutlich stärkerem Rank Reshuffling und überproportionalen Zeitverlusten bei langsameren Athleten."
+}
+}
+},
+{
+"id": "HYB-103",
+"karte": {
+"kopf": "Top-Athleten · 6 Jahre Renndaten",
+"titel": "Spitzenathleten wurden in sechs Jahren rund ein Fünftel schneller",
+"titel_hervor": "rund ein Fünftel schneller",
+"setup": "350 Rennergebnisse der Top-50-Männer aus den Jahren 2018 bis 2024 wurden nach Lauf-, Stations- und Wechselzeiten verglichen.",
+"zahl": {
+"label": "Zeitersparnis der Top 50 seit 2018",
+"wert": "−20,8 %",
+"alltag": "rund ein Fünftel schneller"
+},
+"kern": [
+"Die schnellsten Athleten teilen sich ihre acht Laufabschnitte immer gleichmäßiger ein",
+"Am stärksten verbesserten sich Lauf 8 sowie Wall Balls, Sled Pull und Farmers Carry",
+"Auch die Zeit in der Wechselzone sank im Schnitt um rund ein Fünftel"
+],
+"grenze": "Untersucht wurden nur männliche Spitzenathleten – auf Einsteiger ist das nicht direkt übertragbar.",
+"fuer_dich": "Du planst dein Renntempo? Starte die ersten drei Läufe nicht zu schnell und trainiere gezielt das Ende unter Ermüdung.",
+"labor": {
+"design": "Retrospektive Längsschnittanalyse von Wettkampf-Splits (2018–2024)",
+"teilnehmer": "350 Beobachtungen (Top-50-Pro-Männer, 138 Athleten)",
+"ergebnis": "Gesamtzeit −20,8 % (eta²=0,777); Lauf ES=3,04; Stationen ES=2,68; Wechsel ES=1,12"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du startest in einen langen Fitness-Wettkampf mit acht Laufrunden. Welche Tempoverteilung hat sich bei den schnellsten Athleten bewährt?",
+"richtig": "Die acht Läufe möglichst gleichmäßig einteilen",
+"falsch": [
+"Die ersten drei Runden deutlich schneller angehen als geplant",
+"Die erste Hälfte betont langsam laufen und am Ende sprinten",
+"Jede zweite Laufrunde als aktive Gehpause nutzen"
+],
+"warum": "Ein gleichmäßiges Tempo verhindert frühes Überziehen und lässt genug Kraft für die letzten Läufe und Stationen."
+},
+"plus": {
+"frage": "Du bist fortgeschritten und möchtest dein Pacing für acht 1-km-Läufe mit Stationen planen. Wie gehst du die ersten drei Läufe idealerweise an?",
+"richtig": "Nur minimal schneller oder genau im geplanten Schnitt bleiben",
+"falsch": [
+"Deutlich unter Zielpace anlaufen, um ein Polster aufzubauen",
+"Im ersten Lauf voll gehen, solange die Beine noch frisch sind",
+"Die ersten drei Läufe bewusst sehr langsam als Warm-up nutzen"
+],
+"warum": "Nur maximal zwei bis drei Prozent Abweichung am Start schützen vor einem Einbruch im achten Lauf und bei den letzten Stationen."
+},
+"labor": {
+"frage": "350 Top-50-Rennergebnisse von Männern zwischen 2018 und 2024 wurden längsschnittlich verglichen. Welche Einschränkung gilt für diese Daten?",
+"richtig": "Sie zeigen nur männliche Profis und gelten nicht direkt für Einsteiger",
+"falsch": [
+"Sie enthalten nur die Laufzeiten und lassen die Stationen außen vor",
+"Sie messen nur einen einzigen Wettkampf aus dem Jahr 2024",
+"Sie schließen Wechselzeiten zwischen den Stationen vollständig aus"
+],
+"warum": "Die Analyse umfasst ausschließlich männliche Top-50-Profis und lässt sich daher nicht einfach auf Freizeit- oder Einsteigerklassen übertragen."
+}
+}
+},
+{
+"id": "HYB-104",
+"karte": {
+"kopf": "Hybrid-Athleten · 12-Wochen-Beobachtung",
+"titel": "Fast drei Viertel der Beschwerden entstehen durch Überlastung",
+"titel_hervor": "Fast drei Viertel",
+"setup": "89 Hybrid-Athleten meldeten 12 Wochen lang jede Woche per Fragebogen alle körperlichen Beschwerden und Trainingsausfälle.",
+"zahl": {
+"label": "Anteil von Überlastungsbeschwerden",
+"wert": "73 %",
+"alltag": "fast drei von vier Fällen"
+},
+"kern": [
+"Am häufigsten betroffen waren Knie, Unterschenkel und Achillessehne",
+"Schulterprobleme traten in den 12 Wochen fast gar nicht auf",
+"Etwa die Hälfte der Beschwerden führte nicht zu einer kompletten Trainingspause"
+],
+"grenze": "Selbstauskünfte über 12 Wochen ohne ärztliche Diagnose – einzelne Risiken bleiben statistisch unsicher.",
+"fuer_dich": "Du spürst Beschwerden an Knie oder Achillessehne? Dann pausiere lieber frühzeitig und lass es ärztlich abklären.",
+"labor": {
+"design": "Prospektive Kohortenstudie über 12 Wochen per wöchentlichem Fragebogen (OSTRC-H2)",
+"teilnehmer": "89 Hybrid-Athleten (56 Frauen)",
+"ergebnis": "Wochenprävalenz 30 % (95 % KI 24–37 %); 14,4/1.000 h; Vorverletzung RR=2,60 (1,00–6,75)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Beim kombinierten Lauf- und Krafttraining treten manchmal körperliche Beschwerden auf. Welche Art von Problemen kommt am häufigsten vor?",
+"richtig": "Schleichende Überlastungen an Knie oder Unterschenkel",
+"falsch": [
+"Plötzliche Unfälle durch fallende Gewichte im Studio",
+"Akute Schulterverletzungen durch Überkopfdrücken",
+"Muskelrisse im oberen Rücken durch das Rudern"
+],
+"warum": "Fast drei Viertel der gemeldeten Probleme entstanden durch allmähliche Überlastung, vor allem an Knie, Unterschenkel und Achillessehne."
+},
+"plus": {
+"frage": "Du hast beim Hybrid-Training seit einigen Tagen wiederholt Beschwerden an Knie oder Achillessehne, kannst aber noch irgendwie trainieren. Was ist sinnvoll?",
+"richtig": "Belastung pausieren und die Beschwerden ärztlich abklären",
+"falsch": [
+"Normal weitertrainieren, solange kein voller Ausfall droht",
+"Nur das Oberkörpertraining streichen und weiter viel laufen",
+"Die Laufintensität erhöhen, um die Sehne schneller abzuhärten"
+],
+"warum": "Viele Überlastungen führen anfangs nicht zum Komplettausfall, verschlimmern sich aber oft ohne Pause und fachliche Abklärung."
+},
+"labor": {
+"frage": "89 Hybrid-Athleten füllten 12 Wochen lang wöchentlich einen standardisierten Beschwerde-Fragebogen aus. Was zeigte sich beim Vergleich von Überlastung und akuten Verletzungen?",
+"richtig": "Überlastungen machten fast drei Viertel aus, oft ohne vollen Ausfall",
+"falsch": [
+"Akute Verletzungen dominierten klar und zwangen meist zur Pause",
+"Beide Verletzungsarten traten etwa gleich häufig auf",
+"Fast alle gemeldeten Probleme betrafen Schulter und Nacken"
+],
+"warum": "73 Prozent der Episoden waren Überlastungsbeschwerden, und nur knapp die Hälfte führte zu einem vollständigen Trainingsausfall."
+}
+}
+},
+{
+"id": "HYB-105",
+"karte": {
+"kopf": "Freizeitathleten · Leistungsvergleich",
+"titel": "Bessere Ausdauer hing enger mit schnellen Zeiten zusammen als Kraft",
+"titel_hervor": "enger mit schnellen Zeiten",
+"setup": "Bei elf Freizeitathleten wurden Ausdauerleistung, Trainingsumfang, Körperbau und Kraft mit ihrer simulierten Wettkampfzeit verglichen.",
+"zahl": null,
+"kern": [
+"Höhere Sauerstoffaufnahme und mehr Ausdauerumfang gingen mit schnelleren Zeiten einher",
+"Auch ein geringerer Körperfettanteil hing mit besseren Zielzeiten zusammen",
+"Griffkraft, Muskelmasse und Kraftumfang zeigten hier keinen klaren Zusammenhang"
+],
+"grenze": "Sehr kleine Gruppe von 11 Personen mit moderaten Gewichten – bei schweren Klassen kann Kraft wichtiger sein.",
+"fuer_dich": "Du willst deine Wettkampfzeit drücken? Setze im Aufbau zuerst auf mehr Laufumfang und bessere Grundlagenausdauer.",
+"labor": {
+"design": "Querschnitts-Beobachtungsstudie mit Korrelationsanalyse im Open-Format",
+"teilnehmer": "11 Freizeitathleten (im Schnitt 18 Monate Erfahrung)",
+"ergebnis": "Signifikante Korrelation für VO2max (p=0,01), Ausdauervolumen (p=0,04), Körperfett (p=0,03)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du trainierst als Freizeitsportler für einen Wettkampf aus Laufen und moderaten Kraftstationen. Was hilft nach ersten Hinweisen am ehesten für eine schnellere Zeit?",
+"richtig": "Eine bessere Ausdauer und mehr wöchentliche Laufkilometer",
+"falsch": [
+"Möglichst viel reine Muskelmasse am Oberkörper aufzubauen",
+"Vor allem die maximale Griffkraft isoliert zu trainieren",
+"Das Ausdauertraining zugunsten schwerer Maximalkraft zu kürzen"
+],
+"warum": "Bei Freizeitathleten hingen hohe Ausdauerleistung und mehr Laufumfang am deutlichsten mit schnelleren Zielzeiten zusammen."
+},
+"plus": {
+"frage": "Dein Ziel ist eine schnellere Zeit in einer offenen Hybrid-Klasse mit moderaten Gewichten. Worauf legst du im Jahresaufbau den Hauptfokus?",
+"richtig": "VO2max steigern und das wöchentliche Laufvolumen ausbauen",
+"falsch": [
+"Das Kraftvolumen verdoppeln und nur zweimal pro Woche laufen",
+"Den Fokus fast ganz auf Griffkraft und isolierte Armübungen legen",
+"Möglichst schnell viel Körpermasse für die Schlitten aufbauen"
+],
+"warum": "VO2max, Ausdauervolumen und ein moderater Körperfettanteil korrelierten klar mit besseren Zeiten, reines Kraftvolumen hingegen nicht."
+},
+"labor": {
+"frage": "Bei elf Freizeitathleten wurde getestet, welche Merkmale mit einer schnelleren simulierten Wettkampfzeit korrelieren. Warum könnte die Rolle der Maximalkraft dabei unterschätzt worden sein?",
+"richtig": "Die Gruppe war sehr klein und nutzte nur moderate Gewichte",
+"falsch": [
+"Die Athleten durften vor dem Test vier Wochen kein Krafttraining machen",
+"Bei dem Test wurden alle Kraftstationen komplett weggelassen",
+"Es wurden ausschließlich professionelle Langstreckenläufer getestet"
+],
+"warum": "Bei nur elf Personen im leichteren Open-Format fallen schwere Lasten weniger ins Gewicht als in schwereren Wettkampfklassen."
+}
+}
+},
+{
+"id": "HYB-106",
+"karte": {
+"kopf": "Fachartikel · Anforderungsprofil",
+"titel": "Schwere Wettkampflasten verlangen eine solide Kraftreserve",
+"titel_hervor": "eine solide Kraftreserve",
+"setup": "Ein Fachüberblick analysierte die festen Wettkampfgewichte und leitete daraus ab, welche körperlichen Fähigkeiten nötig sind.",
+"zahl": null,
+"kern": [
+"Feste Gewichte machen schwere Stationen für leichtere oder schwächere Athleten härter",
+"Neben Ausdauer zählen lokale Kraftausdauer und hohe Belastbarkeit unter Laktat",
+"Eine höhere Maximalkraft senkt die relative Anstrengung an jeder Kraftstation"
+],
+"grenze": "Expertenmodell ohne eigene Trainingsstudie – wie viel Maximalkraft genau reicht, ist bisher nicht gemessen.",
+"fuer_dich": "Du wechselst in eine schwerere Wettkampfklasse? Plane in der Vorbereitung zwei schwere Krafteinheiten pro Woche ein.",
+"labor": {
+"design": "Narratives Review und physiologisches Anforderungsmodell",
+"teilnehmer": "",
+"ergebnis": ""
+}
+},
+"quiz": {
+"basis": {
+"frage": "Bei manchen Fitness-Wettkämpfen müssen alle Teilnehmer dieselben festen Gewichte schieben oder tragen. Warum hilft dir dafür eine gute Grundkraft?",
+"richtig": "Dieselbe Last fühlt sich leichter an und ermüdet dich weniger",
+"falsch": [
+"Du darfst mit höherer Grundkraft weniger Wiederholungen machen",
+"Gute Grundkraft ersetzt das gesamte Lauftraining im Vorfeld",
+"Feste Gewichte werden im Wettkampf ans Körpergewicht angepasst"
+],
+"warum": "Wer mehr Kraftreserven hat, arbeitet an schweren Stationen näher am eigenen Komfortbereich und verliert dort weniger Energie."
+},
+"plus": {
+"frage": "Du steigst in eine schwerere Wettkampfklasse mit deutlich höheren Schlitten- und Tragelasten auf. Wie ergänzt du deine allgemeine Vorbereitungsphase sinnvoll?",
+"richtig": "Zwei Krafteinheiten pro Woche mit schweren Grundübungen einbauen",
+"falsch": [
+"Schwere Gewichte meiden und nur noch hohe Wiederholungen machen",
+"Krafttraining streichen, um Körpergewicht für das Laufen zu sparen",
+"Ausschließlich leichte Isolationsübungen für die Schultern ergänzen"
+],
+"warum": "Schwere Grundübungen vergrößern deine Kraftreserve, sodass feste Wettkampflasten relativ gesehen weniger anstrengend sind."
+},
+"labor": {
+"frage": "Ein narratives Review leitete aus den festen Wettkampflasten ab, dass eine ausreichende Maximalkraftreserve wichtig ist. Wie hoch ist die direkte Evidenz dafür?",
+"richtig": "Bisher nur ein Expertenmodell ohne direkte Trainingsstudien",
+"falsch": [
+"Belegt durch mehrere große randomisierte Langzeitstudien",
+"Mit exakten Mindestwerten pro Körpergewicht empirisch bewiesen",
+"Durch direkte Blut- und Muskelbiopsien im Wettkampf bestätigt"
+],
+"warum": "Das Modell überträgt Wissen aus verwandten Sportarten; ein exakter Schwellenwert für die optimale Kraftreserve wurde noch nicht gemessen."
+}
+}
+},
+{
+"id": "HYB-107",
+"karte": {
+"kopf": "Läufer · 20 Studien ausgewertet",
+"titel": "Hartes Krafttraining bremst das Laufen bis zu 24 Stunden lang",
+"titel_hervor": "bis zu 24 Stunden lang",
+"setup": "20 Studien prüften, wie stark intensives Krafttraining die Laufökonomie und Ausdauerleistung in den Stunden danach beeinflusst.",
+"zahl": null,
+"kern": [
+"Nach hartem Beintraining braucht der Körper beim Laufen spürbar mehr Energie",
+"Auch die Zeit bis zur Erschöpfung sinkt vorübergehend deutlich",
+"Starker Muskelkater und ungewohnte Übungen verlängern die Bremswirkung"
+],
+"grenze": "Wie lange die Ermüdung anhält, schwankt stark je nach Trainingsgewohnheit und Muskelkater.",
+"fuer_dich": "Morgen steht ein schnelles Intervall- oder Tempotraining an? Lege heute kein schweres Beintraining davor.",
+"labor": {
+"design": "Systematisches Review ohne Meta-Analyse zu akuten Effekten von Krafttraining auf Laufen",
+"teilnehmer": "20 Studien mit Messung der Laufökonomie",
+"ergebnis": "Akute Verschlechterung der Laufökonomie und Time-to-Exhaustion für <24 h bis mehrere Tage"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du hast gestern sehr hart deine Beine trainiert und gehst heute laufen. Was passiert dabei typischerweise mit deinem Laufgefühl?",
+"richtig": "Dasselbe Tempo kostet mehr Energie und du ermüdest schneller",
+"falsch": [
+"Du läufst automatisch sparsamer, weil die Muskeln aktiviert sind",
+"Die Beine sind nach wenigen Stunden wieder voll leistungsfähig",
+"Das Krafttraining beeinflusst nur den Puls, nicht das Lauftempo"
+],
+"warum": "Nach intensivem Krafttraining verschlechtert sich die Laufökonomie oft für mindestens einen Tag, manchmal sogar mehrere Tage."
+},
+"plus": {
+"frage": "Am Mittwoch steht deine wichtigste Tempodeinheit oder VO2max-Intervallsession an. Wie planst du dein schweres Beintraining in dieser Woche?",
+"richtig": "Nicht in den 24 Stunden vor dem schnellen Lauf ansetzen",
+"falsch": [
+"Direkt am Dienstagabend mit vielen schweren RDL und Split Squats",
+"Am Mittwochmorgen kurz vor den Intervallen zur Voraktivierung",
+"Der Abstand ist egal, solange du abends genug Protein isst"
+],
+"warum": "Schweres oder ungewohntes Beintraining bremst Laufökonomie und Ausdauerleistung oft über 24 Stunden hinaus."
+},
+"labor": {
+"frage": "20 Studien untersuchten akute Effekte intensiven Krafttrainings auf die Laufökonomie. Wovon hängt es stark ab, wie lange die Beeinträchtigung anhält?",
+"richtig": "Von Muskelschaden, exzentrischem Anteil und Trainingsgewohnheit",
+"falsch": [
+"Allein von der Trainingsdauer unabhängig von der Intensität",
+"Nur davon, ob im Sitzen oder im Stehen trainiert wurde",
+"Ausschließlich vom Alter, nicht vom gewohnten Trainingsreiz"
+],
+"warum": "Starker Muskelschaden durch ungewohnte oder stark exzentrische Übungen verlängert die Erholungszeit der Laufökonomie deutlich."
+}
+}
+},
+{
+"id": "HYB-108",
+"karte": {
+"kopf": "Forschungsstand · 11 Arbeiten gesichtet",
+"titel": "Für Wechseltraining aus Kraft und Laufen fehlen noch Studien",
+"titel_hervor": "fehlen noch Studien",
+"setup": "Eine Übersicht sammelte alle bis Mitte 2026 veröffentlichten Studien zu Hybrid-Wettkämpfen und suchte nach Trainingsvergleichen.",
+"zahl": {
+"label": "Kontrollierte Trainingsstudien bisher",
+"wert": "0",
+"alltag": "von 11 gesichteten Arbeiten"
+},
+"kern": [
+"Bisherige Empfehlungen zum Wechseltraining stützen sich auf Erfahrung und Theorie",
+"Zu häufiges Laufen mit schweren Beinen kann Technik und Gelenke unnötig belasten",
+"Experten raten zu ein bis zwei gezielten Wechseleinheiten kurz vor dem Wettkampf"
+],
+"grenze": "Bisher wenig untersucht – es gibt noch keine Studie, die verschiedene Trainingspläne direkt vergleicht.",
+"fuer_dich": "Dein Wettkampf ist in 4 bis 6 Wochen? Übe den Wechsel aus Station und Laufen 1–2 Mal pro Woche, sonst lauf ausgeruht.",
+"labor": {
+"design": "Systematisches Review ohne Meta-Analyse (Literaturstand bis Juli 2026)",
+"teilnehmer": "11 publizierte Arbeiten (8 Originalstudien, 3 Reviews)",
+"ergebnis": "0 kontrollierte Trainingsinterventionsstudien vorhanden"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Manche Sportler laufen fast jedes Mal direkt nach harten Beinübungen, um das Wettkampfgefühl zu üben. Was spricht gegen zu viel davon?",
+"richtig": "Ermüdete Technik kann den Laufstil verschlechtern und überlasten",
+"falsch": [
+"Die Muskeln gewöhnen sich dadurch überhaupt nicht ans Laufen",
+"Man verliert dadurch die gesamte Kraft im Oberkörper",
+"Der Körper verbrennt dabei deutlich weniger Energie als normal"
+],
+"warum": "Ständiges Laufen mit schweren Beinen belastet Technik und Gelenke; die meisten Läufe gelingen ausgeruht sauberer."
+},
+"plus": {
+"frage": "Dein Hybrid-Wettkampf steht in fünf Wochen an und du willst das Laufen direkt nach Beinstationen üben. Wie baust du diese Einheiten sinnvoll ein?",
+"richtig": "Ein- bis zweimal pro Woche gezielt einplanen, sonst ausgeruht laufen",
+"falsch": [
+"Jeden einzelnen Lauf ab jetzt direkt nach schweren Lunges starten",
+"Erst in der Wettkampfwoche täglich volle Simulationen durchführen",
+"Ganz darauf verzichten, weil sich der Wechsel von selbst ergibt"
+],
+"warum": "Experten empfehlen vier bis sechs Wochen vor dem Start ein bis zwei spezifische Wechseleinheiten pro Woche und sonst ausgeruhte Läufe."
+},
+"labor": {
+"frage": "Eine systematische Literatursuche sichtete alle bis Mitte 2026 publizierten Arbeiten zu Hybrid-Wettkämpfen. Wie ist die Datenlage zu spezifischem Wechseltraining?",
+"richtig": "Es gibt bisher keine kontrollierten Trainingsinterventionsstudien",
+"falsch": [
+"Mehrere Meta-Analysen belegen ein exaktes optimales Wochenvolumen",
+"Über zwanzig RCTs verglichen verschiedene Wechsel-Protokolle",
+"Nur für Einsteiger liegen bereits randomisierte Vergleichsdaten vor"
+],
+"warum": "Unter elf publizierten Arbeiten fand sich keine einzige kontrollierte Trainingsstudie; aktuelle Protokolle basieren auf Expertenkonsens."
+}
+}
+},
+{
+"id": "HYB-109",
+"karte": {
+"kopf": "Gemischte Gruppen · 43 Studien",
+"titel": "Ausdauer bremst vor allem Explosivkraft, nicht Muskelwachstum",
+"titel_hervor": "vor allem Explosivkraft",
+"setup": "43 Studien verglichen reines Krafttraining mit kombiniertem Kraft- und Ausdauertraining über alle Alters- und Leistungsstufen.",
+"zahl": {
+"label": "Effekt auf die Explosivkraft",
+"wert": "SMD −0,28",
+"alltag": "kleine, aber klare Dämpfung"
+},
+"kern": [
+"Muskelwachstum und Maximalkraft blieben im Gesamtschnitt unbeeinträchtigt",
+"Die Dämpfung der Schnellkraft war stärker, wenn beides direkt nacheinander lief",
+"Mindestens drei Stunden Pause zwischen den Einheiten schützten die Explosivkraft"
+],
+"grenze": "Gepoolter Durchschnitt über viele Gruppen – bei sehr gut Trainierten können Effekte anders ausfallen.",
+"fuer_dich": "Du trainierst Sprünge oder Schnellkraft am selben Tag wie Ausdauer? Lass mindestens 3 Stunden Pause dazwischen.",
+"labor": {
+"design": "Meta-Analyse (Concurrent Training vs. reines Krafttraining)",
+"teilnehmer": "43 Studien (525 kombiniert vs. 442 nur Kraft)",
+"ergebnis": "Explosivkraft SMD −0,28 (95 % KI −0,48 bis −0,08); Kraft 0,05; Hypertrophie −0,06"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Stimmt der Mythos, dass zusätzliches Ausdauertraining bei den meisten Menschen automatisch den Muskelaufbau zerstört?",
+"richtig": "Nein, Muskelaufbau und Kraft leiden im Schnitt kaum",
+"falsch": [
+"Ja, Ausdauer baut vorhandene Muskeln direkt wieder ab",
+"Ja, wer läuft, kann gar keine Kraft mehr dazugewinnen",
+"Nur beim Radfahren passiert das, beim Laufen dagegen nicht"
+],
+"warum": "Über 43 Studien hinweg blieben Muskelwachstum und Maximalkraft im Gesamtschnitt erhalten; spürbar gedämpft war vor allem die Schnellkraft."
+},
+"plus": {
+"frage": "Du hast heute sowohl explosive Sprünge als auch eine Ausdauereinheit im Plan. Wie verhinderst du am besten, dass deine Explosivkraft leidet?",
+"richtig": "Mindestens drei Stunden Pause dazwischen lassen oder Tage trennen",
+"falsch": [
+"Beides direkt nacheinander in einer langen Einheit erledigen",
+"Die Ausdauereinheit direkt vor den Sprüngen als Aufwärmen nutzen",
+"Auf Erholung verzichten und einfach mehr Sätze springen"
+],
+"warum": "Wenn Kraft und Ausdauer in derselben Einheit liegen, wird die Explosivkraft deutlich stärker gedämpft als mit mindestens drei Stunden Pause."
+},
+"labor": {
+"frage": "Eine Meta-Analyse über 43 Studien verglich kombiniertes Kraft- und Ausdauertraining mit reinem Krafttraining. Welcher Parameter war insgesamt signifikant verringert?",
+"richtig": "Ausschließlich die Explosivkraft, besonders in derselben Einheit",
+"falsch": [
+"Sowohl Hypertrophie als auch Maximalkraft in starkem Ausmaß",
+"Nur die Muskelhypertrophie, während Kraftwerte stabil blieben",
+"Keiner der untersuchten Parameter zeigte irgendeine Dämpfung"
+],
+"warum": "Während Hypertrophie und Maximalkraft im Mittel stabil blieben, zeigte die Explosivkraft eine signifikante Dämpfung (SMD −0,28)."
+}
+}
+},
+{
+"id": "HYB-110",
+"karte": {
+"kopf": "Verschiedene Level · 27 Studien",
+"titel": "Bei gut Trainierten bremst Ausdauer die Beinkraft in einer Einheit",
+"titel_hervor": "bremst Ausdauer die Beinkraft",
+"setup": "27 Studien wurden nach Trainingsstand getrennt ausgewertet, um den Einfluss von Ausdauertraining auf die Bein-Maximalkraft zu prüfen.",
+"zahl": {
+"label": "Kraftverlust in derselben Einheit",
+"wert": "ES −0,66",
+"alltag": "mittlerer bis deutlicher Nachteil"
+},
+"kern": [
+"Bei Einsteigern zeigte sich kein Nachteil für die Maximalkraft der Beine",
+"Trainierte verloren Kraft, wenn weniger als 20 Minuten zwischen den Teilen lagen",
+"Über zwei Stunden Pause zwischen Kraft und Ausdauer hoben den Nachteil weitgehend auf"
+],
+"grenze": "Andere große Auswertungen fanden diesen Unterschied nach Trainingsstand nicht – das Bild bleibt uneinheitlich.",
+"fuer_dich": "Du trainierst schon länger und willst deine Beinkraft steigern? Trenne Beintraining und Ausdauer um mindestens 2 Stunden.",
+"labor": {
+"design": "Stratifizierte Meta-Analyse nach Trainingsstatus und Pausenlänge",
+"teilnehmer": "27 Studien (Untrainierte, moderat Trainierte, Trainierte)",
+"ergebnis": "Trainierte gesamt ES −0,35; gleiche Einheit (<20 min) ES −0,66 vs. getrennt (>2 h) ES −0,10"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Macht es für den Kraftaufbau der Beine einen Unterschied, ob du Einsteiger oder schon gut trainiert bist, wenn du Kraft und Ausdauer kombinierst?",
+"richtig": "Ja, bei gut Trainierten bremst eine direkte Kombination eher",
+"falsch": [
+"Ja, vor allem Einsteiger verlieren dadurch stark an Beinkraft",
+"Nein, beide Gruppen verlieren genau gleich viel Beinkraft",
+"Nein, Ausdauer steigert die maximale Beinkraft bei allen"
+],
+"warum": "In einer nach Trainingsstand getrennten Auswertung zeigten Untrainierte keinen Nachteil, gut Trainierte in derselben Einheit dagegen schon."
+},
+"plus": {
+"frage": "Du bist gut trainiert und willst im aktuellen Block dein 1RM bei Kniebeugen steigern, machst aber auch Ausdauer. Wie planst du beide Reize?",
+"richtig": "Auf verschiedene Tage oder mindestens über zwei Stunden trennen",
+"falsch": [
+"Beinkraft und Ausdauer direkt hintereinander in einer Einheit",
+"Nur zehn Minuten Pause zwischen Kniebeugen und Lauf einlegen",
+"Auf Kniebeugen verzichten und nur noch Ausdauer trainieren"
+],
+"warum": "Bei gut Trainierten verschwand der Kraftnachteil weitgehend, sobald mehr als zwei Stunden zwischen beiden Einheiten lagen."
+},
+"labor": {
+"frage": "Eine Meta-Analyse über 27 Studien stratifizierte den Interferenzeffekt auf die Beinkraft nach Trainingsstatus. Wie ist dieses Ergebnis im Forschungskontext einzuordnen?",
+"richtig": "Zeigt klare Dämpfung bei Trainierten, andere Analysen sind milder",
+"falsch": [
+"Alle Meta-Analysen weltweit kommen hier zum exakt selben Schluss",
+"Die Dämpfung trat nur bei getrennten Tagen über zwei Stunden auf",
+"Bei Untrainierten war der negative Effekt am stärksten ausgeprägt"
+],
+"warum": "Während diese Analyse eine deutliche Dämpfung bei Trainierten fand (ES −0,66 in gleicher Einheit), bestätigte eine andere große Meta-Analyse den Moderationseffekt nicht."
+}
+}
+},
+{
+"id": "HYB-111",
+"karte": {
+"kopf": "Trainierte Sportler · Vergleichsstudie",
+"titel": "Sechs Stunden Pause schützten Kraft und Ausdauer am selben Tag",
+"titel_hervor": "Sechs Stunden Pause",
+"setup": "Sportler absolvierten Krafttraining und harte Intervalle mit 0, 6 oder 24 Stunden Pause dazwischen, dann wurden die Fortschritte verglichen.",
+"zahl": null,
+"kern": [
+"Weniger als sechs Stunden Pause dämpften sowohl Kraft- als auch Ausdauergewinne",
+"Ein Abstand von 24 Stunden brachte die vollständigsten Trainingsanpassungen",
+"Getestet wurde hartes Intervalltraining – lockere Läufe ermüden vermutlich weniger"
+],
+"grenze": "Nur für sehr harte Intervalle mit Maximalkraft geprüft – für ruhiges Grundlagentraining gilt es vielleicht milder.",
+"fuer_dich": "Du trainierst zweimal am Tag Kraft und harte Intervalle? Plane mindestens 6 Stunden Pause dazwischen, besser einen Tag.",
+"labor": {
+"design": "Randomisierte kontrollierte Studie, 0 h vs. 6 h vs. 24 h Pause (Kraft + HIIT)",
+"teilnehmer": "Trainierte Sportler",
+"ergebnis": "Unter 6 h Pause signifikant geringere Kraft- und Ausdaueranpassungen"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du möchtest am selben Tag schweres Krafttraining und sehr anstrengende Intervalle machen. Was ist für deinen Trainingserfolg deutlich besser?",
+"richtig": "Morgens und abends mit vielen Stunden Pause dazwischen trainieren",
+"falsch": [
+"Beides direkt nacheinander ohne Pause durchziehen",
+"Nur eine kurze Trinkpause von zehn Minuten einlegen",
+"Der Abstand spielt für den Fortschritt überhaupt keine Rolle"
+],
+"warum": "Zu wenig Pause zwischen Kraft und harten Intervallen bremst beide Anpassungen; mindestens sechs Stunden Abstand schützen den Fortschritt."
+},
+"plus": {
+"frage": "Du planst einen Doppeltrainingstag mit schwerem Krafttraining und hartem HIIT. Welchen Mindestabstand solltest du zwischen beiden Einheiten einhalten?",
+"richtig": "Mindestens sechs Stunden, noch besser auf zwei Tage verteilen",
+"falsch": [
+"Eine Stunde Pause reicht für vollständige Anpassungen aus",
+"Kein Abstand nötig, wenn du direkt danach Kohlenhydrate isst",
+"Genau dreißig Minuten Pause nach dem Cool-down einplanen"
+],
+"warum": "In einer Vergleichsstudie mit 0, 6 und 24 Stunden Pause fielen Kraft- und Ausdauergewinne unter sechs Stunden Abstand deutlich kleiner aus."
+},
+"labor": {
+"frage": "Eine randomisierte Studie verglich 0, 6 und 24 Stunden Pause zwischen Maximalkraft und supramaximalem HIIT. Welche Einschränkung gilt bei der Übertragung?",
+"richtig": "Bei lockerem Grundlagentraining könnte die Ermüdung kleiner sein",
+"falsch": [
+"Die Studie testete nur lockere Spaziergänge statt echter Intervalle",
+"Es wurden gar keine Kraftwerte, sondern nur Laufzeiten gemessen",
+"Die Pause von 24 Stunden schnitt schlechter ab als 0 Stunden"
+],
+"warum": "Da sehr hartes Intervalltraining geprüft wurde, fällt die lokale Ermüdung bei niedrigintensivem Grundlagentraining möglicherweise geringer aus."
+}
+}
+},
+{
+"id": "HYB-112",
+"karte": {
+"kopf": "Erwachsene · 10 Studien zusammengefasst",
+"titel": "Kraft vor Ausdauer brachte rund 7 Prozent mehr Beinkraft",
+"titel_hervor": "rund 7 Prozent mehr Beinkraft",
+"setup": "10 Trainingsstudien über mindestens 5 Wochen verglichen Kraft vor Ausdauer mit der umgekehrten Reihenfolge in derselben Einheit.",
+"zahl": {
+"label": "Mehr Zuwachs bei der Beinkraft",
+"wert": "+6,9 %",
+"alltag": "rund 4 kg mehr beim 1RM"
+},
+"kern": [
+"Muskelwachstum und maximale Sauerstoffaufnahme blieben in beiden Reihenfolgen gleich",
+"Wer zuerst Gewichte hebt, spürt den Lauf danach oft mit höherem Puls und mehr Mühe",
+"Die Daten umfassen Einsteiger und Trainierte über mindestens fünf Wochen"
+],
+"grenze": "Gilt für allgemeine Kombistunden – gezieltes Wettkampf-Wechseltraining hat andere Ziele.",
+"fuer_dich": "Du musst Kraft und Ausdauer in eine Einheit packen? Starte mit dem Kraftteil, außer du übst gezielt ermüdetes Laufen.",
+"labor": {
+"design": "Meta-Analyse über Trainingsstudien (≥5 Wochen), Kraft-vor-Ausdauer vs. umgekehrt",
+"teilnehmer": "10 Studien (n=227 Kraft, n=184 VO2max, n=137 Hypertrophie)",
+"ergebnis": "Beinkraft WMD +6,91 % (95 % KI 1,96 bis 11,87 %); Hypertrophie +1,15 % (p=0,40)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du hast wenig Zeit und machst Kraft- und Ausdauertraining direkt hintereinander. Welche Reihenfolge bringt dir meist mehr Kraft in den Beinen?",
+"richtig": "Erst das Krafttraining, danach die Ausdauereinheit",
+"falsch": [
+"Erst die Ausdauereinheit, danach das Krafttraining",
+"Immer nach jedem Satz kurz auf das Laufband wechseln",
+"Die Reihenfolge hat bei der Beinkraft keinen Einfluss"
+],
+"warum": "Über zehn Studien hinweg brachte Kraft vor Ausdauer im Schnitt knapp sieben Prozent mehr Zuwachs bei der Beinkraft."
+},
+"plus": {
+"frage": "Du kombinierst Kraft vor Ausdauer in einer Einheit, um dein Bein-1RM zu schützen. Worauf solltest du beim anschließenden Lauf achten?",
+"richtig": "Herzfrequenz und RPE sind oft höher, also Pace sinnvoll steuern",
+"falsch": [
+"Die VO2max sinkt langfristig durch diese Reihenfolge deutlich ab",
+"Der Muskelaufbau bricht ein, wenn danach noch gelaufen wird",
+"Du kannst deutlich schneller laufen als im ausgeruhten Zustand"
+],
+"warum": "Vorermüdete Beine erhöhen beim anschließenden Ausdauerteil oft Puls und gefühlte Anstrengung, auch wenn die langfristige VO2max gleich bleibt."
+},
+"labor": {
+"frage": "Zehn Trainingsstudien über mindestens fünf Wochen verglichen Kraft-vor-Ausdauer mit Ausdauer-vor-Kraft in derselben Einheit. Wo zeigte sich ein signifikanter Vorteil?",
+"richtig": "Bei der dynamischen Unterkörperkraft, nicht bei Hypertrophie oder VO2max",
+"falsch": [
+"Bei der Muskelhypertrophie, nicht aber bei der dynamischen Beinkraft",
+"Bei der maximalen Sauerstoffaufnahme, aber nicht bei den Kraftwerten",
+"In allen drei Bereichen gleichermaßen zugunsten von Ausdauer zuerst"
+],
+"warum": "Die Meta-Analyse fand einen klaren Vorteil für die Unterkörperkraft (+6,9 %), während Hypertrophie und VO2max in beiden Reihenfolgen ähnlich blieben."
+}
+}
+}
+]

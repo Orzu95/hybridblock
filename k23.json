@@ -1,0 +1,1134 @@
+[
+{
+"id": "PSY-112",
+"karte": {
+"kopf": "1.824 Personen · 73 Studien zusammengefasst",
+"titel": "Fokus auf die Wirkung macht Bewegungen flüssiger als Muskelfokus",
+"titel_hervor": "macht Bewegungen flüssiger",
+"setup": "In 73 Studien wurde verglichen, ob man sich bei einer Bewegung besser auf Körperteile konzentriert oder auf die Wirkung nach außen.",
+"zahl": null,
+"kern": [
+"Wer an die Wirkung denkt, lernt Bewegungen nachhaltiger und überträgt sie besser",
+"Der Körper arbeitet dabei sparsamer, weil die Bewegung automatischer abläuft",
+"Der Vorteil zeigte sich unabhängig von Alter oder Trainingsstand"
+],
+"grenze": "Neuere Analysen weisen auf Publikationsbias hin – der sofortige Leistungsvorteil könnte deutlich kleiner sein.",
+"fuer_dich": "Du übst Sprünge, Sprints oder Grundübungen? Denke lieber an „Boden wegdrücken“ statt an einzelne Muskeln.",
+"labor": {
+"design": "Systematisches Review mit Meta-Analyse, externer vs. interner Fokus",
+"teilnehmer": "1.824 Teilnehmende aus 73 Leistungsstudien",
+"ergebnis": "Leistung g = 0,264, Retention 0,583, Transfer 0,584, EMG-Effizienz 0,833; Re-Analyse mit Bias-Korrektur g ≈ 0,01"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du willst möglichst hoch springen. Woran solltest du beim Absprung eher denken?",
+"richtig": "Daran, den Boden kräftig von dir wegzudrücken",
+"falsch": [
+"Daran, gezielt die Oberschenkelmuskeln anzuspannen",
+"Daran, jeden Winkel in Knie und Hüfte genau zu prüfen",
+"Daran, beide Waden bewusst so hart wie möglich zu machen"
+],
+"warum": "Ein Fokus auf die äußere Wirkung stört die automatische Bewegungssteuerung weniger als der Blick auf Körperteile."
+},
+"plus": {
+"frage": "Du trainierst komplexe Grundübungen oder Sprints und willst effizienter werden. Welche Art von Cue hilft dabei am ehesten?",
+"richtig": "Ein äußerer Cue auf die Wirkung, möglichst weit weg vom Körper",
+"falsch": [
+"Ein innerer Cue, der jeden einzelnen Muskel getrennt ansteuert",
+"Nur Tipps für Einsteiger, weil Fortgeschrittene anders reagieren",
+"Möglichst viele Details zur exakten Stellung jedes Gelenks"
+],
+"warum": "Externe, besonders weiter entfernte Cues verbesserten Leistung, Lerneffekt und Effizienz über alle Alters- und Leistungsstufen."
+},
+"labor": {
+"frage": "Eine Meta-Analyse aus 73 Studien fand Vorteile für einen externen gegenüber einem internen Aufmerksamkeitsfokus. Was wendet eine neuere Re-Analyse ein?",
+"richtig": "Starker Publikationsbias könnte den sofortigen Effekt fast auflösen",
+"falsch": [
+"Der Effekt trat nur bei älteren Personen, nicht bei Jüngeren auf",
+"Ein naher externer Fokus war dem distalen Fokus deutlich überlegen",
+"Die Muskelaktivität war bei externem Fokus deutlich unökonomischer"
+],
+"warum": "Bayes-Selektionsmodelle deuten auf Publikationsbias hin, sodass der unmittelbare Leistungseffekt auf rund g = 0,01 sinken könnte."
+}
+}
+},
+{
+"id": "PSY-113",
+"karte": {
+"kopf": "30 junge Männer · 8-Wochen-Trainingsstudie",
+"titel": "Den Bizeps bewusst zu spüren, ließ den Arm stärker wachsen",
+"titel_hervor": "ließ den Arm stärker wachsen",
+"setup": "30 untrainierte Männer trainierten acht Wochen lang Armbeuger und Oberschenkel – eine Gruppe fokussierte den Muskel, die andere das Gewicht.",
+"zahl": {
+"label": "Kraftplus am Arm mit Muskelfokus",
+"wert": "+16,2 %",
+"alltag": "gegenüber +2,6 % mit Gewichtsfokus"
+},
+"kern": [
+"Am Oberschenkel brachte der Muskelfokus beim Wachstum keinen Vorteil",
+"Beim Beinstrecker stieg die Kraft mit Fokus aufs Gewicht deutlich stärker",
+"Beinmuskeln lassen sich im Training schwerer gezielt einzeln ansteuern als Arme"
+],
+"grenze": "Kleine Studie über acht Wochen nur mit untrainierten jungen Männern – offen, ob Erfahrene genauso reagieren.",
+"fuer_dich": "Dein Ziel ist Muskelaufbau bei Arm-Isolationsübungen? Spüre bewusst den arbeitenden Muskel; für Beinkraft denke ans Bewegen der Last.",
+"labor": {
+"design": "RCT über 8 Wochen, interner Fokus (Muskel) vs. externer Fokus (Gewicht)",
+"teilnehmer": "30 untrainierte Männer (21,7 ± 3,7 Jahre)",
+"ergebnis": "Armbeuger-Hypertrophie F(1,24) = 10,64; Kraft Arm +16,2 vs. +2,6 % (ηp² = 0,114); Beinstrecker +20,4 vs. +10,1 %"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Beim Bizeps-Training achten manche bewusst auf das Anspannen des Muskels, andere nur auf das Bewegen der Hantel. Was half dem Armwachstum eher?",
+"richtig": "Sich bewusst auf das Anspannen des Muskels zu konzentrieren",
+"falsch": [
+"Nur darauf zu achten, das Gewicht irgendwie hochzubekommen",
+"Beide Denkweisen brachten bei Armen und Beinen exakt dasselbe",
+"Die Gedanken beim Training möglichst weit wegschweifen zu lassen"
+],
+"warum": "Bei Armbeugern sorgte der bewusste Muskelfokus über acht Wochen für mehr Muskelwachstum als der Fokus aufs Gewicht."
+},
+"plus": {
+"frage": "Du willst deinen Fokus je nach Ziel anpassen: einmal für Bizeps-Hypertrophie, einmal für mehr Kraft im Unterkörper. Wie teilst du das auf?",
+"richtig": "Interner Muskelfokus am Arm, externer Fokus aufs Gewicht am Bein",
+"falsch": [
+"Bei beiden Übungen nur den einzelnen Muskel bewusst ansteuern",
+"Bei beiden Übungen nur an das Bewegen des Gewichts denken",
+"Externer Fokus am Arm und interner Muskelfokus am Bein"
+],
+"warum": "Die Armbeuger profitierten vom internen Fokus, während die Kniestrecker mit externem Fokus stärker an Kraft zulegten."
+},
+"labor": {
+"frage": "In einer achtwöchigen RCT trainierten 30 untrainierte Männer Armbeuger und Kniestrecker mit internem oder externem Fokus. Welche Grenze ist wichtig?",
+"richtig": "Nur untrainierte junge Männer untersucht, ohne Wachstumsvorteil am Bein",
+"falsch": [
+"Der interne Fokus war bei Arm- und Beinübungen bei Kraft klar überlegen",
+"Die Trainingsbeteiligung lag in beiden Gruppen unter sechzig Prozent",
+"Bei den Armbeugern zeigte sich zwar mehr Kraft, aber kein Wachstum"
+],
+"warum": "Die Daten stammen von 30 untrainierten jungen Männern, und am Kniestrecker gab es keinen Hypertrophie-Unterschied."
+}
+}
+},
+{
+"id": "PSY-114",
+"karte": {
+"kopf": "Sportler · 55 Studien zusammengefasst",
+"titel": "Bewegungen im Kopf durchzugehen macht Training messbar wirksamer",
+"titel_hervor": "macht Training messbar wirksamer",
+"setup": "55 Studien untersuchten, wie es wirkt, wenn Sportler Bewegungsabläufe gezielt vor ihrem inneren Auge durchspielen.",
+"zahl": null,
+"kern": [
+"Kombiniert mit echtem Training wirkte mentales Üben besser als Körpertraining allein",
+"Neben der Bewegungsleistung verbesserten sich auch Motivation und Stimmung",
+"Wie stark es hilft, hängt auch von der eigenen Vorstellungsfähigkeit ab"
+],
+"grenze": "In streng randomisierten Studien fiel der Vorteil kleiner aus als im Gesamtschnitt aller 55 Untersuchungen.",
+"fuer_dich": "Du feilst an einer neuen Technik? Geh den Ablauf drei- bis viermal pro Woche in Satzpausen oder an Ruhetagen kurz im Kopf durch.",
+"labor": {
+"design": "Meta-Analyse aus 55 Studien (62 % RCTs, 26 % CTs, 12 % Prä-Post)",
+"teilnehmer": "55 Studien mit 401 Effektstärken im Sport",
+"ergebnis": "Gesamt d = 0,431 (95 % KI 0,298–0,563); nur RCTs d = 0,254; vs. passive Kontrolle d = 0,508"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Kann es die sportliche Leistung verbessern, wenn du dir eine Bewegung gezielt im Kopf vorstellst?",
+"richtig": "Ja, besonders in Kombination mit echtem körperlichem Training",
+"falsch": [
+"Nein, bloßes Vorstellen verändert an der Bewegung nichts",
+"Ja, und es ersetzt das körperliche Training fast vollständig",
+"Nur die Stimmung bessert sich, nicht aber die Bewegung selbst"
+],
+"warum": "Über 55 Studien verbesserte mentales Vorstellen Leistung, Motivation und Stimmung – am besten zusammen mit echtem Training."
+},
+"plus": {
+"frage": "Du arbeitest an einer anspruchsvollen Übungstechnik und willst zusätzlich etwas tun, ohne deinen Körper weiter zu ermüden. Was bietet sich an?",
+"richtig": "Den Ablauf in Satzpausen oder an Ruhetagen mehrmals pro Woche visualisieren",
+"falsch": [
+"Das körperliche Techniktraining streichen und nur noch nachdenken",
+"Vor dem Training allgemeine Motivationsvideos ohne Technikbezug schauen",
+"Die Bewegung erst wieder durchgehen, wenn alle Wochen vorbei sind"
+],
+"warum": "Drei bis vier kurze mentale Einheiten pro Woche ergänzen das physische Techniktraining sinnvoll."
+},
+"labor": {
+"frage": "Eine Meta-Analyse aus 55 Studien (401 Effektstärken) untersuchte Imagination im Sport. Was zeigte der Blick auf das Studiendesign?",
+"richtig": "In streng randomisierten Studien war die Effektstärke kleiner",
+"falsch": [
+"Nur gegen passive Kontrollgruppen zeigte sich überhaupt ein Effekt",
+"In streng randomisierten Studien fiel der Effekt fast doppelt so groß aus",
+"Die individuelle Vorstellungsfähigkeit spielte für den Effekt keine Rolle"
+],
+"warum": "Über alle Designs lag d bei 0,431, in strengen RCTs dagegen bei 0,254; zudem beeinflusst die Vorstellungsfähigkeit den Nutzen."
+}
+}
+},
+{
+"id": "PSY-115",
+"karte": {
+"kopf": "Sportler & Aktive · 37 Studien zusammengefasst",
+"titel": "Mentales Üben wirkt am stärksten in Blöcken von ein bis sechs Wochen",
+"titel_hervor": "ein bis sechs Wochen",
+"setup": "37 Studien prüften, wie stark mentales Durchgehen von Bewegungen die Leistung hebt und welche Dauer sowie Aufgabenart am besten funktionieren.",
+"zahl": {
+"label": "Anteil positiver Effekte",
+"wert": "74,8 %",
+"alltag": "86 von 115 Einzelwerten"
+},
+"kern": [
+"Zusammen mit echtem Training fiel der Leistungszuwachs größer aus als allein",
+"Bei Bewegungen mit äußerem Startsignal wirkte mentales Üben besonders gut",
+"Nach Abzug verzerrter Studien bleibt ein kleiner, aber klarer Vorteil übrig"
+],
+"grenze": "Unveröffentlichte Null-Ergebnisse verzerren die Daten – der bereinigte Effekt ist spürbar kleiner und die Studien schwanken stark.",
+"fuer_dich": "Du willst mentales Üben gezielt einsetzen? Plane es als klaren Block über ein bis sechs Wochen statt endlos nebenbei.",
+"labor": {
+"design": "Meta-Analyse aus 37 Studien zu mentalem Training und Bewegungsleistung",
+"teilnehmer": "37 Studien mit 115 Effektstärken",
+"ergebnis": "Allein d = 0,419 (korrigiert d = 0,264), kombiniert r = 0,240; extern vs. intern z = 2,266 (p = 0,023)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du möchtest eine Bewegung einige Zeit lang gezielt im Kopf üben. Wie lange sind solche Phasen im Schnitt am wirksamsten?",
+"richtig": "Als begrenzter Block über einige Wochen statt endlos am Stück",
+"falsch": [
+"Erst nach einem halben Jahr zeigt sich überhaupt ein Effekt",
+"Nur an einem einzigen Tag kurz vor der eigentlichen Bewegung",
+"Die Dauer spielt für den Nutzen im Alltag überhaupt keine Rolle"
+],
+"warum": "Über 37 Studien schnitten fokussierte Blöcke von ein bis sechs Wochen am besten ab."
+},
+"plus": {
+"frage": "Du baust mentales Techniktraining in deinen Trainingszyklus ein. Wie planst du es, damit der Effekt nicht verpufft?",
+"richtig": "Einen klaren Block über ein bis sechs Wochen mit echtem Training kombinieren",
+"falsch": [
+"Das ganze Jahr ohne Pause täglich dasselbe mentale Programm durchziehen",
+"Auf körperliches Training verzichten, solange du mental an der Technik übst",
+"Nur Bewegungen ohne jedes äußere Signal gezielt im Kopf durchgehen"
+],
+"warum": "Begrenzt auf ein bis sechs Wochen und kombiniert mit echtem Training bleiben die Effekte am stärksten."
+},
+"labor": {
+"frage": "In einer Meta-Analyse aus 37 Studien (115 Effektstärken) wurde mentales Training auf Publikationsbias geprüft. Was ergab die Korrektur?",
+"richtig": "Der Effekt schrumpfte deutlich, blieb aber positiv und klein",
+"falsch": [
+"Der Effekt verdoppelte sich nach der Korrektur für Bias",
+"Der Effekt verschwand nach der Korrektur vollständig auf null",
+"In der Literatur gab es keinerlei Hinweise auf Publikationsbias"
+],
+"warum": "Nach Publikationsbias-Korrektur sank die Effektstärke von d = 0,419 auf d = 0,264 bei zugleich hoher Heterogenität."
+}
+}
+},
+{
+"id": "PSY-116",
+"karte": {
+"kopf": "3.599 Personen · 139 Studien zusammengefasst",
+"titel": "Musik macht Training spürbar angenehmer und steigert die Leistung",
+"titel_hervor": "spürbar angenehmer und steigert",
+"setup": "139 Studien mit 3.599 Teilnehmenden prüften, wie Musik vor oder beim Sport auf Stimmung, Leistung, Anstrengungsgefühl, Puls und Sauerstoffbedarf wirkt.",
+"zahl": null,
+"kern": [
+"Am stärksten hob Musik die Stimmung, gefolgt von Leistung und leichterem Gefühl",
+"Der Körper brauchte etwas weniger Sauerstoff, der Puls änderte sich aber kaum",
+"Schnelle, selbst gewählte Musik wirkt besser – ungeliebte Musik bremst eher"
+],
+"grenze": "Im Freizeitsport wirkt Musik stärker als im Wettkampfsport – und ungeliebte Musik erhöht sogar das Anstrengungsgefühl.",
+"fuer_dich": "Dir steht eine harte Einheit bevor? Wähle schnelle Musik, die dir gefällt, und wechsle nach dem Training auf ruhige Klänge.",
+"labor": {
+"design": "Multilevel-Meta-Analyse aus 139 Studien zu Musik vor oder während Sport",
+"teilnehmer": "3.599 Teilnehmende (598 Effektstärken aus 139 Studien)",
+"ergebnis": "Affekt g = 0,48, Leistung g = 0,31, RPE g = 0,22, VO2 g = 0,15; Herzfrequenz g = 0,07 (n. s.)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du hörst beim Sport deine eigene schnelle Lieblingsmusik. Was verändert sich dadurch im Schnitt am wenigsten?",
+"richtig": "Dein Puls während der Belastung",
+"falsch": [
+"Deine Stimmung während des Trainings",
+"Wie anstrengend sich das Training anfühlt",
+"Deine körperliche Leistung in der Einheit"
+],
+"warum": "Musik verbesserte Stimmung, Leistung und Anstrengungsgefühl deutlich, veränderte die Herzfrequenz aber nicht signifikant."
+},
+"plus": {
+"frage": "Du willst bei einem harten HIIT- oder Krafttraining das RPE senken und mehr herausholen. Welche Musikwahl hilft dir am besten?",
+"richtig": "Schnelle Musik, die du selbst ausgesucht hast und magst",
+"falsch": [
+"Schnelle Studio-Musik, auch wenn sie dir nicht gefällt",
+"Langsame, ruhige Musik schon während der harten Sätze",
+"Jedes beliebige Tempo, da nur die Lautstärke entscheidet"
+],
+"warum": "Schnelle, selbst gewählte Musik senkt das RPE und hebt die Leistung, während ungeliebte Musik das Unbehagen erhöht."
+},
+"labor": {
+"frage": "Eine Multilevel-Meta-Analyse aus 139 Studien prüfte Musik im Sport auf Stimmung, Leistung, RPE, VO2 und Puls. Wo lag der größte Effekt?",
+"richtig": "Beim affektiven Wohlbefinden, während der Puls nicht signifikant war",
+"falsch": [
+"Bei der Herzfrequenz, während Stimmung und RPE unverändert blieben",
+"Beim Sauerstoffverbrauch, besonders im leistungsorientierten Wettkampf",
+"Bei der Leistung, vor allem mit langsamer und fremdgewählter Musik"
+],
+"warum": "Der stärkste Effekt zeigte sich bei der affektiven Valenz (g = 0,48), gefolgt von Leistung (0,31) und RPE (0,22)."
+}
+}
+},
+{
+"id": "REC-101",
+"karte": {
+"kopf": "Untrainierte Frauen · Zufallsstudie",
+"titel": "Muskeln aufbauen und Fett verlieren klappt bei gleichem Gewicht",
+"titel_hervor": "bei gleichem Gewicht",
+"setup": "Untrainierte Frauen trainierten zwölf Wochen lang ihren ganzen Körper und erhielten direkt danach Protein oder eine Vergleichsgabe.",
+"zahl": {
+"label": "Mehr Muskelmasse bei gleichem Gewicht",
+"wert": "+1,9 kg",
+"alltag": "bei gleichzeitig −1,6 kg Körperfett"
+},
+"kern": [
+"Auf der Waage tat sich kaum etwas, obwohl sich der Körper spürbar veränderte.",
+"Mit Protein direkt nach dem Training sank die Fettmasse deutlich stärker.",
+"Dieser starke Einsteiger-Effekt lässt nach drei bis sechs Monaten meist nach."
+],
+"grenze": "Untersucht wurden 20 junge, untrainierte Frauen – bei Erfahrenen fällt der Effekt meist kleiner aus.",
+"fuer_dich": "Du startest mit Krafttraining und die Waage bewegt sich nicht? Bleib dran und plane direkt danach Protein ein.",
+"labor": {
+"design": "RCT, 12 Wochen Ganzkörper-Krafttraining (5x/Woche), Protein direkt post-workout vs. Kontrolle",
+"teilnehmer": "20 untrainierte junge Frauen (je 10 pro Gruppe)",
+"ergebnis": "Magermasse +1,9 vs. +1,1 kg (p<0,01); Fettmasse −1,6 vs. −0,3 kg (p<0,01); Gewicht +0,5 kg (p=0,29)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du beginnst neu mit Krafttraining und dein Gewicht auf der Waage ändert sich wochenlang kaum. Was kann trotzdem im Körper passieren?",
+"richtig": "Du baust gleichzeitig Muskeln auf und verlierst Körperfett",
+"falsch": [
+"Das Training ist zu leicht und bewirkt noch keinen Umbau",
+"Ohne weniger Gewicht auf der Waage schmilzt kein Körperfett",
+"Der Körper speichert vor allem Wasser statt neuer Muskeln"
+],
+"warum": "Bei Einsteigerinnen wuchs die Muskelmasse, während gleichzeitig Körperfett sank – das Gesamtgewicht blieb dabei fast unverändert."
+},
+"plus": {
+"frage": "Du bist Einsteigerin, trainierst fünfmal pro Woche Kraft auf Erhaltungskalorien und willst Muskeln aufbauen und Fett abbauen. Was hilft direkt nach der Einheit?",
+"richtig": "Direkt nach dem Training eine Portion Protein einplanen",
+"falsch": [
+"Zwei Stunden nichts essen, damit die Fettverbrennung weiterläuft",
+"Die Kalorien sofort stark senken statt auf Erhalt zu bleiben",
+"Das Krafttraining auf eine Einheit pro Woche reduzieren"
+],
+"warum": "Mit einer Proteingabe direkt nach dem Training stieg die Magermasse stärker und es ging deutlich mehr Fettmasse verloren."
+},
+"labor": {
+"frage": "In einer zwölfwöchigen Zufallsstudie machten untrainierte Frauen fünfmal pro Woche Ganzkörper-Krafttraining mit oder ohne direkte Proteingabe danach. Was zeigte sich?",
+"richtig": "Die Proteingruppe gewann mehr Magermasse und verlor mehr Fett",
+"falsch": [
+"Beide Gruppen verloren deutlich an Gesamtkörpergewicht",
+"Nur die Proteingruppe baute überhaupt neue Magermasse auf",
+"Zwischen beiden Gruppen gab es beim Fettverlust keinen Unterschied"
+],
+"warum": "Bei fast stabilem Körpergewicht legte die Proteingruppe 1,9 statt 1,1 kg Magermasse zu und verlor 1,6 statt 0,3 kg Fettmasse."
+}
+}
+},
+{
+"id": "REC-102",
+"karte": {
+"kopf": "Erwachsene · Kleine Vergleichsstudie",
+"titel": "Erste Hinweise deuten auf kaum Verlust nach drei Wochen Pause",
+"titel_hervor": "kaum Verlust nach drei Wochen",
+"setup": "Eine Gruppe trainierte 24 Wochen durch, die andere legte zweimal drei Wochen Pause ein und trainierte dazwischen sechs Wochen.",
+"zahl": {
+"label": "Schnelleres Muskelwachstum beim Neustart",
+"wert": "1,7–1,8×",
+"alltag": "fast doppelt so schnell wie im Dauerbetrieb"
+},
+"kern": [
+"Nach 24 Wochen waren Kraft und Muskelgröße in beiden Gruppen nahezu gleich.",
+"In den sechs Wochen nach jeder Pause wuchsen die Muskeln deutlich schneller.",
+"Bisher nur an 14 Personen geprüft – die Hinweise sind daher noch vorläufig."
+],
+"grenze": "Kleine Studie mit 14 Personen; gleichzeitiger Fettabbau im Kaloriendefizit wurde hier nicht untersucht.",
+"fuer_dich": "Du musstest drei Wochen mit dem Krafttraining pausieren? Steig ruhig wieder ein – Muskeln holen den Rückstand oft rasch auf.",
+"labor": {
+"design": "Kontrollierte Interventionsstudie, 24 Wochen, periodisch (3 Wo. Pause / 6 Wo. Training) vs. durchgehend",
+"teilnehmer": "14 Personen (je 7 pro Gruppe)",
+"ergebnis": "1-RM Bankdrücken +50,0 % vs. +51,3 %; Trizeps-CSA +19,3 % vs. +21,0 % (kein signifikanter Unterschied)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du machst nach längerem Krafttraining drei Wochen Pause und startest dann wieder. Was deuten erste Untersuchungen an?",
+"richtig": "Muskeln holen den Rückstand beim Neustart rasch wieder auf",
+"falsch": [
+"Nach drei Wochen Pause beginnst du wieder fast bei null",
+"Ohne Dauertraining wächst die Kraft über Monate kaum noch",
+"Verlorene Muskeln brauchen Monate länger als beim ersten Mal"
+],
+"warum": "Nach dreiwöchigen Pausen wuchs die Muskulatur beim Wiedereinstieg fast doppelt so schnell, sodass das Gesamtergebnis ähnlich blieb."
+},
+"plus": {
+"frage": "Nach einer dreiwöchigen Pause fürchtest du um deinen gesamten Trainingsfortschritt der letzten Monate. Wie ordnest du das realistisch ein?",
+"richtig": "Kraft und Muskelmasse ziehen in den ersten Wochen meist stark nach",
+"falsch": [
+"Du musst das Volumen verdoppeln, um den Verlust auszugleichen",
+"Die verlorene Maximalkraft kehrt erst nach einem halben Jahr zurück",
+"Ein Neustart lohnt sich nur im deutlichen Kalorienüberschuss"
+],
+"warum": "Erste Daten deuten darauf hin, dass sich die Wachstumsrate nach einer dreiwöchigen Pause für rund sechs Wochen deutlich erhöht."
+},
+"labor": {
+"frage": "Eine kontrollierte Studie verglich über 24 Wochen durchgehendes Krafttraining mit einem Wechsel aus sechs Wochen Training und drei Wochen Pause. Was schränkt die Aussagekraft ein?",
+"richtig": "Die kleine Stichprobe und fehlende Daten zum Fettabbau im Defizit",
+"falsch": [
+"Die Pausen dauerten zu kurz für messbare Veränderungen",
+"Die Maximalkraft wurde am Ende nicht mehr überprüft",
+"Die Gruppen trainierten unterschiedliche Muskelgruppen"
+],
+"warum": "Mit nur 14 Teilnehmenden ist die Stichprobe sehr klein, und der gleichzeitige Fettverlust im Energiedefizit wurde nicht erfasst."
+}
+}
+},
+{
+"id": "REC-103",
+"karte": {
+"kopf": "Menschliche Muskelzellen · Übersichtsarbeit",
+"titel": "Dauerhaftes Zell-Muskelgedächtnis ist beim Menschen noch unklar",
+"titel_hervor": "beim Menschen noch unklar",
+"setup": "Eine Übersichtsarbeit prüfte Human- und Tierdaten dazu, ob zusätzliche Zellkerne in Muskelfasern nach langen Pausen erhalten bleiben.",
+"zahl": null,
+"kern": [
+"Bei älteren Männern nahm die Zahl der Zellkerne nach 12 Wochen Pause wieder ab.",
+"Ihre Kraft kehrte beim Neustart trotzdem innerhalb von acht Wochen rasch zurück.",
+"Tierdaten passen wegen anderer Zell-Färbemethoden nicht einfach auf Menschen."
+],
+"grenze": "Übersichtsarbeit mit geringer Beleglage: Wie stark Muskel- und Fettmasse nach langen Pausen schwanken, ist wenig untersucht.",
+"fuer_dich": "Du steigst nach über zwölf Wochen Pause wieder ein? Plane vorsichtig mit kleinem Defizit und genug Protein statt auf einen Bonus zu zählen.",
+"labor": {
+"design": "Narratives Review zu Myonuklei-Persistenz bei Detraining und Retraining (Mensch vs. Nagetier)",
+"teilnehmer": "Übersichtsarbeit (u. a. Muskelbiopsien älterer Männer)",
+"ergebnis": "12 Wo. Pause: Myonuklei Typ I −7 %, Typ II −12 % (p=0,084); 12 Wo. Retraining: Typ II +29 % (p=0,050)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Oft heißt es, trainierte Muskeln behalten dauerhaft extra Zellkerne für spätere Pausen. Was weiß man beim Menschen bisher dazu?",
+"richtig": "Die Belege beim Menschen sind bisher uneinheitlich und unklar",
+"falsch": [
+"Extra Zellkerne bleiben beim Menschen lebenslang voll erhalten",
+"Nach langen Pausen lassen sich alte Muskeln nicht mehr aufbauen",
+"Das Phänomen tritt ausschließlich bei sehr jungen Menschen auf"
+],
+"warum": "Während Tiermodelle dauerhafte Zellkerne zeigen, sind die bisherigen Ergebnisse aus menschlichen Muskelproben widersprüchlich."
+},
+"plus": {
+"frage": "Du kehrst nach über zwölf Wochen Pause ins Gym zurück und möchtest gleichzeitig Körperfett abbauen. Wie planst du Ernährung und Defizit sinnvoll?",
+"richtig": "Moderates Defizit und solide Proteinzufuhr ohne Sonderbonus wählen",
+"falsch": [
+"Ein sehr großes Defizit fahren, weil das Zellgedächtnis schützt",
+"Auf Protein verzichten, da alte Muskelzellen kaum Baustoff brauchen",
+"Erst monatelang im Überschuss essen, bevor ein Defizit klappt"
+],
+"warum": "Da ein dauerhafter Zell-Bonus beim Menschen nicht belegt ist, fährst du mit moderatem Defizit und mindestens 1,6 g/kg Protein besser."
+},
+"labor": {
+"frage": "Warum widersprechen sich Ergebnisse aus Nagetiermodellen und menschlichen Muskelbiopsien zur dauerhaften Speicherung von Myonuklei häufig?",
+"richtig": "Unterschiedliche Färbemethoden erschweren die Trennung der Zellkerne",
+"falsch": [
+"Menschliche Typ-II-Fasern können keine neuen Myonuklei bilden",
+"In Humanstudien wurde nach Pausen kein Kraftzuwachs gemessen",
+"Bei Menschen schrumpfen Muskelfasern in Pausen deutlich langsamer"
+],
+"warum": "Je nach Immunfluoreszenz-Färbung lassen sich Satellitenzellen und echte Myonuklei unterschiedlich gut voneinander abgrenzen."
+}
+}
+},
+{
+"id": "REC-104",
+"karte": {
+"kopf": "Übergewichtige Männer · Zufallsstudie",
+"titel": "Viel Protein schützte Muskeln selbst im starken 40-Prozent-Defizit",
+"titel_hervor": "im starken 40-Prozent-Defizit",
+"setup": "40 übergewichtige Männer aßen vier Wochen lang 40 % weniger Kalorien, trainierten sechsmal pro Woche und nahmen viel oder moderat Protein.",
+"zahl": {
+"label": "Fettverlust mit sehr viel Protein in 4 Wochen",
+"wert": "−4,8 kg",
+"alltag": "bei gleichzeitig +1,2 kg Muskelmasse"
+},
+"kern": [
+"Mit sehr viel Protein wuchs die Muskelmasse um 1,2 kg trotz hartem Defizit.",
+"Bei halber Proteinmenge blieb die Muskelmasse nur stabil und es ging weniger Fett weg.",
+"Große Fettreserven liefern dem Körper Energie, die den Muskelaufbau mitträgt."
+],
+"grenze": "Nur vier Wochen an jungen Männern getestet, die einen Großteil des Proteins über Molkenproteinisolat deckten.",
+"fuer_dich": "Du hast deutliches Übergewicht und willst rasch Fett verlieren? Trainiere oft und halte dein Protein sehr hoch, um Muskeln zu schützen.",
+"labor": {
+"design": "RCT, 28 Tage, 40 % Energiedefizit + 6x/Wo. intensives Training, 2,4 vs. 1,2 g/kg/Tag Protein",
+"teilnehmer": "40 übergewichtige junge Männer (~96 kg, ~23 Jahre)",
+"ergebnis": "2,4 vs. 1,2 g/kg Protein: Magermasse +1,2 vs. +0,1 kg; Fettmasse −4,8 vs. −3,5 kg"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Jemand mit deutlichem Übergewicht macht eine strenge Diät und trainiert sechsmal pro Woche hart. Was hilft dabei besonders, Muskeln sogar aufzubauen?",
+"richtig": "Eine sehr hohe tägliche Eiweißzufuhr neben dem Training",
+"falsch": [
+"Möglichst wenig Eiweiß, damit der Körper mehr Fett nutzt",
+"Ein starkes Streichen aller Kohlenhydrate am Trainingstag",
+"Auf Krafttraining verzichten und nur noch langsam spazieren"
+],
+"warum": "Bei sehr hoher Proteinzufuhr und intensivem Training bauten übergewichtige Männer selbst im starken Defizit Muskeln auf und verloren mehr Fett."
+},
+"plus": {
+"frage": "Du startest mit erhöhtem Körperfettanteil und hoher Trainingsfrequenz in ein starkes Defizit. Welchen Vorteil hatte sehr viel gegenüber moderatem Protein?",
+"richtig": "Deutlich mehr Fettverlust bei gleichzeitigem Aufbau von Magermasse",
+"falsch": [
+"Gleicher Fettverlust, aber weniger Muskelkater nach dem Training",
+"Nur ein leichtes Plus beim Körpergewicht durch mehr Wasser",
+"Keine Veränderung der Körperzusammensetzung nach vier Wochen"
+],
+"warum": "Mit 2,4 statt 1,2 g/kg Protein stieg die Magermasse um 1,2 statt 0,1 kg und der Fettverlust war spürbar größer."
+},
+"labor": {
+"frage": "In einem 28-tägigen RCT bei 40 % Defizit und sechs Trainingstagen pro Woche bauten übergewichtige Männer mit 2,4 g/kg Protein Magermasse auf. Was begrenzt die Übertragbarkeit?",
+"richtig": "Die kurze Dauer von vier Wochen und die Deckung über Molkenprotein",
+"falsch": [
+"Die Probanden waren stark untergewichtig und älter als 60 Jahre",
+"Es gab keine Kontrollgruppe mit geringerer Proteinzufuhr",
+"Die Energieaufnahme wurde nicht kontrolliert oder vorgegeben"
+],
+"warum": "Der Versuch dauerte nur 28 Tage, umfasste junge Männer und deckte das hohe Protein über Molkenproteinisolat ab."
+}
+}
+},
+{
+"id": "REC-105",
+"karte": {
+"kopf": "Trainierte Kraftsportler · Übersichtsarbeit",
+"titel": "Auch nach Jahren Training sind Muskelaufbau und Fettabbau möglich",
+"titel_hervor": "Muskelaufbau und Fettabbau möglich",
+"setup": "Eine Übersichtsarbeit fasste Trainingsstudien über sechs bis zehn Wochen mit Personen zusammen, die schon mindestens ein Jahr Krafttraining machten.",
+"zahl": {
+"label": "Zuwachs fettfreier Masse in 6–10 Wochen",
+"wert": "+1,3 bis +5,0 kg",
+"alltag": "bei −0,2 bis −1,4 kg weniger Körperfett"
+},
+"kern": [
+"Auch Sportler mit hohen Kraftwerten legten im Schnitt weiter Muskelmasse zu.",
+"Entscheidend waren schweres, geplantes Training, viel Protein und kaum Defizit.",
+"Bei sehr niedrigem Körperfettanteil wird der doppelte Effekt deutlich schwerer."
+],
+"grenze": "Übersichtsarbeit ohne gepoolte Meta-Analyse; bei sehr austrainierten Wettkampfathleten sinkt das Potenzial stark.",
+"fuer_dich": "Du trainierst schon länger und willst definierter werden? Bleib nahe an Erhaltungskalorien, trainiere schwer und iss sehr proteinreich.",
+"labor": {
+"design": "Narratives Review kontrollierter Interventionsstudien, 6–10 Wochen Krafttraining",
+"teilnehmer": "Krafttrainierte Personen mit >= 1 Jahr Trainingserfahrung",
+"ergebnis": "Fettfreie Masse +1,3 bis +5,0 kg; Fettmasse −0,2 bis −1,4 kg über 6–10 Wochen"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Stimmt der Mythos, dass nur blutige Anfänger gleichzeitig Muskeln aufbauen und Körperfett abbauen können?",
+"richtig": "Nein, auch nach über einem Jahr Training gelingt das noch",
+"falsch": [
+"Ja, ab dem ersten Trainingsjahr geht nur noch eines von beiden",
+"Nein, aber es funktioniert ausschließlich bei Frauen über 50",
+"Ja, weil Muskeln nach einem Jahr keine neue Nahrung nutzen"
+],
+"warum": "Kontrollierte Studien zeigen auch bei Personen mit mindestens einem Jahr Krafttraining gleichzeitigen Muskelaufbau und Fettabbau."
+},
+"plus": {
+"frage": "Du trainierst seit zwei Jahren schwer und möchtest gleichzeitig Muskeln aufbauen und Fett abbauen. Wie richtest du deine Ernährung am sinnvollsten aus?",
+"richtig": "Nahe an Erhaltungskalorien bleiben und sehr viel Protein essen",
+"falsch": [
+"Ein starkes Defizit wählen und das Trainingsgewicht senken",
+"Auf Krafttraining verzichten und vor allem Ausdauer machen",
+"Einen großen Kalorienüberschuss fahren und wenig Protein essen"
+],
+"warum": "Trainierte profitierten vor allem von periodisiertem schwerem Krafttraining bei Kalorien nahe Erhalt und sehr hoher Proteinzufuhr."
+},
+"labor": {
+"frage": "Übersichtsdaten belegen bei Kraftsportlern mit über einem Jahr Erfahrung gleichzeitigen Aufbau von Magermasse und Fettabbau. Wann sinkt dieses Potenzial stark?",
+"richtig": "Bei weit fortgeschrittenen Athleten mit sehr niedrigem Körperfett",
+"falsch": [
+"Sobald mehr als drei Einheiten pro Woche trainiert werden",
+"Wenn das Training über sechs Wochen periodisiert wird",
+"Sobald die tägliche Proteinzufuhr über 2 g/kg steigt"
+],
+"warum": "Bei sehr niedrigem Körperfettanteil bremsen hormonelle, metabolische Anpassungen und Schlafprobleme im Defizit den Umbau deutlich."
+}
+}
+},
+{
+"id": "REC-106",
+"karte": {
+"kopf": "Erwachsene · Meta-Analyse und Einzelstudien",
+"titel": "Ab rund 500 kcal Defizit stoppt der Muskelaufbau im Schnitt",
+"titel_hervor": "stoppt der Muskelaufbau im Schnitt",
+"setup": "Eine Meta-Regression prüfte, ab welchem Defizit kein Muskelaufbau mehr gelang, und wurde mit strengen Hochprotein-Einzelstudien verglichen.",
+"zahl": {
+"label": "Im Schnitt kein Aufbau mehr ab Defizit",
+"wert": "~500 kcal/Tag",
+"alltag": "mit sehr viel Protein sind Ausnahmen möglich"
+},
+"kern": [
+"Je größer das Kaloriendefizit, desto weniger Muskelmasse wuchs im Schnitt.",
+"Junge Leute mit viel Protein und hartem Training schafften trotzdem Ausnahmen.",
+"Die große Auswertung enthielt vor allem ältere Teilnehmer um 60 Jahre."
+],
+"grenze": "Widerspruch zwischen älteren Durchschnittsgruppen und jungen Hochprotein-Gruppen – dein Verlauf hängt von Alter, Fett und Protein ab.",
+"fuer_dich": "Du willst Fett verlieren und Muskeln aufbauen? Halte dein Defizit meist bei 200 bis 300 kcal statt es stark zu kürzen.",
+"labor": {
+"design": "Meta-Analyse/-Regression (k=7 / k=52) im Vergleich zu Hochprotein-Einzel-RCTs",
+"teilnehmer": "282 Personen in Analyse A (60±11 J.) vs. junge Kohorten in Einzel-RCTs",
+"ergebnis": "−0,031 ES pro 100 kcal Defizit (ES = 0 bei ~500 kcal; Analyse A ES = −0,57, p=0,02); Einzel-RCT +1,2 kg LBM"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du möchtest beim Abnehmen gleichzeitig Muskeln aufbauen. Was passiert im Durchschnitt, wenn du deine Kalorien sehr stark kürzt?",
+"richtig": "Der Muskelaufbau bleibt im Schnitt ab einem Punkt aus",
+"falsch": [
+"Die Muskeln wachsen umso schneller, je weniger du isst",
+"Die Höhe des Kaloriendefizits spielt für Muskeln keine Rolle",
+"Der Körper baut bei kleinem Defizit kaum noch Fett ab"
+],
+"warum": "In gepoolten Daten nahm der Muskelaufbau mit größerem Defizit ab und lag im Mittel ab rund 500 kcal Defizit bei null."
+},
+"plus": {
+"frage": "Du planst eine Rekomposition und fragst dich, wie groß dein tägliches Defizit sein darf. Wann ist ein kleines Defizit von 200 bis 300 kcal meist besser als ein großes?",
+"richtig": "Meistens, außer bei viel Körperfett und sehr viel Protein",
+"falsch": [
+"Nur an trainingsfreien Tagen ohne Krafttraining im Plan",
+"Kaum, weil unter 500 kcal Defizit fast kein Fett schmilzt",
+"Nur bei Profis, da Anfänger kein Protein dafür brauchen"
+],
+"warum": "Unter 500 kcal Defizit bleibt Raum für Aufbau; größere Defizite klappten vor allem bei höherem Körperfett und sehr viel Protein."
+},
+"labor": {
+"frage": "Eine Meta-Regression fand ab rund 500 kcal Defizit keinen mittleren Magermassezuwachs mehr, während einzelne RCTs selbst bei starkem Defizit Zuwächse zeigten. Was erklärt den Unterschied?",
+"richtig": "Ältere Gruppen, weniger Protein und sanfteres Training",
+"falsch": [
+"Die Einzelstudien dauerten alle deutlich über ein Jahr",
+"In der Meta-Analyse fand überhaupt kein Krafttraining statt",
+"Die Einzelstudien maßen nur das Gewicht statt Magermasse"
+],
+"warum": "Die Meta-Analyse umfasste im Mittel 60-Jährige mit moderatem Training und weniger Protein, die Einzel-RCTs junge Gruppen mit sehr viel Protein."
+}
+}
+},
+{
+"id": "REC-107",
+"karte": {
+"kopf": "Krafttrainings-Anfänger · 52 Gruppen verglichen",
+"titel": "Im Kaloriendefizit wuchs weniger Muskel, aber die Kraft stieg weiter",
+"titel_hervor": "die Kraft stieg weiter",
+"setup": "Eine Meta-Analyse verglich mehrwöchiges Krafttraining im Kaloriendefizit mit Training bei ausgeglichener Kalorienzufuhr.",
+"zahl": null,
+"kern": [
+"Die Muskelmasse legte im Defizit spürbar schwächer zu als ohne Defizit.",
+"Die Maximalkraft stieg bei Anfängern im Defizit fast genauso gut wie im Erhalt.",
+"Bei erfahrenen Kraftsportlern kann auch die Kraft im Defizit nachlassen."
+],
+"grenze": "Fast alle Daten stammen von älteren Einsteigern (im Schnitt 60 Jahre) – bei sehr Erfahrenen leidet oft auch die Kraft.",
+"fuer_dich": "Du bist im moderaten Defizit und willst deine Leistung halten? Steigere deine Trainingsgewichte im Plan ruhig weiter.",
+"labor": {
+"design": "Meta-Analyse & Meta-Regression, 8–20 Wo. Krafttraining, Defizit vs. Erhaltungskalorien",
+"teilnehmer": "Analyse A: 7 Studien (n=282, 60±11 J.); Analyse B: 52 Gruppen",
+"ergebnis": "Magermasse ES −0,57 (p=0,02) bzw. −0,11 vs. 0,20; Kraft ES −0,31 (p=0,28) bzw. 0,84 vs. 0,81"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du startest mit Krafttraining und isst gleichzeitig etwas weniger Kalorien zum Abnehmen. Was passiert dabei im Schnitt mit deiner Kraft?",
+"richtig": "Sie steigt fast genauso gut wie ohne Kaloriendefizit",
+"falsch": [
+"Sie sinkt sofort ab der ersten Woche des Abnehmens",
+"Sie bleibt unverändert, bis du wieder mehr Kalorien isst",
+"Sie steigt nur, wenn gleichzeitig große Muskeln wachsen"
+],
+"warum": "Bei Trainingsanfängern bremste ein Defizit zwar den Muskelaufbau, die Entwicklung der Maximalkraft blieb im Mittel aber unbeeinträchtigt."
+},
+"plus": {
+"frage": "Du bist als Einsteiger in einem moderaten Defizit bis 500 kcal. Solltest du im Krafttraining vorsichtshalber deine Gewichte senken?",
+"richtig": "Nein, eine progressive Laststeigerung klappt im Defizit meist weiter",
+"falsch": [
+"Ja, sonst verlierst du im Defizit sofort deine Maximalkraft",
+"Ja, im Defizit bringen nur leichte Sätze mit vielen Wiederholungen etwas",
+"Nein, aber nur wenn du ganz auf Ausdauertraining verzichtest"
+],
+"warum": "Da Kraftzuwächse bei Einsteigern im moderaten Defizit kaum leiden, solltest du weiter sauber versuchen, dich zu steigern."
+},
+"labor": {
+"frage": "Eine Meta-Analyse verglich Krafttraining im Energiedefizit mit ausgeglichener Bilanz: Die Magermasse litt, die Maximalkraft kaum. Warum gilt das nicht ohne Weiteres für Fortgeschrittene?",
+"richtig": "Ausgewertet wurden fast nur Einsteiger mit neuronalen Reserven",
+"falsch": [
+"Fortgeschrittene trainieren in Diäten deutlich weniger Sätze",
+"Bei Fortgeschrittenen wächst die Magermasse im Defizit schneller",
+"Die Kraftmessung erfolgte nur über das eigene Körpergewicht"
+],
+"warum": "Bei Erfahrenen sind frühe neuronale Kraftanpassungen bereits ausgeschöpft – in der einzigen Gruppe mit Trainierten litt auch die Kraft."
+}
+}
+},
+{
+"id": "REC-108",
+"karte": {
+"kopf": "Krafttrainierende · Übersichtsarbeit",
+"titel": "Ein großer Kalorienüberschuss brachte vor allem mehr Körperfett",
+"titel_hervor": "vor allem mehr Körperfett",
+"setup": "Eine Übersichtsarbeit verglich Krafttraining bei normalem Essen mit einem hohen Kalorienüberschuss und berechnete den Energiebedarf für Muskeln.",
+"zahl": {
+"label": "Fettzunahme bei hohem Überschuss vs. normal",
+"wert": "+1,1 vs. +0,2 kg",
+"alltag": "mehr als fünfmal so viel zusätzliches Fett"
+},
+"kern": [
+"Bei der Muskelmasse gab es keinen klaren Vorteil durch sehr viele Extra-Kalorien.",
+"Für fettarmen Aufbau reichten meist Erhaltungskalorien bis 300–500 kcal extra.",
+"Wie viel Energie extra nötig ist, schwankt stark je nach Alltagsbewegung."
+],
+"grenze": "Übersichtsarbeit statt Meta-Analyse; der genaue Energiebedarf für neues Muskelgewebe ist beim Menschen noch nicht geklärt.",
+"fuer_dich": "Du willst Muskeln aufbauen, ohne unnötig Fett anzusetzen? Starte im Erhalt oder mit maximal 300 bis 500 kcal Plus am Tag.",
+"labor": {
+"design": "Narratives Review zu Energieüberschuss, Hypertrophie und energetischen Gewebemodellen",
+"teilnehmer": "Einsteiger und Trainierte aus ausgewerteten Krafttrainingsstudien",
+"ergebnis": "Hyperenergie vs. ad libitum: LBM +1,7 vs. +1,2 kg (n.s.); Fettmasse +1,1 vs. +0,2 kg (signifikant)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du trainierst Kraft und isst jeden Tag riesige Extra-Portionen, damit die Muskeln schneller wachsen. Was passiert dabei am ehesten?",
+"richtig": "Du legst vor allem deutlich mehr Körperfett zu",
+"falsch": [
+"Deine Muskeln wachsen genau im Tempo der Extra-Kalorien",
+"Überschüssige Kalorien wandeln sich beim Training in Muskeln um",
+"Du baust kaum Fett auf, solange du schwer trainierst"
+],
+"warum": "Ein sehr hoher Kalorienüberschuss steigerte im Vergleich zu moderater Zufuhr vor allem die Fettmasse, nicht klar das Muskelwachstum."
+},
+"plus": {
+"frage": "Du bist bereits trainiert und möchtest möglichst fettarm Muskelmasse aufbauen. Wie steuerst du deine Kalorienzufuhr sinnvoll?",
+"richtig": "Erhaltungskalorien oder nur ein kleines tägliches Kalorienplus",
+"falsch": [
+"Einen sehr hohen täglichen Überschuss für maximales Wachstum",
+"Ein starkes Defizit einhalten, damit kein Gramm Fett dazukommt",
+"Die Kalorien ignorieren und nur das Trainingsvolumen verdoppeln"
+],
+"warum": "Ein moderater Bereich bis 300–500 kcal Plus begrenzt den Fettansatz und zielt auf langsames, sauberes Wachstum."
+},
+"labor": {
+"frage": "Warum lässt sich der exakte Kalorienüberschuss für ein Kilogramm neue Skelettmuskelmasse in der Praxis kaum als feste Zahl festlegen?",
+"richtig": "Der echte Bedarf schwankt stark durch Unterschiede in der Alltagsaktivität",
+"falsch": [
+"Skelettmuskulatur verbraucht beim Aufbau keinerlei zusätzliche Energie",
+"Die Energiebilanz hat erst ab zwei Jahren Training einen Einfluss",
+"Protein liefert beim Muskelaufbau doppelt so viele Kalorien wie Fett"
+],
+"warum": "Der Energieaufwand für Gewebeaufbau ist noch nicht endgültig quantifiziert und variiert stark durch spontane Alltagsbewegung (NEAT)."
+}
+}
+},
+{
+"id": "REC-109",
+"karte": {
+"kopf": "Trainierte Männer & Frauen · Zufallsstudie",
+"titel": "Extrem viel Protein ließ mehr Fett schmelzen trotz mehr Kalorien",
+"titel_hervor": "ließ mehr Fett schmelzen",
+"setup": "48 trainierte Personen absolvierten acht Wochen schweres Krafttraining und aßen entweder sehr viel oder normal viel Protein.",
+"zahl": {
+"label": "Fettverlust bei sehr viel vs. normal Protein",
+"wert": "−1,7 vs. −0,3 kg",
+"alltag": "Körperfettanteil sank um 2,4 % vs. 0,7 %"
+},
+"kern": [
+"Beide Gruppen bauten im Schnitt gleich viel fettfreie Masse auf (+1,5 kg).",
+"Die Hochprotein-Gruppe meldete mehr Kalorien, verlor aber trotzdem mehr Fett.",
+"Höhere Wärmeabgabe beim Verdauen und stärkere Sättigung könnten mitwirken."
+],
+"grenze": "Essen wurde nur selbst aufgeschrieben – ungenaue Tagebücher könnten einen Teil des Effekts erklären.",
+"fuer_dich": "Du trainierst hart und willst ohne klassische Diät Fett verlieren? Teste für einige Wochen eine sehr proteinreiche Ernährung.",
+"labor": {
+"design": "RCT, 8 Wochen periodisiertes Krafttraining, 3,4 vs. 2,3 g/kg/Tag Protein",
+"teilnehmer": "48 trainierte Männer und Frauen (HP n=31, NP n=17)",
+"ergebnis": "Fettmasse −1,7 vs. −0,3 kg (p<=0,05); KFA −2,4 % vs. −0,7 % (p<=0,05); FFM je +1,5 kg"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Trainierte Personen aßen beim Krafttraining acht Wochen lang extrem viel Eiweiß statt normal viel. Wie veränderte sich ihr Körper?",
+"richtig": "Sie bauten gleich viel Muskeln auf, verloren aber mehr Fett",
+"falsch": [
+"Sie legten durch das viele Eiweiß spürbar mehr Körperfett zu",
+"Sie bauten doppelt so viele Muskeln auf bei gleichem Fettanteil",
+"Sie verloren Muskelmasse, weil zu viel Eiweiß das Training bremste"
+],
+"warum": "Beide Gruppen legten 1,5 kg fettfreie Masse zu, doch mit sehr hoher Proteinzufuhr sank die Fettmasse deutlich stärker."
+},
+"plus": {
+"frage": "Du trainierst schwer nach einem periodisierten Plan und willst ohne klassisches Kaloriendefizit etwas Körperfett abbauen. Welche Ernährungsstrategie unterstützt das?",
+"richtig": "Die tägliche Proteinzufuhr vorübergehend sehr hoch ansetzen",
+"falsch": [
+"Die Proteinzufuhr halbieren und mehr einfache Kohlenhydrate essen",
+"Alle schweren Grundübungen durch reines Gerätetraining ersetzen",
+"Jede zweite Trainingseinheit ausfallen lassen für mehr Erholung"
+],
+"warum": "In Kombination mit schwerem Krafttraining führte eine sehr hohe Proteinzufuhr trotz höherer Kalorien zu spürbarem Fettverlust."
+},
+"labor": {
+"frage": "In einem achtwöchigen RCT verloren Kraftsportler mit sehr hoher Proteinzufuhr trotz höherer gemeldeter Kalorien mehr Fett. Welche methodische Grenze relativiert das?",
+"richtig": "Die Ernährung wurde nur über selbst geführte Tagebücher erfasst",
+"falsch": [
+"Die Kontrollgruppe führte gar kein Krafttraining durch",
+"Der Körperfettanteil wurde am Studienende nicht gemessen",
+"Alle Teilnehmenden befanden sich in strenger Bettruhe"
+],
+"warum": "Neben höherer Thermogenese und Sättigung kann auch ungenaues Selbstprotokollieren von Beikost den Kalorienunterschied mitverursacht haben."
+}
+}
+},
+{
+"id": "REC-110",
+"karte": {
+"kopf": "Trainierte Frauen · Kleine Zufallsstudie",
+"titel": "Viel Protein verdreifachte den Muskelaufbau in kleiner Frauenstudie",
+"titel_hervor": "verdreifachte den Muskelaufbau",
+"setup": "17 krafttrainierte Frauen absolvierten acht Wochen Krafttraining plus HIIT und aßen entweder viel oder sehr wenig Protein.",
+"zahl": {
+"label": "Zuwachs fettfreier Masse mit viel Protein",
+"wert": "+2,1 kg",
+"alltag": "im Vergleich zu +0,6 kg bei wenig Protein"
+},
+"kern": [
+"Die Hochprotein-Gruppe aß rund 400 kcal extra aus Protein, ohne Fett anzusetzen.",
+"Innerhalb der Hochprotein-Gruppe sank die Fettmasse im Schnitt um 1,1 kg.",
+"Die Vergleichsgruppe lag mit ihrer Proteinmenge für Sportlerinnen sehr tief."
+],
+"grenze": "Kleine Studie mit nur 17 jungen Frauen – wie groß der Vorteil gegenüber moderater Zufuhr ist, bleibt offen.",
+"fuer_dich": "Du bist Frau, trainierst regelmäßig Kraft und isst bisher wenig Protein? Ein deutlicher Schritt nach oben lohnt sich oft spürbar.",
+"labor": {
+"design": "RCT, 8 Wochen Krafttraining + HIIT, 2,5 vs. 0,9 g/kg/Tag Protein",
+"teilnehmer": "17 krafttrainierte Frauen (~21 Jahre, HP n=8, LP n=9)",
+"ergebnis": "FFM +2,1 vs. +0,6 kg (p=0,009); Fettmasse −1,1 kg (innerhalb HP p<0,01) vs. −0,7 kg (n.s.)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Trainierte Frauen aßen zum Krafttraining acht Wochen lang viel Eiweiß statt sehr wenig. Was zeigten erste Hinweise aus dem Vergleich?",
+"richtig": "Sie bauten deutlich mehr Muskelmasse auf, ohne Fett zuzulegen",
+"falsch": [
+"Sie legten durch die zusätzlichen Kalorien vor allem Körperfett zu",
+"Frauen bauten unabhängig von der Eiweißmenge gleich viel Muskeln auf",
+"Wenig Eiweiß sorgte für einen deutlich stärkeren Fettabbau"
+],
+"warum": "Trotz rund 400 Extra-Kalorien aus Protein baute die Hochprotein-Gruppe dreimal so viel fettfreie Masse auf und verlor sogar etwas Fett."
+},
+"plus": {
+"frage": "Du machst als Frau regelmäßig Krafttraining und HIIT, isst bisher aber sehr wenig Protein. Was bringt eine deutliche Erhöhung deiner Proteinzufuhr am ehesten?",
+"richtig": "Spürbar mehr Zuwachs an fettfreier Masse ohne unnötigen Fettansatz",
+"falsch": [
+"Automatisch eine schnelle Zunahme an unerwünschtem Körperfett",
+"Kaum einen Effekt, weil HIIT den Muskelaufbau blockiert",
+"Einen stärkeren Verlust an Kraft bei gleichbleibendem Gewicht"
+],
+"warum": "Bei sehr niedriger Ausgangszufuhr deuten die Daten auf deutlich besseren Aufbau fettfreier Masse hin, wenn die Proteinmenge kräftig steigt."
+},
+"labor": {
+"frage": "In einem achtwöchigen RCT mit 17 krafttrainierten Frauen erzielten 2,5 g/kg Protein klar mehr Magermasse als 0,9 g/kg. Was schränkt die Aussagekraft ein?",
+"richtig": "Die kleine Stichprobe und die sehr niedrige Proteinmenge der Kontrolle",
+"falsch": [
+"Die Hochprotein-Gruppe trainierte doppelt so oft wie die Kontrolle",
+"Es wurden ausschließlich untrainierte Männer über 50 eingeschlossen",
+"Die fettfreie Masse wurde nur über den Taillenumfang geschätzt"
+],
+"warum": "Mit nur 17 Teilnehmenden ist die Gruppe klein, und 0,9 g/kg/Tag liegen für aktive Kraftsportlerinnen deutlich im unteren Bereich."
+}
+}
+},
+{
+"id": "REC-111",
+"karte": {
+"kopf": "Trainierende · 49 Studien zusammengefasst",
+"titel": "Bis rund 1,6 g Protein pro Kilo wuchsen Muskeln im Schnitt besser",
+"titel_hervor": "rund 1,6 g Protein",
+"setup": "49 Krafttrainingsstudien mit fast 1.900 Personen wurden ausgewertet, um die wirksamste tägliche Proteinmenge für Muskelaufbau zu finden.",
+"zahl": {
+"label": "Obergrenze für Extra-Aufbau ohne Defizit",
+"wert": "1,6 g/kg",
+"alltag": ""
+},
+"kern": [
+"Zusätzliches Protein brachte über rund 13 Wochen im Schnitt 0,3 kg mehr Muskeln.",
+"Wer bereits Trainingserfahrung hatte, profitierte von extra Protein stärker.",
+"Mit zunehmendem Alter fiel der Zusatzeffekt durch mehr Protein kleiner aus."
+],
+"grenze": "Ausgewertet wurden vor allem Phasen ohne Kaloriendefizit – in einer Diät können höhere Mengen sinnvoll sein.",
+"fuer_dich": "Du machst Krafttraining ohne Kaloriendefizit? Peile täglich mindestens 1,6 g Protein pro Kilogramm Körpergewicht an.",
+"labor": {
+"design": "Systematisches Review, Meta-Analyse & Meta-Regression, im Schnitt 13 Wo. Krafttraining",
+"teilnehmer": "1.863 Teilnehmende aus 49 Studien (Einsteiger, Trainierte, Ältere)",
+"ergebnis": "FFM +0,3 kg durch Proteinsupplementierung; Plateau-Schwellenwert bei ~1,6 g/kg/Tag"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du machst Krafttraining und isst genug Kalorien. Bringt noch mehr Eiweiß über einen gewissen Punkt hinaus weiter mehr Muskelaufbau?",
+"richtig": "Nein, ab einer bestimmten Menge flacht der Zusatzgewinn im Schnitt ab",
+"falsch": [
+"Ja, jede weitere Portion Eiweiß bringt linear mehr Muskelmasse",
+"Nein, schon sehr kleine Mengen reichen für maximalen Aufbau",
+"Ja, aber nur wenn das Eiweiß ausschließlich aus Shakes stammt"
+],
+"warum": "Über 49 Studien steigerte mehr Protein den Muskelaufbau bis etwa 1,6 g/kg pro Tag; darüber gab es ohne Defizit im Mittel kein Plus mehr."
+},
+"plus": {
+"frage": "Du bist im Erhalt oder leichten Überschuss und erreichst deinen Protein-Zielwert bereits gut. Wann kann deutlich mehr Protein trotzdem sinnvoll sein?",
+"richtig": "Wenn du in ein Kaloriendefizit gehst, um Muskelmasse zu schützen",
+"falsch": [
+"Wenn du eine ganze Woche gar kein Krafttraining machst",
+"Wenn du Anfänger bist und gerade deine erste Woche trainierst",
+"Wenn du im großen Kalorienüberschuss noch schneller wachsen willst"
+],
+"warum": "Das Plateau um 1,6 g/kg stammt vor allem aus Studien ohne Defizit – bei Kalorienreduktion können höhere Mengen nötig werden."
+},
+"labor": {
+"frage": "Eine Meta-Regression über 49 Studien fand beim Krafttraining ein Hypertrophie-Plateau bei rund 1,6 g/kg Protein am Tag. Für welche Phase gilt diese Grenze nur begrenzt?",
+"richtig": "Für Phasen im Energiedefizit, da kaum Diätstudien ausgewertet wurden",
+"falsch": [
+"Für zwölfwöchige Trainingspläne bei gesunden jungen Erwachsenen",
+"Für erfahrene Kraftsportler im leichten Kalorienüberschuss",
+"Für gemischte Trainingsprogramme mit ausgeglichener Bilanz"
+],
+"warum": "Die Meta-Regression wertete überwiegend ausgeglichene und positive Energiebilanzen aus; im Defizit liegt der Bedarf oft höher."
+}
+}
+},
+{
+"id": "REC-112",
+"karte": {
+"kopf": "Krafttrainierende · Meta-Analyse",
+"titel": "Mehrere Sätze pro Muskel brachten 40 Prozent mehr Muskelwachstum",
+"titel_hervor": "40 Prozent mehr Muskelwachstum",
+"setup": "Eine Meta-Analyse verglich Krafttraining mit nur einem Satz pro Übung mit Plänen aus mehreren wöchentlichen Arbeitssätzen.",
+"zahl": {
+"label": "Stärkerer Muskelaufbau bei mehreren Sätzen",
+"wert": "+40 %",
+"alltag": "im Vergleich zu nur einem Satz"
+},
+"kern": [
+"Mehr fordernde Sätze pro Woche ließen die Muskeln abgestuft stärker wachsen.",
+"Oberhalb von 12 bis 20 Wochen-Sätzen je Muskelgruppe flacht der Nutzen ab.",
+"Entscheidend bleibt, dass Sätze anstrengend sind und die Last schrittweise steigt."
+],
+"grenze": "Jeder weitere Satz bringt ab einem gewissen Punkt weniger Extra-Wachstum – Ausführungsqualität und Intensität zählen mit.",
+"fuer_dich": "Deine Muskeln wachsen mit wenigen Sätzen kaum weiter? Steigere auf 10 bis 20 harte Sätze pro Muskelgruppe und Woche.",
+"labor": {
+"design": "Systematisches Review und Meta-Analyse, Dosis-Wirkung des wöchentlichen Satzvolumens",
+"teilnehmer": "Einsteiger und Trainierte aus ausgewerteten Krafttrainingsstudien",
+"ergebnis": "40 % größere Hypertrophie-Effektstärke bei Mehrsatz- vs. Einsatz-Training"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du machst im Krafttraining bisher nur einen Satz pro Übung. Was passiert im Schnitt, wenn du auf mehrere Sätze steigerst?",
+"richtig": "Die Muskeln wachsen deutlich stärker als mit nur einem Satz",
+"falsch": [
+"Ein einziger Satz reicht im Schnitt für genau denselben Aufbau",
+"Mehrere Sätze erhöhen nur die Ausdauer, nicht die Muskelgröße",
+"Ab dem zweiten Satz bauen Muskeln durch Ermüdung wieder ab"
+],
+"warum": "In der Gesamtauswertung erzielten mehrere Sätze eine rund 40 % größere Wirkung auf das Muskelwachstum als ein einzelner Satz."
+},
+"plus": {
+"frage": "Du machst bereits 18 harte Sätze pro Muskelgruppe und Woche bei 1 bis 4 RIR. Bringt eine Verdopplung des Volumens noch doppelt so viel Wachstum?",
+"richtig": "Nein, bei sehr hohem Wochenvolumen flacht der Zusatznutzen klar ab",
+"falsch": [
+"Ja, das Muskelwachstum steigt ohne Grenze linear weiter an",
+"Nein, ab zehn Sätzen pro Woche sinkt das Wachstum sofort auf null",
+"Ja, solange du alle Sätze in einer einzigen Einheit absolvierst"
+],
+"warum": "Die Dosis-Wirkungs-Kurve flacht oberhalb von etwa 12 bis 20 Wochen-Sätzen deutlich ab – mehr Volumen bringt dort kaum noch extra."
+},
+"labor": {
+"frage": "Meta-Analysen zeigen eine abgestufte Dosis-Wirkung zwischen wöchentlichem Satzvolumen und Hypertrophie. Welche Trainingsfaktoren beeinflussen den Effekt jedes Satzes zusätzlich?",
+"richtig": "Die Nähe zum Muskelversagen und progressive Laststeigerung",
+"falsch": [
+"Ausschließlich die Dauer der Satzpausen zwischen zwei Übungen",
+"Die genaue Uhrzeit des Trainings am Vormittag oder Abend",
+"Die Reihenfolge von Aufwärmen und abschließendem Dehnen"
+],
+"warum": "Wie stark jeder Arbeitssatz wirkt, wird maßgeblich dadurch moderiert, wie fordernd er nah am Versagen und progressiv trainiert wird."
+}
+}
+},
+{
+"id": "REC-113",
+"karte": {
+"kopf": "Sportler · 43 Studien zusammengefasst",
+"titel": "Ausdauertraining bremste Muskelaufbau und Maximalkraft nicht",
+"titel_hervor": "bremste Muskelaufbau und Maximalkraft nicht",
+"setup": "43 Studien verglichen reines Krafttraining mit Trainingsplänen, die Kraft- und Ausdauertraining in derselben Woche kombinierten.",
+"zahl": null,
+"kern": [
+"Muskelwachstum und Maximalkraft litten weder durch Laufen noch durch Radfahren.",
+"Nur die Schnellkraft sank, wenn Kraft und Ausdauer direkt hintereinander lagen.",
+"Mindestens drei Stunden Pause dazwischen schützte auch die Schnellkraft."
+],
+"grenze": "Bei sehr hohem Gesamtumfang und gut Trainierten kann Beinermüdung die Unterkörper-Kraft dennoch begrenzen.",
+"fuer_dich": "Du kombinierst Kraft und Ausdauer? Trenne beide um mindestens drei bis sechs Stunden oder mache Kraft zuerst.",
+"labor": {
+"design": "Systematisches Review & Meta-Analyse (k=43), Concurrent Training vs. reines Krafttraining",
+"teilnehmer": "967 Personen (525 Concurrent, 442 Kraft); Explosivkraft k=18 (n=478)",
+"ergebnis": "Hypertrophie SMD −0,06; Maximalkraft SMD 0,05 (n.s.); Explosivkraft SMD −0,28 (p=0,007; <=20 min −0,31)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Stimmt der Mythos, dass Ausdauertraining wie Laufen oder Radfahren deinen Muskelaufbau automatisch bremst?",
+"richtig": "Nein, Muskeln und Maximalkraft wachsen im Schnitt genauso gut",
+"falsch": [
+"Ja, schon leichtes Radfahren verhindert fast jedes Muskelwachstum",
+"Ja, vor allem die Maximalkraft sinkt durch Laufen sofort stark ab",
+"Nein, aber nur wenn du höchstens einmal pro Woche Kraft trainierst"
+],
+"warum": "Über 43 Studien hinweg beeinträchtigte zusätzliches Ausdauertraining weder Muskelwachstum noch Maximalkraft im Vergleich zu reinem Krafttraining."
+},
+"plus": {
+"frage": "Du kombinierst Kraft- und Ausdauertraining, möchtest aber deine Explosivkraft voll erhalten. Wie planst du die beiden Einheiten am besten?",
+"richtig": "Auf getrennte Tage legen oder mehrere Stunden Pause dazwischen",
+"falsch": [
+"Ausdauer meist direkt vor dem explosiven Krafttraining absolvieren",
+"Beide Einheiten ohne Pause direkt hintereinander im Gym durchziehen",
+"Nur noch laufen statt radfahren, um die Schnellkraft zu schützen"
+],
+"warum": "Die Explosivkraft litt nur dann spürbar, wenn Kraft und Ausdauer direkt in derselben Einheit mit kurzer Pause lagen."
+},
+"labor": {
+"frage": "Eine Meta-Analyse über 43 Studien verglich kombiniertes Ausdauer- und Krafttraining mit reinem Krafttraining. Welcher Bereich zeigte einen signifikanten Nachteil und wann?",
+"richtig": "Die Explosivkraft, wenn beide Einheiten direkt nacheinander lagen",
+"falsch": [
+"Die Muskelhypertrophie, vor allem bei Teilnehmenden über 40 Jahren",
+"Die Maximalkraft, sobald mehr als fünfmal pro Woche trainiert wurde",
+"Die Ausdauerleistung, wenn Radfahren statt Laufen gewählt wurde"
+],
+"warum": "Hypertrophie und Maximalkraft blieben unbeeinträchtigt; nur die Explosivkraft sank signifikant, besonders bei maximal 20 Minuten Pause dazwischen."
+}
+}
+},
+{
+"id": "REC-114",
+"karte": {
+"kopf": "Übergewichtige Frauen · Zufallsstudie",
+"titel": "Der Bauchumfang schrumpfte um fast 5 cm, während die Kraft stieg",
+"titel_hervor": "schrumpfte um fast 5 cm",
+"setup": "90 übergewichtige Frauen trainierten 16 Wochen lang Kraft und Ausdauer mit unterschiedlich viel Protein und Milchprodukten.",
+"zahl": {
+"label": "Weniger Taillenumfang nach 16 Wochen",
+"wert": "−4,9 cm",
+"alltag": "im Schnitt bei klar steigender Kraft"
+},
+"kern": [
+"Der Taillenumfang sank stetig und spiegelte den Verlust von tiefem Bauchfett wider.",
+"Gleichzeitig stieg die Kraft, etwa beim Bankdrücken von 28 auf 34 kg.",
+"Wer nur auf die Waage schaut, übersieht echten Fettabbau bei wachsenden Muskeln."
+],
+"grenze": "Untersucht wurden 90 übergewichtige Frauen vor den Wechseljahren – wie viele Zentimeter schmelzen, hängt vom Ausgangswert ab.",
+"fuer_dich": "Deine Waage bewegt sich seit vier Wochen kaum, aber du wirst stärker? Miss deinen Taillenumfang als echten Gradmesser mit.",
+"labor": {
+"design": "RCT, 16 Wochen Kraft- und Ausdauertraining, drei Protein-/Milchprodukt-Stufen",
+"teilnehmer": "90 übergewichtige prämenopausale Frauen (30 pro Gruppe)",
+"ergebnis": "Taillenumfang −4,9±0,9 cm (p<0,05); Viszeralfett (MRT) korreliert mit Protein (r=0,32) & Kalzium (r=0,40)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du trainierst regelmäßig und wirst stärker, aber die Waage bleibt stehen. Welches einfache Maß zeigt dir zu Hause besser, ob Bauchfett schmilzt?",
+"richtig": "Der regelmäßig gemessene Taillenumfang",
+"falsch": [
+"Das Körpergewicht direkt nach dem Abendessen",
+"Die Anzahl deiner geschafften Ausdauer-Minuten",
+"Dein Ruhepuls am Morgen vor dem Aufstehen"
+],
+"warum": "Auch wenn Muskeln das Gewicht stabil halten, sinkt der Taillenumfang verlässlich, sobald Bauchfett abgebaut wird."
+},
+"plus": {
+"frage": "Dein Körpergewicht schwankt seit vier Wochen kaum um ein Kilo, aber deine Kraftwerte im Training steigen. Woran erkennst du eine gelungene Rekomposition?",
+"richtig": "Dein Taillenumfang sinkt, während du im Training stärker wirst",
+"falsch": [
+"Dein Gewicht fällt plötzlich um mehrere Kilo in einer Woche",
+"Deine Kraftwerte bleiben gleich und dein Appetit steigt an",
+"Dein Taillenumfang wächst parallel zu deinen Trainingsgewichten"
+],
+"warum": "Steigende Kraft bei sinkendem Taillenumfang zeigt an, dass gleichzeitig Muskelkraft gewonnen und Rumpffett abgebaut wird."
+},
+"labor": {
+"frage": "Bei 90 übergewichtigen Frauen im 16-wöchigen Trainings-RCT wurde der Bauchfettabbau per MRT und DXA erfasst. Womit korrelierte der Verlust an Viszeralfett?",
+"richtig": "Mit einer höheren Protein- und Kalziumzufuhr",
+"falsch": [
+"Ausschließlich mit dem Rückgang des Gesamtgewichts",
+"Mit einer möglichst geringen täglichen Eiweißmenge",
+"Nur mit der Anzahl der Ausdauer- statt Krafteinheiten"
+],
+"warum": "Die im MRT gemessene Reduktion des viszeralen Fetts korrelierte signifikant sowohl mit der Protein- als auch mit der Kalziumzufuhr."
+}
+}
+},
+{
+"id": "REC-115",
+"karte": {
+"kopf": "Körperanalyse-Verfahren · Methodenstudie",
+"titel": "Essen, Trinken und Training verfälschen Körperfett-Waagen deutlich",
+"titel_hervor": "verfälschen Körperfett-Waagen deutlich",
+"setup": "Eine Methodenstudie prüfte die Messgenauigkeit von Körperanalysen und wie Einflüsse vor der Messung Ergebnisse verzerren.",
+"zahl": null,
+"kern": [
+"Heim-Waagen schätzen Fett und Muskeln nur indirekt über Rechenformeln.",
+"Schon Schwankungen im Wasserhaushalt oder der Hauttemperatur ändern den Wert.",
+"Verlässliche Trends entstehen erst durch gleiche Bedingungen und Wochenmittelwerte."
+],
+"grenze": "Auch standardisierte Heim-Waagen messen kein echtes Fett, sondern bleiben empfindlich für Wasserverschiebungen.",
+"fuer_dich": "Du trackst deinen Verlauf mit einer Körperfett-Waage? Miss morgens nach 8 Stunden Nüchternheit ohne hartes Vortagestraining.",
+"labor": {
+"design": "Methodenvergleichs- und Validierungsstudie zu Standardisierung von Körperanalysen",
+"teilnehmer": "",
+"ergebnis": "Kalibrierte Waage ICC 0,999 (TEM 0,01 kg, CV 0,01 %); ADP-Volumen ICC 0,999 (TEM 0,10 L, CV 0,15 %)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Deine Körperfett-Waage zeigt heute Abend plötzlich zwei Prozent mehr Fett als gestern Morgen. Was ist die wahrscheinlichste Ursache?",
+"richtig": "Essen, Trinken und Training verzerren den Messwert stark",
+"falsch": [
+"Du hast über einen einzigen Tag zwei Prozent echtes Fett angesetzt",
+"Deine Muskeln haben sich über Nacht spürbar zurückgebildet",
+"Abends sind Körperfett-Waagen deutlich genauer als morgens"
+],
+"warum": "Flüssigkeit, Mahlzeiten, Stehen und vorheriges Training verändern die Messung deutlich, ohne dass sich echtes Körperfett ändert."
+},
+"plus": {
+"frage": "Du willst deinen Trend mit einer Heim-BIA-Waage oder einem 3D-Scan möglichst verlässlich messen. Wie bereitest du den Check-in vor?",
+"richtig": "Morgens nüchtern nach der Nachtruhe und ohne hartes Vortagestraining",
+"falsch": [
+"Direkt nach einem intensiven Workout und einem großen Protein-Shake",
+"Jeden Abend nach dem Abendessen, um den Tagesdurchschnitt zu sehen",
+"Nach einem Liter Wasser, damit der Messstrom besser geleitet wird"
+],
+"warum": "Ein festes Protokoll mit mindestens acht Stunden Nüchternheit und einem Tag ohne hartes Training minimiert Messfehler."
+},
+"labor": {
+"frage": "Warum bleiben Einzelmessungen mit Heim-BIA-Waagen und 3D-Scannern im Alltag trotz sauberem Ablauf grundsätzlich fehleranfällig?",
+"richtig": "Sie schätzen indirekt und reagieren stark auf Wasserhaushalt und Temperatur",
+"falsch": [
+"Kalibrierte Waagen liefern schon beim Körpergewicht hohe Fehler",
+"Die Geräte messen nur das Unterhautfett an den Fußsohlen",
+"Sie liefern ab einer Gewichtsabnahme von 5 % keine Werte mehr"
+],
+"warum": "Heim-BIA und 3D-Scanner berechnen Fett- und Magermasse indirekt über Gleichungen, die empfindlich auf Körperwasser und Hauttemperatur reagieren."
+}
+}
+}
+]

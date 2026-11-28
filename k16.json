@@ -1,0 +1,1114 @@
+[
+{
+"id": "HYP-116",
+"karte": {
+"kopf": "Krafttrainierende · 10-Wochen-Studie",
+"titel": "Muskelaufbau greift wohl erst, wenn der starke Muskelkater abflaut",
+"titel_hervor": "wenn der starke Muskelkater abflaut",
+"setup": "Über zehn Wochen Krafttraining wurde gemessen, wann die erhöhte Eiweißbildung im Muskel tatsächlich zu größerem Muskelquerschnitt führte.",
+"zahl": null,
+"kern": [
+"Am Trainingsstart ging fast der gesamte Eiweiß-Einbau in die Reparatur kleiner Schäden.",
+"Erst nach einigen Wochen Gewöhnung hing die Eiweißbildung eng mit Muskelwachstum zusammen.",
+"Kein Muskelkater mehr zu spüren ist also kein schlechtes, sondern ein gutes Zeichen."
+],
+"grenze": "Erste Hinweise aus einer einzelnen zehnwöchigen Mechanismusstudie – sie prüft den Ablauf im Muskel, nicht das optimale Satzvolumen.",
+"fuer_dich": "Hast du starken Muskelkater? Kürze beim nächsten Mal 1–2 Sätze oder pausiere 72 Stunden – und jage im Training keinem Muskelkater hinterher.",
+"labor": {
+"design": "10-wöchige Längsschnitt-Mechanismusstudie zu myofibrillärer Proteinsynthese (MyoPS), Schaden u. Hypertrophie",
+"teilnehmer": "Krafttrainierende über 10 Wochen Trainingsintervention",
+"ergebnis": "Korrelation MyoPS–Hypertrophie zu T2/T3: r ≈ 0,9 (p<0,04); chronisch gesamt r = 0,42 (p=0,05); T1 nur Reparatur"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Viele glauben, ein Training bringe nur dann Muskelaufbau, wenn du danach ordentlichen Muskelkater hast. Was legen Messungen über zehn Wochen Training nahe?",
+"richtig": "Echtes Wachstum greift erst richtig, wenn starke Muskelschäden abklingen",
+"falsch": [
+"Ohne starken Muskelkater können Muskeln biologisch gar nicht wachsen",
+"Je heftiger der Muskelkater ausfällt, desto schneller wächst der Muskel",
+"Wenn der Muskelkater wegbleibt, solltest du sofort alle Übungen wechseln"
+],
+"warum": "Am Anfang geht die Eiweißbildung vor allem in die Reparatur geschädigter Fasern – erst nach der Gewöhnung zeigt sich ein enger Bezug zum Muskelwachstum."
+},
+"plus": {
+"frage": "Du merkst nach ein paar Wochen im selben Trainingsplan kaum noch Muskelkater, obwohl deine Gewichte steigen. Gleichzeitig hat dich eine neue Übung stark zerstört. Wie steuerst du?",
+"richtig": "Wenig Muskelkater als Anpassung schätzen; bei starkem Kater Volumen kürzen",
+"falsch": [
+"Jede Woche neue Übungen einbauen, damit der Muskelkater maximal bleibt",
+"Bei starkem Muskelkater sofort drei zusätzliche Arbeitssätze anhängen",
+"Das Training abbrechen, sobald der Muskelkater nachlässt"
+],
+"warum": "Ausbleibender Muskelkater spricht für erfolgreiche Anpassung; bei starkem Kater hilft es, 1–2 Sätze zu reduzieren oder die Pause auf 72 Stunden zu strecken."
+},
+"labor": {
+"frage": "Eine 10-wöchige Längsschnittstudie verglich die trainingsinduzierte myofibrilläre Proteinsynthese (MyoPS) mit echtem Muskelwachstum. Warum sagte MyoPS zu Beginn (T1) das Wachstum kaum voraus?",
+"richtig": "Anfangs diente MyoPS primär der Reparatur geschädigter Sarkomere",
+"falsch": [
+"In den ersten Wochen war die Proteinsynthese überhaupt nicht erhöht",
+"Die Korrelation war zu T1 am höchsten und sank bis T3 auf null ab",
+"Muskelquerschnitt und Proteinsynthese hingen über zehn Wochen nie zusammen"
+],
+"warum": "Erst nachdem die initialen Muskelschäden abgeklungen waren (T2/T3), korrelierte MyoPS sehr eng mit der Hypertrophie (r ≈ 0,9; p<0,04)."
+}
+}
+},
+{
+"id": "KRA-101",
+"karte": {
+"kopf": "Einsteiger & Trainierte · 21 Studien",
+"titel": "Schwere Gewichte steigern die Maximalkraft deutlich stärker",
+"titel_hervor": "Maximalkraft deutlich stärker",
+"setup": "Trainierende hoben 6 bis 12 Wochen lang entweder schwere Gewichte über 60 % ihres Maximums oder leichtere Lasten bis zum Versagen.",
+"zahl": null,
+"kern": [
+"Der Kraftvorteil schwerer Lasten kommt vor allem von besserer Nervensteuerung",
+"Die Muskeln wuchsen bei leichten und schweren Gewichten ähnlich stark",
+"Leichte Lasten passen eher zu Muskelaufbau oder Ausdauer als zu Maximaltests"
+],
+"grenze": "Alle Studien trainierten bis zum Muskelversagen – wie groß der Unterschied mit Reserve ist, bleibt offen.",
+"fuer_dich": "Du willst bei Grundübungen mehr Gewicht bewegen? Plane Hauptübungen schwer im Bereich von 3 bis 10 Wiederholungen ein.",
+"labor": {
+"design": "Systematisches Review & Meta-Analyse, 6–12 Wochen, >60 % vs. ≤60 % 1RM bis Versagen",
+"teilnehmer": "21 Studien gesamt (14 für 1RM), Einsteiger und Trainierte",
+"ergebnis": "ES = 0,58 zugunsten von Lasten >60 % 1RM für dynamische 1RM-Maximalkraft"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du willst ein möglichst schweres Gewicht einmal heben können. Welche Trainingsart bringt dich im Schnitt weiter?",
+"richtig": "Schwere Gewichte mit wenigen Wiederholungen",
+"falsch": [
+"Leichte Gewichte mit sehr vielen Wiederholungen",
+"Beides steigert die Höchstkraft genau gleich",
+"Langes Ausdauertraining vor dem Kraftblock"
+],
+"warum": "Schwere Gewichte schulen besonders das Zusammenspiel von Nerven und Muskeln für hohe Lasten."
+},
+"plus": {
+"frage": "Dein Hauptziel ist ein höheres 1RM bei Kniebeuge und Bankdrücken. Wie solltest du deine Hauptübungen überwiegend beladen?",
+"richtig": "Mit 75 bis 90 % 1RM für etwa 3 bis 10 Wiederholungen",
+"falsch": [
+"Mit 30 bis 50 % 1RM für 20 bis 35 Wiederholungen",
+"Vorwiegend mit leichten Sätzen bis zum Versagen",
+"Überwiegend mit Isolationsübungen unter 60 % 1RM"
+],
+"warum": "Für dynamische Maximalkraft sind Lasten über 60 % 1RM klar überlegen, besonders im Bereich von 75 bis 90 % 1RM."
+},
+"labor": {
+"frage": "In 14 Studien einer Meta-Analyse wurden Lasten über 60 % 1RM mit leichteren Lasten jeweils bis zum Muskelversagen verglichen. Was schränkt den Übertrag ein?",
+"richtig": "Submaximales Training ohne Muskelversagen wurde nicht geprüft",
+"falsch": [
+"Es wurden ausschließlich untrainierte Personen untersucht",
+"Die Interventionen dauerten alle kürzer als zwei Wochen",
+"Muskelwachstum wurde in keiner der Studien mitgemessen"
+],
+"warum": "Da alle eingeschlossenen Studien bis zum konzentrischen Versagen trainierten, ist der Übertrag auf Training mit RIR begrenzt."
+}
+}
+},
+{
+"id": "KRA-102",
+"karte": {
+"kopf": "Trainierte · Kontrollierte Studie",
+"titel": "Du wirst vor allem genau in dem Bereich stärker, den du trainierst",
+"titel_hervor": "genau in dem Bereich",
+"setup": "Trainierte übten 8 Wochen lang dreimal pro Woche entweder schwer (8–12 Wiederholungen) oder leicht (25–35 Wiederholungen).",
+"zahl": {
+"label": "Kniebeuge-Zuwachs schwer vs. leicht",
+"wert": "+19,6 % vs. +8,8 %",
+"alltag": ""
+},
+"kern": [
+"Beim Bankdrücken legte die schwere Gruppe +6,5 % zu, die leichte nur +2,0 %",
+"Bei vielen Wiederholungen mit halber Last verbesserte sich nur die leichte Gruppe",
+"Bei reinen Haltetests ohne Bewegung verschwand der Vorteil schwerer Lasten oft"
+],
+"grenze": "Geprüft wurden nur trainierte Personen über 8 Wochen – wie groß der Unterschied bei Einsteigern ausfällt, zeigt der Test nicht.",
+"fuer_dich": "Du arbeitest auf ein neues Maximalgewicht in einer Übung hin? Trainiere genau diese Bewegung zwei- bis dreimal pro Woche schwer.",
+"labor": {
+"design": "Randomisierte kontrollierte Studie, 8 Wochen, 3x/Woche, 8–12 RM vs. 25–35 RM",
+"teilnehmer": "Widerstandstrainierte Erwachsene",
+"ergebnis": "Kniebeuge 1RM +19,6 % vs. +8,8 %, Bankdrücken +6,5 % vs. +2,0 %, Kraftausdauer +16,6 % vs. −1,2 %"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du trainierst wochenlang mit leichten Gewichten und rund 30 Wiederholungen pro Satz. Worin wirst du dabei vor allem besser?",
+"richtig": "Viele Wiederholungen am Stück durchzuhalten",
+"falsch": [
+"Ein möglichst schweres Gewicht einmal zu heben",
+"Ohne Zusatzgewicht höher aus dem Stand zu springen",
+"Deutlich schneller lange Strecken zu laufen"
+],
+"warum": "Kraft passt sich gezielt an: Viele leichte Wiederholungen fördern die Kraftausdauer, schwere Lasten die Höchstkraft."
+},
+"plus": {
+"frage": "Du willst dein 1RM in der Kniebeuge steigern, machst aber meist 25 bis 35 Wiederholungen und Isolationsübungen. Was solltest du ändern?",
+"richtig": "Die Kniebeuge selbst schwer mit 3 bis 12 RM trainieren",
+"falsch": [
+"Noch mehr Wiederholungen pro Satz bei leichtem Gewicht",
+"Die Kniebeuge durch statische Halteübungen ersetzen",
+"Auf eine Einheit pro Monat mit Maximallast reduzieren"
+],
+"warum": "Dynamische 1RM-Kraft folgt dem Spezifitätsprinzip: Du brauchst genau diese Bewegung regelmäßig im schweren Lastbereich."
+},
+"labor": {
+"frage": "In einem 8-Wochen-Vergleich von 8–12 RM gegen 25–35 RM siegte die schwere Gruppe klar im 1RM, nicht aber in isometrischen Tests (MVIC). Warum?",
+"richtig": "Koordination und Technik sind an die dynamische Bewegung gebunden",
+"falsch": [
+"Schwere Lasten bewirken kaum strukturelles Muskelwachstum",
+"Isometrische Tests messen ausschließlich die Kraftausdauer",
+"Leichte Lasten reizen das Nervensystem deutlich stärker"
+],
+"warum": "Motorisches Lernen und intermuskuläre Koordination mit freien Gewichten übertragen sich kaum auf statische MVIC-Tests."
+}
+}
+},
+{
+"id": "KRA-103",
+"karte": {
+"kopf": "Alle Trainingslevel · 9 Studien zusammengefasst",
+"titel": "Mehr als fünf Sätze pro Woche bringen meist mehr Maximalkraft",
+"titel_hervor": "Mehr als fünf Sätze",
+"setup": "Verglichen wurden niedrige (bis 5), mittlere (5–9) und hohe (ab 10) wöchentliche Satzzahlen pro Übung für den Kraftzuwachs.",
+"zahl": null,
+"kern": [
+"Der Vorteil höherer Satzzahlen zeigte sich bei Grund- und Isolationsübungen",
+"Zwischen 5 bis 9 und ab 10 Sätzen war der Zusatzgewinn nur noch klein",
+"Neuere Daten zeigen: Ab rund 4 bis 6 Sätzen flacht der Kraftzuwachs stark ab"
+],
+"grenze": "Für Maximalkraft flacht der Nutzen viel früher ab als für Muskelaufbau – über 10 Sätze bringen kaum noch extra Kraft.",
+"fuer_dich": "Deine Kraft stagniert seit 6 Wochen und du erholst dich gut? Steigere von unter 5 auf 5 bis 10 Sätze pro Woche.",
+"labor": {
+"design": "Meta-Analyse (k=9), ≤5 vs. 5–9 vs. ≥10 Wochensätze; Ergänzung Meta-Regression k=67",
+"teilnehmer": "9 Studien (Einsteiger & Trainierte); Meta-Regression n=2.058",
+"ergebnis": "HWS vs. LWS: Mehrgelenk ES = 0,18 (95 % KI 0,01–0,34), Isolation ES = 0,23 (0,06–0,40)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du machst bisher nur drei Sätze pro Woche für eine Übung und kommst bei der Kraft nicht weiter. Was hilft dabei im Schnitt am ehesten?",
+"richtig": "Auf fünf bis neun Sätze pro Woche zu steigern",
+"falsch": [
+"Auf einen einzigen Satz pro Woche zu kürzen",
+"Die Satzzahl sofort auf über zwanzig zu erhöhen",
+"Die Übung nur noch ohne Gewicht auszuführen"
+],
+"warum": "Mittlere Satzzahlen ab fünf Sätzen pro Woche bringen im Schnitt spürbar mehr Kraft als sehr wenige Sätze."
+},
+"plus": {
+"frage": "Dein 1RM stagniert nach 6 Wochen bei 4 Wochensätzen, deine Regeneration passt. Wie solltest du das Volumen anpassen?",
+"richtig": "Auf 5 bis 10 Sätze pro Woche erhöhen, nicht viel weiter",
+"falsch": [
+"Direkt auf 15 bis 20 Sätze pro Woche hochgehen",
+"Das Volumen halbieren und nur noch leicht pumpen",
+"Die Sätze gleich lassen und die Pausen halbieren"
+],
+"warum": "Zwischen 5 und 10 Wochensätzen liegt ein sinnvoller Zuwachs, darüber sinkt der Zusatznutzen für Kraft stark."
+},
+"labor": {
+"frage": "In Meta-Analysen und einer neueren Meta-Regression (k=67) wurde die Dosis-Wirkung von Wochensätzen für Maximalkraft untersucht. Was zeigt sich im Vergleich zur Hypertrophie?",
+"richtig": "Die Kraftkurve flacht deutlich früher ab, etwa ab 4–6 Sätzen",
+"falsch": [
+"Maximalkraft steigt linear bis über 25 Sätze pro Woche",
+"Isolationsübungen profitieren überhaupt nicht von mehr Sätzen",
+"Unter 10 Wochensätzen entsteht keinerlei Kraftzuwachs"
+],
+"warum": "Obwohl ≥5 Sätze leicht besser als ≤5 wirken (ES 0,18–0,23), erreicht Maximalkraft viel früher ein Plateau als Hypertrophie."
+}
+}
+},
+{
+"id": "KRA-104",
+"karte": {
+"kopf": "Trainierte Männer · 6 Studien zusammengefasst",
+"titel": "Schon ein harter Satz pro Übung macht deutlich stärker",
+"titel_hervor": "ein harter Satz",
+"setup": "Trainierte Männer machten 8 bis 12 Wochen lang zwei- bis dreimal pro Woche nur einen schweren Satz à 6 bis 12 Wiederholungen.",
+"zahl": {
+"label": "Durchschnittlicher Kraftzuwachs",
+"wert": "+12,1 kg",
+"alltag": ""
+},
+"kern": [
+"In der Kniebeuge waren es im Schnitt +17,5 kg, beim Bankdrücken +8,3 kg",
+"Die Muskeln wuchsen dabei oft kaum – vor allem die Ansteuerung wurde besser",
+"Das taugt als zeitsparende Lösung, holt aber weniger raus als mehrere Sätze"
+],
+"grenze": "Untersucht wurden nur trainierte Männer über 8 bis 12 Wochen – langfristig stößt ein einzelner Satz an Grenzen.",
+"fuer_dich": "Du hast unter 20 Minuten Zeit? Mach zwei- bis dreimal pro Woche einen harten Satz mit 6 bis 12 Wiederholungen pro Grundübung.",
+"labor": {
+"design": "Systematisches Review & Meta-Analyse, 8–12 Wochen, 1 Satz à 6–12 Wdh. (70–85 % 1RM), 2–3x/Wo.",
+"teilnehmer": "6 Studien (5 in Meta-Analyse), trainierte Männer",
+"ergebnis": "Gesamt +12,09 kg (95 % KI 8,16–16,03), Kniebeuge +17,48 kg, Bankdrücken +8,25 kg"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du hast wochenlang kaum Zeit fürs Training und schaffst pro Übung nur einen anstrengenden Satz. Was passiert mit deiner Kraft?",
+"richtig": "Du kannst trotzdem spürbar stärker werden",
+"falsch": [
+"Deine Kraft geht sofort deutlich zurück",
+"Ein einziger Satz bringt überhaupt keinen Effekt",
+"Du baust damit maximal viel Muskelmasse auf"
+],
+"warum": "Zwei- bis dreimal pro Woche ein harter Satz reicht über mehrere Wochen schon für deutliche Kraftzuwächse."
+},
+"plus": {
+"frage": "Du steckst in einer stressigen Phase mit unter 20 Minuten Trainingszeit pro Einheit. Wie hältst oder steigerst du deine Kraft sinnvoll?",
+"richtig": "1 harter Satz à 6–12 Wdh. bei RPE 9–10, 2–3x pro Woche",
+"falsch": [
+"5 lockere Sätze à 20 Wdh. bei RPE 4, einmal pro Woche",
+"Das Krafttraining aussetzen, weil ein Satz nichts bringt",
+"Nur dehnen und auf schwere Grundübungen verzichten"
+],
+"warum": "Ein schwerer Arbeitssatz bei 70–85 % 1RM und hoher Ausbelastung (RPE 9–10) liefert die Mindestdosis für Kraft."
+},
+"labor": {
+"frage": "In einer Meta-Analyse trainierten erfahrene Männer 8–12 Wochen mit nur einem Satz pro Übung (70–85 % 1RM, 2–3x/Woche). Worauf beruht der Kraftzuwachs primär?",
+"richtig": "Vor allem auf neuronaler Effizienz bei oft geringer Hypertrophie",
+"falsch": [
+"Vor allem auf starkem Muskelwachstum ohne neuronale Effekte",
+"Ausschließlich auf längerer Erholung zwischen den Einheiten",
+"Auf gleichwertigen Effekten wie bei hohem Satzvolumen"
+],
+"warum": "Die Mindestdosis steigert das 1RM im Mittel um rund 12 kg, meist über neuronale Anpassungen statt signifikanter Hypertrophie."
+}
+}
+},
+{
+"id": "KRA-105",
+"karte": {
+"kopf": "Trainierte Frauen & Kreuzheben · Datenlücke",
+"titel": "Für Minimaltraining bei Frauen und Kreuzheben fehlen noch Studien",
+"titel_hervor": "fehlen noch Studien",
+"setup": "In einer systematischen Suche über 2.629 Treffer wurde gezielt nach kontrollierten Studien zu Minimalprogrammen gesucht.",
+"zahl": null,
+"kern": [
+"Unter 2.629 gesichteten Treffern fand sich keine kontrollierte Studie dazu",
+"Bisherige Richtwerte stammen aus Kniebeuge-, Bankdrück- und Trainerdaten",
+"Befragte Krafttrainer setzen beim Kreuzheben oft auf 1 schwere Einheit pro Woche"
+],
+"grenze": "Bisher kaum untersucht: Es ist offen, ob Kreuzheben wegen stärkerer Belastung für den Rücken noch weniger Sätze braucht.",
+"fuer_dich": "Du hast wenig Zeit und willst Kreuzheben im Plan halten? Nutze als groben Richtwert einmal pro Woche 2 bis 3 schwere Sätze.",
+"labor": {
+"design": "Systematisches Review (2.629 Treffer gescreent) & Expertenbefragungen",
+"teilnehmer": "0 RCTs zu trainierten Frauen/Kreuzheben; Befragungen n=25–57",
+"ergebnis": ""
+}
+},
+"quiz": {
+"basis": {
+"frage": "Wie gut ist wissenschaftlich untersucht, wie wenig Krafttraining trainierte Frauen oder das Kreuzheben mindestens brauchen?",
+"richtig": "Bisher gibt es dazu keine kontrollierten Studien",
+"falsch": [
+"Das ist bereits durch Dutzende Studien belegt",
+"Studien zeigen, dass Frauen doppelt so viel brauchen",
+"Kreuzheben braucht laut Studien mindestens vier Tage"
+],
+"warum": "In der Literatursuche fand sich keine kontrollierte Studie – Empfehlungen beruhen bisher auf Erfahrungswerten."
+},
+"plus": {
+"frage": "Du willst mit Minimalvolumen deine Kraft im Kreuzheben halten. Woran kannst du dich mangels Studien vorläufig orientieren?",
+"richtig": "An 1x pro Woche mit 2–3 schweren Sätzen à 1–5 Wdh.",
+"falsch": [
+"An 4x pro Woche mit leichten Sätzen bis zum Versagen",
+"An täglichen Maximallasten ohne jede Pause",
+"An reinem Ausdauertraining für den unteren Rücken"
+],
+"warum": "Da kontrollierte Studien fehlen, dienen Trainer-Richtwerte mit 1 Einheit pro Woche über 80 % 1RM als vorläufige Basis."
+},
+"labor": {
+"frage": "Ein systematisches Review zur Mindestdosis im Krafttraining durchsuchte 2.629 Publikationen. Welche Evidenzlücke fiel für Frauen und Kreuzheben auf?",
+"richtig": "Es lagen 0 kontrollierte Studien vor, nur Experten-Extrapolationen",
+"falsch": [
+"Kreuzheben zeigte signifikant höhere Effekte als Kniebeugen",
+"Trainierte Frauen reagierten deutlich schlechter als Männer",
+"Nur Studien mit über 12 Monaten Dauer wurden eingeschlossen"
+],
+"warum": "Mangels RCTs müssen Empfehlungen bisher aus Kniebeuge-/Bankdrückdaten und Coach-Umfragen abgeleitet werden."
+}
+}
+},
+{
+"id": "KRA-106",
+"karte": {
+"kopf": "Alle Trainingslevel · 12 Studien zusammengefasst",
+"titel": "Bei gleicher Wochenmenge zählt die Zahl der Trainingstage kaum",
+"titel_hervor": "Zahl der Trainingstage kaum",
+"setup": "Verglichen wurde, ob dieselbe Anzahl wöchentlicher Sätze auf einen, zwei oder mindestens drei Tage verteilt mehr Kraft bringt.",
+"zahl": null,
+"kern": [
+"Egal ob 1, 2 oder 3 Tage: Bei gleicher Satzzahl stieg die Kraft ähnlich stark",
+"Verteilst du viele Sätze auf mehr Tage, fühlt sich jeder Satz meist leichter an",
+"Einzelne Studien fanden bei aufgeteilten Sätzen etwas mehr Kraft in Haltetests"
+],
+"grenze": "Das gilt nur bei identischer Gesamtsatzzahl – wer öfter trainiert und dadurch mehr Sätze schafft, erzielt andere Effekte.",
+"fuer_dich": "Dein Alltag lässt nur wenige Tage zu? Verteile deine Sätze flexibel, ab 6 Sätzen pro Übung besser auf zwei oder mehr Tage.",
+"labor": {
+"design": "Meta-Analyse, volumenäquivalenter Vergleich 1x vs. 2x vs. ≥3x/Woche",
+"teilnehmer": "12 Studien mit 74 Gruppen, Einsteiger, Trainierte und Ältere",
+"ergebnis": "Gesamt ES = 0,09 (95 % KI −0,06 bis 0,24; p = 0,25), Unterkörper ES = 0,21 (p = 0,22)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Zwei Personen machen pro Woche genau gleich viele Sätze einer Übung: eine an einem Tag, die andere an drei Tagen. Wer wird deutlich stärker?",
+"richtig": "Beide machen im Schnitt ähnlich viel Fortschritt",
+"falsch": [
+"Die Person mit drei Tagen wird doppelt so stark",
+"An einem Tag pro Woche entsteht gar kein Effekt",
+"Nur tägliches Training steigert die Höchstkraft"
+],
+"warum": "Bei gleicher wöchentlicher Satzmenge hat die reine Verteilung auf mehr Tage kaum eigenen Effekt auf die Kraft."
+},
+"plus": {
+"frage": "Du hast 6 schwere Sätze Kniebeugen pro Woche im Plan. Warum ist es oft klüger, sie auf 2 bis 3 Tage statt 1 Tag zu verteilen?",
+"richtig": "Die Sätze fühlen sich weniger ermüdend an (niedrigere RPE)",
+"falsch": [
+"Ein einziger Tag pro Woche verhindert jeden Kraftzuwachs",
+"Hohe Frequenz verdoppelt den 1RM-Effekt bei gleichem Volumen",
+"Nach drei Sätzen baut der Körper sofort Muskeln ab"
+],
+"warum": "Das 1RM steigt ähnlich, aber aufgeteilte Sätze senken die akute Ermüdung und halten die Ausführungsqualität höher."
+},
+"labor": {
+"frage": "Eine Meta-Analyse (k=12, 74 Gruppen) verglich 1, 2 und ≥3 Trainingstage pro Woche bei identischem Satzvolumen. Was zeigte sich für das 1RM?",
+"richtig": "Kein signifikanter eigenständiger Frequenzeffekt (ES = 0,09)",
+"falsch": [
+"Ein starker Vorteil für ≥3 Einheiten pro Woche im Unterkörper",
+"Ein signifikanter Nachteil von 2 Einheiten gegenüber 1 Einheit",
+"Höhere Frequenz wirkte nur bei älteren Teilnehmern negativ"
+],
+"warum": "Bei Volumenäquivalenz war der Unterschied nicht signifikant (p = 0,25); Vorteile zeigten sich eher bei RPE und MVC."
+}
+}
+},
+{
+"id": "KRA-107",
+"karte": {
+"kopf": "Verschiedene Altersgruppen · Studienüberblick",
+"titel": "Öfter trainieren bringt mehr Kraft, wenn mehr Sätze dazukommen",
+"titel_hervor": "wenn mehr Sätze dazukommen",
+"setup": "Untersucht wurde, wie stark sich häufigeres Training pro Woche auf die Maximalkraft auswirkt, wenn die Satzzahl dabei mitwächst.",
+"zahl": null,
+"kern": [
+"Ohne mehr Gesamtsätze verschwindet der Vorteil häufigerer Einheiten meist wieder",
+"Besonders Oberkörper-Übungen, Frauen und jüngere Erwachsene profitierten stärker",
+"Ältere Erwachsene brauchen zwischen schweren Einheiten oft etwas mehr Erholung"
+],
+"grenze": "Beim Unterkörper war der Vorteil häufigerer Einheiten statistisch weniger eindeutig als beim Oberkörper.",
+"fuer_dich": "Du willst beim Bankdrücken über 8 Sätze pro Woche schaffen? Teile sie auf 3 bis 4 Tage auf – im höheren Alter reichen oft 2.",
+"labor": {
+"design": "Systematisches Review & Meta-Analyse, Frequenz mit und ohne Volumenangleichung",
+"teilnehmer": "Subgruppe Unterkörper: 17 Studien (40 Gruppen), diverse Altersgruppen",
+"ergebnis": "Signifikanter linearer Frequenzeffekt ohne Volumenangleichung (p = 0,003); Unterkörper p = 0,070"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Warum werden Menschen, die eine Übung öfter pro Woche trainieren, im Schnitt stärker als bei nur einer Einheit?",
+"richtig": "Weil sie über die Woche insgesamt mehr Sätze schaffen",
+"falsch": [
+"Weil Muskeln nach zwei Tagen Pause sofort abbauen",
+"Weil jeder zusätzliche Tag unabhängig von der Menge wirkt",
+"Weil kurze Pausen zwischen den Tagen das Gewicht ersetzen"
+],
+"warum": "Häufigeres Training dient vor allem als Weg zu mehr hochwertigen Sätzen über die Woche verteilt."
+},
+"plus": {
+"frage": "Du erhöhst dein Bankdrücken auf über 8 schwere Sätze pro Woche. Wie nutzt du die Trainingsfrequenz sinnvoll – je nach Alter?",
+"richtig": "Bei Jüngeren 3–4 Tage nutzen, bei Älteren eher 2 Tage",
+"falsch": [
+"Alle Sätze in eine einzige Sitzung pro Woche packen",
+"Im höheren Alter auf 5 bis 6 schwere Tage hochgehen",
+"Höhere Frequenz nur bei Beinübungen einplanen"
+],
+"warum": "Mehr Tage helfen, hohes Oberkörper-Volumen frisch zu bewegen; Ältere brauchen wegen höherer Muskelschädigung oft mehr Pause."
+},
+"labor": {
+"frage": "Eine Meta-Analyse prüfte steigende Trainingsfrequenzen mit und ohne Volumenangleichung über verschiedene Altersgruppen. Was zeigte sich?",
+"richtig": "Ein linearer Kraftvorteil entstand vor allem bei steigendem Volumen",
+"falsch": [
+"Der Unterkörper profitierte deutlich stärker als der Oberkörper",
+"Ältere Erwachsene profitierten stärker von sehr hoher Frequenz",
+"Der Effekt blieb auch bei volumenäquivalenten Gruppen stark"
+],
+"warum": "Der Gesamteffekt war ohne Volumenangleichung signifikant (p = 0,003), verschwand aber bei gleichem Wochenvolumen."
+}
+}
+},
+{
+"id": "KRA-108",
+"karte": {
+"kopf": "Einsteiger & Trainierte · 8 Studien",
+"titel": "Vor dem Muskelversagen aufhören bringt mindestens genauso viel Kraft",
+"titel_hervor": "Vor dem Muskelversagen",
+"setup": "Verglichen wurde Krafttraining bis zum Muskelversagen mit Training, das einige Wiederholungen vorher stoppt.",
+"zahl": {
+"label": "Kraftvorteil ohne Muskelversagen",
+"wert": "+0,6 bis +1,3 %",
+"alltag": ""
+},
+"kern": [
+"Gerade Trainierte und Grundübungen profitierten leicht von etwas Reserve im Satz",
+"Wer bis zum Versagen drückt, verliert Tempo und sammelt deutlich mehr Ermüdung an",
+"Bei genau gleicher Satz- und Wiederholungszahl waren beide Ansätze ähnlich wirksam"
+],
+"grenze": "Der Vorteil ohne Versagen war klein – und bei identischem Trainingsvolumen statistisch nicht mehr eindeutig.",
+"fuer_dich": "Du trainierst Grundübungen für mehr Kraft? Lass meist 2 bis 5 Wiederholungen im Tank statt jeden Satz ans Limit zu treiben.",
+"labor": {
+"design": "Systematisches Review & Meta-Analyse, Non-Failure vs. Failure (4 volumenkontrolliert)",
+"teilnehmer": "8 Studien, Einsteiger und Trainierte; Ergänzung Meta-Regression k=67",
+"ergebnis": "Non-Failure vs. Failure: +0,6–1,3 %, Gesamt ES = 0,34 (p = 0,02), Trainierte ES = 0,37"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Muss beim Krafttraining jeder Satz so lange gehen, bis keine einzige Wiederholung mehr klappt, um stärker zu werden?",
+"richtig": "Nein, etwas Reserve bringt ähnlich viel oder leicht mehr",
+"falsch": [
+"Ja, ohne Muskelversagen steigt die Kraft kaum an",
+"Ja, erst ab dem Punkt des Versagens entsteht ein Reiz",
+"Nein, das funktioniert aber nur bei echten Anfängern"
+],
+"warum": "Training vor dem Muskelversagen bringt im Schnitt mindestens gleiche Kraftzuwächse bei weniger Ermüdung."
+},
+"plus": {
+"frage": "Dein Fokus liegt auf Maximalkraft bei Kniebeugen und Kreuzheben. Wie nah solltest du im normalen Satz ans Muskelversagen gehen?",
+"richtig": "Meist 2 bis 5 RIR (RPE 5–8) statt regelmäßig 0 RIR",
+"falsch": [
+"Jeden Arbeitssatz konsequent bis 0 RIR ausbelasten",
+"Ausschließlich unter RPE 3 mit minimaler Last üben",
+"Nur bei schweren Grundübungen regelmäßig bis 0 RIR"
+],
+"warum": "Routinemäßiges Muskelversagen drückt die Hantelgeschwindigkeit und häuft Ermüdung an, ohne mehr 1RM zu bringen."
+},
+"labor": {
+"frage": "In einer Meta-Analyse (k=8) wurde Non-Failure mit Failure-Training verglichen – teils volumenkontrolliert, teils unkontrolliert. Was zeigte die Subgruppenanalyse?",
+"richtig": "Der Vorteil ohne Versagen sank bei gleichem Volumen unter Signifikanz",
+"falsch": [
+"Bei gleichem Volumen war Muskelversagen hochsignifikant überlegen",
+"Trainierte profitierten nur, wenn jeder Satz bis 0 RIR ging",
+"Mehrgelenksübungen zeigten in keiner Analyse einen Unterschied"
+],
+"warum": "Gesamt lag Non-Failure vorn (ES = 0,34), doch bei volumenkontrollierten Studien war der Unterschied nicht signifikant."
+}
+}
+},
+{
+"id": "KRA-109",
+"karte": {
+"kopf": "Trainierte Frauen & Männer · Crossover-Studie",
+"titel": "Bis ans Limit zu gehen verlängert die nötige Erholungszeit deutlich",
+"titel_hervor": "verlängert die nötige Erholungszeit",
+"setup": "24 Trainierte absolvierten 6 Sätze Bankdrücken bis zum Versagen, bis 1 oder bis 3 Wiederholungen davor – gemessen wurde bis 72 Stunden danach.",
+"zahl": null,
+"kern": [
+"Je näher ein Satz am Versagen lag, desto stärker fiel die Leistung danach ab",
+"Auch Stimmung und Anstrengungsempfinden litten näher am Limit stärker",
+"Mit 1 bis 3 Wiederholungen Reserve erholten sich die Muskeln merklich schneller"
+],
+"grenze": "Geprüft wurde nur Bankdrücken bei Erfahrenen – zudem verschätzen sich Ungeübte leicht dabei, wie viele Wiederholungen noch gingen.",
+"fuer_dich": "Du trainierst dieselbe Muskelgruppe in den nächsten 48 Stunden wieder? Stoppe den Satz besser bei 3 RIR (RPE 7 oder darunter).",
+"labor": {
+"design": "Randomisierte Crossover-Studie, 6 Sätze Bankdrücken (12-RM), 0 vs. 1 vs. 3 RIR bis 72 h",
+"teilnehmer": "n=24 Trainierte (12 Männer, 12 Frauen)",
+"ergebnis": "Linearer Ermüdungsanstieg (0 > 1 > 3 RIR), kritische Effektstärke d = 0,27"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du machst sechs Sätze Bankdrücken bis gar nichts mehr geht, statt zwei bis drei Wiederholungen vorher aufzuhören. Was spürst du in den Tagen danach?",
+"richtig": "Deine Muskeln brauchen deutlich länger zur Erholung",
+"falsch": [
+"Du erholst dich genauso schnell wie mit Reserve",
+"Dein Körper regeneriert nach vollem Limit schneller",
+"Die Anstrengung hat auf den nächsten Tag keinen Effekt"
+],
+"warum": "Je näher du im Satz ans Muskelversagen gehst, desto höher sind Ermüdung und Erholungsbedarf."
+},
+"plus": {
+"frage": "Du fühlst dich leicht ermüdet und willst dieselbe Muskelgruppe in weniger als 48 Stunden erneut schwer trainieren. Welche Ausbelastung passt?",
+"richtig": "Mindestens 3 RIR lassen (also maximal etwa RPE 7)",
+"falsch": [
+"Alle Sätze gezielt bis 0 RIR (RPE 10) ausreizen",
+"Auf 1 RIR gehen, um die Erholung zu beschleunigen",
+"Mit noch schwererem Gewicht bis zum Versagen drücken"
+],
+"warum": "Bei 3 RIR bleiben Bewegungsgeschwindigkeit und neuromuskuläre Frische deutlich besser erhalten als bei 0 oder 1 RIR."
+},
+"labor": {
+"frage": "In einer Crossover-Studie (n=24) wurden 0, 1 und 3 RIR beim Bankdrücken über 72 h verglichen. Welches methodische Problem hat die RIR-Steuerung in der Praxis?",
+"richtig": "Die Schätzung schwankt individuell, besonders weit weg vom Versagen",
+"falsch": [
+"RIR lässt sich nur bei Männern, nicht bei Frauen anwenden",
+"Zwischen 0 und 3 RIR gibt es keinen messbaren Ermüdungsunterschied",
+"Unerfahrene schätzen ihre Reserve deutlich präziser als Profis"
+],
+"warum": "Subjektive RIR-Angaben werden näher am Versagen genauer, während Unerfahrene ihre Reserve oft unterschätzen."
+}
+}
+},
+{
+"id": "KRA-110",
+"karte": {
+"kopf": "Einsteiger & Trainierte · Studienüberblick",
+"titel": "Trainierte gewinnen mit längeren Satzpausen deutlich mehr Kraft",
+"titel_hervor": "mit längeren Satzpausen",
+"setup": "Ein Studienüberblick verglich kurze (unter 1 Minute), mittlere (1–2 Minuten) und lange Satzpausen (2–5 Minuten) für den Kraftzuwachs.",
+"zahl": null,
+"kern": [
+"Bei Trainierten brachten 3 Minuten Pause bei Kniebeuge und Bankdrücken mehr als 1 Minute",
+"Bei Einsteigern reichten schon 1 bis 2 Minuten Pause für gute Kraftfortschritte",
+"Pausen nach Gefühl brachten nicht mehr Kraft als feste 2 Minuten, dauerten aber länger"
+],
+"grenze": "Bei sehr schweren Sätzen nahe dem Maximum können bis zu 5 Minuten nötig sein, bis die Energiespeicher wieder voll sind.",
+"fuer_dich": "Du bist geübt und hebst schwere Grundübungen? Stelle den Pausentimer auf 3 Minuten – als Einsteiger reichen meist 1,5 bis 2 Minuten.",
+"labor": {
+"design": "Systematisches Review, Vergleich Satzpausen <60 s vs. 60–120 s vs. >120 s (2–5 min)",
+"teilnehmer": "Einsteiger & Trainierte; Einzelstudien u. a. n=21–36 und n=40",
+"ergebnis": "Trainierte (3 vs. 1 min): signifikanter 1RM-Vorteil Bankdrücken (p = 0,02) und Kniebeuge (p < 0,01)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du trainierst schon länger regelmäßig und willst schwerer heben. Was passiert, wenn du zwischen harten Sätzen nur eine Minute statt drei Minuten pausierst?",
+"richtig": "Dein Kraftzuwachs fällt im Schnitt geringer aus",
+"falsch": [
+"Du wirst durch den Zeitdruck deutlich stärker",
+"Kurze und lange Pausen wirken bei Profis gleich",
+"Lange Pausen bremsen den Kraftaufbau stark aus"
+],
+"warum": "Erfahrene brauchen meist mehr als zwei Minuten, um für den nächsten schweren Satz wieder voll leistungsfähig zu sein."
+},
+"plus": {
+"frage": "Du bist fortgeschritten und machst schwere Mehrgelenksübungen ab 75 % 1RM. Welche Satzpause bietet ein gutes Verhältnis aus Kraft und Zeit?",
+"richtig": "Etwa 2 bis 3 Minuten (bei sehr schweren Sätzen bis 5)",
+"falsch": [
+"Maximal 30 bis 45 Sekunden für höheren Trainingspuls",
+"Genau 60 Sekunden, weil längere Pausen zu sehr abkühlen",
+"Beliebig nach Gefühl pausieren für extra 1RM-Zuwachs"
+],
+"warum": "Pausen von 2 bis 5 Minuten sichern schwere Wiederholungen und Phosphokreatin-Erholung; 180 Sekunden sind ein guter Standard."
+},
+"labor": {
+"frage": "In einem Review wurden Satzpausen (<60 s, 60–120 s, >120 s) sowie selbstgewählte gegen feste 2-Minuten-Pausen verglichen. Was ergab der Vergleich bei 8–12 Wdh.?",
+"richtig": "Selbstgewählte Pausen verlängerten die Einheit ohne Kraftvorteil",
+"falsch": [
+"Selbstgewählte Pausen steigerten das 1RM deutlich stärker",
+"Untrainierte brauchten zwingend über 3 Minuten Satzpause",
+"Bei Trainierten schnitten 60 Sekunden signifikant besser ab"
+],
+"warum": "Selbstgewählte Pausen lieferten gegenüber festen 2 Minuten keinen Adaptationsvorteil (n=40), kosteten aber mehr Zeit."
+}
+}
+},
+{
+"id": "KRA-111",
+"karte": {
+"kopf": "Erfahrene Kraftsportler · 5 Teilstudien",
+"titel": "Schwere Einzelversuche wirken erst mit Folgesätzen verlässlich",
+"titel_hervor": "erst mit Folgesätzen",
+"setup": "Kraftsportler testeten schwere Einzelwiederholungen teils allein, teils kombiniert mit zwei bis drei leichteren Folgesätzen.",
+"zahl": {
+"label": "Gesamt-Kraftzuwachs in 6 Wochen",
+"wert": "+15,3 bis +17,5 kg",
+"alltag": ""
+},
+"kern": [
+"Ohne Folgesätze wurden in einer Pilotgruppe 3 von 5 Sportlern sogar schwächer",
+"Mit 2 bis 3 Folgesätzen bei rund 80 % des Tagesgewichts stieg die Kraft stabil",
+"Reine Maximalversuche ohne Zusatzarbeit bergen das Risiko einer Überlastung"
+],
+"grenze": "Die Gruppen waren klein (25 Personen in der Hauptstudie, 5 in der Pilotgruppe) und bestanden nur aus erfahrenen Kraftsportlern.",
+"fuer_dich": "Du baust schwere Einzelversuche in deinen Plan ein? Hänge direkt 2 bis 3 Folgesätze mit 3 bis 5 Wiederholungen bei rund 80 % an.",
+"labor": {
+"design": "Multi-Experiment (5 Studien: Interventionen 6–10 Wo. & Survey), Heavy Singles ± Back-offs",
+"teilnehmer": "Intervention n=25, Pilot MAX-Gruppe n=5, Survey n=57 Trainierte",
+"ergebnis": "Mit Back-offs +15,3 bis +17,5 kg Total in 6 Wo.; ohne Back-offs 2/5 stärker, 3/5 schwächer"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Ein erfahrener Kraftsportler macht pro Training nur einen einzigen sehr schweren Versuch und hört dann auf. Was passiert dabei häufig?",
+"richtig": "Die Kraft stagniert oft oder geht sogar zurück",
+"falsch": [
+"Die Kraft steigt besonders schnell und stabil an",
+"Das reicht für maximale Kraft und Muskelmasse",
+"Die Erholung wird dadurch kaum noch nötig"
+],
+"warum": "Einzelne Maximalversuche allein liefern oft zu wenig Trainingsarbeit und können das Nervensystem überfordern."
+},
+"plus": {
+"frage": "Du machst in einer Peaking-Phase einen Heavy Single bei RPE 9 bis 9,5. Wie gestaltest du den Rest der Übung sinnvoll?",
+"richtig": "2 bis 3 Back-off-Sätze à 3–5 Wdh. bei rund 80 % davon",
+"falsch": [
+"Direkt aufhören, damit der Single seine Wirkung behält",
+"Drei weitere Singles bei RPE 10 direkt hinterherschieben",
+"Nur noch leichtes Dehnen für dieselbe Muskelgruppe"
+],
+"warum": "Erst die Kombination aus Heavy Single und 2 bis 3 Back-off-Sätzen bei ~80 % brachte konsistente 1RM-Steigerungen."
+},
+"labor": {
+"frage": "In einer Multi-Experiment-Studie wurden reine 'Daily Max'-Singles mit Singles plus Back-off-Sätzen verglichen. Welches Risiko zeigte die reine MAX-Pilotgruppe (n=5)?",
+"richtig": "Mehrheitlich Kraftverlust durch zu wenig Volumen oder Überlastung",
+"falsch": [
+"Identische Zuwächse wie mit Back-offs bei halber Trainingszeit",
+"Starkes Muskelwachstum bei gleichzeitig sinkender Ausdauer",
+"Kein Effekt beim Bankdrücken, aber starker Zuwachs im Kreuzheben"
+],
+"warum": "Ohne Back-offs wurden 3 von 5 Athleten schwächer, weil Gesamtarbeit fehlte und RPE 10 das Nervensystem überlastete."
+}
+}
+},
+{
+"id": "KRA-112",
+"karte": {
+"kopf": "Trainierte · 6 Studien zusammengefasst",
+"titel": "Training nach Hanteltempo bringt gleiche Kraft mit weniger Arbeit",
+"titel_hervor": "mit weniger Arbeit",
+"setup": "Verglichen wurde Krafttraining, das Gewichte über das gemessene Bewegungstempo steuert, mit festen Prozentvorgaben vom Maximum.",
+"zahl": null,
+"kern": [
+"Für die Kniebeuge-Maximalkraft war das Tempo-Training genauso wirksam wie Prozente",
+"Dafür brauchten die Sportler weniger Wiederholungen und sammelten weniger Ermüdung",
+"Bei Sprüngen, Sprints und Richtungswechseln zeigten sich kleine Vorteile"
+],
+"grenze": "Viele Übersichten beruhen auf kleinen Gruppen – zudem braucht die Methode genaue Sensoren und vollen Einsatz bei jedem Zug.",
+"fuer_dich": "Du nutzt einen Temposensor oder treibst Spiel- und Hybridsport? Steuere dein Gewicht über Zielgeschwindigkeiten statt starrer Prozente.",
+"labor": {
+"design": "Systematisches Review & Meta-Analyse, VBT vs. prozentbasiertes Krafttraining",
+"teilnehmer": "6 Studien (n=124) für Kniebeuge-1RM, trainierte Sportler",
+"ergebnis": "1RM Kniebeuge MD = 3,03 kg (95 % KI −3,55 bis 9,61; p = 0,37), CMJ SMD = 0,27, COD SMD = 0,46"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Einige Sportler steuern ihr Gewicht danach, wie schnell sie die Hantel bewegen können. Welchen Vorteil hat das gegenüber festen Gewichtsprozenten?",
+"richtig": "Ähnlich viel Kraft bei insgesamt weniger Wiederholungen",
+"falsch": [
+"Doppelt so viel Höchstkraft in der halben Zeit",
+"Es funktioniert ganz ohne Anstrengung im Training",
+"Man braucht damit keine Pausen zwischen den Sätzen"
+],
+"warum": "Wer das Gewicht ans Tages-Tempo anpasst, erreicht ähnliche Kraftzuwächse mit weniger unnötiger Ermüdung."
+},
+"plus": {
+"frage": "Du machst Hybrid- oder Spielsport und hast einen Geschwindigkeitssensor an der Hantel. Warum kann VBT für dich sinnvoll sein?",
+"richtig": "Gleiches 1RM bei weniger Ermüdung und kleinen Sprungvorteilen",
+"falsch": [
+"Du brauchst damit deutlich höhere Satzzahlen pro Woche",
+"Es ersetzt Sprint- und Techniktraining für den Spielsport",
+"Es liefert auch bei langsamer Ausführung große Kraftvorteile"
+],
+"warum": "VBT passt die Last der Tagesform an, spart Wiederholungen und zeigt kleine Vorteile bei Sprung und Richtungswechsel."
+},
+"labor": {
+"frage": "In einer Meta-Analyse (k=6, n=124) wurde VBT mit prozentbasiertem Training verglichen. Was ist neben kleinen Stichproben eine wichtige Voraussetzung für VBT?",
+"richtig": "Validierte Sensoren und maximale konzentrische Beschleunigung",
+"falsch": [
+"Ausschließlich schwere Lasten über 90 % des 1RM",
+"Bewusst langsame Ausführung in jeder einzelnen Wiederholung",
+"Verzicht auf jegliche Leistungsdiagnostik im Vorfeld"
+],
+"warum": "Ohne verlässliche Messgeräte und maximale konzentrische Absicht verliert das Last-Geschwindigkeits-Profil an Genauigkeit."
+}
+}
+},
+{
+"id": "KRA-113",
+"karte": {
+"kopf": "Trainierte · Kontrollierte Studie",
+"titel": "Sätze früh stoppen bringt bei 40 % weniger Arbeit mehr Sprungkraft",
+"titel_hervor": "40 % weniger Arbeit",
+"setup": "22 Trainierte machten 8 Wochen lang Kniebeugen und stoppten jeden Satz entweder bei 20 % oder erst bei 40 % Tempoabfall.",
+"zahl": {
+"label": "Sprungkraft-Zuwachs (20 % vs. 40 % Abfall)",
+"wert": "+9,5 % vs. +3,5 %",
+"alltag": ""
+},
+"kern": [
+"Die Maximalkraft stieg bei 20 % Tempoabfall genauso stark – mit 40 % weniger Arbeit",
+"Längeres Durchziehen bis 40 % Abfall ließ den Oberschenkelmuskel dafür etwas mehr wachsen",
+"Zu starkes Ausbrennen im Satz bremste dagegen schnelle Muskelfasern und Explosivität"
+],
+"grenze": "Die Hauptstudie hatte nur 22 Teilnehmer über 8 Wochen – für maximalen Muskelaufbau sind größere Tempoabfälle teils im Vorteil.",
+"fuer_dich": "Du trainierst mit Sensor auf Kraft oder Schnellkraft? Beende den Satz bei 15 bis 20 % Tempoabfall, statt dich durchzuquälen.",
+"labor": {
+"design": "RCT (8 Wochen, Kniebeuge 50–85 % 1RM), VL 20 % vs. VL 40 %; Ergänzung Meta-Analyse",
+"teilnehmer": "n=22 trainierte Erwachsene",
+"ergebnis": "CMJ +9,5 % vs. +3,5 % bei ~40 % weniger Wdh.; Meta-Analyse VL ≤25 %: +2,32 kg 1RM (p = 0,02)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du machst Kniebeugen so explosiv wie möglich und stoppst den Satz, sobald die Bewegung spürbar langsamer wird. Was bringt das gegenüber dem Durchquälen bis ans Limit?",
+"richtig": "Ähnlich viel Kraft und deutlich mehr Sprungkraft",
+"falsch": [
+"Kaum Kraftzuwachs wegen der wenigen Wiederholungen",
+"Deutlich mehr Muskelwachstum im Oberschenkel",
+"Weniger Sprungkraft durch zu kurze Belastung"
+],
+"warum": "Wer Sätze früh bei geringem Tempoabfall stoppt, spart rund 40 % Arbeit und schützt Explosivität und Kraft."
+},
+"plus": {
+"frage": "Du nutzt VBT und kombinierst Krafttraining mit Ausdauer- oder Schnellkraftzielen. Bei welchem Geschwindigkeitsverlust solltest du den Satz beenden?",
+"richtig": "Bei etwa 15 bis 20 % Verlust gegenüber der schnellsten Wdh.",
+"falsch": [
+"Erst bei 30 bis 40 % Verlust für maximale Explosivkraft",
+"Erst ab 50 % Verlust nahe am echten Muskelversagen",
+"Schon vor der zweiten Wiederholung unabhängig vom Tempo"
+],
+"warum": "Ein moderater Abfall von 15–20 % fördert 1RM und Sprungkraft besser, während 30–40 % eher Hypertrophie dienen."
+},
+"labor": {
+"frage": "In einem 8-Wochen-RCT (n=22) wurde ein Geschwindigkeitsverlust von 20 % (VL20) mit 40 % (VL40) verglichen. Welchen physiologischen Nachteil zeigte VL40?",
+"richtig": "Weniger schnelle MHC-IIX-Fasern und geringere Sprungkraftgewinne",
+"falsch": [
+"Keinerlei Hypertrophie-Effekt im Quadrizeps trotz hohem Volumen",
+"Einen signifikanten Verlust der maximalen Kniebeugekraft",
+"Rund 40 % weniger Gesamtwiederholungen über acht Wochen"
+],
+"warum": "Hohe Geschwindigkeitsverluste fördern zwar Hypertrophie, reduzieren aber schnelle MHC-IIX-Fasern und hemmen die RFD."
+}
+}
+},
+{
+"id": "KRA-114",
+"karte": {
+"kopf": "Trainierte & Ältere · Studienüberblick",
+"titel": "Schweres Ablassen steigert Brems- und Sprungkraft deutlich",
+"titel_hervor": "Brems- und Sprungkraft deutlich",
+"setup": "Verglichen wurde betontes Training der Ablassphase (teils mit Überlast) mit klassischem Heben oder reinem Anheben.",
+"zahl": {
+"label": "Bremskraft: Ablass- vs. Hebetraining",
+"wert": "+27 % vs. +10 %",
+"alltag": ""
+},
+"kern": [
+"Auch beim Vertikalsprung schnitt betontes Ablassen besser ab (+8 % vs. +4 %)",
+"Für klassisches Hochheben ist die Datenlage gemischt – isoliert half Ablassen kaum mehr",
+"Erst kombiniert mit normalem Hochdrücken half schwere Überlast teils auch beim Maximum"
+],
+"grenze": "Die Studien widersprechen sich beim Übertrag aufs Hochheben: Kraftzuwächse sind stark an Bewegungsrichtung und Tempo gebunden.",
+"fuer_dich": "Deine Kraft stagniert? Baue für 4 bis 8 Wochen zweimal pro Woche betonte Ablasssätze ein und prüfe deinen Fortschritt im normalen Heben.",
+"labor": {
+"design": "Systematisches Review & Meta-Analyse (k=27), exzentrisches vs. konzentr./traditionelles Training",
+"teilnehmer": "Trainierte & Ältere; Meta-Analyse k=27 mit 162 Effekten",
+"ergebnis": "Exz. MVC g = 1,51 (+27 % vs. +10 %), konz. MVC g = −0,10 (p = 0,726), Sprung +8 % vs. +4 %"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du betonst beim Krafttraining besonders das kontrollierte, schwere Ablassen des Gewichts. Wobei bringt diese Methode den klarsten Vorteil?",
+"richtig": "Beim Abbremsen schwerer Lasten und beim Springen",
+"falsch": [
+"Beim Ausdauerlaufen über sehr lange Strecken",
+"Bei jedem normalen Hochheben deutlich überlegen",
+"Ausschließlich bei ruhigen Halteübungen ohne Bewegung"
+],
+"warum": "Betontes Ablassen steigert vor allem die Bremskraft und Sprungkraft; beim normalen Heben sind die Ergebnisse gemischt."
+},
+"plus": {
+"frage": "Du willst ein Maximalkraft-Plateau überwinden und exzentrische Überlast (Accentuated Eccentric Loading) testen. Wie setzt du sie sinnvoll ein?",
+"richtig": "Für 4–8 Wochen 2x/Woche mit konzentrischer Arbeit verbinden",
+"falsch": [
+"Normales Heben streichen und nur noch Gewichte ablassen",
+"Täglich supramaximale Lasten bis zum Versagen nutzen",
+"Nur an einem Tag pro Monat ganz leichtes Gewicht ablassen"
+],
+"warum": "Isolierte Exzentrik überträgt sich kaum besser aufs konzentrische 1RM; erst im Verbund mit Heben zeigen sich Vorteile."
+},
+"labor": {
+"frage": "Ein Review und eine Meta-Analyse (k=27) untersuchten exzentrisches Training. Warum widersprechen sich die Daten beim Übertrag auf die konzentrische Maximalkraft?",
+"richtig": "Isolierte Exzentrik hat wenig Übertrag, AEL mit Konzentrik mehr",
+"falsch": [
+"Exzentrisches Training steigert nicht einmal die exzentrische MVC",
+"Konzentrisches Training war bei der exzentrischen MVC überlegen",
+"Neuronale Muster übertragen sich frei auf jede Kontraktionsform"
+],
+"warum": "Aktivierungsmuster sind kontraktionsspezifisch: Isolierte Exzentrik zeigte g = −0,10 für konz. MVC, AEL im Verbund war teils überlegen."
+}
+}
+},
+{
+"id": "KRA-115",
+"karte": {
+"kopf": "Alle Trainingslevel · Studienüberblick",
+"titel": "Halteübungen in gedehnter Position bringen mehr Kraft und Muskel",
+"titel_hervor": "in gedehnter Position",
+"setup": "Ein Studienüberblick verglich statische Halteübungen (5–12 Wochen, 1–3x pro Woche) bei gedehntem und bei verkürztem Muskel.",
+"zahl": null,
+"kern": [
+"In gedehnter Position wirkten Halteübungen auch über den genauen Winkel hinaus",
+"In verkürzter Position blieb die neue Kraft eng auf genau diesen Winkel begrenzt",
+"Hoher Krafteinsatz mit explosivem Druck brachte die klarsten Fortschritte"
+],
+"grenze": "Die Übersicht nennt keine einheitliche Prozentzahl – für bewegte Übungen sind gedehnte oder mehrwinklige Positionen entscheidend.",
+"fuer_dich": "Du hängst bei einer Übung an einem festen Punkt fest? Drücke genau dort oder in gedehnter Position kräftig und explosiv gegen Widerstand.",
+"labor": {
+"design": "Systematisches Review, isometrisches Training (≥60–100 % MVIC, 5–12 Wo., 1–3x/Wo.)",
+"teilnehmer": "Trainierte, Einsteiger und Ältere",
+"ergebnis": ""
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du hältst oder drückst ein Gewicht kräftig, ohne es zu bewegen. In welcher Muskelposition bringt das im Schnitt mehr Kraft und Muskel?",
+"richtig": "Wenn der Muskel dabei lang und gedehnt ist",
+"falsch": [
+"Wenn der Muskel so kurz wie möglich ist",
+"Die Position macht überhaupt keinen Unterschied",
+"Nur wenn du dabei ganz locker ohne Druck hältst"
+],
+"warum": "Statisches Training bei gedehntem Muskel fördert Kraft, Wachstum und den Übertrag auf benachbarte Winkel besser."
+},
+"plus": {
+"frage": "Du hast einen klaren Sticking Point in einer Grundübung und willst Overcoming Isometrics einbauen. Wie führst du sie am besten aus?",
+"richtig": "In gedehnter Position oder am Sticking Point, hart und explosiv",
+"falsch": [
+"In maximal verkürzter Position mit sehr geringer Anspannung",
+"Ausschließlich locker bei etwa 20 bis 30 % Einsatz halten",
+"Am Ende der Bewegung, wo die Übung ohnehin leicht fällt"
+],
+"warum": "Hohe Intensität (≥70 % MVIC) mit explosiver Absicht in langer Muskellänge oder am Zielwinkel bietet den besten Übertrag."
+},
+"labor": {
+"frage": "Ein Review verglich Langzeitanpassungen durch isometrisches Training bei langen versus kurzen Muskellängen (5–12 Wochen). Welche Grenze zeigten kurze Muskellängen?",
+"richtig": "Der Kraftzuwachs blieb eng auf den trainierten Winkel begrenzt",
+"falsch": [
+"Sie führten zu stärkerer Hypertrophie als lange Muskellängen",
+"Sie verbesserten dynamische 1RM-Tests über alle Winkel hinweg",
+"Sie erforderten zwingend tägliches Training über 12 Wochen"
+],
+"warum": "Bei kurzen Muskellängen bleibt der Effekt stark winkelspezifisch; für dynamischen Übertrag sind lange Längen oder mehrere Winkel nötig."
+}
+}
+},
+{
+"id": "KRA-116",
+"karte": {
+"kopf": "Erwachsene (18–69 J.) · 2 Einzelstudien",
+"titel": "Kraftrechner treffen bei 2 bis 5 Wiederholungen am genauesten",
+"titel_hervor": "bei 2 bis 5 Wiederholungen",
+"setup": "In zwei Prüfstudien (70 und 67 Personen) wurden gängige Rechenformeln für das Maximalgewicht mit echten Maximaltests verglichen.",
+"zahl": {
+"label": "Schätzfehler bei 2–5 Wiederholungen",
+"wert": "≈ 5 %",
+"alltag": ""
+},
+"kern": [
+"Über 10 Wiederholungen steigt der Fehler auf 10 bis 15 %, weil Ausdauer mitmischt",
+"Beim Kreuzheben unterschätzten alle sieben geprüften Formeln den Wert um 9 bis 14 %",
+"Für Isolations- und Eigengewichtsübungen sind solche Rechner kaum verlässlich"
+],
+"grenze": "Erste Hinweise aus Querschnittsstudien mit mittelgroßen Gruppen – im Einzelfall kann dein echtes Maximum stärker abweichen.",
+"fuer_dich": "Du willst dein Maximalgewicht ohne riskanten Einzelversuch schätzen? Nutze dafür schwere Sätze mit 2 bis 5 Wiederholungen.",
+"labor": {
+"design": "Validierungs- und Querschnittsstudien, 7 Schätzformeln gegen echtes 1RM",
+"teilnehmer": "n=70 (18–69 J., Bank/Beinpresse) & n=67 (40 M., 27 F.)",
+"ergebnis": "r > 0,95 für ≤10 Wdh., ~5 % Fehler bei 2–5 Wdh., Kreuzheben −9 bis −14 %"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du willst mit einer Rechenformel abschätzen, wie viel Gewicht du einmal schaffen würdest. Welcher Satz liefert dafür die genaueste Grundlage?",
+"richtig": "Ein schwerer Satz mit zwei bis fünf Wiederholungen",
+"falsch": [
+"Ein leichter Satz mit zwanzig bis dreißig Wiederholungen",
+"Ein kurzer Satz mit dem eigenen Körpergewicht",
+"Eine kleine Isolationsübung mit vielen Wiederholungen"
+],
+"warum": "Bei zwei bis fünf Wiederholungen liegt der Fehler in den Tests bei rund fünf Prozent; ab über zehn steigt er deutlich."
+},
+"plus": {
+"frage": "Du berechnest dein e1RM aus einem schweren 3er-Satz beim Kreuzheben. Womit solltest du bei den gängigen Formeln rechnen?",
+"richtig": "Das echte Kreuzheben-1RM wird meist spürbar unterschätzt",
+"falsch": [
+"Die Formeln treffen beim Kreuzheben auf das Kilo genau",
+"Das echte Kreuzheben-1RM wird deutlich überschätzt",
+"Formeln funktionieren beim Kreuzheben erst ab 15 Wdh."
+],
+"warum": "In der Validierungsstudie unterschätzten alle sieben geprüften Formeln das Kreuzheben im Mittel um 9 bis 14 %."
+},
+"labor": {
+"frage": "In Validierungsstudien (n=70 und n=67) wurden 1RM-Schätzformeln über verschiedene Wiederholungszahlen geprüft. Warum sinkt die Validität oberhalb von 10 Wiederholungen?",
+"richtig": "Lokale Kraftausdauer überlagert zunehmend die Maximalkraft",
+"falsch": [
+"Alle Formeln gelten mathematisch nur für genau 10 Wdh.",
+"Die Korrelation fällt nur bei Männern, nicht bei Frauen ab",
+"Unter 5 Wiederholungen sind die Formeln kaum noch brauchbar"
+],
+"warum": "Oberhalb von 10 Wdh. steigt der Schätzfehler auf 10–15 %, weil Ausdauerfaktoren stärker ins Gewicht fallen."
+}
+}
+},
+{
+"id": "KRA-117",
+"karte": {
+"kopf": "Trainierte · 16 Validierungsstudien",
+"titel": "Tempo-Schätzung spart Kraft, überschätzt das Maximum aber leicht",
+"titel_hervor": "überschätzt das Maximum aber leicht",
+"setup": "In 16 Studien wurde geprüft, wie genau zwei mittelschwere Gewichtsstufen samt Tempomessung das persönliche Maximum vorhersagen.",
+"zahl": null,
+"kern": [
+"Für die Schätzung reichen zwei gut getrennte Lasten – ohne riskanten Maximaltest",
+"Beim geführten Bankdrücken war sie genau, bei Kniebeuge und Rudern oft ungenauer",
+"Bei Kniebeugen lagen Einzelfälle bis zu 14 kg daneben, beim Rudern im Schnitt 6 bis 11 kg"
+],
+"grenze": "Das Mindesttempo bei Maximalversuchen schwankt individuell – bei freien Zug- und Beinübungen streuen die Werte stark.",
+"fuer_dich": "Du schätzt dein Maximum per Zwei-Punkt-Methode? Nutze etwa 40 % und 80 % Last und ziehe bei Kniebeuge und Rudern 5 bis 8 % ab.",
+"labor": {
+"design": "Methodenarbeit & systematisches Review (k=16, 8 Übungen), Zwei-Punkt-VBT vs. 1RM",
+"teilnehmer": "16 Studien (Trainierte), Altersvergleich n=40",
+"ergebnis": "Systematische Überschätzung ES = 0,203 (95 % KI 0,132–0,275; p < 0,001), ICC = 0,797"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Ein Sensor misst dein Hebetempo bei zwei mittelschweren Gewichten und berechnet daraus dein mögliches Maximalgewicht. Wofür taugt diese Methode vor allem?",
+"richtig": "Für eine schnelle Schätzung ohne erschöpfenden Test",
+"falsch": [
+"Für eine auf das Gramm genaue Messung bei jeder Übung",
+"Um schwere Gewichte im Training ganz zu ersetzen",
+"Um die Ausdauer beim Laufen zuverlässig zu berechnen"
+],
+"warum": "Zwei mittlere Lasten sparen Ermüdung, können das echte Maximum aber besonders bei freien Übungen leicht überschätzen."
+},
+"plus": {
+"frage": "Du bestimmst dein 1RM bei Kniebeuge oder Langhantelrudern per Zwei-Punkt-Methode (ca. 40 % und 80 % 1RM). Wie gehst du mit dem Ergebnis um?",
+"richtig": "Etwa 5 bis 8 % als Sicherheitsabzug einrechnen",
+"falsch": [
+"Pauschal 10 % draufschlagen, da es zu niedrig ist",
+"Den Wert blind für den nächsten Maximallift nehmen",
+"Die zweite Last so nah wie möglich an die erste legen"
+],
+"warum": "Die Zwei-Punkt-Methode überschätzt das 1RM im Mittel leicht und streut bei freien Unterkörper- und Zugübungen stärker."
+},
+"labor": {
+"frage": "Ein Review (k=16, 8 Übungen) prüfte die VBT-Zwei-Punkt-Methode. Warum treten bei freien Kniebeugen und Rudern größere Fehler auf als an der Multipresse?",
+"richtig": "Die minimale Geschwindigkeitsschwelle (MVT) schwankt dort stärker",
+"falsch": [
+"Die Methode unterschätzt das 1RM durchweg um über 20 %",
+"Die Reliabilität liegt in allen Studien deutlich unter 0,30",
+"Zwei weit auseinanderliegende Lasten verschlechtern die Gerade"
+],
+"warum": "Streuende MVT-Werte (~0,37 m/s Kniebeuge, ~0,40 m/s Rudern) erzeugen heteroskedastische Fehler und Überschätzung (ES = 0,203)."
+}
+}
+},
+{
+"id": "LOD-101",
+"karte": {
+"kopf": "Läufer · Vergleichsstudie über 8 Wochen",
+"titel": "Wer nach Erholung trainiert, spart ein Viertel harter Läufe",
+"titel_hervor": "spart ein Viertel harter Läufe",
+"setup": "Läufer trainierten acht Wochen entweder nach festem Plan oder passten harte Einheiten morgens an ihre Herzschlag-Schwankungen an.",
+"zahl": {
+"label": "Weniger mittel- bis hochintensive Läufe",
+"wert": "−25 %",
+"alltag": "13,2 statt 17,7 harte Einheiten"
+},
+"kern": [
+"Die 3000-Meter-Zeit verbesserte sich nur in der angepassten Gruppe deutlich",
+"Im direkten Vergleich zwischen beiden Gruppen blieb der Vorteil aber klein",
+"Die maximale Sauerstoffaufnahme stieg beim festen Plan tendenziell etwas stärker"
+],
+"grenze": "Ob die Anpassung Verletzungen oder Erschöpfung vorbeugt, wurde über die acht Wochen nicht geprüft.",
+"fuer_dich": "Dein morgendlicher Erholungswert weicht ab? Tausche harte Einheiten gegen lockeres Training und plane höchstens zwei harte Tage am Stück.",
+"labor": {
+"design": "RCT, 4 Wochen Vorbereitung und 8 Wochen Intervention, HRV-gesteuert vs. fester Plan",
+"teilnehmer": "40 Ausdauerläufer",
+"ergebnis": "3000 m +2,1 % vs. +1,1 % (n. s.), ES = 0,42; −25 % harte Einheiten (13,2 vs. 17,7); VO2max +3,7 % vs. +5,0 %"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Läufer passten harte Einheiten morgens an ihre gemessene Erholung an statt stur nach Plan zu laufen. Was zeigte sich beim Lauftraining?",
+"richtig": "Sie brauchten deutlich weniger harte Läufe für gute Ergebnisse",
+"falsch": [
+"Sie wurden deutlich langsamer als die Gruppe mit festem Plan",
+"Sie mussten am Ende deutlich mehr Kilometer pro Woche laufen",
+"Sie verletzten sich in den acht Wochen nachweislich seltener"
+],
+"warum": "Mit Anpassung an die Erholung absolvierten sie rund ein Viertel weniger harte Einheiten und verbesserten ihre 3000-Meter-Zeit."
+},
+"plus": {
+"frage": "Dein morgendlicher HRV-Wert (RMSSD) liegt heute außerhalb deines Normalbereichs, eigentlich steht ein hartes Intervall an. Was passt am besten?",
+"richtig": "Du ersetzt das Intervall durch lockeres Training oder Ruhe",
+"falsch": [
+"Du ziehst das Intervall durch und verkürzt nur die Pausen",
+"Du machst ab heute eine ganze Woche Trainingspause am Stück",
+"Du erhöhst das Tempo, um den Körper gezielt stärker zu fordern"
+],
+"warum": "Weicht der morgendliche RMSSD ab, werden geplante harte Einheiten durch lockeres Training oder Ruhe ersetzt."
+},
+"labor": {
+"frage": "In einer randomisierten Studie trainierten Läufer acht Wochen HRV-gesteuert oder nach festem Plan. Wie fielen 3000-m-Leistung und VO2max im Vergleich aus?",
+"richtig": "Kleiner Vorteil für HRV bei 3000 m, VO2max tendenziell höher bei Plan",
+"falsch": [
+"Großer Vorteil für HRV bei 3000 m und deutlich höhere VO2max-Zuwächse",
+"Klarer Vorteil für den festen Plan bei 3000 m sowie bei der VO2max",
+"Kaum messbare Veränderungen in beiden Gruppen über die acht Wochen"
+],
+"warum": "Der Gruppenunterschied über 3000 m war klein (ES = 0,42), während die VO2max beim festen Plan tendenziell stärker stieg."
+}
+}
+},
+{
+"id": "LOD-102",
+"karte": {
+"kopf": "Ausdauersportler · 8 Studien zusammengefasst",
+"titel": "Erholungssteuerung beruhigt das Herz, Ausdauer-Vorteil bleibt unklar",
+"titel_hervor": "Ausdauer-Vorteil bleibt unklar",
+"setup": "Zwei Übersichtsanalysen fassten Ausdauerstudien zusammen, die tägliche Anpassungen nach Herzschlag-Schwankungen mit festen Plänen verglichen.",
+"zahl": null,
+"kern": [
+"Die beruhigende Steuerung des Herzens verbesserte sich im Schnitt mittelstark",
+"Bei der maximalen Ausdauer widersprechen sich die beiden Auswertungen deutlich",
+"Einsteiger, Freizeitsportler und Frauen profitierten eher als Profisportler"
+],
+"grenze": "Die meisten Studien dauerten nur acht Wochen und maßen uneinheitlich im Liegen oder Stehen.",
+"fuer_dich": "Du misst mindestens dreimal pro Woche morgens deinen Erholungswert? Nutze den 7-Tage-Schnitt besonders als Einsteiger oder Freizeitsportler.",
+"labor": {
+"design": "Zwei Meta-Analysen (2020 und 2021), meist 8 Wochen, HRV-gesteuert vs. fester Plan",
+"teilnehmer": "6 bis 8 Studien (u. a. 195 Ausdauersportler)",
+"ergebnis": "Vagale HRV SMD = 0,50; VO2max SMD = 0,20 (n. s.) vs. ES = 0,402 (Diff. 0,187, I² = 94 %); Amateure ES = 0,36 vs. Elite 0,17"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Wer sein Ausdauertraining morgens an Messwerte der Erholung anpasst statt stur nach Plan zu trainieren – was zeigen Auswertungen dazu bisher?",
+"richtig": "Die Erholungsfähigkeit steigt, der Ausdauer-Vorteil bleibt unklar",
+"falsch": [
+"Die Ausdauer steigt in jedem Fall doppelt so stark wie nach Plan",
+"Das Anpassen an Messwerte schneidet deutlich schlechter ab als Plan",
+"Profis profitieren am stärksten, Freizeitsportler fast gar nicht"
+],
+"warum": "Die beruhigende Herzsteuerung verbesserte sich im Schnitt, doch beim Ausdauer-Zusatzgewinn kamen Übersichten zu verschiedenen Ergebnissen."
+},
+"plus": {
+"frage": "Du misst morgens regelmäßig deinen RMSSD-Wert. Für wen lohnt sich der 7-Tage-Schnitt zur Trainingssteuerung im Ausdauerbereich am ehesten?",
+"richtig": "Eher für Einsteiger, Freizeitsportler und Frauen als für Profis",
+"falsch": [
+"Vor allem für Profisportler zur maximalen Steigerung der VO2max",
+"Nur wenn du einmal pro Monat nach einem harten Wettkampf misst",
+"Ausschließlich für kurze Krafteinheiten ohne Ausdaueranteil"
+],
+"warum": "Die Daten zeigen größere Effekte bei Amateuren und Frauen als bei Eliteathleten – bei mindestens drei Messungen pro Woche."
+},
+"labor": {
+"frage": "Zwei Meta-Analysen verglichen HRV-gesteuertes Ausdauertraining mit festen Plänen und kamen bei der VO2max zu widersprüchlichen Befunden. Was erklärt das?",
+"richtig": "Andere Einschlusskriterien, hohe Heterogenität und Messpositionen",
+"falsch": [
+"Die eine Analyse prüfte nur Kraftsport, die andere nur Schwimmen",
+"Alle eingeschlossenen Studien dauerten deutlich länger als ein Jahr",
+"Beide nutzten dieselben Studien, rechneten aber ohne Kontrollgruppe"
+],
+"warum": "Abweichende Einschlusskriterien, sehr hohe Heterogenität (I² = 94 %) sowie Messungen im Liegen vs. Stehen prägten die Ergebnisse."
+}
+}
+}
+]

@@ -1,0 +1,1122 @@
+[
+{
+"id": "NRG-107",
+"karte": {
+"kopf": "Frauen · Einjährige Zyklus-Beobachtung",
+"titel": "Wassereinlagerungen sind am ersten Tag der Periode am stärksten",
+"titel_hervor": "am ersten Tag der Periode",
+"setup": "62 Frauen protokollierten ein Jahr lang über 765 Menstruationszyklen, wie stark sie Wassereinlagerungen spürten.",
+"zahl": null,
+"kern": [
+"Am niedrigsten war die gefühlte Wassereinlagerung in der Zyklusmitte.",
+"Das Muster trat unabhängig davon auf, ob im Zyklus ein Eisprung stattfand.",
+"Die gemessenen Östrogen- und Progesteronwerte erklärten das Muster nicht direkt."
+],
+"grenze": "Erfasst wurde das subjektive Gefühl bei 62 Frauen – der genaue hormonelle Auslöser bleibt ungeklärt.",
+"fuer_dich": "Dein Gewicht geht kurz vor oder zu Beginn deiner Periode hoch? Vergleiche dein Trendgewicht lieber mit derselben Phase im Vormonat.",
+"labor": {
+"design": "Prospektive Beobachtungsstudie über 1 Jahr, tägliche Scores zur Flüssigkeitseinlagerung (Skala 0–4)",
+"teilnehmer": "62 prämenopausale Frauen (765 Zyklen, Ø 12,3 Zyklen/Frau)",
+"ergebnis": "Höchstwert Tag 1 der Blutung: Score 0,9 ± 0,1 (p < 0,0001 vs. Zyklusmitte); keine Korrelation mit Östradiol/Progesteron"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Zu welchem Zeitpunkt im Menstruationszyklus fühlen Frauen im Schnitt am meisten Wassereinlagerungen?",
+"richtig": "Am ersten Tag der Blutung",
+"falsch": [
+"Genau in der Mitte des Zyklus",
+"Eine Woche nach Ende der Blutung",
+"Erst nach den Wechseljahren"
+],
+"warum": "In einer einjährigen Beobachtung über 765 Zyklen lag der Höhepunkt am ersten Blutungstag und der Tiefpunkt in der Zyklusmitte."
+},
+"plus": {
+"frage": "Du trackst dein Gewicht in einer Diät und stehst kurz vor oder am Beginn deiner Periode. Wie ordnest du einen plötzlichen Anstieg auf der Waage am besten ein?",
+"richtig": "Erst abwarten und mit derselben Zyklusphase im Vormonat vergleichen",
+"falsch": [
+"Die Kalorien sofort senken, weil das Defizit nicht mehr reicht",
+"Das Training pausieren, bis das Wasser ganz verschwunden ist",
+"Einen Eisprung ausschließen, weil Wasser nur ohne Eisprung steigt"
+],
+"warum": "Zyklusbedingte Wassereinlagerungen rund um den Blutungsbeginn verdecken echten Fortschritt – ein Phasenvergleich schafft Klarheit."
+},
+"labor": {
+"frage": "In einer prospektiven Beobachtung über 765 Zyklen wurde die wahrgenommene Flüssigkeitseinlagerung mit Hormonspiegeln verglichen. Was blieb dabei offen?",
+"richtig": "Weder Östradiol noch Progesteron korrelierten klar mit den Werten",
+"falsch": [
+"Das Muster trat ausschließlich bei Zyklen mit Eisprung auf",
+"Die Teilnehmerinnen wurden nur über einen einzigen Zyklus begleitet",
+"Die Scores waren in der Zyklusmitte signifikant höher als am Start"
+],
+"warum": "Obwohl der Peak am ersten Blutungstag hochsignifikant war, erklärten die gemessenen Hormonwerte den Mechanismus nicht."
+}
+}
+},
+{
+"id": "NRG-108",
+"karte": {
+"kopf": "Erwachsene · Kleine Stoffwechselstudie",
+"titel": "Bei scheinbarem Stillstand fehlte fast die Hälfte im Tagebuch",
+"titel_hervor": "fehlte fast die Hälfte",
+"setup": "Bei 10 Personen, die trotz angeblich unter 1.200 kcal nicht abnahmen, wurden echter Kalorienverbrauch und Bewegung im Labor gemessen.",
+"zahl": {
+"label": "Im Schnitt nicht aufgeschrieben",
+"wert": "47 %",
+"alltag": "≈ 1.053 kcal pro Tag"
+},
+"kern": [
+"Der gemessene Ruhestoffwechsel war nicht verlangsamt, sondern lag im normalen Bereich.",
+"Gleichzeitig überschätzten die Teilnehmenden ihren Trainingsverbrauch um rund die Hälfte.",
+"Allein das Vergessen nach 24 Stunden erklärte im Test rund 20 % der fehlenden Kalorien."
+],
+"grenze": "Nur 10 stark übergewichtige Personen wurden untersucht – ob bewusst oder unbewusst zu wenig notiert wurde, blieb offen.",
+"fuer_dich": "Dein Gewicht steht trotz großem Defizit seit Wochen still? Wiege eine Woche genau ab und prüfe Öl, Getränke und Snacks.",
+"labor": {
+"design": "Klinische Stoffwechselstudie, Vergleich Selbstbericht gegen doppelt markiertes Wasser und Kalorimetrie",
+"teilnehmer": "10 Erwachsene mit Adipositas und selbstberichteter Diätresistenz",
+"ergebnis": "Zufuhr −47 % (1.028 vs. 2.081 kcal/Tag); Aktivität +51 % überschätzt (1.022 vs. 771 kcal/Tag)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Jemand schreibt jeden Tag sehr wenig Essen auf, nimmt aber trotzdem nicht ab. Was war in einer bekannten Stoffwechselmessung der Hauptgrund?",
+"richtig": "Essen wurde stark unterschätzt und Bewegung deutlich überschätzt",
+"falsch": [
+"Der Ruhestoffwechsel war fast ganz zum Erliegen gekommen",
+"Der Körper bildete aus reinem Wasser neues Körperfett",
+"Alle Teilnehmenden hatten eine seltene Schilddrüsenstörung"
+],
+"warum": "Die gemessenen Werte zeigten einen normalen Ruheumsatz, aber fast die Hälfte der gegessenen Kalorien fehlte im Protokoll."
+},
+"plus": {
+"frage": "Seit drei Wochen zeigt dein Tagebuch ein großes Defizit, aber dein 7-Tage-Trendgewicht bewegt sich kaum. Was ist dein sinnvollster erster Schritt?",
+"richtig": "Eine Woche konsequent abwiegen und Öl, Getränke sowie Snacks prüfen",
+"falsch": [
+"Deinen Grundumsatz als eingeschlafen einstufen und weiter halbieren",
+"Das Krafttraining streichen, um den Stoffwechsel zu schonen",
+"Dein Aktivitätsziel sofort verdoppeln und weniger schlafen"
+],
+"warum": "Schon normales Vergessen über 24 Stunden sowie ungenaue Portionen erklären oft hunderte fehlende Kalorien im Protokoll."
+},
+"labor": {
+"frage": "Bei Personen mit selbstberichteter Diätresistenz wurde der tatsächliche Energieumsatz per doppelt markiertem Wasser bestimmt. Was zeigte ein ergänzender Mahlzeitentest nach 24 Stunden?",
+"richtig": "Allein das Vergessen machte rund ein Fünftel der echten Zufuhr aus",
+"falsch": [
+"Die Teilnehmenden erinnerten sich exakt an jede kleine Zwischenmahlzeit",
+"Das Defizit fehlte wegen eines halbierten Grundumsatzes",
+"Die Aktivität wurde im Schnitt um die Hälfte unterschätzt"
+],
+"warum": "Auch ohne bewusste Täuschung gehen rund 20 % der Aufnahme innerhalb eines Tages einfach im Gedächtnis verloren."
+}
+}
+},
+{
+"id": "NRG-109",
+"karte": {
+"kopf": "Sportler · 11 Studien zusammengefasst",
+"titel": "Wer sein Essen aufschreibt, vergisst rund ein Fünftel",
+"titel_hervor": "vergisst rund ein Fünftel",
+"setup": "Sportler protokollierten ihr Essen. Gleichzeitig wurde im Labor gemessen, wie viel Energie sie wirklich aufgenommen hatten.",
+"zahl": {
+"label": "Im Schnitt fehlten im Protokoll",
+"wert": "19 %",
+"alltag": "≈ 670 kcal pro Tag"
+},
+"kern": [
+"Am häufigsten fehlen Öl, Getränke und kleine Snacks",
+"Betrifft gerade Teamsportler: gut jeder Zweite schreibt zu wenig auf",
+"Wer zu wenig einträgt, bekommt von jeder App einen falschen Bedarf"
+],
+"grenze": "Mittelwert über viele Sportler – bei dir kann es mehr oder weniger sein.",
+"fuer_dich": "Dein Gewicht bleibt gleich, obwohl die App ein Defizit zeigt? Prüfe zuerst Öl, Getränke und Snacks.",
+"labor": {
+"design": "Systematisches Review mit Meta-Analyse, Protokolle gegen doppelt markiertes Wasser",
+"teilnehmer": "18 Studien, davon 11 mit Labormessung",
+"ergebnis": "−19 % (−2.793 ± 1.134 kJ/Tag), ES −1,0 (95 % KI −1,3 bis −0,7)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du schreibst eine Woche lang alles auf, was du isst. Was passiert dabei bei den meisten Menschen?",
+"richtig": "Sie schreiben weniger auf, als sie wirklich gegessen haben",
+"falsch": [
+"Sie schreiben ziemlich genau auf",
+"Sie schreiben mehr auf, als sie gegessen haben",
+"Das gleicht sich über die Woche aus"
+],
+"warum": "Kleinigkeiten wie Öl, Getränke und Snacks gehen leicht unter – im Schnitt fehlt rund ein Fünftel."
+},
+"plus": {
+"frage": "Die App zeigt seit Wochen ein Defizit, dein Gewicht bleibt aber gleich. Was ist die häufigste Erklärung?",
+"richtig": "Im Protokoll fehlt ein Teil des Essens, z. B. Öl oder Snacks",
+"falsch": [
+"Der Stoffwechsel ist eingeschlafen",
+"Du baust gerade sehr viel Muskeln auf",
+"Wasser verdeckt den Fettverlust dauerhaft"
+],
+"warum": "Unvollständige Protokolle sind der häufigste Grund – der echte Verbrauch passt dann nicht zur Rechnung."
+},
+"labor": {
+"frage": "Ernährungsprotokolle von Sportlern wurden mit einer Labormessung der tatsächlichen Energieaufnahme verglichen (doppelt markiertes Wasser). Was zeigte sich im Mittel?",
+"richtig": "Die Zufuhr wurde deutlich unterschätzt, um rund ein Fünftel",
+"falsch": [
+"Die Protokolle stimmten fast genau",
+"Die Zufuhr wurde deutlich überschätzt",
+"Der Fehler trat nur bei Ausdauersportlern auf"
+],
+"warum": "Über 11 Studien lag die protokollierte Zufuhr im Mittel 19 % unter dem gemessenen Wert."
+}
+}
+},
+{
+"id": "NRG-110",
+"karte": {
+"kopf": "Erwachsene · 15 Studien zusammengefasst",
+"titel": "Wiegen hilft beim Abnehmen erst mit konkretem Feedback",
+"titel_hervor": "erst mit konkretem Feedback",
+"setup": "In 15 kontrollierten Studien wurde geprüft, wie stark regelmäßiges Wiegen allein oder als Teil eines Abnehmprogramms wirkt.",
+"zahl": {
+"label": "Zusätzlicher Gewichtsverlust im Programm",
+"wert": "−1,7 kg",
+"alltag": ""
+},
+"kern": [
+"Sich nur auf die Waage zu stellen, brachte ohne weitere Schritte kaum Effekt.",
+"In Programmen mit mehreren Bausteinen lag der Vorteil im Schnitt bei 3,4 kg.",
+"Tägliches und wöchentliches Wiegen schnitten im direkten Vergleich ähnlich ab."
+],
+"grenze": "Nur eine einzige Studie prüfte isoliertes Wiegen – entscheidend war meist das Gesamtpaket mit Verbindlichkeit.",
+"fuer_dich": "Du wiegst dich regelmäßig zum Abnehmen? Nutze die Zahl für einen Wochenblick und klare nächste Schritte statt nur als Zahl im Protokoll.",
+"labor": {
+"design": "Systematisches Review und Meta-Analyse von RCTs, Selbstwiegen isoliert vs. im Verhaltensprogramm",
+"teilnehmer": "15 Studien (4 zum Zusatz im Verhaltensprogramm, 1 isoliert)",
+"ergebnis": "Zusatz: MD −1,7 kg (95 % KI −2,6 bis −0,8); Multikomponenten: MD −3,4 kg (95 % KI −4,2 bis −2,6)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du willst abnehmen und stellst dich ab morgen einfach öfter auf die Waage, änderst sonst aber nichts. Was zeigen Studien dazu?",
+"richtig": "Allein das Wiegen ohne Plan bringt meist kaum etwas",
+"falsch": [
+"Allein das Wiegen führt im Schnitt zu deutlichem Fettverlust",
+"Wiegen bremst den Gewichtsverlust bei fast allen Menschen",
+"Nur dreimaliges Wiegen am Tag bringt einen sichtbaren Effekt"
+],
+"warum": "Erst wenn das Wiegen mit konkretem Feedback und Verhaltensschritten gekoppelt ist, zeigt sich ein klarer Zusatzvorteil."
+},
+"plus": {
+"frage": "Du trackst dein Gewicht während einer Diät. Wie häufig solltest du dich laut Studien mindestens wiegen und wie gehst du mit den Zahlen um?",
+"richtig": "Mindestens wöchentlich wiegen und daraus konkrete Anpassungen ableiten",
+"falsch": [
+"Zwingend täglich wiegen, weil wöchentliches Wiegen nicht wirkt",
+"Die Werte nur abspeichern und nicht auf den Verlauf reagieren",
+"Nur am Ende der Diät wiegen, um den Trend nicht zu beeinflussen"
+],
+"warum": "Zwischen täglichem und wöchentlichem Wiegen gab es keinen klaren Unterschied – wichtig sind Feedback und Verbindlichkeit."
+},
+"labor": {
+"frage": "In einer Meta-Analyse aus 15 randomisierten Studien wurde Selbstwiegen mit und ohne Verhaltensprogramm verglichen. Welcher Faktor verbesserte die Ergebnisse zusätzlich?",
+"richtig": "Externe Verbindlichkeit durch Begleitung oder Rückmeldung",
+"falsch": [
+"Der strikte Verzicht auf jegliche wöchentliche Trendauswertung",
+"Das vollständige Weglassen anderer Programmbausteine",
+"Ein Wiegeabstand von mindestens zwei Monaten zwischen Messungen"
+],
+"warum": "Programme mit externer Verbindlichkeit (Accountability) erzielten signifikant größere Gewichtsverluste (p = 0,03)."
+}
+}
+},
+{
+"id": "NRG-111",
+"karte": {
+"kopf": "Waagen-Nutzer · Große Beobachtung (3 Jahre)",
+"titel": "Lange Wiegepausen gingen meist mit Gewichtszunahme einher",
+"titel_hervor": "mit Gewichtszunahme einher",
+"setup": "Daten von 9.768 Nutzern vernetzter Waagen wurden über knapp drei Jahre ausgewertet, um Wiegehäufigkeit und Gewichtsverlauf zu vergleichen.",
+"zahl": {
+"label": "Zunahme in Wiegepause ab 30 Tagen",
+"wert": "+0,58–1,37 kg",
+"alltag": ""
+},
+"kern": [
+"Wer häufiger auf die Waage stieg, verlor im Schnitt eher Gewicht.",
+"Fast drei Viertel der Nutzer machten mindestens einmal 30 Tage Wiegepause.",
+"Je höher das Ausgangsgewicht, desto größer war die Zunahme in der Pause."
+],
+"grenze": "Beobachtungsdaten zeigen keinen Beweis für Ursache: Viele meiden die Waage wohl erst, wenn das Gewicht schon steigt.",
+"fuer_dich": "Du hast dich seit zwei Wochen nicht mehr gewogen? Steig ohne Druck wieder auf die Waage, bevor daraus eine lange Pause wird.",
+"labor": {
+"design": "Beobachtende Kohortenstudie über 1.085 Tage, Auswertung von Smart-Scale-Protokollen",
+"teilnehmer": "9.768 Nutzer vernetzter Waagen (Ø 2,8 Wiegungen/Woche)",
+"ergebnis": "r = −0,111 (Adipositas r = −0,148; p < 0,001); Pause ≥ 30 Tage: +0,58 bis +1,37 kg (p < 0,001)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Jemand wiegt sich im Alltag regelmäßig, macht dann aber über einen Monat lang gar keine Messung mehr. Was beobachten Daten häufig nach so einer Pause?",
+"richtig": "Das Gewicht ist nach der Pause im Schnitt gestiegen",
+"falsch": [
+"Das Gewicht sinkt in langen Pausen meist schneller weiter",
+"Lange Pausen kommen bei Menschen mit Waage fast gar nicht vor",
+"Nach einem Monat Pause bleibt das Gewicht im Schnitt unverändert"
+],
+"warum": "In einer großen Auswertung nahmen Menschen während Wiegepausen ab 30 Tagen im Schnitt zwischen rund 0,6 und 1,4 kg zu."
+},
+"plus": {
+"frage": "Du steckst im Gewichtsmanagement und merkst, dass du die Waage seit gut zwei Wochen meidest. Wie reagierst du am klügsten?",
+"richtig": "Ohne Druck wieder einsteigen, bevor die Routine abreißt",
+"falsch": [
+"Noch einen Monat warten, bis das Gewicht wieder perfekt ist",
+"Ab sofort dreimal täglich wiegen, um die Pause auszugleichen",
+"Die Kalorien pauschal halbieren, ohne den Trend zu prüfen"
+],
+"warum": "Eine längere Wiegepause ist oft ein Frühwarnzeichen dafür, dass Gewohnheiten abreißen – ein ruhiger Neustart hilft."
+},
+"labor": {
+"frage": "In einer dreijährigen Kohorte mit 9.768 Waagen-Nutzern hing häufigeres Wiegen mit Gewichtsverlust zusammen. Warum beweist das keine direkte Ursache?",
+"richtig": "Menschen meiden die Waage oft erst, wenn sie bereits zunehmen",
+"falsch": [
+"Die Stichprobe war für statistische Tests viel zu klein",
+"Vernetzte Waagen speichern keine Pausen über dreißig Tage",
+"Der Zusammenhang war statistisch nicht signifikant"
+],
+"warum": "Bei Beobachtungsdaten droht umgekehrte Kausalität: Wer merkt, dass es schlecht läuft, geht oft schlicht nicht mehr auf die Waage."
+}
+}
+},
+{
+"id": "NRG-112",
+"karte": {
+"kopf": "Jugendliche & Erwachsene · 23 Studien",
+"titel": "Wiegen belastet die Psyche vor allem ohne Begleitung",
+"titel_hervor": "vor allem ohne Begleitung",
+"setup": "23 Studien prüften, wie regelmäßiges Selbstwiegen mit Stimmung, Körperbild, Essverhalten und Selbstwert zusammenhängt.",
+"zahl": null,
+"kern": [
+"In begleiteten Abnehmprogrammen wirkte Wiegen auf Stimmung und Essverhalten neutral.",
+"Ohne Begleitung zeigte sich ein kleiner negativer Zusammenhang mit dem Selbstwert.",
+"Besonders Jugendliche und junge Erwachsene reagierten eher sensibel auf die Waage."
+],
+"grenze": "Die Studienlage ist widersprüchlich, da viele Daten nur Zusammenhänge ohne echten Vergleich zeigen.",
+"fuer_dich": "Dich stressen Zahlen auf der Waage stark? Schalte auf Gewohnheiten, Kraftwerte oder geglättete Trends ohne tägliche Einzelwerte um.",
+"labor": {
+"design": "Meta-Analyse aus Interventions- und Beobachtungsstudien zu psychologischen Folgen des Selbstwiegens",
+"teilnehmer": "Bis zu 23 Studien (bis zu 8.650 Teilnehmende je Endpunkt)",
+"ergebnis": "Psychisches Funktionsniveau r+ = −0,08 (95 % KI −0,14 bis −0,03); ohne Intervention gestörtes Essverhalten r+ = −0,12"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Schadet regelmäßiges Wiegen automatisch dem Selbstwert oder dem Essverhalten?",
+"richtig": "Nicht pauschal, aber ohne Begleitung kann es manche Menschen belasten",
+"falsch": [
+"Ja, jede Art von Wiegen löst fast unweigerlich Essstörungen aus",
+"Nein, Wiegen verbessert die Stimmung bei jedem Menschen spürbar",
+"Nur bei älteren Menschen, während Jugendliche davon profitieren"
+],
+"warum": "In begleiteten Programmen traten keine negativen Folgen auf, ohne Begleitung und bei Jüngeren gab es aber kleine Belastungen."
+},
+"plus": {
+"frage": "Du merkst, dass tägliches Wiegen bei dir Stress auslöst und deine Stimmung drückt. Welche Umstellung passt am besten?",
+"richtig": "Tägliches Wiegen ausblenden und auf Gewohnheiten oder Kraftwerte schauen",
+"falsch": [
+"Trotz Stress noch öfter wiegen, bis man sich daran gewöhnt",
+"Das gesamte Training sofort stoppen, bis das Wunschgewicht steht",
+"Die Waage nur nach schweren Mahlzeiten nutzen, um abzuhärten"
+],
+"warum": "Wer durch Einzelwerte unter Druck gerät, fährt mit gewichtsneutralen Fortschrittsmarkern wie Gewohnheiten oder Kraft meist besser."
+},
+"labor": {
+"frage": "In einer Meta-Analyse aus 23 Studien zu psychischen Folgen des Selbstwiegens widersprachen sich Interventions- und Beobachtungsstudien. Wie lässt sich das erklären?",
+"richtig": "Ohne Programm fehlt oft eine Strategie für den Umgang mit Abweichungen",
+"falsch": [
+"In Interventionsstudien wurde das Gewicht gar nicht gemessen",
+"Beobachtungsstudien zeigten durchweg stark positive Effekte",
+"Die negativen Effekte betrafen ausschließlich ältere Leistungssportler"
+],
+"warum": "Ohne begleitende Handlungsstrategie macht die Waage vor allem die Lücke zum Wunschgewicht sichtbar, was Selbstwert und Stimmung drückt."
+}
+}
+},
+{
+"id": "NRG-113",
+"karte": {
+"kopf": "Erwachsene · Verlaufsstudie über 6 Monate",
+"titel": "Flexibles Essen hilft langfristig mehr als strenge Verbote",
+"titel_hervor": "hilft langfristig mehr",
+"setup": "Über sechs Monate wurde untersucht, wie eine flexible oder eine strenge Alles-oder-nichts-Ernährung mit Abnehmerfolg und Gedanken ans Essen zusammenhängt.",
+"zahl": null,
+"kern": [
+"Strenge Regeln hingen deutlich mit kreisenden Gedanken um Essen und Figur zusammen.",
+"Ein flexibler Ansatz bremst das typische Aufgeben nach einem kleinen Ausrutscher.",
+"Auch flexibles Abwägen kostet im Alltag etwas mentale Energie und Konzentration."
+],
+"grenze": "Die Daten zeigen Zusammenhänge über sechs Monate, belegen aber keinen direkten Ursache-Wirkungs-Beweis.",
+"fuer_dich": "Du hast dein Kalorienziel heute überschritten? Kein Grund zum Aufgeben – nutze ein Zielband oder gleiche entspannt über die Woche aus.",
+"labor": {
+"design": "Längsschnittstudie mit 6 Monaten Follow-up, flexible vs. rigide Kontrolle und kognitive Tests",
+"teilnehmer": "Erwachsene",
+"ergebnis": "Rigide Kontrolle: Aufmerksamkeitsbias Essen r = 0,43, Figur r = 0,49 (p < 0,001); flexibel: Arbeitsgedächtnis r = −0,25"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du vergleichst eine sehr strenge Ernährung mit strikten Verboten mit einem flexiblen Ansatz mit kleinen Spielräumen. Was zeigen Verlaufsdaten eher?",
+"richtig": "Der flexible Ansatz begünstigt langfristigen Erfolg eher als Verbote",
+"falsch": [
+"Strikte Verbote lassen Gedanken ans Essen schneller verschwinden",
+"Ein flexibler Ansatz führt fast automatisch zu ständigem Überessen",
+"Zwischen strengen Verboten und Flexibilität zeigt sich kein Unterschied"
+],
+"warum": "Flexiblere Regeln hingen eher mit langfristigem Gewichtsverlust zusammen, während Strenge oft die Fixierung aufs Essen verstärkte."
+},
+"plus": {
+"frage": "Du bist beim Abendessen über dein Tagesziel gerutscht. Wie vermeidest du am besten den typischen Jetzt-ist-es-auch-egal-Effekt?",
+"richtig": "Mit einem kleinen Zielkorridor arbeiten oder locker über Tage ausgleichen",
+"falsch": [
+"Die ganze Woche abhaken und erst am nächsten Montag neu starten",
+"Alle betroffenen Lebensmittel ab morgen streng auf eine Verbotsliste setzen",
+"Am nächsten Tag gar nichts essen, um den Fehler zu bestrafen"
+],
+"warum": "Ein flexibler Korridor nimmt den Druck aus einzelnen Tagen und verhindert eher das typische Überessen nach kleinen Abweichungen."
+},
+"labor": {
+"frage": "In einer sechsmonatigen Verlaufsstudie wurden flexible und rigide Diätkontrolle auch mit kognitiven Tests verknüpft. Welcher unerwartete Nachteil zeigte sich bei flexibler Kontrolle?",
+"richtig": "Ein kleiner Zusammenhang mit schwächerer Leistung im Arbeitsgedächtnis",
+"falsch": [
+"Eine stärkere gedankliche Fixierung auf Figur als bei rigider Kontrolle",
+"Ein vollständiger Verlust der Fähigkeit, Portionen einzuschätzen",
+"Ein deutlich höherer Abbruch der Gewichtsreduktion nach sechs Monaten"
+],
+"warum": "Flexible Kontrolle korrelierte leicht negativ mit dem N-Back-Test (r = −0,25), was auf kognitive Kosten durch ständiges Abwägen hindeutet."
+}
+}
+},
+{
+"id": "NRG-114",
+"karte": {
+"kopf": "Frauen · Fragebogen-Studie (3 Gruppen)",
+"titel": "Beim Essverhalten zählt nicht nur die Regel, sondern dein Gefühl",
+"titel_hervor": "sondern dein Gefühl",
+"setup": "An 1.048 Frauen wurde geprüft, warum bisherige Fragebögen gesundes flexibles Essen und strenges Kontrollverhalten kaum sauber trennten.",
+"zahl": null,
+"kern": [
+"Alte Tests warfen flexibles und strenges Verhalten oft zusammen in einen Topf.",
+"Sorgen und Schuldgefühle nach dem Essen trennen Stress besser von echtem Spielraum.",
+"Unklar bleibt, ob strenge Regeln zu Zunahme führen oder erst danach entstehen."
+],
+"grenze": "Nur Frauen wurden per Fragebogen zu einem Zeitpunkt befragt – langfristige Ursachen lassen sich so nicht klären.",
+"fuer_dich": "Dein Plan wirkt flexibel, macht dir aber oft ein schlechtes Gewissen? Prüfe dein Gefühl nach dem Essen statt nur die Regeln.",
+"labor": {
+"design": "Querschnitts- und Validierungsstudie über 3 Stichproben, Entwicklung einer 5-Faktoren-Skala",
+"teilnehmer": "1.048 Frauen in drei Stichproben",
+"ergebnis": ""
+}
+},
+"quiz": {
+"basis": {
+"frage": "Zwei Menschen achten auf ihre Ernährung und erlauben sich ab und zu Ausnahmen. Woran merkst du am ehesten, ob der Umgang wirklich entspannt ist?",
+"richtig": "Daran, ob nach dem Essen kaum Schuldgefühle und Sorgen auftreten",
+"falsch": [
+"Allein daran, wie oft jemand pro Woche seine Kalorien aufschreibt",
+"Allein daran, ob Süßigkeiten völlig aus dem Haus verbannt sind",
+"Daran, ob das Gewicht von Tag zu Tag auf das Gramm gleich bleibt"
+],
+"warum": "Nicht nur äußere Essensregeln zählen – negative Gefühle und Sorgen nach dem Essen zeigen oft versteckte Strenge an."
+},
+"plus": {
+"frage": "Du bewertest dein eigenes Ernährungsverhalten in einer App. Warum reicht es nicht, nur nach deinen Essensregeln zu fragen?",
+"richtig": "Hinter scheinbar flexiblen Regeln können trotzdem Schuldgefühle stecken",
+"falsch": [
+"Regeln spielen für das Essverhalten überhaupt keine Rolle",
+"Wer flexibel isst, hat grundsätzlich keine Struktur im Alltag",
+"Fragebögen können Essensregeln technisch gar nicht erfassen"
+],
+"warum": "Erst wenn Gefühle wie Sorge und Schuld getrennt von Regeln erfasst werden, lässt sich gesunde Flexibilität sauber erkennen."
+},
+"labor": {
+"frage": "Bei einer Validierungsstudie mit 1.048 Frauen wurden ältere Skalen zur flexiblen und rigiden Esskontrolle kritisch geprüft. Welches methodische Problem fiel dabei auf?",
+"richtig": "Die alten Subskalen trennten beide Konstrukte nur unzureichend",
+"falsch": [
+"Die alten Skalen zeigten gar keinen Zusammenhang mit dem Essverhalten",
+"Rigide Kontrolle ließ sich nur bei Männern zuverlässig messen",
+"Die neue Skala verzichtet bewusst auf emotionale Bewertungen"
+],
+"warum": "Ältere Fragebögen vermischten flexible und rigide Kontrolle stark, sodass beide oft ähnlich mit Unzufriedenheit zusammenhingen."
+}
+}
+},
+{
+"id": "NRG-115",
+"karte": {
+"kopf": "Erwachsene · Viele Studien zusammengefasst",
+"titel": "Eiweiß macht sofort satter, verliert aber langfristig an Effekt",
+"titel_hervor": "macht sofort satter",
+"setup": "Kontrollierte Studien wurden ausgewertet, um die Wirkung von eiweißreichen Mahlzeiten auf Hunger und Sättigung kurzfristig und über Wochen zu vergleichen.",
+"zahl": null,
+"kern": [
+"Direkt nach dem Essen dämpfte mehr Eiweiß das Hungergefühl deutlich.",
+"Kurzfristig veränderten sich auch Hunger- und Sättigungshormone spürbar.",
+"Über mehrere Wochen zeigte sich kein verlässlicher Dauereffekt auf den Appetit."
+],
+"grenze": "Wie stark Eiweiß sättigt, hängt auch von Textur und Ballaststoffen ab – langfristig gewöhnt sich der Körper oft daran.",
+"fuer_dich": "Nach dem Essen kommt schnell wieder Hunger? Plane 20 bis 30 g Eiweiß pro Hauptmahlzeit ein, verlass dich aber nicht allein darauf.",
+"labor": {
+"design": "Systematisches Review und Meta-Analyse von RCTs, akute vs. mehrwöchige Proteinzufuhr",
+"teilnehmer": "Erwachsene in akuten und mehrwöchigen RCTs",
+"ergebnis": ""
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du isst eine eiweißreiche Mahlzeit statt einer mit wenig Eiweiß. Wie wirkt sich das meist auf deinen Hunger aus?",
+"richtig": "Du bist direkt danach meist spürbar satter als nach wenig Eiweiß",
+"falsch": [
+"Du bekommst direkt danach deutlich schneller wieder Hunger",
+"Der Effekt wirkt erst nach Monaten, nicht nach der Mahlzeit",
+"Die Menge an Eiweiß spielt für das Völlegefühl kaum eine Rolle"
+],
+"warum": "Kurzfristig senkt Eiweiß das Hungergefühl deutlich und steigert das Völlegefühl sowie körpereigene Sättigungshormone."
+},
+"plus": {
+"frage": "In einer Diät erhöhst du dein Eiweiß pro Hauptmahlzeit gegen den akuten Hunger. Womit solltest du über mehrere Wochen rechnen?",
+"richtig": "Akut hilft es gut, aber es ersetzt langfristig nicht dein Kalorienbudget",
+"falsch": [
+"Dein Appetit bleibt über Monate automatisch dauerhaft unterdrückt",
+"Du musst keine Portionen mehr beachten, weil Eiweiß den Hunger blockt",
+"Ballaststoffe und die Art des Lebensmittels werden damit überflüssig"
+],
+"warum": "Über mehrere Wochen treten Gewöhnungseffekte auf, sodass der Appetit nicht automatisch dauerhaft niedrig bleibt."
+},
+"labor": {
+"frage": "In einer Meta-Analyse aus randomisierten Studien wurden akute und mehrwöchige Effekte von Protein auf Hunger und Sättigungshormone untersucht. Welcher Unterschied trat auf?",
+"richtig": "Akut sanken Hunger und Ghrelin klar, langfristig blieb der Effekt uneinheitlich",
+"falsch": [
+"Nur in mehrwöchigen Studien stiegen die Sättigungshormone deutlich an",
+"Weder akut noch langfristig gab es einen Einfluss auf das Völlegefühl",
+"Akut wirkte Protein nur, wenn gar keine Ballaststoffe enthalten waren"
+],
+"warum": "Kurzfristig steigen CCK und GLP-1 und Ghrelin sinkt, doch über Wochen zeigen RCTs keinen konsistenten Appetiteffekt mehr."
+}
+}
+},
+{
+"id": "NRG-116",
+"karte": {
+"kopf": "Erwachsene · 13 Studien zusammengefasst",
+"titel": "Große Portionen mit wenig Kalorien erleichtern das Abnehmen",
+"titel_hervor": "Portionen mit wenig Kalorien",
+"setup": "13 Studien untersuchten, wie sich wasser- und ballaststoffreiches Essen mit niedriger Kaloriendichte auf das Gewicht von Erwachsenen auswirkt.",
+"zahl": {
+"label": "Weniger Kalorien durch klare Suppe vorab",
+"wert": "−26 %",
+"alltag": "≈ ein Viertel weniger"
+},
+"kern": [
+"Auch ein ganzer Apfel vor dem Essen senkte die Kalorienaufnahme im Test um 15 %.",
+"Wasser und Ballaststoffe sorgen für viel Volumen im Magen bei wenigen Kalorien.",
+"Fett einfach durch Zucker zu ersetzen brachte beim Abnehmen dagegen wenig."
+],
+"grenze": "Die Studien zählten Getränke uneinheitlich mit – entscheidend ist, echte Lebensmittel statt nur fettarmer Süßwaren zu wählen.",
+"fuer_dich": "Dein Defizit macht dich hungrig? Starte Mahlzeiten öfter mit einer klaren Suppe, Obst oder viel Gemüse, um das Volumen hochzuhalten.",
+"labor": {
+"design": "Systematisches Review und Meta-Analyse aus RCTs und Kohortenstudien zur Nahrungsenergiedichte",
+"teilnehmer": "13 Studien mit Erwachsenen mit Adipositas",
+"ergebnis": "Vorspeisen-Effekt: −15 % Kalorienaufnahme (ganzer Apfel), −26 % (klare Suppe auf Brühebasis)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du willst im Alltag abnehmen, aber trotzdem große, sättigende Teller essen. Welche Lebensmittel helfen dir dabei am meisten?",
+"richtig": "Lebensmittel mit viel Wasser und Ballaststoffen wie Gemüse oder Suppen",
+"falsch": [
+"Sehr kleine Portionen aus fettarmen, aber zuckerreichen Snacks",
+"Möglichst trockene Lebensmittel ohne Wasser, weil sie leichter sind",
+"Hauptsächlich reine Öle und Nüsse, weil sie das meiste Volumen haben"
+],
+"warum": "Lebensmittel mit niedriger Energiedichte füllen den Teller und den Magen, ohne das Kalorienkonto schnell zu sprengen."
+},
+"plus": {
+"frage": "Dein Kalorienbudget im Defizit wird knapper und der Hunger steigt. Welche Strategie für deine Hauptmahlzeiten passt am besten?",
+"richtig": "Eine klare Suppe oder Obst vorab und mehr Gemüse auf dem Teller",
+"falsch": [
+"Fett einfach durch fettarme, aber zuckerreiche Produkte ersetzen",
+"Das Mahlzeitenvolumen stark verkleinern, damit sich der Magen gewöhnt",
+"Vorspeisen streichen, weil sie die gesamte Aufnahme meist erhöhen"
+],
+"warum": "Eine wasserreiche Vorspeise wie Suppe oder ein ganzer Apfel senkte die nachfolgende Kalorienaufnahme spürbar."
+},
+"labor": {
+"frage": "In einer Meta-Analyse aus 13 Studien zur Senkung der Nahrungsenergiedichte zeigten sich konsistente Gewichtsverluste. Welche inhaltliche Grenze ist dabei wichtig?",
+"richtig": "Wird Fett nur durch Zucker ersetzt, bleibt der Abnehmeffekt gering",
+"falsch": [
+"Wasserreiche Lebensmittel hatten überhaupt keinen Einfluss auf das Gewicht",
+"Getränke wurden in allen Studien nach einem einheitlichen Standard erfasst",
+"Der Effekt trat ausschließlich bei streng fettfreier Ernährung auf"
+],
+"warum": "Die Studienlage nutzt keinen einheitlichen Standard für Getränke, und ohne Gemüse oder Vollkorn verpufft der Volumen-Vorteil."
+}
+}
+},
+{
+"id": "NRG-117",
+"karte": {
+"kopf": "Frauen nach Diät · Klinische Verlaufsstudie",
+"titel": "Der Stoffwechsel sinkt nach einer Diät meist nur um rund 50 kcal",
+"titel_hervor": "nur um rund 50 kcal",
+"setup": "Bei 171 Frauen nach rund 12 kg Gewichtsverlust wurde der Ruhebedarf direkt nach der Diät sowie teils nach ein und zwei Jahren gemessen.",
+"zahl": {
+"label": "Extra-Absenkung des Ruhebedarfs akut",
+"wert": "−54 kcal/Tag",
+"alltag": ""
+},
+"kern": [
+"Nach einem und zwei Jahren war diese kleine Absenkung im Schnitt verschwunden.",
+"Die leichte Stoffwechselanpassung sagte nicht voraus, wer später wieder zunahm.",
+"Für Empfehlungen ab 250 Minuten Sport pro Woche fehlen bislang starke Studien."
+],
+"grenze": "Nur Frauen wurden untersucht, und für den optimalen Bewegungsumfang zum Gewichthalten gibt es bislang kaum harte Studienbelege.",
+"fuer_dich": "Zielgewicht erreicht? Berechne deinen Bedarf mit dem neuen Gewicht neu und halte dich aktiv, statt einen kaputten Stoffwechsel zu fürchten.",
+"labor": {
+"design": "Prospektive klinische Studie (bis 2 Jahre Follow-up) plus Fachgesellschafts-Positionspapier",
+"teilnehmer": "171 Frauen (−12 ± 2,6 kg), Subgruppe n = 46 nach 1–2 Jahren",
+"ergebnis": "Adaptation akut −54 ± 105 kcal/Tag (p < 0,001); nach 1 J. −18, nach 2 J. −19 kcal/Tag (n. s.); Wiederzunahme 52 % bzw. 89 %"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Nach einer normalen Diät mit rund zwölf Kilo Verlust fürchten viele einen dauerhaft ruinierten Stoffwechsel. Was zeigte eine zweijährige Messung?",
+"richtig": "Die Extra-Absenkung war klein und nach einem Jahr meist wieder weg",
+"falsch": [
+"Der Stoffwechsel blieb über Jahre um hunderte Kalorien blockiert",
+"Der Ruhebedarf stieg nach der Diät von selbst stark über den Startwert",
+"Die Absenkung war der alleinige Grund für jede spätere Zunahme"
+],
+"warum": "Bei stabilem Gewicht lag die zusätzliche Anpassung direkt nach der Diät nur bei rund 54 kcal pro Tag und bildete sich wieder zurück."
+},
+"plus": {
+"frage": "Du hast dein Wunschgewicht erreicht und willst nun in die Erhaltungsphase wechseln. Wie kalkulierst du deinen neuen Tagesbedarf sinnvoll?",
+"richtig": "Regulär mit dem neuen Gewicht rechnen und nur minimal nachsteuern",
+"falsch": [
+"Dauerhaft fünfhundert Kalorien extra abziehen wegen Stoffwechsel-Schaden",
+"Den alten Bedarf vom Startgewicht einfach unverändert beibehalten",
+"Erst wieder normal essen, wenn du täglich über zwei Stunden trainierst"
+],
+"warum": "Weil ein leichterer Körper zwar weniger braucht, die zusätzliche Anpassung aber sehr klein ist, reicht meist die Neuberechnung."
+},
+"labor": {
+"frage": "In einer klinischen Nachbeobachtung nach moderatem Gewichtsverlust fiel die metabolische Adaptation viel kleiner aus als in älteren Berichten. Welche Ursache gilt als wahrscheinlich?",
+"richtig": "Ältere Messungen erfolgten oft noch im Defizit oder nach Extremdiäten",
+"falsch": [
+"In der neueren Studie wurden nur Männer nach starkem Muskelaufbau getestet",
+"Moderne Messgeräte erfassen kleine Anpassungen gar nicht erst",
+"Die Teilnehmerinnen nahmen in der neueren Studie kein Gewicht ab"
+],
+"warum": "Wird erst bei stabilem Gewicht nach moderater Diät gemessen, liegt die Anpassung im Schnitt nur bei rund 54 kcal statt mehreren hundert."
+}
+}
+},
+{
+"id": "PACE-101",
+"karte": {
+"kopf": "Gesunde Erwachsene · 123 Studien ausgewertet",
+"titel": "Zwei einfache Lauftests schätzen die Ausdauer fast wie im Labor",
+"titel_hervor": "fast wie im Labor",
+"setup": "Forschende werteten 123 Studien aus, in denen einfache Lauftests im Freien mit direkten Sauerstoffmessungen im Labor verglichen wurden.",
+"zahl": null,
+"kern": [
+"Der 1,5-Meilen-Lauf und der 12-Minuten-Lauf trafen die Fitness am genauesten",
+"Fließen Alter, Gewicht und Geschlecht ein, steigt die Genauigkeit deutlich",
+"Motivation und gleichmäßiges Tempo beeinflussen das Testergebnis spürbar"
+],
+"grenze": "Zwischen einzelnen Personen streut die Schätzung deutlich und ersetzt keine direkte Labormessung.",
+"fuer_dich": "Du bist gesund, trainiert und willst deine Fitness ohne Labor testen? Nutze den 1,5-Meilen- oder 12-Minuten-Lauf.",
+"labor": {
+"design": "Systematisches Review mit Meta-Analyse, Feldlauftests gegen Labor-VO2max",
+"teilnehmer": "123 Studien mit gesunden Erwachsenen und Ausdauersportlern",
+"ergebnis": "1,5 Meilen (+Demografie): rp = 0,90 (95 % KI 0,86–0,95); nur Zeit: 0,79; 12-min: 0,78"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Brauchst du für eine gute Einschätzung deiner Ausdauer-Fitness zwingend ein Sportlabor mit Atemmaske?",
+"richtig": "Nein, ein zügiger 12-Minuten- oder 1,5-Meilen-Lauf reicht oft aus",
+"falsch": [
+"Ja, ohne Atemmaske lassen sich kaum verlässliche Werte ermitteln",
+"Nein, ein kurzer Sprint über 100 Meter liefert das gleiche Ergebnis",
+"Ja, Lauftests im Freien zeigen nur die Kraft der Beinmuskeln an"
+],
+"warum": "Über 123 Studien hinweg trafen der 1,5-Meilen- und der 12-Minuten-Lauf die im Labor gemessene Ausdauer-Fitness am genauesten."
+},
+"plus": {
+"frage": "Du bist gut trainiert und willst deine VO2max ohne Labor per 1,5-Meilen-Lauf möglichst genau schätzen. Was verbessert das Ergebnis am stärksten?",
+"richtig": "Alter, Gewicht und Geschlecht zusätzlich in die Formel einbeziehen",
+"falsch": [
+"Den Lauf morgens nüchtern statt am späten Nachmittag absolvieren",
+"Die erste Hälfte deutlich schneller angehen als die zweite Hälfte",
+"Den Test auf mehrere kurze Intervalle mit Gehpausen aufteilen"
+],
+"warum": "Wurden Alter, Gewicht und Geschlecht einbezogen, stieg die Übereinstimmung mit der Labor-VO2max deutlich an."
+},
+"labor": {
+"frage": "In einer Meta-Analyse aus 123 Studien wurden Feldlauftests mit der direkt gemessenen Labor-VO2max verglichen. Welche Grenze blieb bestehen?",
+"richtig": "Hohe Streuung zwischen Einzelstudien und starker Einfluss von Pacing",
+"falsch": [
+"Die Tests funktionierten ausschließlich bei männlichen Profisportlern",
+"Die Laufzeiten korrelierten kaum mit der gemessenen Sauerstoffaufnahme",
+"Der 12-Minuten-Lauf war dem 1,5-Meilen-Lauf ohne Formel klar unterlegen"
+],
+"warum": "Trotz hoher Korrelation blieb ein Schätzfehler von rund 2,9 bis 4,1 mL/kg/min, stark beeinflusst von Pacing und Motivation."
+}
+}
+},
+{
+"id": "PACE-102",
+"karte": {
+"kopf": "Junge Erwachsene · Validierungsstudie",
+"titel": "Je weiter du in 12 Minuten läufst, desto höher ist deine Ausdauer",
+"titel_hervor": "in 12 Minuten läufst",
+"setup": "115 junge Erwachsene liefen 12 Minuten so weit wie möglich. Danach wurde ihre maximale Sauerstoffaufnahme direkt auf dem Laufband gemessen.",
+"zahl": null,
+"kern": [
+"Die Laufstrecke in 12 Minuten stieg fast geradlinig mit der Labor-Fitness an",
+"Wiederholte jemand den 12-Minuten-Lauf, kamen fast gleiche Strecken heraus",
+"Bei kurzen Distanzen unter 2,25 km streuten die Ergebnisse spürbar stärker"
+],
+"grenze": "In gemischten Gruppen unterschätzt die Formel niedrige Fitness oft und überschätzt sehr hohe Fitness.",
+"fuer_dich": "Du schaffst im 12-Minuten-Lauf weniger als 2,25 km? Werte das Ergebnis als grobe Richtung und achte auf gleichmäßiges Tempo.",
+"labor": {
+"design": "Experimentelle Querschnittsstudie, 12-Minuten-Lauf gegen Laufband-VO2max",
+"teilnehmer": "115 junge Erwachsene und Freizeitläufer",
+"ergebnis": "r = 0,897 zur Laufband-VO2max; Test-Retest-Reliabilität r = 0,98"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du läufst 12 Minuten lang so weit du kannst, um deine Ausdauer einzuschätzen. Wann ist das Ergebnis besonders ungenau?",
+"richtig": "Wenn die geschaffte Strecke kurz ist und das Tempo stark schwankt",
+"falsch": [
+"Wenn du den Test auf einer flachen, abgemessenen Bahn durchführst",
+"Wenn du den Lauf nach einigen Tagen zur Kontrolle wiederholst",
+"Wenn du dein Tempo über die gesamten 12 Minuten konstant hältst"
+],
+"warum": "Bei geringen Distanzen beeinflussen Motivation und ungleichmäßige Tempoeinteilung das Ergebnis deutlich stärker."
+},
+"plus": {
+"frage": "Ein Laufanfänger schafft im 12-Minuten-Test knapp 2 Kilometer. Wie solltest du den daraus berechneten VO2max-Wert einordnen?",
+"richtig": "Als groben Richtwert, weil geringe Distanz und Pacing stark streuen",
+"falsch": [
+"Als präzisen Laborersatz, weil die Formel für jede Fitness exakt gilt",
+"Als systematisch zu hoch, weil kurze Strecken die VO2max überschätzen",
+"Als unbrauchbar für Vergleiche, weil der Test kaum reproduzierbar ist"
+],
+"warum": "Unter 2,25 km nimmt die Streuung deutlich zu, und die lineare Gleichung unterschätzt niedrige Fitnesswerte häufig."
+},
+"labor": {
+"frage": "Die Laufdistanz aus einem 12-Minuten-Test wurde gegen die Laufband-VO2max geprüft. Welche Verzerrung zeigt die lineare Formel in gemischten Gruppen?",
+"richtig": "Unterschätzung bei niedriger Fitness und Überschätzung bei sehr hoher",
+"falsch": [
+"Überschätzung bei niedriger Fitness und Unterschätzung bei sehr hoher",
+"Gleichmäßige Überschätzung über alle Fitnessstufen hinweg",
+"Geringe Wiederholbarkeit bei mehrfacher Durchführung des Laufs"
+],
+"warum": "Trotz hoher Korrelation (r = 0,897) und Reliabilität (r = 0,98) tritt ein proportionaler Bias an beiden Rändern des Fitnessspektrums auf."
+}
+}
+},
+{
+"id": "PACE-103",
+"karte": {
+"kopf": "Junge Erwachsene · Prüfstudie (60 Personen)",
+"titel": "Der 12-Minuten-Lauf bleibt konstant, verzerrt aber extreme Werte",
+"titel_hervor": "verzerrt aber extreme Werte",
+"setup": "60 junge Erwachsene machten den 12-Minuten-Lauf mehrfach und ließen ihre Sauerstoffaufnahme zusätzlich direkt im Labor prüfen.",
+"zahl": null,
+"kern": [
+"Wiederholte Durchgänge lieferten für dieselbe Person fast gleiche Strecken",
+"Bei geringer Fitness fiel der berechnete Wert systematisch zu niedrig aus",
+"Bei hoher Fitness schätzte die Standardformel die Leistung zu hoch ein"
+],
+"grenze": "Untersucht wurden nur 60 junge, gesunde Erwachsene – für ältere Gruppen fehlen eigene Daten.",
+"fuer_dich": "Du fängst gerade erst mit dem Laufen an? Nutze lieber einen moderaten Gehtest oder ein Laufzeit-Modell statt des 12-Minuten-Laufs.",
+"labor": {
+"design": "Reliabilitäts- und Validitätsstudie (G-Study, Bland-Altman-Analyse)",
+"teilnehmer": "60 junge, gesunde Männer und Frauen",
+"ergebnis": "Reliabilität Phi = 0,96 (2 Tests) und 0,98 (3 Tests); proportionaler Bias"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du wiederholst einen 12-Minuten-Lauf und erreichst beide Male dieselbe Strecke. Heißt das, die berechnete Fitnesszahl stimmt exakt?",
+"richtig": "Nein, der Wert kann stabil sein und trotzdem verzerrt ausfallen",
+"falsch": [
+"Ja, gleiche Ergebnisse bei zwei Tests beweisen volle Genauigkeit",
+"Ja, die Formel liefert gerade für Laufanfänger die exaktesten Werte",
+"Nein, der Test schwankt von Tag zu Tag meist extrem stark"
+],
+"warum": "Ein Test kann sehr gut wiederholbar sein und trotzdem bei niedriger Fitness zu niedrige und bei sehr hoher Fitness zu hohe Werte ausgeben."
+},
+"plus": {
+"frage": "Ein Laufanfänger will seine Startfitness für den Trainingsplan bestimmen. Warum ist die Standardformel des 12-Minuten-Laufs hier ungünstig?",
+"richtig": "Sie unterschätzt niedrige VO2max-Werte meist systematisch",
+"falsch": [
+"Sie liefert bei Wiederholung kaum vergleichbare Laufstrecken",
+"Sie überschätzt die Fitness von Anfängern fast durchgehend",
+"Sie funktioniert nur bei Männern, nicht aber bei Frauen"
+],
+"warum": "An den Rändern des Fitnessspektrums verzerrt die Standardformel die Absolutwerte; submaximale Tests oder das VDOT-Modell passen hier besser."
+},
+"labor": {
+"frage": "Bei 60 jungen Erwachsenen wurde der 12-Minuten-Lauf per Mehrfachtest und Bland-Altman-Analyse gegen Laborwerte geprüft. Was zeigte sich?",
+"richtig": "Sehr hohe Wiederholbarkeit, aber proportionaler Bias bei beiden Geschlechtern",
+"falsch": [
+"Geringe Wiederholbarkeit, aber hohe Genauigkeit auf jedem Fitnessniveau",
+"Hohe Genauigkeit bei geringer Fitness und Verzerrung nur bei Frauen",
+"Erst ab mindestens fünf Wiederholungen wurden die Ergebnisse stabil"
+],
+"warum": "Die Reliabilität lag schon bei 2 bis 3 Durchgängen bei Phi = 0,96–0,98, doch die Absolutwerte zeigten bei Männern und Frauen proportionalen Bias."
+}
+}
+},
+{
+"id": "PACE-104",
+"karte": {
+"kopf": "Erwachsene 18–39 · Validierungsstudie",
+"titel": "Ein schneller 3-km-Lauf schätzt die Ausdauer so gut wie 12 Minuten",
+"titel_hervor": "so gut wie 12 Minuten",
+"setup": "259 gesunde Erwachsene liefen 3 km auf Bestzeit und absolvierten zusätzlich eine direkte Sauerstoffmessung im Labor.",
+"zahl": null,
+"kern": [
+"Eigene Formeln für Männer und Frauen machten die Schätzung verlässlicher",
+"Die Genauigkeit lag auf dem Niveau von 12-Minuten- und 1,5-Meilen-Lauf",
+"Für ein brauchbares Ergebnis musst du über die 3 km wirklich ans Limit gehen"
+],
+"grenze": "Nur 30 Frauen nahmen teil und alle waren zwischen 18 und 39 Jahre alt.",
+"fuer_dich": "Du willst deine Fitness zügig auf fester Distanz prüfen? Lauf 3 km voll ausbelastet und nutze die Formel für dein Geschlecht.",
+"labor": {
+"design": "Experimentelle Validierungsstudie, 3000-m-Zeitlauf gegen Labor-VO2max",
+"teilnehmer": "259 gesunde Erwachsene (18–39 Jahre): 229 Männer, 30 Frauen",
+"ergebnis": "Männer: r = 0,74, SEE 3,3 (95 % LoA ±6,4); Frauen: r = 0,79, SEE 2,6 (±5,0 mL/kg/min)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du möchtest deine Ausdauer über einen 3-km-Lauf testen. Was ist dabei wichtig, damit die Schätzung gut passt?",
+"richtig": "Du läufst die 3 km wirklich zügig und nutzt eine Formel nach Geschlecht",
+"falsch": [
+"Du joggst die 3 km möglichst locker, damit der Puls niedrig bleibt",
+"Du rechnest für Männer und Frauen mit exakt derselben Standardformel",
+"Du machst nach jedem Kilometer eine kurze Gehpause zur Erholung"
+],
+"warum": "Der 3-km-Test schätzt die Ausdauer verlässlich, wenn du voll ausbelastet läufst und die eigene Gleichung für Männer oder Frauen nutzt."
+},
+"plus": {
+"frage": "Du überlegst, ob ein 3-km-Test als Ersatz für den 12-Minuten-Lauf zur VO2max-Schätzung taugt. Was spricht dafür?",
+"richtig": "Er schätzt die VO2max ähnlich genau und bleibt zeiteffizient",
+"falsch": [
+"Er kommt ohne Ausbelastung aus und schont so die Beine",
+"Er liefert halb so große Messfehler wie der 1,5-Meilen-Lauf",
+"Er ist besonders für ältere Einsteiger ab 60 gut validiert"
+],
+"warum": "Der 3-km-Zeitlauf erreicht eine ähnliche Genauigkeit wie der 12-Minuten- und der 1,5-Meilen-Test, erfordert aber hohe Ausbelastung."
+},
+"labor": {
+"frage": "Bei 259 Erwachsenen (18–39 Jahre) wurden geschlechtsspezifische 3000-m-Gleichungen gegen Labor-VO2max geprüft. Welche Einschränkung fällt auf?",
+"richtig": "Die Frauen-Stichprobe war mit 30 Personen deutlich kleiner als die der Männer",
+"falsch": [
+"Bei Frauen fiel der Schätzfehler deutlich größer aus als bei Männern",
+"Die Korrelation lag bei beiden Geschlechtern nur im schwachen Bereich",
+"Der Test war deutlich ungenauer als der klassische 12-Minuten-Lauf"
+],
+"warum": "Während 229 Männer getestet wurden, nahmen nur 30 Frauen teil; zudem umfasste die Studie nur Erwachsene von 18 bis 39 Jahren."
+}
+}
+},
+{
+"id": "PACE-105",
+"karte": {
+"kopf": "Top-Läufer · Querschnittsstudie (16 Männer)",
+"titel": "Die eigene Tempo-Schwelle erklärt 87 % der 3-km-Laufleistung",
+"titel_hervor": "erklärt 87 %",
+"setup": "16 sehr gut trainierte männliche Läufer absolvierten einen 3-km-Lauf sowie Stufentests im Labor zur Bestimmung ihrer Stoffwechselschwellen.",
+"zahl": {
+"label": "Der 3-km-Leistung erklärte die Schwelle",
+"wert": "87 %",
+"alltag": ""
+},
+"kern": [
+"Je höher das Schwellentempo lag, desto schneller waren die Läufer über 3 km",
+"Die Stoffwechselschwelle lag im Mittel rund 11 bis 16 % unter dem 3-km-Tempo",
+"Das Tempo bei maximaler Sauerstoffaufnahme lag rund 8 % über dem 3-km-Tempo"
+],
+"grenze": "Getestet wurden nur 16 hochtrainierte Männer – bei Freizeitläufern können die Verhältnisse abweichen.",
+"fuer_dich": "Du bist gut trainiert und kennst dein 3-km-Tempo? Nutze gut 10 bis 15 % darunter als groben Richtwert für dein Schwellentempo.",
+"labor": {
+"design": "Experimentelle Querschnittsstudie, 3-km-Lauf gegen Labor-Laktat- und VO2max-Test",
+"teilnehmer": "16 hochtrainierte männliche Läufer (VO2max 73,3 ± 6,7 mL/kg/min)",
+"ergebnis": "v3km vs. vLT: r = 0,93 (R² = 87 %); vs. vVO2max: r = 0,86"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Was entscheidet bei sehr gut trainierten Läufern am stärksten darüber, wie schnell sie 3 Kilometer schaffen?",
+"richtig": "Wie hoch das Tempo ist, das sie ohne starke Übersäuerung halten",
+"falsch": [
+"Wie schnell sie die ersten 100 Meter aus dem Stand sprinten",
+"Wie groß ihre Körpergröße und Schrittlänge beim Joggen sind",
+"Wie niedrig ihr Ruhepuls morgens direkt nach dem Aufwachen ist"
+],
+"warum": "Das Tempo an der Belastungsschwelle erklärte allein 87 % der Leistungsunterschiede über 3 Kilometer."
+},
+"plus": {
+"frage": "Du bist ein gut trainierter Läufer und hast gerade eine 3-km-Bestzeit aufgestellt. Wie ordnest du dein Schwellentempo im Vergleich dazu ein?",
+"richtig": "Spürbar langsamer als dein 3-km-Tempo, grob gut ein Zehntel darunter",
+"falsch": [
+"Exakt identisch mit dem Durchschnittstempo deines 3-km-Laufs",
+"Etwas schneller als dein 3-km-Tempo, rund ein Zehntel darüber",
+"Nur etwa halb so schnell wie dein maximales 3-km-Tempo"
+],
+"warum": "Bei gut trainierten Läufern lag die Laktatschwelle im Mittel bei etwa 84 bis 89 % der 3-km-Geschwindigkeit."
+},
+"labor": {
+"frage": "Bei 16 männlichen Läufern wurde die 3-km-Pace mit vLT und vVO2max aus dem Labor verglichen. Warum gelten die Prozentwerte nicht blind für alle?",
+"richtig": "Die Stichprobe war sehr klein und bestand nur aus hochtrainierten Männern",
+"falsch": [
+"Zwischen 3-km-Pace und Laktatschwelle gab es nur einen schwachen Bezug",
+"Die Läufer absolvierten den 3-km-Test nicht mit maximalem Einsatz",
+"Die Laktatschwelle wurde nur geschätzt und nicht im Labor bestimmt"
+],
+"warum": "Mit N = 16 und einer mittleren VO2max von 73,3 mL/kg/min war die Gruppe sehr klein und extrem leistungsstark."
+}
+}
+},
+{
+"id": "PACE-106",
+"karte": {
+"kopf": "Freizeit- & Masters-Läufer · Prüfstudien",
+"titel": "Ein 5-km-Lauf schwankt kaum und trifft das Schwellentempo fast genau",
+"titel_hervor": "schwankt kaum",
+"setup": "Freizeit- und Masters-Läufer absolvierten wiederholte 5-km-Zeitläufe und ließen im Labor ihre Stoffwechselschwelle bestimmen.",
+"zahl": {
+"label": "Typische Schwankung zwischen 5-km-Läufen",
+"wert": "1,2 %",
+"alltag": ""
+},
+"kern": [
+"Bei wiederholten 5-km-Läufen im Freien lag die Abweichung oft unter 1 %",
+"Das 5-km-Tempo deckte sich fast genau mit der im Labor gemessenen Schwelle",
+"Erst ab 1,2 bis 2 % Zeitgewinn gilt ein Sprung als echter Fortschritt"
+],
+"grenze": "Der Test setzt eine flache Strecke und Erfahrung beim Einteilen über 17 bis 35 Minuten voraus.",
+"fuer_dich": "Du willst deinen Fortschritt prüfen? Lauf eine flache 5-km-Strecke und werte erst ab 1,2 bis 2 % Zeitgewinn als echtes Plus.",
+"labor": {
+"design": "Experimentelle Reliabilitäts- und Validierungsstudien (5-km-TT vs. Labor-LT)",
+"teilnehmer": "Freizeit- und Masters-Läufer (u. a. N = 17 in der Reliabilitätsstudie)",
+"ergebnis": "CV = 1,2 % (95 % KI 0,9–1,8 %), ICC = 0,99; Outdoor-CV = 0,95 %; vs. Dmax r = 0,92"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du läufst zweimal dieselbe flache 5-km-Strecke auf Bestzeit und bist beim zweiten Mal ein halbes Prozent schneller. Was bedeutet das?",
+"richtig": "Der Unterschied liegt noch im normalen Bereich der Tagesform",
+"falsch": [
+"Deine Ausdauer hat sich bereits messbar und deutlich verbessert",
+"Ein 5-km-Lauf ist viel zu ungenau, um Fitness überhaupt zu prüfen",
+"Du musst dein Training sofort deutlich härter und länger gestalten"
+],
+"warum": "Selbst bei sehr stabilen 5-km-Tests schwankt die Zeit um rund 1 %, erst ab etwa 1,2 bis 2 % zählt es als echter Fortschritt."
+},
+"plus": {
+"frage": "Als Freizeitläufer absolvierst du einen flachen 5-km-Zeitlauf am Limit. Wofür eignet sich dein Durchschnittstempo besonders gut?",
+"richtig": "Als verlässlicher VDOT-Anker und grober Richtwert fürs Schwellentempo",
+"falsch": [
+"Als Zieltempo für lockere, lange Grundlageneinheiten in Zone 2",
+"Als Ersatz für eine genaue Messung deines maximalen Sprints",
+"Als Nachweis, dass du problemlos ein ähnliches Marathontempo läufst"
+],
+"warum": "Bei Freizeit- und Masters-Läufern entsprach die 5-km-Pace fast exakt der Laktatschwelle und zeigte sehr geringes Messrauschen."
+},
+"labor": {
+"frage": "In Prüfstudien mit Freizeit- und Masters-Läufern wurden wiederholte 5-km-Zeitläufe mit der Dmax-Laktatschwelle aus dem Labor verglichen. Was zeigte sich?",
+"richtig": "Sehr geringes Messrauschen und fast deckungsgleiche Schwellengeschwindigkeit",
+"falsch": [
+"Starke Streuung der Laufzeiten trotz hoher Korrelation zur Schwelle",
+"Die 5-km-Pace lag systematisch deutlich unter der Laktatschwelle",
+"Nur auf dem Laufband, nicht aber im Freien blieben die Zeiten stabil"
+],
+"warum": "Der Variationskoeffizient lag bei 1,2 % bzw. 0,95 % im Freien (ICC 0,99) und die 5-km-Pace korrelierte mit r = 0,92 zur Dmax-Schwelle."
+}
+}
+},
+{
+"id": "PACE-107",
+"karte": {
+"kopf": "Fortgeschrittene Läufer · Vergleichsstudie",
+"titel": "Ein 30-Minuten-Lauf trifft Tempo und Puls an der Schwelle gut",
+"titel_hervor": "Tempo und Puls",
+"setup": "27 erfahrene Läufer liefen 30 Minuten maximal auf einer Bahn. Tempo und Puls wurden gegen Blutlaktat-Messungen im Labor geprüft.",
+"zahl": {
+"label": "Typischer Schätzfehler beim Puls",
+"wert": "8 Schläge/min",
+"alltag": ""
+},
+"kern": [
+"Im Schnitt gab es keine Abweichung zum Blutlaktat-Test aus dem Labor",
+"Der 30-Minuten-Test war deutlich genauer als eine Schätzung über 3,2 km",
+"Beim Schwellenpuls blieben einzelne Werte trotzdem um rund 8 Schläge daneben"
+],
+"grenze": "Nur 27 erfahrene Läufer nahmen teil – Anfänger tun sich schwer, 30 Minuten gleichmäßig voll zu laufen.",
+"fuer_dich": "Du bist erfahren und machst den 30-Minuten-Test? Nutze die 30-Minuten-Pace als Schwelle und den Puls der letzten 20 Minuten dazu.",
+"labor": {
+"design": "Methodenvergleichsstudie, 30-min-Einzelzeitlauf gegen Labor-Blutlaktat",
+"teilnehmer": "27 fortgeschrittene Läufer und Triathleten",
+"ergebnis": "vLT: r = 0,85–0,87 (SEE 0,21–0,22 m/s); LTHR: r = 0,74 (SEE 8,0 bpm)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Warum eignet sich ein harter 30-Minuten-Lauf am Limit kaum für Laufanfänger, um ihr ideales Trainingstempo zu finden?",
+"richtig": "Eine halbe Stunde gleichmäßig voll durchzulaufen ist sehr schwer einzuteilen",
+"falsch": [
+"Der Test misst nur die Sprintkraft und sagt nichts über Ausdauer aus",
+"Ohne Blutabnahme liefert ein 30-Minuten-Lauf keine brauchbaren Werte",
+"Die Ergebnisse liegen im Schnitt völlig neben den Werten aus dem Labor"
+],
+"warum": "Das 30-Minuten-Tempo gleichmäßig am Limit zu treffen verlangt viel Erfahrung, weshalb Einsteiger leicht falsch starten."
+},
+"plus": {
+"frage": "Du hast einen maximalen 30-Minuten-Test absolviert und daraus Schwellen-Pace und LTHR abgeleitet. Wie solltest du künftig steuern?",
+"richtig": "Pace und Herzfrequenz zusammen nutzen, weil der Puls einzeln streuen kann",
+"falsch": [
+"Ausschließlich nach Puls trainieren und die Pace ignorieren",
+"Den Puls der ersten 10 Minuten als LTHR für Intervalle nehmen",
+"Die gemessene Pace für lockere Regenerationsläufe übernehmen"
+],
+"warum": "Der Puls hat im Einzelfall einen Schätzfehler von rund 8 Schlägen pro Minute – zusammen mit der Pace wird die Steuerung verlässlicher."
+},
+"labor": {
+"frage": "Ein 30-minütiger maximaler Zeitlauf wurde gegen Labor-Blutlaktat und eine 3200-m-Schätzung getestet. Wie schnitt der 30-Minuten-Test ab?",
+"richtig": "Kein signifikanter Mittelwert-Bias und kleinerer Fehler als über 3200 m",
+"falsch": [
+"Größerer Schätzfehler beim Tempo als über 3200 m, aber genauer beim Puls",
+"Deutliche Überschätzung der Schwellen-Pace im Vergleich zum Blutlaktat",
+"Hohe Genauigkeit bei der Herzfrequenz ohne nennenswerte Streuung"
+],
+"warum": "Beim 30-Minuten-Test war der Tempo-Schätzfehler mit 0,21–0,22 m/s etwa halb so groß wie bei der 3200-m-Schätzung (0,41–0,45 m/s)."
+}
+}
+},
+{
+"id": "PACE-108",
+"karte": {
+"kopf": "Läufer · Review (19 Studien) & Feldtests",
+"titel": "Zwei Bahnläufe reichen für ein stabiles Tempo-Limit nahe am Labor",
+"titel_hervor": "Zwei Bahnläufe reichen",
+"setup": "Freizeit- und Wettkampfläufer absolvierten zwei bis drei maximale Bahnläufe von 2 bis 15 Minuten. Die Werte wurden mit Labortests verglichen.",
+"zahl": {
+"label": "Schwankung bei Test-Wiederholung",
+"wert": "0,4 %",
+"alltag": ""
+},
+"kern": [
+"Zwei gut gewählte Distanzen trafen das Ergebnis von drei Läufen fast exakt",
+"Das berechnete Grenztempo sagte die 5-km-Zeit besser voraus als ein Stufentest",
+"Die errechnete Grenze liegt etwa 6 % über dem langfristig stabilen Dauertempo"
+],
+"grenze": "Die Reserve für kurze Sprints oberhalb der Grenze ließ sich im Feld nur sehr ungenau messen.",
+"fuer_dich": "Du willst dein oberes Ausdauerlimit testen? Lauf z. B. 1000 m und 2600 m voll mit mindestens 30 Minuten Pause und nimm 94 % als Schwelle.",
+"labor": {
+"design": "Systematisches Review (19 Studien) und Feldvalidierungen gegen Laufband-CS",
+"teilnehmer": "Freizeit- und Wettkampfläufer aus 19 Studien",
+"ergebnis": "Feld- vs. Labor-CS: r = 0,89, TE 0,14 m/s, CV 0,4 %; D'-CV 13–39 %"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Wie lässt sich auf einer Laufbahn ohne Labor herausfinden, wo die Grenze zwischen hartem Ausdauerlauf und schneller Erschöpfung liegt?",
+"richtig": "Mit zwei vollen Zeitläufen über eine kürzere und eine längere Strecke",
+"falsch": [
+"Mit einem einzigen maximalen Sprint über 60 Meter aus dem Startblock",
+"Mit einer Stunde sehr lockerem Joggen und einem Blick auf den Ruhepuls",
+"Nur durch eine Blutentnahme am Ohrläppchen nach jedem Kilometer"
+],
+"warum": "Aus zwei maximalen Läufen zwischen 2 und 15 Minuten lässt sich diese Belastungsgrenze im Feld sehr stabil berechnen."
+},
+"plus": {
+"frage": "Du hast über zwei maximale Bahnläufe deine Critical Speed (CS) berechnet. Warum solltest du deine kontinuierliche Schwellen-Pace etwas darunter ansetzen?",
+"richtig": "Weil CS im Schnitt leicht über dem stabilen Laktat-Gleichgewicht liegt",
+"falsch": [
+"Weil CS im Feld deutlich niedriger ausfällt als im Lauflabor",
+"Weil CS nur für kurze Sprints unter einer Minute aussagekräftig ist",
+"Weil zwei Läufe meist zu stark schwanken, um Zonen abzuleiten"
+],
+"warum": "Die Critical Speed liegt rund 6 % über dem maximalen Laktat-Steady-State, weshalb etwa 94 % der CS als Schwellen-Pace passen."
+},
+"labor": {
+"frage": "In Feldvalidierungen wurde das Critical-Speed-Modell aus zwei bis drei maximalen Bahnläufen mit Labormessungen verglichen. Welcher Wert blieb unzuverlässig?",
+"richtig": "Die anaerobe Distanzkapazität D' zeigte im Feld sehr hohe Streuungen",
+"falsch": [
+"Die Critical Speed selbst wich im Schnitt stark von der Laufband-CS ab",
+"Zwei Testläufe waren drei Testläufen bei der CS-Schätzung klar unterlegen",
+"Die 5-km-Leistung ließ sich damit schlechter vorhersagen als per Stufentest"
+],
+"warum": "Während die Critical Speed im Feld sehr stabil war (CV 0,4 %), streute der Parameter D' stark mit einem CV von 13 bis 39 %."
+}
+}
+},
+{
+"id": "PACE-109",
+"karte": {
+"kopf": "Einsteiger bis Risikogruppen · Crossover-Studien",
+"titel": "Wird Sprechen beim Laufen knapp, bist du an deiner ersten Schwelle",
+"titel_hervor": "Sprechen beim Laufen knapp",
+"setup": "Teilnehmende steigerten ihr Tempo in Stufen und sagten einen Text auf. Die Sprechstufen wurden mit Atem- und Pulswerten aus dem Labor verglichen.",
+"zahl": null,
+"kern": [
+"Solange du entspannt ganze Sätze sprichst, bleibst du im Grundlagenbereich",
+"Fällt flüssiges Sprechen erstmals schwer, triffst du genau die erste Schwelle",
+"Der Test klappt ohne Ausbelastung und auch bei Herz-Kreislauf-Risiko"
+],
+"grenze": "Die Stufen von 2 bis 3 Minuten sind recht grob – bei Untrainierten klettert der Puls an der oberen Sprechgrenze später oft hoch.",
+"fuer_dich": "Du suchst dein lockeres Lauftempo? Lauf trainiert beim letzten entspannten Sprechtempo, als Einsteiger noch eine Stufe darunter.",
+"labor": {
+"design": "Experimentelle Crossover-Studien und klinisches Review, Talk-Test vs. Labor-VT1",
+"teilnehmer": "Einsteiger, Fortgeschrittene und Herz-Kreislauf-Risikogruppen",
+"ergebnis": "VT vs. +/-: 77 vs. 83 % VO2peak (n. s.); LP (+): 64 ± 5 % VO2max; Neg (-): 79 ± 7 %"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du läufst locker und testest nebenbei, wie gut du noch sprechen kannst. Woran merkst du, dass du im Grundlagenbereich bleibst?",
+"richtig": "Du kannst noch bequem und flüssig ganze Sätze sprechen",
+"falsch": [
+"Du bringst gerade noch einzelne Wörter mit Mühe heraus",
+"Du kannst gar nicht mehr reden und atmest sehr laut",
+"Du merkst am Sprechen keinen Unterschied zwischen leicht und hart"
+],
+"warum": "Solange bequemes Sprechen problemlos klappt, liegt die Belastung verlässlich im aeroben Grundlagenbereich."
+},
+"plus": {
+"frage": "Ein Laufanfänger nutzt den Talk-Test, um sein Zone-2-Tempo für längere Dauerläufe zu finden. Welche Stufe sollte er wählen?",
+"richtig": "Eine Stufe unter dem Tempo, bei dem bequemes Sprechen gerade noch klappt",
+"falsch": [
+"Genau das Tempo, bei dem flüssiges Sprechen erstmals nicht mehr gelingt",
+"Das Tempo, bei dem Sprechen überhaupt nicht mehr möglich ist",
+"Das höchste bequeme Sprechtempo plus einen kleinen Tempo-Aufschlag"
+],
+"warum": "Bei Untrainierten steigt die Belastung auf der letzten bequemen Sprechstufe während längerer Läufe oft nach, daher hilft eine Stufe Puffer."
+},
+"labor": {
+"frage": "In Crossover-Studien wurde der stufenweise Talk-Test mit der im Labor gemessenen ventilatorischen Schwelle (VT1) verglichen. Was entsprach der VT1 am besten?",
+"richtig": "Die Übergangsstufe, auf der bequemes Sprechen erstmals leicht stockte",
+"falsch": [
+"Die Stufe, auf der gar kein Sprechen mehr möglich war",
+"Die niedrigste Stufe, auf der entspanntes Sprechen leicht fiel",
+"Keine Stufe, da der Test nur auf dem Fahrradergometer funktionierte"
+],
+"warum": "Auf der Übergangsstufe (+/-) gab es keinen signifikanten Unterschied zur Labor-VT1 (83 vs. 77 % VO2peak, 86 vs. 89 % HRpeak)."
+}
+}
+}
+]

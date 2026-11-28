@@ -1,0 +1,1102 @@
+[
+{
+"id": "HYB-113",
+"karte": {
+"kopf": "Erfahrene Athleten · Schlafmessung",
+"titel": "Nach Krafttraining dauerte das Einschlafen fast dreimal so lang",
+"titel_hervor": "fast dreimal so lang",
+"setup": "Bei acht erfahrenen Hybrid-Athleten wurden Einschlafzeit, nächtliche Wachphasen und Herzaktivität nach Kraft- und Ausdauereinheiten gemessen.",
+"zahl": {
+"label": "Einschlafzeit nach Kraft vs. Ausdauer",
+"wert": "29 vs. 10 min",
+"alltag": "19 Minuten länger wach im Bett"
+},
+"kern": [
+"Nach Ausdauertraining lagen die Athleten nachts dagegen länger wieder wach",
+"Vor dem Einschlafen zeigte das Herz nach Krafttraining deutlich mehr Unruhe",
+"Die Schlafstörungen hingen direkt mit der Aktivierung des Nervensystems zusammen"
+],
+"grenze": "Erste Hinweise aus nur 8 Männern – wie groß der Effekt bei Frauen oder anderen Uhrzeiten ist, bleibt offen.",
+"fuer_dich": "Du schläfst nach späten Krafteinheiten schlecht ein? Versuche, schweres Training früher zu legen und ruhig auszuklingen.",
+"labor": {
+"design": "Beobachtungsstudie zum Schlaf nach Kraft- vs. Ausdauertraining",
+"teilnehmer": "8 erfahrene männliche Hybrid-Athleten",
+"ergebnis": "Einschlafzeit 29 vs. 10 min (p=0,003); Wachzeit nachts 48 vs. 31 min (p=0,008)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Kann es einen Unterschied für deinen Schlaf machen, ob du Kraft- oder Ausdauertraining absolviert hast?",
+"richtig": "Ja, erste Hinweise zeigen längeres Einschlafen nach Krafttraining",
+"falsch": [
+"Nein, jede Trainingsart macht abends sofort gleich müde",
+"Nach Krafttraining schläft man laut Daten sofort schneller ein",
+"Ausdauertraining verhindert jegliches nächtliches Aufwachen"
+],
+"warum": "Bei acht erfahrenen Athleten dauerte das Einschlafen nach Krafttraining fast dreimal so lang, während nach Ausdauer mehr nächtliche Wachzeit auftrat."
+},
+"plus": {
+"frage": "Du trainierst oft abends nach 18 Uhr und liegst nach schweren Krafteinheiten lange wach. Welche Anpassung ist naheliegend?",
+"richtig": "Schweres Krafttraining früher legen und ein ruhiges Cool-down einplanen",
+"falsch": [
+"Das Krafttraining noch näher an die Schlafenszeit schieben",
+"Nach dem Krafttraining noch harte Sprints für tiefen Schlaf anhängen",
+"Vor dem Schlafen komplett auf Ruhephasen verzichten"
+],
+"warum": "Krafttraining aktivierte das Nervensystem vor dem Einschlafen stärker; mehr zeitlicher Abstand und ruhiges Ausklingen können beim Herunterfahren helfen."
+},
+"labor": {
+"frage": "Bei acht männlichen Hybrid-Athleten wurden Schlafparameter nach Kraft- und Ausdauertraining verglichen. Wie unterschieden sich die beiden Schlafstörungen?",
+"richtig": "Längere Einschlafzeit nach Kraft, mehr nächtliche Wachzeit nach Ausdauer",
+"falsch": [
+"Längere Einschlafzeit nach Ausdauer, mehr Wachzeit nachts nach Kraft",
+"Beide Störungen traten ausschließlich nach dem Krafttraining auf",
+"Zwischen beiden Trainingsarten gab es keinen messbaren Unterschied"
+],
+"warum": "Nach Krafttraining war die Einschlaflatenz höher (29 vs. 10 min), nach Ausdauer dagegen die Wachzeit nach dem Einschlafen (48 vs. 31 min)."
+}
+}
+},
+{
+"id": "HYB-114",
+"karte": {
+"kopf": "Ausdauer- & Kraftsportler · Meta-Analyse",
+"titel": "Zwei Wochen halbes Volumen brachten 2 bis 3 Prozent mehr Leistung",
+"titel_hervor": "2 bis 3 Prozent mehr Leistung",
+"setup": "Eine Meta-Analyse verglich verschiedene Wettkampf-Entlastungen bei Schwimmern, Radfahrern, Läufern und Kraftdreikämpfern.",
+"zahl": {
+"label": "Typischer Leistungsschub durch Taper",
+"wert": "+2 bis 3 %",
+"alltag": "im Schnitt rund +2,6 %"
+},
+"kern": [
+"Am besten wirkte es, das Volumen schrittweise um rund die Hälfte zu senken",
+"Trainingsintensität und Anzahl der Einheiten pro Woche blieben dabei erhalten",
+"Ausdauer- und Kraftsportler reagierten auf fast dieselbe Volumenkürzung positiv"
+],
+"grenze": "Für Hybrid-Wettkämpfe gibt es noch keine eigene Studie – die Werte stammen aus Ausdauer- und Kraftsport.",
+"fuer_dich": "Dein Wettkampf ist in zwei Wochen? Halbiere schrittweise dein Trainingsvolumen, aber halte Tempo und Gewichte hoch.",
+"labor": {
+"design": "Meta-Analyse verschiedener Taper-Strategien (Dauer ≤21 Tage)",
+"teilnehmer": "249 Schwimmer, 80 Radfahrer, 110 Läufer sowie Kraftdreikämpfer",
+"ergebnis": "Leistungszuwachs 2–3 % (ca. 2,6 %) bei 41–60 % exponentieller Volumenreduktion"
+}
+},
+"quiz": {
+"basis": {
+"frage": "In zwei Wochen steht dein großer Wettkampf an. Wie holst du auf den letzten Metern am meisten Frische und Leistung heraus?",
+"richtig": "Trainingsmenge deutlich senken, aber knackig und regelmäßig bleiben",
+"falsch": [
+"Zwei Wochen lang gar keinen Sport mehr machen",
+"In den letzten zwei Wochen noch einmal deutlich mehr trainieren",
+"Nur noch sehr langsam trainieren, aber genauso lange wie sonst"
+],
+"warum": "Wer die Trainingsmenge rund zwei Wochen lang etwa halbiert, aber Tempo und Rhythmus hält, steigert die Wettkampfleistung im Schnitt um 2 bis 3 Prozent."
+},
+"plus": {
+"frage": "Dein Wettkampf ist in 14 Tagen und du startest deinen Taper. Welche Schraube drehst du deutlich herunter, während die anderen stabil bleiben?",
+"richtig": "Das Trainingsvolumen senken, Intensität und Frequenz erhalten",
+"falsch": [
+"Die Intensität halbieren, das Wochenvolumen aber hochhalten",
+"Die Trainingsfrequenz auf einmal pro Woche reduzieren",
+"Alle drei Faktoren gleichzeitig auf nahezu null fahren"
+],
+"warum": "Eine schrittweise Volumenkürzung um rund 41 bis 60 Prozent bei erhaltener Intensität und Frequenz maximierte die Leistung."
+},
+"labor": {
+"frage": "Meta-Analysen untersuchten Taper-Strategien bei Ausdauer- und Kraftsportlern über bis zu drei Wochen. Wie gut lassen sich diese Ergebnisse auf Hybrid-Wettkämpfe übertragen?",
+"richtig": "Noch keine eigenen Hybrid-RCTs, aber Ausdauer und Kraft stimmen überein",
+"falsch": [
+"Ausdauer- und Kraftsportler brauchten völlig gegensätzliche Taper",
+"Die Daten stammen ausschließlich aus reinen Hybrid-Wettkampfstudien",
+"Für Kraftsportler brachte eine Volumenkürzung gar keinen Effekt"
+],
+"warum": "Obwohl spezifische Hybrid-RCTs fehlen, lagen die optimalen Volumenkürzungen im Ausdauer- (41–60 %) und Kraftsport (~59 %) praktisch gleichauf."
+}
+}
+},
+{
+"id": "HYB-115",
+"karte": {
+"kopf": "Fachgesellschaften · Ernährungsleitlinie",
+"titel": "Volle Kohlenhydratspeicher und genug Trinken sichern die Leistung",
+"titel_hervor": "sichern die Leistung",
+"setup": "Sportmedizinische Fachgesellschaften fassten Studien zu Kohlenhydraten und Flüssigkeit vor und während intensiver Wettkämpfe zusammen.",
+"zahl": null,
+"kern": [
+"Mehr als zwei Prozent Gewichtsverlust durch Schweiß bremst spürbar die Leistung",
+"Ab etwa einer Stunde Wettkampfdauer helfen zusätzliche Kohlenhydrate zwischendurch",
+"Bei sehr hoher Anstrengung verträgt der Magen Getränke oder Gels meist besser"
+],
+"grenze": "Leitlinie auf Basis von Ausdauerstudien – wie der Magen bei harten Kraftstationen reagiert, ist individuell.",
+"fuer_dich": "Dein Wettkampf dauert über eine Stunde? Fülle am Vortag deine Speicher und teste Gels oder Sportgetränke vorher im Training.",
+"labor": {
+"design": "Konsens-Positionspapier auf Basis zahlreicher Ausdauer-Ernährungsstudien",
+"teilnehmer": "",
+"ergebnis": ""
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du hast morgen einen anstrengenden Wettkampf, der über eine Stunde dauert. Was hilft deinem Körper am meisten, lange durchzuhalten?",
+"richtig": "Schon am Vortag genug Kohlenhydrate essen und gut hydriert starten",
+"falsch": [
+"Am Vortag möglichst wenig essen, um leichter am Start zu stehen",
+"Während des Wettkampfs nichts trinken, damit der Magen ruhig bleibt",
+"Direkt vor dem Start nur eine große Portion Fett und Eiweiß essen"
+],
+"warum": "Gut gefüllte Kohlenhydratspeicher und ausreichend Flüssigkeit verhindern einen frühen Leistungsabfall bei langen, harten Belastungen."
+},
+"plus": {
+"frage": "Dein Hybrid-Wettkampf dauert voraussichtlich über 60 Minuten bei sehr hoher RPE. Wie versorgst du dich währenddessen am sinnvollsten?",
+"richtig": "Mit im Training getesteten flüssigen Kohlenhydraten oder Gels",
+"falsch": [
+"Mit festen, sehr fettreichen Riegeln direkt vor schweren Stationen",
+"Nur mit reinem Wasser ohne Kohlenhydrate oder Natrium",
+"Erst nach der Ziellinie trinken, um Zeit im Rennen zu sparen"
+],
+"warum": "Hohe Belastungen bremsen die Magenentleerung; flüssige Kohlenhydrate oder Gels mit etwas Natrium sind meist am besten verträglich."
+},
+"labor": {
+"frage": "Sportmedizinische Positionspapiere empfehlen Kohlenhydrat-Vorladung und gezielte Flüssigkeitszufuhr vor und im Wettkampf. Welches physiologische Ziel verfolgt die Flüssigkeitsstrategie?",
+"richtig": "Den schweißbedingten Körpermasseverlust unter zwei Prozent halten",
+"falsch": [
+"Während des Rennens aktiv an Körpergewicht zuzulegen",
+"Jede Natriumaufnahme zu vermeiden, um den Puls zu senken",
+"Die Magenentleerung während der Belastung gezielt zu stoppen"
+],
+"warum": "Ein Flüssigkeitsverlust über zwei Prozent der Körpermasse beeinträchtigt die Leistungsfähigkeit; gezieltes Trinken begrenzt dieses Defizit."
+}
+}
+},
+{
+"id": "HYB-116",
+"karte": {
+"kopf": "Sportler · Fachgesellschafts-Review",
+"titel": "Koffein und Natron steigern Ausdauer und harte Intervalle spürbar",
+"titel_hervor": "steigern Ausdauer und harte Intervalle",
+"setup": "Zwei Fach-Positionspapiere werteten Studien zu akuter Einnahme von Koffein und Natriumbicarbonat vor Wettkämpfen aus.",
+"zahl": null,
+"kern": [
+"Koffein unterstützt sowohl die Ausdauer als auch die Kraftausdauer deutlich",
+"Natriumbicarbonat hilft vor allem bei harten Belastungen von 30 Sekunden bis 12 Minuten",
+"Natron löst häufig Magen-Darm-Probleme wie Übelkeit oder Blähungen aus"
+],
+"grenze": "Ob die Kombination aus Koffein und Natron mehr bringt als jedes Mittel allein, ist noch nicht geklärt.",
+"fuer_dich": "Du willst Koffein oder Natron am Wettkampftag nutzen? Teste Dosis und Verträglichkeit unbedingt vorher im Training.",
+"labor": {
+"design": "Positionspapiere auf Basis von Interventionsstudien und Meta-Analysen",
+"teilnehmer": "",
+"ergebnis": "Koffein: moderater bis großer Effekt; Natriumbicarbonat: mehr Zeit >90 % VO2max"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du hast gehört, dass Backnatron vor einem harten Wettkampf helfen kann, und willst es am Renntag zum ersten Mal probieren. Was spricht dagegen?",
+"richtig": "Es verursacht häufig Magen-Darm-Probleme wie Übelkeit oder Blähungen",
+"falsch": [
+"Es wirkt nur, wenn man es monatelang täglich einnimmt",
+"Es macht während des Rennens stark müde und verlangsamt den Puls",
+"Es hat bei harten Belastungen überhaupt keine messbare Wirkung"
+],
+"warum": "Natriumbicarbonat kann die Leistung bei harten Belastungen steigern, sorgt aber oft für Bauchbeschwerden und muss im Training getestet werden."
+},
+"plus": {
+"frage": "Du verträgst Koffein und Natriumbicarbonat aus dem Training gut und willst beides vor einem Wettkampf timen. Wann nimmst du sie typischerweise ein?",
+"richtig": "Natron ein bis drei Stunden, Koffein etwa eine Stunde vor dem Start",
+"falsch": [
+"Beides erst unmittelbar beim Startschuss auf nüchternen Magen",
+"Koffein schon am Vorabend und Natron erst nach dem Ziel",
+"Beides nur in den Pausen zwischen den letzten beiden Stationen"
+],
+"warum": "Natriumbicarbonat wird meist 60 bis 180 Minuten vor dem Start mit Kohlenhydraten genommen, Koffein rund 60 Minuten vorher."
+},
+"labor": {
+"frage": "Positionspapiere bestätigen leistungssteigernde Effekte für Koffein und Natriumbicarbonat bei harten Belastungen. Was ist zur Kombination beider Stoffe noch offen?",
+"richtig": "Ob die Kombination einen klaren Zusatznutzen gegenüber Einzelgaben hat",
+"falsch": [
+"Ob Koffein allein überhaupt die aerobe Ausdauer beeinflusst",
+"Ob Natriumbicarbonat jemals Magen-Darm-Beschwerden auslösen kann",
+"Ob beide Stoffe überhaupt vor dem Start eingenommen werden dürfen"
+],
+"warum": "Für beide Stoffe einzeln ist die Wirkung gut belegt, ein sicherer additiver Zusatznutzen der Kombination ist jedoch noch nicht abschließend geklärt."
+}
+}
+},
+{
+"id": "HYB-117",
+"karte": {
+"kopf": "Sportler · Fachgesellschafts-Review",
+"titel": "Beta-Alanin wirkt nur nach Wochen, nicht als Einzelgabe vor dem Start",
+"titel_hervor": "wirkt nur nach Wochen",
+"setup": "Ein Fach-Positionspapier wertete Studien zur mehrwöchigen und einmaligen Einnahme von Beta-Alanin bei harten Belastungen aus.",
+"zahl": {
+"label": "Mittlerer Leistungszuwachs nach Ladephase",
+"wert": "+2,85 %",
+"alltag": "bei rund 179 g Gesamtdosis"
+},
+"kern": [
+"Die Substanz füllt über Wochen die Säurepuffer im Muskel langsam auf",
+"Eine einzelne Portion direkt vor dem Wettkampf bringt keinen Leistungsgewinn",
+"Größere Einzeldosen lösen oft harmloses Hautkribbeln aus, verteilt passiert das seltener"
+],
+"grenze": "Hilft vor allem bei harten Intervallen über 30 Sekunden – für reine Maximalkraft ist der Nutzen unklar.",
+"fuer_dich": "Du willst Beta-Alanin für ein Rennen nutzen? Starte 4 bis 10 Wochen vorher täglich in kleinen Portionen statt am Renntag.",
+"labor": {
+"design": "Positionspapier auf Basis von Interventionsstudien und Meta-Analysen",
+"teilnehmer": "",
+"ergebnis": "Mediane Leistung +2,85 % (179 g gesamt); Muskelcarnosin +40–64 % (4 Wo.), bis +80 % (10 Wo.)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Viele Trainings-Booster enthalten Beta-Alanin und sorgen kurz vor dem Sport für Hautkribbeln. Macht dich eine einmalige Portion direkt vor dem Start schneller?",
+"richtig": "Nein, es wirkt nur nach mehrwöchiger täglicher Einnahme",
+"falsch": [
+"Ja, das Kribbeln zeigt den sofortigen Energieschub an",
+"Ja, es wirkt genau wie Koffein innerhalb einer Stunde",
+"Nein, es hat auch nach mehreren Wochen keinen Effekt"
+],
+"warum": "Eine Einzelgabe bringt keinen Leistungsgewinn und löst bei höheren Dosen nur Hautkribbeln aus; der Effekt entsteht erst nach Wochen."
+},
+"plus": {
+"frage": "Du möchtest Beta-Alanin für einen Wettkampf in zwei Monaten nutzen, aber unangenehmes Hautkribbeln vermeiden. Wie gehst du vor?",
+"richtig": "Täglich über Wochen in mehreren kleinen Portionen zu Mahlzeiten nehmen",
+"falsch": [
+"Die gesamte Tagesmenge einmalig direkt vor dem Training schlucken",
+"Erst am Wettkampftag eine große Einzeldosis vor dem Start nehmen",
+"Nur an Trainingstagen nehmen und an Ruhetagen pausieren"
+],
+"warum": "Mehrere kleinere Einzeldosen zu den Mahlzeiten über 4 bis 10 Wochen füllen die Muskelspeicher auf und verringern das Kribbeln."
+},
+"labor": {
+"frage": "Ein Positionspapier wertete Studien zur chronischen Beta-Alanin-Einnahme aus. Über welchen Mechanismus und bei welcher Belastung zeigt sich der Hauptnutzen?",
+"richtig": "Mehr Muskelcarnosin als Säurepuffer bei harten Belastungen ab 30 Sekunden",
+"falsch": [
+"Akute Stimulation des Nervensystems bei kurzen Maximalsprints",
+"Direkte Steigerung der reinen Maximalkraft nach einer Einzelgabe",
+"Sofortige Auffüllung der Muskelglykogenspeicher vor dem Start"
+],
+"warum": "Chronische Einnahme erhöht das Muskelcarnosin deutlich und verbessert vor allem die Säurepufferung bei intensiven Belastungen von 30 Sekunden bis mehreren Minuten."
+}
+}
+},
+{
+"id": "HYP-101",
+"karte": {
+"kopf": "Meist Untrainierte · 15 Studien zusammengefasst",
+"titel": "Mehr Sätze pro Woche lassen Muskeln spürbar stärker wachsen",
+"titel_hervor": "spürbar stärker wachsen",
+"setup": "Verglichen wurde das Muskelwachstum bei unter 5, 5 bis 9 und 10 oder mehr Sätzen pro Muskelgruppe und Woche.",
+"zahl": {
+"label": "Mehr Wachstum bei höherem Volumen",
+"wert": "+3,9 %",
+"alltag": "≈ +0,37 % pro extra Satz"
+},
+"kern": [
+"Mit jedem zusätzlichen Satz pro Woche stieg der Muskelzuwachs im Schnitt leicht an.",
+"10 oder mehr Sätze pro Woche brachten deutlich mehr Zuwachs als unter 5 Sätze.",
+"Mehr Volumen lohnt sich nur, solange deine Erholung zwischen den Einheiten stimmt."
+],
+"grenze": "Die meisten Daten stammen von Untrainierten bei moderaten Satzzahlen – wo das Maximum liegt, blieb offen.",
+"fuer_dich": "Dein Muskelwachstum stagniert bei wenigen Sätzen? Steigere dich schrittweise Richtung 10 Sätze pro Woche.",
+"labor": {
+"design": "Systematisches Review mit Meta-Analyse, Vergleich <5 vs. 5–9 vs. 10+ Sätze/Woche",
+"teilnehmer": "15 Studien, 34 Gruppen, überwiegend Untrainierte",
+"ergebnis": "ES +0,023 (+0,37 %) pro Satz (p = 0,002); Differenz +0,241 (+3,9 %) hoch vs. niedrig"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du machst bisher nur wenige Sätze pro Muskel in der Woche und willst stärker aufbauen. Was hilft im Schnitt am ehesten?",
+"richtig": "Die Zahl der Sätze pro Woche schrittweise erhöhen",
+"falsch": [
+"Die Zahl der Sätze pro Woche weiter reduzieren",
+"Die Sätze gleich lassen und nur mehr dehnen",
+"Jede Woche komplett andere Übungen wählen"
+],
+"warum": "Mehr Sätze pro Muskel und Woche steigern das Muskelwachstum im Schnitt stufenweise, solange du dich gut erholst."
+},
+"plus": {
+"frage": "Du trainierst einen Muskel mit unter 5 Sätzen pro Woche und deine Regeneration ist stabil. Wie passt du deinen Plan sinnvoll an?",
+"richtig": "Das Wochenvolumen schrittweise auf 10 oder mehr Sätze steigern",
+"falsch": [
+"Sofort auf über 30 Sätze pro Woche springen",
+"Das Volumen halbieren und jede Woche einen Deload machen",
+"Die Satzzahl beibehalten und nur die Pausen kürzen"
+],
+"warum": "Bei stabiler Erholung bringen 10 oder mehr Sätze pro Woche im Schnitt deutlich mehr Hypertrophie als unter 5 Sätze."
+},
+"labor": {
+"frage": "In einer Meta-Analyse aus 15 Studien wurden unter 5, 5 bis 9 und 10+ Sätze pro Woche verglichen. Welche Grenze hat dieses Ergebnis?",
+"richtig": "Es untersuchte meist Untrainierte und zeigt keine klare Obergrenze",
+"falsch": [
+"Es untersuchte nur Leistungssportler bei extrem hohem Volumen",
+"Es zeigte keinen Zusammenhang zwischen Satzzahl und Muskelwachstum",
+"Es berücksichtigte ausschließlich das Training der Oberarme"
+],
+"warum": "Da vor allem Untrainierte bei niedrigen bis moderaten Satzzahlen geprüft wurden, blieb das Abflachen bei sehr hohem Volumen offen."
+}
+}
+},
+{
+"id": "HYP-102",
+"karte": {
+"kopf": "Trainierte · 7 Studien zusammengefasst",
+"titel": "Ab 12 bis 20 Sätzen bringen noch mehr Sätze meist keinen Vorteil",
+"titel_hervor": "meist keinen Vorteil",
+"setup": "Bei Trainierten wurde das Muskelwachstum bei unter 12, 12 bis 20 und über 20 Sätzen pro Muskel und Woche verglichen.",
+"zahl": {
+"label": "Profitieren von individuellem Volumen",
+"wert": "62,5 %",
+"alltag": "fast zwei von drei Trainierten"
+},
+"kern": [
+"Bei Oberschenkel und Bizeps wuchs der Muskel ab 20 Sätzen nicht stärker weiter.",
+"Nur beim Trizeps zeigten über 20 Sätze in der Auswertung einen zusätzlichen Vorteil.",
+"Wie viel Volumen optimal ist, unterscheidet sich stark von Person zu Person."
+],
+"grenze": "Druckübungen wurden beim Trizeps voll mitgezählt – das könnte den scheinbaren Vorteil von über 20 Sätzen erklären.",
+"fuer_dich": "Du trainierst regelmäßig und überlegst mehr Sätze? Bleib meist bei 12 bis 20 Sätzen pro Muskel und Woche.",
+"labor": {
+"design": "Systematisches Review mit Meta-Analyse, Vergleich <12 vs. 12–20 vs. >20 Sätze/Woche",
+"teilnehmer": "7 Studien mit trainierten Personen",
+"ergebnis": "Quadrizeps p = 0,19, Bizeps p = 0,59, Trizeps p = 0,01; 62,5 % profitieren von Individualisierung"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du trainierst schon regelmäßig und machst bereits viele Sätze für Beine und Bizeps. Was bringt noch mehr Volumen über das hohe Maß hinaus?",
+"richtig": "Im Schnitt kaum noch zusätzliches Muskelwachstum",
+"falsch": [
+"Doppelt so schnellen Muskelaufbau in kurzer Zeit",
+"Sofortigen Muskelabbau bei jedem einzelnen Satz",
+"Immer den gleichen Zuwachs wie am Trainingsanfang"
+],
+"warum": "Bei Trainierten brachten über 20 Sätze für Oberschenkel und Bizeps im Schnitt nicht mehr Wachstum als 12 bis 20 Sätze."
+},
+"plus": {
+"frage": "Du bist fortgeschritten und planst dein wöchentliches Standardvolumen pro Muskelgruppe. Welcher Bereich ist meist der beste Ausgangspunkt?",
+"richtig": "Ein moderater Bereich von etwa 12 bis 20 Sätzen pro Woche",
+"falsch": [
+"Dauerhaft deutlich über 25 Sätze für jede Muskelgruppe",
+"Streng unter 5 Sätzen pro Woche für alle Muskeln",
+"Jede Woche zufällig zwischen 3 und 30 Sätzen wechseln"
+],
+"warum": "12 bis 20 Sätze liefern bei Trainierten meist denselben Zuwachs wie über 20 Sätze und lassen Raum für individuelle Anpassung."
+},
+"labor": {
+"frage": "Beim Vergleich von 12–20 gegen über 20 Sätze pro Woche zeigte nur der Trizeps einen Vorteil bei sehr hohem Volumen. Was ist eine methodische Erklärung?",
+"richtig": "Mehrgelenksübungen wurden 1:1 als volle Sätze für den Trizeps gezählt",
+"falsch": [
+"Der Trizeps wurde in den Studien gar nicht direkt trainiert",
+"Der Trizeps reagiert grundsätzlich nicht auf moderate Satzzahlen",
+"Beim Trizeps wurden ausschließlich Untrainierte untersucht"
+],
+"warum": "Wenn Druckübungen voll für den Hilfsmuskel Trizeps gezählt werden, steigt die gezählte Satzzahl rechnerisch stark an."
+}
+}
+},
+{
+"id": "HYP-103",
+"karte": {
+"kopf": "Einsteiger & Trainierte · 26 Studien ausgewertet",
+"titel": "Je näher am Muskelversagen, desto stärker wächst der Muskel",
+"titel_hervor": "näher am Muskelversagen",
+"setup": "Analysiert wurde, wie sehr Muskelwachstum und Kraft davon abhängen, wie viele Wiederholungen am Satzende noch möglich wären.",
+"zahl": null,
+"kern": [
+"Für den Kraftzuwachs machte es kaum einen Unterschied, wie nah der Satz ans Limit ging.",
+"Bei großen Grundübungen reichen meist 1 bis 3 Wiederholungen Reserve am Satzende.",
+"Bei Isolationsübungen lohnt es sich oft, bis auf 0 bis 2 Reserven ans Limit zu gehen."
+],
+"grenze": "Wie viele Wiederholungen noch im Tank waren, musste in den Studien meist nachträglich geschätzt werden.",
+"fuer_dich": "Deine letzten Wiederholungen fühlen sich noch locker an? Trainiere näher ans Limit mit 1 bis 3 RIR.",
+"labor": {
+"design": "Meta-Regression (0–5 RIR), mittlere Dauer 8,3 Wochen, im Schnitt 75 % 1RM",
+"teilnehmer": "26 Studien (140 Effekte) Hypertrophie, 55 Studien Kraft; Ø 27,8 Jahre",
+"ergebnis": ""
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du hörst bei jedem Satz auf, obwohl du locker noch fünf Wiederholungen schaffen würdest. Wie wirkt sich das auf den Muskelaufbau aus?",
+"richtig": "Der Muskel wächst im Schnitt spürbar weniger als näher am Limit",
+"falsch": [
+"Der Muskel wächst genauso stark wie kurz vor dem Limit",
+"Der Muskel wächst deutlich schneller durch geringere Anstrengung",
+"Die Kraft nimmt dadurch überhaupt nicht mehr zu"
+],
+"warum": "Muskelwachstum nimmt deutlich zu, je näher ein Satz am Muskelversagen beendet wird."
+},
+"plus": {
+"frage": "Du programmierst deinen Plan für Muskelaufbau mit RIR-Zielen. Welche Aufteilung zwischen Grund- und Isolationsübungen ist sinnvoll?",
+"richtig": "1 bis 3 RIR bei Grundübungen und 0 bis 2 RIR bei Isolationsübungen",
+"falsch": [
+"Immer 5 RIR bei Isolationsübungen und 0 RIR bei Grundübungen",
+"Mindestens 5 bis 6 RIR bei jeder Übung für maximales Wachstum",
+"RIR spielt nur für die Kraft eine Rolle, nicht für Muskelaufbau"
+],
+"warum": "Nähe zum Versagen treibt das Muskelwachstum an, wobei etwas mehr Reserve bei Grundübungen gut steuerbar bleibt."
+},
+"labor": {
+"frage": "In einer Meta-Regression aus 26 Studien zu Hypertrophie und 55 zu Kraft wurden 0 bis 5 RIR verglichen. Wie unterschieden sich die beiden Ziele?",
+"richtig": "Hypertrophie profitierte klar von Nähe zum Versagen, Kraft kaum",
+"falsch": [
+"Kraft profitierte stark von 0 RIR, Hypertrophie war unabhängig davon",
+"Beide Ziele erreichten ihr Maximum bei genau 5 RIR",
+"Weder Kraft noch Hypertrophie zeigten einen Zusammenhang mit RIR"
+],
+"warum": "Während Muskelwachstum mit sinkenden RIR signifikant stieg, war der Maximalkraftzuwachs weitgehend unabhängig davon."
+}
+}
+},
+{
+"id": "HYP-104",
+"karte": {
+"kopf": "Alle Trainingslevel · 21 Studien zusammengefasst",
+"titel": "Leichte und schwere Gewichte lassen Muskeln gleich gut wachsen",
+"titel_hervor": "gleich gut wachsen",
+"setup": "Verglichen wurde Training mit leichten Lasten bis 60 % der Maximalkraft gegen schwerere Lasten bis nahe ans Muskelversagen.",
+"zahl": null,
+"kern": [
+"Entscheidend für Muskelaufbau war die Anstrengung bis ans Limit, nicht das Gewicht.",
+"Für mehr Maximalkraft schnitten schwere Gewichte dagegen deutlich besser ab.",
+"Etwa 5 bis 30 Wiederholungen pro Satz funktionieren für Muskelwachstum ähnlich gut."
+],
+"grenze": "Sehr leichte Gewichte über 20 Wiederholungen ermüden Herz und Kreislauf bei Grundübungen oft vor dem Muskel.",
+"fuer_dich": "Du hast nur leichtere Gewichte verfügbar? Trainiere trotzdem bis auf 0 bis 2 RIR ans Limit.",
+"labor": {
+"design": "Systematisches Review mit Meta-Analyse, ≤60 % 1RM vs. >60 % 1RM bis nahe Muskelversagen",
+"teilnehmer": "21 Studien mit Einsteigern und Trainierten",
+"ergebnis": "Hypertrophie ES = 0,03 (p = 0,862); Maximalkraft signifikant höher bei >60 % 1RM"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Stimmt es, dass Muskeln nur mit sehr schweren Gewichten und wenigen Wiederholungen wachsen können?",
+"richtig": "Nein, auch leichtere Gewichte wirken ähnlich, wenn der Satz anstrengend ist",
+"falsch": [
+"Ja, leichte Gewichte straffen nur und bauen keinen Muskel auf",
+"Ja, über 12 Wiederholungen trainiert man nur noch die Ausdauer",
+"Nein, aber nur leichte Gewichte steigern auch die Maximalkraft"
+],
+"warum": "Solange du bis nahe ans Muskelversagen trainierst, erzeugen leichte und schwere Gewichte im Schnitt dasselbe Muskelwachstum."
+},
+"plus": {
+"frage": "Dein Hauptziel ist Muskelaufbau und dir stehen bei einer Übung nur Kurzhanteln für rund 20 Wiederholungen zur Verfügung. Wie nutzt du sie richtig?",
+"richtig": "Mit 0 bis 2 RIR nahe ans muskuläre Limit trainieren",
+"falsch": [
+"Die Übung streichen, weil 20 Wiederholungen keine Hypertrophie bringen",
+"Den Satz locker bei 5 RIR beenden, um Ermüdung zu vermeiden",
+"Nur noch auf Maximalkraft wechseln, da leichte Lasten dafür besser sind"
+],
+"warum": "Auch im höheren Wiederholungsbereich bis etwa 30 Wiederholungen wächst der Muskel vergleichbar, wenn der Satz hart genug ist."
+},
+"labor": {
+"frage": "In einer Meta-Analyse aus 21 Studien wurden Lasten bis 60 % 1RM mit Lasten über 60 % 1RM bis nahe ans Versagen verglichen. Was zeigte sich?",
+"richtig": "Gleichwertige Hypertrophie, aber klar höhere Maximalkraft bei schweren Lasten",
+"falsch": [
+"Klare Vorteile schwerer Lasten für Hypertrophie und Maximalkraft",
+"Gleichwertige Ergebnisse bei Hypertrophie und bei Maximalkraft",
+"Vorteile leichter Lasten für Hypertrophie, aber nicht für Kraft"
+],
+"warum": "Bei der Hypertrophie lag die Effektstärke nahe null (ES = 0,03), während schwere Lasten die dynamische Maximalkraft deutlich stärker steigerten."
+}
+}
+},
+{
+"id": "HYP-105",
+"karte": {
+"kopf": "Meist Untrainierte · 10 Studiengruppen verglichen",
+"titel": "Leichte und schwere Gewichte treffen alle Muskelfasern ähnlich",
+"titel_hervor": "alle Muskelfasern ähnlich",
+"setup": "Verglichen wurde über 6 bis 12 Wochen, wie langsame und schnelle Muskelfasern auf leichtes gegen schweres Training bis zum Limit reagieren.",
+"zahl": null,
+"kern": [
+"Weder Ausdauer- noch Kraftfasern wuchsen bei einem Gewichtsbereich klar besser.",
+"Wichtiger als die exakte Wiederholungszahl war die Ausbelastung bis ans Satzende.",
+"Du musst deinen Plan nicht starr in schwere und leichte Phasen je Fasertyp teilen."
+],
+"grenze": "Vier von fünf Studien prüften nur Untrainierte am Oberschenkel – kleine Unterschiede bei Profis bleiben möglich.",
+"fuer_dich": "Du willst alle Muskelfasern ansprechen? Wähle ein Gewicht, mit dem du sauber bis auf 0 bis 2 RIR kommst.",
+"labor": {
+"design": "Systematisches Review mit Meta-Analyse, 6–12 Wochen, 30–50 % vs. 75–90 % 1RM bis Versagen",
+"teilnehmer": "10 Studiengruppen, überwiegend Untrainierte (Quadrizeps)",
+"ergebnis": "SMD = 0,30 (95 % KI −0,05 bis 0,66; p = 0,089), Prädiktionsintervall −0,28 bis 0,88"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Manche sagen, man müsse zwingend schwer für schnelle und leicht für langsame Muskelfasern trainieren. Was zeigt die Forschung dazu?",
+"richtig": "Beide Gewichtsbereiche lassen beide Faserarten ähnlich wachsen",
+"falsch": [
+"Schwere Gewichte trainieren ausschließlich schnelle Muskelfasern",
+"Leichte Gewichte erreichen niemals schnelle Muskelfasern",
+"Langsame Muskelfasern können durch Krafttraining nicht wachsen"
+],
+"warum": "Bei Training bis ans Muskelversagen gab es weder bei Typ-I- noch bei Typ-II-Fasern einen klaren Unterschied zwischen leichten und schweren Lasten."
+},
+"plus": {
+"frage": "Du willst im Hypertrophie-Plan möglichst alle Muskelfasertypen gut entwickeln. Worauf solltest du primär achten?",
+"richtig": "Sätze sauber bis auf 0 bis 2 RIR nahe ans Muskelversagen bringen",
+"falsch": [
+"Jede Übung zwingend einmal mit 3 und einmal mit 30 Wiederholungen machen",
+"Ausschließlich über 85 % 1RM trainieren, um Typ-I-Fasern zu treffen",
+"Das Muskelversagen meiden und nur die Wiederholungszahl variieren"
+],
+"warum": "Die Ausbelastung nahe ans Limit ist entscheidender für das Wachstum aller Fasertypen als eine strikte Trennung in schwere und leichte Bereiche."
+},
+"labor": {
+"frage": "In einer Meta-Analyse aus 10 Studiengruppen wurden 30–50 % gegen 75–90 % 1RM auf Typ-I- und Typ-II-Faserwachstum verglichen. Was ist eine wichtige Grenze?",
+"richtig": "Meist wurden Untrainierte am Quadrizeps getestet bei breiter Streuung",
+"falsch": [
+"Die Studien dauerten alle unter zwei Wochen ohne echte Anpassung",
+"Es wurde ausschließlich die Oberarmmuskulatur von Profis gemessen",
+"Keine der Gruppen trainierte bis nahe ans Muskelversagen"
+],
+"warum": "Vier von fünf Studien untersuchten Untrainierte am Quadrizeps und das Prädiktionsintervall war breit, sodass kleine Effekte bei Trainierten möglich bleiben."
+}
+}
+},
+{
+"id": "HYP-106",
+"karte": {
+"kopf": "Alle Trainingslevel · 25 Studien zusammengefasst",
+"titel": "Bei gleicher Satzzahl wachsen Muskeln egal wie oft du trainierst",
+"titel_hervor": "egal wie oft du trainierst",
+"setup": "Über 6 bis 30 Wochen wurde verglichen, ob 1 bis über 6 Einheiten pro Woche bei gleicher wöchentlicher Satzzahl mehr Muskelaufbau bringen.",
+"zahl": null,
+"kern": [
+"Entscheidend für das Wachstum war die gesamte Wochen-Satzzahl, nicht die Verteilung.",
+"Mehrere Einheiten helfen indirekt, weil du so ausgeruhter mehr Sätze schaffst.",
+"Ab etwa 10 Sätzen pro Muskel lohnt sich das Aufteilen auf 2 bis 3 Tage pro Woche."
+],
+"grenze": "Gilt nur bei gleicher Wochen-Satzzahl – wer öfter geht und dadurch mehr Sätze macht, wächst oft stärker.",
+"fuer_dich": "Du schaffst einen Muskel nur einmal pro Woche? Kein Problem, solange deine Wochen-Satzzahl passt.",
+"labor": {
+"design": "Systematisches Review mit Meta-Analyse, 6–30 Wochen, 1 bis 6+ Einheiten/Woche volumenäquivalent",
+"teilnehmer": "25 Studien mit Einsteigern und Trainierten",
+"ergebnis": "Kein signifikanter Frequenzeffekt bei gleichem Volumen (I² = 0 %)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du machst 9 Sätze für den Rücken pro Woche – einmal alles an einem Tag, einmal auf drei Tage verteilt. Wie stark unterscheidet sich das Muskelwachstum?",
+"richtig": "Im Schnitt kaum, solange die gesamte Satzzahl pro Woche gleich bleibt",
+"falsch": [
+"Drei Tage bauen immer doppelt so viel Muskel auf wie ein Tag",
+"Einmal pro Woche reicht nie aus, um überhaupt Muskeln aufzubauen",
+"Sechs Tage pro Woche sind bei gleicher Satzzahl klar überlegen"
+],
+"warum": "Bei identischer Wochen-Satzzahl hatte die Trainingshäufigkeit pro Muskel im Schnitt keinen eigenen Einfluss auf das Muskelwachstum."
+},
+"plus": {
+"frage": "Du willst dein Volumen für eine Muskelgruppe auf 14 Sätze pro Woche erhöhen. Wie verteilst du die Sätze am sinnvollsten?",
+"richtig": "Auf 2 bis 3 Einheiten mit mindestens 48 Stunden Pause dazwischen",
+"falsch": [
+"Alle 14 Sätze in eine einzige Einheit packen für maximalen Reiz",
+"Jeden Tag genau 2 Sätze ohne Pausentag für diesen Muskel machen",
+"Die Satzzahl halbieren, weil über 10 Sätze nur einmal pro Woche gehen"
+],
+"warum": "Ab etwa 10 Sätzen pro Woche hilft die Aufteilung auf 2 bis 3 Tage, die Ermüdung pro Einheit gering und die Satzqualität hoch zu halten."
+},
+"labor": {
+"frage": "In einer Meta-Analyse aus 25 volumenäquivalenten Studien zeigte die Trainingsfrequenz keinen eigenen Hypertrophie-Effekt. Wann entsteht dennoch ein Vorteil höherer Frequenz?",
+"richtig": "Wenn mehr Einheiten zu einem höheren Gesamtvolumen pro Woche führen",
+"falsch": [
+"Nur wenn die Pausen zwischen den Einheiten unter 12 Stunden liegen",
+"Sobald das Gesamtvolumen pro Woche deutlich gesenkt wird",
+"Ausschließlich bei Trainingsdauern von unter vier Wochen"
+],
+"warum": "In nicht-volumenäquivalenten Studien profitieren höhere Frequenzen, weil sich damit bei geringerer Ermüdung mehr Gesamtsätze ansammeln lassen."
+}
+}
+},
+{
+"id": "HYP-107",
+"karte": {
+"kopf": "Alle Trainingslevel · 23 Studien zusammengefasst",
+"titel": "Voller Bewegungsweg schlägt kurze Teilbewegungen leicht",
+"titel_hervor": "schlägt kurze Teilbewegungen",
+"setup": "Verglichen wurde Muskelwachstum beim vollen Bewegungsweg mit Teilwiederholungen in kurzer oder stark gedehnter Muskelposition.",
+"zahl": null,
+"kern": [
+"Der volle Bewegungsweg schnitt im Schnitt leicht besser ab als Teilwiederholungen.",
+"Teilbewegungen in stark gedehnter Position zeigten tendenziell sogar kleine Vorteile.",
+"Besonders die tiefe, gedehnte Endposition scheint ein starker Wachstumsreiz zu sein."
+],
+"grenze": "Nur 6 Studien untersuchten gedehnte Teilbewegungen – der mögliche Vorteil ist statistisch noch unsicher.",
+"fuer_dich": "Du willst das Maximum aus jeder Übung holen? Nutze den vollen Weg und betone die gedehnte Position.",
+"labor": {
+"design": "Systematisches Review mit Meta-Analyse, Full ROM vs. kurze (19) und gedehnte (6) Partials",
+"teilnehmer": "23 Studien mit Einsteigern und Trainierten",
+"ergebnis": "Full ROM gesamt SMD 0,12 (−0,02 bis 0,26); gedehnte Partials SMD −0,28 (−0,81 bis 0,16)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Bei einer Übung bewegst du das Gewicht nur im oberen, kurzen Bereich statt ganz nach unten. Was passiert im Schnitt mit dem Muskelaufbau?",
+"richtig": "Er fällt etwas geringer aus als über den vollen Bewegungsweg",
+"falsch": [
+"Er wird deutlich stärker, weil der Muskel kürzer bleibt",
+"Der Muskel wächst durch Teilbewegungen überhaupt nicht",
+"Der Bewegungsweg hat keinerlei Einfluss auf das Training"
+],
+"warum": "Im Schnitt schnitt der volle Bewegungsweg leicht besser ab als Teilwiederholungen, vor allem wegen der fehlenden Dehnung."
+},
+"plus": {
+"frage": "Du wählst eine Übungsausführung für maximalen Muskelaufbau. Worauf legst du im Standardtraining den Schwerpunkt?",
+"richtig": "Voller Bewegungsumfang mit sauberer Betonung der gedehnten Endposition",
+"falsch": [
+"Kurze Teilwiederholungen ausschließlich in der verkürzten Endposition",
+"Den untersten, gedehnten Teil der Bewegung grundsätzlich auslassen",
+"Schwung nutzen, um die gedehnte Position möglichst schnell zu verlassen"
+],
+"warum": "Voller Bewegungsumfang liefert im Schnitt bessere Anpassungen, wobei gerade die gedehnte Position besonders wirksam erscheint."
+},
+"labor": {
+"frage": "Eine Meta-Analyse aus 23 Studien verglich Full ROM mit kurzen und gedehnten Partials. Wie belastbar ist der beobachtete Trend zugunsten gedehnter Partials?",
+"richtig": "Noch unsicher, da nur 6 Studien vorlagen und das Intervall null einschließt",
+"falsch": [
+"Eindeutig bewiesen durch 19 große Studien mit sehr engem Intervall",
+"Widerlegt, da gedehnte Partials klar schlechter abschnitten als kurze",
+"Nur statistisch signifikant, wenn das Gewicht extrem leicht war"
+],
+"warum": "Bei nur 6 Studien zu gedehnten Partials reichte das 95-%-Konfidenzintervall von −0,81 bis 0,16 und schloss damit den Nulleffekt ein."
+}
+}
+},
+{
+"id": "HYP-108",
+"karte": {
+"kopf": "Einsteiger & Trainierte · 2 Vergleichsstudien",
+"titel": "Gedehnte Teilbewegungen helfen Einsteigern mehr als Erfahrenen",
+"titel_hervor": "Einsteigern mehr als Erfahrenen",
+"setup": "Verglichen wurden Teilwiederholungen in gedehnter Position mit dem vollen Bewegungsweg bei untrainierten Frauen und erfahrenen Trainierenden.",
+"zahl": null,
+"kern": [
+"Bei Einsteigern wuchsen einzelne Muskeln durch gedehnte Teilbewegungen deutlich stärker.",
+"Bei erfahrenen Trainierenden über 8 Wochen gab es keinen Vorteil gegenüber vollem Weg.",
+"Trotzdem lernen Einsteiger mit vollem Bewegungsweg die saubere Technik besser."
+],
+"grenze": "Warum Einsteiger und Trainierte unterschiedlich reagierten, ist noch nicht abschließend geklärt.",
+"fuer_dich": "Du trainierst schon länger? Nutze gedehnte Teilbewegungen flexibel als gleichwertige Alternative zum vollen Weg.",
+"labor": {
+"design": "Zwei RCTs, u. a. 8 Wochen, Vergleich gedehnte Partials vs. Full ROM (und verkürzte Partials)",
+"teilnehmer": "n = 45 untrainierte Frauen; n = 25 Trainierte (Ø 4,9 Jahre Erfahrung)",
+"ergebnis": "Trainierte: Differenz −0,08 mm (95 % KI −1,1 bis 0,90), Bayes-Faktor 0,16–0,39"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du bist Einsteiger im Krafttraining und hörst von halben Wiederholungen in der gedehnten Position. Sollte das dein Standard statt voller Bewegungen sein?",
+"richtig": "Nein, voller Bewegungsweg ist für saubere Technik zum Start sinnvoller",
+"falsch": [
+"Ja, volle Bewegungen bringen bei Einsteigern kaum Muskelaufbau",
+"Nein, gedehnte Teilbewegungen lassen Muskeln bei Einsteigern schrumpfen",
+"Ja, nur mit Teilbewegungen lernt man die volle Kontrolle"
+],
+"warum": "Obwohl gedehnte Teilbewegungen bei Einsteigern starkes Wachstum zeigten, sichert der volle Weg eine bessere motorische Kontrolle."
+},
+"plus": {
+"frage": "Du trainierst seit mehreren Jahren und überlegst, ob Lengthened Partials dir mehr Muskelaufbau bringen als voller Bewegungsumfang. Was ist realistisch?",
+"richtig": "Beide Varianten liefern bei Erfahrenen im Schnitt ähnliche Zuwächse",
+"falsch": [
+"Lengthened Partials verdoppeln das Wachstum auch bei Erfahrenen",
+"Lengthened Partials sind bei Erfahrenen dem vollen Weg klar unterlegen",
+"Nur verkürzte Teilbewegungen bringen bei Erfahrenen noch Fortschritt"
+],
+"warum": "Bei erfahrenen Trainierenden führten gedehnte Teilbewegungen und voller Bewegungsumfang über 8 Wochen zu gleichwertiger Hypertrophie."
+},
+"labor": {
+"frage": "Zwei RCTs verglichen gedehnte Partials mit Full ROM einmal bei 45 untrainierten Frauen und einmal bei 25 erfahrenen Trainierenden. Welches Bild ergab sich?",
+"richtig": "Widersprüchliche Effekte: Vorteile bei Einsteigern, Gleichstand bei Trainierten",
+"falsch": [
+"Einheitlich doppeltes Wachstum durch gedehnte Partials in beiden Gruppen",
+"Vorteile gedehnter Partials nur bei erfahrenen Trainierenden",
+"Klarer Vorteil verkürzter Partials gegenüber beiden anderen Varianten"
+],
+"warum": "Während Einsteiger stärker von gedehnten Partials profitierten, zeigte sich bei Trainierten kein Unterschied (Differenz −0,08 mm)."
+}
+}
+},
+{
+"id": "HYP-109",
+"karte": {
+"kopf": "Trainierte Männer · Vergleichsstudie (8 Wochen)",
+"titel": "Drei Minuten Satzpause ließen Muskeln stärker wachsen als eine",
+"titel_hervor": "stärker wachsen als eine",
+"setup": "21 trainierte Männer absolvierten 8 Wochen lang dasselbe Ganzkörpertraining – einmal mit 1 Minute und einmal mit 3 Minuten Satzpause.",
+"zahl": null,
+"kern": [
+"Auch die Maximalkraft stieg mit 3 Minuten Pause deutlich stärker als mit 1 Minute.",
+"Bei nur 60 Sekunden Pause brachen die Wiederholungen in den Folgesätzen stark ein.",
+"Bei kleineren Übungen flacht der Zusatznutzen laut neueren Daten ab etwa 2 Minuten ab."
+],
+"grenze": "Nur 21 trainierte Männer über 8 Wochen getestet – bei Isolationsübungen reichen oft auch 90 bis 120 Sekunden.",
+"fuer_dich": "Du machst schwere Grundübungen und hast es eilig? Gönn dir trotzdem 2 bis 3 Minuten Pause zwischen den Sätzen.",
+"labor": {
+"design": "RCT über 8 Wochen (3x/Woche, 3x 8–12 RM, 7 Übungen), 1 min vs. 3 min Satzpause",
+"teilnehmer": "n = 21 trainierte Männer",
+"ergebnis": "Signifikant höhere Hypertrophie und Kraft bei 3 min Pause (Trizeps-Trend p = 0,06)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Stimmt der Mythos, dass sehr kurze Satzpausen von einer Minute für den Muskelaufbau besser sind als längere Pausen?",
+"richtig": "Nein, längere Pausen von etwa drei Minuten führten zu mehr Wachstum",
+"falsch": [
+"Ja, kürzere Pausen bringen durch mehr Brennen immer mehr Muskelaufbau",
+"Ja, ab zwei Minuten Pause verliert der Muskel den Trainingsreiz",
+"Die Pausenlänge spielt für Kraft und Muskelwachstum keine Rolle"
+],
+"warum": "Mit längeren Pausen schaffst du in den Folgesätzen mehr saubere Wiederholungen, was Wachstum und Kraft stärker fördert."
+},
+"plus": {
+"frage": "Du stellst deinen Pausen-Timer für eine Einheit mit schweren Kniebeugen und Bizepscurls ein. Welche Pausen sind sinnvoll?",
+"richtig": "Rund 3 Minuten bei Kniebeugen und 90 bis 120 Sekunden bei Curls",
+"falsch": [
+"Strikt 60 Sekunden bei Kniebeugen und 5 Minuten bei Curls",
+"Maximal 45 Sekunden bei allen Übungen für maximale Hormonausschüttung",
+"Genau 30 Sekunden bei Grundübungen, um das Volumen zu erhöhen"
+],
+"warum": "Mehrgelenksübungen profitieren stark von etwa 3 Minuten Pause, während bei Eingelenksübungen meist 90 bis 120 Sekunden genügen."
+},
+"labor": {
+"frage": "In einer 8-wöchigen RCT mit 21 trainierten Männern schnitten 3 Minuten Satzpause besser ab als 1 Minute. Welcher Mechanismus erklärt den Nachteil kurzer Pausen?",
+"richtig": "Stark abfallende Wiederholungszahlen und gedämpfte Proteinsynthese",
+"falsch": [
+"Eine zu geringe akute Hormonausschüttung bei kurzen Pausen",
+"Eine höhere Gesamtlast durch die kürzeren Pausen",
+"Zu wenig metabolische Ermüdung während der Sätze"
+],
+"warum": "Kurze 60-Sekunden-Pausen senken die mögliche Wiederholungszahl in Folgesätzen deutlich und dämpfen trotz akuter Hormonspitzen die Proteinsynthese."
+}
+}
+},
+{
+"id": "HYP-110",
+"karte": {
+"kopf": "Trainierende · Vergleichsstudie (9 Wochen)",
+"titel": "Verschiedene Übungen lassen Muskeln gleichmäßiger wachsen",
+"titel_hervor": "gleichmäßiger wachsen",
+"setup": "Über 9 Wochen wurde gemessen, wie gleichmäßig Ober- und Unterseiten eines Muskels bei einer Übung gegen mehrere Übungen wachsen.",
+"zahl": null,
+"kern": [
+"Jede Übung belastet je nach Gelenkwinkel andere Bereiche desselben Muskels stärker.",
+"Mit zwei unterschiedlichen Übungen wuchsen Anfang, Mitte und Ende gleichmäßiger.",
+"Ständiges Wechseln jede Woche bremst dagegen oft den stetigen Kraftfortschritt."
+],
+"grenze": "Gemessen an Oberschenkel und Armen über 9 Wochen – wie oft man Übungen wechseln sollte, bleibt offen.",
+"fuer_dich": "Du trainierst einen Muskel mit 6 oder mehr Sätzen pro Woche? Teile sie auf mindestens zwei verschiedene Übungen auf.",
+"labor": {
+"design": "RCT über 9 Wochen, Einzelübung vs. Übungskombination; Messung an 3 Muskelregionen",
+"teilnehmer": "",
+"ergebnis": ""
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du willst deine Arme oder Oberschenkel möglichst gleichmäßig aufbauen. Reicht dafür eine einzige Übung oder hilft eine Kombination?",
+"richtig": "Mehrere verschiedene Übungen lassen alle Muskelbereiche gleichmäßiger wachsen",
+"falsch": [
+"Eine einzige Übung belastet jeden Bereich des Muskels identisch",
+"Nur wöchentlich komplett neue Übungen bringen überhaupt Wachstum",
+"Der Gelenkwinkel hat keinen Einfluss darauf, wo der Muskel wächst"
+],
+"warum": "Unterschiedliche Übungen und Winkel treffen verschiedene Regionen desselben Muskels, sodass er über die ganze Länge gleichmäßiger wächst."
+},
+"plus": {
+"frage": "Du hast 8 Sätze pro Woche für eine Muskelgruppe eingeplant. Wie gestaltest du die Übungsauswahl am sinnvollsten?",
+"richtig": "Mindestens 2 biomechanisch unterschiedliche Übungen fest im Plan halten",
+"falsch": [
+"Alle 8 Sätze dauerhaft mit genau derselben Übung ausführen",
+"Jede Woche 8 völlig neue Übungen ohne festes System durchwechseln",
+"Die Satzzahl halbieren, um nicht mehr als eine Übung zu brauchen"
+],
+"warum": "Zwei verschiedene Übungen decken unterschiedliche Winkel ab, während feste Übungen im Plan eine saubere Steigerung ermöglichen."
+},
+"labor": {
+"frage": "Eine 9-wöchige RCT maß das Wachstum proximal, mittig und distal bei Einzelübung gegen Übungskombination. Welcher Zielkonflikt besteht bei Übungsvariation?",
+"richtig": "Zu häufige unsystematische Rotation kann die progressive Überladung hemmen",
+"falsch": [
+"Übungskombinationen verhindern jedes regionale Wachstum am Muskelansatz",
+"Mehrere Übungen senken die mechanische Spannung in allen Muskelköpfen",
+"Einzelübungen führen grundsätzlich zu gleichmäßigerer Hypertrophie"
+],
+"warum": "Abwechslung fördert zwar gleichmäßiges regionales Wachstum, doch zu häufiges Wechseln erschwert durch fehlende Gewöhnung die Laststeigerung."
+}
+}
+},
+{
+"id": "HYP-111",
+"karte": {
+"kopf": "268 Teilnehmende · 11 Studien zusammengefasst",
+"titel": "Die Übungsreihenfolge zählt für Kraft, aber kaum für Muskelgröße",
+"titel_hervor": "zählt für Kraft",
+"setup": "Über 6 bis 12 Wochen wurde verglichen, ob es Muskelwachstum und Kraft verändert, welche Übungen am Anfang oder Ende der Einheit stehen.",
+"zahl": null,
+"kern": [
+"Die Muskeln wuchsen im Schnitt gleich stark, egal wann eine Übung im Plan stand.",
+"Bei der ersten Übung der Einheit stieg die Kraft dagegen spürbar stärker an.",
+"Dieser Kraftvorteil war bei Eingelenksübungen fast doppelt so groß wie bei Grundübungen."
+],
+"grenze": "Nur 7 der 11 Studien maßen direkt das Muskelwachstum über maximal 12 Wochen.",
+"fuer_dich": "Du hast eine klare Schwachstelle oder Lieblingsübung? Stelle sie an den Anfang deines Trainings.",
+"labor": {
+"design": "Systematisches Review mit Meta-Analyse, 6–12 Wochen, Vergleich der Übungsreihenfolge",
+"teilnehmer": "11 Studien (7 Hypertrophie), n = 268 Teilnehmende",
+"ergebnis": "Hypertrophie ES = 0,03 (95 % KI −0,26 bis 0,31); signifikant mehr Kraft bei erster Übung"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Musst du für den Muskelaufbau zwingend immer zuerst große Grundübungen und erst am Ende kleine Übungen machen?",
+"richtig": "Nein, für die Muskelgröße machte die Reihenfolge im Schnitt keinen Unterschied",
+"falsch": [
+"Ja, kleine Übungen am Anfang blockieren das gesamte Muskelwachstum",
+"Ja, Muskeln wachsen nur bei der allerersten Übung der Einheit",
+"Nein, aber am Ende der Einheit baut man immer mehr Kraft auf"
+],
+"warum": "Langfristig glich sich das Muskelwachstum unabhängig von der Reihenfolge aus, während die erste Übung vor allem mehr Kraft brachte."
+},
+"plus": {
+"frage": "Du willst bei einer bestimmten Übung oder Schwachstelle vor allem schneller stärker werden. Wo platzierst du sie in deiner Einheit?",
+"richtig": "Direkt an Position 1, egal ob Ein- oder Mehrgelenksübung",
+"falsch": [
+"Immer ganz ans Ende, wenn der Muskel schon vorermüdet ist",
+"In die Mitte der Einheit, weil dort der Kraftzuwachs am höchsten ist",
+"Nur an Position 1, wenn es sich um eine große Mehrgelenksübung handelt"
+],
+"warum": "Übungen am Anfang der Einheit bringen spürbar größere Kraftzuwächse – bei Eingelenksübungen sogar besonders deutlich."
+},
+"labor": {
+"frage": "Eine Meta-Analyse mit 268 Teilnehmenden aus 11 Studien untersuchte die Übungsreihenfolge über 6–12 Wochen. Wie unterschied sich der Effekt auf Kraft und Hypertrophie?",
+"richtig": "Kein Effekt auf Hypertrophie, aber klarer Kraftvorteil für die erste Übung",
+"falsch": [
+"Starker Vorteil früher Übungen für Hypertrophie, aber nicht für Kraft",
+"Beide Effekte waren nur bei Mehrgelenksübungen nachweisbar",
+"Späte Übungen schnitten bei Kraft und Hypertrophie signifikant besser ab"
+],
+"warum": "Die Effektstärke für Hypertrophie lag bei 0,03, während zuerst ausgeführte Übungen signifikant höhere Kraftzuwächse erzielten."
+}
+}
+},
+{
+"id": "HYP-112",
+"karte": {
+"kopf": "204 Teilnehmende · 8 Studien zusammengefasst",
+"titel": "Normales und langsames Tempo bauen Muskeln ähnlich gut auf",
+"titel_hervor": "ähnlich gut auf",
+"setup": "Verglichen wurde das Muskelwachstum bei zügigen Wiederholungen (0,5–4 s), langsamen (4–8 s) und extrem langsamen über 10 Sekunden.",
+"zahl": null,
+"kern": [
+"Zwischen einer halben und acht Sekunden pro Wiederholung wuchsen Muskeln ähnlich.",
+"Extrem langsame Wiederholungen über 10 Sekunden bremsten das Muskelwachstum.",
+"Bei Zeitlupentempo sinkt das mögliche Gewicht oft um 40 bis 60 %, was den Reiz schwächt."
+],
+"grenze": "Nur 8 Studien mit teils breiten Schwankungen bei den direkten Messmethoden.",
+"fuer_dich": "Du überlegst, wie schnell du heben sollst? Bleib bei kontrollierten 2 bis 6 Sekunden pro Wiederholung.",
+"labor": {
+"design": "Systematisches Review mit Meta-Analyse, Wiederholungsdauer 0,5–4 s vs. 4–8 s vs. >8 s",
+"teilnehmer": "8 Studien, 18 Gruppen, n = 204 Teilnehmende",
+"ergebnis": "ES = 0,46 ± 0,13 (95 % KI 0,20 bis 0,71); 0,5–4 s ES 0,42 vs. 4–8 s ES 0,37"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Bringt es mehr Muskelaufbau, wenn du jede einzelne Wiederholung in extremer Zeitlupe von über 10 Sekunden ausführst?",
+"richtig": "Nein, extrem langsames Tempo führte im Schnitt zu weniger Wachstum",
+"falsch": [
+"Ja, je länger eine Wiederholung dauert, desto stärker wächst der Muskel",
+"Ja, Zeitlupentempo erlaubt deutlich schwerere Gewichte",
+"Das Tempo hat auch bei extrem langsamen Bewegungen gar keinen Einfluss"
+],
+"warum": "Bei über 10 Sekunden pro Wiederholung musst du das Gewicht stark reduzieren, wodurch der Muskel weniger effektiv gereizt wird."
+},
+"plus": {
+"frage": "Welches Bewegungstempo ist für kontrollierten Muskelaufbau im Trainingsplan am sinnvollsten?",
+"richtig": "Etwa 2 bis 6 Sekunden pro Wiederholung, zügig hoch und kontrolliert runter",
+"falsch": [
+"Mindestens 10 bis 14 Sekunden pro Wiederholung für maximale Zeit unter Spannung",
+"So schnell wie möglich mit Schwung, da jede Kontrolle Kraft kostet",
+"Genau 10 Sekunden beim Heben und 4 Sekunden beim Absenken"
+],
+"warum": "Zwischen 0,5 und 8 Sekunden pro Wiederholung wächst der Muskel vergleichbar gut, während über 10 Sekunden das Wachstum bremsen."
+},
+"labor": {
+"frage": "In einer Meta-Analyse aus 8 Studien (n = 204) brachten extrem langsame Wiederholungen (>10 s) weniger Hypertrophie als 0,5–8 s. Was ist der Hauptgrund?",
+"richtig": "Die nötige Lastreduktion senkt die Rekrutierung hochschwelliger Einheiten",
+"falsch": [
+"Die gesamte Zeit unter Spannung ist bei Zeitlupentempo zu kurz",
+"Bei unter 8 Sekunden wird die exzentrische Phase komplett übersprungen",
+"Die Muskeln ermüden bei langsamem Tempo überhaupt nicht mehr"
+],
+"warum": "Durch die starke Verlangsamung sinkt die mechanische Last um 40 bis 60 % 1RM, sodass weniger hochschwellige motorische Einheiten aktiv werden."
+}
+}
+},
+{
+"id": "HYP-113",
+"karte": {
+"kopf": "Junge Männer · 5 Studien zusammengefasst",
+"titel": "Drop-Sets sparen Trainingszeit, bauen aber nicht mehr Muskel auf",
+"titel_hervor": "sparen Trainingszeit",
+"setup": "Verglichen wurden klassische Sätze mit Drop-Sets (Gewicht sofort senken) und Rest-Pause-Sätzen (20 s Kurzpause) bei gleichem Volumen.",
+"zahl": null,
+"kern": [
+"Bei gleicher Gesamtarbeit wuchsen die Muskeln genauso stark wie bei normalen Sätzen.",
+"Der größte Vorteil ist die kürzere Trainingsdauer durch weniger lange Satzpausen.",
+"Einzelne Daten deuten bei Rest-Pause auf leichte Vorteile für die Maximalkraft hin."
+],
+"grenze": "Nur 5 Studien mit jungen Männern zwischen 19 und 27 Jahren – Daten zu Frauen und Älteren fehlen.",
+"fuer_dich": "Du hast heute unter 45 Minuten Zeit? Ersetze die letzten Sätze an Maschinen durch ein Drop-Set oder Rest-Pause.",
+"labor": {
+"design": "Systematisches Review mit Meta-Analyse, Drop-Sets (10–20 % Abwurf) & Rest-Pause vs. klassisch",
+"teilnehmer": "5 Studien, ausschließlich Männer (19–27 Jahre)",
+"ergebnis": "Kein signifikanter Hypertrophie-Unterschied bei angeglichenem Volumen"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du senkst nach einem harten Satz sofort das Gewicht und machst ohne Pause weiter. Was ist der größte belegte Nutzen dieser Technik?",
+"richtig": "Du wirst schneller fertig bei ähnlichem Muskelaufbau",
+"falsch": [
+"Deine Muskeln wachsen deutlich stärker als mit normalen Sätzen",
+"Du brauchst danach gar keine normalen Sätze mehr im Plan",
+"Die Technik schont dich und fühlt sich leichter an als normale Sätze"
+],
+"warum": "Bei gleicher Gesamtarbeit brachten Drop-Sets und Rest-Pause kein größeres Muskelwachstum, verkürzten aber die Trainingszeit."
+},
+"plus": {
+"frage": "Du hast heute weniger als 45 Minuten Zeit im Gym und willst dein Volumen halten. Wie setzt du Drop-Sets oder Rest-Pause sinnvoll ein?",
+"richtig": "Bei Isolations- oder Maschinenübungen die letzten regulären Sätze ersetzen",
+"falsch": [
+"Jede schwere Grundübung komplett auf Drop-Sets umstellen",
+"Drop-Sets zusätzlich auf das normale Volumen legen für doppeltes Wachstum",
+"Auf Zeitspar-Techniken verzichten, da sie Muskelaufbau verhindern"
+],
+"warum": "Bei Isolations- und Maschinenübungen sparen Drop-Sets oder Rest-Pause sicher Zeit, ohne dass du auf Muskelwachstum verzichtest."
+},
+"labor": {
+"frage": "Eine Meta-Analyse aus 5 Studien verglich Drop-Sets und Rest-Pause mit traditionellen Sätzen bei gleichem Volumen. Welche Einschränkung gilt für die Übertragbarkeit?",
+"richtig": "Kleine Studienzahl mit ausschließlich jungen Männern von 19 bis 27 Jahren",
+"falsch": [
+"Es wurden ausschließlich ältere Frauen ohne Trainingserfahrung getestet",
+"Die Vergleichsgruppe führte nur die Hälfte des Trainingsvolumens aus",
+"Es wurde ausschließlich die Ausdauerleistung, nicht die Muskelgröße gemessen"
+],
+"warum": "Wegen der geringen Studienzahl und rein männlicher junger Stichproben waren keine Subgruppenanalysen für Frauen oder Ältere möglich."
+}
+}
+},
+{
+"id": "HYP-114",
+"karte": {
+"kopf": "Erwachsene · Literaturübersicht",
+"titel": "Für mehr Muskelaufbau durch Supersets fehlen bisher Belege",
+"titel_hervor": "fehlen bisher Belege",
+"setup": "Gesichtet wurde die bisherige Forschung dazu, ob Supersets oder Vorermüdung langfristig mehr Muskelaufbau bringen als normale Sätze.",
+"zahl": null,
+"kern": [
+"Bisher wenig untersucht: Echte Langzeitstudien zu Supersets und Muskelgröße fehlen.",
+"Zwei Übungen für denselben Muskel direkt nacheinander senken oft das Trainingsgewicht.",
+"Gegenspieler-Übungen im Wechsel sparen Zeit, ohne erkennbaren Extra-Wachstumsbonus."
+],
+"grenze": "Reine Literaturübersicht ohne eigene Datenauswertung – belastbare Langzeitvergleiche stehen noch aus.",
+"fuer_dich": "Du willst schneller durch dein Training kommen? Kombiniere Zug- und Druckübungen als Superset zum Zeitsparen.",
+"labor": {
+"design": "Narratives Review zu Supersets und Vorermüdung vs. traditionelles Satztraining",
+"teilnehmer": "Gesichtete Studien mit Erwachsenen (19–44 Jahre)",
+"ergebnis": ""
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du machst zwei Übungen direkt hintereinander ohne lange Pause. Ist belegt, dass deine Muskeln dadurch langfristig stärker wachsen?",
+"richtig": "Nein, dafür gibt es bisher keine belastbaren Langzeitbelege",
+"falsch": [
+"Ja, zwei Übungen am Stück verdoppeln den Muskelaufbau nachweislich",
+"Ja, vor allem zwei Übungen für denselben Muskel sind klar überlegen",
+"Nein, dadurch baut der Körper langfristig sogar Muskeln ab"
+],
+"warum": "Für einen überlegenen Muskelaufbau durch Supersets oder Vorermüdung fehlen bisher belastbare Langzeitstudien."
+},
+"plus": {
+"frage": "Du möchtest deine Trainingszeit verkürzen, ohne die Leistung in schweren Übungen unnötig zu drücken. Welche Superset-Form eignet sich am besten?",
+"richtig": "Antagonistische Übungen wie Zug und Druck mit kurzer Wechselpause koppeln",
+"falsch": [
+"Vorermüdung desselben Muskels direkt vor der schweren Grundübung",
+"Zwei schwere Grundübungen für dieselbe Muskelgruppe ohne jede Pause",
+"Supersets immer als Extra-Wachstumsfaktor im Wochenvolumen doppelt zählen"
+],
+"warum": "Gegenspieler-Supersets sparen Zeit, während Vorermüdung derselben Muskelgruppe oft Spannung und Last in der Folgeübung senkt."
+},
+"labor": {
+"frage": "Eine narrative Übersichtsarbeit bewertete Supersets und Vorermüdung gegenüber traditionellen Sätzen. Warum ist die Aussagekraft für chronische Hypertrophie begrenzt?",
+"richtig": "Es mangelt an randomisierten Langzeitstudien mit direkten Hypertrophiemessungen",
+"falsch": [
+"Die Meta-Analyse zeigte einen statistisch signifikanten Nachteil von Supersets",
+"Alle eingeschlossenen Langzeitstudien dauerten über drei Jahre",
+"Vorermüdung steigerte das Gesamtvolumen in allen Studien zu stark"
+],
+"warum": "Bisher fehlen kontrollierte Langzeit-Interventionsstudien, die Supersets isoliert anhand direkter Muskelwachstumsmarker prüfen."
+}
+}
+},
+{
+"id": "HYP-115",
+"karte": {
+"kopf": "Einsteiger & Trainierte · 140 Studien ausgewertet",
+"titel": "Einsteiger wachsen mit leichteren Lasten, Erfahrene brauchen mehr",
+"titel_hervor": "Erfahrene brauchen mehr",
+"setup": "Ausgewertet wurden 140 Studien dazu, welche Gewichte, Satzzahlen und Trainingstage bei Einsteigern und Trainierten am besten wirken.",
+"zahl": null,
+"kern": [
+"Bei Einsteigern reichten moderate Lasten um 60 % der Maximalkraft und weniger Sätze.",
+"Trainierte erzielten die besten Fortschritte eher um 80 % der Maximalkraft.",
+"Nach den ersten 3 bis 6 Monaten flacht das Muskelwachstum biologisch ab."
+],
+"grenze": "Die große Auswertung maß vor allem Kraftzuwächse, nicht ausschließlich Muskelwachstum.",
+"fuer_dich": "Du fängst gerade erst an? Starte mit 1 bis 3 Sätzen pro Übung und moderatem Gewicht statt sofort am Limit.",
+"labor": {
+"design": "Meta-Analyse zur Dosis-Wirkungs-Beziehung von Last, Volumen und Frequenz",
+"teilnehmer": "140 Studien, 1.433 Effektgrößen (Einsteiger und Trainierte)",
+"ergebnis": "Optimum Einsteiger: 60 % 1RM, 3 Tage/Wo.; Trainierte: 80 % 1RM, 2 Tage/Wo."
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du beginnst gerade erst mit dem Krafttraining. Brauchst du von Tag eins an genauso hohe Gewichte und viele Sätze wie jemand mit Jahren Erfahrung?",
+"richtig": "Nein, zu Beginn reichen moderate Gewichte und weniger Sätze für gute Erfolge",
+"falsch": [
+"Ja, Einsteiger brauchen sogar noch schwerere Gewichte als Erfahrene",
+"Ja, sonst passt sich der Körper in den ersten Monaten gar nicht an",
+"Nein, aber nach zwei Wochen musst du sofort ans absolute Maximum gehen"
+],
+"warum": "Untrainierte erzielen bereits mit moderaten Lasten und geringeren Satzzahlen pro Übung sehr starke Anpassungen."
+},
+"plus": {
+"frage": "Du wechselst nach deinen ersten Trainingsmonaten vom Einsteiger- zum Fortgeschrittenen-Plan. Was ändert sich sinnvoll an Intensität und Satzzahl pro Übung?",
+"richtig": "Schwerere Lasten Richtung 70 bis 85 % 1RM und mehr Sätze pro Übung",
+"falsch": [
+"Leichtere Lasten unter 50 % 1RM und weniger Sätze pro Übung",
+"Alles exakt gleich lassen, da sich der Bedarf nie verändert",
+"Auf 1 Satz pro Übung reduzieren und täglich denselben Muskel trainieren"
+],
+"warum": "Mit steigender Erfahrung flacht die Anpassungsrate ab, sodass meist höhere Intensitäten und mehr Sätze pro Übung nötig werden."
+},
+"labor": {
+"frage": "Eine Meta-Analyse aus 140 Studien leitete optimale Lasten und Satzzahlen für Einsteiger und Trainierte ab. Welche Einschränkung gilt für das Ziel Muskelaufbau?",
+"richtig": "Die Dosis-Wirkungs-Kurve bezog sich primär auf Kraft, nicht rein auf Hypertrophie",
+"falsch": [
+"Es wurden ausschließlich Untrainierte ohne Vergleichsgruppe ausgewertet",
+"Trainierte erzielten bei 60 % 1RM bessere Ergebnisse als bei 80 % 1RM",
+"Die Analyse umfasste nur sehr wenige Studien mit geringer Aussagekraft"
+],
+"warum": "Die große Auswertung untersuchte vor allem die Kraftentwicklung, während die Hypertrophie-Rate nach 3 bis 6 Monaten zusätzlich biologisch abflacht."
+}
+}
+}
+]

@@ -1,0 +1,1134 @@
+[
+{
+"id": "FRA-106",
+"karte": {
+"kopf": "Schwangere · Leitlinie & Meta-Analyse",
+"titel": "Moderates Training in der Schwangerschaft schadete dem Baby nicht",
+"titel_hervor": "schadete dem Baby nicht",
+"setup": "Internationale Leitlinien werteten Studien zu mindestens 150 Minuten moderatem Kraft- und Ausdauertraining pro Woche bei gesunden Schwangeren aus.",
+"zahl": {
+"label": "Schwangere, die das Ziel bisher erreichen",
+"wert": "< 15 %",
+"alltag": "Weniger als jede Sechste"
+},
+"kern": [
+"Kein erhöhtes Risiko für Fehlgeburt, Frühgeburt oder geringeres Wachstum",
+"Verteilt auf mindestens drei Tage pro Woche brachte die Bewegung klare Vorteile",
+"Ab dem zweiten Trimester sollten längere Übungen flach auf dem Rücken gemieden werden"
+],
+"grenze": "Gilt nur ohne medizinische Gegenanzeigen – bei Warnzeichen wie Blutungen oder Schwindel sofort stoppen und ärztlich abklären.",
+"fuer_dich": "Du bist gesund schwanger? Plane mindestens 150 Minuten moderate Bewegung pro Woche ein und kläre unsichere Fragen vorab ärztlich.",
+"labor": {
+"design": "Evidenzbasierte Leitlinie und Meta-Analyse zu moderatem Ausdauer- und Krafttraining",
+"teilnehmer": "Schwangere ohne medizinische Kontraindikationen",
+"ergebnis": "Kein erhöhtes Risiko für Fehlgeburt, Frühgeburt oder Wachstumsrestriktion; < 15 % erreichen >= 150 min/Woche"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Schadet regelmäßiges, moderates Training in einer gesunden Schwangerschaft dem ungeborenen Kind?",
+"richtig": "Nein, es bringt Vorteile und erhöht das Risiko für Früh- oder Fehlgeburten nicht",
+"falsch": [
+"Ja, schon leichtes Krafttraining erhöht das Risiko für Frühgeburten deutlich",
+"Nur Spazierengehen ist sicher, jede andere Bewegung schadet dem Wachstum",
+"Training ist erst in den letzten vier Wochen vor der Geburt sinnvoll"
+],
+"warum": "Leitlinien mit hoher Evidenz zeigen, dass moderates Kraft- und Ausdauertraining bei gesunden Schwangeren sicher und vorteilhaft ist."
+},
+"plus": {
+"frage": "Du bist im zweiten Trimester einer unkomplizierten Schwangerschaft und trainierst dreimal pro Woche. Worauf solltest du im Plan achten?",
+"richtig": "Moderat bleiben und längere Übungen flach auf dem Rücken weglassen",
+"falsch": [
+"Das Training auf eine einzige sehr lange Einheit pro Woche bündeln",
+"Bei Schwindel oder Blutungen einfach das Gewicht etwas reduzieren",
+"Jegliches Krafttraining streichen und nur noch liegen"
+],
+"warum": "Ab dem zweiten Trimester werden längere Übungen in flacher Rückenlage ausgeblendet; bei Warnzeichen gilt: sofort abbrechen und ärztlich abklären."
+},
+"labor": {
+"frage": "Internationale Leitlinien werteten Studien zu mindestens 150 Minuten moderatem Training pro Woche in der Schwangerschaft aus. Was fiel bei der Umsetzung auf?",
+"richtig": "Trotz belegter Sicherheit erreicht nur ein kleiner Teil das Ziel",
+"falsch": [
+"Über die Hälfte der Schwangeren trainiert bereits deutlich über der Empfehlung",
+"Die Sicherheit ist nur für Frauen mit niedrigem BMI belegt",
+"Krafttraining wurde wegen erhöhter Frühgeburtsraten ausgeschlossen"
+],
+"warum": "Weniger als 15 % der Schwangeren erreichen derzeit das empfohlene Mindestvolumen, obwohl die Sicherheitsdaten sehr gut belegt sind."
+}
+}
+},
+{
+"id": "FRA-107",
+"karte": {
+"kopf": "Schwangere · 106 Studien zusammengefasst",
+"titel": "Training in der Schwangerschaft senkte das Komplikationsrisiko um rund 40 %",
+"titel_hervor": "senkte das Komplikationsrisiko um rund 40 %",
+"setup": "In 106 Studien wurde untersucht, wie stark reine Bewegungsprogramme das Risiko für Schwangerschaftsdiabetes, Bluthochdruck und Präeklampsie senken.",
+"zahl": {
+"label": "Geringeres Risiko für Komplikationen",
+"wert": "−38 bis −41 %",
+"alltag": "Bei Diabetes, Bluthochdruck, Präeklampsie"
+},
+"kern": [
+"Für mindestens 25 % weniger Risiko waren rund drei Einheiten pro Woche nötig",
+"Je früher im ersten Trimester begonnen wurde, desto deutlicher war der Schutz",
+"Auch gegen übermäßige Gewichtszunahme half regelmäßige moderate Bewegung"
+],
+"grenze": "Bei spätem Start nach der 14. bis 20. Woche fiel der Effekt auf die Insulinresistenz teils kleiner aus.",
+"fuer_dich": "Du bist frisch schwanger ohne medizinische Einschränkungen? Starte früh mit mindestens drei moderaten Einheiten à 25 Minuten pro Woche.",
+"labor": {
+"design": "Meta-Analyse von 106 Studien zu reinen Trainingsinterventionen in der Schwangerschaft",
+"teilnehmer": "Schwangere aus 106 Studien",
+"ergebnis": "Odds-Reduktion: Gestationsdiabetes −38 %, Gestationshypertonie −39 %, Präeklampsie −41 % (ab >= 600 MET-min/Woche)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Welchen gesundheitlichen Nutzen hat regelmäßige Bewegung in der Schwangerschaft für die Mutter?",
+"richtig": "Das Risiko für Schwangerschaftsdiabetes und Bluthochdruck sinkt deutlich",
+"falsch": [
+"Es hat nur Einfluss auf die Stimmung, aber nicht auf den Stoffwechsel",
+"Es verhindert jegliche Gewichtszunahme während der Schwangerschaft",
+"Es wirkt nur, wenn man zusätzlich eine strenge Diät macht"
+],
+"warum": "Über 106 Studien senkten reine Trainingsprogramme die Wahrscheinlichkeit für Diabetes, Bluthochdruck und Präeklampsie um 38 bis 41 %."
+},
+"plus": {
+"frage": "Du bist im ersten Trimester und möchtest dein Risiko für Schwangerschaftskomplikationen durch Bewegung senken. Wie planst du deine Woche?",
+"richtig": "Früh starten und mindestens dreimal pro Woche 25 Minuten moderat trainieren",
+"falsch": [
+"Bis zur 20. Woche warten, weil Training erst spät im Verlauf wirkt",
+"Nur einmal pro Woche sehr intensiv trainieren",
+"Erst mit Bewegung anfangen, wenn erhöhte Blutzuckerwerte auftreten"
+],
+"warum": "Ein früher Beginn und mindestens 600 MET-Minuten verteilt auf drei Einheiten pro Woche brachten die klarste Risikoreduktion."
+},
+"labor": {
+"frage": "Eine Meta-Analyse von 106 Studien analysierte Trainingsinterventionen in der Schwangerschaft. Welcher zeitliche Faktor beeinflusste die Effektgröße?",
+"richtig": "Ein früher Start im ersten Trimester oder davor zeigte stärkere Schutzeffekte",
+"falsch": [
+"Ein später Start nach der 20. Woche senkte die Insulinresistenz am stärksten",
+"Der Startzeitpunkt spielte für die Risikoreduktion überhaupt keine Rolle",
+"Nur Programme unter 15 Minuten pro Einheit erreichten 25 % Risikoreduktion"
+],
+"warum": "Subgruppenanalysen zeigten geringere Effekte auf die Insulinresistenz, wenn erst nach der 14. bis 20. Woche gestartet wurde."
+}
+}
+},
+{
+"id": "FRA-108",
+"karte": {
+"kopf": "Mütter nach Geburt · Expertenkonsens",
+"titel": "Wann du nach der Geburt wieder läufst, hängt an Tests statt am Kalender",
+"titel_hervor": "hängt an Tests statt am Kalender",
+"setup": "Fachleute verglichen Empfehlungen für den Laufeinstieg nach einer Geburt und definierten Belastungs- und Beckenbodentests als Voraussetzung.",
+"zahl": null,
+"kern": [
+"Ältere Leitfäden nannten drei bis sechs Monate, neuere sehen individuelle Starts früher",
+"Entscheidend ist Beschwerdefreiheit ohne Urinverlust, Druckgefühl oder Schmerzen",
+"Der Aufbau startet schrittweise mit Gehen, Beckenboden und gelenkfreundlichem Training"
+],
+"grenze": "Expertenkonsens ohne randomisierte Vergleichsstudien zu genauen Zeitpunkten – individuelle Freigabe bleibt wichtig.",
+"fuer_dich": "Du willst nach der Geburt wieder laufen? Prüfe zuerst Gehen und Beckenboden ohne Beschwerden und kläre Warnsignale ärztlich ab.",
+"labor": {
+"design": "Delphi-Konsensstudie und Leitfadenvergleich zum Wiedereinstieg ins Laufen postpartum",
+"teilnehmer": "Expertenkonsens für Frauen nach der Geburt",
+"ergebnis": "Goom 2019: 3–6 Monate; Delphi 2024: individueller Start ab >= 3 Wochen erwägenswert nach funktionellen Tests"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Woran solltest du dich nach einer Geburt beim Wiedereinstieg ins Joggen vor allem orientieren?",
+"richtig": "An schrittweisem Aufbau und einem beschwerdefreien Beckenboden",
+"falsch": [
+"An einer festen Woche im Kalender, unabhängig von Beschwerden",
+"Daran, wie schnell dein altes Gewicht wieder erreicht ist",
+"Daran, ob du vor der Schwangerschaft Marathon gelaufen bist"
+],
+"warum": "Fachleute betonen, dass funktionelle Belastbarkeit und ein beschwerdefreier Beckenboden wichtiger sind als ein festes Datum."
+},
+"plus": {
+"frage": "Du bist acht Wochen nach der Geburt und merkst beim schnellen Gehen ein Druckgefühl im Beckenboden. Wie gehst du vor?",
+"richtig": "Laufen verschieben, gezielt am Aufbau arbeiten und Beschwerden fachlich abklären",
+"falsch": [
+"Trotzdem mit kurzen Sprints starten, damit der Beckenboden schneller kräftig wird",
+"Einfach langsamer joggen, solange keine starken Schmerzen auftreten",
+"Mit Sprungübungen testen, ob das Druckgefühl von allein verschwindet"
+],
+"warum": "Druckgefühl, Schmerzen oder Urinverlust sind klare Zeichen, High-Impact-Laufen zurückzustellen und zuerst die Basis aufzubauen."
+},
+"labor": {
+"frage": "Wie unterscheidet sich der neuere Delphi-Konsens von 2024 vom älteren Leitfaden (2019) zum Laufen nach der Geburt?",
+"richtig": "Er hält einen früheren, schrittweisen Start nach bestandenen Tests für möglich",
+"falsch": [
+"Er empfiehlt pauschal für alle Frauen eine Laufpause von mindestens zwölf Monaten",
+"Er streicht Beckenbodentests komplett zugunsten fester Zeitangaben",
+"Er stützt sich auf große randomisierte Studien mit exakten Startwochen"
+],
+"warum": "Statt starrer 3 bis 6 Monate erlaubt der Konsens einen individuellen, testbasierten Einstieg, wobei RCTs zu exakten Zeitpunkten noch fehlen."
+}
+}
+},
+{
+"id": "FRA-109",
+"karte": {
+"kopf": "Frauen nach Menopause · 74 Studien",
+"titel": "Kraft- und Sprungtraining stärkten die Knochen nach der Menopause",
+"titel_hervor": "stärkten die Knochen",
+"setup": "In 74 Studien trainierten Frauen nach den Wechseljahren mindestens sechs Monate lang mit dynamischem Krafttraining, Impact-Training oder beidem.",
+"zahl": null,
+"kern": [
+"Die Knochendichte stieg an Wirbelsäule, Schenkelhals und Gesamthüfte messbar an",
+"Die stabilsten Ergebnisse zeigten sich, wenn mindestens ein Jahr trainiert wurde",
+"Der Nutzen galt sowohl bei normalen Knochen als auch bei bereits geringer Knochendichte"
+],
+"grenze": "Bei Trainingsabbruch gehen die Effekte wieder zurück – der Schutz verlangt dauerhaftes Dranbleiben.",
+"fuer_dich": "Du bist in oder nach den Wechseljahren? Kombiniere dauerhaft Krafttraining und gewichtsbelastende Bewegung an drei bis fünf Tagen pro Woche.",
+"labor": {
+"design": "Meta-Analyse von 74 Studien (84 Trainingsgruppen), DRT vs. WB vs. Kombination, >= 6 Monate",
+"teilnehmer": "Postmenopausale Frauen aus 74 Studien",
+"ergebnis": "LWS SMD 0,26–0,42; Schenkelhals SMD 0,27–0,37; Gesamthüfte SMD 0,34–0,51 (alle signifikant)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Hilft Krafttraining nach den Wechseljahren auch dann noch für die Knochen, wenn die Knochendichte schon etwas gesunken ist?",
+"richtig": "Ja, die Knochendichte verbesserte sich unabhängig vom Ausgangswert",
+"falsch": [
+"Nein, bei niedriger Knochendichte bringt Krafttraining nichts mehr",
+"Es wirkt nur an den Armen, nicht an Hüfte und Wirbelsäule",
+"Es schützt die Knochen nur in den ersten zwei Wochen des Trainings"
+],
+"warum": "Über 74 Studien stärkte langfristiges Kraft- und gewichtsbelastendes Training Hüfte und Wirbelsäule unabhängig vom Ausgangsstatus."
+},
+"plus": {
+"frage": "Du bist nach der Menopause und möchtest deine Knochen gezielt stärken. Wie baust du dein Training am besten auf?",
+"richtig": "Dauerhaft Krafttraining mit 7–12 Wiederholungen plus Sprungreize",
+"falsch": [
+"Einmal acht Wochen trainieren und danach dauerhaft pausieren",
+"Ausschließlich schwimmen, weil das die Knochen am stärksten belastet",
+"Nur mit extrem leichten Gewichten ohne jede Steigerung trainieren"
+],
+"warum": "Dynamisches Krafttraining und gewichtsbelastende Reize wirken am stabilsten, wenn sie dauerhaft über mindestens ein Jahr fortgeführt werden."
+},
+"labor": {
+"frage": "Eine Meta-Analyse von 74 Studien untersuchte Kraft- und Impact-Training bei postmenopausalen Frauen. Was zeigte sich zur Dauer?",
+"richtig": "Signifikante Effekte traten ab 6 Monaten auf und waren ab 52 Wochen am stabilsten",
+"falsch": [
+"Schon nach vier Wochen waren maximale Knochendichte-Zuwächse erreicht",
+"Nach 52 Wochen kehrten sich die Effekte ins Negative um",
+"Nur reines Impact-Training, nicht aber Krafttraining, verbesserte die Hüft-BMD"
+],
+"warum": "Alle drei Modalitäten verbesserten LWS, Schenkelhals und Gesamthüfte, wobei die Effekte ab 52 Wochen am stabilsten waren."
+}
+}
+},
+{
+"id": "FRA-110",
+"karte": {
+"kopf": "Frauen nach Menopause · 17 Studien",
+"titel": "Freie Gewichte schützten die Hüftknochen besser als Maschinen",
+"titel_hervor": "besser als Maschinen",
+"setup": "In Meta-Analysen wurden freies Krafttraining, Gerätetraining, verschiedene Intensitäten und Trainingshäufigkeiten für die Knochendichte verglichen.",
+"zahl": {
+"label": "Weniger Knochenbrüche durch Training",
+"wert": "−25 %",
+"alltag": "151 statt 196 Brüche in der Auswertung"
+},
+"kern": [
+"Training insgesamt senkte das Risiko für Knochenbrüche um rund ein Viertel",
+"An der Gesamthüfte schnitten freie Gewichte besser ab als reines Gerätetraining",
+"Zwischen hoher und moderater Intensität waren die Vergleichsdaten widersprüchlich"
+],
+"grenze": "Einzelne Auswertungen zu Intensität und Häufigkeit widersprechen sich – das perfekte Rezept ist noch offen.",
+"fuer_dich": "Du willst nach den Wechseljahren deine Hüftknochen stärken? Nutze bevorzugt freie Gewichte und wechsle moderate mit intensiveren Phasen ab.",
+"labor": {
+"design": "Meta-Analysen zu DRT (k = 17), Intensitätsvergleichen (k = 11) und Frakturen (k = 11), >= 6 Monate",
+"teilnehmer": "Postmenopausale Frauen (u. a. n = 796 in DRT-Analyse, Alter 41–82)",
+"ergebnis": "Frakturen RR 0,75 (95 % KI 0,54–0,94, p = 0,006); Intensität LWS SMD 0,19 (p = 0,37), Hüfte 0,17 (p = 0,11)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Was ist für die Knochendichte der Hüfte nach den Wechseljahren im Schnitt wirksamer: freie Gewichte oder reines Gerätetraining?",
+"richtig": "Training mit freien Gewichten schnitt für die Hüfte besser ab",
+"falsch": [
+"Maschinen waren für die Hüftknochen deutlich überlegen",
+"Beides brachte für die Hüfte gar keinen Nutzen",
+"Nur Maschinen im Sitzen schützen vor Knochenbrüchen"
+],
+"warum": "In der Auswertung war freies Krafttraining für die Knochendichte der Gesamthüfte dem reinen Gerätetraining überlegen."
+},
+"plus": {
+"frage": "Du planst ein Knochenschutz-Training für die Postmenopause. Wie kombinierst du Übungswahl und Intensität am sinnvollsten?",
+"richtig": "Freie Gewichte priorisieren und moderate mit intensiveren Phasen abwechseln",
+"falsch": [
+"Ausschließlich sitzende Maschinen mit immer gleicher leichter Last nutzen",
+"Jede Einheit bis zum absoluten Maximum gehen ohne Phasenwechsel",
+"Freie Gewichte meiden, weil sie das Bruchrisiko erhöhen"
+],
+"warum": "Freie Gewichte punkteten besonders an der Hüfte, und weil die Intensitätsdaten uneinheitlich sind, ist ein Phasenwechsel sinnvoll."
+},
+"labor": {
+"frage": "Meta-Analysen verglichen hohe und moderate Intensitäten sowie verschiedene Frequenzen für die Knochendichte nach der Menopause. Was fiel auf?",
+"richtig": "Direkte Vergleiche fanden keinen klaren Vorteil hoher Intensität",
+"falsch": [
+"Hohe Intensität war in jeder Meta-Analyse hochsignifikant überlegen",
+"Training insgesamt hatte keinen signifikanten Einfluss auf die Frakturrate",
+"Mehr als fünf Einheiten pro Woche waren zwingend für jeden Effekt nötig"
+],
+"warum": "Die Frakturrate sank signifikant (RR 0,75), doch direkte Intensitätsvergleiche waren nicht signifikant und Frequenzbefunde widersprüchlich."
+}
+}
+},
+{
+"id": "FRA-111",
+"karte": {
+"kopf": "Frauen nach Menopause · 12 Studien",
+"titel": "Krafttraining steigerte Kraft und Fitness auch ohne Hormontherapie deutlich",
+"titel_hervor": "auch ohne Hormontherapie deutlich",
+"setup": "In 12 randomisierten Studien trainierten gesunde Frauen nach den Wechseljahren ohne Hormontherapie 12 bis 56 Wochen lang progressiv mit Gewichten.",
+"zahl": null,
+"kern": [
+"Ober- und Unterkörperkraft nahmen hochsignifikant zu",
+"Auch die maximale Sauerstoffaufnahme stieg und der Taillenumfang sank",
+"Untrainierte Frauen nach der Menopause aßen im Schnitt deutlich weniger Protein als empfohlen"
+],
+"grenze": "Ergebnisse gelten für gesunde Frauen ohne Hormontherapie – eine ärztliche Hormontherapie kann Effekte zusätzlich beeinflussen.",
+"fuer_dich": "Du bist nach den Wechseljahren und nimmst keine Hormone? Trainiere dreimal pro Woche progressiv mit Gewichten und achte auf genug Protein.",
+"labor": {
+"design": "Meta-Analyse von 12 RCTs, progressives Krafttraining, 2–3x/Woche, 50–90 % 1RM, 12–56 Wochen",
+"teilnehmer": "Gesunde postmenopausale Frauen ohne Hormonersatztherapie",
+"ergebnis": "Unterkörperkraft SMD 4,70; Oberkörperkraft SMD 7,42; VO2max SMD 2,32 (alle p < 0,001); Taille p = 0,013"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Lohnt sich Krafttraining nach den Wechseljahren auch dann, wenn man keine Hormonersatztherapie macht?",
+"richtig": "Ja, Kraft, Ausdauerfitness und Taillenumfang verbesserten sich deutlich",
+"falsch": [
+"Nein, ohne Östrogentherapie baut der Körper keine Kraft mehr auf",
+"Nur der Taillenumfang sinkt, die Muskelkraft bleibt unverändert",
+"Es wirkt erst ab mehr als zwei Stunden Training pro Tag"
+],
+"warum": "Über 12 Studien gewannen Frauen ohne Hormontherapie deutlich an Kraft und Fitness und verringerten ihren Taillenumfang."
+},
+"plus": {
+"frage": "Du bist postmenopausal und startest ein Kraftprogramm. Welcher Wochenrahmen erwies sich in der Auswertung als besonders wirksam?",
+"richtig": "Dreimal pro Woche rund 60 Minuten progressiv trainieren plus reichlich Protein",
+"falsch": [
+"Einmal pro Woche 20 Minuten leichtes Training bei wenig Protein",
+"Jeden Tag nur leichtes Dehnen ohne Widerstände",
+"Sechsmal pro Woche Ausdauer statt Krafttraining"
+],
+"warum": "Als Optimum zeigten sich rund drei Einheiten à 60 Minuten pro Woche über mindestens 12 Wochen, begleitet von ausreichender Proteinzufuhr."
+},
+"labor": {
+"frage": "Eine Meta-Analyse von 12 RCTs untersuchte progressives Krafttraining bei postmenopausalen Frauen ohne Hormontherapie. Was verbesserte sich neben der Muskelkraft?",
+"richtig": "Die maximale Sauerstoffaufnahme stieg und der Taillenumfang nahm signifikant ab",
+"falsch": [
+"Ausschließlich die Oberkörperkraft, nicht aber die Unterkörperkraft",
+"Weder Fitness noch Körpermaße veränderten sich ohne Hormontherapie",
+"Die habituelle Proteinzufuhr stieg ohne Beratung automatisch auf 2 g/kg"
+],
+"warum": "Neben sehr großen Effekten auf Ober- und Unterkörperkraft stieg auch die VO2max hochsignifikant und der Taillenumfang sank."
+}
+}
+},
+{
+"id": "FRA-112",
+"karte": {
+"kopf": "Frauen & Männer · 17 Studien zusammengefasst",
+"titel": "Frauen bauten relativ genauso viel Muskel auf wie Männer",
+"titel_hervor": "relativ genauso viel Muskel",
+"setup": "In 17 Studien absolvierten Frauen und Männer mindestens fünf Wochen lang identische Krafttrainingsprogramme für Muskelaufbau und Kraft.",
+"zahl": null,
+"kern": [
+"Beim relativen Muskelwachstum gab es keinen Unterschied zwischen den Geschlechtern",
+"Im Oberkörper steigerten Frauen ihre relative Kraft sogar stärker als Männer",
+"Die Unterkörperkraft entwickelte sich relativ gesehen ähnlich"
+],
+"grenze": "Betrachtet wurden relative Zuwächse – absolut starten Männer im Schnitt mit mehr Muskelmasse und Kraft.",
+"fuer_dich": "Du bist Frau und willst Muskeln oder Kraft aufbauen? Nutze dieselben bewährten Trainingsprinzipien und steigere deine Gewichte mutig weiter.",
+"labor": {
+"design": "Meta-Analyse von 17 Studien, identische Krafttrainingsprotokolle (>= 5 Wochen), Frauen vs. Männer",
+"teilnehmer": "Frauen und Männer in direkten Vergleichsstudien",
+"ergebnis": "Hypertrophie ES 0,07 (p = 0,31); UK-Kraft ES −0,21 (p = 0,20); OK-Kraft ES −0,60 (p = 0,002) zugunsten Frauen"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Stimmt es, dass Frauen mit dem gleichen Krafttraining prozentual deutlich langsamer Muskeln aufbauen als Männer?",
+"richtig": "Nein, relativ zu ihrem Startwert bauten Frauen genauso viel Muskel auf",
+"falsch": [
+"Ja, Frauen bauen im Schnitt nur halb so schnell Muskelmasse auf",
+"Ja, Frauen können durch Krafttraining nur Ausdauer, aber kaum Kraft gewinnen",
+"Nur in den Beinen halten Frauen mit, im Oberkörper kaum"
+],
+"warum": "In 17 Vergleichsstudien mit identischem Training erzielten Frauen und Männer prozentual gleich große Muskelzuwächse."
+},
+"plus": {
+"frage": "Du bist Frau und möchtest deinen Trainingsplan für Hypertrophie und Kraft zusammenstellen. Brauchst du ein völlig anderes Trainingsprinzip als Männer?",
+"richtig": "Nein, dieselben Grundprinzipien für Volumen und Progression funktionieren genauso",
+"falsch": [
+"Ja, Frauen sollten grundsätzlich nur leichte Gewichte mit über 25 Wiederholungen nutzen",
+"Ja, im Oberkörper sollten Frauen die Gewichte kaum steigern",
+"Ja, Frauen brauchen im Schnitt nur ein Viertel des üblichen Satzvolumens"
+],
+"warum": "Das relative Anpassungspotenzial ist geschlechtsunabhängig ähnlich, im Oberkörper steigern Frauen relativ sogar besonders stark."
+},
+"labor": {
+"frage": "Eine Meta-Analyse von 17 Studien verglich identische Krafttrainingsprogramme bei Frauen und Männern. Wo zeigte sich ein signifikanter Unterschied?",
+"richtig": "Frauen erzielten signifikant größere relative Kraftzuwächse im Oberkörper",
+"falsch": [
+"Männer erzielten signifikant größere relative Hypertrophie-Zuwächse",
+"Männer steigerten ihre relative Unterkörperkraft doppelt so stark",
+"In keinem einzigen Kraft- oder Muskelparameter gab es einen Unterschied"
+],
+"warum": "Hypertrophie (p = 0,31) und Unterkörperkraft (p = 0,20) waren ähnlich, die relative Oberkörperkraft begünstigte Frauen (p = 0,002)."
+}
+}
+},
+{
+"id": "FRA-113",
+"karte": {
+"kopf": "Frauen & Männer · Forschungsüberblick",
+"titel": "Frauen ermüdeten im Kraftsatz langsamer und schafften mehr Wiederholungen",
+"titel_hervor": "schafften mehr Wiederholungen",
+"setup": "Ein systematischer Überblick verglich, wie schnell Frauen und Männer bei gleicher relativer Last im Krafttraining ermüden und wie stark die Kraft direkt danach sinkt.",
+"zahl": {
+"label": "Akuter Kraftverlust bei Frauen",
+"wert": "−15,5 %",
+"alltag": "Bei Männern waren es −26,8 %"
+},
+"kern": [
+"Bei gleicher Prozentlast schafften Frauen im Bankdrück-Test fast doppelt so viele Wiederholungen",
+"Direkt nach der Belastung verloren Frauen im Schnitt weniger Kraft als Männer",
+"Auch in den Satzpausen erholte sich der Stoffwechsel im Muskel meist schneller"
+],
+"grenze": "Gilt für die akute Ermüdung im Training – über mehrere Tage hinweg ist die Erholung nicht automatisch schneller.",
+"fuer_dich": "Du bist Frau und trainierst nach Prozent-Tabellen? Trau dir oft zwei bis vier Wiederholungen mehr zu oder halte deine Satzpausen etwas kürzer.",
+"labor": {
+"design": "Systematisches Review zu geschlechtsspezifischer Ermüdung bei isometrischer und dynamischer Last",
+"teilnehmer": "Frauen und Männer in Kraft- und Ermüdungsprotokollen",
+"ergebnis": "Bankdrücken: 58,3 vs. 29,6 Wdh. (p = 0,0001); akuter Kraftverlust 0 h: −15,5 % vs. −26,8 % (p < 0,05)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Eine Frau und ein Mann trainieren beide mit dem gleichen Anteil ihrer jeweiligen Maximalkraft. Wer ermüdet im Satz meist langsamer?",
+"richtig": "Frauen ermüden bei gleicher relativer Last meist langsamer",
+"falsch": [
+"Männer schaffen bei gleicher relativer Last deutlich mehr Wiederholungen",
+"Beide ermüden bei gleicher relativer Last fast exakt gleich schnell",
+"Frauen ermüden nur bei Kniebeugen langsamer, nicht im Oberkörper"
+],
+"warum": "Durch einen höheren Anteil ausdauernder Muskelfasern und schnellere Erholung im Satz schaffen Frauen bei gleicher Prozentlast oft mehr Wiederholungen."
+},
+"plus": {
+"frage": "Du bist Frau und nutzt eine Standard-Prozenttabelle (% 1RM), merkst aber am Satzende immer noch viele RIR. Was ist eine sinnvolle Anpassung?",
+"richtig": "Etwas mehr Wiederholungen einplanen, das Gewicht anpassen oder kürzer pausieren",
+"falsch": [
+"Die Satzpausen sicherheitshalber auf fünf Minuten verlängern",
+"Das Gewicht senken, weil Prozenttabellen für Frauen zu schwer sind",
+"Bei der vorgegebenen Zahl stoppen, auch wenn kaum Anstrengung spürbar ist"
+],
+"warum": "Standardtabellen unterschätzen oft die Wiederholungszahl von Frauen bei gegebener Prozentlast; kürzere Pausen oder mehr Wiederholungen passen besser."
+},
+"labor": {
+"frage": "Ein systematisches Review untersuchte Ermüdung im Krafttraining bei Frauen und Männern. Welche physiologischen Faktoren erklären die höhere Ermüdungsresistenz bei Frauen?",
+"richtig": "Höherer Typ-I-Faseranteil, geringere Gefäßkompression und schnellere metabolische Erholung",
+"falsch": [
+"Höherer Typ-II-Faseranteil und deutlich größere Muskelquerschnitte",
+"Niedrigere Bewegungsgeschwindigkeit bei schweren konzentrischen Lasten",
+"Vollständiges Ausbleiben eines akuten Kraftverlusts direkt nach dem Training"
+],
+"warum": "Mehr oxidative Typ-I-Fasern, kleinere Muskelquerschnitte mit besserer Durchblutung und schnellere Pausen-Erholung verzögern die akute Ermüdung."
+}
+}
+},
+{
+"id": "FRA-114",
+"karte": {
+"kopf": "Untrainierte Frauen · Experimentelle Studie",
+"titel": "Nach sehr hartem Volumen brauchten Muskeln drei bis vier Tage zur Erholung",
+"titel_hervor": "drei bis vier Tage zur Erholung",
+"setup": "Zehn untrainierte Frauen absolvierten acht schwere Sätze pro Übung; ihre Muskelkraft wurde direkt danach sowie bis vier Tage später gemessen.",
+"zahl": {
+"label": "Dauer bis zur vollen Kraft-Erholung",
+"wert": "72–96 Std.",
+"alltag": "Rund 3 bis 4 Tage nach hohem Volumen"
+},
+"kern": [
+"Direkt nach dem Training war der Kraftverlust geringer als bei Männern",
+"Trotzdem dauerte die Rückkehr zur vollen Ausgangskraft mehrere Tage",
+"Andere Studien fanden teils weniger Muskelkater – die Studienlage ist gemischt"
+],
+"grenze": "Erste Hinweise aus einer kleinen Studie mit 10 untrainierten Frauen – Trainierte erholen sich teils anders.",
+"fuer_dich": "Du hast eine Muskelgruppe mit sehr vielen harten Sätzen belastet? Gönn ihr rund drei Tage Pause vor der nächsten Maximaleinheit.",
+"labor": {
+"design": "Experimentelle Studie, 8 Sätze à 10RM (80 % 1RM, 3 min Pause), Messungen 0 bis 96 h nach Belastung",
+"teilnehmer": "10 untrainierte Frauen (im Schnitt 22,7 Jahre)",
+"ergebnis": "Akuter Kraftverlust 0 h geringer (−15,5 % vs. −26,8 %), aber verzögerte Erholung bis 72–96 h"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du fühlst dich als Frau direkt nach einem sehr harten Krafttraining gar nicht völlig platt. Bedeutet das, der Muskel ist schon am nächsten Tag wieder voll erholt?",
+"richtig": "Nicht unbedingt – nach viel Volumen kann es drei bis vier Tage dauern",
+"falsch": [
+"Ja, ein geringer Kraftverlust direkt danach bedeutet Erholung über Nacht",
+"Ja, Frauen brauchen nach schwerem Krafttraining grundsätzlich nur 24 Stunden Pause",
+"Nein, der Muskel braucht nach jedem Training mindestens zwei Wochen Pause"
+],
+"warum": "Erste Hinweise zeigen, dass trotz geringerem Kraftverlust direkt nach der Einheit die mehrtägige Erholung bis zu 96 Stunden dauern kann."
+},
+"plus": {
+"frage": "Du hast heute acht schwere Sätze für eine Muskelgruppe bis nahe ans Muskelversagen gemacht. Wann solltest du sie frühestens wieder maximal belasten?",
+"richtig": "Nach etwa 72 Stunden Regenerationszeit",
+"falsch": [
+"Schon am nächsten Morgen, solange kaum Muskelkater da ist",
+"Erst nach mindestens zwei Wochen kompletter Trainingspause",
+"Bereits nach 12 Stunden, weil Frauen schneller regenerieren"
+],
+"warum": "Nach sehr hohem Volumen bis nahe ans Versagen braucht die Maximalkraft oft mindestens drei Tage zur vollständigen Erholung."
+},
+"labor": {
+"frage": "Nach 8 Sätzen à 10RM zeigten Frauen in einer Studie über 4 Tage anhaltende Krafteinbußen, trotz geringerem akutem Verlust. Was ist eine diskutierte Erklärung?",
+"richtig": "Höhere Ermüdungsresistenz im Training ermöglichte insgesamt mehr mechanische Arbeit",
+"falsch": [
+"Östrogen zerstört die Muskelmembranen nach schwerem Training",
+"Frauen trainierten in der Studie mit deutlich kürzeren Satzpausen als Männer",
+"Die Messungen begannen erst nach 72 Stunden statt direkt nach der Belastung"
+],
+"warum": "Weil Frauen im Satz langsamer ermüden, verrichten sie bei gleichem Protokoll teils mehr relative Gesamtarbeit, was die Erholung verlängern kann."
+}
+}
+},
+{
+"id": "FRA-115",
+"karte": {
+"kopf": "Frauen mit Blasenschwäche · 31 Studien",
+"titel": "Gezieltes Beckenbodentraining verfünffachte die Chance auf Besserung",
+"titel_hervor": "verfünffachte die Chance auf Besserung",
+"setup": "In 31 kontrollierten Studien mit 1.817 Frauen wurde gezieltes Beckenbodentraining über vier Wochen bis sechs Monate mit keiner Behandlung verglichen.",
+"zahl": {
+"label": "Höhere Chance auf Beschwerdefreiheit",
+"wert": "5-fach",
+"alltag": "Im Schnitt rund 1 Vorfall weniger pro Tag"
+},
+"kern": [
+"Die Zahl täglicher Vorfälle sank im Schnitt um rund eine Episode pro Tag",
+"Das Training half bei Belastungs-, Drang- und gemischter Blasenschwäche",
+"Unerwünschte Nebenwirkungen traten in den 31 Studien extrem selten auf"
+],
+"grenze": "Die Trainingspläne der Studien waren sehr unterschiedlich – bei anhaltenden Beschwerden lohnt eine ärztliche oder fachliche Abklärung.",
+"fuer_dich": "Du verlierst beim Sport oder im Alltag Urin? Baue über mindestens 8 bis 12 Wochen tägliches Beckenbodentraining ein und lass Beschwerden ärztlich abklären.",
+"labor": {
+"design": "Cochrane Meta-Analyse von 31 RCTs, Beckenbodentraining (4 Wochen–6 Monate) vs. keine Behandlung",
+"teilnehmer": "1.817 Frauen mit Belastungs-, Drang- oder Mischharninkontinenz",
+"ergebnis": "5-fach höhere Heilungswahrscheinlichkeit; −1,23 Episoden/24 h (95 % KI −1,78 bis −0,68) bei Belastungsinkontinenz"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Lässt sich eine Blasenschwäche bei Frauen durch gezieltes Training des Beckenbodens tatsächlich deutlich verbessern?",
+"richtig": "Ja, die Chance auf Beschwerdefreiheit war rund fünfmal so hoch",
+"falsch": [
+"Nein, der Beckenboden lässt sich durch Training kaum beeinflussen",
+"Nur bei sehr jungen Frauen, im höheren Alter wirkt es nicht mehr",
+"Es hilft nur gegen Schmerzen, aber nicht gegen Urinverlust"
+],
+"warum": "Eine große Auswertung von 31 Studien zeigte sehr gute Erfolge bei nahezu fehlenden Nebenwirkungen."
+},
+"plus": {
+"frage": "Du merkst beim Training gelegentlichen Urinverlust und willst das gezielt angehen. Welcher Zeitrahmen ist als erster Schritt sinnvoll?",
+"richtig": "8 bis 12 Wochen täglich gezielt trainieren, bei Bedarf ärztlich abklären",
+"falsch": [
+"Einmal pro Woche kurz anspannen, das reicht meist in wenigen Tagen",
+"Nur beim Laufen weniger trinken, statt den Beckenboden zu trainieren",
+"Sofort dauerhaft auf jegliche körperliche Bewegung verzichten"
+],
+"warum": "In den meisten erfolgreichen Studien wurde über 8 bis 12 Wochen regelmäßig und strukturiert trainiert."
+},
+"labor": {
+"frage": "Eine Cochrane-Analyse von 31 RCTs (n = 1.817) bewertete Beckenbodentraining gegen keine Behandlung. Wie fiel der Effekt auf die täglichen Episoden aus?",
+"richtig": "Signifikante Reduktion um rund 1 bis 1,2 Episoden pro 24 Stunden",
+"falsch": [
+"Keine messbare Veränderung der täglichen Episodenzahl",
+"Ein Effekt nur bei reiner Dranginkontinenz, nicht bei Belastungsinkontinenz",
+"Häufige unerwünschte Nebenwirkungen bei mehr als einem Drittel der Frauen"
+],
+"warum": "Bei Belastungsinkontinenz sanken die Vorfälle um 1,23 pro 24 h (95 % KI −1,78 bis −0,68) bei hoher Evidenzqualität."
+}
+}
+},
+{
+"id": "FRA-116",
+"karte": {
+"kopf": "Sportlerinnen · 22 Studien zusammengefasst",
+"titel": "Bei Sprungsportarten trat Blasenschwäche bis zu viermal häufiger auf",
+"titel_hervor": "bis zu viermal häufiger",
+"setup": "In 22 Studien mit 7.507 Frauen aus 17 Sportarten wurde verglichen, wie oft Belastungs-Blasenschwäche bei Sportarten mit und ohne Sprungbelastung vorkommt.",
+"zahl": {
+"label": "Höhere Häufigkeit bei High-Impact-Sport",
+"wert": "bis 4,6-fach",
+"alltag": "Im Vergleich zu Sportarten ohne Sprünge"
+},
+"kern": [
+"Gegenüber inaktiven Frauen hatten Leistungssportlerinnen ein 2,5-fach höheres Risiko",
+"Am häufigsten betroffen waren Trampolinspringen und andere Sportarten mit starken Stößen",
+"Hoher Druck im Bauchraum ermüdet den Beckenboden bei wiederholten Sprüngen"
+],
+"grenze": "Neuere Übersichten zeigen große Überschneidungen zwischen Sportarten – wichtig ist die eigene Prüfung, nicht nur die Sportart.",
+"fuer_dich": "Du machst viel Sprung-, Sprint- oder Hebetraining? Achte auf Warnsignale, spanne den Beckenboden vor harten Stößen an und kläre Beschwerden ärztlich ab.",
+"labor": {
+"design": "Systematisches Review von 22 Studien zu Belastungsharninkontinenz in 17 Sportarten",
+"teilnehmer": "7.507 Frauen im Alter von 12 bis 69 Jahren",
+"ergebnis": "Prävalenz 5,6 % (Low-Impact) bis 80 % (Trampolin); 4,59-fach bei High- vs. Low-Impact; 2,5-fach bei Profis vs. inaktiv"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Stimmt es, dass sportliche Frauen wegen ihrer starken Muskulatur seltener Urin verlieren als inaktive Frauen?",
+"richtig": "Nein, gerade bei Sprung- und Stoßsportarten tritt es deutlich häufiger auf",
+"falsch": [
+"Ja, Leistungssport schützt fast vollständig vor Blasenschwäche",
+"Es tritt bei Sportlerinnen und inaktiven Frauen exakt gleich oft auf",
+"Nur beim Schwimmen und Radfahren ist das Risiko deutlich erhöht"
+],
+"warum": "In 22 Studien hatten Sportlerinnen in High-Impact-Disziplinen bis zu 4,6-mal häufiger Beschwerden als in gelenkschonenden Sportarten."
+},
+"plus": {
+"frage": "Du machst viel schweres Heben und Sprungtraining und möchtest deinen Beckenboden gezielt entlasten. Was hilft direkt vor einer harten Belastung?",
+"richtig": "Den Beckenboden bewusst kurz vor dem Heben oder Springen voraktivieren",
+"falsch": [
+"Die Luft maximal anhalten und kräftig nach unten pressen",
+"Den Beckenboden erst nach dem letzten Satz kurz anspannen",
+"Nur noch auf die Bauchmuskeln achten und den Beckenboden ignorieren"
+],
+"warum": "Eine gezielte Voraktivierung vor Druckspitzen unterstützt den Beckenboden bei schweren Hebe- und Sprungbelastungen."
+},
+"labor": {
+"frage": "Ein Review von 22 Studien (n = 7.507) zeigte hohe Raten von Belastungsharninkontinenz im High-Impact-Sport. Was ergänzen neuere Übersichtsarbeiten dazu?",
+"richtig": "Große Überlappungen – individuelles Screening zählt mehr als die Sportart",
+"falsch": [
+"In Low-Impact-Sportarten treten keinerlei Beschwerden auf",
+"Allein die Sportart sagt zuverlässig vorher, wer betroffen ist",
+"Der Mechanismus hat nichts mit intraabdominellem Druck zu tun"
+],
+"warum": "Da sich die Häufigkeiten zwischen Sportkategorien stark überschneiden, ist individuelles Screening entscheidender als die reine Sportartgruppe."
+}
+}
+},
+{
+"id": "FRA-117",
+"karte": {
+"kopf": "Sportlerinnen · Expertenkonsens",
+"titel": "Dauerhafter Energiemangel im Sport bremst weit mehr als nur den Zyklus",
+"titel_hervor": "bremst weit mehr als nur den Zyklus",
+"setup": "Ein internationales Expertengremium fasste die gesundheitlichen und sportlichen Folgen eines anhaltenden Energiedefizits bei hohem Trainingspensum zusammen.",
+"zahl": null,
+"kern": [
+"Betroffen sein können Knochen, Stoffwechsel, Abwehrkraft, Herz-Kreislauf und Psyche",
+"Auch Leistungsstagnation, Schlafprobleme und Ermüdungsbrüche sind typische Warnzeichen",
+"Die Pille kann Zyklusstörungen durch künstliche Blutungen verdecken"
+],
+"grenze": "Expertenkonsens ohne einzelne Effektstärke – kurzfristige, begleitete Defizite sind von schädlichem Mangel zu trennen.",
+"fuer_dich": "Dein Zyklus bleibt aus, du schläfst schlecht oder deine Leistung stagniert bei viel Training? Iss mehr, reduziere das Volumen und kläre es ärztlich ab.",
+"labor": {
+"design": "Konsenspapier zur Risikostratifizierung und Differentialdiagnose bei problematischer niedriger Energieverfügbarkeit (REDs)",
+"teilnehmer": "Konsens für Sportlerinnen (inkl. Jugendliche und Leistungssport)",
+"ergebnis": "Multisystemische Folgen über 8 Diagnosekategorien; Unterscheidung anpassungsfähige vs. problematische LEA"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Eine Sportlerin trainiert sehr viel und isst dauerhaft zu wenig. Welche Körperbereiche können darunter leiden?",
+"richtig": "Viele Systeme gleichzeitig, etwa Knochen, Abwehrkraft, Zyklus, Psyche und Leistung",
+"falsch": [
+"Ausschließlich der Menstruationszyklus, der Rest bleibt gesund",
+"Nur das Körpergewicht, während Leistung und Knochen stärker werden",
+"Ausschließlich die Ausdauer, nicht aber Knochen oder Schlaf"
+],
+"warum": "Ein problematischer Energiemangel im Sport betrifft zahlreiche Körpersysteme von den Knochen bis zur psychischen Stabilität."
+},
+"plus": {
+"frage": "Du trainierst sehr viel, schläfst schlechter, deine Leistung stagniert und du hast erste Zyklusstörungen. Was ist der wichtigste Schritt?",
+"richtig": "Mehr Energie und Kohlenhydrate zuführen, das Volumen senken und ärztlich abklären",
+"falsch": [
+"Noch härter trainieren, um aus dem Leistungstief herauszukommen",
+"Die Kohlenhydrate weiter kürzen, bis die Leistung wieder steigt",
+"Abwarten, weil ein ausbleibender Zyklus bei viel Sport normal ist"
+],
+"warum": "Mehrere Warnzeichen bei hohem Pensum deuten auf Energiemangel hin – mehr Essen, weniger Volumen und ärztliche Abklärung sind zentral."
+},
+"labor": {
+"frage": "Ein internationales Konsenspapier beschreibt die Folgen problematischer niedriger Energieverfügbarkeit. Warum ist das Screening bei hormoneller Verhütung besonders knifflig?",
+"richtig": "Künstliche Entzugsblutungen können eine zugrundeliegende Zyklusstörung verdecken",
+"falsch": [
+"Hormonelle Verhütung schützt vollständig vor Knochenstressverletzungen",
+"Unter der Pille tritt ein relatives Energiedefizit im Sport nicht auf",
+"Bluttests reichen allein aus, sodass Schlaf und Psyche unwichtig sind"
+],
+"warum": "Weil Entzugsblutungen eine Amenorrhoe maskieren, müssen Schlafqualität, psychische Zeichen und Knochenverletzungen mitüberwacht werden."
+}
+}
+},
+{
+"id": "GES-101",
+"karte": {
+"kopf": "Erwachsene · 270 Studien zusammengefasst",
+"titel": "Halteübungen senken den Ruheblutdruck am stärksten",
+"titel_hervor": "senken den Ruheblutdruck am stärksten",
+"setup": "In 270 Studien wurde verglichen, wie stark verschiedene Trainingsarten den Ruheblutdruck ab 2 Wochen Training senken.",
+"zahl": {
+"label": "Oberer Blutdruckwert im Schnitt",
+"wert": "−8,2 mmHg",
+"alltag": "Wandsitzen sogar −10,5 mmHg"
+},
+"kern": [
+"Wandsitzen schnitt am besten ab, gefolgt von Beinstrecken und Handgriff-Übungen",
+"Typisch waren 3 Einheiten pro Woche mit 4-mal 2 Minuten Halten über 8 Wochen",
+"Auch der untere Blutdruckwert sank im Schnitt um rund 4 mmHg"
+],
+"grenze": "Daten über mehrere Jahre sind noch dünn, und nicht jeder Mensch spricht gleich stark auf das Training an.",
+"fuer_dich": "Dein Ruheblutdruck liegt bei 120/80 mmHg oder höher? Bau 3-mal pro Woche 4-mal 2 Minuten Wandsitzen in deinen Plan ein.",
+"labor": {
+"design": "Netzwerk-Meta-Analyse randomisierter Studien, Dauer ≥ 2 Wochen (meist 8 Wochen)",
+"teilnehmer": "15.827 Erwachsene aus 270 Studien (Einsteiger, Ältere, Trainierte)",
+"ergebnis": "Systolisch −8,24 mmHg (95 %-KI −10,0 bis −6,5), diastolisch −4,00 mmHg; Wandsitzen −10,47 mmHg (SUCRA 90,4 %)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Welche Trainingsart senkte den Blutdruck in Ruhe im Vergleich von hunderten Studien im Schnitt am stärksten?",
+"richtig": "Statische Halteübungen wie Wandsitzen oder Handgriff-Training",
+"falsch": [
+"Ausschließlich langsames Gehen an der frischen Luft",
+"Sehr kurzes Dehnen ohne spürbare Muskelanspannung",
+"Reines Bauchmuskeltraining mit vielen Wiederholungen"
+],
+"warum": "Statisches Halten wie Wandsitzen senkte den oberen und unteren Ruheblutdruck im Schnitt stärker als jede andere geprüfte Trainingsart."
+},
+"plus": {
+"frage": "Du willst deinen Ruheblutdruck gezielt mit isometrischem Training unterstützen. Welcher Umfang hat sich in den meisten Studien bewährt?",
+"richtig": "Dreimal pro Woche vier Durchgänge à zwei Minuten über mehrere Wochen",
+"falsch": [
+"Einmal im Monat eine maximale Halteübung bis zur Erschöpfung",
+"Täglich dreißig Minuten ununterbrochenes Wandsitzen ohne Pause",
+"Zehn Sekunden leichtes Halten direkt nach dem Aufwachen"
+],
+"warum": "Typisch und wirksam waren 3 Einheiten pro Woche mit 4-mal 2 Minuten Halten über mindestens 4 bis 8 Wochen."
+},
+"labor": {
+"frage": "Eine Netzwerk-Meta-Analyse aus 270 randomisierten Studien verglich verschiedene Trainingsmodalitäten auf den Ruheblutdruck. Was zeigte sich für isometrisches Training und wo liegt eine Grenze?",
+"richtig": "Stärkste Senkung besonders beim Wandsitzen, aber noch begrenzte Langzeitdaten über Jahre",
+"falsch": [
+"Nur ein Effekt auf den unteren Wert, während der obere Wert unverändert blieb",
+"Gleichmäßige Wirkung bei jedem Menschen ohne individuelle Unterschiede",
+"Nachweislich wirksamer erst ab einer Trainingsdauer von mindestens zwei Jahren"
+],
+"warum": "Isometrisches Training lag beim Ruheblutdruck vorn, doch Langzeit-Adhärenzdaten über 1 bis 5 Jahre und Responder-Raten sind noch begrenzt."
+}
+}
+},
+{
+"id": "GES-102",
+"karte": {
+"kopf": "Erwachsene · 270 Studien zusammengefasst",
+"titel": "Kraft plus Ausdauer senkt den Ruheblutdruck um rund 6 mmHg",
+"titel_hervor": "um rund 6 mmHg",
+"setup": "270 Studien verglichen Krafttraining, Ausdauer, HIIT und kombiniertes Training auf ihren Effekt auf den Ruheblutdruck.",
+"zahl": {
+"label": "Oberer Wert bei Kombitraining",
+"wert": "−6,0 mmHg",
+"alltag": "unterer Wert im Schnitt −2,5 mmHg"
+},
+"kern": [
+"Alle vier Trainingsarten senkten den Ruheblutdruck im Schnitt deutlich",
+"Je höher der Ausgangsblutdruck war, desto größer fiel der Rückgang aus",
+"Laufen und Radfahren wirkten spürbar stärker als reines Gehen"
+],
+"grenze": "Für den unteren Blutdruckwert reichten die Daten nicht für alle Untergruppen nach Ausgangswert vollständig aus.",
+"fuer_dich": "Du möchtest deinen Ruheblutdruck senken? Kombiniere 2 bis 3 Kraft- mit 2 bis 3 Ausdauereinheiten pro Woche.",
+"labor": {
+"design": "Netzwerk-Meta-Analyse randomisierter Studien, Vergleich verschiedener Trainingsmodalitäten",
+"teilnehmer": "15.827 Erwachsene aus 270 Studien",
+"ergebnis": "Kombiniert −6,04/−2,54 mmHg; dynamische Kraft −4,55/−3,04 mmHg; Ausdauer −4,49/−2,53 mmHg; HIIT −4,08/−2,50 mmHg"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Hilft gegen erhöhten Ruheblutdruck nur klassisches Ausdauertraining, oder bringen auch Krafttraining und Intervalltraining etwas?",
+"richtig": "Alle diese Trainingsarten senken den Ruheblutdruck im Schnitt deutlich",
+"falsch": [
+"Nur lockeres Joggen hilft, Krafttraining erhöht den Ruheblutdruck dauerhaft",
+"Intervalltraining zeigt gar keine messbare Wirkung auf den Blutdruck",
+"Krafttraining wirkt nur bei jungen Menschen mit normalem Blutdruck"
+],
+"warum": "Kombitraining, Krafttraining, Ausdauer und HIIT senkten den Ruheblutdruck im Schnitt alle deutlich – besonders bei erhöhtem Ausgangswert."
+},
+"plus": {
+"frage": "Du hast erhöhten Ruheblutdruck und möchtest deinen Wochenplan anpassen. Welche Struktur bietet eine besonders starke Basis?",
+"richtig": "Zwei bis drei Kraft- und zwei bis drei Ausdauereinheiten pro Woche",
+"falsch": [
+"Ausschließlich gemütliches Spazierengehen statt Radfahren oder Laufen",
+"Nur eine sehr lange Ausdauereinheit am Sonntag und sonst Pause",
+"Jede Woche zufällig wechseln ohne regelmäßige Ausdauer- oder Kraftreize"
+],
+"warum": "Kombiniertes Training senkte den Ruheblutdruck besonders zuverlässig, wobei Laufen und Radfahren stärker wirkten als bloßes Gehen."
+},
+"labor": {
+"frage": "In einer großen Netzwerk-Meta-Analyse zu dynamischem Kraft-, Ausdauer-, Kombi- und Intervalltraining: Wovon hing die Größe der Blutdrucksenkung stark ab?",
+"richtig": "Vom Ausgangsblutdruck – bei bestehender Hypertonie war der Rückgang am größten",
+"falsch": [
+"Ausschließlich vom Körpergewicht unabhängig vom Ausgangsblutdruck",
+"Nur davon, ob das Training morgens oder abends absolviert wurde",
+"Von der Trainingsart allein, während der Ausgangswert keine Rolle spielte"
+],
+"warum": "Personen mit bereits erhöhtem Blutdruck erreichten die deutlichsten Reduktionen, und Laufen/Radfahren wirkte stärker als Gehen."
+}
+}
+},
+{
+"id": "GES-103",
+"karte": {
+"kopf": "Erwachsene · 93 Studien zusammengefasst",
+"titel": "Für den 24-Stunden-Blutdruck zählt Ausdauer und Intervalltraining",
+"titel_hervor": "zählt Ausdauer und Intervalltraining",
+"setup": "Meta-Analysen verglichen, wie verschiedene Trainingsarten den Blutdruck in der Praxis und über volle 24 Stunden beeinflussen.",
+"zahl": {
+"label": "Ausdauer bei Bluthochdruck (oberer Wert)",
+"wert": "−5 bis −11 mmHg",
+"alltag": ""
+},
+"kern": [
+"Beim 24-Stunden-Blutdruck schnitten HIIT und Kombitraining am verlässlichsten ab",
+"Reines Kraft- oder Haltetraining zeigte über 24 Stunden unsicherere Ergebnisse",
+"Der 24-Stunden-Wert gilt als aussagekräftiger als eine einzelne Messung in Ruhe"
+],
+"grenze": "Zwischen Ruhemessung und 24-Stunden-Messung widersprechen sich Daten teils, und strenge statistische Grenzen wurden knapp verfehlt.",
+"fuer_dich": "Du willst deinen 24-Stunden-Blutdruck senken? Ergänze Krafttraining mit 2 bis 5 Ausdauer-, Kombi- oder HIIT-Einheiten pro Woche.",
+"labor": {
+"design": "Systematisches Review und Meta-Analyse (Ruhe-BP und 24-h-ABPM über 6–52 Wochen)",
+"teilnehmer": "5.223 Erwachsene (93 Studien) bzw. 633 in 15 ABPM-Studien",
+"ergebnis": "24-h-ABPM SUCRA: HIIT 76 %, Kombi 65 %, Isometrisch 53 %, Ausdauer 44 %, Kraft 41 %; Hypertonie −5,2 bis −11,0 mmHg"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Reicht reines Kraft- oder Haltetraining allein aus, um den Blutdruck verlässlich über volle 24 Stunden im Alltag zu senken?",
+"richtig": "Eher nicht – Ausdauer, Kombitraining und Intervalle zeigen hier klarere Effekte",
+"falsch": [
+"Ja, Krafttraining wirkt über 24 Stunden deutlich besser als jede Ausdauer",
+"Nein, über 24 Stunden lässt sich der Blutdruck durch Sport kaum beeinflussen",
+"Ja, zwischen einer Einzelmessung und 24 Stunden gibt es keinen Unterschied"
+],
+"warum": "Während Halteübungen in Ruhe stark wirken, liefern HIIT, Ausdauer und Kombitraining die verlässlicheren Effekte über 24 Stunden."
+},
+"plus": {
+"frage": "Du machst bereits regelmäßig Kraft- und Haltetraining, möchtest aber gezielt deinen 24-Stunden-Blutdruck verbessern. Was solltest du ergänzen?",
+"richtig": "Zwei bis fünf Einheiten Ausdauer, Kombitraining oder HIIT pro Woche",
+"falsch": [
+"Die Krafteinheiten verdoppeln und jegliches Ausdauertraining streichen",
+"Nur noch statische Halteübungen machen und dynamische Übungen meiden",
+"Einmal pro Woche kurz dehnen statt Ausdauertraining einzuplanen"
+],
+"warum": "Für den prognostisch wichtigen 24-Stunden-Blutdruck sind Ausdauer-, Kombi- oder HIIT-Reize eine sinnvolle Ergänzung zum Krafttraining."
+},
+"labor": {
+"frage": "Beim Vergleich von Praxis-Ruheblutdruck und 24-Stunden-Langzeitmessung (ABPM) über verschiedene Trainingsarten: Welcher Unterschied fiel auf?",
+"richtig": "Bei 24-h-ABPM lagen HIIT und Kombi vorn, während Krafttraining unsicherer blieb",
+"falsch": [
+"Isometrisches Training lag bei 24-h-ABPM mit großem Abstand auf Platz eins",
+"Alle Trainingsarten zeigten im 24-h-ABPM stärkere Effekte als in Ruhe",
+"Ausdauertraining hatte bei Bluthochdruck gar keinen Effekt auf den 24-h-Wert"
+],
+"warum": "Die Evidenz zwischen Praxis-Ruheblutdruck und 24-h-ABPM weicht ab: Beim Langzeitblutdruck schnitten HIIT und Kombitraining konsistenter ab."
+}
+}
+},
+{
+"id": "GES-104",
+"karte": {
+"kopf": "Erwachsene · Große Meta-Analyse",
+"titel": "Schon eine einzige Einheit senkt den Blutdruck für Stunden",
+"titel_hervor": "senkt den Blutdruck für Stunden",
+"setup": "Über 1.100 Studienergebnisse wurden ausgewertet, um den direkten Blutdruckabfall in den Stunden nach einer einzelnen Einheit zu messen.",
+"zahl": {
+"label": "Akuter Abfall nach dem Training",
+"wert": "−4,8 mmHg",
+"alltag": "bei Bluthochdruck im Schnitt −8,1 mmHg"
+},
+"kern": [
+"Kombitraining und Joggen senkten den Blutdruck direkt danach am stärksten",
+"Längere Einheiten wirkten besser als sehr kurze Belastungen",
+"Beim Krafttraining fiel der Effekt ohne Muskelversagen stärker aus"
+],
+"grenze": "Die Ergebnisse schwankten stark zwischen den Studien, und mit höherem Alter oder BMI fiel der Effekt kleiner aus.",
+"fuer_dich": "Du willst deinen Blutdruck tagsüber spürbar entlasten? Trainiere 30 bis 60 Minuten locker bis moderat und meide Pressatmung.",
+"labor": {
+"design": "Meta-Analyse zur akuten Blutdrucksenkung nach einzelnen Ausdauer-, Kraft- und Kombi-Einheiten",
+"teilnehmer": "1.101 Effektstärken aus Studien mit Normo-, Prä- und Hypertonikern",
+"ergebnis": "Systolisch −4,80 mmHg (ES −0,56), diastolisch −3,19 mmHg (ES −0,44); Dauer r = −0,19 (p = 0,01); I² > 98 %"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Muss man erst wochenlang trainieren, damit der Blutdruck sinkt, oder reagiert er schon nach einer einzelnen Trainingseinheit?",
+"richtig": "Schon eine einzelne Einheit senkt den Blutdruck für mehrere Stunden",
+"falsch": [
+"Eine einzelne Einheit lässt den Blutdruck danach stundenlang erhöht",
+"Ein Rückgang ist frühestens nach sechs Wochen Training messbar",
+"Der Blutdruck reagiert nur, wenn man bis zur völligen Erschöpfung geht"
+],
+"warum": "Direkt nach einer Einheit sinkt der Blutdruck oft für Stunden ab – besonders deutlich bei Menschen mit erhöhtem Ausgangswert."
+},
+"plus": {
+"frage": "Du machst Krafttraining und möchtest danach eine gute akute Blutdrucksenkung mitnehmen. Worauf solltest du im Satz achten?",
+"richtig": "Pressatmung vermeiden und vor dem Muskelversagen aufhören",
+"falsch": [
+"Jeden Satz mit angehaltenem Atem bis zum Muskelversagen ziehen",
+"Die Einheit auf höchstens fünf Minuten maximale Belastung kürzen",
+"Zwischen den Sätzen gar nicht mehr atmen, um die Spannung zu halten"
+],
+"warum": "Ohne Pressatmung und konzentrisches Muskelversagen fällt die akute Blutdrucksenkung nach dem Krafttraining günstiger aus."
+},
+"labor": {
+"frage": "Eine Meta-Analyse mit über 1.100 Effektstärken untersuchte die akute Blutdrucksenkung nach einer einzelnen Trainingseinheit. Welche statistische Einschränkung war auffällig?",
+"richtig": "Sehr hohe Streuung, kleinere Effekte bei höherem Alter und BMI",
+"falsch": [
+"Es gab fast keine Streuung, weil alle Trainingsarten exakt gleich wirkten",
+"Nur Menschen mit normalem Blutdruck zeigten einen messbaren Rückgang",
+"Die Dauer der Einheit hatte überhaupt keinen Zusammenhang mit dem Effekt"
+],
+"warum": "Trotz klarem mittlerem Effekt lag die Heterogenität über 98 %, und Alter sowie BMI schwächten die akute systolische Senkung ab."
+}
+}
+},
+{
+"id": "GES-105",
+"karte": {
+"kopf": "Erwachsene · 7 Studien zusammengefasst",
+"titel": "Kurze Gehpausen beim Sitzen dämpfen Blutzucker und Insulin deutlich",
+"titel_hervor": "dämpfen Blutzucker und Insulin",
+"setup": "In sieben Laborstudien saßen Teilnehmende über fünf Stunden am Stück oder unterbrachen das Sitzen alle 20 bis 30 Minuten für kurzes leichtes Gehen.",
+"zahl": null,
+"kern": [
+"Schon zwei bis fünf Minuten gemächliches Gehen reichten für einen klaren Effekt aus.",
+"Nach dem Essen stiegen Blutzucker und Insulin deutlich flacher an als beim Dauersitzen.",
+"Auf den Blutdruck hatte das Unterbrechen an einem einzelnen Tag keinen klaren Effekt."
+],
+"grenze": "Geprüft wurden nur eintägige Labortests bei meist übergewichtigen Erwachsenen – Langzeitdaten aus dem freien Alltag fehlen noch.",
+"fuer_dich": "Sitzt du mehr als fünf Stunden am Tag oder hast gerade gegessen? Steh alle 20 bis 30 Minuten auf und geh 2 bis 5 Minuten locker umher.",
+"labor": {
+"design": "Systematisches Review und Meta-Analyse aus Crossover-RCTs, langes Sitzen (≥5 Std.) vs. leichte Gehpausen",
+"teilnehmer": "Meist übergewichtige Erwachsene (7 Studien Glukose, 4 Insulin)",
+"ergebnis": "Glukose d = −0,72 (95 % KI −1,03 bis −0,41; p<0,001); Insulin d = −0,83 (−1,18 bis −0,48; p<0,001)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du sitzt im Büro stundenlang am Stück, besonders nach dem Mittagessen. Was passiert mit deinem Blutzucker, wenn du alle halbe Stunde ein paar Minuten locker gehst?",
+"richtig": "Blutzucker und Insulin steigen nach dem Essen spürbar flacher an",
+"falsch": [
+"Lockeres Gehen bringt nichts, nur schweißtreibendes Joggen wirkt",
+"Der Blutzucker steigt durch das Aufstehen sogar noch höher an",
+"Der Effekt zeigt sich nur beim Blutdruck, nicht beim Blutzucker"
+],
+"warum": "Schon zwei bis fünf Minuten leichtes Gehen alle 20 bis 30 Minuten dämpften in sieben Studien den Blutzucker- und Insulinanstieg deutlich."
+},
+"plus": {
+"frage": "Du hast einen langen Schreibtischtag vor dir und willst nach einer kohlenhydratreichen Mahlzeit Blutzuckerspitzen abflachen. Was lässt sich am einfachsten umsetzen?",
+"richtig": "Alle 20 bis 30 Minuten für 2 bis 5 Minuten locker umhergehen",
+"falsch": [
+"Fünf Stunden sitzen bleiben und abends 10 Minuten dehnen",
+"Nach dem Essen eine Stunde still sitzen, damit die Verdauung arbeitet",
+"Alle zwei Stunden für 30 Sekunden kurz aufstehen und wieder setzen"
+],
+"warum": "Regelmäßige kurze Gehpausen von 2 bis 5 Minuten alle 20–30 Minuten senkten Blutzucker und Insulin gegenüber Dauersitzen signifikant."
+},
+"labor": {
+"frage": "Eine Meta-Analyse aus Crossover-RCTs zeigte starke Effekte kurzer leichter Gehpausen auf postprandiale Glukose (d = −0,72) und Insulin (d = −0,83). Welche Grenze besteht?",
+"richtig": "Akute 1-Tages-Laborstudien, meist mit Übergewicht und ohne Blutdruckeffekt",
+"falsch": [
+"Es wurden nur Leistungssportler über mehrere Jahre im Alltag begleitet",
+"Nur hochintensive Sprints zeigten überhaupt einen Effekt auf Insulin",
+"Der systolische Blutdruck sank an einem Einzeltag noch stärker ab"
+],
+"warum": "Die Daten stammen aus eintägigen Laborprotokollen vorwiegend übergewichtiger Erwachsener; Langzeit-Alltagsdaten und akute Blutdruckeffekte fehlen."
+}
+}
+},
+{
+"id": "GES-106",
+"karte": {
+"kopf": "Erwachsene · 7 Studien zusammengefasst",
+"titel": "Kurzes Gehen dämpft Blutzucker und Insulin stärker als Stehen",
+"titel_hervor": "stärker als Stehen",
+"setup": "Sieben Vergleichsstudien untersuchten nach Mahlzeiten, wie sich kurzes Aufstehen im Vergleich zu wenigen Minuten leichtem Gehen auf den Blutzucker auswirkt.",
+"zahl": null,
+"kern": [
+"Zwar half reines Stehen etwas besser als Sitzen, doch Gehen legte klar nach.",
+"Gerade die Insulinausschüttung sank durch aktive Schritte spürbar deutlicher.",
+"Erst wenn Muskeln aktiv arbeiten, nehmen sie Zucker besonders gut aus dem Blut auf."
+],
+"grenze": "Bei starkem Übergewicht fiel die Wirkung der Bewegungspausen schwächer aus als bei leichtem Übergewicht.",
+"fuer_dich": "Hast du einen Stehschreibtisch? Tausch reines Stehen nach dem Essen lieber alle 20 bis 30 Minuten gegen 2 bis 5 Minuten lockeres Gehen.",
+"labor": {
+"design": "Systematisches Review und Meta-Analyse, kurze leichte Gehpausen (2–5 Min.) vs. reine Stehpausen",
+"teilnehmer": "Erwachsene (7 Studien zu Glukose, 4 zu Insulin)",
+"ergebnis": "Gehen vs. Stehen: Glukose d = −0,30 (p<0,009), Insulin d = −0,54 (p<0,001); Stehen vs. Sitzen Glukose d = −0,31"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Nach dem Mittagessen willst du deinem Blutzucker etwas Gutes tun. Reicht es, am Stehschreibtisch einfach still zu stehen, oder ist kurzes Umhergehen besser?",
+"richtig": "Kurzes lockeres Gehen wirkt spürbar besser als bloßes Stehen",
+"falsch": [
+"Still stehen senkt Blutzucker und Insulin genauso stark wie Gehen",
+"Stehen ist wirksamer als Gehen, weil die Muskeln dauerhaft gespannt sind",
+"Weder Stehen noch kurzes Gehen verändert den Blutzucker nach dem Essen"
+],
+"warum": "Aktive Muskelbewegung beim Gehen zieht Zucker besser in die Muskelzellen – deshalb sanken Blutzucker und Insulin stärker als beim reinen Stehen."
+},
+"plus": {
+"frage": "Du arbeitest am Stehschreibtisch und möchtest deine Insulinsensitivität nach den Mahlzeiten akut verbessern. Wie optimierst du deine Pausen?",
+"richtig": "Statt nur zu stehen, alle 20–30 Minuten kurz locker umhergehen",
+"falsch": [
+"Den ganzen Nachmittag unbeweglich stehen statt kurze Schritte zu machen",
+"Lieber sitzen bleiben, weil Stehen keinen Vorteil gegenüber Sitzen hat",
+"Nach dem Essen zwei Stunden warten und dann fünf Minuten still stehen"
+],
+"warum": "Stehen war zwar etwas besser als Sitzen, aber 2–5 Minuten leichtes Gehen alle 20–30 Minuten senkten Glukose und Insulin deutlich stärker."
+},
+"labor": {
+"frage": "In einer Meta-Analyse schnitten leichte Gehpausen bei Glukose (d = −0,30) und Insulin (d = −0,54) besser ab als Stehpausen. Welcher Mechanismus und welche Grenze zeigten sich?",
+"richtig": "Aktive Kontraktionen fördern GLUT4; bei starker Adipositas kleinerer Effekt",
+"falsch": [
+"Stehen löste dieselbe Muskel-Glukoseaufnahme aus wie aktives Gehen",
+"Bei starker Adipositas war der Vorteil von Gehpausen am allergrößten",
+"Stehen schnitt gegenüber Sitzen schlechter ab als ununterbrochenes Sitzen"
+],
+"warum": "Insulinunabhängige Glukoseaufnahme braucht aktive Muskelkontraktionen, wobei der Effekt bei starker Adipositas geringer ausfiel."
+}
+}
+},
+{
+"id": "GES-107",
+"karte": {
+"kopf": "2.033 Erwachsene · 50 Studien ausgewertet",
+"titel": "Intervalltraining hilft der Insulinwirkung stärker als Dauerlauf",
+"titel_hervor": "stärker als Dauerlauf",
+"setup": "Eine Auswertung aus 50 Studien mit über 2.000 Erwachsenen verglich kurzes intensives Intervalltraining mit gleichmäßigem Ausdauertraining und Nichtstun.",
+"zahl": {
+"label": "Senkung des Langzeitblutzuckers bei Risiko",
+"wert": "−0,47 %",
+"alltag": "Bei Vorstufe oder Typ-2-Diabetes"
+},
+"kern": [
+"Besonders Menschen mit bereits erhöhten Werten profitierten am stärksten.",
+"Auch kurze Einheiten unter 30 Minuten gesamt reichten bereits für gute Effekte.",
+"Die Wirkung lässt mit den Tagen nach – regelmäßiges Dranbleiben ist entscheidend."
+],
+"grenze": "Viele Einzelstudien hatten nur geringe Qualität und stark verschiedene Protokolle; nüchterner Blutzucker sinkt ohne Abnehmen oft kaum.",
+"fuer_dich": "Willst du deine Insulinwirkung stärken? Bau 3- bis 5-mal pro Woche kurze HIIT-Einheiten ein – bei Diabetes vorher ärztlich abklären.",
+"labor": {
+"design": "Meta-Analyse (50 Studien, 36 kontrolliert, ≥2 Wo.), HIIT vs. moderates Dauertraining und Kontrolle",
+"teilnehmer": "2.033 Erwachsene (21–68 Jahre), inkl. Prädiabetes und Typ-2-Diabetes",
+"ergebnis": "Insulinresistenz SMD −0,49 (vs. Kontrolle) u. −0,35 (vs. Dauertraining); HbA1c −0,47 % (p=0,04); I²=89,1 %"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du hast wenig Zeit, willst aber durch Sport verbessern, wie gut dein Körper Zucker verarbeitet. Reichen kurze, intensive Wechsel-Einheiten unter 30 Minuten aus?",
+"richtig": "Ja, kurzes Intervalltraining wirkte im Schnitt sogar stärker als Dauerlauf",
+"falsch": [
+"Nein, für den Blutzucker zählen erst lockere Einheiten ab einer Stunde",
+"Nein, intensives Training verschlechtert die Zuckerverarbeitung dauerhaft",
+"Nur Menschen mit völlig gesunden Werten profitieren von Intervallen"
+],
+"warum": "In 50 Studien verbesserte Intervalltraining – auch in kurzen Einheiten – die Insulinwirkung besonders bei erhöhten Ausgangswerten spürbar."
+},
+"plus": {
+"frage": "Du hast erhöhte Blutzuckerwerte (ärztlich abgeklärt) und willst mit knappem Zeitbudget deine Insulinsensitivität verbessern. Wie baust du Ausdauer sinnvoll ein?",
+"richtig": "3–5 kurze HIIT-Einheiten pro Woche einplanen und regelmäßig dranbleiben",
+"falsch": [
+"Einmal im Monat eine sehr lange Tour fahren, weil der Effekt Wochen hält",
+"HIIT meiden, weil es bei erhöhten Ausgangswerten am schwächsten wirkt",
+"Nur noch nüchtern trainieren und auf regelmäßige Einheiten verzichten"
+],
+"warum": "Low-Volume-HIIT über mehrere Wochen senkte die Insulinresistenz deutlich; da der Effekt mit den Tagen abnimmt, zählt Regelmäßigkeit."
+},
+"labor": {
+"frage": "Eine Meta-Analyse (50 Studien, n=2.033) zeigte Vorteile von HIIT gegenüber Dauertraining für Insulinresistenz und HbA1c. Welche Einschränkungen schwächen das Bild?",
+"richtig": "Hohe Heterogenität, geringe Studienqualität und flüchtiger Akuteffekt",
+"falsch": [
+"Es wurden ausschließlich perfekt verblindete Spitzenstudien eingeschlossen",
+"Die Nüchternglukose sank immer massiv, auch völlig ohne Kaloriendefizit",
+"Der positive Effekt auf die Muskeln hielt nach Trainingsende monatelang an"
+],
+"warum": "Bei hoher Heterogenität (I²=89,1 %) und niedrigem Qualitätsscore (1/5) lässt der Effekt nach dem Training nach; Nüchternglukose braucht oft auch ein Defizit."
+}
+}
+},
+{
+"id": "GES-108",
+"karte": {
+"kopf": "Typ-2-Diabetes · 47 Studien zusammengefasst",
+"titel": "Über 150 Minuten Sport pro Woche senken Blutzucker doppelt so stark",
+"titel_hervor": "doppelt so stark",
+"setup": "Eine große Auswertung aus 47 Studien untersuchte bei Typ-2-Diabetes, wie stark geplantes Training und allgemeine Bewegungstipps den Langzeitblutzucker senken.",
+"zahl": {
+"label": "Senkung Langzeitblutzucker (>150 Min./Wo.)",
+"wert": "−0,89 %",
+"alltag": "Bei ≤150 Min./Wo. nur −0,36 %"
+},
+"kern": [
+"Ausdauer-, Kraft- und Kombitraining halfen alle, solange das Programm strukturiert war.",
+"Bloße Bewegungstipps ohne festen Trainingsplan blieben allein wirkungslos.",
+"Erst wenn Bewegungstipps mit einer Ernährungsumstellung gekoppelt wurden, sank der Wert."
+],
+"grenze": "Die Ergebnisse zwischen den einzelnen Studien schwankten sehr stark – die persönliche Reaktion hängt stark vom Plan und Alltag ab.",
+"fuer_dich": "Willst du deinen Langzeitblutzucker senken? Plane über 150 Min. festen Sport plus Ernährung ein – bei Diabetes ärztlich abstimmen.",
+"labor": {
+"design": "Systematisches Review und Meta-Analyse aus 47 RCTs (23 strukturiertes Training, 24 Beratung)",
+"teilnehmer": "Erwachsene mit Typ-2-Diabetes aus 47 RCTs",
+"ergebnis": "HbA1c >150 Min.: −0,89 % vs. ≤150 Min.: −0,36 %; gesamt −0,67 % (I²=91,3 %); Beratung allein 0 %, mit Ernährung −0,58 %"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Reicht es bei Typ-2-Diabetes meist aus, nur den allgemeinen Rat zu bekommen, sich etwas mehr zu bewegen – ganz ohne festen Trainingsplan oder Ernährungsumstellung?",
+"richtig": "Nein, bloße Bewegungstipps allein senkten den Langzeitblutzucker kaum",
+"falsch": [
+"Ja, allgemeine Tipps wirkten genauso stark wie fest geplantes Training",
+"Ja, aber nur wenn dabei ausschließlich Krafttraining empfohlen wird",
+"Nein, Sport hat bei Typ-2-Diabetes überhaupt keinen Einfluss auf den Wert"
+],
+"warum": "In 47 Studien brachte unstrukturierte Bewegungsberatung allein keine klare Senkung – erst festes Training oder die Kombination mit Ernährung half deutlich."
+},
+"plus": {
+"frage": "Du willst dein Trainingsprogramm (ärztlich abgestimmt) gezielt zur Senkung des Langzeitblutzuckers aufbauen. Welcher Hebel machte im Vergleich den größten Unterschied?",
+"richtig": "Über 150 Minuten fest geplantes Training pro Woche plus Ernährung",
+"falsch": [
+"Unter 60 Minuten lockeres Training, weil mehr keinen Zusatznutzen bringt",
+"Ausschließlich Krafttraining, da Ausdauertraining den Wert nicht senkt",
+"Nur allgemeine Bewegungstipps ohne feste Einheiten und ohne Ernährung"
+],
+"warum": "Strukturiertes Ausdauer-, Kraft- oder Kombitraining über 150 Min./Woche senkte den HbA1c mehr als doppelt so stark wie kürzere Umfänge."
+},
+"labor": {
+"frage": "Eine Meta-Analyse aus 47 RCTs verglich strukturiertes Training und Bewegungsberatung bei Typ-2-Diabetes hinsichtlich HbA1c. Was zeigte sich methodisch und inhaltlich?",
+"richtig": "Klarer Dosiseffekt >150 Min./Wo., aber sehr hohe Studien-Heterogenität",
+"falsch": [
+"Bewegungsberatung ohne Ernährungsvorgabe senkte HbA1c um über 0,5 %",
+"Die Heterogenität lag bei allen Trainingsarten nahe null Prozent",
+"Nur kombiniertes Training wirkte, isoliertes Ausdauertraining nicht"
+],
+"warum": "Strukturiertes Training >150 Min./Wo. erreichte −0,89 % vs. −0,36 %, bei allerdings sehr hoher Heterogenität (I² = 91,3 %); Beratung allein blieb bei 0 %."
+}
+}
+}
+]

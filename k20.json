@@ -1,0 +1,1138 @@
+[
+{
+"id": "PAUSE-110",
+"karte": {
+"kopf": "Läufer & Radsportler · Laborstudien",
+"titel": "Nach vier Wochen Pause bricht die Durchhaltezeit um ein Fünftel ein",
+"titel_hervor": "um ein Fünftel ein",
+"setup": "Ausdauersportler pausierten mehrere Wochen. Im Labor wurde getestet, wie lange sie ein festes Tempo halten konnten und wo ihre Belastungsschwelle lag.",
+"zahl": {
+"label": "Kürzere Durchhaltezeit nach 4 Wochen Pause",
+"wert": "−21 %",
+"alltag": "62 statt 79 Minuten"
+},
+"kern": [
+"Das Durchhaltevermögen sank stark, selbst wenn der Maximalwert stabil blieb",
+"Auch die Tempo-Schwelle fiel nach drei Wochen bereits um gut ein Zehntel",
+"Der Körper verbrauchte bei gleichem Tempo mehr Kohlenhydrate als vorher"
+],
+"grenze": "Es handelte sich um kleine Laborstudien; die Laufökonomie bleibt in den ersten zwei Wochen oft stabil.",
+"fuer_dich": "Du warst drei bis vier Wochen raus aus dem Lauftraining? Streiche in den ersten zwei Wochen harte Tempoläufe und baue locker auf.",
+"labor": {
+"design": "Experimentelle Längsschnittstudien zu submaximaler Ausdauer und Laktatschwelle",
+"teilnehmer": "Ausdauerläufer und Radsportler (kleine Laborstichproben)",
+"ergebnis": "TTE bei 75 % VO2max −21 % nach 4 Wo. (79 auf 62 Min., p < 0,001); Schwelle −11,5 % (21 d), −20,3 % (56 d), −23,5 % (84 d)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du machst einen Monat Laufpause. Was spürst du beim Wiedereinstieg auf einer längeren Runde meist am stärksten?",
+"richtig": "Das gewohnte Tempo lässt sich deutlich kürzer durchhalten",
+"falsch": [
+"Die Beine sind schneller, nur der Start fällt schwer",
+"Die Ausdauer bleibt über einen Monat unverändert",
+"Der Körper verbrennt deutlich mehr Fett als vorher"
+],
+"warum": "In Laborversuchen sank die Durchhaltezeit nach vier Wochen Pause um rund ein Fünftel, obwohl die maximale Ausdauer kaum fiel."
+},
+"plus": {
+"frage": "Du steigst nach vier Wochen Laufpause wieder ein. Welche Einheiten solltest du in den ersten zwei Wochen am ehesten weglassen?",
+"richtig": "Schwellen- und harte Tempoläufe",
+"falsch": [
+"Lockere Grundlagenläufe bei niedrigem Puls",
+"Kurze, entspannte Einheiten zum Wiedereingewöhnen",
+"Ein lockeres Einlaufen mit Gehpausen"
+],
+"warum": "Da Laktatschwelle und Glykogenspeicher nach mehrwöchiger Pause deutlich abfallen, sind harte Tempoläufe anfangs zu anspruchsvoll."
+},
+"labor": {
+"frage": "Längsschnittstudien verglichen den Abfall von VO2max, Time to Exhaustion und anaerober Schwelle in Trainingspausen. Was fiel prozentual stärker ab?",
+"richtig": "Durchhaltezeit und anaerobe Schwelle sanken deutlich stärker als VO2max",
+"falsch": [
+"Die VO2max brach doppelt so stark ein wie die Durchhaltezeit",
+"Alle drei Messwerte fielen exakt im gleichen Verhältnis ab",
+"Die Laufökonomie brach schon nach drei Tagen stark ein"
+],
+"warum": "Die submaximale Durchhaltezeit sank nach vier Wochen um 21 % trotz konstanter VO2max, und auch die anaerobe Schwelle fiel rasch ab."
+}
+}
+},
+{
+"id": "PAUSE-111",
+"karte": {
+"kopf": "Kraftsportler · Kontrollierte Studien & Reviews",
+"titel": "Bis drei Wochen Pause bleiben Muskelmasse und Kraft erhalten",
+"titel_hervor": "bleiben Muskelmasse und Kraft",
+"setup": "Krafttrainierende legten eine zwei- bis dreiwöchige Trainingspause bei normalem Alltag ein. Muskeldicke per Ultraschall, Waage und Maximalkraft wurden verglichen.",
+"zahl": {
+"label": "Erhaltene Maximalkraft nach 2 Wochen Pause",
+"wert": "100 %",
+"alltag": "kein echter Kraftverlust"
+},
+"kern": [
+"Im Ultraschall zeigte sich nach bis zu drei Wochen kein Muskelabbau",
+"Körperfettwaagen täuschten Verlust vor, weil Wasser und Speicher schrumpften",
+"Die Maximalkraft blieb über zwei Wochen vollständig auf dem alten Stand"
+],
+"grenze": "Bei sehr hochtrainierten Sportlern können Schnellkraft und Bremskraft ab der dritten Woche leicht nachlassen.",
+"fuer_dich": "Du hast zwei bis drei Wochen nicht trainiert und die Waage zeigt weniger Muskeln? Bleib entspannt – starte nur etwas leichter gegen Muskelkater.",
+"labor": {
+"design": "Randomisierte kontrollierte Studien und systematische Reviews (14–21 Tage Detraining)",
+"teilnehmer": "Kraftsportler und Freizeitsportler bei normaler Alltagsbewegung",
+"ergebnis": "Ultraschall-Muskeldicke ES 0,00 bis −0,11 (p > 0,20); BIA-FFM scheinbar tiefer (ES −0,18, p = 0,018); 1RM nach 2 Wo. 100 %"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Nach zwei Wochen Urlaub ohne Krafttraining zeigt deine Waage weniger Muskelmasse an. Was steckt meistens dahinter?",
+"richtig": "Weniger Wasser und Energiespeicher im Muskel, kein echter Abbau",
+"falsch": [
+"Ein deutlicher Verlust an echter Muskelsubstanz nach 14 Tagen",
+"Der Körper hat Muskeln direkt in Körperfett umgewandelt",
+"Die Waage misst nach Urlauben grundsätzlich zu viel Gewicht"
+],
+"warum": "Bei normaler Alltagsbewegung gehen in zwei bis drei Wochen nur Wasser und Glykogen zurück, nicht aber echte Muskelmasse."
+},
+"plus": {
+"frage": "Du steigst nach zweieinhalb Wochen Pause wieder ins Krafttraining ein. Warum ist eine leicht reduzierte Startlast trotzdem sinnvoll?",
+"richtig": "Um starken Muskelkater beim Wiedereinstieg zu vermeiden",
+"falsch": [
+"Weil dein 1RM in zwei Wochen um rund ein Viertel fällt",
+"Weil die Muskeldicke im Ultraschall bereits deutlich geschrumpft ist",
+"Weil du erst wieder wochenlang Anfängerpläne brauchst"
+],
+"warum": "Kraft und Muskelmasse sind nach bis zu drei Wochen noch erhalten, aber eine leicht gebremste Startlast schützt vor starkem Muskelkater."
+},
+"labor": {
+"frage": "In Detraining-Studien über 2 bis 3 Wochen wurden Ultraschall-Messungen der Muskeldicke mit bioelektrischen Waagen (BIA) verglichen. Was fiel auf?",
+"richtig": "Die Waage zeigte einen scheinbaren Verlust, der Ultraschall jedoch nicht",
+"falsch": [
+"Der Ultraschall zeigte starken Abbau, die Waage blieb unverändert",
+"Beide Verfahren zeigten denselben deutlichen Rückgang der Muskeldicke",
+"Die Maximalkraft fiel stärker ab als der Messwert auf der Waage"
+],
+"warum": "BIA-Waagen reagieren auf Wasser- und Glykogenverluste (ES −0,18), während Ultraschall keine echte Abnahme der Muskeldicke zeigte (p > 0,20)."
+}
+}
+},
+{
+"id": "PAUSE-112",
+"karte": {
+"kopf": "Krafttrainierte · Meta-Analyse aus 103 Studien",
+"titel": "Ab vier Wochen Pause schrumpfen Kraft und Muskeln messbar",
+"titel_hervor": "schrumpfen Kraft und Muskeln",
+"setup": "Eine große Meta-Analyse und eine Kontrollstudie untersuchten, wie sich Kraft und Muskelquerschnitt bei Pausen von vier bis zehn Wochen entwickeln.",
+"zahl": {
+"label": "Weniger Oberschenkel-Querschnitt nach 10 Wo.",
+"wert": "−9,9 %",
+"alltag": "≈ ein Zehntel weniger"
+},
+"kern": [
+"In den ersten Wochen verliert zuerst die Ansteuerung, später schrumpft der Muskel",
+"Nach zehn Wochen Pause sanken Beinkraft um rund 5 % und Armkraft um knapp 4 %",
+"Kraftausdauer lässt meist spürbar schneller nach als die reine Maximalkraft"
+],
+"grenze": "Menschen über 65 Jahre und bisher Inaktive verlieren Muskeln und Kraft oft schneller als jüngere Freizeitsportler.",
+"fuer_dich": "Du hast vier Wochen oder länger kein Krafttraining gemacht? Starte deutlich leichter und halbiere anfangs deine Satzzahl.",
+"labor": {
+"design": "Meta-Analyse (103 Studien) und randomisierte kontrollierte Studie über 10 Wochen Pause",
+"teilnehmer": "Krafttrainierte, Ältere und Freizeitsportler (RCT mit n = 55)",
+"ergebnis": "Ab Wo. 3–4: Kraftausdauer SMD −0,62, 1RM SMD −0,46, Power SMD −0,20; nach 10 Wo.: Beinpresse −5,4 %, VL-CSA −9,9 %"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du machst zwei Monate lang gar kein Krafttraining. Was passiert dabei mit deiner Kraft und deinen Muskeln?",
+"richtig": "Beides nimmt messbar ab, aber der Großteil bleibt erhalten",
+"falsch": [
+"Fast die gesamte Kraft und Muskelmasse sind verschwunden",
+"Es geht überhaupt keine Muskelmasse verloren",
+"Nur die Arme bauen ab, die Beine bleiben unverändert"
+],
+"warum": "Ab drei bis vier Wochen Pause setzt messbarer Abbau ein, nach zehn Wochen gehen rund 5 % Beinkraft und knapp ein Zehntel Querschnitt verloren."
+},
+"plus": {
+"frage": "Nach sechs Wochen kompletter Krafttrainingspause gehst du wieder ins Gym. Wie passt du Gewicht und Volumen für den Start am besten an?",
+"richtig": "Last deutlich senken und etwa halb so viele Sätze machen",
+"falsch": [
+"Mit den alten Gewichten starten, aber doppelt so lange pausieren",
+"Alte Satzzahl beibehalten und jeden Satz bis zum Versagen pushen",
+"Nur das Gewicht minimal senken, weil zehn Wochen kaum etwas ändern"
+],
+"warum": "Ab vier Wochen Pause schützt ein Einstieg mit reduzierter Last und 40 bis 50 % weniger Sätzen vor starken Muskelschäden."
+},
+"labor": {
+"frage": "Eine Meta-Analyse über 103 Studien verglich verschiedene Kraftformen ab drei bis vier Wochen Trainingspause. Welche Fähigkeit nahm laut Effektstärke am stärksten ab?",
+"richtig": "Die submaximale Kraftausdauer sank am deutlichsten",
+"falsch": [
+"Die Schnellkraft sank am stärksten, die Kraftausdauer kaum",
+"Maximalkraft und Power blieben auch nach zehn Wochen unverändert",
+"Der Muskelquerschnitt schrumpfte schneller als die neuronale Ansteuerung"
+],
+"warum": "Die Meta-Analyse fand den stärksten Abfall bei submaximaler Kraft (SMD −0,62), gefolgt von Maximalkraft (−0,46) und Power (−0,20)."
+}
+}
+},
+{
+"id": "PAUSE-113",
+"karte": {
+"kopf": "Erfahrene Kraftsportler · Kontrollierte Studie",
+"titel": "Eine Woche Pause mitten im Block bremst den Muskelaufbau nicht",
+"titel_hervor": "bremst den Muskelaufbau nicht",
+"setup": "Kraftsportler absolvierten ein neunwöchiges Programm – eine Gruppe trainierte durch, die andere legte in Woche fünf eine volle Pause ein.",
+"zahl": null,
+"kern": [
+"Muskelwachstum, Schnellkraft und Kraftausdauer waren am Ende gleich stark",
+"Bei der Maximalkraft fiel der Zuwachs nach Vollpause minimal geringer aus",
+"Direkt nach einer ganzen Woche Ruhe fühlten sich viele kurzzeitig träge"
+],
+"grenze": "Die Ernährung wurde selbst protokolliert und das Oberkörpertraining nicht direkt im Studio überwacht.",
+"fuer_dich": "Du hast eine Woche komplett pausiert? Steige die erste Woche mit 1–2 RIR Puffer und etwas weniger Gewicht wieder ein.",
+"labor": {
+"design": "Randomisierte kontrollierte Studie über 9 Wochen (durchgängig vs. 1 Woche Pause in Woche 5)",
+"teilnehmer": "39 erfahrene Kraftsportler",
+"ergebnis": "Keine Unterschiede bei Hypertrophie, Power und Kraftausdauer; minimal geringerer 1RM-Zuwachs nach Vollpause"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du bist mitten in einer guten Trainingsphase und machst eine Woche gar keinen Sport. Wie wirkt sich das auf deinen Muskelaufbau aus?",
+"richtig": "Der Muskelaufbau leidet unter einer einzelnen Woche Pause nicht",
+"falsch": [
+"Die Erfolge der letzten vier Wochen gehen größtenteils verloren",
+"Eine volle Pause verdoppelt das Muskelwachstum im nächsten Monat",
+"Kraftausdauer und Schnellkraft fallen sofort stark zurück"
+],
+"warum": "In einer neunwöchigen Studie erreichte die Gruppe mit einer Woche Pause in der Mitte das gleiche Muskelwachstum wie die Durchtrainierenden."
+},
+"plus": {
+"frage": "Du planst einen Deload und dein Hauptziel ist maximale Kraft im 1RM. Was spricht eher für reduziertes Volumen statt einer vollen Pause?",
+"richtig": "Du vermeidest das kurzzeitige Trägheitsgefühl beim Wiedereinstieg",
+"falsch": [
+"Bei einer vollen Woche Pause verlierst du sofort viel Muskelmasse",
+"Die Kraftausdauer bricht nach sieben Tagen Ruhe stark ein",
+"Ohne Vollpause baut der Muskel gar keine Ermüdung ab"
+],
+"warum": "Nach einer kompletten Pausenwoche trat kurzzeitig Trägheit auf, wodurch der 1RM-Zuwachs minimal geringer ausfiel."
+},
+"labor": {
+"frage": "Eine randomisierte Studie verglich neun Wochen durchgängiges Krafttraining mit einer Pausenwoche in Woche fünf. Welche methodische Grenze hatte der Versuch?",
+"richtig": "Ernährung war selbstberichtet und Oberkörpertraining unüberwacht",
+"falsch": [
+"Es nahmen ausschließlich untrainierte Anfänger über 60 Jahre teil",
+"Die Pause dauerte vier Wochen statt nur einer Woche",
+"Muskelwachstum und Schnellkraft wurden gar nicht gemessen"
+],
+"warum": "Die Studie stützte sich auf selbstberichtete Ernährungsdaten, und das Oberkörpertraining fand ohne direkte Aufsicht statt."
+}
+}
+},
+{
+"id": "PAUSE-114",
+"karte": {
+"kopf": "Junge Männer · Gips-Versuch im Labor",
+"titel": "Zwei Wochen im Gips kosten fast ein Viertel der Beinkraft",
+"titel_hervor": "fast ein Viertel der Beinkraft",
+"setup": "Gesunde Männer trugen fünf oder vierzehn Tage lang einen Bein-Gips. Mit Computertomografie und Krafttests wurde der Muskelabbau gemessen.",
+"zahl": {
+"label": "Kraftverlust nach 14 Tagen im Gips",
+"wert": "−22,9 %",
+"alltag": "≈ fast ein Viertel weniger"
+},
+"kern": [
+"Schon nach fünf Tagen im Gips schrumpfte der Oberschenkelmuskel um 3,5 %",
+"Die Beinkraft sank nach nur fünf Tagen bereits um fast ein Zehntel",
+"Echte Ruhigstellung baut viel schneller ab als eine normale Sportpause"
+],
+"grenze": "Untersucht wurden nur junge Männer – bei älteren Menschen verläuft der Muskelabbau oft noch stärker.",
+"fuer_dich": "Du kommst nach Gips, Schiene oder Krücken zurück? Starte erst nach ärztlicher Freigabe und mit deutlich leichterem Gewicht.",
+"labor": {
+"design": "Experimentelle klinische Interventionsstudie (5 vs. 14 Tage Bein-Gips, CT und Muskelbiopsie)",
+"teilnehmer": "24 junge Männer",
+"ergebnis": "5 Tage: CSA −3,5 ± 0,5 % (p < 0,0001), Kraft −9,0 ± 2,3 %; 14 Tage: CSA −8,4 ± 2,8 %, Kraft −22,9 ± 2,6 % (p < 0,001)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Was ist der Unterschied zwischen zwei Wochen normaler Trainingspause und zwei Wochen mit einem Bein im Gips?",
+"richtig": "Im Gips schwinden Muskelmasse und Kraft innerhalb von Tagen stark",
+"falsch": [
+"Beides führt zu genau dem gleichen kleinen Kraftverlust",
+"Im Gips bleibt der Muskel geschützt und baut kaum ab",
+"Echter Muskelabbau startet im Gips erst nach sechs Wochen"
+],
+"warum": "Ohne normale Alltagsbewegung schrumpfte der Muskel im Gips schon nach fünf Tagen messbar und verlor in 14 Tagen fast ein Viertel Kraft."
+},
+"plus": {
+"frage": "Dein Bein war zwei Wochen ruhiggestellt und du hast ärztliche Freigabe für den Neustart. Wie sollte deine erste Krafteinheit aussehen?",
+"richtig": "Wie nach wochenlanger Pause starten, etwa bei halber alter Last",
+"falsch": [
+"Mit rund 90 % der alten Last, da es nur zwei Wochen waren",
+"Direkt im gewohnten Plan starten, da zwei Wochen nichts ausmachen",
+"Hohes Satzvolumen wählen, um den Abbau in einer Woche aufzuholen"
+],
+"warum": "Vierzehn Tage echte Ruhigstellung verursachen so viel Kraft- und Masseverlust wie eine deutlich längere normale Trainingspause."
+},
+"labor": {
+"frage": "In einer klinischen Studie mit CT-Messung und Biopsien trugen junge Männer 5 oder 14 Tage einen Bein-Gips. Wie fiel der Verlust bei Kraft versus Muskelquerschnitt aus?",
+"richtig": "Die Kraft sank prozentual mehr als doppelt so stark wie der Querschnitt",
+"falsch": [
+"Der Muskelquerschnitt sank stärker als die gemessene Muskelkraft",
+"Nach fünf Tagen zeigten sich noch keine messbaren Veränderungen",
+"Der Abbau war bei jungen Männern stärker als bei älteren Menschen"
+],
+"warum": "Nach 14 Tagen im Gips fiel die Kraft um 22,9 %, während der Muskelquerschnitt um 8,4 % abnahm."
+}
+}
+},
+{
+"id": "PAUSE-115",
+"karte": {
+"kopf": "Krafttrainierte · Kontrollierte & Biopsie-Studien",
+"titel": "Trainierte Muskeln holen nach Pausen oft deutlich schneller auf",
+"titel_hervor": "holen nach Pausen oft",
+"setup": "Teilnehmende bauten Muskeln auf, pausierten sieben bis zwanzig Wochen und trainierten erneut. Gewebeproben und Krafttests erfassten das Muskelgedächtnis.",
+"zahl": {
+"label": "Beinmasse-Zuwachs beim 2. Aufbau (vs. +6,5 %)",
+"wert": "+12,4 %",
+"alltag": "≈ fast doppelt so viel"
+},
+"kern": [
+"In den Muskelzellen bleiben steuernde Markierungen über Pausen hinweg bestehen",
+"Nach zehn Wochen Pause war der alte Stand oft nach fünf Wochen zurück",
+"Selbst nach zwanzig Wochen Pause blieb ein großer Teil der Kraft erhalten"
+],
+"grenze": "In einer neueren Studie wuchs der Muskel in den ersten fünf Wochen nicht schneller als beim allerersten Aufbau.",
+"fuer_dich": "Du kehrst nach einer längeren Pause zurück? Gib dir ein paar ruhige Wochen – dein Körper findet meist schneller zurück als gedacht.",
+"labor": {
+"design": "Randomisierte kontrollierte Studien und molekularbiologische Muskelbiopsie-Studien",
+"teilnehmer": "Krafttrainierte nach 7, 10 bzw. 20 Wochen Trainingspause",
+"ergebnis": "Reloading-Beinmasse +12,4 % vs. +6,5 % (p = 0,022); 100 % Aufholung in 5 Wo. nach 10 Wo. Pause; ~60 % Kraft nach 20 Wo."
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du hast nach Jahren Krafttraining eine zweimonatige Pause eingelegt. Musst du beim Wiedereinstieg wieder ganz bei null anfangen?",
+"richtig": "Nein, trainierte Muskeln holen ihren alten Stand meist rasch wieder auf",
+"falsch": [
+"Ja, der erneute Aufbau dauert genau so lange wie beim allerersten Mal",
+"Nein, weil Muskeln in zwei Monaten überhaupt nicht abbauen",
+"Ja, denn Muskeln merken sich frühere Reize nur bei Profisportlern"
+],
+"warum": "Durch ein zelluläres Muskelgedächtnis und erhaltene Ansteuerung erreichen Trainierte ihr altes Niveau meist deutlich schneller."
+},
+"plus": {
+"frage": "Nach zehn Wochen Pause steigst du wieder ein und willst realistisch planen. Welche Erwartung passt zu den Studiendaten?",
+"richtig": "Ein Großteil der Kraft und Masse kommt binnen weniger Wochen zurück",
+"falsch": [
+"Du brauchst mindestens zehn weitere Monate für das alte Niveau",
+"Schon in der allerersten Woche sind alle alten 1RM-Werte wieder da",
+"Ohne doppeltes Satzvolumen greift das Muskelgedächtnis nicht"
+],
+"warum": "In einer Studie holten Trainierte den Verlust aus zehn Wochen Pause innerhalb von fünf Wochen Wiederaufbau auf."
+},
+"labor": {
+"frage": "Biopsie- und Kontrollstudien untersuchten das menschliche Muskelgedächtnis beim Wiederaufbau. Über welche Mechanismen läuft es beim Menschen vor allem?",
+"richtig": "Vor allem über epigenetische Markierungen und das Nervensystem",
+"falsch": [
+"Ausschließlich über dauerhaft erhöhte Blutwerte von Wachstumshormonen",
+"Nur über eine zweifelsfrei belegte Verdopplung der Zellkerne",
+"Über eingelagertes Wasser, das während der Pause erhalten bleibt"
+],
+"warum": "Beim Menschen ist der dauerhafte Zellkern-Zuwachs weniger eindeutig als im Mausmodell; der Effekt läuft primär über DNA-Markierungen und ZNS."
+}
+}
+},
+{
+"id": "PAUSE-116",
+"karte": {
+"kopf": "246 Athleten & Experten · Befragung & Konsens",
+"titel": "Für exakte Einstiegsgewichte nach Pausen fehlen direkte Studien",
+"titel_hervor": "fehlen direkte Studien",
+"setup": "Fachleute erstellten einen Konsens zu Entlastungswochen und befragten 246 Athleten, wie sie Gewicht, Sätze und Anstrengung nach Pausen steuern.",
+"zahl": {
+"label": "Athleten, die im Deload das Volumen senken",
+"wert": "78,9 %",
+"alltag": "≈ vier von fünf Sportlern"
+},
+"kern": [
+"Feste Prozentregeln wie 90 % oder 75 % nach Pause sind Praxis-Faustregeln",
+"In der Praxis dauern Entlastungsphasen im Schnitt knapp eine Woche",
+"Meist werden weniger Sätze gemacht und mehr Wiederholungen im Tank gelassen"
+],
+"grenze": "Es gibt bisher keine direkten Zufallsstudien, die feste Prozentstufen für den Wiedereinstieg vergleichen.",
+"fuer_dich": "Du startest nach einer Pause neu? Reduziere Gewicht und Satzzahl nach Gefühl und lass in den ersten Einheiten 2–4 RIR Puffer.",
+"labor": {
+"design": "Internationaler Delphi-Konsens und Querschnittserhebung (keine direkte RCT zu %-Stufen gefunden)",
+"teilnehmer": "246 Kraftsportler sowie internationale Experten",
+"ergebnis": "Deload-Dauer 6,4 ± 1,7 Tage alle 5,6 ± 2,3 Wochen; Volumenreduktion bei 78,9 % der Athleten"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Manche Pläne sagen, du müsstest nach zwei Wochen Pause exakt 80 % des alten Gewichts nehmen. Wie gesichert ist diese genaue Zahl?",
+"richtig": "Es ist eine sinnvolle Faustregel aus der Praxis, kein starres Gesetz",
+"falsch": [
+"Sie wurde in großen Studien als einzig richtige Zahl bewiesen",
+"Bei 85 % kommt es sofort zu einer schweren Verletzung",
+"Prozentregeln gelten nur für Maschinen, nicht für freie Gewichte"
+],
+"warum": "Für starre Prozentstufen nach Pausen fehlen direkte Vergleichsstudien – sie dienen als praxistaugliche Orientierung."
+},
+"plus": {
+"frage": "Du steigst nach einer Pause wieder ins Krafttraining ein. Welche Kombination entspricht am ehesten dem Konsens aus der Praxis?",
+"richtig": "Gewicht und Sätze senken und mit 2 bis 4 RIR Puffer starten",
+"falsch": [
+"Altes Gewicht lassen und jeden Satz bis 0 RIR ausreizen",
+"Gewicht halbieren, aber doppelt so viele Sätze absolvieren",
+"Gar nichts anpassen und sofort einen Maximalkrafttest machen"
+],
+"warum": "Eine Kombination aus geringerer Last, weniger Sätzen und höherem RIR-Puffer schützt vor starkem Muskelkater und Überlastung."
+},
+"labor": {
+"frage": "Ein Delphi-Konsens und eine Befragung von 246 Athleten untersuchten Deloads und Wiedereinstiegs-Heuristiken. Wie ist die Evidenz für starre Prozentstufen einzustufen?",
+"richtig": "Niedrig, da direkte kontrollierte Vergleichsstudien dazu fehlen",
+"falsch": [
+"Sehr hoch, da dutzende RCTs exakte Prozentstufen bestätigt haben",
+"Widerlegt, da Volumenreduktion im Deload kaum genutzt wird",
+"Unklar, weil Athleten fast ausschließlich das Gewicht halbieren"
+],
+"warum": "Die Werte sind evidenzgestützte Praxis-Heuristiken aus Konsensarbeiten; direkte RCTs zum Vergleich fixer Prozentstufen fehlen."
+}
+}
+},
+{
+"id": "PAUSE-117",
+"karte": {
+"kopf": "Läufer & Ausdauersportler · Methodenkritik",
+"titel": "Belastungs-Quotienten schlagen nach Pausen oft falschen Alarm",
+"titel_hervor": "schlagen nach Pausen oft",
+"setup": "Forschende prüften das Verhältnis aus aktueller und vierwöchiger Laufbelastung und untersuchten, wie die Formel nach Trainingspausen reagiert.",
+"zahl": null,
+"kern": [
+"Nach einer Pause fällt der vierwöchige Vergleichswert fast auf null ab",
+"Schon ein lockerer Wiedereinstieg erzeugt dann rechnerisch hohe Warnwerte",
+"Als alleinige Verletzungsvorhersage taugt die Kennzahl ohnehin kaum"
+],
+"grenze": "Der Quotient hat eine geringe Vorhersagekraft für einzelne Sportler und beweist keine Verletzungsursache.",
+"fuer_dich": "Deine Lauf-App warnt nach einer Pause sofort vor Überlastung? Orientiere dich in den ersten Wochen lieber an deinem früheren Umfang.",
+"labor": {
+"design": "Methodenkritik, Kohortenstudien und narrative Reviews zum Acute:Chronic Workload Ratio (ACWR)",
+"teilnehmer": "Läufer und Ausdauersportler",
+"ergebnis": "Übliche Schwellen: Sweet Spot 0,8–1,3, Gefahr ≥ 1,5; EWMA mit N = 7 (akut) und N = 28 (chronisch)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du hast zwei Wochen nicht gelaufen und machst eine sehr kurze, lockere Runde. Trotzdem warnt deine Sportuhr vor extremer Belastung. Warum passiert das?",
+"richtig": "Weil dein Durchschnitt der letzten Wochen durch die Pause fast null war",
+"falsch": [
+"Weil schon ein kurzer Lauf nach Pause extrem gefährlich ist",
+"Weil die Uhr nach Pausen den Puls immer falsch misst",
+"Weil dein Körper nach zwei Wochen gar keine Läufe mehr verträgt"
+],
+"warum": "Wenn der Vergleichswert der letzten vier Wochen durch eine Pause stark fällt, erzeugt selbst ein kleiner Lauf rechnerisch ein hohes Verhältnis."
+},
+"plus": {
+"frage": "Nach zwei Wochen Laufpause startet dein Trainingsaufbau. Wie steuerst du dein Laufvolumen sinnvoller als mit dem Standard-Belastungsquotienten?",
+"richtig": "Einen reduzierten Anteil deines alten Umfangs vor der Pause nutzen",
+"falsch": [
+"Bei jeder Warnung der Formel sofort wieder eine Woche pausieren",
+"Den Umfang so steigern, dass der Quotient sofort im Idealbereich liegt",
+"Ausschließlich nach täglichem Ruhepuls ohne Blick auf Kilometer laufen"
+],
+"warum": "Nach längeren Pausen ist ein Anteil des eingefrorenen Vor-Pausen-Volumens verlässlicher als der mathematisch verzerrte Standard-Quotient."
+},
+"labor": {
+"frage": "Methodenkritische Arbeiten analysierten das Acute:Chronic Workload Ratio (ACWR) inklusive EWMA-Glättung. Welche zentrale Schwäche zeigt das Modell?",
+"richtig": "Es produziert Rechenartefakte nach Pausen und sagt Verletzungen schlecht voraus",
+"falsch": [
+"Es funktioniert nur nach Pausen, aber nicht im laufenden Betrieb",
+"Mit EWMA-Glättung verschwinden alle mathematischen Probleme nach Pausen",
+"Es sagt individuelle Laufverletzungen sehr präzise und kausal voraus"
+],
+"warum": "Durch den kleinen chronischen Nenner entstehen nach Pausen Fehlalarme, und die individuelle Vorhersagekraft des ACWR ist gering."
+}
+}
+},
+{
+"id": "PAUSE-118",
+"karte": {
+"kopf": "874 Laufanfänger · 1-Jahres-Beobachtung",
+"titel": "Sprünge über 30 % Wochenumfang zeigen Trend zu mehr Verletzungen",
+"titel_hervor": "Trend zu mehr Verletzungen",
+"setup": "874 Laufanfänger wurden ein Jahr lang begleitet. Verglichen wurde das Verletzungsrisiko bei kleinen unter 10 % und großen über 30 % Wochensteigerungen.",
+"zahl": null,
+"kern": [
+"Bei sehr großen Sprüngen traten eher Knie- und Schienbeinprobleme auf",
+"Der Unterschied war statistisch nicht eindeutig gesichert",
+"Über alle Verletzungsarten zusammen zeigte sich kein klarer Unterschied"
+],
+"grenze": "Ergebnis war nicht statistisch signifikant und deckt schnelle Tempo-Verletzungen wie an der Achillessehne kaum ab.",
+"fuer_dich": "Du baust deine Laufkilometer nach einer Pause wieder auf? Steigere lieber ruhig um 10–20 % pro Woche statt großer Sprünge.",
+"labor": {
+"design": "Prospektive Kohortenstudie über 1 Jahr (Wochenprogression > 30 % vs. < 10 %)",
+"teilnehmer": "874 Laufanfänger mit insgesamt 202 erfassten Verletzungen",
+"ergebnis": "Distanzabhängige Verletzungen HR 1,59 (95 % KI 0,96–2,66; p = 0,07); alle Verletzungen nicht signifikant"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du willst deine wöchentlichen Laufkilometer steigern. Was spricht gegen sehr große Sprünge von über einem Drittel in kurzer Zeit?",
+"richtig": "Typische Überlastungen an Knie oder Schienbein traten dabei eher auf",
+"falsch": [
+"Große Sprünge verbessern die Ausdauer langsamer als kleine",
+"Unter 10 % Steigerung sind Verletzungen ausgeschlossen",
+"Die Kilometerzahl spielt beim Laufen überhaupt keine Rolle"
+],
+"warum": "In einer großen Beobachtungsstudie zeigten Läufer mit Sprüngen über 30 % eine Tendenz zu mehr distanzabhängigen Überlastungen."
+},
+"plus": {
+"frage": "Du steigerst nach einer Pause deine Wochenkilometer vorsichtig um 10 %, baust aber plötzlich harte Sprints ein. Bist du damit auf der sicheren Seite?",
+"richtig": "Nein, denn reine Kilometergrenzen erfassen Tempospitzen nicht",
+"falsch": [
+"Ja, solange der Wochenumfang unter 10 % Plus bleibt",
+"Ja, denn Sprints belasten Sehnen weniger als lange Läufe",
+"Nur wenn du vorher zwei Tage pausiert hast"
+],
+"warum": "Reine Umfangsregeln decken geschwindigkeitsabhängige Belastungen wie an Achillessehne oder Beinrückseite nicht mit ab."
+},
+"labor": {
+"frage": "Eine einjährige Kohortenstudie an 874 Laufanfängern verglich Wochensteigerungen über 30 % mit unter 10 %. Wie ist das Ergebnis statistisch einzuordnen?",
+"richtig": "Tendenz bei distanzabhängigen Verletzungen, aber nicht signifikant",
+"falsch": [
+"Hochsignifikanter Anstieg bei jeder Art von Laufverletzung",
+"Geringeres Verletzungsrisiko bei Steigerungen über 30 %",
+"Eindeutiger Nachweis für Wiedereinsteiger nach langen Pausen"
+],
+"warum": "Für distanzabhängige Verletzungen lag die Hazard Ratio bei 1,59 mit p = 0,07 (nicht signifikant), für alle Verletzungen gab es keinen Unterschied."
+}
+}
+},
+{
+"id": "PAUSE-119",
+"karte": {
+"kopf": "Verletzte Sportler · Fachübersichten",
+"titel": "Ein Kaloriendefizit bremst den Muskelaufbau bei Verletzung stark",
+"titel_hervor": "bremst den Muskelaufbau",
+"setup": "Übersichtsarbeiten zur Sporternährung werteten aus, wie Kaloriendefizit, Heilung und Krücken den Energiebedarf und Muskelabbau bei Verletzungen verändern.",
+"zahl": {
+"label": "Weniger Muskelaufbau-Signal im Defizit",
+"wert": "−20 bis −30 %",
+"alltag": "≈ rund ein Viertel weniger"
+},
+"kern": [
+"Allein der Aufbau von Muskelprotein kostet rund 500 kcal am Tag",
+"Gehen an Krücken verbraucht zwei- bis dreimal so viel Energie wie normales Gehen",
+"Auch die Wundheilung erhöht den täglichen Energiebedarf spürbar"
+],
+"grenze": "Wie viele Kalorien genau nötig sind, schwankt stark je nach Verletzung und Alltagsbewegung.",
+"fuer_dich": "Du bist verletzt und bewegst dich weniger? Streiche jedes Abnehmdifizit und iss mindestens so viel, dass dein Gewicht stabil bleibt.",
+"labor": {
+"design": "Wissenschaftliche Übersichtsarbeiten zur Sporternährung bei Verletzungen",
+"teilnehmer": "Verletzte Sportler (Daten aus Stoffwechsel- und Ernährungsstudien)",
+"ergebnis": "Moderates Defizit senkt MPS um 20–30 %; MPS-Bedarf ~500 kcal/Tag; Krückengehen 2–3× Energiebedarf; Ziel 25–30 kcal/kg"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du hast dich verletzt und kannst nicht trainieren. Viele kürzen dann stark die Kalorien, um nicht zuzunehmen. Was ist das Problem dabei?",
+"richtig": "Ein Defizit bremst Heilung und beschleunigt den Muskelabbau",
+"falsch": [
+"Ohne Sport braucht der Körper fast keine Kalorien mehr",
+"Ein starkes Defizit schützt die Muskulatur bei Verletzungen",
+"Gehen an Krücken verbraucht kaum Energie im Alltag"
+],
+"warum": "Ein Kaloriendefizit senkt die Muskelproteinsynthese deutlich, während Heilung und Krücken sogar extra Energie kosten."
+},
+"plus": {
+"frage": "Du warst gerade in einer Diätphase und verletzt dich so, dass du mehrere Wochen ausfällst. Wie passt du dein Kalorienziel am sinnvollsten an?",
+"richtig": "Diät pausieren und auf Erhaltungskalorien hochgehen",
+"falsch": [
+"Das Defizit noch vergrößern, weil der Sportverbrauch fehlt",
+"Das Defizit unverändert lassen und nur Fett streichen",
+"Einen großen Überschuss essen, um doppelt so schnell zu heilen"
+],
+"warum": "Bei Verletzungen droht im Defizit unnötiger Muskelverlust – Erhaltungskalorien stützen Gewebereparatur und Muskelerhalt."
+},
+"labor": {
+"frage": "Übersichtsarbeiten zur Ernährung bei Verletzungen analysierten Energiebedarf und Muskelproteinsynthese. Welcher doppelte Fehler entsteht im Defizit?",
+"richtig": "Die Muskelproteinsynthese sinkt, während Heilung und Krücken Energie fordern",
+"falsch": [
+"Der Grundumsatz sinkt sofort auf die Hälfte des Normalwerts",
+"Die Muskelproteinsynthese steigt, aber Kohlenhydrate werden blockiert",
+"Der Bedarf liegt bei jeder Verletzung exakt auf demselben Wert"
+],
+"warum": "Ein moderates Defizit senkt die MPS um 20 bis 30 %, während Wundheilung und Gehen an Krücken den tatsächlichen Bedarf erhöhen."
+}
+}
+},
+{
+"id": "PAUSE-120",
+"karte": {
+"kopf": "Ruhiggestellte Sportler · Stoffwechselstudien",
+"titel": "Bei Ruhigstellung nutzen Muskeln Eiweiß fast ein Drittel schlechter",
+"titel_hervor": "fast ein Drittel schlechter",
+"setup": "In Stoffwechselstudien wurde gemessen, wie gut ruhiggestellte Muskeln Eiweiß nach einer Mahlzeit für den Muskelerhalt verwerten können.",
+"zahl": {
+"label": "Schwächere Protein-Antwort bei Ruhigstellung",
+"wert": "−31 %",
+"alltag": "≈ fast ein Drittel weniger"
+},
+"kern": [
+"Die Muskeln reagieren bei fehlender Bewegung träger auf Eiweiß",
+"Eine höhere Eiweißmenge von 2,0 bis 2,5 g pro Kilo hilft dagegen",
+"Gleichmäßige Portionen über den Tag steigerten das Aufbausignal um ein Viertel"
+],
+"grenze": "Bei reiner Passivität im höheren Alter kann Eiweiß allein den Muskelabbau ohne Bewegung nicht vollständig stoppen.",
+"fuer_dich": "Du musst wegen einer Verletzung pausieren? Achte auf viel Eiweiß und verteile es gleichmäßig auf vier bis fünf Mahlzeiten am Tag.",
+"labor": {
+"design": "Stoffwechsel-Tracer-Studien und systematische Reviews zu anaboler Resistenz",
+"teilnehmer": "Verletzte und immobilisierte Probanden",
+"ergebnis": "Postprandiale MPS −31 ± 12 % (0,046 auf 0,032 %/h, p < 0,05); EVEN vs. SKEW Verteilung +25 % 24h-MPS (p = 0,003)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du bist wegen einer Verletzung länger außer Gefecht. Sollte dein Eiweißanteil in der Ernährung dann eher sinken oder steigen?",
+"richtig": "Eher steigen, weil der Körper Eiweiß bei Ruhe schlechter nutzt",
+"falsch": [
+"Deutlich sinken, da ohne Sport kaum Eiweiß gebraucht wird",
+"Gleich bleiben, denn Eiweiß wirkt nur direkt nach dem Training",
+"Auf eine große Portion am Abend gebündelt werden"
+],
+"warum": "Bei Ruhigstellung sprechen Muskeln fast ein Drittel schwächer auf Eiweiß an, daher hilft mehr und gleichmäßig verteiltes Eiweiß."
+},
+"plus": {
+"frage": "Du bist verletzt und zielst auf 2,0 bis 2,5 g Protein pro Kilo ab. Wie verteilst du die Menge über den Tag am effektivsten?",
+"richtig": "Gleichmäßig auf vier bis fünf Mahlzeiten über den Tag",
+"falsch": [
+"Fast die gesamte Menge abends in einer großen Mahlzeit",
+"Morgens fasten und mittags einmal die ganze Tagesmenge essen",
+"Die Verteilung hat bei Verletzungen gar keinen Einfluss"
+],
+"warum": "Eine gleichmäßige Verteilung auf mehrere Portionen steigerte die tägliche Muskelproteinsynthese um rund ein Viertel."
+},
+"labor": {
+"frage": "Tracer-Studien untersuchten die postprandiale Muskelproteinsynthese unter Immobilisation. Was beschreibt die dabei gemessene anabole Resistenz?",
+"richtig": "Eine um rund ein Drittel schwächere MPS-Antwort nach Proteingabe",
+"falsch": [
+"Eine Allergie gegen tierisches Eiweiß während der Ruhigstellung",
+"Dass Protein bei Passivität den Muskelabbau immer vollständig stoppt",
+"Einen kompletten Verlust der Eiweißverdauung im Darm"
+],
+"warum": "Die postprandiale MPS fiel bei Immobilisation um 31 % ab; im höheren Alter kann Protein allein ohne Reiz den Abbau aber nicht komplett verhindern."
+}
+}
+},
+{
+"id": "PAUSE-121",
+"karte": {
+"kopf": "Erkrankte mit Fieber · Stoffwechselmessungen",
+"titel": "Jedes Grad Fieber erhöht den Grundumsatz um gut ein Zehntel",
+"titel_hervor": "um gut ein Zehntel",
+"setup": "In klassischen Stoffwechselmessungen wurde bestimmt, wie stark der Energieverbrauch in Ruhe ansteigt, wenn die Körpertemperatur durch Fieber steigt.",
+"zahl": {
+"label": "Mehr Energiebedarf pro +1 °C Fieber",
+"wert": "+10 bis +13 %",
+"alltag": "im Schnitt rund +11,5 %"
+},
+"kern": [
+"Immunsystem und erhöhter Stoffwechsel verbrauchen bei Fieber deutlich mehr Energie",
+"Trotz Bettruhe ist ein Kaloriendefizit bei Fieber fehl am Platz",
+"Appetitverlust erschwert oft feste Mahlzeiten während akuter Erkrankung"
+],
+"grenze": "Es handelt sich um klassische Ruhe-Messungen; wie viel man tatsächlich essen kann, begrenzt oft der fehlende Appetit.",
+"fuer_dich": "Du liegst mit Fieber im Bett? Vergiss jedes Diätziel – greife bei wenig Appetit zu leicht verdaulichen oder flüssigen Kalorien.",
+"labor": {
+"design": "Klassische kalorimetrische Stoffwechselstudien bei fieberhaften Infekten",
+"teilnehmer": "Erkrankte Personen mit erhöhter Körperkerntemperatur",
+"ergebnis": "Grundumsatz (BMR) steigt um +10 bis +13 % (Mittel ~11,5 %) pro +1 °C über 37,0 °C"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du liegst mit Fieber den ganzen Tag im Bett. Was passiert dabei mit dem Grundumsatz deines Körpers?",
+"richtig": "Er steigt deutlich an, weil Stoffwechsel und Abwehr hart arbeiten",
+"falsch": [
+"Er sinkt durch das Liegen sofort unter das normale Niveau",
+"Er bleibt bei jeder Körpertemperatur genau gleich hoch",
+"Er steigt erst, wenn das Fieber wieder vollständig vorbei ist"
+],
+"warum": "Pro Grad Fieber erhöht sich der Grundumsatz im Schnitt um rund elf Prozent, weil Immunabwehr und Stoffwechsel auf Hochtouren laufen."
+},
+"plus": {
+"frage": "Du bist in einer Diätphase und bekommst Fieber, hast aber kaum Hunger. Welche Strategie passt zu den Stoffwechseldaten?",
+"richtig": "Defizit stoppen und bei wenig Appetit flüssige Energie nutzen",
+"falsch": [
+"Den fehlenden Appetit nutzen, um schneller abzunehmen",
+"Nur Wasser trinken, da der Körper bei Fieber keine Kalorien braucht",
+"Trotz Fieber leicht trainieren, damit der Appetit zurückkommt"
+],
+"warum": "Fieber erhöht den Grundumsatz spürbar – ein Defizit fördert unnötigen Abbau, daher helfen leicht verdauliche oder flüssige Kalorien."
+},
+"labor": {
+"frage": "Klassische kalorimetrische Messungen untersuchten den Grundumsatz bei fieberhaften Infekten. Welche Größenordnung zeigte sich pro Grad Temperaturanstieg?",
+"richtig": "Ein Anstieg des Grundumsatzes um rund ein Zehntel pro Grad Celsius",
+"falsch": [
+"Eine Verdopplung des Grundumsatzes ab jedem einzelnen Grad Fieber",
+"Kein messbarer Unterschied unterhalb von 40 Grad Celsius",
+"Ein Rückgang des Grundumsatzes durch die körperliche Ruhe"
+],
+"warum": "Die kalorimetrischen Daten zeigten einen Anstieg des basalen Grundumsatzes um 10 bis 13 % je 1 °C über 37,0 °C."
+}
+}
+},
+{
+"id": "PAUSE-122",
+"karte": {
+"kopf": "Kraftsportler · 49 Studien & 6 Diätstudien",
+"titel": "Ohne Defizit reichen rund 1,6 g Eiweiß pro Kilo für Muskelerhalt",
+"titel_hervor": "reichen rund 1,6 g Eiweiß",
+"setup": "Meta-Analysen untersuchten, ab welcher täglichen Eiweißmenge Muskeln bei normaler Kalorienzahl oder im Kaloriendefizit optimal geschützt bleiben.",
+"zahl": {
+"label": "Protein-Plateau ohne Kaloriendefizit",
+"wert": "1,6 g/kg",
+"alltag": ""
+},
+"kern": [
+"Bei ausgeglichenen Kalorien brachte noch mehr Eiweiß kaum zusätzlichen Effekt",
+"Im Kaloriendefizit brauchen schlanke Sportler deutlich mehr Eiweiß",
+"Im Defizit lagen die Schutzwerte bei 2,3 bis 3,1 g je Kilo fettfreier Masse"
+],
+"grenze": "Im Urlaub ohne Waage ist exaktes Abwiegen unpraktisch – grobe Portionen nach Augenmaß reichen oft aus.",
+"fuer_dich": "Du bist im Urlaub und isst normal satt? Ziele grob auf 1,6 g Eiweiß pro Kilo ab – im Defizit darf es spürbar mehr sein.",
+"labor": {
+"design": "Systematische Reviews, Meta-Analyse und Meta-Regression (Erhaltung vs. Defizit)",
+"teilnehmer": "49 RCTs mit 1.863 Teilnehmenden; Defizit-Review mit 6 Studien an schlanken Athleten",
+"ergebnis": "Breakpoint ohne Defizit: 1,62 g/kg/Tag; im Kaloriendefizit: 2,3–3,1 g/kg fettfreie Masse"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du bist im Urlaub, isst normal satt und willst deine Muskeln schützen. Wann brauchst du besonders viel Eiweiß am Tag?",
+"richtig": "Wenn du zusätzlich im Kaloriendefizit bist und abnehmen willst",
+"falsch": [
+"Wenn du ohnehin mehr Kalorien isst als du verbrauchst",
+"Immer genau gleich viel, egal ob du abnimmst oder nicht",
+"Gar nicht, da Eiweiß im Urlaub ohne Hanteln nichts bringt"
+],
+"warum": "Im Kaloriendefizit steigt der Eiweißbedarf deutlich, um die Muskelmasse trotz geringerer Energiezufuhr zu schützen."
+},
+"plus": {
+"frage": "Du hältst im Urlaub dein Gewicht und trainierst nur minimal. Wie ordnest du dein Proteinziel sinnvoll ein?",
+"richtig": "Rund um das Plateau von etwa 1,6 g/kg, gern grob geschätzt",
+"falsch": [
+"Mindestens 3,5 g/kg, weil das Training reduziert ist",
+"Unter 0,8 g/kg, da bei weniger Training kaum Bedarf besteht",
+"Nur über Shakes, weil normales Essen im Urlaub zu ungenau ist"
+],
+"warum": "Bei ausgeglichener Kalorienbilanz liegt das Plateau für Muskelerhalt bei rund 1,6 g/kg, im Urlaub auch gut über Portionen schätzbar."
+},
+"labor": {
+"frage": "Eine Meta-Regression über 49 Studien und ein Review an schlanken Athleten verglichen Proteinziele. Wie unterscheiden sich die Bezugsgrößen im Defizit?",
+"richtig": "Im Defizit steigt der Bedarf, oft pro kg fettfreier Masse angegeben",
+"falsch": [
+"Der Breakpoint lag in beiden Zuständen exakt gleich hoch",
+"Im Defizit sank der Bedarf wegen der geringeren Kalorienzufuhr",
+"Die Defizit-Werte stammten aus 49 Studien an Untrainierten"
+],
+"warum": "Ohne Defizit zeigte die Meta-Regression ein Plateau bei 1,62 g/kg Körpergewicht, während im Defizit 2,3–3,1 g/kg fettfreie Masse empfohlen wurden."
+}
+}
+},
+{
+"id": "PAUSE-123",
+"karte": {
+"kopf": "Junge & ältere Erwachsene · Dosis-Studie & Review",
+"titel": "Ein harter Satz pro Woche reicht jungen Erwachsenen zum Erhalt",
+"titel_hervor": "Ein harter Satz pro Woche",
+"setup": "Nach einer Aufbauphase kürzten Teilnehmende ihr Krafttraining auf ein Drittel oder ein Neuntel des Umfangs, hielten aber das Gewicht hoch.",
+"zahl": {
+"label": "Reichte jungen Erwachsenen zum Muskelerhalt",
+"wert": "1/9 Volumen",
+"alltag": "1 harter Satz pro Woche"
+},
+"kern": [
+"Bei jungen Erwachsenen blieben Kraft und Muskeln so bis 32 Wochen erhalten",
+"Menschen über 60 Jahre brauchten rund ein Drittel des Umfangs zum Erhalt",
+"Entscheidend war, dass das Gewicht und die Anstrengung hoch blieben"
+],
+"grenze": "Wird neben dem Umfang auch das Gewicht stark gesenkt, geht der Erhaltungseffekt verloren.",
+"fuer_dich": "Du hast im Urlaub oder im Stress kaum Zeit fürs Gym? Mach einmal pro Woche eine kurze Ganzkörper-Einheit mit 1–2 harten Sätzen.",
+"labor": {
+"design": "Narratives Review und randomisierte Dosis-Wirkungs-Studie über bis zu 32 Wochen",
+"teilnehmer": "Junge Erwachsene und ältere Erwachsene (> 60 Jahre)",
+"ergebnis": "Junge: 1 Einheit/Wo., 1 Satz/Übung (1/9 Volumen) erhielt 1RM & Masse; Ältere: 2 Einheiten, 2–3 Sätze (1/3 Volumen) nötig"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du hast wochenlang kaum Zeit fürs Krafttraining und willst deine Kraft trotzdem halten. Worauf kommt es bei kurzen Einheiten am meisten an?",
+"richtig": "Wenig Sätze reichen, solange die Anstrengung hoch bleibt",
+"falsch": [
+"Viele lockere Sätze mit ganz leichtem Gewicht machen",
+"Unter drei Einheiten pro Woche geht sofort alles verloren",
+"Lieber gar nicht trainieren, weil ein Satz pro Woche nichts bringt"
+],
+"warum": "Schon ein Bruchteil des üblichen Umfangs kann Kraft und Muskeln über Monate halten, wenn die Sätze intensiv bleiben."
+},
+"plus": {
+"frage": "Du bist zwei Wochen im Urlaub und willst mit minimalem Aufwand Muskelmasse und 1RM halten. Wie gestaltest du dein Minimalprogramm?",
+"richtig": "Einmal pro Woche Ganzkörper mit ein bis zwei harten Sätzen nahe am Versagen",
+"falsch": [
+"Fünfmal pro Woche kurz mit sehr leichtem Gewicht und 6 RIR trainieren",
+"Das normale Volumen behalten, aber das Gewicht halbieren",
+"Nur Ausdauer machen, weil ein Training pro Woche nicht zum Erhalt reicht"
+],
+"warum": "Für den Erhalt ist hohe Intensität entscheidend – bei jungen Erwachsenen reichte sogar eine intensive Einheit pro Woche."
+},
+"labor": {
+"frage": "Eine Dosis-Wirkungs-Studie und ein Review prüften Minimaldosen zum Muskelerhalt über bis zu 32 Wochen. Wie unterschied sich der Bedarf nach Alter?",
+"richtig": "Ältere über 60 brauchten deutlich mehr Volumen und Frequenz als Jüngere",
+"falsch": [
+"Ältere brauchten weniger Volumen als junge Erwachsene",
+"Beide Altersgruppen hielten ihre Masse mit einem Neuntel Volumen",
+"Bei beiden Gruppen reichte es, nur die Trainingsfrequenz beizubehalten"
+],
+"warum": "Junge Erwachsene erhielten Kraft und Masse mit 1/9 Volumen (1×/Wo.), während Ältere etwa 1/3 Volumen und 2 Einheiten pro Woche benötigten."
+}
+}
+},
+{
+"id": "PAUSE-124",
+"karte": {
+"kopf": "Ausdauersportler · Review & Trainingsstudien",
+"titel": "Zwei kurze, harte Läufe halten die Ausdauer über Monate",
+"titel_hervor": "halten die Ausdauer über Monate",
+"setup": "Trainierte Ausdauersportler senkten über bis zu 15 Wochen entweder die Häufigkeit, die Dauer oder die Intensität ihrer Einheiten und testeten ihre Fitness.",
+"zahl": {
+"label": "So viel weniger Ausdauer-Umfang reichte",
+"wert": "−33 bis −66 %",
+"alltag": "13–26 Min. bei hohem Tempo"
+},
+"kern": [
+"Zwei Einheiten pro Woche reichten für den Erhalt der maximalen Ausdauer",
+"Auch eine drastische Kürzung der Dauer schadete bei hohem Tempo kaum",
+"Sank stattdessen das Tempo deutlich, ging die Fitness messbar zurück"
+],
+"grenze": "Für sehr lange Wettkämpfe über zwei Stunden können extrem kurze Einheiten von 13 Minuten etwas nachlassen.",
+"fuer_dich": "Im Urlaub fehlt Zeit für lange Läufe? Mach zweimal pro Woche 15–25 Minuten mit flotten Intervallen statt langsamen Dauerläufen.",
+"labor": {
+"design": "Systematisches Review und experimentelle Reduktionsstudien über bis zu 15 Wochen",
+"teilnehmer": "Trainierte Ausdauersportler und Läufer",
+"ergebnis": "Erhalt von VO2max bei −33 bis −66 % Volumen (13–26 Min.) oder 2×/Wo. bei ≥ 80–90 % HFmax; Intensitätsreduktion senkte VO2max"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du hast im Urlaub nur wenig Zeit zum Laufen, willst aber deine Kondition nicht verlieren. Welche Strategie funktioniert besser?",
+"richtig": "Zwei kurze, aber spürbar anstrengende Läufe pro Woche",
+"falsch": [
+"Zwei kurze, ganz gemütliche Spazierläufe pro Woche",
+"Einmal im Monat eine sehr lange Wanderung machen",
+"Ohne mindestens eine Stunde pro Lauf geht die Fitness sofort weg"
+],
+"warum": "Um die Ausdauer mit wenig Zeit zu halten, darf die Dauer stark schrumpfen – entscheidend ist, das Tempo hoch zu halten."
+},
+"plus": {
+"frage": "Du reduzierst deinen Laufumfang in stressigen Wochen um die Hälfte. Was solltest du dabei unbedingt beibehalten, damit deine VO2max stabil bleibt?",
+"richtig": "Eine hohe Trainingsintensität in den verbleibenden kurzen Einheiten",
+"falsch": [
+"Die genaue Länge des langen Sonntagslaufs bei niedrigem Puls",
+"Mindestens fünf lockere Läufe pro Woche im Regenerationsbereich",
+"Einen Verzicht auf Intervalle, um Ermüdung komplett zu vermeiden"
+],
+"warum": "In den Studien blieb die VO2max bei 33 bis 66 % weniger Volumen erhalten, brach aber ein, sobald die Intensität gesenkt wurde."
+},
+"labor": {
+"frage": "Reduktionsstudien über bis zu 15 Wochen prüften den Erhalt der aeroben Fitness bei weniger Volumen oder Frequenz. Welche Einschränkung bleibt bei extrem kurzen Einheiten?",
+"richtig": "Die Langzeit-Ausdauer für sehr lange Wettkämpfe kann leicht nachgeben",
+"falsch": [
+"Die VO2max lässt sich unter 45 Minuten pro Einheit gar nicht halten",
+"Eine Senkung der Intensität hatte denselben Effekt wie weniger Dauer",
+"Der Erhalt funktionierte maximal über zwei bis drei Wochen"
+],
+"warum": "Während VO2max und Kurzzeit-Ausdauer stabil blieben, kann die Ausdauer für Wettkämpfe über zwei Stunden bei 13-Minuten-Einheiten leicht nachlassen."
+}
+}
+},
+{
+"id": "PAUSE-125",
+"karte": {
+"kopf": "Trainierende · 8-Wochen-Studie & Review",
+"titel": "Harte Liegestütze bauen ähnlich viel Brustmuskel auf wie Hanteln",
+"titel_hervor": "ähnlich viel Brustmuskel",
+"setup": "Acht Wochen lang machten Teilnehmende entweder Liegestütze oder Bankdrücken mit leichtem Gewicht bis ans Muskelversagen. Gemessen wurden Muskeldicke und Kraft.",
+"zahl": {
+"label": "Brustmuskel-Zuwachs durch Liegestütze",
+"wert": "+18,3 %",
+"alltag": "ähnlich wie Bankdrücken (+19,4 %)"
+},
+"kern": [
+"Auch der Trizeps wuchs bei Liegestützen ähnlich stark wie beim Bankdrücken",
+"Entscheidend war, die Sätze bis nahe ans Muskelversagen auszuführen",
+"Mit Supersätzen lässt sich so auch ohne Studio sehr zeiteffizient trainieren"
+],
+"grenze": "Für sehr hohe Maximalkraft bei stark trainierten Kraftsportlern stößt Körpergewicht über mehrere Wochen an Grenzen.",
+"fuer_dich": "Kein Fitnessstudio im Urlaub? Nutze Liegestütze, Split Squats und Handtuch-Rudern im Superset bis 0–1 RIR.",
+"labor": {
+"design": "Randomisierte kontrollierte Studie über 8 Wochen (Push-ups vs. Bankdrücken bei 40 % 1RM bis Versagen) & Review",
+"teilnehmer": "18 Teilnehmende in der Interventionsstudie",
+"ergebnis": "Brust-Muskeldicke +18,3 % vs. +19,4 % (p < 0,01, kein Gruppenunterschied); Trizeps +9,5 % vs. +10,3 %"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du hast im Urlaub keine Hanteln und machst stattdessen Liegestütze. Unter welcher Bedingung bauen sie ähnlich gut Muskeln auf?",
+"richtig": "Wenn du jeden Satz bis nahe an deine Belastungsgrenze machst",
+"falsch": [
+"Nur wenn du mindestens hundert lockere Wiederholungen abspulst",
+"Gar nicht, denn ohne Eisengewichte wachsen Muskeln nicht",
+"Nur wenn du zwischen den Sätzen zehn Minuten pausierst"
+],
+"warum": "In einer achtwöchigen Studie wuchsen Brust und Trizeps bei Liegestützen bis ans Versagen ähnlich stark wie beim Bankdrücken."
+},
+"plus": {
+"frage": "Du trainierst auf Reisen ohne Geräte und hast wenig Zeit. Wie machst du Bodyweight-Training für den Muskelerhalt besonders effektiv?",
+"richtig": "Schwere Varianten wie Split Squats im Superset bis 0–1 RIR nutzen",
+"falsch": [
+"Immer genau zehn lockere Liegestütze bei 5 RIR abhaken",
+"Auf Beinübungen verzichten, da sie ohne Langhantel wirkungslos sind",
+"Jede Übung nur sehr langsam aufwärmen und früh abbrechen"
+],
+"warum": "Anspruchsvolle Varianten nahe am Muskelversagen liefern den nötigen Reiz, und antagonistische Supersätze sparen zusätzlich Zeit."
+},
+"labor": {
+"frage": "Eine achtwöchige Studie verglich Liegestütze bis zum Versagen mit Bankdrücken bei 40 % 1RM. Wo liegt die wesentliche Grenze dieses Ergebnisses?",
+"richtig": "Bei sehr starken Kraftsportlern ist die reine Maximalkraft nach oben begrenzt",
+"falsch": [
+"Der Trizeps wuchs bei Liegestützen nur halb so stark wie mit Hanteln",
+"Die Brustmuskeldicke nahm in beiden Gruppen nicht signifikant zu",
+"Die Studie dauerte nur eine Woche und zeigte nur Krafteffekte"
+],
+"warum": "Für Hypertrophie waren beide gleichwertig, aber für das 1RM sehr starker Powerlifter ist reines Körpergewicht über längere Zeit begrenzt."
+}
+}
+},
+{
+"id": "PER-101",
+"karte": {
+"kopf": "Krafttrainierende · 35 Studien zusammengefasst",
+"titel": "Geplanter Wechsel von Gewicht und Menge macht messbar stärker",
+"titel_hervor": "macht messbar stärker",
+"setup": "Verglichen wurden feste Trainingspläne mit Plänen, bei denen Gewicht und Satzanzahl über Wochen gezielt wechseln.",
+"zahl": {
+"label": "Kraftzuwachs mit Wechselplan (vs. +22,7 %)",
+"wert": "+27,6 %",
+"alltag": "≈ 2,1 % pro Woche statt 1,8 %"
+},
+"kern": [
+"Der Vorteil bleibt auch dann bestehen, wenn beide Pläne gleich viele Sätze enthalten.",
+"Die höhere Kraft entsteht vor allem, weil der Körper öfter sehr hohe Lasten bewegt.",
+"Sowohl Einsteiger als auch erfahrene Kraftsportler profitieren vom gezielten Wechsel."
+],
+"grenze": "Die meisten Untersuchungen dauerten unter 16 Wochen – langfristige Effekte über ein Jahr sind weniger belegt.",
+"fuer_dich": "Du willst in den nächsten 8 bis 16 Wochen deutlich stärker werden? Wechsle Gewicht und Satzzahl in klaren Phasen.",
+"labor": {
+"design": "Zwei Meta-Analysen, periodisiertes vs. nicht periodisiertes Krafttraining (volumenäquivalent, meist < 16 Wochen)",
+"teilnehmer": "18 Studien (n = 612) bzw. 35 Studien, Einsteiger bis Trainierte",
+"ergebnis": "1RM: ES 0,43 (95 % KI 0,27–0,58); volumenäquivalent ES 0,31 (95 % KI 0,04–0,57), +27,6 % vs. +22,7 %"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du trainierst mehrere Monate mit demselben Plan statt Gewicht und Umfang gezielt zu wechseln. Was passiert mit deiner Höchstkraft?",
+"richtig": "Sie steigt meist etwas langsamer als mit geplantem Wechsel",
+"falsch": [
+"Sie bleibt von Anfang an auf dem gleichen Ausgangsstand",
+"Sie steigt deutlich schneller durch die starre Routine",
+"Sie sinkt nach einigen Wochen wieder deutlich unter den Start"
+],
+"warum": "Gezielte Wechsel von Gewicht und Satzanzahl führen im Schnitt zu größeren Kraftzuwächsen als starre Pläne."
+},
+"plus": {
+"frage": "Dein Ziel ist mehr 1RM in den nächsten 12 Wochen, dein Wochenvolumen bleibt gleich. Was bringt dir für die Maximalkraft am meisten?",
+"richtig": "Volumen und Intensität über mehrere Wochen zyklisch wechseln",
+"falsch": [
+"Jede Woche mit denselben Sätzen und Lasten weitertrainieren",
+"Nur leichte Gewichte mit sehr vielen Wiederholungen nutzen",
+"Das Satzvolumen halbieren und ohne feste Struktur trainieren"
+],
+"warum": "Auch bei gleichem Gesamtvolumen bringt ein periodisierter Wechsel höhere Spitzenlasten und im Schnitt mehr Maximalkraft."
+},
+"labor": {
+"frage": "In Meta-Analysen wurden periodisierte und nicht periodisierte Pläne mit gleichem Gesamtvolumen auf das 1RM verglichen. Worauf beruht der Vorteil vor allem?",
+"richtig": "Auf neuronalen Anpassungen durch höhere Spitzenlasten",
+"falsch": [
+"Auf deutlich stärkerem Muskelwachstum in kurzer Zeit",
+"Auf einer langen Studiendauer von über einem Jahr",
+"Auf einem höheren wöchentlichen Gesamtsatzvolumen"
+],
+"warum": "Bei gleichem Volumen liegt der kleine bis mittlere Vorteil (ES 0,31) vor allem an neuronalen Anpassungen an schwere Lasten."
+}
+}
+},
+{
+"id": "PER-102",
+"karte": {
+"kopf": "Trainierende · 35 Studien zusammengefasst",
+"titel": "Für den Muskelaufbau bringt komplizierte Planung keinen Vorteil",
+"titel_hervor": "komplizierte Planung keinen Vorteil",
+"setup": "Verglichen wurde Muskelwachstum bei fest strukturierten Trainingsphasen und bei einfachen Plänen mit derselben Satzanzahl.",
+"zahl": null,
+"kern": [
+"Entscheidend für Muskelwachstum sind genug Sätze pro Woche und stetige Steigerung.",
+"Viele ältere Vergleiche nutzten sehr eintönige Kontrollpläne und liefen unter 9 Monate.",
+"Ob genau getimte Trainingsphasen die Anpassung steuern, wurde bislang nicht belegt."
+],
+"grenze": "Keine der ausgewerteten Untersuchungen lief länger als neun Monate – Effekte über Jahre bleiben offen.",
+"fuer_dich": "Dein Ziel ist vor allem Muskelaufbau? Konzentriere dich auf genug Wochen-Sätze und Steigerung statt auf komplexe Phasen.",
+"labor": {
+"design": "Meta-Analyse und Methodenkritik, periodisiertes vs. nicht periodisiertes Training bei gleichem Volumen",
+"teilnehmer": "35 Studien (Einsteiger und Trainierte); Kritik an 2 Meta-Analysen",
+"ergebnis": "Hypertrophie ES 0,13 (95 % KI −0,10 bis 0,36, p = 0,27); keine Studie > 9 Monate"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Stimmt es, dass Muskeln nur dann gut wachsen, wenn du dein Training in komplizierte Phasen einteilst?",
+"richtig": "Nein, bei gleicher Trainingsmenge wachsen Muskeln ähnlich gut",
+"falsch": [
+"Ja, ohne feste Phasen bleibt Muskelwachstum fast ganz aus",
+"Ja, einfache Pläne wirken nur in den ersten zwei Wochen",
+"Nein, häufiger Phasenwechsel bremst den Muskelaufbau stark"
+],
+"warum": "Bei gleicher Satzanzahl zeigt sich im Schnitt kein klarer Vorteil komplexer Phasenpläne für den Muskelaufbau."
+},
+"plus": {
+"frage": "Dein Hauptziel ist Hypertrophie, doch komplexe Phasenpläne überfordern dich im Alltag. Wie solltest du dein Training steuern?",
+"richtig": "Auf stabiles Wochenvolumen und progressive Steigerung setzen",
+"falsch": [
+"Trotzdem strenge 4-Wochen-Phasen erzwingen für mehr Wachstum",
+"Das Volumen halbieren und jede Woche alle Übungen tauschen",
+"Auf Krafttraining verzichten und nur Kraftausdauer machen"
+],
+"warum": "Für Hypertrophie zählt bei gleichem Volumen vor allem die stetige Steigerung, nicht ein erzwungener Phasenwechsel."
+},
+"labor": {
+"frage": "Vergleiche zwischen periodisiertem und festem Krafttraining bei gleichem Satzvolumen wurden methodisch überprüft. Welcher Kritikpunkt fiel dabei auf?",
+"richtig": "Kontrollgruppen trainierten oft sehr monoton und kurz",
+"falsch": [
+"Alle Studien dauerten über zwei Jahre mit großen Gruppen",
+"Die Effektstärke für Hypertrophie war hoch und signifikant",
+"Die Kontrollgruppen absolvierten deutlich mehr Wochen-Sätze"
+],
+"warum": "Der Effekt war nicht signifikant (ES 0,13) und viele ältere Studien nutzten starre Kontrollgruppen unter neun Monaten."
+}
+}
+},
+{
+"id": "PER-103",
+"karte": {
+"kopf": "Einsteiger & Trainierte · 2 Gesamtauswertungen",
+"titel": "Häufiger Lastwechsel hilft vor allem Erfahrenen bei der Kraft",
+"titel_hervor": "vor allem Erfahrenen",
+"setup": "Verglichen wurden Pläne mit stufenweisem Gewichtsanstieg und Pläne, bei denen schwere und leichtere Tage ständig wechseln.",
+"zahl": null,
+"kern": [
+"Bei Einsteigern bringen beide Planungsarten im Schnitt gleich viel Kraft.",
+"Bei erfahrenen Kraftsportlern schneiden wellenförmige Wechsel tendenziell besser ab.",
+"Eine ältere Auswertung von 17 Studien fand insgesamt noch keinen klaren Unterschied."
+],
+"grenze": "Der Vorteil für Erfahrene liegt genau an der statistischen Grenze und stützt sich auf nur sechs Studien.",
+"fuer_dich": "Du trainierst schon länger für mehr Maximalkraft? Wechsle pro Woche zwischen schwereren und leichteren Tagen statt starr zu steigern.",
+"labor": {
+"design": "Zwei Meta-Analysen, wellenförmige (UP/DUP) vs. lineare Periodisierung (LP), ca. 12–13 Wochen",
+"teilnehmer": "17 Studien (n = 510) bzw. 35 Studien, davon 6 zu Trainierten",
+"ergebnis": "UP vs. LP: gesamt ES 0,31 (p = 0,04), Trainierte ES 0,61 (95 % KI 0,00–1,22, p = 0,05), Untrainierte ES 0,06"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du fängst gerade erst mit Krafttraining an. Musst du schon jede Woche zwischen schweren und leichten Tagen wechseln?",
+"richtig": "Nein, eine einfache schrittweise Steigerung reicht am Anfang",
+"falsch": [
+"Ja, sonst baust du als Einsteiger kaum neue Kraft auf",
+"Ja, einfache Steigerungen wirken erst bei sehr Erfahrenen",
+"Nein, am Anfang solltest du Gewichte besser nicht steigern"
+],
+"warum": "Bei Einsteigern zeigen Vergleiche im Schnitt keinen Unterschied zwischen einfachem und wellenförmigem Wechsel."
+},
+"plus": {
+"frage": "Du trainierst seit Jahren Kraft und willst dein 1RM steigern. Welche Struktur bei gleichem Wochenvolumen hat leichte Vorteile?",
+"richtig": "Wellenförmige Wechsel von Fokus und Last innerhalb der Woche",
+"falsch": [
+"Monatelang exakt dieselbe Wiederholungszahl pro Satz nutzen",
+"Alle Einheiten der Woche nur mit leichten Lasten ausführen",
+"Nach jeder einzelnen Woche alle Hauptübungen austauschen"
+],
+"warum": "Bei Fortgeschrittenen deutet die Studienlage auf etwas größere Kraftzuwächse durch wellenförmige Abwechslung hin."
+},
+"labor": {
+"frage": "Zwei Meta-Analysen verglichen wellenförmige (UP) und lineare Periodisierung (LP) bei gleichem Volumen. Wie ist der Vorteil für Trainierte einzuordnen?",
+"richtig": "Er liegt an der Signifikanzgrenze und ruht auf wenigen Studien",
+"falsch": [
+"Er ist in allen Zielgruppen und allen Analysen eindeutig",
+"Er zeigt sich vor allem bei reinen Kraft-Einsteigern",
+"Er beruht ausschließlich auf höherem Gesamtvolumen bei UP"
+],
+"warum": "Der Effekt bei Trainierten (ES 0,61) erreicht genau p = 0,05 in nur sechs Studien, während eine ältere Analyse keinen Unterschied fand."
+}
+}
+},
+{
+"id": "PER-104",
+"karte": {
+"kopf": "Einsteiger & Trainierte · 13 Studien ausgewertet",
+"titel": "Feste Blöcke und ständiger Wechsel bauen gleich viel Muskel auf",
+"titel_hervor": "bauen gleich viel Muskel",
+"setup": "Verglichen wurde Muskelwachstum über etwa zwölf Wochen bei stufenweiser Steigerung und bei täglichem Wechsel der Wiederholungsbereiche.",
+"zahl": null,
+"kern": [
+"Bei gleicher Satzanzahl pro Woche liefern beide Planungsarten ähnliche Muskelzuwächse.",
+"Du kannst frei nach Vorliebe wählen, was dich langfristig besser am Ball hält.",
+"Zwei große Auswertungen kamen unabhängig voneinander zum selben Ergebnis."
+],
+"grenze": "Viele Teilnehmende waren Einsteiger und Muskelmasse wurde teils nur indirekt statt per Ultraschall oder MRT gemessen.",
+"fuer_dich": "Du fragst dich, ob feste Blöcke oder tägliche Abwechslung besser für Muskeln sind? Wähle das Modell, das dir mehr Spaß macht.",
+"labor": {
+"design": "Zwei Meta-Analysen, lineare (LP) vs. täglich wellenförmige Periodisierung (DUP), Schnitt ca. 12 Wochen",
+"teilnehmer": "13 Studien (n = 417), überwiegend untrainierte Erwachsene",
+"ergebnis": "Hypertrophie: d = −0,02 (95 % KI −0,25 bis 0,21, p = 0,848); Replikation ES 0,05 (p = 0,72)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Ist es für den Muskelaufbau besser, jede Einheit den Wiederholungsbereich zu wechseln oder ihn mehrere Wochen festzuhalten?",
+"richtig": "Beide Ansätze bringen im Schnitt ähnlich viel Muskelaufbau",
+"falsch": [
+"Nur täglicher Wechsel sorgt für spürbares Muskelwachstum",
+"Nur mehrwöchige Blöcke reizen die Muskulatur ausreichend",
+"Ständiger Wechsel verhindert den Aufbau von Muskelmasse"
+],
+"warum": "Über rund zwölf Wochen zeigen sich bei gleichem Trainingsumfang keine klaren Unterschiede zwischen beiden Methoden."
+},
+"plus": {
+"frage": "Dein Ziel ist Hypertrophie bei drei Einheiten pro Woche. Wann lohnt sich der Wechsel von linearen 4-Wochen-Blöcken auf tägliche Wellen (DUP)?",
+"richtig": "Wenn dir mehr Abwechslung hilft, dein Wochenvolumen zu halten",
+"falsch": [
+"Weil DUP bei gleichem Volumen doppelt so viel Muskel baut",
+"Weil lineare Blöcke nach zwei Wochen keinen Reiz mehr geben",
+"Weil DUP nur halb so viele Sätze pro Muskelgruppe braucht"
+],
+"warum": "Da beide Modelle gleichwertig für Hypertrophie sind, zählt vor allem das konstante Wochenvolumen und deine Motivation."
+},
+"labor": {
+"frage": "Meta-Analysen verglichen lineare (LP) und täglich wellenförmige Periodisierung (DUP) für Muskelhypertrophie. Welche methodische Grenze bestand?",
+"richtig": "Viele Studien testeten Untrainierte mit indirekten Messungen",
+"falsch": [
+"Alle Studien nutzten ausschließlich MRT-Scans über ein Jahr",
+"Die Effektstärke war stark positiv zugunsten von DUP",
+"Das Wochenvolumen war in der LP-Gruppe stets deutlich höher"
+],
+"warum": "Bei trivialem Effekt (d = −0,02) schränken der hohe Einsteiger-Anteil und indirekte Messmethoden wie Hautfalten die Aussagekraft ein."
+}
+}
+}
+]

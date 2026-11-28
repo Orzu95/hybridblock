@@ -1,0 +1,1114 @@
+[
+{
+"id": "FAT-117",
+"karte": {
+"kopf": "1.158 Menschen · 13 Studien zusammengefasst",
+"titel": "Gezielte Übungen lassen Fett an einer Körperstelle nicht schmelzen",
+"titel_hervor": "nicht schmelzen",
+"setup": "In 13 kontrollierten Studien trainierten Teilnehmende gezielt nur eine Körperseite oder Region und verglichen das Fett dort mit der Gegenseite.",
+"zahl": null,
+"kern": [
+"In 37 Vergleichen gab es insgesamt keinen Unterschied zwischen trainierter und anderer Seite.",
+"Das Ergebnis galt unabhängig von Alter, Geschlecht und gewählter Trainingsart.",
+"Auch wenn beim Training kurz lokal Fett mobilisiert wird, schrumpft das Depot dort nicht gezielt."
+],
+"grenze": "Gezielte Übungen kräftigen den Muskel darunter trotzdem – sie bestimmen nur nicht, wo der Körper Fett abbaut.",
+"fuer_dich": "Willst du Fett an Bauch, Beinen oder Armen verlieren? Setze auf ein Kaloriendefizit mit Ganzkörpertraining statt endloser Bauchübungen.",
+"labor": {
+"design": "Meta-Analyse aus 13 kontrollierten Studien (37 Vergleiche), trainierte vs. untrainierte Körperseite",
+"teilnehmer": "1.158 Teilnehmende (14–71 Jahre)",
+"ergebnis": "Hedges' g = −0,03 (95 % KI −0,10 bis 0,05; p=0,508; I²=24,3 %; Egger-Test p=0,133)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du machst jeden Tag viele Bauchübungen, um gezielt dein Bauchfett abzubauen. Was passiert mit dem Fett genau über dem Bauch?",
+"richtig": "Es schrumpft dort nicht gezielt schneller als am restlichen Körper",
+"falsch": [
+"Die Muskeln verbrennen direkt das Fettgewebe genau darüber",
+"Nach einigen Wochen verschwindet gezielt nur das Bauchfett",
+"Das klappt bei Bauch und Armen, nur an den Beinen nicht"
+],
+"warum": "Über 13 Vergleichsstudien bewirkte lokales Training keinen gezielten Fettabbau über dem trainierten Muskel."
+},
+"plus": {
+"frage": "Ein Trainingspartner will Fett an den Oberschenkeln loswerden und plant dafür täglich lokale Isolationsübungen mit vielen Wiederholungen. Was rätst du?",
+"richtig": "Lieber ein Kaloriendefizit mit Ganzkörpertraining statt lokaler Isolierung",
+"falsch": [
+"Noch mehr lokale Sätze ergänzen, bis der Muskel stark brennt",
+"Lokales Training funktioniert nur bei jüngeren Menschen verlässlich",
+"Isolationsübungen weglassen, weil sie gar keine Muskeln aufbauen"
+],
+"warum": "Spot Reduction ist über 13 Studien klar widerlegt; Fettabbau entsteht systemisch über das Defizit, während Ganzkörpertraining Muskeln schützt."
+},
+"labor": {
+"frage": "Eine Meta-Analyse (13 kontrollierte Studien, n=1.158) verglich lokales Training gegen die untrainierte Gegenseite auf subkutanes Fett. Wie ist der Befund einzuordnen?",
+"richtig": "Null-Effekt chronisch, trotz einzelner Hinweise auf akute lokale Lipolyse",
+"falsch": [
+"Kleiner, aber statistisch signifikanter lokaler Fettabbau an den Armen",
+"Starke Heterogenität und klarer Publikationsbias machten Daten unbrauchbar",
+"Deutlicher Effekt bei älteren, aber nicht bei jüngeren Probanden"
+],
+"warum": "Die gepoolte Effektstärke lag nahe null (g = −0,03; p = 0,508; I² = 24,3 %) unabhängig von Alter, Geschlecht oder Protokoll."
+}
+}
+},
+{
+"id": "FAT-118",
+"karte": {
+"kopf": "873 Teilnehmende · 28 Studien ausgewertet",
+"titel": "Die Fettverbrennungszone baut nicht mehr Fett ab als Intervalle",
+"titel_hervor": "nicht mehr Fett ab",
+"setup": "Eine große Auswertung aus 28 Studien verglich lockeres Ausdauertraining in der sogenannten Fettverbrennungszone mit hartem Intervalltraining.",
+"zahl": null,
+"kern": [
+"Sowohl Körperfettanteil als auch Fettmasse sanken mit beiden Methoden ähnlich stark.",
+"Entscheidend für den Fettabbau war eher der gesamte Energieverbrauch als der Pulsbereich.",
+"War Intervalltraining viel kürzer, schnitt längeres lockeres Training tendenziell leicht besser ab."
+],
+"grenze": "Die Programme unterschieden sich in Dauer und Aufwand – entscheidend für den Erfolg im Alltag bleibt, was du durchhältst.",
+"fuer_dich": "Überlegst du, ob lockeres Joggen oder harte Intervalle besser fürs Abnehmen sind? Wähl bei ähnlichem Aufwand, was dir mehr Spaß macht.",
+"labor": {
+"design": "Meta-Analyse aus 28 Studien (35 Vergleiche), MICT (55–69 % HRmax) vs. HIIT/SIT",
+"teilnehmer": "873 Teilnehmende aus 31 gesichteten Studien",
+"ergebnis": "KFA HIIT −1,26 % vs. MICT −1,48 %; Fettmasse HIIT −1,38 vs. MICT −0,91 kg (kein signifikanter Unterschied)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Auf vielen Ausdauergeräten gibt es eine markierte Fettverbrennungszone bei niedrigem Puls. Verlierst du dort wirklich mehr Körperfett als bei harten Intervallen?",
+"richtig": "Nein, bei ähnlichem Aufwand bauen beide Methoden ähnlich viel Fett ab",
+"falsch": [
+"Ja, nur bei niedrigem Puls verliert der Körper überhaupt Körperfett",
+"Nein, harte Intervalle verbrennen immer doppelt so viel Körperfett",
+"Ja, bei hohem Puls blockiert der Körper den Fettabbau vollständig"
+],
+"warum": "Über 28 Studien gab es keinen klaren Unterschied beim Fettabbau zwischen moderatem Dauertraining und Intervalltraining."
+},
+"plus": {
+"frage": "Du willst dein Kaloriendefizit mit Ausdauertraining unterstützen und schwankst zwischen lockerem Dauerlauf und HIIT. Woran orientierst du dich am besten?",
+"richtig": "An deiner Vorliebe und Erholung bei vergleichbarem Energieverbrauch",
+"falsch": [
+"Streng an 55–69 % HRmax, weil darüber kein Körperfett abgebaut wird",
+"Ausschließlich an ganz kurzen Sprints, da sie bei wenig Aufwand klar siegen",
+"An HIIT jeden Tag, weil MICT kaum Wirkung auf die Fettmasse hat"
+],
+"warum": "Bei ähnlichem Energieumsatz senken MICT und HIIT das Körperfett vergleichbar – daher zählt, was gut in deinen Plan passt."
+},
+"labor": {
+"frage": "Eine Meta-Analyse (28 Studien, n=873) verglich MICT (55–69 % HRmax) mit HIIT/SIT hinsichtlich Körperfettverlust. Was zeigte sich in den Subgruppen?",
+"richtig": "Insgesamt kein Unterschied; bei viel kürzerem HIIT leichter Trend pro MICT",
+"falsch": [
+"Hochsignifikanter Vorteil von HIIT trotz geringerem Energieumsatz",
+"MICT baute signifikant mehr absolute Fettmasse ab als jedes HIIT",
+"Keine der beiden Methoden senkte Körperfettanteil oder Fettmasse"
+],
+"warum": "Zwischen den Gruppen bestand kein signifikanter Unterschied; bei deutlich geringerem HIIT-Aufwand tendierte der Vorteil zu MICT (p = 0,09)."
+}
+}
+},
+{
+"id": "FAT-119",
+"karte": {
+"kopf": "Ernährungsexperten · Positionspapier",
+"titel": "Extreme Crash-Diäten bringen laut Experten langfristig keinen Vorteil",
+"titel_hervor": "langfristig keinen Vorteil",
+"setup": "Ein Positionspapier von Sporternährungsexperten fasste Empfehlungen zu extrem strengen Diäten, Eiweißbedarf und Muskelerhalt zusammen.",
+"zahl": null,
+"kern": [
+"Sehr strenge Diäten unter 800 bis 1.200 kcal pro Tag schneiden langfristig nicht besser ab.",
+"Je schlanker man wird, desto wichtiger werden langsameres Abnehmen, Krafttraining und Eiweiß.",
+"Ob mehr Kohlenhydrate oder mehr Fett auf dem Teller landen, darf nach Vorliebe gewählt werden."
+],
+"grenze": "Es handelt sich um Expertenkonsens ohne eigene Datenauswertung – besonders für Frauen und Ältere fehlen laut Autoren noch Studien.",
+"fuer_dich": "Planst du eine Diät? Meide extreme Crash-Diäten, iss genug Eiweiß über mindestens drei Mahlzeiten und wähle Kohlenhydrate nach Geschmack.",
+"labor": {
+"design": "Positionspapier / Expertenkonsens zu VLED, LED, Makronährstoffen und Körperkomposition",
+"teilnehmer": "Allgemeinbevölkerung und Krafttrainierende (keine eigene Stichprobe)",
+"ergebnis": "Protein-Richtwerte: 1,2–1,6 g/kg (allg.), 1,6–2,2 g/kg (Kraft), 1,9–3,2 g/kg (schlank im Defizit)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Lohnt sich eine extreme Diät mit unter 1.000 Kalorien am Tag, um langfristig besser abzunehmen als mit einem normalen Defizit?",
+"richtig": "Laut Experten bietet sie langfristig keinen Vorteil",
+"falsch": [
+"Ja, sie schützt die Muskeln deutlich besser als moderates Abnehmen",
+"Ja, nur unter 1.000 Kalorien hält man das Gewicht dauerhaft",
+"Nur wenn man dabei fast völlig auf Eiweiß verzichtet"
+],
+"warum": "Fachleute raten von extremen Crash-Diäten ab und setzen für nachhaltigen Erfolg auf moderate Defizite, Krafttraining und Eiweiß."
+},
+"plus": {
+"frage": "Du bist im Kaloriendefizit, trainierst regelmäßig Kraft und überlegst, ob Low-Carb oder Low-Fat für den Fettabbau entscheidend ist. Was empfehlen Experten?",
+"richtig": "Eiweißziel auf drei oder mehr Mahlzeiten decken, Rest nach Vorliebe",
+"falsch": [
+"Kohlenhydrate komplett streichen, weil sie sonst den Fettabbau stoppen",
+"Unter 1.200 kcal pro Tag gehen, um das Defizit schneller abzuschließen",
+"Eiweiß im Defizit senken, je niedriger der Körperfettanteil sinkt"
+],
+"warum": "Bei ausreichendem Protein und Krafttraining kann das Verhältnis aus Kohlenhydraten und Fetten frei nach persönlicher Vorliebe gewählt werden."
+},
+"labor": {
+"frage": "Ein Sporternährungs-Positionspapier empfiehlt gestaffelte Proteinziele und moderate Defizite statt VLED/LED. Welche Evidenzgrenze nennen die Autoren selbst?",
+"richtig": "Expertenkonsens ohne eigene Meta-Analyse; Lücken bei Frauen und Älteren",
+"falsch": [
+"Die Empfehlungen gelten ausschließlich für untrainierte Jugendliche",
+"VLED-Diäten unter 800 kcal/Tag waren im Langzeitvergleich überlegen",
+"Die optimale Mahlzeitenfrequenz im Defizit ist abschließend bewiesen"
+],
+"warum": "Als Konsenspapier (Evidenz D) verweist es ausdrücklich auf Forschungslücken bei Frauen, Älteren und der Mahlzeitenfrequenz im Defizit."
+}
+}
+},
+{
+"id": "FAT-120",
+"karte": {
+"kopf": "Aktive & Trainierende · Experten-Übersicht",
+"titel": "Moderates Abnehmen mit viel Eiweiß schützt Muskeln am besten",
+"titel_hervor": "schützt Muskeln am besten",
+"setup": "Ein aktuelles Expertenpapier fasste mehrere Übersichtsarbeiten zu Abnehmtempo, Eiweißmenge, Krafttraining und sehr strengen Diäten zusammen.",
+"zahl": null,
+"kern": [
+"Für Aktive schützt ein Tempo von 0,5 bis 1 % Körpergewicht pro Woche die Muskelmasse gut.",
+"Kombiniert mit Krafttraining und viel Eiweiß sinkt auch das Risiko, später schneller Fett anzusetzen.",
+"Sehr strenge Diäten unter 800 bis 1.200 kcal bringen auf lange Sicht keinen Vorteil."
+],
+"grenze": "Wie gut jemand eine Diät durchhält und wie der Stoffwechsel reagiert, schwankt sehr stark von Mensch zu Mensch.",
+"fuer_dich": "Trainierst du regelmäßig und willst abnehmen? Peile 0,5–1 % Gewicht pro Woche an, iss 1,6–2,2 g Eiweiß/kg und geh nicht unter 1.200 kcal.",
+"labor": {
+"design": "Offizielles Positionspapier auf Basis mehrerer Reviews und Meta-Analysen zur Gewichtsreduktion",
+"teilnehmer": "Allgemeinbevölkerung, Aktive und Krafttrainierende (Reviewsynthese)",
+"ergebnis": "Optimal: 0,5–1,0 % KG/Wo., 1,6–2,2 g/kg Protein (1,9–3,2 g/kg schlank); kein Langzeitvorteil von LED/VLED"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du bist sportlich aktiv und möchtest abnehmen, ohne deine Muskeln zu verlieren. Welcher Weg funktioniert über die Wochen am besten?",
+"richtig": "In gemäßigtem Tempo abnehmen, Kraft trainieren und viel Eiweiß essen",
+"falsch": [
+"Möglichst extrem wenig essen, damit die Diät nach zwei Wochen vorbei ist",
+"Das Krafttraining pausieren, bis das Wunschgewicht erreicht ist",
+"Nur noch eine große Mahlzeit am Tag mit wenig Eiweiß essen"
+],
+"warum": "Ein moderates Abnehmtempo mit Krafttraining und hoher Eiweißzufuhr erhält die Muskelmasse deutlich besser als radikale Crash-Diäten."
+},
+"plus": {
+"frage": "Du trainierst regelmäßig Kraft und planst dein Kaloriendefizit. Welche Kombination schützt deine fettfreie Masse am ehesten?",
+"richtig": "0,5–1 % Gewicht pro Woche verlieren und viel Protein über ≥3 Mahlzeiten",
+"falsch": [
+"Unter 1.200 kcal bleiben, um die Diätdauer auf wenige Wochen zu kürzen",
+"Protein auf das allgemeine Minimum senken, um mehr Carbs zu essen",
+"2–2,5 kg pro Woche abnehmen und dafür nur lockeres Cardio machen"
+],
+"warum": "Moderate Raten (0,5–1 % KG/Woche) plus Krafttraining und 1,6–2,2 g/kg Protein (schlank noch höher) optimieren den Muskelerhalt."
+},
+"labor": {
+"frage": "Ein Positionspapier auf Basis mehrerer Meta-Analysen empfiehlt moderates Abnehmen und hohes Protein zum FFM-Erhalt. Welche Unsicherheit bleibt zentral?",
+"richtig": "Hohe individuelle Unterschiede bei Stoffwechselanpassung und Durchhalten",
+"falsch": [
+"Proteinmengen über 1,2 g/kg zeigen bei Trainierten keinen Zusatznutzen",
+"Sehr niedrigkalorische Diäten schützen die fettfreie Masse am stärksten",
+"Das Abnehmtempo spielt für späteres Fettansetzen keinerlei Rolle"
+],
+"warum": "Trotz guter Basisdaten variieren adaptive Thermogenese und langfristige Adhärenz stark zwischen einzelnen Personen."
+}
+}
+},
+{
+"id": "FAT-121",
+"karte": {
+"kopf": "Schlanke Kraftsportler · Studienübersicht",
+"titel": "Je schlanker du bist, desto langsamer solltest du Muskeln zuliebe abnehmen",
+"titel_hervor": "desto langsamer solltest du",
+"setup": "Eine systematische Übersicht wertete kontrollierte Studien zur Ernährung von schlanken Kraftsportlern während einer Diät aus.",
+"zahl": null,
+"kern": [
+"Bei niedrigem Körperfett helfen 0,5 bis 1 % Abnahme pro Woche und sehr viel Eiweiß.",
+"Bei sehr schnellem Abnehmen verloren Frauen im Schnitt spürbar Bankdrückkraft und Hormone fielen stärker.",
+"Zu wenig Nahrungsfett schadet ebenfalls – rund 15 bis 30 % der Kalorien aus Fett sind sinnvoll."
+],
+"grenze": "Für extrem schlanke Wettkampfathleten mit sehr niedrigem Körperfett gibt es bisher nur wenige kontrollierte Studien.",
+"fuer_dich": "Bist du schon recht schlank und willst weiter definieren? Bremse auf 0,25–0,5 % Gewicht pro Woche ab und halt Eiweiß hoch.",
+"labor": {
+"design": "Systematisches Review kontrollierter Studien zur Wettkampf- und Diäternährung bei Kraftsportlern",
+"teilnehmer": "Schlanke Krafttrainierte aus mehreren kontrollierten Studien",
+"ergebnis": "1,0 vs. 0,5 kg/Wo. (Frauen): −5 % Bankdrücken, 30 % stärkerer Testosteronabfall; Ziel 2,3–3,1 g/kg FFM Protein"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du bist bereits ziemlich schlank und sportlich, willst aber noch die letzten Kilos verlieren. Wie solltest du dein Abnehmtempo anpassen?",
+"richtig": "Langsamer abnehmen, um Muskeln und Kraft besser zu schützen",
+"falsch": [
+"Das Tempo deutlich erhöhen, weil weniger Fett schneller schmilzt",
+"Das Nahrungsfett fast komplett auf null reduzieren",
+"Genauso schnell abnehmen wie Menschen mit starkem Übergewicht"
+],
+"warum": "Bei niedrigem Körperfett steigt das Risiko für Muskel- und Kraftverlust – ein langsameres Tempo und viel Eiweiß federn das ab."
+},
+"plus": {
+"frage": "Dein KFA ist schon niedrig (Männer <12 %, Frauen <20 %), und du gehst in die letzte Diätphase. Wie steuerst du Tempo und Makros?",
+"richtig": "Tempo an den unteren Rand drücken, sehr viel Protein und moderates Fett",
+"falsch": [
+"Tempo auf über 1 kg pro Woche hochziehen, um schnell fertig zu sein",
+"Fett auf unter 5 % der Kalorien drücken und Protein halbieren",
+"Krafttraining stark reduzieren, weil im Defizit kaum Kraft bleibt"
+],
+"warum": "Bei sehr niedrigem KFA schützen 0,25–0,5 % KG/Woche, 2,3–3,1 g Protein/kg FFM und 15–30 % Fett vor Kraft- und Muskelverlust."
+},
+"labor": {
+"frage": "Ein Review zur Diäternährung schlanker Kraftsportler zeigte bei 1,0 vs. 0,5 kg/Woche bei Frauen Kraft- und Hormonverluste. Wo liegt die größte Datenlücke?",
+"richtig": "Nur wenige kontrollierte Studien an extrem schlanken Athleten",
+"falsch": [
+"Es wurden überhaupt keine Kraftleistungen im Defizit gemessen",
+"Fettanteile über 15 % verhinderten den Körperfettabbau komplett",
+"Schnelleres Abnehmen erhielt die Bankdrückleistung deutlich besser"
+],
+"warum": "Gerade im extrem schlanken Wettkampfbereich (<6–8 % KFA) ist die Anzahl kontrollierter Interventionsstudien bisher begrenzt."
+}
+}
+},
+{
+"id": "FAT-122",
+"karte": {
+"kopf": "Historische Hungerdaten · Rechenmodell",
+"titel": "Körperfett liefert pro Tag nur begrenzt Energie – das Modell hat aber Grenzen",
+"titel_hervor": "nur begrenzt Energie",
+"setup": "Ein mathematisches Modell schätzte aus historischen Hungerdaten, wie viel Energie der Körper pro Kilo Körperfett am Tag höchstens freisetzen kann.",
+"zahl": null,
+"kern": [
+"Je weniger Körperfett da ist, desto kleiner ist die Energiemenge aus den Fettreserven.",
+"Das Modell rechnet ohne Krafttraining und ohne hohe Eiweißzufuhr.",
+"Bei starkem Übergewicht liefert die Formel unrealistisch große Kaloriendefizite."
+],
+"grenze": "Es ist nur ein theoretisches Rechenmodell ohne echtes Training – schon kleine Messfehler beim Körperfett verzerren das Ergebnis stark.",
+"fuer_dich": "Willst du dein maximales Defizit bestimmen? Nutze lieber sichere Prozentwerte deines Körpergewichts statt starrer Fett-Formeln.",
+"labor": {
+"design": "Einzelne mathematische Modellierungsstudie auf Basis historischer Semi-Hungerdaten",
+"teilnehmer": "Historische Semi-Hunger-Datensätze (theoretisches Modell)",
+"ergebnis": "Geschätzter Max-Energietransfer: 290 ± 25 kJ/kg Fettmasse/Tag (≈ 69,3 kcal/kg bzw. 31,5 kcal/lb)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Warum verlieren sehr schlanke Menschen bei einer strengen Diät oft schneller Muskeln als Menschen mit größeren Fettreserven?",
+"richtig": "Kleine Fettreserven können pro Tag nur begrenzt Energie liefern",
+"falsch": [
+"Schlanke Menschen haben keinen Zugang mehr zu ihren Fettreserven",
+"Bei schlanken Menschen verbrennt der Körper gar kein Fett mehr",
+"Muskeln liefern pro Gramm mehr Energie als Körperfett"
+],
+"warum": "Ein theoretisches Modell zeigt: Je kleiner die Fettdepots, desto weniger Energie pro Tag können sie decken – der Rest droht aus Muskeln zu kommen."
+},
+"plus": {
+"frage": "Du findest online eine Formel, die aus deinem geschätzten KFA das angeblich maximal erlaubte Kaloriendefizit berechnet. Warum solltest du dich nicht blind darauf verlassen?",
+"richtig": "Sie ignoriert Krafttraining und Protein und reagiert stark auf KFA-Fehler",
+"falsch": [
+"Sie wurde ausschließlich für professionelle Bodybuilder entwickelt",
+"Sie unterschätzt den Bedarf bei starkem Übergewicht immer massiv",
+"Sie erlaubt grundsätzlich nur Defizite von unter 200 Kalorien am Tag"
+],
+"warum": "Das zugrundeliegende Hunger-Modell kennt weder Krafttraining noch hohes Protein und erzeugt bei hohem KFA unrealistisch extreme Defizite."
+},
+"labor": {
+"frage": "Ein mathematisches Modell schätzte anhand historischer Semi-Hungerdaten eine Obergrenze der Fettmobilisierung (~69 kcal/kg Fett/Tag). Warum taugt es nicht zur direkten Steuerung?",
+"richtig": "Kein Krafttraining/Protein einbezogen, extrem anfällig für KFA-Messfehler",
+"falsch": [
+"Die Formel bewies, dass Fettreserven unbegrenzt Energie liefern",
+"Sie basiert auf modernen Kraftsport-RCTs mit zu geringer Dauer",
+"Sie zeigte, dass Defizite bei Adipositas unmöglich über 500 kcal liegen"
+],
+"warum": "Es handelt sich um ein einzelnes theoretisches Modell (Evidenz C), das bei Adipositas überhöhte Defizite liefert und Trainingsfaktoren ausblendet."
+}
+}
+},
+{
+"id": "FAT-123",
+"karte": {
+"kopf": "Abnehmende Erwachsene · Bilanzanalysen",
+"titel": "In den ersten Diättagen verlierst du vor allem Wasser, erst später Fett",
+"titel_hervor": "vor allem Wasser",
+"setup": "Übersichtsarbeiten und Energiebilanzen analysierten, aus welchem Gewebe der Gewichtsverlust in den ersten Tagen versus nach drei bis vier Wochen besteht.",
+"zahl": {
+"label": "Wasseranteil am Verlust der ersten 3 Tage",
+"wert": "bis zu 70 %",
+"alltag": "Nach 3–4 Wochen ca. 85 % Fett"
+},
+"kern": [
+"Am Anfang leeren sich Zuckerspeicher im Körper und ziehen viel gebundenes Wasser mit heraus.",
+"Deshalb purzeln in der ersten Woche oft rasch ein bis zwei Kilo auf der Waage.",
+"Erst nach drei bis vier Wochen spiegelt der Trend verlässlich den echten Fettabbau."
+],
+"grenze": "Wie lang diese Anfangsphase dauert, schwankt je nach Kohlenhydratmenge und Ausgangsgewicht zwischen fünf Tagen und fast vier Wochen.",
+"fuer_dich": "Rauscht dein Gewicht in Woche 1 plötzlich runter? Keine Panik wegen Muskelverlust – bewerte dein echtes Tempo erst ab Woche 3 bis 4.",
+"labor": {
+"design": "Übereinstimmende systematische Reviews und mathematische Bilanzanalysen zur Gewichtsverlust-Kinetik",
+"teilnehmer": "Erwachsene in Energierestriktions-Studien (Reviewsynthese)",
+"ergebnis": "Tag 1–3: 70 % Wasser, 5 % Protein, 25 % Fett; Tag 21–24: 0 % Wasser, 15 % Protein, 85 % Fett"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du startest eine Diät und verlierst schon in den ersten drei Tagen anderthalb Kilo. Woraus besteht dieser schnelle erste Verlust zum größten Teil?",
+"richtig": "Aus Wasser, das mit den geleerten Energiespeichern ausgeschieden wird",
+"falsch": [
+"Fast ausschließlich aus reinem Körperfett am Bauch",
+"Fast nur aus abgebauter Muskelmasse durch das Defizit",
+"Aus Knochenmasse, die sich an das geringere Gewicht anpasst"
+],
+"warum": "In den ersten Tagen entfallen bis zu 70 % des Verlusts auf Wasser durch Glykogenabbau – erst später überwiegt klar der Fettabbau."
+},
+"plus": {
+"frage": "Du bist in Tag 6 deines neuen Defizits und die Waage fällt viel schneller als geplant. Sollte dich das sofort zum Erhöhen der Kalorien bringen?",
+"richtig": "Nein, erst ab Woche 3 bis 4 zeigt der Gewichtstrend das echte Tempo",
+"falsch": [
+"Ja, sonst baust du schon in der ersten Woche massiv Muskeln ab",
+"Ja, denn ab Tag 2 besteht fast jeder Verlust zu 85 % aus Fett",
+"Nein, die Waage zeigt erst nach drei Monaten realistische Werte"
+],
+"warum": "Die wasserreiche Frühphase dauert je nach Ernährung 5 bis 26 Tage; erst danach spiegelt der geglättete Trend den wahren Fettabbau."
+},
+"labor": {
+"frage": "Bilanzanalysen beschreiben eine zweiphasige Kinetik beim Gewichtsverlust (Phase I vs. Phase II). Wovon hängt die Dauer der frühen Phase I ab?",
+"richtig": "Von der Kohlenhydratreduktion und dem Ausgangs-Körperfettanteil",
+"falsch": [
+"Sie dauert bei allen Menschen ausnahmslos genau sieben Tage",
+"Ausschließlich von der täglichen Trinkmenge während der Diät",
+"Phase II beginnt sofort, sobald Protein gegessen wird"
+],
+"warum": "Der Abschluss der Glykogen- und Wasserphase variiert interindividuell stark zwischen etwa 5 und 26 Tagen."
+}
+}
+},
+{
+"id": "FAT-124",
+"karte": {
+"kopf": "32 Erwachsene · Stoffwechselstudie",
+"titel": "Schon nach wenigen Wochen harter Diät drosselt der Körper den Grundumsatz",
+"titel_hervor": "drosselt der Körper den Grundumsatz",
+"setup": "In einer streng kontrollierten Stoffwechselstudie aßen 32 Teilnehmende drei Wochen lang nur halb so viele Kalorien wie üblich.",
+"zahl": {
+"label": "Zusätzlicher Rückgang des Ruheumsatzes",
+"wert": "72–108 kcal",
+"alltag": "pro Tag nach 3 Wochen 50-%-Diät"
+},
+"kern": [
+"Der Ruheverbrauch sank stärker, als allein durch das geringere Gewicht erklärbar war.",
+"Auch Hormone wie Insulin und das Sättigungshormon Leptin fielen spürbar ab.",
+"Sogar Leber, Nieren und Muskulatur verloren in der extremen Diät etwas Masse."
+],
+"grenze": "Erste Hinweise aus einer strengen 50-%-Diät ohne Krafttraining – bei milderen Diäten mit Sport fällt die Drosselung schwächer aus.",
+"fuer_dich": "Stockt deine Abnahme nach ein paar Wochen? Rechne mit rund 5–10 % geringerem Grundumsatz und meide extreme Crash-Defizite.",
+"labor": {
+"design": "Kontrollierte klinische Stoffwechselstudie, 3 Wochen 50 % Kalorienrestriktion",
+"teilnehmer": "32 Erwachsene",
+"ergebnis": "Adaptive Thermogenese −108 kcal/Tag (organbereinigt −72 kcal/Tag); Leber −13 %, Niere −8 %, Muskel −5 %, Leptin −44 %"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du machst eine sehr strenge Diät und merkst nach drei Wochen, dass du etwas langsamer abnimmst als gedacht. Was passiert im Körper oft?",
+"richtig": "Der Körper spart etwas Energie ein und senkt den Ruheverbrauch leicht",
+"falsch": [
+"Der Grundumsatz fällt auf null, sodass gar kein Fettabbau mehr geht",
+"Der Stoffwechsel läuft schneller, um mehr Energie bereitzustellen",
+"Der Ruheverbrauch ändert sich erst nach mehreren Monaten Diät"
+],
+"warum": "In einer Stoffwechselstudie sank der Ruheverbrauch schon nach drei Wochen harter Diät um rund 72 bis 108 kcal am Tag extra."
+},
+"plus": {
+"frage": "Nach drei Wochen im Defizit stagniert dein Gewicht leicht, obwohl dein Tracking stimmt. Welche Stoffwechselanpassung ist dabei realistisch?",
+"richtig": "Ein moderater Rückgang des Ruheumsatzes um grob 5 bis 10 Prozent",
+"falsch": [
+"Ein kompletter Stillstand des Stoffwechsels von über 50 Prozent",
+"Keinerlei Anpassung, weil der Ruheumsatz nur vom Gewicht abhängt",
+"Ein Anstieg des Sättigungshormons Leptin, der den Hunger bremst"
+],
+"warum": "Der Körper drosselt den Ruheverbrauch früh um grob 70–150 kcal/Tag; moderate Defizite und Krafttraining halten den Effekt kleiner."
+},
+"labor": {
+"frage": "In einer klinischen Stoffwechselstudie (n=32, 3 Wochen 50 %-Defizit) sank der Ruheenergieumsatz über den FFM-Verlust hinaus um 72–108 kcal/Tag. Was schränkt die Übertragbarkeit ein?",
+"richtig": "Das extreme 50-%-Defizit ohne Krafttraining überschätzt milde Diäten",
+"falsch": [
+"Organmassen wie Leber und Nieren wurden dabei nicht mitgemessen",
+"Die Teilnehmenden befanden sich nicht in einem echten Kaloriendefizit",
+"Insulin- und Leptinspiegel stiegen während der drei Wochen stark an"
+],
+"warum": "Bei moderaten Defiziten in Kombination mit Krafttraining fällt diese frühe adaptive Thermogenese meist deutlich geringer aus (Evidenz C)."
+}
+}
+},
+{
+"id": "FAT-125",
+"karte": {
+"kopf": "Abnehmende Patienten · Studienauswertung",
+"titel": "Mehr als 1,5 Kilo Abnahme pro Woche erhöht das Gallenstein-Risiko stark",
+"titel_hervor": "erhöht das Gallenstein-Risiko stark",
+"setup": "Eine statistische Auswertung klinischer Abnehmstudien ab vier Wochen prüfte, wie das wöchentliche Abnehmtempo mit neuen Gallensteinen zusammenhängt.",
+"zahl": null,
+"kern": [
+"Das Risiko steigt nicht gleichmäßig, sondern schnellt oberhalb von 1,5 kg pro Woche steil hoch.",
+"Das gilt auch dann, wenn jemand mit sehr hohem Ausgangsgewicht startet.",
+"Etwas Fett in der Ernährung scheint das Risiko dabei zumindest teilweise abzumildern."
+],
+"grenze": "Viele Daten stammen aus älteren, extrem kalorienarmen Diäten – das Risiko hängt auch davon ab, wie viel Fett gegessen wird.",
+"fuer_dich": "Willst du schnell viel Gewicht verlieren? Begrenze dein Tempo auf höchstens 1,5 kg pro Woche – alles darüber ärztlich begleiten lassen.",
+"labor": {
+"design": "Statistische Meta-Analyse prospektiver klinischer Studien (≥4 Wochen) zum Abnehmtempo",
+"teilnehmer": "Abnehmende Erwachsene in klinischen Gewichtsreduktionsstudien",
+"ergebnis": "Exponentielle Regression r²=0,98; starker Anstieg der Gallenstein-Inzidenz ab >1,5 kg/Woche"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Warum raten Fachleute selbst bei höherem Körpergewicht davon ab, auf eigene Faust dauerhaft deutlich mehr als anderthalb Kilo pro Woche abzunehmen?",
+"richtig": "Ab diesem Tempo steigt das Risiko für Gallensteine stark an",
+"falsch": [
+"Mehr als anderthalb Kilo pro Woche ist körperlich gar nicht möglich",
+"Das Risiko für Gallensteine steigt nur bei sehr langsamen Diäten",
+"Bei hohem Startgewicht gibt es nach oben gar keine Risiko-Grenze"
+],
+"warum": "Klinische Auswertungen zeigen einen steilen Anstieg neuer Gallensteine, sobald das Abnehmtempo über 1,5 kg pro Woche liegt."
+},
+"plus": {
+"frage": "Ein schwerer Einsteiger möchte 1 % Körpergewicht pro Woche abnehmen, was bei ihm rund 1,8 kg wären. Wie sollte das Tempo gesteuert werden?",
+"richtig": "Bei 1,5 kg pro Woche deckeln oder schnelleres Abnehmen ärztlich abklären",
+"falsch": [
+"Ohne Obergrenze abnehmen, solange es unter 1 % des Gewichts bleibt",
+"Das Nahrungsfett komplett streichen, um die Gallenblase zu schonen",
+"Auf über 2 kg pro Woche erhöhen, um die Diätphase abzukürzen"
+],
+"warum": "Oberhalb von 1,5 kg/Woche schnellt das Gallensteinrisiko steil hoch, weshalb diese Grenze auch bei hohem Gewicht als Deckel gilt."
+},
+"labor": {
+"frage": "Eine Meta-Analyse prospektiver Studien zeigte eine exponentielle Beziehung zwischen Abnehmrate und Gallensteinen (r²=0,98, Schwelle >1,5 kg/Woche). Welcher Faktor moduliert das Risiko mit?",
+"richtig": "Eine tägliche Mindestfettzufuhr und die Strenge älterer VLCD-Diäten",
+"falsch": [
+"Die genaue Anzahl der täglichen Krafttrainingseinheiten",
+"Ausschließlich der Anteil an Kohlenhydraten in der Abendmahlzeit",
+"Der Zusammenhang war rein linear ohne steilen Anstieg ab 1,5 kg"
+],
+"warum": "Die Primärstudien nutzten teils sehr kalorienarme Diäten; eine Mindestmenge Nahrungsfett (ca. 7–12 g/Tag) beeinflusst das Risiko mit."
+}
+}
+},
+{
+"id": "FAT-126",
+"karte": {
+"kopf": "Erwachsene auf Diät · Beobachtungsstudie",
+"titel": "Extreme 500-kcal-Diäten verdreifachten das Gallenstein-Risiko",
+"titel_hervor": "verdreifachten das Gallenstein-Risiko",
+"setup": "Über ein Jahr wurde verglichen, wie oft Gallensteine bei einer 500-kcal-Formuladiät im Vergleich zu einer Diät mit 1.200 bis 1.500 kcal auftraten.",
+"zahl": {
+"label": "Höheres Risiko bei 500-kcal-Diät",
+"wert": "3,4-fach",
+"alltag": "1 zusätzlicher Fall pro 92 Personen"
+},
+"kern": [
+"Auch Operationen an der Gallenblase waren rund dreimal so häufig",
+"Das absolute Risiko blieb moderat, ist aber medizinisch bedeutsam",
+"Extreme Diäten unter 800 kcal gehören in ärztliche Begleitung"
+],
+"grenze": "Beobachtungsstudie über ein Jahr – ein direkter Beweis für Ursache und Wirkung fehlt.",
+"fuer_dich": "Du willst sehr schnell abnehmen? Bleib im Selbstmanagement über 1.200 kcal pro Tag oder kläre sehr strenge Pläne ärztlich ab.",
+"labor": {
+"design": "Gematchte prospektive Kohortenstudie, 1 Jahr, VLCD (500 kcal/d) vs. LCD (1.200–1.500 kcal/d)",
+"teilnehmer": "Erwachsene in 1:1 gematchten Diätgruppen",
+"ergebnis": "Gallensteine HR 3,4 (95 % KI 1,8–6,3; NNH 92); Cholezystektomie HR 3,2 (NNH 151)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du überlegst, für schnelles Abnehmen nur 500 kcal am Tag zu essen statt moderat zu reduzieren. Welches Risiko steigt dabei deutlich?",
+"richtig": "Das Risiko für schmerzhafte Gallensteine",
+"falsch": [
+"Das Risiko für plötzliche Knochenbrüche",
+"Das Risiko für dauerhaft hohen Blutdruck",
+"Das Risiko für akute Herzrhythmusstörungen"
+],
+"warum": "Hinweise aus einer einjährigen Beobachtung zeigen bei 500-kcal-Diäten rund dreimal so viele krankenhauspflichtige Gallensteine."
+},
+"plus": {
+"frage": "Du willst ein starkes Defizit fahren und überlegst, allein unter 1.200 kcal pro Tag zu gehen. Was ist der sinnvollste Schritt?",
+"richtig": "Im Selbstmanagement moderater bleiben und extreme Defizite ärztlich begleiten",
+"falsch": [
+"Das Defizit durch mehr Ausdauertraining zusätzlich vergrößern",
+"Einfach mehr Protein essen, dann ist das Defizit unbedenklich",
+"Die extreme Diät auf jeden Fall mehrere Monate durchziehen"
+],
+"warum": "Sehr niedrige Kalorienziele erhöhen das Risiko für Gallensteine deutlich und gehören nicht ins unbegleitete Selbstmanagement."
+},
+"labor": {
+"frage": "In einer gematchten Kohortenstudie über ein Jahr wurden 500-kcal-Formuladiäten mit 1.200- bis 1.500-kcal-Diäten verglichen. Was zeigte sich?",
+"richtig": "Rund dreifach höheres relatives Risiko für Gallensteine bei moderatem Absolutrisiko",
+"falsch": [
+"Kein Unterschied bei Gallensteinen, aber mehr Gallenblasen-OPs in der moderaten Gruppe",
+"Ein nur minimal höheres Risiko ohne klinische Bedeutung für die Praxis",
+"Fast die Hälfte aller Personen in der strengen Gruppe musste operiert werden"
+],
+"warum": "Die Hazard Ratio lag bei 3,4 für Gallensteine und 3,2 für Operationen, bei einer Number Needed to Harm von 92."
+}
+}
+},
+{
+"id": "FAT-127",
+"karte": {
+"kopf": "Junge Frauen · Kontrollierte Laborstudie",
+"titel": "Zu wenig Energie bremste wichtige Zyklushormone schon nach fünf Tagen",
+"titel_hervor": "bremste wichtige Zyklushormone",
+"setup": "Junge, regelmäßig menstruierende Frauen bekamen im Labor fünf Tage lang unterschiedlich viel Energie im Verhältnis zu ihrer fettfreien Masse.",
+"zahl": null,
+"kern": [
+"Bei sehr niedriger Energieverfügbarkeit fielen Zyklus- und Schilddrüsenhormone ab",
+"Bis zu einer mittleren Schwelle blieben die Hormonpulse zunächst unauffällig",
+"Die Störung setzte sprunghaft ein, sobald die Energiezufuhr zu tief sank"
+],
+"grenze": "Erste Hinweise aus einem 5-Tage-Laborversuch – längerfristige Effekte können schon früher einsetzen.",
+"fuer_dich": "Du trainierst viel und willst abnehmen? Halte dein Defizit moderat, damit nach Abzug des Trainings genug Energie für deinen Körper bleibt.",
+"labor": {
+"design": "Randomisierte kontrollierte Cross-over-Laborstudie, 5 Tage, EA 45 vs. 30 vs. 20 vs. 10 kcal/kg LBM/d",
+"teilnehmer": "Junge, regelmäßig menstruierende Frauen",
+"ergebnis": "Signifikante Suppression der LH-Pulsfrequenz und -amplitude bei 20 und 10 kcal/kg LBM/d (p < 0,04)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Eine Frau trainiert viel und isst mehrere Tage lang deutlich zu wenig. Wie reagiert der Hormonhaushalt darauf?",
+"richtig": "Zyklus- und Schilddrüsenhormone können schon nach wenigen Tagen abfallen",
+"falsch": [
+"Hormone reagieren erst nach vielen Monaten im starken Defizit",
+"Der Körper schüttet zur Anpassung mehr Zyklushormone aus",
+"Solange das Körpergewicht stabil bleibt, verändert sich hormonell wenig"
+],
+"warum": "Im Laborversuch zeigten sich schon nach fünf Tagen mit zu geringer Energieverfügbarkeit deutliche Störungen wichtiger Hormone."
+},
+"plus": {
+"frage": "Du bist Frau, trainierst regelmäßig und planst dein Kalorienziel für eine Diät. Worauf solltest du bei der Energieverfügbarkeit achten?",
+"richtig": "Nach Abzug des Trainingsverbrauchs genug Energie pro kg fettfreier Masse lassen",
+"falsch": [
+"Die Kalorien einfach pauschal halbieren, solange genug Protein gegessen wird",
+"Nur das Gesamtgewicht beobachten und den Trainingsverbrauch ignorieren",
+"Das Defizit in den ersten Wochen besonders extrem ansetzen"
+],
+"warum": "Sinkt die Energieverfügbarkeit unter rund 30 kcal pro kg fettfreier Masse, drohen erste hormonelle Störungen."
+},
+"labor": {
+"frage": "In einer 5-tägigen Cross-over-Laborstudie wurde die Energieverfügbarkeit bei Frauen schrittweise gesenkt. Welches Muster zeigte sich bei LH?",
+"richtig": "Eine nicht-lineare Unterdrückung unterhalb einer kritischen Schwelle",
+"falsch": [
+"Ein gleichmäßig linearer Abfall bereits bei minimalem Defizit",
+"Eine signifikante Veränderung erst bei vollständigem Fasten",
+"Eine Störung ausschließlich bei Frauen ohne regelmäßigen Zyklus"
+],
+"warum": "Bei 30 kcal/kg LBM/d blieb die LH-Pulsatilität noch stabil, während sie bei 20 und 10 kcal/kg LBM/d signifikant abfiel."
+}
+}
+},
+{
+"id": "FAT-128",
+"karte": {
+"kopf": "Männliche Läufer · Kontrollierte Studie",
+"titel": "Ein extremes Defizit senkte Testosteron, ohne mehr Fett abzubauen",
+"titel_hervor": "ohne mehr Fett abzubauen",
+"setup": "Zwölf männliche Ausdauerläufer durchliefen je vier Tage mit normaler, moderat niedriger und extrem niedriger Energieverfügbarkeit.",
+"zahl": {
+"label": "Testosteronabfall bei extremem Defizit",
+"wert": "−16,1 %",
+"alltag": "Dazu stieg die Erschöpfung um 86 %"
+},
+"kern": [
+"Die Erschöpfung stieg im extremen Defizit fast auf das Doppelte an",
+"Gegenüber dem moderaten Defizit ging kein zusätzliches Körperfett verloren",
+"Im moderaten Defizit blieb der Testosteronspiegel in diesen vier Tagen stabil"
+],
+"grenze": "Kleine Studie mit 12 Läufern über nur 4 Tage – Langzeitfolgen auf Knochen und Stoffwechsel sind offen.",
+"fuer_dich": "Du läufst viel und willst abnehmen? Bleib bei einem moderaten Defizit statt extrem zu kürzen, um Hormone und Energie zu schonen.",
+"labor": {
+"design": "Randomisierte kontrollierte Cross-over-Studie, 4 Tage pro Bedingung, EA 15 vs. 30 vs. 45 kcal/kg FFM/d",
+"teilnehmer": "12 männliche Ausdauerläufer",
+"ergebnis": "Testosteron −16,1 % (−2,53 nmol/L, p = 0,03) und Fatigue +86 % bei EA 15; kein Mehrverlust an Fett vs. EA 30"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Ein Ausdauerläufer kürzt seine Kalorien vier Tage lang extrem statt nur moderat. Was bringt ihm das extreme Defizit?",
+"richtig": "Mehr Erschöpfung und weniger Testosteron, aber nicht mehr Fettabbau",
+"falsch": [
+"Deutlich schnelleren Fettabbau bei gleichbleibender Tagesform",
+"Mehr Testosteron durch den kurzfristigen Fastenreiz",
+"Weniger Erschöpfung, weil der Körper auf Fettverbrennung umschaltet"
+],
+"warum": "Erste Hinweise zeigen: Das extreme Defizit drückte Testosteron und Energie, baute aber nicht mehr Fett ab als das moderate."
+},
+"plus": {
+"frage": "Du trainierst als Mann viel Ausdauer und möchtest Fett verlieren. Wie steuerst du deine Energiezufuhr am klügsten?",
+"richtig": "Die Energieverfügbarkeit moderat halten und extreme Defizite vermeiden",
+"falsch": [
+"Kurzzeitig extrem wenig essen, um den Fettabbau zu verdoppeln",
+"Das Defizit nur über noch mehr Laufkilometer erzwingen",
+"Die Energiezufuhr erst erhöhen, wenn die Leistung über Monate einbricht"
+],
+"warum": "Bei sehr niedriger Energieverfügbarkeit steigen Erschöpfung und hormonelle Belastung, ohne mehr Fett abzubauen."
+},
+"labor": {
+"frage": "In einer 4-tägigen Cross-over-Studie mit 12 Läufern wurden 15, 30 und 45 kcal/kg FFM/Tag verglichen. Was unterschied die tiefste Stufe?",
+"richtig": "Signifikanter Testosteronabfall und stark erhöhte Fatigue ohne zusätzlichen Fettverlust",
+"falsch": [
+"Signifikant höherer Fettverlust bei unverändertem Testosteronspiegel",
+"Ein Testosteronabfall bereits bei 30 kcal/kg FFM/Tag im gleichen Ausmaß",
+"Nachweisbare Verluste an Knochendichte und Ruheumsatz nach vier Tagen"
+],
+"warum": "Nur bei 15 kcal/kg FFM/d sank Testosteron signifikant (−16,1 %, p = 0,03) bei +86 % Fatigue und gleichem Fettverlust wie bei 30."
+}
+}
+},
+{
+"id": "FAT-129",
+"karte": {
+"kopf": "Erwachsene · 32 Studien zusammengefasst",
+"titel": "Abnehmen nur per Diät ließ die Knochendichte messbar sinken",
+"titel_hervor": "ließ die Knochendichte messbar sinken",
+"setup": "In 32 kontrollierten Studien wurde verglichen, wie sich Gewichtsverlust durch Diät oder durch reines Training auf die Knochendichte auswirkt.",
+"zahl": null,
+"kern": [
+"An der Hüfte sank die Knochendichte bei Diäten ab mehr als vier Monaten",
+"An der Lendenwirbelsäule zeigte sich der Verlust ab mehr als 13 Monaten",
+"Bei Gewichtsabnahme allein durch Training sank die Knochendichte nicht"
+],
+"grenze": "Ob Krafttraining zusätzlich zur Diät den Verlust verhindert, lässt sich aus dieser Auswertung nicht direkt ableiten.",
+"fuer_dich": "Deine Diät dauert länger als drei Monate? Plane begleitend Krafttraining sowie ausreichend Protein, Kalzium und Vitamin D ein.",
+"labor": {
+"design": "Systematisches Review und Meta-Analyse von 32 RCTs, diät- vs. trainingsinduzierter Gewichtsverlust",
+"teilnehmer": "Erwachsene aus 32 randomisierten Studien",
+"ergebnis": "Hüft-BMD MD −0,008 g/cm² (p < 0,001, > 4 Mon.); LWS-BMD MD −0,018 g/cm² (p < 0,001, > 13 Mon.); Training allein: kein Verlust"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Was passiert im Schnitt mit den Knochen, wenn Menschen über viele Monate allein durch weniger Essen abnehmen?",
+"richtig": "Die Knochendichte an Hüfte und Wirbelsäule nimmt messbar ab",
+"falsch": [
+"Die Knochendichte steigt, weil weniger Gewicht auf dem Skelett lastet",
+"Die Knochen bleiben von längeren Diäten völlig unberührt",
+"Nur die Knochen in den Armen verlieren etwas an Dichte"
+],
+"warum": "Über 32 Studien zeigte sich bei längerer Kalorienreduktion ein messbarer Verlust an Hüfte und Lendenwirbelsäule."
+},
+"plus": {
+"frage": "Du bist über 50 oder schon länger als drei Monate in einer Diät. Was solltest du für deine Knochengesundheit ergänzen?",
+"richtig": "Krafttraining sowie ausreichend Protein, Kalzium und Vitamin D",
+"falsch": [
+"Auf Krafttraining verzichten, um die Gelenke im Defizit zu schonen",
+"Die Kalorien noch weiter senken, damit die Diät schneller endet",
+"Ausschließlich lockeres Dehnen zur Entlastung der Wirbelsäule"
+],
+"warum": "Längere Diäten belasten die Knochendichte; begleitendes Krafttraining und passende Nährstoffe sind daher besonders sinnvoll."
+},
+"labor": {
+"frage": "Eine Meta-Analyse von 32 RCTs untersuchte Knochendichte bei Gewichtsverlust. Welche Grenze hatte die Auswertung?",
+"richtig": "Sie konnte nicht direkt klären, ob Krafttraining plus Diät den Verlust verhindert",
+"falsch": [
+"Sie enthielt nur Beobachtungsstudien ohne Kontrollgruppen",
+"Sie untersuchte ausschließlich junge Leistungssportler unter 25 Jahren",
+"Sie maß die Knochendichte nur über kurze Zeiträume von vier Wochen"
+],
+"warum": "Die Analyse trennte reine Diät und reines Training; direkte Schlüsse zur Kombination Diät plus Krafttraining waren nicht ableitbar."
+}
+}
+},
+{
+"id": "FAT-130",
+"karte": {
+"kopf": "Ältere ab 65 · Kontrollierte Langzeitstudie",
+"titel": "Mit Krafttraining gewannen Senioren trotz Abnehmen fast ein Fünftel Kraft",
+"titel_hervor": "fast ein Fünftel Kraft",
+"setup": "160 Erwachsene ab 65 Jahren mit Adipositas nahmen über ein Jahr rund 9 % ab und machten dazu Kraft-, Ausdauer- oder Kombitraining.",
+"zahl": {
+"label": "Kraftzuwachs trotz 9 % Gewichtsverlust",
+"wert": "+18–19 %",
+"alltag": "Bei nur 2–3 % Verlust an Muskelmasse"
+},
+"kern": [
+"Mit Kraft- oder Kombitraining ging deutlich weniger Muskelmasse verloren als bei Ausdauer",
+"Auch die Knochendichte an der Hüfte blieb mit Krafttraining besser geschützt",
+"Die körperliche Fitness im Alltag stieg in der Kombigruppe am deutlichsten"
+],
+"grenze": "Getestet bei funktionell eingeschränkten Senioren mit Adipositas unter enger Betreuung.",
+"fuer_dich": "Du bist über 65 und willst abnehmen? Geh langsam vor, kombiniere Kraft- und Ausdauertraining und achte auf genug Protein.",
+"labor": {
+"design": "Randomisierte kontrollierte Langzeitstudien, 52 Wochen, Diät plus Kraft vs. Ausdauer vs. Kombi",
+"teilnehmer": "160 Erwachsene ab 65 Jahren mit Adipositas",
+"ergebnis": "Gewicht −9 %; LBM −2 % (Kraft) / −3 % (Kombi) vs. −5 % (Ausdauer); Hüft-BMD < −1 % vs. −2,6 %; Kraft +18–19 %"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Ein 68-Jähriger mit starkem Übergewicht möchte abnehmen, ohne im Alltag schwächer zu werden. Welche Trainingsart hilft dabei am besten?",
+"richtig": "Eine Kombination aus Kraft- und Ausdauertraining",
+"falsch": [
+"Reines Spazierengehen ohne Kraftübungen",
+"Abnehmen ganz ohne Sport, um Energie zu sparen",
+"Ausschließlich tägliches Ausdauertraining auf dem Rad"
+],
+"warum": "In einer Einjahresstudie schützte die Kombination aus Kraft und Ausdauer Muskeln und Knochen am besten und steigerte die Alltagsfitness."
+},
+"plus": {
+"frage": "Du begleitest jemanden ab 65 beim Abnehmen. Wie gestaltest du Tempo, Training und Ernährung am sinnvollsten?",
+"richtig": "Moderates Tempo, fest eingeplantes Krafttraining und ausreichend Protein",
+"falsch": [
+"Schneller Gewichtsverlust über 1 % pro Woche und wenig Protein",
+"Reines Ausdauertraining ohne Gewichte und starkes Kaloriendefizit",
+"Hohes Defizit ohne Sport, bis das Zielgewicht erreicht ist"
+],
+"warum": "Ein langsames Tempo mit Krafttraining und genügend Protein bewahrt im höheren Alter Muskelmasse, Kraft und Knochendichte."
+},
+"labor": {
+"frage": "In einer 52-wöchigen RCT mit 160 Senioren (65+) verloren alle Gruppen rund 9 % Gewicht. Wie unterschied sich Ausdauer allein von Kraft- und Kombitraining?",
+"richtig": "Ausdauer allein führte zu größerem Verlust an fettfreier Masse und Hüft-Knochendichte",
+"falsch": [
+"Ausdauer allein steigerte die Maximalkraft genauso stark wie Krafttraining",
+"In allen drei Gruppen nahm die Muskelmasse um denselben Anteil ab",
+"Die Kombigruppe verlor signifikant weniger Gesamtgewicht als die Diätgruppe"
+],
+"warum": "Bei reinem Ausdauertraining sanken fettfreie Masse (−5 %) und Hüft-BMD (−2,6 %) stärker als mit Kraft- oder Kombitraining."
+}
+}
+},
+{
+"id": "FAT-131",
+"karte": {
+"kopf": "Erwachsene auf Diät · 3-Jahres-Studie",
+"titel": "Schnelles und langsames Abnehmen endeten bei ähnlicher Wiederzunahme",
+"titel_hervor": "bei ähnlicher Wiederzunahme",
+"setup": "Teilnehmende nahmen 12,5 % Gewicht entweder schnell in 12 Wochen oder langsam in 36 Wochen ab und wurden danach knapp drei Jahre begleitet.",
+"zahl": {
+"label": "Wiederzunahme nach 3 Jahren im Schnitt",
+"wert": "≈ 71 %",
+"alltag": "Rund 10,3 kg in beiden Gruppen"
+},
+"kern": [
+"In der schnellen Gruppe erreichten mehr Menschen das Abnehmziel von 12,5 %",
+"Nach schnellem Abnehmen war der Hunger in der Erhaltungsphase deutlich stärker",
+"Ein höherer Verlust an fettfreier Masse förderte die spätere Wiederzunahme"
+],
+"grenze": "In der schnellen Gruppe kamen ärztlich betreute Formulaprodukte zum Einsatz – nicht direkt auf normale Kost übertragbar.",
+"fuer_dich": "Du hast dein Abnehmziel erreicht? Schütze schon in der Diät deine Muskeln und plane danach eine feste Erhaltungsphase ein.",
+"labor": {
+"design": "Randomisierte kontrollierte Langzeitstudie, 12 vs. 36 Wochen Abnahme plus Follow-up bis Woche 144",
+"teilnehmer": "Erwachsene mit Ziel −12,5 % Körpergewicht",
+"ergebnis": "Ziel erreicht: 81 % vs. 62 % (p = 0,009); Regain Woche 144: 70,5 % vs. 71,2 %; mehr Hunger bei schnell"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Stimmt es, dass schnelles Abnehmen langfristig zwangsläufig zu einer stärkeren Gewichtszunahme führt als langsames Abnehmen?",
+"richtig": "Nicht unbedingt – nach drei Jahren war die Wiederzunahme im Schnitt gleich hoch",
+"falsch": [
+"Ja, wer langsam abnimmt, nimmt danach fast nichts wieder zu",
+"Nein, wer schnell abnimmt, hält das Gewicht deutlich besser",
+"Ja, schnelles Abnehmen verdoppelt die spätere Wiederzunahme"
+],
+"warum": "In einer 3-Jahres-Studie nahmen beide Gruppen im Schnitt rund 71 % des verlorenen Gewichts wieder zu."
+},
+"plus": {
+"frage": "Du hast erfolgreich abgenommen und willst den Jo-Jo-Effekt bremsen. Was ist laut den Daten besonders wichtig?",
+"richtig": "In der Diät Muskelmasse schützen und danach eine strukturierte Erhaltungsphase planen",
+"falsch": [
+"So langsam abnehmen, dass eine Erhaltungsphase überflüssig wird",
+"Sofort nach der Diät ohne Plan zur alten Ernährung zurückkehren",
+"Mit einer Formuladiät starten, weil diese den Hunger langfristig senkt"
+],
+"warum": "Mehr Verlust an fettfreier Masse fördert den späteren Regain, und schnelles Abnehmen hinterließ stärkeren Hunger in der Erhaltung."
+},
+"labor": {
+"frage": "In einer 3-Jahres-RCT nahmen zwei Gruppen 12,5 % Gewicht in 12 bzw. 36 Wochen ab. Worin unterschieden sie sich langfristig dennoch?",
+"richtig": "Die schnelle Gruppe berichtete in der Erhaltungsphase signifikant stärkeren Hunger",
+"falsch": [
+"Die langsame Gruppe erreichte das Abnehmziel signifikant häufiger",
+"Die langsame Gruppe nahm bis Woche 144 kaum wieder zu",
+"Nur die schnelle Gruppe verlor überhaupt fettfreie Masse"
+],
+"warum": "Obwohl der Regain in Woche 144 gleich war (70,5 % vs. 71,2 %), stieg der Hunger in der schnellen Gruppe signifikant an."
+}
+}
+},
+{
+"id": "FRA-101",
+"karte": {
+"kopf": "Frauen · 42 Studien zusammengefasst",
+"titel": "Die Pille machte im Schnitt kaum einen Unterschied für die Leistung",
+"titel_hervor": "kaum einen Unterschied",
+"setup": "In 42 Studien mit 590 Frauen wurde die sportliche Leistung mit Pille sowohl mit natürlichen Zyklen als auch zwischen Pillen- und Pausentagen verglichen.",
+"zahl": null,
+"kern": [
+"Zwischen Einnahmetagen und der 7-tägigen Pause blieb die Leistung im Schnitt konstant",
+"Gegenüber Frauen ohne Pille war der Leistungsunterschied allenfalls winzig",
+"Die Ergebnisse schwankten zwischen den einzelnen Studien und Präparaten deutlich"
+],
+"grenze": "83 % der Einzelstudien hatten nur mittlere bis sehr niedrige Qualität – individuelle Reaktionen bleiben möglich.",
+"fuer_dich": "Du nimmst die Pille im 21:7-Schema? Du musst dein Training in der Pillenpause nicht pauschal herunterfahren.",
+"labor": {
+"design": "Meta-Analyse von 42 Studien, orale Kontrazeptiva vs. natürlicher Zyklus sowie Einnahme- vs. Pausentage",
+"teilnehmer": "590 Frauen aus 42 Studien",
+"ergebnis": "Gruppenvergleich ES 0,18 (95 % CrI −0,02 bis 0,37); innerhalb Pillenzyklus fast null Chance auf d >= 0,2 (p < 0,001)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du nimmst die Antibabypille und fragst dich, ob deine sportliche Leistung in der Pillenpause einbricht. Was zeigt die Forschung im Schnitt?",
+"richtig": "Die Leistung bleibt über Einnahme- und Pausentage hinweg weitgehend gleich",
+"falsch": [
+"In der Pillenpause sinkt die Leistung bei fast allen deutlich ab",
+"In der Pillenpause ist die Leistung deutlich höher als sonst",
+"Nur die Ausdauer bleibt gleich, die Kraft bricht in der Pause ein"
+],
+"warum": "Über 42 Studien hinweg zeigte sich zwischen den 21 Einnahmetagen und den 7 Pausentagen kein relevanter Leistungsunterschied."
+},
+"plus": {
+"frage": "Du planst deinen Trainingsmonat und nimmst eine Pille im 21:7-Schema. Wie solltest du Volumen und Intensität in der Pausentage-Woche ansetzen?",
+"richtig": "Wie gewohnt weitertrainieren und nur bei echten Beschwerden anpassen",
+"falsch": [
+"In der Pause grundsätzlich eine komplette Deload-Woche einplanen",
+"Alle schweren Grundübungen in den sieben Pausentagen streichen",
+"Das Volumen in der Pause deutlich erhöhen, weil Hormone fehlen"
+],
+"warum": "Im Mittel bleibt die Leistung über den gesamten 28-Tage-Pillenzyklus konstant, sodass pauschale Kürzungen unnötig sind."
+},
+"labor": {
+"frage": "Eine Meta-Analyse fasste 42 Studien zu oralen Kontrazeptiva und sportlicher Leistung zusammen. Welche Einschränkung mahnt bei Leistungssportlerinnen zur Vorsicht?",
+"richtig": "Hohe Heterogenität der Präparate und meist geringe bis mittlere Studienqualität",
+"falsch": [
+"Ein großer negativer Durchschnittseffekt auf die Kraftleistung",
+"Ausschließlich Daten von untrainierten Jugendlichen unter 18 Jahren",
+"Keine einzige Studie untersuchte den Vergleich mit natürlichen Zyklen"
+],
+"warum": "83 % der Studien hatten moderate bis sehr niedrige Qualität und die Zwischenstudienvarianz war hoch, daher lohnt individuelles Monitoring."
+}
+}
+},
+{
+"id": "FRA-102",
+"karte": {
+"kopf": "Trainierende Frauen · Kontrollierte Studien",
+"titel": "Kraft und Sehnen wuchsen mit der Pille genauso gut wie ohne",
+"titel_hervor": "mit der Pille genauso gut",
+"setup": "Frauen mit und ohne kombinierte Antibabypille absolvierten 8 bis 10 Wochen lang ein progressives Krafttraining.",
+"zahl": {
+"label": "Kraftzuwachs in beiden Gruppen",
+"wert": "+11 %",
+"alltag": "Nach 8 bis 10 Wochen Krafttraining"
+},
+"kern": [
+"Auch die Sehnen passten sich mit rund +1,5 % Querschnitt vergleichbar an",
+"Beim Muskelaufbau waren die Ergebnisse je nach Pillen-Wirkstoff widersprüchlich",
+"Präparate mit stark antiandrogener Wirkung zeigten teils geringeren Muskelzuwachs"
+],
+"grenze": "Erste Hinweise aus kurzen Studien über 8 bis 10 Wochen mit teils widersprüchlichen Ergebnissen zum Muskelaufbau.",
+"fuer_dich": "Du nimmst die Pille und machst Krafttraining? Steigere deine Gewichte ganz normal weiter und beobachte deinen Fortschritt individuell.",
+"labor": {
+"design": "Kontrollierte Trainingsstudien, 8–10 Wochen progressives Krafttraining, kombinierte OC vs. Nicht-Nutzerinnen",
+"teilnehmer": "Trainierende Frauen mit und ohne kombinierte orale Kontrazeptiva",
+"ergebnis": "Maximalkraft +11 % (p = 0,965); Sehne +1,5 %; Trend bei FFM (+2,7 % ohne OC, Interaktion p = 0,08)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Kann man mit der Antibabypille durch Krafttraining genauso gut stärker werden wie ohne Pille?",
+"richtig": "Ja, der Kraftzuwachs war in Trainingsstudien vergleichbar",
+"falsch": [
+"Nein, die Pille verhindert den Kraftaufbau weitgehend",
+"Nur im Unterkörper, im Oberkörper bleibt die Kraft gleich",
+"Nur wenn man doppelt so oft trainiert wie ohne Pille"
+],
+"warum": "In kontrollierten Trainingsstudien über 8 bis 10 Wochen steigerten beide Gruppen ihre Maximalkraft um rund 11 %."
+},
+"plus": {
+"frage": "Du nimmst eine Pille mit antiandrogenem Wirkstoff, trainierst progressiv und wirst stärker, aber Muskelmasse wächst nur langsam. Was passt zu den Daten?",
+"richtig": "Weiter progressiv trainieren und den möglichen Einfluss des Präparats im Blick behalten",
+"falsch": [
+"Sofort mit schwerem Krafttraining aufhören, weil Sehnen nicht mitwachsen",
+"Nur noch Ausdauer machen, bis das Präparat abgesetzt ist",
+"Ohne ärztliche Rücksprache die Pillendosis halbieren"
+],
+"warum": "Kraft und Sehnen passen sich normal an; beim Muskelaufbau gibt es Hinweise auf Unterschiede je nach Gestagen-Typ."
+},
+"labor": {
+"frage": "Kontrollierte 8- bis 10-Wochen-Studien verglichen Krafttraining mit und ohne kombinierte orale Kontrazeptiva. Wo lag die Hauptunsicherheit?",
+"richtig": "Widersprüchliche Befunde zum Muskelmassenaufbau je nach Gestagen-Androgenität",
+"falsch": [
+"Ein signifikanter Nachteil bei der Maximalkraft in der Pillengruppe",
+"Eine ausbleibende Anpassung des Sehnenquerschnitts unter Hormongabe",
+"Ein Nachweis, dass alle Pillengenerationen die Proteinsynthese gleich stark hemmen"
+],
+"warum": "Während Maximalkraft und Sehnen gleich blieben, hingen Effekte auf die fettfreie Masse teils von Östrogendosis und Gestagenart ab."
+}
+}
+},
+{
+"id": "FRA-103",
+"karte": {
+"kopf": "Frauen mit natürlichem Zyklus · 78 Studien",
+"titel": "Während der Periode war die Leistung im Schnitt kaum geringer",
+"titel_hervor": "im Schnitt kaum geringer",
+"setup": "In 78 Studien wurde die akute Kraft- und Ausdauerleistung von Frauen mit regelmäßigem Zyklus über alle Zyklusphasen hinweg verglichen.",
+"zahl": null,
+"kern": [
+"Der mittlere Leistungsunterschied an Tag 1 bis 5 war winzig",
+"Alltagsfaktoren wie Schlaf oder Ernährung schwanken die Leistung meist stärker",
+"Einzelne Frauen spüren trotzdem deutliche Unterschiede je nach Befinden"
+],
+"grenze": "42 % der Studien hatten geringe Qualität, weil die Zyklusphase nicht genau per Hormontest bestimmt wurde.",
+"fuer_dich": "Du hast deine Periode, fühlst dich aber fit? Trainiere deinen Plan normal weiter, statt die Last vorsorglich zu kürzen.",
+"labor": {
+"design": "Paarweise Meta-Analyse (k = 51) und Netzwerk-Meta-Analyse (k = 73) über alle Zyklusphasen",
+"teilnehmer": "Eumenorrhoische Frauen aus 78 Studien (Zykluslänge 21–35 Tage)",
+"ergebnis": "Frühe Follikelphase vs. Rest ES −0,06 (95 % CrI −0,16 bis 0,04); vs. späte Follikelphase ES −0,14 (−0,26 bis −0,03)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Bricht die sportliche Leistung während der Periode bei Frauen automatisch deutlich ein?",
+"richtig": "Im Durchschnitt ist der Unterschied zur restlichen Zykluszeit winzig",
+"falsch": [
+"Ja, Kraft und Ausdauer fallen im Schnitt um rund ein Drittel ab",
+"Nur die Kraft fällt stark ab, während die Ausdauer sprunghaft steigt",
+"Ja, schweres Training ist an den ersten Tagen körperlich unmöglich"
+],
+"warum": "Über 78 Studien zeigte sich an den ersten Zyklustagen im Mittel nur ein trivialer Leistungsunterschied."
+},
+"plus": {
+"frage": "Du bist an Zyklustag 2, hast keine starken Beschwerden und fühlst dich normal erholt. Wie solltest du dein geplantes Training angehen?",
+"richtig": "Das geplante Volumen und die Last normal durchziehen",
+"falsch": [
+"Das Trainingsgewicht vorsorglich um die Hälfte reduzieren",
+"Komplett pausieren, bis die Blutung vollständig vorbei ist",
+"Alle schweren Sätze gegen leichtes Dehnen tauschen"
+],
+"warum": "Ohne spürbare Beschwerden gibt es im Gruppenmittel keinen Grund, die Trainingslast an Tag 1 bis 5 pauschal zu senken."
+},
+"labor": {
+"frage": "Eine Meta-Analyse von 78 Studien verglich die akute Leistung in der frühen Follikelphase mit anderen Zyklusphasen. Wie ist der gefundene Effekt einzuordnen?",
+"richtig": "Trivialer Effekt unterhalb von d = 0,20 bei teils mangelhafter Phasenverifikation",
+"falsch": [
+"Großer negativer Effekt auf Kraft, bestätigt durch hohe Studienqualität",
+"Mittlerer positiver Effekt durch niedrige Progesteronspiegel",
+"Kein messbarer Unterschied, weil alle Studien hormonell exakt kontrolliert waren"
+],
+"warum": "Mit ES −0,06 bis −0,14 lag der Effekt im trivialen Bereich, und 42 % der Studien hatten geringe methodische Qualität."
+}
+}
+},
+{
+"id": "FRA-104",
+"karte": {
+"kopf": "Frauen · Forschungsüberblick und Konsens",
+"titel": "Starres Training nach Zyklusphasen brachte bisher keinen klaren Vorteil",
+"titel_hervor": "keinen klaren Vorteil",
+"setup": "Fachleute werteten die gesamte Studienlage dazu aus, ob nach Zyklusphasen gestaffeltes Krafttraining mehr Kraft oder Muskeln bringt als konstantes Training.",
+"zahl": null,
+"kern": [
+"Es fehlen belastbare Belege für mehr Muskelaufbau durch starres Cycle-Syncing",
+"Frühere positive Empfehlungen beruhten oft auf methodisch schwachen Einzelstudien",
+"Auch beim Muskelaufbau-Stoffwechsel zeigten sich keine klaren Phasenunterschiede"
+],
+"grenze": "Bisherige Studienlage ist noch dünn – es gibt bislang schlicht keinen verlässlichen Nachweis für einen Vorteil.",
+"fuer_dich": "Du willst Muskeln oder Kraft aufbauen? Richte deine Steigerung nach deiner Leistung und Tagesform statt nach starren Zyklus-Regeln.",
+"labor": {
+"design": "Systematisches Review / Expertenkonsens, zyklusbasierte Periodisierung vs. konstantes Krafttraining",
+"teilnehmer": "Frauen mit Zykluslänge 21–35 Tage (u. a. 12-Wochen-Vergleiche)",
+"ergebnis": "0 konsistente Nachweise für Hypertrophie- oder Kraftvorteile durch starres Cycle-Syncing"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Musst du als Frau dein Krafttraining streng nach den vier Zyklusphasen umstellen, um gut Muskeln aufzubauen?",
+"richtig": "Nein, dafür gibt es bisher keine belastbaren Belege",
+"falsch": [
+"Ja, sonst wächst die Muskulatur in der zweiten Zyklushälfte kaum",
+"Ja, schweres Training wirkt nur in der Woche vor dem Eisprung",
+"Nur beim Oberkörpertraining ist ein starrer Zyklusplan nötig"
+],
+"warum": "Ein Überblick über die Forschung fand bisher keinen verlässlichen Vorteil von starrem Cycle-Syncing gegenüber konstantem Training."
+},
+"plus": {
+"frage": "Du erstellst deinen neuen 12-Wochen-Plan für Kraft und Hypertrophie. Wie steuerst du Volumen und Gewichte am sinnvollsten?",
+"richtig": "Konstant progressiv planen und nach Tagesform und Leistung anpassen",
+"falsch": [
+"Das gesamte Volumen starr in die erste Zyklushälfte verschieben",
+"In der zweiten Zyklushälfte pauschal auf progressives Steigern verzichten",
+"Jede Woche nach Kalender den Übungskatalog komplett wechseln"
+],
+"warum": "Da starre Phasenpläne keinen belegten Vorteil bringen, steuerst du Progression am besten über echte Leistungsdaten und Tagesform."
+},
+"labor": {
+"frage": "Warum zweifelt ein aktuelles Review frühere Empfehlungen an, Krafttraining gezielt in die Follikelphase zu legen?",
+"richtig": "Sie stützten sich auf schwache Einzelstudien ohne genaue Hormonbestätigung",
+"falsch": [
+"Neuere Studien bewiesen, dass die Lutealphase deutlich überlegen ist",
+"Die chronische Muskelproteinsynthese steigt erst nach dem Eisprung stark an",
+"Alle früheren Studien wurden nur an Frauen mit hormoneller Verhütung durchgeführt"
+],
+"warum": "Frühere Studien hatten methodische Mängel wie fehlende Ovulationsbestätigung; klare Unterschiede bei der Proteinsynthese fehlen."
+}
+}
+},
+{
+"id": "FRA-105",
+"karte": {
+"kopf": "Sportlerinnen · Beobachtungsstudien",
+"titel": "Wie gut das Training läuft, hing eher an Beschwerden als am Hormonwert",
+"titel_hervor": "eher an Beschwerden als am Hormonwert",
+"setup": "In Beobachtungsstudien wurden Zyklusbeschwerden, Wohlbefinden, Hormonspiegel und die erlebte Trainingsleistung von Sportlerinnen erfasst.",
+"zahl": {
+"label": "Sportlerinnen mit spürbaren Einbußen",
+"wert": "50–85 %",
+"alltag": "Jede Zweite bis über vier Fünftel"
+},
+"kern": [
+"Knapp die Hälfte bis über zwei Drittel spürten Einbußen auch im Wettkampf",
+"Beschwerden traten vor allem an Tag 1 bis 5 und kurz vor der Periode auf",
+"Gemessene Hormonwerte allein erklärten die Leistungsschwankungen nicht direkt"
+],
+"grenze": "Beobachtungsdaten aus Befragungen – sie zeigen Zusammenhänge, aber keine festen Ursachen im Einzelfall.",
+"fuer_dich": "Du hast starke Krämpfe oder fühlst dich sehr erschöpft? Senke die Intensität nach Gefühl und verschiebe Maximaltests auf einen besseren Tag.",
+"labor": {
+"design": "Beobachtungsstudien zu Symptombelastung, Wohlbefinden, Hormonen und Leistungsfähigkeit im Zyklus",
+"teilnehmer": "Sportlerinnen (u. a. n = 124 bis n = 140)",
+"ergebnis": "50–84,6 % berichten Trainings-, 49–70,8 % Wettkampfbeeinträchtigungen; Korrelation mit Symptomen, nicht Hormonen"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Wovon hängt es im Zyklus eher ab, ob dein Training schwerer fällt als sonst?",
+"richtig": "Von deinem persönlichen Wohlbefinden und möglichen Beschwerden",
+"falsch": [
+"Ausschließlich vom exakten Hormonwert im Blut",
+"Allein davon, ob gerade Vollmond oder Neumond ist",
+"Von der Zykluslänge, unabhängig von Krämpfen oder Müdigkeit"
+],
+"warum": "Hinweise aus Beobachtungsstudien zeigen: Die Trainingsbereitschaft hängt eng mit Symptomen und Befinden zusammen, nicht direkt mit Hormonwerten."
+},
+"plus": {
+"frage": "Du bist an Zyklustag 1, hast starke Krämpfe und fühlst dich erschöpft, eigentlich steht ein 1RM-Test an. Was ist die beste Entscheidung?",
+"richtig": "Den Maximaltest verschieben und heute moderater trainieren",
+"falsch": [
+"Den 1RM-Test erzwingen, weil Hormone die Kraft kaum beeinflussen",
+"Die Gewichte erhöhen, um die Krämpfe durch Anstrengung zu überdecken",
+"Das Training für den gesamten restlichen Monat stark reduzieren"
+],
+"warum": "Bei starken Beschwerden oder hoher Fatigue lohnt es sich, die Intensität autoregulativ zu senken und Maximaltests zu verschieben."
+},
+"labor": {
+"frage": "Beobachtungsstudien untersuchten Zyklussymptome, Hormonspiegel und Leistung bei Sportlerinnen. Welcher Zusammenhang zeigte sich?",
+"richtig": "Leistung hing an Symptomen und Wohlbefinden, nicht direkt an Hormonen",
+"falsch": [
+"Die Leistung korrelierte direkt mit Östrogen, unabhängig von subjektiven Beschwerden",
+"Nur rund 10 % der Athletinnen berichteten überhaupt von Einschränkungen",
+"Beschwerden traten fast ausschließlich rund um den Eisprung auf"
+],
+"warum": "50 bis 85 % berichteten Beeinträchtigungen, vor allem in früher Follikel- und später Lutealphase, gekoppelt an Symptome und Befinden."
+}
+}
+}
+]

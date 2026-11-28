@@ -1,0 +1,1154 @@
+[
+{
+"id": "ALG-101",
+"karte": {
+"kopf": "67 Männer und Frauen · Messvergleich",
+"titel": "Kraftformeln unterschätzen das Kreuzheben um rund ein Zehntel",
+"titel_hervor": "unterschätzen das Kreuzheben",
+"setup": "67 Männer und Frauen testeten ihr Maximalgewicht in drei Grundübungen. Diese Werte wurden mit sieben gängigen Schätzformeln verglichen.",
+"zahl": {
+"label": "Kreuzheben im Schnitt unterschätzt",
+"wert": "9–14 %",
+"alltag": "≈ 10 bis 15 kg zu niedrig"
+},
+"kern": [
+"Beim Bankdrücken trafen die Formeln das echte Maximum am genauesten",
+"Bei der Kniebeuge lag nur eine von sieben Formeln im Schnitt richtig",
+"Körperbau, Bewegungsweg und Griffkraft verzerren pauschale Rechnungen"
+],
+"grenze": "Getestet wurden nur Sätze bis zehn Wiederholungen in drei Übungen – auf andere Übungen nicht direkt übertragbar.",
+"fuer_dich": "Du berechnest dein Maximum beim Kreuzheben per Formel? Plane ein, dass dein echtes Maximum oft spürbar höher liegt.",
+"labor": {
+"design": "Validierungsstudie, 7 Schätzformeln (<=10 Wdh.) gegen reales 1RM in 3 Grundübungen",
+"teilnehmer": "67 Personen (40 Männer, 27 Frauen)",
+"ergebnis": "r > 0,95; Bankdrücken −0,8 bis −6 %; Kreuzheben −9 bis −14 % (−10,1 bis −15,3 kg)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du berechnest dein Maximalgewicht aus einem Satz mit mehreren Wiederholungen. Wie genau ist so eine Formel bei verschiedenen Übungen?",
+"richtig": "Die Genauigkeit hängt stark von der jeweiligen Übung ab",
+"falsch": [
+"Sie trifft bei jeder Kraftübung ungefähr gleich genau",
+"Sie schätzt das Maximum bei allen Übungen deutlich zu hoch",
+"Sie funktioniert nur bei Übungen für den Unterkörper"
+],
+"warum": "Während Bankdrücken gut getroffen wird, unterschätzen gängige Formeln das Kreuzheben oft deutlich."
+},
+"plus": {
+"frage": "Du schätzt dein 1RM im Kreuzheben aus einem 8er-Satz mit einer klassischen Formel. Womit solltest du rechnen?",
+"richtig": "Der Wert liegt oft rund ein Zehntel unter deinem echten 1RM",
+"falsch": [
+"Der Wert überschätzt dein echtes 1RM meist um ein Zehntel",
+"Der Wert ist beim Kreuzheben genauer als beim Bankdrücken",
+"Der Wert weicht höchstens um ein halbes Kilogramm ab"
+],
+"warum": "Alle sieben geprüften Formeln unterschätzten das Kreuzheben um 9 bis 14 %, teils wegen Griffkraft und Hebeln."
+},
+"labor": {
+"frage": "Sieben klassische 1RM-Formeln wurden bei Sätzen bis zehn Wiederholungen mit dem realen 1RM verglichen. Wie fielen Korrelation und Abweichung aus?",
+"richtig": "Hohe Korrelation, aber systematische Unterschätzung beim Kreuzheben",
+"falsch": [
+"Schwache Korrelation bei allen drei getesteten Grundübungen",
+"Hohe Korrelation ohne relevante Abweichung zwischen den Übungen",
+"Hohe Korrelation, aber starke Überschätzung beim Bankdrücken"
+],
+"warum": "Trotz hoher Korrelation (r > 0,95) zeigten alle Formeln beim Kreuzheben eine systematische Unterschätzung von 9–14 %."
+}
+}
+},
+{
+"id": "ALG-102",
+"karte": {
+"kopf": "70 Personen · Krafttest-Vergleich",
+"titel": "Fünf harte Wiederholungen schätzen die Maximalkraft am genauesten",
+"titel_hervor": "Fünf harte Wiederholungen",
+"setup": "70 Personen machten an Brust- und Beinpresse Tests mit 5, 10 und 20 maximalen Wiederholungen. Daraus wurde ihre echte Maximalkraft hochgerechnet.",
+"zahl": {
+"label": "Schätzfehler beim 5er-Test",
+"wert": "3,2–6,8 kg",
+"alltag": ""
+},
+"kern": [
+"Ab mehr als zehn Wiederholungen werden Hochrechnungen deutlich ungenauer",
+"Bei vielen Wiederholungen zählt Kraftausdauer mehr als reine Maximalkraft",
+"Wie schnell Muskeln ermüden, unterscheidet sich stark von Mensch zu Mensch"
+],
+"grenze": "Getestet wurde nur an Brust- und Beinpresse – freie Langhantelübungen wurden hier nicht geprüft.",
+"fuer_dich": "Du willst dein Maximalgewicht schätzen, ohne ein Einzelgewicht zu testen? Nutze einen harten Satz mit rund fünf Wiederholungen.",
+"labor": {
+"design": "Validierungsstudie, 5RM, 10RM und 20RM gegen reales 1RM an Brust- und Beinpresse",
+"teilnehmer": "70 Personen",
+"ergebnis": "5RM: R² = 0,96–0,97, SEE = 3,2–6,8 kg; signifikanter Fehleranstieg ab >10 Wdh."
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du möchtest ohne Einzelversuch abschätzen, wie viel Gewicht du maximal einmal bewegen kannst. Welcher Satz hilft dir dafür am besten?",
+"richtig": "Ein schwerer Satz mit rund fünf Wiederholungen",
+"falsch": [
+"Ein leichter Satz mit zwanzig Wiederholungen",
+"Ein langer Satz bis die Muskeln stark brennen",
+"Jede Wiederholungszahl ist gleich gut geeignet"
+],
+"warum": "Bei wenigen schweren Wiederholungen zählt echte Kraft; bei vielen verfälscht die Ausdauer das Ergebnis."
+},
+"plus": {
+"frage": "Du hast einen Satz mit 18 Wiederholungen an der Beinpresse geloggt. Wie sinnvoll ist daraus eine 1RM-Schätzung?",
+"richtig": "Wenig sinnvoll, da ab über zehn Wdh. der Fehler stark steigt",
+"falsch": [
+"Sehr sinnvoll, da mehr Wiederholungen mehr Datenpunkte liefern",
+"Genau so verlässlich wie eine Schätzung aus einem 5RM-Satz",
+"Nur sinnvoll, wenn der Satz als letztes im Training liegt"
+],
+"warum": "Über zehn Wiederholungen dominiert die lokale Kraftausdauer, wodurch 1RM-Formeln deutlich ungenauer werden."
+},
+"labor": {
+"frage": "Sätze mit 5, 10 und 20 maximalen Wiederholungen an Maschinen wurden zur 1RM-Prognose verglichen. Warum brach die Genauigkeit ab über zehn Wiederholungen ein?",
+"richtig": "Individuelle Kraftausdauer und Muskelfasern verzerren die Rechnung",
+"falsch": [
+"Die Maschinen zeigten bei leichten Gewichten mehr Reibung",
+"Bei über zehn Wiederholungen sank die Motivation der Teilnehmer",
+"Hohe Wiederholungszahlen überschätzen nur die Oberkörperkraft"
+],
+"warum": "Bei vielen Wiederholungen beeinflussen Muskelfasertyp und Pufferkapazität das Ergebnis stark – beim 5RM lag R² bei 0,96–0,97."
+}
+}
+},
+{
+"id": "ALG-103",
+"karte": {
+"kopf": "32–36 Personen · Krafttest-Studie",
+"titel": "Angepasste Formeln schätzen die Maximalkraft auf unter 4 % genau",
+"titel_hervor": "auf unter 4 % genau",
+"setup": "32 bis 36 Personen machten hunderte Krafttests in sieben Übungen mit 5 bis 16 Wiederholungen. Geprüft wurde, wie genau übungsspezifische Formeln sind.",
+"zahl": {
+"label": "Mittlerer Fehler bei 5–8 Wdh.",
+"wert": "3,7 %",
+"alltag": ""
+},
+"kern": [
+"Eigene Formeln pro Übung waren klar genauer als allgemeine Standardformeln",
+"Das Fenster von fünf bis acht Wiederholungen lieferte die besten Werte",
+"Ändert sich dein Bewegungstempo zwischen Sätzen, schwankt die Schätzung"
+],
+"grenze": "Rumpfübungen wie die Rumpfbeugung blieben deutlich ungenauer als andere Übungen – im Schnitt über 8 % Abweichung.",
+"fuer_dich": "Du willst deine Maximalkraft sauber bestimmen? Wähle ein Gewicht für fünf bis acht Wiederholungen und halte dein Tempo konstant.",
+"labor": {
+"design": "Validierungsstudie, 300 1RM- und 800 RTF-Tests in 7 Übungen (5–8 vs. 9–12 vs. 13–16 Wdh.)",
+"teilnehmer": "32–36 Personen",
+"ergebnis": "MAD bei 5–8 Wdh.: 3,7 ± 3,7 %; Rumpfstreckung 4,1 ± 2,8 %, Rumpfbeugung 8,1 ± 8,8 %"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du testest deine Kraft mit einem Satz bis zur Grenze. Was macht die Hochrechnung auf dein Maximalgewicht besonders genau?",
+"richtig": "Ein konstantes Tempo bei fünf bis acht Wiederholungen",
+"falsch": [
+"Ein möglichst schnelles Tempo bei über fünfzehn Wiederholungen",
+"Dieselbe einfache Formel für jede beliebige Körperpartie",
+"Ein leichtes Gewicht, das du locker zwölfmal schaffst"
+],
+"warum": "Im Bereich von fünf bis acht Wiederholungen bei gleichmäßigem Tempo weicht die Schätzung im Schnitt kaum ab."
+},
+"plus": {
+"frage": "Du möchtest dein e1RM für deinen neuen Trainingsblock kalibrieren. Welcher Satz liefert das verlässlichste Ergebnis?",
+"richtig": "5–8 Wdh. bis zum Muskelversagen mit standardisiertem Tempo",
+"falsch": [
+"13–16 Wdh. bis zum Muskelversagen mit freiem Tempo",
+"9–12 Wdh. mit bewusster Pause zwischen jeder Wiederholung",
+"Ein schneller Satz ohne Rücksicht auf die Übungsart"
+],
+"warum": "Bei 5 bis 8 Wiederholungen und übungsspezifischer Formel lag der mittlere Fehler bei nur 3,7 %."
+},
+"labor": {
+"frage": "In sieben Übungen wurden kubische Polynommodelle bei 5–8, 9–12 und 13–16 Wiederholungen gegen reale 1RM-Tests geprüft. Was beeinflusste die Zuverlässigkeit?",
+"richtig": "Sowohl der Wiederholungsbereich als auch Schwankungen der Kadenz",
+"falsch": [
+"Ausschließlich die Wahl zwischen freien Gewichten und Geräten",
+"Nur die Gesamtanzahl der absolvierten Sätze pro Woche",
+"Die Formel funktionierte bei 13–16 Wiederholungen am präzisesten"
+],
+"warum": "Das 5–8-Wdh.-Fenster erreichte im Schnitt 3,7 % Fehler, während abweichende Bewegungsgeschwindigkeiten die Streuung erhöhten."
+}
+}
+},
+{
+"id": "ALG-104",
+"karte": {
+"kopf": "414 Trainierende · 12 Studien zusammengefasst",
+"titel": "Beim Training schätzen wir fast eine Wiederholung zu wenig ein",
+"titel_hervor": "fast eine Wiederholung zu wenig",
+"setup": "414 Trainierende schätzten im Satz, wie viele Wiederholungen noch im Tank wären. Danach machten sie bis zum echten Muskelversagen weiter.",
+"zahl": {
+"label": "Im Schnitt zu niedrig geschätzt",
+"wert": "0,95 Wdh.",
+"alltag": "≈ 1 Wiederholung extra im Tank"
+},
+"kern": [
+"Je näher du am Muskelversagen bist, desto genauer triffst du deine Reserve",
+"Erfahrene schätzen ihre Kraftreserve kaum besser ein als Einsteiger",
+"Ab mehr als zwölf Wiederholungen verschätzen sich fast alle deutlich stärker"
+],
+"grenze": "Die Ergebnisse schwanken extrem von Person zu Person – manche liegen genau richtig, andere weit daneben.",
+"fuer_dich": "Du steuerst dein Training nach Gefühl? Verlass dich vor allem bei harten Sätzen bis zwölf Wiederholungen auf deine Einschätzung.",
+"labor": {
+"design": "Scoping Review und Metaanalyse, 12 Studien mit 262 Effektstärken",
+"teilnehmer": "414 Trainierende (Einsteiger bis Erfahrene)",
+"ergebnis": "Unterschätzung 0,95 Wdh. (95 % KI 0,17–1,73; I² = 97,9 %); Erfahrung n. s. (β = −0,006)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du brichst einen Satz ab, weil du glaubst, es gingen nur noch zwei Wiederholungen. Wie liegst du im Vergleich zur Realität meist?",
+"richtig": "Du hättest meist noch mehr Wiederholungen geschafft",
+"falsch": [
+"Du schätzt deine Kraftreserve fast genau richtig ein",
+"Du traust dir in der Regel deutlich zu viel zu",
+"Das hängt allein davon ab, wie lange du trainierst"
+],
+"warum": "Im Schnitt unterschätzen Trainierende ihre Reserve um fast eine Wiederholung – oft weil Brennen wie Erschöpfung wirkt."
+},
+"plus": {
+"frage": "Du steuerst deine Trainingsgewichte über RIR. Bei welchem Satz ist dein eigenes RIR-Gefühl am verlässlichsten?",
+"richtig": "In späteren Sätzen nahe am Versagen mit höchstens zwölf Wdh.",
+"falsch": [
+"Im allerersten Satz mit über fünfzehn leichten Wiederholungen",
+"Bei sehr lockeren Sätzen weit weg vom Muskelversagen",
+"Nur dann, wenn du bereits mehrere Jahre Krafttraining machst"
+],
+"warum": "Nähe zum Versagen, spätere Sätze und maximal zwölf Wiederholungen senken den Schätzfehler – Erfahrung half kaum."
+},
+"labor": {
+"frage": "In zwölf Studien schätzten Trainierende ihre RIR und führten den Satz dann bis zum Versagen aus. Welcher Faktor hatte dabei überraschend keinen relevanten Einfluss?",
+"richtig": "Die bisherige Trainingserfahrung der Teilnehmer",
+"falsch": [
+"Der Abstand der Schätzung zum echten Muskelversagen",
+"Ob der Satz mehr oder weniger als zwölf Wiederholungen hatte",
+"Ob es sich um einen frühen oder späteren Satz handelte"
+],
+"warum": "Der Trainingsstatus war statistisch nicht signifikant (β = −0,006), bei sehr hoher individueller Streuung (I² = 97,9 %)."
+}
+}
+},
+{
+"id": "ALG-105",
+"karte": {
+"kopf": "Krafttrainierende · Studienübersicht",
+"titel": "Bei sehr lockeren Sätzen versagt das Gefühl für Kraftreserven",
+"titel_hervor": "versagt das Gefühl",
+"setup": "Eine Übersicht fasste Studien zusammen, in denen Trainierende bei 30 bis 90 % ihrer Maximalkraft ihre verbleibenden Wiederholungen schätzten.",
+"zahl": null,
+"kern": [
+"Bei ein bis vier Wiederholungen Reserve war die Einschätzung brauchbar",
+"Ab sechs Wiederholungen Reserve lag das Bauchgefühl meist stark daneben",
+"Ohne echte Tests bis zur Grenze verbesserte sich das Gefühl über Wochen nicht"
+],
+"grenze": "Besonders bei Bankdrücken und Kreuzheben geprüft – nicht jede Übung reagiert bei hohen Reserven gleich.",
+"fuer_dich": "Du trainierst nach RIR und zweifelst an deinem Gefühl? Teste alle vier bis sechs Wochen kontrolliert bis zur Grenze, um dich neu zu eichen.",
+"labor": {
+"design": "Systematisches Scoping Review zu RIR-Genauigkeit über 30–90 % 1RM und Lerneffekten",
+"teilnehmer": "Krafttrainierende (Einsteiger und Erfahrene)",
+"ergebnis": "Akzeptabel bei 1–4 RIR (3–8 Wdh.), ungenau bei 6–9 RIR; kein Lerneffekt über 6 Wochen"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du machst einen lockeren Satz und glaubst, du könntest danach noch acht Wiederholungen schaffen. Wie gut klappt so eine Schätzung?",
+"richtig": "Meist sehr ungenau, weil die echte Grenze zu weit weg ist",
+"falsch": [
+"Sehr genau, weil die Muskeln noch nicht ermüdet sind",
+"Genau so gut wie kurz vor dem letzten möglichen Versuch",
+"Nach ein paar Wochen Training automatisch fehlerfrei"
+],
+"warum": "Weit weg von der Belastungsgrenze fehlt dem Körper ein klares Signal – erst nah am Limit wird das Gefühl verlässlich."
+},
+"plus": {
+"frage": "Du steuerst dein Training seit sechs Wochen nach RIR, gehst dabei aber selten ans Limit. Wie entwickelt sich dein RIR-Gefühl?",
+"richtig": "Es verbessert sich ohne gelegentliche Kalibrierung kaum",
+"falsch": [
+"Es wird durch reine Routine jede Woche spürbar genauer",
+"Es funktioniert danach auch bei sieben bis neun RIR präzise",
+"Es verschlechtert sich vor allem bei schweren Gewichten"
+],
+"warum": "Ohne gelegentliches Feedback am Muskelversagen zeigte sich über sechs Wochen kein automatischer Lerneffekt."
+},
+"labor": {
+"frage": "Ein systematisches Scoping Review prüfte die Reliabilität von RIR-Schätzungen über verschiedene Lasten und Reserven. Wo zog die Auswertung die Grenze?",
+"richtig": "Akzeptabel bei 1–4 RIR, aber unbrauchbar bei 6–9 RIR",
+"falsch": [
+"Erst ab mindestens sechs RIR statistisch ausreichend reliabel",
+"Über alle Bereiche von null bis neun RIR gleich verlässlich",
+"Nur im allerersten Satz einer Übung ausreichend genau"
+],
+"warum": "Bei 1–4 RIR (3–8 Wdh.) war die Reliabilität akzeptabel, während 6–9 RIR bei Bankdrücken und Kreuzheben ungenau blieben."
+}
+}
+},
+{
+"id": "ALG-106",
+"karte": {
+"kopf": "34 Trainierende · Krafttest-Experiment",
+"titel": "Bei schwerem Gewicht spüren wir die letzte Reserve fast exakt",
+"titel_hervor": "spüren wir die letzte Reserve",
+"setup": "34 Trainierende schätzten mitten im Satz bei mittlerer und schwerer Last, wann noch eine oder drei Wiederholungen gingen, und zogen dann durch.",
+"zahl": {
+"label": "Fehler bei schwerer Last, 1 RIR",
+"wert": "< 0,5 Wdh.",
+"alltag": "fast genau getroffen"
+},
+"kern": [
+"Bei mittlerer Last und drei Wdh. Reserve lag der Fehler bei fast zwei Wdh.",
+"Je langsamer die Hantel wurde, desto härter fühlte sich der Satz an",
+"Brennende Muskeln bei vielen Wiederholungen täuschen frühe Erschöpfung vor"
+],
+"grenze": "Nur zwei Laststufen wurden getestet – wie stark sich der Fehler bei noch leichteren Gewichten aufschaukelt, bleibt offen.",
+"fuer_dich": "Du willst dein Trainingsgewicht per Gefühl steuern? Nutze dafür schwere Sätze nahe am Limit statt leichte Sätze mit viel Reserve.",
+"labor": {
+"design": "Experimentelle Validierungsstudie, 50 % vs. 75 % 1RM bei jeweils 1 RIR und 3 RIR",
+"teilnehmer": "34 Trainierende",
+"ergebnis": "75 %/1 RIR: −0,09 bis −0,50 Wdh.; 50 %/3 RIR: −1,80 ± 1,57 Wdh.; Speed vs. RPE r = −0,85"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Warum verschätzen sich viele beim leichteren Gewicht viel stärker als beim schweren Gewicht, wenn sie ihre Kraftreserve prüfen?",
+"richtig": "Das Brennen bei vielen Wdh. lässt sie zu früh abbrechen",
+"falsch": [
+"Schwere Gewichte aktivieren weniger Muskelfasern im Körper",
+"Bei leichten Gewichten steigt das Verletzungsrisiko stark an",
+"Bei schweren Gewichten zählt man die Wiederholungen langsamer"
+],
+"warum": "Bei vielen Wiederholungen stört das unangenehme Gefühl oft, obwohl der Muskel noch Kraftreserven hat."
+},
+"plus": {
+"frage": "Du möchtest aus einem Satz mit RIR-Angabe dein tägliches e1RM berechnen lassen. Welche Kombination ist am präzisesten?",
+"richtig": "Schwere Last ab rund 75 % 1RM mit etwa 1 RIR",
+"falsch": [
+"Mittlere Last um 50 % 1RM mit etwa 3 RIR",
+"Leichte Last unter 40 % 1RM mit etwa 4 RIR",
+"Jede Kombination aus Last und RIR ist gleich genau"
+],
+"warum": "Bei 75 % 1RM und 1 RIR lag der Fehler unter einer halben Wiederholung, bei 50 % und 3 RIR stieg er auf fast zwei."
+},
+"labor": {
+"frage": "Trainierende schätzten mitten im Satz bei 50 % und 75 % 1RM die Punkte 1 RIR und 3 RIR; parallel wurde die Hantelgeschwindigkeit gemessen. Was zeigte sich?",
+"richtig": "Fehler unter 0,5 Wdh. bei 75 %/1 RIR und starke Speed-RPE-Beziehung",
+"falsch": [
+"Kaum ein Unterschied zwischen 50 % und 75 % 1RM bei 1 RIR",
+"Keine Verbindung zwischen Hantelgeschwindigkeit und Anstrengung",
+"Höhere Genauigkeit bei 3 RIR als bei 1 RIR in beiden Laststufen"
+],
+"warum": "Bei 75 % 1RM und 1 RIR war der Fehler minimal (−0,09 bis −0,50 Wdh.), und Hanteltempo korrelierte stark mit RPE (r = −0,85)."
+}
+}
+},
+{
+"id": "ALG-107",
+"karte": {
+"kopf": "Trainierte · Mehrere Studien zusammengefasst",
+"titel": "Pauschale Tempowerte überschätzen die freie Kniebeuge deutlich",
+"titel_hervor": "überschätzen die freie Kniebeuge",
+"setup": "Eine Metaanalyse prüfte, wie gut feste Mindestgeschwindigkeiten der Hantel das maximale Gewicht bei der freien Kniebeuge vorhersagen.",
+"zahl": {
+"label": "Mittlere Überschätzung (Effektstärke)",
+"wert": "0,53",
+"alltag": "mittelgroßer Schätzfehler"
+},
+"kern": [
+"Wie langsam jemand beim echten Maximum beugt, ist sehr individuell",
+"Werte von geführten Maschinen passen nicht einfach zur freien Langhantel",
+"Auch zwischen Männern und Frauen unterscheidet sich das Mindesttempo"
+],
+"grenze": "Betrifft vor allem pauschale Richtwerte – individuelle Messungen bei hoher Last wurden nicht widerlegt.",
+"fuer_dich": "Du misst dein Hanteltempo bei Kniebeugen? Nutze deinen eigenen Tempo-Anker bei schwerem Gewicht statt fester Tabellenwerte.",
+"labor": {
+"design": "Systematisches Review und 3-Level-Metaanalyse, MVT-Methode gegen reales 1RM",
+"teilnehmer": "Krafttrainierte (freie Kniebeuge)",
+"ergebnis": "Systematische Überschätzung des 1RM bei freier Kniebeuge: ES = 0,53"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Manche Sensoren messen, wie schnell du die Hantel bewegst, um daraus mit festen Richtwerten dein Kniebeuge-Maximum zu berechnen. Was passiert dabei oft?",
+"richtig": "Das berechnete Maximum fällt zu hoch aus",
+"falsch": [
+"Das berechnete Maximum fällt viel zu niedrig aus",
+"Das Ergebnis trifft das echte Maximum fast exakt",
+"Das Tempo der Hantel hängt nicht vom Gewicht ab"
+],
+"warum": "Jeder Mensch bewegt die Hantel am Limit unterschiedlich schnell – pauschale Tabellenwerte überschätzen die freie Kniebeuge."
+},
+"plus": {
+"frage": "Du nutzt Hantelgeschwindigkeit für deine freie Kniebeuge und willst dein 1RM schätzen. Welcher Fehler passiert mit pauschalen Standard-Grenzwerten?",
+"richtig": "Die Rechnung überschätzt dein echtes 1RM systematisch",
+"falsch": [
+"Die Rechnung unterschätzt dein echtes 1RM systematisch",
+"Die Werte gelten eins zu eins wie an geführten Maschinen",
+"Die Schätzung ist bei freien Gewichten genauer als an Geräten"
+],
+"warum": "Pauschale Mindestgeschwindigkeiten ignorieren individuelle Unterschiede und überschätzen die freie Kniebeuge im Mittel deutlich."
+},
+"labor": {
+"frage": "Eine 3-Level-Metaanalyse prüfte die 1RM-Schätzung der freien Kniebeuge über generische minimale Geschwindigkeitsschwellen (MVT). Was war der Hauptbefund?",
+"richtig": "Mittelgroße systematische Überschätzung bei stark streuender V1RM",
+"falsch": [
+"Geringe Unterschätzung bei fast identischer V1RM über alle Personen",
+"Kein Unterschied zwischen geführter Maschine und freier Langhantel",
+"Exakte Übereinstimmung mit dem direkt getesteten 1RM"
+],
+"warum": "Generische MVT-Werte überschätzten das freie Kniebeuge-1RM (ES = 0,53), da die individuelle Geschwindigkeit beim 1RM stark streut."
+}
+}
+},
+{
+"id": "ALG-108",
+"karte": {
+"kopf": "Trainierte · Einzeldaten-Metaanalyse",
+"titel": "Persönliche Tempoprofile schlagen Standardformeln, streuen aber",
+"titel_hervor": "schlagen Standardformeln",
+"setup": "Eine Metaanalyse wertete Einzeldaten zu persönlichen Last-Geschwindigkeits-Profilen aus und prüfte, wie genau sie das echte Maximum treffen.",
+"zahl": {
+"label": "Schwankungsbreite bei leichter Last",
+"wert": "± 10–15 kg",
+"alltag": ""
+},
+"kern": [
+"Eigene Profile sind klar verlässlicher als pauschale Gruppenwerte",
+"Aus sehr leichten, schnellen Sätzen hochzurechnen bleibt ungenau",
+"Schwung aus der Umkehrbewegung verändert das gemessene Hanteltempo"
+],
+"grenze": "Auch mit eigenem Profil bleibt am freien Gewicht Spielraum durch tägliche Technikschwankungen.",
+"fuer_dich": "Du nutzt ein eigenes Tempoprofil für dein Gewicht? Miss beim Aufwärmen auch eine schwere Last mit ein, statt nur leichte Sätze.",
+"labor": {
+"design": "Systematisches Review und IPD-Metaanalyse individueller Last-Geschwindigkeits-Profile",
+"teilnehmer": "Krafttrainierte (Einzeldaten aus Primärstudien)",
+"ergebnis": "Hohe Linearität, aber 95 % Limits of Agreement bis ±10–15 kg bei Extrapolation aus >1,0 m/s"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du lässt dein persönliches Hanteltempo beim Aufwärmen messen, um dein Maximalgewicht zu schätzen. Warum reichen sehr leichte Gewichte dafür nicht aus?",
+"richtig": "Aus leichten Sätzen hochgerechnet schwankt das Ergebnis stark",
+"falsch": [
+"Bei leichten Gewichten bewegt sich die Hantel zu langsam",
+"Leichte Gewichte sind für den Sensor überhaupt nicht messbar",
+"Persönliche Profile sind ungenauer als allgemeine Tabellen"
+],
+"warum": "Wer nur aus schnellen, leichten Sätzen hochrechnet, landet am freien Gewicht schnell zehn bis fünfzehn Kilo daneben."
+},
+"plus": {
+"frage": "Du kalibrierst dein persönliches Last-Geschwindigkeits-Profil für die Kniebeuge. Wie wird deine 1RM-Schätzung deutlich verlässlicher?",
+"richtig": "Indem du auch schwere Aufwärmlasten nahe am Maximum misst",
+"falsch": [
+"Indem du nur sehr schnelle Sätze über 1,0 m/s aufzeichnest",
+"Indem du stattdessen pauschale Gruppenwerte aus Tabellen nutzt",
+"Indem du unten möglichst stark abfederst für mehr Tempo"
+],
+"warum": "Schwere Lasten nahe dem 1RM verbessern die Prognose deutlich, während Schwung (Rebound) das gemessene Tempo verfälscht."
+},
+"labor": {
+"frage": "Eine Metaanalyse wertete individuelle Einzeldaten zu Last-Geschwindigkeits-Profilen (LVR) aus. Welche Grenze zeigte sich trotz hoher Linearität?",
+"richtig": "Breite 95-%-Grenzen bei Extrapolation aus leichten Lasten",
+"falsch": [
+"Individuelle Profile schnitten schlechter ab als Gruppenmodelle",
+"Die Beziehung zwischen Last und Tempo war kaum linear",
+"Am freien Gewicht traten kaum Tagesschwankungen im Tempo auf"
+],
+"warum": "Trotz hoher Linearität reichten die 95 % Limits of Agreement bei Extrapolation aus schnellen Sätzen (>1,0 m/s) bis ±10–15 kg."
+}
+}
+},
+{
+"id": "ALG-109",
+"karte": {
+"kopf": "Trainierte · Geräte-Vergleichsstudie",
+"titel": "Verschiedene Hantel-Sensoren liefern deutlich abweichende Werte",
+"titel_hervor": "deutlich abweichende Werte",
+"setup": "Ein kleiner Bewegungssensor an der Hantel wurde bei Kniebeugen mit 20 bis 90 % Maximallast gegen ein Seilzug-Messgerät verglichen.",
+"zahl": {
+"label": "Abweichung zwischen beiden Geräten",
+"wert": "bis 11 %",
+"alltag": "in Spitzen deutlich höher"
+},
+"kern": [
+"Erste Hinweise: Der kleine Bewegungssensor maß im Schnitt langsamer als der Seilzug",
+"Bei der abgeleiteten Maximalkraft streuten die Fehler teils extrem stark",
+"Leichtes Kippen der Hantel und Software-Filter verzerren die Messung"
+],
+"grenze": "Geprüft wurden nur zwei konkrete Geräte bei Kniebeugen – andere Modelle können genauer oder anders abweichen.",
+"fuer_dich": "Du misst dein Hanteltempo mit einem Sensor? Bleib dauerhaft beim selben Gerät und mische Werte verschiedener Modelle nicht.",
+"labor": {
+"design": "Experimentelle Geräte-Validierung, IMU vs. Seilzug (LPT), 20–90 % 1RM Kniebeuge",
+"teilnehmer": "Krafttrainierte (Kniebeuge)",
+"ergebnis": "Inter-Device ICC 0,28–0,88, MAPE bis 11 % (Spitze 44 %); 1RM-Fehler 4,1–71,6 %"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du misst heute mit einem Hantel-Sensor im Studio und nächste Woche mit einem anderen Modell. Kannst du die Tempowerte direkt vergleichen?",
+"richtig": "Nein, verschiedene Modelle messen oft spürbar unterschiedlich",
+"falsch": [
+"Ja, alle Sensoren messen physikalisch genau denselben Wert",
+"Ja, solange du bei derselben Übung und demselben Gewicht bleibst",
+"Nur dann, wenn du besonders leichte Gewichte verwendest"
+],
+"warum": "Unterschiedliche Bauarten und Software-Filter führen zu deutlichen Abweichungen zwischen zwei Geräten."
+},
+"plus": {
+"frage": "Du wechselst beim geschwindigkeitsbasierten Training vom Seilzugsystem auf einen kompakten Hantel-Sensor. Wie solltest du vorgehen?",
+"richtig": "Ein neues Profil anlegen, statt alte Werte zu mischen",
+"falsch": [
+"Deine bisherigen Zielgeschwindigkeiten unverändert übernehmen",
+"Beide Sensoren abwechselnd für dieselbe Trainingskurve nutzen",
+"Die Werte pauschal um die Hälfte nach oben korrigieren"
+],
+"warum": "Zwischen beiden Gerätetypen traten systematische Unterschiede und hohe Streuungen auf – Werte sind nicht austauschbar."
+},
+"labor": {
+"frage": "Ein Inertialsensor (IMU) und ein Seilzugsystem (LPT) wurden bei Kniebeugen von 20 bis 90 % 1RM verglichen. Wie fielen Vergleichbarkeit und 1RM-Prognose aus?",
+"richtig": "Systematisch niedrigere IMU-Werte und enorme Zufallsstreuung beim 1RM",
+"falsch": [
+"Hohe Austauschbarkeit beider Sensoren bei unter zwei Prozent Fehler",
+"Systematisch höhere IMU-Werte bei stabiler 1RM-Prognose",
+"Nur bei leichten Lasten kleine Abweichungen ohne Effekt aufs 1RM"
+],
+"warum": "Es gibt Hinweise auf relevante Geräte-Abweichungen (MAPE bis 11 %) und extreme Zufallsfehler der 1RM-Schätzung (bis 71,6 %)."
+}
+}
+},
+{
+"id": "ALG-110",
+"karte": {
+"kopf": "Trainierte · Experiment im Überkreuz-Design",
+"titel": "Bei starker Ermüdung liegt das alte Maximalgewicht um 16 kg zu hoch",
+"titel_hervor": "um 16 kg zu hoch",
+"setup": "Trainierende hoben eine Trap-Bar frisch sowie moderat und stark ermüdet. Verglichen wurden feste Prozentwerte mit dem aktuellen Hanteltempo.",
+"zahl": {
+"label": "Überschätzung bei hoher Ermüdung",
+"wert": "+15,7 kg",
+"alltag": ""
+},
+"kern": [
+"Schon bei mäßiger Ermüdung überschätzte der alte Bestwert um fast 9 kg",
+"Das Hanteltempo bildete die aktuelle Tagesform auch ermüdet sauber ab",
+"Voraussetzung: Jede gemessene Wiederholung wird maximal explosiv bewegt"
+],
+"grenze": "Nur beim Heben mit der Trap-Bar geprüft – bei anderen Übungen kann die Abweichung kleiner oder größer sein.",
+"fuer_dich": "Du trainierst schwer nach einer harten Vorbelastung? Passe das Gewicht nach Tagesform oder Tempo an statt nach alten Prozentwerten.",
+"labor": {
+"design": "Experimentelle Crossover-Studie, Kontrolle vs. moderate und hohe Ermüdung (Trap-Bar)",
+"teilnehmer": "Krafttrainierte (Trap-Bar Deadlift)",
+"ergebnis": "Statisches 1RM: +4,1 kg (Kontrolle), +8,9 kg (moderat), +15,7 ± 10,2 kg (hoch); VBT ohne Bias"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du hast schon ein hartes Lauf- oder Krafttraining in den Beinen und willst schwer heben. Was passiert, wenn du stur nach deiner frischen Bestleistung trainierst?",
+"richtig": "Die geplanten Gewichte sind für den Tag deutlich zu schwer",
+"falsch": [
+"Die Bestleistung bleibt auch stark ermüdet unverändert abrufbar",
+"Das geplante Gewicht fühlt sich meist spürbar zu leicht an",
+"Ermüdung verändert nur die Ausdauer, nicht die Maximalkraft"
+],
+"warum": "Unter starker Ermüdung sinkt die abrufbare Kraft – der frische Bestwert lag im Schnitt fast 16 kg zu hoch."
+},
+"plus": {
+"frage": "Nach einer ermüdenden Vorbelastung stehen schwere Sätze auf dem Plan. Wie steuerst du die Last sinnvoller als über fixe Prozentwerte des Basis-1RM?",
+"richtig": "Über das aktuelle Aufwärmtempo oder deine heutige RIR",
+"falsch": [
+"Über ein paar Kilo Aufschlag für mehr Trainingsreiz",
+"Über den höchsten Bestwert aus dem letzten Trainingsblock",
+"Indem du die Pausen verkürzt, aber das Gewicht gleich lässt"
+],
+"warum": "Feste Prozentwerte ignorieren Tagesermüdung, während Hanteltempo und RIR die aktuelle Leistungsfähigkeit abbilden."
+},
+"labor": {
+"frage": "Beim Trap-Bar-Heben wurden statische Pre-Session-1RM-Vorgaben mit Last-Geschwindigkeits-Modellen unter zunehmender Ermüdung verglichen. Was zeigte sich?",
+"richtig": "Statische Werte überschätzten stark, Tempomodelle blieben unverzerrt",
+"falsch": [
+"Beide Verfahren verloren unter Ermüdung gleichermaßen an Genauigkeit",
+"Tempomodelle unterschätzten die Leistung bei hoher Ermüdung massiv",
+"Erst nach mehreren Tagen Ermüdung wich das statische 1RM ab"
+],
+"warum": "Die Überschätzung statischer 1RM-Werte stieg auf +15,7 kg, während das Tempoprofil bei maximaler Bewegungsintention unverzerrt blieb."
+}
+}
+},
+{
+"id": "ALG-111",
+"karte": {
+"kopf": "498 Erwachsene · Messvergleich & Review",
+"titel": "Gängige Kalorienformeln liegen bei jedem Fünften klar daneben",
+"titel_hervor": "bei jedem Fünften klar daneben",
+"setup": "Bei 498 gesunden Erwachsenen wurde der Ruhe-Energieverbrauch im Labor gemessen und mit bekannten Berechnungsformeln verglichen.",
+"zahl": {
+"label": "Trefferquote innerhalb ±10 %",
+"wert": "70–82 %",
+"alltag": "≈ 7 bis 8 von 10 Personen"
+},
+"kern": [
+"Die beste Standardformel traf den echten Verbrauch bei sieben bis acht von zehn",
+"Ältere Formeln überschätzten den täglichen Grundbedarf deutlich häufiger",
+"Organmasse, Hormone und Anpassungen des Körpers erfasst keine Formel"
+],
+"grenze": "Untersucht wurden gesunde Erwachsene in Ruhe – dein täglicher Gesamtverbrauch hängt zusätzlich stark von Bewegung ab.",
+"fuer_dich": "Du startest mit einem Kalorienrechner? Nimm den Wert nur für zwei Wochen als Startpunkt und passe ihn danach an deinen Gewichtstrend an.",
+"labor": {
+"design": "Validierungsstudie und Review, statische RMR-Formeln gegen indirekte Kalorimetrie",
+"teilnehmer": "498 gesunde Erwachsene",
+"ergebnis": "Mifflin-St Jeor: R² = 0,71, 70–82 % innerhalb ±10 %; Abweichungen bis ±200–400 kcal/Tag"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Ein Online-Rechner ermittelt deinen Grundumsatz aus Alter, Größe und Gewicht. Wie genau ist so ein Ergebnis für dich persönlich?",
+"richtig": "Ein guter Startwert, der im Einzelfall aber klar abweichen kann",
+"falsch": [
+"Auf wenige Kalorien genau für fast jeden gesunden Menschen",
+"Völlig unbrauchbar, weil Größe und Gewicht keine Rolle spielen",
+"Für alle Menschen zu niedrig, weil Bewegung nicht mitzählt"
+],
+"warum": "Selbst die beste Standardformel trifft nur rund sieben bis acht von zehn Personen innerhalb von zehn Prozent."
+},
+"plus": {
+"frage": "Du hast deinen Kalorienbedarf neu per Formel berechnet. Wie gehst du in den nächsten Wochen sinnvoll mit diesem Wert um?",
+"richtig": "Zwei Wochen als Startwert testen und am Gewichtstrend anpassen",
+"falsch": [
+"Monatelang unverändert beibehalten, da die Formel feststeht",
+"Pauschal 400 kcal abziehen, weil Formeln zu hoch liegen",
+"Jeden Tag neu berechnen, sobald sich dein Gewicht bewegt"
+],
+"warum": "Statische Formeln kennen weder Hormone noch Anpassungen – erst der echte Verlauf zeigt deinen tatsächlichen Bedarf."
+},
+"labor": {
+"frage": "Statische Ruheumsatzformeln wurden gegen indirekte Kalorimetrie bei 498 gesunden Erwachsenen geprüft. Wo lag die Grenze der besten Formel?",
+"richtig": "70–82 % lagen innerhalb ±10 %, individuell blieben größere Fehler",
+"falsch": [
+"Über 95 % lagen innerhalb von ±2 % des gemessenen Laborwerts",
+"Die ältere Standardformel schnitt deutlich treffsicherer ab",
+"Statische Formeln berücksichtigten hormonelle Unterschiede genau"
+],
+"warum": "Bei R² = 0,71 traf die beste Formel 70–82 % innerhalb ±10 %, konnte aber individuelle Faktoren wie Organmasse nicht abbilden."
+}
+}
+},
+{
+"id": "ALG-112",
+"karte": {
+"kopf": "Klinische Daten · Energiemodell-Validierung",
+"titel": "Die alte 7.700-kcal-Regel überschätzt den Gewichtsverlust doppelt",
+"titel_hervor": "überschätzt den Gewichtsverlust doppelt",
+"setup": "Ein dynamisches Stoffwechselmodell wurde mit klinischen Abnehmdaten verglichen und der alten Faustregel von 7.700 kcal pro Kilo gegenübergestellt.",
+"zahl": {
+"label": "Überschätzung nach zwölf Monaten",
+"wert": "rund 100 %",
+"alltag": "halb so viel Verlust wie gedacht"
+},
+"kern": [
+"Wenn du abnimmst, sinkt dein Energieverbrauch dynamisch mit",
+"Kurzfristig schwankt das Gewicht durch Wasser oft um ein bis zwei Kilo",
+"Wer sein Essen aufschreibt, vergisst im Schnitt 15 bis 30 % der Kalorien"
+],
+"grenze": "Auch ein besseres Modell braucht ehrliche Einträge – fehlen Snacks im Protokoll, rechnet jede App falsch.",
+"fuer_dich": "Deine Waage springt von Tag zu Tag? Schau auf den Trend über zwei bis drei Wochen statt auf einzelne Wiegetage.",
+"labor": {
+"design": "Mathematische Modellvalidierung (2-Kompartiment-Modell) gegen klinische Studiendaten",
+"teilnehmer": "Klinische Abnehmstudien (Erwachsene)",
+"ergebnis": "3.500-kcal-Regel überschätzt Verlust nach 12 Mon. um ~100 %; Wasser ±1–2 kg; Underreporting 15–30 %"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Viele rechnen: 7.700 eingesparte Kalorien bedeuten genau ein Kilo weniger auf der Waage. Was passiert über ein Jahr wirklich?",
+"richtig": "Man nimmt deutlich weniger ab, weil der Verbrauch mitsinkt",
+"falsch": [
+"Man nimmt genau so viel ab, wie die Rechnung vorhersagt",
+"Man nimmt deutlich mehr ab, weil der Körper schneller verbrennt",
+"Das Gewicht ändert sich erst nach genau zwölf Monaten"
+],
+"warum": "Mit sinkendem Gewicht verbraucht der Körper weniger Energie – die alte Regel überschätzt den Verlust nach einem Jahr etwa doppelt."
+},
+"plus": {
+"frage": "Du bist seit zehn Tagen im Defizit, aber die Waage zeigt heute ein Kilo mehr als gestern. Wie bewertest du das sinnvoll?",
+"richtig": "Als normale Wasserschwankung – erst der 2–3-Wochen-Trend zählt",
+"falsch": [
+"Als Beweis, dass du sofort 500 kcal weiter streichen musst",
+"Als Zeichen, dass du über Nacht ein Kilo Fett zugenommen hast",
+"Als Beleg, dass Kalorienzählen bei dir grundsätzlich nicht wirkt"
+],
+"warum": "Wasser- und Glykogenverschiebungen von ±1 bis 2 kg überdecken unterhalb von 14 Tagen echte Veränderungen."
+},
+"labor": {
+"frage": "Ein dynamisches 2-Kompartiment-Modell wurde gegen die statische 7.700-kcal/kg-Regel geprüft. Welcher Fehler entsteht zusätzlich bei adaptiven TDEE-Algorithmen durch Underreporting?",
+"richtig": "Der berechnete TDEE wird künstlich zu niedrig angesetzt",
+"falsch": [
+"Der berechnete TDEE wird systematisch nach oben korrigiert",
+"Underreporting gleicht sich über 14 Tage von selbst aus",
+"Wasserschwankungen verschwinden bei höherem Underreporting"
+],
+"warum": "Fehlen 15–30 % der Zufuhr im Log, hält der Algorithmus das reale Defizit für kleiner und senkt den geschätzten TDEE fälschlich ab."
+}
+}
+},
+{
+"id": "ALG-113",
+"karte": {
+"kopf": "40 Geräte · 60 Studien zusammengefasst",
+"titel": "Smartwatches verfehlen den Kalorienverbrauch oft um 15 bis 40 %",
+"titel_hervor": "oft um 15 bis 40 %",
+"setup": "60 Studien verglichen 40 Fitness-Tracker und Smartwatches beim Kalorienverbrauch mit genauen Labormessungen.",
+"zahl": {
+"label": "Typischer Fehler vieler Tracker",
+"wert": "15–40 %",
+"alltag": ""
+},
+"kern": [
+"Die Abweichungen hängen stark vom jeweiligen Uhrenmodell ab",
+"Im Einzelfall streuen die geschätzten Werte extrem breit",
+"Hersteller-Rechenwege sind geheim und kennen deinen Körperbau kaum"
+],
+"grenze": "Geprüft wurden 40 verbreitete Modelle – neuere Software-Updates der Hersteller können sich leicht anders verhalten.",
+"fuer_dich": "Deine Uhr zeigt 700 verbrannte Kalorien an? Iss diese Zahl nicht einfach extra auf, sondern richte dich nach deinem Gewichtstrend.",
+"labor": {
+"design": "Systematisches Review und Metaanalyse, 60 Studien gegen DLW und indirekte Kalorimetrie",
+"teilnehmer": "40 kommerzielle Wearables in 60 Studien",
+"ergebnis": "MAPE meist deutlich über 10 % (oft 15–40 %); sehr breite 95 % Limits of Agreement"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Deine Smartwatch zeigt dir am Abend genau an, wie viele Kalorien du heute verbrannt hast. Wie verlässlich ist diese Zahl?",
+"richtig": "Sie liegt oft um fünfzehn bis vierzig Prozent daneben",
+"falsch": [
+"Sie stimmt meist bis auf wenige Prozent mit der Realität überein",
+"Sie ist beim Sport ungenau, im Alltag aber fast exakt",
+"Alle bekannten Marken liefern annähernd dieselben Zahlen"
+],
+"warum": "Im Vergleich zu Labormessungen wichen die meisten Tracker deutlich von der Akzeptanzgrenze ab und streuten stark."
+},
+"plus": {
+"frage": "Deine Ernährungs-App will die von der Smartwatch gemeldeten Aktivitätskalorien automatisch auf dein Tagesziel aufschlagen. Was ist sinnvoll?",
+"richtig": "Diese Kopplung ausschalten und nach dem Gewichtstrend steuern",
+"falsch": [
+"Die Zahl genau so übernehmen, damit du genug Energie isst",
+"Die Uhrkalorien verdoppeln, weil Tracker zu wenig anzeigen",
+"Die Uhrkalorien nur an Krafttrainingstagen voll einrechnen"
+],
+"warum": "Wegen Fehlerbreiten von oft 15–40 % verfälschen Smartwatch-Kalorien dein Ernährungsziel leicht nach oben oder unten."
+},
+"labor": {
+"frage": "60 Validierungsstudien verglichen 40 Wearables gegen doppelt markiertes Wasser und indirekte Kalorimetrie. Wie fiel das Urteil zur Individualgenauigkeit aus?",
+"richtig": "Hohe MAPE-Werte und sehr breite 95-%-Limits-of-Agreement",
+"falsch": [
+"Durchgehend unter zehn Prozent Fehler bei allen Sportuhren",
+"Hohe Genauigkeit, sobald das Körpergewicht hinterlegt war",
+"Systematisch kleine Streuung ohne Unterschiede zwischen Geräten"
+],
+"warum": "Viele Geräte lagen mit 15–40 % MAPE klar über der 10-%-Schwelle und zeigten sehr breite individuelle Schwankungen."
+}
+}
+},
+{
+"id": "ALG-114",
+"karte": {
+"kopf": "Führende Smartwatches · Labormessvergleich",
+"titel": "Beim Krafttraining liegen Smartwatches rund die Hälfte daneben",
+"titel_hervor": "rund die Hälfte daneben",
+"setup": "Führende Smartwatches wurden beim Gehen, Laufen und Krafttraining mit einer tragbaren Atemgasmessung des echten Kalorienverbrauchs verglichen.",
+"zahl": {
+"label": "Mittlerer Fehler beim Krafttraining",
+"wert": "42–57 %",
+"alltag": ""
+},
+"kern": [
+"Auch beim Gehen und Laufen lagen die Uhren rund 20 bis 32 % zu hoch",
+"Beim Krafttraining gab es fast keinen Zusammenhang zur echten Messung",
+"Ohne Armschwung merkt die Uhr kaum, wie hart ein Muskel arbeitet"
+],
+"grenze": "Geprüft wurden ausgewählte Modelle – bei sehr schnellen Sprints können Uhren den Verbrauch dagegen sogar unterschätzen.",
+"fuer_dich": "Du schaust nach dem Krafttraining auf die Uhr-Kalorien? Ignoriere den Wert und nutze die Uhr lieber für Pausen und Zeit.",
+"labor": {
+"design": "Experimentelle Validierung, 3 Smartwatches (Gehen/Laufen) & 7 Wearables (Kraft) vs. Atemgas",
+"teilnehmer": "Erwachsene im Feld- und Krafttest",
+"ergebnis": "Gehen +19,8–32,0 %, Laufen +21,8–24,4 % (LoA ±44–89 kcal); Kraft MAPE 42–57 %, r = 0,02–0,18"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Warum verschätzt sich eine Smartwatch beim Krafttraining noch viel stärker beim Kalorienverbrauch als beim Joggen?",
+"richtig": "Sie erkennt schwere Muskelarbeit ohne viel Armbewegung kaum",
+"falsch": [
+"Beim Krafttraining verbraucht der Körper fast keine Energie",
+"Der Pulssensor schaltet sich im Fitnessstudio automatisch ab",
+"Die Uhr rechnet beim Joggen ohnehin auf die Kalorie genau"
+],
+"warum": "Schwere Arbeit mit wenig Handgelenksbewegung können Uhren kaum erfassen – der Fehler lag beim Krafttraining bei rund der Hälfte."
+},
+"plus": {
+"frage": "Deine Sportuhr meldet nach einem lockeren Lauf 600 verbrannte Kalorien. In welche Richtung weicht dieser Wert meist ab?",
+"richtig": "Er liegt oft rund ein Fünftel bis ein Drittel zu hoch",
+"falsch": [
+"Er liegt meistens rund ein Drittel zu niedrig",
+"Er trifft den echten Verbrauch beim Laufen fast exakt",
+"Er ist nur bei sehr langsamen Spaziergängen zu hoch"
+],
+"warum": "Beim Gehen und Laufen im Freien überschätzten führende Smartwatches den realen Verbrauch um rund 20 bis 32 %."
+},
+"labor": {
+"frage": "Führende Wearables wurden beim Gehen, Laufen und Krafttraining gegen mobile Atemgasmessung geprüft. Wie fiel die Validität beim Krafttraining aus?",
+"richtig": "Sehr hoher Fehler um die Hälfte bei minimaler Korrelation",
+"falsch": [
+"Geringerer Fehler als beim Laufen durch stabile Herzfrequenz",
+"Moderater Fehler von rund zehn Prozent bei hoher Korrelation",
+"Systematische Unterschätzung bei gleichzeitig hoher Korrelation"
+],
+"warum": "Über sieben Wearables erreichte der Fehler beim Krafttraining 42–57 % MAPE bei einer minimalen Korrelation von r = 0,02–0,18."
+}
+}
+},
+{
+"id": "ALG-115",
+"karte": {
+"kopf": "53 Personen · Multi-Uhren-Vergleich",
+"titel": "Bei Bewegung steigt der Pulsfehler am Handgelenk um rund 30 %",
+"titel_hervor": "steigt der Pulsfehler",
+"setup": "53 Personen mit allen Hauttypen trugen verschiedene optische Handgelenks-Sensoren in Ruhe und bei Belastung – verglichen mit einem EKG.",
+"zahl": {
+"label": "Höherer Pulsfehler bei Aktivität",
+"wert": "+30 %",
+"alltag": ""
+},
+"kern": [
+"In Ruhe und bei ruhigem Dauerlauf messen Uhren den Puls meist ordentlich",
+"Verrutschen, fester Griff und Laufrhythmus stören die optische Messung",
+"Zwischen helleren und dunkleren Hauttypen gab es keinen klaren Unterschied"
+],
+"grenze": "Die Sensoren filterten viele unklare Werte intern heraus – dadurch entstanden Lücken genau in bewegten Phasen.",
+"fuer_dich": "Du steuerst harte Intervalle oder Krafttraining nach Puls? Nutze dafür einen Brustgurt oder Oberarmsensor statt der Uhr.",
+"labor": {
+"design": "Experimentelle Multi-Device-Validierung, Consumer- und Research-PPG gegen EKG",
+"teilnehmer": "53 Personen (alle Fitzpatrick-Hauttypen 1–6)",
+"ergebnis": "Ruhe-MAE Consumer 7,2 ± 5,4 bpm; unter Aktivität +30 % Fehler (Research-MAE 12,8–19,8 bpm)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Warum zeigt deine Uhr beim Krafttraining oder bei Sprints manchmal einen seltsamen Puls an?",
+"richtig": "Bewegung, Verrutschen und feste Griffspannung stören den Sensor",
+"falsch": [
+"Das Herz schlägt bei kurzen Sprints noch nicht schneller",
+"Optische Sensoren funktionieren grundsätzlich nur im Schlaf",
+"Schweiß macht den Sensor sofort dauerhaft unbrauchbar"
+],
+"warum": "Sobald die Uhr auf der Haut wackelt oder Unterarme anspannen, steigt der Messfehler im Schnitt um rund 30 %."
+},
+"plus": {
+"frage": "Du planst ein hochintensives Intervalltraining (HIIT) und willst präzise Herzfrequenzzonen treffen. Welche Messung passt am besten?",
+"richtig": "Ein EKG-Brustgurt oder ein optischer Oberarmsensor",
+"falsch": [
+"Die normale Handgelenksmessung einer Smartwatch",
+"Eine locker sitzende Uhr, damit mehr Licht durchkommt",
+"Gar keine Messung, weil sich der Puls bei HIIT kaum ändert"
+],
+"warum": "Bei schnellen Wechseln hinken Handgelenkssensoren nach und zeigen deutliche Bewegungsfehler – ein Brustgurt misst sauberer."
+},
+"labor": {
+"frage": "Optische Handgelenks-Sensoren (PPG) wurden bei 53 Personen aller Hauttypen in Ruhe und bei Aktivität gegen ein EKG getestet. Was zeigte sich?",
+"richtig": "Rund 30 % höherer Fehler unter Belastung, kein klarer Hauttyp-Effekt",
+"falsch": [
+"Gleiche Genauigkeit bei Bewegung wie in Ruhe über alle Geräte",
+"Starker Fehleranstieg bei dunkler Haut, aber kaum Bewegungsfehler",
+"Geringerer Messfehler bei schnellen Lastwechseln als in Ruhe"
+],
+"warum": "Unter Aktivität stieg der Fehler im Schnitt um 30 % bei vielen Datenlücken; signifikante Hauttyp-Effekte fanden sich hier nicht."
+}
+}
+},
+{
+"id": "ALG-116",
+"karte": {
+"kopf": "Sportler · Messdauer-Vergleich",
+"titel": "Eine Minute im Liegen reicht für eine saubere Herz-Erholungsmessung",
+"titel_hervor": "Eine Minute im Liegen reicht",
+"setup": "Verglichen wurde eine einminütige Messung der Herzratenvariabilität direkt nach dem Aufwachen mit dem klassischen Fünf-Minuten-Standard.",
+"zahl": null,
+"kern": [
+"Im Liegen schwanken die Tageswerte deutlich weniger als im Stehen",
+"Der gewählte Messwert reagiert kaum empfindlich auf dein Atemtempo",
+"Erst der Schnitt über sieben Tage ist wirklich aussagekräftig"
+],
+"grenze": "Ein einzelner Morgenwert schwankt stark durch Trinkmenge, spätes Essen oder Schlaf und sagt allein wenig aus.",
+"fuer_dich": "Du misst morgens deine HRV? Miss direkt nach dem Aufwachen eine Minute ruhig im Liegen und schau nur auf deinen Wochentrend.",
+"labor": {
+"design": "Validierungsstudie, 60-s- gegen 5-Min.-LnRMSSD im Liegen vs. Stehen",
+"teilnehmer": "Sportler (Morgenmessungen)",
+"ergebnis": "Kein signifikanter Unterschied zwischen 60 s und 5 Min.; geringerer CV im Liegen als im Stehen"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du möchtest morgens mit Uhr oder Gurt messen, wie erholt dein Nervensystem ist. Wie gelingt die Messung am zuverlässigsten?",
+"richtig": "Eine Minute ruhig im Liegen direkt nach dem Aufwachen",
+"falsch": [
+"Im Stehen direkt nach dem ersten Kaffee des Tages",
+"Mindestens zwanzig Minuten lang nach dem Sport",
+"Zu beliebigen Uhrzeiten je nach freier Minute"
+],
+"warum": "Eine Minute im Liegen direkt nach dem Aufwachen schwankt am wenigsten und ist so genau wie fünf Minuten."
+},
+"plus": {
+"frage": "Dein einzelner HRV-Wert ist heute Morgen deutlich tiefer als gestern. Wie solltest du damit umgehen?",
+"richtig": "Den gleitenden 7-Tage-Durchschnitt prüfen statt überreagieren",
+"falsch": [
+"Sofort eine ganze Trainingswoche aussetzen",
+"Die Messung noch einmal im Stehen wiederholen und mischen",
+"Den Wert ignorieren, weil nur 5-Minuten-Messungen gelten"
+],
+"warum": "Einzelwerte reagieren auf spätes Essen oder Flüssigkeit – erst der 7-Tage-Trend zeigt die echte Entwicklung."
+},
+"labor": {
+"frage": "Beim autonomen Monitoring wurden 60-Sekunden- und 5-Minuten-Messungen von LnRMSSD im Liegen und Stehen verglichen. Warum eignet sich RMSSD besonders für den Alltag?",
+"richtig": "Es ist bei 60 s valide und kaum anfällig für die Atemfrequenz",
+"falsch": [
+"Es verlangt zwingend eine Messung im Stehen über fünf Minuten",
+"Es reagiert stärker auf die Atemfrequenz als LF/HF-Werte",
+"Es eliminiert alle Einflüsse von Schlaf und Flüssigkeit"
+],
+"warum": "60-s-LnRMSSD entsprach dem 5-Minuten-Standard, streute im Liegen geringer und ist deutlich robuster gegenüber der Atmung als LF/HF."
+}
+}
+},
+{
+"id": "ALG-117",
+"karte": {
+"kopf": "Smartwatches · Systematische Studienübersicht",
+"titel": "Smartwatches treffen die Schlafdauer gut, Schlafphasen nur mäßig",
+"titel_hervor": "Schlafphasen nur mäßig",
+"setup": "Eine Studienübersicht verglich Schlafdaten gängiger Smartwatches mit echten Messungen im Schlaflabor.",
+"zahl": {
+"label": "Trefferquote bei Schlafphasen",
+"wert": "50–65 %",
+"alltag": "nur knapp über die Hälfte stimmt"
+},
+"kern": [
+"Ob du überhaupt schläfst, erkennen Uhren in über 90 % der Fälle",
+"Kurzes ruhiges Wachliegen im Bett halten Uhren oft fälschlich für Schlaf",
+"Ohne Hirnstrommessung raten Uhren Schlafphasen nur aus Bewegung und Puls"
+],
+"grenze": "Geprüft wurden Alltags-Wearables ohne Hirnstrommessung – medizinische Schlaflabore ersetzen sie nicht.",
+"fuer_dich": "Deine Uhr zeigt wenig Tiefschlaf an und macht dich nervös? Achte lieber auf genug Gesamtschlaf und feste Schlafenszeiten.",
+"labor": {
+"design": "Systematisches Review, kommerzielle Wearables gegen Polysomnographie (PSG)",
+"teilnehmer": "Nutzer kommerzieller Wearables (Schlaflabor-Validierungen)",
+"ergebnis": "Schlaf-Sensitivität >90 %; WASO-Spezifität 30–60 %; 4-Phasen-Genauigkeit ca. 50–65 %"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Deine Uhr meldet morgens kaum Tiefschlaf, obwohl du dich ausgeschlafen fühlst. Wie solltest du diese Zahl einordnen?",
+"richtig": "Mit Vorsicht, denn Uhren schätzen Schlafphasen nur mäßig genau",
+"falsch": [
+"Als verlässliche Messung deiner Hirnaktivität in der Nacht",
+"Als genaueren Wert als deine tatsächliche Gesamtschlafzeit",
+"Als Zeichen, dass die Uhr auch deine Schlafdauer nicht erkennt"
+],
+"warum": "Uhren erkennen die Gesamtschlafzeit gut, liegen bei einzelnen Schlafphasen ohne Hirnstrommessung aber oft daneben."
+},
+"plus": {
+"frage": "Welche Schlafwerte deiner Smartwatch eignen sich am ehesten, um deine Erholung im Trainingsalltag zu bewerten?",
+"richtig": "Gesamtschlafzeit und Regelmäßigkeit deiner Schlafenszeiten",
+"falsch": [
+"Der exakte Prozentanteil an REM- und Tiefschlaf pro Nacht",
+"Die minutengenaue Dauer deiner nächtlichen Wachphasen",
+"Die Anzahl der Wechsel zwischen Leicht- und Tiefschlaf"
+],
+"warum": "Die Schlafdauer erkennen Wearables mit über 90 % Sensitivität, während Wachphasen und Schlafstadien stark fehlerbehaftet sind."
+},
+"labor": {
+"frage": "Kommerzielle Wearables wurden in einem systematischen Review mit der Polysomnographie (PSG) verglichen. Wo lag die größte Schwäche der Geräte?",
+"richtig": "Niedrige Spezifität für Wachphasen und mäßige Stadien-Genauigkeit",
+"falsch": [
+"Sehr geringe Sensitivität für die generelle Schlaf-Erkennung",
+"Unfähigkeit, den groben Einschlafzeitpunkt zu bestimmen",
+"Zu hohe Gewichtung der gemessenen Hirnstromkurven"
+],
+"warum": "Trotz >90 % Sensitivität für Schlaf lag die WASO-Spezifität oft bei nur 30–60 % und die 4-Stufen-Klassifikation bei 50–65 %."
+}
+}
+},
+{
+"id": "ALG-118",
+"karte": {
+"kopf": "21 Athleten · Sportuhr gegen Labor",
+"titel": "Sportuhren schätzen die Ausdauerfitness fast 7 % daneben",
+"titel_hervor": "fast 7 % daneben",
+"setup": "21 Athleten absolvierten einen Belastungstest im Labor. Ihre Atemwerte wurden mit der Fitness-Schätzung einer modernen Sportuhr verglichen.",
+"zahl": {
+"label": "Mittlerer Fehler der Fitness-Schätzung",
+"wert": "6,85 %",
+"alltag": ""
+},
+"kern": [
+"Erste Hinweise: Für einen echten Labor-Ersatz war die Uhr nicht genau genug",
+"Der geschätzte Puls an der Ausdauerschwelle stimmte deutlich besser",
+"Wind, Hitze, Untergrund und ein falscher Maximalpuls verzerren den Wert"
+],
+"grenze": "Nur 21 Athleten mit einem Uhrenmodell getestet – für andere Marken und Freizeitsportler noch wenig untersucht.",
+"fuer_dich": "Du willst genaue Tempobereiche fürs Laufen? Nutze deine Uhr für den Langzeittrend, aber bestimme dein Tempo per 3- oder 5-km-Test.",
+"labor": {
+"design": "Validierungsstudie, Sportuhr (VO2max & Schwelle) gegen 1-Min.-Spiroergometrie",
+"teilnehmer": "21 Athleten",
+"ergebnis": "VO2max MAPE 6,85 %, CCC = 0,70; TOST (±0,5 d) für VO2max & OBLA-Tempo nicht bestanden"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Deine Sportuhr zeigt dir nach dem Joggen einen genauen Fitnesswert an. Was solltest du über diese Zahl wissen?",
+"richtig": "Sie zeigt grobe Trends, ersetzt aber keinen genauen Labortest",
+"falsch": [
+"Sie entspricht genau einer medizinischen Atemgasmessung",
+"Sie bleibt von Wind, Hitze und Untergrund völlig unberührt",
+"Sie hat überhaupt keinen Zusammenhang mit deiner Ausdauer"
+],
+"warum": "Die Uhr lag im Schnitt knapp sieben Prozent daneben und reagiert empfindlich auf Wetter, Boden und Puls-Annahmen."
+},
+"plus": {
+"frage": "Du möchtest präzise Pace-Zonen für dein Lauftraining festlegen. Wie gehst du mit dem VO2max- und Schwellenwert deiner Uhr um?",
+"richtig": "Die Uhr als Trend nutzen, Pace aber im Feldtest messen",
+"falsch": [
+"Die geschätzte Schwellen-Pace der Uhr direkt übernehmen",
+"Den VO2max-Wert der Uhr gar nicht als Trend beobachten",
+"Die Pace-Zonen allein nach dem Ruhepuls der Uhr berechnen"
+],
+"warum": "Die Schwellen-Geschwindigkeit der Uhr erreichte keine Labor-Genauigkeit – ein realer 3- oder 5-km-Test liefert verlässlichere Zonen."
+},
+"labor": {
+"frage": "Bei 21 Athleten wurde eine Sportuhr mittels Äquivalenztest (TOST) gegen eine Spiroergometrie geprüft. Welcher Parameter bestand den strengen Vergleich?",
+"richtig": "Nur die Herzfrequenz an der Laktatschwelle",
+"falsch": [
+"Sowohl die VO2max als auch das Laktatschwellen-Tempo",
+"Keiner der geschätzten Ausdauerparameter der Uhr",
+"Nur die geschätzte VO2max bei sehr langsamen Läufen"
+],
+"warum": "Diese kleine Studie deutet darauf hin, dass VO2max (MAPE 6,85 %, CCC 0,70) und Schwellentempo nicht äquivalent zum Labor waren."
+}
+}
+},
+{
+"id": "ALG-119",
+"karte": {
+"kopf": "GPS-Geräte · Feldmessung im Freien",
+"titel": "GPS trifft gerade Strecken gut, verliert aber in engen Kurven",
+"titel_hervor": "verliert aber in engen Kurven",
+"setup": "Verschiedene GPS-Uhren und Smartphones wurden auf freien Strecken, in engen Kurven und bei schnellen Wendemanövern im Freien geprüft.",
+"zahl": {
+"label": "Distanzfehler auf freier Strecke",
+"wert": "< 1–3 %",
+"alltag": ""
+},
+"kern": [
+"Erste Hinweise: Das aktuelle Lauftempo schwankt per GPS oft deutlich",
+"Bei vielen Kehrtwenden misst GPS die echte Laufstrecke systematisch zu kurz",
+"Hohe Gebäude und dichter Wald lenken das Signal ab und stören die Messung"
+],
+"grenze": "Geprüft an typischen 1-Hz-Geräten im Feld – modernere Mehrfrequenz-Chips wurden hier noch nicht erfasst.",
+"fuer_dich": "Du läufst kurze, schnelle Intervalle auf der Bahn? Stoppe deine Rundenzeiten manuell statt auf das Live-GPS-Tempo zu schauen.",
+"labor": {
+"design": "Experimentelle Multi-Device-Feldvalidierung auf geraden und kurvigen Strecken",
+"teilnehmer": "Feldtests mit Sportuhren und Smartphones",
+"ergebnis": "Freie Strecke meist <1–3 % Distanzfehler; deutliche Fehler bei Momentan-Pace und 180°-Wenden"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du machst draußen kurze Pendelsprints mit vielen engen Kehrtwenden. Wie gut misst das GPS deiner Uhr dabei die genaue Strecke?",
+"richtig": "Es misst die Strecke meist kürzer, als du wirklich gelaufen bist",
+"falsch": [
+"Es erfasst jeden Richtungswechsel auf den Zentimeter genau",
+"Es rechnet bei vielen Kurven meistens viel zu viele Meter hinzu",
+"Es funktioniert in engen Straßen besser als auf offenem Feld"
+],
+"warum": "Bei engen Radien und 180-Grad-Wenden schneidet das GPS die Ecken ab und unterschätzt die echte Laufstrecke."
+},
+"plus": {
+"frage": "Du läufst kurze, schnelle Intervalle auf einer 400-Meter-Bahn und willst dein Tempo sauber treffen. Worauf verlässt du dich besser?",
+"richtig": "Auf manuelle Rundenzeiten statt auf die GPS-Momentan-Pace",
+"falsch": [
+"Ausschließlich auf die sekündliche Live-Pace deiner Uhr",
+"Auf GPS in dichten Waldstücken statt auf freier Strecke",
+"Auf die Annahme, dass schnelle Sprints GPS genauer machen"
+],
+"warum": "Die Momentan-Pace reagiert träge und schwankt in Kurven stark – manuelle Splits auf abgemessener Bahn sind präziser."
+},
+"labor": {
+"frage": "Feldvalidierungen prüften 1-Hz-GPS-Geräte auf freien Strecken versus engen Radien und 180°-Wenden. Welche Ursachen begrenzen die Genauigkeit im Alltag?",
+"richtig": "Niedrige Abtastrate, Signalreflexionen und interne Glättung",
+"falsch": [
+"Zu hohe Abtastraten überfordern die Distanzrechnung",
+"GPS-Fehler treten nur bei sehr langsamen Gehgeschwindigkeiten auf",
+"Auf offenen Strecken liegt der Distanzfehler meist über zehn Prozent"
+],
+"warum": "Erste Feldstudien zeigen <1–3 % Fehler auf freien Strecken, aber deutliche Verzerrungen durch 1 Hz, Multipath und Glättung."
+}
+}
+},
+{
+"id": "ALG-120",
+"karte": {
+"kopf": "198 Ausdauersportler · 8 Studien ausgewertet",
+"titel": "Training nach Erholungs-Puls bringt mehr Ausdauer bei weniger Härte",
+"titel_hervor": "mehr Ausdauer bei weniger Härte",
+"setup": "Acht Studien verglichen starre Lauf- und Ausdauerpläne mit Plänen, bei denen harte Einheiten an die tägliche Herzratenvariabilität angepasst wurden.",
+"zahl": {
+"label": "Vorteil an den Ausdauerschwellen",
+"wert": "g = 0,30",
+"alltag": "spürbarer mittlerer Vorteil"
+},
+"kern": [
+"Die Sportler brauchten weniger harte Einheiten für starke Fortschritte",
+"Deutlich weniger Teilnehmer verschlechterten sich über den Trainingsblock",
+"Bei der maximalen Sauerstoffaufnahme war der Unterschied nur minimal"
+],
+"grenze": "Die meisten Studien dauerten nur drei bis acht Wochen mit kleinen Gruppen – langfristige Effekte über Jahre sind offen.",
+"fuer_dich": "Dein 7-Tage-HRV-Trend fällt unter deinen Normbereich? Tausche das geplante Intervalltraining gegen eine lockere Grundlageneinheit.",
+"labor": {
+"design": "Systematisches Review und Metaanalyse, HRV-gesteuert vs. starrer Plan (meist 3–8 Wo.)",
+"teilnehmer": "198 Teilnehmer (8 Studien, 9 Interventionen)",
+"ergebnis": "Submaximale Schwellen (VT1/VT2): g = 0,30; 3.000-m-Streuung −1 bis +6 % vs. −4 bis +8 %"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du passt harte Ausdauereinheiten an deinen morgendlichen Erholungswert an, statt stur nach Plan zu laufen. Was ist der Hauptvorteil?",
+"richtig": "Weniger Leute rutschen ins Übertraining und bauen sogar ab",
+"falsch": [
+"Du musst überhaupt keine lockeren Einheiten mehr machen",
+"Deine Bestzeit springt in wenigen Tagen auf Profi-Niveau",
+"Du machst dadurch doppelt so viele harte Einheiten pro Woche"
+],
+"warum": "Wer harte Tage auf gute Erholungsphasen legt, erreicht bessere Schwellenwerte und riskiert seltener Rückschritte."
+},
+"plus": {
+"frage": "Dein 7-Tage-Trend der HRV ist deutlich unter deinen üblichen Bereich gefallen, heute steht aber HIIT im Plan. Was ist am sinnvollsten?",
+"richtig": "Auf eine lockere Grundlageneinheit oder Erholung wechseln",
+"falsch": [
+"Das HIIT besonders hart durchziehen, um den Körper abzuhärten",
+"Die HRV ignorieren, da sie im Ausdauersport nichts aussagt",
+"Das geplante HIIT durch einen maximalen 3000-m-Test ersetzen"
+],
+"warum": "HRV-gesteuertes Verschieben intensiver Einheiten schützt vor Fehlbelastung und liefert bei weniger Härte starke Ergebnisse."
+},
+"labor": {
+"frage": "Eine Metaanalyse über acht Studien (n = 198) verglich HRV-gesteuertes mit starrem Ausdauertraining. Wo lag der statistisch klare Vorteil?",
+"richtig": "Bei submaximalen Schwellen und geringerer Negativ-Streuung",
+"falsch": [
+"In einem massiven Anstieg der maximalen Sauerstoffaufnahme",
+"In einer deutlich höheren Anzahl hochintensiver Trainingstage",
+"Ausschließlich in Studien mit über einem Jahr Laufzeit"
+],
+"warum": "Submaximale Schwellen zeigten einen signifikanten Effekt (g = 0,30) bei kleinerer 3000-m-Streuung, während VO2peak kaum abwich."
+}
+}
+}
+]

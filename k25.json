@@ -1,0 +1,1134 @@
+[
+{
+"id": "SPD-102",
+"karte": {
+"kopf": "Männliche Sprinter · Biomechanik-Messung",
+"titel": "Beim Sprint ändert sich die Laufmechanik wohl in drei Phasen",
+"titel_hervor": "in drei Phasen",
+"setup": "Bei 21 Sprintern wurden Bewegungen und Bodenkräfte während maximaler 60-Meter-Sprints Schritt für Schritt gemessen.",
+"zahl": {
+"label": "Deutliche Abschnitte beim Beschleunigen",
+"wert": "3 Phasen",
+"alltag": "Übergänge um Schritt 5 und 15"
+},
+"kern": [
+"Bis etwa zum fünften Schritt drücken sich Sprinter steil nach vorn ab.",
+"Ab dem sechsten Schritt setzt der Fuß vor dem Körper auf und bremst kurz ab.",
+"Um den fünfzehnten Schritt folgt der zweite deutliche Wechsel Richtung Top-Tempo."
+],
+"grenze": "Nur 21 männliche Sprinter untersucht – je nach Körperbau und Niveau verschieben sich die Übergänge etwas.",
+"fuer_dich": "Du willst nur den ersten Antritt schärfen? Halte Sprints bei rund 5 Schritten, für den Übergang wähle 20 bis 30 Meter.",
+"labor": {
+"design": "Experimentelle Biomechanik-Studie, 60-m-Sprints mit Schritt-für-Schritt-Analyse",
+"teilnehmer": "21 männliche Sprinter",
+"ergebnis": ""
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du sprintest aus dem Stand 60 Meter so schnell du kannst. Wie läuft die Beschleunigung dabei ab?",
+"richtig": "Die Bewegung wechselt an zwei Punkten in neue Phasen",
+"falsch": [
+"Der Laufstil bleibt vom Start bis zum Ziel gleich",
+"Die Beinbewegung ändert sich erst kurz vor dem Ziel",
+"Nach dem ersten Schritt erreichst du schon Top-Tempo"
+],
+"warum": "Messungen an Sprintern deuten auf drei Abschnitte hin, mit deutlichen Wechseln um den 5. und 15. Schritt."
+},
+"plus": {
+"frage": "Du willst gezielt den allerersten Antritt trainieren, bevor die Übergangsphase einsetzt. Welche Sprintlänge passt dafür?",
+"richtig": "Kurze Sprints von etwa 5 Schritten, rund 5 bis 10 m",
+"falsch": [
+"Lange Sprints über mindestens 40 bis 60 Meter",
+"Fliegende Sprints mit 30 Metern lockerem Anlauf",
+"Steigerungsläufe über jeweils 80 bis 100 Meter"
+],
+"warum": "Um den fünften Schritt verändert sich die Mechanik sprunghaft, danach beginnt die mittlere Übergangsphase."
+},
+"labor": {
+"frage": "Bei 21 Sprintern wurden 60-m-Sprints kinematisch analysiert und Übergänge um Schritt 5 und 15 gefunden. Welche Einschränkung gilt?",
+"richtig": "Die genaue Schrittzahl schwankt nach Niveau und Körperbau",
+"falsch": [
+"Die Übergänge treten nur bei Hobbyläufern ohne Startblock auf",
+"Ab Schritt 6 entsteht gar keine Bremskraft am Boden mehr",
+"Die Methode misst nur das Maximaltempo ab 50 Metern"
+],
+"warum": "Je nach Leistungsniveau und Anthropometrie der Sprinter verschiebt sich die exakte Schrittzahl bis zu den Übergängen leicht."
+}
+}
+},
+{
+"id": "SPD-103",
+"karte": {
+"kopf": "Läufer & Sprinter · 11 Studien zusammengefasst",
+"titel": "Bei Höchsttempo zählt vor allem senkrechter Druck nach unten",
+"titel_hervor": "senkrechter Druck nach unten",
+"setup": "Elf Studien verglichen, wie stark Läufer vom Hobby- bis zum Elitebereich nach vorn und nach unten gegen den Boden drücken.",
+"zahl": {
+"label": "Mehr senkrechte Kraft bei Top-Sprintern",
+"wert": "1,26-fach",
+"alltag": "bezogen auf das Körpergewicht"
+},
+"kern": [
+"Am Start entscheidet vor allem der waagerechte Schub nach vorn über das Tempo.",
+"Im vollen Lauf erklärt die senkrechte Kraft pro Kilo fast vier Zehntel des Tempos.",
+"Schnelle Sprinter treffen den Boden extrem kurz und federn mit steifen Beinen ab."
+],
+"grenze": "Verglichen wurden gemischte Gruppen vom Freizeit- bis zum Eliteläufer – das erklärt einen Teil des großen Zusammenhangs.",
+"fuer_dich": "Dein Endtempo stagniert trotz starkem Antritt? Baue kurze, federnde Sprünge mit minimalem Bodenkontakt ins Training ein.",
+"labor": {
+"design": "Systematisches Review von 11 Studien zu horizontalen und vertikalen Bodenreaktionskräften",
+"teilnehmer": "Freizeitläufer, Trainierte und Elitesprinter aus 11 Studien",
+"ergebnis": "Relative Vertikalkraft vs. Maximaltempo: r = 0,624 (39 % Varianz); 1,26-fache relative Vertikalkraft (11,1 vs. 6,2 m/s)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Beim Start drückst du dich stark nach vorn ab. Worauf kommt es stattdessen an, sobald du dein höchstes Sprinttempo erreicht hast?",
+"richtig": "Kräftiger, kurzer Druck senkrecht nach unten",
+"falsch": [
+"Möglichst langer Bodenkontakt bei jedem Schritt",
+"Starkes Vorbeugen des Oberkörpers im vollen Lauf",
+"Lockeres Einsinken im Knie zur Dämpfung"
+],
+"warum": "Im vollen Tempo entscheidet vor allem, wie viel senkrechte Kraft du pro Körpergewicht in extrem kurzer Zeit auf den Boden bringst."
+},
+"plus": {
+"frage": "Dein Start ist stark, aber dein Topspeed über 7 m/s stagniert. Worauf solltest du dein Training gezielt ausrichten?",
+"richtig": "Kurze Bodenkontakte und reaktive Sprünge nach oben",
+"falsch": [
+"Ausschließlich schwere horizontale Hüftstöße",
+"Langsame Kniebeugen mit langer Pause unten",
+"Lange Dauerläufe für mehr Grundlagenausdauer"
+],
+"warum": "Für hohes Endtempo brauchst du vertikale Beinsteifigkeit und schnelle reaktive Kraft statt rein horizontaler Kraftübungen."
+},
+"labor": {
+"frage": "In einem Review über 11 Studien korrelierte die relative vertikale Kraft deutlich mit dem Maximaltempo. Warum ist dieser Wert vorsichtig zu deuten?",
+"richtig": "Die breite Leistungsstreuung bläht die Korrelation mit auf",
+"falsch": [
+"Es wurden nur Untrainierte auf dem Laufband getestet",
+"Die vertikale Kraft spielt erst nach 100 Metern eine Rolle",
+"Bei Elitesprintern zählt allein der horizontale Schub"
+],
+"warum": "Die Stichproben reichten vom Freizeitläufer bis zur Elite; innerhalb homogener Elitegruppen zählt auch die asymmetrische Kraftverteilung."
+}
+}
+},
+{
+"id": "SPD-104",
+"karte": {
+"kopf": "Sportler · 13 Studien zusammengefasst",
+"titel": "Schlittensprints machen vor allem die ersten zehn Meter schneller",
+"titel_hervor": "die ersten zehn Meter schneller",
+"setup": "Dreizehn Studien verglichen Sprints mit Zugschlitten über Wochen mit normalem Training auf kurzen Antritten und längeren Strecken.",
+"zahl": null,
+"kern": [
+"Auf den ersten zehn Metern bringt der Zugschlitten den klarsten Tempogewinn.",
+"Für das höchste Endtempo ab 20 Metern zeigte sich kein verlässlicher Vorteil.",
+"Auf festem Boden mit gleichmäßiger Reibung wirkt der Schlitten besser als auf Rasen."
+],
+"grenze": "Die meisten Studien nutzten leichte Schlitten unter 20 % Körpergewicht – zu schweren Lasten sagt diese Auswertung wenig.",
+"fuer_dich": "Du willst explosiver starten? Nutze Zugschlitten auf festem Untergrund, aber trainiere dein Endtempo weiter ohne Last.",
+"labor": {
+"design": "Systematisches Review mit Meta-Analyse, Zugschlitten-Sprints vs. Kontrollen",
+"teilnehmer": "13 Studien mit 32 Schlitten- und 15 Kontrollgruppen",
+"ergebnis": "≤10 m: SMD 0,57 (p = 0,0001); Gesamt: SMD 0,38 (p = 0,009); Topspeed ≥20 m: SMD 0,18 (p = 0,25)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du trainierst regelmäßig Sprints mit einem Zugschlitten. Auf welcher Strecke bringt dir das am meisten?",
+"richtig": "Auf den ersten Metern direkt nach dem Start",
+"falsch": [
+"Erst im höchsten Tempo ab etwa 20 Metern",
+"Vor allem bei längeren Läufen über 400 Meter",
+"Gleich stark auf allen Laufstrecken"
+],
+"warum": "Der Zugschlitten verbessert vor allem den frühen Antritt bis zehn Meter; für das volle Endtempo reicht er allein nicht aus."
+},
+"plus": {
+"frage": "Du willst in einem Trainingsblock sowohl deinen 10-m-Start als auch deinen fliegenden Topspeed ab 20 m verbessern. Wie kombinierst du am sinnvollsten?",
+"richtig": "Schlittensprints auf festem Boden plus freie Sprints",
+"falsch": [
+"Nur schwere Schlittensprints auf weichem Rasen",
+"Ausschließlich Schlittensprints über 40 Meter",
+"Ganz auf freie Sprints verzichten für acht Wochen"
+],
+"warum": "Schlitten auf konstantem Untergrund steigern den Antritt bis 10 m, während freie Sprints ohne Last das Maximaltempo gezielt fordern."
+},
+"labor": {
+"frage": "Eine Meta-Analyse fasste 13 Studien zum Schlittensprint zusammen (meist leichte Lasten unter 20 % Körpermasse). Was zeigte sich für das Maximaltempo ab 20 m?",
+"richtig": "Kein statistisch signifikanter Vorteil durch den Schlitten",
+"falsch": [
+"Ein stärkerer Effekt als in der frühen Beschleunigung",
+"Eine klare Verschlechterung der freien Sprintzeit",
+"Nur auf Rasenflächen ein signifikanter Leistungsgewinn"
+],
+"warum": "Während die Beschleunigung bis 10 m deutlich profitierte (SMD 0,57, p = 0,0001), blieb der Effekt im Maximaltempo nicht signifikant (p = 0,25)."
+}
+}
+},
+{
+"id": "SPD-105",
+"karte": {
+"kopf": "Trainierte Sportler · Vergleichsstudie",
+"titel": "Leichte und schwere Schlitten machen im Schnitt ähnlich schnell",
+"titel_hervor": "im Schnitt ähnlich schnell",
+"setup": "Verglichen wurde, ob leichte oder sehr schwere Zugschlitten die Sprintzeit stärker verbessern und wie sie gegen freie Sprints abschneiden.",
+"zahl": {
+"label": "Schnellere Sprintzeit mit beiden Lasten",
+"wert": "1,4–2,3 %",
+"alltag": ""
+},
+"kern": [
+"Bisher ist unklar, ob leichte oder schwere Schlitten grundsätzlich überlegen sind.",
+"Der Untergrund ändert die Reibung – das Gewicht allein zeigt den Widerstand nicht.",
+"Deshalb lohnt es sich, die Last danach zu wählen, wie stark sie dein Tempo bremst."
+],
+"grenze": "Ältere und neuere Auswertungen widersprechen sich noch, ob Schlitten freien Sprints klar überlegen sind.",
+"fuer_dich": "Unsicher, wie schwer dein Schlitten sein soll? Nutze mehr Last für die ersten 10 Meter und leichtere Last für den Übergang.",
+"labor": {
+"design": "Randomisierte Interventionsstudie (10 % vs. 50 % Geschwindigkeitsverlust) plus Meta-Analysen",
+"teilnehmer": "Trainierte Sportler; 77 % der 13 Review-Studien mit Lasten ≤13 % KM",
+"ergebnis": "Beide Lasten: −1,4 % bis −2,3 % Sprintzeit (p < 0,05); 0–10 m vs. freier Sprint in neueren Analysen SMD 0,65"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Beim Schlittensprint gibt es zwei Lager: ganz leicht oder richtig schwer. Was zeigt der Vergleich bisher?",
+"richtig": "Beide Varianten können die Sprintzeit ähnlich verbessern",
+"falsch": [
+"Nur extrem schwere Schlitten bringen überhaupt etwas",
+"Schwere Schlitten machen Läufer dauerhaft langsamer",
+"Leichte Schlitten sind freien Sprints klar überlegen"
+],
+"warum": "Sowohl leichte als auch schwere Schlitten verbesserten die Sprintzeit ähnlich – die optimale Wahl hängt vom Trainingsziel ab."
+},
+"plus": {
+"frage": "Warum taugt das bloße Gewicht auf dem Schlitten in Prozent deines Körpergewichts oft schlecht zur Trainingssteuerung?",
+"richtig": "Die Reibung des Bodens verändert den echten Widerstand stark",
+"falsch": [
+"Der Schlitten verliert während des Sprints an Masse",
+"Das Körpergewicht hat gar keinen Einfluss auf Sprints",
+"Nur das Seil bestimmt, wie schwer der Zug ausfällt"
+],
+"warum": "Je nach Bodenbelag zieht sich dasselbe Gewicht völlig anders – der prozentuale Geschwindigkeitsverlust misst den echten Widerstand besser."
+},
+"labor": {
+"frage": "Verglichen wurden leichte Schlitten (ca. 10 % Tempoverlust) mit schweren (ca. 50 % Tempoverlust). Warum herrscht in der Forschung noch Uneinigkeit?",
+"richtig": "Zwei Ansätze konkurrieren: Technik-Erhalt vs. Kraftüberlast",
+"falsch": [
+"Keine der beiden Lasten verbesserte die Sprintzeit messbar",
+"Schwere Lasten wurden bisher häufiger getestet als leichte",
+"Die meisten Studien testeten nur fliegende 60-m-Sprints"
+],
+"warum": "Ein Ansatz meidet hohe Lasten wegen Technikänderungen, der andere nutzt rund 50 % Geschwindigkeitsverlust gezielt für Startkraft und Power."
+}
+}
+},
+{
+"id": "SPD-106",
+"karte": {
+"kopf": "Profi-Fußballerinnen · 6-Wochen-Training",
+"titel": "Einmal Schlittensprint pro Woche macht den Antritt schneller",
+"titel_hervor": "macht den Antritt schneller",
+"setup": "Profi-Fußballerinnen machten sechs Wochen lang einmal pro Woche fünf bis zehn Schlittensprints mit steigender Last bis 80 % Körpergewicht.",
+"zahl": null,
+"kern": [
+"Nach sechs Wochen sprinteten die Spielerinnen über 20 Meter messbar schneller.",
+"Schon die ersten beiden Schritte wurden deutlich länger und kraftvoller.",
+"Die Lauftechnik blieb trotz schwerer Schlittenlasten bis 80 % unverändert sauber."
+],
+"grenze": "Nur über sechs Wochen bei Profi-Fußballerinnen getestet – langfristige Effekte hängen von der weiteren Planung ab.",
+"fuer_dich": "Wenig Zeit in der Saison? Plane einmal pro Woche fünf bis zehn Schlittensprints mit drei Minuten Pause und steigere die Last langsam.",
+"labor": {
+"design": "6-wöchige In-Season-Interventionsstudie, 1x/Woche 100–200 m Schlitten (20–80 % KM)",
+"teilnehmer": "Professionelle Fußballerinnen",
+"ergebnis": "0–20 m Zeit: ES −0,50 (95 % KI −1,12 bis −0,03, p < 0,047); Schritt 1–2 Länge/Tempo: ES −2,56 und −2,18"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Viele fürchten, schwere Zugschlitten würden den Laufstil verderben. Was zeigte sich bei Fußballerinnen nach sechs Wochen mit steigender Last?",
+"richtig": "Der Antritt wurde schneller und die Technik blieb sauber",
+"falsch": [
+"Der Laufstil verschlechterte sich deutlich durch die Last",
+"Die Spielerinnen wurden über 20 Meter etwas langsamer",
+"Ohne vier Einheiten pro Woche passierte gar nichts"
+],
+"warum": "Die ersten Schritte wurden länger und die 20-Meter-Zeit besser, während Haltung und Bodenkontaktzeiten stabil blieben."
+},
+"plus": {
+"frage": "Du spielst Teamsport und willst mitten in der Saison mit wenig Zeitaufwand deinen Antritt verbessern. Welches Schlitten-Setup passt?",
+"richtig": "1x pro Woche 5–10 Sprints, 3 min Pause, Last steigern",
+"falsch": [
+"4x pro Woche 25 Sprints mit nur 30 Sekunden Pause",
+"1x im Monat ein einzelner Sprint über 80 Meter",
+"Jeden Tag leichtes Schlittenziehen bis zur Erschöpfung"
+],
+"warum": "Bereits eine kurze Einheit pro Woche mit 100 bis 200 m Gesamtvolumen und voller Pause brachte über 6 Wochen spürbare Fortschritte."
+},
+"labor": {
+"frage": "Profi-Fußballerinnen absolvierten 6 Wochen lang 1x wöchentlich Schlittensprints mit 20 bis 80 % Körpermasse. Was ergab die Auswertung?",
+"richtig": "Moderater Zeitgewinn über 20 m ohne Technikverlust",
+"falsch": [
+"Kein messbarer Effekt auf den ersten beiden Schritten",
+"Starke Verlängerung der Bodenkontaktzeiten im Lauf",
+"Ein signifikanter Verlust an Rumpfstabilität im Sprint"
+],
+"warum": "Die 0–20-m-Zeit verbesserte sich (ES −0,50, p < 0,047) und Schritt 1–2 legten stark zu, während Winkel und Kontaktzeiten gleich blieben."
+}
+}
+},
+{
+"id": "SPD-107",
+"karte": {
+"kopf": "Sportler · Überblick über Studien",
+"titel": "Hütchen-Drills und echte Spielwendigkeit überschneiden sich kaum",
+"titel_hervor": "überschneiden sich kaum",
+"setup": "Ein Forschungsüberblick verglich geplante Hütchen-Parcours mit echtem Reagieren auf Gegner sowie den Einfluss von Kraft- und Sprinttraining.",
+"zahl": {
+"label": "Gemeinsamer Anteil von Parcours & Spiel",
+"wert": "29 %",
+"alltag": "knapp ein Drittel im Schnitt"
+},
+"kern": [
+"Wer um Hütchen schnell ist, reagiert im Spiel nicht automatisch schnell auf Gegner.",
+"Reine Kraft- und Sprungwerte hingen kaum mit der spielnahen Wendigkeit zusammen.",
+"Gerade Sprints helfen bei flachen Kurven, kaum aber bei scharfen, offenen Haken."
+],
+"grenze": "Die Überschneidung schwankte je nach Test zwischen 10 % und 49 % – der genaue Übertrag hängt stark vom Parcours ab.",
+"fuer_dich": "Du wirkst im Spiel trotz schneller Hütchen-Drills oft einen Schritt zu spät? Ergänze 1-gegen-1-Duelle und Kleinfeldspiele.",
+"labor": {
+"design": "Systematisches Review, Korrelationen von CODS, reaktiver Agilität, Kraft und Sprint",
+"teilnehmer": "Sportler verschiedener Alters- und Leistungsstufen",
+"ergebnis": "CODS vs. Agilität: im Mittel 29 % gemeinsame Varianz (10–49 %); Kraft/Power vs. Agilität: r = −0,12 bis −0,28 (n. s.)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du läufst vorgegebene Hütchen-Parcours blitzschnell ab. Heißt das, du bist auch im echten Spiel gegen Gegner automatisch wendig?",
+"richtig": "Nein, beides sind weitgehend getrennte Fähigkeiten",
+"falsch": [
+"Ja, wer um Hütchen schnell ist, dominiert jedes Duell",
+"Ja, die beiden Leistungen stimmen fast genau überein",
+"Nein, aber reines Krafttraining schließt die Lücke"
+],
+"warum": "Geplante Parcours und das Reagieren auf echte Gegner überschneiden sich im Schnitt nur zu knapp einem Drittel."
+},
+"plus": {
+"frage": "Du bist stark im Kraftraum und schnell im linearen Sprint, verlierst aber im Teamsport 1-gegen-1-Duelle. Was fehlt wahrscheinlich?",
+"richtig": "Offene Spielformen mit Reaktion auf echte Gegner",
+"falsch": [
+"Noch mehr schwere Kniebeugen für mehr Beinkraft",
+"Schnellere Zeiten in bekannten Hütchen-Parcours",
+"Längere gerade Sprints ohne Richtungswechsel"
+],
+"warum": "Kraft und lineare Sprints übertragen sich kaum auf reaktive Entscheidungen – dafür brauchst du offene Reize wie 1-gegen-1 oder Kleinfeldspiele."
+},
+"labor": {
+"frage": "Ein systematisches Review verglich geplante Richtungswechseltests (CODS) mit reaktiven Agilitätstests sowie Kraftwerten. Was zeigte sich?",
+"richtig": "Geringe Überlappung und kein signifikanter Kraft-Link",
+"falsch": [
+"Nahezu identische Ergebnisse bei allen sechs CODS-Tests",
+"Sehr hohe Korrelation zwischen Maximalkraft und Agilität",
+"Vollständiger Transfer von geraden Sprints auf scharfe Cuts"
+],
+"warum": "CODS und reaktive Agilität teilten im Mittel nur 29 % gemeinsame Varianz, und Kraft- bzw. Powerwerte korrelierten nicht signifikant (p > 0,05)."
+}
+}
+},
+{
+"id": "SPD-108",
+"karte": {
+"kopf": "Sportler · Vergleichstest & Spieltraining",
+"titel": "Schnelleres Entscheiden macht wohl den Unterschied im Spiel",
+"titel_hervor": "Schnelleres Entscheiden",
+"setup": "Verglichen wurden geplante und unerwartete Richtungswechsel sowie die Wirkung von Kleinfeldspielen und Videoübungen auf die Reaktionszeit.",
+"zahl": {
+"label": "Kürzere Entscheidungszeit durch Spielformen",
+"wert": "−31 %",
+"alltag": "fast ein Drittel schneller"
+},
+"kern": [
+"Bei unerwarteten Haken waren Sportler über eine Sekunde langsamer als geplant.",
+"Kleinfeldspiele machten nicht die Beine schneller, sondern den Kopf deutlich fixer.",
+"Auch kurzes Videotraining von Spielszenen verkürzte die Entscheidungszeit stark."
+],
+"grenze": "Einfache Lichtsignale prüfen nur allgemeine Reaktion – im Spiel zählt das Lesen von Gegnerbewegungen.",
+"fuer_dich": "Du reagierst bei Finten zu langsam? Trainiere mehr Kleinfeldspiele und schaue kurze Spielclips, um Gegnerbewegungen früh zu lesen.",
+"labor": {
+"design": "Querschnittsvergleich (4 Richtungswechsel, 8 Optionen) plus Befunde zu Spiel- und Videotraining",
+"teilnehmer": "",
+"ergebnis": "CODS vs. reaktiv: r = −0,125 bis 0,333 (n. s.); Kleinfeld: +4 % Agilität, −31 % Entscheidungszeit (p < 0,001)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Kleinfeldspiele machen Sportler in unerwarteten Spielsituationen wendiger. Was verbessert sich dabei vor allem?",
+"richtig": "Die Zeit, bis sie die richtige Richtung erkennen",
+"falsch": [
+"Vor allem die reine Sprintgeschwindigkeit geradeaus",
+"Ausschließlich die reine Wendezeit am Boden",
+"Nur die allgemeine Ausdauer über eine Halbzeit"
+],
+"warum": "Kleinfeldspiele verkürzten vor allem die Entscheidungszeit um fast ein Drittel, während die reine Bewegungszeit kaum schneller wurde."
+},
+"plus": {
+"frage": "In geplanten Hütchen-Tests bist du top, aber sobald du spontan reagieren musst, bricht deine Zeit stark ein. Was hilft gezielt?",
+"richtig": "Kleinfeldspiele und kurze Video-Übungen zum Spiel-Lesen",
+"falsch": [
+"Noch engere Hütchen-Parcours mit fester Laufroute",
+"Zusätzliche schwere Beinpresse für mehr Maximalkraft",
+"Reine Reaktionstests mit blinkenden Lichtampeln allein"
+],
+"warum": "Sowohl Kleinfeldspiele als auch videobasiertes Antizipationstraining senken gezielt die kognitive Entscheidungszeit in echten Spielszenen."
+},
+"labor": {
+"frage": "In einem Parcours mit vier Richtungswechseln und acht Optionen korrelierte die geplante Zeit nicht mit der reaktiven. Welche Grenze haben einfache Lichtsignale?",
+"richtig": "Sie messen allgemeine Reaktion statt Gegner-Antizipation",
+"falsch": [
+"Sie sind für Amateurspieler viel zu schwer zu erkennen",
+"Sie verbessern die reine Bewegungszeit um über 30 %",
+"Sie bilden reale Spielsituationen genauer ab als Videos"
+],
+"warum": "Lichtsignale erfassen nur allgemeine visuelle Reaktion; Top-Spieler unterscheiden sich vor allem beim Lesen echter Gegnerbewegungen wie der Hüfte."
+}
+}
+},
+{
+"id": "SPD-109",
+"karte": {
+"kopf": "Junge Sportler · 14 Studien zusammengefasst",
+"titel": "Reines Sprinttraining wirkt erst ab dem Wachstumsschub deutlich",
+"titel_hervor": "erst ab dem Wachstumsschub",
+"setup": "Vierzehn Studien mit 307 männlichen Jugendlichen verglichen die Wirkung von Sprinttraining vor, während und nach dem Wachstumsschub.",
+"zahl": null,
+"kern": [
+"Zwischen etwa 13 und 18 Jahren brachte gezieltes Sprinttraining große Fortschritte.",
+"Bei Zehn- bis Zwölfjährigen vor dem Schub zeigte reines Sprinttraining kaum Wirkung.",
+"Für jüngere Kids lohnen sich stattdessen spielerische Sprünge deutlich mehr."
+],
+"grenze": "Nur Jungen wurden ausgewertet, die Gruppe unter 13 war klein (41 Kinder) und die Ergebnisse streuten stark.",
+"fuer_dich": "Du trainierst Jugendliche ab 13? Plane zweimal pro Woche kurze Sprints mit langen Pausen; bei Jüngeren setze zuerst auf Sprünge.",
+"labor": {
+"design": "Meta-Analyse (14 Studien), Sprinttraining nach Reifestadium (Pre-, Mid-, Post-PHV)",
+"teilnehmer": "307 männliche Jugendliche (166 Training, 141 Kontrolle; Pre-PHV n = 41)",
+"ergebnis": "Gesamt ES 1,01; Post-PHV ES 1,39 (p = 0,01); Mid-PHV ES 1,15 (p = 0,003); Pre-PHV ES −0,18 (n. s.)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Ein elfjähriger Junge vor dem großen Wachstumsschub will schneller werden. Was zeigt der Vergleich vieler Jugendstudien?",
+"richtig": "Reines Sprinttraining bringt hier noch kaum Fortschritt",
+"falsch": [
+"Kinder vor der Pubertät profitieren am allerstärksten",
+"Ab zehn Jahren wirken Sprints genauso wie bei 17-Jährigen",
+"Kraft- und Sprungübungen sind vor 13 Jahren nutzlos"
+],
+"warum": "Vor dem Wachstumsschub fehlt noch die hormonelle Basis für starke Sprint-Anpassungen; Sprungübungen greifen hier besser."
+},
+"plus": {
+"frage": "Du planst Sprinttraining für 14- bis 17-jährige männliche Jugendliche. Welche Dosierung passt zu den wirksamen Programmen?",
+"richtig": "2x/Woche bis 16 Sprints um 20 m mit >90 s Pause",
+"falsch": [
+"5x/Woche 30 Sprints über 60 m mit 20 s Pause",
+"1x im Monat maximale 100-m-Läufe bis zur Ermüdung",
+"Nur noch Sprungübungen und gar keine Sprints mehr"
+],
+"warum": "Ab dem Wachstumsschub bringen zwei Einheiten pro Woche mit kurzen Sprints und langen Pausen (mindestens 1:25) deutliche Zuwächse."
+},
+"labor": {
+"frage": "Eine Meta-Analyse (14 Studien, 307 männliche Jugendliche) fand große Effekte im Mid- und Post-PHV, aber keinen im Pre-PHV. Was schränkt den Befund ein?",
+"richtig": "Hohe Heterogenität und eine kleine Pre-PHV-Stichprobe",
+"falsch": [
+"Es fehlten Kontrollgruppen in fast allen Studien",
+"Die Sprints waren kürzer als fünf Meter angelegt",
+"Im Post-PHV war der Effekt statistisch nicht signifikant"
+],
+"warum": "Die Subgruppen streuten stark (I² = 69–85 %) und in der Pre-PHV-Gruppe waren nur 41 Jugendliche enthalten."
+}
+}
+},
+{
+"id": "SPD-110",
+"karte": {
+"kopf": "Sportler · 13 Studien zusammengefasst",
+"titel": "Sprinttraining wirkt erst mit genug Strecke und langen Pausen",
+"titel_hervor": "genug Strecke und langen Pausen",
+"setup": "Dreizehn Studien wurden daraufhin ausgewertet, ab welcher Dauer, Häufigkeit und Sprintstrecke Widerstandssprints zuverlässig schneller machen.",
+"zahl": null,
+"kern": [
+"Erfolgreiche Programme liefen mindestens sechs Wochen bei zwei bis drei Einheiten.",
+"Pro Einheit kamen dabei meist mehr als 160 Meter reine Sprintstrecke zusammen.",
+"Für echte Höchstleistung braucht es etwa eine Minute Pause je zehn Meter Sprint."
+],
+"grenze": "Die Werte stammen aus vielen Trainingsstudien – mitten in der Saison zeigten auch kleinere Wochenmengen teils Effekte.",
+"fuer_dich": "Deine Sprints bringen dich nicht voran? Plane sechs Wochen lang 2–3 Einheiten über 160 Meter und gönne dir volle Pausen.",
+"labor": {
+"design": "Systematisches Review mit Meta-Analyse (13 Studien) zur Dosierung von Widerstandssprints",
+"teilnehmer": "Sportler aus 13 Interventionsstudien",
+"ergebnis": "Bei Einhaltung der Dosis (>160 m/Einheit, ≥6 Wo.): SMD 0,57 (Antritt), SMD 0,38 (Gesamtsprint)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du willst wirklich schneller sprinten und machst mehrere 30-Meter-Sprints. Wie lang sollte deine Pause dazwischen sein?",
+"richtig": "Lang genug für volle Erholung, rund drei Minuten",
+"falsch": [
+"Kurz, etwa 20 Sekunden, damit der Puls oben bleibt",
+"Gar keine Pause, sondern direkt locker zurückjoggen",
+"Eine halbe Minute reicht bei so kurzen Strecken aus"
+],
+"warum": "Bei maximalen Sprints gilt grob eine Minute Pause pro zehn Meter Strecke, damit du jeden Lauf wirklich voll durchziehen kannst."
+},
+"plus": {
+"frage": "Du planst einen Block für schnellere Sprints mit Zugschlitten. Welche Kombination aus Dauer, Häufigkeit und Volumen greift zuverlässig?",
+"richtig": "Mindestens 6 Wochen, 2–3x/Woche, über 160 m je Einheit",
+"falsch": [
+"2 Wochen täglich je 60 Meter mit minimaler Pause",
+"4 Wochen 1x/Woche jeweils 50 Meter zum Aufwärmen",
+"8 Wochen 2x/Woche je 1.000 Meter zügiges Tempolaufen"
+],
+"warum": "Die Auswertung von 13 Studien zeigt zuverlässige Fortschritte ab sechs Wochen bei zwei bis drei Einheiten und über 160 m Sprintvolumen."
+},
+"labor": {
+"frage": "Eine Meta-Analyse (13 Studien) ermittelte für Widerstandssprints ein wirksames Mindestvolumen von über 160 m bei 2–3 Einheiten pro Woche. Welche Einschränkung gilt?",
+"richtig": "In der Saison wirkten teils schon kleinere Wochenumfänge",
+"falsch": [
+"Die Pausenlänge spielte für den Trainingseffekt keine Rolle",
+"Nur Programme über 24 Wochen zeigten überhaupt Effekte",
+"Der Effekt betraf ausschließlich den fliegenden Topspeed"
+],
+"warum": "Im laufenden Teamsport-Betrieb erzielten neuere Studien bereits mit 100–200 m einmal wöchentlich messbare Verbesserungen."
+}
+}
+},
+{
+"id": "SPD-111",
+"karte": {
+"kopf": "Profi-Team · Beobachtung über 2 Saisons",
+"titel": "Plötzliche Sprint-Sprünge erhöhen wohl das Verletzungsrisiko",
+"titel_hervor": "Plötzliche Sprint-Sprünge",
+"setup": "Über zwei Saisons wurden 11.457 GPS-Daten einer Profimannschaft ausgewertet und mit 22 Verletzungen der Oberschenkelrückseite abgeglichen.",
+"zahl": {
+"label": "Höheres Risiko nach starkem Wochen-Sprung",
+"wert": "6,4-fach",
+"alltag": "in der Woche vor der Verletzung"
+},
+"kern": [
+"Viel schnelles Laufen über die Saison allein erhöhte das Risiko nicht.",
+"Kritisch war ein starker Sprung bei schnellen Läufen über 24 km/h in 1–4 Wochen.",
+"Erfahrene Spieler mit über vier Profi-Jahren blieben in dieser Gruppe unverletzt."
+],
+"grenze": "Beobachtung eines einzelnen Profiteams mit 22 Verletzungen – direkte Ursachen lassen sich daraus allein nicht beweisen.",
+"fuer_dich": "Nach einer ruhigen Woche stehen plötzlich viele Sprints an? Steigere schnelle Meter schrittweise statt sprunghaft.",
+"labor": {
+"design": "Prospektive Kohortenstudie über 2 Saisons, GPS-Daten (>24 km/h) vs. Verletzungen",
+"teilnehmer": "Ein Profi-Team (11.457 GPS-Dateien, 22 Hamstring-Verletzungen)",
+"ergebnis": "Anstieg Woche −1: OR 6,44 (KI 2,99–14,41); Woche −1/−2: OR 3,06; 4 Wochen: OR 1,96 (je p < 0,001)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Wann droht bei schnellen Läufen am ehesten eine Zerrung der hinteren Oberschenkel?",
+"richtig": "Wenn du schnelle Strecken von Woche zu Woche stark steigerst",
+"falsch": [
+"Sobald du über die ganze Saison insgesamt viel sprintest",
+"Wenn du jede Woche gleichmäßig viel schnell läufst",
+"Erst nach vielen Jahren regelmäßigen Wettkampfsports"
+],
+"warum": "Nicht die hohe Gesamtmenge über die Saison, sondern ein plötzlicher Anstieg schneller Meter in den letzten Wochen ließ das Risiko stark steigen."
+},
+"plus": {
+"frage": "Du hast nach zwei ruhigeren Trainingswochen wieder volle Spiel- und Sprintbelastung. Worauf solltest du beim High-Speed-Volumen achten?",
+"richtig": "Sprünge weit über deinen 4-Wochen-Schnitt vermeiden",
+"falsch": [
+"Sofort dein höchstes Saisonvolumen nachholen",
+"Schnelle Sprints für den Rest der Saison streichen",
+"Nur die gesamte Saisonkilometerzahl klein halten"
+],
+"warum": "Gerade akute Anstiege über den eigenen 1- bis 4-Wochen-Durchschnitt waren mit einem deutlich erhöhten Hamstring-Risiko verknüpft."
+},
+"labor": {
+"frage": "In einer zweijährigen GPS-Kohorte eines Profiteams stieg das Hamstring-Risiko bei sprunghaftem High-Speed-Running (>24 km/h) stark an. Was ist die Hauptgrenze?",
+"richtig": "Beobachtungsdaten eines Teams mit nur 22 Verletzungen",
+"falsch": [
+"Die Studie verglich keine relativen Wochenanstiege",
+"Das absolute Saisonvolumen war der stärkste Risikofaktor",
+"Spieler mit über vier Jahren Erfahrung verletzten sich oft"
+],
+"warum": "Es handelt sich um Beobachtungsdaten aus einem einzelnen Team; zudem traten in anderen Studien Verletzungen auch nach Unterbelastungswochen auf."
+}
+}
+},
+{
+"id": "SPD-112",
+"karte": {
+"kopf": "Teamsportler · Saison-Beobachtung",
+"titel": "Zu wenig und zu viel volles Sprinten erhöhen wohl das Risiko",
+"titel_hervor": "Zu wenig und zu viel",
+"setup": "Teamsportler wurden über die Saison per GPS begleitet, um schnelle Sprints und Trainingsumfang mit dem Verletzungsrisiko abzugleichen.",
+"zahl": null,
+"kern": [
+"Wer im Training kaum nahe am Top-Tempo sprintet, ist im Spiel anfälliger.",
+"Zu viele volle Sprints in einer Woche lassen das Risiko aber wieder ansteigen.",
+"Eine solide Grundfitness und hohe gewohnte Belastung schützen die Muskulatur."
+],
+"grenze": "Beobachtungsdaten aus dem Teamsport – zudem messen GPS-Geräte ab 95 % Höchsttempo etwas ungenauer.",
+"fuer_dich": "Du schonst dich im Training vor schnellen Sprints? Setze jede Woche einige kontrollierte Sprints über 90 % Tempo, aber übertreibe nicht.",
+"labor": {
+"design": "Prospektive Kohortenstudie, GPS-Exposition (>90 % Max-Tempo) vs. Verletzungsrisiko",
+"teilnehmer": "",
+"ergebnis": "U-förmige Risikokurve für Max-Tempo-Sprints; Schutz bei chronischer Last ≥2584 AU; Obergrenze ca. 7–8 Sprints/Woche >90 %"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Manche meiden im Training schnelle Sprints ganz, um ihre hinteren Oberschenkel zu schonen. Geht diese Rechnung auf?",
+"richtig": "Eher nicht – fehlende Sprints erhöhen das Risiko ebenfalls",
+"falsch": [
+"Ja, je weniger Sprints, desto niedriger bleibt das Risiko",
+"Ja, nur wer extrem viel sprintet, verletzt sich überhaupt",
+"Nein, nur tägliche Maximalsprints bieten vollen Schutz"
+],
+"warum": "Das Risiko folgt einer U-Form: Sowohl fehlende schnelle Reize als auch eine Überdosis erhöhen die Anfälligkeit im Wettkampf."
+},
+"plus": {
+"frage": "Wie dosierst du schnelle Sprints über 90 % deines Top-Tempos in einer normalen Trainingswoche am sinnvollsten als Schutz?",
+"richtig": "Regelmäßig ein paar Sprints, aber maximal etwa 7–8/Woche",
+"falsch": [
+"Im Training nicht über 80 % gehen, nur im Spiel sprinten",
+"Mindestens 20 volle Maximalsprints pro Woche einbauen",
+"Nur vor wichtigen Spielen einmalig sehr viel sprinten"
+],
+"warum": "Regelmäßige Sprints über 90 % bereiten die Hamstrings vor, während mehr als 7 bis 8 maximale Sprints pro Woche Kraft und Schutz schmälern können."
+},
+"labor": {
+"frage": "In GPS-Kohorten zeigte die Sprint-Exposition eine U-förmige Risikokurve. Warum wird in der Praxis meist >90 % statt >95 % Max-Tempo gesteuert?",
+"richtig": "GPS-Systeme messen oberhalb von 95 % ungenauer",
+"falsch": [
+"Ab 95 % steigt das Verletzungsrisiko nicht mehr an",
+"Unter 95 % arbeiten die Hamstrings gar nicht mit",
+"Athleten erreichen im Spiel höchstens 90 % Tempo"
+],
+"warum": "Über 95 % der Maximalgeschwindigkeit nimmt die GPS-Messgenauigkeit ab, daher dient >90 % als robusterer Steuerwert."
+}
+}
+},
+{
+"id": "SPD-113",
+"karte": {
+"kopf": "Sportler · Zufällig zugeteilte Studie",
+"titel": "Aufbauendes Sprinten verbessert Muskelbau und Tempo zugleich",
+"titel_hervor": "Muskelbau und Tempo zugleich",
+"setup": "Verglichen wurde, wie sich schrittweise gesteigertes Sprinttraining und eine bekannte Beinbeuger-Übung auf Muskelstruktur und Sprinttempo auswirken.",
+"zahl": null,
+"kern": [
+"Mehr als die Hälfte aller Zerrungen der Beinrückseite passiert im vollen Sprint.",
+"Gezieltes Sprinten verlängerte die Muskelfaserbündel stärker als die Kraftübung.",
+"Nur das Sprinttraining verbesserte gleichzeitig Muskelbau, Technik und Tempo."
+],
+"grenze": "Die reine Muskelkraft wurde nicht direkt gemessen – erfasst wurden Ultraschall-Muskelbau und Sprintmechanik.",
+"fuer_dich": "Du willst deine Beinrückseite robust machen? Kombiniere Kraftübungen mit behutsam gesteigerten Sprints statt nur Kraft.",
+"labor": {
+"design": "Randomisierte kontrollierte Studie, progressives Sprinttraining vs. Nordic Hamstring Exercise",
+"teilnehmer": "",
+"ergebnis": "Signifikant größere BFlh-Faszikellänge und bessere horizontale Sprintmechanik durch Sprinttraining vs. NHE"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Viele Sportler machen für robuste hintere Oberschenkel nur eine Kraftübung am Boden. Was bringt schrittweise gesteigertes Sprinten zusätzlich?",
+"richtig": "Es verbessert Muskelstruktur und Lauftempo zugleich",
+"falsch": [
+"Es ersetzt jedes Krafttraining für den gesamten Körper",
+"Es wirkt nur auf die Ausdauer und kaum auf die Muskeln",
+"Es schont die Muskeln, verändert ihren Aufbau aber nicht"
+],
+"warum": "Aufbauendes Sprinttraining verlängerte die Muskelfaserbündel stärker als die reine Kraftübung und verbesserte gleichzeitig die Lauftechnik."
+},
+"plus": {
+"frage": "Im Vergleich zwischen Nordic Hamstring Exercises und progressivem Sprinttraining: Warum reichen Nordics allein für Sprinter oft nicht?",
+"richtig": "Nur Sprinten verbessert Muskelbau und Sprintmechanik zugleich",
+"falsch": [
+"Nordics trainieren überhaupt nicht die hinteren Oberschenkel",
+"Nur Nordics erhöhen das Risiko für Zerrungen beim Sprinten",
+"Nordics wirken erst ab 50 Metern Sprintdistanz sinnvoll"
+],
+"warum": "Progressives Sprinttraining vergrößerte die Faszikellänge stärker als isolierte Nordics und schulte zugleich die horizontale Sprintmechanik."
+},
+"labor": {
+"frage": "Eine randomisierte Studie verglich progressives Sprinttraining mit der Nordic Hamstring Exercise per Ultraschall und Sprintprofil. Welche Größe fehlte?",
+"richtig": "Eine direkte Kraftmessung der Hamstrings",
+"falsch": [
+"Die Messung der Faszikellänge per Ultraschall",
+"Die Erfassung der horizontalen Sprintmechanik",
+"Der Vergleich zweier zufällig verteilter Gruppen"
+],
+"warum": "Die Muskelkraft wurde nicht per Dynamometrie oder Nordic-Test direkt gemessen, sondern nur über Muskelarchitektur und Sprintprofile beurteilt."
+}
+}
+},
+{
+"id": "SPD-114",
+"karte": {
+"kopf": "Trainierte Sportler · Belastungs-Vergleich",
+"titel": "Nach harten Sprints brauchen Muskeln bis zu drei Tage Pause",
+"titel_hervor": "bis zu drei Tage Pause",
+"setup": "Nach intensiven Sprint-, Sprung- und schweren Krafteinheiten wurde bei 15 Sportlern gemessen, wie lange Muskelkraft und Sprinttempo gedämpft bleiben.",
+"zahl": {
+"label": "Erholungszeit nach harten Sprints",
+"wert": "bis 72 Std.",
+"alltag": "≈ bis zu 3 volle Tage"
+},
+"kern": [
+"Sprinttempo und Kraft der Beinrückseite blieben zwei bis drei Tage lang spürbar tiefer.",
+"Die Ermüdung sitzt vor allem direkt im Muskel, weniger in der Nervensteuerung.",
+"Ermüdet kippt das Becken im Lauf weiter vor, was die Beinrückseite stärker dehnt."
+],
+"grenze": "Getestet an einer kleinen Gruppe von 15 Sportlern nach sehr hohem Sprintumfang – bei lockeren Einheiten geht es schneller.",
+"fuer_dich": "Harte Sprints oder schweres Beintraining absolviert? Lass zwei bis drei Tage Pause bis zum nächsten vollen Sprint oder Spiel.",
+"labor": {
+"design": "Experimentelle Crossover-Studie, Erholungsverlauf nach Sprint-, Sprung- und Kraftbelastung",
+"teilnehmer": "15 trainierte Sportler",
+"ergebnis": "48–72 h: V0 ES −0,71 (p < 0,01), Sprint ES −0,59, hintere Kette ES −0,60/−0,40, Beckenkippung ES 0,53"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du hast eine richtig harte Sprint- oder Beinkraft-Einheit hinter dir. Wie lange brauchen deine Muskeln oft, bis sie wieder ganz erholt sind?",
+"richtig": "Etwa zwei bis drei volle Tage",
+"falsch": [
+"Meist schon nach wenigen Stunden",
+"Eine einzige ruhige Nacht reicht",
+"Erst nach etwa zwei vollen Wochen"
+],
+"warum": "Nach harten Sprints und schwerem Beintraining blieben Muskelkraft und Tempo in Messungen bis zu 48 bis 72 Stunden reduziert."
+},
+"plus": {
+"frage": "Warum steigt das Risiko für die Hamstrings, wenn du schon 24 Stunden nach einer harten Sprint-Einheit wieder maximal sprintest?",
+"richtig": "Kraft fehlt und das Becken kippt stärker nach vorn",
+"falsch": [
+"Die Muskeln sind dann zu steif zum Laufen geworden",
+"Der Stoffwechsel kann gar keinen Zucker mehr nutzen",
+"Die Waden übernehmen plötzlich die gesamte Arbeit"
+],
+"warum": "Die hintere Kette ist noch geschwächt und eine stärkere Beckenkippung nach vorn setzt die Hamstrings im Topspeed unter höhere Dehnung."
+},
+"labor": {
+"frage": "In einer Crossover-Studie (n = 15) wurde die Erholung über 72 Stunden nach maximalen Sprints gemessen. Wo lag die Ermüdung hauptsächlich?",
+"richtig": "Primär peripher in der Muskulatur statt im Nervensystem",
+"falsch": [
+"Fast ausschließlich zentral im Nervensystem",
+"Nur im dominanten Bein ohne Effekt auf das andere",
+"Ausschließlich im ersten Sprint direkt nach der Pause"
+],
+"warum": "Die kontraktile Muskelfunktion brauchte bis zu 72 h zur Erholung, mit Kraftverlusten an beiden Beinen und sinkendem V0 (ES −0,71)."
+}
+}
+},
+{
+"id": "SPD-115",
+"karte": {
+"kopf": "Teamsportler · Trainingswoche beobachtet",
+"titel": "Ersatzspieler sammeln im Schnitt wohl ein Viertel weniger Sprints",
+"titel_hervor": "ein Viertel weniger Sprints",
+"setup": "GPS-Daten über ganze Trainingswochen im Teamsport verglichen die Sprintmengen einzelner Wochentage sowie von Stamm- und Ersatzspielern.",
+"zahl": {
+"label": "Weniger Sprintstrecke bei Ersatzspielern",
+"wert": "−25,2 %",
+"alltag": "rund ein Viertel pro Woche"
+},
+"kern": [
+"Die meisten Sprints lagen drei bis vier Tage vor dem Spiel, kurz davor viel weniger.",
+"Selbst mit Ausgleichstraining am Tag nach dem Spiel fehlte Ersatzspielern Sprintstrecke.",
+"Kleine Spielformen allein reichen kaum aus, um echtes Höchsttempo zu erreichen."
+],
+"grenze": "Beobachtungsdaten aus dem Teamsport – die Sprintmengen schwankten zudem von Spieler zu Spieler besonders stark.",
+"fuer_dich": "Am Spieltag nur auf der Bank gesessen? Baue am Folgetag gezielt freie Sprints ein und drossele zwei Tage vor dem nächsten Spiel.",
+"labor": {
+"design": "Prospektive Beobachtungsstudie, GPS-Belastung im Wochenmikrozyklus (Starter vs. Ersatz)",
+"teilnehmer": "",
+"ergebnis": "Tagesunterschiede F = 26,53–89,41 (p < 0,01); Nicht-Starter vs. Starter: −25,17 % Sprint, −14,00 % HSR (d = 0,40–0,49)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Im Teamsport trainieren Ersatzspieler am Tag nach dem Spiel oft extra. Kommen sie damit auf genauso viele Sprints wie Stammspieler?",
+"richtig": "Nein, ihnen fehlt über die Woche rund ein Viertel",
+"falsch": [
+"Ja, die Extra-Einheit gleicht das Spiel völlig aus",
+"Ja, sie sprinten über die Woche sogar deutlich mehr",
+"Nein, sie laufen dafür aber doppelt so weit insgesamt"
+],
+"warum": "Auch mit Zusatztraining blieben Ersatzspieler im Schnitt rund ein Viertel unter der wöchentlichen Sprintstrecke der Stammspieler."
+},
+"plus": {
+"frage": "Wann legst du im Teamsport-Wochenplan mit Spiel am Wochenende die intensivsten Sprinteinheiten am sinnvollsten ein?",
+"richtig": "Drei bis vier Tage vor dem Spiel, danach klar drosseln",
+"falsch": [
+"Am Tag direkt vor dem Spiel für maximale Schärfe",
+"Zwei Tage vor dem Spiel mit vollem Sprintvolumen",
+"Gleichmäßig hoch an jedem einzelnen Wochentag"
+],
+"warum": "Die höchsten Sprintspitzen liegen drei bis vier Tage vor dem Spiel (MD−4/MD−3), während in den zwei Tagen davor um mindestens die Hälfte gedrosselt wird."
+},
+"labor": {
+"frage": "GPS-Analysen von Teamsport-Mikrozyklen zeigten bei Nicht-Startern trotz MD+1-Training ein deutliches Sprintdefizit. Woran lag das vor allem?",
+"richtig": "Kleinfeldspiele erzeugen kaum Sprints im Maximaltempo",
+"falsch": [
+"Die Ersatzspieler trainierten an MD+1 weniger als 10 Minuten",
+"An MD−4 und MD−3 trainierten Nicht-Starter gar nicht mit",
+"Stammspieler machten an MD−1 die meisten Maximalsprints"
+],
+"warum": "Obwohl an MD+1 rund 40 Minuten trainiert wurde, fehlten in Kleinfeldspielen die Raumdistanzen für echte Maximalgeschwindigkeits-Sprints."
+}
+}
+},
+{
+"id": "SUP-101",
+"karte": {
+"kopf": "Erwachsene im Krafttraining · Meta-Analyse",
+"titel": "Mit Kreatin steigt die Bankdrück-Kraft im Schnitt um gut 5 %",
+"titel_hervor": "im Schnitt um gut 5 %",
+"setup": "Teilnehmer machten mindestens sechs Wochen Krafttraining und nahmen dazu täglich Kreatin oder ein Scheinpräparat ohne Wirkstoff.",
+"zahl": {
+"label": "Mehr Bankdrück-Kraft als mit Placebo",
+"wert": "+5,3 %",
+"alltag": ""
+},
+"kern": [
+"Auch die direkt gemessene Muskeldicke nahm um 0,10 bis 0,16 cm zusätzlich zu.",
+"Jüngere bauen damit spürbarer Muskeln auf als Erwachsene ab 60 Jahren.",
+"Kreatin nur an Trainingstagen zu nehmen, zeigte bei Trainierten keine Wirkung."
+],
+"grenze": "Bei Erwachsenen ab 60 steigt die Kraft zuverlässig, der zusätzliche Muskelaufbau ist dort aber uneinheitlich.",
+"fuer_dich": "Du trainierst regelmäßig Kraft? Nimm täglich 3 bis 5 g Kreatin-Monohydrat ein, auch an trainingsfreien Tagen.",
+"labor": {
+"design": "2 Meta-Analysen von RCTs (ab 6 Wochen), Kreatin vs. Placebo bei Krafttraining",
+"teilnehmer": "10 RCTs (Muskeldicke) und 53 RCTs mit 1.138 Personen (Oberkörperkraft)",
+"ergebnis": "Muskeldicke +0,10 bis +0,16 cm (ES 0,11; 95 % CrI −0,02 bis 0,25); Oberkörperkraft ES 0,317"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du machst regelmäßig Krafttraining und nimmst täglich Kreatin statt eines Scheinpräparats. Was verändert sich im Schnitt?",
+"richtig": "Kraft und Muskelumfang steigen etwas stärker als ohne Kreatin",
+"falsch": [
+"Muskeln wachsen damit auch ganz ohne regelmäßiges Training",
+"Die Ausdauer steigt stark, die Kraft bleibt aber unverändert",
+"Ein Effekt entsteht nur bei Einnahme direkt vor dem Training"
+],
+"warum": "Kreatin unterstützt das Krafttraining und bringt im Schnitt etwas mehr Kraft und leicht dickere Muskeln."
+},
+"plus": {
+"frage": "Du trainierst viermal pro Woche Kraft und willst Kreatin sinnvoll nutzen. Wie nimmst du es am besten ein?",
+"richtig": "Täglich eine kleine Erhaltungsdosis nehmen, auch an Ruhetagen",
+"falsch": [
+"Nur an Trainingstagen direkt nach dem letzten Satz einnehmen",
+"Nach vier Wochen Einnahme jeweils zwei Wochen pausieren",
+"Erst nach einem Jahr Trainingserfahrung mit Kreatin starten"
+],
+"warum": "Kreatin wirkt über volle Muskelspeicher – eine Einnahme nur an Trainingstagen blieb bei Trainierten wirkungslos."
+},
+"labor": {
+"frage": "Meta-Analysen verglichen Krafttraining mit Kreatin gegen Placebo über mindestens sechs Wochen bei Jüngeren und Älteren. Wie fiel der Effekt aus?",
+"richtig": "Kleiner Zusatzgewinn bei Muskeldicke, deutlicherer bei Oberkörperkraft",
+"falsch": [
+"Großer Muskelzuwachs bei Älteren ab 60, kaum messbar bei Jüngeren",
+"Starker Effekt auf die Muskeldicke, aber kein Unterschied bei der Kraft",
+"Signifikante Zuwächse nur bei isolierter Einnahme an Trainingstagen"
+],
+"warum": "Die Effektstärke lag für Muskeldicke klein (ES 0,11) und für Oberkörperkraft höher (ES 0,317), mit klarerem Muskelplus bei Jüngeren."
+}
+}
+},
+{
+"id": "SUP-102",
+"karte": {
+"kopf": "Erwachsene & Sportler · Übersichtsarbeit",
+"titel": "Kreatin macht kein Körperfett und braucht keine Ladephase",
+"titel_hervor": "macht kein Körperfett",
+"setup": "Eine Auswertung verglich Studien von einer Woche bis zwei Jahren zu Kreatin-Einnahme, Körpergewicht, Fettmasse und Ladephasen.",
+"zahl": {
+"label": "Typischer Wasser-Anstieg zu Beginn",
+"wert": "+0,9 bis 1,1 kg",
+"alltag": "≈ 1 Liter Wasser im Muskel"
+},
+"kern": [
+"Täglich 3 bis 5 g füllen die Muskelspeicher auch ohne hohe Ladephase.",
+"Ein schneller Gewichtsanstieg tritt vor allem bei 20 g pro Tag auf.",
+"In ausgewerteten Studien traten rund 60 % weniger Muskelkrämpfe auf."
+],
+"grenze": "Das zusätzliche Wasser in den Muskeln kann bei Körperscans kurzfristig mehr Muskelmasse vortäuschen.",
+"fuer_dich": "Deine Waage steigt kurz nach dem Kreatin-Start? Bleib bei 3 bis 5 g täglich und werte das Plus als Wasser, nicht als Fett.",
+"labor": {
+"design": "Systematisches Review von RCTs (1 Woche bis 2 Jahre), 3–5 g/Tag vs. 20 g/Tag Ladephase",
+"teilnehmer": "Trainierte, Frauen, Ältere und weitere Erwachsene aus RCTs",
+"ergebnis": "Körperfettmasse unverändert; Gewicht kurzfristig +0,9 bis 1,1 kg (Wasser); −60 % Muskelkrämpfe"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du startest mit Kreatin und wiegst nach wenigen Tagen rund ein Kilo mehr. Woher kommt dieses Plus meistens?",
+"richtig": "Die Muskeln speichern vorübergehend mehr Wasser",
+"falsch": [
+"Kreatin liefert viele Kalorien und baut Körperfett auf",
+"Die Muskeln sind in wenigen Tagen deutlich gewachsen",
+"Der Körper scheidet plötzlich weniger Salz über Schweiß aus"
+],
+"warum": "Kreatin zieht Wasser in die Muskelzellen – die Körperfettmasse steigt durch empfohlene Mengen nicht an."
+},
+"plus": {
+"frage": "Du möchtest mit Kreatin-Monohydrat anfangen, willst aber starke Gewichtssprünge vermeiden. Wie gehst du vor?",
+"richtig": "Direkt mit kleiner Tagesdosis starten und Ladephase weglassen",
+"falsch": [
+"Zuerst hochdosiert laden, sonst bleiben die Speicher leer",
+"Kreatin nur im Aufbau nutzen und in der Diät sofort absetzen",
+"Auf Kreatin verzichten, weil es sonst Körperfett ansetzt"
+],
+"warum": "Auch mit 3 bis 5 g täglich füllen sich die Muskelspeicher zuverlässig, während eine 20-g-Ladephase Wassereinlagerung verstärkt."
+},
+"labor": {
+"frage": "In einem Review von Studien über eine Woche bis zwei Jahre wurden Kreatin-Wassereinlagerungen untersucht. Welcher Messfehler kann dabei auftreten?",
+"richtig": "DXA-Scans zeigen durch Zellwasser teils künstlich mehr fettfreie Masse",
+"falsch": [
+"Hautfaltenmessungen überschätzen durch Kreatin deutlich das Körperfett",
+"Krafttests fallen wegen des Zellwassers wochenlang schlechter aus",
+"Waagen zeigen trotz Wassereinlagerung erst nach Monaten einen Anstieg"
+],
+"warum": "Der osmotische Wassertransport in die Muskelzelle erhöht die gemessene fettfreie Masse im DXA-Scan, ohne sofort mehr Muskelprotein zu bilden."
+}
+}
+},
+{
+"id": "SUP-103",
+"karte": {
+"kopf": "Mischköstler & Vegetarier · Übersichtsarbeit",
+"titel": "Vegetarier profitieren besonders stark von Kreatin",
+"titel_hervor": "profitieren besonders stark",
+"setup": "Eine Übersichtsarbeit verglich, wie stark Menschen mit unterschiedlich vollen Kreatinspeichern im Muskel auf eine Einnahme ansprechen.",
+"zahl": {
+"label": "Niedrigere Ausgangsspeicher bei Vegetariern",
+"wert": "−10 %",
+"alltag": ""
+},
+"kern": [
+"Wer schon von Natur aus volle Speicher hat, spürt oft kaum einen Effekt.",
+"Kreatin steigerte im Schnitt die Maximalkraft um 8 % und Kraftausdauer um 14 %.",
+"Sonderformen wie Kreatin-Ethylester wirken nicht besser und zerfallen schneller."
+],
+"grenze": "Wie stark jemand anspricht, hängt auch vom Muskelfasertyp und den Aufnahmekanälen im Muskel ab.",
+"fuer_dich": "Du isst vegetarisch oder vegan? Dann lohnt sich 3 bis 5 g Kreatin täglich besonders – bei Mischkost nach 4 Wochen prüfen, ob es wirkt.",
+"labor": {
+"design": "Systematisches Review zu Kreatinspeichern, Dosierungen (0,03 vs. 0,3 g/kg/Tag) und Darreichungsformen",
+"teilnehmer": "Trainierte, Ausdauersportler, Mischköstler und Vegetarier",
+"ergebnis": "Vegetarier −10 % Ausgangsspeicher (117 vs. 130 mmol/kg); +8 % Maximalkraft; +14 % Kraftausdauer; +13 % Retention"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Zwei Sportler nehmen täglich Kreatin: eine Person isst viel Fleisch, die andere lebt vegetarisch. Wer spürt im Schnitt mehr?",
+"richtig": "Die vegetarische Person, weil ihre Speicher anfangs leerer sind",
+"falsch": [
+"Die Person mit viel Fleisch, weil ihr Körper Kreatin gewöhnt ist",
+"Beide gleich stark, weil die Ernährung darauf keinen Einfluss hat",
+"Keine von beiden, weil pflanzliche Kost die Aufnahme blockiert"
+],
+"warum": "Vegetarier starten im Schnitt mit rund 10 % niedrigeren Muskelspeichern und holen durch die Einnahme mehr auf."
+},
+"plus": {
+"frage": "Du isst gemischte Kost und nimmst seit vier Wochen täglich Kreatin, aber weder Kraft noch Gewicht bewegen sich. Was ist wahrscheinlich?",
+"richtig": "Deine Speicher waren vorher schon voll – du reagierst wohl kaum",
+"falsch": [
+"Du musst auf Kreatin-Ethylester wechseln, damit es aufgenommen wird",
+"Deine Dosis sollte dauerhaft vervierfacht werden, um zu wirken",
+"Kreatin wirkt bei gemischter Kost erst nach einem halben Jahr"
+],
+"warum": "Bei hohen Ausgangsspeichern stößt die Aufnahme an eine Sättigungsgrenze; teurere Formen wie Ethylester helfen dann nicht."
+},
+"labor": {
+"frage": "In Studien wurden Kreatin-Ethylester und klassisches Kreatin-Monohydrat sowie die Sättigung der Muskelspeicher verglichen. Was zeigte sich?",
+"richtig": "Ethylester verbessert den Transport nicht und zerfällt schneller zu Kreatinin",
+"falsch": [
+"Ethylester umgeht die Sättigungsgrenze und steigert Speicher unbegrenzt",
+"Nur Ethylester funktioniert bei Personen mit niedrigen Ausgangsspeichern",
+"Hohe Ausgangsspeicher lassen sich durch Ethylester deutlich anheben"
+],
+"warum": "Die Sättigung des SLC6A8-Transporters begrenzt die Aufnahme, und Ethylester bringt keinen Transportvorteil."
+}
+}
+},
+{
+"id": "SUP-104",
+"karte": {
+"kopf": "Gesunde Erwachsene · 2 Meta-Analysen",
+"titel": "Kreatin schadet gesunden Nieren nicht, erhöht aber einen Blutwert",
+"titel_hervor": "schadet gesunden Nieren nicht",
+"setup": "Meta-Analysen prüften bei gesunden Menschen, wie sich Kreatin auf die tatsächliche Filterleistung der Nieren und auf den Kreatinin-Blutwert auswirkt.",
+"zahl": {
+"label": "Leichter Anstieg beim Blutwert Kreatinin",
+"wert": "+0,07 mg/dL",
+"alltag": ""
+},
+"kern": [
+"Die eigentliche Filterleistung der Nieren blieb bei Gesunden unverändert.",
+"Kreatinin entsteht beim normalen Abbau von Kreatin – nicht erst durch Schäden.",
+"Standard-Nierenformeln schätzen die Nierenleistung durch Kreatin oft zu niedrig ein."
+],
+"grenze": "Die Ergebnisse gelten nur für gesunde Nieren – bei Vorerkrankungen muss ein Arzt entscheiden.",
+"fuer_dich": "Dein Blutbild zeigt unter Kreatin leicht erhöhtes Kreatinin? Sprich deine Ärztin auf Kreatin und den Wert Cystatin C an.",
+"labor": {
+"design": "Meta-Analysen randomisierter Studien (Follow-up 1–12 Wochen), Kreatin vs. Kontrolle",
+"teilnehmer": "Nierengesunde Erwachsene, Trainierte und Ältere",
+"ergebnis": "Serum-Kreatinin MD +0,07 mg/dL (95 % CI 0,01–0,12; p=0,03; I²=69,7 %); GFR nicht signifikant"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Ein gesunder Sportler nimmt täglich Kreatin und lässt ein Blutbild machen. Was passiert dabei oft mit den Nierenwerten?",
+"richtig": "Ein Blutwert steigt leicht, die Nieren arbeiten aber normal weiter",
+"falsch": [
+"Die Nierenleistung sinkt nach wenigen Wochen messbar ab",
+"Alle Blutwerte bleiben gleich, weil Kreatin nur im Muskel bleibt",
+"Die Nieren filtern durch Kreatin plötzlich doppelt so schnell"
+],
+"warum": "Beim normalen Abbau von Kreatin entsteht etwas mehr Kreatinin im Blut, ohne dass die Nierenfunktion gesunder Menschen leidet."
+},
+"plus": {
+"frage": "Du bist nierengesund, nimmst Kreatin und dein Laborbericht zeigt einen leicht erhöhten Kreatinin-Wert. Was ist der sinnvollste Schritt?",
+"richtig": "Kreatin beim Arzt erwähnen und Nieren über Cystatin C prüfen lassen",
+"falsch": [
+"Kreatin sofort absetzen, weil das klar auf einen Schaden hinweist",
+"Den Wert ignorieren und die Kreatindosis zum Ausgleich halbieren",
+"Drei Tage wenig trinken und den Kreatinin-Test bald wiederholen"
+],
+"warum": "Kreatinin steigt unter Kreatin rein stoffwechselbedingt; Cystatin C misst die Nierenleistung unabhängig davon."
+},
+"labor": {
+"frage": "Meta-Analysen untersuchten Kreatin bei Gesunden anhand von Serum-Kreatinin und glomerulärer Filtrationsrate (GFR). Was zeigte die Auswertung?",
+"richtig": "Minimaler Anstieg von Serum-Kreatinin, aber keine Veränderung der GFR",
+"falsch": [
+"Signifikanter Abfall der GFR schon nach wenigen Wochen Einnahme",
+"Weder Serum-Kreatinin noch eGFR-Formeln werden durch Kreatin beeinflusst",
+"Kreatinin sank deutlich, während die GFR stark anstieg"
+],
+"warum": "Serum-Kreatinin stieg im Mittel leicht an, was eGFR-Schätzformeln verzerren kann, während die GFR selbst unverändert blieb."
+}
+}
+},
+{
+"id": "SUP-105",
+"karte": {
+"kopf": "Junge & Ältere · 16 Studien ausgewertet",
+"titel": "Für fitte junge Köpfe bringt Kreatin wohl keinen Denk-Schub",
+"titel_hervor": "wohl keinen Denk-Schub",
+"setup": "16 Studien prüften, ob Kreatin im Vergleich zu einem Scheinpräparat das allgemeine Denken und Gedächtnis von Jüngeren und Älteren verbessert.",
+"zahl": null,
+"kern": [
+"Für allgemeine Denkleistung und Planung zeigte sich insgesamt kein klarer Vorteil.",
+"Erste Hinweise auf besseres Gedächtnis gibt es bei Älteren zwischen 66 und 76 Jahren.",
+"Auch nach rund 21 Stunden ohne Schlaf deuten Daten auf akute Hilfe hin."
+],
+"grenze": "Die Studienlage ist widersprüchlich; frühere positive Gesamtzahlen beruhten teils auf Rechenfehlern.",
+"fuer_dich": "Du bist jung und ausgeschlafen? Nutze Kreatin fürs Training, nicht als Lern-Booster – erst bei Schlafmangel gibt es Hinweise.",
+"labor": {
+"design": "Meta-Analysen von RCTs zu Kognition, Gedächtnis und Exekutivfunktion (inkl. Re-Analysen)",
+"teilnehmer": "16 RCTs mit 492 Personen (junge Erwachsene und Ältere 66–76 Jahre)",
+"ergebnis": "Gesamtkognition SMD 0,34 (p=0,22); Gedächtnis Ältere SMD 0,88 vs. Junge SMD 0,03"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Ein ausgeschlafener 25-Jähriger nimmt Kreatin, um sich Prüfungsstoff besser zu merken. Was zeigen die bisherigen Studien?",
+"richtig": "Für junge, ausgeruhte Erwachsene gibt es kaum Hinweise auf einen Effekt",
+"falsch": [
+"Das Gedächtnis verbessert sich bei allen Altersgruppen sehr stark",
+"Die Denkgeschwindigkeit steigt schon nach der ersten kleinen Portion",
+"Kreatin macht tagsüber eher müde und bremst das Erinnerungsvermögen"
+],
+"warum": "Nach kritischer Prüfung der Daten zeigten sich Hinweise fürs Gedächtnis vor allem bei Älteren oder nach starkem Schlafentzug."
+},
+"plus": {
+"frage": "Du bist Mitte 30, schläfst gut und überlegst, Kreatin gezielt für mehr Fokus im Job zu kaufen. Wie ordnest du den Nutzen ein?",
+"richtig": "Fürs Training sinnvoll, als allgemeiner Denk-Booster aber kaum belegt",
+"falsch": [
+"Im ausgeruhten Zustand bringt es mehr für Fokus als für Kraft",
+"Nach einer Ladephase steigt die Gedächtnisleistung im Job deutlich",
+"Für das Gehirn wirkt Kreatin nur, wenn man keinen Sport treibt"
+],
+"warum": "Bei ausgeschlafenen jüngeren Erwachsenen blieben Gesamtkognition und Gedächtnis in Studien ohne klaren Effekt."
+},
+"labor": {
+"frage": "Meta-Analysen zu Kreatin und Gedächtnis wurden wegen Mehrfachzählung korrelierter Tests derselben Probanden korrigiert. Was blieb bestehen?",
+"richtig": "Hinweise auf Gedächtniseffekte vor allem bei Älteren und Schlafentzug",
+"falsch": [
+"Ein großer, konsistenter Effekt auf die Exekutivfunktion in jedem Alter",
+"Ein starker Gedächtnisvorteil vor allem bei jungen, ausgeruhten Erwachsenen",
+"Keinerlei Unterschied zwischen Altersgruppen oder Schlafstatus"
+],
+"warum": "Nach Korrektur des Unit-of-Analysis-Fehlers blieben Effekte auf Ältere mit geringeren Hirnspeichern und akuten Schlafentzug beschränkt."
+}
+}
+},
+{
+"id": "SUP-106",
+"karte": {
+"kopf": "Sportler · 26 Studien zusammengefasst",
+"titel": "Koffein bringt bei harten Sprints gut 5–6 % mehr Leistung",
+"titel_hervor": "5–6 % mehr Leistung",
+"setup": "Studien prüften, wie unterschiedliche Koffeindosen vor dem Sport Ausdauer, Kraft, Sprünge, Reaktion und Sprint-Arbeit im Vergleich zu Placebo beeinflussen.",
+"zahl": {
+"label": "Mehr Gesamtarbeit bei Intervall-Sprints",
+"wert": "+5,3 bis 6,2 %",
+"alltag": ""
+},
+"kern": [
+"Koffein steigert Ausdauer, Kraft, Sprungkraft und Reaktionszeit.",
+"Schon 1 bis 2 mg pro Kilo machen Belastung spürbar leichter.",
+"Bei 6 mg pro Kilo nehmen Herzklopfen, Unruhe und Schlafprobleme zu."
+],
+"grenze": "Eine höhere Dosis bringt nicht automatisch mehr Nutzen, sondern oft vor allem stärkere Nebenwirkungen.",
+"fuer_dich": "Steht eine intensive Einheit an? Teste 60 Minuten vorher 3 mg Koffein pro Kilo – bei Empfindlichkeit reichen oft 1 bis 2 mg.",
+"labor": {
+"design": "Meta-Analyse (26 Kampfsport-Studien) und Übersichtsarbeit, 1–6 mg/kg Koffein vs. Placebo",
+"teilnehmer": "Trainierte, Ausdauer-, Kampf- und Hybridsportler, Männer und Frauen",
+"ergebnis": "+6,2 % (Halbzeit 1) und +5,3 % (Halbzeit 2) Gesamtarbeit; 1–2 mg/kg senken RPE"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du trinkst etwa eine Stunde vor dem Training Kaffee oder nimmst Koffein. Wie wirkt sich das im Schnitt auf deine Leistung aus?",
+"richtig": "Ausdauer, Kraft, Sprungkraft und Reaktion verbessern sich messbar",
+"falsch": [
+"Es hilft nur beim langen Laufen, nicht bei Kraft oder Sprints",
+"Es wirkt erst, wenn man mindestens eine Woche lang vorlädt",
+"Es macht wach, verändert die körperliche Leistung aber kaum"
+],
+"warum": "Koffein wirkt akut und verbessert sowohl Ausdauer als auch Maximalkraft, Sprungkraft und Reaktionszeit."
+},
+"plus": {
+"frage": "Du verträgst hohe Koffeindosen schlecht, willst vor einer harten Einheit aber trotzdem etwas Rückenwind. Was passt am besten?",
+"richtig": "Eine niedrige Dosis testen, die schon die RPE spürbar senkt",
+"falsch": [
+"Ohne sehr hohe Dosis zeigt Koffein im Training kaum Wirkung",
+"Eine hohe Dosis erst beim Aufwärmen für weniger Nebenwirkungen",
+"Koffein meiden, weil es Kraftausdauer im Gym verschlechtert"
+],
+"warum": "Schon 1 bis 2 mg/kg senken das Belastungsempfinden (RPE) und fördern die Sprungkraft bei deutlich weniger Nebenwirkungen."
+},
+"labor": {
+"frage": "In Meta-Analysen wurden akute Koffeindosen von niedrig bis hoch auf Leistung und Verträglichkeit geprüft. Welcher Zusammenhang zeigte sich?",
+"richtig": "Mittlere Dosen wirken konsistent für Ausdauer, hohe mehren Nebenwirkungen",
+"falsch": [
+"Höhere Dosen steigern die Leistung ohne Zunahme von Nebenwirkungen",
+"Niedrige Dosen zeigen keinen Effekt auf RPE oder Sprungkraft",
+"Koffeinkaugummi wirkt deutlich langsamer als Kapseln oder Getränke"
+],
+"warum": "Während 3 bis 6 mg/kg für Ausdauer am konsistentesten wirken, nehmen bei 6 mg/kg Herzklopfen, Unruhe und Schlafstörungen deutlich zu."
+}
+}
+}
+]

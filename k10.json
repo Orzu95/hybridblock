@@ -1,0 +1,1126 @@
+[
+{
+"id": "FAST-137",
+"karte": {
+"kopf": "Erwachsene · 23 Studien zusammengefasst",
+"titel": "Die Tagesmenge Protein schlägt den schnellen Shake nach dem Training",
+"titel_hervor": "schlägt den schnellen Shake",
+"setup": "Kraft- und Muskelzuwächse wurden zwischen engem Protein-Timing (innerhalb einer Stunde) und freierem Timing über den Tag verglichen.",
+"zahl": null,
+"kern": [
+"Ein Shake direkt nach dem Training brachte keinen messbaren Extra-Effekt",
+"Entscheidend für mehr Muskeln und Kraft war die tägliche Gesamtmenge Protein",
+"Die Auswertung umfasste sowohl Untrainierte als auch erfahrene Kraftsportler"
+],
+"grenze": "Das gilt vor allem, wenn du vor dem Training gegessen hast – nach Nüchterntraining bleibt zeitnahes Protein sinnvoll.",
+"fuer_dich": "Du hast nach dem Training keinen Shake dabei? Kein Stress – achte einfach darauf, über den Tag genug Protein zu essen.",
+"labor": {
+"design": "Systematisches Review & Multilevel-Meta-Regression, Protein-Timing ≤ 1 h um das Training vs. Kontrolle",
+"teilnehmer": "Hypertrophie: 23 Studien (n = 525); Kraft: 20 Studien (n = 478)",
+"ergebnis": "Gesamtprotein stärkster Prädiktor (p = 0,004); Timing nach Kontrolle der Gesamtproteinmenge nicht signifikant"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du hast nach dem Krafttraining deinen Eiweißshake vergessen und isst erst zwei Stunden später. War das Training jetzt umsonst?",
+"richtig": "Nein – entscheidend ist vor allem, wie viel Eiweiß du über den ganzen Tag isst",
+"falsch": [
+"Ja – nach 30 Minuten schließt sich das Aufbaufenster komplett",
+"Ja – ohne sofortigen Shake baut der Körper sogar Muskeln ab",
+"Nur wenn du den Shake genau 15 Minuten nach dem Training trinkst, wirkt er"
+],
+"warum": "Sobald die tägliche Gesamteiweißmenge passt, bringt ein enger Zeitdruck direkt nach dem Training keinen belegten Zusatznutzen."
+},
+"plus": {
+"frage": "Du trainierst im gefütterten Zustand und fragst dich, ob du direkt in der Umkleide einen Post-Workout-Shake trinken musst. Wie entscheidest du?",
+"richtig": "Die tägliche Gesamtproteinmenge priorisieren statt auf 30 Minuten genau zu timen",
+"falsch": [
+"Immer innerhalb von 30 Minuten trinken, sonst verlierst du den halben Reiz",
+"Lieber die Tagesmenge senken und dafür das Timing minutengenau einhalten",
+"Nach dem Training gar kein Protein mehr essen, wenn es später als eine Stunde wird"
+],
+"warum": "Im gefütterten Zustand ist die tägliche Proteinmenge der stärkste Treiber für Kraft und Hypertrophie, nicht ein enges 30-Minuten-Fenster."
+},
+"labor": {
+"frage": "Eine Multilevel-Meta-Regression über mehr als 20 Studien prüfte den Effekt von engem Protein-Timing (≤ 1 h) auf Hypertrophie und Kraft. Was zeigte die Kovariaten-Kontrolle?",
+"richtig": "Kein signifikanter Timing-Effekt mehr, sobald für das Gesamtprotein kontrolliert wurde",
+"falsch": [
+"Ein starker Zusatzeffekt für enges Timing unabhängig von der Gesamtproteinmenge",
+"Ein signifikanter Vorteil von engem Timing für Kraft, aber nicht für Hypertrophie",
+"Die tägliche Gesamtproteinmenge hatte keinen Zusammenhang mit dem Muskelwachstum"
+],
+"warum": "Die Gesamtproteinzufuhr war der stärkste Prädiktor (p = 0,004); nach Kontrolle dafür verschwand der scheinbare Vorteil des engen Timings."
+}
+}
+},
+{
+"id": "FAST-138",
+"karte": {
+"kopf": "Sportler · Fachgesellschafts-Leitlinie",
+"titel": "Bei zwei Einheiten am Tag füllen Kohlenhydrate die Speicher schnell",
+"titel_hervor": "füllen Kohlenhydrate die Speicher",
+"setup": "Eine internationale Fachgesellschaft fasste den Forschungsstand zum Nährstoff-Timing bei Doppeltraining und vor dem Schlafen zusammen.",
+"zahl": null,
+"kern": [
+"Bei unter 4 Stunden Pause helfen 1,2 g/kg Kohlenhydrate pro Stunde beim Auffüllen",
+"Alternativ klappt auch 0,8 g/kg Kohlenhydrate plus etwas Protein pro Stunde",
+"30 bis 40 g Casein vor dem Schlafen fördern die Nacht-Erholung ohne Fettbau-Stopp"
+],
+"grenze": "Sehr hohe Kohlenhydratmengen über 1 g/kg pro Stunde verträgt nicht jeder Magen – die Verträglichkeit ist individuell.",
+"fuer_dich": "Zwei Einheiten am selben Tag mit wenig Pause dazwischen? Unterbrich das Fasten nach Einheit eins für Kohlenhydrate und Protein.",
+"labor": {
+"design": "Offizielles Positionspapier / Leitlinie (ISSN Position Stand) zu Nährstoff-Timing",
+"teilnehmer": "Kraft-, Ausdauer- und Hybrid-Sportler (Evidenzsynthese)",
+"ergebnis": "Pause < 4 h: 1,2 g/kg/h KH (GI > 70) oder 0,8 g/kg/h KH + 0,2–0,4 g/kg/h Protein; Pre-Sleep: 30–40 g Casein steigern nächtliche MPS"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du trainierst heute zweimal mit nur drei Stunden Pause dazwischen. Was hilft dir am besten, für die zweite Einheit wieder fit zu sein?",
+"richtig": "Zwischen den Einheiten gezielt Kohlenhydrate und etwas Eiweiß essen",
+"falsch": [
+"Bis nach der zweiten Einheit weiterfasten, damit der Körper sparsamer läuft",
+"Zwischen den Einheiten nur Wasser trinken, um den Magen zu schonen",
+"Ausschließlich Fett essen, weil das die Muskelspeicher am schnellsten füllt"
+],
+"warum": "Bei kurzer Pause zwischen zwei Einheiten füllen schnell verfügbare Kohlenhydrate (ggf. mit Protein) die Energiespeicher zügig wieder auf."
+},
+"plus": {
+"frage": "An einem Doppeltrainingstag liegen nur vier Stunden zwischen Lauf und Krafttraining, eigentlich wäre noch Fastenzeit. Wie gehst du vor?",
+"richtig": "Das Fasten nach Einheit eins für reichlich Kohlenhydrate und Protein unterbrechen",
+"falsch": [
+"Das Fastenfenster stur durchziehen und erst abends wieder essen",
+"Nach Einheit eins nur einen reinen Proteinshake ohne Kohlenhydrate trinken",
+"Vor dem Schlafen kein Casein essen, weil es die Fettverbrennung stoppt"
+],
+"warum": "Bei unter vier bis acht Stunden Pause ist zügiges Auffüllen mit Kohlenhydraten und Protein entscheidend für die zweite Einheit."
+},
+"labor": {
+"frage": "Ein Positionspapier zum Nährstoff-Timing bewertete Strategien für schnelle Glykogen-Resynthese (< 4 h) und Pre-Sleep-Protein. Welche Aussage trifft zu?",
+"richtig": "Viel KH oder KH plus Protein füllen am schnellsten; Casein hemmt Lipolyse nicht",
+"falsch": [
+"Protein vor dem Schlafen blockiert die nächtliche Lipolyse vollständig",
+"Für schnelle Glykogen-Resynthese unter 4 Stunden reichen 0,2 g/kg/h Kohlenhydrate aus",
+"Niedrig-glykämische Kohlenhydrate füllen Speicher unter 4 Stunden schneller als hoch-glykämische"
+],
+"warum": "Empfohlen werden 1,2 g/kg/h hoch-glykämische KH (oder 0,8 g/kg/h KH + Protein); 30–40 g Casein steigern die nächtliche MPS ohne Lipolyse-Hemmung."
+}
+}
+},
+{
+"id": "FAST-139",
+"karte": {
+"kopf": "Ausdauersportler · Meta-Analyse",
+"titel": "Kohlenhydrate füllen Muskelspeicher deutlich schneller als Wasser",
+"titel_hervor": "deutlich schneller als Wasser",
+"setup": "Nach erschöpfendem Training wurde per Muskelprobe gemessen, wie schnell sich die Speicher mit Kohlenhydraten, mit Zusatz-Protein oder nur mit Wasser füllen.",
+"zahl": {
+"label": "Mehr Glykogen-Aufbau pro Stunde",
+"wert": "+23,5 mmol/kg/h",
+"alltag": ""
+},
+"kern": [
+"Gegenüber Wasser steigerten Kohlenhydrate die Wiederauffüllung hochsignifikant",
+"Zusätzliches Protein machte die reine Speicherfüllung bei gleicher Energie nicht schneller",
+"Für die Muskelreparatur selbst bleibt Protein nach dem Training trotzdem wichtig"
+],
+"grenze": "Gemessen wurde in den ersten 8 Stunden nach dem Training; bei wenig Kohlenhydraten kann Protein die Rolle anders beeinflussen.",
+"fuer_dich": "Folgt heute noch eine zweite harte Einheit? Plan direkt nach dem ersten Training eine kohlenhydratreiche Mahlzeit ein.",
+"labor": {
+"design": "Systematisches Review & Meta-Analyse (Muskelbiopsien ≤ 8 h nach Belastung), CHO vs. Wasser sowie CHO+PRO vs. CHO",
+"teilnehmer": "CHO vs. Kontrolle: 10 Studien (n = 86); CHO+PRO vs. CHO: 19 Studien (n = 160)",
+"ergebnis": "CHO vs. Kontrolle: MD +23,5 mmol/kg dm/h (95 % KI 19,0 bis 27,9, p < 0,001); CHO+PRO vs. CHO: MD +0,4 mmol/kg dm/h (p = 0,805)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Nach einem anstrengenden Training willst du deine leeren Energiespeicher in den Muskeln rasch wieder füllen. Was bringt den größten Schub?",
+"richtig": "Kohlenhydrate nach dem Training statt nur Wasser zu trinken",
+"falsch": [
+"Möglichst viel Wasser trinken, bis sich die Speicher selbst füllen",
+"Nur reines Eiweiß essen und Kohlenhydrate ganz weglassen",
+"Nach dem Training erst einmal acht Stunden lang nichts essen"
+],
+"warum": "Kohlenhydrate steigerten die Muskelglykogen-Resynthese nach dem Training hochsignifikant gegenüber Wasser."
+},
+"plus": {
+"frage": "Du hast zwei glykogenintensive Einheiten am selben Tag und nimmst nach Einheit eins schon reichlich Kohlenhydrate auf. Beschleunigt zusätzliches Protein die reine Glykogenspeicherung weiter?",
+"richtig": "Nein, bei gleicher Energiemenge bleibt die Glykogenrate gleich",
+"falsch": [
+"Ja, zusätzliches Protein verdoppelt die Geschwindigkeit der Glykogenspeicherung",
+"Nein, Protein bremst die Kohlenhydrataufnahme im Muskel deutlich aus",
+"Ja, aber nur wenn man gleichzeitig die Kohlenhydrate halbiert"
+],
+"warum": "Bei energieäquivalenter Kohlenhydratmenge brachte zusätzliches Protein keinen Bonus für die reine Glykogenrate, bleibt aber für die Muskelreparatur wichtig."
+},
+"labor": {
+"frage": "Eine Meta-Analyse von Muskelbiopsie-Studien (≤ 8 h nach Belastung) verglich Kohlenhydrate gegen Kontrolle sowie Kohlenhydrate plus Protein gegen reine Kohlenhydrate. Was zeigte sich?",
+"richtig": "KH halfen klar, Protein brachte bei gleicher Energie nichts extra",
+"falsch": [
+"Sowohl Kohlenhydrate als auch zusätzliches Protein steigerten die Glykogenrate hochsignifikant",
+"Kein signifikanter Unterschied zwischen Kohlenhydraten und Wasser in den ersten 8 Stunden",
+"Die Kombination aus Kohlenhydraten und Protein senkte die Glykogen-Resynthese signifikant"
+],
+"warum": "Kohlenhydrate erhöhten die Rate um +23,5 mmol/kg dm/h (p < 0,001), während CHO+PRO gegenüber energieäquivalenten CHO keinen Unterschied zeigte (p = 0,805)."
+}
+}
+},
+{
+"id": "FAST-140",
+"karte": {
+"kopf": "Sportliche Männer im Ramadan · Zufallsstudie",
+"titel": "Im Ramadan brachte Krafttraining nach dem Essen mehr Kraft",
+"titel_hervor": "nach dem Essen mehr Kraft",
+"setup": "Männer trainierten 8 Wochen lang viermal pro Woche Ganzkörper-Kraft – entweder abends nach dem Fastenbrechen oder nachmittags fastend.",
+"zahl": null,
+"kern": [
+"Nach dem Fastenbrechen stiegen Kniebeuge, Kreuzheben und Testosteron deutlich an",
+"Beim Nachmittagstraining ohne Essen und Wasser stagnierte die Beinkraft",
+"In der fastenden Gruppe war das Stresshormon Cortisol signifikant höher"
+],
+"grenze": "Untersucht wurden nur männliche Teilnehmer beim trockenen Ramadan-Fasten ohne Wasser tagsüber.",
+"fuer_dich": "Du fastest im Ramadan und willst schwer heben? Leg dein Krafttraining 1,5 bis 2 Stunden nach dem Fastenbrechen.",
+"labor": {
+"design": "RCT über 8 Wochen (4×/Woche Ganzkörper-RT, 75–85 % 1RM), Training nach Iftar (20–22 Uhr) vs. fastend (16–18 Uhr)",
+"teilnehmer": "37 gesunde sportliche Männer im Ramadan",
+"ergebnis": "Nur nach Iftar: 1RM Squat (p = 0,03, ES = 0,13), Deadlift (p = 0,04, ES = 0,21), Testosteron (p = 0,04, ES = 0,31); Cortisol fastend höher (p = 0,03, ES = 0,34)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du fastest im Ramadan tagsüber ohne Essen und Trinken und willst schweres Krafttraining machen. Wann klappt der Kraftaufbau meist besser?",
+"richtig": "Am Abend, nachdem du gegessen und getrunken hast",
+"falsch": [
+"Am späten Nachmittag kurz vor dem Fastenbrechen",
+"Die Tageszeit macht für Kraft und Stresshormone keinen Unterschied",
+"Morgens direkt nach Beginn der Fastenzeit ohne Wasser"
+],
+"warum": "Nur beim Training nach dem Fastenbrechen stiegen die Kraftwerte in Kniebeuge und Kreuzheben signifikant an."
+},
+"plus": {
+"frage": "Du willst während des Ramadans viermal pro Woche schweres Ganzkörper-Krafttraining bei 75–85 % 1RM unterbringen. Wie legst du deine Einheiten?",
+"richtig": "Etwa 1,5 bis 2 Stunden nach dem Fastenbrechen, wenn Essen und Flüssigkeit drin sind",
+"falsch": [
+"Bewusst am Nachmittag im trockenen Fasten, um mehr Testosteron auszuschütten",
+"Kurz vor Sonnenuntergang, weil das Training dann weniger Stresshormone auslöst",
+"Am Nachmittag ohne Wasser, da sich die Beinkraft genauso gut entwickelt"
+],
+"warum": "Nachmittagstraining im trockenen Fasten führte zu Kraftstagnation bei Beinübungen und höheren Cortisolwerten als Training nach Iftar."
+},
+"labor": {
+"frage": "In einer 8-Wochen-RCT trainierten Männer im Ramadan schweres Krafttraining entweder nach Iftar (20–22 Uhr) oder fastend (16–18 Uhr). Was zeigte der Gruppenvergleich?",
+"richtig": "Kraft- und Testosteronzuwachs nur nach Iftar, höheres Cortisol bei Nachmittagstraining",
+"falsch": [
+"Identische 1RM-Steigerungen bei Kniebeuge und Kreuzheben in beiden Gruppen",
+"Höhere Testosteronwerte und geringeres Cortisol in der fastenden Gruppe",
+"Kraftverlust in der Gruppe nach Iftar durch die späte Trainingszeit"
+],
+"warum": "Nur die gefütterte Gruppe nach Iftar steigerte 1RM bei Squat und Deadlift sowie Testosteron signifikant, während Cortisol fastend höher lag."
+}
+}
+},
+{
+"id": "FAST-141",
+"karte": {
+"kopf": "2.762 junge Menschen · Bevölkerungsstudie",
+"titel": "Intervallfasten hängt bei jungen Menschen oft mit Essstörungen zusammen",
+"titel_hervor": "oft mit Essstörungen zusammen",
+"setup": "Eine große Befragung von 2.762 Jugendlichen und jungen Erwachsenen untersuchte den Zusammenhang zwischen Intervallfasten und gestörtem Essverhalten.",
+"zahl": null,
+"kern": [
+"Der Zusammenhang zeigte sich bei Frauen, Männern und trans oder nicht-binären Personen.",
+"Betroffen waren Essanfälle, Erbrechen, Abführmittel und zwanghaftes Training.",
+"Rund vier bis fünf von zehn Befragten hatten im letzten Jahr Intervallfasten ausprobiert."
+],
+"grenze": "Eine Befragung beweist allein noch nicht, was Ursache und was Folge ist – Verlaufsdaten stützen den Zusammenhang aber.",
+"fuer_dich": "Hattest du schon einmal Essstörungen oder starkes Essdruck-Verhalten? Verzichte auf Fastenfenster und kläre Unsicherheiten ärztlich ab.",
+"labor": {
+"design": "Nationale Querschnittsstudie zu Intervallfasten und Essstörungs-Psychopathologie (EDE-Q)",
+"teilnehmer": "2.762 Jugendliche und junge Erwachsene (Längsschnitt-Stütze n=491)",
+"ergebnis": "12-Monats-IF-Prävalenz: 47,7 % Frauen, 38,4 % Männer, 52,0 % TGNC; signifikant höherer EDE-Q-Score"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Für wen ist Intervallfasten laut großen Befragungen junger Menschen besonders heikel?",
+"richtig": "Für Menschen mit aktuellen oder früheren Problemen beim Essverhalten",
+"falsch": [
+"Ausschließlich für Frauen, bei jungen Männern gibt es keinen Zusammenhang",
+"Nur für ältere Menschen, für Jugendliche gilt Fasten als unbedenklich",
+"Für niemanden, da feste Essenszeiten Essanfälle zuverlässig verhindern"
+],
+"warum": "Intervallfasten hing bei jungen Menschen über alle Geschlechter hinweg deutlich mit Essanfällen und anderem gestörten Essverhalten zusammen."
+},
+"plus": {
+"frage": "Du hattest früher Phasen mit Essanfällen oder strenger Esskontrolle und überlegst, 16:8-Fasten für deine Fitness zu testen. Was ist die sinnvollere Wahl?",
+"richtig": "Auf Fastenfenster verzichten und stattdessen feste, entspannte Mahlzeiten nutzen",
+"falsch": [
+"Mit engen Fastenfenstern starten, um das Essverhalten strikt zu disziplinieren",
+"Fasten mit intensivem Extratraining kombinieren, um Ausrutscher auszugleichen",
+"Fasten ohne Bedenken nutzen, solange das tägliche Eiweißziel erreicht wird"
+],
+"warum": "Bei Vorgeschichte gestörten Essverhaltens sollte auf Zeitdruck durch Fastenfenster verzichtet werden; bei Bedarf hilft professionelle Unterstützung."
+},
+"labor": {
+"frage": "Eine nationale Kohorten-Querschnittsstudie (n=2.762) fand signifikante Zusammenhänge zwischen Intervallfasten und EDE-Q-Scores. Wie ist die Kausalität einzuschätzen?",
+"richtig": "Querschnitt beweist keine Kausalität, Verlaufsdaten stützen aber das Risiko",
+"falsch": [
+"Das Querschnittsdesign beweist direkt eine rein kausale Ursache",
+"Der Zusammenhang trat ausschließlich bei weiblichen Befragten auf",
+"Zwanghaftes Training stand nicht mit Intervallfasten in Verbindung"
+],
+"warum": "Obwohl Querschnittsdaten keine direkte Kausalität beweisen, untermauern prospektive Längsschnittdaten (n=491) das erhöhte Risiko."
+}
+}
+},
+{
+"id": "FAST-142",
+"karte": {
+"kopf": "Typ-2-Diabetes · Kontrollierte Studie",
+"titel": "Bei Diabetes-Mitteln verdoppelt Fasten das Unterzucker-Risiko",
+"titel_hervor": "verdoppelt Fasten das Unterzucker-Risiko",
+"setup": "37 Menschen mit Typ-2-Diabetes und blutzuckersenkenden Mitteln machten zwölf Wochen 5:2-Fasten – trotz ärztlicher Dosisanpassung.",
+"zahl": {
+"label": "Höheres Risiko an Fastentagen",
+"wert": "2-fach",
+"alltag": "RR 2,05 trotz ärztlicher Begleitung"
+},
+"kern": [
+"Unterzuckerungen traten an Fastentagen rund doppelt so oft auf wie an Esstagen.",
+"Fast jeder Vierte brauchte im Verlauf noch weitere Anpassungen der Medikamente.",
+"Ohne enge ärztliche Steuerung ist ein Fasten-Timer bei solchen Mitteln riskant."
+],
+"grenze": "Die Gruppe war mit 37 Personen klein und testete nur 5:2-Fasten; das Risiko betrifft aber jedes längere Fasten.",
+"fuer_dich": "Du nimmst Insulin oder bestimmte Tabletten gegen Diabetes? Fasten niemals allein per App starten – immer ärztlich abklären.",
+"labor": {
+"design": "Randomisierte kontrollierte Studie, 12 Wochen, 5:2-Fasten mit ärztlicher Schulung",
+"teilnehmer": "37 Erwachsene mit Typ-2-Diabetes unter Insulin oder Sulfonylharnstoffen",
+"ergebnis": "53 Hypoglykämien; RR 2,05 an Fastentagen (95 % KI 1,17–3,52; p=0,013); 24 % Dosisanpassung"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du nimmst blutzuckersenkende Mittel gegen Diabetes und überlegst, an einzelnen Tagen zu fasten. Was passiert dabei leicht?",
+"richtig": "Der Blutzucker kann an Fastentagen gefährlich tief abfallen",
+"falsch": [
+"Die Medikamente hören an Fastentagen von allein auf zu wirken",
+"Der Blutzucker bleibt ohne Essen automatisch perfekt stabil",
+"Fasten ersetzt solche Medikamente sicher innerhalb weniger Tage"
+],
+"warum": "Selbst mit ärztlich angepasster Dosis verdoppelte sich das Unterzucker-Risiko an Fastentagen."
+},
+"plus": {
+"frage": "Du nimmst Insulin oder bestimmte blutzuckersenkende Tabletten und möchtest einen Fasten-Timer in einer Fitness-App nutzen. Wie solltest du vorgehen?",
+"richtig": "Keinen Fasten-Timer auf eigene Faust nutzen und erst ärztlich abklären",
+"falsch": [
+"Den Timer starten und die Medikamente nach Gefühl selbst halbieren",
+"Einfach das Frühstück weglassen, solange das Training locker bleibt",
+"Fastentage nur auf Trainingstage legen, um den Zucker auszugleichen"
+],
+"warum": "Eine Fitness-App darf keine Medikamente steuern – Fasten bei solchen Mitteln erfordert enge ärztliche Begleitung."
+},
+"labor": {
+"frage": "In einer zwölfwöchigen Studie mit 37 medikamentös behandelten Typ-2-Diabetikern traten unter 5:2-Fasten trotz Schulung und Dosisreduktion doppelt so viele Hypoglykämien an Fastentagen auf. Was folgt daraus für andere Fastenfenster?",
+"richtig": "Das erhöhte Risiko ist pharmakologisch auf andere Fastenformen übertragbar",
+"falsch": [
+"Nur das 5:2-Modell birgt ein Risiko, tägliches langes Fasten ist sicher",
+"Eine einmalige ärztliche Schulung schließt Unterzuckerungen sicher aus",
+"Wegen der kleinen Stichprobe besteht bei Insulin kein relevantes Risiko"
+],
+"warum": "Der blutzuckersenkende Wirkmechanismus gilt grundsätzlich für jedes längere Fastenfenster unter diesen Medikamenten."
+}
+}
+},
+{
+"id": "FAST-143",
+"karte": {
+"kopf": "Menschen mit Vorerkrankungen · Leitfaden",
+"titel": "Bei Diabetes und schweren Erkrankungen birgt Fasten deutliche Risiken",
+"titel_hervor": "birgt Fasten deutliche Risiken",
+"setup": "Ein klinischer Experten-Leitfaden bewertete die Risiken von Intervallfasten bei Diabetes, bestimmten Medikamenten und schweren Vorerkrankungen.",
+"zahl": null,
+"kern": [
+"Mit Insulin oder bestimmten Blutzucker-Tabletten drohen gefährliche Unterzuckerungen.",
+"Auch Flüssigkeitsmangel, Blutdruckabfall, Ohnmacht und zu wenig Eiweiß sind möglich.",
+"Bei schweren Herz-, Nieren- oder Krebserkrankungen sind die Folgen bisher kaum geklärt."
+],
+"grenze": "Es fehlen große Langzeitstudien an mehrfach vorerkrankten Menschen – die Einordnung stützt sich vor allem auf Expertenkonsens.",
+"fuer_dich": "Hast du Diabetes, nimmst Medikamente oder hast eine Herz- oder Nierenerkrankung? Kläre Fasten unbedingt vorher ärztlich ab.",
+"labor": {
+"design": "Klinischer Experten-Leitfaden / Narratives Review zur Risikostratifizierung bei Intervallfasten",
+"teilnehmer": "Menschen mit Diabetes oder chronischen Vorerkrankungen (Expertenbewertung)",
+"ergebnis": "Hohes Hypoglykämie-Risiko unter Insulin, Sulfonylharnstoffen, Gliniden; Sicherheit nur mit ärztlicher Begleitung"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du hast Diabetes und nimmst blutzuckersenkende Medikamente oder spritzt Insulin. Darfst du einfach auf eigene Faust mit Intervallfasten starten?",
+"richtig": "Nein, wegen Unterzuckerungs- und Kreislaufrisiko erst ärztlich abklären",
+"falsch": [
+"Ja, Intervallfasten ist bei allen Medikamenten ohne Rücksprache sicher",
+"Ja, du lässt an Fastentagen die Medikamente einfach selbst weg",
+"Nur wenn du während der Fastenstunden gar nichts trinkst"
+],
+"warum": "Besonders unter Insulin und bestimmten Diabetes-Mitteln drohen Unterzuckerung, Flüssigkeitsmangel und Blutdruckabfall – vorher ärztlich prüfen."
+},
+"plus": {
+"frage": "Ein sportlich aktiver Bekannter hat eine chronische Herz- oder Nierenerkrankung und möchte 16:8 ausprobieren. Welche Empfehlung ist verantwortungsvoll?",
+"richtig": "Erst eine ärztliche Freigabe einholen, bevor Fastenfenster genutzt werden",
+"falsch": [
+"Sofort mit 16:8 starten, solange im Essfenster genug Protein gegessen wird",
+"Nur bei Insulin aufpassen, bei Herz- oder Nierenleiden ist Fasten harmlos",
+"Direkt mit 24-Stunden-Fasten beginnen, weil es weniger Mahlzeiten braucht"
+],
+"warum": "Bei chronischen Herz-, Nieren- oder Stoffwechselerkrankungen bestehen ungeklärte Risiken wie Hypotonie oder Dehydratation – ärztliche Klärung ist nötig."
+},
+"labor": {
+"frage": "Ein klinisches narratives Review bewertete Intervallfasten bei Diabetes und Multimorbidität. Worauf beruhen die Vorsichts-Empfehlungen maßgeblich?",
+"richtig": "Überwiegend auf Expertenkonsens mangels großer Langzeit-RCTs",
+"falsch": [
+"Auf Meta-Analysen mit zehntausenden multimorbiden Herzpatienten",
+"Auf dem Nachweis, dass Fasten unter Sulfonylharnstoffen risikofrei ist",
+"Ausschließlich auf Risiken durch zu hohe Wasseraufnahme beim Fasten"
+],
+"warum": "Neben klar bekannten Wirkstoff-Risiken (z. B. Hypoglykämie) fehlen große Langzeit-RCTs bei Multimorbidität, sodass Expertenkonsens (Evidenz C) leitet."
+}
+}
+},
+{
+"id": "FAST-144",
+"karte": {
+"kopf": "3.625 Patienten · 12 Studien zusammengefasst",
+"titel": "Bestimmte Diabetes-Mittel erhöhen beim Fasten das Schwindel-Risiko stark",
+"titel_hervor": "das Schwindel-Risiko stark",
+"setup": "Eine Auswertung aus 12 Studien mit 3.625 Menschen prüfte, wie sich bestimmte Blutzucker-Medikamente (SGLT2-Hemmer) während täglicher Fastenphasen auswirken.",
+"zahl": {
+"label": "Erhöhtes Risiko für Schwindel beim Aufstehen",
+"wert": "6,4-fach",
+"alltag": "Blutdruckabfall rund 4,4-fach häufiger"
+},
+"kern": [
+"Beim Aufstehen traten Schwindel und Blutdruckabfall deutlich häufiger auf.",
+"Auch der Natriumwert im Blut und der obere Blutdruck sanken im Mittel messbar ab.",
+"Gerade in Kombination mit Blutdruck- oder Wassertabletten steigt das Kreislaufrisiko."
+],
+"grenze": "Die Daten stammen aus Studien zu Trockenfasten tagsüber – wenn du Wasser trinken darfst, ist das Risiko kleiner, aber noch da.",
+"fuer_dich": "Nimmst du SGLT2-Hemmer oder Blutdruckmittel und dir wird beim Fasten schwindelig? Sofort pausieren, trinken und ärztlich abklären.",
+"labor": {
+"design": "Systematisches Review und Meta-Analyse aus 12 Studien zu SGLT2-Hemmern während täglicher Fastenphasen",
+"teilnehmer": "3.625 Patienten aus 12 Studien",
+"ergebnis": "Schwindel RR 6,39 (95 % KI 1,58–25,80); Hypotonie RR 4,43 (1,35–14,55); Natrium −1,00 mmol/L; SBP −2,41 mmHg"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du nimmst bestimmte Diabetes-Tabletten (SGLT2-Hemmer) oder Blutdruckmittel und spürst beim Fasten plötzlich Schwindel beim Aufstehen. Was tust du?",
+"richtig": "Das Fasten sofort pausieren, Flüssigkeit ausgleichen und ärztlich abklären",
+"falsch": [
+"Das Fasten durchziehen, denn leichter Schwindel zeigt gute Fettverbrennung",
+"Einfach intensiver trainieren, damit der Kreislauf wieder in Schwung kommt",
+"Bis zum Abend abwarten und am nächsten Tag noch länger fasten"
+],
+"warum": "Unter diesen Mitteln steigen beim Fasten Blutdruckabfall, Schwindel und Salzverlust deutlich – bei Symptomen sofort abbrechen und ärztlich prüfen."
+},
+"plus": {
+"frage": "Warum erhöhen SGLT2-Inhibitoren während täglicher Fastenperioden das Kreislaufrisiko besonders deutlich?",
+"richtig": "Sie fördern Blutdruckabfall, Natriumverlust und Schwindel beim Aufstehen",
+"falsch": [
+"Sie lassen den Blutdruck beim Fasten gefährlich in die Höhe schießen",
+"Sie verhindern jede Flüssigkeitsaufnahme über den Magen-Darm-Trakt",
+"Sie führen beim Fasten ausschließlich zu Muskelkrämpfen ohne Kreislaufeffekt"
+],
+"warum": "In 12 Studien stiegen das Risiko für Schwindel beim Aufstehen und Blutdruckabfall stark an, begleitet von sinkendem Natrium."
+},
+"labor": {
+"frage": "Eine Meta-Analyse (12 Studien, n=3.625) fand unter SGLT2-Inhibitoren während täglicher Fastenphasen stark erhöhte RRs für Schwindel und Hypotonie. Welche Grenze gilt für klassisches TRE?",
+"richtig": "Daten stammen aus Trockenfasten; mit Wasserzufuhr ist das Risiko kleiner",
+"falsch": [
+"Die Effekte waren statistisch nicht signifikant und ohne Konfidenzintervalle",
+"Natriumspiegel stiegen in den Fastenphasen signifikant an",
+"Bei erlaubter Wasserzufuhr verschwindet das klinische Risiko vollständig"
+],
+"warum": "Die Primärstudien untersuchten Trockenfasten tagsüber; erlaubtes Trinken im TRE mindert das Risiko, macht es aber nicht irrelevant."
+}
+}
+},
+{
+"id": "FAST-145",
+"karte": {
+"kopf": "Schwangere, Stillende & Jugend · Leitlinie",
+"titel": "Wer wächst, schwanger ist oder stillt, braucht stetig Wasser und Energie",
+"titel_hervor": "stetig Wasser und Energie",
+"setup": "Europäische Ernährungs-Referenzwerte legen fest, wie viel Flüssigkeit und Energie Erwachsene, Schwangere, Stillende und Jugendliche brauchen.",
+"zahl": {
+"label": "Anteil des Wassers aus fester Nahrung",
+"wert": "rund 1/3",
+"alltag": "Fehlt beim Fasten zusätzlich"
+},
+"kern": [
+"Schwangere und Stillende haben einen spürbar höheren Flüssigkeits- und Energiebedarf.",
+"Auch Jugendliche unter 18 Jahren befinden sich im Wachstum und brauchen stetige Versorgung.",
+"Bei Hitze oder viel Schweiß im Sport steigt der Wasserbedarf zudem weit über Basiswerte."
+],
+"grenze": "Referenzwerte sind Richtgrößen für gesunde Gruppen – dein eigener Bedarf hängt stark von Hitze, Bewegung und Schweißverlust ab.",
+"fuer_dich": "Bist du unter 18, schwanger oder stillst du? Lass Fastenfenster weg und iss sowie trinke regelmäßig über den Tag verteilt.",
+"labor": {
+"design": "Wissenschaftliche Leitlinie / Europäische Referenzwerte zur Gesamtwasseraufnahme",
+"teilnehmer": "Erwachsene, Schwangere, Stillende und Jugendliche (14–18 Jahre)",
+"ergebnis": "Richtwerte Gesamtwasser: Frauen 2,0 L, Männer 2,5 L, Schwangere 2,3 L, Stillende 2,7 L, 14–18 J. 2,0–2,5 L/Tag"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Warum führt langes Fasten neben weniger Kalorien oft auch schneller zu Flüssigkeitsmangel, selbst wenn du weiter etwas trinkst?",
+"richtig": "Weil rund ein Drittel unseres Wassers normalerweise aus dem Essen stammt",
+"falsch": [
+"Weil der Körper beim Fasten kein Wasser aus Getränken aufnehmen kann",
+"Weil feste Nahrung überhaupt kein Wasser enthält",
+"Weil der Wasserbedarf während des Fastens auf das Dreifache steigt"
+],
+"warum": "Ohne Mahlzeiten entfällt etwa ein Drittel der täglichen Wasseraufnahme – besonders heikel für Schwangere, Stillende und Jugendliche."
+},
+"plus": {
+"frage": "Eine 17-jährige Sportlerin oder eine stillende Mutter möchte Intervallfasten ausprobieren. Wie ordnest du das anhand wissenschaftlicher Leitlinien ein?",
+"richtig": "Fasten meiden und stetig ausreichend Energie und Flüssigkeit zuführen",
+"falsch": [
+"Unbedenklich, solange einfach etwas mehr Wasser getrunken wird",
+"Empfohlen, um in Schwangerschaft oder Wachstum Kalorien zu sparen",
+"In der Stillzeit okay, da der Flüssigkeitsbedarf dort sinkt"
+],
+"warum": "Schwangere, Stillende und unter 18-Jährige haben erhöhten Bedarf an stetiger Wasser- und Energiezufuhr; Fastenfenster passen hier nicht."
+},
+"labor": {
+"frage": "Europäische Referenzwerte definieren Basiswerte für die Gesamtwasseraufnahme (z. B. 2,0–2,7 L/Tag je nach Status). Welche Streubreite besteht im Sport?",
+"richtig": "Durch Hitze und Schweißverlust kann der Bedarf stark ansteigen",
+"falsch": [
+"Der Wasserbedarf bleibt auch bei Extremsport strikt unter 3 Litern",
+"Jugendliche brauchen grundsätzlich weniger Wasser als ältere Frauen",
+"Stillende haben denselben Flüssigkeitsbedarf wie nicht-schwangere Frauen"
+],
+"warum": "Temperatur und Schweißverlust lassen den Bedarf weit über die Basis-Referenzwerte steigen (im Extremsport bis zu 10–12 L/Tag)."
+}
+}
+},
+{
+"id": "FAST-146",
+"karte": {
+"kopf": "Aktive Frauen & Männer · Konsens-Leitlinie",
+"titel": "Zu wenig Energie beim Sport trifft Hormone, Knochen und Leistung zugleich",
+"titel_hervor": "Hormone, Knochen und Leistung",
+"setup": "Ein internationales Fachgremium für Sportmedizin fasste die Folgen von dauerhaft oder akut zu geringer Energieversorgung bei Sportlern zusammen.",
+"zahl": null,
+"kern": [
+"Nicht nur Frauen sind betroffen – auch sportliche Männer können in ein Energiedefizit geraten.",
+"Es drohen Zyklus- oder Hormonstörungen, schwächere Knochen, Infekte und Leistungsabfall.",
+"Auch Stimmung, Konzentration und Erholung leiden, wenn Training und Essen nicht zusammenpassen."
+],
+"grenze": "Ab welcher genauen Kaloriengrenze Beschwerden starten, unterscheidet sich stark nach Geschlecht, Trainingsalter und Dauer.",
+"fuer_dich": "Bleibt deine Periode aus oder bricht deine Leistung dauerhaft ein? Stoppe Fastenfenster, iss wieder genug und klär es ärztlich ab.",
+"labor": {
+"design": "Internationales Konsensus-Statement zu Diagnose, Risikostratifizierung und Umgang mit REDs",
+"teilnehmer": "Weibliche und männliche Sporttreibende",
+"ergebnis": "Kontraindikation restriktiver Essfenster bei REDs; Folgen betreffen Knochen, Hormone, Immunsystem, Psyche, Leistung"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du trainierst sehr viel und isst über Wochen deutlich zu wenig, um besonders schlank zu werden. Was kann neben Müdigkeit im Körper passieren?",
+"richtig": "Hormone, Knochendichte, Abwehrkräfte und Leistung können leiden",
+"falsch": [
+"Der Körper schützt Knochen und Hormone immer, nur das Fett schmilzt",
+"Das betrifft nur Frauen, Männer können problemlos zu wenig essen",
+"Solange das Körpergewicht sinkt, steigt die sportliche Leistung weiter"
+],
+"warum": "Dauerhaft zu wenig Energie für das Trainingspensum greift bei Frauen und Männern zahlreiche Systeme von Knochen bis Immunsystem an."
+},
+"plus": {
+"frage": "Du nutzt Intervallfasten bei hohem Trainingsumfang, fühlst dich dauerhaft erschöpft und deine Leistung fällt ab (oder der Zyklus bleibt aus). Was ist der erste Schritt?",
+"richtig": "Fastenfenster beenden, Energiebilanz ausgleichen und ärztlich abklären",
+"falsch": [
+"Das Essfenster noch weiter verkürzen, um die Regeneration zu fördern",
+"Einfach mehr Koffein nutzen und das Trainingsvolumen weiter erhöhen",
+"Abwarten, weil Leistungsabfall beim Fasten normal und harmlos ist"
+],
+"warum": "Solche Warnzeichen deuten auf Energiemangel (REDs) hin – enge Essfenster sind dann ungeeignet, ausreichend Energie und ärztliche Klärung zählen."
+},
+"labor": {
+"frage": "Ein internationales Sportmedizin-Konsensuspapier beschreibt REDs durch niedrige Energieverfügbarkeit. Welche individuelle Unsicherheit betonen die Experten?",
+"richtig": "Kritische Schwellenwerte variieren nach Geschlecht, Dauer und Trainingsalter",
+"falsch": [
+"REDs betrifft ausschließlich Leistungssportlerinnen im Ausdauerbereich",
+"Nur chronische, niemals akute Energiedefizite lösen Symptome aus",
+"Psychische Faktoren und Immunsystem bleiben bei REDs unberührt"
+],
+"warum": "REDs betrifft alle Geschlechter und zahlreiche Organsysteme, aber individuelle Auslöseschwellen hängen stark von Person und Dauer ab."
+}
+}
+},
+{
+"id": "FAST-147",
+"karte": {
+"kopf": "29 Frauen · Kontrollierte Laborstudie",
+"titel": "Zu wenig Energie bringt Zyklus-Hormone schon nach fünf Tagen aus dem Takt",
+"titel_hervor": "schon nach fünf Tagen",
+"setup": "29 Frauen mit regelmäßigem Zyklus durchliefen fünf Tage lang verschiedene Energiemengen im Vergleich zu ihrem normalen Bedarf – dabei wurden Hormone gemessen.",
+"zahl": null,
+"kern": [
+"Unterhalb von 30 kcal je Kilo fettfreier Masse geriet die hormonelle Zyklussteuerung ins Stocken.",
+"Zugleich sanken Schilddrüsenhormon, Wachstumsfaktoren, Sättigungshormon und Blutzucker.",
+"Oberhalb dieser Schwelle blieb die Hormonsteuerung in dem kurzen Test noch stabil."
+],
+"grenze": "Der Versuch dauerte nur fünf Tage mit zuvor wenig aktiven Frauen – über mehrere Zyklen können Störungen teils schon etwas früher beginnen.",
+"fuer_dich": "Trainierst du viel und isst sehr knapp? Verzichte auf enge Fastenfenster, iss über mindestens 12 Stunden und kläre Zyklusprobleme ärztlich ab.",
+"labor": {
+"design": "Randomisierte kontrollierte Crossover-Studie über 5 Tage, EA 45 vs. 30 vs. 20 vs. 10 kcal/kg LBM/Tag",
+"teilnehmer": "29 regelmäßig menstruierende Frauen (zuvor inaktiv)",
+"ergebnis": "Bei EA 20 u. 10 kcal/kg LBM/Tag signifikant gestörte LH-Pulsatilität (p<0,04) u. ↓ T3, IGF-1, Leptin; bei 30 noch stabil (p>0,3)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Wie schnell kann starkes Hungern bei viel Bewegung die hormonelle Zyklussteuerung von Frauen messbar durcheinanderbringen?",
+"richtig": "Schon nach wenigen Tagen deutlichen Energiemangels",
+"falsch": [
+"Erst nach vielen Monaten mit starkem Untergewicht",
+"Nur bei Profisportlerinnen, nicht im normalen Alltag",
+"Ernährung hat keinen direkten Einfluss auf Zyklushormone"
+],
+"warum": "In einem kontrollierten Versuch reagierten Zyklus- und Stoffwechselhormone schon nach fünf Tagen stark verringerter Energieverfügbarkeit."
+},
+"plus": {
+"frage": "Du bist eine sportlich aktive Frau und deine Energieverfügbarkeit rutscht durch Training und enges Fasten sehr tief ab. Wie passt du dein Essfenster an?",
+"richtig": "Verkürzte Fastenfenster pausieren und über mindestens 12 Stunden essen",
+"falsch": [
+"Das Essfenster noch weiter verkleinern, um den Hormonpuls zu schärfen",
+"Unverändert weitermachen, solange fünf Tage noch nicht überschritten sind",
+"Nur die Kohlenhydrate senken und das enge Fastenfenster behalten"
+],
+"warum": "Unter rund 30 kcal/kg FFM/Tag drohen rasch hormonelle Störungen; ein breiteres Essfenster erleichtert es, genug Energie aufzunehmen."
+},
+"labor": {
+"frage": "In einer 5-tägigen Crossover-Studie (n=29 Frauen) blieb die LH-Pulsatilität bei 30 kcal/kg LBM/Tag stabil, fiel aber darunter ab. Was zeigten spätere Langzeitstudien?",
+"richtig": "Über mehrere Zyklen treten Störungen teils auch knapp oberhalb auf",
+"falsch": [
+"Nach einigen Wochen gewöhnt sich die Hormonachse an 10 kcal/kg LBM/Tag",
+"Schilddrüsenhormon T3 und Leptin blieben bei allen Stufen unverändert",
+"Die Störung war rein linear ohne Schwellenwert-Verhalten"
+],
+"warum": "Im Kurzzeitversuch wirkten 30 kcal/kg LBM/Tag noch stabil, doch über mehrere Zyklen zeigen sich Lutealphasendefekte teils schon knapp darüber."
+}
+}
+},
+{
+"id": "FAST-148",
+"karte": {
+"kopf": "Ausdauerathletinnen · Querschnittsstudie",
+"titel": "Lange Hungerphasen am Tag hängen mit Zyklusstörungen zusammen",
+"titel_hervor": "hängen mit Zyklusstörungen zusammen",
+"setup": "Bei Ausdauerathletinnen mit und ohne Zyklusstörungen wurde stündlich geschätzt, wie viele Stunden am Tag sie stark im Energiedefizit waren.",
+"zahl": {
+"label": "Stunden im starken Defizit (mit Störung)",
+"wert": "21,8 Std.",
+"alltag": "vs. 17,6 Std. bei normalem Zyklus"
+},
+"kern": [
+"Die gesamte Tageskalorienmenge unterschied sich zwischen beiden Gruppen kaum.",
+"Lange Lücken ohne Essen gingen mit niedrigerem Ruheumsatz und mehr Cortisol einher.",
+"Auch Schilddrüsen- und Zyklushormone lagen bei langen Defizitphasen tiefer."
+],
+"grenze": "Die stündliche Energiebilanz wurde im Querschnitt geschätzt – direkte Ursache und Wirkung lassen sich so nicht allein beweisen.",
+"fuer_dich": "Trainierst du viel Ausdauer? Leg das Training nicht in lange Fastenphasen und iss zeitnah danach – bei Zyklusproblemen ärztlich abklären.",
+"labor": {
+"design": "Querschnitts- und Reanalyse-Studie mit stündlicher Energiebilanzschätzung (WDEB < −300 kcal)",
+"teilnehmer": "Ausdauerathletinnen mit und ohne Menstruationsstörungen",
+"ergebnis": "WDEB < −300 kcal: 21,8 vs. 17,6 Std./Tag (p=0,043) bei ähnlicher 24-h-EA (35,6 vs. 41,3 kcal/kg FFM/d, p=0,269)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du treibst als Frau viel Ausdauersport und erreichst abends zwar deine Tageskalorien, isst aber den halben Tag lang nichts. Kann das deinen Zyklus belasten?",
+"richtig": "Ja, lange Hungerphasen am Tag hängen oft mit Zyklusstörungen zusammen",
+"falsch": [
+"Nein, solange die gesamte Kalorienzahl am Abend stimmt",
+"Nur wenn du über mehrere Wochen fast gar nichts mehr isst",
+"Lange Essenspausen am Tag schützen den Zyklus vor Trainingsstress"
+],
+"warum": "Auch bei ähnlichen Tageskalorien hatten Ausdauerathletinnen mit Zyklusstörungen deutlich mehr Stunden pro Tag im starken Defizit."
+},
+"plus": {
+"frage": "Du trainierst als Ausdauer- oder Hybridathletin viel und nutzt ein festes Essfenster. Wie legst du deine Einheiten und Mahlzeiten am klügsten zusammen?",
+"richtig": "Training ins Essfenster legen und zeitnah danach wieder essen",
+"falsch": [
+"Harte Einheiten morgens nüchtern starten und erst abends groß essen",
+"Den ganzen Tag im Defizit bleiben und nachts alles nachholen",
+"Nur auf die 24-Stunden-Bilanz schauen und Mahlzeiten-Timing ignorieren"
+],
+"warum": "Große untertägige Energielücken korrelieren mit höherem Cortisol und tieferem Ruheumsatz – zeitnahes Essen rund ums Training beugt vor."
+},
+"labor": {
+"frage": "Eine Querschnitts-Reanalyse schätzte bei Ausdauerathletinnen mit und ohne Menstruationsstörungen die stündliche Energiebilanz neben der 24-h-EA. Was fiel auf?",
+"richtig": "Mehr Stunden unter −300 kcal trotz statistisch ähnlicher 24-h-EA",
+"falsch": [
+"Die 24-h-EA allein erklärte alle Unterschiede bei RMR und Cortisol",
+"Athletinnen mit Störungen hatten höhere Estradiol- und T3-Werte",
+"Die Zeit im untertägigen Defizit war in beiden Gruppen fast gleich"
+],
+"warum": "Trotz ähnlicher 24-h-EA (p=0,269) lagen die Stunden unter −300 kcal bei 21,8 vs. 17,6 Std. (p=0,043) – ein Hinweis, dass Tagesziele allein nicht reichen."
+}
+}
+},
+{
+"id": "FAST-149",
+"karte": {
+"kopf": "Männliche Ausdauerathleten · Querschnitt",
+"titel": "Große Essenspausen am Tag drücken auch bei Männern Hormone und Umsatz",
+"titel_hervor": "Hormone und Umsatz",
+"setup": "Bei männlichen Ausdauerathleten wurden die größten Energielücken im Tagesverlauf mit dem Ruheumsatz sowie Stress- und Sexualhormonen verglichen.",
+"zahl": null,
+"kern": [
+"Bei großen Tageslücken im Essen fiel der Ruheumsatz der Sportler häufiger ab.",
+"Gleichzeitig stieg das Stresshormon Cortisol an, das Testosteron-Verhältnis sank.",
+"Untertägiger Energiemangel betrifft damit längst nicht nur weibliche Sportler."
+],
+"grenze": "Beobachtungsdaten aus dem Ausdauersport zeigen Zusammenhänge, beweisen aber noch keine direkte Ursache-Wirkungs-Kette.",
+"fuer_dich": "Trainierst du als Mann viel Ausdauer oder Hybrid? Begrenze Fasten auf höchstens 12 bis 14 Stunden und iss rund um harte Einheiten.",
+"labor": {
+"design": "Querschnittsstudie zu untertägigem Energiedefizit (WDED), RMRratio und Hormonlage",
+"teilnehmer": "Männliche Ausdauerathleten",
+"ergebnis": "Max. Defizit bei RMRratio <0,90: −3.265 vs. −1.340 kcal (p=0,023); Cortisol r=−0,499; Testosteron:Cortisol r=0,431"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Stimmt der Mythos, dass lange Essenspausen rund um viel Ausdauersport nur den Hormonhaushalt von Frauen belasten können?",
+"richtig": "Nein, auch bei Männern hängen große Tageslücken mit gedrückten Hormonen zusammen",
+"falsch": [
+"Ja, der männliche Stoffwechsel reagiert auf lange Hungerphasen gar nicht",
+"Ja, bei Männern steigt durch lange Fastenphasen vor allem das Testosteron",
+"Nein, bei Männern steigt der Ruheverbrauch dadurch stark nach oben"
+],
+"warum": "Bei männlichen Ausdauerathleten gingen große untertägige Energielücken mit tieferem Ruheumsatz, mehr Cortisol und schwächerem Testosteron-Verhältnis einher."
+},
+"plus": {
+"frage": "Du bist ein männlicher Ausdauer- oder Hybridathlet mit hohem Wochenvolumen und willst Intervallfasten testen. Wo ziehst du sinnvoll die Grenze?",
+"richtig": "Fastendauer auf etwa 12 bis 14 Stunden begrenzen und gut auftanken",
+"falsch": [
+"Auf 20 Stunden Fasten steigern, um nach dem Training alles zu essen",
+"Alle Ausdauereinheiten ohne Ausnahme tief in die Fastenphase legen",
+"Auf Mahlzeiten-Timing verzichten, solange die Wochenkalorien passen"
+],
+"warum": "Kürzere Fastenfenster verhindern tiefe stündliche Defizite, die mit unterdrücktem Ruheumsatz und ungünstiger Hormonlage zusammenhängen."
+},
+"labor": {
+"frage": "Eine Querschnittsstudie an männlichen Ausdauerathleten prüfte den Zusammenhang zwischen untertägigem Energiedefizit (WDED), RMRratio und Hormonen. Was zeigte sich?",
+"richtig": "Größere Defizite korrelierten mit tiefer RMRratio und mehr Cortisol",
+"falsch": [
+"Größere Defizite gingen mit höherem Testosteron:Cortisol-Quotienten einher",
+"Zwischen maximalem Einstunden-Defizit und RMR zeigte sich kein Bezug",
+"Die Daten stammen aus einer mehrjährigen randomisierten Interventionsstudie"
+],
+"warum": "Athleten mit RMRratio <0,90 hatten signifikant größere Defizite (p=0,023), und WDED korrelierte mit Cortisol sowie dem Testosteron:Cortisol-Quotienten."
+}
+}
+},
+{
+"id": "FAST-150",
+"karte": {
+"kopf": "23 Frauen mit Adipositas · 8-Wochen-Studie",
+"titel": "Acht Wochen strenges Fasten veränderte die meisten Hormone kaum",
+"titel_hervor": "die meisten Hormone kaum",
+"setup": "23 Frauen mit starkem Übergewicht aßen acht Wochen lang nur in einem 4- bis 6-Stunden-Fenster; vor und nach der Zeit wurden Hormone gemessen.",
+"zahl": {
+"label": "Rückgang des Hormons DHEA nach 8 Wochen",
+"wert": "−13 bis −14 %",
+"alltag": "Andere gemessene Hormone blieben stabil"
+},
+"kern": [
+"Testosteron und weitere getestete Werte blieben vor und nach den Wechseljahren stabil.",
+"Die Frauen nahmen im Schnitt drei bis vier Prozent ihres Körpergewichts ab.",
+"Wichtige Zyklushormone wurden bei jüngeren Frauen in dieser Studie gar nicht gemessen."
+],
+"grenze": "Nur 23 Frauen mit starkem Übergewicht und ohne Zyklushormon-Messung vor den Wechseljahren – kaum übertragbar auf schlanke Sportlerinnen.",
+"fuer_dich": "Willst du als Frau wegen deiner Hormone fasten? Sei bei strengen 4- bis 6-Stunden-Fenstern vorsichtig, die Datenlage ist noch dünn.",
+"labor": {
+"design": "Sekundäranalyse einer 8-wöchigen Interventionsstudie mit 4–6-stündigem Essfenster (TRE)",
+"teilnehmer": "23 Frauen mit Adipositas (12 prä-, 11 postmenopausal)",
+"ergebnis": "Gewicht −3 % bzw. −4 %; DHEA −14 % (p<0,05) bzw. −13 % (p=0,03); Testosteron, Androstendion, SHBG unverändert"
+}
+},
+"quiz": {
+"basis": {
+"frage": "In sozialen Medien heißt es oft, strenges Fasten mit 4 bis 6 Stunden Essenszeit sei für die Hormone aller Frauen gut erforscht und sicher. Stimmt das?",
+"richtig": "Nein, Kurzzeitdaten sind sehr klein und lassen Zyklushormone oft aus",
+"falsch": [
+"Ja, große Langzeitstudien an schlanken Sportlerinnen belegen volle Sicherheit",
+"Nein, strenges Fasten ließ alle gemessenen Hormone sofort stark abstürzen",
+"Ja, alle weiblichen Zyklushormone blieben in großen Studien stabil"
+],
+"warum": "In einer kleinen 8-Wochen-Studie an 23 Frauen mit starkem Übergewicht blieben manche Hormone stabil, doch Zyklushormone jüngerer Frauen wurden gar nicht gemessen."
+},
+"plus": {
+"frage": "Eine schlanke, regelmäßig trainierende Frau fragt dich, ob eine 8-Wochen-Studie mit 4–6h-Essfenster beweist, dass strenges Fasten ihren Zyklus nicht stört. Wie antwortest du?",
+"richtig": "Kaum übertragbar: winzige Gruppe mit Adipositas und fehlende Zykluswerte",
+"falsch": [
+"Klar übertragbar, weil Testosteron und SHBG komplett unverändert blieben",
+"Nur für Frauen nach den Wechseljahren ungeeignet, für jüngere bewiesen",
+"DHEA stieg stark an, was auf einen Vorteil für Sportlerinnen hindeutet"
+],
+"warum": "Mit nur 12 prämenopausalen Frauen mit Adipositas und ohne Estradiol- oder Progesteron-Messung taugt diese Datenlage nicht für schlanke Athletinnen."
+},
+"labor": {
+"frage": "Eine Sekundäranalyse untersuchte 8 Wochen 4–6h-TRE bei 12 prä- und 11 postmenopausalen Frauen mit Adipositas. Was zeigten die Hormonmarker und ihre Grenzen?",
+"richtig": "DHEA sank leicht, Testosteron/SHBG stabil; prämenopausal kein Estradiol",
+"falsch": [
+"Testosteron und SHBG sanken stark, während DHEA unverändert blieb",
+"Estradiol und Progesteron wurden bei allen Frauen engmaschig gemessen",
+"Perimenopausale Sportlerinnen bildeten die größte Untergruppe"
+],
+"warum": "DHEA nahm um 13–14 % ab, Testosteron und SHBG blieben stabil – doch Estradiol und Progesteron wurden nur postmenopausal erhoben."
+}
+}
+},
+{
+"id": "FAST-151",
+"karte": {
+"kopf": "90 Erwachsene mit Adipositas · 1-Jahres-Studie",
+"titel": "Ein Jahr 8-Stunden-Essfenster schadete den Sexualhormonen nicht",
+"titel_hervor": "schadete den Sexualhormonen nicht",
+"setup": "90 Erwachsene mit starkem Übergewicht aßen ein Jahr lang entweder im 8-Stunden-Fenster, kalorienreduziert oder wie gewohnt; dabei wurden Hormone geprüft.",
+"zahl": {
+"label": "Gewichtsverlust über ein Jahr",
+"wert": "4–5 %",
+"alltag": "Ähnlich wie mit normaler Kalorienreduktion"
+},
+"kern": [
+"Testosteron und weitere getestete Hormonwerte blieben über das ganze Jahr stabil.",
+"Das 8-Stunden-Essfenster nahm nicht mehr Gewicht ab als normales Kalorienzählen.",
+"Beide Gruppen verloren im Schnitt rund vier bis fünf Prozent ihres Körpergewichts."
+],
+"grenze": "Untersucht wurden nur Erwachsene mit Adipositas – weibliche Zyklushormone vor den Wechseljahren wurden auch hier nicht erhoben.",
+"fuer_dich": "Spricht nichts gegen Fasten? Nutze 8–10 Stunden Essfenster als gleichwertige Option, falls es dir leichter fällt als normale Mahlzeiten.",
+"labor": {
+"design": "Sekundäranalyse einer 12-Monats-RCT, 8-h-TRE (12–20 Uhr) vs. 25 % Kalorienrestriktion vs. Kontrolle",
+"teilnehmer": "90 Männer und Frauen mit Adipositas",
+"ergebnis": "Gewichtsverlust ca. 4–5 % (p<0,01); keine Gruppen×Zeit-Unterschiede bei Testosteron, DHEA und SHBG"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du überlegst, ob ein 8-Stunden-Essfenster zum Abnehmen langfristig besser wirkt als einfach etwas weniger Kalorien über den Tag verteilt zu essen. Was zeigt ein Ein-Jahres-Vergleich?",
+"richtig": "Beide Wege brachten ähnlich viel Gewichtsverlust bei stabilen Hormonen",
+"falsch": [
+"Das 8-Stunden-Essfenster führte zu doppelt so viel Gewichtsverlust",
+"Über ein Jahr senkte das Essfenster Testosteron bei allen stark ab",
+"Normales Kalorienreduzieren brachte nach einem Jahr keinerlei Erfolg"
+],
+"warum": "Über 12 Monate verloren beide Gruppen rund 4–5 % Gewicht, ohne dass sich Testosteron oder andere geprüfte Hormone ungünstig veränderten."
+},
+"plus": {
+"frage": "Du hast keine gesundheitlichen Gegenanzeigen und suchst eine langfristig machbare Diätstruktur. Wie ordnest du ein moderates 8- bis 10-Stunden-Essfenster ein?",
+"richtig": "Als gleichwertige Alternative, wenn sie gut zu deinem Alltag passt",
+"falsch": [
+"Als klar überlegene Methode, die klassische Defizite immer schlägt",
+"Als Risiko, das über ein Jahr zwingend das Testosteron ruiniert",
+"Als nutzlos, weil sich damit über ein Jahr gar kein Gewicht abbauen lässt"
+],
+"warum": "Ein 8-Stunden-Fenster schnitt über ein Jahr ähnlich gut ab wie tägliche Kalorienreduktion und zeigte bei Erwachsenen mit Adipositas keine hormonellen Nachteile."
+},
+"labor": {
+"frage": "In einer Sekundäranalyse einer 12-Monats-RCT (n=90, Adipositas) wurden 8-h-TRE (12–20 Uhr) und 25 % CR auf Sexualhormone verglichen. Welche Grenze bleibt?",
+"richtig": "Estradiol und Progesteron wurden nur bei postmenopausalen Frauen geprüft",
+"falsch": [
+"Die Studiendauer war mit wenigen Tagen zu kurz für Langzeiteffekte",
+"Die TRE-Gruppe verlor signifikant weniger Gewicht als die Kontrollgruppe",
+"Gesamttestosteron und DHEA brachen in der TRE-Gruppe signifikant ein"
+],
+"warum": "Testosteron, DHEA und SHBG blieben zwischen den Gruppen unverändert, doch prämenopausale Östrogene und Progesteron wurden nicht bestimmt."
+}
+}
+},
+{
+"id": "FAST-152",
+"karte": {
+"kopf": "318 Frauen · 26 Studien zusammengefasst",
+"titel": "Vor der Periode steigt der Verbrauch nur leicht – der Hunger oft mehr",
+"titel_hervor": "der Verbrauch nur leicht",
+"setup": "Eine Auswertung aus 26 Studien verglich den Ruheenergieverbrauch von Frauen in der ersten und zweiten Hälfte des Menstruationszyklus.",
+"zahl": {
+"label": "Mehr Ruheverbrauch vor der Periode",
+"wert": "3–5 %",
+"alltag": "≈ 30–120 kcal pro Tag"
+},
+"kern": [
+"In neueren Studien seit 2000 fiel der Anstieg sogar noch etwas kleiner aus.",
+"Deutlicher spürbar als der Mehrverbrauch ist oft der hormonell bedingte stärkere Hunger.",
+"Ein pauschaler Freibrief für große Extraportionen ergibt sich aus dem Grundumsatz nicht."
+],
+"grenze": "Viele ältere Einzelstudien bestimmten den Eisprung ungenau – wie stark Hunger und Bedarf schwanken, ist individuell verschieden.",
+"fuer_dich": "Hast du in den Tagen vor der Periode mehr Hunger? Lockere strenge Fastenfenster auf 12:12 oder ergänze komplexe Kohlenhydrate.",
+"labor": {
+"design": "Systematisches Review und Meta-Analyse, Vergleich des Ruheumsatzes (RMR) in Luteal- vs. Follikelphase",
+"teilnehmer": "318 Frauen vor der Menopause aus 26 Studien",
+"ergebnis": "RMR gesamt ES 0,33 (95 % KI 0,17–0,49; p<0,001); ab 2000 ES 0,23 (−0,00 bis 0,47; p=0,055), ca. 3–5 % (30–120 kcal/Tag)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Kurz vor der Periode haben viele Frauen deutlich mehr Hunger. Steigt der tägliche Kalorienverbrauch in Ruhe in diesen Tagen wirklich um Hunderte Kalorien?",
+"richtig": "Meist nur um ein kleines Stück – der Hunger wächst stärker als der Bedarf",
+"falsch": [
+"Ja, der Grundumsatz steigt in dieser Woche meist um rund ein Drittel",
+"Nein, der Kalorienverbrauch sinkt vor der Periode sogar spürbar ab",
+"Ja, deshalb nimmt man in diesen Tagen bei jeder Essmenge automatisch ab"
+],
+"warum": "In 26 Studien stieg der Ruheverbrauch vor der Periode nur gering um grob 3–5 %, während der hormonell bedingte Hunger oft viel stärker auffällt."
+},
+"plus": {
+"frage": "Du bist in den Tagen vor deiner Periode, trackst deinen Zyklus und kämpfst mit starkem Hunger im 16:8-Fasten. Wie gehst du pragmatisch damit um?",
+"richtig": "Fastenfenster auf 12:12 lockern oder etwas komplexe Carbs ergänzen",
+"falsch": [
+"Die Kalorien pauschal um 600 kcal erhöhen, weil der Grundumsatz explodiert",
+"Das Fastenfenster noch enger ziehen, um den Hunger komplett wegzudrücken",
+"Jedes Training streichen, weil der Körper in der Lutealphase nichts verbraucht"
+],
+"warum": "Der RMR-Anstieg ist klein (ca. 30–120 kcal/Tag), doch der stärkere Hunger ist real – ein lockereres Fenster mit sättigenden Carbs hilft beim Dranbleiben."
+},
+"labor": {
+"frage": "Eine Meta-Analyse (26 Studien, n=318) fand einen kleinen RMR-Anstieg in der Lutealphase (ES 0,33). Wie veränderte sich der Befund bei neueren Studien ab 2000?",
+"richtig": "Er fiel kleiner und grenzwertig nicht mehr signifikant aus",
+"falsch": [
+"Er verdoppelte sich dank genauerer Bestimmung des Eisprungs",
+"Neuere Studien zeigten einen klaren RMR-Abfall in der Lutealphase",
+"Alle eingeschlossenen Studien nutzten identische Ovulationstests"
+],
+"warum": "Ab dem Jahr 2000 sank die Effektstärke auf ES 0,23 (p=0,055); methodische Mängel bei der Ovulationsbestimmung prägen viele ältere Studien."
+}
+}
+},
+{
+"id": "FAST-153",
+"karte": {
+"kopf": "Krafttrainierte Frauen · Kontrollierte Studie",
+"titel": "Mit genug Eiweiß bremst 16:8 den Muskelaufbau nicht",
+"titel_hervor": "bremst 16:8 den Muskelaufbau nicht",
+"setup": "Krafttrainierte Frauen aßen 8 Wochen lang entweder in einem 8-Stunden-Fenster oder über rund 13 Stunden verteilt bei gleicher Eiweißmenge.",
+"zahl": {
+"label": "Muskelzuwachs in beiden Gruppen",
+"wert": "+2 bis +3 %",
+"alltag": ""
+},
+"kern": [
+"Mit rund 1,6 g Eiweiß pro Kilo wuchsen Muskeln und Kraft genauso gut",
+"In der 16:8-Gruppe sank die Fettmasse im Schnitt um 2 bis 7 Prozent",
+"Ohne bewusste Planung essen viele im engen Fenster zu wenig Kalorien"
+],
+"grenze": "Alle Teilnehmerinnen bekamen genug Kalorien und Eiweiß inkl. Shake – im freien Alltag klappt das oft schlechter.",
+"fuer_dich": "Du trainierst Kraft und nutzt 16:8? Plane mindestens 1,6 g Eiweiß pro Kilo gezielt in dein 8-Stunden-Fenster ein.",
+"labor": {
+"design": "Randomisierte, placebokontrollierte Studie, 8 Wochen, 16:8 (~7,5 h) vs. ~13 h Essfenster",
+"teilnehmer": "40 krafttrainierte junge Frauen (24 in der Auswertung)",
+"ergebnis": "FFM +2 % bis +3 % in allen Gruppen; Fettmasse −2 % bis −7 % (TRF) vs. +2 % Kontrolle"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du machst Krafttraining und isst nur zwischen 12 und 20 Uhr, deckst aber deinen Eiweiß- und Energiebedarf. Was passiert mit deinen Muskeln?",
+"richtig": "Sie wachsen genauso gut wie bei normalen Essenszeiten",
+"falsch": [
+"Sie bauen sich durch das lange Fasten deutlich ab",
+"Sie wachsen nur, wenn du direkt morgens frühstückst",
+"Sie werden zwar größer, verlieren aber spürbar an Kraft"
+],
+"warum": "Solange genug Energie und Eiweiß zusammenkommen, bremst das 8-Stunden-Fenster weder Muskelaufbau noch Kraft."
+},
+"plus": {
+"frage": "Du trainierst regelmäßig Kraft und möchtest 16:8 nutzen, ohne Muskeln zu verlieren. Worauf kommt es im Alltag am meisten an?",
+"richtig": "Genug Kalorien und Eiweiß bewusst im Essfenster unterbringen",
+"falsch": [
+"Das Essfenster noch weiter auf 4 Stunden verkürzen",
+"Trainingseinheiten ausschließlich nüchtern am Morgen planen",
+"Komplett auf Eiweißshakes verzichten und nur fest essen"
+],
+"warum": "Ohne Planung entsteht im engen Fenster leicht ein Defizit – gezieltes Eiweiß und genug Energie sichern den Fortschritt."
+},
+"labor": {
+"frage": "Krafttrainierte Frauen wurden über 8 Wochen randomisiert in ein 8-Stunden- oder 13-Stunden-Essfenster bei kontrollierter Protein- und Energiezufuhr eingeteilt. Welche Grenze hat dieses Design?",
+"richtig": "Die hohe Zufuhr wurde gezielt gesichert, was im freien Alltag oft fehlt",
+"falsch": [
+"Die Teilnehmerinnen machten während der 8 Wochen kein Krafttraining",
+"In der Kontrollgruppe wurde die Eiweißmenge stark abgesenkt",
+"Es wurden ausschließlich ältere Frauen ohne Trainingserfahrung geprüft"
+],
+"warum": "Durch Vorgaben und Shakes war die Zufuhr gesichert – ohne Tracking droht im Alltag eher ein ungewolltes Kaloriendefizit."
+}
+}
+},
+{
+"id": "FAST-154",
+"karte": {
+"kopf": "Krafttrainierte Männer · Kontrollierte Studie",
+"titel": "16:8 erhält Muskeln, senkt aber wichtige Aufbauhormone",
+"titel_hervor": "senkt aber wichtige Aufbauhormone",
+"setup": "Trainierte Männer aßen 8 Wochen lang bei gleichem Krafttraining entweder in 3 Mahlzeiten zwischen 13 und 20 Uhr oder normal über den Tag.",
+"zahl": null,
+"kern": [
+"Die Muskelmasse und Kraft blieben trotz 16 Stunden Fasten voll erhalten",
+"Die Fettmasse sank im engen Essfenster deutlich stärker als in der Normaldiät",
+"Gleichzeitig fielen Testosteron, IGF-1 und das Schilddrüsenhormon T3 ab"
+],
+"grenze": "Nur 34 Männer über 8 Wochen untersucht – wie stark der Hormonabfall maximalen Muskelaufbau bremst, bleibt offen.",
+"fuer_dich": "Dein Hauptziel ist maximaler Muskelaufbau? Verteil dein Eiweiß lieber auf 4 Mahlzeiten in mindestens 12 Stunden.",
+"labor": {
+"design": "Randomisierte kontrollierte Studie, 8 Wochen, 16:8 (3 Mahlzeiten) vs. Normaldiät",
+"teilnehmer": "34 krafttrainierte Männer",
+"ergebnis": "Fettmasse gesunken (p = 0,0448), FFM erhalten; Testosteron (p = 0,0476), IGF-1 (p = 0,0397) und T3 gesunken"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Ein trainierter Mann isst 8 Wochen lang nur zwischen 13 und 20 Uhr und trainiert normal weiter. Was zeigte sich im Schnitt bei Fett und Muskeln?",
+"richtig": "Die Fettmasse sank, während die Muskelmasse erhalten blieb",
+"falsch": [
+"Die Fettmasse blieb gleich, aber die Muskeln schrumpften stark",
+"Fettmasse und Muskelmasse stiegen beide deutlich an",
+"Weder Fettmasse noch Hormonwerte veränderten sich messbar"
+],
+"warum": "Im 8-Stunden-Fenster sank die Fettmasse bei erhaltenen Muskeln – gleichzeitig gingen aber bestimmte Aufbauhormone zurück."
+},
+"plus": {
+"frage": "Dein klares Hauptziel in den nächsten Monaten ist maximaler Muskelaufbau (Bulking). Welches Essmuster passt am besten?",
+"richtig": "Vier verteilte Proteinmahlzeiten über mindestens 12 Stunden",
+"falsch": [
+"Ein enges 16:8-Fenster mit höchstens drei späten Mahlzeiten",
+"Mindestens 18 Stunden Fasten für höhere Testosteronwerte",
+"Nur zwei sehr große Mahlzeiten direkt vor dem Schlafengehen"
+],
+"warum": "Da 16:8 bei trainierten Männern Testosteron und IGF-1 senkte, ist ein breiteres Essfenster für maximale Hypertrophie sinnvoller."
+},
+"labor": {
+"frage": "Krafttrainierte Männer absolvierten 8 Wochen randomisiert entweder 16:8 mit 3 Mahlzeiten oder eine normale Mahlzeitenverteilung. Welcher ambivalente Befund trat auf?",
+"richtig": "Fettmasse sank bei erhaltener FFM, aber Testosteron, IGF-1 und T3 fielen ab",
+"falsch": [
+"Testosteron und IGF-1 stiegen an, während die Fettmasse zunahm",
+"Kraftwerte brachen ein, obwohl alle anabolen Hormone anstiegen",
+"Die FFM wuchs deutlich stärker, doch der Körperfettanteil stieg"
+],
+"warum": "Trotz günstigem Effekt auf Fettmasse und Muskelerhalt sanken anabole Hormone signifikant ab, was maximale Hypertrophie bremsen kann."
+}
+}
+},
+{
+"id": "FAST-155",
+"karte": {
+"kopf": "Übergewichtige Erwachsene · Kontrollierte Studie",
+"titel": "Enge Essfenster sparen rund 550 kcal, bringen aber Beschwerden",
+"titel_hervor": "sparen rund 550 kcal",
+"setup": "Erwachsene mit Übergewicht aßen 8 Wochen lang nur in einem 4- oder 6-Stunden-Fenster, ohne Kalorien zu zählen.",
+"zahl": {
+"label": "Spontanes Defizit pro Tag",
+"wert": "≈ 550 kcal",
+"alltag": "≈ 3,4 bis 3,9 kg weniger in 8 Wochen"
+},
+"kern": [
+"Ohne Krafttraining ging ein spürbarer Teil des Gewichts als Muskelmasse verloren",
+"Viele berichteten über Schwindel, Kopfschmerzen, Übelkeit und Müdigkeit",
+"Auch Verstopfung und ein trockener Mund traten in den engen Fenstern auf"
+],
+"grenze": "Überwiegend Frauen mit Übergewicht ohne Krafttraining – bei Aktiven mit Training können die Folgen anders ausfallen.",
+"fuer_dich": "Du willst Leistung aufbauen oder Gewicht halten? Meide 4- oder 6-Stunden-Fenster, sonst rutschst du leicht ins Defizit.",
+"labor": {
+"design": "Randomisierte kontrollierte Studie, 8 Wochen, 4-h- vs. 6-h-Essfenster ohne Kalorienvorgabe",
+"teilnehmer": "58 Erwachsene mit Übergewicht (49 ausgewertet, 53 Frauen, 5 Männer)",
+"ergebnis": "4 h: −528 ± 102 kcal/Tag, −3,9 kg (Lean Mass −0,8 kg); 6 h: −566 ± 142 kcal/Tag, −3,4 kg (Lean Mass −1,5 kg)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du isst 8 Wochen lang nur in einem sehr kurzen Zeitfenster von 4 bis 6 Stunden pro Tag, ohne Kalorien zu zählen. Was passiert dabei meist?",
+"richtig": "Du isst automatisch deutlich weniger, spürst aber öfter Nebenwirkungen",
+"falsch": [
+"Du isst im kurzen Fenster meist mehr als zuvor und nimmst zu",
+"Du nimmst ab, fühlst dich aber fast durchgehend energiegeladener",
+"Dein Gewicht bleibt gleich, weil der Körper alles ausgleicht"
+],
+"warum": "Ohne Kalorienzählen entstand im Schnitt ein Defizit von rund 550 kcal pro Tag, oft begleitet von Kopfschmerz, Schwindel oder Müdigkeit."
+},
+"plus": {
+"frage": "Du befindest dich in einer Aufbauphase oder willst deine Trainingsleistung steigern. Warum sind 18:6- oder 20:4-Fenster dafür ungünstig?",
+"richtig": "Sie führen oft ungewollt ins Defizit und kosten Lean Mass",
+"falsch": [
+"Sie verhindern, dass der Körper nach dem Training Kohlenhydrate speichert",
+"Sie zwingen dich zu mehr Kalorien, als du für den Aufbau brauchst",
+"Sie blockieren die Aufnahme von Wasser und Elektrolyten im Darm"
+],
+"warum": "Enge 4- oder 6-Stunden-Fenster erzeugen meist ein deutliches Defizit und gingen ohne Gegensteuern mit Verlust fettfreier Masse einher."
+},
+"labor": {
+"frage": "In einer 8-wöchigen randomisierten Studie wurden ein 4-Stunden- und ein 6-Stunden-Essfenster ohne Kalorienvorgabe verglichen. Was zeigte sich zusätzlich zum Gewichtsverlust?",
+"richtig": "Ein anteiliger Verlust fettfreier Masse sowie deutliche Nebenwirkungen",
+"falsch": [
+"Ein gleichzeitiger Zuwachs an Muskelmasse trotz fehlendem Training",
+"Kein messbares Kaloriendefizit in der 6-Stunden-Gruppe",
+"Deutlich geringere Beschwerden als bei normaler Mahlzeitenverteilung"
+],
+"warum": "Beide Gruppen verloren Gewicht und Lean Mass bei rund 550 kcal Defizit und meldeten Schwindel, Fatigue, Übelkeit und Kopfschmerzen."
+}
+}
+},
+{
+"id": "FAST-156",
+"karte": {
+"kopf": "Erwachsene · Große Bevölkerungsstudie",
+"titel": "Langes Nachtfasten geht öfter mit hoher Harnsäure einher",
+"titel_hervor": "öfter mit hoher Harnsäure",
+"setup": "Daten von über 22.000 Erwachsenen wurden ausgewertet, um Fastendauer, Mahlzeitenanzahl, Harnsäurewerte und Gicht zu vergleichen.",
+"zahl": {
+"label": "Erhöhte Chance bei ≥ 14 h Fasten",
+"wert": "1,48-fach",
+"alltag": "bei ≥ 14 Stunden Nachtfasten"
+},
+"kern": [
+"Ab 14 Stunden Nachtfasten traten erhöhte Harnsäurewerte deutlich häufiger auf",
+"Auch höchstens 3 Mahlzeiten am Tag hingen mit mehr Harnsäure und Gicht zusammen",
+"Beim Fasten können Ketone die Ausscheidung von Harnsäure über die Niere bremsen"
+],
+"grenze": "Nur eine Momentaufnahme aus zwei Ernährungstagen – sie beweist nicht direkt, dass Fasten allein Gicht auslöst.",
+"fuer_dich": "Du neigst zu Gicht oder erhöhter Harnsäure? Bleib lieber bei 12:12, mehr als 3 Mahlzeiten und viel Wasser.",
+"labor": {
+"design": "Repräsentative Querschnittsstudie aus zwei 24-Stunden-Ernährungsprotokollen",
+"teilnehmer": "22.735 Erwachsene aus der Allgemeinbevölkerung",
+"ergebnis": "Fasten ≥ 14 h: OR 1,48 (95 %-KI 1,21–1,82) für Hyperurikämie; ≤ 3 Mahlzeiten/d: OR 1,32 (Hyperurikämie), OR 1,33 (Gicht)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Stimmt der Eindruck, dass langes Fasten über Nacht den Körper bei erhöhter Harnsäure besonders gut entlastet?",
+"richtig": "Nein, langes Nachtfasten hängt eher mit höherer Harnsäure zusammen",
+"falsch": [
+"Ja, ab 14 Stunden Fasten sinkt die Harnsäure fast bei jedem stark ab",
+"Ja, wenige Mahlzeiten schützen zuverlässig vor Gichtanfällen",
+"Die Länge der Essenspause hat keinen bekannten Bezug zur Harnsäure"
+],
+"warum": "Ab 14 Stunden Nachtfasten traten erhöhte Harnsäurewerte häufiger auf, weil Ketone die Ausscheidung über die Niere bremsen können."
+},
+"plus": {
+"frage": "Du hast erhöhte Harnsäurewerte oder neigst zu Gicht und möchtest deine Mahlzeiten strukturieren. Was ist die klügere Wahl?",
+"richtig": "Ein 12:12-Fenster mit mehr als 3 Mahlzeiten und viel Wasser",
+"falsch": [
+"Ein strenges 16:8-Fenster mit nur zwei großen Mahlzeiten",
+"Möglichst lange Fastenphasen über 18 Stunden am Stück",
+"Wenig trinken am Abend, um die Nieren nachts zu schonen"
+],
+"warum": "Sowohl mindestens 14 Stunden Fasten als auch höchstens 3 Mahlzeiten hingen mit mehr Harnsäure zusammen – 12:12 ist hier sanfter."
+},
+"labor": {
+"frage": "In einer großen repräsentativen Querschnittserhebung wurden Fastendauer und Mahlzeitenfrequenz anhand von zwei 24-Stunden-Recalls mit Harnsäure und Gicht verknüpft. Was ist die zentrale methodische Grenze?",
+"richtig": "Querschnittsdaten aus zwei Tagen beweisen keine direkte Kausalität",
+"falsch": [
+"Die Stichprobe war mit wenigen hundert Personen zu klein für Effekte",
+"Ein biologischer Zusammenhang zwischen Ketonen und Niere ist unbekannt",
+"Es wurden nur Leistungssportler mit sehr hoher Proteinzufuhr erfasst"
+],
+"warum": "Querschnittsdaten zeigen statistische Zusammenhänge, aber keinen kausalen Beweis – auch wenn der Nierenmechanismus plausibel ist."
+}
+}
+}
+]

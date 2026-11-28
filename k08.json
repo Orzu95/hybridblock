@@ -1,0 +1,1150 @@
+[
+{
+"id": "ERN-111",
+"karte": {
+"kopf": "Junge Männer · 12-Wochen-Studie & Schlaflabor",
+"titel": "Eiweiß vor dem Schlafen steigerte den Muskelaufbau über Nacht",
+"titel_hervor": "Muskelaufbau über Nacht",
+"setup": "Junge Männer nahmen abends nach Krafttraining langsam verdauliches Eiweiß oder ein kalorienfreies Getränk ein und wurden über Nacht oder 12 Wochen getestet.",
+"zahl": {
+"label": "Mehr nächtlicher Muskelaufbau-Reiz",
+"wert": "+22 %",
+"alltag": "über 7,5 Stunden Schlaf"
+},
+"kern": [
+"Im Schlaflabor wirkten erst 40 Gramm Casein deutlich, 30 Gramm reichten akut nicht",
+"Über zwölf Wochen wuchsen Muskelmasse und Kraft stärker als ohne Abend-Eiweiß",
+"Besonders praktisch ist der Snack nach spätem Training oder bei offenem Tagesziel"
+],
+"grenze": "In der 12-Wochen-Studie bekam die Vergleichsgruppe gar kein Extra-Eiweiß – unklar bleibt, ob die Uhrzeit oder nur die größere Tagesmenge half.",
+"fuer_dich": "Du trainierst abends oder hast dein Eiweißziel noch nicht voll? Plane 30 bis 60 Minuten vor dem Schlafen 30 bis 40 Gramm Eiweiß ein, etwa Quark oder Casein.",
+"labor": {
+"design": "12-Wochen-RCT (n=44, 3x/Woche Kraft) plus Akut-Schlafstudie (n=16, 7,5 h Schlaf)",
+"teilnehmer": "44 bzw. 16 junge Männer",
+"ergebnis": "+22 % nächtliche MPS und +26 % Ganzkörper-Proteinsynthese bei 40 g Casein vs. Placebo"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Ist es schlecht für den Körper, kurz vor dem Schlafengehen nach dem Sport noch eine Portion Eiweiß zu essen?",
+"richtig": "Nein, der Körper nutzt das Eiweiß über Nacht gut für die Muskeln",
+"falsch": [
+"Ja, im Schlaf kann der Körper überhaupt kein Eiweiß verdauen",
+"Ja, spätes Eiweiß wird nachts fast vollständig als Fett gespeichert",
+"Nein, aber es wirkt nur, wenn man höchstens vier Stunden schläft"
+],
+"warum": "Langsam verdauliches Eiweiß vor dem Schlafen wird über Nacht normal verdaut und steigert den nächtlichen Muskelaufbau-Reiz."
+},
+"plus": {
+"frage": "Du kommst spät aus dem Krafttraining und dir fehlen noch 35 g Protein fürs Tagesziel. Was ist vor dem Schlafen eine sinnvolle Wahl?",
+"richtig": "30 bis 40 g langsam verdauliches Protein etwa 30 bis 60 Minuten vorher",
+"falsch": [
+"Nichts mehr essen und das fehlende Protein einfach verfallen lassen",
+"Nur einen kleinen Schluck mit 10 g Protein nehmen, mehr stört den Schlaf",
+"Lieber reinen Zucker essen, weil Protein nachts nicht verwertet wird"
+],
+"warum": "30 bis 40 g Casein oder Mehrkomponentenprotein vor dem Schlafen schließt die Lücke und versorgt die Muskulatur über die Nacht."
+},
+"labor": {
+"frage": "Eine 12-Wochen-Studie zeigte mehr Muskel- und Kraftzuwachs mit Protein vor dem Schlafen gegenüber Placebo. Welche zentrale Einschränkung besteht?",
+"richtig": "Die Kontrollgruppe erhielt kein isonitrogenes Protein zu einer anderen Zeit",
+"falsch": [
+"Die Teilnehmer führten während der zwölf Wochen gar kein Krafttraining durch",
+"Die Proteinmenge wurde nur geschätzt und nie abgewogen",
+"Es wurden ausschließlich Ausdauerwerte statt Muskelmasse gemessen"
+],
+"warum": "Da die Vergleichsgruppe ein kalorienfreies Placebo bekam, bleibt offen, ob der Vorteil am Abend-Timing oder schlicht an mehr Gesamtprotein lag."
+}
+}
+},
+{
+"id": "ERN-112",
+"karte": {
+"kopf": "Erwachsene · 13 Langzeitstudien",
+"titel": "Mehr Ballaststoffe und Vollkorn senken das Risiko für chronische Leiden",
+"titel_hervor": "senken das Risiko",
+"setup": "Große Beobachtungs- und Interventionsstudien untersuchten, wie eine ballaststoff- und vollkornreiche Ernährung mit chronischen Krankheiten zusammenhängt.",
+"zahl": null,
+"kern": [
+"Wer mehr Vollkorn und Ballaststoffe isst, hat im Schnitt ein geringeres Sterberisiko",
+"Bei strengen Diäten mit wenig Kohlenhydraten rutscht die Zufuhr oft zu tief ab",
+"Selbst in strengen Diäten lassen sich rund 20 Gramm am Tag mit Gemüse erreichen"
+],
+"grenze": "Wie viel weniger Ballaststoffe direkt vor hartem Krafttraining den Magen beruhigen, ist bisher kaum in kontrollierten Studien getestet.",
+"fuer_dich": "Du reduzierst gerade Kohlenhydrate oder Kalorien? Halte Gemüse, Hülsenfrüchte oder Vollkorn im Plan, damit deine Ballaststoffe nicht abrutschen.",
+"labor": {
+"design": "Meta-Analyse aus 13 prospektiven Kohortenstudien (Teil einer Review-Serie)",
+"teilnehmer": "Erwachsene Bevölkerungskohorten (alle Zielgruppen)",
+"ergebnis": "Signifikante Reduktion nicht-übertragbarer chronischer Erkrankungen und Gesamtmortalität"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Warum lohnt es sich im Alltag, öfter zu Vollkorn, Hülsenfrüchten, Obst und Gemüse zu greifen?",
+"richtig": "Mehr Ballaststoffe hängen mit weniger chronischen Erkrankungen zusammen",
+"falsch": [
+"Ballaststoffe liefern besonders viele Kalorien für schnellen Muskelaufbau",
+"Sie ersetzen den kompletten Eiweißbedarf im Krafttraining",
+"Sie sorgen dafür, dass man gar kein Wasser mehr trinken muss"
+],
+"warum": "Große Langzeitstudien zeigen deutlich: Eine höhere Zufuhr an Ballaststoffen und Vollkorn ist mit weniger chronischen Erkrankungen verbunden."
+},
+"plus": {
+"frage": "Du machst eine kohlenhydratarme Diät und merkst, dass deine Verdauung leidet. Was passiert bei Low-Carb in der Praxis besonders oft?",
+"richtig": "Die Ballaststoffzufuhr sinkt unbeabsichtigt stark ab",
+"falsch": [
+"Der Körper nimmt plötzlich doppelt so viele Ballaststoffe aus Fleisch auf",
+"Ballaststoffe werden in einer Diät überhaupt nicht mehr benötigt",
+"Zu viel Gemüse verhindert das Abnehmen trotz Kaloriendefizit"
+],
+"warum": "Wer Brot, Hafer und Obst streicht, verliert schnell Ballaststoffe – mit gezieltem Gemüse bleiben selbst in strengen Diäten bis zu 20 g pro Tag machbar."
+},
+"labor": {
+"frage": "Die gesundheitliche Schutzwirkung von Ballaststoffen ist gut belegt. Wo besteht in der Sporternährung noch eine klare Forschungslücke?",
+"richtig": "Bei der optimalen Ballaststoffreduktion direkt vor hartem Krafttraining",
+"falsch": [
+"Bei der Frage, ob Vollkornprodukte überhaupt Ballaststoffe enthalten",
+"Bei der grundsätzlichen Wirkung auf Herz-Kreislauf-Erkrankungen",
+"Bei der Messung des Ballaststoffgehalts in Obst und Gemüse"
+],
+"warum": "Es gibt kaum kontrollierte Studien dazu, wie stark man Ballaststoffe unmittelbar vor intensiven Krafteinheiten für den Magen reduzieren sollte."
+}
+}
+},
+{
+"id": "ERN-113",
+"karte": {
+"kopf": "Ausdauersportler · 15 Studien zusammengefasst",
+"titel": "Bis vier Prozent Schweißverlust bremsen im Wettkampf kaum aus",
+"titel_hervor": "bremsen im Wettkampf kaum aus",
+"setup": "Eine Meta-Analyse aus 15 Studien verglich Ausdauertests mit freiem Tempo gegen starre Labortests bei unterschiedlichem Flüssigkeitsverlust.",
+"zahl": {
+"label": "Leistungsverlust bei fester Vorgabe",
+"wert": "−1,91 %",
+"alltag": "ab 2 % Flüssigkeitsverlust"
+},
+"kern": [
+"Bei freiem Tempo wie im Wettkampf blieb die Leistung bis vier Prozent Verlust stabil",
+"Nur bei starr vorgegebenem Tempo im Labor sank die Leistung schon ab zwei Prozent",
+"Fehlender Fahrtwind im Labor verstärkte die Belastung der bekannten Zwei-Prozent-Regel"
+],
+"grenze": "Über neunzig Prozent der Untersuchten waren Männer, und bei streng vorgegebenem Tempo gilt die Zwei-Prozent-Grenze weiterhin.",
+"fuer_dich": "Du läufst oder fährst Rad in deinem eigenen Tempo? Trinke nach Durst statt krampfhaft nach Stoppuhr, solange dein Schweißverlust nicht extrem wird.",
+"labor": {
+"design": "Meta-Analyse aus 15 Studien (28 Effektschätzer), Time-Trial vs. fixierte Intensität",
+"teilnehmer": "122 Teilnehmende (91 % Männer, 9 % Frauen)",
+"ergebnis": "Time-Trial +0,09 ± 2,60 % (p=0,9) bis 4 % Verlust; fixierte Intensität −1,91 ± 1,53 % (p<0,05) ab 2 %"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Oft heißt es, schon ein kleiner Flüssigkeitsverlust beim Joggen lässt deine Leistung sofort einbrechen. Was zeigt sich bei freiem Tempo?",
+"richtig": "Im eigenen Tempo bleibt die Leistung auch bei etwas mehr Schweißverlust stabil",
+"falsch": [
+"Schon nach zehn Minuten Schwitzen halbiert sich die Laufgeschwindigkeit",
+"Trinken nach Durst reicht beim Freizeitsport grundsätzlich nicht aus",
+"Je weniger man trinkt, desto schneller läuft man im Wettkampf"
+],
+"warum": "Bei realitätsnahen Zeitfahren mit freiem Tempo blieb die Leistung bis zu vier Prozent Gewichtsverlust im Schnitt stabil."
+},
+"plus": {
+"frage": "Du startest bei einem längeren Lauf mit freier Pace-Wahl. Wie steuerst du deine Flüssigkeitszufuhr am sinnvollsten?",
+"richtig": "Nach Durst trinken und erst bei sehr hohem Schweißverlust aktiv gegensteuern",
+"falsch": [
+"Alle fünf Minuten große Mengen trinken, auch ohne jedes Durstgefühl",
+"Während des gesamten Laufs gar nichts trinken, um Gewicht zu sparen",
+"Genau ab zwei Prozent Verlust sofort abbrechen, da sonst nichts mehr geht"
+],
+"warum": "Bei freier Pace-Wahl ist durstgesteuertes Trinken meist passend; erst bei starr vorgegebener Belastung fällt die Leistung ab etwa 2 % Verlust ab."
+},
+"labor": {
+"frage": "Warum führte Dehydratation ab 2 % in vielen Laborstudien zu Leistungseinbußen, nicht aber in ökologisch validen Time-Trials?",
+"richtig": "Labortests nutzten starre Intensitätsvorgaben und oft fehlenden Fahrtwind",
+"falsch": [
+"In Time-Trials wurde die Laufzeit nicht mit einer Uhr gemessen",
+"Die Time-Trials fanden ausschließlich bei Minustemperaturen statt",
+"In den Labortests durften die Probanden gar nicht schwitzen"
+],
+"warum": "Fixierte Belastungsprotokolle ohne Konvektionskühlung durch Fahrtwind spiegeln Wettkämpfe mit freier Temporegulierung nur schlecht wider."
+}
+}
+},
+{
+"id": "ERN-114",
+"karte": {
+"kopf": "Sportler · Akute Laborstudie",
+"titel": "Viel Alkohol nach dem Training bremst den Muskelaufbau um rund ein Viertel",
+"titel_hervor": "bremst den Muskelaufbau",
+"setup": "Sportler absolvierten Kraft- und Ausdauertraining und bekamen danach Eiweiß, Alkohol plus Eiweiß oder Alkohol plus Kohlenhydrate; gemessen wurde die Muskelneubildung.",
+"zahl": {
+"label": "Weniger Muskelaufbau-Reiz nach Alkohol",
+"wert": "−24 %",
+"alltag": "trotz optimalem Protein"
+},
+"kern": [
+"Ohne Eiweiß, nur mit Alkohol und Kohlenhydraten, sank der Aufbaureiz um 37 Prozent",
+"Eine gute Portion Eiweiß milderte den Dämpfer deutlich ab, hob ihn aber nicht auf",
+"Ein Teil des Trainingsreizes blieb im Vergleich zum Ruhezustand trotzdem erhalten"
+],
+"grenze": "Es gibt bisher nur erste Hinweise aus einer Einzelstudie mit viel Alkohol – ab welcher kleinen Menge der Effekt wegfällt, ist offen.",
+"fuer_dich": "Du gehst nach dem Training doch mal etwas trinken? Iss vorher oder dazu unbedingt eine eiweißreiche Mahlzeit, um den Dämpfer abzumildern.",
+"labor": {
+"design": "Randomisierte Crossover-Biopsiestudie nach kombinierter Kraft- und Ausdauerbelastung",
+"teilnehmer": "Kleine Sportler-Stichprobe (akute Humanstudie mit Muskelbiopsien)",
+"ergebnis": "Myofibrilläre Proteinsynthese −24 % (Alkohol + Protein) und −37 % (Alkohol + Carbs) vs. Protein allein"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du trinkst nach einem harten Training ordentlich Alkohol, isst aber vorher einen Eiweiß-Shake. Bleibt dein Muskelaufbau ungestört?",
+"richtig": "Nein, der Aufbaureiz sinkt deutlich, auch wenn Eiweiß den Schaden mindert",
+"falsch": [
+"Ja, ein Eiweiß-Shake hebt die Wirkung von Alkohol vollständig auf",
+"Nein, Alkohol stoppt jeden Muskelaufbau für die gesamte nächste Woche",
+"Ja, Alkohol hilft den Muskeln nach dem Sport sogar beim Entspannen"
+],
+"warum": "Viel Alkohol senkte den Muskelaufbau-Reiz selbst mit optimalem Eiweiß um rund ein Viertel – ohne Eiweiß war der Rückgang noch stärker."
+},
+"plus": {
+"frage": "Nach einer harten Hybrid-Einheit steht eine Feier an und du möchtest ein paar Drinks nehmen. Wie hältst du den Schaden für die Regeneration kleiner?",
+"richtig": "Unbedingt eine proteinreiche Mahlzeit einplanen statt nur Snacks mit Carbs",
+"falsch": [
+"Nach dem Training gar nichts essen, damit der Alkohol schneller wirkt",
+"Nur schnelle Kohlenhydrate essen und Protein erst am nächsten Tag nehmen",
+"Das Training am nächsten Tag verdoppeln, um den Alkohol auszuschwitzen"
+],
+"warum": "Protein dämpfte den Rückgang der Muskelproteinsynthese nach Alkohol deutlich im Vergleich zu reinen Kohlenhydraten (−24 % statt −37 %)."
+},
+"labor": {
+"frage": "Eine akute Crossover-Biopsiestudie zeigte eine deutliche Hemmung der myofibrillären Proteinsynthese durch Alkohol. Welche wichtige Frage bleibt offen?",
+"richtig": "Ab welchem unteren Schwellenwert geringer Alkoholdosen der Effekt ausbleibt",
+"falsch": [
+"Ob die Teilnehmenden vor dem Test überhaupt trainiert hatten",
+"Ob Protein im Vergleich zu Kohlenhydraten einen Unterschied machte",
+"Ob Alkohol nach dem Training die Proteinsynthese sogar über Eiweiß hinaus steigert"
+],
+"warum": "Getestet wurden hohe Alkoholmengen nach einer einzelnen Einheit; für kleine Mengen im Alltag ist der genaue Schwellenwert noch nicht geklärt."
+}
+}
+},
+{
+"id": "ERN-115",
+"karte": {
+"kopf": "Krafttrainierende · 8 Studien zusammengefasst",
+"titel": "Intervallfasten mit Krafttraining baut Fett ab und hält Muskeln stabil",
+"titel_hervor": "hält Muskeln stabil",
+"setup": "Zwei Meta-Analysen prüften, wie sich Intervallfasten mit acht Stunden Essensfenster plus Krafttraining auf Fettmasse, Muskeln und Kraft auswirkt.",
+"zahl": {
+"label": "Fettverlust im Schnitt (8 Studien)",
+"wert": "−1,36 kg",
+"alltag": "bei stabilem Muskelerhalt"
+},
+"kern": [
+"Die fettfreie Muskelmasse und die Maximalkraft blieben im Schnitt gut erhalten",
+"In einer zweiten Auswertung sank auch das Körpergewicht und leicht das Cholesterin",
+"Der Fettverlust entsteht meist dadurch, dass im kürzeren Fenster weniger gegessen wird"
+],
+"grenze": "Bei exakt gleichen Kalorien verliert man nicht mehr Fett als mit normaler Diät; für gezielten Muskelaufbau gibt es erst wenige kleine Studien.",
+"fuer_dich": "Dir fällt Abnehmen mit 16:8 leichter? Lege dein 8-Stunden-Essensfenster nah ans Training und verteile dort drei Mahlzeiten mit genug Eiweiß.",
+"labor": {
+"design": "Zwei Meta-Analysen (k=8 bzw. k=7 RCTs) zu Time-Restricted Eating mit Krafttraining",
+"teilnehmer": "221 bzw. 164 Teilnehmende (Trainierte, Einsteiger, Frauen)",
+"ergebnis": "Fettmasse WMD −1,36 kg (k=8) bzw. −1,52 kg (k=7); fettfreie Masse −0,27 kg (n. s.)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du probierst 16:8-Intervallfasten aus und machst weiter Krafttraining. Verlierst du durch die langen Essenspausen automatisch Muskeln?",
+"richtig": "Nein, mit Krafttraining und genug Eiweiß bleiben die Muskeln meist stabil",
+"falsch": [
+"Ja, nach zwölf Stunden ohne Essen baut der Körper sofort Muskeln ab",
+"Nein, du baust sogar ganz ohne Training deutlich mehr Muskeln auf",
+"Ja, deshalb darf man beim Intervallfasten kein Krafttraining machen"
+],
+"warum": "In Auswertungen mit Krafttraining verloren Teilnehmende im Schnitt Körperfett, während Muskelmasse und Kraft stabil blieben."
+},
+"plus": {
+"frage": "Du nutzt 16:8 zum Fettabbau und willst im Krafttraining stark bleiben. Worauf solltest du innerhalb deines 8-Stunden-Fensters achten?",
+"richtig": "Das Fenster nah ans Training legen und rund 1,4 bis 1,6 g/kg Protein schaffen",
+"falsch": [
+"Das Protein halbieren, weil der Körper im Fastenfenster sparsamer arbeitet",
+"Nur eine einzige Mahlzeit essen und komplett auf Krafttraining verzichten",
+"Das Essensfenster möglichst weit weg vom Training auf den späten Abend legen"
+],
+"warum": "Ein Essensfenster nah am Training mit drei proteinreichen Mahlzeiten sichert die Zufuhr von mindestens 1,4 bis 1,6 g/kg für den Muskelerhalt."
+},
+"labor": {
+"frage": "Warum führten Studien zu Time-Restricted Eating oft zu stärkerem Fettverlust als unbeschränkte Kontrollgruppen?",
+"richtig": "Überwiegend durch ein spontanes Kaloriendefizit im verkürzten Essensfenster",
+"falsch": [
+"Weil Fasten den Grundumsatz unabhängig von den Kalorien stark erhöht",
+"Weil die Kontrollgruppen kein Krafttraining durchführen durften",
+"Weil der Körper im 8-Stunden-Fenster keine Fette mehr aufnehmen kann"
+],
+"warum": "Bei streng isokalorisch abgeglichenen Diäten zeigt sich kein zusätzlicher Fettabbauvorteil gegenüber einer kontinuierlichen Kalorienreduktion."
+}
+}
+},
+{
+"id": "ERN-116",
+"karte": {
+"kopf": "Erwachsene · 12-Monats-Studie & 11 Trainingsstudien",
+"titel": "Low-Carb und Low-Fat wirken bei gleichen Kalorien ähnlich gut",
+"titel_hervor": "wirken bei gleichen Kalorien ähnlich",
+"setup": "Eine 12-Monats-Studie und eine Auswertung von 11 Kraftstudien verglichen fettarme mit kohlenhydratarmen Diäten bei gleicher Energie- und Eiweißmenge.",
+"zahl": null,
+"kern": [
+"Über zwölf Monate nahmen beide Gruppen im Schnitt gleich viel Gewicht ab",
+"Auch beim Muskelaufbau zeigte sich kein klarer Vorteil für eine der beiden Formen",
+"Weder Gentests noch Insulinwerte sagten zuverlässig voraus, welche Diät besser passt"
+],
+"grenze": "Bei sehr kohlenhydratarmer Kost macht das Essen oft stärker satt – wer gezielt zunehmen will, schafft den Überschuss dann schwerer.",
+"fuer_dich": "Du fragst dich, ob Low-Carb oder Low-Fat besser zu dir passt? Fixiere Kalorien und Eiweiß, und verteile den Rest so, wie du es gut durchhältst.",
+"labor": {
+"design": "12-Monats-RCT (Low-Fat vs. Low-Carb) plus Hypertrophie-Meta-Analyse (k=11)",
+"teilnehmer": "Erwachsene 18–50 Jahre (BMI 28–40) bzw. n=227 in Kraftstudien",
+"ergebnis": "Gewichtsänderung −25 bis +5 kg ohne Gruppenunterschied; Hypertrophie SMD = 0,15 (p=0,230)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Was funktioniert über ein ganzes Jahr besser zum Abnehmen: wenig Kohlenhydrate oder wenig Fett?",
+"richtig": "Beides klappt im Schnitt ähnlich gut, wenn Kalorien und Eiweiß passen",
+"falsch": [
+"Wenig Kohlenhydrate ist bei gleichen Kalorien immer doppelt so wirksam",
+"Wenig Fett funktioniert nur, wenn man komplett auf Eiweiß verzichtet",
+"Keine der beiden Formen führt über ein Jahr zu echtem Gewichtsverlust"
+],
+"warum": "Über zwölf Monate gab es bei gleicher Energie- und Eiweißzufuhr keinen klaren Unterschied zwischen fettarmer und kohlenhydratarmer Kost."
+},
+"plus": {
+"frage": "Dein Kalorienziel und dein Proteinbedarf stehen fest. Wie solltest du die restlichen Kalorien zwischen Kohlenhydraten und Fetten aufteilen?",
+"richtig": "Nach persönlicher Vorliebe, solange mindestens rund 20 % aus Fett kommen",
+"falsch": [
+"Immer exakt 50 zu 50 teilen, sonst funktioniert der Muskelaufbau nicht",
+"Fett möglichst auf null setzen und nur Kohlenhydrate essen",
+"Erst einen Gentest machen, weil sonst keine Diät anschlägt"
+],
+"warum": "Sobald Kalorien, Protein und ein Mindestfettanteil von etwa 20 % stehen, zählt vor allem die Verteilung, die du langfristig gut durchhältst."
+},
+"labor": {
+"frage": "In einer großen 12-Monats-RCT wurden Low-Fat und Low-Carb verglichen und auf individuelle Vorhersagefaktoren geprüft. Was zeigte sich?",
+"richtig": "Weder Genotyp-Muster noch basale Insulinwerte sagten den Diäterfolg voraus",
+"falsch": [
+"Genotyp-Muster bestimmten fast vollständig, welche Diät funktionierte",
+"Personen mit hoher Insulinsekretion nahmen nur mit Low-Fat ab",
+"Beide Gruppen verloren exakt dieselbe Kilogrammzahl ohne Streuung"
+],
+"warum": "Die Gewichtsverläufe streuten individuell stark von −25 bis +5 kg, aber weder 3-SNP-Genotypen noch die Insulinsekretion erklärten den Erfolg."
+}
+}
+},
+{
+"id": "FAST-101",
+"karte": {
+"kopf": "Übergewichtige Erwachsene · 22 Studien",
+"titel": "Intervallfasten senkt das Gewicht kaum anders als normale Diäten",
+"titel_hervor": "kaum anders als normale Diäten",
+"setup": "Über 6 bis 12 Monate wurde Intervallfasten mit normaler Kalorienreduktion sowie mit gar keiner Diät verglichen.",
+"zahl": {
+"label": "Unterschied zur normalen Diät",
+"wert": "−0,33 %",
+"alltag": ""
+},
+"kern": [
+"Beim Abnehmen und der Lebensqualität schnitten beide Wege fast gleich ab",
+"Gegenüber gar keiner Diät half Intervallfasten im Schnitt etwas beim Abnehmen",
+"Entscheidend bleibt das Kaloriendefizit, nicht der Fasten-Timer allein"
+],
+"grenze": "Die meisten Studien liefen maximal 12 Monate und hatten ein gewisses Verzerrungsrisiko.",
+"fuer_dich": "Du willst abnehmen und überlegst zu fasten? Nutze es als Hilfe für dein Kalorienziel, nicht als Stoffwechsel-Trick.",
+"labor": {
+"design": "Cochrane Review & Meta-Analyse (22 RCTs), 6–12 Monate, IF vs. CER und vs. keine Diät",
+"teilnehmer": "1.995 Erwachsene mit Übergewicht",
+"ergebnis": "IF vs. CER: MD −0,33 % (95 % KI −0,92 bis 0,26); vs. keine Diät: MD −3,42 % (−4,95 bis −1,90)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du willst ein Jahr lang Gewicht verlieren und überlegst zwischen Intervallfasten und normalem Kaloriensparen. Was zeigt der Vergleich?",
+"richtig": "Beide Wege führen im Schnitt zu fast demselben Ergebnis",
+"falsch": [
+"Intervallfasten lässt deutlich mehr Gewicht verschwinden",
+"Normales Kaloriensparen wirkt doppelt so stark wie Fasten",
+"Intervallfasten hebt die Lebensqualität spürbar stärker"
+],
+"warum": "Über 6 bis 12 Monate unterschieden sich Gewichtsverlust und Lebensqualität zwischen beiden Ansätzen praktisch nicht."
+},
+"plus": {
+"frage": "Im Cut fällt es dir leicht, dein Kaloriendefizit mit vier Mahlzeiten zu halten. Solltest du trotzdem auf Intervallfasten wechseln?",
+"richtig": "Nur wenn dir feste Essenszeiten im Alltag besser passen",
+"falsch": [
+"Ja, weil Fasten den Stoffwechsel zusätzlich ankurbelt",
+"Ja, weil du dadurch deutlich leichter über 5 % abnimmst",
+"Nein, weil Intervallfasten weniger wirkt als normale Diäten"
+],
+"warum": "Intervallfasten ist eine Strukturhilfe für das Kalorienziel, bringt aber keinen eigenen Stoffwechsel-Bonus."
+},
+"labor": {
+"frage": "In einer Meta-Analyse aus 22 randomisierten Studien über 6 bis 12 Monate wurde Intervallfasten mit kontinuierlicher Kalorienreduktion verglichen. Was zeigte sich?",
+"richtig": "Kein klinisch relevanter Unterschied bei Gewicht oder Lebensqualität",
+"falsch": [
+"Ein deutlicher Vorteil für Intervallfasten über der 5-%-Schwelle",
+"Ein klarer Vorteil für tägliche Reduktion bei hoher Evidenz",
+"Eine starke Überlegenheit von Fasten erst ab dem zwölften Monat"
+],
+"warum": "Der mittlere Unterschied lag bei −0,33 % und blieb damit weit unter einer klinisch relevanten Grenze."
+}
+}
+},
+{
+"id": "FAST-102",
+"karte": {
+"kopf": "Übergewichtige mit Prädiabetes · Fütterungsstudie",
+"titel": "Gleiche Kalorien im 10-Stunden-Fenster bringen keinen Abnehmbonus",
+"titel_hervor": "keinen Abnehmbonus",
+"setup": "Teilnehmende erhielten 12 Wochen lang exakt dieselben Kalorien und Nährstoffe – einmal in 10 Stunden, einmal über bis zu 16 Stunden.",
+"zahl": {
+"label": "Gewichtsunterschied nach 12 Wochen",
+"wert": "0,3 kg",
+"alltag": ""
+},
+"kern": [
+"Beide Gruppen nahmen bei gleichen Kalorien nahezu gleich viel ab",
+"Auch bei Blutzucker und Insulinresistenz gab es keinen klaren Vorteil",
+"Über 92 % hielten sich streng an die vorgegebenen Mahlzeiten"
+],
+"grenze": "Kleine Gruppe mit 41 Personen an nur einem Standort über 12 Wochen.",
+"fuer_dich": "Du hältst dein tägliches Kalorienziel bereits genau ein? Dann erwarte vom bloßen Fasten-Timer keinen schnelleren Gewichtsverlust.",
+"labor": {
+"design": "Randomisierte isokalorische Fütterungsstudie, 12 Wochen, 10-h-TRE vs. <=16-h-Fenster",
+"teilnehmer": "41 Erwachsene mit Adipositas und Prädiabetes",
+"ergebnis": "Gewicht −2,3 vs. −2,6 kg (Diff. 0,3 kg; 95 % KI −1,2 bis 1,9); HOMA-IR −0,8 (−1,9 bis 0,4)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Zwei Personen essen 12 Wochen lang genau dasselbe. Eine isst alles in 10 Stunden, die andere über den ganzen Tag. Wer nimmt mehr ab?",
+"richtig": "Beide nehmen im Schnitt fast gleich viel ab",
+"falsch": [
+"Die Person mit dem 10-Stunden-Fenster nimmt deutlich mehr ab",
+"Die Person mit Essen über den ganzen Tag nimmt mehr ab",
+"Nur beim 10-Stunden-Fenster sinkt der Blutzucker spürbar"
+],
+"warum": "Bei exakt gleicher Kalorien- und Nährstoffmenge brachte das kürzere Essensfenster keinen messbaren Zusatzvorteil."
+},
+"plus": {
+"frage": "Du trackst dein Defizit präzise und aktivierst zusätzlich einen 10-Stunden-Fasten-Timer. Wie solltest du deine Abnehmprognose anpassen?",
+"richtig": "Gar nicht, denn das Tempo hängt weiter vom Defizit ab",
+"falsch": [
+"Nach oben, weil kürzere Fenster mehr Fett verbrennen",
+"Nach oben, weil sich der Blutzucker automatisch halbiert",
+"Nach unten, weil der Körper bei 10 Stunden Energie spart"
+],
+"warum": "Solange Kalorien und Nährstoffe gleich bleiben, verändert ein 10-Stunden-Fenster das Abnehmtempo nicht."
+},
+"labor": {
+"frage": "In einer streng kontrollierten 12-Wochen-Fütterungsstudie wurden 10-h-TRE und ein <=16-h-Fenster isokalorisch verglichen. Was lässt sich daraus schließen?",
+"richtig": "TRE wirkt beim Abnehmen wohl vor allem über weniger Kalorien",
+"falsch": [
+"TRE senkt HOMA-IR stark unabhängig von der Energiebilanz",
+"Isokalorisches TRE verhindert den Gewichtsverlust vollständig",
+"Die Adhärenz war zu niedrig, um Effekte zu beurteilen"
+],
+"warum": "Bei >92 % Adhärenz und identischen Mahlzeiten zeigten sich keine signifikanten Unterschiede bei Gewicht oder HOMA-IR."
+}
+}
+},
+{
+"id": "FAST-103",
+"karte": {
+"kopf": "Erwachsene mit Adipositas · 12-Monats-Studie",
+"titel": "Ein 8-Stunden-Fenster bringt im Defizit keinen klaren Vorteil",
+"titel_hervor": "keinen klaren Vorteil",
+"setup": "Erwachsene hielten 12 Monate lang ein Kaloriendefizit – die eine Hälfte mit Essenszeit von 8 bis 16 Uhr, die andere ohne Zeitvorgabe.",
+"zahl": null,
+"kern": [
+"Gewicht, Körperfett und Magermasse entwickelten sich in beiden Gruppen ähnlich",
+"Auch Blutwerte für Herz und Stoffwechsel besserten sich nicht stärker",
+"Im zweiten Halbjahr fiel das Durchhalten in beiden Gruppen schwerer"
+],
+"grenze": "Die Studie war auf Unterschiede ab 2,5 kg ausgelegt; kleinere Effekte blieben unsicher.",
+"fuer_dich": "Du hältst dein tägliches Kaloriendefizit schon gut ein? Dann wähle deine Essenszeiten flexibel statt streng nach 8-bis-16-Uhr.",
+"labor": {
+"design": "Randomisierte kontrollierte Studie, 12 Monate, 16:8-TRE (8–16 Uhr) + CR vs. CR allein",
+"teilnehmer": "139 Erwachsene mit Adipositas (84,9 % Completers)",
+"ergebnis": "Gewicht −8,0 vs. −6,3 kg (Diff. −1,8 kg; 95 % KI −4,0 bis 0,4; p=0,11); Fett −1,5 kg (n.s.)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du reduzierst ein Jahr lang deine Kalorien. Macht es einen klaren Unterschied, ob du zusätzlich nur zwischen 8 und 16 Uhr isst?",
+"richtig": "Nein, Gewicht und Körperfett sinken in beiden Fällen ähnlich",
+"falsch": [
+"Ja, das 8-Stunden-Fenster verdoppelt den Fettabbau deutlich",
+"Ja, ohne Zeitfenster verliert man fast nur Muskelmasse",
+"Nein, mit Zeitfenster nimmt man im Jahr gar nicht ab"
+],
+"warum": "Über 12 Monate brachte das frühe 8-Stunden-Fenster keinen statistisch belegten Zusatzvorteil gegenüber Kaloriensparen allein."
+},
+"plus": {
+"frage": "Dein Defizit läuft rund, aber ein starres 8-bis-16-Uhr-Fenster stresst dich im Job. Was ist die sinnvollste Entscheidung?",
+"richtig": "Essenszeiten flexibel halten und weiter aufs Defizit achten",
+"falsch": [
+"Trotz Stress bei 8 bis 16 Uhr bleiben für mehr Fettverlust",
+"Das Kalorienzählen stoppen und nur noch nach Uhrzeit essen",
+"Abends trainieren, um das Zeitfenster auszugleichen"
+],
+"warum": "Da 16:8 keinen klaren Zusatzvorteil bei Fett- oder Magermasse zeigte, zählt vor allem eine alltagstaugliche Routine."
+},
+"labor": {
+"frage": "In einer 12-Monats-RCT erhielten beide Gruppen ein Kaloriendefizit, eine zusätzlich ein frühes 8-h-Fenster. Wie ist die Differenz von −1,8 kg einzuordnen?",
+"richtig": "Statistisch nicht signifikant, das Konfidenzintervall schließt null ein",
+"falsch": [
+"Ein klar belegter Effekt für das frühe Zeitfenster",
+"Ein Beweis dafür, dass Magermasse stärker verloren geht",
+"Nur ein Ergebnis fehlender Completers in der Kontrollgruppe"
+],
+"warum": "Mit p=0,11 und einem 95-%-KI von −4,0 bis 0,4 kg ließ sich kein signifikanter Zusatznutzen belegen."
+}
+}
+},
+{
+"id": "FAST-104",
+"karte": {
+"kopf": "Erwachsene · 99 Studien verglichen",
+"titel": "Jeden zweiten Tag fasten bringt kurzfristig etwas mehr Verlust",
+"titel_hervor": "kurzfristig etwas mehr Verlust",
+"setup": "Fast 100 Studien verglichen 16:8, 5:2, jeden zweiten Tag fasten, tägliches Kaloriensparen und normales Essen ohne Vorgabe.",
+"zahl": {
+"label": "Vorteil jeden-2.-Tag-Fasten vs. Diät",
+"wert": "−1,29 kg",
+"alltag": ""
+},
+"kern": [
+"Alle Fastenformen senkten das Gewicht gegenüber freiem Essen deutlich",
+"Jeden zweiten Tag fasten lag knapp vor 16:8, 5:2 und täglicher Diät",
+"Bei Langzeit-Blutzucker und HDL-Cholesterin gab es keinen Unterschied"
+],
+"grenze": "Die meisten der 99 Studien liefen unter 24 Wochen; im Alltag sind strenge Tage schwer durchzuhalten.",
+"fuer_dich": "Du wählst zwischen 16:8, 5:2 und jeden zweiten Tag fasten? Alle wirken – wähle die Form, die du langfristig durchhältst.",
+"labor": {
+"design": "Systematisches Review & Netzwerk-Meta-Analyse (99 RCTs; 76 <24 Wo., 17 >=24 Wo.)",
+"teilnehmer": "6.582 Erwachsene (gesund oder mit erhöhtem Risiko)",
+"ergebnis": "ADF vs. CER: −1,29 kg (−1,99 bis −0,59); ADF vs. TRE: −1,69 kg; ADF vs. 5:2: −1,05 kg"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du vergleicht 16:8, 5:2 und jeden zweiten Tag fasten miteinander. Welche Form funktioniert überhaupt beim Abnehmen?",
+"richtig": "Alle drei senken das Gewicht gegenüber normalem Essen",
+"falsch": [
+"Nur jeden zweiten Tag fasten führt zu Gewichtsverlust",
+"Nur 16:8 wirkt, während 5:2 kaum Effekte zeigt",
+"Keine der Formen hilft mehr als freies Essen"
+],
+"warum": "In fast 100 Studien reduzierten alle gängigen Formen des Intervallfastens das Gewicht gegenüber freiem Essen."
+},
+"plus": {
+"frage": "Jeden zweiten Tag fasten zeigte kurzfristig einen kleinen Gewichtsvorteil gegenüber 16:8 und normaler Diät. Was solltest du bei der Wahl bedenken?",
+"richtig": "Der Vorteil ist klein, strenge Fastentage sind langfristig schwerer",
+"falsch": [
+"Jeden zweiten Tag fasten verbessert den Langzeit-Blutzucker stark",
+"16:8 wirkt im Vergleich zu normalen Diäten fast gar nicht",
+"Der Vorteil wächst erst nach über einem Jahr deutlich an"
+],
+"warum": "Der Vorsprung lag im Schnitt bei rund einem Kilo und stammte vor allem aus kürzeren Studien unter 24 Wochen."
+},
+"labor": {
+"frage": "Eine Netzwerk-Meta-Analyse aus 99 RCTs verglich ADF, TRE, 5:2 und CER. Welche methodische Einschränkung relativiert den leichten Vorteil von ADF?",
+"richtig": "Die große Mehrheit der eingeschlossenen Studien dauerte unter 24 Wochen",
+"falsch": [
+"Es wurden keine randomisierten Studien mit einbezogen",
+"ADF wurde nie direkt oder indirekt mit CER verglichen",
+"Die Teilnehmerzahl war mit unter 500 Personen sehr klein"
+],
+"warum": "76 von 99 Studien liefen kürzer als 24 Wochen, weshalb die langfristige Überlegenheit und Adhärenz begrenzt belegt sind."
+}
+}
+},
+{
+"id": "FAST-105",
+"karte": {
+"kopf": "Schichtarbeiter · 12-Wochen-Studie",
+"titel": "Ein 10-Stunden-Essensfenster klappt sogar bei 24-Stunden-Schichten",
+"titel_hervor": "sogar bei 24-Stunden-Schichten",
+"setup": "Feuerwehrleute im 24-Stunden-Schichtdienst verkürzten ihr tägliches Essensfenster 12 Wochen lang selbstständig auf rund 10 Stunden.",
+"zahl": {
+"label": "Tatsächliches Essensfenster im Schnitt",
+"wert": "11,1 Std.",
+"alltag": "3 Std. kürzer als vorher"
+},
+"kern": [
+"Das 14:10-Fenster ließ sich im harten Schichtalltag gut umsetzen",
+"Lebensqualität und bestimmte Blutfett-Werte verbesserten sich",
+"Bei erhöhtem Risiko sanken zudem Blutdruck und Langzeit-Blutzucker"
+],
+"grenze": "In der Feuerwehr-Gruppe waren nur 9 % Frauen, und das 10-Stunden-Ziel wurde im Mittel leicht überschritten.",
+"fuer_dich": "Du arbeitest im Schichtdienst oder startest neu mit Fasten? Beginne mit 14:10 statt direkt mit 16:8 oder einer Mahlzeit.",
+"labor": {
+"design": "Randomisierte kontrollierte Studie (12 Wochen) plus klinische Interventionsstudie, 10-h-TRE",
+"teilnehmer": "137 Feuerwehrleute im 24-h-Schichtdienst (9 % Frauen) & Risikopatienten",
+"ergebnis": "Essensfenster 14,13 h auf 11,13 h verkürzt; VLDL-Größe, HbA1c und DBP bei Risiko gesenkt"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du arbeitest in wechselnden Schichten und möchtest Essenspausen testen. Welches Zeitfenster gilt dafür als besonders alltagstauglich?",
+"richtig": "Ein moderates Fenster von etwa 10 Stunden Essen und 14 Stunden Pause",
+"falsch": [
+"Nur eine einzige Mahlzeit am Tag nach der Schicht",
+"Mindestens 18 Stunden Pause an jedem Arbeitstag",
+"Schichtarbeiter sollten gar keine festen Essensfenster nutzen"
+],
+"warum": "Ein 10-Stunden-Essensfenster erwies sich selbst bei 24-Stunden-Schichten als sicher, machbar und günstig für Risikowerte."
+},
+"plus": {
+"frage": "Als Fasten-Einsteiger mit unregelmäßigen Arbeitszeiten schwankst du zwischen 14:10 und 16:8. Was spricht für den Start mit 14:10?",
+"richtig": "Hohe Alltagstauglichkeit bei guten Effekten auf Blutdruck und Blutfette",
+"falsch": [
+"14:10 verbrennt im Schlaf mehr Fett als 16:8",
+"Bei 14:10 musst du gar nicht auf deine Gesamtkalorien achten",
+"14:10 baut ohne Training mehr Muskelmasse auf als 16:8"
+],
+"warum": "Schon eine Verkürzung um rund drei Stunden auf etwa 10 bis 11 Stunden brachte messbare Verbesserungen und war gut durchhaltbar."
+},
+"labor": {
+"frage": "In einer 12-wöchigen RCT verkürzten 137 Schichtarbeiter ihr Essensfenster von etwa 14 auf rund 11 Stunden. Welche Grenze schränkt die Übertragbarkeit ein?",
+"richtig": "Die Kohorte bestand zu über 90 % aus Männern",
+"falsch": [
+"Es gab keine Kontrollgruppe in der Hauptstudie",
+"Das Essensfenster konnte im Schnitt gar nicht verkürzt werden",
+"Blutdruck und HbA1c verschlechterten sich bei Risikopersonen"
+],
+"warum": "Der Frauenanteil in der Feuerwehr-Kohorte lag bei nur 9 %, und im Mittel wurde ein 11,1-Stunden-Fenster eingehalten."
+}
+}
+},
+{
+"id": "FAST-106",
+"karte": {
+"kopf": "Schlanke Erwachsene · Kurze Vergleichsstudie",
+"titel": "Eine Mahlzeit am Tag baut kurz Fett ab, erhöht aber Cholesterin",
+"titel_hervor": "erhöht aber Cholesterin",
+"setup": "Schlanke Erwachsene aßen je 11 Tage lang dieselben Kalorien – einmal auf drei Mahlzeiten verteilt, einmal alles abends auf einmal.",
+"zahl": {
+"label": "Gewichtsverlust nach 11 Tagen",
+"wert": "−1,4 kg",
+"alltag": "vs. −0,5 kg bei 3 Mahlzeiten"
+},
+"kern": [
+"Erste Hinweise: Eine Mahlzeit senkte kurzfristig Gewicht und Fettmasse",
+"Kraft und Magermasse blieben in den 11 Tagen weitgehend stabil",
+"Gleichzeitig stieg das Nüchtern-LDL-Cholesterin spürbar an"
+],
+"grenze": "Bisher wenig untersucht: nur 11 schlanke Personen über 11 Tage; Langzeitdaten fehlen.",
+"fuer_dich": "Du willst nur eine Mahlzeit am Tag essen? Achte auf mögliche Cholesterin-Anstiege und darauf, genug Eiweiß und Nährstoffe zu schaffen.",
+"labor": {
+"design": "Randomisierte eukalorische Crossover-Studie, je 11 Tage OMAD (abends) vs. 3 Mahlzeiten/Tag",
+"teilnehmer": "11 schlanke gesunde Erwachsene",
+"ergebnis": "Gewicht −1,4 vs. −0,5 kg (p=0,03); Fett −0,7 vs. −0,1 kg; LDL-C 2,8 vs. 2,4 mmol/L (p=0,02)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du überlegst, alle Tageskalorien in einer einzigen Mahlzeit am Abend zu essen. Auf welches mögliche Risiko weisen erste Untersuchungen hin?",
+"richtig": "Das ungünstige LDL-Cholesterin im Blut kann ansteigen",
+"falsch": [
+"Die Körperkraft bricht schon nach wenigen Tagen stark ein",
+"Man nimmt dadurch sofort mehr Körperfett zu",
+"Der Körper verlernt die Fettverbrennung vollständig"
+],
+"warum": "Nach 11 Tagen mit nur einer Abendmahlzeit sanken zwar Gewicht und Fett etwas, aber das Nüchtern-LDL-Cholesterin stieg an."
+},
+"plus": {
+"frage": "Ein Trainingskollege will auf OMAD (eine Mahlzeit pro Tag) umstellen. Welche beiden Punkte solltest du ihm fairerweise mitgeben?",
+"richtig": "Mögliches LDL-Risiko und schwierige Protein- und Nährstoffabdeckung",
+"falsch": [
+"Sofortiger Kraftverlust und geringere Fettverbrennung",
+"Kompletter Muskelabbau schon in den ersten zwei Wochen",
+"Sicherer langfristiger Abnehmerfolg ohne Nebenwirkungen"
+],
+"warum": "Erste Kurzzeitdaten zeigen steigendes LDL-Cholesterin, und in einer Mahlzeit sind Protein- und Mikronährstoffziele schwer zu decken."
+},
+"labor": {
+"frage": "In einer eukalorischen Crossover-Studie aßen 11 gesunde Personen je 11 Tage lang OMAD oder 3 Mahlzeiten. Wie ist die Aussagekraft einzuordnen?",
+"richtig": "Niedrig für Langzeiteffekte wegen sehr kleiner Stichprobe und kurzer Dauer",
+"falsch": [
+"Hoch für Langzeitfolgen dank über 12 Wochen Beobachtungszeit",
+"Beweisend für dauerhaften Muskelschutz bei Übergewichtigen",
+"Unbrauchbar, weil die Kalorienzufuhr nicht kontrolliert wurde"
+],
+"warum": "Mit nur 11 schlanken Teilnehmenden über 11 Tage liefert die Studie erste Hinweise, aber keine belastbaren Langzeitdaten."
+}
+}
+},
+{
+"id": "FAST-107",
+"karte": {
+"kopf": "Erwachsene ohne Krafttraining · Meta-Analysen",
+"titel": "Wer ohne Krafttraining fastet, verliert im Schnitt fettfreie Masse",
+"titel_hervor": "verliert im Schnitt fettfreie Masse",
+"setup": "Große Studienauswertungen prüften, wie sich zeitbegrenztes Essen ohne gezieltes Krafttraining und Proteinziel auf den Körper auswirkt.",
+"zahl": {
+"label": "Verlust fettfreier Masse im Schnitt",
+"wert": "−0,84 kg",
+"alltag": "je nach Fenster −0,6 bis −1,3 kg"
+},
+"kern": [
+"Sowohl allein als auch mit Kaloriensparen sank die fettfreie Masse",
+"Das traf auf frühe, späte und sehr kurze Essensfenster unter 8 Stunden zu",
+"Zwar schmolz auch Körperfett, doch fehlte der Schutzreiz für Muskeln"
+],
+"grenze": "Untersucht wurde Fasten ohne gezieltes Krafttraining und ohne festgelegte hohe Eiweißzufuhr.",
+"fuer_dich": "Du fastest zeitbegrenzt, trainierst aber keine Gewichte? Plane mindestens zweimal Krafttraining pro Woche und reichlich Eiweiß ein.",
+"labor": {
+"design": "Systematische Reviews & (Netzwerk-)Meta-Analysen, TRE allein und TRE+ER vs. Standarddiät",
+"teilnehmer": "Erwachsene ohne gezieltes Krafttraining (u. a. 20 RCTs, n=1.242)",
+"ergebnis": "FFM Gesamt-TRE −0,84 kg (−1,27 bis −0,41); eTRE −1,27 kg; <8h −1,06 kg; TRE allein −0,58 kg"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du startest mit Intervallfasten, machst aber kein Krafttraining und achtest nicht auf Eiweiß. Was passiert im Schnitt neben dem Fettabbau?",
+"richtig": "Du verlierst meist auch spürbar fettfreie Masse",
+"falsch": [
+"Deine Muskeln bleiben durch das Fasten automatisch geschützt",
+"Du baust durch die langen Essenspausen neue Muskeln auf",
+"Dein Körper baut ausschließlich Bauchfett ab"
+],
+"warum": "Ohne Krafttraining und Proteinziel sank die fettfreie Masse beim Intervallfasten im Schnitt um etwa 0,6 bis 1,3 kg."
+},
+"plus": {
+"frage": "Du willst 16:8 starten, trainierst bisher aber nur locker Ausdauer. Wie schützt du deine Muskelmasse am besten?",
+"richtig": "Mindestens zweimal Krafttraining pro Woche und höheres Proteinziel",
+"falsch": [
+"Das Essensfenster auf unter sechs Stunden verkürzen",
+"Das Essensfenster möglichst spät auf den Abend legen",
+"Die Ausdauereinheiten nüchtern und ohne Snacks verlängern"
+],
+"warum": "Krafttraining und eine hohe Proteinzufuhr ab etwa 1,6 g/kg liefern den fehlenden Schutzreiz für die fettfreie Masse."
+},
+"labor": {
+"frage": "Zwei Meta-Analysen untersuchten zeitbegrenztes Essen ohne Krafttraining im Vergleich zu Standarddiäten. Wie konsistent war der Effekt auf fettfreie Masse?",
+"richtig": "Signifikanter Rückgang über frühe, späte und sehr kurze Fenster hinweg",
+"falsch": [
+"Ein Rückgang trat nur bei spätem Essen am Abend auf",
+"Nur in Kombination mit Kalorienreduktion ging FFM verloren",
+"Es zeigte sich kein signifikanter Effekt auf die fettfreie Masse"
+],
+"warum": "Sowohl Gesamt-TRE als auch frühe, späte und <8-Stunden-Fenster zeigten signifikante FFM-Verluste bei hoher GRADE-Evidenz."
+}
+}
+},
+{
+"id": "FAST-108",
+"karte": {
+"kopf": "Übergewichtige Erwachsene · 12-Wochen-Studie",
+"titel": "Spätes 16:8 ohne Proteinziel ging vor allem auf die Muskelmasse",
+"titel_hervor": "vor allem auf die Muskelmasse",
+"setup": "Übergewichtige Erwachsene aßen 12 Wochen lang nur zwischen 12 und 20 Uhr ohne Kalorien-, Eiweiß- oder Trainingsvorgabe.",
+"zahl": {
+"label": "Anteil Magermasse am Gewichtsverlust",
+"wert": "≈ 65 %",
+"alltag": "−1,1 kg von −1,7 kg Gesamtverlust"
+},
+"kern": [
+"Der gesamte Gewichtsverlust fiel kaum größer aus als bei drei Mahlzeiten",
+"Besonders die Muskelmasse in Armen und Beinen nahm messbar ab",
+"Ohne Steuerung sank die Eiweißzufuhr und Aktivität vermutlich unbemerkt"
+],
+"grenze": "Eiweißmenge und Bewegung wurden nicht vorgegeben; die Untersuchung dauerte 12 Wochen.",
+"fuer_dich": "Du nutzt 16:8 frei nach Gefühl ohne Kalorienzählen? Behalte zumindest dein tägliches Eiweiß im Blick, um Muskeln zu schützen.",
+"labor": {
+"design": "Randomisierte kontrollierte Studie, 12 Wochen, 16:8 (12–20 Uhr) ad libitum vs. 3 Mahlzeiten",
+"teilnehmer": "116 Übergewichtige (ca. 46 J.), davon 50 in der DXA-Gruppe",
+"ergebnis": "Gewicht −0,94 vs. −0,68 kg (p=0,63); DXA: Lean Mass −1,10 kg; ALM-Diff. −0,47 kg (p=0,009)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du lässt 12 Wochen lang das Frühstück weg und isst frei zwischen 12 und 20 Uhr, ohne auf Eiweiß oder Sport zu achten. Was droht laut einer Untersuchung?",
+"richtig": "Wenig Gewichtsverlust, davon ein großer Teil Magermasse",
+"falsch": [
+"Starker Fettabbau bei vollem Erhalt aller Muskeln",
+"Deutlicher Muskelaufbau durch das lange Fasten am Morgen",
+"Mehr Gewichtsverlust als bei jeder anderen Diätform"
+],
+"warum": "Ohne Kalorien-, Eiweiß- oder Trainingsvorgabe bestand rund zwei Drittel des kleinen Gewichtsverlusts aus Magermasse."
+},
+"plus": {
+"frage": "Du möchtest 16:8 ohne genaues Kalorien-Tracking nutzen. Welche Mindestmaßnahme hilft gegen ein schlechtes Muskel-zu-Fett-Verhältnis?",
+"richtig": "Tägliches Protein-Tracking aktivieren und Krafttraining einplanen",
+"falsch": [
+"Das Essensfenster auf 14 bis 20 Uhr weiter verkürzen",
+"Kohlenhydrate abends vollständig aus dem Plan streichen",
+"Morgens zusätzlich nüchtern locker spazieren gehen"
+],
+"warum": "Gezielte Proteinzufuhr wirkt dem unbemerkten Verlust an Skelettmuskelmasse bei freiem 16:8 entgegen."
+},
+"labor": {
+"frage": "In einer 12-Wochen-RCT mit DXA-Messung (n=50) wurde freies 16:8 (12–20 Uhr) mit drei Mahlzeiten verglichen. Was zeigte die Körperzusammensetzung?",
+"richtig": "Signifikanter Verlust an appendikulärer Muskelmasse ohne Abnehmvorteil",
+"falsch": [
+"Signifikant höherer Fettverlust bei unveränderter Magermasse",
+"Gleichmäßiger Abbau von je 50 % Fett und Magermasse",
+"Keine Unterschiede in keinem der gemessenen DXA-Parameter"
+],
+"warum": "Die appendikuläre Magermasse sank signifikant stärker (−0,47 kg, p=0,009), während das Gesamtgewicht sich kaum unterschied."
+}
+}
+},
+{
+"id": "FAST-109",
+"karte": {
+"kopf": "Krafttrainierende · Mehrere Meta-Analysen",
+"titel": "Intervallfasten plus Krafttraining schützt Muskeln beim Fettabbau",
+"titel_hervor": "schützt Muskeln beim Fettabbau",
+"setup": "Mehrere Auswertungen verglichen Krafttraining mit Intervallfasten gegen reines Krafttraining bei normalem Essensrhythmus.",
+"zahl": {
+"label": "Zusätzlicher Fettverlust vs. nur Training",
+"wert": "−1,52 kg",
+"alltag": "bei stabilem Muskelanteil"
+},
+"kern": [
+"Die Kombination baute deutlich mehr Körperfett ab als Training allein",
+"Fettfreie Masse und Maximalkraft blieben dabei vollständig erhalten",
+"Besonders gut belegt ist die Kombination für 16:8 im Fettabbau"
+],
+"grenze": "Die meisten Studien liefen 4 bis 12 Wochen; für maximalen Muskelaufbau im Überschuss fehlen Daten.",
+"fuer_dich": "Du willst definieren und trainierst zwei- bis dreimal pro Woche Kraft? Dann passt 16:8 gut, um Fett abzubauen und Muskeln zu halten.",
+"labor": {
+"design": "Systematische Reviews & (Netzwerk-)Meta-Analysen, 4–12 Wochen, IF/TRE + RT vs. RT allein",
+"teilnehmer": "Trainierte und Untrainierte im Krafttraining",
+"ergebnis": "Fettmasse WMD −1,36 bis −1,52 kg (TRE+RT vs. Kontrolle −2,79 kg); FFM SMD −0,20 (p=0,594)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du verbindest Intervallfasten mit regelmäßigem Krafttraining. Was passiert im Schnitt mit Fett und Muskeln im Vergleich zu Training allein?",
+"richtig": "Du verlierst mehr Körperfett, während Muskeln und Kraft bleiben",
+"falsch": [
+"Du verlierst deutlich mehr Muskeln und Kraft als ohne Fasten",
+"Das Fasten verhindert jeden zusätzlichen Fettabbau beim Sport",
+"Du baust schneller Muskeln auf als bei normalem Essen"
+],
+"warum": "Krafttraining liefert den nötigen Reiz, sodass Muskeln und Maximalkraft trotz des zusätzlichen Fettabbaus erhalten bleiben."
+},
+"plus": {
+"frage": "Du startest einen 8-wöchigen Cut mit dreimal Krafttraining pro Woche und überlegst 16:8 einzubauen. Wie passt das zusammen?",
+"richtig": "Gut geeignet für Fettabbau bei stabilem Muskelerhalt",
+"falsch": [
+"Ungeeignet, weil Krafttraining im Fasten immer Kraft kostet",
+"Nur sinnvoll, wenn du das Trainingsvolumen stark reduzierst",
+"Optimal für maximalen Muskelaufbau im großen Überschuss"
+],
+"warum": "In mehreren Meta-Analysen blieben fettfreie Masse und Maximalkraft bei 16:8 plus Krafttraining stabil, während Fett sank."
+},
+"labor": {
+"frage": "Meta-Analysen verglichen 4 bis 12 Wochen Intervallfasten plus Krafttraining mit Krafttraining allein. Wie fielen die Effekte auf Fettmasse und FFM aus?",
+"richtig": "Signifikante Fettmassenreduktion bei statistisch unveränderter FFM",
+"falsch": [
+"Signifikante Reduktion sowohl von Fettmasse als auch von FFM",
+"Kein Unterschied bei Fettmasse, aber deutlicher Zuwachs an FFM",
+"Hohe Heterogenität beim FFM-Erhalt verhinderte eine Aussage"
+],
+"warum": "Die Fettmasse sank signifikant (−1,36 bis −2,79 kg), während die FFM unverändert blieb (p=0,594; I²=0 %)."
+}
+}
+},
+{
+"id": "FAST-110",
+"karte": {
+"kopf": "Kraftsportler · Drei Kontrollstudien",
+"titel": "Mit genug Eiweiß klappen Kraft und Muskeln auch beim Fasten",
+"titel_hervor": "auch beim Fasten",
+"setup": "Krafttrainierende aßen 1,4 bis 1,6 g Eiweiß pro Kilo Körpergewicht – verteilt auf 16:8 oder 5:2 im Vergleich zu normalem Essen.",
+"zahl": {
+"label": "Zuwachs fettfreier Masse unter 16:8",
+"wert": "+2–3 %",
+"alltag": "ähnlich wie ohne Fasten"
+},
+"kern": [
+"Kraft und Magermasse entwickelten sich unter 16:8 und 5:2 ähnlich",
+"Bei 5:2 fiel der Muskelquerschnitt allerdings etwas kleiner aus als täglich",
+"In den 16:8-Studien fand das Training innerhalb des Essensfensters statt"
+],
+"grenze": "Die einzelnen Gruppen waren mit 24 bis 40 Teilnehmenden eher klein bis mittelgroß.",
+"fuer_dich": "Du kombinierst 16:8 oder 5:2 mit Krafttraining? Peile 1,6 bis 2,2 g Eiweiß pro Kilo an und trainiere möglichst im Essensfenster.",
+"labor": {
+"design": "Drei randomisierte kontrollierte Studien (u. a. 12 Wo.), 16:8 bzw. 5:2 + RT vs. normale Zufuhr",
+"teilnehmer": "Krafttrainierende Männer und aktive Frauen (n=24 bis n=40 pro Studie)",
+"ergebnis": "16:8 (~1,6 g/kg): +2–3 % FFM wie Kontrolle; 5:2 (1,4 g/kg): gleiche Kraft/LBM, kleinerer pQCT-Querschnitt"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du machst Krafttraining und isst nach 16:8. Was ist besonders wichtig, damit Kraft und Muskeln sich ähnlich gut entwickeln wie sonst?",
+"richtig": "Im Essensfenster insgesamt genug Eiweiß zu essen",
+"falsch": [
+"Vor dem Training möglichst lange gar nichts zu essen",
+"Möglichst viele kleine Snacks über den Abend zu verteilen",
+"Auf Kohlenhydrate im Essensfenster komplett zu verzichten"
+],
+"warum": "Bei einer ausreichenden täglichen Eiweißmenge entwickelten sich Kraft und Magermasse trotz Fastenfenster ähnlich."
+},
+"plus": {
+"frage": "Du nutzt 16:8 im Krafttraining und willst deine Leistung absichern. Wann legst du deine Einheit am klügsten?",
+"richtig": "Ins Essensfenster oder direkt vor eine proteinreiche Mahlzeit",
+"falsch": [
+"Möglichst viele Stunden vor der ersten Mahlzeit des Tages",
+"Erst kurz nach Beginn der langen Fastenphase am Abend",
+"Das Timing spielt neben der Proteinmenge gar keine Rolle"
+],
+"warum": "In den erfolgreichen 16:8-Studien wurde im Essensfenster trainiert und täglich reichlich Protein zugeführt."
+},
+"labor": {
+"frage": "Drei RCTs verglichen 16:8 oder 5:2 plus Krafttraining (1,4–1,6 g/kg Protein) mit täglicher Zufuhr. Welcher feine Unterschied zeigte sich bei 5:2?",
+"richtig": "Gleiche Kraft und Magermasse, aber kleinerer Muskelquerschnitt im pQCT",
+"falsch": [
+"Deutlicher Verlust an Maximalkraft trotz hoher Proteinzufuhr",
+"Stärkerer Muskelquerschnitt unter 5:2 als bei täglicher Diät",
+"Keinerlei Zuwachs an Magermasse in allen Fastengruppen"
+],
+"warum": "Bei 5:2 über 12 Wochen stiegen Kraft und LBM gleich, doch tägliche Kalorienreduktion erzielte einen größeren pQCT-Querschnitt."
+}
+}
+},
+{
+"id": "FAST-111",
+"karte": {
+"kopf": "Junge Kraftsportler · Doppelblind-Studie",
+"titel": "Der Körper nutzt auch 100 Gramm Eiweiß in einer Mahlzeit",
+"titel_hervor": "auch 100 Gramm Eiweiß",
+"setup": "Nach einem Ganzkörper-Krafttraining bekamen junge Männer 0, 25 oder 100 g Milchprotein; über 12 Stunden wurde der Muskelaufbau gemessen.",
+"zahl": {
+"label": "Höhere Muskelbildung in Std. 4–12",
+"wert": "+40 %",
+"alltag": "bei 100 g vs. 25 g Eiweiß"
+},
+"kern": [
+"In den ersten 4 Stunden lag der Muskelaufbau schon rund 20 % höher",
+"Der Effekt hielt volle 12 Stunden an, ohne viel Eiweiß zu verschwenden",
+"Rund 13 g der 100-g-Portion landeten direkt im Muskelprotein"
+],
+"grenze": "Getestet wurde langsam verdauliches Milchprotein bei jungen Männern nach einer einzelnen Einheit.",
+"fuer_dich": "Du isst beim Fasten nur ein oder zwei große Portionen? Zähle auch 60 bis 100 g Eiweiß pro Mahlzeit voll zu deinem Tagesziel.",
+"labor": {
+"design": "Randomisierte, doppelt verblindete Vierfach-Isotopentracer-Studie, 12 h nach Ganzkörper-RT",
+"teilnehmer": "36 junge krafttrainierende Männer (12 pro Gruppe)",
+"ergebnis": "MyoPS 100 g vs. 25 g: ~+20 % (0–4 h), ~+40 % (4–12 h); ~13 g eingebaut; Oxidation kaum erhöht"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Stimmt der Mythos, dass der Körper nach dem Sport höchstens 30 Gramm Eiweiß pro Mahlzeit für Muskeln nutzen kann?",
+"richtig": "Nein, auch eine sehr große Portion wirkt stärker und viel länger",
+"falsch": [
+"Ja, alles über 30 Gramm wird direkt ungenutzt verbrannt",
+"Ja, große Portionen bremsen den Muskelaufbau nach dem Sport",
+"Nur wer über 50 Jahre alt ist, nutzt mehr als 30 Gramm"
+],
+"warum": "Nach 100 g Milchprotein lief der Muskelaufbau stärker und volle 12 Stunden lang weiter, ohne nennenswerten Überschussverlust."
+},
+"plus": {
+"frage": "Durch 18:6 passen bei dir nur zwei Mahlzeiten mit je 70 g Protein in den Tag. Musst du dein Tracking bei 40 g pro Mahlzeit kappen?",
+"richtig": "Nein, rechne die vollen 70 g auf dein Tagesproteinziel an",
+"falsch": [
+"Ja, weil maximal 40 g pro Portion verwertet werden können",
+"Ja, den Rest solltest du durch zusätzliche Shakes ausgleichen",
+"Nur wenn die Mahlzeit aus reinem schnellen Whey besteht"
+],
+"warum": "Da keine feste Obergrenze für die Muskelproteinsynthese gefunden wurde, zählt das volle Protein großer Mahlzeiten fürs Tagesziel."
+},
+"labor": {
+"frage": "Eine Doppelblind-Tracer-Studie verglich 0, 25 und 100 g Milchprotein über 12 Stunden nach Krafttraining. Was zeigte sich bei Muskelproteinsynthese und Oxidation?",
+"richtig": "Stärkere, 12 h anhaltende MyoPS ohne nennenswerten Oxidationsanstieg",
+"falsch": [
+"Gleiche MyoPS ab Stunde 4, aber stark erhöhte Aminosäureoxidation",
+"Höhere MyoPS nur in den ersten 2 Stunden nach der Einnahme",
+"Über die Hälfte der 100 g wurde direkt im Muskel eingebaut"
+],
+"warum": "Die MyoPS lag in Stunde 4–12 rund 40 % über der 25-g-Dosis, während die Aminosäureoxidation vernachlässigbar blieb."
+}
+}
+},
+{
+"id": "FAST-112",
+"karte": {
+"kopf": "Ausdauer- und Hybrid-Sportler · Querschnitt",
+"titel": "Lange Defizitphasen am Tag stören Hormone trotz voller Tageskalorien",
+"titel_hervor": "stören Hormone trotz voller Tageskalorien",
+"setup": "Bei Ausdauer- und Hybrid-Sportlern wurde stündlich berechnet, wie lange sie am Tag im Energiedefizit lagen – und mit Hormonen verglichen.",
+"zahl": {
+"label": "Stunden im starken Defizit (Zyklusstörung)",
+"wert": "21,8 Std.",
+"alltag": "vs. 17,6 Std. ohne Störung"
+},
+"kern": [
+"Auch bei ähnlichen Tageskalorien drückten lange Essenspausen den Ruheumsatz",
+"Bei Frauen hingen lange Defizite mit Zyklusstörungen und mehr Cortisol zusammen",
+"Bei Männern sank bei großen Stunden-Defiziten das Testosteron-Cortisol-Verhältnis"
+],
+"grenze": "Momentaufnahme ohne Langzeit-Eingriff – ob die Pausen allein die Ursache sind, ist nicht endgültig bewiesen.",
+"fuer_dich": "Du trainierst viel Ausdauer oder Hybrid? Vermeide lange 16-Stunden-Fastenphasen und iss rund um dein Training Kohlenhydrate und Eiweiß.",
+"labor": {
+"design": "Querschnitts-Reanalysen mit stündlicher Energiebilanz-Modellierung, DXA, Kalorimetrie & Hormonen",
+"teilnehmer": "25 Sportlerinnen und 31 Sportler (Ausdauer/Hybrid)",
+"ergebnis": "WDEB <−300 kcal: 21,8 vs. 17,6 h (p=0,043); RMR r=−0,472, Östradiol r=−0,516, Cortisol r=0,463"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du trainierst viel und isst erst spät am Tag alle deine Kalorien auf einmal nach. Reicht es dem Körper, wenn die Tagessumme am Ende stimmt?",
+"richtig": "Nicht unbedingt – lange Defizitphasen am Tag können Hormone stressen",
+"falsch": [
+"Ja, für Hormone und Ruheumsatz zählt ausschließlich die Tagessumme",
+"Ja, lange Pausen am Tag erhöhen sogar den Ruheumsatz",
+"Probleme entstehen erst, wenn man mehrere Tage nichts isst"
+],
+"warum": "Selbst bei ähnlicher 24-Stunden-Bilanz hingen viele Stunden im Energiedefizit mit mehr Cortisol und gestörtem Hormonstatus zusammen."
+},
+"plus": {
+"frage": "Du fährst ein hohes Hybrid-Trainingsvolumen und trainierst morgens oft nüchtern, sodass du lange im Defizit hängst. Was solltest du ändern?",
+"richtig": "Lange Fastenfenster streichen und ums Training Carbs plus Protein essen",
+"falsch": [
+"Weiter nüchtern trainieren und abends noch größere Portionen essen",
+"Das Fastenfenster auf 18:6 verlängern, um Fett besser zu nutzen",
+"Nur das Protein erhöhen, aber rund ums Training weiter fasten"
+],
+"warum": "Frühe Energie rund ums Training verhindert stundenlange starke Defizite, die Ruheumsatz und Hormonbalance belasten können."
+},
+"labor": {
+"frage": "Querschnitts-Reanalysen modellierten die stündliche Energiebilanz (WDEB) bei Ausdauerathleten trotz ähnlicher 24-h-Energieverfügbarkeit. Was war auffällig?",
+"richtig": "Mehr Stunden unter −300 kcal korrelierten mit tieferem RMR und mehr Cortisol",
+"falsch": [
+"Die 24-h-Energieverfügbarkeit erklärte alle Hormonunterschiede allein",
+"Lange untertägige Defizite traten nur bei zu niedriger Proteinzufuhr auf",
+"Das Längsschnittdesign bewies einen kausalen Effekt über zwölf Monate"
+],
+"warum": "Stündliche Defizite unter −300 kcal korrelierten negativ mit RMR und Östradiol sowie positiv mit Cortisol – im Querschnittsdesign."
+}
+}
+},
+{
+"id": "FAST-113",
+"karte": {
+"kopf": "Erwachsene mit Risiko · Netzwerk-Analysen",
+"titel": "Frühes Essen verbessert Blutzucker und Gewicht stärker als spätes",
+"titel_hervor": "stärker als spätes",
+"setup": "Zwei große Studienvergleiche stellten frühes Intervallfasten (Ende vor 15–17 Uhr) spätem Essen (Ende nach 19 Uhr) und normaler Kost gegenüber.",
+"zahl": {
+"label": "Mehr Gewichtsverlust früh vs. spät",
+"wert": "−1,15 kg",
+"alltag": ""
+},
+"kern": [
+"Frühes Essen senkte Nüchterninsulin und Insulinresistenz deutlich stärker",
+"Auch der Nüchtern-Blutzucker sank gegenüber normaler Kost nur bei frühem Essen",
+"Spätes Essen schnitt bei den Zuckerwerten im Vergleich kaum besser ab"
+],
+"grenze": "Bei einzelnen Zuckerwerten schwankten die Ergebnisse zwischen den Studien sehr stark.",
+"fuer_dich": "Dir sind Blutzucker und Stoffwechsel besonders wichtig? Beende dein Essensfenster lieber früh bis mittleren Abend statt das Frühstück wegzulassen.",
+"labor": {
+"design": "Systematische Reviews & Netzwerk-Meta-Analysen von RCTs, eTRE vs. lTRE vs. Standarddiät",
+"teilnehmer": "Erwachsene mit Übergewicht oder metabolischen Risikofaktoren",
+"ergebnis": "eTRE vs. lTRE: Gewicht −1,15 kg (−1,86 bis −0,45), Insulin −3,32 µIU/ml; HOMA-IR −0,44"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du willst dein Essensfenster auf 8 Stunden verkürzen. Ist es für Blutzucker und Gewicht günstiger, eher früh am Tag oder erst ab mittags zu essen?",
+"richtig": "Eher früh am Tag zu essen und abends früher aufzuhören",
+"falsch": [
+"Das Frühstück wegzulassen und abends spät zu essen",
+"Die Tageszeit macht für den Blutzucker keinerlei Unterschied",
+"Spätes Essen senkt das Insulin im Schnitt doppelt so stark"
+],
+"warum": "Frühe Essensfenster senkten Nüchterninsulin, Insulinresistenz und Gewicht im Schnitt stärker als späte Fenster."
+},
+"plus": {
+"frage": "Dein Hauptziel beim Intervallfasten sind bessere Stoffwechselwerte und Fettabbau. Wie legst du dein Essensfenster idealerweise?",
+"richtig": "Früh oder mittel mit letzter Mahlzeit spätestens am frühen Abend",
+"falsch": [
+"Klassisches Frühstück-Auslassen mit Essen bis spät in die Nacht",
+"Jeden Tag spontan wechseln, je nach Hunger am Abend",
+"Erst nach dem Abendtraining mit der ersten Mahlzeit starten"
+],
+"warum": "Frühe bis mittlere Fenster bis höchstens 19 Uhr zeigten deutlich bessere Effekte auf Insulin und Blutzucker als spätes Essen."
+},
+"labor": {
+"frage": "Netzwerk-Meta-Analysen verglichen frühes (eTRE) mit spätem zeitbegrenztem Essen (lTRE). Welches Ergebnis war am robustesten belegt?",
+"richtig": "Niedrigeres Nüchterninsulin und etwas mehr Gewichtsverlust unter eTRE",
+"falsch": [
+"Überlegenheit von lTRE bei Nüchternglukose und Körpergewicht",
+"Niedrige Heterogenität bei HOMA-IR und HbA1c über alle Studien",
+"Kein Unterschied zwischen eTRE und Standarddiät bei Glukose"
+],
+"warum": "Für Gewicht (−1,15 kg) und Nüchterninsulin (−3,32 µIU/ml) zeigte eTRE vs. lTRE hohe Evidenz, trotz hoher Heterogenität bei HbA1c."
+}
+}
+},
+{
+"id": "FAST-114",
+"karte": {
+"kopf": "Übergewichtige · Meta-Analyse und Studien",
+"titel": "Frühes Intervallfasten senkt den Blutdruck und spart Kalorien",
+"titel_hervor": "senkt den Blutdruck",
+"setup": "Übergewichtige und Männer mit Prädiabetes nutzten frühe Essensfenster (etwa 7 bis 15 Uhr) im Vergleich zu längeren Essenszeiten.",
+"zahl": {
+"label": "Oberer Blutdruck im Schnitt gesenkt",
+"wert": "−6,16 mmHg",
+"alltag": "dazu rund 214 kcal/Tag gespart"
+},
+"kern": [
+"Sowohl der obere als auch der untere Blutdruck sanken messbar",
+"Bei Prädiabetes fiel der Blutdruck sogar ohne Gewichtsverlust",
+"Mit Beratung sparten Teilnehmende im Schnitt 214 kcal pro Tag extra"
+],
+"grenze": "In einer anderen Gesamtauswertung senkte tägliches Kaloriensparen den oberen Blutdruck insgesamt etwas stärker.",
+"fuer_dich": "Du wählst ein frühes Essensfenster und nimmst Blutdruck- oder Zuckermittel? Sprich Änderungen vorher ärztlich ab.",
+"labor": {
+"design": "Netzwerk-Meta-Analyse & RCTs (u. a. 14 Wochen, eTRE 7–15 Uhr + ER vs. >=12 h + ER)",
+"teilnehmer": "Erwachsene mit Adipositas (u. a. n=90) und Männer mit Prädiabetes",
+"ergebnis": "SBP eTRE −6,16 mmHg (−9,20 bis −3,12); 14-Wo.-RCT: −2,3 kg, −214 kcal/d, DBP −4 mmHg"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du isst mehrere Wochen lang nur von morgens bis zum frühen Nachmittag. Welcher Effekt zeigt sich neben dem Gewicht oft zusätzlich?",
+"richtig": "Der Blutdruck sinkt im Schnitt und man spart etwas Kalorien",
+"falsch": [
+"Der Blutdruck steigt durch den Stress des frühen Fastens an",
+"Man isst automatisch mehr Kalorien, um den Abend zu überstehen",
+"Ein Effekt auf den Blutdruck tritt erst nach starkem Abnehmen auf"
+],
+"warum": "Frühe Essensfenster senkten den Blutdruck messbar – teilweise sogar ohne Gewichtsverlust – und sparten im Schnitt Kalorien ein."
+},
+"plus": {
+"frage": "Du nimmst Medikamente gegen Bluthochdruck oder hohen Blutzucker und möchtest mit einem frühen Essensfenster starten. Was ist wichtig?",
+"richtig": "Den Start ärztlich abklären, weil der Blutdruck spürbar sinken kann",
+"falsch": [
+"Die Medikamente ab Tag eins einfach selbstständig halbieren",
+"Nichts beachten, weil Essenszeiten keinen Einfluss auf Werte haben",
+"Statt frühem Essen lieber erst abends essen, um Werte zu halten"
+],
+"warum": "Da frühes Intervallfasten Blutdruck und Stoffwechsel messbar beeinflussen kann, gehört bei Medikamenten ärztliche Rücksprache dazu."
+},
+"labor": {
+"frage": "Frühes TRE senkte in einer Netzwerk-Meta-Analyse den systolischen Blutdruck um rund 6 mmHg gegenüber Standarddiät. Welcher Befund aus einem Umbrella Review ergänzt das Bild?",
+"richtig": "Tägliche Kalorienreduktion senkte den systolischen Blutdruck im Gesamtvergleich stärker",
+"falsch": [
+"Intervallfasten senkte den Blutdruck nur bei normalgewichtigen Sportlern",
+"Spätes TRE hatte gar keinen Effekt auf den systolischen Blutdruck",
+"Die Adhärenz lag bei frühem TRE unter drei Tagen pro Woche"
+],
+"warum": "Während eTRE gegenüber Standarddiät deutlich wirkte, zeigte tägliche CER im Gesamtvergleich einen leichten Vorteil beim systolischen Druck."
+}
+}
+}
+]

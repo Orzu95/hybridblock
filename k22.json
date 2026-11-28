@@ -1,0 +1,1106 @@
+[
+{
+"id": "PLY-109",
+"karte": {
+"kopf": "Wenig Kräftige · Kontrollierte Studie",
+"titel": "Ohne Kraftbasis wirkt schweres Heben genauso explosiv wie Sprünge",
+"titel_hervor": "genauso explosiv wie Sprünge",
+"setup": "Zehn Wochen lang verglich eine Studie bei weniger kräftigen Männern schweres Krafttraining mit leichtem, explosivem Sprungtraining.",
+"zahl": null,
+"kern": [
+"Sprunghöhe und Sprint verbesserten sich in beiden Gruppen kurzfristig ähnlich stark",
+"Das schwere Krafttraining baute zusätzlich deutlich mehr Maximalkraft auf",
+"Erst bei bereits kräftigen Sportlern wird spezielles Schnellkrafttraining unverzichtbar"
+],
+"grenze": "Die Studie dauerte zehn Wochen – bei schon sehr kräftigen Sportlern reicht reines schweres Heben allein irgendwann nicht mehr aus.",
+"fuer_dich": "Du hast noch wenig Grundkraft, willst aber explosiver werden? Bau zuerst mit schwerem Krafttraining deine Basis auf.",
+"labor": {
+"design": "RCT über 10 Wochen, schweres Krafttraining vs. ballistisches Power-Training (0–30 % 1RM)",
+"teilnehmer": "Personen mit geringem Ausgangskraftniveau",
+"ergebnis": "Ähnliche Zuwächse bei Sprung und Sprint, aber signifikant größerer Maximalkraftgewinn durch schweres Krafttraining"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du startest mit wenig Kraft in den Beinen und willst höher springen und schneller sprinten. Womit bekommst du am Anfang das bessere Gesamtpaket?",
+"richtig": "Mit klassischem schwerem Krafttraining als Grundlage",
+"falsch": [
+"Ausschließlich mit leichten Sprüngen ohne Gewichte",
+"Mit langsamem Ausdauerlaufen auf langen Strecken",
+"Mit reinem Dehnen vor jeder Trainingseinheit"
+],
+"warum": "Bei geringer Grundkraft verbessert schweres Krafttraining Sprung und Sprint ähnlich gut wie Sprungtraining – und macht dich zusätzlich stärker."
+},
+"plus": {
+"frage": "Du betreust einen Einsteiger mit schwacher Kniebeuge, der explosiver werden möchte. Solltest du sofort einen isolierten Jump-Squat-Block mit 0–30 % 1RM starten?",
+"richtig": "Nein, priorisiere erst schweres Krafttraining für die Kraftbasis",
+"falsch": [
+"Ja, schweres Krafttraining macht Einsteiger beim Sprint langsamer",
+"Ja, nur Jump Squats verbessern die Explosivität bei Einsteigern",
+"Nein, ballistisches Training bringt auch bei Fortgeschrittenen nichts"
+],
+"warum": "Über 10 Wochen verbesserte schweres Heben Sprung und Sprint genauso gut, steigerte aber die Maximalkraft deutlich stärker."
+},
+"labor": {
+"frage": "In einer 10-Wochen-RCT verglichen Forscher schweres Krafttraining mit ballistischem Power-Training bei Personen mit geringer Grundkraft. Wann ändert sich die Empfehlung?",
+"richtig": "Bei kräftigen Athleten wird spezifisches ballistisches Training wichtiger",
+"falsch": [
+"Bei kräftigen Athleten verliert ballistisches Training jeden Nutzen",
+"Bei Einsteigern baut ballistisches Training mehr Maximalkraft auf",
+"Schweres Krafttraining verschlechtert ab Woche zehn die Sprintzeit"
+],
+"warum": "Mit steigender Grundkraft schrumpft das Anpassungsfenster für reines Maximalkrafttraining – dann braucht es gezielte Reize bei hohen Geschwindigkeiten."
+}
+}
+},
+{
+"id": "PLY-110",
+"karte": {
+"kopf": "Teamsportler · 27 Studien zusammengefasst",
+"titel": "Kraft und Sprünge im Wechsel steigern die Sprunghöhe um über 9 %",
+"titel_hervor": "um über 9 %",
+"setup": "27 Studien prüften bei Teamsportlern, wie stark der Wechsel aus schweren Kraftübungen und passenden Sprüngen Kraft, Sprung und Sprint steigert.",
+"zahl": {
+"label": "Zuwachs bei der Sprunghöhe",
+"wert": "+9,3 %",
+"alltag": ""
+},
+"kern": [
+"Auch die Sprintzeit verkürzte sich im Schnitt um knapp fünf Prozent",
+"Die Maximalkraft legte im Durchschnitt um mehr als ein Fünftel zu",
+"Direkter Satz-für-Satz-Wechsel mit unter 85 % Maximallast lag leicht vorn"
+],
+"grenze": "Seinen vollen Vorteil zeigt dieser Mix erst ab etwa acht Wochen – zudem nutzen Studien die Begriffe teils uneinheitlich.",
+"fuer_dich": "Du willst Kraft und Explosivität gleichzeitig pushen? Wechsle zweimal pro Woche zwischen schwerer Übung und passendem Sprung ab.",
+"labor": {
+"design": "Systematisches Review mit Meta-Analyse, Komplex- (CPX) vs. geblocktes Kontrasttraining (CNT)",
+"teilnehmer": "Teamsportler aus 27 Studien",
+"ergebnis": "1RM +23,4 % (CPX) / +23,7 % (CNT); Vertikalsprung +9,3 %; Sprint −4,7 % (CPX); <85 % 1RM leicht überlegen"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du kombinierst eine schwere Kraftübung wie Kniebeugen direkt mit einer passenden Sprungübung. Was bringt dieser Wechsel über mehrere Wochen?",
+"richtig": "Er verbessert Kraft, Sprunghöhe und Sprinttempo gleichzeitig deutlich",
+"falsch": [
+"Beide Übungen heben sich gegenseitig auf und bremsen den Fortschritt",
+"Er steigert nur die Kraft, macht aber beim Sprinten eher langsamer",
+"Er wirkt nur, wenn du jeden Tag bis zur völligen Erschöpfung trainierst"
+],
+"warum": "Über mindestens acht Wochen führte der Mix aus Kraft und Sprüngen im Schnitt zu klaren Gewinnen bei Kraft, Sprung und Sprint."
+},
+"plus": {
+"frage": "Du planst Komplextraining im Satz-für-Satz-Wechsel über 8 Wochen. Welche Last bei der Kraftübung schnitt in der Auswertung leicht besser ab?",
+"richtig": "Schwere, aber noch gut kontrollierbare Lasten unter 85 % 1RM",
+"falsch": [
+"Nahezu maximale Lasten deutlich über 85 % 1RM in jedem Satz",
+"Sehr leichte Gewichte mit kaum spürbarem Widerstand im Satz",
+"Das Gewicht spielt erst ab einer Trainingsdauer von einem Jahr mit"
+],
+"warum": "Lasten unter 85 % 1RM im direkten Satz-für-Satz-Wechsel brachten leicht bessere Effekte auf Kraft, Sprung und Sprint als schwerere Lasten."
+},
+"labor": {
+"frage": "In einer Meta-Analyse aus 27 Studien wurden Komplex- und Kontrasttraining im Teamsport verglichen. Ab welcher Dauer entfaltet Komplextraining seinen vollen Vorteil?",
+"richtig": "Erst ab rund acht Wochen, während reines Ballistiktraining früher stagniert",
+"falsch": [
+"Bereits nach zwei Wochen, danach nimmt der Effekt rasch wieder ab",
+"Ausschließlich in einzelnen Einheiten, nicht in langfristigen Blöcken",
+"Erst nach einem halben Jahr, vorher zeigen sich gar keine Zuwächse"
+],
+"warum": "Ballistisches Training erreichte im CMJ schon nach 4 Wochen ein Plateau, während Komplextraining seine volle Überlegenheit ab ca. 8 Wochen zeigte."
+}
+}
+},
+{
+"id": "PLY-111",
+"karte": {
+"kopf": "Trainierte Sportler · Studien zusammengefasst",
+"titel": "Nach schwerer Vorbelastung zündet der Turbo erst nach fünf Minuten",
+"titel_hervor": "erst nach fünf Minuten",
+"setup": "Eine Meta-Analyse wertete aus, wann eine schwere Vorübung direkt danach Sprünge, Sprints oder Würfe messbar steigert.",
+"zahl": null,
+"kern": [
+"Direkt nach einem schweren Satz überwiegt Ermüdung – die Pause entscheidet",
+"Kräftige Sportler spüren den kurzfristigen Leistungsschub deutlich stärker",
+"Kurze Sprints bis 30 Meter profitieren akut, längere Sprints dagegen kaum"
+],
+"grenze": "Das gilt für den akuten Soforteffekt – über sechs Wochen Training profitieren auch schwächere Personen ähnlich gut.",
+"fuer_dich": "Du nutzt eine schwere Übung direkt vor Sprüngen oder Sprints? Warte 5 bis 7 Minuten dazwischen, statt sofort weiterzuspringen.",
+"labor": {
+"design": "Systematisches Review mit Meta-Analyse zu akuter Post-Activation Potentiation (PAP/PAPE)",
+"teilnehmer": "Trainierte Männer und Frauen unterschiedlicher Relativkraft",
+"ergebnis": "Pause 5–7 min ES 0,49; >=8 min ES 0,44; kräftig vs. schwächer ES 0,66 vs. 0,24; Sprint <=30 m SMD 0,73"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du machst ein paar schwere Kniebeugen, um direkt danach höher zu springen. Warum solltest du nicht sofort nach wenigen Sekunden loslegen?",
+"richtig": "Zuerst bremst Ermüdung – der Schub kommt nach einigen Minuten",
+"falsch": [
+"Der Effekt ist schon nach zwanzig Sekunden wieder verflogen",
+"Die Muskeln kühlen sonst sofort ab und verlieren Spannung",
+"Schwere Übungen machen dich für den Rest des Tages langsamer"
+],
+"warum": "Nach einer schweren Vorbelastung laufen Ermüdung und Aktivierung gleichzeitig ab – erst nach etwa 5 bis 7 Minuten überwiegt der Vorteil."
+},
+"plus": {
+"frage": "Du willst im Kontrasttraining die akute Potenzierung (PAPE) für Sprünge oder kurze Sprints nutzen. Welche Pause zwischen schwerem Satz und Sprung wirkt am stärksten?",
+"richtig": "Etwa 5 bis 7 Minuten Pause nach der schweren Vorbelastung",
+"falsch": [
+"Gar keine Pause, sondern im direkten Superset ohne Wartezeit",
+"Etwa 30 bis 60 Sekunden, solange der Puls noch hoch ist",
+"Mindestens 30 Minuten, bis die Muskeln wieder kalt sind"
+],
+"warum": "Die größten akuten Effekte zeigten sich bei 5 bis 7 Minuten Pause (und ab 8 Minuten bei sehr schweren Sätzen), besonders bei kräftigen Athleten."
+},
+"labor": {
+"frage": "Eine Meta-Analyse verglich die akute Post-Activation Potentiation zwischen kräftigeren und schwächeren Sportlern. Was zeigte der Vergleich mit mehrwöchigen Blöcken?",
+"richtig": "Akut profitieren Kräftigere klar mehr, über 6 Wochen holen Schwächere auf",
+"falsch": [
+"Auch über 6 Wochen profitieren nur Athleten über 1,75x Körpergewicht",
+"Schwächere Sportler zeigen akut den deutlich größeren Potenzierungseffekt",
+"Akutes Priming wirkt vor allem auf Sprints über 30 Meter, nicht darunter"
+],
+"warum": "Akut lag der Effekt bei Kräftigeren viel höher (ES 0,66 vs. 0,24), in 6-Wochen-Interventionen profitierten jedoch auch schwächere Gruppen ähnlich."
+}
+}
+},
+{
+"id": "PLY-112",
+"karte": {
+"kopf": "Ausdauersportler · 20 Studien zusammengefasst",
+"titel": "Kraft- und Sprungtraining macht das Laufen um 2–8 % sparsamer",
+"titel_hervor": "um 2–8 % sparsamer",
+"setup": "20 Studien untersuchten, wie zusätzliches Explosiv-, Sprung- oder schweres Krafttraining den Energieverbrauch beim Laufen verändert.",
+"zahl": {
+"label": "Sparsameres Laufen bei gleichem Tempo",
+"wert": "2–8 %",
+"alltag": ""
+},
+"kern": [
+"Das Körpergewicht blieb über acht bis vierzehn Wochen im Schnitt unverändert",
+"Auch die maximale Sauerstoffaufnahme litt durch das Zusatztraining nicht",
+"Steifere Achillessehnen federn den Schritt wie eine Sprungfeder besser zurück"
+],
+"grenze": "Spürbare Anpassungen an Sehnen und Schrittökonomie brauchen Geduld – längere Blöcke wirkten klar besser als kurze.",
+"fuer_dich": "Du läufst regelmäßig und willst bei gleichem Tempo weniger Kraft verbrauchen? Bau 1 bis 2 Kraft- oder Sprungeinheiten pro Woche ein.",
+"labor": {
+"design": "Systematisches Review mit Meta-Analyse, ergänzendes Explosiv-/Plyo- oder schweres Krafttraining",
+"teilnehmer": "Ausdauersportler aus 20 Studien, Dauer meist 8–14 Wochen",
+"ergebnis": "Laufökonomie +2–8 % (Subgruppen +2,0–3,4 %, g = −0,38 bis −0,62); Sehnensteifigkeit +16 %; 0 kg Gewichtszuwachs"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Viele Läufer meiden schweres Kraft- oder Sprungtraining aus Angst, dadurch schwerer und langsamer zu werden. Was zeigt die Forschung?",
+"richtig": "Man läuft sparsamer bei gleichem Tempo, ohne messbar zuzunehmen",
+"falsch": [
+"Man nimmt rasch mehrere Kilo zu und verliert an Ausdauer",
+"Die Ausdauerleistung sinkt, weil die Muskeln zu steif werden",
+"Krafttraining hilft nur Sprintern, nicht bei langen Läufen"
+],
+"warum": "Über 8 bis 14 Wochen stieg das Körpergewicht im Schnitt nicht an, während das Laufen um 2 bis 8 % sparsamer wurde."
+},
+"plus": {
+"frage": "Du bereitest dich auf einen längeren Lauf vor und möchtest deine Laufökonomie verbessern. Wie solltest du Kraft- oder Plyometrietraining einbauen?",
+"richtig": "1 bis 2 ausgeruhte Einheiten pro Woche über 8 bis 14 Wochen",
+"falsch": [
+"Jeden Tag direkt nach den längsten und härtesten Dauerläufen",
+"Nur für zwei Wochen kurz vor dem Wettkampf mit leichtem Gewicht",
+"Lieber weglassen, da es die maximale Sauerstoffaufnahme senkt"
+],
+"warum": "Ausgeruhtes Zusatztraining an 1 bis 2 Tagen pro Woche über mindestens 8 bis 14 Wochen stärkt Sehnensteifigkeit und Laufökonomie."
+},
+"labor": {
+"frage": "In einer Meta-Analyse aus 20 Studien verbesserte ergänzendes Kraft- und Explosivtraining die Laufökonomie von Ausdauersportlern. Welcher Mechanismus steht dahinter?",
+"richtig": "Höhere Steifigkeit der Achillessehne und schnellere Kraftentwicklung",
+"falsch": [
+"Ein starker Anstieg der maximalen Sauerstoffaufnahme durch Muskelmasse",
+"Eine gezielte Senkung des Körpergewichts durch höheren Grundumsatz",
+"Ein Umbau der Muskelfasern zu langsameren Kontraktionen am Boden"
+],
+"warum": "Eine steifere Achillessehne (+16 % nach 14 Wochen) und bessere Kraftentwicklung bei kurzen Bodenkontakten sparen Energie pro Schritt."
+}
+}
+},
+{
+"id": "PLY-113",
+"karte": {
+"kopf": "Ausdauersportler · 22 Studien zusammengefasst",
+"titel": "Beim Laufen wirkt schweres Heben stabiler als reines Sprungtraining",
+"titel_hervor": "wirkt schweres Heben stabiler",
+"setup": "Eine Meta-Analyse aus 22 Studien verglich getrennt, wie stark schweres Krafttraining oder isoliertes Sprungtraining Laufökonomie und Zeitläufe verbessern.",
+"zahl": null,
+"kern": [
+"Schweres Training mit sehr hohen Lasten über 10 bis 14 Wochen schnitt am besten ab",
+"Reines Sprungtraining zeigte im Gesamtmittel nur einen kleinen, unsicheren Effekt",
+"Bei sehr hohem Lauftempo oder nach dem Radfahren könnten Sprünge dennoch helfen"
+],
+"grenze": "Die Studienlage ist widersprüchlich und die beiden Methoden wurden hier nicht direkt im selben Modell gegeneinander getestet.",
+"fuer_dich": "Du hast neben dem Laufen nur Zeit für eine Zusatzmethode? Setze zuerst auf schweres Krafttraining über mindestens 10 Wochen.",
+"labor": {
+"design": "Systematisches Review mit Meta-Analyse (getrennte Modelle), schweres Krafttraining vs. Plyometrie",
+"teilnehmer": "Ausdauerläufer aus 22 Studien",
+"ergebnis": "Laufökonomie: Kraft g = −0,32 (KI −0,55 bis −0,10) vs. Plyo g = −0,13 (n. s.); Time-Trial g = −0,24 vs. −0,17"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du läufst lange Strecken und hast pro Woche nur Zeit für eine Extrasession: schweres Krafttraining oder reines Sprungtraining. Was scheint verlässlicher?",
+"richtig": "Schweres Krafttraining zeigt im Schnitt die klareren Vorteile",
+"falsch": [
+"Reines Sprungtraining ist dem Krafttraining bei jedem Tempo überlegen",
+"Keine der beiden Methoden hilft Läufern bei der Zeit über die Strecke",
+"Schon nach drei Wochen zeigen Sprünge einen riesigen Effekt"
+],
+"warum": "Über viele Studien hinweg verbesserte schweres Krafttraining das sparsame Laufen klarer als reines Sprungtraining allein."
+},
+"plus": {
+"frage": "Du willst mit schwerem Krafttraining deine Laufökonomie spürbar steigern. Welche Intensität und Dauer zeigten in der Auswertung den stärksten Effekt?",
+"richtig": "Sehr hohe Lasten ab 90 % 1RM über mindestens 10 bis 14 Wochen",
+"falsch": [
+"Leichte Gewichte mit vielen Wiederholungen über 4 bis 6 Wochen",
+"Moderate Lasten unter 70 % 1RM für genau einen Monat",
+"Maximale Sätze einmal im Monat ohne weitere Progression"
+],
+"warum": "Lasten ab 90 % 1RM und längere Blöcke von 10 bis 14 Wochen brachten im Vergleich zu leichteren oder kürzeren Programmen den größeren Effekt."
+},
+"labor": {
+"frage": "In einer Meta-Analyse aus 22 Studien zur Laufökonomie zeigte schweres Krafttraining einen signifikanten Effekt, isolierte Plyometrie im Gesamtmittel jedoch nicht. Warum bleibt das Bild uneinheitlich?",
+"richtig": "Kein direkter Modellvergleich und teils Vorteile von Plyo bei hohem Tempo",
+"falsch": [
+"Die Plyometrie-Gruppen absolvierten gar kein Lauftraining daneben",
+"Schweres Krafttraining verschlechterte die Zeitfahrleistung deutlich",
+"Die Daten stammten ausschließlich von jugendlichen Sprintern"
+],
+"warum": "Die Analyse rechnete keinen direkten Head-to-Head-Vergleich, und andere Studien berichten Vorteile von Plyometrie bei hohem Tempo oder im Koppellauf."
+}
+}
+},
+{
+"id": "PLY-114",
+"karte": {
+"kopf": "Erwachsene ab 60 · 12 Studien ausgewertet",
+"titel": "Angepasstes Sprungtraining klappt auch ab 60 ohne mehr Verletzungen",
+"titel_hervor": "ohne mehr Verletzungen",
+"setup": "Zwölf kontrollierte Studien prüften vier Wochen bis ein Jahr lang, wie gut betreutes Sprungtraining für Menschen ab 60 Jahren verträglich ist.",
+"zahl": {
+"label": "Studien mit erhöhter Verletzungsrate",
+"wert": "0 von 12",
+"alltag": ""
+},
+"kern": [
+"Muskelkraft, Balance, Sprungleistung und Knochen profitierten messbar",
+"Die Teilnehmer hatten vorher keine Sprungerfahrung und trainierten angepasst",
+"Zwei bis drei lockere Einheiten pro Woche mit Ruhetag dazwischen reichten"
+],
+"grenze": "Das Training fand meist eng betreut in Kleingruppen statt – allein zu Hause ist saubere Landetechnik besonders wichtig.",
+"fuer_dich": "Du bist Einsteiger oder über 60 und ohne Gelenkbeschwerden? Starte mit kleinen, weichen Sprüngen und stoppe bei Müdigkeit.",
+"labor": {
+"design": "Systematisches Review von RCTs, 4 Wochen bis 12 Monate, supervidierte Plyometrie",
+"teilnehmer": "289 Erwachsene (58–79 Jahre; 176 Frauen, 113 Männer) in 12 Studien",
+"ergebnis": "0 von 12 Studien mit erhöhter Verletzungsrate; PEDro-Score Ø 6,0 (4–7); Gewinne in Kraft, Balance, Knochen"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Sind leichte Sprungübungen für gesunde Menschen ab 60 Jahren grundsätzlich zu gefährlich für Gelenke und Knochen?",
+"richtig": "Nein, gut angepasst führten sie nicht zu mehr Verletzungen",
+"falsch": [
+"Ja, ab 60 Jahren sollte man ganz auf Sprünge verzichten",
+"Ja, sie schaden meist den Knochen und dem Gleichgewicht",
+"Nein, aber nur für Menschen mit jahrelanger Sprungerfahrung"
+],
+"warum": "In 12 betreuten Studien mit älteren Einsteigern gab es keine erhöhte Verletzungsrate, dafür bessere Kraft, Balance und Knochengesundheit."
+},
+"plus": {
+"frage": "Du startest als Einsteiger ohne akute Gelenkbeschwerden mit leichten Sprüngen allein nach App-Plan. Worauf solltest du besonders achten?",
+"richtig": "Kleine Sprünge wählen und bei unsauberer Landung sofort stoppen",
+"falsch": [
+"Sofort mit hohen Tiefsprüngen beginnen, um schneller anzupassen",
+"Auch bei müden Beinen alle Sätze durchziehen für maximalen Reiz",
+"An aufeinanderfolgenden Tagen springen, damit sich Sehnen gewöhnen"
+],
+"warum": "Die Studien liefen unter enger Aufsicht – trainierst du allein, schützt ein sofortiger Stopp bei nachlassender Landequalität deine Gelenke."
+},
+"labor": {
+"frage": "Ein systematisches Review aus 12 RCTs (n = 289, 58–79 Jahre) fand keine erhöhte Verletzungsrate durch plyometrisches Training. Was schränkt die Übertragung auf App-Training ein?",
+"richtig": "Die Programme fanden meist eng betreut in sehr kleinen Gruppen statt",
+"falsch": [
+"Die Studien liefen alle kürzer als zwei Wochen ohne Nachbeobachtung",
+"Es wurden ausschließlich trainierte männliche Senioren untersucht",
+"Die Studien maßen weder Kraft noch Balance oder Knochengesundheit"
+],
+"warum": "Viele Interventionen arbeiteten mit enger Betreuung (z. B. maximal vier Personen pro Trainer), was im unüberwachten Training fehlt."
+}
+}
+},
+{
+"id": "PLY-115",
+"karte": {
+"kopf": "14.394 Sportler · 9 Großstudien zusammengefasst",
+"titel": "Warm-ups mit Sprung- und Landeübungen senken Kreuzbandrisse um 60 %",
+"titel_hervor": "Kreuzbandrisse um 60 %",
+"setup": "Neun große Vergleichsstudien mit über 14.000 Sportlern prüften, wie Aufwärmprogramme mit Sprung- und Landeübungen Kreuzbandrisse beeinflussen.",
+"zahl": {
+"label": "Weniger vordere Kreuzbandrisse",
+"wert": "−60 %",
+"alltag": "−66 % ohne Gegnerkontakt"
+},
+"kern": [
+"Ohne gegnerischen Zusammenprall sank das Risiko sogar um zwei Drittel",
+"Weiches Abfedern und stabile Knie beim Landen entlasten das Kniegelenk",
+"Sowohl Männer als auch Frauen profitierten deutlich von diesem Aufwärmen"
+],
+"grenze": "Bei direkten Zusammenstößen mit Gegnern ist ein Schutzeffekt statistisch nicht eindeutig belegt.",
+"fuer_dich": "Du spielst Sport mit schnellen Richtungswechseln? Bau 2- bis 3-mal pro Woche 15 bis 25 weiche Landeübungen ins Warm-up ein.",
+"labor": {
+"design": "Systematisches Review mit Meta-Analyse von 9 Cluster-RCTs, Präventions-Warm-ups mit Plyometrie",
+"teilnehmer": "14.394 Sportler (Männer, Frauen, Jugendliche)",
+"ergebnis": "ACL gesamt IRR 0,40 (−60 %; KI 0,26–0,63); Nicht-Kontakt IRR 0,34 (−66 %); Männer 0,21, Frauen 0,51"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du spielst Fußball, Handball oder Basketball. Was bewirkt ein regelmäßiges Aufwärmen mit gezielten Sprung- und Landeübungen für dein Knie?",
+"richtig": "Es senkt das Risiko für vordere Kreuzbandrisse deutlich",
+"falsch": [
+"Es erhöht das Risiko, weil Sprünge die Bänder überlasten",
+"Es schützt nur die Sprunggelenke, nicht aber das Knie",
+"Es hilft nur gegen direkte Fouls und Zusammenstöße"
+],
+"warum": "Wer regelmäßig weiches Landen und stabile Knieachsen trainiert, senkt Kreuzbandrisse im Schnitt um 60 % – ohne Gegnerkontakt sogar um 66 %."
+},
+"plus": {
+"frage": "Du willst dein Warm-up für Sport mit vielen Richtungswechseln knieschonender gestalten. Wie baust du plyometrische Übungen sinnvoll ein?",
+"richtig": "Mehrmals pro Woche wenige kontrollierte Sprünge mit weicher Landung",
+"falsch": [
+"Einmal im Monat sehr viele maximale Sprünge bis zur Ermüdung",
+"Möglichst hart und mit gestreckten Knien landen für mehr Spannung",
+"Ganz ohne Sprünge aufwärmen und nur statisch im Sitzen dehnen"
+],
+"warum": "Kontrollierte Sprung- und Landewiederholungen (ca. 15 bis 25 pro Warm-up) trainieren Kniebeugung und Beinachse und dämpfen Spitzenkräfte."
+},
+"labor": {
+"frage": "Eine Meta-Analyse aus 9 Cluster-RCTs (n = 14.394) untersuchte Aufwärmprogramme mit Sprung- und Landeübungen. Bei welcher Verletzungsart blieb der Schutzeffekt statistisch unsicher?",
+"richtig": "Bei Kreuzbandverletzungen durch direkten Körperkontakt mit Gegnern",
+"falsch": [
+"Bei Nicht-Kontakt-Kreuzbandrissen nach schnellen Richtungswechseln",
+"Bei weiblichen Sportlerinnen im Vergleich zu männlichen Sportlern",
+"Bei der Gesamtrate aller vorderen Kreuzbandrisse pro 1.000 Stunden"
+],
+"warum": "Für Gesamt- und Nicht-Kontakt-ACL-Risse war der Schutz klar signifikant, bei Kontaktverletzungen umfasste das Konfidenzintervall (0,15–2,30) die 1."
+}
+}
+},
+{
+"id": "PLY-116",
+"karte": {
+"kopf": "37 Fußballer · Vergleichsstudie",
+"titel": "Sand spart Muskelkater, fester Rasen bringt mehr Sprunghöhe",
+"titel_hervor": "bringt mehr Sprunghöhe",
+"setup": "37 Fußballer machten vier Wochen lang dasselbe Sprungtraining entweder auf Sand oder auf festem Rasen und verglichen Muskelkater, Sprint und Sprung.",
+"zahl": {
+"label": "Sprunggewinn mit Ausholen (Rasen vs. Sand)",
+"wert": "+5,5 vs. +2,4 cm",
+"alltag": ""
+},
+"kern": [
+"Auf Sand fiel die Landekraft rund zwei Drittel niedriger aus als auf Rasen",
+"Auch der Muskelkater war nach dem Sandtraining deutlich geringer",
+"Bei 10- und 20-Meter-Sprints sowie Sprüngen aus der Hocke zogen beide gleich"
+],
+"grenze": "Die Studie lief nur vier Wochen – längere Untersuchungen zeigen teils noch kleinere Unterschiede zwischen den Böden.",
+"fuer_dich": "Müde Beine oder neu beim Springen? Nutze Sand oder eine Weichmatte; für maximale Federkraft wähle festen Boden.",
+"labor": {
+"design": "RCT über 4 Wochen, identisches Plyometrieprogramm auf Sand vs. Rasen",
+"teilnehmer": "37 Fußballspieler (19 auf Sand, 18 auf Rasen)",
+"ergebnis": "CMJ +5,5 vs. +2,4 cm (p = 0,033, g = 0,124); Landekraft 393,6 vs. 1.173 N (p < 0,01); Muskelkater p < 0,001"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du machst dein Sprungtraining im Sommer am Strand im Sand statt auf festem Rasen. Was ändert sich dabei vor allem?",
+"richtig": "Du hast deutlich weniger Muskelkater und weichere Landungen",
+"falsch": [
+"Du springst mit Ausholen danach doppelt so hoch wie auf Rasen",
+"Das Training bringt für deine Sprintzeit gar keinen Nutzen",
+"Die Stoßbelastung beim Landen ist im Sand besonders hoch"
+],
+"warum": "Sand schluckt viel Aufprallenergie und schont die Muskeln, während fester Rasen die Federkraft beim Ausholen stärker fördert."
+},
+"plus": {
+"frage": "Du willst den Untergrund für dein Plyometrie-Training gezielt nach Trainingsphase wählen. Wann passt weicher Untergrund wie Sand oder eine Matte am besten?",
+"richtig": "Bei hoher Müdigkeit oder beim Einstieg für weniger Muskelkater",
+"falsch": [
+"Wenn maximale Reaktivkraft im CMJ dein alleiniges Hauptziel ist",
+"Besser meiden, weil Sand den Sprinteffekt stark abschwächt",
+"Gerade im Wettkampfblock, da Sand die Bodenkontaktzeit verkürzt"
+],
+"warum": "Weicher Untergrund senkt Stoßkräfte und Muskelkater bei gleichem Sprint-Effekt; für maximale Reaktivkraft im CMJ eignet sich fester Boden besser."
+},
+"labor": {
+"frage": "In einer 4-Wochen-RCT trainierten 37 Fußballer identische Sprünge auf Sand oder Rasen. Warum verbesserte sich der Countermovement Jump auf Rasen stärker?",
+"richtig": "Sand absorbiert Aufprallenergie und dämpft die elastische Rückfederung",
+"falsch": [
+"Die Sandgruppe durfte aus Schonungsgründen halb so viele Sprünge machen",
+"Auf Rasen war die rein konzentrische Muskelarbeit deutlich höher als im Sand",
+"Auf Sand verschlechterten sich neben dem CMJ auch alle Sprintzeiten"
+],
+"warum": "Nachgiebiger Untergrund verlängert die Umkehrphase und schluckt elastische Energie im Dehnungs-Verkürzungs-Zyklus, erhöht aber konzentrische Arbeit."
+}
+}
+},
+{
+"id": "PLY-117",
+"karte": {
+"kopf": "Einsteiger & Sportler · Expertenauswertung",
+"titel": "Die alte Kniebeugen-Regel vor Sprüngen ist wissenschaftlich unbelegt",
+"titel_hervor": "ist wissenschaftlich unbelegt",
+"setup": "Ein Fachüberblick prüfte die Belege für die verbreitete Regel, erst ab dem 1,5-Fachen des Körpergewichts in der Kniebeuge zu springen.",
+"zahl": null,
+"kern": [
+"Für leichte Sprünge wurde diese strenge Kraftgrenze bisher nicht in Studien belegt",
+"Mehr Grundkraft schützt tendenziell, ersetzt aber keinen sauberen Einstieg",
+"Fachleute raten zum Start zu 30 bis 50 kleinen Sprüngen und sauberer Technik"
+],
+"grenze": "Es handelt sich um eine Expertenauswertung ohne eigene neue Verletzungsstudie – harte Tiefsprünge brauchen weiterhin eine Basis.",
+"fuer_dich": "Du beugst noch kein 1,5-faches Körpergewicht? Starte mit kleinen Sprüngen und wechsle erst nach 6 bis 8 Wochen Basis zu Tiefsprüngen.",
+"labor": {
+"design": "Narratives Review / Expertenkonsens zur Rolle der Maximalkraft vor plyometrischem Training",
+"teilnehmer": "Literaturüberblick über Einsteiger und trainierte Sportler",
+"ergebnis": "Keine prospektive Evidenz für 1,5x-KG-Grenze; Trainingseffekt ähnlich bei <1,55x (g = 0,37–1,34) vs. >=1,75x KG (g = 0,27–0,98)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Im Fitnessstudio heißt es oft, du dürftest erst springen, wenn du sehr schwere Kniebeugen schaffst. Stimmt das so pauschal?",
+"richtig": "Nein, für leichte Sprünge gibt es dafür bisher keine Belege",
+"falsch": [
+"Ja, schon kleine Hüpfer sind ohne hohe Kraft sehr gefährlich",
+"Ja, erst ab doppeltem Körpergewicht bringen Sprünge etwas",
+"Nein, Krafttraining und Landetechnik sind beim Springen egal"
+],
+"warum": "Der starre Grenzwert entstand historisch und wurde bisher nicht belegt – mit kleinen Sprüngen und sauberer Landung können auch Einsteiger starten."
+},
+"plus": {
+"frage": "Du schaffst in der Kniebeuge noch nicht das 1,5-Fache deines Körpergewichts, willst aber mit Plyometrie starten. Wie gehst du klug vor?",
+"richtig": "Mit kleinen Sprüngen starten und Tiefsprünge erst später einbauen",
+"falsch": [
+"Sprungtraining erst einmal streichen, bis 1,5x erreicht sind",
+"Sofort mit hohen Drop Jumps von 60 cm beginnen, um Zeit zu sparen",
+"Jeden Tag über 120 maximale Sprünge machen, um Kraft aufzubauen"
+],
+"warum": "Niedrigintensive Sprünge brauchen keine 1,5x-Schranke; erst für Tiefsprünge empfehlen Experten 6 bis 8 Wochen Basis und saubere Landemechanik."
+},
+"labor": {
+"frage": "Ein narratives Review prüfte die klassische 1,5x-Körpergewicht-Regel in der Kniebeuge als Voraussetzung für Plyometrie. Wie ist die Evidenzlage einzuordnen?",
+"richtig": "Keine prospektive Evidenz für die Grenze; hohe Kraft bleibt nützlich",
+"falsch": [
+"Mehrere große RCTs bestätigten genau 1,5x Körpergewicht als Schwelle",
+"Maximalkraft hängt statistisch überhaupt nicht mit Schnellkraft zusammen",
+"Schwächere Athleten erzielten in Blöcken gar keinen Trainingserfolg"
+],
+"warum": "Hohe Maximalkraft korreliert zwar stark mit Schnellkraft und weniger Verletzungen, aber die starre 1,5x-Grenze wurde bisher nicht prospektiv validiert."
+}
+}
+},
+{
+"id": "PSY-101",
+"karte": {
+"kopf": "Sportler · 27 Studien zusammengefasst",
+"titel": "Wer sich auf die Ausführung konzentriert, leistet deutlich mehr",
+"titel_hervor": "leistet deutlich mehr",
+"setup": "Eine Auswertung von 27 Sportstudien verglich, wie verschiedene Zielarten auf die Leistung und das eigene Zutrauen wirken.",
+"zahl": null,
+"kern": [
+"Ziele zur Bewegungsausführung wirken auch allein, ohne weitere Zielarten",
+"Das Zutrauen in die eigene Fähigkeit stieg durch solche Ziele besonders stark",
+"Sie funktionieren wohl gut, weil du den Ablauf selbst direkt steuern kannst"
+],
+"grenze": "Die 27 Studien waren sehr unterschiedlich aufgebaut und zwölf davon hatten kein klares Theorie-Modell.",
+"fuer_dich": "Du planst deine Trainingswoche? Setze dir ein bis zwei konkrete Technikziele statt nur ein Endziel.",
+"labor": {
+"design": "Systematisches Review mit Meta-Analyse, Vergleich verschiedener Zieltypen im Sport",
+"teilnehmer": "27 Studien (davon 5 mit Selbstregulationstheorie)",
+"ergebnis": "Selbstwirksamkeit d = 1,11; Leistung bei Selbstregulation d = 1,53 (z = 5,59, p < 0,001)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du willst im Training besser werden und setzt dir ein Ziel. Welche Art von Ziel bringt deine Leistung meist am stärksten voran?",
+"richtig": "Ein konkretes Ziel dafür, wie du die Übung ausführst",
+"falsch": [
+"Ein Ziel, das ausschließlich das Endergebnis im Blick hat",
+"Ein Ziel, das dich mit anderen im Studio direkt vergleicht",
+"Ein grobes Ziel ohne Bezug zur eigentlichen Bewegung"
+],
+"warum": "Ziele für die Ausführung kannst du direkt steuern – das stärkt sowohl dein Zutrauen als auch die Leistung."
+},
+"plus": {
+"frage": "Du planst deinen nächsten Trainingsblock und willst bei Kniebeugen besser werden. Welche Zielsetzung hilft dir am meisten?",
+"richtig": "Ein bis zwei konkrete Technikziele für saubere Sätze festlegen",
+"falsch": [
+"Nur ein Wunschgewicht auf der Stange als einziges Ziel notieren",
+"Dich vor allem an den Bestwerten deiner Trainingspartner messen",
+"Erst am Ende des Blocks prüfen, ob sich die Kraft gesteigert hat"
+],
+"warum": "Konkrete Prozessziele zur Bewegungsausführung wirken auch allein deutlich stärker als reine Ergebnisziele."
+},
+"labor": {
+"frage": "In einer Meta-Analyse aus 27 Sportstudien wurden Prozessziele mit anderen Zieltypen verglichen. Was ist eine zentrale Grenze der Datenlage?",
+"richtig": "Hohe Heterogenität und oft fehlendes theoretisches Rahmenmodell",
+"falsch": [
+"Prozessziele wirkten nur gemeinsam mit reinen Ergebniszielen",
+"Die Effekte auf Leistung und Selbstwirksamkeit blieben sehr klein",
+"Es wurden ausschließlich untrainierte Einsteiger untersucht"
+],
+"warum": "Die Heterogenität war hoch (Q = 111,26) und in fast der Hälfte der 27 Studien fehlte ein explizites Rahmenmodell."
+}
+}
+},
+{
+"id": "PSY-102",
+"karte": {
+"kopf": "Sportler · 27 Studien zusammengefasst",
+"titel": "Reine Vergleichs- und Ergebnisziele steigern Leistung kaum",
+"titel_hervor": "steigern Leistung kaum",
+"setup": "In 27 Sportstudien wurde ausgewertet, wie reine Ergebnisziele und Vergleiche mit anderen auf Leistung, Einsatz und Anspannung wirken.",
+"zahl": null,
+"kern": [
+"Wer sich nur an anderen misst, bleibt oft weniger engagiert bei der Sache",
+"Reine Platzierungs- oder Vergleichsziele verstärken häufig Angstsymptome",
+"Was andere leisten, liegt außer Kontrolle – das erzeugt zusätzlichen Stress"
+],
+"grenze": "Nur zwei Studien prüften Ergebnis- und Ablaufziele gemeinsam und kamen zu widersprüchlichen Resultaten.",
+"fuer_dich": "Dein Ziel hängt von Platzierungen oder anderen ab? Formuliere es in eigene Leistungs- und Technikziele um.",
+"labor": {
+"design": "Systematisches Review mit Meta-Analyse zu Zieltypen im Sport",
+"teilnehmer": "27 Studien (davon 2 zu kombinierten Ergebnis- und Prozesszielen)",
+"ergebnis": ""
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du trainierst vor allem mit dem Ziel, besser abzuschneiden als andere. Welche Folge zeigt sich dabei häufig?",
+"richtig": "Die Leistung steigt kaum, aber Anspannung und Angst nehmen zu",
+"falsch": [
+"Der Ehrgeiz hebt die Leistung deutlich stärker als eigene Ziele",
+"Du bleibst langfristig motivierter und entspannter im Training",
+"Vergleiche haben kaum Einfluss auf deinen Einsatz oder Stress"
+],
+"warum": "Weil du andere nicht kontrollieren kannst, erzeugen Vergleichsziele Stress und senken das Aufgabenengagement."
+},
+"plus": {
+"frage": "Dein Hauptziel für den nächsten Wettkampf ist eine bestimmte Platzierung. Wie machst du daraus ein besseres Trainingsziel?",
+"richtig": "Du übersetzt es in eigene Leistungs- und Ablaufziele",
+"falsch": [
+"Du verschärfst das Platzierungsziel für noch mehr Druck",
+"Du richtest dein Training stark an der Konkurrenz aus",
+"Du verzichtest ab sofort auf jegliche Trainingsziele"
+],
+"warum": "Selbstgesteuerte Leistungs- und Prozessziele halten das Engagement hoch und vermeiden unnötigen Stress."
+},
+"labor": {
+"frage": "In einer Meta-Analyse aus 27 Sportstudien wurden Ergebnis- und Ego-Ziele ausgewertet. Was bleibt dabei noch ungeklärt?",
+"richtig": "Wie kombinierte Ergebnis- und Prozessziele zusammen wirken",
+"falsch": [
+"Ob reine Ego-Ziele überhaupt Angstsymptome fördern können",
+"Ob fehlende Kontrollierbarkeit als Stressfaktor wirken kann",
+"Ob reine Ergebnisziele die sportliche Leistung stark steigern"
+],
+"warum": "Nur zwei der 27 Studien prüften die Kombination aus Ergebnis- und Prozesszielen und fanden widersprüchliche Resultate."
+}
+}
+},
+{
+"id": "PSY-103",
+"karte": {
+"kopf": "Einsteiger & Aktive · Fachübersicht",
+"titel": "Starre SMART-Ziele sind nicht nachweislich besser als offene Ziele",
+"titel_hervor": "nicht nachweislich besser",
+"setup": "Fachleute prüften die Studienlage zu starren SMART-Zielen im Vergleich zu offenen Zielen für mehr körperliche Aktivität.",
+"zahl": null,
+"kern": [
+"Die SMART-Regel stammt ursprünglich nicht aus der psychologischen Zielforschung",
+"Verfehlte starre Vorgaben können Schuldgefühle wecken und zum Abbruch führen",
+"Erste Hinweise deuten darauf hin, dass offene Ziele bei Einsteigern Druck nehmen"
+],
+"grenze": "Übersichtsarbeit ohne eigene statistische Auswertung – direkte Vergleichsstudien sind bisher noch dünn.",
+"fuer_dich": "Du verfehlst dein Wochenziel zweimal hintereinander? Tausche feste Zahlen gegen ein offenes Ziel wie „schauen, was heute geht“.",
+"labor": {
+"design": "Narratives Review und Expertenkonsens zur Zielsetzung für körperliche Aktivität",
+"teilnehmer": "",
+"ergebnis": ""
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du fängst gerade erst mit Sport an. Welches Risiko haben sehr strenge Ziele mit festen Zahlen und engen Fristen?",
+"richtig": "Wer sie verfehlt, fühlt sich leicht schuldig und bricht eher ab",
+"falsch": [
+"Sie sorgen bei Einsteigern meist von selbst für mehr Spaß",
+"Sie sind jeder anderen Zielart nachweislich klar überlegen",
+"Sie nehmen zuverlässig jeden Leistungsdruck beim Start heraus"
+],
+"warum": "Fachleute weisen darauf hin, dass verfehlte starre Vorgaben Druck und Schuldgefühle begünstigen können."
+},
+"plus": {
+"frage": "Du hast deine festen Wochenziele zweimal hintereinander verfehlt und merkst, dass die Lust sinkt. Was ist ein sinnvoller nächster Schritt?",
+"richtig": "Die festen Schwellenwerte durch offenere Ziele ersetzen",
+"falsch": [
+"Die Vorgaben noch enger und präziser durchplanen",
+"Ein noch strengeres tägliches Kontrollsystem starten",
+"Das Ziel verdoppeln, um verpasste Wochen aufzuholen"
+],
+"warum": "Offene, explorative Ziele nehmen den Druck heraus und begünstigen eher ein gutes Bewegungsgefühl."
+},
+"labor": {
+"frage": "In einer narrativen Übersichtsarbeit mit Expertenkonsens wurden starre SMART-Ziele für mehr Bewegung bewertet. Wie fällt die Einordnung aus?",
+"richtig": "Wenig belastbare Evidenz für eine generelle Überlegenheit",
+"falsch": [
+"Zahlreiche Meta-Analysen belegen ihre eindeutige Überlegenheit",
+"Die SMART-Regel entstammt direkt der empirischen Zielforschung",
+"Offene Ziele lassen sich algorithmisch viel leichter messen"
+],
+"warum": "Die SMART-Heuristik stammt nicht aus der empirischen Zielforschung und ihre Überlegenheit ist bisher nicht belastbar belegt."
+}
+}
+},
+{
+"id": "PSY-104",
+"karte": {
+"kopf": "6.787 Erwachsene · 27 Studien zusammengefasst",
+"titel": "Persönliches Feedback stärkt das Zutrauen deutlich mehr als Zuspruch",
+"titel_hervor": "stärkt das Zutrauen deutlich",
+"setup": "In 27 Studien wurde verglichen, welche Coaching-Methoden das Zutrauen in die eigene Bewegungsfähigkeit am stärksten erhöhen.",
+"zahl": null,
+"kern": [
+"Individuell zugeschnittene Rückmeldungen wirkten deutlich stärker als Standardtexte",
+"Auch Vorbilder in ähnlicher Lage halfen, wurden aber nur selten eingesetzt",
+"Reine Motivationssprüche und reine Hürden-Listen schnitten schwächer ab"
+],
+"grenze": "Mehr Zutrauen führte in den Studien nicht automatisch zu deutlich mehr Bewegung – der Zusammenhang war nicht eindeutig.",
+"fuer_dich": "Allgemeine Motivationssprüche lassen dich kalt? Schau nach dem Training lieber auf deinen eigenen Fortschritt im Verlauf.",
+"labor": {
+"design": "Systematisches Review mit Meta-Analyse zu Verhaltensänderungstechniken",
+"teilnehmer": "6.787 Teilnehmende aus 27 Studien",
+"ergebnis": "Gesamt d = 0,16; mit Tailoring d = 0,26 vs. ohne d = 0,07 (p < 0,001); Verhalten r = 0,266 (p = 0,208)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Was stärkt das Vertrauen in die eigene Trainingsfähigkeit im Schnitt mehr: allgemeine Motivationssprüche oder Rückmeldungen zum eigenen Fortschritt?",
+"richtig": "Persönliche Rückmeldungen zum eigenen Fortschritt",
+"falsch": [
+"Allgemeine Motivationssprüche vor jeder Einheit",
+"Möglichst lange Listen aller möglichen Hindernisse",
+"Beides wirkt im Durchschnitt ziemlich gleich stark"
+],
+"warum": "Individuelles Leistungsfeedback und ähnliche Vorbilder steigerten das Zutrauen klar besser als bloßer Zuspruch."
+},
+"plus": {
+"frage": "Nach einer fordernden Einheit willst du dein Selbstvertrauen fürs nächste Training stärken. Worauf schaust du am besten?",
+"richtig": "Auf den konkreten Vergleich mit deinen früheren Einheiten",
+"falsch": [
+"Auf allgemeine Durchhalteparolen in den sozialen Medien",
+"Auf eine Liste aller Gründe, warum das Training ausfallen könnte",
+"Auf pauschale Tipps ohne Bezug zu deinem Trainingsstand"
+],
+"warum": "Personalisiertes Leistungsfeedback zur eigenen Historie wirkt deutlich stärker als generische Motivationssprüche."
+},
+"labor": {
+"frage": "Eine Meta-Analyse aus 27 Studien prüfte Techniken zur Steigerung der bewegungsbezogenen Selbstwirksamkeit. Welche Grenze zeigte sich?",
+"richtig": "Der Zusammenhang mit echtem Bewegungsverhalten war nicht signifikant",
+"falsch": [
+"Individuelles Tailoring brachte keinen Vorteil gegenüber Standardtexten",
+"Verbale Überzeugung war die wirksamste und seltenste Methode",
+"Stellvertretende Erfahrungen senkten die Selbstwirksamkeit deutlich"
+],
+"warum": "Die Korrelation zwischen geänderter Selbstwirksamkeit und mehr Aktivität war moderat, aber statistisch nicht signifikant (r = 0,266)."
+}
+}
+},
+{
+"id": "PSY-105",
+"karte": {
+"kopf": "Erwachsene · 20 Vergleichsstudien ausgewertet",
+"titel": "Für Start und Dranbleiben zählen zwei verschiedene Arten von Zutrauen",
+"titel_hervor": "zwei verschiedene Arten",
+"setup": "In 20 randomisierten Studien wurde geprüft, welches Vertrauen beim Trainingsstart hilft und welches beim langfristigen Dranbleiben.",
+"zahl": null,
+"kern": [
+"Am Anfang zählt das Gefühl, die Übungen selbst gut ausführen zu können",
+"Später entscheidet das Vertrauen, auch bei Zeitmangel oder Stress zu trainieren",
+"Tägliche Pflicht-Protokolle können Einsteigern das Zutrauen sogar erschweren"
+],
+"grenze": "Wann genau der Wechsel von der Startphase zum Dranbleiben stattfindet, ist von Mensch zu Mensch verschieden.",
+"fuer_dich": "Du startest gerade neu? Konzentriere dich erst auf einfache Übungen ohne Protokollzwang und plane später für Engpässe vor.",
+"labor": {
+"design": "Meta-Analyse aus 20 RCTs zu Aufgaben- und Barrierenselbstwirksamkeit",
+"teilnehmer": "20 randomisierte kontrollierte Studien (aus 1.080 Treffern)",
+"ergebnis": "Aufgaben-SW g = 0,208, Barrieren-SW g = 0,128 (beide p < 0,05); Aktivität g = 0,335 (p < 0,001)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Wer neu mit Sport anfängt, braucht etwas anderes als jemand, der schon Monate dranbleibt. Was hilft beim Start besonders?",
+"richtig": "Das Gefühl, die einzelnen Übungen gut ausführen zu können",
+"falsch": [
+"Ein strenges tägliches Protokoll ab dem ersten Trainingstag",
+"Ein komplexer Plan für alle möglichen Hindernisse im Jahr",
+"Möglichst anspruchsvolle Übungen gleich in der ersten Woche"
+],
+"warum": "In der Startphase hilft das Zutrauen in die Übungsausführung, während täglicher Protokollzwang eher bremst."
+},
+"plus": {
+"frage": "Du trainierst seit einigen Wochen stabil und willst langfristig dranbleiben. Worauf solltest du deinen Fokus jetzt stärker legen?",
+"richtig": "Auf Strategien, um trotz Stress oder Zeitmangel zu trainieren",
+"falsch": [
+"Nur noch darauf, die einfachste Grundbewegung neu zu lernen",
+"Auf noch mehr tägliche Pflicht-Protokolle nach jedem Training",
+"Auf reine Willenskraft ohne Plan für stressige Arbeitswochen"
+],
+"warum": "Für das langfristige Dranbleiben wird das Vertrauen entscheidend, typische Trainingsbarrieren gut zu meistern."
+},
+"labor": {
+"frage": "Eine Meta-Analyse aus 20 randomisierten Studien trennte Aufgaben- und Barrierenselbstwirksamkeit im Training. Welches Muster zeigte sich?",
+"richtig": "Aufgaben-SW prägt den Start, Barrieren-SW das langfristige Halten",
+"falsch": [
+"Nur die Barrieren-SW stieg, die körperliche Aktivität blieb gleich",
+"Tägliche Pflicht-Logbücher verstärkten den Einstiegseffekt deutlich",
+"Der Übergang zwischen beiden Phasen liegt fest bei vier Wochen"
+],
+"warum": "Beide Formen wirkten phasenabhängig auf die Aktivität, doch der genaue Übergangszeitpunkt schwankt individuell."
+}
+}
+},
+{
+"id": "PSY-106",
+"karte": {
+"kopf": "96 Erwachsene · 12-Wochen-Beobachtungsstudie",
+"titel": "Eine neue Gewohnheit braucht meist über zwei Monate",
+"titel_hervor": "über zwei Monate",
+"setup": "96 Personen übten zwölf Wochen lang täglich eine neue Ess-, Trink- oder Bewegungsroutine im gleichen Alltagsmoment und bewerteten, wie automatisch sie lief.",
+"zahl": {
+"label": "Spanne bis zur festen Gewohnheit",
+"wert": "18–254 Tage",
+"alltag": "im Schnitt über 2 Monate"
+},
+"kern": [
+"Ein einzelner ausgelassener Tag wirft den Gewohnheitsaufbau kaum zurück",
+"Der gleiche Auslöser im Alltag erleichtert es, dass eine Routine von selbst läuft",
+"Bewegung dauert meist länger zu festigen als eine simple Trink- oder Essroutine"
+],
+"grenze": "Beobachtungsstudie mit kleiner Gruppe – nicht bei allen passte die Kurve, und die Dauer schwankte extrem stark.",
+"fuer_dich": "Du hast einen Tag deiner neuen Routine verpasst? Mach am nächsten Tag im gewohnten Moment einfach weiter.",
+"labor": {
+"design": "Prospektive Längsschnitt-Beobachtungsstudie, 12 Wochen (84 Tage), tägliche Messung",
+"teilnehmer": "96 Teilnehmende (82 analysiert, 62 mit Modellpassung)",
+"ergebnis": "18–254 Tage bis 95 % der Automatizitäts-Asymptote (Mittelwert > 2 Monate)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du willst eine neue Alltagsroutine aufbauen und verpasst nach drei Wochen einen einzigen Tag. Was passiert mit deiner Gewohnheit?",
+"richtig": "Der Aufbau läuft weiter, ein einzelner Aussetzer schadet kaum",
+"falsch": [
+"Du fängst wieder bei null an und musst von vorn beginnen",
+"Nach genau drei Wochen ist die Gewohnheit ohnehin schon fest",
+"Ein verpasster Tag verdoppelt die nötige Zeit bis zur Routine"
+],
+"warum": "In einer zwölfwöchigen Beobachtung hatte das einmalige Auslassen keinen spürbaren negativen Effekt auf die Automatisierung."
+},
+"plus": {
+"frage": "Du möchtest ein neues kurzes Trainingsritual fest in deinen Alltag einbauen. Womit erhöhst du die Chance, dass es automatisch läuft?",
+"richtig": "Es an denselben Tagesmoment koppeln und über zwei Monate dranbleiben",
+"falsch": [
+"Die Uhrzeit täglich wechseln, damit die Routine abwechslungsreich bleibt",
+"Nach drei Wochen aufhören zu planen, weil es dann von selbst läuft",
+"Bei einem verpassten Tag die ganze Woche abbrechen und neu starten"
+],
+"warum": "Ein fester Tageskontext und Geduld über mehrere Monate helfen, gerade weil Bewegung länger braucht als simple Routinen."
+},
+"labor": {
+"frage": "In einer zwölfwöchigen Beobachtungsstudie wurde die tägliche Automatisierung neuer Alltagsgewohnheiten modelliert. Was zeigte sich zur Dauer?",
+"richtig": "Die Spanne war sehr groß: unter drei Wochen bis über acht Monate",
+"falsch": [
+"Fast alle Teilnehmenden erreichten nach genau einem Monat das Plateau",
+"Das asymptotische Modell passte bei allen untersuchten Personen gut",
+"Bewegungsroutinen automatisierten sich schneller als Trinkgewohnheiten"
+],
+"warum": "Die geschätzte Dauer reichte von 18 bis 254 Tagen, wobei das Modell nicht bei allen Teilnehmenden passte."
+}
+}
+},
+{
+"id": "PSY-107",
+"karte": {
+"kopf": "Erwachsene · 26 Studien zusammengefasst",
+"titel": "Konkrete Wenn-Dann-Pläne bringen Menschen häufiger in Bewegung",
+"titel_hervor": "häufiger in Bewegung",
+"setup": "Über 26 Studien wurde geprüft, ob feste Pläne nach dem Muster „Wenn Zeit oder Ort X, dann Training Y“ die Aktivität steigern.",
+"zahl": null,
+"kern": [
+"Regelmäßige Erinnerungen machen Wenn-Dann-Pläne spürbar wirksamer",
+"Ein vorab geplanter Plan B für Hindernisse verbessert die Umsetzung weiter",
+"Der Effekt zeigte sich über Altersgruppen von 18 bis 76 Jahren hinweg"
+],
+"grenze": "Nach mehr als sechs Wochen lässt die Wirkung deutlich nach, wenn der Plan nicht erinnert oder angepasst wird.",
+"fuer_dich": "Training fällt oft aus? Lege Zeit und Ort als Wenn-Dann-Satz fest, plane ein Hindernis vorab ein und stelle eine Wochenerinnerung.",
+"labor": {
+"design": "Systematisches Review mit Meta-Analyse (26 Studien) plus 13 RCTs (2–32 Wochen)",
+"teilnehmer": "Erwachsene (18–76 Jahre), Einzelstudien mit 30–709 Teilnehmenden",
+"ergebnis": "SMD = 0,25 mit Verstärkung (13 RCTs); SMD = 0,31 bei Studierenden (k = 12)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du willst dich diese Woche häufiger bewegen. Welcher Vorsatz führt im Alltag am ehesten dazu, dass du wirklich loslegst?",
+"richtig": "Zeit und Ort genau festlegen und typische Hürden vorab einplanen",
+"falsch": [
+"Dir allgemein vornehmen, diese Woche einfach mehr Sport zu machen",
+"Spontan jeden Abend entscheiden, ob noch genug Energie übrig ist",
+"Einmal einen Plan schreiben und ihn danach wochenlang weglegen"
+],
+"warum": "Konkrete Wenn-Dann-Pläne mit vorab durchdachten Hindernissen erhöhen die tatsächliche Bewegung deutlich."
+},
+"plus": {
+"frage": "Dein Wenn-Dann-Plan fürs Training hat am Anfang gut geklappt, nach zwei Monaten lässt der Effekt aber nach. Was hilft dir jetzt am meisten?",
+"richtig": "Regelmäßige Erinnerungen setzen und den Plan frisch anpassen",
+"falsch": [
+"Den ursprünglichen Plan unverändert liegen lassen und abwarten",
+"Auf Planung verzichten und nur noch spontan nach Gefühl trainieren",
+"Noch mehr Trainingstage hinzufügen, um den Druck zu erhöhen"
+],
+"warum": "Ohne regelmäßige Erinnerungen und Plananpassungen schwächt sich die Wirkung von Wenn-Dann-Plänen nach sechs Wochen ab."
+},
+"labor": {
+"frage": "In Meta-Analysen wurden Wenn-Dann-Pläne (Implementation Intentions) zur Bewegungsförderung geprüft. Was beeinflusste ihre Nachhaltigkeit?",
+"richtig": "Ohne Verstärkung und Anpassung nahm der Effekt nach sechs Wochen ab",
+"falsch": [
+"Sie wirkten nur bei Studierenden, nicht aber bei älteren Erwachsenen",
+"Die Wirkung blieb ohne Erinnerungen über viele Monate voll stabil",
+"Das Vorab-Planen von Hindernissen schwächte den Effekt deutlich ab"
+],
+"warum": "Die Daten zeigen kleine bis moderate Effekte (SMD 0,25–0,31), die ohne regelmäßige Verstärkung deutlich abnehmen."
+}
+}
+},
+{
+"id": "PSY-108",
+"karte": {
+"kopf": "Erwachsene · 73 Studien zusammengefasst",
+"titel": "Eigene Wahlmöglichkeiten stärken Motivation und Bewegung spürbar",
+"titel_hervor": "stärken Motivation und Bewegung",
+"setup": "73 experimentelle Studien prüften Programme, die Selbstbestimmung und das Gefühl eigener Fähigkeiten im Alltag gezielt unterstützen.",
+"zahl": null,
+"kern": [
+"Wer mitentscheiden darf, trainiert häufiger aus eigenem Antrieb statt aus Druck",
+"Das Gefühl, die Aufgabe gut zu meistern, nahm auch in der Nachbeobachtung weiter zu",
+"Auf soziales Zugehörigkeitsgefühl allein gab es keinen eindeutigen Effekt"
+],
+"grenze": "Die 73 Programme waren sehr verschieden aufgebaut, und fehlende Lust ließ sich nicht zuverlässig abbauen.",
+"fuer_dich": "Dein Plan fühlt sich wie Zwang an? Halte pro Einheit zwei bis drei gleichwertige Übungs- oder Intensitätsoptionen zur Wahl bereit.",
+"labor": {
+"design": "Meta-Analyse aus 73 experimentellen Studien zur Selbstbestimmungstheorie",
+"teilnehmer": "73 Interventionsstudien (aus 2.622 Treffern)",
+"ergebnis": "Bedürfnisunterstützung g = 0,64 (Follow-up 1,13), Autonomie g = 0,37, Kompetenz g = 0,31–0,55, autonome Mot. g = 0,30"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Was hilft im Schnitt mehr dabei, langfristig aktiv zu werden: strenge Vorgaben oder Wahlmöglichkeiten bei Übungen und Tempo?",
+"richtig": "Wahlmöglichkeiten, die Selbstbestimmung und Können stärken",
+"falsch": [
+"Strenge Vorgaben ohne Spielraum, damit kein Zweifel bleibt",
+"Druck von außen durch starre Verbote und Pflichtregeln",
+"Beides führt im Mittel zu gleich viel eigenem Antrieb"
+],
+"warum": "Programme, die Autonomie und Kompetenz stärken, fördern die eigene Motivation und positives Bewegungsverhalten."
+},
+"plus": {
+"frage": "Dein Trainingsplan nervt dich zunehmend, weil jede Übung starr vorgegeben ist. Welche Anpassung stärkt deine Motivation am besten?",
+"richtig": "Pro Einheit zwei bis drei gleichwertige Übungsoptionen zulassen",
+"falsch": [
+"Den Plan noch strenger machen, um keine Ausreden zuzulassen",
+"Ab sofort nur noch trainieren, wenn Trainingspartner dabei sind",
+"Jede Woche einen völlig zufälligen Plan ohne System ausprobieren"
+],
+"warum": "Gleichwertige Auswahlmöglichkeiten erhöhen Autonomie und Kompetenzerleben, ohne den Trainingsreiz zu verlieren."
+},
+"labor": {
+"frage": "Eine Meta-Analyse aus 73 experimentellen Studien prüfte Programme nach der Selbstbestimmungstheorie. Wo blieb der Effekt aus?",
+"richtig": "Bei sozialer Eingebundenheit, kontrollierter Motivation und Amotivation",
+"falsch": [
+"Bei wahrgenommener Autonomie und dem eigenen Kompetenzerleben",
+"Bei der wahrgenommenen Bedürfnisunterstützung in der Nachbeobachtung",
+"Bei der autonomen Motivation und dem geänderten Bewegungsverhalten"
+],
+"warum": "Autonomie, Kompetenz und autonome Motivation stiegen signifikant; Relatedness, kontrollierte Motivation und Amotivation nicht."
+}
+}
+},
+{
+"id": "PSY-109",
+"karte": {
+"kopf": "Erwachsene · 93 Publikationen ausgewertet",
+"titel": "Nutzen bringt dich zum Start, Spaß hält dich langfristig dabei",
+"titel_hervor": "Spaß hält dich langfristig",
+"setup": "Eine systematische Übersicht wertete Studien aus über fünfzig Jahren dazu aus, welche Motivationsarten mit Start und Dranbleiben zusammenhängen.",
+"zahl": null,
+"kern": [
+"Wer den persönlichen Nutzen sieht, fängt eher mit dem Training an",
+"Langfristig bleiben vor allem Menschen dabei, die Freude und Können erleben",
+"Reine Optik-Ziele oder schlechtes Gewissen wirken langfristig uneinheitlich"
+],
+"grenze": "Viele ausgewertete Studien waren reine Beobachtungen statt Experimente – ein direkter Ursachenbeweis fehlt oft.",
+"fuer_dich": "Du willst länger als ein paar Monate dranbleiben? Wähle nach der Startphase gezielt Übungen, die dir wirklich Spaß machen.",
+"labor": {
+"design": "Systematisches Review (1960–2011), überwiegend korrelative und prospektive Studien",
+"teilnehmer": "93 referenzierte Publikationen zu Bewegung und Motivation",
+"ergebnis": ""
+}
+},
+"quiz": {
+"basis": {
+"frage": "Warum bleiben manche Menschen jahrelang beim Sport, während andere nach wenigen Wochen aufhören?",
+"richtig": "Sie haben Spaß an der Bewegung und erleben eigene Fortschritte",
+"falsch": [
+"Sie trainieren vor allem aus schlechtem Gewissen oder Druck",
+"Sie richten sich beim Sport fast nur nach ihrem Aussehen",
+"Sie brauchen beim Start überhaupt keinen persönlichen Nutzen"
+],
+"warum": "Persönlicher Nutzen hilft beim Start, doch langfristig halten Freude am Training und Kompetenzerleben am besten."
+},
+"plus": {
+"frage": "Du hast die ersten Wochen gut überstanden, merkst aber, dass dir dein Plan keinen Spaß macht. Was tust du fürs Dranbleiben?",
+"richtig": "Übungen einbauen, die dir Freude machen und dir liegen",
+"falsch": [
+"Dich mit noch strengeren Optik-Zielen weiter antreiben",
+"Den ungeliebten Plan unverändert durchziehen, da nur Nutzen zählt",
+"Ein schlechtes Gewissen als täglichen Antrieb nutzen"
+],
+"warum": "Über längere Zeiträume sagen Freude am Training und Kompetenzerleben das Dranbleiben am zuverlässigsten voraus."
+},
+"labor": {
+"frage": "Ein systematisches Review über fünf Jahrzehnte prüfte Motivationsformen im Sport. Welche methodische Grenze prägt die Befunde?",
+"richtig": "Überwiegend korrelative und prospektive Designs statt RCTs",
+"falsch": [
+"Es wurden nur sehr wenige Studien aus einem kurzen Zeitraum geprüft",
+"Optik-Motive zeigten durchweg einen stabilen positiven Langzeiteffekt",
+"Zwischen kurzfristigem Start und Langzeitadhärenz gab es kein Muster"
+],
+"warum": "Da vor allem beobachtende Designs vorlagen, lassen sich Zusammenhänge gut erkennen, Ursachen aber weniger eindeutig belegen."
+}
+}
+},
+{
+"id": "PSY-110",
+"karte": {
+"kopf": "Wettkampfsportler · Meta-Analyse",
+"titel": "Selbstvertrauen wiegt für Leistung schwerer als Nervosität",
+"titel_hervor": "wiegt für Leistung schwerer",
+"setup": "Eine Meta-Analyse über mehr als 20 Sportarten verglich, wie stark Selbstvertrauen und grübelnde Wettkampfangst mit der Leistung zusammenhängen.",
+"zahl": null,
+"kern": [
+"Starkes Selbstvertrauen hängt enger mit guter Leistung zusammen als Angst mit schlechter",
+"Nervosität schadet nicht automatisch – entscheidend ist, wie du sie für dich deutest",
+"Hohes Selbstvertrauen kann eine angespannte Lage vor dem Start abfedern"
+],
+"grenze": "Wettkampfangst wirkt nicht bei allen gleich – ob sie bremst oder hilft, hängt von Deutung und Selbstvertrauen ab.",
+"fuer_dich": "Du bist vor einem Test oder Wettkampf nervös? Erinnere dich kurz an deine letzten drei Bestleistungen, um dein Vertrauen zu stärken.",
+"labor": {
+"design": "Meta-Analyse zu kognitiver Wettkampfangst, Selbstvertrauen und Leistung",
+"teilnehmer": "Wettkampfsportler aus über 20 Sportarten",
+"ergebnis": ""
+}
+},
+"quiz": {
+"basis": {
+"frage": "Vor einem wichtigen Lauf oder Test bist du nervös. Was spielt für deine Leistung im Schnitt die größere Rolle?",
+"richtig": "Wie stark du deinen eigenen Fähigkeiten vertraust",
+"falsch": [
+"Wie entspannt und ruhig dein Kopf vor dem Start bleibt",
+"Wie gut du jedes Gefühl von Aufregung ausblendest",
+"Ob du dich mit den stärksten Gegnern direkt vergleichst"
+],
+"warum": "Selbstvertrauen hängt im Schnitt stärker positiv mit der Leistung zusammen als Nervosität negativ wirkt."
+},
+"plus": {
+"frage": "Vor einem Leistungstest merkst du starke gedankliche Anspannung. Was hilft dir in den letzten Minuten davor am ehesten?",
+"richtig": "Dir kurz deine letzten drei Bestleistungen ins Gedächtnis rufen",
+"falsch": [
+"Den Test verschieben, weil Nervosität die Leistung zerstört",
+"Verkrampft versuchen, überhaupt nicht mehr nervös zu sein",
+"Dich vor allem auf mögliche Fehler während des Tests konzentrieren"
+],
+"warum": "Gezieltes Stärken des Selbstvertrauens stützt die Leistung besser, als gegen die Aufregung anzukämpfen."
+},
+"labor": {
+"frage": "In einer Meta-Analyse über mehr als 20 Sportarten wurden kognitive Angst und Selbstvertrauen im Wettkampf untersucht. Wie wirkt kognitive Angst?",
+"richtig": "Nicht pauschal negativ, sondern je nach Deutung und Vertrauen",
+"falsch": [
+"In jeder Sportart eindeutig stärker bremsend als Vertrauen hilft",
+"Unabhängig vom Selbstvertrauen bei allen gleich stark hemmend",
+"Nur leistungsfördernd, wenn das Selbstvertrauen sehr niedrig ist"
+],
+"warum": "Kognitive Angst hängt stark davon ab, ob Athleten sie als förderlich oder hinderlich bewerten und wie hoch ihr Vertrauen ist."
+}
+}
+},
+{
+"id": "PSY-111",
+"karte": {
+"kopf": "Athleten · Überblick über Meta-Analysen",
+"titel": "Jeder braucht ein eigenes Maß an Anspannung für Bestleistung",
+"titel_hervor": "ein eigenes Maß an Anspannung",
+"setup": "Ein Überblick über Meta-Analysen verglich eine pauschale „mittlere Anspannung“ mit der persönlichen optimalen Zone einzelner Athleten.",
+"zahl": null,
+"kern": [
+"In der eigenen optimalen Anspannungszone waren die Leistungen deutlich besser",
+"Die pauschale Regel „mittlere Aufregung ist optimal“ hielt dem Vergleich nicht stand",
+"Präzise Bewegungen verlangen meist weniger Anspannung als maximale Kraft"
+],
+"grenze": "Im Vergleich mit dem eigenen Schnitt war der Effekt weniger eindeutig als bei festen Leistungskriterien.",
+"fuer_dich": "Du leistest mal zu ruhig, mal überdreht weniger? Notiere vor Tests deine Anspannung von 1 bis 10 und steuere sie gezielt.",
+"labor": {
+"design": "Systematisches Review von Meta-Analysen, Vergleich IZOF-Modell vs. Inverted-U",
+"teilnehmer": "Athleten verschiedener Sportarten (Meta-Analysen)",
+"ergebnis": "IZOF gesamt SMD = 0,44 (95 % KI 0,32–0,55), kriteriumsbezogen 0,61, selbstbezogen 0,27; Inverted-U p > 0,05"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Wie viel Aufregung oder Anspannung ist vor einer sportlichen Leistung am besten?",
+"richtig": "Das ist individuell verschieden und hängt auch von der Aufgabe ab",
+"falsch": [
+"Für fast alle Menschen liegt das Optimum genau in der Mitte",
+"Je höher die Aufregung steigt, desto stärker wird jede Leistung",
+"Möglichst gar keine Anspannung bringt bei jedem Sport das Beste"
+],
+"warum": "Eine pauschale Mitte passt nicht für alle – gute Leistungen entstehen in der persönlichen optimalen Zone."
+},
+"plus": {
+"frage": "Du willst herausfinden, bei welchem Aktivierungslevel du bei schweren Sätzen oder Tests am besten ablieferst. Wie gehst du vor?",
+"richtig": "Bei mehreren Tests deine Anspannung notieren und deine Zone finden",
+"falsch": [
+"Dich vor jeder einzelnen Einheit so stark wie möglich pushen",
+"Vor Maximalkraft und Technikarbeit exakt dasselbe Level anstreben",
+"Die optimale Anspannungszone deines Trainingspartners übernehmen"
+],
+"warum": "Über mehrere Tests mit Ratings von 1 bis 10 erkennst du deine Zone und kannst dich gezielt beruhigen oder aktivieren."
+},
+"labor": {
+"frage": "In einem Überblick über Meta-Analysen wurden das IZOF-Modell (individuelle Zone optimaler Funktion) und die Inverted-U-Kurve verglichen. Was zeigte sich?",
+"richtig": "IZOF trennte Leistungen signifikant, die pauschale Inverted-U nicht",
+"falsch": [
+"Die klassische Inverted-U-Kurve zeigte größere Effekte als IZOF",
+"Beide Modelle waren im statistischen Vergleich gleich aussagekräftig",
+"Selbstbezogene IZOF-Effekte waren stärker als kriteriumsbezogene"
+],
+"warum": "IZOF erreichte insgesamt SMD = 0,44 (kriteriumsbezogen 0,61), während die pauschale Inverted-U-Kurve nicht signifikant war."
+}
+}
+}
+]

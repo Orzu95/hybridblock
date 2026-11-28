@@ -1,0 +1,1114 @@
+[
+{
+"id": "LOD-103",
+"karte": {
+"kopf": "Kraftsportler · Vergleichsstudie über 7 Wochen",
+"titel": "Beim Krafttraining brachte Herz-Steuerung keinen klaren Vorteil",
+"titel_hervor": "keinen klaren Vorteil",
+"setup": "Teilnehmer machten sieben Wochen Krafttraining – entweder nach festem Plan oder indem sie Einheiten bei schlechteren morgendlichen Herzwerten ausließen.",
+"zahl": null,
+"kern": [
+"Muskelmasse und Kraft wuchsen in beiden Gruppen ähnlich stark",
+"Auch die Unterschiede zwischen einzelnen Personen wurden nicht kleiner",
+"Herzmessungen erfassen lokale Muskelermüdung nach Krafttraining nur schlecht"
+],
+"grenze": "Nur 21 Personen über sieben Wochen – langfristige Effekte über Monate bleiben offen.",
+"fuer_dich": "Dein Ziel sind Muskelaufbau oder Kraft? Halte dich an deinen festen Wochenplan, statt Einheiten wegen eines tiefen Herzwerts zu streichen.",
+"labor": {
+"design": "RCT, 7 Wochen Krafttraining, HRV-gesteuerte Frequenz (Schwelle −1 SD) vs. fester Plan",
+"teilnehmer": "21 Teilnehmer (11 HRV-gesteuert, 10 fester Plan)",
+"ergebnis": ""
+}
+},
+"quiz": {
+"basis": {
+"frage": "Jemand lässt geplante Krafteinheiten aus, sobald die Uhr morgens schlechtere Erholungswerte vom Herzen anzeigt. Was zeigt der Vergleich mit einem festen Plan?",
+"richtig": "Kraft und Muskelaufbau fallen nicht besser aus als beim festen Plan",
+"falsch": [
+"Die Muskeln wachsen deutlich schneller als mit einem festen Plan",
+"Man verliert in wenigen Wochen fast die gesamte aufgebaute Kraft",
+"Alle Trainierenden reagieren danach genau gleich auf das Training"
+],
+"warum": "Die Erholungswerte des Herzens spiegeln lokale Muskelermüdung nach Krafttraining nur unzureichend wider."
+},
+"plus": {
+"frage": "Dein Hauptziel ist Muskelaufbau und dein morgendlicher HRV-Wert liegt heute unter deinem Normalbereich. Wie solltest du dein Krafttraining steuern?",
+"richtig": "Trainiere nach deinem festen Wochenplan statt die Einheit zu streichen",
+"falsch": [
+"Streiche jede Krafteinheit, bis die HRV wieder über dem Schnitt liegt",
+"Ersetze das gesamte Krafttraining ab sofort durch lockere Läufe",
+"Verdopple das Gewicht, um das Nervensystem gezielt anzuregen"
+],
+"warum": "Bei Kraft- und Hypertrophiezielen brachte das Aussetzen nach RMSSD-Abfall keinen Vorteil gegenüber einem festen Plan."
+},
+"labor": {
+"frage": "In einer siebenwöchigen RCT wurde die Krafttrainingsfrequenz über einen RMSSD-Abfall von über einer Standardabweichung gesteuert. Warum blieb ein Vorteil aus?",
+"richtig": "Kardiale HRV bildet lokale neuromuskuläre Ermüdung nur schlecht ab",
+"falsch": [
+"Ein Abfall um eine Standardabweichung tritt nach Krafttraining nicht auf",
+"Feste Pläne verhindern Muskelwachstum durch fehlende Pausentage",
+"Die RMSSD-Messung erfasst ausschließlich Muskelschäden in den Beinen"
+],
+"warum": "Die autonome Herzsteuerung erfasst periphere neuromuskuläre Ermüdung und lokale Muskelschäden nach Krafttraining nur unzureichend."
+}
+}
+},
+{
+"id": "LOD-104",
+"karte": {
+"kopf": "Sportler · 56 Studien & Expertenkonsens",
+"titel": "Der Ruhepuls allein zeigt Überlastung nicht verlässlich an",
+"titel_hervor": "zeigt Überlastung nicht verlässlich an",
+"setup": "Fachleute werteten 56 Studien aus, um zu prüfen, ob der morgendliche Ruhepuls akute Trainingsmüdigkeit oder Übertraining anzeigt.",
+"zahl": null,
+"kern": [
+"Zwischen Ruhepuls und Trainingsbelastung fand sich kein klarer Zusammenhang",
+"Ein tiefer Ruhepuls kann gute Fitness bedeuten – oder starke Überlastung",
+"Bisherige Fachbewertungen sehen keine belastbare Grundlage für den Einzelwert"
+],
+"grenze": "Als Konsensuspapier fasst die Arbeit bisherige Daten zusammen und prüft keinen neuen Einzeltest.",
+"fuer_dich": "Dein Ruhepuls weicht morgens vom Wochenmittel ab? Ändere deinen Plan erst zusammen mit deinem Befinden und weiteren Messwerten.",
+"labor": {
+"design": "Konsensuspapier und systematisches Review ohne Meta-Analyse zu Ermüdungsmarkern",
+"teilnehmer": "56 eingeschlossene Studien",
+"ergebnis": "Ruhepuls vs. interne Trainingsintensität r = 0,14 (95 % KI −0,18 bis 0,42, n. s.); Wochenmittel 52,6–54,7 bpm"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du misst morgens nur deinen Ruhepuls, um zu erkennen, ob du zu viel trainiert hast. Wie verlässlich ist dieser Wert allein?",
+"richtig": "Allein nicht verlässlich, da er kaum mit der Trainingslast zusammenhängt",
+"falsch": [
+"Sehr verlässlich, weil Überlastung den Puls meist eindeutig hochtreibt",
+"Sehr verlässlich, solange du ihn im Sitzen direkt nach dem Aufstehen misst",
+"Gut nutzbar, weil ein niedriger Ruhepuls gute Erholung eindeutig beweist"
+],
+"warum": "Über 56 Studien zeigte der Ruhepuls allein keinen klaren Zusammenhang mit der Trainingsbelastung."
+},
+"plus": {
+"frage": "Dein morgendlicher Ruhepuls weicht heute von deinem 7-Tage-Mittel ab. Wie solltest du diesen Wert für dein Training einordnen?",
+"richtig": "Nur zusammen mit HRV-Werten und deinem subjektiven Wohlbefinden deuten",
+"falsch": [
+"Sofort eine Woche Deload einlegen, unabhängig von deinem Körpergefühl",
+"Die Intensität steigern, wenn der Puls heute niedriger als üblich liegt",
+"Den Wert als festen Grenzwert nutzen und subjektive Signale ignorieren"
+],
+"warum": "Der Ruhepuls allein reicht nicht aus – sinnvoll wird er erst in Kombination mit RMSSD und subjektiven Wellness-Werten."
+},
+"labor": {
+"frage": "In einem Review über 56 Studien wurde geprüft, wie gut der morgendliche Ruhepuls akute Ermüdung anzeigt. Welches Problem erschwert die Deutung niedriger Werte?",
+"richtig": "Sie können sowohl aerobe Anpassung als auch Overreaching widerspiegeln",
+"falsch": [
+"Die Ruheherzfrequenz korreliert mit der internen Last fast perfekt positiv",
+"Bei Trainierten verändert sich der Ruhepuls durch Training gar nicht",
+"Niedrige Werte treten erst nach mehreren Wochen Trainingspause auf"
+],
+"warum": "Ein tiefer Ruhepuls kann positive Anpassung oder parasympathische Hyperaktivität bei Overreaching sein; die Korrelation war nicht signifikant (r = 0,14)."
+}
+}
+},
+{
+"id": "LOD-105",
+"karte": {
+"kopf": "Ausdauersportler · 24 Studien zusammengefasst",
+"titel": "Bessere Herz-Erholungswerte können Fitness oder Überlastung sein",
+"titel_hervor": "Fitness oder Überlastung sein",
+"setup": "Eine Meta-Analyse wertete 24 Studien mit Ausdauersportlern aus und verglich Herzwerte bei fitter Leistung mit denen bei starker Überlastung.",
+"zahl": null,
+"kern": [
+"Ruhe-Erholungswerte und schneller Pulsabfall nach dem Sport stiegen in beiden Fällen",
+"Bei Überlastung stieg der Puls zu Trainingsbeginn jedoch deutlich langsamer an",
+"Ohne Blick auf Leistung und Gefühl lassen sich beide Zustände leicht verwechseln"
+],
+"grenze": "Die Daten stammen aus Ausdauerstudien – ob Kraftsportler genau so reagieren, bleibt offen.",
+"fuer_dich": "Deine morgendlichen Herzwerte steigen stark an? Prüfe zuerst dein Ermüdungsgefühl und deine Leistung, statt blind hart zu trainieren.",
+"labor": {
+"design": "Systematisches Review mit Meta-Analyse zu autonomen Herzfrequenzmarkern bei Adaptation vs. Overreaching",
+"teilnehmer": "355 Ausdauersportler aus 24 Studien",
+"ergebnis": "Ruhe-RMSSD: Anpassung SMD = 0,58, Overreaching SMD = 0,26; HFP SMD = 0,55; HR-Akzeleration SMD = 1,34"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Deine Sportuhr zeigt an, dass sich dein Herz in Ruhe und nach dem Sport besonders schnell erholt. Bedeutet das zwangsläufig, dass du topfit bist?",
+"richtig": "Nein, derselbe Anstieg tritt auch bei starker Trainingsüberlastung auf",
+"falsch": [
+"Ja, diese Werte steigen nur, wenn deine Fitness klar zugenommen hat",
+"Nein, ein schnellerer Pulsabfall zeigt meistens eine schlechte Form an",
+"Ja, bei Überlastung fallen diese Herzwerte stattdessen stark nach unten"
+],
+"warum": "Sowohl gute Trainingsanpassung als auch Überlastung können die Ruhe-Erholungswerte des Herzens ansteigen lassen."
+},
+"plus": {
+"frage": "Dein 7-Tage-RMSSD-Durchschnitt und deine Pulserholung nach dem Training steigen deutlich an. Wie unterscheidest du Fitnessgewinn von Overreaching?",
+"richtig": "Du prüfst dein subjektives Ermüdungsgefühl und den Pulsanstieg beim Start",
+"falsch": [
+"Du schaust allein auf den Ruhepuls, der beide Zustände eindeutig trennt",
+"Du erhöhst das Volumen, bis der RMSSD-Wert wieder deutlich nach unten fällt",
+"Du kannst bei steigender HRV direkt von besonders guter Form ausgehen"
+],
+"warum": "Bei Overreaching steigt der RMSSD zwar ebenfalls, doch Müdigkeit nimmt zu und der Puls steigt zu Belastungsbeginn langsamer an."
+},
+"labor": {
+"frage": "Eine Meta-Analyse über 24 Studien verglich autonome Herzfrequenzmarker bei positiver Anpassung und funktionellem Overreaching. Welcher Marker trennte beide am klarsten?",
+"richtig": "Die Herzfrequenz-Akzeleration zu Belastungsbeginn sank bei Overreaching",
+"falsch": [
+"Der Ruhe-RMSSD stieg nur bei Anpassung und fiel bei Overreaching stark ab",
+"Die Herzfrequenzerholung nach Belastung stieg nur bei positiver Anpassung",
+"Alle vagalen Ruhewerte blieben bei funktionellem Overreaching unverändert"
+],
+"warum": "Ruhe-RMSSD und HRR stiegen in beiden Zuständen an, während die Herzfrequenz-Akzeleration bei Overreaching sank (SMD = 1,34)."
+}
+}
+},
+{
+"id": "LOD-106",
+"karte": {
+"kopf": "Leistungssportler · Beobachtung über 12 Wochen",
+"titel": "Ein niedriger Puls beim Aufwärmen kann auch akute Müdigkeit sein",
+"titel_hervor": "auch akute Müdigkeit sein",
+"setup": "Zehn Leistungssportler absolvierten zwölf Wochen lang denselben Aufwärmlauf, während Puls, Blutwerte und subjektive Erschöpfung gemessen wurden.",
+"zahl": {
+"label": "Niedrigerer Aufwärm-Puls bei Ermüdung",
+"wert": "−1,5 %",
+"alltag": "≈ 3 Schläge pro Minute"
+},
+"kern": [
+"Über zwölf Wochen Training sank der Aufwärm-Puls im Schnitt ähnlich stark um 1,4 %",
+"Die tägliche Schwankung lag fast genauso hoch wie der Effekt von Ermüdung",
+"Erst das subjektive Belastungsgefühl trennte gute Fitness von akuter Müdigkeit"
+],
+"grenze": "Nur zehn Leistungssportler nahmen teil – diese ersten Hinweise lassen sich nicht direkt verallgemeinern.",
+"fuer_dich": "Dein Puls bleibt beim gewohnten Aufwärmen tiefer als sonst? Prüfe dein Müdigkeitsgefühl, bevor du das als bessere Fitness wertest.",
+"labor": {
+"design": "Prospektive Beobachtungsstudie über 12 Wochen mit standardisiertem submaximalem Aufwärmtest (HRex)",
+"teilnehmer": "10 Elite-Spieler",
+"ergebnis": "HRex ermüdet −1,5 % vs. 12-Wochen-Trend −1,4 % (CV = 1,3 %); CK und SRSS |d| = 0,93 bis 2,90"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Beim gewohnten Aufwärmlauf ist dein Puls heute etwas niedriger als sonst. Was kann außer besserer Fitness dahinterstecken?",
+"richtig": "Eine akute Ermüdung durch hohe Trainingsbelastung der letzten Tage",
+"falsch": [
+"Ein deutlicher Verlust an Ausdauer durch zu wenige Laufkilometer",
+"Ein reiner Messfehler, weil Ermüdung den Puls meist nach oben treibt",
+"Eine frische Erholung, da Müdigkeit den Aufwärm-Puls nicht senkt"
+],
+"warum": "Erste Hinweise deuten darauf hin, dass der Puls bei lockerer Belastung sowohl durch Training als auch durch akute Ermüdung leicht sinken kann."
+},
+"plus": {
+"frage": "Dein Puls im standardisierten Aufwärmlauf liegt heute etwas unter deinem Normalwert, gleichzeitig fühlst du dich deutlich erschöpft. Wie ordnest du das ein?",
+"richtig": "Eher als akute Trainingsmüdigkeit und nicht als frischen Fitnessgewinn",
+"falsch": [
+"Als klares Zeichen für verbesserte Ausdauer trotz deiner Müdigkeit",
+"Als Hinweis, heute besonders viele harte Intervalle einzuplanen",
+"Als Beleg dafür, dass du dein subjektives Gefühl ignorieren solltest"
+],
+"warum": "Weil die Herzfrequenz beim Aufwärmen in beiden Fällen ähnlich leicht sinkt, gibt das erhöhte Belastungsgefühl den Ausschlag."
+},
+"labor": {
+"frage": "Bei zehn Leistungssportlern wurde über zwölf Wochen die submaximale Herzfrequenz (HRex) im Aufwärmlauf verfolgt. Warum ist HRex als Einzelmarker problematisch?",
+"richtig": "Ermüdungssenkung, Langzeitanpassung und Tagesschwankung liegen nah beieinander",
+"falsch": [
+"Die HRex zeigte keinerlei Veränderung während akuter Ermüdungsphasen",
+"Die subjektiven Beanspruchungsmarker reagierten deutlich schwächer als HRex",
+"Bei hoher Beanspruchung stieg die HRex um mehr als zehn Prozent stark an"
+],
+"warum": "Ermüdung (−1,5 %), 12-Wochen-Anpassung (−1,4 %) und Normalvariation (CV 1,3 %) liegen eng beisammen, während subjektive Marker stark ausschlugen."
+}
+}
+},
+{
+"id": "LOD-107",
+"karte": {
+"kopf": "Verschiedene Sportler · 36 Studien geprüft",
+"titel": "Gefühlte Anstrengung mal Dauer misst Belastung fast wie ein Pulsgurt",
+"titel_hervor": "fast wie ein Pulsgurt",
+"setup": "In 36 Studien bewerteten Sportler nach dem Training ihre Anstrengung von 0 bis 10 mal Trainingsdauer und verglichen dies mit Pulsmessungen.",
+"zahl": null,
+"kern": [
+"Die einfache Bewertung spiegelte die Herzfrequenz-Belastung über viele Sportarten wider",
+"Ob du nach 15 oder nach 30 Minuten bewertest, lieferte fast dieselben Werte",
+"Bei sehr wechselhaftem Zirkeltraining braucht die Einschätzung anfangs etwas Übung"
+],
+"grenze": "Bei hochintensivem funktionellem Training passte die Einschätzung anfangs nur mäßig zu den Pulswerten.",
+"fuer_dich": "Du willst deine Belastung ohne Brustgurt erfassen? Bewerte 15 bis 30 Minuten nach dem Training die Härte von 0 bis 10 mal Minuten.",
+"labor": {
+"design": "Systematisches Review ohne Meta-Analyse, Validierung der Session-RPE (CR-10 x Dauer) vs. HF-Lastmaße",
+"teilnehmer": "36 Studien über verschiedene Sportarten, Alter und Geschlechter",
+"ergebnis": "r = 0,889 vs. Edwards-TL (individuell 0,68–0,97), r = 0,561 vs. Banister-TRIMP; HIFT anfangs ICC = 0,586"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Nach dem Sport schätzt du auf einer Skala von 0 bis 10 ein, wie hart die Einheit war, und rechnest sie mit der Dauer zusammen. Wie gut erfasst das deine Belastung?",
+"richtig": "Erstaunlich genau – über viele Sportarten ähnlich gut wie Pulsmessungen",
+"falsch": [
+"Kaum brauchbar, weil Gefühle fast gar nicht zur Herzfrequenz passen",
+"Nur für Profis geeignet, da Freizeitsportler sich völlig verschätzen",
+"Nur beim Schwimmen nützlich, aber nicht beim Laufen oder Krafttraining"
+],
+"warum": "Über 36 Studien stimmte diese einfache Einschätzung sehr stark mit objektiven Pulsmessungen überein."
+},
+"plus": {
+"frage": "Du möchtest deine Trainingslast per Session-RPE erfassen. Wann nach dem Training solltest du die Anstrengung bewerten?",
+"richtig": "Etwa 15 bis 30 Minuten nach Trainingsende für die gesamte Einheit",
+"falsch": [
+"Am nächsten Morgen direkt nach dem Aufwachen noch im Bett",
+"Bereits direkt nach dem Aufwärmen vor dem eigentlichen Hauptteil",
+"Erst drei Tage später, wenn der Muskelkater seinen Höhepunkt hat"
+],
+"warum": "Die Bewertung 15 bis 30 Minuten nach Trainingsende liefert stabile Werte für die gesamte Einheit."
+},
+"labor": {
+"frage": "Ein Review über 36 Studien validierte die Session-RPE-Methode gegen herzfrequenzbasierte Trainingslastmodelle. Wo zeigte sich eine wesentliche Einschränkung?",
+"richtig": "Bei hochintensivem funktionellem Training war die Übereinstimmung anfangs mäßig",
+"falsch": [
+"Zwischen 15 und 30 Minuten nach Trainingsende schwankten die Werte extrem",
+"Bei Frauen und Jugendlichen korrelierte Session-RPE gar nicht mit dem Puls",
+"Die Korrelation mit herzfrequenzbasierten Lastmaßen blieb insgesamt sehr niedrig"
+],
+"warum": "Im hochintensiven funktionellen Training lag die anfängliche Reliabilität nur moderat (ICC = 0,586) und stieg erst mit Erfahrung."
+}
+}
+},
+{
+"id": "LOD-108",
+"karte": {
+"kopf": "Erfahrene Sportler · Beobachtungsstudie",
+"titel": "Training ohne leichte Tage begünstigt wohl Infekte und Überlastung",
+"titel_hervor": "begünstigt wohl Infekte und Überlastung",
+"setup": "Bei 25 erfahrenen Sportlern wurden tägliche Trainingsbelastung, Eintönigkeit der Woche und das Auftreten leichter Infekte beobachtet.",
+"zahl": null,
+"kern": [
+"Erste Hinweise zeigen mehr harmlose Infekte bei sehr gleichförmigen Trainingswochen",
+"Entscheidend ist nicht nur die Wochenmenge, sondern der fehlende Wechsel der Härte",
+"Ab welchem Wert das Risiko steigt, unterscheidet sich von Person zu Person stark"
+],
+"grenze": "Nur 25 Sportler wurden beobachtet – feste Grenzwerte für alle lassen sich daraus nicht ableiten.",
+"fuer_dich": "Deine Trainingstage fühlen sich fast jeden Tag gleich fordernd an? Plane ein bis zwei Ruhetage oder deutlich leichtere Tage pro Woche ein.",
+"labor": {
+"design": "Prospektive Beobachtungsstudie, 7-Tage-Monotonie (Mittel/SD) und Strain über 6-Wochen-Basis",
+"teilnehmer": "25 erfahrene Athleten",
+"ergebnis": ""
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du trainierst jede Woche fast täglich mit derselben mittleren bis hohen Anstrengung ohne echte Ruhetage. Worauf deuten Beobachtungen bei Sportlern hin?",
+"richtig": "Das Risiko für leichte Infekte und Überlastung kann spürbar steigen",
+"falsch": [
+"Der Körper gewöhnt sich daran und wird danach deutlich seltener krank",
+"Ohne Pausen wächst die Ausdauer schneller als mit leichten Tagen",
+"Nur extreme Einzeltage belasten den Körper, Gleichförmigkeit kaum"
+],
+"warum": "Wenn harte und leichte Tage sich nicht abwechseln, steigt die Eintönigkeit der Belastung – das ging mit mehr Infekten und Überlastung einher."
+},
+"plus": {
+"frage": "Deine tägliche Session-RPE-Last schwankt über die Woche kaum, weil du an fast allen Tagen ähnlich hart trainierst. Was hilft am besten gegen hohe Trainingsmonotonie?",
+"richtig": "Ein bis zwei Ruhetage oder deutlich leichtere Tage pro Woche einbauen",
+"falsch": [
+"Jeden Tag genau das gleiche mittlere Gewicht und Tempo beibehalten",
+"Die Dauer jeder Einheit etwas erhöhen, aber weiter ohne Pausentag",
+"Einen festen Grenzwert aus dem Internet statt eigener Daten nutzen"
+],
+"warum": "Klare Unterschiede zwischen fordernden Tagen und Ruhe- oder Leicht-Tagen senken die Monotonie und damit den Trainings-Strain."
+},
+"labor": {
+"frage": "In einer Beobachtungsstudie mit 25 Athleten wurden Trainingsmonotonie (Tagesmittel durch Standardabweichung) und Strain (Wochenlast mal Monotonie) erfasst. Welche Grenze hat die Praxisnutzung?",
+"richtig": "Kritische Schwellen sind stark individuell und brauchen eine eigene Baseline",
+"falsch": [
+"Ein fester Gruppen-Grenzwert trennt Gesunde und Erkrankte zuverlässig",
+"Monotonie lässt sich nur mit Blutwerten und nicht über RPE berechnen",
+"Strain steigt vor allem dann, wenn man zwei Ruhetage pro Woche einbaut"
+],
+"warum": "Die Belastungsgrenzen variieren interindividuell stark; feste Gruppenschwellen ohne mehrwöchige eigene Baseline erzeugen Fehlalarme."
+}
+}
+},
+{
+"id": "LOD-109",
+"karte": {
+"kopf": "Teamsportler · Beobachtungsdaten & Übersicht",
+"titel": "Sprunghaft mehr Training geht wohl mit mehr Verletzungen einher",
+"titel_hervor": "mit mehr Verletzungen einher",
+"setup": "Beobachtungsdaten vor allem aus Rugby und Cricket verglichen plötzliche Belastungssprünge von Woche zu Woche mit kontaktfreien Verletzungen.",
+"zahl": {
+"label": "Verletzungsrisiko bei Sprung ab 15 %",
+"wert": "21–49 %",
+"alltag": ""
+},
+"kern": [
+"Starke Belastungsspitzen gegenüber dem Monatsmittel zeigten ein 5- bis 7-faches Risiko",
+"Die häufig genannte 10-Prozent-Regel stammt jedoch aus Beobachtungen ohne Beweis",
+"Kritische Nachprüfungen zeigen, dass die Rechenformel Risiken künstlich verzerren kann"
+],
+"grenze": "Die Daten sind reine Beobachtungen ohne Ursachenbeweis und stammen stark aus Rugby und Cricket.",
+"fuer_dich": "Du willst dein Trainingspensum steigern? Erhöhe die Wochenlast lieber schrittweise um unter 10 bis höchstens 15 Prozent statt sprunghaft.",
+"labor": {
+"design": "Narrative Übersicht und Beobachtungsdaten zu Wochenanstiegen und ACWR (7- vs. 28-Tage-Last)",
+"teilnehmer": "U. a. Rugby-, Cricket- und 56 Ausdauersportler",
+"ergebnis": "Wochenanstieg ≥ 15 %: 21–49 % Verletzungsrisiko; ACWR-Spikes: RR = 5 bis 7 (Beobachtungsdaten)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du fühlst dich motiviert und steigerst dein wöchentliches Training auf einen Schlag sehr stark. Worauf deuten Beobachtungen bei Sportlern hin?",
+"richtig": "Das Risiko für Muskel- und Sehnenverletzungen kann deutlich steigen",
+"falsch": [
+"Der Körper passt sich bei großen Sprüngen besonders verletzungsfrei an",
+"Verletzungen entstehen fast nur durch Zweikämpfe, kaum durch Planung",
+"Hohe Sprünge schaden erst, wenn man über ein ganzes Jahr so trainiert"
+],
+"warum": "In Beobachtungsdaten traten kontaktfreie Verletzungen bei schnellen Wochensteigerungen und Belastungsspitzen deutlich häufiger auf."
+},
+"plus": {
+"frage": "Du planst die nächste Trainingswoche und möchtest dein Volumen ausbauen. Wie gehst du nach dem aktuellen Kenntnisstand am sinnvollsten vor?",
+"richtig": "Steigere die Wochenlast moderat und nutze Quotienten nur als grobe Orientierung",
+"falsch": [
+"Verlasse dich starr auf eine feste ACWR-Schwelle als festen Schutz",
+"Verdopple das Volumen für eine Woche und lege danach einen Ruhetag ein",
+"Reduziere die Belastung jede Woche weiter, um Verletzungen zu vermeiden"
+],
+"warum": "Schrittweise Steigerungen unter 10 bis maximal 15 % sind eine sinnvolle Orientierung, während starre ACWR-Schwellen nicht bewiesen sind."
+},
+"labor": {
+"frage": "Beobachtungsdaten aus dem Teamsport verbanden starke Wochenanstiege und hohe ACWR-Werte mit mehr Weichteilverletzungen. Was schränkt diese Schwellen ein?",
+"richtig": "Fehlende kausale Validierung und mögliche Rechenartefakte der Quote",
+"falsch": [
+"Es wurden ausschließlich kontaktbedingte Knochenbrüche ausgewertet",
+"In den Beobachtungsdaten zeigten Belastungsspitzen keinen Zusammenhang",
+"Die Schwellen wurden nur an untrainierten Kindern im Labor ermittelt"
+],
+"warum": "Die 10-/15-%-Grenzen und ACWR-Bereiche stammen aus Beobachtungsdaten ohne Kausalbeweis, und die Quotientenformel kann Scheineffekte erzeugen."
+}
+}
+},
+{
+"id": "LOD-110",
+"karte": {
+"kopf": "Rechenmodelle · Methodische Nachprüfung",
+"titel": "Beliebte Belastungsformel erzeugt oft künstliche Warnsignale",
+"titel_hervor": "künstliche Warnsignale",
+"setup": "Wissenschaftler testeten das Verhältnis aus Wochen- und Monatslast in Computersimulationen und ersetzten die Monatslast sogar durch Zufallszahlen.",
+"zahl": null,
+"kern": [
+"Selbst mit reinen Zufallszahlen als Monatsbasis zeigte die Formel scheinbare Risiken",
+"Sie bläst den Einfluss der aktuellen Woche künstlich auf, ohne besser vorherzusagen",
+"Gerade bei niedriger Grundfitness führt der Bruch leicht zu falschen Warnungen"
+],
+"grenze": "Es handelt sich um mathematische Simulationen – welche Formel Verletzungen perfekt vorhersagt, ist offen.",
+"fuer_dich": "Deine App warnt vor einem hohen Belastungsverhältnis? Schau lieber getrennt auf deine aktuelle Wochenlast und den Sprung zur Vorwoche.",
+"labor": {
+"design": "Methodische Simulations- (je 100 Läufe) und Reanalyse-Studie zur ACWR-Normalisierung",
+"teilnehmer": "Simulierte und reanalysierte Trainingsdatensätze",
+"ergebnis": "Zufalls-Nenner: OR = 1,53 (1,16–2,07) bzw. 1,89 bei halber SD; fester Nenner OR = 1,95 vs. Original 2,45"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Manche Apps teilen dein Training dieser Woche durch dein Monatsmittel, um Verletzungen vorherzusagen. Was zeigte eine genaue Nachprüfung dieser Rechenformel?",
+"richtig": "Die Formel kann selbst bei Zufallszahlen scheinbare Risiken anzeigen",
+"falsch": [
+"Die Formel sagt fast jede Muskelverletzung auf den Tag genau voraus",
+"Der Rechenwert funktioniert besonders bei Einsteigern fehlerfrei",
+"Ohne diesen Bruch lässt sich die Wochenbelastung gar nicht einschätzen"
+],
+"warum": "In Simulationen erzeugte die Formel sogar mit zufälligen Monatswerten deutliche Risiko-Signale und brachte keinen echten Vorhersage-Vorteil."
+},
+"plus": {
+"frage": "Du willst deine Trainingsbelastung vernünftig überwachen, ohne dich von Fehlalarmen der ACWR verunsichern zu lassen. Welche Kennzahlen betrachtest du besser getrennt?",
+"richtig": "Deine reine Wochenlast und die Steigerung im Vergleich zur Vorwoche",
+"falsch": [
+"Ausschließlich den ACWR-Quotienten ohne Blick auf die Wochenmenge",
+"Nur deine durchschnittliche Trainingslast der letzten sechs Monate",
+"Den Ruhepuls geteilt durch die Dauer deiner letzten Einheit"
+],
+"warum": "Die akute Wochenlast und die Veränderung zur Vorwoche getrennt zu betrachten, vermeidet Verzerrungen durch den Quotienten."
+},
+"labor": {
+"frage": "In einer Simulationsstudie wurde der Nenner der ACWR (chronische Last) durch Zufallszahlen ersetzt. Was war das zentrale Ergebnis dieser Reanalyse?",
+"richtig": "Es entstanden dennoch signifikante Odds Ratios durch statistische Artefakte",
+"falsch": [
+"Die Odds Ratios sanken sofort auf genau eins ohne jede Verzerrung",
+"Eine entkoppelte ACWR löste alle Probleme der fehlenden Linearität",
+"Der Quotient übertraf die reine akute Last deutlich in der Vorhersagekraft"
+],
+"warum": "Selbst mit Zufalls-Nenner ergaben sich signifikante Odds Ratios (1,53 bis 1,89); auch entkoppelt bleibt der Quotient verzerrt."
+}
+}
+},
+{
+"id": "LOD-111",
+"karte": {
+"kopf": "Rechenmodelle · Methodische Analyse",
+"titel": "Belastungs-Quotienten verzerren den Neustart bis zu 50 Tage lang",
+"titel_hervor": "bis zu 50 Tage lang",
+"setup": "Eine methodische Prüfung testete, wie Belastungs-Quotienten verschiedene Wochenpläne, den Tracking-Start und Wettkampf-Entlastungen abbilden.",
+"zahl": null,
+"kern": [
+"Drei völlig verschiedene Wochen mit oder ohne Pausen ergaben exakt denselben Wert",
+"Je nach gewähltem Startwert lag das Verhältnis am ersten Tag bei 1,00 oder 3,65",
+"Vor Wettkämpfen löst geplantes Zurückfahren oft irreführende Warnungen aus"
+],
+"grenze": "Die Analyse zeigt Rechenschwächen an Modellbeispielen, liefert aber keine neuen Verletzungsdaten.",
+"fuer_dich": "Du startest neu mit dem Tracking oder fährst vor dem Wettkampf runter? Verlasse dich in diesen Phasen nicht auf Belastungs-Quotienten.",
+"labor": {
+"design": "Methodische Analyse von ACWR-Wochenmustern, EWMA-Startwerten und starren Risikozonen",
+"teilnehmer": "Modellierte Trainingswochen und EWMA-Verläufe",
+"ergebnis": "3 Pläne identisch ACWR = 1,43; EWMA Tag 1: ACWR = 3,65 (E0 = 0) vs. 1,00 (E0 = 55), Konvergenz nach 50 Tagen"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Jemand trainiert an einem Tag extrem hart und ruht sechs Tage; jemand anders verteilt dasselbe Pensum locker über die Woche. Was passiert bei typischen Wochen-Quotienten?",
+"richtig": "Beide Wochen können am Ende genau denselben Risikowert ergeben",
+"falsch": [
+"Die extrem harte Einzel-Einheit löst automatisch Alarmstufe Rot aus",
+"Die gleichmäßig verteilte Woche wird deutlich riskanter gewertet",
+"Die Berechnung erkennt die Verteilung von Pausen sehr zuverlässig"
+],
+"warum": "Weil die Formel nur Wochen- und Monatssummen vergleicht, bildet sie völlig verschiedene Tagesverteilungen identisch ab."
+},
+"plus": {
+"frage": "Du steigst nach einer längeren Pause neu ins Tracking ein oder beginnst ein geplantes Tapering vor dem Wettkampf. Wie gehst du mit ACWR-Warnungen deiner App um?",
+"richtig": "Ignoriere sie beim Neustart für mehrere Wochen sowie während des Taperings",
+"falsch": [
+"Erhöhe im Tapering sofort das Volumen, um den Warnbereich zu verlassen",
+"Nutze sie schon ab dem zweiten Tracking-Tag als feste Trainingsgrenze",
+"Streiche alle Einheiten, sobald der Quotient unter eins abfällt"
+],
+"warum": "Beim Neustart verzerren Startwerte den Verlauf wochenlang, und beim geplanten Tapering erzeugen sinkende Lasten falsche Warnungen."
+},
+"labor": {
+"frage": "Eine methodische Analyse untersuchte exponentiell gewichtete gleitende Durchschnitte (EWMA) für die ACWR. Welches Problem trat zu Beginn einer Aufzeichnung auf?",
+"richtig": "Die Wahl des Startwerts verzerrt die Werte über viele Wochen hinweg",
+"falsch": [
+"EWMA gleicht Startwerte bereits nach genau drei Trainingstagen aus",
+"EWMA verhindert den Informationsverlust durch starre ACWR-Zonen",
+"Unterschiedliche Tagesverteilungen werden über EWMA perfekt getrennt"
+],
+"warum": "Je nach Startwert (E0 = 0 vs. 55 AU) lag die ACWR an Tag 1 bei 3,65 statt 1,00 und glich sich erst nach etwa 50 Tagen an."
+}
+}
+},
+{
+"id": "LOD-112",
+"karte": {
+"kopf": "Sportler · 56 Studien zusammengefasst",
+"titel": "Dein eigenes Befinden reagiert feiner auf Training als Messwerte",
+"titel_hervor": "reagiert feiner auf Training",
+"setup": "Eine Übersichtsarbeit über 56 Studien verglich Fragebögen zum Wohlbefinden mit objektiven Messwerten wie Ruhepuls und Blutwerten bei wechselnder Belastung.",
+"zahl": null,
+"kern": [
+"Gefühlte Ermüdung, Erholung und Stress reagierten zuverlässiger auf harte Wochen",
+"Auch auf geplante Entlastungswochen sprachen die Selbstauskünfte deutlich besser an",
+"Objektive Messwerte und eigenes Befinden stimmten oft nicht miteinander überein"
+],
+"grenze": "Gruppendurchschnitte können verdecken, dass einzelne Personen anders reagieren als der Schnitt.",
+"fuer_dich": "Dein Messgerät zeigt grünes Licht, aber du fühlst dich ausgelaugt? Gewichte dein Wohlbefinden höher als einzelne Ruhewerte.",
+"labor": {
+"design": "Systematisches Review ohne Meta-Analyse, subjektive Wellness-Maße vs. objektive Ruhe-/Belastungsmarker",
+"teilnehmer": "56 Originalstudien mit Sportlern",
+"ergebnis": ""
+}
+},
+"quiz": {
+"basis": {
+"frage": "Was reagiert im Schnitt empfindlicher darauf, wenn dein Training plötzlich härter oder leichter wird: ein kurzer Check deines Befindens oder einzelne Ruhe-Messwerte?",
+"richtig": "Die eigene Einschätzung von Ermüdung, Stress und Wohlbefinden",
+"falsch": [
+"Der morgendliche Ruhepuls als alleiniger objektiver Messwert",
+"Einzelne Blutwerte aus dem Labor reagieren deutlich schneller",
+"Beide reagieren ähnlich schwach auf kurze Entlastungswochen"
+],
+"warum": "Über 56 Studien zeigten subjektive Angaben zu Ermüdung, Erholung und Stress eine höhere Empfindlichkeit auf Belastungswechsel."
+},
+"plus": {
+"frage": "Deine Uhr meldet normale Ruhewerte, aber im täglichen Readiness-Check sind deine Ermüdung hoch und dein Wohlbefinden im Keller. Wonach richtest du dich eher?",
+"richtig": "Gewichte dein subjektives Wohlbefinden stärker als einzelne Ruhewerte",
+"falsch": [
+"Ignoriere dein Gefühl, weil objektive Werte meist deutlich genauer sind",
+"Trainiere besonders hart, bis die objektiven Werte ebenfalls abfallen",
+"Warte eine Blutuntersuchung ab, bevor du die Belastung anpasst"
+],
+"warum": "Validierte subjektive Wellness-Parameter bilden akute und chronische Belastung meist sensibler ab als isolierte objektive Marker."
+},
+"labor": {
+"frage": "Ein systematisches Review über 56 Studien verglich subjektive Fragebögen mit objektiven Markern bei akuter Last, chronischer Last und Deloads. Wie verhielten sich beide zueinander?",
+"richtig": "Subjektive Maße waren konsistenter und korrelierten oft nicht mit objektiven",
+"falsch": [
+"Objektive Marker und Selbstauskünfte korrelierten durchgehend sehr stark",
+"Subjektive Fragebögen reagierten nur auf chronische Last, nicht auf Deloads",
+"Objektive Ruhemarker reagierten sensitiver auf akute Belastungssprünge"
+],
+"warum": "Subjektive Selbstauskünfte zeigten höhere Sensitivität und Konsistenz, während subjektive und objektive Maße oft kaum zusammenhingen."
+}
+}
+},
+{
+"id": "LOD-113",
+"karte": {
+"kopf": "Sportler · 21 Studien zu Fragebögen geprüft",
+"titel": "Geprüfte Fragebögen erfassen Ermüdung klarer als Einzelfragen",
+"titel_hervor": "klarer als Einzelfragen",
+"setup": "Eine methodische Übersicht verglich geprüfte, mehrteilige Fragebögen mit einzelnen Alltagsfragen zu Schlaf, Stress, Stimmung und Muskelkater.",
+"zahl": null,
+"kern": [
+"Einzelne Fragen wie ‚Wie müde bist du?‘ vermischen körperliche und geistige Müdigkeit",
+"Ungeprüfte Kurzfragen zeigten oft nur schwache bis mäßige Bezüge zur Trainingslast",
+"Klare Skalen werden verlässlicher, wenn man sie erst einige Tage zum Eingewöhnen nutzt"
+],
+"grenze": "Selbstauskünfte können verzerrt sein, wenn Sportler so antworten, wie es erwartet wirkt.",
+"fuer_dich": "Du nutzt tägliche Check-in-Fragen in einer App? Gewöhne dich erst mehrere Tage an klare Skalen, bevor du danach dein Training änderst.",
+"labor": {
+"design": "Methodisches und systematisches Review zur Psychometrie von Mehr- vs. Einzel-Item-Wellness-Skalen",
+"teilnehmer": "21 Studien zu Single-Item-Skalen sowie Validierungsdaten",
+"ergebnis": "RESTQ-Sport Kurzzeit-Reliabilität r = 0,79 (Sensitivitätsabfall ≥ 3 Tage); Single-Items trivial bis moderat"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Warum ist eine einzelne Frage wie ‚Wie müde bist du heute?‘ oft weniger genau als ein gut aufgebauter Fragebogen mit mehreren klaren Punkten?",
+"richtig": "Sie lässt offen, ob körperliche oder geistige Müdigkeit gemeint ist",
+"falsch": [
+"Sie dauert im Alltag viel zu lange und wird deshalb seltener genutzt",
+"Einzelne Fragen erfassen ausschließlich Muskelkater in den Beinen",
+"Man kann darauf überhaupt nicht ehrlich antworten, egal wie klar sie ist"
+],
+"warum": "Einzelfragen sind oft mehrdeutig und zeigten im Schnitt nur schwache bis mäßige Zusammenhänge mit der Trainingslast."
+},
+"plus": {
+"frage": "Du fängst neu an, dein tägliches Befinden über kurze Skalen in einer Trainings-App zu erfassen. Worauf solltest du anfangs achten?",
+"richtig": "Erst einige Tage eingewöhnen und klare Skalen statt Bauchgefühl nutzen",
+"falsch": [
+"Schon nach dem ersten ausgefüllten Tag den ganzen Trainingsplan umwerfen",
+"Nur eine einzige Zahl für alles von Schlaf bis Muskelkater vergeben",
+"Den Check-in nur einmal im Monat nach einem Ruhetag ausfüllen"
+],
+"warum": "Eine kurze Gewöhnungsphase stabilisiert die Antworten, und klar definierte Skalen liefern verlässlichere Daten für Entscheidungen."
+},
+"labor": {
+"frage": "Ein methodisches Review verglich psychometrisch validierte Mehr-Item-Fragebögen mit unvalidierten Einzel-Item-Abfragen im Sport. Welcher Unterschied fiel auf?",
+"richtig": "Validierte Fragebögen waren reliabler; Einzel-Items zeigten schwächere Bezüge",
+"falsch": [
+"Einzel-Items übertrafen validierte Bögen bei der individuellen Diagnostik",
+"Validierte Fragebögen blieben auch ohne Gewöhnung über Wochen gleich sensitiv",
+"Einzel-Items waren völlig frei von sozial erwünschtem Antwortverhalten"
+],
+"warum": "Mehrdimensionale Fragebögen zeigten höhere Kurzzeit-Reliabilität, während unvalidierte Einzel-Items oft mehrdeutig waren und schwächer korrelierten."
+}
+}
+},
+{
+"id": "LOD-114",
+"karte": {
+"kopf": "Triathleten · Vergleichsstudie über 5 Wochen",
+"titel": "Bei starker Überlastung steigt der Erholungswert trotz Leistungsabfall",
+"titel_hervor": "Erholungswert trotz Leistungsabfall",
+"setup": "21 männliche Triathleten absolvierten drei extrem harte Trainingswochen oder normales Training, gefolgt von einer Erholungswoche mit täglichen Herzmessungen.",
+"zahl": {
+"label": "Leistungsabfall nach 3 harten Wochen",
+"wert": "−9,0 %",
+"alltag": ""
+},
+"kern": [
+"Trotz deutlichem Leistungseinbruch stiegen die 7-Tage-Herzwerte fast eindeutig an",
+"Einzelmessungen einmal pro Woche übersahen diese Verschiebung wegen Tagesschwankungen",
+"In der anschließenden Entlastungswoche kehrten die Herzwerte wieder zur Basis zurück"
+],
+"grenze": "Untersucht wurden nur 21 männliche Triathleten – für Frauen und andere Sportarten fehlen hier Daten.",
+"fuer_dich": "Dein 7-Tage-Herzwert steigt in harten Wochen, doch Leistung sinkt und Müdigkeit wächst? Lege eine einwöchige Entlastung ein.",
+"labor": {
+"design": "RCT über 5 Wochen (1 Wo Basis, 3 Wo Overload vs. Kontrolle, 1 Wo Taper), täglicher Orthostase-Test",
+"teilnehmer": "21 männliche Triathleten (13 Overload, 8 Kontrolle)",
+"ergebnis": "Laufleistung −9,0 % ± 2,1 %; Wahrscheinlichkeit Anstieg im Liegen: 96 % LnRMSSD, 99 % LnHF, 95 % Ln(LF+HF)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Nach drei extrem harten Trainingswochen bricht deine Laufleistung ein. Wie können sich dabei die über eine Woche gemittelten Ruhe-Herzwerte verhalten?",
+"richtig": "Sie können trotz Erschöpfung deutlich ansteigen statt abzufallen",
+"falsch": [
+"Sie fallen in solchen Phasen fast ausnahmslos steil nach unten",
+"Sie bleiben über die gesamten drei Wochen völlig unverändert",
+"Schon eine einzige Messung pro Woche reicht zur klaren Erkennung"
+],
+"warum": "Bei starker Überlastung kann der Ruhenerv überaktiv werden – der Wochenwert steigt dann, obwohl die Leistung deutlich absackt."
+},
+"plus": {
+"frage": "Mitten in einer sehr harten Trainingsphase steigt dein 7-Tage-HRV-Schnitt stetig an, aber deine Leistung bricht ein und du fühlst dich erschöpft. Was tust du?",
+"richtig": "Du erkennst mögliches Overreaching und planst eine Entlastungswoche ein",
+"falsch": [
+"Du legst noch mehr Volumen drauf, weil die HRV schließlich steigt",
+"Du misst künftig nur noch einmal pro Woche, um weniger Schwankung zu sehen",
+"Du brichst das Training ab sofort für mehrere Monate am Stück ab"
+],
+"warum": "Steigende 7-Tage-HRV bei sinkender Leistung deutet auf funktionelles Overreaching hin – eine Woche Tapering half bei der Erholung."
+},
+"labor": {
+"frage": "In einer fünfwöchigen RCT mit 21 Triathleten wurden tägliche Orthostase-Tests während eines dreiwöchigen Overloads erfasst. Warum versagten wöchentliche Einzelmessungen?",
+"richtig": "Die hohe Tag-zu-Tag-Variabilität der HRV überdeckte den Trend",
+"falsch": [
+"Vagale HRV-Parameter veränderten sich während des Overloads gar nicht",
+"Der Effekt war nur im Stehen messbar, aber nicht in Rückenlage",
+"Nach dem Tapering blieb der vagale Anstieg dauerhaft auf dem Höchstwert"
+],
+"warum": "Nur der 7-Tage-Durchschnitt zeigte die parasympathische Hyperaktivität zuverlässig (96–99 % Wahrscheinlichkeit); Einzelmessungen streuten zu stark."
+}
+}
+},
+{
+"id": "LOD-115",
+"karte": {
+"kopf": "Sportler · Internationaler Expertenkonsens",
+"titel": "Einzelne Blutwerte können echtes Übertraining nicht nachweisen",
+"titel_hervor": "echtes Übertraining nicht nachweisen",
+"setup": "Internationale Sportfachgesellschaften werteten aus, wie sich langanhaltende Überlastung und echtes Übertraining medizinisch abgrenzen lassen.",
+"zahl": null,
+"kern": [
+"Kein einzelner Hormon-, Blut- oder Pulswert gilt bisher als verlässlicher Nachweis",
+"Entscheidend sind der Ausschluss anderer Ursachen und wie lange die Erholung dauert",
+"Harte Erschöpfung kann Wochen bis Monate anhalten, einfache Überlastung Tage bis Wochen"
+],
+"grenze": "Echtes Übertraining lässt sich aus ethischen Gründen nicht im Experiment erzeugen – Daten sind Rückblicke.",
+"fuer_dich": "Deine Leistung bleibt trotz zwei bis drei Wochen Erholung schwach? Pausiere und lass mögliche Ursachen ärztlich abklären.",
+"labor": {
+"design": "Konsensuspapier zur Abgrenzung von FOR, NFOR und Übertrainingssyndrom (OTS)",
+"teilnehmer": "Klinische Verläufe und retrospektive Beobachtungsdaten",
+"ergebnis": ""
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du bist seit Wochen erschöpft und deine Leistung bricht ein. Kann ein einzelner Blut- oder Hormonwert eindeutig belegen, dass es echtes Übertraining ist?",
+"richtig": "Nein, kein einzelner Messwert kann das bisher verlässlich nachweisen",
+"falsch": [
+"Ja, ein einziger Hormontest reicht dafür in den meisten Fällen aus",
+"Ja, ein niedriger Ruhepuls am Morgen beweist es bereits zuverlässig",
+"Nein, dafür reicht allein ein einziger harter Ausdauertest im Studio"
+],
+"warum": "Fachleute sehen keinen einzelnen Blut- oder Hormonwert als ausreichend – erst der Verlauf und das Ausschließen anderer Ursachen schaffen Klarheit."
+},
+"plus": {
+"frage": "Trotz mehr als zwei bis drei Wochen deutlicher Trainingspause bleiben deine Leistung schwach und deine Müdigkeit hoch. Was ist der richtige nächste Schritt?",
+"richtig": "Weiter pausieren und Mängel, Infekte oder Schlaf ärztlich abklären",
+"falsch": [
+"Sofort wieder voll einsteigen, um den Körper aus dem Tief zu holen",
+"Auf eigene Faust hochdosierte Einzelpräparate testen und abwarten",
+"Die Ursache allein anhand von HRV-Werten deiner Sportuhr festlegen"
+],
+"warum": "Hält ein Leistungstief trotz mehrwöchiger Erholung an, sollten Energie- oder Nährstoffmängel, Infekte und Schlafstörungen ärztlich geprüft werden."
+},
+"labor": {
+"frage": "Warum stützt sich die Abgrenzung zwischen nicht-funktionellem Overreaching und Übertrainingssyndrom vor allem auf den Verlauf und rückblickende Daten?",
+"richtig": "Ein Übertrainingssyndrom darf aus ethischen Gründen nicht ausgelöst werden",
+"falsch": [
+"Weil hormonelle Einzelmarker das Syndrom bereits am ersten Tag belegen",
+"Weil die Erholungsdauer bei beiden Formen fast auf den Tag gleich liegt",
+"Weil klinische Ausschlussdiagnostik bei Sportlern nicht aussagekräftig ist"
+],
+"warum": "Echtes Übertraining ist am Menschen nicht experimentell herbeiführbar; zudem erfüllt kein einzelner Biomarker die Validitätskriterien."
+}
+}
+},
+{
+"id": "LOD-116",
+"karte": {
+"kopf": "Sportler & Aktive · 69 Studien zusammengefasst",
+"titel": "Sechs Stunden Schlaf oder weniger kosten im Schnitt fast 8 % Leistung",
+"titel_hervor": "fast 8 % Leistung",
+"setup": "Eine Meta-Analyse wertete 69 Studien mit 959 Personen aus und verglich Trainingsleistungen nach höchstens sechs Stunden Schlaf mit normalem Schlaf.",
+"zahl": {
+"label": "Leistungsverlust im Schnitt",
+"wert": "−7,56 %",
+"alltag": "ca. −0,4 % pro Wachstunde"
+},
+"kern": [
+"Kraftausdauer litt fast zehn Prozent, Maximalkraft sank dagegen nur knapp drei Prozent",
+"Je länger du vor dem Training wach warst, desto stärker fiel die Leistung am Nachmittag",
+"Zu früh aufzuwachen bremste die Leistung deutlich stärker als später einzuschlafen"
+],
+"grenze": "Fast neun von zehn Teilnehmenden waren Männer, und die Studien unterschieden sich stark.",
+"fuer_dich": "Höchstens sechs Stunden geschlafen? Trainiere lieber vormittags oder reduziere nachmittags die Vorgaben für harte Sätze um 7 bis 10 %.",
+"labor": {
+"design": "Systematisches Review mit Meta-Analyse (227 Effektmaße), akuter Schlafmangel ≤ 6 h vs. > 6 h",
+"teilnehmer": "959 Teilnehmer aus 69 Studien (89 % männlich)",
+"ergebnis": "Gesamt −7,56 % (95 % KI −11,9 bis −3,13 %); Maximalkraft −2,85 %, Kraftausdauer −9,85 %; Morgen d = −0,30 vs. Nachmittag −1,11"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du hast letzte Nacht höchstens sechs Stunden geschlafen. Wann macht sich der Schlafmangel beim Training im Schnitt stärker bemerkbar?",
+"richtig": "Am Nachmittag, nachdem du schon viele Stunden wach warst",
+"falsch": [
+"Direkt am frühen Morgen, weil der Körper noch nicht wach ist",
+"Zu jeder Tageszeit genau gleich stark ohne Unterschied",
+"Gar nicht, da eine kurze Nacht kaum Auswirkung auf Sport hat"
+],
+"warum": "Mit jeder Wachstunde nimmt der Leistungsverlust im Schnitt weiter zu, sodass Nachmittagseinheiten deutlich stärker leiden."
+},
+"plus": {
+"frage": "Du bist heute zu früh aufgewacht und kommst nur auf fünf Stunden Schlaf. Eigentlich stehen nachmittags harte Intervalle oder Kraftausdauer an. Was passt am besten?",
+"richtig": "Einheit auf den Vormittag legen oder nachmittags die Vorgaben leicht senken",
+"falsch": [
+"Die Einheit auf den späten Abend verschieben, um länger wach zu sein",
+"Gerade bei Kraftausdauer die Sätze erhöhen, da sie kaum betroffen ist",
+"Alle Gewichte halbieren, weil Maximalkraft am stärksten einbricht"
+],
+"warum": "Nach zu wenig Schlaf leidet Kraftausdauer am Nachmittag besonders stark – Vormittagstraining oder 7 bis 10 % geringere Vorgaben fangen das auf."
+},
+"labor": {
+"frage": "Eine Meta-Analyse über 69 Studien untersuchte akuten Schlafmangel bis sechs Stunden auf verschiedene Leistungsbereiche. Welche Muster zeigten die Subanalysen?",
+"richtig": "Kraftausdauer litt stärker als Maximalkraft; frühes Erwachen traf härter",
+"falsch": [
+"Maximalkraft litt stärker als Kraftausdauer; spätes Einschlafen wog schwerer",
+"Frauen machten die Mehrheit der Stichprobe aus und zeigten geringe Streuung",
+"Die Leistungsabnahme fiel am Morgen deutlich größer aus als am Nachmittag"
+],
+"warum": "Kraftausdauer fiel um knapp 10 % gegenüber knapp 3 % bei Maximalkraft, verfrühtes Aufwachen wirkte stärker (d = −1,17), und 89 % waren Männer."
+}
+}
+},
+{
+"id": "NRG-101",
+"karte": {
+"kopf": "Erwachsene · Überblicksstudie zu Rechenformeln",
+"titel": "Die beste Standardformel trifft bei 4 von 5 Menschen",
+"titel_hervor": "bei 4 von 5 Menschen",
+"setup": "Verschiedene Formeln für den Kalorienbedarf in Ruhe wurden mit echten Messungen bei normal- und stark übergewichtigen Erwachsenen verglichen.",
+"zahl": {
+"label": "Trefferquote bei Normalgewicht (±10 %)",
+"wert": "82 %",
+"alltag": "≈ 4 von 5 Menschen"
+},
+"kern": [
+"Bei starkem Übergewicht traf die beste Formel noch bei 70 % der Menschen.",
+"Ältere Formeln lagen bei starkem Übergewicht oft deutlich häufiger daneben.",
+"Mit dem echten Gewicht zu rechnen war viel genauer als mit angepasstem Gewicht."
+],
+"grenze": "Ältere Menschen waren kaum dabei und die eigene Muskelmasse fehlt – beim Tagesbedarf sind ±200 bis 400 kcal Abweichung möglich.",
+"fuer_dich": "Du kennst deinen Körperfettanteil nicht und willst deinen Bedarf berechnen? Nimm dein echtes Gewicht und sieh den Wert als Startpunkt.",
+"labor": {
+"design": "Systematisches Review, Vergleich von RMR-Formeln (Mifflin-St Jeor, Harris-Benedict, Owen, WHO)",
+"teilnehmer": "Normalgewichtige und adipöse Erwachsene",
+"ergebnis": "Innerhalb ±10 %: 82 % (Nicht-Adipöse) bzw. 70 % (Adipöse) mit Mifflin-St Jeor vs. 38–64 % mit Harris-Benedict"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du berechnest deinen täglichen Kalorienbedarf mit einer gängigen Formel aus Gewicht, Größe und Alter. Wie genau ist so ein Ergebnis?",
+"richtig": "Ein guter Startwert, bei dem Abweichungen aber normal bleiben",
+"falsch": [
+"Auf wenige Kalorien genau für fast alle Menschen im Alltag",
+"Völlig unbrauchbar ohne eine aufwendige Laboruntersuchung",
+"Deutlich genauer, wenn du dein Wunschgewicht statt des echten nimmst"
+],
+"warum": "Die beste Standardformel trifft den Ruhebedarf bei rund 82 % der normalgewichtigen Menschen gut, kann im Alltag aber spürbar abweichen."
+},
+"plus": {
+"frage": "Du hast einen höheren Körperfettanteil und möchtest deinen Grundumsatz per Standardformel schätzen. Welches Gewicht liefert den genaueren Wert?",
+"richtig": "Dein tatsächliches aktuelles Körpergewicht",
+"falsch": [
+"Ein rechnerisch angepasstes Zielgewicht",
+"Dein leichtestes Gewicht der letzten Jahre",
+"Das Durchschnittsgewicht für deine Größe"
+],
+"warum": "Rechnungen mit angepasstem Körpergewicht trafen nur in 26 % der Fälle, während das echte Gewicht auf 70 % Genauigkeit kam."
+},
+"labor": {
+"frage": "In einer Übersichtsarbeit wurden gängige Gleichungen für den Ruheenergieumsatz gegen gemessene Werte geprüft. Wo liegt eine Hauptgrenze der genauesten Standardformel?",
+"richtig": "Individuelle Muskelmasse fehlt und ältere Gruppen waren unterrepräsentiert",
+"falsch": [
+"Sie funktioniert nur bei stark untergewichtigen Ausdauersportlern gut",
+"Sie schneidet bei Adipositas schlechter ab als ältere Standardformeln",
+"Sie überschätzt den Ruheumsatz bei allen Frauen um rund zwanzig Prozent"
+],
+"warum": "Ohne Muskelmasse und mit geschätztem Aktivitätsfaktor kann der gesamte Tagesbedarf leicht um 200 bis 400 kcal abweichen."
+}
+}
+},
+{
+"id": "NRG-102",
+"karte": {
+"kopf": "Sportler · Große Studien-Auswertung",
+"titel": "Bei Sportlern liegen Standard-Kalorienformeln oft daneben",
+"titel_hervor": "Standard-Kalorienformeln oft daneben",
+"setup": "Bei 1.430 Sportlern wurden 100 Rechenformeln für den Kalorienbedarf in Ruhe mit echten Labormessungen verglichen.",
+"zahl": {
+"label": "Trefferquote der genauesten Sportler-Formel",
+"wert": "80,2 %",
+"alltag": "≈ 4 von 5 Sportlern"
+},
+"kern": [
+"Andere gängige Formeln trafen bei Sportlern nur in etwa 41 bis 64 % der Fälle.",
+"Formeln anhand der fettfreien Masse wichen im Schnitt nicht deutlich vom Messwert ab.",
+"Die Ergebnisse schwankten je nach Formel stark – nur eine blieb über Studien stabil."
+],
+"grenze": "Messmethoden, Nüchternheit vor dem Test und sehr wenig Essen können den gemessenen Ruhebedarf verzerren.",
+"fuer_dich": "Du trainierst fünf Stunden oder mehr pro Woche? Nutze lieber eine Sportler-Formel oder eine mit fettfreier Masse statt Standardrechnern.",
+"labor": {
+"design": "Systematisches Review und Meta-Analyse, Vergleich von 100 RMR-Gleichungen gegen Kalorimetrie",
+"teilnehmer": "1.430 Athleten (822 Frauen, 608 Männer)",
+"ergebnis": "ES 0,04 bis −1,49; Präzision (±10 %): 80,2 % (Ten-Haaf, I² = 0 %) vs. 40,7–63,7 % (andere, I² = 80–93 %)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du trainierst regelmäßig viel Sport und gibst deine Daten in einen normalen Kalorienrechner für alle ein. Was passiert häufig?",
+"richtig": "Der Rechner weicht oft deutlich von deinem echten Ruhebedarf ab",
+"falsch": [
+"Der Rechner trifft bei Sportlern genauer als bei Untrainierten",
+"Der Rechner misst automatisch deinen gesamten Trainingsverbrauch",
+"Der Rechner liefert bei Männern und Frauen fast denselben Wert"
+],
+"warum": "Standardformeln wurden nicht für Sportler entwickelt und treffen deren echten Ruhebedarf oft deutlich schlechter als Sportler-Formeln."
+},
+"plus": {
+"frage": "Du trainierst über fünf Stunden pro Woche und kennst deinen Körperfettanteil aus einer verlässlichen Messung. Welche Art Formel passt für deinen Grundumsatz am besten?",
+"richtig": "Eine Formel auf Basis deiner fettfreien Masse",
+"falsch": [
+"Eine klassische Standardformel nur nach Gesamtgewicht",
+"Eine Formel mit einem pauschalen Abzug für Sportler",
+"Eine beliebige Formel, weil alle fast gleich rechnen"
+],
+"warum": "Formeln mit fettfreier Masse zeigen bei Sportlern im Schnitt keine deutliche Abweichung vom gemessenen Ruhebedarf."
+},
+"labor": {
+"frage": "In einer Meta-Analyse mit 1.430 Athleten wurden 100 Formeln für den Ruheumsatz gegen indirekte Kalorimetrie geprüft. Wodurch fiel die genaueste Sportler-Formel auf?",
+"richtig": "Rund vier Fünftel lagen im Zielbereich, ohne Streuung zwischen Studien",
+"falsch": [
+"Sie war die einzige Formel, die auch die Aktivität im Alltag einrechnet",
+"Alle anderen Formeln lagen ähnlich genau im gleichen Zielbereich",
+"Sie schnitt nur bei männlichen Kraftsportlern besser als Standardformeln ab"
+],
+"warum": "Die präziseste Athleten-Formel erreichte 80,2 % Treffer innerhalb ±10 % bei einer Heterogenität von I² = 0 %."
+}
+}
+},
+{
+"id": "NRG-103",
+"karte": {
+"kopf": "Kraftsportler · Kleine Messstudie",
+"titel": "Bei sehr muskulösen Menschen rechnen gängige Formeln oft zu tief",
+"titel_hervor": "oft zu tief",
+"setup": "Bei 27 muskulösen Kraftsportlern wurde der echte Ruhebedarf gemessen und mit gängigen sowie speziellen Formeln verglichen.",
+"zahl": null,
+"kern": [
+"Erste Hinweise zeigen: Selbst Formeln mit fettfreier Masse lagen hier oft zu tief.",
+"Speziell für Kraftsportler entwickelte Formeln passten besser zum gemessenen Wert.",
+"Unpräzise Körperfettwaagen für zu Hause übertragen ihren Fehler direkt in die Formel."
+],
+"grenze": "Nur 27 Kraftsportler wurden untersucht – eine Überprüfung an größeren Gruppen steht noch aus.",
+"fuer_dich": "Du bist sehr muskulös? Nutze Formeln nur als Startwert, denn normale Haushaltswaagen verfälschen Werte zur fettfreien Masse leicht.",
+"labor": {
+"design": "Querschnitts- und Validierungsstudie, Vergleich von RMR-Gleichungen gegen indirekte Kalorimetrie",
+"teilnehmer": "27 muskulöse Kraft- und Physique-Athleten (17 Männer, BMI Ø 28,8 kg/m²)",
+"ergebnis": "Korrelation Katch-McArdle mit indirekter Kalorimetrie r = 0,85–0,92"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Jemand trainiert seit Jahren hart mit Gewichten und hat sehr viel Muskelmasse. Was passiert meist bei einer normalen Kalorienformel?",
+"richtig": "Die Formel schätzt den Ruhebedarf eher zu niedrig ein",
+"falsch": [
+"Die Formel schätzt den Ruhebedarf meist viel zu hoch ein",
+"Die Formel passt bei viel Muskelmasse am genauesten",
+"Die Formel erkennt die Muskelmasse automatisch am Alter"
+],
+"warum": "In einer kleinen Studie mit sehr muskulösen Kraftsportlern unterschätzten fast alle klassischen Formeln den gemessenen Ruhebedarf."
+},
+"plus": {
+"frage": "Du willst deinen Grundumsatz über deine fettfreie Masse berechnen, hast aber nur eine einfache Körperanalyse-Waage aus dem Bad. Worauf solltest du achten?",
+"richtig": "Messfehler der Waage wandern direkt in das Kalorienergebnis",
+"falsch": [
+"Die Formel gleicht ungenaue Waagenwerte automatisch aus",
+"Der Körperfettanteil hat kaum Einfluss auf diese Formel",
+"Normale Waagen sind bei viel Muskeln genauso genau wie Labors"
+],
+"warum": "Schon fünf Prozent Fehler beim Körperfettanteil verfälschen eine Rechnung über die fettfreie Masse spürbar."
+},
+"labor": {
+"frage": "Bei muskulösen Kraftsportlern wurden spezifische Formeln für den Ruheumsatz gegen indirekte Kalorimetrie geprüft. Warum bleibt die Aussagekraft bislang begrenzt?",
+"richtig": "Die Stichprobe war sehr klein und braucht weitere Prüfung",
+"falsch": [
+"Die Formeln zeigten keinen Zusammenhang mit dem Messwert",
+"Es wurden ausschließlich Ausdauerathleten ohne Krafttraining getestet",
+"Die indirekte Kalorimetrie konnte den Ruheumsatz nicht erfassen"
+],
+"warum": "Mit nur 27 Untersuchten liefert die Validierung erste Hinweise, die erst an anderen Gruppen bestätigt werden müssen."
+}
+}
+},
+{
+"id": "NRG-104",
+"karte": {
+"kopf": "Erwachsene · 60 Studien zusammengefasst",
+"titel": "Fitnessuhren schätzen verbrannte Kalorien oft ungenau ein",
+"titel_hervor": "verbrannte Kalorien oft ungenau",
+"setup": "40 verschiedene Arm- und Handgelenk-Tracker wurden in 60 Studien mit Labormessungen des echten Kalorienverbrauchs verglichen.",
+"zahl": null,
+"kern": [
+"Im Durchschnitt unterschätzten die Tracker den echten Verbrauch spürbar.",
+"Besonders beim Radfahren lagen die Werte deutlich stärker daneben.",
+"Uhren mit Herzfrequenzmessung trafen etwas besser als reine Bewegungssensoren."
+],
+"grenze": "Die Ergebnisse schwankten je nach Gerät und Sportart extrem stark – ein Einzelwert kann weit abweichen.",
+"fuer_dich": "Deine Uhr meldet verbrannte Trainingskalorien? Rechne sie nicht eins zu eins auf dein Essen drauf, sondern nutze sie nur als groben Trend.",
+"labor": {
+"design": "Systematisches Review und Meta-Analyse, 40 kommerzielle Tracker gegen Labormessungen",
+"teilnehmer": "60 Studien, 1.946 Erwachsene (20–86 Jahre, BMI Ø 24,9 kg/m²)",
+"ergebnis": "Gesamt ES −0,23 (95 % KI −0,44 bis −0,03; I² = 92,2 %); Radfahren ES −0,73 (95 % KI −1,39 bis −0,06)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Deine Fitnessuhr zeigt nach dem Sport eine genaue Zahl verbrannter Kalorien an. Wie zuverlässig ist dieser Wert im Alltag?",
+"richtig": "Eher ungenau, weil die Werte je nach Gerät und Sportart stark schwanken",
+"falsch": [
+"Sehr verlässlich, solange die Uhr fest genug am Handgelenk sitzt",
+"Auf wenige Kalorien genau bei jeder Ausdauer- und Kraftsportart",
+"Im Schnitt viel zu hoch, besonders bei ruhigem Radfahren"
+],
+"warum": "Über 60 Studien hinweg lagen Fitnessuhren im Schnitt daneben und streuten je nach Modell und Aktivität extrem stark."
+},
+"plus": {
+"frage": "Deine Smartwatch überträgt nach dem Training 600 aktive Kalorien an deine Ernährungs-App. Wie solltest du damit am sinnvollsten umgehen?",
+"richtig": "Nicht eins zu eins aufessen, sondern nur als groben Trend nutzen",
+"falsch": [
+"Die volle Zahl zusätzlich essen, damit kein Defizit entsteht",
+"Den Wert verdoppeln, weil Uhren den Bedarf extrem unterschätzen",
+"Auf die Herzfrequenzmessung verzichten, weil sie den Fehler erhöht"
+],
+"warum": "Wegen der großen Schwankungsbreite taugen Uhr-Kalorien nicht als 1:1-Essensbudget, sondern höchstens als Aktivitätstrend."
+},
+"labor": {
+"frage": "In einer Meta-Analyse aus 60 Studien wurden 40 kommerzielle Arm-Tracker mit Labormessungen des Energieverbrauchs verglichen. Was zeigte sich zusätzlich zum Gesamtfehler?",
+"richtig": "Die Abweichungen streuten extrem stark zwischen Geräten und Aktivitäten",
+"falsch": [
+"Alle getesteten Geräte zeigten fast identische, kleine Fehler",
+"Beim Radfahren waren Handgelenk-Tracker besonders präzise",
+"Zusätzliche Herzfrequenzsensoren verschlechterten die Genauigkeit"
+],
+"warum": "Die Heterogenität lag bei über 92 %, und beim Radfahren fiel die Unterschätzung (ES −0,73) besonders deutlich aus."
+}
+}
+},
+{
+"id": "NRG-105",
+"karte": {
+"kopf": "Erwachsene · Labortest mit 7 Fitnessuhren",
+"titel": "Fitnessuhren treffen den Puls gut, die Kalorien aber kaum",
+"titel_hervor": "die Kalorien aber kaum",
+"setup": "60 Erwachsene trugen sieben gängige Handgelenk-Uhren beim Gehen und Radfahren, während Puls und Kalorienverbrauch im Labor gemessen wurden.",
+"zahl": {
+"label": "Mittlerer Fehler beim Kalorienverbrauch",
+"wert": "27,4–92,6 %",
+"alltag": ""
+},
+"kern": [
+"Sechs von sieben Uhren maßen den Puls beim Radfahren mit unter 5 % Abweichung.",
+"Kein einziges getestetes Gerät blieb beim Kalorienverbrauch unter 20 % Fehler.",
+"Die Abweichung stieg unter anderem beim Gehen, bei Männern und höherem BMI."
+],
+"grenze": "Nur 60 Personen und sieben Modelle wurden im Labor getestet – wie Hersteller genau rechnen, bleibt unbekannt.",
+"fuer_dich": "Du nutzt eine Smartwatch im Training? Orientiere dich für deine Intensität am Puls, aber ignoriere die Kalorienzahl für dein Essensziel.",
+"labor": {
+"design": "Experimentelle Validierungsstudie, 7 Handgelenk-Tracker gegen Labormessung beim Gehen und Radfahren",
+"teilnehmer": "60 Erwachsene",
+"ergebnis": "Herzfrequenz-Fehler < 5 % (6 von 7 Geräten, Radfahren); Energieverbrauch-Fehler Median 27,4–92,6 %"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Deine Fitnessuhr misst beim Radfahren sowohl deinen Puls als auch deinen Kalorienverbrauch. Welchem Wert kannst du eher trauen?",
+"richtig": "Dem Puls deutlich mehr als dem geschätzten Kalorienverbrauch",
+"falsch": [
+"Dem Kalorienverbrauch deutlich mehr als dem gemessenen Puls",
+"Beiden Werten gleich stark, da beide ähnlich genau arbeiten",
+"Keinem von beiden, da selbst der Puls meist über die Hälfte irrt"
+],
+"warum": "Im Labortest lag der Puls bei fast allen Uhren unter 5 % Fehler, während der Kalorienverbrauch mindestens ein Fünftel danebenlag."
+},
+"plus": {
+"frage": "Du importierst deine Smartwatch-Daten nach einer Ausdauereinheit in deine Trainings-App. Wofür taugen die Messwerte am besten?",
+"richtig": "Für Herzfrequenzzonen, aber nicht zum Anpassen der Tageskalorien",
+"falsch": [
+"Zum exakten Ausgleichen der verbrannten Kalorien beim Abendessen",
+"Nur für Kalorienziele, weil der Puls am Handgelenk kaum stimmt",
+"Nur beim Gehen, weil dort die Kalorienwerte am genauesten sind"
+],
+"warum": "Die Herzfrequenz ist am Handgelenk oft recht brauchbar, die Kalorienschätzung streut dagegen viel zu stark für das Tagesbudget."
+},
+"labor": {
+"frage": "Sieben kommerzielle Handgelenk-Uhren wurden bei 60 Erwachsenen gegen Labormessungen geprüft. Welche Faktoren gingen mit noch größeren Fehlern beim Energieverbrauch einher?",
+"richtig": "Männliches Geschlecht, höherer BMI, dunklerer Hautton und Gehen",
+"falsch": [
+"Niedriger BMI, weibliches Geschlecht und schnelles Radfahren",
+"Ausschließlich sehr hohe Herzfrequenzen über neunzig Prozent",
+"Nur fehlende Kalibrierung vor dem ersten Start der Uhr"
+],
+"warum": "Die Analyse zeigte signifikant höhere Kalorienfehler bei Männern, höherem BMI, dunklerem Hautton sowie beim Gehen statt Radfahren."
+}
+}
+},
+{
+"id": "NRG-106",
+"karte": {
+"kopf": "Erwachsene · Langzeit-Beobachtung (1,5 Jahre)",
+"titel": "Das Gewicht schwankt im Wochenrhythmus – montags am höchsten",
+"titel_hervor": "schwankt im Wochenrhythmus",
+"setup": "Bei 1.421 Erwachsenen wurden im Schnitt 220 Gewichtsmessungen über rund anderthalb Jahre ausgewertet.",
+"zahl": {
+"label": "Gewichtsanstieg über Weihnachten",
+"wert": "+1,35 %",
+"alltag": ""
+},
+"kern": [
+"Im Schnitt war das Gewicht sonntags und montags am höchsten und freitags am tiefsten.",
+"Der Weihnachtsanstieg ging in den Monaten danach im Schnitt nicht ganz zurück.",
+"Tageswerte schwanken leicht um 0,5 bis 2 kg durch Wasser, Salz und Darminhalt."
+],
+"grenze": "Beobachtungsdaten zeigen typische Muster, belegen aber nicht die genaue Ursache bei einzelnen Personen.",
+"fuer_dich": "Die Waage zeigt am Montag plötzlich mehr an? Schau auf deinen 7-Tage-Schnitt und passe Kalorien erst nach zwei bis drei Wochen an.",
+"labor": {
+"design": "Längsschnitt-Beobachtungsstudie über durchschnittlich 566 Tage (Ø 220 Wiegungen pro Person)",
+"teilnehmer": "1.421 Erwachsene",
+"ergebnis": "Wochenschwankung 0,35 % (Männer 0,41 % vs. Frauen 0,29 %; p < 0,001); Weihnachten +1,35 %"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Am Montagmorgen wiegst du plötzlich ein Kilo mehr als am Freitag davor. Was steckt meistens dahinter?",
+"richtig": "Normale Schwankungen durch Wasser, Salz, Speicher und Darminhalt",
+"falsch": [
+"Ein Kilo reines Körperfett von einem einzigen Wochenende",
+"Ein kaputter Stoffwechsel nach wenigen Tagen ohne Diät",
+"Sofortiger Muskelverlust durch weniger Bewegung am Sonntag"
+],
+"warum": "Das Gewicht schwankt über die Woche ganz typisch – sonntags und montags liegt es im Schnitt höher als freitags."
+},
+"plus": {
+"frage": "Du bist im Kaloriendefizit, aber die Waage springt von Tag zu Tag um über ein Kilo. Wie bewertest du deinen Fortschritt am sinnvollsten?",
+"richtig": "Über den 7-Tage-Durchschnitt im Vergleich über zwei bis drei Wochen",
+"falsch": [
+"Anhand deines tiefsten Einzelwerts am Freitagmorgen jeder Woche",
+"Indem du bei jedem Anstieg sofort die täglichen Kalorien kürzt",
+"Indem du dich nur einmal im Monat nach dem Wochenende wiegst"
+],
+"warum": "Ein 7-Tage-Schnitt glättet den typischen Wochenrhythmus, weil jeder Wochentag genau einmal einfließt."
+},
+"labor": {
+"frage": "In einer Längsschnittanalyse mit 1.421 Personen wurden hunderte Wiegungen über rund anderthalb Jahre ausgewertet. Welches Muster zeigte sich rund um Feiertage?",
+"richtig": "Über Weihnachten stieg das Gewicht deutlich an und blieb teils bestehen",
+"falsch": [
+"Feiertage führten im Schnitt zu keinem messbaren Gewichtsanstieg",
+"Das Plus von Weihnachten war innerhalb einer Woche wieder verschwunden",
+"Nur Frauen zeigten überhaupt Schwankungen im Wochen- und Jahresverlauf"
+],
+"warum": "Im Mittel stieg das Gewicht über Weihnachten um 1,35 % und wurde in den Folgemonaten nicht vollständig ausgeglichen."
+}
+}
+}
+]

@@ -1,0 +1,1138 @@
+[
+{
+"id": "CAR-103",
+"karte": {
+"kopf": "Gesunde Erwachsene · Studien zusammengefasst",
+"titel": "Intensive Intervalle steigerten die Ausdauer stärker als Dauerläufe",
+"titel_hervor": "stärker als Dauerläufe",
+"setup": "Eine große Auswertung verglich intensives Intervalltraining mit gleichmäßigem Ausdauertraining und Nichttraining bei Erwachsenen von 18 bis 45 Jahren.",
+"zahl": {
+"label": "Mehr Sauerstoffaufnahme als Dauertraining",
+"wert": "+1,2 ml/kg/min",
+"alltag": ""
+},
+"kern": [
+"Beide Trainingsarten verbesserten die Fitness deutlich gegenüber Nichttraining.",
+"Gerade bei geringer Ausgangsfitness fiel der Vorteil von Intervallen größer aus.",
+"Das Herz-Kreislauf-System wird bei Intervallen stärker gefordert als bei Dauerläufen."
+],
+"grenze": "Die Auswertung betrachtete Erwachsene zwischen 18 und 45 Jahren – über Ältere sagt sie nichts aus.",
+"fuer_dich": "Wenig Zeit, aber Lust auf mehr Ausdauer? Plane über 4 bis 12 Wochen zwei bis drei intensive Intervalleinheiten pro Woche ein.",
+"labor": {
+"design": "Meta-Analyse: HIIT vs. moderates Dauertraining vs. Kontrolle, meist 4–12 Wochen",
+"teilnehmer": "Gesunde Erwachsene zwischen 18 und 45 Jahren (Untrainierte und Trainierte)",
+"ergebnis": "HIIT vs. Dauertraining: MD +1,2 ± 0,9 ml/kg/min; vs. Kontrolle: +5,5 ± 1,2 vs. +4,9 ± 1,4"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du willst deine Kondition verbessern und schwankst zwischen lockerem Dauertraining und kurzen, sehr anstrengenden Intervallen mit Pausen. Was stimmt?",
+"richtig": "Beide helfen deutlich, Intervalle bringen im Schnitt mehr",
+"falsch": [
+"Nur langes gleichmäßiges Training steigert die Ausdauer stark",
+"Gleichmäßiges Training wirkt kaum besser als gar kein Sport",
+"Intervalle bringen nur etwas für langjährige Leistungssportler"
+],
+"warum": "Beide Methoden steigern die Fitness stark gegenüber Nichttraining, aber intensive Intervalle brachten im Schnitt einen größeren Zuwachs."
+},
+"plus": {
+"frage": "Du bist 30, hast wenig Zeit und willst in zwei bis drei Monaten deine VO2max möglichst stark steigern. Welcher Ansatz ist am wirksamsten?",
+"richtig": "Regelmäßige HIIT-Einheiten statt nur moderatem Dauerlauf",
+"falsch": [
+"Ausschließlich moderates Dauertraining im gleichen Tempo laufen",
+"Eine einzelne sehr lange lockere Ausdauereinheit pro Monat",
+"Nur Krafttraining ohne jede Herz-Kreislauf-Belastung planen"
+],
+"warum": "Zwei bis drei HIIT-Einheiten pro Woche steigern die VO2max zeiteffizienter und im Mittel stärker als reines moderates Dauertraining."
+},
+"labor": {
+"frage": "Eine Meta-Analyse verglich HIIT mit kontinuierlichem Ausdauertraining bei gesunden 18- bis 45-Jährigen. Wo fiel der Zusatzvorteil von HIIT am größten aus?",
+"richtig": "Bei Personen mit niedrigerem Ausgangsniveau der Fitness",
+"falsch": [
+"Bei Personen mit bereits sehr hoher Ausgangsfitness",
+"Nur bei Programmen, die kürzer als zwei Wochen dauerten",
+"Es zeigte sich kein signifikanter Vorteil gegenüber Dauerlauf"
+],
+"warum": "HIIT lag insgesamt um +1,2 ml/kg/min vorn, und der relative Vorteil fiel bei Untrainierten besonders deutlich aus (15 % vs. 9 % nach 8 Wochen)."
+}
+}
+},
+{
+"id": "CAR-104",
+"karte": {
+"kopf": "Ausdauertraining · Kontrollierte Studie",
+"titel": "Harte Intervalle brachten bei gleicher Arbeit mehr Ausdauer",
+"titel_hervor": "bei gleicher Arbeit mehr Ausdauer",
+"setup": "Vier Gruppen leisteten 8 Wochen lang die gleiche Gesamtarbeit: locker, zügig im Dauerlauf, im 15-Sekunden-Wechsel oder als 4x4-Minuten-Intervalle.",
+"zahl": null,
+"kern": [
+"Die 4x4-Minuten- und 15-Sekunden-Intervalle steigerten die Pumpleistung des Herzens mehr.",
+"Der Körper braucht einige Minuten oder ganz kurze Pausen, um voll auf Touren zu kommen.",
+"Lockeres und zügiges Dauerlaufen schnitten bei gleicher Gesamtarbeit schwächer ab."
+],
+"grenze": "Getestet wurden 8 Wochen – langfristige Anpassungen und Verletzungsrisiko wurden nicht geprüft.",
+"fuer_dich": "Du willst deine Ausdauer gezielt heben? Teste 8 Wochen lang dreimal pro Woche 4x4 Minuten hart mit je 3 Minuten lockerer Pause.",
+"labor": {
+"design": "RCT, 8 Wochen, 3x/Woche, arbeitsäquivalent: 4x4 min vs. 15/15 s vs. 82,5 % vs. 70 % HFmax",
+"teilnehmer": "",
+"ergebnis": "Signifikant größere Zunahme von VO2max und Schlagvolumen bei 4x4 min und 15/15 s vs. Dauerläufen"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Zwei Gruppen verrichten über acht Wochen genau die gleiche Gesamtmenge an Laufarbeit: eine läuft gleichmäßig, die andere macht sehr harte Intervalle. Wer steigert die Kondition mehr?",
+"richtig": "Die Gruppe mit den harten Intervallen und aktiven Pausen",
+"falsch": [
+"Beide gleich stark, weil die Gesamtarbeit identisch war",
+"Die Gruppe im durchgehend lockeren gleichmäßigen Tempo",
+"Die Gruppe im durchgehend zügigen mittleren Tempo"
+],
+"warum": "Obwohl alle Gruppen dieselbe Arbeit leisteten, forderten die harten Intervalle das Herz stärker und steigerten die Ausdauer deutlich mehr."
+},
+"plus": {
+"frage": "Du willst über acht Wochen gezielt deine VO2max verbessern und wählst das 4x4-Minuten-Protokoll. Wie steuerst du Intensität und Pausen sinnvoll?",
+"richtig": "Sehr hart im Intervall und dazwischen aktiv locker bewegen",
+"falsch": [
+"Locker im Dauerlauftempo laufen und dazwischen stehenbleiben",
+"Durchgehend an der Laktatschwelle ohne jede Pause laufen",
+"Ganz kurz locker traben und dazwischen sehr lange ausruhen"
+],
+"warum": "4 Minuten bei 90–95 % HFmax mit 3 Minuten aktiver Pause bei 70 % HFmax lasten das Herz-Kreislauf-System optimal für VO2max-Zuwächse aus."
+},
+"labor": {
+"frage": "In einer arbeitsäquivalenten 8-Wochen-Studie steigerten 4x4-Minuten- und 15/15-Sekunden-Intervalle die VO2max stärker als Schwellentraining. Was erklärt diese Wirkung?",
+"richtig": "Höhere Auslastung des Schlagvolumens trotz träger VO2-Kinetik",
+"falsch": [
+"Ein deutlich höherer Gesamtarbeitsumsatz der Intervallgruppen",
+"Längere passive Ruhepausen zwischen allen Belastungsblöcken",
+"Eine niedrigere Herzfrequenz bei gleicher Laufgeschwindigkeit"
+],
+"warum": "Weil die Sauerstoffaufnahme träge hochfährt, brauchen zentrale Anpassungen des Schlagvolumens entweder 3–5 Minuten Belastung oder sehr kurze 15-s-Pausen."
+}
+}
+},
+{
+"id": "CAR-105",
+"karte": {
+"kopf": "Ausdauersportler · 3 Studien zusammengefasst",
+"titel": "Klar locker oder klar hart machte Ausdauersportler schneller",
+"titel_hervor": "Klar locker oder klar hart",
+"setup": "Drei Studien verglichen bei erfahrenen Ausdauersportlern viel lockeres plus wenig hartes Training mit viel Training im anstrengenden Mittelbereich.",
+"zahl": {
+"label": "Mehr Leistung an der Belastungsschwelle",
+"wert": "+8,1 %",
+"alltag": ""
+},
+"kern": [
+"Im Zeitfahren schnitt der Mix aus sehr locker und sehr hart moderat besser ab.",
+"Zu viel Training im mittleren Tempobereich kann Erholung und Schlaf belasten.",
+"Die klare Trennung spricht zwei verschiedene Anpassungswege im Muskel an."
+],
+"grenze": "Nur drei Studien mit erfahrenen Sportlern (über zwei Jahre Praxis) – auf Einsteiger nur begrenzt übertragbar.",
+"fuer_dich": "Du trainierst oft im mittelharten „Graubereich“? Verlege rund 75–80 % in lockeres Tempo und 15–20 % in wirklich harte Intervalle.",
+"labor": {
+"design": "Meta-Analyse (k=3): polarisierte (POL) vs. schwellenorientierte Intensitätsverteilung",
+"teilnehmer": "Trainierte Ausdauersportler (>2 Jahre Erfahrung, VO2max >50 ml/kg/min)",
+"ergebnis": "Zeitfahren ES −0,66 (95 % KI −1,17 bis −0,15) für POL; +11,7 % VO2peak, +8,1 % bei 4 mmol/L"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du läufst regelmäßig und überlegst, wie du dein Tempo über die Woche verteilen solltest. Welcher Ansatz machte erfahrene Sportler im Schnitt schneller?",
+"richtig": "Viel sehr lockeres Training plus wenig sehr hartes",
+"falsch": [
+"Möglichst jede Einheit im anstrengenden mittleren Tempo",
+"Nur lockere Einheiten und gar keine schnellen Abschnitte",
+"Fast jede Einheit bis zur völligen Erschöpfung ausreizen"
+],
+"warum": "Die klare Trennung aus lockerer Basis und harten Reizen verbesserte die Zeitfahrleistung stärker als viel Training im mittleren Bereich."
+},
+"plus": {
+"frage": "Du bist erfahrener Ausdauersportler und trainierst über ein Drittel deiner Zeit in Zone 2, fühlst dich aber oft müde. Wie stellst du sinnvoll um?",
+"richtig": "Zone 1 stark ausbauen, Zone 2 kürzen und Zone 3 gezielt nutzen",
+"falsch": [
+"Zone 2 auf über die Hälfte des Wochenumfangs ausweiten",
+"Zone 1 streichen und nur noch in Zone 2 und Zone 3 trainieren",
+"Alle drei Zonen exakt zu gleichen Dritteln pro Woche verteilen"
+],
+"warum": "Sehr hohe Zone-2-Anteile können Erholung und Schlaf stören, während eine polarisierte Verteilung im Mittel bessere Wettkampfleistungen bringt."
+},
+"labor": {
+"frage": "Eine Meta-Analyse (3 Studien) verglich polarisierte mit schwellenorientierter Intensitätsverteilung bei trainierten Ausdauersportlern. Welcher Effekt zeigte sich im Zeitfahren?",
+"richtig": "Ein moderater Vorteil für das polarisierte Modell",
+"falsch": [
+"Ein großer Vorteil für das schwellenorientierte Modell",
+"Kein statistisch absicherbarer Unterschied zwischen beiden",
+"Nur bessere Erholung, aber langsamere Zeiten im Test"
+],
+"warum": "Die Effektstärke lag bei −0,66 zugunsten des polarisierten Trainings, bei gleichzeitigem Anstieg von VO2peak und Schwellenleistung."
+}
+}
+},
+{
+"id": "CAR-106",
+"karte": {
+"kopf": "Läufer & Ausdauersportler · RCT & Meta-Analyse",
+"titel": "Erst gestuft, dann zugespitzt machte Läufer über 5 km am schnellsten",
+"titel_hervor": "über 5 km am schnellsten",
+"setup": "60 starke Läufer testeten über 16 Wochen verschiedene Intensitäts-Mischungen; zusätzlich verglich eine Auswertung von 13 Studien die Modelle.",
+"zahl": {
+"label": "Schneller über 5 km durch Phasenwechsel",
+"wert": "+1,5 %",
+"alltag": ""
+},
+"kern": [
+"Im Gesamtschnitt lagen pyramidales und polarisiertes Training praktisch gleichauf.",
+"Am besten wirkte der Wechsel von erst Basis plus Mitteltempo zu harten Intervallen.",
+"Freizeitsportler profitieren oft vom gestuften Aufbau, Wettkämpfer vom harten Finale."
+],
+"grenze": "Je nach Messmethode der Trainingszonen fallen Studien unterschiedlich aus – das eine beste Modell gibt es nicht.",
+"fuer_dich": "16 Wochen bis zum Wettkampf? Trainiere erst 8 Wochen gestuft und spitze die letzten 8 Wochen mit harten Intervallen zu.",
+"labor": {
+"design": "RCT (16 Wochen, PYR→POL vs. andere Abfolgen) plus Netzwerk-Meta-Analyse (k=13)",
+"teilnehmer": "60 Läufer (VO2max 67 ± 4 ml/kg/min); Netzwerk-Meta-Analyse n=348",
+"ergebnis": "Ca. +1,5 % über 5 km bei PYR→POL; gesamt kein Unterschied POL vs. PYR (p = 0,81)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Wenn du dich über mehrere Monate auf einen 5-Kilometer-Lauf vorbereitest: Welche Abfolge von Trainingstempos schnitt im Vergleich am besten ab?",
+"richtig": "Erst locker plus etwas Mitteltempo, dann mehr harte Intervalle",
+"falsch": [
+"Von der ersten bis zur letzten Woche nur harte Intervalle laufen",
+"Die gesamte Vorbereitung über ausschließlich ganz langsam laufen",
+"Erst sehr hart trainieren und vor dem Rennen nur noch locker traben"
+],
+"warum": "Ein stufenweiser Aufbau mit anschließendem Wechsel zu intensiveren Intervallen brachte im 5-km-Test die größte Leistungssteigerung."
+},
+"plus": {
+"frage": "Du bist Freizeitsportler und fragst dich, ob du unbedingt strikt polarisiert statt pyramidal trainieren musst. Was zeigt der Gesamtvergleich?",
+"richtig": "Kein klarer Vorteil für polarisiert – pyramidal passt gut",
+"falsch": [
+"Strikt polarisiert ist für jedes Niveau weit überlegen",
+"Pyramidales Training führt bei Hobbysportlern zu Rückschritten",
+"Beide Modelle funktionieren erst ab über 20 Wochenstunden"
+],
+"warum": "Im Gesamtvergleich gab es keinen signifikanten Unterschied zwischen beiden Modellen, und Freizeitsportler profitieren besonders vom pyramidalen Aufbau."
+},
+"labor": {
+"frage": "Eine Netzwerk-Meta-Analyse (13 Studien) fand keinen Gesamtunterschied zwischen polarisiertem und pyramidalem Training. Was erklärt widersprüchliche Einzelstudien?",
+"richtig": "Unterschiedliche Zonen-Messmethoden und das Leistungsniveau",
+"falsch": [
+"Die fehlende Vergleichbarkeit von Radfahrern und Schwimmern",
+"Dass keine Studie länger als vier Wochen untersucht wurde",
+"Ein grundsätzlicher Messfehler bei allen 5-km-Zeitfahren"
+],
+"warum": "Ob Zonen per Herzfrequenz-Zeit oder per Einheitsziel erfasst werden und wie fit die Sportler sind, beeinflusst maßgeblich, welches Modell vorn liegt."
+}
+}
+},
+{
+"id": "CAR-107",
+"karte": {
+"kopf": "Einsteiger & Trainierte · Kontrollierte Studien",
+"titel": "Kurze Vollsprints wirkten bei Einsteigern trotz 5-mal weniger Umfang",
+"titel_hervor": "trotz 5-mal weniger Umfang",
+"setup": "Über 12 Wochen wurden maximale Kurzsprints mit klassischem Ausdauertraining sowie längeren Intervallen bei Einsteigern und Trainierten verglichen.",
+"zahl": null,
+"kern": [
+"Bei Einsteigern und mäßig Fitten stieg die Fitness ähnlich stark wie im Dauerlauf.",
+"Bei gut trainierten Sportlern brachten längere 3- bis 5-Minuten-Intervalle mehr.",
+"Sehr kurze Sprints setzen starke Muskelreize, fordern das Herz aber kürzer."
+],
+"grenze": "Sehr intensive Sprints sind körperlich extrem fordernd und ersetzen bei gut Trainierten keine längeren Intervalle.",
+"fuer_dich": "Einsteiger mit wenig Zeit? Nutze kurze Vollsprints bis 45 Sekunden; bist du schon sehr fit, bringen 3- bis 5-Minuten-Intervalle mehr.",
+"labor": {
+"design": "RCTs (u. a. 12 Wochen): SIT (≤1 min, ≥150 % MAS) vs. MICT und aerobes HIIT (3–5 min)",
+"teilnehmer": "Untrainierte/Moderate (VO2max ~35) vs. Trainierte (>50–63 ml/kg/min)",
+"ergebnis": "VO2max-Effekt SIT: ES = 0,69; ähnlich wie MICT bei Moderaten, schwächer als HIIT bei Trainierten"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du fängst gerade mit Ausdauertraining an und hast kaum Zeit. Können ganz kurze, maximale Sprints mit Pausen eine ähnliche Grundfitness bringen wie längeres Laufen?",
+"richtig": "Ja, bei Einsteigern klappt das trotz viel geringerem Umfang",
+"falsch": [
+"Nein, unter einer halben Stunde Training passiert kaum etwas",
+"Nur wenn du zusätzlich täglich eine Stunde locker läufst",
+"Ja, aber das gilt ausschließlich für erfahrene Leistungssportler"
+],
+"warum": "Bei untrainierten und mäßig fitten Personen erzielten kurze Vollsprints trotz fünffach kleinerem Umfang ähnliche Fitnessgewinne wie Dauertraining."
+},
+"plus": {
+"frage": "Du bist bereits gut trainiert (VO2max über 50) und willst deine VO2max weiter pushen. Wählst du eher kurze Vollsprints (SIT) oder längeres HIIT?",
+"richtig": "Längere aerobe HIIT-Intervalle für den stärkeren VO2max-Reiz",
+"falsch": [
+"Kurze Vollsprints, weil sie das Herzzeitvolumen länger auslasten",
+"Beide steigern die VO2max bei gut Trainierten exakt gleich stark",
+"Keines von beiden, weil gut Trainierte nur locker laufen sollten"
+],
+"warum": "Bei gut Trainierten reichen sehr kurze Sprints oft nicht, um das Herz zentral maximal auszulasten – 3- bis 5-minütige HIIT-Intervalle wirken dort stärker."
+},
+"labor": {
+"frage": "Warum war supramaximales Sprintintervalltraining (≤60 s) bei gut trainierten Athleten dem aeroben HIIT (3–5 min) zur VO2max-Steigerung unterlegen?",
+"richtig": "Rasche lokale Ermüdung begrenzt die zentrale Herzauslastung",
+"falsch": [
+"Kurze Sprints setzen keine Reize in den Muskelmitochondrien",
+"Sprints verschlechtern die Laufökonomie von Ausdauersportlern",
+"Die Intensität lag unterhalb der maximalen aeroben Leistung"
+],
+"warum": "SIT erzeugt zwar starke periphere Reize und verbessert die Laufökonomie, überlastet aber bei hoher Basis-VO2max das zentrale Herzzeitvolumen kürzer."
+}
+}
+},
+{
+"id": "CAR-108",
+"karte": {
+"kopf": "Mittel- & Langstreckenläufer · Übersichtsarbeit",
+"titel": "Topläufer nutzen ein Zehntel bis Fünftel für zügiges Tempotraining",
+"titel_hervor": "ein Zehntel bis Fünftel",
+"setup": "Übersichtsarbeiten werteten aus, wie viel zügiges Schwellentraining hochtrainierte Mittel- und Langstreckenläufer in ihrer Vorbereitung absolvieren.",
+"zahl": {
+"label": "Anteil Tempotraining bei Topläufern",
+"wert": "10–20 %",
+"alltag": ""
+},
+"kern": [
+"Dieser Bereich verbessert den Abbau von Stoffwechsel-Nebenprodukten bei hohem Tempo.",
+"Er hilft dem Körper, das geplante Wettkampftempo länger stabil durchzuhalten.",
+"Über ein Drittel des Umfangs in diesem Bereich erhöht dagegen das Überlastungsrisiko."
+],
+"grenze": "Beschreibt vor allem Programme hochtrainierter Läufer und Radstudien – genaue Effekte hängen vom Gesamtplan ab.",
+"fuer_dich": "Du trainierst auf einen langen Lauf? Nutze 10 bis 20 % deines Umfangs für 30- bis 45-minütige Tempoläufe oder Schwellenintervalle.",
+"labor": {
+"design": "Systematische Reviews zur Trainingsstruktur in Vorbereitungsphasen und Rad-Interventionsdaten",
+"teilnehmer": "Hochtrainierte Mittel- und Langstreckenläufer sowie Radsportler",
+"ergebnis": "Leistung an 4 mmol/L Laktat: d = 1,21–1,54 (Radstudien), R² = 0,61 mit Zone-2-Zeit"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Spitzenläufer trainieren viel locker, bauen aber auch zügige Tempoläufe ein, die fordernd, aber nicht maximal sind. Wie groß ist dieser Anteil meist?",
+"richtig": "Rund ein Zehntel bis ein Fünftel des gesamten Trainings",
+"falsch": [
+"Mehr als die Hälfte aller wöchentlichen Trainingskilometer",
+"Gar nicht, da mittleres Tempo die Leistung ausbremst",
+"Fast ausschließlich kurz vor dem Start ohne Basisumfang"
+],
+"warum": "In der Vorbereitung machen Tempoläufe meist 10 bis 20 % des Umfangs aus – genug für Tempo-Härte, ohne zu stark zu ermüden."
+},
+"plus": {
+"frage": "Du bereitest dich auf einen Marathon vor und willst Schwellentraining (Zone 2) sinnvoll dosieren. Welche Umsetzung passt am besten?",
+"richtig": "Einen kleinen gezielten Anteil als Tempolauf oder Intervalle",
+"falsch": [
+"Über ein Drittel des Umfangs in Zone 2 für maximale Härte",
+"Zone 2 ganz streichen und nur noch extrem locker joggen",
+"Jeden zweiten Tag zwei Stunden im vollen Wettkampftempo"
+],
+"warum": "Kontrollierte 10–20 % in Zone 2 (82–92 % HFmax) stärken die Laktat-Clearance, während über 35 % das Risiko für Übertraining erhöhen."
+},
+"labor": {
+"frage": "Übersichtsarbeiten untersuchten den Stellenwert von Zone-2-Training (2–4 mmol/L Laktat) in der Vorbereitung. Welcher physiologische Nutzen steht im Vordergrund?",
+"richtig": "Bessere Laktat-Clearance und Ermüdungsresistenz im Renntempo",
+"falsch": [
+"Vermeidung jeglicher Erholungszeiten nach harten Einheiten",
+"Senkung der maximalen Herzfrequenz bei submaximaler Ruhe",
+"Ersatz für das gesamte lockere Grundlagenvolumen in Zone 1"
+],
+"warum": "Ein dosierter Zone-2-Anteil steigert MCT-Transporter, Laktat-Clearance und die Leistung an 4 mmol/L (d = 1,21–1,54 in Radstudien)."
+}
+}
+},
+{
+"id": "CAR-109",
+"karte": {
+"kopf": "Verschiedene Sportarten · Übersichtsarbeit",
+"titel": "Der Sprechtest traf das lockere Ausdauertempo in 88 % der Fälle",
+"titel_hervor": "in 88 % der Fälle",
+"setup": "Eine Übersichtsarbeit prüfte beim Gehen, Laufen, Radfahren und auf dem Crosstrainer, wie genau lautes Sprechen die individuelle Ausdauerschwelle anzeigt.",
+"zahl": {
+"label": "Trefferquote für echtes lockeres Tempo",
+"wert": "88 %",
+"alltag": "fast 9 von 10 Fällen"
+},
+"kern": [
+"Klappt ein 10- bis 15-Sekunden-Satz locker am Stück, bist du im ruhigen Bereich.",
+"Wird flüssiges Sprechen spürbar mühsamer, liegst du nahe deiner ersten Schwelle.",
+"Anders als der Puls bleibt der Test bei Hitze, Koffein oder wenig Schlaf stabil."
+],
+"grenze": "Für sehr kurze, hochintensive Intervalle taugt der Test nicht, weil die Atmung dort zu verzögert reagiert.",
+"fuer_dich": "Unsicher, ob dein lockerer Lauf wirklich locker ist? Sprich 10 bis 15 Sekunden laut – stockt dein Atem, nimm etwas Tempo raus.",
+"labor": {
+"design": "Systematisches Review zur Validität und Reliabilität des Talk Tests vs. VT1/Laktatschwelle",
+"teilnehmer": "Verschiedene Leistungsniveaus (Gehen, Laufen, Rad, Crosstrainer)",
+"ergebnis": "88 % Treffergenauigkeit für Belastung unter VT1 (entspricht ca. 40–80 % VO2max / 50–85 % HRR)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du willst beim Joggen oder Radfahren ohne Pulsuhr im lockeren Grundlagenbereich bleiben. Woran merkst du das laut Sprechtest am besten?",
+"richtig": "Du kannst einen kurzen Text flüssig und entspannt sprechen",
+"falsch": [
+"Du bringst gerade noch einzelne abgehackte Wörter heraus",
+"Du kannst gar nicht mehr sprechen, atmest aber ruhig durch",
+"Du musst nach jedem zweiten Wort tief nach Luft schnappen"
+],
+"warum": "Wenn du 10 bis 15 Sekunden problemlos flüssig sprechen kannst, liegt dein Tempo in 88 % der Fälle im lockeren Bereich unter der ersten Schwelle."
+},
+"plus": {
+"frage": "Es ist heiß, du hast schlecht geschlafen und dein Puls ist beim lockeren Lauf ungewohnt hoch. Wie steuerst du deine Zone-1-Grenze verlässlich?",
+"richtig": "Per Talk Test prüfen, ob flüssiges Sprechen leicht klappt",
+"falsch": [
+"Stur nach dem gewohnten Lauftempo trotz Atemnot weiterlaufen",
+"Den Talk Test erst bei ganz kurzen Vollsprints anwenden",
+"Ausschließlich auf eine pauschale Pulsformel verlassen"
+],
+"warum": "Der Talk Test reagiert anders als die Herzfrequenz robust auf Hitze, Koffein oder Schlafmangel und grenzt Zone 1 und Zone 2 gut ab."
+},
+"labor": {
+"frage": "Eine Übersichtsarbeit bewertete den Talk Test als nicht-invasives Maß für die erste ventilatorische Schwelle (VT1). Wo liegt eine klare methodische Grenze?",
+"richtig": "Bei kurzen HIIT-Intervallen reagiert die Atmung zu verzögert",
+"falsch": [
+"Der Test funktioniert nur beim Laufen, nicht beim Radfahren",
+"Er ist deutlich anfälliger für Koffeinkonsum als der Puls",
+"Er trifft die Belastung unterhalb von VT1 nur zufällig"
+],
+"warum": "Während der Talk Test unterhalb von VT1 88 % Treffergenauigkeit erreicht, lässt die verzögerte Atemantwort keine Echtzeit-Steuerung kurzer Sprints zu."
+}
+}
+},
+{
+"id": "CAR-110",
+"karte": {
+"kopf": "18.712 Erwachsene · 351 Studien ausgewertet",
+"titel": "Pulsformeln liegen bei jedem Dritten um über 10 Schläge daneben",
+"titel_hervor": "um über 10 Schläge daneben",
+"setup": "Daten aus 351 Studien und 514 Labortests (18 bis 81 Jahre) verglichen gängige Altersformeln für den Maximalpuls mit echten Messungen.",
+"zahl": {
+"label": "Abweichung >10 Schläge trotz neuer Formel",
+"wert": "ca. 33 %",
+"alltag": "rund jeder Dritte"
+},
+"kern": [
+"Die alte Regel „220 minus Alter“ schätzt den Maximalpuls Älterer zu niedrig ein.",
+"Die Formel „208 minus 0,7 mal Alter“ trifft den Gruppendurchschnitt deutlich besser.",
+"Im Einzelfall sind trotzdem Abweichungen von bis zu 20 Schlägen pro Minute möglich."
+],
+"grenze": "Jede Altersformel liefert nur einen groben Startwert – individuelle Unterschiede von Herzgröße und Nervensteuerung erfasst sie nicht.",
+"fuer_dich": "Deine Pulsuhr rechnet mit einer Altersformel? Nutze sie nur als Startwert und passe Zonen per Sprechtest oder echtem Spitzenpuls an.",
+"labor": {
+"design": "Meta-Analyse (k=351) plus Laborvalidierung: Vergleich HFmax-Formeln vs. Messung",
+"teilnehmer": "18.712 Erwachsene in der Meta-Analyse, 514 im Labor (18–81 Jahre)",
+"ergebnis": "208 − 0,7 × Alter ohne Gruppen-Bias, aber SD ±7–12 bpm (ca. 33 % weichen >10 bpm ab)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Viele Fitness-Apps schätzen deinen Maximalpuls mit der alten Regel „220 minus Alter“. Was stimmt über diese Rechnung?",
+"richtig": "Sie unterschätzt den Maximalpuls Älterer und streut stark",
+"falsch": [
+"Sie trifft den persönlichen Maximalpuls meist auf den Schlag",
+"Sie überschätzt den Maximalpuls bei älteren Menschen stark",
+"Sie gilt exakt für alle Menschen mit regelmäßigem Training"
+],
+"warum": "„220 minus Alter“ liegt bei Älteren systematisch zu tief, und selbst bessere Altersformeln weichen bei vielen Menschen deutlich ab."
+},
+"plus": {
+"frage": "Du hast keinen Ausbelastungstest gemacht und willst deine HFmax-Zonen einrichten. Wie gehst du mit einer Altersformel richtig um?",
+"richtig": "Mit neuerer Formel starten und über echte Werte anpassen",
+"falsch": [
+"Die alte Altersformel fest eintragen und nicht mehr ändern",
+"Die errechnete HFmax pauschal deutlich nach unten senken",
+"Auf Herzfrequenzzonen verzichten, weil Messung nichts bringt"
+],
+"warum": "208 − 0,7 × Alter ist ein besserer Startwert, sollte aber bei höheren gemessenen Spitzenwerten oder über den Talk Test korrigiert werden."
+},
+"labor": {
+"frage": "Eine Auswertung von 351 Studien und 514 Labortests prüfte die Regressionsformel 208 − 0,7 × Alter. Warum bleibt sie für die individuelle Zonensteuerung riskant?",
+"richtig": "Hohe individuelle Streuung verschiebt Zonen im Einzelfall",
+"falsch": [
+"Die Formel liefert im Gruppenmittel einen sehr großen Bias",
+"Sie funktioniert nur bei Männern, nicht bei gesunden Frauen",
+"Sie unterschätzt ausschließlich sehr junge Untrainierte"
+],
+"warum": "Trotz genauem Gruppenmittelwert liegt etwa jeder Dritte über 10 bpm daneben (SD 7–12 bpm); Abweichungen bis 20 bpm verschieben Zonen spürbar."
+}
+}
+},
+{
+"id": "CAR-111",
+"karte": {
+"kopf": "Trainierte Radfahrer · Beobachtungsstudie",
+"titel": "Ein 20-Minuten-Radtest schätzt die Dauergrenze im Mittel recht gut",
+"titel_hervor": "im Mittel recht gut",
+"setup": "Bei trainierten Radsportlern wurden 95 % der Leistung aus einem 20-Minuten-Test mit der im Labor gemessenen Laktat-Dauergrenze verglichen.",
+"zahl": {
+"label": "Typischer Schätzfehler bei der Radleistung",
+"wert": "4,7 %",
+"alltag": ""
+},
+"kern": [
+"Im Gruppenschnitt stimmten Feldtest und Labormessung eng überein.",
+"Die errechnete Leistung hielten Fahrer meist nur 34 bis 51 statt 60 Minuten durch.",
+"Bei weniger stark Trainierten fiel der Schätzfehler bis etwa doppelt so groß aus."
+],
+"grenze": "Beobachtungsdaten an trainierten Radfahrern: Im Einzelfall kann der Test um gut 9 % danebenliegen.",
+"fuer_dich": "Du willst deine Rad-Zonen ohne Labor schätzen? Fahre nach dem Aufwärmen 20 Minuten voll und nutze 95 % als groben Richtwert.",
+"labor": {
+"design": "Beobachtungsstudie: Vergleich FTP20 (95 % aus 20-min-TT) mit MLSS-Labormessung",
+"teilnehmer": "Trainierte Radsportler",
+"ergebnis": "r = 0,91 (Watt), d < 0,2, TEE 4,7 %, Bias +1,4 ± 9,2 % (95 % LoA); Haltedauer 34–51 min"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Im Radsport wird oft behauptet, man könne seine aus einem 20-Minuten-Test berechnete Dauergrenze exakt eine ganze Stunde lang durchhalten. Was zeigt die Praxis?",
+"richtig": "Die meisten halten diese Leistung deutlich kürzer durch",
+"falsch": [
+"Fast alle schaffen damit genau eine Stunde ohne Einbruch",
+"Die meisten halten das Tempo problemlos zwei Stunden",
+"Der Wert lässt sich höchstens wenige Minuten lang treten"
+],
+"warum": "Beobachtungsdaten zeigen, dass die berechnete Leistung im Schnitt eher 34 bis 51 Minuten statt einer vollen Stunde durchgehalten wird."
+},
+"plus": {
+"frage": "Du bist noch kein sehr erfahrener Radsportler und bestimmst deine FTP über einen 20-Minuten-Test. Wie ordnest du das Ergebnis sinnvoll ein?",
+"richtig": "Als guten Richtwert mit spürbarem individuellem Spielraum",
+"falsch": [
+"Als millimetergenaue Laborgrenze ohne relevanten Messfehler",
+"Als unbrauchbar, weil er nicht mit der Schwelle zusammenhängt",
+"Als exaktes Maß, das bei Einsteigern genauer ist als bei Profis"
+],
+"warum": "Im Mittel korreliert die FTP20 eng mit dem MLSS, doch individuell schwankt sie bis etwa ±9 % – bei weniger Trainierten sogar noch stärker."
+},
+"labor": {
+"frage": "Eine Beobachtungsstudie verglich die FTP20 (95 % eines 20-Minuten-Zeitfahrens) mit dem maximalen Laktat-Steady-State (MLSS). Was spricht gegen eine blinde Gleichsetzung?",
+"richtig": "Große individuelle Streuung und meist kürzere Haltedauer",
+"falsch": [
+"Ein großer systematischer Gruppen-Bias zwischen beiden Werten",
+"Eine schwache Korrelation zwischen Leistungstest und Laborwert",
+"Die Herzfrequenz lässt sich im 20-Minuten-Test nicht erfassen"
+],
+"warum": "Trotz hoher Korrelation (r = 0,91) und kleinem Gruppen-Bias betrug die 95-%-Übereinstimmungsgrenze ±9,2 %, und die Haltedauer lag meist bei 34–51 Minuten."
+}
+}
+},
+{
+"id": "CAR-112",
+"karte": {
+"kopf": "532 Laufeinsteiger · Kontrollierte Studie",
+"titel": "Die 10-%-Laufregel senkte das Verletzungsrisiko bei Einsteigern nicht",
+"titel_hervor": "Verletzungsrisiko bei Einsteigern nicht",
+"setup": "532 Laufeinsteiger trainierten dreimal pro Woche auf einen 4-Meilen-Lauf – entweder 13 Wochen strikt nach der 10-%-Regel oder 8 Wochen im Standardplan.",
+"zahl": {
+"label": "Verletzte mit 10-%-Regel vs. Standard",
+"wert": "20,8 % vs. 20,3 %",
+"alltag": "rund jeder Fünfte in beiden"
+},
+"kern": [
+"In beiden Gruppen verletzte sich gut jeder fünfte Einsteiger gleich häufig.",
+"Eine starre Prozentzahl ignoriert dein Ausgangsniveau und alte Verletzungen.",
+"Bei wenig Stoßerfahrung oder höherem Körpergewicht brauchen Sehnen oft mehr Ruhe."
+],
+"grenze": "Getestet wurden Einsteiger auf dem Weg zu rund 6,4 km – für hohe Marathonumfänge gilt der Vergleich nicht direkt.",
+"fuer_dich": "Du fängst mit dem Laufen an? Verlasse dich nicht blind auf 10 % pro Woche, sondern achte auf frühere Beschwerden und baue Ruhewochen ein.",
+"labor": {
+"design": "RCT: 13 Wochen (10-%-Regel) vs. 8 Wochen Standardprogramm, 3x/Woche bis 4-Meilen-Lauf",
+"teilnehmer": "532 Laufeinsteiger zwischen 18 und 65 Jahren",
+"ergebnis": "Verletzungsrate 20,8 % vs. 20,3 % (Chi² = 0,016, p = 0,90; kein signifikanter Unterschied)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Im Laufsport hört man oft, die „10-%-Regel“ pro Woche schütze Einsteiger verlässlich vor Verletzungen. Was zeigte ein direkter Vergleich mit einem schnelleren Aufbau?",
+"richtig": "In beiden Gruppen verletzten sich etwa gleich viele Menschen",
+"falsch": [
+"Die 10-%-Regel halbierte die Zahl der Laufverletzungen",
+"Mit der 10-%-Regel traten gar keine Beschwerden mehr auf",
+"Das kürzere Programm führte zu doppelt so vielen Ausfällen"
+],
+"warum": "Mit 20,8 % gegenüber 20,3 % verletzte sich in beiden Gruppen rund jeder Fünfte – die pauschale 10-%-Regel allein schützte nicht."
+},
+"plus": {
+"frage": "Du baust als Laufeinsteiger deinen Umfang auf und hattest früher schon Knieprobleme. Reicht es, die Wochenkilometer stur um höchstens 10 % zu steigern?",
+"richtig": "Nein, individuelle Belastbarkeit und Deload-Wochen mitplanen",
+"falsch": [
+"Ja, unter dieser Grenze sind Überlastungsschäden ausgeschlossen",
+"Ja, frühere Verletzungen spielen bei langsamem Aufbau keine Rolle",
+"Nein, besser die Kilometer jede Woche noch deutlicher anheben"
+],
+"warum": "Eine pauschale Prozentregel ignoriert Vorerfahrung, Gewicht und Vorschädigungen; ohne Erholungswochen drohen trotzdem Überlastungen."
+},
+"labor": {
+"frage": "In einer randomisierten Studie trainierten 532 Laufeinsteiger entweder 13 Wochen nach der 10-%-Regel oder 8 Wochen im Standardplan. Welches Ergebnis zeigte sich?",
+"richtig": "Kein signifikanter Unterschied bei der Verletzungshäufigkeit",
+"falsch": [
+"Signifikant weniger Verletzungen in der 13-Wochen-Gruppe",
+"Signifikant mehr Verletzungen durch das langsamere Tempo",
+"Ein klarer Schutzeffekt, aber nur bei älteren Teilnehmern"
+],
+"warum": "Die Verletzungsinzidenz lag bei 20,8 % vs. 20,3 % (p = 0,90) – die isolierte 10-%-Regel berücksichtigt individuelle Gewebetoleranzen zu wenig."
+}
+}
+},
+{
+"id": "CAR-113",
+"karte": {
+"kopf": "873 Laufeinsteiger · 1-Jahres-Beobachtung",
+"titel": "Sprünge über 30 % beim Laufumfang erhöhten tendenziell das Risiko",
+"titel_hervor": "erhöhten tendenziell das Risiko",
+"setup": "873 Laufeinsteiger wurden ein Jahr lang begleitet, um zu prüfen, wie Sprünge im 2-Wochen-Laufumfang mit Überlastungsbeschwerden zusammenhängen.",
+"zahl": {
+"label": "Tendenziell höheres Risiko bei >30 % Sprung",
+"wert": "1,59-fach",
+"alltag": ""
+},
+"kern": [
+"Moderate Steigerungen von 10 bis 30 % über zwei Wochen zeigten kein erhöhtes Risiko.",
+"Der Hinweis bei über 30 % betraf vor allem Umfangsbeschwerden an Knie und Schienbein.",
+"Tempobedingte Probleme an Wade oder Achillessehne hingen damit nicht direkt zusammen."
+],
+"grenze": "Beobachtungsstudie mit knapp nicht signifikantem Trend – beweist keine alleinige Ursache und gilt primär für Einsteiger.",
+"fuer_dich": "Du steigerst deine Laufkilometer? Bleibe über zwei Wochen unter 20 bis 25 % Plus – bei Beschwerden pausieren und ärztlich abklären.",
+"labor": {
+"design": "Prospektive Beobachtungsstudie, 1 Jahr Follow-up, 2-Wochen-Progression (<10 %, 10–30 %, >30 %)",
+"teilnehmer": "873 Laufeinsteiger (202 Verletzte im Beobachtungsjahr)",
+"ergebnis": "Distanzverletzungen: >30 % vs. <10 % HR 1,59 (95 % KI 0,96–2,66; p = 0,07); 10–30 % HR 1,03"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du fängst mit dem Laufen an und steigerst deine Kilometer über zwei Wochen um mehr als ein Drittel. Was deuten Beobachtungsdaten an?",
+"richtig": "Das Risiko für typische Umfangsbeschwerden steigt tendenziell",
+"falsch": [
+"Große Kilometersprünge machen Sehnen besonders schnell belastbar",
+"Erst ab einer Verdreifachung steigt das Verletzungsrisiko an",
+"Das Risiko sinkt, solange du langsam genug joggst"
+],
+"warum": "Bei Sprüngen über 30 % in zwei Wochen zeigten sich Hinweise auf mehr distanzabhängige Überlastungsbeschwerden, etwa an Knie oder Schienbein."
+},
+"plus": {
+"frage": "Du bist Laufeinsteiger und willst deine Wochenkilometer über zwei Wochen ausbauen. Welcher Zuwachs gilt laut Beobachtungsdaten noch als unauffällig?",
+"richtig": "Moderate Umfangssteigerungen deutlich unter einem Drittel",
+"falsch": [
+"Deutliche Sprünge über ein Drittel für rasche Anpassung",
+"Kaum messbare Schritte, da schon kleine Sprünge riskant sind",
+"Große Sprünge sind egal, solange du gedämpfte Schuhe trägst"
+],
+"warum": "Steigerungen von 10 bis 30 % über zwei Wochen zeigten kein erhöhtes Risiko, während ab über 30 % ein tendenzieller Risikoanstieg auftrat."
+},
+"labor": {
+"frage": "Eine 1-Jahres-Beobachtung an 873 Laufeinsteigern fand bei >30 % Umfangssteigerung in zwei Wochen eine Hazard Ratio von 1,59 (p = 0,07). Wie ist das einzuordnen?",
+"richtig": "Trend für distanzabhängige Verletzungen, knapp nicht signifikant",
+"falsch": [
+"Hochsignifikanter Beweis für mehr Achillessehnen- und Wadenprobleme",
+"Beleg, dass bereits 10–30 % Steigerung das Risiko stark erhöhen",
+"Nachweis einer Ursache-Wirkung aus einem randomisierten Versuch"
+],
+"warum": "Das 95-%-Konfidenzintervall (0,96–2,66) schließt 1 knapp ein, und der Trend betraf spezifisch distanz- statt geschwindigkeitsabhängige Verletzungen."
+}
+}
+},
+{
+"id": "CAR-114",
+"karte": {
+"kopf": "Laufen vs. Radfahren · Übersichtsarbeit",
+"titel": "Laufen belastet Muskeln und Puls stärker und überträgt mehr aufs Rad",
+"titel_hervor": "überträgt mehr aufs Rad",
+"setup": "Übersichtsarbeiten verglichen die körperlichen Reaktionen, Ermüdungsmuster und Übertragungseffekte zwischen Lauf- und Radtraining.",
+"zahl": null,
+"kern": [
+"Beim Laufen liegt der Puls bei gleicher Anstrengung meist höher als auf dem Rad.",
+"Die Stöße beim Laufen ermüden Nerven und Muskeln spürbar stärker als Radfahren.",
+"Laufeinheiten verbessern auch die Radleistung meist mehr als umgekehrt."
+],
+"grenze": "Für feste Zeit-Umrechnungsformeln zwischen Laufen und Radfahren fehlen bislang kontrollierte Studien.",
+"fuer_dich": "Du läufst und fährst Rad? Nutze für beide getrennte Pulszonen und sammle lockeres Zusatzvolumen gelenkschonend auf dem Rad.",
+"labor": {
+"design": "Systematische Reviews zu physiologischen Unterschieden und Cross-Training-Transfer",
+"teilnehmer": "",
+"ergebnis": ""
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du machst sowohl Lauf- als auch Radtraining. Warum fühlen sich deine Beine nach einer harten Laufeinheit meist erschöpfter an als nach ähnlich langem Radfahren?",
+"richtig": "Beim Laufen kommen wiederholte Stöße und mehr Muskelmasse dazu",
+"falsch": [
+"Beim Radfahren arbeiten deutlich mehr Muskeln im ganzen Körper",
+"Beim Laufen schlägt das Herz bei gleicher Mühe deutlich langsamer",
+"Radfahren verursacht stärkere Stoßbelastungen auf alle Gelenke"
+],
+"warum": "Laufen aktiviert mehr Muskelmasse und bremst jeden Schritt ab, was Puls und muskuläre Ermüdung stärker nach oben treibt als Radfahren."
+},
+"plus": {
+"frage": "Du kombinierst Laufen und Radfahren in einer Trainingswoche. Wie stellst du deine Herzfrequenzzonen und deine Erholung richtig ein?",
+"richtig": "Getrennte Zonen (Rad tiefer) und mehr Pause nach harten Läufen",
+"falsch": [
+"Identische Pulszonen für beide Sportarten fest verwenden",
+"Die Rad-Pulszonen deutlich höher ansetzen als beim Laufen",
+"Nach langen Läufen kürzer pausieren als nach lockeren Radrunden"
+],
+"warum": "Auf dem Rad liegt die Herzfrequenz meist niedriger als beim Laufen, während Laufen stärkere neuromuskuläre Ermüdung und längere Erholung bedingt."
+},
+"labor": {
+"frage": "Übersichtsarbeiten verglichen physiologische Reaktionen und Trainingstransfer zwischen Laufen und Radfahren. Was trifft auf den Transfer und die Ermüdung zu?",
+"richtig": "Laufen überträgt stärker aufs Rad und ermüdet zentral deutlicher",
+"falsch": [
+"Radfahren überträgt deutlich stärker auf das Laufen als umgekehrt",
+"Beide Sportarten zeigen identische lokale und zentrale Ermüdung",
+"Kontrollierte Studien belegen einen festen Umrechnungsfaktor"
+],
+"warum": "Durch größere Muskelmasse und Dehnungs-Verkürzungs-Zyklus erzeugt Laufen stärkere zentrale Ermüdung und Kraftverluste, überträgt aber besser aufs Rad."
+}
+}
+},
+{
+"id": "CAR-115",
+"karte": {
+"kopf": "122.007 Erwachsene · Langzeit-Beobachtung",
+"titel": "Bessere Ausdauer hing stark mit geringerer Sterblichkeit zusammen",
+"titel_hervor": "mit geringerer Sterblichkeit",
+"setup": "Über im Schnitt 8,4 Jahre wurde bei 122.007 Erwachsenen untersucht, wie die Fitness aus einem Laufbandtest mit der langfristigen Sterblichkeit zusammenhängt.",
+"zahl": {
+"label": "Höheres Sterberisiko (niedrig vs. Elite)",
+"wert": "5,04-fach",
+"alltag": ""
+},
+"kern": [
+"Je höher die Ausdauerfitness war, desto geringer war das beobachtete Sterberisiko.",
+"Selbst bei extrem fitter Spitze zeigte sich kein Nachteil und keine Obergrenze.",
+"Sehr niedrige Fitness ging mit einem ähnlich hohen Risiko einher wie Rauchen."
+],
+"grenze": "Rückblickende Beobachtungsstudie – Genetik und Lebensstil spielen mit, ein reiner Ursache-Wirkung-Beweis ist das nicht.",
+"fuer_dich": "Deine Ausdauer liegt eher im unteren Bereich? Regelmäßiges Training Richtung oberes Viertel deiner Altersgruppe lohnt sich langfristig.",
+"labor": {
+"design": "Retrospektive Beobachtungsstudie, 8,4 Jahre Median-Follow-up (1,1 Mio. Personenjahre)",
+"teilnehmer": "122.007 Erwachsene (53,4 ± 12,6 Jahre) mit Belastungstest",
+"ergebnis": "Niedrig vs. Elite HR 5,04 (95 % KI 4,10–6,20); Elite vs. hoch HR 0,77 (≥70 J.: 0,71)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Manche befürchten, dass sehr hohe Ausdauerfitness irgendwann ungesund wird und der Langlebigkeit schadet. Was zeigten Daten von über 120.000 Erwachsenen?",
+"richtig": "Selbst bei extrem hoher Fitness war kein Nachteil erkennbar",
+"falsch": [
+"Ab mittlerer Fitness stieg das Sterberisiko wieder stark an",
+"Hohe Ausdauer brachte nur bei jüngeren Menschen Vorteile",
+"Geringe Fitness spielte für das langfristige Risiko kaum eine Rolle"
+],
+"warum": "Über im Schnitt 8,4 Jahre sank das Sterberisiko stufenweise bis in die oberste Fitnessgruppe – ohne erkennbare Obergrenze oder Schadenseffekt."
+},
+"plus": {
+"frage": "Deine geschätzte VO2max liegt im unteren Viertel deiner Altersgruppe. Wie solltest du diesen Befund für deine Trainingsplanung einordnen?",
+"richtig": "Als Signal, Ausdauer gezielt Richtung oberes Viertel aufzubauen",
+"falsch": [
+"Als unbedenklich, solange du regelmäßig Krafttraining machst",
+"Als Zeichen, nur sehr wenig zu trainieren, um das Herz zu schonen",
+"Als unveränderlich, weil Fitness allein von den Genen abhängt"
+],
+"warum": "Geringe Ausdauerfitness ging mit einem sehr hohen Risiko einher; der Sprung in höhere Fitnessbereiche zeigte den deutlichsten Zusammenhang."
+},
+"labor": {
+"frage": "Eine retrospektive Beobachtungsstudie (n = 122.007, 8,4 Jahre Follow-up) fand ein fünffach höheres Sterberisiko bei niedriger vs. Elite-Fitness. Welche Grenze ist wichtig?",
+"richtig": "Beobachtung und Genetik erlauben keinen reinen Kausalbeweis",
+"falsch": [
+"Die Stichprobe war für Aussagen über Ältere viel zu klein",
+"Ab höherem Alter kehrte sich der Vorteil hoher Fitness um",
+"Das Risiko geringer Fitness lag klar unter dem von Rauchen"
+],
+"warum": "Trotz starkem Zusammenhang auch ab 70 Jahren (HR 0,71) können retrospektive Beobachtungsdaten genetische und andere Einflüsse nicht trennen."
+}
+}
+},
+{
+"id": "CAR-116",
+"karte": {
+"kopf": "Gesunde Erwachsene · Übersichtsarbeit",
+"titel": "Bei hohem Tempo blieb die Ausdauer trotz viel weniger Training stabil",
+"titel_hervor": "trotz viel weniger Training",
+"setup": "Eine Übersichtsarbeit prüfte, wie lange die Ausdauer erhalten bleibt, wenn Häufigkeit, Dauer oder Intensität des Trainings stark gekürzt werden.",
+"zahl": {
+"label": "Erhalt der Ausdauer bei hohem Tempo",
+"wert": "bis 15 Wochen",
+"alltag": "≈ fast 4 Monate"
+},
+"kern": [
+"Zwei Einheiten pro Woche reichten oft aus, statt zuvor sechs Einheiten.",
+"Auch ein Drittel bis zwei Drittel kürzere Einheiten hielten die Leistung stabil.",
+"Sank dagegen das Tempo stark ab, ging die Ausdauer selbst bei sechs Einheiten zurück."
+],
+"grenze": "Gilt für gesunde Erwachsene über bis zu 15 Wochen – für Leistungssportler und noch längere Phasen fehlen robuste Daten.",
+"fuer_dich": "Du hast wochenlang kaum Zeit? Kürze lieber Zahl oder Dauer auf zwei kurze Einheiten pro Woche, aber halte die Intensität hoch.",
+"labor": {
+"design": "Systematisches Review zu Minimaldosen für Ausdauererhalt (Frequenz vs. Volumen vs. Intensität)",
+"teilnehmer": "Gesunde Erwachsene (Trainingsreduktion über bis zu 15 Wochen)",
+"ergebnis": "Kein signifikanter VO2max-Verlust bei −66 % Frequenz/Volumen (90–100 % HFmax); Verlust bei 61–67 %"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du hast ein paar stressige Monate vor dir und kannst viel weniger Ausdauertraining schaffen als sonst. Was hilft am besten, deine Fitness zu halten?",
+"richtig": "Seltener oder kürzer trainieren, aber anstrengend bleiben",
+"falsch": [
+"Genauso oft trainieren, aber viel langsamer und gemütlicher",
+"Lieber ganz pausieren, weil wenige Einheiten nichts bringen",
+"Einmal im Monat eine extrem lange lockere Tour machen"
+],
+"warum": "Entscheidend für den Erhalt ist die hohe Intensität – selbst mit zwei statt sechs Einheiten blieb die Ausdauer bis zu 15 Wochen stabil."
+},
+"plus": {
+"frage": "Du musst dein Ausdauertraining zeitlich um etwa die Hälfte kürzen, willst aber deine VO2max über mehrere Wochen halten. Was behältst du unbedingt bei?",
+"richtig": "Hohe Trainingsintensität bei verkürztem Umfang beibehalten",
+"falsch": [
+"Die gewohnte Frequenz von lockeren Einheiten pro Woche",
+"Ein gemütliches Tempo bei gleicher Einheitsdauer wählen",
+"Das volle Grundlagenvolumen bei halber Geschwindigkeit"
+],
+"warum": "Volumen und Frequenz lassen sich um 33 bis 66 % senken, während ein Abfall der Intensität auf 61–67 % HFmax zu deutlichem Fitnessverlust führte."
+},
+"labor": {
+"frage": "Eine systematische Übersicht untersuchte, welche Trainingsvariable für den Erhalt der VO2max über bis zu 15 Wochen entscheidend ist. Was passierte bei konstanter Frequenz (6x/Woche), aber reduzierter Intensität?",
+"richtig": "Die aerobe Kapazität nahm trotz vollem Umfang deutlich ab",
+"falsch": [
+"Die VO2max blieb dank der hohen Trainingshäufigkeit stabil",
+"Nur die Muskelkraft sank, während die Ausdauer gleich blieb",
+"Erst nach über einem halben Jahr zeigten sich erste Verluste"
+],
+"warum": "Senkte man die Intensität auf 61–67 % HFmax, verloren selbst 6 Einheiten pro Woche signifikant Ausdauer, während 2 hochintensive Einheiten sie erhielten."
+}
+}
+},
+{
+"id": "CAR-117",
+"karte": {
+"kopf": "55 Experten & Athleten · Expertenkonsens",
+"titel": "Für Profis und Rad-Lauf-Umrechnungen fehlen noch belastbare Studien",
+"titel_hervor": "fehlen noch belastbare Studien",
+"setup": "Übersichten und eine Befragung von 55 Experten prüften, was zu Minimaltraining bei Profis und Rad-Lauf-Umrechnungen wirklich belegt ist.",
+"zahl": null,
+"kern": [
+"Für Leistungssportler gibt es bisher kaum kontrollierte Langzeitdaten zum Minimalpensum.",
+"Bekannte Umrechnungen von Laufen zu Radfahren stammen nur aus Praxisbefragungen.",
+"Als grober Erfahrungswert gelten knapp zwei Minuten lockeres Radeln pro Minute Laufen."
+],
+"grenze": "Bisher wenig untersucht: Es liegen nur Expertenmeinungen und Befragungen vor, keine kontrollierten Langzeitstudien.",
+"fuer_dich": "Du ersetzt lockeres Laufen durch Radfahren? Nutze knapp 2 Minuten Rad pro Laufminute nur als grobe Faustregel, nicht als starre Formel.",
+"labor": {
+"design": "Expertenkonsens / Narrative Übersicht und Praxisbefragung zu Erhaltungsdosen und Cross-Training",
+"teilnehmer": "55 Experten und Athleten (Befragung); Übersicht zu Leistungssportlern",
+"ergebnis": "Befragung: Lauf-zu-Rad 1,76–2,01; Rad-zu-Lauf 0,48–0,57 (keine kontrollierten Studiendaten)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Im Netz kursieren genaue Tabellen, wie viele Minuten Radfahren eine Laufeinheit ersetzen. Wie gut sind solche festen Umrechnungsformeln wissenschaftlich belegt?",
+"richtig": "Sie sind nur grobe Erfahrungswerte ohne strenge Studienbelege",
+"falsch": [
+"Sie sind durch große Langzeitstudien exakt auf die Minute bewiesen",
+"Eine Minute Radfahren ersetzt nachweislich genau eine Minute Laufen",
+"Radfahren kann lockeres Lauftraining grundsätzlich gar nicht ersetzen"
+],
+"warum": "Bisher gibt es für feste Umrechnungsfaktoren zwischen Laufen und Radfahren keine kontrollierten Studien, sondern nur Erfahrungswerte aus Befragungen."
+},
+"plus": {
+"frage": "Du bist sehr gut trainiert und willst in einer Übergangsphase lockere Läufe teilweise durch Radfahren ersetzen. Wie gehst du praxisnah vor?",
+"richtig": "Lockeres Rad grob höher dosieren und harte Reize beibehalten",
+"falsch": [
+"Intensive Laufintervalle nach starrer Formel aufs Rad umrechnen",
+"Alle intensiven Reize streichen und nur halb so lange Rad fahren",
+"Auf dem Rad genau halb so viele Minuten fahren wie beim Laufen"
+],
+"warum": "Erfahrungswerte legen in Zone 1 etwa 1,8 bis 2,0 Minuten Rad pro Laufminute nahe, während regelmäßige intensive Reize helfen, die Leistung zu halten."
+},
+"labor": {
+"frage": "Warum wird die Evidenzlage für langfristige Minimaldosen bei Leistungssportlern und feste Rad-Lauf-Äquivalenzfaktoren derzeit sehr niedrig eingestuft?",
+"richtig": "Es fehlen kontrollierte Langzeitstudien außerhalb kurzer Taper-Phasen",
+"falsch": [
+"Kontrollierte Studien widerlegten jeden Effekt von Radtraining",
+"Für Freizeitsportler existieren ebenfalls keinerlei Erhaltungsdaten",
+"Die Befragung von Experten ergab überhaupt keine Richtwerte"
+],
+"warum": "Während für die Allgemeinbevölkerung 15-Wochen-Daten vorliegen, beruhen Profi-Langzeiterhalt und Umrechnungsfaktoren bisher fast nur auf Expertenkonsens."
+}
+}
+},
+{
+"id": "CARB-101",
+"karte": {
+"kopf": "Ausdauersportler · Fachleitlinie",
+"titel": "Der Bedarf an Kohlenhydraten wächst mit deinem Training",
+"titel_hervor": "wächst mit deinem Training",
+"setup": "Fachgesellschaften werteten Studien zum täglichen Kohlenhydratbedarf bei unterschiedlicher Trainingsdauer und -intensität aus.",
+"zahl": null,
+"kern": [
+"Bei leichten Tagen unter einer Stunde reichen meist 3 bis 5 Gramm pro Kilo.",
+"Bei ein bis drei Stunden hartem Training steigt der Bedarf auf 6 bis 10 Gramm.",
+"Passende Mengen halten die Energiespeicher in Muskeln und Kopf leistungsfähig."
+],
+"grenze": "Wie viel Fett dein Körper verbrennt und wie hoch dein Ruheverbrauch ist, schwankt individuell.",
+"fuer_dich": "Steht morgen eine harte statt einer lockeren Einheit an? Dann iss heute und morgen spürbar mehr Kohlenhydrate.",
+"labor": {
+"design": "Positionspapier und gemeinsame Leitlinie zur täglichen Kohlenhydrat-Periodisierung",
+"teilnehmer": "Ausdauer- und Hybridsportler",
+"ergebnis": "Leicht 3–5, moderat 5–7, hoch 6–10, sehr hoch 8–12 g/kg/Tag"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du trainierst an manchen Tagen eine halbe Stunde locker und an anderen Tagen zwei Stunden hart. Wie verändert sich dein Bedarf an Kohlenhydraten?",
+"richtig": "Er steigt an harten Trainingstagen deutlich an",
+"falsch": [
+"Er bleibt jeden Tag der Woche praktisch gleich",
+"Er sinkt an langen Trainingstagen spürbar ab",
+"Er hängt fast nur vom Körpergewicht im Ruhezustand ab"
+],
+"warum": "Der tägliche Bedarf richtet sich direkt nach Trainingsdauer und Intensität, nicht nach einem festen Wert."
+},
+"plus": {
+"frage": "Du wechselst von einem Ruhetag auf einen Tag mit zwei Stunden intensivem Lauf- und Krafttraining. Wie passt du deine Kohlenhydrate am sinnvollsten an?",
+"richtig": "Du erhöhst deine tägliche Menge spürbar passend zur Belastung",
+"falsch": [
+"Du hältst die Menge konstant und erhöhst nur dein Fett",
+"Du reduzierst sie, damit der Körper mehr Fett verbrennt",
+"Du isst erst am Tag danach deutlich mehr Kohlenhydrate"
+],
+"warum": "Um die Trainingsqualität bei langen, harten Einheiten hochzuhalten, skaliert die Zufuhr mit der Tagesbelastung."
+},
+"labor": {
+"frage": "Internationale Sporternährungs-Leitlinien ordnen den täglichen Kohlenhydratbedarf in Gramm pro Kilogramm nach Belastungsstufen ein. Welche Grenze gilt dabei für den Alltag?",
+"richtig": "Ruheumsatz und Fettoxidation schwanken individuell innerhalb der Spannen",
+"falsch": [
+"Die Spannen gelten ausschließlich für reine Kraftsportler",
+"Ab einer Stunde Training steigt der Bedarf nicht mehr weiter",
+"Körpergewicht spielt für die Berechnung kaum eine Rolle"
+],
+"warum": "Die empfohlenen Korridore sind Richtwerte, weil Stoffwechsel und Fettoxidation von Person zu Person variieren."
+}
+}
+},
+{
+"id": "CARB-102",
+"karte": {
+"kopf": "Ausdauersportler · Übersichtsarbeit",
+"titel": "Weniger Kohlenhydrate bei lockeren Läufen stärken den Trainingseffekt",
+"titel_hervor": "stärken den Trainingseffekt",
+"setup": "Eine Übersichtsarbeit prüfte, wie Muskeln auf Ausdauertraining mit halbvollen statt ganz vollen Energiespeichern reagieren.",
+"zahl": {
+"label": "Studien mit stärkerem Anpassungssignal",
+"wert": "73–78 %",
+"alltag": "≈ drei von vier Studien"
+},
+"kern": [
+"Bei halbvollen Speichern sprangen Ausdauersignale in gut drei Viertel der Studien an.",
+"Für harte Intervalle oder hohes Volumen bleiben volle Speicher dagegen entscheidend.",
+"Gezieltes Anpassen je Einheit verbindet starke Anpassung mit hoher Qualität."
+],
+"grenze": "Im Alltag lässt sich der genaue Speicherstand im Muskel ohne Gewebeprobe nur grob schätzen.",
+"fuer_dich": "Steht ein kurzer, lockerer Lauf unter einer Stunde an? Dann brauchst du vorher meist keine große Portion Kohlenhydrate.",
+"labor": {
+"design": "Systematisches Review und Rahmenmodell (Anpassung der KH-Verfügbarkeit je Einheit)",
+"teilnehmer": "Ausdauer- und Hybridsportler (9 bis 12 Studien je Marker)",
+"ergebnis": "Signalanstieg bei 100–300 mmol/kg dw: Zellsignale 73 %, Genexpression 75 %, Enzyme 78 %"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Stimmt es, dass deine Muskelspeicher vor jedem noch so lockeren Ausdauerlauf randvoll sein müssen?",
+"richtig": "Nein, bei lockeren Läufen können halbvolle Speicher sogar helfen",
+"falsch": [
+"Ja, sonst bringt lockeres Ausdauertraining gar keinen Effekt",
+"Ja, sonst verlierst du schon nach zehn Minuten jede Kraft",
+"Nein, volle Speicher schaden selbst bei harten Wettkämpfen"
+],
+"warum": "Bei moderat gefüllten Speichern werden Ausdaueranpassungen oft verstärkt, während harte Einheiten volle Speicher brauchen."
+},
+"plus": {
+"frage": "Diese Woche stehen harte Intervalle und ein kurzer, lockerer Zone-2-Lauf an. Wie verteilst du deine Kohlenhydrate am klügsten?",
+"richtig": "Hoch vor den Intervallen und moderat am Tag des lockeren Laufs",
+"falsch": [
+"Niedrig vor den Intervallen und hoch am Tag des lockeren Laufs",
+"Vor beiden Einheiten sehr niedrig für maximale Fettverbrennung",
+"An beiden Tagen gleich hoch, da das Timing keinen Unterschied macht"
+],
+"warum": "Intensive Schlüsseleinheiten brauchen hohe Verfügbarkeit für Leistung, während lockere Läufe mit weniger auskommen."
+},
+"labor": {
+"frage": "Eine Übersichtsarbeit wertete Muskelbiopsien nach Ausdauertraining in einem mittleren Glykogenfenster aus. Was zeigte sich über die Studien hinweg?",
+"richtig": "Zellsignale, Genexpression und Enzyme stiegen in rund drei Viertel der Studien",
+"falsch": [
+"Die molekularen Anpassungssignale sanken in den meisten Studien deutlich",
+"Nur bei völlig leeren Speichern ließen sich Zellsignale nachweisen",
+"Die Enzymaktivität reagierte kaum, nur die maximale Kraft nahm zu"
+],
+"warum": "Zwischen 100 und 300 mmol/kg Trockengewicht stiegen Zellsignale (73 %), Genexpression (75 %) und Enzyme (78 %)."
+}
+}
+},
+{
+"id": "CARB-103",
+"karte": {
+"kopf": "Kraftsportler · Übersichtsarbeit",
+"titel": "Krafttraining verbraucht weniger Kohlenhydrate als lange Läufe",
+"titel_hervor": "weniger Kohlenhydrate",
+"setup": "Eine Übersichtsarbeit fasste Messungen zum Energieverbrauch und den Muskelspeichern bei Kraftsportlern zusammen.",
+"zahl": {
+"label": "Speicherabbau pro Krafteinheit",
+"wert": "24–40 %",
+"alltag": "≈ ein Viertel bis zwei Fünftel"
+},
+"kern": [
+"Wegen der Satzpausen bist du im Krafttraining nur rund ein Sechstel der Zeit aktiv.",
+"Darum reichen meist moderate Mengen von 3 bis 7 Gramm Kohlenhydraten pro Kilo am Tag.",
+"So bleibt im Alltag genug Raum für ausreichend Eiweiß und wichtige Fette."
+],
+"grenze": "Es gibt erst wenige Langzeitstudien mit direkter Speichermessung bei gleicher Kalorienzahl.",
+"fuer_dich": "Trainierst du vor allem Kraft statt lange Ausdauer? Dann musst du dich nicht wie ein Marathonläufer verpflegen.",
+"labor": {
+"design": "Narratives Review zum Kohlenhydratbedarf im Kraftsport",
+"teilnehmer": "Kraftsportler, Bodybuilder und Powerlifter",
+"ergebnis": "Glykogenverlust 24–40 %/Einheit (~17 % aktive Zeit); Bedarf 3–7 g/kg/Tag"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du gehst eine Stunde ins Fitnessstudio und machst normales Krafttraining mit Satzpausen. Wie stark leeren sich dabei die Energiespeicher in deinen Muskeln?",
+"richtig": "Nur teilweise, etwa um ein Viertel bis zwei Fünftel",
+"falsch": [
+"Fast vollständig, ähnlich wie nach einem Marathonlauf",
+"So gut wie gar nicht, weil Krafttraining nur Fett nutzt",
+"Stärker als bei mehrstündigem, schnellem Ausdauersport"
+],
+"warum": "Durch die Satzpausen verbrauchst du insgesamt deutlich weniger Kohlenhydrate als bei mehrstündigem Ausdauertraining."
+},
+"plus": {
+"frage": "Du trainierst viermal pro Woche reines Krafttraining für Muskelaufbau. Wie ordnest du deinen täglichen Kohlenhydratbedarf ein?",
+"richtig": "Moderat, damit genug Platz für Eiweiß und Fette bleibt",
+"falsch": [
+"Extrem hoch, auf dem Niveau langer Ausdauerwettkämpfe",
+"Möglichst nahe null, weil Krafttraining kaum Zucker braucht",
+"Unabhängig vom Volumen gleich hoch an Trainings- und Ruhetagen"
+],
+"warum": "Krafttraining hat durch Satzpausen eine geringere Gesamtoxidation, sodass moderate Mengen meist ausreichen."
+},
+"labor": {
+"frage": "In einer Übersichtsarbeit zum Kraftsport wurden Glykogenmessungen und aktive Arbeitszeiten zusammengefasst. Welche Aussagekraft hat die Datenlage?",
+"richtig": "Es fehlen noch viele isokalorische Langzeitstudien mit direkter Messung",
+"falsch": [
+"Dutzende mehrjährige Biopsiestudien belegen exakte Grammwerte",
+"Die aktive Arbeitszeit liegt im Krafttraining bei über zwei Dritteln",
+"Kraftheber brauchen im Mittel mehr Kohlenhydrate als Ausdauerprofis"
+],
+"warum": "Die Autoren betonen, dass es erst wenige isokalorische Langzeitstudien mit direkter Glykogenmessung gibt."
+}
+}
+},
+{
+"id": "CARB-104",
+"karte": {
+"kopf": "Kraftsportler · 21 Studien zusammengefasst",
+"titel": "Kohlenhydrate steigern das Kraftvolumen erst bei längeren Einheiten",
+"titel_hervor": "erst bei längeren Einheiten",
+"setup": "In 21 kontrollierten Studien wurde getestet, ob Kohlenhydrate vor oder beim Krafttraining mehr Wiederholungen ermöglichen als ein Scheinpräparat.",
+"zahl": null,
+"kern": [
+"Ein klarer Vorteil zeigte sich ab mehr als 45 Minuten oder ab 8 bis 10 Sätzen.",
+"Auch nach mindestens 8 Stunden ohne Essen schafften Sportler mit Zufuhr mehr.",
+"Bei kurzen Einheiten nach einer normalen Mahlzeit halfen extra Kohlenhydrate kaum."
+],
+"grenze": "Geprüft wurde das Volumen einzelner Einheiten – ob daraus langfristig mehr Muskel wächst, ist offen.",
+"fuer_dich": "Steht ein langes Krafttraining oder ein Morgentraining ohne Frühstück an? Dann nimm vorher leicht verdauliche Kohlenhydrate.",
+"labor": {
+"design": "Systematisches Review mit Meta-Analyse kontrollierter Studien (KH vs. Placebo)",
+"teilnehmer": "21 RCTs mit insgesamt 226 Kraft- und Hybridsportlern",
+"ergebnis": "Volumen gesamt SMD 0,61 (Update 2025: 0,28); >45 min SMD 1,02 (0,38); >=8 h Fasten SMD 0,39"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du hast vor zwei Stunden normal gegessen und machst jetzt ein kurzes 30-Minuten-Krafttraining. Bringt ein süßer Sportdrink währenddessen meist mehr Leistung?",
+"richtig": "Nein, bei kurzen Einheiten nach dem Essen bringt das kaum Vorteil",
+"falsch": [
+"Ja, du schaffst damit in jedem Satz deutlich mehr Gewicht",
+"Ja, sonst sinkt dein Blutzucker nach zehn Minuten stark ab",
+"Nein, Kohlenhydrate bremsen im Krafttraining die Leistung"
+],
+"warum": "Extra Kohlenhydrate zahlten sich vor allem bei langen Einheiten über 45 Minuten oder nach längerem Fasten aus."
+},
+"plus": {
+"frage": "Du trainierst morgens direkt nach dem Aufstehen eine Stunde lang schweres Krafttraining mit über 10 Sätzen. Was unterstützt dein Trainingsvolumen am besten?",
+"richtig": "Vorab eine Portion Kohlenhydrate essen oder beim Training zuführen",
+"falsch": [
+"Komplett nüchtern bleiben, da Krafttraining keine Speicher leert",
+"Nur reines Fett vor dem Training einnehmen",
+"Die Kohlenhydrate erst mehrere Stunden nach der Einheit essen"
+],
+"warum": "Nach rund acht Stunden Nachtfasten und bei längerem Volumen steigert akute Kohlenhydratzufuhr die Gesamtwiederholungen."
+},
+"labor": {
+"frage": "Eine Meta-Analyse fasste 21 kontrollierte Studien zu akuter Kohlenhydratzufuhr gegen Placebo im Krafttraining zusammen. Wann war der Effekt am deutlichsten?",
+"richtig": "Bei Einheiten über 45 Minuten, höherer Satzzahl oder nach langem Fasten",
+"falsch": [
+"Bei kurzen Einheiten unter 30 Minuten direkt nach einer Mahlzeit",
+"Unabhängig von Dauer und Satzanzahl in jeder getesteten Einheit",
+"Nur bei Einheiten mit maximal fünf Sätzen ohne Satzpausen"
+],
+"warum": "Dauer über 45 Minuten, steigende Satzanzahl und Fasten ab acht Stunden verstärkten den positiven Volumeneffekt."
+}
+}
+},
+{
+"id": "CARB-105",
+"karte": {
+"kopf": "Kraftsportler · Muskelproben im Labor",
+"titel": "Schweres Krafttraining leert jede zweite schnelle Muskelfaser lokal",
+"titel_hervor": "jede zweite schnelle Muskelfaser",
+"setup": "Bei Kraftsportlern wurden nach schwerem Training Muskelproben entnommen und die Energiespeicher einzelner Fasern unter dem Mikroskop untersucht.",
+"zahl": {
+"label": "Schnelle Fasern lokal fast leer",
+"wert": "≈ 50 %",
+"alltag": "rund jede zweite schnelle Faser"
+},
+"kern": [
+"Im gesamten Oberschenkelmuskel sank der Speicher im Schnitt nur um 38 Prozent.",
+"In der Hälfte der schnellen Kraftfasern war der lokale Speicher aber fast leer.",
+"Das erklärt, warum Muskeln ermüden, obwohl der Gesamtspeicher noch halb voll wirkt."
+],
+"grenze": "Untersucht wurde nur eine kleine Gruppe aus Elite-Gewichthebern und Kraftdreikämpfern.",
+"fuer_dich": "Folgt auf ein schweres Beintraining bald ein Lauf oder die nächste Krafteinheit? Dann fülle deine Kohlenhydrate gezielt wieder auf.",
+"labor": {
+"design": "Experimentelle Biopsiestudie mit Elektronenmikroskopie nach schwerem Krafttraining",
+"teilnehmer": "Kleine Stichprobe aus Elite-Gewichthebern und Powerliftern",
+"ergebnis": "Gesamtglykogen M. vastus lateralis −38 %; nahezu volle intramyofibrilläre Leerung in ~50 % der Typ-II-Fasern"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Nach schwerem Beintraining fühlen sich deine Beine schlapp an, obwohl der gesamte Muskel noch mehr als die Hälfte seiner Energie hat. Woran kann das liegen?",
+"richtig": "Einzelne schnelle Muskelfasern sind lokal schon fast leer",
+"falsch": [
+"Der gesamte Muskel verbraucht bei Krafttraining gar keine Energie",
+"Die Ermüdung entsteht ausschließlich im Kopf, nicht im Muskel",
+"Langsame Fasern blockieren die Durchblutung im Oberschenkel"
+],
+"warum": "Auch wenn der Gesamtspeicher moderat sinkt, können die wichtigen schnellen Fasern vor Ort weitgehend entleert sein."
+},
+"plus": {
+"frage": "Du hast heute ein schweres Beintraining mit über 10 Sätzen absolviert und willst morgen zügig laufen. Warum solltest du heute gut Kohlenhydrate nachfüllen?",
+"richtig": "Weil die lokalen Speicher der schnellen Fasern stark geleert wurden",
+"falsch": [
+"Weil Krafttraining das gesamte Muskelglykogen auf null senkt",
+"Weil Beintraining den Laufstoffwechsel nur über Fett steuert",
+"Weil ohne Zucker am selben Abend kein Muskeleiweiß verdaut wird"
+],
+"warum": "Trotz moderatem Gesamtverlust sind rund die Hälfte der Typ-II-Fasern lokal fast leer, was die Folgeleistung bremst."
+},
+"labor": {
+"frage": "Muskelbiopsien von Kraftsportlern nach schwerem Training wurden per Elektronenmikroskop auf subzelluläre Glykogenspeicher untersucht. Welches Ergebnis lieferte die Analyse?",
+"richtig": "Rund die Hälfte der Typ-II-Fasern war intramyofibrillär fast entleert",
+"falsch": [
+"Das Glykogen sank in allen Fasertypen gleichmäßig um knapp zehn Prozent",
+"Nur die langsamen Typ-I-Fasern verloren lokal ihre Speicher",
+"Die Speicher blieben unverändert, nur das Gesamtgewicht sank"
+],
+"warum": "Bei −38 % Gesamtglykogen zeigten etwa 50 % der Typ-II-Fasern eine nahezu vollständige intramyofibrilläre Entleerung."
+}
+}
+}
+]

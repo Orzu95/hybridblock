@@ -1,0 +1,1122 @@
+[
+{
+"id": "ALG-121",
+"karte": {
+"kopf": "Junge Kraftsportler · 48-Stunden-Messung",
+"titel": "Der Ruhepuls erholt sich nach Krafttraining schneller als die Muskeln",
+"titel_hervor": "schneller als die Muskeln",
+"setup": "Nach hartem Krafttraining wurden über 48 Stunden Herzratenvariabilität, Sprungkraft und Muskelkater junger Krafttrainierter verfolgt.",
+"zahl": null,
+"kern": [
+"Erste Hinweise: Der Herzwert wirkt oft schon frisch, wenn Beine noch müde sind",
+"Sprungkraft und Muskelgefühl brauchten teils länger als das Nervensystem",
+"Ein reiner HRV-Score überschätzt nach schwerem Heben leicht deine Kraft"
+],
+"grenze": "Kleine Gruppe junger Krafttrainierter nach einem bestimmten Plan – bei anderem Volumen kann die Erholung anders verlaufen.",
+"fuer_dich": "Dein HRV-Wert ist grün, aber deine Muskeln brennen noch? Beziehe Muskelkater, Schlaf und die letzten zwei Trainingstage mit ein.",
+"labor": {
+"design": "Experimentelle Längsschnittstudie (Baseline, post, 24 h, 48 h nach 10RM-Krafttraining)",
+"teilnehmer": "Kleine Stichprobe junger Krafttrainierter",
+"ergebnis": "Zeitliche Dissoziation zwischen LnRMSSD, CMJ-Peak-Power und subjektiver Erholung über 24–48 h"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Deine Uhr meldet am Tag nach hartem Beintraining volle Erholung, aber deine Beine fühlen sich noch schwer an. Wie passt das zusammen?",
+"richtig": "Herz und Nervensystem erholen sich oft schneller als die Muskeln",
+"falsch": [
+"Muskelkater hat nichts mit echter Erholung zu tun",
+"Die Uhr zeigt zuverlässig an, dass die Beine voll belastbar sind",
+"Die Muskeln erholen sich meist schneller als der Herzschlag"
+],
+"warum": "Erste Daten deuten darauf hin, dass sich das Herz-Nervensystem schneller erholt als lokale Muskelkraft und Muskelkater."
+},
+"plus": {
+"frage": "Dein morgendlicher HRV-Wert ist wieder auf Ausgangsniveau, 24 Stunden nach schweren Kniebeugen. Was prüfst du vor dem nächsten schweren Satz?",
+"richtig": "Lokalen Muskelkater, Schlaf und Vorbelastung der Zielmuskeln",
+"falsch": [
+"Nichts weiter, denn normale HRV heißt volle Kraftbereitschaft",
+"Ausschließlich die Kalorienanzeige deiner Smartwatch",
+"Ob deine Atemfrequenz im Stehen gestiegen ist"
+],
+"warum": "HRV allein bildet lokale Muskelermüdung und Muskelschaden nach Krafttraining oft nicht vollständig ab."
+},
+"labor": {
+"frage": "Über 48 Stunden nach 10RM-Krafttraining wurden LnRMSSD, Countermovement-Jump-Power und subjektive Erholung gemessen. Welches Muster zeigte sich?",
+"richtig": "LnRMSSD kehrte teils schneller zurück als Sprungkraft und Gefühl",
+"falsch": [
+"Alle drei Marker verliefen über 48 Stunden exakt deckungsgleich",
+"Die Sprungkraft erholte sich deutlich schneller als die LnRMSSD",
+"Weder Sprungkraft noch Muskelkater veränderten sich nach 10RM"
+],
+"warum": "In der kleinen Stichprobe zeigte sich eine zeitliche Entkopplung von kardialer Vagus-Erholung und neuromuskulärer Leistung."
+}
+}
+},
+{
+"id": "ALG-122",
+"karte": {
+"kopf": "Expertenkonsens · Methodische Analyse",
+"titel": "Keine einzelne App-Zahl misst Fitness und Ermüdung verlässlich",
+"titel_hervor": "Keine einzelne App-Zahl",
+"setup": "Eine methodische Analyse und ein Expertenkonsens prüften, was einzelne Erholungs-Scores und klassische Belastungsformeln wirklich leisten.",
+"zahl": null,
+"kern": [
+"Experten betonen: Geheime Einzel-Scores sind oft nicht unabhängig geprüft",
+"Stress, Schlaf, Essen und Alltag verändern jede Trainingsreaktion stark",
+"Klassische Last-Quoten enthalten rechnerische Verzerrungen"
+],
+"grenze": "Expertenmeinung und Methodenanalyse ohne eigene neue Trainingsstudie – liefert Rahmenregeln, keine neuen Messwerte.",
+"fuer_dich": "Deine Uhr zeigt einen roten Erholungs-Score ohne Erklärung? Schau auf die einzelnen Werte dahinter und triff die Entscheidung selbst.",
+"labor": {
+"design": "Methodisches Review, SWOT-Analyse und Expertenkonsens zum Athleten-Monitoring",
+"teilnehmer": "Kein Probandenkollektiv (Methodenarbeit)",
+"ergebnis": ""
+}
+},
+"quiz": {
+"basis": {
+"frage": "Manche Fitness-Apps fassen Schlaf, Puls und Training in einer einzigen geheimen Prozentzahl zusammen. Wie solltest du so eine Zahl sehen?",
+"richtig": "Als groben Hinweis, nicht als alleinige Entscheidungsgrundlage",
+"falsch": [
+"Als verlässliche Vorhersage für dein Verletzungsrisiko",
+"Als genaueren Wert als dein eigenes Körpergefühl",
+"Als einheitlich geprüften medizinischen Standard"
+],
+"warum": "Fachleute betonen, dass kein einzelner Wert das Zusammenspiel aus Fitness, Ermüdung, Schlaf und Alltagsstress abdeckt."
+},
+"plus": {
+"frage": "Eine App warnt dich allein anhand eines starren Last-Quotienten vor einer drohenden Verletzung. Wie bewertest du so eine Warnung?",
+"richtig": "Kritisch, denn ein einzelner Quotient erfasst das Risiko kaum",
+"falsch": [
+"Als klares Stoppsignal, das allein jede Pause vorschreibt",
+"Als mathematisch fehlerfreies Maß für deine Belastbarkeit",
+"Als Ersatz für Schlaf-, Stress- und Körpergefühlabfragen"
+],
+"warum": "Klassische Last-Quotienten haben rechnerische Mängel – erst mehrere transparente Signale plus eigene Einschätzung ergeben ein Bild."
+},
+"labor": {
+"frage": "Ein methodisches Review prüfte proprietäre Readiness-Scores und das klassische Acute:Chronic Workload Ratio (ACWR). Was war die zentrale Kritik?",
+"richtig": "Mathematische Kopplung beim ACWR und fehlende externe Validierung",
+"falsch": [
+"Zu hohe Transparenz der Hersteller-Algorithmen im Alltag",
+"Zu geringe Empfindlichkeit gegenüber psychologischem Stress",
+"Überlegenheit starrer Grenzwerte über das Urteil von Trainern"
+],
+"warum": "Der Konsens (Evidenzgrad D) kritisiert rechnerische Kopplung, unklare Black-Box-Logik und fehlende externe Validierung von Single-Scores."
+}
+}
+},
+{
+"id": "ALG-123",
+"karte": {
+"kopf": "55 junge Erwachsene · Zufallsstudie",
+"titel": "Angepasste Intensität brachte gleichen Fortschritt mit weniger Härte",
+"titel_hervor": "gleichen Fortschritt mit weniger Härte",
+"setup": "55 aktive Erwachsene trainierten sechs Wochen fünfmal pro Woche funktionell – entweder nach starrem Plan oder angepasst an ihren HRV-Trend.",
+"zahl": {
+"label": "Weniger harte Tage in 6 Wochen",
+"wert": "−13,6 Tage",
+"alltag": "über 2 Tage pro Woche gespart"
+},
+"kern": [
+"Beide Gruppen steigerten Kraft, Ausdauer und Muskelmasse gleich stark",
+"Bei schwachem Erholungswert wurde die Härte gesenkt, nicht pausiert",
+"Auch Ruhepuls und Körperfett verbesserten sich in beiden Gruppen ähnlich"
+],
+"grenze": "Nur sechs Wochen mit freizeitaktiven jungen Erwachsenen um 24 Jahre – mehrjährige Effekte bei Spitzenathleten sind offen.",
+"fuer_dich": "Dein HRV-Trend hängt im Hybridtraining durch? Geh trotzdem trainieren, aber drossle die Intensität statt dich ans Limit zu prügeln.",
+"labor": {
+"design": "RCT, 6 Wochen HIFT (5 Tage/Wo.), HRV-/RPE-gesteuert (n = 26) vs. starrer Plan (n = 29)",
+"teilnehmer": "55 freizeitaktive Erwachsene (24 ± 4 Jahre)",
+"ergebnis": "Keine Gruppenunterschiede bei Kraft, Kapazität & Körperbau; −13,56 ± 0,83 harte Tage (p < 0,001)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du kombinierst Kraft- und Ausdauertraining fünfmal pro Woche. Musst du dafür möglichst oft bis zur totalen Erschöpfung gehen?",
+"richtig": "Nein, angepasste Härte bringt oft denselben Fortschritt",
+"falsch": [
+"Ja, nur maximale Härte an fast jedem Tag bringt Fortschritte",
+"Nur wenn du bei Müdigkeit das Training ganz ausfallen lässt",
+"Lockerere Tage bauen bereits gewonnene Muskelmasse sofort ab"
+],
+"warum": "Wer die Intensität an Tagen mit schlechterer Erholung drosselt, erzielt ähnliche Kraft- und Ausdauergewinne bei weniger Härte."
+},
+"plus": {
+"frage": "In einer harten Hybrid-Trainingswoche zeigt dein gleitender HRV-Durchschnitt heute ein Tief. Wie steuerst du deine Einheit am klügsten?",
+"richtig": "Die Einheit absolvieren, aber die Intensität deutlich drosseln",
+"falsch": [
+"Den starren Plan trotz schlechter Erholung voll durchziehen",
+"Zwei Wochen ganz aussetzen, bis die HRV stark ansteigt",
+"Extra viel hochintensives Training einschieben für mehr Reiz"
+],
+"warum": "Das Drosseln der Intensität sparte über sechs Wochen rund 13,6 harte Tage bei gleichen Fortschritten in Kraft und Ausdauer."
+},
+"labor": {
+"frage": "In einer 6-wöchigen RCT (n = 55) wurde funktionelles Training entweder starr oder per HRV-Trend und Session-RPE gesteuert. Wie fielen die Ergebnisse aus?",
+"richtig": "Gleiche Fortschritte bei deutlich weniger harten Tagen",
+"falsch": [
+"Signifikant mehr Muskelmasse in der starren Trainingsgruppe",
+"Deutlich geringere Kraftzuwächse durch sanftere Einheiten",
+"Keine messbare Verbesserung der Leistung in beiden Gruppen"
+],
+"warum": "Beide Gruppen verbesserten Kraft, Körperbau und Ruhepuls identisch, doch die HRV-Gruppe brauchte 13,6 hochintensive Tage weniger."
+}
+}
+},
+{
+"id": "ALG-124",
+"karte": {
+"kopf": "Große Erwachsenengruppe · Messvergleich",
+"titel": "Maßband und Körperfettwaage weichen oft um mehrere Prozent ab",
+"titel_hervor": "oft um mehrere Prozent ab",
+"setup": "Körperfett-Schätzungen per Maßbandformel und Körperfettwaage wurden mit einem genauen Ganzkörper-Scan im Labor verglichen.",
+"zahl": {
+"label": "Individuelle Streuung beider Methoden",
+"wert": "± 3,1–4,8 %",
+"alltag": "Prozentpunkte Körperfett"
+},
+"kern": [
+"Die Maßbandformel schätzte Männer im Schnitt zu niedrig und Frauen zu hoch",
+"Körperfettwaagen trafen den Gruppenschnitt besser, streuten aber im Einzelfall",
+"Wasserhaushalt, Zyklus, Schweiß und Maßband-Anlage verändern den Wert"
+],
+"grenze": "Ein einzelner Messwert sagt wenig – wie genau sich kleine Fortschritte über Monate abbilden, hängt von sehr konstanter Messung ab.",
+"fuer_dich": "Du willst deinen Fettverlust verfolgen? Achte lieber direkt auf Bauchumfang und Gewichtstrend statt auf die Prozentzahl der Waage.",
+"labor": {
+"design": "Große Kohorten-Validierung, Umfangsformel und BIA gegen DXA",
+"teilnehmer": "Militärkohorte & Diagnostik-Stichprobe (n = 386)",
+"ergebnis": "Umfang Männer −2,5 bis −2,6 ± 3,7 %, Frauen +1,3 bis +2,3 ± 4,3–4,8 %; BIA −0,5 bis +1,4 ± 3,1–3,5 %"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Deine Körperfettwaage zeigt heute zwei Prozent mehr Körperfett an als vorgestern. Was steckt meistens dahinter?",
+"richtig": "Schwankungen im Körperwasser und normale Messungenauigkeit",
+"falsch": [
+"Du hast in zwei Tagen zwei Prozent echtes Körperfett aufgebaut",
+"Die Waage ist kaputt, da gute Waagen kaum schwanken",
+"Maßbandformeln treffen den exakten Prozentwert fehlerfrei"
+],
+"warum": "Körperfettwaagen reagieren stark auf Schweiß, Wasser und Zyklus und schwanken im Einzelfall um mehrere Prozentpunkte."
+},
+"plus": {
+"frage": "Du möchtest deinen Fettabbau im Alltag ohne teuren Laborscan sinnvoll verfolgen. Worauf verlässt du dich am besten?",
+"richtig": "Direkt auf deinen Bauchumfang und den geglätteten Gewichtstrend",
+"falsch": [
+"Auf einzelne KFA-Prozentwerte deiner BIA-Waage von Tag zu Tag",
+"Auf eine einmalige Umfangsformel ohne Blick auf den Verlauf",
+"Auf BIA-Messungen direkt nach schweißtreibendem Ausdauersport"
+],
+"warum": "Sowohl Umfangsformeln als auch BIA haben breite individuelle Fehler – direkte Umfangs- und Gewichtstrends sind robuster."
+},
+"labor": {
+"frage": "Eine Umfangsformel und Bioimpedanz-Waagen (BIA) wurden gegen den Ganzkörper-Scan (DXA) geprüft. Welches Fehlerbild zeigten beide Methoden?",
+"richtig": "Geschlechtsabhängiger Bias der Formel, breite Einzelstreuung bei BIA",
+"falsch": [
+"Identische Unterschätzung bei Männern und Frauen durch die Formel",
+"Sehr hohe Einzelsensitivität der BIA bei über 95 Prozent",
+"Deutlich geringere Streuung der Umfangsformel als bei der BIA"
+],
+"warum": "Die Formel unterschätzte Männer (−2,5 %) und überschätzte Frauen (+1,3–2,3 %); BIA hatte weniger Gruppenbias, aber nur 72,3 % Sensitivität."
+}
+}
+},
+{
+"id": "ALG-125",
+"karte": {
+"kopf": "Erwachsene · Smartphone-Scan gegen Labor",
+"titel": "Handy-Körperscans funktionieren nur bei streng gleichen Fotos",
+"titel_hervor": "nur bei streng gleichen Fotos",
+"setup": "Smartphone-Scans mit 3D-Körpermodellen und 2D-Silhouetten wurden bei der Fettmassen-Schätzung gegen genaue Laborscans geprüft.",
+"zahl": null,
+"kern": [
+"Mit festem Abstand, Haltung und enger Kleidung stimmten die Werte gut",
+"Normale Alltagsfotos ohne feste Vorgaben führten zu starken Fehlern",
+"Schatten, Weitwinkel, weite Kleidung und Bauchspannung verzerren das Bild"
+],
+"grenze": "Ohne automatische Qualitätskontrolle bei der Aufnahme bricht die Genauigkeit im Alltag schnell zusammen.",
+"fuer_dich": "Du nutzt eine Foto-App für deinen Körperfett-Trend? Fotografiere dich morgens nüchtern in enger Kleidung bei gleichem Licht und Abstand.",
+"labor": {
+"design": "Validierungsstudie, Smartphone-3D-Avatare und 2D-Silhouetten gegen DXA und 4C-Modell",
+"teilnehmer": "Erwachsene (inkl. Subgruppe n = 63)",
+"ergebnis": "Hohe Reproduzierbarkeit ohne proportionalen Bias bei Standardisierung; schwache Konkordanz ohne Kontrolle"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du möchtest per Smartphone-Foto deinen Körperfettanteil schätzen lassen. Was entscheidet vor allem darüber, ob das Ergebnis taugt?",
+"richtig": "Dass Abstand, Haltung, Licht und enge Kleidung genau passen",
+"falsch": [
+"Dass dein Handy eine möglichst hohe Auflösung hat",
+"Dass du lockere Sportkleidung für natürliche Falten trägst",
+"Dass du den Bauch für ein klareres Bild kräftig einziehst"
+],
+"warum": "Schon Schatten, weite Kleidung oder veränderte Bauchspannung verzerren die Umrisse und machen Foto-Scans ungenau."
+},
+"plus": {
+"frage": "Du vergleichst deine Körperentwicklung per Smartphone-Scan alle vier Wochen. Welche Routine hält deine Messwerte vergleichbar?",
+"richtig": "Nüchtern, aufrechte Haltung, enge Kleidung und fester Abstand",
+"falsch": [
+"Jedes Mal aus einem leicht anderen Winkel im Spiegel",
+"Direkt nach dem Training mit gutem Pump im Studio",
+"Mit Weitwinkel-Kamera aus möglichst kurzer Entfernung"
+],
+"warum": "Nur unter streng standardisierten Bedingungen liefern 3D-Avatare und Silhouetten-Modelle verlässliche Werte ohne Verzerrung."
+},
+"labor": {
+"frage": "Smartphone-basierte 3D-Avatare und 2D-Silhouetten wurden gegen DXA und ein 4-Kompartiment-Modell validiert. Wodurch unterschieden sich valide von schwachen Apps?",
+"richtig": "Strenge Standardisierung verhinderte proportionalen Bias",
+"falsch": [
+"2D-Silhouetten versagten grundsätzlich auch mit Standardisierung",
+"Unkontrollierte Alltagsfotos erreichten ähnliche Konkordanz",
+"Nur 3D-Scans ohne Kalibrierung blieben frei von Verzerrung"
+],
+"warum": "Standardisierte 3D-Avatare und 2D-Silhouetten zeigten hohe Reproduzierbarkeit ohne Bias, während unkontrollierte 2D-Apps versagten."
+}
+}
+},
+{
+"id": "BES-101",
+"karte": {
+"kopf": "Menschen mit Rückenschmerz · 249 Studien",
+"titel": "Gezieltes Training lindert langen Rückenschmerz spürbar",
+"titel_hervor": "lindert langen Rückenschmerz",
+"setup": "Über 24.000 Menschen mit langanhaltendem Rückenschmerz machten strukturiertes Bewegungstraining im Vergleich zu keiner oder anderer Behandlung.",
+"zahl": {
+"label": "Weniger Schmerz auf 0–100-Skala",
+"wert": "−15 Punkte",
+"alltag": "im Schnitt vs. keine Behandlung"
+},
+"kern": [
+"Training schnitt auch besser ab als Beratung allein oder übliche Versorgung.",
+"Die Funktion im Alltag verbesserte sich im Schnitt um 7 von 100 Punkten.",
+"Der Nutzen galt für Beschwerden ohne klare Ursache über mehr als 12 Wochen."
+],
+"grenze": "Die Programme unterschieden sich stark und Langzeitdaten über viele Jahre fehlen oft.",
+"fuer_dich": "Dein Rücken schmerzt seit Wochen? Kläre die Ursache ärztlich ab und besprich, welches Bewegungstraining für dich passt.",
+"labor": {
+"design": "Systematisches Review mit Meta-Analyse, Bewegungstraining vs. keine oder andere Therapie",
+"teilnehmer": "249 Studien, über 24.000 Personen mit chronischem Rückenschmerz (> 12 Wo.)",
+"ergebnis": "Schmerz MD −15 (vs. Kontrolle) bzw. −9 (vs. andere Therapie); Funktion MD −7 bzw. −4 (0–100-Skala)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Viele Menschen meiden bei langanhaltendem Rückenschmerz ohne klare Ursache jede Bewegung. Was zeigt sich im Schnitt, wenn sie stattdessen gezielt trainieren?",
+"richtig": "Schmerzen und Alltagseinschränkungen gehen spürbar zurück",
+"falsch": [
+"Die Beschwerden werden durch Belastung meist deutlich stärker",
+"Training wirkt genauso schwach wie reine Ruhe ohne Therapie",
+"Reine Aufklärung im Gespräch hilft deutlich besser als Bewegung"
+],
+"warum": "Strukturiertes Bewegungstraining senkte Schmerzen im Schnitt um 15 von 100 Punkten gegenüber keiner Behandlung."
+},
+"plus": {
+"frage": "Du trainierst regelmäßig, hast aber seit Monaten unspezifische Rückenschmerzen und überlegst, ganz zu pausieren. Was ist der sinnvollste Schritt?",
+"richtig": "Beschwerden ärztlich abklären und passendes Training besprechen",
+"falsch": [
+"Bewegung für Monate vollständig streichen, bis alles abklingt",
+"Nur noch Tipps zur Haltung lesen, statt aktiv zu werden",
+"Training sofort auf maximale Gewichte ohne Rücksprache steigern"
+],
+"warum": "Bei langen unspezifischen Beschwerden half strukturiertes Training besser als Untätigkeit – die Auswahl gehört in fachliche Hände."
+},
+"labor": {
+"frage": "In einer Meta-Analyse aus 249 Studien wurde Bewegungstraining bei chronischem Rückenschmerz mit keiner Behandlung verglichen. Welche Grenze schränkt die Aussage ein?",
+"richtig": "Die Trainingsprogramme waren sehr verschieden und nicht verblindet",
+"falsch": [
+"Die Gesamtstichprobe war mit wenigen hundert Personen viel zu klein",
+"Es wurden ausschließlich Leistungssportler unter 30 Jahren untersucht",
+"Schmerzen wurden in keiner der eingeschlossenen Studien ausgewertet"
+],
+"warum": "Hohe Heterogenität bei Dosierung und Betreuung, fehlende Verblindung und meist kurz- bis mittelfristige Nachbeobachtung begrenzen die Präzision."
+}
+}
+},
+{
+"id": "BES-102",
+"karte": {
+"kopf": "Chronischer Rückenschmerz · 89 Studien",
+"titel": "Aktives Training hilft dem Rücken deutlich besser als reines Dehnen",
+"titel_hervor": "deutlich besser als reines Dehnen",
+"setup": "In 89 Studien wurden Kraft-, Ausdauer- und Rumpftraining, Pilates sowie reines Dehnen bei langem Rückenschmerz miteinander verglichen.",
+"zahl": null,
+"kern": [
+"Kraft-, Rumpf-, Ausdauertraining und Pilates schnitten klar besser ab als Nichtstun.",
+"Reines Dehnen allein zeigte keinen klaren Vorteil gegenüber keiner Behandlung.",
+"Welche der aktiven Formen ganz vorne liegt, lässt sich nicht verlässlich sagen."
+],
+"grenze": "Die Studienqualität war niedrig und die Daten schwankten stark – eine feste Rangliste bleibt unsicher.",
+"fuer_dich": "Längere Rückenbeschwerden? Lass sie ärztlich abklären und besprich eine aktive Trainingsform statt nur zu dehnen.",
+"labor": {
+"design": "Netzwerk-Meta-Analyse, Vergleich verschiedener Trainingsformen gegen Kontrolle",
+"teilnehmer": "89 Studien mit jeweils mindestens 20 Teilnehmenden pro Studie",
+"ergebnis": "Training gesamt vs. Kontrolle SMD −1,06; Pilates SMD −1,86; Kraft Funktion SMD −1,14; Dehnen p > 0,095; I² = 87–93 %"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Jemand mit langanhaltendem Rückenschmerz überlegt, ob reines Dehnen ausreicht oder ob aktives Kraft- und Ausdauertraining sinnvoller ist. Was zeigen Vergleiche aus 89 Studien?",
+"richtig": "Aktives Training wie Kraft oder Ausdauer hilft im Schnitt besser",
+"falsch": [
+"Reines Dehnen lindert Beschwerden meist stärker als Krafttraining",
+"Zwischen Dehnen und gezieltem Krafttraining gibt es keinen Unterschied",
+"Ausdauertraining verschlechtert Rückenschmerzen im Schnitt deutlich"
+],
+"warum": "Kraft-, Rumpf-, Ausdauertraining und Pilates wirkten klar besser als keine Behandlung, während reines Dehnen keinen klaren Vorteil brachte."
+},
+"plus": {
+"frage": "Nach ärztlicher Freigabe bei längerem unspezifischem Rückenschmerz suchst du eine Trainingsform. Welche Erkenntnis hilft bei der Auswahl?",
+"richtig": "Mehrere aktive Formen wie Kraft, Rumpf oder Cardio helfen ähnlich gut",
+"falsch": [
+"Nur eine einzige Trainingsform wirkt, alle anderen sind wirkungslos",
+"Isoliertes Dehnen sollte den Hauptteil des Trainingsplans bilden",
+"Krafttraining sollte bei Rückenbeschwerden grundsätzlich gemieden werden"
+],
+"warum": "Kraft-, Stabilisations-, Ausdauertraining und Pilates schnitten alle gut ab, während die genaue Rangfolge untereinander unsicher bleibt."
+},
+"labor": {
+"frage": "In einer Netzwerk-Meta-Analyse aus 89 Studien wurden verschiedene Trainingsarten bei chronischem Rückenschmerz verglichen. Was ist die wichtigste Einschränkung?",
+"richtig": "Die Rangfolge der Trainingsarten ist wegen niedriger Qualität unsicher",
+"falsch": [
+"Es gibt keine Hinweise, dass aktives Training besser ist als Nichtstun",
+"Die Analyse umfasste nur zwei kleine Beobachtungen ohne Kontrolle",
+"Die Ergebnisse waren in allen Studien fast identisch ohne Streuung"
+],
+"warum": "Hohes Verzerrungsrisiko und starke Inkonsistenz (I² bis 93 %) lassen zwar den Gesamtnutzen erkennen, aber keine feste Rangliste."
+}
+}
+},
+{
+"id": "BES-103",
+"karte": {
+"kopf": "Menschen mit Rückenschmerz · Zufallsstudie",
+"titel": "Kontrollübungen und Kreuzheben linderten Rückenschmerz ähnlich gut",
+"titel_hervor": "linderten Rückenschmerz ähnlich gut",
+"setup": "70 Menschen mit bewegungsabhängigem Rückenschmerz trainierten 8 Wochen lang entweder leichte Kontrollübungen oder schweres Kreuzheben.",
+"zahl": {
+"label": "Alltagsfunktion mit Kontrollübungen",
+"wert": "+4,2 Punkte",
+"alltag": "vs. +2,5 Punkte beim Kreuzheben"
+},
+"kern": [
+"Beide Gruppen verringerten ihre Schmerzen und wurden über 8 Wochen kräftiger.",
+"Leichtes Kontrolltraining verbesserte Alltagsaktivitäten kurzfristig stärker.",
+"Auch die saubere Bewegungsausführung nahm nur mit Kontrolltraining klar zu."
+],
+"grenze": "Alle erhielten zusätzlich Aufklärung; die Ergebnisse gelten für eine bestimmte Schmerzform über 8 Wochen.",
+"fuer_dich": "Rückenbeschwerden beim Heben? Lass sie ärztlich abklären und besprich, ob zuerst leichte Kontrollübungen für dich passen.",
+"labor": {
+"design": "Randomisierte kontrollierte Studie, 8 Wochen (12 Einheiten), Kontrolltraining vs. Kreuzheben",
+"teilnehmer": "70 Erwachsene mit mechanisch-nozizeptivem Rückenschmerz",
+"ergebnis": "PSFS +4,2 vs. +2,5 (p < 0,001); Bewegungskontrolle +3,0 vs. −0,8 (p < 0,001); Schmerz p = 0,505"
+}
+},
+"quiz": {
+"basis": {
+"frage": "In einem 8-wöchigen Vergleich trainierten Menschen mit bewegungsabhängigem Rückenschmerz entweder leichte Kontrollübungen oder schweres Kreuzheben. Was geschah mit den Schmerzen?",
+"richtig": "Beide Trainingsarten linderten die Schmerzen ähnlich stark",
+"falsch": [
+"Schweres Kreuzheben verschlimmerte die Schmerzen meist deutlich",
+"Nur leichte Kontrollübungen konnten die Schmerzen verringern",
+"Keine der beiden Gruppen bemerkte eine Veränderung der Schmerzen"
+],
+"warum": "Zwischen beiden Gruppen gab es bei der Schmerzintensität keinen signifikanten Unterschied – beide Gruppen verbesserten sich."
+},
+"plus": {
+"frage": "Nach ärztlicher Abklärung eines wiederkehrenden mechanischen Rückenschmerzes merkst du, dass deine Bewegungskontrolle unsauber ist. Was zeigte der direkte Vergleich mit schwerem Kreuzheben?",
+"richtig": "Leichte Kontrollübungen verbesserten Alltagsfunktion und Kontrolle stärker",
+"falsch": [
+"Schweres Kreuzheben verbesserte die Bewegungskontrolle deutlich mehr",
+"Leichte Kontrollübungen brachten überhaupt keinen Kraftzuwachs",
+"Schweres Kreuzheben war bei der Schmerzreduktion klar überlegen"
+],
+"warum": "Bei Alltagsaktivität und Bewegungskontrolle schnitt leichtes Kontrolltraining über 8 Wochen besser ab, während der Schmerz ähnlich sank."
+},
+"labor": {
+"frage": "In einer randomisierten Studie über 8 Wochen (n = 70) wurden niedrigschwelliges Motor-Control-Training und schweres Kreuzheben bei mechanischem Rückenschmerz verglichen. Wie fielen die Zielwerte aus?",
+"richtig": "Ähnlicher Schmerzrückgang, aber Vorteil für Kontrolle bei Alltagsfunktion",
+"falsch": [
+"Klarer Vorteil für Kreuzheben bei Schmerz, Funktion und Kontrolle",
+"Kein Gruppenunterschied bei einem einzigen gemessenen Endpunkt",
+"Stärkerer Schmerzabbau durch Kontrolltraining ohne Effekt auf die Funktion"
+],
+"warum": "Während der Schmerz zwischen den Gruppen gleich blieb (p = 0,505), punktete Motor-Control klar bei PSFS (+4,2 vs. +2,5) und Bewegungskontrolle."
+}
+}
+},
+{
+"id": "BES-104",
+"karte": {
+"kopf": "Vorderer Knieschmerz · 5 Studien",
+"titel": "Gezieltes Training lindert vorderen Knieschmerz kurz- und langfristig",
+"titel_hervor": "lindert vorderen Knieschmerz",
+"setup": "Menschen mit Schmerzen vorne am Knie machten gezieltes Kräftigungstraining und wurden bis zu 12 Monate mit keiner Behandlung verglichen.",
+"zahl": {
+"label": "Weniger Belastungsschmerz (0–10)",
+"wert": "−1,46 Punkte",
+"alltag": "nach 4–12 Wochen vs. kein Training"
+},
+"kern": [
+"Auch der alltägliche Knieschmerz nahm nach 4 bis 12 Wochen spürbar ab.",
+"Die Kniefunktion verbesserte sich kurzfristig und blieb bis zu einem Jahr besser.",
+"Trotz Besserung waren viele Betroffene nach 12 Monaten nicht völlig schmerzfrei."
+],
+"grenze": "Die Trainingspläne unterschieden sich stark und für die Langzeitwirkung lagen nur zwei Studien vor.",
+"fuer_dich": "Dein Knie schmerzt vorn bei Treppen oder Kniebeugen? Lass es ärztlich abklären und besprich ein gezieltes Kraftprogramm.",
+"labor": {
+"design": "Systematisches Review mit Meta-Analyse, Trainingstherapie vs. keine Behandlung (bis 12 Monate)",
+"teilnehmer": "Kurzfristig 5 Studien (n = 375), langfristig 2 Studien (n = 180)",
+"ergebnis": "Aktivitätsschmerz MD −1,46 (kurz) bzw. −1,07 (lang, 0–10); Funktion SMD 1,10 (kurz) bzw. 1,62 (lang)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Schmerzen vorne am Knie beim Treppensteigen oder Laufen sind häufig. Was bewirkt gezieltes Krafttraining im Vergleich zu reinem Abwarten?",
+"richtig": "Es lindert Schmerzen und verbessert die Kniefunktion über Monate",
+"falsch": [
+"Es hilft nur wenige Tage und verliert danach jede Wirkung",
+"Es verschlechtert vordere Knieschmerzen durch mehr Belastung",
+"Es bringt gegenüber reinem Abwarten keinen messbaren Vorteil"
+],
+"warum": "Gezieltes Training senkte Belastungs- und Alltagsschmerz nach 4 bis 12 Wochen und hielt den Funktionsgewinn bis zu 12 Monate."
+},
+"plus": {
+"frage": "Du hast nach ärztlicher Abklärung wegen vorderer Knieschmerzen mit Krafttraining begonnen und nach vier Wochen noch Restbeschwerden. Was ist realistisch?",
+"richtig": "Besserung dauert oft Monate, volle Schmerzfreiheit klappt nicht bei allen",
+"falsch": [
+"Nach vier Wochen Training sind die Beschwerden meist restlos weg",
+"Restbeschwerden zeigen, dass Krafttraining bei diesem Knie nicht hilft",
+"Nach einem Monat sollte das Krafttraining sofort abgesetzt werden"
+],
+"warum": "Zwar bessert Training Schmerz und Funktion deutlich, doch selbst nach einem Jahr war ein relevanter Anteil nicht völlig beschwerdefrei."
+},
+"labor": {
+"frage": "In einer Meta-Analyse wurde Trainingstherapie bei patellofemoralem Schmerz kurzfristig (4–12 Wochen) und langfristig (bis 12 Monate) gegen keine Therapie geprüft. Wie ist die Langzeit-Evidenz einzuordnen?",
+"richtig": "Deutlicher Effekt bei Funktion und Schmerz, aber nur aus zwei Studien",
+"falsch": [
+"Langfristig kehrte sich der Effekt deutlich ins Negative um",
+"Die Langzeitanalyse beruht auf über hundert einheitlichen Studien",
+"Langfristig wurden ausschließlich Kraftwerte ohne Schmerzdaten erhoben"
+],
+"warum": "Nach 16 Wochen bis 12 Monaten zeigten sich weiter Vorteile (MD −1,07; SMD 1,62), die Daten stammen jedoch nur aus 2 Studien (n = 180)."
+}
+}
+},
+{
+"id": "BES-105",
+"karte": {
+"kopf": "Vorderer Knieschmerz · 14 Studien",
+"titel": "Hüfte und Knie zusammen zu trainieren lindert Knieschmerz stärker",
+"titel_hervor": "Hüfte und Knie zusammen",
+"setup": "In 14 Studien mit 673 Personen wurde ein kombiniertes Hüft- und Knietraining bei vorderem Knieschmerz mit reinem Knietraining verglichen.",
+"zahl": {
+"label": "Zusätzlicher Schmerzrückgang",
+"wert": "−1,5 Punkte",
+"alltag": "Hüfte + Knie vs. nur Knietraining"
+},
+"kern": [
+"Auch die Belastbarkeit im Alltag stieg durch das Kombi-Training stärker an.",
+"Die meisten Programme liefen 6 bis 12 Wochen mit 3 Einheiten pro Woche.",
+"Schmerzen besserten sich oft auch ohne messbaren Zuwachs an Maximalkraft."
+],
+"grenze": "Warum genau es hilft – ob über Kraft, bessere Führung oder Schmerztoleranz – ist nicht abschließend geklärt.",
+"fuer_dich": "Vorderer Knieschmerz bremst dich aus? Lass ihn ärztlich abklären und frag in der Physio nach Übungen für Hüfte und Knie zusammen.",
+"labor": {
+"design": "Systematisches Review mit Meta-Analyse, Hüft- + Knietraining vs. nur Knietraining (4–12 Wochen)",
+"teilnehmer": "14 Studien, 673 Personen mit patellofemoralem Schmerz",
+"ergebnis": "Schmerz MD −1,50 (vs. nur Knie) bzw. −3,30 (vs. kein Training); gepoolt Schmerz SMD 0,73, Funktion SMD 0,56"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Wenn es vorne im Knie schmerzt, trainieren viele nur den Oberschenkel. Was zeigt der Vergleich mit Programmen, die zusätzlich die Hüfte kräftigen?",
+"richtig": "Hüfte und Knie zusammen zu stärken lindert den Schmerz stärker",
+"falsch": [
+"Hüftübungen haben keinen Einfluss auf Beschwerden am Knie",
+"Reines Oberschenkeltraining wirkt deutlich besser als die Kombination",
+"Beide Ansätze bringen erst nach über einem Jahr einen Unterschied"
+],
+"warum": "Über 14 Studien senkte das kombinierte Hüft- und Knietraining den Schmerz deutlicher als reines Knietraining."
+},
+"plus": {
+"frage": "Nach ärztlicher Freigabe bei vorderem Knieschmerz möchtest du dein Kraftprogramm mit deiner Physio ausrichten. Welcher Schwerpunkt ist am besten belegt?",
+"richtig": "Kniestrecker zusammen mit seitlicher und hinterer Hüftmuskulatur stärken",
+"falsch": [
+"Ausschließlich isolierte Beinstrecker-Maschinen ohne Hüftanteil nutzen",
+"Die Beinmuskulatur pausieren und ausschließlich den Oberkörper trainieren",
+"Nur die Beweglichkeit der Sprunggelenke passiv dehnen"
+],
+"warum": "Kombiniertes Training aus Knieextensoren sowie Hüftabduktoren, -außenrotatoren und -extensoren übertraf isoliertes Knietraining klar."
+},
+"labor": {
+"frage": "In einer Meta-Analyse aus 14 Studien verbesserte Hüft- plus Knietraining Schmerz und Funktion bei patellofemoralem Schmerz. Welcher Befund spricht gegen Kraftzuwachs als alleinigen Mechanismus?",
+"richtig": "Beschwerden besserten sich oft auch ohne messbaren isometrischen Kraftgewinn",
+"falsch": [
+"Die Teilnehmenden trainierten in allen Studien völlig ohne Widerstand",
+"Die Schmerzlinderung trat ausschließlich bei extremem Muskelwachstum auf",
+"Nur Personen mit starkem Kraftverlust profitierten von der Kombination"
+],
+"warum": "Dass Schmerz und Funktion oft ohne isometrischen Kraftzuwachs besser wurden, deutet auf veränderte Bewegungskontrolle, Lastverteilung und Schmerztoleranz hin."
+}
+}
+},
+{
+"id": "BES-106",
+"karte": {
+"kopf": "Kniearthrose · 54 Studien zusammengefasst",
+"titel": "Kraft- und Ausdauertraining lindert Kniearthrose-Schmerzen spürbar",
+"titel_hervor": "lindert Kniearthrose-Schmerzen spürbar",
+"setup": "Fast 4.000 Erwachsene mit Kniearthrose machten Kraft-, Alltags- oder Ausdauertraining an Land im Vergleich zu Gruppen ohne Training.",
+"zahl": {
+"label": "Weniger Schmerz direkt nach Training",
+"wert": "−12 Punkte",
+"alltag": "auf einer Skala von 0 bis 100"
+},
+"kern": [
+"Die Beweglichkeit im Alltag stieg im Schnitt um 10 von 100 Punkten.",
+"Auch die Lebensqualität legte leicht zu, im Schnitt um 4 Punkte.",
+"Hörte das betreute Training auf, ließ der Nutzen über 2 bis 6 Monate nach."
+],
+"grenze": "Ohne fortlaufendes Training schrumpfen die Vorteile – und fast niemand war in den Studien verblindet.",
+"fuer_dich": "Du hast Kniearthrose und willst aktiv bleiben? Besprich mit deinem Arzt ein dauerhaftes, gut begleitetes Kraft- und Ausdauerprogramm.",
+"labor": {
+"design": "Systematisches Review mit Meta-Analyse, landbasiertes Training vs. Kontrolle (inkl. 2–6 Mo. Follow-up)",
+"teilnehmer": "54 Studien (n = 3.913), direkt nach Therapie 44 Studien (n = 3.537)",
+"ergebnis": "Direkt: Schmerz −12/100 (SMD −0,49), Funktion +10/100 (SMD 0,52); nach 2–6 Mo.: Schmerz −6, Funktion +3"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Viele glauben, bei Kniearthrose müsse man das Gelenk vor allem schonen. Was zeigen 54 Studien zu regelmäßigem Training an Land?",
+"richtig": "Kraft- und Ausdauertraining senkt Schmerzen und hilft im Alltag",
+"falsch": [
+"Training an Land verstärkt Arthroseschmerzen fast regelmäßig",
+"Bewegung hilft bei Kniearthrose ausschließlich im Schwimmbad",
+"Nur die Lebensqualität steigt, Schmerz und Funktion bleiben gleich"
+],
+"warum": "Landbasiertes Training senkte Schmerzen im Schnitt um 12 und verbesserte die Funktion um 10 von 100 Punkten."
+},
+"plus": {
+"frage": "Nach ärztlicher Absprache hast du mit einem Trainingsprogramm bei Kniearthrose spürbare Fortschritte erzielt. Was passiert, wenn du danach ganz aufhörst?",
+"richtig": "Die Vorteile nehmen über zwei bis sechs Monate wieder deutlich ab",
+"falsch": [
+"Der Effekt bleibt nach einem einzigen Kurs über Jahre voll erhalten",
+"Die Gelenkfunktion verbessert sich in der Pause sogar noch weiter",
+"Die Wirkung verschwindet bereits innerhalb von zwei Tagen vollständig"
+],
+"warum": "Zwei bis sechs Monate nach Trainingsende halbierten sich die Schmerz- und Funktionsgewinne – dauerhaftes Dranbleiben ist entscheidend."
+},
+"labor": {
+"frage": "In einer Meta-Analyse aus 54 Studien zu landbasiertem Training bei Gonarthrose wurde direkt nach der Intervention und 2–6 Monate später gemessen. Wie entwickelten sich die Effekte?",
+"richtig": "Moderate Anfangseffekte bei Schmerz und Funktion, danach deutlicher Rückgang",
+"falsch": [
+"Keine direkte Wirkung nach Therapieende, aber starker Effekt nach sechs Monaten",
+"Sehr große Effekte bei Lebensqualität ohne messbare Schmerzlinderung",
+"Gleichbleibend hohe Effektstärken auch ein halbes Jahr ohne Training"
+],
+"warum": "Direkt nach Training lagen die Effektstärken bei SMD −0,49 (Schmerz) und 0,52 (Funktion) und sanken nach 2 bis 6 Monaten auf 0,24 bzw. 0,15."
+}
+}
+},
+{
+"id": "BES-107",
+"karte": {
+"kopf": "Kniearthrose · 18-Monats-Zufallsstudie",
+"titel": "Schwere Gewichte halfen bei Kniearthrose nicht mehr als leichte",
+"titel_hervor": "nicht mehr als leichte",
+"setup": "377 Erwachsene mit Kniearthrose machten 18 Monate lang schweres Krafttraining, leichtes Krafttraining oder ein reines Info-Programm.",
+"zahl": null,
+"kern": [
+"Die Knieschmerzen lagen nach 18 Monaten in allen drei Gruppen ähnlich hoch.",
+"Schweres Training erhöhte den Druck im Kniegelenk beim Gehen nicht.",
+"Hohe Gewichte sind bei Kniearthrose für weniger Schmerz nicht zwingend nötig."
+],
+"grenze": "Warum auch die leichte Gruppe kaum besser als die Info-Gruppe abschnitt, klärt diese Einzelstudie nicht abschließend.",
+"fuer_dich": "Du trainierst nach ärztlicher Freigabe mit Kniearthrose? Wähle die Last nach guter Verträglichkeit – schwerer ist nicht automatisch besser.",
+"labor": {
+"design": "Randomisierte kontrollierte Studie, 18 Monate, hoch- vs. niedrigintensives Krafttraining vs. Kontrolle",
+"teilnehmer": "377 Erwachsene mit Kniearthrose (85 % Abschlussrate)",
+"ergebnis": "WOMAC-Schmerz (0–20): 5,1 vs. 4,4 (p = 0,08) vs. 4,9; Gelenkdruck: 2.453 vs. 2.475 vs. 2.512 N (p = 0,85)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "In einem 18-monatigen Vergleich bei Kniearthrose trainierte eine Gruppe mit schweren Gewichten und eine andere mit leichten. Was zeigte sich bei den Schmerzen?",
+"richtig": "Schweres Training linderte die Schmerzen nicht stärker als leichtes",
+"falsch": [
+"Schweres Training beseitigte die Schmerzen deutlich schneller",
+"Schweres Training führte zu viel stärkeren Gelenkschmerzen",
+"Nur schweres Training schützte das Knie beim normalen Gehen"
+],
+"warum": "Nach 18 Monaten unterschieden sich die Schmerzwerte zwischen schwerem und leichtem Krafttraining nicht signifikant."
+},
+"plus": {
+"frage": "Du darfst nach ärztlicher Abklärung mit Kniearthrose Krafttraining machen und fragst dich, ob du möglichst schwer heben musst. Was legt der 18-Monats-Vergleich nahe?",
+"richtig": "Last nach Verträglichkeit wählen – schwerer bringt nicht mehr Schmerzabbau",
+"falsch": [
+"Unbedingt maximal schwer trainieren, da leichte Lasten nichts bewirken",
+"Jedes schwere Krafttraining schädigt sofort die Druckverteilung im Knie",
+"Mit Gewichten erst anfangen, wenn keine Arthrose mehr vorhanden ist"
+],
+"warum": "Hohe Lasten verschlechterten den Gelenkdruck beim Gehen nicht, brachten aber auch keinen klaren Schmerzvorteil gegenüber leichten Lasten."
+},
+"labor": {
+"frage": "Eine 18-monatige randomisierte Studie (n = 377) verglich hoch- und niedrigintensives Krafttraining bei Gonarthrose auch mittels Ganganalyse. Wie verhielt sich die Kniekompressionskraft?",
+"richtig": "Kein signifikanter Unterschied zwischen den Gruppen beim Gehen",
+"falsch": [
+"Deutlicher Anstieg der Gelenkkompression in der Hochintensiv-Gruppe",
+"Starke Senkung der Gelenkkompression ausschließlich durch schwere Lasten",
+"Messbarer Druckanstieg nur in der Gruppe mit leichten Gewichten"
+],
+"warum": "Mit 2.453 N (hochintensiv) vs. 2.475 N (niedrigintensiv) und 2.512 N (Kontrolle) blieb der Gelenkdruck praktisch unverändert (p = 0,85)."
+}
+}
+},
+{
+"id": "BES-108",
+"karte": {
+"kopf": "Schulterschmerz · 64 Studien ausgewertet",
+"titel": "Gezieltes Schultertraining wirkt ähnlich gut wie eine Operation",
+"titel_hervor": "ähnlich gut wie eine Operation",
+"setup": "64 Zufallsstudien mit über 6.300 Personen verglichen gezieltes Krafttraining der Schulter mit Operationen, Scheinbehandlungen oder Abwarten.",
+"zahl": null,
+"kern": [
+"Kräftigung von Schulter- und Schulterblattmuskeln half besser als Nichtstun.",
+"Der Gleichstand mit einer Operation galt kurz-, mittel- und langfristig.",
+"Welche Übungszahl und Dosis optimal sind, ist in den Studien nicht einheitlich."
+],
+"grenze": "Das Review fasst 64 Studien qualitativ zusammen, nennt aber keine einheitliche Ideal-Dosis oder gepoolte Effektstärke.",
+"fuer_dich": "Deine Schulter schmerzt beim Heben des Arms? Lass es ärztlich abklären und besprich gezieltes Training statt nur passiver Anwendungen.",
+"labor": {
+"design": "Systematisches Review von 64 RCTs, Schulterkräftigung vs. OP, Placebo oder Kontrolle (3–12 Wo.)",
+"teilnehmer": "64 RCTs, 6.319 Personen mit subakromialem Schulterschmerz",
+"ergebnis": ""
+}
+},
+"quiz": {
+"basis": {
+"frage": "Bei bestimmten Schulterschmerzen unter dem Schulterdach wird oft über eine Operation nachgedacht. Was zeigt ein Überblick aus 64 Studien zu gezieltem Training?",
+"richtig": "Gezieltes Schultertraining wirkt im Schnitt ähnlich gut wie eine OP",
+"falsch": [
+"Nur eine Operation kann diese Art von Schulterschmerz langfristig bessern",
+"Training hilft ausschließlich in den ersten zwei Wochen nach Beginn",
+"Kräftigung schneidet im Vergleich zu gar keiner Behandlung nicht besser ab"
+],
+"warum": "Kräftigung der Rotatorenmanschette und Schulterblattmuskeln war kurz-, mittel- und langfristig ähnlich wirksam wie eine Operation."
+},
+"plus": {
+"frage": "Nach ärztlicher Diagnose eines subakromialen Schulterschmerzes überlegst du, worauf der Schwerpunkt in deiner Physio liegen sollte. Was ist am besten belegt?",
+"richtig": "Aktive Kräftigung von Rotatorenmanschette und Schulterblattmuskeln",
+"falsch": [
+"Reine Passivmaßnahmen wie Tape, Ultraschall oder Laserbehandlung",
+"Vollständige Ruhigstellung des Arms über mehrere Monate hinweg",
+"Sofortige Operation als einziger wirksamer erster Behandlungsschritt"
+],
+"warum": "Gezielte Kräftigung über 3 bis 12 Wochen zeigte sich als stark belegte erste Wahl, im Gegensatz zu rein passiven Anwendungen."
+},
+"labor": {
+"frage": "Ein systematisches Review aus 64 RCTs (n = 6.319) bewertete Bewegungstherapie beim subakromialen Schmerzsyndrom. Welche wichtige Frage lassen die Primärstudien offen?",
+"richtig": "Einheitliche Standards zu optimaler Übungsauswahl, Wiederholungen und Frequenz",
+"falsch": [
+"Ob Bewegungstherapie überhaupt besser wirkt als gar keine Behandlung",
+"Ob die methodische Qualität der Studien mit einer Skala bewertet wurde",
+"Ob Schultertraining länger als drei Tage überhaupt untersucht wurde"
+],
+"warum": "Trotz solider Studienqualität (mittlerer PEDro-Score 6,9) fehlten einheitliche Dosis-Wirkungs-Vorgaben für die genaue Programmierung."
+}
+}
+},
+{
+"id": "BES-109",
+"karte": {
+"kopf": "Schulterbeschwerden · Große Zufallsstudie",
+"titel": "Gute Anleitung fürs Heimtraining wirkte so gut wie 6 Physio-Termine",
+"titel_hervor": "so gut wie 6 Physio-Termine",
+"setup": "682 Erwachsene mit Beschwerden der Schultersehnen erhielten entweder bis zu 6 betreute Übungstermine oder eine gute Einweisung fürs Heimtraining.",
+"zahl": {
+"label": "Unterschied nach 12 Monaten (0–100)",
+"wert": "−0,66 Punkte",
+"alltag": "praktisch kein Vorteil durch mehr Termine"
+},
+"kern": [
+"Beide Gruppen verbesserten Schmerz und Schulterfunktion über ein Jahr ähnlich.",
+"Eine Kortisonspritze half nach 8 Wochen kurzfristig, nach einem Jahr nicht mehr.",
+"Gut angeleitetes Selbsttraining kann häufige Präsenztermine oft ersetzen."
+],
+"grenze": "Teilnehmende und Therapeuten waren nicht verblindet; untersucht wurden vor allem Erwachsene um 55 Jahre.",
+"fuer_dich": "Schulterprobleme im Alltag? Lass sie ärztlich abklären und hol dir eine klare Einweisung, die du zu Hause konsequent umsetzen kannst.",
+"labor": {
+"design": "Randomisierte kontrollierte Studie, bis zu 6 Termine (16 Wo.) vs. 1 Beratung + Heimtraining, 12 Mo.",
+"teilnehmer": "682 Erwachsene in der Primäranalyse (Ø 55,5 Jahre, 49 % Frauen)",
+"ergebnis": "SPADI über 12 Mo.: MD −0,66 (99 % KI −4,52 bis 3,20); Kortison: 8 Wo. MD −5,64, 12 Mo. MD −1,11"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Bei Sehnenbeschwerden in der Schulter erhielten Betroffene entweder bis zu sechs betreute Trainingstermine oder eine gute Einweisung fürs Heimtraining. Wie sah es nach einem Jahr aus?",
+"richtig": "Beide Gruppen erreichten eine sehr ähnliche Besserung",
+"falsch": [
+"Ohne sechs Termine gab es im Heimtraining kaum eine Besserung",
+"Das betreute Programm war nach einem Jahr doppelt so wirksam",
+"In beiden Gruppen verschlimmerten sich die Beschwerden deutlich"
+],
+"warum": "Über zwölf Monate zeigte sich kein klinisch relevanter Unterschied zwischen der einmaligen Einweisung fürs Heimtraining und bis zu sechs Terminen."
+},
+"plus": {
+"frage": "Nach ärztlicher Abklärung von Rotatorenmanschetten-Beschwerden hast du wenig Zeit für viele Präsenztermine. Was spricht laut dem 12-Monats-Vergleich für ein strukturiertes Heimprogramm?",
+"richtig": "Mit einer guten Ersteinweisung erzielt es langfristig ähnliche Ergebnisse",
+"falsch": [
+"Ein Heimprogramm wirkt nur in Kombination mit einer Kortisonspritze",
+"Ohne wöchentliche Kontrolle durch einen Trainer funktioniert es kaum",
+"Eine einzelne Kortisonspritze ersetzt langfristig jedes Training"
+],
+"warum": "Eine gute Best-Practice-Beratung mit selbstgesteuertem Training schnitt über 12 Monate genauso ab wie bis zu 6 Termine; Kortison half nur kurzfristig."
+},
+"labor": {
+"frage": "In einer großen RCT (n = 682) zu Rotatorenmanschetten-Störungen wurden progressive Betreuung, Einzelberatung und Kortisoninjektionen über 12 Monate verglichen. Was zeigte sich zur Injektion?",
+"richtig": "Nur ein kurzfristiger Vorteil nach 8 Wochen, kein Nutzen über 12 Monate",
+"falsch": [
+"Ein dauerhaft großer Funktionsgewinn über das gesamte Jahr hinweg",
+"Gar kein messbarer Effekt zu keinem der untersuchten Zeitpunkte",
+"Eine deutlich stärkere Langzeitwirkung als beide Trainingsarme zusammen"
+],
+"warum": "Bei der Kortikosteroid-Injektion sank der SPADI-Wert nach 8 Wochen (MD −5,64), über 12 Monate verschwand der Effekt (MD −1,11)."
+}
+}
+},
+{
+"id": "BES-110",
+"karte": {
+"kopf": "Achillessehne · Kleine Zufallsstudie",
+"titel": "Weitertrainieren unter Kontrolle schnitt ähnlich ab wie Sportpause",
+"titel_hervor": "schnitt ähnlich ab wie Sportpause",
+"setup": "38 Sportler mit Achillessehnen-Reizung machten Reha-Übungen; eine Hälfte trieb nach Schmerzregeln weiter Sport, die andere pausierte.",
+"zahl": {
+"label": "Funktionsgewinn bei weiterem Sport",
+"wert": "+28 Punkte",
+"alltag": "ähnlich wie +34 mit aktiver Pause"
+},
+"kern": [
+"Beide Gruppen verbesserten Beschwerden und Belastbarkeit über 12 Monate klar.",
+"Entscheidend war, dass der Schmerz begrenzt blieb und bis morgens abklang.",
+"Beide Gruppen führten begleitend ein gezieltes Reha-Übungsprogramm durch."
+],
+"grenze": "Nur 38 Teilnehmende in der Originalstudie – das Konzept wurde gezielt für die Achillessehne begleitet getestet.",
+"fuer_dich": "Deine Achillessehne zwickt beim Laufen? Pausiere belastende Einheiten und lass ärztlich oder physiotherapeutisch abklären, was geht.",
+"labor": {
+"design": "Randomisierte kontrollierte Studie, Sport mit Schmerz-Monitoring vs. aktive Pause, 12 Monate",
+"teilnehmer": "38 Personen mit Achillessehnentendinopathie (2 Gruppen à 19)",
+"ergebnis": "VISA-A-S: +28 Punkte (57 auf 85, p < 0,01) mit Sport vs. +34 Punkte (57 auf 91, p < 0,01) mit Pause"
+}
+},
+"quiz": {
+"basis": {
+"frage": "In einem Vergleich bei gereizter Achillessehne pausierte eine Gruppe ihren Sport, während die andere nach festen Schmerzregeln weiter aktiv blieb. Was zeigte sich nach einem Jahr?",
+"richtig": "Beide Gruppen erreichten ähnlich gute Fortschritte bei der Sehne",
+"falsch": [
+"Die Sportgruppe erlitt deutlich häufiger schwere Rückschläge",
+"Nur durch strikte monatelange Pause beruhigte sich die Sehne",
+"Die Sportgruppe verbesserte sich doppelt so schnell wie die Pause"
+],
+"warum": "Unter kontrollierten Schmerzgrenzen und mit begleitenden Übungen erholte sich die Sehne nach 12 Monaten ähnlich gut wie mit Pause."
+},
+"plus": {
+"frage": "In betreuten Reha-Konzepten für die Achillessehne wird oft ein Schmerz-Monitoring genutzt. Welches Zeichen spricht dabei für eine zu hohe Belastung?",
+"richtig": "Der Schmerz bleibt am nächsten Morgen höher oder steigt über Wochen an",
+"falsch": [
+"Während der Übung ist ein leichtes Ziehen überhaupt spürbar",
+"Nach der Einheit sind die Wadenmuskeln normal ermüdet",
+"Die Sehne fühlt sich am nächsten Morgen genau wie am Vortag an"
+],
+"warum": "Ein zentrales Prüfkriterium im Modell ist die 24-Stunden-Reaktion: Bleibt der Schmerz morgens erhöht oder steigt wöchentlich, war die Last zu hoch."
+},
+"labor": {
+"frage": "Eine randomisierte Studie verglich bei Achillessehnentendinopathie fortgesetzten Sport nach Schmerz-Monitoring mit einer aktiven Sportpause über 12 Monate. Welche Grenze hat die Originalstudie?",
+"richtig": "Die Stichprobe war mit 38 Teilnehmenden insgesamt sehr klein",
+"falsch": [
+"Es gab überhaupt keine Kontrollgruppe für den Vergleich",
+"Die Nachbeobachtung endete bereits nach genau zwei Wochen",
+"Die Sportgruppe durfte keinerlei begleitende Übungen machen"
+],
+"warum": "Die Originalstudie umfasste nur 19 Personen pro Gruppe, auch wenn das Modell später durch klinische Leitlinien breit übernommen wurde."
+}
+}
+},
+{
+"id": "BES-111",
+"karte": {
+"kopf": "Chronische Beschwerden · 7 Studien",
+"titel": "Übungen mit erlaubtem Schmerz wirkten kurzfristig etwas stärker",
+"titel_hervor": "kurzfristig etwas stärker",
+"setup": "In 7 Zufallsstudien mit 385 Personen wurden bei längeren Beschwerden Übungen mit erlaubtem Schmerz gegen streng schmerzfreie Übungen verglichen.",
+"zahl": null,
+"kern": [
+"Mittel- und langfristig gab es keinen Unterschied bei Schmerz und Alltag.",
+"Die Gruppen mit erlaubtem Schmerz trainierten oft auch mit höheren Gewichten.",
+"Strenge Schmerzfreiheit war für gute Ergebnisse langfristig nicht nötig."
+],
+"grenze": "Der kleine Anfangsvorteil könnte auch an höheren Trainingslasten liegen – und gilt nicht für akute Verletzungen.",
+"fuer_dich": "Längere Beschwerden im Training? Lass sie ärztlich abklären und besprich mit deiner Physio, wie viel Zug bei Übungen okay ist.",
+"labor": {
+"design": "Systematisches Review mit Meta-Analyse, schmerztolerierende vs. schmerzfreie Übungen",
+"teilnehmer": "7 RCTs (9 Publikationen), 385 Personen mit chronischen Beschwerden",
+"ergebnis": "Kurzfristige Schmerzreduktion SMD −0,27 (95 % KI −0,54 bis −0,05); mittel-/langfristig kein Unterschied"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Bei länger bestehenden Muskel- oder Gelenkbeschwerden wurden zwei Trainingsansätze verglichen: Übungen mit erlaubtem leichtem Schmerz und streng schmerzfreie Übungen. Was zeigte sich langfristig?",
+"richtig": "Beide Ansätze führten mittel- und langfristig zu ähnlichen Ergebnissen",
+"falsch": [
+"Übungen mit leichtem Schmerz verschlechterten den Zustand dauerhaft",
+"Nur streng schmerzfreie Übungen brachten überhaupt eine Besserung",
+"Schmerzfreie Übungen waren langfristig doppelt so wirksam"
+],
+"warum": "Kurzfristig lag das Training mit erlaubtem Schmerz leicht vorn, mittel- und langfristig waren beide Wege bei Schmerz und Funktion gleichwertig."
+},
+"plus": {
+"frage": "In betreuter Therapie bei chronischen Beschwerden über drei Monate taucht beim Kräftigen ein moderates, abgesprochenes Ziehen auf. Was legt die Studienlage nahe?",
+"richtig": "Ein abgesprochener, milder Schmerz bedeutet nicht automatisch Schaden",
+"falsch": [
+"Jedes kleinste Ziehen bedeutet sofortigen Abbruch aller Übungen",
+"Je stärker der Schmerz beim Training, desto schneller die Heilung",
+"Hohe Trainingslasten sollten bei chronischen Beschwerden tabu sein"
+],
+"warum": "Bei chronischen Beschwerden ohne akute Warnzeichen schadeten schmerztolerierende Übungen nicht – kurzfristig schnitten sie im Schnitt sogar leicht besser ab."
+},
+"labor": {
+"frage": "Eine Meta-Analyse (7 RCTs, n = 385) fand kurzfristig einen kleinen Vorteil für schmerztolerierende gegenüber schmerzfreien Übungen (SMD −0,27). Welche Störgröße könnte diesen Effekt miterklären?",
+"richtig": "Die schmerztolerierenden Gruppen nutzten oft höhere mechanische Lasten",
+"falsch": [
+"Die schmerzfreien Gruppen durften keinerlei Bewegung durchführen",
+"Die schmerztolerierenden Gruppen nahmen alle Schmerzmittel ein",
+"Alle Studien untersuchten ausschließlich frische Knochenbrüche"
+],
+"warum": "Da bei erlaubtem Schmerz häufiger mit höheren Lasten trainiert wurde, könnte ein Teil des kurzfristigen Effekts auf der höheren Trainingsdosis beruhen."
+}
+}
+},
+{
+"id": "BES-112",
+"karte": {
+"kopf": "Akuter Rückenschmerz · 10 Studien",
+"titel": "Aktiv bleiben hilft akutem Rücken meist besser als Bettruhe",
+"titel_hervor": "meist besser als Bettruhe",
+"setup": "In 10 Zufallsstudien mit 1.923 Personen mit akutem Rückenschmerz wurde der Rat zu angepasster Alltagsbewegung mit Bettruhe verglichen.",
+"zahl": null,
+"kern": [
+"Ohne ausstrahlenden Beinschmerz besserten sich Schmerz und Alltag schneller.",
+"Bei begleitender Ischias-Ausstrahlung gab es keinen klaren Unterschied.",
+"Längere Bettruhe birgt das Risiko von Muskelabbau und anhaltenden Beschwerden."
+],
+"grenze": "Die Belegqualität war niedrig bis mittel; für den Vergleich ohne Beinausstrahlung lagen nur zwei Studien vor.",
+"fuer_dich": "Plötzlicher Rückenschmerz? Pausiere schweres Training und lass ihn ärztlich abklären – besonders bei Taubheit oder Ausstrahlung ins Bein.",
+"labor": {
+"design": "Systematisches Review mit Meta-Analyse, Empfehlung aktiv zu bleiben vs. Bettruhe",
+"teilnehmer": "10 RCTs (n = 1.923); Subgruppe ohne Ischialgie: 2 RCTs (n = 401)",
+"ergebnis": ""
+}
+},
+"quiz": {
+"basis": {
+"frage": "Früher wurde bei plötzlich einschießendem Rückenschmerz oft strenge Bettruhe empfohlen. Was zeigen Vergleiche zwischen Bettruhe und angepasster Bewegung im Alltag?",
+"richtig": "Im Alltag sanft aktiv zu bleiben bessert Beschwerden meist schneller",
+"falsch": [
+"Mehrere Tage strenge Bettruhe sorgen für die schnellste Erholung",
+"Aktiv bleiben schadet dem Rücken bei akuten Schmerzen fast regelmäßig",
+"Schwere Kniebeugen sind bei akutem Rückenschmerz am besten"
+],
+"warum": "Bei akutem Rückenschmerz ohne Beinausstrahlung brachte angepasste Bewegung Vorteile bei Schmerz und Funktion gegenüber Bettruhe."
+},
+"plus": {
+"frage": "Du bekommst plötzlich Rückenschmerzen mit Ausstrahlung ins Bein und fragst dich, ob normales Weitertrainieren eine gute Idee ist. Was solltest du tun?",
+"richtig": "Das Training pausieren und die Beschwerden ärztlich abklären lassen",
+"falsch": [
+"Wie gewohnt schwer weitertrainieren, da Bewegung grundsätzlich hilft",
+"Wochenlang im Bett bleiben, ohne eine fachliche Einschätzung zu holen",
+"Den Schmerz mit maximalem Dehnen einfach wegarbeiten"
+],
+"warum": "Bei Ausstrahlung ins Bein (Ischialgie) zeigte sich kein klarer Vorteil für Aktivität – neurologische Zeichen gehören unbedingt ärztlich abgeklärt."
+},
+"labor": {
+"frage": "In einem Review aus 10 RCTs (n = 1.923) wurde der Rat zum Aktivbleiben bei akutem Rückenschmerz gegen Bettruhe geprüft. Wie unterschieden sich Patienten mit und ohne Ischialgie?",
+"richtig": "Vorteile zeigten sich ohne Ischialgie, mit Ischialgie kein klarer Unterschied",
+"falsch": [
+"Nur bei schwerer Ischialgie war Aktivbleiben klar überlegen",
+"Bei beiden Gruppen führte Bettruhe zu deutlich weniger Schmerzen",
+"Ischialgie-Patienten wurden aus allen zehn Studien ausgeschlossen"
+],
+"warum": "Die Vorteile für Aktivbleiben stammen aus der Subgruppe ohne Ischialgie (k = 2, n = 401), während mit Ischialgie kein signifikanter Unterschied bestand."
+}
+}
+},
+{
+"id": "BES-113",
+"karte": {
+"kopf": "Weichteilverletzungen · Fachleute-Konsens",
+"titel": "Nach Zerrung empfehlen Fachleute oft nur wenige Tage Schonung",
+"titel_hervor": "oft nur wenige Tage Schonung",
+"setup": "Ein internationales Fachkonzept fasst zusammen, wie frische Muskel- und Bandverletzungen nach kurzer Entlastung wieder aufgebaut werden.",
+"zahl": null,
+"kern": [
+"Für akute Zerrungen sehen Fachleute meist nur 1 bis 3 Tage strenge Entlastung vor.",
+"Danach soll schrittweise, schmerzfreie Belastung die Gewebeheilung anregen.",
+"Auch frühes, schmerzfreies Ausdauertraining gilt im Konzept als hilfreich."
+],
+"grenze": "Das Konzept beruht auf Fachmeinung und Gewebebiologie, nicht auf direkten Vergleichsstudien; der Verlauf hängt vom Verletzungsgrad ab.",
+"fuer_dich": "Du hast dich im Training gezerrt oder bist umgeknickt? Pausiere sofort, lass die Verletzung ärztlich prüfen und kläre den Wiederaufbau ab.",
+"labor": {
+"design": "Expertenkonsens und Leitlinien-Editorial auf Basis narrativer Evidenzsynthese",
+"teilnehmer": "Keine eigene Stichprobe (Konzeptpapier)",
+"ergebnis": ""
+}
+},
+"quiz": {
+"basis": {
+"frage": "Früher hieß es nach einer leichten Zerrung oder Verstauchung oft: erst mal wochenlang völlig ruhigstellen. Was empfehlen Fachleute heute meist nach wenigen Tagen?",
+"richtig": "Nach kurzer Schonung schrittweise wieder schmerzfrei belasten",
+"falsch": [
+"Das Gelenk grundsätzlich mindestens vier Wochen völlig stilllegen",
+"Noch am selben Tag wieder mit vollem Sprinttraining starten",
+"Jede Form von Bewegung meiden, bis keinerlei Spur mehr da ist"
+],
+"warum": "Im aktuellen Fachkonzept gilt eine kurze Entlastung von 1 bis 3 Tagen, gefolgt von schrittweiser, schmerzfreier Belastung."
+},
+"plus": {
+"frage": "Du bist beim Laufen umgeknickt und merkst einen akuten Schmerz im Sprunggelenk. Was ist der richtige erste Schritt für dein Training?",
+"richtig": "Die belastete Stelle sofort pausieren und ärztlich abklären lassen",
+"falsch": [
+"Die Einheit normal fertig laufen, um das Gewebe zu durchbluten",
+"Ab morgen direkt wieder mit maximalen Sprüngen ins Training gehen",
+"Das Gelenk eigenständig zwei Monate ohne Untersuchung ruhigstellen"
+],
+"warum": "Wann der Übergang von Schutz zu schrittweiser Belastung passt, hängt vom genauen Verletzungsgrad ab – daher zuerst pausieren und abklären."
+},
+"labor": {
+"frage": "Ein vielzitiertes Leitlinien-Editorial beschreibt den Ablauf von kurzer Entlastung zu progressiver Belastung nach Weichteilverletzungen. Wie ist die Evidenzstufe dieses Papiers einzuordnen?",
+"richtig": "Expertenkonsens auf Basis narrativer Synthese, keine klinische RCT",
+"falsch": [
+"Große Meta-Analyse aus über hundert randomisierten Doppelblind-Studien",
+"Prospektive Kohortenstudie mit zehntausend untersuchten Profisportlern",
+"Direkter randomisierter Vergleich von drei Verletzungsgraden über Jahre"
+],
+"warum": "Das Papier ist ein Expertenkonsens (Evidenzgrad D), der physiologische Prinzipien bündelt, aber keine eigenen Schwellenwerte per RCT belegt."
+}
+}
+},
+{
+"id": "BES-114",
+"karte": {
+"kopf": "Profisportler nach Kreuzband · Beobachtung",
+"titel": "Ohne bestandene Knie-Tests war das neue Rissrisiko viermal höher",
+"titel_hervor": "Rissrisiko viermal höher",
+"setup": "158 männliche Profisportler wurden nach einer Kreuzband-OP mit sechs Kraft- und Sprungtests geprüft und nach ihrer Rückkehr beobachtet.",
+"zahl": {
+"label": "Höheres Risiko für neuen Riss",
+"wert": "4-fach",
+"alltag": "ohne bestandene Rückkehr-Tests"
+},
+"kern": [
+"Schwächere hintere Oberschenkel gegenüber vorne erhöhten das Risiko deutlich.",
+"Sieben von zehn neuen Rissen passierten in den ersten 6 Monaten nach Rückkehr.",
+"Nach 6 Monaten bestanden erst 29 % alle Tests, nach einem Jahr gut die Hälfte."
+],
+"grenze": "Beobachtungsstudie nur an männlichen Profis nach Kreuzband-OP – auf Freizeitsportler und Frauen nicht 1:1 übertragbar.",
+"fuer_dich": "Wiedereinstieg nach Knieverletzung? Lass Kraft und Sprungtests von Arzt oder Physio prüfen, statt nur nach Kalender zu gehen.",
+"labor": {
+"design": "Prospektive Kohortenstudie, Zusammenhang von 6 Rückkehr-Kriterien mit erneuter VKB-Ruptur",
+"teilnehmer": "158 männliche Profisportler nach vorderer Kreuzbandrekonstruktion",
+"ergebnis": "4-fach höheres Reruptur-Risiko bei Nichtbestehen; 10,6-fach pro 10 % Defizit im H:Q-Verhältnis (60°/s)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Nach einer Kreuzband-OP kehren viele zurück in den Sport, sobald eine bestimmte Zahl an Monaten vorbei ist. Was fiel in einer Beobachtung von Profisportlern auf?",
+"richtig": "Wer Kraft- und Sprungtests nicht bestand, verletzte sich viel häufiger erneut",
+"falsch": [
+"Nach genau sechs Monaten waren fast alle Sportler wieder voll belastbar",
+"Kraftunterschiede zwischen beiden Beinen spielten für das Risiko keine Rolle",
+"Erneute Risse passierten fast ausschließlich erst nach über zwei Jahren"
+],
+"warum": "Wer vor der Rückkehr nicht alle sechs Kriterien bestand, hatte in dieser Gruppe ein vierfach höheres Risiko für einen neuen Riss."
+},
+"plus": {
+"frage": "Sechs Monate nach einer Kreuzband-OP fühlst du dich im Alltag gut und möchtest wieder voll sprinten. Worauf solltest du dich vor der Rückkehr stützen?",
+"richtig": "Auf objektive Kraft- und Sprungtests mit Arzt oder Physio, nicht nur die Zeit",
+"falsch": [
+"Allein auf das Kalenderdatum von sechs Monaten nach der Operation",
+"Auf das Bauchgefühl nach einer kurzen schmerzfreien Joggingrunde",
+"Darauf, dass das operierte Bein mindestens halb so stark ist wie das andere"
+],
+"warum": "Nach sechs Monaten erfüllten nur 29 % alle Rückkehr-Kriterien – klare Kraft- und Sprungtests helfen, Risiken besser einzuschätzen."
+},
+"labor": {
+"frage": "Eine prospektive Kohortenstudie (n = 158) untersuchte sechs Entlassungskriterien nach VKB-Rekonstruktion. Welche Einschränkung begrenzt die direkte Übertragbarkeit?",
+"richtig": "Es wurden nur männliche Profisportler nach einer Verletzungsart beobachtet",
+"falsch": [
+"Die Teilnehmenden wurden überhaupt nicht über ihre Rückkehr verfolgt",
+"Es wurden keinerlei isokinetische Kraftverhältnisse im Knie gemessen",
+"Die Studie umfasste nur Sportler über sechzig Jahre im Breitensport"
+],
+"warum": "Die Ergebnisse liefern wichtige Hinweise, stammen aber aus einer Kohorte männlicher Profis nach VKB-OP und brauchen angepasste Tests für andere Gruppen."
+}
+}
+},
+{
+"id": "BES-115",
+"karte": {
+"kopf": "Sportverletzungen · Internationaler Konsens",
+"titel": "Rückkehr nach Verletzung verläuft laut Fachleuten in drei Stufen",
+"titel_hervor": "laut Fachleuten in drei Stufen",
+"setup": "Ein internationales Fachgremium hat festgelegt, wie die Rückkehr nach einer Sportverletzung schrittweise nach Kriterien statt nach Datum abläuft.",
+"zahl": null,
+"kern": [
+"Stufe 1 heißt angepasstes Ersatz- oder Reha-Training statt sofortigem Zielsport.",
+"Stufe 2 ist der Einstieg in die eigene Sportart mit reduzierter Intensität.",
+"Erst Stufe 3 beschreibt volle Leistung ohne Beschwerden auf altem Niveau."
+],
+"grenze": "Das Modell ist ein Fachkonsens – einheitliche Tests für jede Sportart und Verletzung sind noch wenig erforscht.",
+"fuer_dich": "Zurück ins Training nach einer Verletzung? Plane den Übergang mit Arzt oder Physio in klaren Stufen statt direkt auf 100 % zu gehen.",
+"labor": {
+"design": "Internationaler Expertenkonsens und Positionspapier zum Return-to-Sport-Kontinuum",
+"teilnehmer": "Keine eigene Stichprobe (Konsensbericht)",
+"ergebnis": ""
+}
+},
+"quiz": {
+"basis": {
+"frage": "Viele betrachten den Wiedereinstieg nach einer Sportverletzung als einfachen Schalter: verletzt oder wieder voll dabei. Wie sehen Sportfachleute die Rückkehr?",
+"richtig": "Als schrittweisen Übergang über mehrere Stufen bis zur vollen Leistung",
+"falsch": [
+"Als festen Stichtag, ab dem man sofort wieder maximal belastet",
+"Als reine Ruhephase, bis man ohne Übergang Wettkämpfe bestreitet",
+"Als Frage des Alters, bei der Zwischenstufen keine Rolle spielen"
+],
+"warum": "Im Konsensmodell folgt die Rückkehr einem dreistufigen Verlauf von angepasster Bewegung über reduzierten Zielsport bis zur vollen Leistung."
+},
+"plus": {
+"frage": "Nach ärztlicher Freigabe für den ersten Wiedereinstieg nach einer längeren Sportverletzung bist du wieder im Gym. Welche Phase folgt im Drei-Stufen-Modell nach dem Ersatztraining?",
+"richtig": "Rückkehr in die eigene Sportart mit noch reduzierter Last und Intensität",
+"falsch": [
+"Direkter Sprung auf neue persönliche Bestleistungen ohne Übergang",
+"Zurück zur vollständigen Trainingspause für weitere vier Wochen",
+"Ausschließlich passives Dehnen ohne schrittweisen Belastungsaufbau"
+],
+"warum": "Auf angepasstes Ersatztraining (Phase 1) folgt der Einstieg in den Zielsport mit reduzierter Belastung (Phase 2), erst danach volle Leistung."
+},
+"labor": {
+"frage": "Ein internationales Konsenspapier definiert die Rückkehr nach Sportverletzungen als dreistufiges Kontinuum. Wo sieht der Konsens selbst noch eine zentrale Evidenzlücke?",
+"richtig": "Bei standardisierten, prognostisch geprüften Tests über alle Sportarten hinweg",
+"falsch": [
+"Bei der Frage, ob Verletzungen überhaupt zu Ausfallzeiten führen können",
+"Bei der grundsätzlichen Unterscheidung zwischen Training und Wettkampf",
+"Es bestehen laut dem Bericht keinerlei offene Forschungsfragen mehr"
+],
+"warum": "Das Positionspapier (Evidenzgrad D) weist ausdrücklich darauf hin, dass prospektiv validierte Rückkehr-Tests über verschiedene Sportarten noch begrenzt sind."
+}
+}
+}
+]

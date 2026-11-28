@@ -1,0 +1,1094 @@
+[
+{
+"id": "CARB-106",
+"karte": {
+"kopf": "Kraftsportler · 49 Studien ausgewertet",
+"titel": "Mehr Kohlenhydrate bauen bei gleichen Kalorien nicht mehr Muskeln auf",
+"titel_hervor": "nicht mehr Muskeln auf",
+"setup": "In 49 Studien und einer Meta-Analyse aus 11 Versuchen wurde verglichen, wie viel Muskelmasse bei mehr oder weniger Kohlenhydraten wächst.",
+"zahl": null,
+"kern": [
+"Stimmten Kalorien und Eiweiß, gab es keinen klaren Vorteil für mehr Kohlenhydrate.",
+"Das galt für übliche Kraftpläne mit bis zu 10 Sätzen pro Muskelgruppe.",
+"Erst bei sehr hohem Volumen oder zwei Einheiten am Tag helfen extra Kohlenhydrate."
+],
+"grenze": "Die Sicherheit der Datenlage ist niedrig bis moderat – vor allem bei sehr hohem Trainingsvolumen.",
+"fuer_dich": "Willst du Muskeln aufbauen oder erhalten? Decke zuerst Kalorien und Eiweiß, und passe Kohlenhydrate flexibel an dein Training an.",
+"labor": {
+"design": "Systematisches Review und Meta-Analyse (höhere vs. niedrigere KH bei gleicher Energie und Eiweiß)",
+"teilnehmer": "Krafttrainierende Erwachsene (49 Studien im Review, 11 RCTs gepoolt)",
+"ergebnis": "Hypertrophie gesamt SMD 0,15 (p = 0,23); isokalorische Subgruppe SMD 0,15 (p = 0,60)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Zwei Personen trainieren gleich viel Kraft und essen gleich viele Kalorien und genug Eiweiß. Eine isst mehr Kohlenhydrate, die andere weniger. Wer baut meist mehr Muskeln auf?",
+"richtig": "Beide bauen bei normalem Trainingsumfang ähnlich viele Muskeln auf",
+"falsch": [
+"Die Person mit vielen Kohlenhydraten baut doppelt so viel auf",
+"Die Person mit wenigen Kohlenhydraten verliert deutlich Muskelmasse",
+"Ohne sehr viele Kohlenhydrate ist Muskelaufbau biologisch unmöglich"
+],
+"warum": "Solange Kalorien und Eiweiß passen, brachten mehr Kohlenhydrate bei üblichem Kraftvolumen keinen klaren Zusatzgewinn."
+},
+"plus": {
+"frage": "Dein Ziel ist Muskelaufbau mit rund 8 Sätzen pro Muskelgruppe pro Einheit. Welche Stellschraube solltest du in der Ernährung zuerst absichern?",
+"richtig": "Gesamtkalorien und eine hohe Eiweißzufuhr",
+"falsch": [
+"Eine möglichst hohe Kohlenhydratmenge unabhängig von den Kalorien",
+"Den vollständigen Verzicht auf Nahrungsfette an Trainingstagen",
+"Exakte Zuckergaben zwischen jedem einzelnen Arbeitssatz"
+],
+"warum": "Bei bis zu 10 Sätzen pro Muskelgruppe entscheiden primär Energiebilanz und Eiweiß, nicht eine extra hohe KH-Menge."
+},
+"labor": {
+"frage": "Eine Meta-Analyse verglich 11 kontrollierte Studien zu höherer versus niedrigerer Kohlenhydratzufuhr bei gleichem Eiweiß- und Kaloriengehalt. Was ergab der gepoolte Effekt auf Hypertrophie?",
+"richtig": "Einen sehr kleinen, statistisch nicht signifikanten Unterschied",
+"falsch": [
+"Einen großen, hochsignifikanten Vorteil für sehr viele Kohlenhydrate",
+"Einen signifikanten Muskelverlust in der Gruppe mit mehr Kohlenhydraten",
+"Einen starken Effekt, der ausschließlich bei unter fünf Sätzen auftrat"
+],
+"warum": "Mit SMD 0,15 (p = 0,23; isokalorisch p = 0,60) zeigte sich kein gesicherter isolierter Hypertrophievorteil."
+}
+}
+},
+{
+"id": "CARB-107",
+"karte": {
+"kopf": "Sportler · Methodenprüfung",
+"titel": "Dein eigenes Anstrengungsgefühl passt gut zu den Pulswerten",
+"titel_hervor": "passt gut zu den Pulswerten",
+"setup": "Verglichen wurde, ob die eigene Einschätzung der Anstrengung nach dem Training ebenso zuverlässig die Belastung misst wie Herzfrequenz-Zonen.",
+"zahl": null,
+"kern": [
+"Dauer mal Anstrengung von 0 bis 10 erfasst Kraft- und Ausdauertraining einheitlich.",
+"Die Bewertung sollte rund 30 Minuten nach der Einheit erfolgen, nicht mittendrin.",
+"Zusammen mit Pulszonen lässt sich die echte Tagesbelastung noch genauer einordnen."
+],
+"grenze": "Bei sehr langen, ruhigen Einheiten steigt das Ermüdungsgefühl oft stärker als der tatsächliche Zuckerverbrauch.",
+"fuer_dich": "Du trainierst Kraft und Laufen gemischt? Bewerte jede Einheit rund 30 Minuten danach von 0 bis 10, um die Last zu vergleichen.",
+"labor": {
+"design": "Methoden-Validierungsstudie: Session-RPE (CR-10 x Dauer) vs. Edwards-TRIMP (Pulszonen Z1–Z5)",
+"teilnehmer": "",
+"ergebnis": "Hohe Konsistenz zwischen Herzfrequenz-Zonenlast und subjektiver Gesamtbeanspruchung bei Dauer- und Intervallbelastung"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du hast keine Pulsuhr dabei und bewertest eine halbe Stunde nach dem Sport, wie hart das Training von 0 bis 10 war. Wie nützlich ist diese Einschätzung?",
+"richtig": "Sehr nützlich, sie passt gut zu objektiven Pulsmessungen",
+"falsch": [
+"Kaum nützlich, weil das eigene Gefühl meistens völlig danebenliegt",
+"Nur beim Laufen brauchbar, beim Krafttraining dagegen wertlos",
+"Nur sinnvoll, wenn du die Zahl mitten im härtesten Satz aufschreibst"
+],
+"warum": "Trainingsdauer mal persönlichem Anstrengungsgefühl bildet die Gesamtbelastung zuverlässig und sportartübergreifend ab."
+},
+"plus": {
+"frage": "Du möchtest deine Wochenbelastung über Krafttraining und Läufe hinweg per Session-RPE erfassen. Wann notierst du den RPE-Wert der Einheit am besten?",
+"richtig": "Etwa 30 Minuten nach Ende des Trainings für die gesamte Einheit",
+"falsch": [
+"Direkt nach dem Aufwärmen vor dem ersten Arbeitssatz",
+"Mitten in der härtesten Minute unmittelbar bei Maximalpuls",
+"Erst am nächsten Abend kurz vor dem Schlafengehen"
+],
+"warum": "Die Bewertung 30 Minuten danach verhindert, dass nur die allerletzte harte Minute den Gesamteindruck verzerrt."
+},
+"labor": {
+"frage": "In einer Validierungsstudie wurde die subjektive Session-RPE mit einer gewichteten Pulszonen-Methode verglichen. Wo liegt eine typische Grenze der Session-RPE?",
+"richtig": "Bei sehr langen Zone-2-Einheiten steigt sie stärker als der Zuckerverbrauch",
+"falsch": [
+"Sie funktioniert bei Intervalltraining deutlich schlechter als im Ruhestand",
+"Sie korreliert in Dauerbelastungen überhaupt nicht mit Pulszonen",
+"Sie lässt sich rechnerisch nur für Läufe über zwei Stunden anwenden"
+],
+"warum": "Zunehmende Ermüdung treibt die subjektive RPE bei sehr langen ruhigen Läufen höher als die rein glykolytische Last."
+}
+}
+},
+{
+"id": "CARB-108",
+"karte": {
+"kopf": "Ausdauersportler · Belastungsmodell",
+"titel": "Der Durchschnittspuls unterschätzt harte Intervalle spürbar",
+"titel_hervor": "unterschätzt harte Intervalle",
+"setup": "Ein physiologisches Modell verknüpfte Trainingsdauer und Herzfrequenzreserve mit der typischen Laktatkurve von Männern und Frauen.",
+"zahl": {
+"label": "Unterschätzung bei Intervallen",
+"wert": "≈ 9 %",
+"alltag": ""
+},
+"kern": [
+"Hohe Intensität zählt in dem Modell deutlich stärker als langes, lockeres Tempo.",
+"Mittelwerte über Arbeit und Pause drücken den Durchschnittspuls künstlich nach unten.",
+"Dadurch wirken harte Intervalle in einfachen Pulsformeln rund 9 Prozent zu leicht."
+],
+"grenze": "Es handelt sich um ein mathematisches Modell – bei Intervallen braucht es getrennte Abschnitte oder eine Korrektur.",
+"fuer_dich": "Deine Uhr zeigt nach harten Intervallen nur einen mittleren Durchschnittspuls? Plane trotzdem mehr Erholung und Kohlenhydrate ein.",
+"labor": {
+"design": "Physiologisches Modellierungs-Kapitel (exponentielle Gewichtung der Herzfrequenzreserve)",
+"teilnehmer": "",
+"ergebnis": "Geschlechtsspezifische Laktat-Gewichtung; ca. 9 % Unterschätzung bei Intervallen via Durchschnittspuls"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Ein lockerer Dauerlauf und ein hartes Intervalltraining mit Trabpausen hatten denselben Durchschnittspuls. Waren beide für deinen Körper gleich anstrengend?",
+"richtig": "Nein, die harten Intervalle belasten den Stoffwechsel spürbar stärker",
+"falsch": [
+"Ja, bei gleichem Durchschnittspuls ist die Belastung gleich groß",
+"Nein, der lockere Dauerlauf ist für den Stoffwechsel deutlich härter",
+"Ja, die Trabpausen gleichen die harten Sprints vollständig aus"
+],
+"warum": "Die Pausen senken den Durchschnittspuls, obwohl die schnellen Abschnitte deutlich mehr Energie und Erholung fordern."
+},
+"plus": {
+"frage": "Dein Lauftracker berechnet die Trainingslast nur aus Dauer und Durchschnittspuls. Worauf solltest du nach einer harten Intervall-Einheit achten?",
+"richtig": "Die echte Belastung höher einschätzen als der angezeigte Wert",
+"falsch": [
+"Die Einheit wie einen leichten Regenerationslauf behandeln",
+"Am nächsten Tag sofort noch härtere Intervalle nachlegen",
+"Die Kohlenhydrate deutlich senken, weil der Schnitt niedrig war"
+],
+"warum": "Mittelwerte über Belastung und Pause unterschätzen die anaerobe Last und den Kohlenhydratverbrauch von Intervallen."
+},
+"labor": {
+"frage": "Ein physiologisches Belastungsmodell gewichtet die Trainingsdauer exponentiell über die Herzfrequenzreserve analog zur Laktatkurve. Welche Schwäche entsteht bei Intervallen?",
+"richtig": "Der gemittelte Puls führt zu rund neun Prozent Unterschätzung der Last",
+"falsch": [
+"Die Formel überschätzt lockere Einheiten gegenüber Intervallen massiv",
+"Das Modell unterscheidet rechnerisch nicht zwischen Männern und Frauen",
+"Bei kontinuierlichen Dauerläufen versagt die exponentielle Gewichtung"
+],
+"warum": "Wird der Durchschnittspuls über Belastungs- und Pausenphasen gemittelt, geht die exponentielle Spitze der Intervalle verloren."
+}
+}
+},
+{
+"id": "CARB-109",
+"karte": {
+"kopf": "Hybridsportler · 43 Studien zusammengefasst",
+"titel": "Kraft und Laufen direkt nacheinander bremsen deine Schnellkraft",
+"titel_hervor": "bremsen deine Schnellkraft",
+"setup": "In 43 Studien wurde verglichen, wie sich Kraft- und Ausdauertraining in einer gemeinsamen Einheit oder zeitlich getrennt auf Kraft und Muskeln auswirken.",
+"zahl": null,
+"kern": [
+"Maximalkraft und Muskelaufbau litten durch das parallele Ausdauertraining nicht.",
+"Ab mindestens drei Stunden Pause dazwischen verschwand der Nachteil für die Schnellkraft.",
+"Laufen bremst durch stärkere muskuläre Belastung eher als Radfahren."
+],
+"grenze": "Die optimale Pausenzeit hängt von Umfang, Intensität und der gewählten Ausdauerart ab.",
+"fuer_dich": "Planst du Kraft und Laufen am selben Tag? Lege mindestens 3 bis 6 Stunden dazwischen und fülle deine Kohlenhydrate dazwischen auf.",
+"labor": {
+"design": "Systematisches Review mit Meta-Analyse (kombiniertes vs. zeitlich getrenntes Kraft- und Ausdauertraining)",
+"teilnehmer": "43 Studien mit Hybridsportlern",
+"ergebnis": "Explosivkraft SMD −0,28 (p = 0,007; gleiche Sitzung p = 0,043, >=3 h n.s.); Maximalkraft −0,06; Hypertrophie 0,05"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du kombinierst regelmäßig Krafttraining und Laufen. Stimmt der Mythos, dass Ausdauertraining deinen Muskelaufbau zwangsläufig kaputtmacht?",
+"richtig": "Nein, Muskelaufbau und Maximalkraft blieben im Schnitt unbeeinträchtigt",
+"falsch": [
+"Ja, schon kurzes Laufen stoppt jeden Muskelzuwachs deutlich",
+"Ja, wer läuft, verliert dabei zwangsläufig seine Maximalkraft",
+"Nein, Ausdauertraining verdoppelt sogar die Schnellkraft beim Springen"
+],
+"warum": "Über 43 Studien litten weder Muskelwachstum noch Maximalkraft – nur die Schnellkraft litt bei direkter Kopplung."
+},
+"plus": {
+"frage": "Du möchtest am selben Tag schweres Krafttraining und einen Lauf unterbringen, ohne deine Explosivkraft zu bremsen. Wie planst du den Tag am besten?",
+"richtig": "Mindestens 3 bis 6 Stunden Pause dazwischen und Speicher nachfüllen",
+"falsch": [
+"Direkt nach dem letzten Kraftsatz ohne Pause loslaufen",
+"Zwischen beiden Einheiten bewusst auf Kohlenhydrate verzichten",
+"Beide Einheiten direkt nacheinander auf leeren Magen legen"
+],
+"warum": "Ein zeitlicher Abstand ab drei bis sechs Stunden plus Kohlenhydrat-Refueling puffert den Interferenzeffekt wirksam ab."
+},
+"labor": {
+"frage": "Eine Meta-Analyse von 43 Studien untersuchte kombiniertes Kraft- und Ausdauertraining auf Kraft, Muskelwachstum und Explosivkraft. Welcher Unterschied zeigte sich beim Timing?",
+"richtig": "Explosivkraft sank in derselben Sitzung, nicht aber ab drei Stunden Pause",
+"falsch": [
+"Hypertrophie sank unabhängig vom Abstand am stärksten ab",
+"Maximalkraft litt stärker als Explosivkraft, besonders auf dem Fahrrad",
+"Erst ab 24 Stunden Pause war kein Effekt auf Muskelmasse mehr messbar"
+],
+"warum": "Der negative Effekt auf Explosivkraft war bei gleicher Sitzung signifikant, bei mindestens drei Stunden Trennung jedoch nicht."
+}
+}
+},
+{
+"id": "CARB-110",
+"karte": {
+"kopf": "Sportler im Defizit · Kontrollierte Studie",
+"titel": "Gezielte Kohlenhydrat-Tage zeigten im Defizit nur einen Teilvorteil",
+"titel_hervor": "nur einen Teilvorteil",
+"setup": "Sieben Wochen lang verglich eine Studie ein gleichmäßiges Kaloriendefizit mit fünf strengen Diättagen plus zwei kohlenhydratreichen Erhaltungstagen.",
+"zahl": null,
+"kern": [
+"Bei gleichem Wochendefizit blieb die trockene Muskelmasse etwas besser erhalten.",
+"Bei gesamter fettfreier Masse und Ruheumsatz zeigte die Nachprüfung keinen Vorteil.",
+"Die energiereicheren Tage erlauben härtere Einheiten, fordern aber strengere Resttage."
+],
+"grenze": "Der Plan klappt nur, wenn das größere Defizit an den fünf strengen Tagen tatsächlich eingehalten wird.",
+"fuer_dich": "Du willst abnehmen und trotzdem hart trainieren? Halte Eiweiß täglich hoch und lege mehr Kohlenhydrate auf deine schwersten Tage.",
+"labor": {
+"design": "7-wöchige RCT (5 Tage −35 % + 2 Tage KH-Refeed auf Erhalt vs. lineares Defizit, isokalorisch)",
+"teilnehmer": "Sportler im Kaloriendefizit (1,8 g/kg Protein/Tag)",
+"ergebnis": "Besserer Erhalt trockener FFM; Reanalyse ohne Gruppenunterschied bei Gesamt-FFM und Ruheumsatz"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du bist im Kaloriendefizit und machst am Wochenende zwei kohlenhydratreiche Tage auf Erhaltungsniveau, sparst dafür unter der Woche mehr. Kurbelt das deinen Stoffwechsel stark an?",
+"richtig": "Nein, beim Ruheumsatz zeigte die genaue Prüfung keinen Unterschied",
+"falsch": [
+"Ja, der Ruheumsatz steigt dadurch für Wochen deutlich nach oben",
+"Ja, du nimmst damit ab, ohne unter der Woche mehr sparen zu müssen",
+"Nein, zwei Tage mit mehr Kohlenhydraten stoppen jeden Fettabbau"
+],
+"warum": "Bei gleichem Wochendefizit zeigte die Nachprüfung keinen gesicherten Vorteil beim Ruheumsatz oder der gesamten fettfreien Masse."
+},
+"plus": {
+"frage": "Du nutzt im Cut zwei Refeed-Tage pro Woche mit mehr Kohlenhydraten, um an schweren Trainingstagen mehr Power zu haben. Worauf kommt es an den übrigen fünf Tagen an?",
+"richtig": "Hohes Eiweiß halten und das größere Defizit konsequent einhalten",
+"falsch": [
+"Das Eiweiß an den Diättagen halbieren, um Kalorien zu sparen",
+"Das tägliche Defizit gleich lassen, damit die Wochenbilanz steigt",
+"Am Refeed-Tag vor allem extra Fett statt Kohlenhydrate essen"
+],
+"warum": "Ohne das stärkere Defizit an den fünf übrigen Tagen überschreitest du dein Wochenbudget, und hohes Eiweiß schützt die Muskeln."
+},
+"labor": {
+"frage": "In einer siebenwöchigen randomisierten Studie wurde ein lineares Defizit mit einem 5-zu-2-Kohlenhydrat-Refeed bei gleichem Wochendefizit verglichen. Was zeigte die Reanalyse?",
+"richtig": "Besserer Erhalt trockener fettfreier Masse, aber kein Unterschied beim Ruheumsatz",
+"falsch": [
+"Deutlich höherer Fettverlust und stark erhöhter Ruheumsatz durch die Refeeds",
+"Starker Verlust an Muskelmasse in beiden Gruppen trotz viel Protein",
+"Signifikante Vorteile bei Gesamt-FFM und Ruheumsatz über sieben Wochen"
+],
+"warum": "Die Reanalyse bestätigte nur den Vorteil bei trockener fettfreier Masse, nicht aber bei Gesamt-FFM oder Ruheumsatz."
+}
+}
+},
+{
+"id": "CARB-111",
+"karte": {
+"kopf": "Ausdauersportler · Fachleitlinie",
+"titel": "Kohlenhydrate vor langen Einheiten verzögern die Ermüdung",
+"titel_hervor": "verzögern die Ermüdung",
+"setup": "Internationale Fachleitlinien fassten Studien zur Wirkung kohlenhydratreicher Mahlzeiten in den vier Stunden vor längeren Ausdauerbelastungen zusammen.",
+"zahl": null,
+"kern": [
+"Eine passende Mahlzeit 1 bis 4 Stunden vorher füllt Muskel- und Leberspeicher.",
+"Je näher der Start rückt, desto kleiner und leichter verdaulich sollte die Portion sein.",
+"Vor Wettkämpfen über 90 Minuten zahlt sich gezieltes Auffüllen über zwei Tage aus."
+],
+"grenze": "Wie gut du bestimmte Mengen verträgst, hängt individuell von Magen und Blutzuckerreaktion ab.",
+"fuer_dich": "Steht eine harte Einheit über eine Stunde an? Iss 2 bis 4 Stunden vorher kohlenhydratreich und kurz vor dem Start nur noch fettarm.",
+"labor": {
+"design": "Positionspapier und internationale Fachleitlinie zum Pre-Workout-Timing",
+"teilnehmer": "Ausdauer- und Hybridsportler",
+"ergebnis": "Pre-Workout 1–4 g/kg (1–4 h vorher); Carbo-Loading >90 min: 10–12 g/kg/24 h über 36–48 h"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du hast heute Nachmittag einen langen, anstrengenden Lauf vor dir. Was passiert im Schnitt, wenn du 1 bis 4 Stunden vorher kohlenhydratreich isst statt nüchtern zu starten?",
+"richtig": "Dein Blutzucker bleibt stabiler und du ermüdest später",
+"falsch": [
+"Deine Ausdauer sinkt, weil der Körper nur noch Zucker verbrennt",
+"Die Mahlzeit macht keinen Unterschied, solange du genug trinkst",
+"Du verbrauchst dadurch doppelt so schnell deine Reserven"
+],
+"warum": "Eine passende Mahlzeit vorab füllt Leber- und Muskelspeicher und hält den Blutzucker länger stabil."
+},
+"plus": {
+"frage": "Du hast nur noch eine Stunde Zeit bis zu einer harten 75-Minuten-Einheit. Welche Pre-Workout-Mahlzeit passt am besten?",
+"richtig": "Ein kleiner, fett- und ballaststoffarmer Kohlenhydrat-Snack",
+"falsch": [
+"Eine sehr große, vollkorn- und fettreiche Hauptmahlzeit",
+"Gar nichts essen, weil eine Stunde zu kurz für Energie ist",
+"Ein reiner Fett-Shake ohne Kohlenhydrate für langsame Energie"
+],
+"warum": "Bei kurzem Vorlauf liegt eine fett- und ballaststoffarme kleine Portion leichter im Magen und liefert schnell Energie."
+},
+"labor": {
+"frage": "Fachleitlinien empfehlen 1 bis 4 Stunden vor Belastungen über 60 Minuten eine nach Zeitfenster gestaffelte Kohlenhydratzufuhr. Welche Einschränkung muss individuell geprüft werden?",
+"richtig": "Neigung zu Magenbeschwerden oder reaktiver Unterzuckerung",
+"falsch": [
+"Leberglykogen lässt sich vor dem Sport ernährungsseitig kaum füllen",
+"Über 90 Minuten Belastung bringt vorheriges Auffüllen keinen Effekt",
+"Vor langen Einheiten sollten Ballaststoffe möglichst maximiert werden"
+],
+"warum": "Je nach individueller Verträglichkeit müssen Ballaststoffgehalt und Art der Kohlenhydrate angepasst werden."
+}
+}
+},
+{
+"id": "CARB-112",
+"karte": {
+"kopf": "Ausdauersportler · Übersichtsarbeit",
+"titel": "Beim Sport zählt für Kohlenhydrate die Dauer, nicht dein Gewicht",
+"titel_hervor": "die Dauer, nicht dein Gewicht",
+"setup": "Ein Leitlinien-Review wertete aus, wie viel Kohlenhydrate der Darm während verschieden langer Ausdauerbelastungen aufnehmen und verwerten kann.",
+"zahl": null,
+"kern": [
+"Unter 45 Minuten brauchst du während der Einheit keine zusätzlichen Kohlenhydrate.",
+"Bei 45 bis 75 Minuten hartem Tempo hilft oft schon kurzes Ausspülen des Mundes.",
+"Erst ab rund einer Stunde sind 30 bis 60 Gramm pro Stunde sinnvoll, ab 2,5 Stunden mehr."
+],
+"grenze": "Hohe Mengen bis 90 Gramm pro Stunde klappen meist erst nach vorheriger Gewöhnung des Darms.",
+"fuer_dich": "Trainierst du länger als eine Stunde am Stück? Plane feste Mengen pro Stunde ein, statt nach deinem Körpergewicht zu rechnen.",
+"labor": {
+"design": "Leitlinien-Review zur Intra-Workout-Kohlenhydratzufuhr nach Belastungsdauer",
+"teilnehmer": "Ausdauer- und Hybridsportler",
+"ergebnis": "<45 min: 0 g/h; 45–75 min: Mundspülung; 1–2,5 h: 30–60 g/h; >2,5 h: bis 90 g/h"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Zwei gleich schnelle Läufer – einer wiegt 55 Kilo, der andere 85 Kilo – laufen zwei Stunden zusammen. Wovon hängt ab, wie viel Kohlenhydrate sie pro Stunde während des Laufs brauchen?",
+"richtig": "Vor allem von der Laufdauer, kaum vom Körpergewicht",
+"falsch": [
+"Fast ausschließlich vom Körpergewicht des Läufers",
+"Nur davon, wie groß die Beinmuskeln der Person sind",
+"Unter drei Stunden braucht kein Läufer Energie unterwegs"
+],
+"warum": "Die Aufnahmekapazität im Darm richtet sich während des Sports nicht nach dem Körpergewicht, sondern nach der Belastungsdauer."
+},
+"plus": {
+"frage": "Du absolvierst einen sehr intensiven 60-Minuten-Wettkampf, verträgst aber bei hohem Tempo kaum Essen im Magen. Welche Strategie passt hier gut?",
+"richtig": "Den Mund kurz mit einem Kohlenhydrat-Drink spülen oder kleine Schlucke",
+"falsch": [
+"Trotzdem so viel wie bei einem Vier-Stunden-Lauf zuführen",
+"Vorab drei Stunden lang gar nichts trinken",
+"Unterwegs nur reines Eiweißpulver im Wasser auflösen"
+],
+"warum": "Bei 45 bis 75 Minuten aktivieren Kohlenhydratrezeptoren im Mund das Nervensystem auch ohne große Mengen im Magen."
+},
+"labor": {
+"frage": "In einer Leitlinien-Übersicht zur Zufuhr während des Sports wurden Empfehlungen nach Belastungsdauer gestaffelt. Über welchen Mechanismus wirkt eine Kohlenhydrat-Mundspülung bei 45 bis 75 Minuten?",
+"richtig": "Zentrale Aktivierung über Rezeptoren im Mundraum",
+"falsch": [
+"Vollständige Wiederauffüllung der Muskelglykogenspeicher",
+"Direkte Aufnahme großer Zuckermengen über die Mundschleimhaut",
+"Sofortige Steigerung der Fettverbrennung in der Leber"
+],
+"warum": "Orale Kohlenhydratrezeptoren senden Signale ans zentrale Nervensystem und können so die Leistung bei 45 bis 75 Minuten stützen."
+}
+}
+},
+{
+"id": "CARB-113",
+"karte": {
+"kopf": "Ausdauersportler · 14 Studien zusammengefasst",
+"titel": "Ein Mix aus zwei Zuckerarten steigert lange Ausdauerleistungen",
+"titel_hervor": "zwei Zuckerarten",
+"setup": "In 14 Leistungsstudien wurde getestet, ob eine Mischung aus Glukose und Fruktose bei hoher Zufuhr besser wirkt als reine Glukose.",
+"zahl": {
+"label": "Mehr Leistung bei hoher Zufuhr",
+"wert": "+1–9 %",
+"alltag": ""
+},
+"kern": [
+"Reine Glukose stößt im Darm bei rund 60 Gramm pro Stunde an eine Aufnahmegrenze.",
+"Fruktose nutzt einen zweiten Transportweg und erhöht die verwertbare Energie deutlich.",
+"Dadurch leert sich der Magen schneller und Beschwerden treten seltener auf."
+],
+"grenze": "Unterhalb von 60 Gramm pro Stunde zeigt der Mix keinen klaren Vorteil gegenüber reiner Glukose.",
+"fuer_dich": "Brauchst du bei langen Einheiten über 60 Gramm Kohlenhydrate pro Stunde? Wähle Gels oder Drinks mit Glukose und Fruktose.",
+"labor": {
+"design": "Systematisches Review mit Meta-Analyse (Glukose-Fruktose-Mix vs. reine Glukose)",
+"teilnehmer": "14 Leistungsstudien mit Ausdauer- und Ultra-Athleten",
+"ergebnis": "SGLT1-Limit ~1,0–1,1 g/min; Mix-Oxidation bis 1,80 g/min; Leistung +1–9 % bei >78 g/h"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Warum enthalten viele Sportgels für lange Läufe sowohl Trauben- als auch Fruchtzucker statt nur einer einzigen Zuckerart?",
+"richtig": "Der Darm kann beide über getrennte Wege gleichzeitig aufnehmen",
+"falsch": [
+"Die Mischung schmeckt zwar süßer, liefert aber weniger Energie",
+"Eine einzelne Zuckerart kann beim Sport gar nicht verdaut werden",
+"Fruchtzucker ersetzt bei langen Läufen das Trinken von Wasser"
+],
+"warum": "Traubenzucker allein stößt im Darm an ein Limit; Fruchtzucker nutzt einen zweiten Kanal und steigert die Gesamtaufnahme."
+},
+"plus": {
+"frage": "Du planst einen langen Lauf über drei Stunden und willst mehr als 60 Gramm Kohlenhydrate pro Stunde zu dir nehmen. Worauf solltest du bei deinen Gels achten?",
+"richtig": "Auf eine Mischung aus Glukose bzw. Maltodextrin und Fruktose",
+"falsch": [
+"Auf Produkte mit ausschließlich reiner Glukose ohne Zusätze",
+"Auf möglichst viel Ballaststoffe für eine langsame Verdauung",
+"Auf reine Fruktose, damit der Glukosetransporter geschont wird"
+],
+"warum": "Ab über 60 Gramm pro Stunde sättigt der Glukosetransporter, sodass erst die Mischung höhere Raten und weniger Bauchprobleme erlaubt."
+},
+"labor": {
+"frage": "Eine Meta-Analyse von 14 Leistungsstudien verglich Glukose-Fruktose-Mischungen mit reiner Glukose bei Ausdauerbelastungen. Wann blieb ein klarer Leistungsvorteil aus?",
+"richtig": "Bei Zufuhrraten unterhalb von rund 60 Gramm pro Stunde",
+"falsch": [
+"Bei Zufuhrraten oberhalb von 78 Gramm pro Stunde",
+"Sobald das Verhältnis nahe 2 zu 1 oder 1 zu 0,8 lag",
+"Bei Belastungen, die länger als zweieinhalb Stunden dauerten"
+],
+"warum": "Erst oberhalb der SGLT1-Sättigungsgrenze von etwa 60 g/h bringt der zusätzliche GLUT5-Transporter einen klaren Vorteil."
+}
+}
+},
+{
+"id": "CARB-114",
+"karte": {
+"kopf": "Ausdauersportler · Übersichtsarbeit",
+"titel": "Dein Magen gewöhnt sich in Wochen an Essen beim Sport",
+"titel_hervor": "gewöhnt sich in Wochen",
+"setup": "Kontrollierte Studien prüften, wie der Verdauungstrakt darauf reagiert, wenn Sportler mehrere Wochen lang gezielt beim Training Kohlenhydrate einnehmen.",
+"zahl": null,
+"kern": [
+"Erste Verbesserungen bei der Verträglichkeit zeigten sich oft schon nach zwei Wochen.",
+"Nach vier bis sechs Wochen nimmt der Darm deutlich größere Mengen pro Stunde auf.",
+"Übelkeit, Völlegefühl und Krämpfe unter Belastung nahmen spürbar ab."
+],
+"grenze": "Durch die Erschütterung beim Laufen reagiert der Bauch empfindlicher als auf dem Rad.",
+"fuer_dich": "Planst du einen Wettkampf über 2,5 Stunden? Übe deine Verpflegung sechs Wochen vorher schrittweise direkt im Lauftraining.",
+"labor": {
+"design": "Review und kontrollierte Interventionsstudien zum progressiven Gut-Training",
+"teilnehmer": "Ausdauer- und Hybridsportler",
+"ergebnis": "Erste Adaptation nach 2 Wochen, volle Toleranz bis 90 g/h nach 4–6 Wochen; weniger GI-Symptome"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du bekommst beim Laufen leicht Bauchweh, wenn du unterwegs Gels nimmst. Bedeutet das, dass dein Magen das grundsätzlich nicht verträgt?",
+"richtig": "Nein, der Darm lässt sich über einige Wochen daran gewöhnen",
+"falsch": [
+"Ja, die Verträglichkeit beim Sport ist rein angeboren",
+"Ja, beim Laufen kann der Darm grundsätzlich nichts aufnehmen",
+"Nein, schon nach einem einzigen Testlauf ist der Magen angepasst"
+],
+"warum": "Der Magen-Darm-Trakt ist anpassungsfähig: Durch regelmäßiges Üben nimmt er mehr auf und reagiert ruhiger."
+},
+"plus": {
+"frage": "In sechs Wochen steht ein langer Laufwettkampf an, bei dem du hohe Mengen Kohlenhydrate pro Stunde nehmen willst. Wie bereitest du deinen Magen am besten vor?",
+"richtig": "Die stündliche Menge im Lauftraining über Wochen langsam steigern",
+"falsch": [
+"Die Wettkampfmenge erst am Renntag zum ersten Mal testen",
+"Nur beim lockeren Radfahren üben und beim Laufen nüchtern bleiben",
+"In den Wochen vorher möglichst wenig Kohlenhydrate essen"
+],
+"warum": "Schrittweises Üben im Laufen über 4 bis 6 Wochen steigert die Aufnahmefähigkeit und beugt Beschwerden unter Erschütterung vor."
+},
+"labor": {
+"frage": "Kontrollierte Interventionsstudien untersuchten wiederholte Kohlenhydratzufuhr während des Trainings über mehrere Wochen. Welcher Unterschied besteht dabei zwischen Laufen und Radfahren?",
+"richtig": "Laufen löst durch vertikale Erschütterung eher Magen-Darm-Symptome aus",
+"falsch": [
+"Radfahren verursacht durch die Sitzhaltung deutlich mehr Magenkrämpfe",
+"Die Transportkapazität im Darm passt sich nur bei Radfahrern an",
+"Zwischen beiden Sportarten gibt es bei der Verträglichkeit keinen Unterschied"
+],
+"warum": "Die Auf-und-ab-Bewegung beim Laufen reizt den Verdauungstrakt stärker, weshalb laufspezifisches Gut-Training wichtig ist."
+}
+}
+},
+{
+"id": "CARB-115",
+"karte": {
+"kopf": "Sportler · Fachleitlinie",
+"titel": "Schon zwei Prozent Flüssigkeitsverlust bremsen deine Leistung",
+"titel_hervor": "zwei Prozent Flüssigkeitsverlust",
+"setup": "Eine Fachleitlinie wertete Studien dazu aus, wie Schweißverlust und Salzmangel die Ausdauer, Kraft und Wärmeregulation beeinflussen.",
+"zahl": null,
+"kern": [
+"Je nach Person und Hitze gehen beim Sport 0,5 bis 2 Liter Schweiß pro Stunde verloren.",
+"Mit jedem Liter Schweiß verlierst du im Schnitt rund 800 Milligramm Natrium.",
+"Folgt bald die nächste Einheit, helfen rund 1,5 Liter Wasser pro verlorenem Kilo."
+],
+"grenze": "Wie viel du schwitzt und wie salzig dein Schweiß ist, unterscheidet sich stark von Mensch zu Mensch.",
+"fuer_dich": "Schwitzt du bei langen oder warmen Einheiten stark? Wiege dich vorher und nachher und ersetze Flüssigkeit gemeinsam mit etwas Salz.",
+"labor": {
+"design": "Positionspapier zu Flüssigkeits- und Elektrolythaushalt vor, während und nach Belastung",
+"teilnehmer": "Sportler verschiedener Disziplinen",
+"ergebnis": "Leistungsabfall ab >2 % BW-Verlust; Schweißrate 0,5–2,0 L/h; Ø 35 mEq/L (~800 mg/L) Natrium"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du hast im Sommer hart trainiert und ordentlich geschwitzt. Wann beginnt Flüssigkeitsmangel im Schnitt, deine Ausdauer und Kraft spürbar zu bremsen?",
+"richtig": "Schon ab gut zwei Prozent Verlust deines Körpergewichts",
+"falsch": [
+"Erst ab etwa zehn Prozent Verlust deines Körpergewichts",
+"Erst wenn du überhaupt nicht mehr schwitzen kannst",
+"Bei Krafttraining gar nicht, sondern nur bei langen Läufen"
+],
+"warum": "Bereits mehr als zwei Prozent Gewichtsverlust durch Schweiß beeinträchtigen sowohl Ausdauer- als auch Kraftleistung deutlich."
+},
+"plus": {
+"frage": "Du hast bei einer schwülen Einheit stark geschwitzt und trainierst in unter 12 Stunden schon wieder. Wie füllst du deine Flüssigkeit am sinnvollsten auf?",
+"richtig": "Etwas mehr trinken als das verlorene Gewicht und Natrium ergänzen",
+"falsch": [
+"Nur reines Wasser trinken und Salz komplett weglassen",
+"Genau die Hälfte des verlorenen Gewichts als Wasser trinken",
+"Mit dem Trinken warten, bis am Abend starker Durst kommt"
+],
+"warum": "Für schnelle Erholung braucht der Körper etwa das Eineinhalbfache des Gewichtsverlusts plus Natrium, damit Wasser gebunden bleibt."
+},
+"labor": {
+"frage": "Eine große Fachleitlinie fasste Daten zu Schweißverlusten und Elektrolyten im Sport zusammen. Warum lassen sich pauschale Trinkmengen pro Stunde nur begrenzt vorgeben?",
+"richtig": "Schweißrate und Salzkonzentration schwanken zwischen Personen sehr stark",
+"falsch": [
+"Die Schweißrate hängt ausschließlich von der Lufttemperatur ab",
+"Natrium geht über den Schweiß kaum verloren und bleibt konstant",
+"Die Leistung sinkt erst bei schwerer medizinischer Austrocknung"
+],
+"warum": "Weil Schweißraten von 0,5 bis 2,0 L/h und Salzverluste stark variieren, empfehlen Leitlinien individuelle Wiegetests."
+}
+}
+},
+{
+"id": "CARB-116",
+"karte": {
+"kopf": "Sportler mit Doppeleinheiten · Fachleitlinie",
+"titel": "Sofortige Kohlenhydrate nach dem Sport zählen erst bei zwei Einheiten",
+"titel_hervor": "erst bei zwei Einheiten",
+"setup": "Fachleitlinien zum Nährstoff-Timing werteten aus, wie schnell Energiespeicher nach dem Training wieder aufgefüllt werden können.",
+"zahl": null,
+"kern": [
+"In den ersten vier Stunden nach dem Training füllen sich leere Speicher am schnellsten.",
+"Mit etwas Eiweiß dazu klappt die schnelle Erholung auch bei etwas weniger Kohlenhydraten.",
+"Liegen 8 bis 24 Stunden bis zum nächsten Training, zählt vor allem die Tagesmenge."
+],
+"grenze": "Bei nur einer Einheit am Tag bringt minutengenaues Timing direkt nach dem Sport keinen großen Vorteil.",
+"fuer_dich": "Trainierst du heute in weniger als 8 Stunden ein zweites Mal? Dann iss direkt nach der ersten Einheit reichlich schnelle Kohlenhydrate.",
+"labor": {
+"design": "Positionspapier und Review zum Nährstoff-Timing und zur biphasischen Glykogenresynthese",
+"teilnehmer": "Hybrid- und Ausdauersportler mit Doppeleinheiten",
+"ergebnis": "Schnelle Phase (0–4 h): 1,0–1,2 g/kg/h KH oder 0,8 g/kg/h KH + 0,2–0,4 g/kg/h Protein"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du trainierst einmal am Tag und das nächste Training ist erst morgen wieder. Musst du direkt in den ersten Minuten nach dem Sport schnelle Kohlenhydrate essen?",
+"richtig": "Nein, bei einem Tag Pause zählt vor allem die Gesamtmenge am Tag",
+"falsch": [
+"Ja, nach 30 Minuten können die Muskeln nichts mehr aufnehmen",
+"Ja, sonst bleiben deine Speicher bis zum nächsten Tag leer",
+"Nein, nach dem Training sollten gar keine Kohlenhydrate folgen"
+],
+"warum": "Minutengenaues Nachfüllen lohnt sich vor allem bei kurzen Pausen unter acht Stunden, sonst reicht die Tagesmenge."
+},
+"plus": {
+"frage": "Du hast heute Morgen eine harte Einheit absolviert und in fünf Stunden folgt schon die zweite. Wie füllst du deine Speicher in den ersten vier Stunden am besten wieder auf?",
+"richtig": "Direkt starten und reichlich schnelle Kohlenhydrate, gern mit Eiweiß",
+"falsch": [
+"Zwei Stunden warten und dann eine sehr fettreiche Mahlzeit essen",
+"Nur einen reinen Eiweißshake ohne Kohlenhydrate trinken",
+"Erst nach der zweiten Einheit abends eine große Mahlzeit essen"
+],
+"warum": "In den ersten vier Stunden läuft die Wiederauffüllung am schnellsten – schnelle Kohlenhydrate (oder KH plus Eiweiß) sichern Einheit zwei."
+},
+"labor": {
+"frage": "Fachleitlinien zum Nährstoff-Timing beschreiben eine schnelle Phase der Glykogenresynthese in den ersten vier Stunden nach Belastung. Wann hilft die Zugabe von Protein besonders?",
+"richtig": "Wenn die hohe optimale Kohlenhydratmenge allein nicht erreicht wird",
+"falsch": [
+"Protein ersetzt Kohlenhydrate bei der Speicherung fast vollständig",
+"Nur wenn zwischen beiden Einheiten mindestens 24 Stunden liegen",
+"Protein verlangsamt die schnelle Phase und sollte gemieden werden"
+],
+"warum": "Kombinierte Zufuhr (0,8 g/kg/h KH plus 0,2–0,4 g/kg/h Protein) erzielt hohe Resyntheseraten, wenn 1,0–1,2 g/kg/h KH nicht machbar sind."
+}
+}
+},
+{
+"id": "CARB-117",
+"karte": {
+"kopf": "Ausdauersportler · Kontrollierte Studien",
+"titel": "Dauerhaft kaum Kohlenhydrate bremst dein Tempo im Wettkampf",
+"titel_hervor": "bremst dein Tempo",
+"setup": "Kontrollierte Studien verglichen dauerhafte Low-Carb-Diäten, gezieltes Nüchterntraining am Morgen und durchgehend kohlenhydratreiche Ernährung.",
+"zahl": null,
+"kern": [
+"Bei dauerhafter Low-Carb-Kost brauchten Sportler für dasselbe Tempo mehr Sauerstoff.",
+"Gezielte lockere Morgenläufe nach kohlenhydratarmem Abend verbesserten teils 10 km.",
+"Über alle Studien hinweg schlägt Nüchterntraining volle Speicher nicht verlässlich."
+],
+"grenze": "Untersucht an gut trainierten Ausdauersportlern – auf Krafttraining oder Einsteiger nicht direkt übertragbar.",
+"fuer_dich": "Willst du deine Ausdauer steigern? Streiche Kohlenhydrate nicht dauerhaft, sondern nutze sie gezielt rund um harte Einheiten.",
+"labor": {
+"design": "Kontrollierte Interventionsstudien (chronische LCHF-Diät vs. Sleep-Low vs. hohe KH-Zufuhr)",
+"teilnehmer": "Fortgeschrittene Ausdauersportler",
+"ergebnis": "Sleep-Low (6 g/kg/d): schnellere 10-km-Zeit; LCHF: schlechtere Ökonomie trotz VO2peak-Anstieg"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Manche sagen, eine dauerhaft sehr kohlenhydratarme Ernährung mache dich im Ausdauerwettkampf schneller, weil der Körper mehr Fett verbrennt. Was zeigten Studien?",
+"richtig": "Sie verschlechterte die Laufökonomie und bremste die Wettkampfleistung",
+"falsch": [
+"Sie machte Ausdauersportler im Wettkampf deutlich schneller",
+"Sie hatte keinerlei Einfluss auf Sauerstoffverbrauch oder Tempo",
+"Sie half vor allem bei kurzen, sehr schnellen Sprints"
+],
+"warum": "Bei chronischem Verzicht auf Kohlenhydrate braucht der Körper für dasselbe Tempo mehr Sauerstoff, was im Wettkampf bremst."
+},
+"plus": {
+"frage": "Du bist ein erfahrener Ausdauersportler im Kalorienerhalt und willst gezielt einmal pro Woche mit niedrigen Speichern trainieren. Für welche Einheit eignet sich das höchstens?",
+"richtig": "Für einen kurzen, lockeren Zone-1- oder Zone-2-Lauf am Morgen",
+"falsch": [
+"Für deine härteste HIIT-Einheit der gesamten Woche",
+"Für ein schweres Ganzkörper-Krafttraining mit hohem Volumen",
+"Als Dauerzustand für alle Trainingseinheiten über Monate"
+],
+"warum": "Gezielte Train-Low-Reize passen höchstens zu kurzen, lockeren Einheiten – harte Intervalle und Krafttraining leiden darunter."
+},
+"labor": {
+"frage": "Kontrollierte Studien verglichen eine chronische ketogene Diät mit sequenzieller Kohlenhydrat-Periodisierung bei Ausdauerathleten. Wie ist die gesamte Studienlage zu bewerten?",
+"richtig": "Über alle Studien gibt es keinen konstanten Vorteil von Train-Low gegen viel KH",
+"falsch": [
+"Chronische ketogene Kost verbesserte sowohl Ökonomie als auch Rennzeit",
+"Sequenzielles Train-Low war in jeder einzelnen Studie klar überlegen",
+"Hohe Kohlenhydratzufuhr senkte die maximale Sauerstoffaufnahme deutlich"
+],
+"warum": "Während einzelne Sleep-Low-Protokolle halfen, zeigen Meta-Analysen insgesamt keinen verlässlichen Vorteil gegenüber hohen KH."
+}
+}
+},
+{
+"id": "CARB-118",
+"karte": {
+"kopf": "Sportler · Labor- und Muskelstudien",
+"titel": "Training mit leeren Speichern lässt den Körper mehr Muskel abbauen",
+"titel_hervor": "mehr Muskel abbauen",
+"setup": "In Stoffwechsel- und Muskelproben-Studien wurde gemessen, wie viel Muskeleiweiß bei Training mit leeren Speichern verloren geht und ob Eiweiß vorher schützt.",
+"zahl": null,
+"kern": [
+"Sind die Kohlenhydratspeicher niedrig, verbrennt der Körper deutlich mehr Aminosäuren.",
+"20 bis 40 Gramm hochwertiges Eiweiß vor dem Start fangen diesen Abbau wirksam ab.",
+"Die gewünschten Ausdauersignale in den Muskelzellen bleiben dabei trotzdem aktiv."
+],
+"grenze": "Wie sich das über viele Monate auf die Muskelmasse im Hybridtraining auswirkt, ist noch wenig untersucht.",
+"fuer_dich": "Läufst du morgens locker und nüchtern? Trink vorher einen kleinen Eiweißshake ohne Kohlenhydrate, um deine Muskeln zu schützen.",
+"labor": {
+"design": "Stabile-Isotopen-Tracer-Studie und Molekularbiopsie (Training bei niedrigem Glykogen ± Protein)",
+"teilnehmer": "Hybrid- und Ausdauersportler",
+"ergebnis": "Erhöhte Aminosäureoxidation und negative Netto-Proteinbilanz; 20–40 g Protein erhält MPS bei aktiver AMPK"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du gehst mit niedrigen Energiespeichern locker laufen. Was passiert dabei mit dem Eiweiß in deinen Muskeln, wenn du vorher gar nichts zu dir nimmst?",
+"richtig": "Der Körper baut während des Laufs mehr Muskeleiweiß ab",
+"falsch": [
+"Der Körper schützt das Muskeleiweiß automatisch besser als sonst",
+"Der Körper verbrennt ausschließlich Körperfett und kein Eiweiß",
+"Der Muskelaufbau steigt während des Laufs deutlich an"
+],
+"warum": "Bei niedrigen Kohlenhydratspeichern nutzt der Körper vermehrt Aminosäuren zur Energiegewinnung, was die Proteinbilanz drückt."
+},
+"plus": {
+"frage": "Du planst eine lockere Ausdauereinheit mit wenig Kohlenhydraten, willst aber deine Muskelmasse schützen. Was nimmst du vor dem Start am besten ein?",
+"richtig": "Etwa 20 bis 30 Gramm hochwertiges Eiweiß ohne Kohlenhydrate",
+"falsch": [
+"Eine große Portion schnellen Zucker direkt vor dem Start",
+"Nur Wasser, weil Eiweiß den Ausdauerreiz sofort blockiert",
+"Einen Esslöffel Öl, um den Muskelabbau zu stoppen"
+],
+"warum": "Leuzinreiches Eiweiß vor dem Training bremst den Muskelabbau, ohne die gewünschten Ausdauersignale zu unterdrücken."
+},
+"labor": {
+"frage": "Tracer- und Biopsiestudien prüften Training mit niedrigem Muskelglykogen mit und ohne vorherige Proteinzufuhr. Wie beeinflusste Protein die molekulare Anpassung?",
+"richtig": "Es erhielt die Muskelproteinsynthese, ohne AMPK-Signale zu blockieren",
+"falsch": [
+"Es schaltete die AMPK-Signalkaskade fast vollständig ab",
+"Es verstärkte die Aminosäureoxidation während der Belastung",
+"Es zeigte erst bei gleichzeitiger hoher Zuckerzufuhr eine Wirkung"
+],
+"warum": "20 bis 40 Gramm leuzinreiches Protein glichen die negative Proteinbilanz aus, während AMPK aktiv blieb."
+}
+}
+},
+{
+"id": "CARB-119",
+"karte": {
+"kopf": "Elite-Ausdauersportler · Kontrollierte Studie",
+"titel": "Sechs Tage kaum Kohlenhydrate bremsen den Knochenaufbau deutlich",
+"titel_hervor": "bremsen den Knochenaufbau",
+"setup": "Elite-Ausdauersportler aßen sechs Tage lang sehr kohlenhydratarm bei vollen Kalorien, während Blutmarker für Knochenauf- und -abbau gemessen wurden.",
+"zahl": {
+"label": "Weniger Knochenaufbau-Signal (6 Tage)",
+"wert": "−21,1 %",
+"alltag": "≈ ein Fünftel weniger"
+},
+"kern": [
+"Obwohl genug Kalorien gegessen wurden, stieg das Signal für Knochenabbau um 28 Prozent.",
+"Kohlenhydratmangel traf die Knochen stärker als reines Kaloriensparen.",
+"Auf Dauer kann ein gestörter Knochenumbau das Risiko für Stressverletzungen erhöhen."
+],
+"grenze": "Gemessen wurden kurzfristige Blutmarker – jahrelange Messungen der Knochendichte sind aus ethischen Gründen kaum möglich.",
+"fuer_dich": "Du machst gerade Diät oder läufst viel? Verzichte auch an Ruhetagen nicht extrem auf Kohlenhydrate, um deine Knochen zu schützen.",
+"labor": {
+"design": "Kontrollierte klinische Studie (6 Tage LCHF bei 40 kcal/kg FFM Energieverfügbarkeit)",
+"teilnehmer": "Elite-Ausdauerathleten",
+"ergebnis": "P1NP AUC −21,1 % (p < 0,0001, d = 3,2); Osteocalcin −24 %; CTX AUC +28,0 % (p = 0,008, d = 1,9)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du isst genug Kalorien, streichst aber fast alle Kohlenhydrate für eine Woche aus deinem Essen. Bleibt dein Knochenstoffwechsel dabei unberührt?",
+"richtig": "Nein, schon nach Tagen sinkt der Knochenaufbau und der Abbau steigt",
+"falsch": [
+"Ja, solange genug Kalorien drin sind, merken Knochen nichts davon",
+"Ja, Knochen reagieren erst nach mehreren Monaten ohne Kohlenhydrate",
+"Nein, aber der Knochenaufbau wird dadurch sogar deutlich verstärkt"
+],
+"warum": "Selbst bei voller Kalorienzahl bremste starker Kohlenhydratmangel nach sechs Tagen die Signale für den Knochenaufbau."
+},
+"plus": {
+"frage": "Du bist im Kaloriendefizit und trainierst viel Laufen. Wie gehst du an Ruhetagen mit deinen Kohlenhydraten um, um Stressverletzungen vorzubeugen?",
+"richtig": "Eine sinnvolle Untergrenze einhalten statt extrem low-carb zu essen",
+"falsch": [
+"An Ruhetagen fast vollständig auf Kohlenhydrate verzichten",
+"Kohlenhydrate komplett durch zusätzliches Fett ersetzen",
+"Nur vor Wettkämpfen Kohlenhydrate einbauen und sonst streichen"
+],
+"warum": "Akute Kohlenhydratrestriktion stört den Knochenumbau stärker als ein Kaloriendefizit allein, daher schützt eine Untergrenze."
+},
+"labor": {
+"frage": "In einer klinischen Studie aßen Elite-Ausdauerathleten sechs Tage lang sehr kohlenhydratarm bei ausreichender Energieverfügbarkeit. Welche methodische Grenze gilt für die Ergebnisse?",
+"richtig": "Gemessen wurden akute Blutmarker des Knochenumbaus, keine Langzeit-Dichte",
+"falsch": [
+"Die Sportler befanden sich gleichzeitig in einem extremen Kaloriendefizit",
+"Die Veränderungen bei Aufbau- und Abbaumarkern waren kaum messbar",
+"Es wurden ausschließlich inaktive Personen ohne Laufbelastung untersucht"
+],
+"warum": "Die sehr starken Effekte betreffen biochemische Knochenumbaumarker; mehrjährige DXA-Studien sind ethisch kaum vertretbar."
+}
+}
+},
+{
+"id": "CARB-120",
+"karte": {
+"kopf": "Sportlerinnen · Fachleitlinie & Studie",
+"titel": "Längere Essenspausen belasten den Hormonhaushalt von Frauen stärker",
+"titel_hervor": "Hormonhaushalt von Frauen",
+"setup": "Eine Fachleitlinie für Sportlerinnen und eine Querschnittsstudie werteten aus, wie Essenspausen und Zyklusphasen Stoffwechsel und Hormone beeinflussen.",
+"zahl": null,
+"kern": [
+"In der zweiten Zyklushälfte bauen Frauen unter Belastung leichter körpereigenes Eiweiß ab.",
+"Viele Stunden im Tagesdefizit hingen mit niedrigerem Ruheverbrauch und Östradiol zusammen.",
+"Nüchterntraining belastet den weiblichen Hormonhaushalt oft stärker als bei Männern."
+],
+"grenze": "Zykluslängen schwanken stark zwischen 22 und 35 Tagen, weshalb pauschale Tage nicht für jede passen.",
+"fuer_dich": "Du trainierst früh morgens oder fühlst dich vor der Periode schlapp? Iss vor dem Training eine kleine Portion Kohlenhydrate und Eiweiß.",
+"labor": {
+"design": "Positionspapier für Sportlerinnen und Querschnittsstudie zu untertägigen Energiedefiziten (WDED)",
+"teilnehmer": "Sportlerinnen",
+"ergebnis": "WDED <-300 kcal (21,8 vs. 17,6 h, p = 0,043) korreliert negativ mit RMR und Östradiol"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Stimmt es, dass Sportlerinnen und Sportler auf lange Essenspausen und Nüchterntraining körperlich genau gleich reagieren?",
+"richtig": "Nein, der weibliche Hormonhaushalt reagiert darauf oft empfindlicher",
+"falsch": [
+"Ja, Stoffwechsel und Hormone reagieren bei allen genau gleich",
+"Nein, Frauen vertragen sehr lange Essenspausen im Schnitt besser",
+"Ja, Zyklusphasen haben auf Energie und Eiweißabbau keinen Einfluss"
+],
+"warum": "Frauen reagieren empfindlicher auf untertägige Energiedefizite und bauen in der zweiten Zyklushälfte leichter Eiweiß ab."
+},
+"plus": {
+"frage": "Du bist eine Sportlerin und trainierst morgens oder in der zweiten Zyklushälfte. Wie versorgst du dich rund um die Einheit am besten?",
+"richtig": "Nüchterntraining meiden und vorab etwas Kohlenhydrate plus Eiweiß essen",
+"falsch": [
+"Möglichst lange nüchtern trainieren, um Hormone zu stabilisieren",
+"In der zweiten Zyklushälfte Kohlenhydrate und Eiweiß halbieren",
+"Die gesamten Tageskalorien erst spät am Abend nachholen"
+],
+"warum": "Zeitnahe Energie und Eiweiß rund ums Training schützen vor langen Defizitstunden, höherem Eiweißabbau und hormonellem Stress."
+},
+"labor": {
+"frage": "Eine Querschnittsstudie an Sportlerinnen untersuchte, wie viele Stunden pro Tag im untertägigen Energiedefizit verbracht wurden. Womit hing ein längeres Defizit zusammen?",
+"richtig": "Mit einem niedrigeren Ruheumsatz und geringeren Östradiolwerten",
+"falsch": [
+"Mit einer verbesserten Schilddrüsenfunktion und höherem Östradiol",
+"Mit geringerem Proteinabbau in der Lutealphase unter Belastung",
+"Mit keinerlei Unterschieden bei Ruheumsatz oder Hormonen"
+],
+"warum": "Mehr Stunden im untertägigen Defizit unter −300 kcal korrelierten negativ mit Ruheumsatz und Östradiol."
+}
+}
+},
+{
+"id": "CARB-121",
+"karte": {
+"kopf": "Sportler · Internationales Konsenspapier",
+"titel": "Dauerhaft zu wenig Energie bremst Hormone, Knochen und Leistung",
+"titel_hervor": "Hormone, Knochen und Leistung",
+"setup": "Ein internationales Expertengremium fasste die Forschung zusammen, wie dauerhafter Energiemangel im Sport verschiedene Körpersysteme beeinträchtigt.",
+"zahl": null,
+"kern": [
+"Betroffen sind unter anderem Zyklus, Libido, Knochendichte, Eisenhaushalt und Abwehr.",
+"Frühe Warnzeichen sind schlechter Schlaf und ungewohnt anstrengende leichte Läufe.",
+"Auch bei Männern sanken bei starkem Mangel Stoffwechselhormone wie Leptin und Insulin."
+],
+"grenze": "Über Ernährungstagebücher lässt sich die echte Energieverfügbarkeit im Alltag nur ungenau berechnen.",
+"fuer_dich": "Dein Zyklus bleibt aus, leichte Läufe wirken schwer oder Knochen schmerzen? Pausiere harte Diäten, iss mehr und kläre es ärztlich ab.",
+"labor": {
+"design": "Internationales Konsenspapier zu chronisch niedriger Energieverfügbarkeit im Sport (REDs)",
+"teilnehmer": "Sportlerinnen und Sportler",
+"ergebnis": "EA-Schwellen: Frauen <30 kcal/kg FFM/d (LH); Männer <15–25 (Leptin −53 bis −56 %, Insulin −34 bis −38 %)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Kann es im Sport auch Männer treffen, wenn sie über längere Zeit deutlich zu wenig essen für ihr Training?",
+"richtig": "Ja, auch bei Männern leiden Hormone, Leistung und Gesundheit",
+"falsch": [
+"Nein, dauerhafter Energiemangel betrifft ausschließlich Frauen",
+"Nein, Männer bauen bei zu wenig Essen einfach nur schneller Fett ab",
+"Ja, aber erst nach mehreren Jahren ohne Probleme im Alltag"
+],
+"warum": "Auch bei Männern senkt chronischer Energiemangel wichtige Hormone, Libido, Immunfunktion und Trainingsanpassung."
+},
+"plus": {
+"frage": "Deine eigentlich leichten Zone-2-Läufe fühlen sich plötzlich viel härter an, du schläfst schlecht und verlierst schnell Gewicht. Was ist der klügste nächste Schritt?",
+"richtig": "Kaloriendefizit pausieren, Energie anheben und Beschwerden ärztlich prüfen",
+"falsch": [
+"Das Trainingsvolumen steigern, um aus dem Formtief herauszukommen",
+"Die Kohlenhydrate weiter senken, damit der Körper sparsamer wird",
+"Die Signale ignorieren, solange dein Tagesprotokoll genug Kalorien zeigt"
+],
+"warum": "Solche Warnzeichen deuten auf ein relatives Energiedefizit hin – rechtzeitiges Gegensteuern und Abklärung schützen vor Schäden."
+},
+"labor": {
+"frage": "Ein internationales Konsenspapier fasste Daten zur Früherkennung chronisch niedriger Energieverfügbarkeit zusammen. Warum sollten klinische und subjektive Marker Vorrang vor Tagebuch-Rechnungen haben?",
+"richtig": "Weil Feldschätzungen über Ernährungstagebücher sehr fehleranfällig sind",
+"falsch": [
+"Weil sich Energieverfügbarkeit rechnerisch gar nicht definieren lässt",
+"Weil hormonelle Veränderungen erst nach Stressfrakturen auftreten",
+"Weil objektive Leistungstests im Sport keine Warnzeichen liefern"
+],
+"warum": "Alltagsprotokolle erfassen Aufnahme und Verbrauch oft ungenau, sodass körperliche und subjektive Warnzeichen verlässlicher sind."
+}
+}
+},
+{
+"id": "CARB-122",
+"karte": {
+"kopf": "Sportler mit Diabetes · Fachleitlinie",
+"titel": "Laufen und Krafttraining steuern den Blutzucker gegensätzlich",
+"titel_hervor": "den Blutzucker gegensätzlich",
+"setup": "Internationale Diabetes-Leitlinien fassten zusammen, wie verschiedene Trainingsarten den Blutzucker bei Typ-1- und Typ-2-Diabetes beeinflussen.",
+"zahl": null,
+"kern": [
+"Gleichmäßige Ausdauerläufe erhöhen vor allem das Risiko für zu niedrigen Blutzucker.",
+"Schweres Krafttraining und Intervalle lassen ihn durch Stresshormone oft kurz steigen.",
+"Höchstens zwei Pausentage am Stück helfen, die Insulinempfindlichkeit zu erhalten."
+],
+"grenze": "Die genaue Reaktion schwankt stark je nach Tageszeit und aktivem Insulin – eine App ersetzt keine Arztberatung.",
+"fuer_dich": "Du hast Diabetes und trainierst Kraft oder Ausdauer? Stimme deine Kohlenhydrat- und Insulinstrategie vorher ärztlich ab.",
+"labor": {
+"design": "Internationales Konsenspapier und Leitlinie zu Bewegung bei Diabetes Typ 1 und Typ 2",
+"teilnehmer": "Menschen mit Diabetes mellitus Typ 1 oder Typ 2",
+"ergebnis": "Aerob: Hypoglykämie-Risiko; HIIT/Kraft: transiente Hyperglykämie; max. 2 Pausentage für Insulinsensitivität"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Senkt jede Art von Sport bei Menschen mit Diabetes den Blutzucker auf genau dieselbe Weise?",
+"richtig": "Nein, Ausdauer senkt ihn oft, schweres Krafttraining kann ihn kurz heben",
+"falsch": [
+"Ja, jede Bewegung senkt den Blutzucker sofort und gleich stark",
+"Ja, Sport lässt den Blutzucker grundsätzlich stark ansteigen",
+"Nein, nur Krafttraining beeinflusst den Blutzuckerspiegel"
+],
+"warum": "Gleichmäßige Ausdauer verbraucht viel Zucker, während Stresshormone bei schwerem Krafttraining den Wert vorübergehend heben können."
+},
+"plus": {
+"frage": "Du hast Diabetes und möchtest regelmäßig Krafttraining und HIIT in deinen Trainingsplan aufnehmen. Wie gehst du bei Anpassungen von Kohlenhydraten und Insulin vor?",
+"richtig": "Die Strategie vorab ärztlich abstimmen statt per Fitness-App zu rechnen",
+"falsch": [
+"Insulindosen direkt über eine normale Fitness-App berechnen lassen",
+"Vor jedem Krafttraining pauschal große Mengen Zucker ohne Rücksprache essen",
+"Mindestens vier Tage Pause zwischen allen Einheiten einlegen"
+],
+"warum": "Wegen gegensätzlicher und stark schwankender Blutzuckerreaktionen gehört die Dosierungsplanung in ärztliche Hände."
+},
+"labor": {
+"frage": "Internationale Diabetes-Leitlinien beschreiben unterschiedliche Blutzuckerverläufe bei aerobem Training gegenüber HIIT und schwerem Krafttraining. Worauf beruht die hohe Schwankung im Alltag?",
+"richtig": "Unter anderem auf der Tageszeit und der Menge an aktivem Bolusinsulin",
+"falsch": [
+"Ausschließlich darauf, ob Typ-1- oder Typ-2-Diabetes vorliegt",
+"Darauf, dass Stresshormone bei Ausdauerläufen am höchsten ansteigen",
+"Auf einer fehlenden Wirkung regelmäßiger Bewegung auf Insulin"
+],
+"warum": "Aktives Bolusinsulin und Tageszeit verändern die individuelle Blutzuckerreaktion stark, selbst bei identischem Training."
+}
+}
+},
+{
+"id": "CON-101",
+"karte": {
+"kopf": "Trainierende · 43 Studien zusammengefasst",
+"titel": "Ausdauertraining bremst den Muskelaufbau im Schnitt nicht",
+"titel_hervor": "Muskelaufbau im Schnitt nicht",
+"setup": "Verglichen wurde reines Krafttraining mit kombiniertem Kraft- und Ausdauertraining über mindestens vier Wochen bei gleichem Kraftvolumen.",
+"zahl": null,
+"kern": [
+"Gilt für Einsteiger, Trainierte sowie Menschen unter und über 40 Jahren.",
+"Selbst bis zu fünf Ausdauereinheiten pro Woche schmälerten das Wachstum nicht.",
+"Auf einzelner Muskelfaserebene sind dennoch kleine Unterschiede möglich."
+],
+"grenze": "Hochtrainierte Bodybuilder waren kaum vertreten – für sie ist die Aussagekraft begrenzt.",
+"fuer_dich": "Du willst Muskeln aufbauen und trotzdem joggen oder radeln? Behalte dein normales Kraftvolumen einfach bei.",
+"labor": {
+"design": "Systematisches Review & Meta-Analyse, ≥ 4 Wochen, Kraft vs. Kraft + Ausdauer",
+"teilnehmer": "43 Studien (15 zu Hypertrophie), Einsteiger bis Trainierte, < 40 & > 40 J.",
+"ergebnis": "SMD −0,01 (95 % KI −0,16 bis 0,18, p = 0,919)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du gehst dreimal pro Woche ins Krafttraining und möchtest zusätzlich joggen. Was passiert meist mit deinem Muskelaufbau?",
+"richtig": "Deine Muskeln wachsen im Schnitt genauso gut weiter",
+"falsch": [
+"Das Laufen baut deine Muskeln sofort wieder ab",
+"Du baust deutlich weniger Muskelmasse auf",
+"Muskelaufbau klappt dann nur noch am Oberkörper"
+],
+"warum": "Solange dein Krafttraining gleich bleibt, bremst zusätzliches Ausdauertraining das Muskelwachstum im Schnitt nicht."
+},
+"plus": {
+"frage": "Dein Hauptziel ist Muskelaufbau, aber du planst zusätzlich einige Ausdauereinheiten pro Woche. Wie passt du dein Kraftvolumen an?",
+"richtig": "Du behältst dein reguläres Hypertrophie-Volumen einfach bei",
+"falsch": [
+"Du halbierst dein Kraftvolumen wegen des Ausdauertrainings",
+"Du streichst Ausdauer ganz, da sonst nichts wächst",
+"Du verdoppelst dein Kraftvolumen zum Ausgleich"
+],
+"warum": "Bei gleichem Kraftvolumen zeigen Übersichtsarbeiten bis zu fünf Ausdauereinheiten keinen pauschalen Verlust beim Muskelwachstum."
+},
+"labor": {
+"frage": "In einer Meta-Analyse über 15 Hypertrophie-Studien wurde Ganzmuskelwachstum (MRT/Ultraschall) bei Kraft- vs. kombiniertem Training verglichen. Was zeigte sich?",
+"richtig": "Kein statistisch bedeutsamer Unterschied zwischen beiden Gruppen",
+"falsch": [
+"Ein starker Verlust an Muskelmasse ab vier Wochen Dauer",
+"Ein klarer Nachteil erst bei Personen über 40 Jahren",
+"Ein signifikanter Vorteil durch zusätzliches Ausdauertraining"
+],
+"warum": "Mit einer Effektstärke von SMD −0,01 lag auf Ganzmuskelebene keine Interferenz vor; nur Bodybuilder waren unterrepräsentiert."
+}
+}
+},
+{
+"id": "CON-102",
+"karte": {
+"kopf": "Trainierte · 15 Studien zusammengefasst",
+"titel": "Laufen bremst das Wachstum einzelner Muskelfasern leicht",
+"titel_hervor": "einzelner Muskelfasern leicht",
+"setup": "Gewebeproben aus dem Muskel zeigten, wie stark einzelne Fasern bei reinem Krafttraining im Vergleich zu Kraft plus Laufen oder Radfahren wuchsen.",
+"zahl": null,
+"kern": [
+"Betroffen waren vor allem die ausdauernden Muskelfasern in den Beinen.",
+"Beim Radfahren zeigte sich dieser Bremseffekt in den Fasern nicht.",
+"Auf den gesamten Muskel bezogen war der Unterschied kaum messbar."
+],
+"grenze": "Gewebeproben schwanken stark und stammen aus kleinen Gruppen – der Effekt ist unsicher.",
+"fuer_dich": "Du willst maximale Beinmuskeln und machst mehr als zwei Ausdauereinheiten? Tausche Laufen öfter gegen Radfahren.",
+"labor": {
+"design": "Systematisches Review & Meta-Analyse, Muskelbiopsien, Kraft vs. Kraft + Ausdauer",
+"teilnehmer": "15 Studien, 300 Teilnehmende",
+"ergebnis": "Gesamt SMD −0,23 (p=0,05); Typ-I bei Laufen SMD −0,81 (95 % KI −1,26 bis −0,36)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du möchtest möglichst kräftige Beinmuskeln aufbauen und zusätzlich Ausdauer trainieren. Welche Sportart verträgt sich auf Zellebene etwas besser damit?",
+"richtig": "Radfahren statt häufigem Laufen",
+"falsch": [
+"Laufen statt häufigem Radfahren",
+"Beides verhindert jeden Muskelaufbau",
+"Nur leichtes Dehnen nach dem Training"
+],
+"warum": "In Muskelproben bremste Laufen das Wachstum bestimmter Fasern leicht ab, Radfahren hingegen nicht."
+},
+"plus": {
+"frage": "Dein Fokus liegt auf maximaler Bein-Hypertrophie, aber du planst mehrere Ausdauereinheiten pro Woche. Wie wählst du deine Ausdauermodalität?",
+"richtig": "Du setzt eher auf Radfahren statt auf Laufen",
+"falsch": [
+"Du ersetzt Radfahren gezielt durch lange Läufe",
+"Du streichst jedes Beintraining für vier Wochen",
+"Du machst nur noch lockere Oberkörper-Einheiten"
+],
+"warum": "Beim Radfahren trat keine Abschwächung des Faserwachstums auf, während Laufen ausdauernde Fasern leicht bremste."
+},
+"labor": {
+"frage": "In einer Meta-Analyse wurden 15 Biopsie-Studien zu Faser-Hypertrophie bei Concurrent Training ausgewertet. Was zeigte die Subgruppenanalyse nach Modalität?",
+"richtig": "Deutliche Reduktion in Typ-I-Fasern beim Laufen, nicht beim Radfahren",
+"falsch": [
+"Starke Reduktion in Typ-II-Fasern ausschließlich beim Radfahren",
+"Einheitlich starker Muskelverlust auf Ganzmuskel- und Faserebene",
+"Signifikanter Vorteil für Typ-I-Fasern durch zusätzliches Laufen"
+],
+"warum": "Bei Läufern sank das Typ-I-Faserwachstum (SMD −0,81), allerdings sind Biopsie-Daten klein und variabel."
+}
+}
+},
+{
+"id": "CON-103",
+"karte": {
+"kopf": "Trainierte & Einsteiger · 27 Studien",
+"titel": "Bei Trainierten bremst eng getaktete Ausdauer die Beinkraft",
+"titel_hervor": "bremst eng getaktete Ausdauer",
+"setup": "Verglichen wurde der Kraftzuwachs im Unterkörper bei reinem Krafttraining versus kombiniertem Training, getrennt nach Trainingsstand und Pausenlänge.",
+"zahl": null,
+"kern": [
+"Bei Einsteigern und moderat Trainierten blieb die Maximalkraft ungestört.",
+"Der Kraftverlust trat bei Trainierten vor allem in derselben Einheit auf.",
+"Sechs bis 24 Stunden Pause ließen den Bremseffekt fast verschwinden."
+],
+"grenze": "Untersucht wurde vor allem die dynamische Beinkraft – für den Oberkörper gilt das nicht zwingend.",
+"fuer_dich": "Du bist bereits trainiert und willst deine Beinkraft steigern? Trenne Kraft und Ausdauer um mindestens sechs Stunden.",
+"labor": {
+"design": "Systematisches Review & Meta-Analyse, Kraft vs. Kraft + Ausdauer (< 20 min vs. 6–24 h)",
+"teilnehmer": "27 Studien, Untrainierte, moderat Trainierte und Trainierte",
+"ergebnis": "Trainierte gesamt ES −0,35; gleiche Einheit ES −0,66 vs. getrennt ES −0,10"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Wer verliert beim kombinierten Kraft- und Ausdauertraining am ehesten etwas vom möglichen Kraftzuwachs in den Beinen?",
+"richtig": "Bereits gut Trainierte, die beides direkt nacheinander machen",
+"falsch": [
+"Einsteiger, die gerade erst mit dem Training beginnen",
+"Personen, die Kraft und Ausdauer auf verschiedene Tage legen",
+"Alle Sportler gleichermaßen, unabhängig vom Trainingsstand"
+],
+"warum": "Bei Trainierten stört vor allem die direkte Rest-Ermüdung, wenn beide Reize ohne Pause zusammenfallen."
+},
+"plus": {
+"frage": "Du trainierst schon lange und startest einen Zyklus für mehr Bein-Maximalkraft, willst aber weiter Ausdauer machen. Wie planst du die Woche?",
+"richtig": "Du legst mehrere Stunden Pause dazwischen oder trennst die Tage",
+"falsch": [
+"Du hängst das Ausdauertraining direkt ans schwere Beintraining",
+"Du reduzierst die Gewichte auf sehr leichte Lasten",
+"Du trainierst Kraft und Ausdauer nur noch im Zirkel"
+],
+"warum": "Eine Pause von sechs bis 24 Stunden verhindert die lokale und nervöse Rest-Ermüdung fast vollständig."
+},
+"labor": {
+"frage": "Eine Meta-Analyse (27 Studien) verglich den Interferenzeffekt auf die Unterkörper-Maximalkraft nach Trainingsstatus und zeitlichem Abstand. Was war der Haupttreiber?",
+"richtig": "Enge Kopplung unter 20 Minuten bei bereits trainierten Personen",
+"falsch": [
+"Ein genereller Kraftverlust über alle Leistungsstufen hinweg",
+"Geringes Ausdauervolumen bei ungeübten Einsteigern",
+"Lange Pausen von mehr als sechs Stunden zwischen Einheiten"
+],
+"warum": "Bei Trainierten lag der Effekt in derselben Einheit bei ES −0,66, bei getrennten Einheiten nur noch bei ES −0,10."
+}
+}
+}
+]

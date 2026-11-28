@@ -1,0 +1,1110 @@
+[
+{
+"id": "PER-105",
+"karte": {
+"kopf": "Trainierte Athleten · Vergleichsstudien",
+"titel": "Fokussierte Trainingsblöcke stärken vor allem die Explosivkraft",
+"titel_hervor": "vor allem die Explosivkraft",
+"setup": "Trainierte Athleten absolvierten über 6 bis 15 Wochen entweder nacheinander fokussierte Blöcke oder gemischte Trainingspläne.",
+"zahl": null,
+"kern": [
+"Bei Oberkörper-Schnellkraft und Sprunghöhe schnitten Blöcke teils klar besser ab.",
+"Für reine Maximalkraft lagen wellenförmige und gemischte Pläne teils sogar vorn.",
+"Wie gut Blöcke wirken, hängt stark davon ab, wie lang jede einzelne Phase dauert."
+],
+"grenze": "Für eine große Gesamtauswertung bei gleicher Trainingsmenge gibt es bisher noch zu wenige Einzelstudien.",
+"fuer_dich": "Du bereitest dich gezielt auf einen Wettkampf mit Explosivkraft vor? Nutze klare Blöcke, sonst reicht ein gemischter Plan.",
+"labor": {
+"design": "RCTs und Review (6–15 Wochen), Blockperiodisierung vs. traditionelle, wellenförmige und gemischte Pläne",
+"teilnehmer": "Trainierte Männer und Frauen (n = 17 bis 47 pro Einzelstudie)",
+"ergebnis": "Beinkraft +15,2 % (Block) vs. +27,7 % (WUP); Bankdrücken +2,0 % vs. +8,6 % (gemischt); Vorteile bei Power"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Wann lohnt es sich für Sportler, über mehrere Wochen jeweils nur eine einzige Fähigkeit wie Kraft oder Schnelligkeit zu trainieren?",
+"richtig": "Für gezielte Explosivkraft und Höhepunkte in der Saison",
+"falsch": [
+"Für Einsteiger als einziger Weg zu ersten Muskelzuwächsen",
+"Wenn man ohne Bewegung schnell Körperfett abbauen möchte",
+"Weil gemischte Pläne langfristig kaum Kraft aufbauen"
+],
+"warum": "Fokussierte Blöcke zeigten Vorteile bei Schnellkraft und Sprungleistung, nicht aber generell bei Kraft oder Muskelaufbau."
+},
+"plus": {
+"frage": "Du trainierst für allgemeinen Muskel- und Kraftaufbau ohne Wettkampftermin. Brauchst du strikte Blockperiodisierung?",
+"richtig": "Nein, ein wellenförmiges oder gemischtes Modell passt besser",
+"falsch": [
+"Ja, Blöcke steigern die Maximalkraft in jedem Vergleich stärker",
+"Ja, ohne Blöcke stagnieren Oberkörper und Beine sofort",
+"Nein, Muskelaufbau klappt nur ohne jede Trainingsstruktur"
+],
+"warum": "Für Maximalkraft und Hypertrophie waren Blöcke wellenförmigen oder gemischten Programmen nicht verlässlich überlegen."
+},
+"labor": {
+"frage": "Einzelstudien (6–15 Wochen) verglichen Blockperiodisierung mit wellenförmigen und gemischten Modellen bei Trainierten. Was ist die Hauptgrenze der Evidenz?",
+"richtig": "Zu wenige volumenäquivalente Studien für eine Meta-Analyse",
+"falsch": [
+"Es wurden ausschließlich untrainierte Senioren untersucht",
+"Die Blocklänge hatte in keinem Vergleich einen Einfluss",
+"Blockperiodisierung übertraf jedes Modell bei der Beinkraft"
+],
+"warum": "Bislang fehlen ausreichend volumenäquivalente Studien zum Poolen, und Ergebnisse variieren stark je nach Blockdauer."
+}
+}
+},
+{
+"id": "PER-106",
+"karte": {
+"kopf": "Trainierte Männer · Vergleichsstudie & Analyse",
+"titel": "Gewicht nach Anstrengungsgefühl macht oft etwas stärker",
+"titel_hervor": "oft etwas stärker",
+"setup": "Trainierte Männer wählten acht Wochen lang ihre Gewichte entweder nach gefühlter Anstrengung oder nach festen Prozentwerten.",
+"zahl": {
+"label": "Kniebeuge-Zuwachs nach Gefühl vs. Prozent",
+"wert": "+17,1 vs. +13,9 kg",
+"alltag": "im Schnitt +3,2 kg mehr in 8 Wochen"
+},
+"kern": [
+"Auch beim Bankdrücken fiel der Kraftzuwachs nach Gefühl im Schnitt leicht höher aus.",
+"Das Muskelwachstum war bei beiden Steuerungsarten praktisch identisch.",
+"Wer das Gewicht an die Tagesform anpasst, fängt gute wie schlechte Tage besser ab."
+],
+"grenze": "Die Unterschiede verfehlten knapp die strenge statistische Schwelle – beide Pläne funktionierten sehr gut.",
+"fuer_dich": "Dein Gewicht fühlt sich heute leichter oder schwerer an als geplant? Passe es um etwa 4 % pro RPE-Punkt Abweichung an.",
+"labor": {
+"design": "Kontrollierte Studie (8 Wochen, 3x/Woche DUP) und Meta-Analyse (k = 15), RPE/RIR vs. %1RM",
+"teilnehmer": "21 trainierte Männer (Einzelstudie); 15 Studien in Meta-Analyse",
+"ergebnis": "Kniebeuge ES 0,50 (+17,1 vs. +13,9 kg), Bank ES 0,28, Total ES 0,48 (p > 0,05); ≥ 8 Wo. SMD 0,30 (p = 0,06)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Ist es besser, das Trainingsgewicht nach festen Prozenttabellen oder nach dem eigenen Anstrengungsgefühl zu steuern?",
+"richtig": "Nach Gefühl klappt oft genauso gut oder leicht besser für Kraft",
+"falsch": [
+"Nur starre Prozenttabellen bringen zuverlässig mehr Kraft",
+"Nach Gefühl trainiert man meist viel zu leicht für Erfolge",
+"Feste Tabellen bauen doppelt so viel Muskelmasse auf"
+],
+"warum": "Die Steuerung nach empfundener Anstrengung führt zu ähnlichem Muskelaufbau und im Schnitt leicht höheren Kraftzuwächsen."
+},
+"plus": {
+"frage": "Dein Satz Kniebeugen war bei RPE 7 statt dem geplanten RPE 8, du hattest also mehr Reserven. Was tust du für den nächsten Satz?",
+"richtig": "Das Gewicht moderat um rund 4 % erhöhen",
+"falsch": [
+"Das Gewicht um 20 % steigern bis zum Versagen",
+"Das Gewicht aus Vorsicht um 10 % reduzieren",
+"Die restlichen Sätze für heute komplett streichen"
+],
+"warum": "Eine Anpassung von etwa 4 % pro ganzem RPE-Punkt hält dich zuverlässig im geplanten Belastungskorridor."
+},
+"labor": {
+"frage": "Über 8 bis 12 Wochen wurde Laststeuerung per RPE/RIR mit festen Prozenten (%1RM) verglichen. Wie fällt die statistische Einordnung für die Maximalkraft aus?",
+"richtig": "Kleiner bis moderater Trend zugunsten RPE, knapp nicht signifikant",
+"falsch": [
+"Hochsignifikante Überlegenheit bei Kraft und Hypertrophie",
+"Klarer statistischer Nachteil für RPE bei trainierten Männern",
+"Keinerlei Trend, da beide Gruppen identische Werte erreichten"
+],
+"warum": "Die Effektstärken sprechen leicht für RPE (ES 0,28–0,50; SMD 0,30), verfehlten aber knapp die Signifikanz (p = 0,06)."
+}
+}
+},
+{
+"id": "PER-107",
+"karte": {
+"kopf": "Einsteiger & Erfahrene · Messstudie",
+"titel": "Erfahrene schätzen ihre Reserven im Satz deutlich genauer ein",
+"titel_hervor": "deutlich genauer ein",
+"setup": "Einsteiger und erfahrene Kraftsportler schätzten, wie viele Wiederholungen noch gingen, während das Hanteltempo gemessen wurde.",
+"zahl": null,
+"kern": [
+"Je langsamer die Hantel wird, desto genauer spiegelt das Gefühl die echte Belastung.",
+"Erste Hinweise zeigen: Wer unter ein Jahr trainiert, verschätzt sich noch häufiger.",
+"Bei sehr vielen Wiederholungen oder großen Reserven wird das Schätzen für alle ungenau."
+],
+"grenze": "Kleine Querschnittsmessung – wie schnell Einsteiger das Einschätzen lernen, wurde hier nicht verfolgt.",
+"fuer_dich": "Du trainierst unter einem Jahr? Nutze feste Gewichte und prüfe dein Gefühl nur gelegentlich in einem sauberen Maximalsatz.",
+"labor": {
+"design": "Querschnitts- und Validierungsstudie, Tests bei 60/75/90 % 1RM und 8 Wdh. bei 70 % 1RM",
+"teilnehmer": "15 erfahrene Lifter (≥ 2 Jahre) vs. Einsteiger (< 1 Jahr)",
+"ergebnis": "Tempo vs. RPE: r = −0,88 (p < 0,001); Kniebeuge r = −0,87, Bank r = −0,79; Gruppenunterschied p = 0,023"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du sollst am Ende eines Satzes schätzen, wie viele Wiederholungen du noch geschafft hättest. Wann gelingt das am ehesten?",
+"richtig": "Mit mehr Trainingserfahrung und nahe an der Grenze",
+"falsch": [
+"Als frischer Anfänger bei sehr leichtem Gewicht",
+"Bei Sätzen mit zwanzig und mehr Wiederholungen",
+"Wenn noch mindestens sechs Wiederholungen locker gingen"
+],
+"warum": "Erfahrene schätzen ihre Reserven nahe der Ermüdung am genauesten ein, während große Abstände alle eher verschätzen."
+},
+"plus": {
+"frage": "Du trainierst seit vier Monaten im Gym und dein Plan gibt RPE 6 vor. Warum ist reines RIR-Schätzen hier noch unzuverlässig?",
+"richtig": "Mit wenig Erfahrung und viel RIR verschätzt man sich leicht",
+"falsch": [
+"Weil RPE 6 bereits das volle Muskelversagen bedeutet",
+"Weil die RIR-Skala nur für Isolationsübungen gilt",
+"Weil Anfänger beim Heben keine Ermüdung spüren können"
+],
+"warum": "Unter einem Jahr Erfahrung und bei mehr als 4 RIR weicht die eigene Einschätzung oft deutlich von der realen Last ab."
+},
+"labor": {
+"frage": "Zur Prüfung der RIR-Skala wurde die subjektive Anstrengung (RPE) mit der realen Hantelgeschwindigkeit verglichen. Was zeigte sich?",
+"richtig": "Eine starke inverse Korrelation, am genauesten bei Erfahrenen",
+"falsch": [
+"Kein Zusammenhang zwischen Tempo und gefühlter Anstrengung",
+"Einsteiger schätzten ihr 1RM präziser als erfahrene Lifter",
+"Die Genauigkeit stieg bei Sätzen über zwölf Wiederholungen"
+],
+"warum": "Die Korrelation zwischen Hanteltempo und RPE war stark negativ (r = −0,88), nahm aber bei hohen Wdh. und viel RIR ab."
+}
+}
+},
+{
+"id": "PER-108",
+"karte": {
+"kopf": "Trainierte · 9 Studien zusammengefasst",
+"titel": "Kürzere Sätze fördern Kraft, tiefere Ermüdung den Muskelaufbau",
+"titel_hervor": "tiefere Ermüdung den Muskelaufbau",
+"setup": "Trainierende brachen ihre Sätze ab, sobald die Hantel entweder leicht oder deutlich langsamer wurde.",
+"zahl": {
+"label": "Mehr Muskelquerschnitt bei tiefer Ermüdung",
+"wert": "+0,64 cm²",
+"alltag": "bei > 25 % statt ≤ 20 % Tempoverlust"
+},
+"kern": [
+"Bei über 25 % Tempoverlust wuchs der Muskel messbar stärker als bei höchstens 20 %.",
+"Zwischen 20–25 % und über 25 % Tempoverlust war der Muskelunterschied nur noch winzig.",
+"Für maximale Kraft war früheres Stoppen im Schnitt besser, weil weniger Ermüdung entsteht."
+],
+"grenze": "Der Kraftvorteil beim frühen Satzabbruch zeigte sich nur dann, wenn neben der Hauptübung auch Zusatzübungen liefen.",
+"fuer_dich": "Du trainierst auf Muskelaufbau statt nur Kraft? Beende Sätze nicht zu früh, sondern erst bei deutlicher Verlangsamung (1–2 RIR).",
+"labor": {
+"design": "Systematisches Review mit Meta-Analyse, Satzabbruch nach Geschwindigkeitsverlust (Velocity Loss)",
+"teilnehmer": "15 Studien gesamt, davon 9 zur Volumen-Autoregulation bei Trainierten",
+"ergebnis": "Hypertrophie > 25 % vs. ≤ 20 %: MD 0,64 cm² (95 % KI 0,07–1,20); > 25 % vs. 20–25 %: SMD 0,13 (p = 0,28)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Deine Wiederholungen werden im Satz merklich langsamer. Was passiert, wenn du für Muskelaufbau sofort aufhörst, sobald das Tempo leicht sinkt?",
+"richtig": "Der Muskel wächst im Schnitt weniger als bei tieferer Ermüdung",
+"falsch": [
+"Der Muskel wächst dadurch deutlich schneller als sonst",
+"Die Muskulatur verliert direkt an vorhandener Kraft",
+"Das hat keinen Einfluss auf Kraft oder Muskelgröße"
+],
+"warum": "Erst wenn das Tempo im Satz deutlicher abnimmt, entsteht im Schnitt ein stärkerer Wachstumsreiz für den Muskel."
+},
+"plus": {
+"frage": "Du willst Muskeln aufbauen, aber deine Erholung nicht sprengen. Welcher Tempoverlust im Satz bietet den besten Mittelweg?",
+"richtig": "Etwa 20 bis 25 % Tempoverlust, also nah am Zielbereich",
+"falsch": [
+"Unter 10 % Tempoverlust, also sehr weit vom Versagen",
+"Über 50 % Tempoverlust in jedem einzelnen Arbeitssatz",
+"Kein Tempoverlust, jede Wiederholung maximal explosiv"
+],
+"warum": "Über 25 % bringt kaum mehr Hypertrophie als 20–25 %, erhöht aber die neuromuskuläre Ermüdung deutlich."
+},
+"labor": {
+"frage": "Satzvolumen wurde über verschiedene Schwellen des Geschwindigkeitsverlusts im Satz gesteuert. Wann zeigte sich der 1RM-Kraftvorteil von ≤ 25 %?",
+"richtig": "Nur wenn zusätzlich zur Hauptübung weitere Übungen liefen",
+"falsch": [
+"Ausschließlich bei isoliertem Training einer einzelnen Übung",
+"Nur bei untrainierten Einsteigern ohne Vorerfahrung",
+"Sobald der Geschwindigkeitsverlust über 40 % anstieg"
+],
+"warum": "Der 1RM-Vorteil niedrigerer Verlustschwellen (≤ 25 %) trat in der Analyse nur auf, wenn ergänzende Übungen dabei waren."
+}
+}
+},
+{
+"id": "PER-109",
+"karte": {
+"kopf": "Trainierte Männer · Zufallszuteilung",
+"titel": "Trainingstage nach Tagesform zu tauschen klappt genauso gut",
+"titel_hervor": "klappt genauso gut",
+"setup": "Kraftsportler absolvierten neun Wochen lang drei feste Einheiten pro Woche – entweder in starrer Reihenfolge oder nach Tagesform sortiert.",
+"zahl": null,
+"kern": [
+"Kraft und Muskelmasse entwickelten sich bei freier und fester Reihenfolge gleich gut.",
+"Auch Motivation, Zufriedenheit und gefühlte Anstrengung unterschieden sich kaum.",
+"Wichtig blieb, dass alle drei geplanten Einheiten innerhalb der Woche stattfanden."
+],
+"grenze": "Es nahmen nur 25 starke Männer über neun Wochen teil – ob volle Freiheit langfristig motiviert, ist noch offen.",
+"fuer_dich": "Du fühlst dich heute platt, aber der schwere Krafttag steht an? Tausche ihn einfach mit deinem leichteren Tag derselben Woche.",
+"labor": {
+"design": "Randomisierte kontrollierte Studie (9 Wochen, 3x/Woche), flexible DUP vs. feste DUP-Reihenfolge",
+"teilnehmer": "25 fortgeschrittene Männer (FDUP n = 14, DUP n = 11)",
+"ergebnis": "Total nach 9 Wochen: 304 ± 51 kg vs. 325 ± 38 kg (p > 0,05); Motivation/sRPE p = 0,369–0,702"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du hast diese Woche eine schwere und eine leichtere Einheit geplant, bist heute aber müde. Schadet es dem Fortschritt, beide Tage zu tauschen?",
+"richtig": "Nein, solange du beide Einheiten in der Woche erledigst",
+"falsch": [
+"Ja, ein Tausch macht den gesamten Wochenerfolg zunichte",
+"Ja, schwere Einheiten wirken nur direkt am Wochenanfang",
+"Nein, du kannst die schwere Einheit dann einfach streichen"
+],
+"warum": "Wer die Reihenfolge seiner Wocheneinheiten nach Tagesform tauscht, erzielt im Schnitt dieselben Kraft- und Muskelzuwächse."
+},
+"plus": {
+"frage": "Dein Aufwärmen bei 70 % 1RM fühlt sich heute ungewohnt zäh an, obwohl eine schwere 85-%-Einheit ansteht. Was ist die sinnvollste Anpassung?",
+"richtig": "Die schwere Einheit mit dem leichteren Wochen-Tag tauschen",
+"falsch": [
+"Trotzdem mehr Gewicht auflegen, um den Körper zu zwingen",
+"Die ganze Trainingswoche einfach ausfallen lassen",
+"Alle Grundübungen dauerhaft durch leichtes Dehnen ersetzen"
+],
+"warum": "Bei identischem Wochenvolumen erlaubt flexibles Tauschen, schwere Tage auf Tage mit besserer Tagesform zu legen."
+},
+"labor": {
+"frage": "Fortgeschrittene Männer trainierten neun Wochen nach flexibler oder fester DUP-Reihenfolge. Warum waren die Ergebnisse beider Gruppen gleichwertig?",
+"richtig": "Beide Gruppen absolvierten jede Woche das exakt gleiche Volumen",
+"falsch": [
+"Die flexible Gruppe durfte beliebige Einheiten streichen",
+"Die feste Gruppe trainierte deutlich seltener pro Woche",
+"Die flexible Gruppe zeigte doppelt so hohe Motivation"
+],
+"warum": "Da jede Woche alle drei Einheiten Pflicht waren, blieb das Gesamtarbeitsvolumen gleich und es gab keine Gruppenunterschiede."
+}
+}
+},
+{
+"id": "PER-110",
+"karte": {
+"kopf": "Kraft-Einsteiger · Zufallszuteilung",
+"titel": "Einheiten nach Energielevel wählen bringt Einsteigern mehr Beinkraft",
+"titel_hervor": "mehr Beinkraft",
+"setup": "Einsteiger bewerteten zwölf Wochen lang ihr tägliches Energielevel und wählten danach leichte, mittlere oder schwere Einheiten.",
+"zahl": {
+"label": "Zuwachs in der Beinpresse nach Tagesform",
+"wert": "+33 %",
+"alltag": "entspricht +62 kg in 12 Wochen"
+},
+"kern": [
+"Die Gruppe mit flexibler Wahl steigerte ihre Beinpresskraft stärker als die feste Gruppe.",
+"Beim Brustdrücken und bei der Sprunghöhe schnitten beide Gruppen jedoch gleich ab.",
+"An energiereichen Tagen lagen die schwereren Sätze, an müden Tagen die leichteren."
+],
+"grenze": "Der Vorteil zeigte sich nur in der Beinpresse – auf alle Übungen lässt er sich nicht einfach übertragen.",
+"fuer_dich": "Du fängst neu an und dein Energielevel schwankt? Lege schwere Sätze auf frische Tage und leichte Sätze auf müde Tage.",
+"labor": {
+"design": "Randomisierte kontrollierte Studie (12 Wochen, 2–3x/Woche), flexible vs. starre Wahl von 10/15/20 RM",
+"teilnehmer": "Krafttraining-Einsteiger, 3 Mesozyklen mit 7 bis 15 Sätzen",
+"ergebnis": "Beinpresse 1RM-Äquivalent +62 kg (+33 %) zugunsten FNLP; Brustdrücken und Sprung ohne Unterschied"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Als Kraft-Einsteiger bist du heute schlapp, obwohl eigentlich schwere Sätze geplant sind. Was hilft dir an so einem Tag?",
+"richtig": "Heute leichtere Sätze machen und schwere auf einen fitten Tag legen",
+"falsch": [
+"Trotz Müdigkeit besonders schwer heben für maximale Wirkung",
+"Krafttraining erst wieder starten, wenn du perfekt erholt bist",
+"Ab sofort nur noch mit minimalem Gewicht weitertrainieren"
+],
+"warum": "Einsteiger, die schwere und leichte Tage nach ihrem Energielevel verteilten, erzielten bei der Beinpresse größere Kraftgewinne."
+},
+"plus": {
+"frage": "Du planst als Einsteiger mit 10-, 15- und 20-RM-Einheiten in einem 4-Wochen-Block. Wann wählst du das 10-RM-Training?",
+"richtig": "An Tagen, an denen dein subjektives Energielevel hoch ist",
+"falsch": [
+"Gerade an müden Tagen, um das Nervensystem aufzuwecken",
+"Fest am letzten Tag der Woche, egal wie du dich fühlst",
+"Erst nach sechs Monaten, weil 10 RM für Anfänger zu schwer ist"
+],
+"warum": "Die schwereren 10-RM-Einheiten passen zu Tagen mit hoher Energie, während 15- oder 20-RM-Tage bei niedriger Readiness helfen."
+},
+"labor": {
+"frage": "Einsteiger wählten zwölf Wochen lang 10-, 15- oder 20-RM-Einheiten flexibel nach Energielevel statt nach festem Plan. Wo zeigte sich der Vorteil?",
+"richtig": "Nur bei der Beinpresse, nicht bei Brustdrücken oder Sprung",
+"falsch": [
+"Gleichmäßig in allen getesteten Kraft- und Sprungtests",
+"Ausschließlich im Oberkörper beim schweren Brustdrücken",
+"Nur bei der Sprungkraft, nicht bei der Maximalkraft"
+],
+"warum": "Der signifikante Vorteil der flexiblen Planung trat nur in der Beinpresse auf, während Brustdrücken und Vertikalsprung gleich blieben."
+}
+}
+},
+{
+"id": "PER-111",
+"karte": {
+"kopf": "Trainierte Erwachsene · Zufallszuteilung",
+"titel": "Mehr Wiederholungen bauen genauso Muskeln auf wie mehr Gewicht",
+"titel_hervor": "genauso Muskeln auf",
+"setup": "Trainierende steigerten acht Wochen lang bei vier Übungen entweder nur das Gewicht oder nur die Wiederholungen bei gleicher Last.",
+"zahl": null,
+"kern": [
+"Beide Wege brachten ähnliche Zuwächse bei Oberschenkelmuskeln, Kraft und Ausdauer.",
+"Bei der Kniebeuge stieg die Höchstkraft in beiden Gruppen um rund 20 kg.",
+"Über sehr viele Monate werden reine Wiederholungssteigerungen irgendwann unpraktisch lang."
+],
+"grenze": "Getestet wurden acht Wochen ab 8 bis 12 Wiederholungen – über Monate wird irgendwann doch mehr Gewicht nötig.",
+"fuer_dich": "Die nächste Hantelstufe ist zu schwer? Steigere erst die Wiederholungen und erhöhe das Gewicht, sobald du das Ziel oben schaffst.",
+"labor": {
+"design": "Randomisierte kontrollierte Studie (8 Wochen, 2x/Woche, 4x4 Übungen ab 8–12 RM), Last vs. Wdh.",
+"teilnehmer": "38 Trainierte abgeschlossen (≥ 1 Jahr Erfahrung; LOAD 21, REPS 17)",
+"ergebnis": "Kniebeuge 1RM −2,0 kg (90 % KI −7,8 bis 2,4); Vastus Lateralis −0,3 mm (90 % KI −3,6 bis 3,6)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Deine Kurzhanteln zu Hause lassen sich nicht schwerer machen. Kannst du trotzdem Muskeln und Kraft aufbauen?",
+"richtig": "Ja, indem du bei gleichem Gewicht mehr Wiederholungen schaffst",
+"falsch": [
+"Nein, ohne mehr Gewicht entsteht kein wirksamer Trainingsreiz",
+"Nur Ausdauer steigt, Muskeln wachsen dabei überhaupt nicht",
+"Ja, aber nur wenn du deine Satzpausen auf zehn Minuten dehnst"
+],
+"warum": "Über acht Wochen brachten zusätzliche Wiederholungen bei gleicher Last ähnliche Kraft- und Muskelzuwächse wie schwerere Gewichte."
+},
+"plus": {
+"frage": "Du trainierst im 8–12-Wdh.-Korridor, doch der nächste Gewichtssprung an der Maschine ist zu groß. Wie nutzt du doppelte Progression?",
+"richtig": "Erst alle Sätze bis 12 Wdh. ausbauen, dann die Last steigern",
+"falsch": [
+"Trotzdem sofort das Gewicht steigern und nur 3 Wdh. machen",
+"Die Übung dauerhaft aus dem Plan werfen und ersetzen",
+"Das Gewicht senken und dauerhaft bei 8 Wdh. bleiben"
+],
+"warum": "Wiederholungen zu steigern wirkt genauso effektiv, bis du sauber genug Kraft für den nächsten Gewichtssprung hast."
+},
+"labor": {
+"frage": "Trainierte steigerten acht Wochen lang ab 8–12 RM entweder Last oder Wiederholungen. Welche praktische Grenze hat die reine Wiederholungsprogression?",
+"richtig": "Über viele Monate steigen die Sätze auf unpraktisch hohe Zahlen",
+"falsch": [
+"Sie führt schon nach drei Wochen zu messbarem Muskelabbau",
+"Sie verbessert im Gegensatz zur Laststeigerung kein 1RM",
+"Sie funktioniert ausschließlich bei Untrainierten im ersten Jahr"
+],
+"warum": "Beide Methoden waren über acht Wochen gleichwertig, doch langfristig (> 16 Wochen) werden Sätze ohne Lasterhöhung zu lang (> 30 Wdh.)."
+}
+}
+},
+{
+"id": "PER-112",
+"karte": {
+"kopf": "Trainierte · 2 Zufallsstudien",
+"titel": "Eine ganze Woche Trainingspause bremst vor allem die Beinkraft",
+"titel_hervor": "bremst vor allem die Beinkraft",
+"setup": "Trainierende legten mitten im Trainingsblock eine volle Pause oder leichte Entlastungswochen mit weniger Sätzen ein.",
+"zahl": null,
+"kern": [
+"Beim Muskelaufbau machte weder eine Pausenwoche noch reduziertes Training einen Verlust.",
+"Nach einer vollen Pause fehlte vielen im Krafttest etwas Routine und Spannung.",
+"Wer in Entlastungswochen leicht weitertrainiert, hält Bewegung und Leistung besser."
+],
+"grenze": "In einer der beiden Studien wurde gar nicht trainiert statt leicht zu reduzieren – das entspricht keinem typischen Deload.",
+"fuer_dich": "Du planst eine Entlastungswoche? Pausiere nicht ganz, sondern mache einfach rund ein Drittel bis die Hälfte weniger Sätze.",
+"labor": {
+"design": "Zwei RCTs (8–9 Wochen), volle Pause in Wo. 5 bzw. aktiver Deload in Wo. 4 & 8 (−18 % Gesamtvolumen)",
+"teilnehmer": "50 Trainierte (≥ 1 Jahr Erfahrung) in Studie 1; weitere RCT über 8 Wochen",
+"ergebnis": "Quadrizeps +1,99 mm (95 % KI −0,76 bis 4,74) vs. +2,27 mm (0,06 bis 4,48); moderater 1RM-Nachteil bei Pause"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du trainierst regelmäßig und machst mitten in deinem Trainingsblock eine Woche lang gar keinen Sport. Was passiert mit deinen Muskeln?",
+"richtig": "Die Muskelmasse bleibt erhalten, die Höchstkraft leidet etwas",
+"falsch": [
+"Du verlierst in sieben Tagen fast alle neuen Muskeln",
+"Deine Höchstkraft steigt danach automatisch sprunghaft an",
+"Sowohl Kraft als auch Ausdauer verschwinden fast ganz"
+],
+"warum": "Eine einwöchige Pause schadete dem Muskelaufbau nicht, dämpfte aber die maximale Beinkraft etwas."
+},
+"plus": {
+"frage": "Du brauchst nach mehreren harten Wochen einen Deload, willst aber kein 1RM einbüßen. Wie gestaltest du die Woche am besten?",
+"richtig": "Weiter trainieren, aber das Satzvolumen deutlich senken",
+"falsch": [
+"Sieben Tage lang überhaupt keine Hantel mehr anfassen",
+"Alle Sätze beibehalten und bis zum Muskelversagen gehen",
+"Jeden Tag einen neuen Maximalversuch im Gym testen"
+],
+"warum": "Ein aktiver Deload mit weniger Sätzen erhält Technik und Routine, während eine volle Pause eher zu Trägheit führt."
+},
+"labor": {
+"frage": "In einem 9-wöchigen Vergleich führte eine Pausenwoche in Woche 5 zu schwächerem 1RM-Zuwachs im Unterkörper. Welcher Designpunkt erklärt das mit?",
+"richtig": "Es war eine volle Trainingspause statt reduzierten Volumens",
+"falsch": [
+"Die Pausenwoche dauerte volle vier Wochen am Stück",
+"Die Muskeldicke schrumpfte um mehr als die Hälfte",
+"Es wurden ausschließlich Untrainierte ohne 1RM-Test geprüft"
+],
+"warum": "Die volle Unterbrechung statt aktivem Deload führte zu Lethargie und fehlender Übungspraxis vor dem Krafttest."
+}
+}
+},
+{
+"id": "PER-113",
+"karte": {
+"kopf": "Wettkampfathleten & Coaches · Befragung",
+"titel": "Erfahrene Athleten entlasten etwa alle sechs Wochen kurz",
+"titel_hervor": "alle sechs Wochen kurz",
+"setup": "Befragt wurden 246 erfahrene Kraft- und Figur-Athleten sowie Trainer, wie oft und wie genau sie leichte Wochen planen.",
+"zahl": {
+"label": "Durchschnittliche Dauer eines Deloads",
+"wert": "6,4 Tage",
+"alltag": "im Schnitt alle 5 bis 6 Wochen"
+},
+"kern": [
+"In der Praxis sinkt vor allem die Satzanzahl um etwa ein Drittel bis die Hälfte.",
+"Trainingstage und Hauptübungen bleiben meist gleich, nur die Härte wird gesenkt.",
+"Viele legen leichte Wochen nicht starr, sondern erst bei Stillstand oder Ermüdung ein."
+],
+"grenze": "Bisher nur Befragungen und Trainerkonsens – direkte Experimente zu einzelnen Entlastungs-Rezepten fehlen noch.",
+"fuer_dich": "Deine Leistungen stehen seit zwei bis drei Einheiten still? Reduziere 5 bis 7 Tage lang Sätze um 30–50 % und trainiere lockerer.",
+"labor": {
+"design": "Querschnittsumfrage und 3-Runden-Delphi-Konsens (138 Statements) zur Deload-Praxis",
+"teilnehmer": "246 Wettkampfathleten (Ø 8,2 Jahre Erfahrung) und 21–34 Experten-Coaches",
+"ergebnis": "Dauer 6,4 ± 1,7 Tage alle 5,6 ± 2,3 Wochen; Konsens: 5–7 Tage, −30 bis −50 % Volumen; 48 % Zusatz-Regeneration"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Wie gestalten erfahrene Kraftsportler meist eine geplante Erholungswoche?",
+"richtig": "Weniger Sätze und lockerer trainieren, aber gewohnte Übungen halten",
+"falsch": [
+"Alle Übungen austauschen und deutlich schwerer heben",
+"Einen ganzen Monat pausieren und danach neu anfangen",
+"Genau so viele Sätze machen wie sonst, nur schneller"
+],
+"warum": "In der Praxis wird das Volumen für knapp eine Woche deutlich gesenkt, während Rhythmus und Hauptübungen bleiben."
+},
+"plus": {
+"frage": "Seit drei Einheiten stagnierst du und fühlst dich ausgelaugt. Wie sieht ein praxiserprobter Deload für 5 bis 7 Tage aus?",
+"richtig": "Sätze um 30–50 % kürzen, Gewicht leicht senken, 3–4+ RIR halten",
+"falsch": [
+"Sätze verdoppeln und das Gewicht um die Hälfte reduzieren",
+"Alle Hauptübungen streichen und nur bis 0 RIR isolieren",
+"Nur einmal im Monat trainieren, bis die Kraft wiederkommt"
+],
+"warum": "Erfahrene Athleten und Coaches senken im Deload vor allem das Satzvolumen und lassen mehr Reserven (3–4+ RIR)."
+},
+"labor": {
+"frage": "Umfragen unter 246 Wettkampfathleten und ein Expertenkonsens von Coaches lieferten Richtwerte für Deloads. Welche Evidenzlücke besteht dabei noch?",
+"richtig": "Direkte Experimente zwischen verschiedenen Deload-Protokollen fehlen",
+"falsch": [
+"Es wurden keine erfahrenen Athleten mit Wettkampfpraxis befragt",
+"Die Trainer waren sich über eine Volumenreduktion uneinig",
+"Deloads dauerten in der Praxis meist mehr als vier Wochen"
+],
+"warum": "Befragungen und Konsens zeigen gängige Praxis, ersetzen aber noch keine kontrollierten Vergleiche wie 30 % gegen 50 % Reduktion."
+}
+}
+},
+{
+"id": "PER-114",
+"karte": {
+"kopf": "Kraft- & Ausdauersportler · Übersichtsarbeit",
+"titel": "Weniger Umfang bei hohem Gewicht bringt am Testtag 2–3 % mehr",
+"titel_hervor": "2–3 % mehr",
+"setup": "Ausgewertet wurde, wie gezieltes Herunterfahren des Trainings in ein bis zwei Wochen vor einem Test oder Wettkampf wirkt.",
+"zahl": {
+"label": "Typischer Leistungsschub am Wettkampftag",
+"wert": "+2–3 %",
+"alltag": "Spanne zwischen 0,5 % und 6 %"
+},
+"kern": [
+"Der Umfang sinkt über 5 bis 14 Tage fast um die Hälfte, schwere Gewichte bleiben anfangs.",
+"Wer das Gewicht stattdessen zu stark senkt, verliert vor dem Test sogar Kraft.",
+"In den letzten zwei bis vier Tagen vor dem Termin folgt meist eine kurze Ruhepause."
+],
+"grenze": "Viele kontrollierte Daten stammen aus dem Ausdauersport – im Kraftsport überwiegen bisher Beobachtungsdaten.",
+"fuer_dich": "Dein Wettkampf oder Krafttest steht in zwei Wochen an? Halbiere den Umfang, halte Hauptübungen schwer und ruhe 2–4 Tage vorher.",
+"labor": {
+"design": "Narratives Review zu Tapering und Peaking (5–14 Tage, 40–60 % Volumenreduktion)",
+"teilnehmer": "Kraft-, Powerlifting-, Strongman- und Ausdauerathleten",
+"ergebnis": "Leistung +2–3 % (0,5–6 %); 2-Wo.-Taper bei 85 % vs. 30 % 1RM: Beinpresse +4,6 % (ES 0,15) vs. −22,8 % (ES −0,12)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "In zehn Tagen willst du deine persönliche Bestleistung im Krafttraining testen. Wie solltest du die letzte Trainingsphase gestalten?",
+"richtig": "Weniger Sätze machen, aber die Gewichte anfangs hoch halten",
+"falsch": [
+"Das Training verdoppeln, um noch schnell stärker zu werden",
+"Auf sehr leichte Gewichte wechseln und viele Sätze machen",
+"Zwei volle Wochen lang gar nicht mehr trainieren"
+],
+"warum": "Weniger Umfang baut Ermüdung ab, während hohe Gewichte die Kraft erhalten und am Testtag oft 2 bis 3 % mehr ermöglichen."
+},
+"plus": {
+"frage": "Dein 1RM-Test steht in 14 Tagen an. Welche Anpassung ist beim Tapering für Maximalkraft der häufigste Fehler?",
+"richtig": "Das Trainingsgewicht viel zu stark herunterzufahren",
+"falsch": [
+"Assistenzübungen in den letzten zwei Wochen zu streichen",
+"Das Satzvolumen schrittweise um rund die Hälfte zu senken",
+"Die letzten zwei bis vier Tage vor dem Test zu pausieren"
+],
+"warum": "Ein zu starker Abfall der Intensität senkt die Maximalkraft deutlich, während schwere Hauptübungen bei halbem Volumen helfen."
+},
+"labor": {
+"frage": "Daten zum Tapering vor Wettkämpfen zeigen meist 2–3 % Leistungsgewinn bei stark reduziertem Volumen und hoher Intensität. Wo liegt die Hauptgrenze für den Kraftsport?",
+"richtig": "Experimentelle Daten stammen meist aus dem Ausdauersport",
+"falsch": [
+"Bei schwerem Tapering fiel die Beinpresskraft stark ab",
+"Kraftsportler reduzierten ihr Volumen höchstens um 10 %",
+"Die Trainingspause vor dem Wettkampf dauerte stets 14 Tage"
+],
+"warum": "Während Ausdauer-Tapering gut experimentell belegt ist, stützen sich Kraftsport-Daten überwiegend auf Beobachtungen."
+}
+}
+},
+{
+"id": "PER-115",
+"karte": {
+"kopf": "Trainierende · 157 Studien ausgewertet",
+"titel": "Irgendwann bringt noch mehr Trainingsmenge keine zusätzliche Kraft",
+"titel_hervor": "keine zusätzliche Kraft",
+"setup": "Über 157 Zufallsstudien wurde berechnet, wie Gesamtumfang, Gewicht, Häufigkeit und Dauer zusammen die Maximalkraft steigern.",
+"zahl": null,
+"kern": [
+"Anfangs führt mehr Trainingsarbeit klar zu mehr Kraft, doch die Kurve flacht spürbar ab.",
+"Ab einer Obergrenze für Brust und Oberschenkel steigt die relative Kraft kaum noch weiter.",
+"Statt endlos mehr Sätze anzuhäufen, kann ein frischer Trainingszyklus sinnvoller sein."
+],
+"grenze": "Die Daten stammen meist von Einsteigern – wo das genaue Limit bei Hochtrainierten liegt, ist noch offen.",
+"fuer_dich": "Deine Kraft stagniert trotz riesiger Trainingsmenge? Schraube das Volumen nicht endlos hoch, sondern wechsle den Reiz oder entlaste.",
+"labor": {
+"design": "Systematisches Review mit Meta-Regression zur Dosis-Wirkungs-Beziehung der Maximalkraft",
+"teilnehmer": "157 RCTs, überwiegend untrainierte Erwachsene",
+"ergebnis": "Nichtlineares Plateau (p < 0,01) ab 773.000 au (Quadrizeps) bzw. 887.000 au (Brust) kumulierter Dosis"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Stimmt es, dass noch mehr Training automatisch zu noch mehr Maximalkraft führt?",
+"richtig": "Nein, ab einer gewissen Menge flacht der Kraftgewinn ab",
+"falsch": [
+"Ja, doppelte Trainingsmenge bringt stets doppelte Kraft",
+"Nein, schon nach zwei Wochen ist das Kraftlimit erreicht",
+"Ja, zumindest solange man nur die Beine trainiert"
+],
+"warum": "Die Beziehung zwischen Trainingsdosis und Kraft ist nichtlinear – ab einem Plateau bringt noch mehr Menge kaum extra Kraft."
+},
+"plus": {
+"frage": "Du hast Umfang, Frequenz und Gewicht in deinem Block stetig gesteigert, doch deine Kraft stagniert. Was solltest du jetzt eher nicht tun?",
+"richtig": "Das Gesamtvolumen einfach noch weiter nach oben schrauben",
+"falsch": [
+"Einen kurzen Deload einplanen und einen neuen Zyklus starten",
+"Das Trainingsmodell oder den Fokus gezielt wechseln",
+"Das Volumen auf ein gut regenerierbares Maß begrenzen"
+],
+"warum": "Oberhalb einer kumulierten Dosis-Schwelle bringt noch mehr Arbeitsmenge im Block keinen zusätzlichen Kraftgewinn mehr."
+},
+"labor": {
+"frage": "Eine Auswertung aus 157 Zufallsstudien fand ein nichtlineares Kraft-Plateau anhand kumulierter Trainingsdosis. Für wen ist diese Grenze am wenigsten belegt?",
+"richtig": "Für die absolute Kraftentwicklung bei Hochtrainierten",
+"falsch": [
+"Für relative Kraftzuwächse bei untrainierten Personen",
+"Für große Muskelgruppen wie Brust und Quadrizeps",
+"Für kontrollierte Studien mit mehreren Wochen Dauer"
+],
+"warum": "Die Daten stammten überwiegend von Untrainierten und relativen Werten, sodass eine exakte Grenze für Hochtrainierte noch fehlt."
+}
+}
+},
+{
+"id": "PER-116",
+"karte": {
+"kopf": "Fortgeschrittene · Übersichtsarbeit",
+"titel": "Gegen echten Muskel-Stillstand gibt es noch kein bewiesenes Rezept",
+"titel_hervor": "noch kein bewiesenes Rezept",
+"setup": "Geprüft wurde die gesamte Forschung dazu, wie weit fortgeschrittene Sportler einen langfristigen Stillstand beim Muskelaufbau durchbrechen.",
+"zahl": null,
+"kern": [
+"Bei erfahrenen Athleten wuchs die Magermasse in vier Jahren im Schnitt nur um 3–4 %.",
+"Oft stecken hinter Stillstand eher Schlafmangel, zu wenig Essen oder hohe Ermüdung.",
+"Mehr Sätze alle zwei Wochen zeigten in einer kleineren Studie erste positive Hinweise."
+],
+"grenze": "Direkte Vergleichsstudien, welche Methode ein echtes Muskel-Plateau am besten löst, gibt es bisher noch nicht.",
+"fuer_dich": "Seit vier Wochen wächst nichts, obwohl Schlaf und Essen passen? Teste schrittweise mehr Sätze, neue Übungen oder einen Deload.",
+"labor": {
+"design": "Narratives Review zu langfristigen Hypertrophie-Plateaus und möglichen Gegenmaßnahmen",
+"teilnehmer": "Fortgeschrittene Athleten (u. a. 4-Jahres-Längsschnitt; 30 trainierte Frauen)",
+"ergebnis": "Keine direkten RCTs; Magermasse 4 J. +3–4 %; +4 Sätze/2 Wo. CSA p = 0,029 (n = 30, 12 Wochen)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Gibt es eine wissenschaftlich bewiesene Geheim-Methode, um einen jahrelangen Stillstand beim Muskelaufbau verlässlich zu durchbrechen?",
+"richtig": "Nein, bisher fehlen direkte Studien zu einem festen Rezept",
+"falsch": [
+"Ja, dreimal täglich trainieren löst jeden Stillstand sofort",
+"Ja, eine spezielle Übungsreihenfolge garantiert neues Wachstum",
+"Nein, nach einem Jahr Training wachsen Muskeln gar nicht mehr"
+],
+"warum": "Für fortgeschrittene Sportler gibt es bisher noch keine direkten Kontrollstudien, die ein bestimmtes Anti-Plateau-Konzept belegen."
+},
+"plus": {
+"frage": "Du trainierst fortgeschritten und stagnierst seit vier Wochen beim Muskelaufbau. Was prüfst du zuerst, bevor du den Plan umbaust?",
+"richtig": "Ob Schlaf, Erholung und Kalorienzufuhr wirklich ausreichen",
+"falsch": [
+"Ob du das genetische Limit schon im zweiten Jahr erreicht hast",
+"Ob du deine Trainingsfrequenz auf täglich erhöhen kannst",
+"Ob du alle Grundübungen durch reines Ausdauertraining ersetzt"
+],
+"warum": "Kurzfristige Stagnation entsteht häufig durch Ermüdung oder Energiedefizit – erst danach lohnen Volumen-, Übungs- oder Deload-Tests."
+},
+"labor": {
+"frage": "Eine Übersichtsarbeit prüfte langfristige Hypertrophie-Plateaus bei Fortgeschrittenen. Welche methodische Hauptschwierigkeit wird dabei beschrieben?",
+"richtig": "Echte Plateaus lassen sich schwer von Ermüdung oder Defizit trennen",
+"falsch": [
+"Es existieren bereits über hundert randomisierte Plateau-Studien",
+"Muskelmasse wächst bei College-Athleten jedes Jahr um 20 %",
+"Zelluläre Grenzen spielen physiologisch nachweislich keine Rolle"
+],
+"warum": "Ohne direkte Plateau-RCTs bleibt schwer abzugrenzen, ob Erholung, Energiebilanz oder biologische Grenzen den Stillstand verursachen."
+}
+}
+},
+{
+"id": "PLY-101",
+"karte": {
+"kopf": "Junge Fußballer · 33 Studien zusammengefasst",
+"titel": "Sprungtraining verbessert Sprung und Sprint bei Fußballern deutlich",
+"titel_hervor": "verbessert Sprung und Sprint",
+"setup": "In 33 Studien absolvierten junge männliche Fußballer über mehrere Wochen Sprungtraining und wurden bei Sprung und Sprint getestet.",
+"zahl": null,
+"kern": [
+"Zwei bis drei Einheiten pro Woche über mindestens sieben Wochen zeigen Wirkung",
+"Pro Einheit bewährten sich 80 bis 120 Bodenkontakte für spürbare Fortschritte",
+"Muskeln und Nerven lernen, elastische Kraft beim Abdruck effizienter zu nutzen"
+],
+"grenze": "Untersucht wurden nur junge männliche Fußballer – ein bestimmtes Idealalter ließ sich nicht nachweisen.",
+"fuer_dich": "Du spielst Teamsport und willst explosiver werden? Plane 2 bis 3 Sprungeinheiten pro Woche mit 80 bis 120 Kontakten ein.",
+"labor": {
+"design": "Systematisches Review mit Meta-Analyse, plyometrisches Training über mind. 7 Wochen",
+"teilnehmer": "1.499 junge männliche Fußballer aus 33 Studien",
+"ergebnis": "Vertikalsprung ES 0,60–0,98 (p < 0,01); Linearsprint ES 0,60–0,98 (p < 0,03)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du willst beim Fußball oder Basketball schneller antreten. Was bringt regelmäßiges Sprungtraining dafür?",
+"richtig": "Es verbessert meist deine Sprunghöhe und dein Sprinttempo",
+"falsch": [
+"Es hilft nur beim Hochspringen, nicht beim schnellen Laufen",
+"Es macht die Beine eher schwerer und bremst den Antritt aus",
+"Es wirkt erst ab etwa einem Jahr Training überhaupt messbar"
+],
+"warum": "Durch regelmäßige Sprünge arbeiten Muskeln und Nerven beim Abdruck effizienter – das hilft beim Springen und Sprinten."
+},
+"plus": {
+"frage": "Du trainierst für Teamsport und willst Plyometrie für mehr Sprungkraft und Sprinttempo einbauen. Welche Dosis passt als Richtwert?",
+"richtig": "2 bis 3 Einheiten pro Woche mit moderatem Umfang über mehrere Wochen",
+"falsch": [
+"Täglich springen mit sehr hohem Umfang bis zur Erschöpfung",
+"Einmal alle zwei Wochen ein paar lockere Sprünge einstreuen",
+"Nur kurz vor dem Wettkampf als einzelnes Aufwärmen nutzen"
+],
+"warum": "Mit 2 bis 3 Einheiten pro Woche und 80 bis 120 Kontakten über mindestens 7 Wochen zeigten sich mittlere bis große Effekte."
+},
+"labor": {
+"frage": "Eine Meta-Analyse fasste 33 Studien zum plyometrischen Training bei jungen Fußballern zusammen und prüfte das Alter als Moderator. Was zeigte sich?",
+"richtig": "Mittlere bis große Effekte bei Sprung und Sprint, kein klares Idealalter",
+"falsch": [
+"Nur Spieler über 20 Jahre profitierten, jüngere zeigten keinen Effekt",
+"Große Effekte bei der Sprunghöhe, aber kein Effekt beim Linearsprint",
+"Kleine Effekte bei Sprung und Sprint, klar am stärksten unter 17 Jahren"
+],
+"warum": "Sprung und Sprint erreichten Effektstärken von 0,60 bis 0,98; ein einzelner Alters-Moderator ließ sich nicht isolieren."
+}
+}
+},
+{
+"id": "PLY-102",
+"karte": {
+"kopf": "Gesunde Erwachsene · Studien zusammengefasst",
+"titel": "Sprungtraining erhöht die Sprunghöhe mit Ausholen um fast 9 %",
+"titel_hervor": "um fast 9 %",
+"setup": "Eine Meta-Analyse wertete aus, wie stark gesunde Menschen ihre Sprunghöhe bei verschiedenen Sprungarten durch Sprungtraining steigern.",
+"zahl": {
+"label": "Mehr Sprunghöhe mit Ausholen",
+"wert": "+8,7 %",
+"alltag": ""
+},
+"kern": [
+"Sprünge mit flüssigem Ausholen legen fast doppelt so stark zu wie aus dem Stand",
+"Beim Ausholen speichern Sehnen elastische Energie und geben sie beim Absprung ab",
+"Aus tiefer Hocke oder nach Niedersprung wächst die Höhe im Schnitt um knapp 5 %"
+],
+"grenze": "Bei Sprüngen mit Ausholen gab es Hinweise auf Publikationsbias – der echte Effekt könnte etwas kleiner sein.",
+"fuer_dich": "Du willst deine Sprunghöhe realistisch planen? Rechne bei einem Plyometrie-Block mit rund 5 bis 9 % Zuwachs je nach Sprungart.",
+"labor": {
+"design": "Meta-Analyse über verschiedene vertikale Sprungtests nach plyometrischem Training",
+"teilnehmer": "Gesunde Personen über mehrere Primärstudien",
+"ergebnis": "CMJ +8,7 % (ES 0,88), CMJA +7,5 % (ES 0,74), SJ +4,7 % (ES 0,44), DJ +4,7 %"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du machst über mehrere Wochen Sprungtraining. Bei welcher Sprungart wächst deine Sprunghöhe im Schnitt am stärksten?",
+"richtig": "Beim Sprung mit flüssigem Ausholen nach unten",
+"falsch": [
+"Beim Sprung direkt aus einer stillen tiefen Hocke",
+"Beim Absprung direkt nach einem tiefen Niedersprung",
+"Bei allen Sprungarten wächst die Höhe exakt gleich"
+],
+"warum": "Beim flüssigen Ausholen nutzt dein Körper gespeicherte Federkraft in Muskeln und Sehnen besonders gut."
+},
+"plus": {
+"frage": "Du planst einen Plyometrie-Block und testest vorher deinen Countermovement Jump (CMJ) und Squat Jump (SJ). Was ist ein realistisches Ergebnis?",
+"richtig": "Der CMJ steigt im Schnitt deutlicher als der SJ",
+"falsch": [
+"Der SJ steigt doppelt so stark wie der CMJ",
+"Nur der CMJ verbessert sich, der SJ bleibt gleich",
+"Beide steigen meist um mehr als zwanzig Prozent"
+],
+"warum": "Im Schnitt verbesserte sich der CMJ um rund 8 bis 9 %, während der SJ ohne Ausholbewegung bei knapp 5 % lag."
+},
+"labor": {
+"frage": "Eine Meta-Analyse zu plyometrischem Training prüfte per Funnel-Plot auch den Publikationsbias für verschiedene Sprungtests. Was fiel dabei auf?",
+"richtig": "Für CMJ und CMJA gab es Hinweise auf Publikationsbias, für SJ nicht",
+"falsch": [
+"Nur beim Squat Jump zeigte sich ein deutlicher Publikationsbias",
+"Alle vier Sprungformen waren frei von Hinweisen auf Publikationsbias",
+"Der Publikationsbias machte den gesamten Effekt statistisch zunichte"
+],
+"warum": "Bei CMJ und CMJA zeigten statistische Tests signifikanten Publikationsbias, sodass der wahre Effekt etwas kleiner ausfallen könnte."
+}
+}
+},
+{
+"id": "PLY-103",
+"karte": {
+"kopf": "Sportler & Aktive · 26 Studien zusammengefasst",
+"titel": "Sprünge nach vorn und oben machen im Kurzsprint am schnellsten",
+"titel_hervor": "nach vorn und oben",
+"setup": "Eine Meta-Analyse aus 26 Studien verglich, welche Sprungarten und Umfänge Sprints über 5 bis 30 Meter am besten verbessern.",
+"zahl": null,
+"kern": [
+"Eine Gewichtsweste bringt beim Sprungtraining keinen zusätzlichen Sprintvorteil",
+"Weitsprünge passen zur Schubrichtung beim Start und verkürzen den Bodenkontakt",
+"Die besten Effekte zeigten sich ab 15 Einheiten mit über 80 Sprüngen pro Training"
+],
+"grenze": "Getestet wurden kurze Sprints bis 30 Meter – für längere Distanzen oder Endgeschwindigkeit sind die Daten begrenzt.",
+"fuer_dich": "Du willst auf den ersten 30 Metern schneller antreten? Kombiniere Weit- und Hochsprünge ohne Zusatzgewicht über gut 15 Einheiten.",
+"labor": {
+"design": "Meta-Analyse von Trainingsstudien zu 5–30-m-Sprints, Dauer meist unter 10 Wochen",
+"teilnehmer": "26 Studien mit 56 Effektstärken, Männer und Frauen",
+"ergebnis": "Signifikante Sprintverbesserung (p < 0,05) bei horizontal-vertikaler Kombi; kein Effekt durch Zusatzlast"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du willst auf den ersten 20 bis 30 Metern schneller sprinten und nutzt dafür Sprungtraining. Was hilft im Schnitt am besten?",
+"richtig": "Weitsprünge und Hochsprünge ohne Zusatzgewicht kombinieren",
+"falsch": [
+"Ausschließlich senkrecht nach oben springen mit Gewichtsweste",
+"Nur wenige Einheiten mit sehr schwerem Zusatzgewicht machen",
+"Auf Sprünge verzichten, da sie nur die Sprunghöhe trainieren"
+],
+"warum": "Weitsprünge trainieren den Schub nach vorn, Hochsprünge die Schnellkraft – eine Gewichtsweste brachte keinen Mehrwert."
+},
+"plus": {
+"frage": "Dein Ziel ist eine schnellere Beschleunigung über 5 bis 30 Meter. Solltest du für dein Plyometrie-Programm eine Gewichtsweste anziehen?",
+"richtig": "Nein, ohne Weste wirkt der Mix aus Sprüngen genauso gut",
+"falsch": [
+"Ja, eine schwere Weste verdoppelt den Transfer auf den Start",
+"Ja, aber nur bei Männern mit viel Krafttrainingserfahrung",
+"Nein, für Sprints solltest du nur vertikale Sprünge nutzen"
+],
+"warum": "Zusatzlasten brachten keinen nachweisbaren Zusatzeffekt; entscheidend war die Kombination aus horizontalen und vertikalen Sprüngen."
+},
+"labor": {
+"frage": "In einer Meta-Analyse aus 26 Studien zum Einfluss von Plyometrie auf 5–30-m-Sprints wurden Subgruppen verglichen. Was ergab die Analyse?",
+"richtig": "Übungstyp und Volumen waren wichtig, Geschlecht und Zusatzlast nicht",
+"falsch": [
+"Nur trainierte Männer profitierten von der Kombination der Sprungformen",
+"Zusatzgewichte erzeugten signifikant größere Effekte als eigenes Gewicht",
+"Kurze Programme unter 10 Einheiten wirkten besser als längere Blöcke"
+],
+"warum": "Signifikant war vor allem die Kombination horizontaler und vertikaler Sprünge bei ausreichendem Umfang, nicht Geschlecht oder Zusatzlast."
+}
+}
+},
+{
+"id": "PLY-104",
+"karte": {
+"kopf": "Trainierte & Jugend · Studien zusammengefasst",
+"titel": "Einbeiniges und beidbeiniges Training machen ähnlich schnell",
+"titel_hervor": "machen ähnlich schnell",
+"setup": "Eine Meta-Analyse verglich einbeiniges mit beidbeinigem Kraft- und Sprungtraining bei Sprints, Sprüngen und Richtungswechseln.",
+"zahl": null,
+"kern": [
+"Weder bei Sprints noch bei schnellen Richtungswechseln lag eine Form klar vorn",
+"Die Idee, nur einbeinige Übungen übertragen sich aufs Laufen, bestätigt sich so nicht",
+"Beide Varianten wirken gut und lassen sich sinnvoll im Wochenplan mischen"
+],
+"grenze": "Kleine Stichproben je Testart und ungleiche Einstufungen des Trainingsstands erschweren feine Vergleiche nach Niveau.",
+"fuer_dich": "Du willst schneller sprinten oder Haken schlagen? Du musst Kniebeugen nicht streichen – mische ein- und beidbeinige Übungen.",
+"labor": {
+"design": "Systematisches Review mit Meta-Analyse, unilaterales vs. bilaterales Kraft- und Plyometrietraining",
+"teilnehmer": "Trainierte Sportler und Jugendliche aus kontrollierten Studien",
+"ergebnis": "Kein signifikanter Unterschied für Sprint, Agilität, Kraft und Sprung; Volumen-Regression p = 0,167–0,616"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Beim Sprinten stößt du dich bei jedem Schritt mit einem Bein ab. Sind einbeinige Übungen deshalb klar besser als beidbeinige?",
+"richtig": "Nein, beide Formen wirken bei Sprint und Wendigkeit ähnlich",
+"falsch": [
+"Ja, beidbeinige Übungen bringen für das Laufen kaum Nutzen",
+"Ja, einbeiniges Training macht meist doppelt so schnell",
+"Nein, nur beidbeiniges Training wirkt auf kurze Sprints"
+],
+"warum": "Obwohl man einbeinig läuft, schnitten ein- und beidbeiniges Kraft- und Sprungtraining im Vergleich gleich gut ab."
+},
+"plus": {
+"frage": "Du willst deinen Plan für Sprint und Richtungswechsel optimieren. Solltest du Kniebeugen ganz durch Split Squats und einbeinige Sprünge ersetzen?",
+"richtig": "Nein, mische bilaterale und unilaterale Übungen im Plan",
+"falsch": [
+"Ja, unilaterale Übungen sind bei Sprints klar überlegen",
+"Ja, bilaterale Übungen bremsen schnelle Richtungswechsel",
+"Nein, streiche lieber alle einbeinigen Übungen im Plan"
+],
+"warum": "Unilaterales Training war bilateralem nicht überlegen; eine Mischung aus beiden Varianten nutzt die Vorteile beider Formen."
+},
+"labor": {
+"frage": "In einer Meta-Analyse wurde unilaterales gegen bilaterales Kraft- und Plyometrietraining getestet, obwohl die Spezifitätshypothese einbeinige Übungen bevorzugt. Was zeigte sich?",
+"richtig": "Kein signifikanter Vorteil für unilaterales Training im Vergleich",
+"falsch": [
+"Klarer Vorteil für unilaterales Training bei Sprint und Kraft",
+"Signifikanter Vorteil für bilaterales Training bei allen Tests",
+"Ein starker Vorteil für unilaterales Training bei hohem Volumen"
+],
+"warum": "Trotz des theoretischen bilateralen Defizits fanden die gepoolten Daten keinen signifikanten Unterschied zwischen beiden Modalitäten."
+}
+}
+},
+{
+"id": "PLY-105",
+"karte": {
+"kopf": "Trainierte & Aktive · 56 Studien zusammengefasst",
+"titel": "Längere Sprungblöcke steigern die Sprunghöhe um bis zu 15 Prozent",
+"titel_hervor": "bis zu 15 Prozent",
+"setup": "Eine Meta-Analyse aus 56 Studien untersuchte, wie Dauer, Umfang, Sprungmix und Zusatzgewicht die vertikale Sprunghöhe beeinflussen.",
+"zahl": {
+"label": "Zuwachs der vertikalen Sprunghöhe",
+"wert": "4,7–15 %",
+"alltag": ""
+},
+"kern": [
+"Am besten wirkten über 10 Wochen, mehr als 20 Einheiten und über 50 Sprünge",
+"Verschiedene Sprungarten zu mischen brachte mehr als eine einzelne Übung",
+"Gewichtswesten boten keinen Vorteil – sie machen den Absprung wohl langsamer"
+],
+"grenze": "Erfahrene Sportler und Männer legten im Schnitt etwas stärker zu – der Einzelwert hängt stark vom Ausgangsniveau ab.",
+"fuer_dich": "Du willst maximal hoch springen? Plane über 10 Wochen mit mehr als 20 Einheiten, mische Sprungarten und lass die Gewichtsweste weg.",
+"labor": {
+"design": "Meta-Analyse über Dosis-Wirkungs-Faktoren von plyometrischem Sprungtraining",
+"teilnehmer": "56 Studien mit 225 Effektstärken, Männer und Frauen",
+"ergebnis": "+4,7 bis +15 % Sprunghöhe; Dauer r = 0,452, Einheiten r = 0,515, Sprünge/Einheit r = 0,391 (p < 0,05)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du trainierst für mehr Sprungkraft und überlegst, ob du dabei eine Gewichtsweste tragen solltest. Was zeigt die Forschung?",
+"richtig": "Sie bringt meist keinen Mehrwert für die Sprunghöhe",
+"falsch": [
+"Sie verdoppelt den Effekt schon nach wenigen Wochen",
+"Ohne Zusatzgewicht steigt die Sprunghöhe kaum noch",
+"Sie hilft vor allem in kurzen Blöcken von zwei Wochen"
+],
+"warum": "Zusatzgewichte verlangsamen wahrscheinlich den Absprung und dämpfen die Federwirkung der Sehnen – ohne sie sprangen die Gruppen genauso gut."
+},
+"plus": {
+"frage": "Du planst einen Trainingsblock gezielt für maximale vertikale Sprunghöhe. Welcher Aufbau verspricht die größten Zuwächse?",
+"richtig": "Ein längerer Block über gut 10 Wochen mit gemischten Sprungarten",
+"falsch": [
+"Ein kurzer 4-Wochen-Block mit einer einzelnen Sprungvariante",
+"Ein längerer Block mit nur einer Sprungart und schwerer Weste",
+"Sehr wenige Sprünge pro Einheit, dafür an sechs Tagen pro Woche"
+],
+"warum": "Längere Programme (>10 Wochen, >20 Einheiten), über 50 Kontakte pro Einheit und die Kombination aus SJ, CMJ und DJ schnitten am besten ab."
+},
+"labor": {
+"frage": "In einer Meta-Analyse aus 56 Studien (225 Effektstärken) wurden Moderatoren für Vertikalsprung-Zuwächse untersucht. Welche Gruppe profitierte stärker?",
+"richtig": "Sportler mit mehr Vorerfahrung sowie Männer tendenziell stärker",
+"falsch": [
+"Untrainierte Einsteiger deutlich stärker als erfahrene Sportler",
+"Ausschließlich Frauen, während Männer kaum Zuwächse zeigten",
+"Gruppen mit Zusatzlast deutlich stärker als ohne Zusatzlast"
+],
+"warum": "Sportler mit höherer Vorerfahrung (p < 0,01) und Männer (p < 0,05) erzielten tendenziell größere Zuwächse; Zusatzlasten halfen nicht."
+}
+}
+},
+{
+"id": "PLY-106",
+"karte": {
+"kopf": "Sportstudierende · Vergleichsstudie",
+"titel": "Weniger Sprungeinheiten liefern pro Sprung deutlich mehr Ertrag",
+"titel_hervor": "deutlich mehr Ertrag",
+"setup": "42 Sportstudierende absolvierten über sieben Wochen entweder 1, 2 oder 4 Tiefsprung-Einheiten pro Woche und testeten Kraft, Sprint und Sprung.",
+"zahl": null,
+"kern": [
+"Ein bis zwei Einheiten pro Woche reichten für starke Gewinne bei wenig Ermüdung",
+"Vier Einheiten pro Woche brachten pro einzelnem Sprung klar geringeren Nutzen",
+"Ab einer gewissen Sprungmenge flacht der zusätzliche Trainingseffekt ab"
+],
+"grenze": "Getestet wurden nur Tiefsprünge bei Einsteigern auf weicher Matte – Profis vertragen oder brauchen eventuell mehr Volumen.",
+"fuer_dich": "Du hast wenig Zeit oder fühlst dich schnell müde? Bleib bei 1 bis 2 Sprungeinheiten pro Woche statt täglich zu springen.",
+"labor": {
+"design": "RCT über 7 Wochen, Vergleich von 7, 14 und 28 Drop-Jump-Einheiten (20/40/60 cm auf 3-cm-Matte)",
+"teilnehmer": "42 Sportstudierende (21–26 Jahre) ohne Plyometrie-Erfahrung",
+"ergebnis": "Effizienz/Sprung: Sprint 0,002 vs. 0,001 %; 1RM Beinpresse 0,0199 vs. 0,0113 % (7 vs. 28 Einheiten)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du möchtest mit Sprungtraining schneller und kräftiger werden. Ist viermal pro Woche automatisch viel besser als ein- bis zweimal?",
+"richtig": "Nein, ein- bis zweimal pro Woche ist pro Sprung deutlich effizienter",
+"falsch": [
+"Ja, viermal pro Woche bringt fast viermal so schnelle Fortschritte",
+"Nein, erst ab fünf Einheiten pro Woche entsteht überhaupt ein Effekt",
+"Ja, aber nur wenn du beim Springen keine Pausen machst"
+],
+"warum": "Bei sehr vielen Sprüngen greift eine Sättigung: 1 bis 2 Einheiten brachten pro Sprung klar höhere Zuwächse bei weniger Belastung."
+},
+"plus": {
+"frage": "Du willst Drop Jumps zeiteffizient und ohne unnötige Ermüdung in deinen Wochenplan einbauen. Welche Frequenz ist dafür am sinnvollsten?",
+"richtig": "1 bis 2 Einheiten pro Woche statt 4 Einheiten pro Woche",
+"falsch": [
+"4 Einheiten pro Woche für maximalen Nutzen pro Sprung",
+"Täglich kleine Sätze für bestmögliche Bodenkontaktzeit",
+"Nur alle zwei Wochen, weil Drop Jumps nicht wirken"
+],
+"warum": "Im Vergleich von 7, 14 und 28 Einheiten war die relative Effizienz pro Sprung bei 1 bis 2 Einheiten pro Woche am höchsten."
+},
+"labor": {
+"frage": "In einer kontrollierten Studie trainierten 42 Sportstudierende 7 Wochen lang Drop Jumps mit 7, 14 oder 28 Gesamteinheiten. Worauf ist die Übertragbarkeit begrenzt?",
+"richtig": "Einsteiger ohne Vorerfahrung, nur Drop Jumps auf einer weichen Matte",
+"falsch": [
+"Es fehlte eine Messung der Sprintzeit und der Beinkraft",
+"Die Gruppe mit 28 Einheiten schied vorzeitig wegen Verletzungen aus",
+"Es wurden nur ältere Menschen über sechzig Jahre untersucht"
+],
+"warum": "Die Teilnehmer hatten keine Plyometrie-Erfahrung und sprangen nur Drop Jumps auf einer 3-cm-Matte – Profis haben teils andere Schwellen."
+}
+}
+},
+{
+"id": "PLY-107",
+"karte": {
+"kopf": "Jugend & Erwachsene · 61 Studien zusammengefasst",
+"titel": "Ab rund 1.080 Sprüngen im Block bringt mehr Volumen keinen Vorteil",
+"titel_hervor": "keinen Vorteil",
+"setup": "Eine Meta-Analyse aus 61 Studien prüfte bei Jugendlichen und Erwachsenen, wie Sprungtraining die schnelle Federkraft bei kurzen Bodenkontakten steigert.",
+"zahl": null,
+"kern": [
+"Jugendliche vor und nach dem Wachstumsspurt sowie Erwachsene profitieren deutlich",
+"Blöcke über sieben Wochen mit mehr als 14 Einheiten schnitten tendenziell besser ab",
+"Drei Einheiten pro Woche wirkten oft stärker als selteneres Sprungtraining"
+],
+"grenze": "Kein einzelner Faktor wie Dauer oder Frequenz erklärte die Unterschiede allein – das Gesamtpaket zählt.",
+"fuer_dich": "Du planst einen Block für schnellere Bodenkontakte? Trainiere über 7 Wochen dreimal wöchentlich und deckele das Volumen bei 1.080 Sprüngen.",
+"labor": {
+"design": "Systematisches Review mit Meta-Analyse, 4–36 Wochen, 1–3 Einheiten/Woche",
+"teilnehmer": "2.576 Teilnehmer aus 61 Studien (Prä-/Post-PHV & Erwachsene)",
+"ergebnis": "RSI ES 0,54 (95 % KI 0,46–0,62, p < 0,001); Reifestadien ES 0,35–0,80; kein Vorteil >1.080 Sprünge"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Hilft Sprungtraining für schnelle, federnde Schritte erst im Erwachsenenalter oder auch schon bei Jugendlichen?",
+"richtig": "Es wirkt vor und nach dem Wachstumsspurt wie bei Erwachsenen",
+"falsch": [
+"Es wirkt erst deutlich nach Abschluss des Längenwachstums",
+"Es bringt nur Kindern vor dem Wachstumsspurt messbare Effekte",
+"Bei Erwachsenen lässt sich diese Federkraft kaum trainieren"
+],
+"warum": "In der Auswertung verbesserten sich Jugendliche vor und nach dem Wachstumsspurt genauso deutlich wie Erwachsene."
+},
+"plus": {
+"frage": "Du planst einen mehrwöchigen Plyometrie-Block für deinen Reactive Strength Index (RSI) und hast schon gut tausend Sprünge im Plan. Lohnt es sich, das Volumen weiter stark hochzuschrauben?",
+"richtig": "Nein, über diese Menge hinaus zeigt sich kein klarer Zusatzgewinn",
+"falsch": [
+"Ja, mehr Sprünge bringen auch danach weiter spürbare Zuwächse",
+"Ja, erst oberhalb dieser Menge beginnt sich der RSI zu verbessern",
+"Nein, aber du solltest dafür auf einmal pro Woche reduzieren"
+],
+"warum": "Über mehr als 1.080 Gesamtsprünge im Block zeigte sich kein Vorteil mehr; optimal waren über 7 Wochen mit 3 Einheiten pro Woche."
+},
+"labor": {
+"frage": "In einer Meta-Analyse aus 61 Studien (n = 2.576) zum Reactive Strength Index wurde per multivariater Meta-Regression nach dem stärksten Einzelfaktor gesucht. Was kam heraus?",
+"richtig": "Keine einzelne Trainingsvariable erklärte die RSI-Varianz isoliert",
+"falsch": [
+"Die Wochenfrequenz erklärte fast die gesamte Varianz allein",
+"Nur das biologische Alter bestimmte den gesamten Trainingserfolg",
+"Die Programmdauer war der einzig signifikante Faktor im Gesamtmodell"
+],
+"warum": "Obwohl längere Blöcke und 3 Einheiten/Woche tendenziell besser abschnitten, lag das erklärte R² einzelner Variablen im Gesamtmodell bei 0,0."
+}
+}
+},
+{
+"id": "PLY-108",
+"karte": {
+"kopf": "Jugend & junge Erwachsene · 35 Studien",
+"titel": "Explosive Würfe stärken Wurfkraft deutlich und die Maximalkraft mit",
+"titel_hervor": "stärken Wurfkraft deutlich",
+"setup": "35 Studien untersuchten über 4 bis 16 Wochen, wie Medizinballwürfe und explosive Druckwürfe Wurfleistung und Kraft im Oberkörper verändern.",
+"zahl": null,
+"kern": [
+"Anders als beim normalen Drücken beschleunigst du beim Werfen bis zum Schluss",
+"In allen 35 Studien zusammen wurde nur eine einzige Verletzung gemeldet",
+"Zwei bis vier Einheiten pro Woche über mindestens vier Wochen zeigten Wirkung"
+],
+"grenze": "Viele Einzelstudien waren sehr klein und enthielten wenige Frauen – die Aussagekraft der Belege ist laut GRADE gering.",
+"fuer_dich": "Du willst mehr Power im Oberkörper für Wurf- oder Schlagsport? Baue 2- bis 4-mal pro Woche Medizinballwürfe in deinen Plan ein.",
+"labor": {
+"design": "Systematisches Review mit Meta-Analyse, 4–16 Wochen, 2–4 Einheiten/Woche",
+"teilnehmer": "Gesunde Jugendliche und junge Erwachsene aus 35 Studien (oft n < 13)",
+"ergebnis": "Medizinballwurf ES 0,64 (95 % KI 0,43–0,85); Maximalkraft ES 0,39 (95 % KI 0,15–0,63); GRADE niedrig"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Warum trainieren Würfe mit dem Medizinball die Explosivität im Oberkörper oft gezielter als normales Bankdrücken?",
+"richtig": "Weil du das Gewicht bis zum Loslassen durchgehend beschleunigst",
+"falsch": [
+"Weil Medizinbälle deutlich schwerer sind als Langhanteln",
+"Weil normales Bankdrücken die Armmuskeln kaum beansprucht",
+"Weil beim Werfen keine Muskeln, sondern nur Sehnen arbeiten"
+],
+"warum": "Beim normalen Bankdrücken bremst du das Gewicht am Ende der Bewegung stark ab – beim Werfen beschleunigst du fast die ganze Zeit."
+},
+"plus": {
+"frage": "Du willst mit Oberkörper-Plyometrie wie Medizinballwürfen mehr Schnellkraft aufbauen, hast aber Sorge vor Verletzungen. Wie sieht die Datenlage aus?",
+"richtig": "Gute Effekte auf Wurfpower und nur eine gemeldete Verletzung in 35 Studien",
+"falsch": [
+"Sehr hohes Verletzungsrisiko, deshalb erst ab jahrelangem Krafttraining",
+"Starker Zuwachs der Maximalkraft, aber kein messbarer Effekt beim Werfen",
+"Wirkt nur, wenn du täglich mindestens sechs verschiedene Wurfübungen machst"
+],
+"warum": "2 bis 4 Einheiten pro Woche brachten moderate Effekte beim Werfen und kleinere bei der Maximalkraft – bei nur einer Verletzung insgesamt."
+},
+"labor": {
+"frage": "Eine Meta-Analyse aus 35 Studien fand moderate Effekte von ballistischem Oberkörpertraining auf die Wurfleistung. Warum wurde die Evidenz nach GRADE niedrig eingestuft?",
+"richtig": "Viele Primärstudien hatten sehr kleine Gruppen und wenige Frauen",
+"falsch": [
+"Die Mehrheit der eingeschlossenen Studien wies ein hohes Bias-Risiko auf",
+"Die Effektstärken waren statistisch nicht signifikant und stark negativ",
+"Alle Studien dauerten kürzer als zwei Wochen ohne Kontrollgruppe"
+],
+"warum": "Obwohl 30 der 35 Studien ein geringes Bias-Risiko hatten, senkten kleine Stichproben (oft n < 13) und wenige Daten zu Frauen die GRADE-Bewertung."
+}
+}
+}
+]

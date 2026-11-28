@@ -1,0 +1,1134 @@
+[
+{
+"id": "FAST-157",
+"karte": {
+"kopf": "Personen mit Stoffwechselrisiko · Pilotstudie",
+"titel": "Ein 10-Stunden-Essfenster senkte Gewicht und Blutdruck spürbar",
+"titel_hervor": "senkte Gewicht und Blutdruck",
+"setup": "19 Personen mit metabolischem Syndrom verkürzten ihr Essfenster 12 Wochen lang von über 14 auf täglich 10 Stunden.",
+"zahl": {
+"label": "Gewichtsverlust in 12 Wochen",
+"wert": "−3 %",
+"alltag": "≈ 3,3 kg weniger im Schnitt"
+},
+"kern": [
+"Der Bauchumfang schrumpfte im Schnitt um 4 Prozent, also rund 4,5 Zentimeter",
+"Blutdruck und LDL-Cholesterin verbesserten sich nach 12 Wochen ebenfalls",
+"Das 14:10-Modell ließ sich gut durchhalten und zeigte keine schweren Nebenwirkungen"
+],
+"grenze": "Kleine Pilotstudie mit 19 Personen ohne Vergleichsgruppe – allgemeine Aussagen für alle Einsteiger sind noch nicht möglich.",
+"fuer_dich": "Du willst Intervallfasten testen? Starte zwei Wochen mit 12:12 und wechsle dann auf ein machbares 10-Stunden-Fenster.",
+"labor": {
+"design": "Einarmige klinische Pilotstudie (Vorher-Nachher-Vergleich), 12 Wochen, 14:10 TRE",
+"teilnehmer": "19 Erwachsene mit metabolischem Syndrom",
+"ergebnis": "Gewicht −3 % (−3,3 kg), Bauch −4 % (−4,5 cm), RR −4 %/−8 %, LDL-C −11 % (alle p < 0,05)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Muss man beim Intervallfasten direkt 16 Stunden am Stück nichts essen, damit sich überhaupt etwas tut?",
+"richtig": "Nein, schon ein 10-Stunden-Essfenster zeigte erste positive Effekte",
+"falsch": [
+"Ja, unter 16 Stunden Fasten verändert sich beim Gewicht gar nichts",
+"Ja, erst ab 20 Stunden Fasten reagieren Blutdruck und Bauchumfang",
+"Nein, aber nur wenn man gleichzeitig alle Kohlenhydrate streicht"
+],
+"warum": "In einer 12-wöchigen Pilotstudie sanken Gewicht, Bauchumfang, Blutdruck und LDL-Cholesterin bereits mit einem 10-Stunden-Essfenster."
+},
+"plus": {
+"frage": "Du bist Einsteiger beim Intervallfasten und möchtest eine realistische Routine aufbauen. Welcher Weg ist am sinnvollsten?",
+"richtig": "Zuerst zwei Wochen 12:12 testen und dann auf 14:10 übergehen",
+"falsch": [
+"Direkt am ersten Tag mit einem strengen 20:4-Fenster starten",
+"Jeden zweiten Tag gar nichts essen und dazwischen unbegrenzt",
+"Das Essfenster täglich zufällig zwischen 4 und 14 Stunden wechseln"
+],
+"warum": "Ein schrittweiser Einstieg über 12:12 auf 14:10 ist deutlich alltagstauglicher als sofort sehr enge Fastenfenster."
+},
+"labor": {
+"frage": "19 Personen mit metabolischem Syndrom verkürzten ihr Essfenster 12 Wochen lang auf 10 Stunden, ohne parallele Kontrollgruppe. Wie sind die Ergebnisse einzuordnen?",
+"richtig": "Ermutigende Pilotdaten, aber ohne Kontrollgruppe nicht allgemein übertragbar",
+"falsch": [
+"Endgültiger Beweis, dass 14:10 jeder anderen Diätform überlegen ist",
+"Unbrauchbare Daten, weil keine relevanten Messwerte erhoben wurden",
+"Sicherer Nachweis der Unbedenklichkeit für alle gesunden Sportler"
+],
+"warum": "Durch die kleine Stichprobe und fehlende Kontrollgruppe liefert die Pilotstudie wertvolle Hinweise, aber keine allgemeine Sicherheitsgarantie."
+}
+}
+},
+{
+"id": "FAST-158",
+"karte": {
+"kopf": "Erwachsene · 26 Studien zusammengefasst",
+"titel": "Kalorienfreie Süßstoffe lassen Blutzucker und Insulin ruhig",
+"titel_hervor": "Blutzucker und Insulin ruhig",
+"setup": "In 26 Studien wurden Blutzucker und Insulin direkt nach kalorienfreien Süßstoffen mit Wasser oder Placebo verglichen.",
+"zahl": null,
+"kern": [
+"Im Mittel stieg weder der Blutzucker noch das Insulin nach Süßstoffen an",
+"Die Ergebnisse gelten für die direkte Reaktion kurz nach dem Trinken oder Essen",
+"Manche Menschen bekommen durch den süßen Geschmack trotzdem mehr Appetit"
+],
+"grenze": "Geprüft wurde nur die akute Reaktion – wie Süßstoffe langfristig Appetit und Geschmack prägen, bleibt individuell.",
+"fuer_dich": "Du willst im Fastenfenster etwas mit Geschmack? Kalorienfreie Süßstoffe sind möglich, prüfe aber, ob sie dich hungrig machen.",
+"labor": {
+"design": "Systematisches Review mit Meta-Analyse randomisierter Studien, Süßstoffe vs. Wasser/Placebo",
+"teilnehmer": "26 Publikationen (34 Glukose-Studien, 29 Insulin-Studien)",
+"ergebnis": "Postprandiale Glukose −0,02 mmol/L (95 %-KI −0,09 bis 0,05); Insulin −2,39 pmol/L (95 %-KI −11,83 bis 7,05)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Löst ein kalorienfreies Getränk mit Süßstoff sofort eine starke Insulinausschüttung aus, nur weil es süß schmeckt?",
+"richtig": "Nein, Blutzucker und Insulin bleiben im Schnitt unverändert",
+"falsch": [
+"Ja, der süße Geschmack treibt das Insulin fast wie Zucker hoch",
+"Ja, der Blutzucker steigt zuerst stark an und stürzt dann ab",
+"Nein, aber das Insulin sinkt danach gefährlich stark unter Null"
+],
+"warum": "Über 26 Studien hinweg zeigten kalorienfreie Süßstoffe direkt nach der Einnahme keinen Anstieg von Blutzucker oder Insulin."
+},
+"plus": {
+"frage": "Du trinkst während deines Fastenfensters ein kalorienfreies Getränk mit Süßstoff. Worauf solltest du dabei achten?",
+"richtig": "Ob der süße Geschmack bei dir persönlich mehr Appetit auslöst",
+"falsch": [
+"Dass du danach sofort trainierst, um den Insulinschub abzubauen",
+"Dass du das Fastenfenster danach abbrechen und essen musst",
+"Dass du zusätzlich Zucker nimmst, um den Blutzucker zu stützen"
+],
+"warum": "Blutzucker und Insulin bleiben zwar ruhig, aber individuell kann der süße Geschmack subjektiv den Appetit anregen."
+},
+"labor": {
+"frage": "Eine Meta-Analyse fasste 26 randomisierte Studien zur akuten Wirkung kalorienfreier Süßstoffe gegenüber Wasser oder Placebo zusammen. Was ergab die gepoolte Auswertung?",
+"richtig": "Keinen signifikanten akuten Effekt auf postprandiale Glukose oder Insulin",
+"falsch": [
+"Einen moderaten Insulinanstieg bei gleichzeitig unveränderter Glukose",
+"Eine signifikante Senkung des Nüchternblutzuckers über mehrere Tage",
+"Starke Unterschiede je nachdem, ob das Getränk kalt oder warm war"
+],
+"warum": "Die gepoolten Konfidenzintervalle für Glukose und Insulin umschlossen jeweils die Null, also keinen akuten Effekt."
+}
+}
+},
+{
+"id": "FAST-159",
+"karte": {
+"kopf": "Mäuse · Laborstudie",
+"titel": "Schwarzer Kaffee regte bei Mäusen die Zellreinigung an",
+"titel_hervor": "bei Mäusen die Zellreinigung",
+"setup": "In einer Tierstudie bekamen Mäuse koffeinhaltigen oder entkoffeinierten Kaffee, während ihre Zellreinigung gemessen wurde.",
+"zahl": null,
+"kern": [
+"Erste Hinweise zeigen den Effekt auch bei entkoffeiniertem Kaffee",
+"Vermutlich spielen Pflanzenstoffe im Kaffee eine Rolle, nicht das Koffein",
+"Schwarzer Kaffee ohne Milch, Zucker oder Fett stört das Fastenfenster nicht"
+],
+"grenze": "Bisher nur an Mäusen untersucht – ob und nach wie vielen Stunden das beim Menschen genauso abläuft, ist offen.",
+"fuer_dich": "Du trinkst im Fastenfenster gern Kaffee? Schwarz und ungesüßt passt er gut – erwarte aber keine garantierten Zelleffekte.",
+"labor": {
+"design": "Präklinische In-vivo-Studie im Mausmodell, koffeinhaltiger vs. entkoffeinierter Kaffee",
+"teilnehmer": "Mäuse (Tiermodell, keine Humandaten)",
+"ergebnis": "Anstieg des autophagischen Fluxes unabhängig vom Koffeingehalt"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Darfst du während einer Fastenphase schwarzen Kaffee trinken, oder macht er das Fasten zunichte?",
+"richtig": "Schwarzer Kaffee ohne Zusätze passt gut ins Fastenfenster",
+"falsch": [
+"Kaffee bricht das Fasten sofort, sobald er Koffein enthält",
+"Nur Kaffee mit einem Schuss Milch oder Butter stört nicht",
+"Entkoffeinierter Kaffee enthält zu viel Energie fürs Fasten"
+],
+"warum": "Schwarzer Kaffee und ungesüßter Tee ohne Milch, Zucker oder Fett beeinträchtigen das Fastenfenster nicht."
+},
+"plus": {
+"frage": "Du trinkst im Fastenfenster schwarzen Kaffee, weil du gehört hast, er starte beim Menschen sofort die Zellreinigung. Wie ist das einzuordnen?",
+"richtig": "Die Daten stammen aus Mäusen und sind nicht eins zu eins übertragbar",
+"falsch": [
+"Der Effekt ist beim Menschen nach genau zwei Tassen sicher belegt",
+"Das funktioniert beim Menschen nur mit sehr starkem Espresso",
+"Koffein blockiert die Zellreinigung, daher geht nur koffeinfreier Kaffee"
+],
+"warum": "Die Hinweise auf angeregte Autophagie kommen aus einem Mausmodell – für den Menschen lassen sich daraus keine Stundenversprechen ableiten."
+},
+"labor": {
+"frage": "In einer präklinischen Studie an Mäusen wurde der autophagische Flux nach koffeinhaltigem und entkoffeiniertem Kaffee untersucht. Welcher Befund und welche Grenze sind zentral?",
+"richtig": "Beide Varianten steigerten den Flux, aber nur bei Mäusen gezeigt",
+"falsch": [
+"Nur koffeinhaltiger Kaffee wirkte, was in großen Human-RCTs bestätigt wurde",
+"Kein Kaffee veränderte die Autophagie, weil Polyphenole kaum aufgenommen werden",
+"Der Effekt trat bei Mäusen erst nach 48 Stunden vollständigem Fasten auf"
+],
+"warum": "Der Effekt trat unabhängig vom Koffein auf (vermutlich über Polyphenole), bleibt aber präklinische Evidenz ohne direkte Humanübertragung."
+}
+}
+},
+{
+"id": "FAST-160",
+"karte": {
+"kopf": "EU-Recht · Regulatorische Fachanalyse",
+"titel": "Die versprochene Funktion macht eine App zum Medizinprodukt",
+"titel_hervor": "macht eine App zum Medizinprodukt",
+"setup": "Die Analyse prüft anhand der EU-Medizinprodukteverordnung und Leitfäden, wann eine Gesundheits-App als Medizinprodukt gilt.",
+"zahl": null,
+"kern": [
+"Maßgeblich ist die Zweckbestimmung, die der Hersteller für die App festlegt",
+"Sobald Diagnose, Vorbeugung oder Behandlung von Krankheiten genannt wird, gilt EU-Recht",
+"Behörden prüfen nicht nur den Code, sondern auch Werbung und App-Store-Texte"
+],
+"grenze": "Es handelt sich um eine rechtliche Auslegung – im Streitfall entscheiden nationale Behörden und Gerichte.",
+"fuer_dich": "Du nutzt Fitness-Apps? Achte auf die Beschreibung: Lifestyle-Apps ordnen deinen Alltag, ersetzen aber keine ärztliche Beratung.",
+"labor": {
+"design": "Regulatorisch-rechtswissenschaftliche Analyse zu EU MDR 2017/745 und MDCG 2019-11",
+"teilnehmer": "Keine Studienteilnehmer (Rechts- und Leitfadenanalyse)",
+"ergebnis": "Einstufung meist als Klasse IIa+ bei klinischer Entscheidungsunterstützung oder Monitoring"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Woran entscheidet sich in der EU vor allem, ob eine Fitness- oder Ernährungs-App als Medizinprodukt gilt?",
+"richtig": "An dem Zweck, den der Hersteller für die App verspricht",
+"falsch": [
+"Allein daran, ob die App einen Schrittzähler oder Timer hat",
+"Daran, wie viele Nutzer die App im Store heruntergeladen haben",
+"Nur daran, ob die App kostenpflichtig oder kostenlos ist"
+],
+"warum": "Entscheidend ist die Zweckbestimmung: Sobald Diagnose, Vorbeugung oder Behandlung von Krankheiten versprochen wird, greift Medizinprodukterecht."
+},
+"plus": {
+"frage": "Du vergleichst zwei Ernährungs-Apps: Eine hilft bei der Mahlzeitenstruktur, die andere verspricht die Behandlung einer Krankheit. Was ist der Unterschied?",
+"richtig": "Die zweite fällt unter strenges EU-Recht für Medizinprodukte",
+"falsch": [
+"Beide gelten rechtlich automatisch als identische Lifestyle-Apps",
+"Nur die erste App braucht eine offizielle Zulassung als Medizinprodukt",
+"Keine App kann in der EU überhaupt als Medizinprodukt gelten"
+],
+"warum": "Reine Alltags- und Wohlfühlfunktionen bleiben Lifestyle, während krankheitsbezogene Zwecke Software zu einem Medizinprodukt machen."
+},
+"labor": {
+"frage": "Bei der regulatorischen Abgrenzung von Lifestyle-Apps und medizinischer Software nach EU-Recht: Was prüfen Aufsichtsbehörden neben der eigentlichen Funktion?",
+"richtig": "Das gesamte Marketing, App-Store-Texte und implizite Gesundheitsversprechen",
+"falsch": [
+"Ausschließlich den Quellcode der Berechnungsalgorithmen im Hintergrund",
+"Nur die Datenschutzerklärung und die Serverstandorte des Anbieters",
+"Allein das Fachwissen der Entwickler, die die App programmiert haben"
+],
+"warum": "Behörden und Gerichte werten neben dem Code besonders Marketing, UI-Texte und App-Store-Aussagen zur Bestimmung des Zwecks."
+}
+}
+},
+{
+"id": "FAT-101",
+"karte": {
+"kopf": "Erwachsene · 7 Vergleichsstudien",
+"titel": "Langsamer abnehmen lässt mehr Fett schmelzen",
+"titel_hervor": "lässt mehr Fett schmelzen",
+"setup": "361 Erwachsene nahmen entweder langsam über Monate oder schnell in wenigen Wochen gleich viel Gewicht ab.",
+"zahl": {
+"label": "Mehr Fett verloren bei gleichem Gewicht",
+"wert": "1,0 kg",
+"alltag": ""
+},
+"kern": [
+"Auch der Körperfettanteil sank beim langsamen Abnehmen deutlicher.",
+"Der Ruheverbrauch fiel bei schnellen Diäten um knapp 100 kcal stärker ab.",
+"Für den Muskelerhalt fehlten meist festes Krafttraining und genug Protein."
+],
+"grenze": "Protein und Krafttraining waren kaum vereinheitlicht – der Vorteil für Muskeln blieb statistisch unklar.",
+"fuer_dich": "Du planst eine Diät? Peile 0,5 bis 1 % deines Körpergewichts pro Woche an statt einer Crash-Diät.",
+"labor": {
+"design": "Meta-Analyse aus 7 RCTs, graduelle (9–36 Wo.) vs. schnelle Abnahme (5–12 Wo.)",
+"teilnehmer": "361 Erwachsene (18–70 Jahre; 167 graduell, 194 schnell)",
+"ergebnis": "FM WMD −1,00 kg (95 % KI −1,70 bis −0,29), KFA −0,83 %, RMR +407 kJ/Tag, FFM +0,74 kg (p = 0,327)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Zwei Menschen nehmen beide fünf Kilo ab – eine Person langsam, die andere per Crash-Diät. Was zeigt sich im Schnitt?",
+"richtig": "Die langsamere Person verliert mehr reines Körperfett",
+"falsch": [
+"Beide verlieren exakt gleich viel Körperfett",
+"Die schnellere Person verliert deutlich mehr Fett",
+"Der Ruheverbrauch bleibt bei beiden genau gleich"
+],
+"warum": "Bei gleichem Gewichtsverlust verschwindet beim langsameren Tempo im Schnitt mehr Fett und der Ruheverbrauch sinkt weniger."
+},
+"plus": {
+"frage": "Du willst über mehrere Monate Fett abbauen und deinen Ruheverbrauch schonen. Welches Tempo ist sinnvoll?",
+"richtig": "Moderat abnehmen statt ein sehr hohes Defizit zu fahren",
+"falsch": [
+"Mit einer Crash-Diät starten, um schnell fertig zu sein",
+"Das Tempo ignorieren, solange das Endgewicht stimmt",
+"Erst extrem schnell abnehmen und am Ende kaum noch essen"
+],
+"warum": "Ein moderates Tempo von 0,5 bis 1 % Körpergewicht pro Woche senkt Körperfett stärker und bremst den Abfall des Ruheumsatzes."
+},
+"labor": {
+"frage": "Sieben randomisierte Studien verglichen langsames und schnelles Abnehmen bei gleichem Gesamtverlust. Warum blieb der Unterschied bei der fettfreien Masse unklar?",
+"richtig": "Proteinzufuhr und Krafttraining waren meist nicht standardisiert",
+"falsch": [
+"Die langsamen Gruppen verloren im Schnitt mehr Muskelmasse",
+"Es wurden nur erfahrene Kraftsportler mit viel Protein getestet",
+"Die schnellen Diäten dauerten länger als die langsamen Phasen"
+],
+"warum": "Ohne einheitliche Vorgaben zu Protein und Krafttraining streuten die Daten zur fettfreien Masse zu stark für Signifikanz."
+}
+}
+},
+{
+"id": "FAT-102",
+"karte": {
+"kopf": "Athleten · Kontrollierte Vergleichsstudie",
+"titel": "Langsamer abnehmen ließ Athleten sogar Muskeln aufbauen",
+"titel_hervor": "sogar Muskeln aufbauen",
+"setup": "24 Athleten machten viermal pro Woche Krafttraining und nahmen entweder langsam oder schnell ab.",
+"zahl": {
+"label": "Fettfreie Masse bei langsamer Abnahme",
+"wert": "+2,1 %",
+"alltag": "gegenüber −0,2 % bei schneller Abnahme"
+},
+"kern": [
+"Die langsame Gruppe verlor rund ein Drittel ihrer Fettmasse, die schnelle ein Fünftel.",
+"Das kleinere Defizit lag bei rund 19 %, das größere bei etwa 30 %.",
+"Nach einem Jahr mit weniger Training waren die Unterschiede wieder weg."
+],
+"grenze": "Nur 24 Athleten wurden getestet; der Muskelzuwachs zeigte sich vor allem bei Frauen und im Oberkörper.",
+"fuer_dich": "Du trainierst regelmäßig Kraft und willst abnehmen? Halte das Defizit um 20 % und nimm unter 0,7 % pro Woche ab.",
+"labor": {
+"design": "RCT, langsame (Ø 8,5 Wo., −19 % Defizit) vs. schnelle Abnahme (Ø 5,3 Wo., −30 %), 4× Kraft/Wo.",
+"teilnehmer": "24 krafttrainierende Athleten",
+"ergebnis": "LBM +2,1 ± 0,4 % vs. −0,2 ± 0,7 % (p < 0,01); Fettmasse −31 ± 3 % vs. −21 ± 4 % (p = 0,02)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du machst regelmäßig Krafttraining und willst Gewicht verlieren. Wie schützt du deine Muskeln am besten?",
+"richtig": "Langsam abnehmen mit einem überschaubaren Defizit",
+"falsch": [
+"Möglichst schnell abnehmen, damit die Diät kurz bleibt",
+"Das Krafttraining während der Diät komplett pausieren",
+"Das Defizit verdoppeln und dafür mehr Ausdauer machen"
+],
+"warum": "Ein kleineres Defizit ermöglichte trainierenden Athleten sogar leichten Muskelaufbau und deutlich mehr Fettverlust."
+},
+"plus": {
+"frage": "Du trainierst viermal pro Woche Kraft und willst Fett verlieren, ohne Muskelmasse einzubüßen. Was passt am besten?",
+"richtig": "Ein kleines Defizit wählen und das wöchentliche Tempo drosseln",
+"falsch": [
+"Ein starkes Defizit von einem Drittel für maximale Fettverbrennung",
+"Zwei Wochen radikal fasten und danach normal weitertrainieren",
+"Das Defizit hochsetzen und nur noch leicht trainieren"
+],
+"warum": "Bei rund 19 % Defizit und langsamem Tempo nahmen Athleten fettfreie Masse zu, während 30 % Defizit keinen Zuwachs erlaubten."
+},
+"labor": {
+"frage": "Athleten absolvierten vier Krafteinheiten pro Woche bei langsamer oder schneller Abnahme und wurden ein Jahr später nachuntersucht. Was zeigte sich im Follow-up?",
+"richtig": "Mit halbiertem Trainingsvolumen glichen sich die Gruppen an",
+"falsch": [
+"Der Muskelvorsprung der langsamen Gruppe wuchs weiter an",
+"Die schnelle Gruppe baute nachträglich mehr Muskeln auf",
+"Nur männliche Athleten behielten ihre Zuwächse langfristig"
+],
+"warum": "Nachdem das Krafttrainingsvolumen im Alltag wieder sank, verschwanden die ursprünglichen Gruppenunterschiede nach 12 Monaten."
+}
+}
+},
+{
+"id": "FAT-103",
+"karte": {
+"kopf": "Frauen mit Übergewicht · Vergleichsstudie",
+"titel": "Schnelle Diäten bauen ohne Krafttraining mehr Muskeln ab",
+"titel_hervor": "mehr Muskeln ab",
+"setup": "36 übergewichtige Frauen nahmen ohne Krafttraining rund 6 % Gewicht ab – die eine Hälfte langsam, die andere schnell.",
+"zahl": null,
+"kern": [
+"Bei langsamer Abnahme sank Myostatin, ein Signalstoff für Muskelabbau.",
+"Beide Gruppen aßen wenig Eiweiß (15 % der Energie) und machten kein Krafttraining.",
+"Kurzfristig besserten sich Blutzucker- und Blutfettwerte bei schneller Abnahme stärker."
+],
+"grenze": "Ohne Krafttraining und mit wenig Eiweiß getestet – mit Training und mehr Protein kann es anders aussehen.",
+"fuer_dich": "Du willst ohne schweres Krafttraining abnehmen? Wähle ein sanftes Defizit statt einer radikalen Diät.",
+"labor": {
+"design": "RCT, schneller vs. gradueller Gewichtsverlust (~6 % KG), 15 % Protein, kein Krafttraining",
+"teilnehmer": "36 übergewichtige und adipöse Frauen (je 18 pro Gruppe)",
+"ergebnis": "Signifikant höherer SMM- und FFM-Verlust bei schneller Abnahme (p < 0,05); Myostatin sank nur graduell (p < 0,05)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Jemand will ohne Krafttraining abnehmen und überlegt zwischen einer sehr strengen kurzen Diät und einer langsamen Diät. Was passiert mit den Muskeln?",
+"richtig": "Die strenge schnelle Diät kostet im Schnitt mehr Muskelmasse",
+"falsch": [
+"Bei beiden Diäten gehen genau gleich viele Muskeln verloren",
+"Die schnelle Diät schützt die Muskeln durch die kürzere Dauer",
+"Ohne Sport verliert der Körper grundsätzlich nur reines Fett"
+],
+"warum": "Bei gleichem Gewichtsverlust bauten Frauen ohne Krafttraining in der schnellen Diät deutlich mehr Skelettmuskelmasse ab."
+},
+"plus": {
+"frage": "Du machst gerade eine Trainingspause, willst aber trotzdem etwas Gewicht verlieren. Wie gehst du mit dem Kaloriendefizit um?",
+"richtig": "Nur ein moderates Defizit wählen, um Muskelabbau zu bremsen",
+"falsch": [
+"Ein radikales Defizit nutzen, da du keine Trainingsenergie brauchst",
+"Die Eiweißzufuhr senken, weil du ohne Training weniger brauchst",
+"So schnell wie möglich abnehmen, um rasch wieder zu trainieren"
+],
+"warum": "Ohne den Schutzreiz durch Krafttraining führt eine radikale Kalorienrestriktion zu spürbar höherem Muskelverlust."
+},
+"labor": {
+"frage": "In einer randomisierten Studie verloren übergewichtige Frauen ohne Krafttraining bei 15 % Protein langsam oder schnell rund 6 % Gewicht. Was unterschied die Gruppen neben der Muskelmasse?",
+"richtig": "Nur langsames Abnehmen senkte Myostatin, schnelles besserte Stoffwechselmarker stärker",
+"falsch": [
+"Nur schnelles Abnehmen senkte Myostatin und schützte die Muskelmasse",
+"Beide Gruppen zeigten identische Veränderungen bei Myostatin und Blutfetten",
+"Die langsame Gruppe verbesserte Blutzucker und LDL kurzfristig deutlich stärker"
+],
+"warum": "Langsames Abnehmen senkte das muskelhemmende Myostatin, während die schnelle Diät kurzfristig HOMA-IR und LDL stärker besserte."
+}
+}
+},
+{
+"id": "FAT-104",
+"karte": {
+"kopf": "Erwachsene · Meta-Analyse aus 7 Studien",
+"titel": "Ab rund 500 kcal Defizit stoppt der Muskelaufbau im Schnitt",
+"titel_hervor": "stoppt der Muskelaufbau",
+"setup": "Verglichen wurde Krafttraining im Kaloriendefizit mit Training ohne Defizit über 8 bis 20 Wochen.",
+"zahl": {
+"label": "Schwelle, ab der Muskelaufbau stoppt",
+"wert": "≈ 500 kcal",
+"alltag": "pro Tag als Kaloriendefizit"
+},
+"kern": [
+"Je größer das tägliche Defizit, desto weniger Muskelmasse kam hinzu.",
+"Die Kraft stieg im Schnitt trotzdem fast genauso stark wie ohne Defizit.",
+"In einer Studie mit erfahrenen Kraftsportlern litt im Defizit auch die Kraft."
+],
+"grenze": "Die meisten Teilnehmenden waren älter (im Schnitt 60 Jahre) und zuvor untrainiert.",
+"fuer_dich": "Du willst abnehmen und gleichzeitig Muskeln aufbauen? Halte dein Defizit bei höchstens 500 kcal am Tag.",
+"labor": {
+"design": "Meta-Analyse (7 direkte Vergleiche, 8–20 Wo., 2–3× Kraft/Wo.) plus Meta-Regression (25 Studien)",
+"teilnehmer": "282 Erwachsene in den Direktvergleichen (Ø 60 ± 11 Jahre)",
+"ergebnis": "LBM ES −0,57 (p = 0,02), Kraft ES −0,31 (p = 0,28); Steigung −0,031 ES pro 100 kcal Defizit (ES = 0 bei ~500 kcal)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Kannst du im Kaloriendefizit durch Krafttraining trotzdem stärker werden?",
+"richtig": "Ja, die Kraft steigt im Schnitt meist auch im Defizit weiter",
+"falsch": [
+"Nein, ohne Überschuss ist kein Kraftzuwachs möglich",
+"Nur wenn du auf jedes Ausdauertraining verzichtest",
+"Erst nachdem die Diät seit einigen Wochen beendet ist"
+],
+"warum": "Während ein großes Defizit den Muskelaufbau ausbremst, blieb der Kraftzuwachs im Schnitt weitgehend erhalten."
+},
+"plus": {
+"frage": "Dein Ziel ist Rekomposition: gleichzeitig Fett abbauen und Muskeln aufbauen. Wie groß sollte dein tägliches Defizit sein?",
+"richtig": "Klein halten, deutlich unter einem großen Defizit bleiben",
+"falsch": [
+"Möglichst groß wählen, damit das Fett schnell weicht",
+"Die Defizitgröße spielt beim Krafttraining keine Rolle",
+"Mindestens tausend Kalorien einsparen und hart trainieren"
+],
+"warum": "Je größer das Defizit, desto stärker wird der Muskelaufbau gebremst – ab etwa 500 kcal am Tag stoppt er im Schnitt."
+},
+"labor": {
+"frage": "Eine Meta-Regression prüfte, wie die Höhe des Energiedefizits den Muskel- und Kraftzuwachs beim Krafttraining beeinflusst. Was schränkt die Übertragbarkeit auf erfahrene Kraftsportler ein?",
+"richtig": "Fast alle direkten Vergleichsstudien untersuchten zuvor inaktive Personen",
+"falsch": [
+"Es wurden ausschließlich junge Leistungssportler einbezogen",
+"Die Trainingsdauer lag in allen Studien unter zwei Wochen",
+"In keiner einzigen Studie wurde die Maximalkraft gemessen"
+],
+"warum": "Sechs von sieben direkten Studien untersuchten ältere oder untrainierte Menschen; bei erfahrenen Kraftsportlern litt auch die Kraft."
+}
+}
+},
+{
+"id": "FAT-105",
+"karte": {
+"kopf": "Junge Männer · Kontrollierte Studie",
+"titel": "Doppelt so viel Eiweiß brachte im Defizit 1,2 kg mehr Muskeln",
+"titel_hervor": "1,2 kg mehr Muskeln",
+"setup": "40 junge Männer machten 4 Wochen lang hartes Training bei 40 % Kaloriendefizit – mit normal viel oder doppelt so viel Eiweiß.",
+"zahl": {
+"label": "Zuwachs fettfreier Masse trotz Defizit",
+"wert": "+1,2 kg",
+"alltag": "gegenüber 0 kg bei halb so viel Eiweiß"
+},
+"kern": [
+"Mit 2,4 g Eiweiß pro Kilo verloren die Männer auch mehr Körperfett (−4,8 vs. −3,5 kg).",
+"Kraft und Sprintleistung stiegen in beiden Gruppen gleich stark an.",
+"Die Männer machten häufiges Kraft- und Intervalltraining und nutzten Molkenprotein."
+],
+"grenze": "Nur vier Wochen bei jungen Männern getestet – zudem aßen die Gruppen unterschiedlich viel Fett.",
+"fuer_dich": "Du fährst ein großes Defizit und trainierst viel? Schraube dein Eiweiß Richtung 2,4 g pro Kilo Körpergewicht hoch.",
+"labor": {
+"design": "RCT über 28 Tage, 40 % Defizit + intensives Kraft-/Intervalltraining, 2,4 vs. 1,2 g/kg Protein",
+"teilnehmer": "40 junge Männer",
+"ergebnis": "LBM +1,2 kg vs. 0,0 kg (p < 0,05); Fettmasse −4,8 kg vs. −3,5 kg (p < 0,05)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du isst deutlich weniger Kalorien als sonst und trainierst intensiv. Warum hilft jetzt besonders viel Eiweiß?",
+"richtig": "Es schützt die Muskeln und unterstützt stärkeren Fettverlust",
+"falsch": [
+"Es ersetzt den Schlaf und verhindert jede Müdigkeit",
+"Es macht Krafttraining während der Diät überflüssig",
+"Es sorgt dafür, dass du kein Kaloriendefizit mehr brauchst"
+],
+"warum": "Bei hohem Defizit und intensivem Training ermöglichte eine sehr hohe Eiweißzufuhr Muskelaufbau und größeren Fettverlust."
+},
+"plus": {
+"frage": "Du gehst für vier Wochen in einen harten Mini-Cut mit viel Trainingsvolumen. Wie solltest du dein Protein anpassen?",
+"richtig": "Deutlich anheben, um Muskelmasse bestmöglich zu schützen",
+"falsch": [
+"Senken, um mehr Platz für Kohlenhydrate im Defizit zu lassen",
+"Auf dem normalen Minimum halten, da mehr nicht verwertet wird",
+"Nur an Trainingsfreien Tagen erhöhen und sonst halbieren"
+],
+"warum": "Bei starkem Defizit von 40 % führte eine Verdopplung des Proteins von 1,2 auf 2,4 g/kg zu mehr Muskel- und Fettverlustvorteilen."
+},
+"labor": {
+"frage": "In einer 28-tägigen Studie mit 40 % Defizit und intensivem Training erhielten junge Männer 2,4 oder 1,2 g/kg Protein. Welche methodische Grenze ist zu beachten?",
+"richtig": "Kurze Dauer und nicht abgeglichene Fettzufuhr zwischen den Gruppen",
+"falsch": [
+"Die Gruppen hatten unterschiedlich hohe Kaloriendefizite",
+"Nur die Hochprotein-Gruppe absolvierte das Krafttraining",
+"Die Kraft- und Sprintleistung wurde nicht erhoben"
+],
+"warum": "Die Intervention lief nur vier Wochen mit Molkenprotein-Isolat, und die Nahrungsfettzufuhr war zwischen den Gruppen nicht gleich."
+}
+}
+},
+{
+"id": "FAT-106",
+"karte": {
+"kopf": "Schlanke Sportler · 6 Studien ausgewertet",
+"titel": "Schlanke Kraftsportler brauchen im Defizit besonders viel Eiweiß",
+"titel_hervor": "besonders viel Eiweiß",
+"setup": "Sechs Studien wurden ausgewertet, um den Eiweißbedarf schlanker Kraftsportler während einer Diät zu bestimmen.",
+"zahl": {
+"label": "Empfohlener Eiweißbereich im Defizit",
+"wert": "2,3–3,1 g/kg",
+"alltag": "bezogen auf die fettfreie Masse"
+},
+"kern": [
+"Je schlanker du bist und je größer das Defizit, desto höher der Bedarf.",
+"Gerechnet wird pro Kilo fettfreier Masse, nicht pro Kilo Körpergewicht.",
+"Bei höherem Körperfett und mildem Defizit reicht meist der untere Bereich."
+],
+"grenze": "Die Spanne basiert auf nur sechs sehr unterschiedlichen, kleinen Studien an jungen Sportlern.",
+"fuer_dich": "Du bist schon recht schlank und gehst ins Defizit? Plane 2,3 bis 3,1 g Eiweiß pro Kilo fettfreier Masse ein.",
+"labor": {
+"design": "Systematisches Review aus 6 Primärstudien zum Proteinbedarf in Kalorienrestriktion",
+"teilnehmer": "Schlanke, krafttrainierte Sportler (Ø 23,4 Jahre)",
+"ergebnis": ""
+}
+},
+"quiz": {
+"basis": {
+"frage": "Zwei Kraftsportler machen Diät: eine Person ist schon sehr schlank, die andere hat noch viel Körperfett. Wer braucht im Verhältnis mehr Eiweiß?",
+"richtig": "Die sehr schlanke Person, weil ihre Muskeln stärker gefährdet sind",
+"falsch": [
+"Die Person mit mehr Körperfett, weil Fett mehr Eiweiß verbraucht",
+"Beide brauchen genau gleich wenig, da im Defizit gespart wird",
+"Keine von beiden, solange regelmäßig trainiert wird"
+],
+"warum": "Je weniger Körperfett vorhanden ist, desto eher greift der Körper im Defizit auf Muskelmasse zurück – daher steigt der Eiweißbedarf."
+},
+"plus": {
+"frage": "Du bist am Ende einer Diät schon ziemlich lean und willst das Defizit halten. Woran orientierst du dein Proteinziel?",
+"richtig": "An der fettfreien Masse, eher am oberen Ende der Empfehlung",
+"falsch": [
+"Am Gesamtgewicht, aber niedriger als zu Beginn der Diät",
+"Nur an den verbrannten Trainingskalorien pro Tag",
+"Am gleichen Wert wie in einer Aufbauphase mit Überschuss"
+],
+"warum": "Bei niedrigem Körperfettanteil skaliert der Bedarf pro Kilo fettfreier Masse nach oben, bis in den Bereich von 2,3 bis 3,1 g/kg."
+},
+"labor": {
+"frage": "Eine systematische Übersichtsarbeit leitete für schlanke Kraftsportler im Defizit 2,3 bis 3,1 g/kg FFM ab. Wie ist die Datengrundlage einzuordnen?",
+"richtig": "Nur sechs heterogene Primärstudien mit kleinen Stichproben",
+"falsch": [
+"Über fünfzig große Langzeitstudien über alle Altersgruppen",
+"Eine reine Tierstudie ohne Daten an menschlichen Sportlern",
+"Eine Meta-Analyse mit einheitlicher Diätdauer von einem Jahr"
+],
+"warum": "Der Zielkorridor stützt sich auf sechs kleine, unterschiedliche Studien an jungen Athleten und dient als praxisnaher Richtwert."
+}
+}
+},
+{
+"id": "FAT-107",
+"karte": {
+"kopf": "Ältere Erwachsene · 6 Studien zusammengefasst",
+"titel": "Krafttraining schützte in der Diät fast die gesamte Muskelmasse",
+"titel_hervor": "fast die gesamte Muskelmasse",
+"setup": "Sechs Studien verglichen 12 bis 24 Wochen lang reine Diät mit derselben Diät plus dreimal Krafttraining pro Woche.",
+"zahl": {
+"label": "Verhinderter Muskelverlust in der Diät",
+"wert": "93,5 %",
+"alltag": "im Schnitt 0,82 kg mehr fettfreie Masse"
+},
+"kern": [
+"Gewichts- und Fettverlust blieben mit Krafttraining genauso hoch wie ohne.",
+"Trainiert wurden alle Hauptmuskelgruppen mit 2 bis 3 Sätzen à 8 bis 15 Wdh.",
+"Die Gewichte lagen bei mindestens 65 % der eigenen Maximalkraft."
+],
+"grenze": "Untersucht wurden über 57-Jährige mit Übergewicht – für junge Schlanke gelten teils andere Bedingungen.",
+"fuer_dich": "Du machst eine Diät und willst deine Muskeln behalten? Trainiere dreimal pro Woche alle großen Muskelgruppen.",
+"labor": {
+"design": "Meta-Analyse aus 6 RCTs (12–24 Wo.), Kalorienrestriktion + Krafttraining (3×/Wo.) vs. Diät allein",
+"teilnehmer": "Übergewichtige Erwachsene über 57 Jahre (6 Studien)",
+"ergebnis": "93–93,5 % Prävention des LBM-Verlusts (+0,82 kg zugunsten Krafttraining + Diät vs. Diät allein)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du machst eine Diät und überlegst, ob Krafttraining den Gewichtsverlust auf der Waage ausbremst. Was stimmt?",
+"richtig": "Gewichts- und Fettverlust bleiben gleich, aber die Muskeln bleiben erhalten",
+"falsch": [
+"Durch Krafttraining verlierst du deutlich weniger Körperfett",
+"Krafttraining lohnt sich erst, wenn die Diät vorbei ist",
+"Ohne Krafttraining gehen in der Diät kaum Muskeln verloren"
+],
+"warum": "Krafttraining verhinderte fast den gesamten Muskelverlust, ohne die Abnahme von Gewicht und Fettmasse zu schmälern."
+},
+"plus": {
+"frage": "Du willst in einer Diät mit überschaubarem Aufwand deine Muskelmasse schützen. Welcher Trainingsumfang reichte in Vergleichsstudien aus?",
+"richtig": "Dreimal pro Woche Ganzkörpertraining mit moderaten bis schweren Gewichten",
+"falsch": [
+"Tägliches Isolationstraining mit sehr leichten Gewichten",
+"Einmal pro Woche lockeres Dehnen für alle Muskelgruppen",
+"Ausschließlich langes Ausdauertraining auf dem Laufband"
+],
+"warum": "Drei Einheiten pro Woche mit 2 bis 3 Sätzen à 8 bis 15 Wiederholungen bei mindestens 65 % 1RM schützten über 90 % der Muskelmasse."
+},
+"labor": {
+"frage": "Sechs randomisierte Studien verglichen Diät allein gegen Diät plus progressives Krafttraining über 12 bis 24 Wochen. Welche Zielgruppe wurde dabei untersucht?",
+"richtig": "Übergewichtige Erwachsene ab etwa Ende fünfzig",
+"falsch": [
+"Junge Leistungssportler mit sehr niedrigem Körperfett",
+"Jugendliche Einsteiger im Schulsport",
+"Ausschließlich Frauen nach der Schwangerschaft"
+],
+"warum": "Die Meta-Analyse fasste Studien mit älteren, übergewichtigen Probanden über 57 Jahre zusammen."
+}
+}
+},
+{
+"id": "FAT-108",
+"karte": {
+"kopf": "Krafttrainierende · 49 Studien zusammengefasst",
+"titel": "Mehr Eiweiß bringt bis 1,6 g pro Kilo mehr Kraft und Muskeln",
+"titel_hervor": "bis 1,6 g pro Kilo",
+"setup": "49 Studien mit 1.863 Menschen prüften, wie viel zusätzliches Eiweiß beim Krafttraining tatsächlich für Muskeln und Kraft bringt.",
+"zahl": {
+"label": "Schwelle für maximalen Trainingseffekt",
+"wert": "1,62 g/kg",
+"alltag": "≈ 130 g Eiweiß pro Tag bei 80 kg"
+},
+"kern": [
+"Wer schon Erfahrung im Krafttraining hatte, profitierte am stärksten (+0,75 kg).",
+"Auch die Maximalkraft stieg mit mehr Eiweiß im Schnitt um rund 2,5 kg extra.",
+"Mit steigendem Alter fiel der zusätzliche Muskelzuwachs etwas kleiner aus."
+],
+"grenze": "Die meisten Studien liefen ohne Kaloriendefizit – in einer Diät kann der Bedarf Richtung 2,2 g/kg steigen.",
+"fuer_dich": "Du trainierst Kraft und willst das Beste herausholen? Peile mindestens 1,6 g Eiweiß pro Kilo Körpergewicht an.",
+"labor": {
+"design": "Meta-Analyse aus 49 Studien mit Breakpoint-Analyse zur Proteinzufuhr beim Krafttraining",
+"teilnehmer": "1.863 Erwachsene (Einsteiger, Trainierte und Ältere)",
+"ergebnis": "Breakpoint 1,62 g/kg (95 % KI 1,03–2,20); FFM +0,30 kg (Trainierte +0,75 kg), 1RM +2,49 kg"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Bringt beim Krafttraining immer noch mehr Eiweiß auch automatisch immer mehr Muskeln?",
+"richtig": "Nein, ab einem bestimmten Punkt bringt noch mehr kaum Extra-Effekt",
+"falsch": [
+"Ja, je mehr Eiweiß, desto schneller wachsen die Muskeln unbegrenzt",
+"Nein, Eiweiß hat beim Krafttraining gar keinen messbaren Effekt",
+"Nur bei absoluten Anfängern, bei Fortgeschrittenen wirkt es nicht"
+],
+"warum": "Zusätzliches Eiweiß steigert Muskel- und Kraftzuwächse spürbar, flacht aber im Schnitt ab rund 1,6 g pro Kilo ab."
+},
+"plus": {
+"frage": "Du bist bereits fortgeschritten im Krafttraining und gehst jetzt in ein Kaloriendefizit. Wie ordnest du den Richtwert von 1,6 g/kg ein?",
+"richtig": "Als Untergrenze – im Defizit kann etwas mehr sinnvoll sein",
+"falsch": [
+"Als feste Obergrenze, die im Defizit reduziert werden muss",
+"Als irrelevant, weil Trainierte weniger Eiweiß brauchen als Anfänger",
+"Als Wert, der nur an Trainingstagen erreicht werden sollte"
+],
+"warum": "Die 1,6 g/kg stammen vor allem aus Studien ohne Defizit; in einer Diät verschiebt sich der Bedarf eher Richtung 2,2 g/kg."
+},
+"labor": {
+"frage": "Eine Meta-Analyse über 49 Krafttrainingsstudien berechnete per Breakpoint-Analyse den optimalen Proteinbereich. Wer profitierte beim Aufbau fettfreier Masse am stärksten?",
+"richtig": "Bereits krafttrainierte und jüngere Personen",
+"falsch": [
+"Ausschließlich untrainierte Senioren über siebzig Jahre",
+"Personen, die kein zusätzliches Krafttraining absolvierten",
+"Alle Alters- und Erfahrungsstufen zeigten exakt denselben Zuwachs"
+],
+"warum": "Bei Trainierten lag der Effekt mit +0,75 kg höher als im Gesamtschnitt, während er mit steigendem Alter leicht abnahm."
+}
+}
+},
+{
+"id": "FAT-109",
+"karte": {
+"kopf": "Trainierende · 43 Studien zusammengefasst",
+"titel": "Ausdauer bremst Muskeln nicht – nur die Schnellkraft direkt danach",
+"titel_hervor": "bremst Muskeln nicht",
+"setup": "43 Studien verglichen reines Krafttraining mit der Kombination aus Kraft- und Ausdauertraining.",
+"zahl": null,
+"kern": [
+"Muskelwachstum und Maximalkraft litten durch zusätzliches Ausdauertraining nicht.",
+"Die Explosivkraft nahm weniger zu, wenn Kraft und Ausdauer direkt hintereinander lagen.",
+"Ab drei Stunden Pause zwischen den Einheiten verschwand dieser Nachteil."
+],
+"grenze": "Wie stark ein hartes Kaloriendefizit die Erholung bei Kombitraining bremst, wurde nicht extra geprüft.",
+"fuer_dich": "Du kombinierst Kraft und Ausdauer und brauchst Schnellkraft? Lege mindestens drei Stunden Pause dazwischen.",
+"labor": {
+"design": "Meta-Analyse aus 43 Studien, kombiniertes Kraft-/Ausdauertraining vs. Krafttraining allein",
+"teilnehmer": "967 Personen (525 kombiniert, 442 nur Krafttraining)",
+"ergebnis": "Hypertrophie SMD −0,06 (p = 0,446); Explosivkraft SMD −0,28 (p = 0,007), bei ≥ 3 h Pause p > 0,05"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Stimmt der Mythos, dass Laufen oder Radfahren deinen Muskelaufbau durch Krafttraining kaputtmacht?",
+"richtig": "Nein, Muskeln und Maximalkraft wachsen im Schnitt genauso gut",
+"falsch": [
+"Ja, Ausdauertraining baut sofort alle aufgebauten Muskeln ab",
+"Ja, schon eine halbe Stunde Radfahren stoppt den Kraftzuwachs",
+"Nur beim Laufen, während Radfahren die Muskeln verdoppelt"
+],
+"warum": "Über 43 Studien hinweg beeinträchtigte zusätzliches Ausdauertraining weder Muskelwachstum noch Maximalkraft."
+},
+"plus": {
+"frage": "Du trainierst hybrid für Kraft, Ausdauer und explosive Sprungkraft. Wie legst du deine Einheiten am klügsten?",
+"richtig": "Kraft und Ausdauer um mindestens drei Stunden zeitlich trennen",
+"falsch": [
+"Beides immer direkt nacheinander in derselben Einheit erledigen",
+"Ausdauer komplett streichen, weil sonst die Hypertrophie leidet",
+"Nur noch Radfahren, da Laufen die Maximalkraft zerstört"
+],
+"warum": "Direkt kombiniert litt die Explosivkraft, doch ab drei Stunden Abstand zwischen den Einheiten verschwand der Nachteil."
+},
+"labor": {
+"frage": "Eine Meta-Analyse mit 967 Teilnehmenden verglich kombiniertes Training mit reinem Krafttraining. Für welche Zielgröße zeigte sich ein signifikanter Interferenz-Effekt?",
+"richtig": "Für die Explosivkraft, wenn beide Reize in einer Einheit lagen",
+"falsch": [
+"Für die Muskelhypertrophie unabhängig vom zeitlichen Abstand",
+"Für die Maximalkraft, besonders bei weniger als fünf Einheiten",
+"Für alle drei Größen gleichermaßen, vor allem beim Laufen"
+],
+"warum": "Nur die Explosivkraft war signifikant gedämpft (SMD −0,28), und auch das nur ohne mindestens drei Stunden Pause dazwischen."
+}
+}
+},
+{
+"id": "FAT-110",
+"karte": {
+"kopf": "Männer mit starkem Übergewicht · Studie",
+"titel": "Diätpausen im Zwei-Wochen-Takt brachten 47 % mehr Abnahme",
+"titel_hervor": "47 % mehr Abnahme",
+"setup": "51 Männer mit Adipositas machten 16 Wochen Diät – entweder am Stück oder abwechselnd mit zwei Wochen Pause.",
+"zahl": {
+"label": "Mehr Gewichtsverlust mit Diätpausen",
+"wert": "+47 %",
+"alltag": "bei gleicher Zahl an Diätwochen"
+},
+"kern": [
+"Auch der Verlust an Körperfett fiel mit den Pausen deutlich höher aus.",
+"Ohne Pausen sank der Ruheverbrauch stärker ab (rund 180 kcal/Tag weniger).",
+"Durch die Pausen dauerte das Programm insgesamt 30 statt 16 Wochen."
+],
+"grenze": "Untersucht wurden inaktive Männer mit Adipositas – bei schlanken Kraftsportlern zeigte sich dieser Effekt nicht.",
+"fuer_dich": "Du hast eine längere Diät vor dir? Wechsle alle zwei Wochen zwischen Defizit und Erhaltungskalorien, wenn Zeit keine Rolle spielt.",
+"labor": {
+"design": "RCT, 16 Wo. 33 %-Defizit kontinuierlich vs. intermittierend im 2:2-Wochen-Wechsel (30 Wo. gesamt)",
+"teilnehmer": "51 inaktive Männer mit Adipositas",
+"ergebnis": "+47 % Gewichtsverlust (p < 0,05); geringerer REE-Abfall vs. Kontrollgruppe (−749 ± 498 kJ/Tag, p < 0,05)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Macht eine geplante zweiwöchige Diätpause auf Erhaltungskalorien den bisherigen Abnehmerfolg zunichte?",
+"richtig": "Nein, bei längeren Diäten kann sie den Erfolg sogar unterstützen",
+"falsch": [
+"Ja, in zwei Wochen Pause nimmt man alles wieder zu",
+"Ja, der Körper schaltet dadurch dauerhaft auf Einlagern",
+"Sie bringt nur etwas, wenn man in der Pause fastet"
+],
+"warum": "Geplante Pausen auf Erhaltungskalorien bremsten den Abfall des Ruheverbrauchs und führten zu deutlich mehr Gewichtsverlust."
+},
+"plus": {
+"frage": "Du hast viel Gewicht zu verlieren und willst eine Diät über mehr als zwölf Wochen durchhalten. Welche Strategie bietet sich an?",
+"richtig": "Diätphasen planmäßig mit zweiwöchigen Erhaltungsphasen abwechseln",
+"falsch": [
+"Ohne jede Pause durchziehen, weil Pausen den Stoffwechsel bremsen",
+"Jede Woche zwischen extremem Fasten und Überschuss wechseln",
+"Das Defizit alle zwei Wochen weiter erhöhen statt zu pausieren"
+],
+"warum": "Der Wechsel aus zwei Wochen Defizit und zwei Wochen Erhaltung reduzierte die Stoffwechselanpassung und steigerte die Abnahme."
+},
+"labor": {
+"frage": "Inaktive Männer mit Adipositas absolvierten 16 Diätwochen am Stück oder im 2:2-Wochen-Wechsel über 30 Wochen. Welche Einschränkung ist für die Einordnung zentral?",
+"richtig": "Die Gesamtdauer verdoppelte sich fast und gilt nicht pauschal für schlanke Sportler",
+"falsch": [
+"Die intermittierende Gruppe hatte ein deutlich größeres tägliches Defizit",
+"Der Ruheenergieverbrauch wurde in der Untersuchung nicht gemessen",
+"Die kontinuierliche Gruppe verlor im Schnitt mehr Körperfett"
+],
+"warum": "Das 2:2-Protokoll dauerte 30 statt 16 Wochen, und der Vorteil für die Körperzusammensetzung bestätigte sich bei schlanken Sportlern nicht."
+}
+}
+},
+{
+"id": "FAT-111",
+"karte": {
+"kopf": "Krafttrainierende · Zwei Vergleichsstudien",
+"titel": "Diätpausen zügeln den Hunger, schmelzen aber nicht mehr Fett",
+"titel_hervor": "zügeln den Hunger",
+"setup": "Krafttrainierende machten eine Diät mit 25 % Defizit – entweder am Stück oder mit je einer Woche Pause alle paar Wochen.",
+"zahl": null,
+"kern": [
+"Fettverlust, Muskelerhalt und Ruheverbrauch waren mit und ohne Pausen gleich.",
+"Mit Pausen fielen Heißhunger und das Gefühl von Kontrollverlust beim Essen geringer aus.",
+"Die Muskelausdauer im Training hielt sich mit Diätpausen besser."
+],
+"grenze": "Diätpausen verlängern die gesamte Diätdauer; in einer der Studien ging dabei sogar minimal mehr fettfreie Masse verloren.",
+"fuer_dich": "Dich plagt in der Diät starker Hunger oder deine Leistung bricht ein? Plane nach 2 bis 3 Wochen eine Woche Erhaltung ein.",
+"labor": {
+"design": "Zwei RCTs (6 bzw. 12 Diätwochen, 25 % Defizit), kontinuierlich vs. 1-wöchige Diätpausen",
+"teilnehmer": "Krafttrainierte Erwachsene, darunter 38 Frauen (21–23 Jahre)",
+"ergebnis": "Kein Unterschied bei Fett (p = 0,19) oder RMR; geringere Enthemmung (p < 0,01), weniger Appetit, bessere Muskelausdauer"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Was bringen regelmäßige einwöchige Diätpausen für Menschen, die Krafttraining machen?",
+"richtig": "Weniger Hunger und weniger Heißhunger, bei gleichem Fettverlust",
+"falsch": [
+"Deutlich schnelleren Fettverlust in kürzerer Gesamtzeit",
+"Einen starken Anstieg des Ruheverbrauchs über den Ausgangswert",
+"Gar keinen Unterschied bei Wohlbefinden oder Essverhalten"
+],
+"warum": "Bei Krafttrainierenden verbesserten Diätpausen Appetitkontrolle und Trainingsgefühl, ohne zusätzlich mehr Fett zu verbrennen."
+},
+"plus": {
+"frage": "Du bist seit drei Wochen im 25-%-Defizit, der Hunger nervt und im Gym fehlt dir die Ausdauer. Was ist jetzt ein sinnvoller Schritt?",
+"richtig": "Eine Woche auf Erhaltungskalorien gehen und dann weitermachen",
+"falsch": [
+"Das Defizit noch stärker anziehen, um schneller fertig zu sein",
+"Das Krafttraining pausieren, bis der Hunger von selbst nachlässt",
+"Auf einwöchige Pausen verzichten, weil sie den Fettverlust stoppen"
+],
+"warum": "Eine einwöchige Diätpause senkt Appetit sowie Essens-Enthemmung und stützt die Muskelausdauer, verlängert aber die Gesamtdauer."
+},
+"labor": {
+"frage": "Zwei randomisierte Studien verglichen kontinuierliche Diäten mit einwöchigen Diätpausen bei Krafttrainierenden. Was zeigte sich beim direkten Vergleich von Fettverlust und Ruheumsatz?",
+"richtig": "Kein signifikanter Vorteil der Pausen bei Fettmasse oder Ruheumsatz",
+"falsch": [
+"Signifikant höherer Fettverlust und deutlich höherer Ruheumsatz",
+"Signifikant schlechtere Muskelausdauer durch die Unterbrechungen",
+"Stark ansteigende Essens-Enthemmung in den Pausengruppen"
+],
+"warum": "Physiologische Größen wie Fettverlust und Ruheumsatz blieben gleich; die Vorteile lagen bei Appetit, Enthemmung und Muskelausdauer."
+}
+}
+},
+{
+"id": "FAT-112",
+"karte": {
+"kopf": "Kraftsportler · Studie mit Nachprüfung",
+"titel": "Wochenend-Refeeds schützen nur einen kleinen Teil der Masse",
+"titel_hervor": "nur einen kleinen Teil",
+"setup": "27 Krafttrainierende machten 7 Wochen Diät – entweder täglich gleich oder mit zwei Kohlenhydrat-Tagen ohne Defizit pro Woche.",
+"zahl": {
+"label": "Vorteil bei trockener fettfreier Masse",
+"wert": "+0,89 kg",
+"alltag": "laut unabhängiger Nachprüfung"
+},
+"kern": [
+"Beim reinen Fettverlust gab es keinen Vorteil durch die Refeed-Tage.",
+"Eine Nachprüfung fand auch bei Ruheverbrauch und gesamter Muskelmasse keinen Unterschied.",
+"Nur die wasserbereinigte fettfreie Masse blieb mit Refeeds besser erhalten."
+],
+"grenze": "Nur 27 Teilnehmende schlossen die sieben Wochen ab; die Nachprüfung schwächte den ursprünglichen Vorteil deutlich ab.",
+"fuer_dich": "Du magst am Wochenende mehr essen? Kombiniere fünf strengere Diättage mit zwei Kohlenhydrat-Tagen auf Erhaltungskalorien.",
+"labor": {
+"design": "RCT (7 Wo., Ø 25 % Defizit, 4× Kraft/Wo.), kontinuierlich vs. 5:2-KH-Refeeds + Re-Analyse",
+"teilnehmer": "27 krafttrainierte Erwachsene (13 Refeed, 14 kontinuierlich)",
+"ergebnis": "Re-Analyse: nur trockene FFM signifikant (+0,89 kg, 95 % KI 0,33–1,46, p = 0,0028); FFM, FM, RMR n.s."
+}
+},
+"quiz": {
+"basis": {
+"frage": "Verbrennst du durch zwei kohlenhydratreiche Pausentage am Wochenende mehr Körperfett als bei einer gleichmäßigen Diät?",
+"richtig": "Nein, beim Fettverlust zeigt sich im Schnitt kein Unterschied",
+"falsch": [
+"Ja, der Stoffwechsel läuft dadurch die ganze Woche auf Hochtouren",
+"Nein, am Wochenende geht der gesamte Fettverlust verloren",
+"Ja, weil Kohlenhydrate am Wochenende direkt Fett abbauen"
+],
+"warum": "Bei gleichem Wochendefizit verloren beide Gruppen ähnlich viel Fett – Refeeds sind vor allem eine Frage der Machbarkeit."
+},
+"plus": {
+"frage": "Du hast ein Wochendefizit von 25 % und möchtest am Wochenende flexibler essen. Wie lässt sich ein 5:2-Refeed sauber umsetzen?",
+"richtig": "Fünf Tage etwas tiefer im Defizit, zwei Tage Erhaltung mit mehr Kohlenhydraten",
+"falsch": [
+"Fünf Tage normal essen und zwei Tage komplett auf Essen verzichten",
+"Fünf Tage im 25-%-Defizit und zwei Tage mit großem Kalorienüberschuss",
+"Am Wochenende vor allem Fett erhöhen und Eiweiß halbieren"
+],
+"warum": "So bleibt das Wochendefizit bei rund 25 %, während zwei Erhaltungstage mit mehr Kohlenhydraten die Diät im Alltag erleichtern."
+},
+"labor": {
+"frage": "Eine 7-wöchige Studie zu 5:2-Kohlenhydrat-Refeeds wurde später unabhängig neu ausgewertet. Wie änderte sich das Ergebnis durch den korrekten Zwischengruppenvergleich?",
+"richtig": "Nur die trockene fettfreie Masse blieb signifikant unterschiedlich",
+"falsch": [
+"Alle Vorteile für Ruheumsatz und Fettverlust wurden noch größer",
+"Die Refeed-Gruppe schnitt bei allen Messwerten schlechter ab",
+"Der Unterschied beim Ruheumsatz verdoppelte sich in der Nachprüfung"
+],
+"warum": "Bei sauberem Gruppenvergleich entfielen die statistischen Vorteile bei gesamter fettfreier Masse und Ruheumsatz."
+}
+}
+},
+{
+"id": "FAT-113",
+"karte": {
+"kopf": "Erwachsene nach starker Diät · Langzeitstudie",
+"titel": "Nach der Diät erholt sich der Ruheverbrauch recht schnell",
+"titel_hervor": "erholt sich recht schnell",
+"setup": "71 Menschen nahmen in 8 Wochen 14 kg ab; ihr Ruheverbrauch wurde am Diätende, nach 4 Wochen Halten und nach einem Jahr gemessen.",
+"zahl": {
+"label": "Extra-Abfall des Ruheverbrauchs am Diätende",
+"wert": "−92 kcal",
+"alltag": "nach 4 Wochen Halten nur noch −38 kcal"
+},
+"kern": [
+"Schon nach vier Wochen auf Erhaltungskalorien halbierte sich die Drosselung.",
+"Nach einem Jahr war die Stoffwechsel-Anpassung praktisch verschwunden (−7 kcal).",
+"Der gedrosselte Verbrauch hing nicht mit einer späteren Zunahme zusammen."
+],
+"grenze": "Untersucht wurden Menschen mit starkem Übergewicht – bei extrem schlanken Athleten dauert die Erholung oft Monate.",
+"fuer_dich": "Deine Diät ist vorbei und der Verbrauch wirkt niedrig? Halte dein Gewicht mindestens vier Wochen, bevor du neu rechnest.",
+"labor": {
+"design": "Beobachtungsstudie: 8 Wo. 1.000-kcal-Diät, 4 Wo. Stabilisierung, 1 Jahr Follow-up",
+"teilnehmer": "71 Erwachsene mit Adipositas (Ø 45,4 Jahre, BMI 34,6)",
+"ergebnis": "RMR-Adaptation: −92 ± 110 kcal/Tag (Wo. 9, p < 0,001), −38 ± 124 (Wo. 13, p = 0,011), −7 ± 129 (1 Jahr, p = 0,701)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Stimmt die Sorge, dass eine strenge Diät deinen Stoffwechsel dauerhaft kaputtmacht?",
+"richtig": "Nein, der gedrosselte Ruheverbrauch erholt sich nach der Diät wieder",
+"falsch": [
+"Ja, der Ruheverbrauch bleibt jahrelang stark abgesenkt",
+"Ja, nach einer Diät verbrennt der Körper dauerhaft halb so viel",
+"Nein, der Ruheverbrauch sinkt in einer Diät überhaupt nicht"
+],
+"warum": "Die zusätzliche Drosselung tritt vor allem im Defizit selbst auf, halbiert sich nach vier Wochen Halten und verschwindet fast ganz."
+},
+"plus": {
+"frage": "Du hast dein Diätziel erreicht und willst deinen neuen Erhaltungsbedarf realistisch einschätzen. Wie gehst du vor?",
+"richtig": "Das Gewicht erst mindestens vier Wochen stabilisieren, dann neu bewerten",
+"falsch": [
+"Sofort mit dem niedrigsten Diät-Umsatz für das ganze Jahr planen",
+"Direkt in einen hohen Überschuss springen, um den Stoffwechsel zu wecken",
+"Noch vier Wochen tiefer ins Defizit gehen, um sicher zu bleiben"
+],
+"warum": "Da sich die Stoffwechselanpassung in den ersten vier Wochen der Stabilisierung bereits halbiert, liefert erst danach eine neue Einschätzung stabile Werte."
+},
+"labor": {
+"frage": "Nach einer 8-wöchigen 1.000-kcal-Diät wurde die adaptive Thermogenese des Ruheumsatzes bis zu einem Jahr verfolgt. Wie hing sie mit der späteren Gewichtszunahme zusammen?",
+"richtig": "Es zeigte sich kein Zusammenhang mit einer späteren Wiederzunahme",
+"falsch": [
+"Sie war der Hauptgrund für fast jede spätere Gewichtszunahme",
+"Sie blieb nach einem Jahr unverändert stark ausgeprägt",
+"Sie trat erst nach dem Ende der Diät erstmals auf"
+],
+"warum": "Die adaptive Thermogenese bildete sich nach Diätende weitgehend zurück und korrelierte nicht mit der Gewichtswiederzunahme."
+}
+}
+},
+{
+"id": "FAT-114",
+"karte": {
+"kopf": "Übergewichtige Männer · Vergleichsstudie",
+"titel": "Doppelt so viel Ausdauersport ließ nicht mehr Fett schmelzen",
+"titel_hervor": "nicht mehr Fett schmelzen",
+"setup": "Übergewichtige Männer trainierten täglich entweder 30 oder 60 Minuten moderat Ausdauer und wurden mit einer Gruppe ohne Sport verglichen.",
+"zahl": {
+"label": "Fettverlust bei 30 vs. 60 Min. Sport",
+"wert": "4,0 vs. 3,8 kg",
+"alltag": "Doppelter Sport brachte kein Plus"
+},
+"kern": [
+"Die 30-Minuten-Gruppe verlor im Schnitt sogar minimal mehr Gewicht als die 60-Minuten-Gruppe.",
+"Wer eine Stunde täglich trainierte, aß teils mehr oder bewegte sich sonst im Alltag weniger.",
+"Auch die gesamte Energiebilanz unterschied sich zwischen beiden Sportgruppen nicht klar."
+],
+"grenze": "Untersucht wurden nur übergewichtige Männer beim Ausdauertraining – bei Frauen oder anderen Sportarten kann es abweichen.",
+"fuer_dich": "Willst du mit Ausdauer abnehmen? Starte mit rund 30 Minuten am Tag und achte darauf, dich im Alltag trotzdem genug zu bewegen.",
+"labor": {
+"design": "RCT, 30 Min./Tag (~1.800 kcal/Wo.) vs. 60 Min./Tag (~3.600 kcal/Wo.) Ausdauertraining vs. Kontrolle",
+"teilnehmer": "61 randomisierte übergewichtige Männer (53 ausgewertet)",
+"ergebnis": "Fettmasse MOD −4,0 kg vs. HIGH −3,8 kg; Gewicht −3,6 vs. −2,7 kg; Energiebilanz −39,6 vs. −34,3 Mcal (n. s.)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du steigerst dein tägliches Ausdauertraining von einer halben auf eine volle Stunde, um doppelt so schnell abzunehmen. Was passiert oft?",
+"richtig": "Du nimmst kaum mehr ab, weil du oft mehr isst oder dich sonst weniger bewegst",
+"falsch": [
+"Du verlierst zuverlässig genau doppelt so viel Körperfett",
+"Der Körper verbrennt erst ab einer Stunde Sport überhaupt Fett",
+"Nach einer Stunde Sport sinkt der Appetit den ganzen Tag stark"
+],
+"warum": "In einer Vergleichsstudie glich die 60-Minuten-Gruppe den Mehrverbrauch über mehr Essen oder weniger Alltagsbewegung aus."
+},
+"plus": {
+"frage": "Du machst täglich 30 Minuten moderates Cardio für den Fettabbau und überlegst, auf 60 Minuten zu verdoppeln. Was ist meist sinnvoller?",
+"richtig": "Bei 30 Minuten bleiben und deinen NEAT im Alltag stabil halten",
+"falsch": [
+"Auf 60 Minuten erhöhen, weil doppeltes Cardio das Fett sicher verdoppelt",
+"Das Cardio auf 90 Minuten ausweiten und den Alltag dafür ruhiger halten",
+"Cardio ganz streichen, weil 30 Minuten keinerlei Fett abbauen"
+],
+"warum": "30 Minuten täglich brachten bereits denselben Fettverlust wie 60 Minuten, solange Alltagsbewegung und Ernährung stabil blieben."
+},
+"labor": {
+"frage": "In einer RCT absolvierten übergewichtige Männer 30 vs. 60 Minuten tägliches Ausdauertraining (~1.800 vs. ~3.600 kcal/Woche). Was erklärt das ähnliche Ergebnis?",
+"richtig": "Kompensation durch höhere Zufuhr oder geringeren NEAT in der 60-Min.-Gruppe",
+"falsch": [
+"Die 30-Min.-Gruppe verlor im Schnitt gar keine Fettmasse",
+"Beide Gruppen hatten exakt dieselbe rechnerische Trainingsdosis",
+"Die 60-Min.-Gruppe baute massiv Muskeln auf, was das Fett verdeckte"
+],
+"warum": "Die Fettverluste lagen bei −4,0 vs. −3,8 kg; in der höheren Dosis wurde der Mehrverbrauch verhaltensbedingt kompensiert."
+}
+}
+},
+{
+"id": "FAT-115",
+"karte": {
+"kopf": "332 Erwachsene · Beobachtungsstudie",
+"titel": "Sehr viel Bewegung steigert den Tagesverbrauch oft nicht endlos weiter",
+"titel_hervor": "nicht endlos weiter",
+"setup": "Bei 332 Erwachsenen aus fünf Bevölkerungsgruppen wurden Bewegung und echter Energieverbrauch eine Woche lang per Labormethode gemessen.",
+"zahl": null,
+"kern": [
+"Bis zu einem mittleren Maß an Bewegung stieg der Tagesverbrauch noch recht gleichmäßig mit an.",
+"Bei sehr aktiven Menschen flachte der Gesamtverbrauch im Schnitt zu einem Plateau ab.",
+"Unterschiede in der Bewegung erklärten insgesamt weniger als ein Zehntel der Verbrauchs-Spannen."
+],
+"grenze": "Erste Hinweise aus einer Momentaufnahme – bei extremen Ausdauersportlern zeigen kleinere Studien teils weiter steigenden Verbrauch.",
+"fuer_dich": "Trainierst du plötzlich deutlich mehr für eine Diät? Rechne den Extra-Sport nicht 1:1 auf dein Kalorienbudget oben drauf.",
+"labor": {
+"design": "Querschnitts-Beobachtungsstudie über 7 Tage, Energieverbrauch via doppelt markiertes Wasser",
+"teilnehmer": "332 Erwachsene aus 5 Bevölkerungsgruppen",
+"ergebnis": "Aktivität erklärt 7–9 % (<9 %) der Varianz im Gesamtenergieverbrauch; Plateau bei sehr hoher Aktivität"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Wenn du immer noch mehr Sport in deinen Tag packst, steigt dein gesamter Kalorienverbrauch dann unbegrenzt im gleichen Tempo mit?",
+"richtig": "Oft nicht – ab einem gewissen Punkt spart der Körper anderswo ein",
+"falsch": [
+"Ja, jede zusätzliche Sportstunde zählt immer voll obendrauf",
+"Nein, Sport erhöht den täglichen Verbrauch überhaupt nicht",
+"Ja, der Verbrauch steigt bei sehr viel Sport sogar überproportional"
+],
+"warum": "Messungen an Erwachsenen deuten darauf hin, dass der Gesamtverbrauch bei sehr viel Bewegung oft abflacht."
+},
+"plus": {
+"frage": "Du bist bereits ziemlich aktiv und packst für dein Defizit noch deutlich mehr Ausdauertraining oben drauf. Wie rechnest du den Mehrverbrauch ein?",
+"richtig": "Nicht 1:1 draufrechnen, sondern am echten Gewichtstrend abgleichen",
+"falsch": [
+"Jede angezeigte Sportkalorie komplett als extra Essen wieder zuführen",
+"Davon ausgehen, dass der Verbrauch doppelt so stark steigt wie gemessen",
+"Die Ernährung unverändert lassen, weil der Bedarf nie kompensiert wird"
+],
+"warum": "Oberhalb eines moderaten Volumens gleicht der Körper einen Teil des Mehrverbrauchs oft über Verhalten und Stoffwechsel aus."
+},
+"labor": {
+"frage": "In einer Querschnittsstudie (n=332, fünf Populationen) wurde der Gesamtenergieverbrauch per doppelt markiertem Wasser mit der Aktivität verglichen. Welche Grenze gilt?",
+"richtig": "Querschnittsdesign; bei extremen Ultraläufern teils weiter linearer Anstieg",
+"falsch": [
+"Der Energieverbrauch wurde nur geschätzt statt im Labor gemessen",
+"Aktivität erklärte über die Hälfte der Varianz im Gesamtverbrauch",
+"Bis zu moderater Aktivität zeigte sich überhaupt kein Verbrauchsanstieg"
+],
+"warum": "Trotz Labormessung bleibt es eine Beobachtungsstudie (Evidenz C), und bei extremen Ausdauerumfängen zeigten kleinere Studien teils andere Muster."
+}
+}
+},
+{
+"id": "FAT-116",
+"karte": {
+"kopf": "Große Bevölkerungsgruppen · Übersicht",
+"titel": "Alltagsbewegung macht bis zur Hälfte des Tagesverbrauchs aus",
+"titel_hervor": "bis zur Hälfte",
+"setup": "Beobachtungsdaten untersuchten, wie stark alltägliches Gehen und Stehen im Vergleich zu geplantem Sport den täglichen Energieverbrauch prägen.",
+"zahl": {
+"label": "Anteil von Alltagsbewegung am Tagesverbrauch",
+"wert": "15–50 %",
+"alltag": "Geplanter Sport oft nur ~100 kcal/Tag"
+},
+"kern": [
+"Wer weniger als zwei Stunden pro Woche trainiert, verbrennt im Sport nur wenig am Tag.",
+"Gehen und Stehen lassen sich langfristig meist leichter durchhalten als extra Sport.",
+"In einer Diät sinkt die unbewusste Alltagsbewegung oft heimlich ab, wenn man nicht achtet."
+],
+"grenze": "Beobachtungsdaten liefern erste Hinweise – wie stark der Alltag bei dir zählt, hängt von Beruf, Körpergewicht und Gewohnheiten ab.",
+"fuer_dich": "Sitzt du im Alltag viel? Bau mehr Geh- und Stehzeiten ein und nutze ein Schrittziel von 7.000 bis 10.000 Schritten.",
+"labor": {
+"design": "Beobachtungsstudien und Übersichtsdaten zu NEAT vs. EAT und Langzeit-Adhärenz",
+"teilnehmer": "Allgemeinbevölkerung, Einsteiger; Adhärenz-Kohorte n=32.005 Jugendliche",
+"ergebnis": "NEAT: 15–50 % des TDEE; EAT bei <2 h Sport/Wo. ~100 kcal/Tag (1–2 % der TEE-Varianz)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du gehst zweimal pro Woche ins Studio, sitzt aber sonst den ganzen Tag am Schreibtisch. Was beeinflusst deinen täglichen Kalorienverbrauch meist stärker?",
+"richtig": "Wie viel du dich im restlichen Alltag bewegst, gehst und stehst",
+"falsch": [
+"Die beiden kurzen Trainingseinheiten machen fast den gesamten Verbrauch aus",
+"Gehen verbraucht kaum Energie, nur intensives Schwitzen zählt wirklich",
+"Alltagsbewegung macht bei fast allen Menschen unter fünf Prozent aus"
+],
+"warum": "Alltagsbewegung wie Gehen und Stehen deckt rund 15 bis 50 % des Tagesverbrauchs ab und lässt sich langfristig gut durchhalten."
+},
+"plus": {
+"frage": "Du bist seit Wochen im Kaloriendefizit, trainierst regelmäßig, aber dein Verbrauch scheint zu sinken. Welchen Faktor solltest du per Schrittzähler im Blick behalten?",
+"richtig": "Deinen NEAT, da unbewusste Alltagsbewegung im Defizit oft absinkt",
+"falsch": [
+"Ausschließlich deinen EAT, weil Alltagsbewegung kaum Kalorien kostet",
+"Die exakte Trainingsuhrzeit, da Abendtraining kaum Energie verbraucht",
+"Nur das Laufen, da Gehen im Vergleich überhaupt keinen Verbrauch bringt"
+],
+"warum": "NEAT steht unter hormoneller Steuerung und fällt in Diäten oft unbemerkt ab – ein festes Schrittziel hält ihn stabil."
+},
+"labor": {
+"frage": "Beobachtungsdaten verglichen den Anteil von NEAT und strukturiertem Training (EAT) am Gesamtenergieverbrauch in der Bevölkerung. Was zeigte sich?",
+"richtig": "NEAT trägt 15–50 % bei, EAT erklärt bei wenig Sport nur 1–2 % Varianz",
+"falsch": [
+"EAT bestimmt bei allen Bevölkerungsgruppen über 40 % des Tagesverbrauchs",
+"NEAT bleibt während Kalorienrestriktion immer automatisch konstant",
+"Laufen verbraucht pro Kilometer etwa sechsmal so viel Energie wie Gehen"
+],
+"warum": "Bei unter zwei Stunden Sport pro Woche liefert EAT im Mittel rund 100 kcal/Tag, während NEAT die größte variable Komponente bildet."
+}
+}
+}
+]

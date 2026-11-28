@@ -1,0 +1,338 @@
+[
+{
+"id": "WAR-114",
+"karte": {
+"kopf": "454 Sportler · 21 Studien zusammengefasst",
+"titel": "Ausrollen vor dem Training macht beweglicher, ohne Kraft zu kosten",
+"titel_hervor": "ohne Kraft zu kosten",
+"setup": "Eine Auswertung aus 21 Studien prüfte, wie sich Ausrollen mit Rolle oder Massagestab vor dem Training auf Beweglichkeit, Sprint, Sprung und Kraft auswirkt.",
+"zahl": {
+"label": "Mehr Beweglichkeit nach dem Ausrollen",
+"wert": "+4,0 %",
+"alltag": "Ohne Verlust bei Kraft oder Sprung"
+},
+"kern": [
+"Die Sprintleistung legte minimal zu, Kraft und Sprungkraft blieben auf vollem Niveau.",
+"Eine Schaumstoffrolle verbesserte die Beweglichkeit etwas mehr als ein Massagestab.",
+"Ein Teil der Wirkung könnte Erwartungseffekt sein, da sich Rollen nicht verblinden lässt."
+],
+"grenze": "Die echten Leistungsvorteile sind sehr klein – als Leistungsturbo taugt die Rolle kaum, aber sie bremst auch nicht.",
+"fuer_dich": "Willst du dich vor schweren Sätzen oder Sprints lockerer fühlen? Roll die Zielmuskeln 30–60 Sekunden aus, ohne Krafteinbußen zu fürchten.",
+"labor": {
+"design": "Systematisches Review und Meta-Analyse, Pre-Rolling mit Rolle oder Massagestab vor Leistungstests",
+"teilnehmer": "454 Teilnehmende aus 21 Studien",
+"ergebnis": "Flexibilität +4,0 % (Rolle +5,0 %, g=0,32); Sprint +0,7 % (g=0,28, p=0,06); Kraft u. Sprung unverändert"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du rollst deine Oberschenkel vor dem Kraft- oder Sprinttraining kurz mit der Faszienrolle aus. Bremst das danach deine Kraft?",
+"richtig": "Nein, die Kraft bleibt erhalten und du wirst etwas beweglicher",
+"falsch": [
+"Ja, wie langes Dehnen kostet Rollen deutlich Maximalkraft",
+"Nein, es steigert sogar deine Sprungkraft um ein großes Stück",
+"Nur ein Massagestab schadet der Kraft nicht, Rollen schon"
+],
+"warum": "Ausrollen vor dem Training steigerte die Beweglichkeit im Schnitt um 4 %, ohne Kraft- oder Sprungleistung zu verschlechtern."
+},
+"plus": {
+"frage": "Du willst vor einer Maximalkraft- oder Sprinteinheit mobilisieren, hast aber Sorge vor Leistungseinbußen. Wie ordnest du Foam Rolling ein?",
+"richtig": "Gut einsetzbar: Kurz ausrollen bringt mehr ROM ohne Kraftverlust",
+"falsch": [
+"Besser meiden, da Foam Rolling die Explosivität klar reduziert",
+"Pflichtprogramm, weil es Sprint- und Kraftwerte massiv steigert",
+"Nur sinnvoll mit Massagestab, weil Rollen weniger flexibel machen"
+],
+"warum": "Foam Rolling ist ein geeignetes Warm-up-Tool mit kleinem ROM-Plus (+4 %) und ohne negative Effekte auf Maximalkraft oder Sprung."
+},
+"labor": {
+"frage": "Eine Meta-Analyse (21 Studien, n=454) untersuchte Pre-Rolling vor Kraft-, Sprung- und Sprinttests. Welche methodische Einschränkung gilt besonders?",
+"richtig": "Hohes Risiko für Placebo-Effekte wegen fehlender Verblindung",
+"falsch": [
+"Kraft- und Sprungtests wurden in keiner der Studien gemessen",
+"Die Sprintleistung verschlechterte sich statistisch signifikant",
+"Es wurden ausschließlich Ausdauerläufer über 50 Jahre getestet"
+],
+"warum": "Teilnehmende wissen von selbst, ob sie gerollt haben – zudem waren die Leistungseffekte insgesamt klein bis vernachlässigbar."
+}
+}
+},
+{
+"id": "WAR-115",
+"karte": {
+"kopf": "454 Sportler · 21 Studien zusammengefasst",
+"titel": "Ausrollen lindert Muskelkater, erholt die Muskeln aber kaum schneller",
+"titel_hervor": "lindert Muskelkater",
+"setup": "Eine Auswertung aus 21 Studien prüfte, ob Ausrollen nach hartem Training Muskelkater senkt und Kraft, Sprint oder Sprung schneller zurückbringt.",
+"zahl": {
+"label": "Weniger empfundener Muskelkater",
+"wert": "−6,0 %",
+"alltag": "Aber keine schnellere Kraft-Erholung"
+},
+"kern": [
+"Das Schmerzgefühl sank spürbar, vor allem über das Nervensystem statt Gewebereparatur.",
+"Kraft, Sprint und Sprung erholten sich im Schnitt nicht klar schneller als ohne Rolle.",
+"Zylindrische Schaumstoffrollen wirkten tendenziell besser als Hand-Massagestäbe."
+],
+"grenze": "Weniger Schmerz heißt nicht, dass der Muskel schon repariert ist – das Risiko für zu frühe neue Belastung bleibt.",
+"fuer_dich": "Plagt dich Muskelkater? Roll 5–15 Min. mit moderatem Druck für mehr Wohlbefinden, plane die nächste schwere Einheit aber nicht früher.",
+"labor": {
+"design": "Systematisches Review und Meta-Analyse, Post-Rolling auf DOMS sowie Sprint-, Kraft- u. Sprungerholung",
+"teilnehmer": "454 Teilnehmende aus 21 Studien",
+"ergebnis": "DOMS −6,0 % (g=0,47; Rolle g=0,55); Sprint +3,1 % (p=0,12), Kraft +3,9 % (p=0,28), Sprung −0,2 % (n. s.)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Nach einer harten Beineinheit rollst du dich mit der Faszienrolle aus und spürst am nächsten Tag etwas weniger Muskelkater. Sind deine Muskeln dadurch schon schneller wieder fit?",
+"richtig": "Nein, es tut nur weniger weh – die Kraft erholt sich kaum schneller",
+"falsch": [
+"Ja, durch das Ausrollen heilen kleine Muskelschäden viel rascher",
+"Ja, gelöste Faszienverklebungen stellen die volle Kraft sofort her",
+"Nein, die Rolle hat auch auf das Schmerzgefühl keinerlei Wirkung"
+],
+"warum": "Ausrollen dämpft das Schmerzempfinden über das Nervensystem, beschleunigte die Erholung von Kraft und Sprint aber nicht eindeutig."
+},
+"plus": {
+"frage": "Du nutzt nach einem intensiven Beintraining 10 Minuten Foam Rolling und fühlst dich am Folgetag weniger steif. Wie gehst du mit deiner Trainingsplanung um?",
+"richtig": "Regenerationszeit beibehalten und die Rolle nur gegen DOMS nutzen",
+"falsch": [
+"Die nächste schwere Beineinheit einen Tag nach vorn ziehen",
+"Mit maximalem Schmerz (10/10) rollen, um Fasern schneller zu heilen",
+"Auf Regeneration verzichten, solange kein Muskelkater spürbar ist"
+],
+"warum": "Foam Rolling senkt subjektiven DOMS (−6 %), verbessert aber die objektive Kraft- und Sprinterholung nicht signifikant."
+},
+"labor": {
+"frage": "In einer Meta-Analyse (21 Studien) reduzierte Post-Rolling subjektiven DOMS (g=0,47), ohne Kraft- oder Sprinterholung signifikant zu beschleunigen. Welcher Mechanismus erklärt das am ehesten?",
+"richtig": "Zentralnervöse Schmerzmodulation statt struktureller Gewebereparatur",
+"falsch": [
+"Mechanisches Aufbrechen und Lösen von Faszienverklebungen",
+"Deutlich beschleunigte Heilung von Mikrotraumen im Muskel",
+"Messbarer Anstieg der maximalen Sprungkraft am Folgetag"
+],
+"warum": "Diskutiert werden Gate-Control-Mechanismen und absteigende schmerzhemmende Bahnen; objektive Leistungsparameter blieben nicht signifikant."
+}
+}
+},
+{
+"id": "WAR-116",
+"karte": {
+"kopf": "290 junge Erwachsene · 11 Studien ausgewertet",
+"titel": "Regelmäßiges Ausrollen hilft den Oberschenkeln, aber kaum den Waden",
+"titel_hervor": "aber kaum den Waden",
+"setup": "Eine Auswertung aus 11 Studien prüfte, ob mehrwöchiges Ausrollen mit der Faszienrolle die Beweglichkeit von Beinen und Sprunggelenk dauerhaft steigert.",
+"zahl": null,
+"kern": [
+"Sichtbare Fortschritte zeigten sich vor allem, wenn länger als vier Wochen gerollt wurde.",
+"Vorder- und Rückseite der Oberschenkel wurden beweglicher, das Sprunggelenk kaum.",
+"In den ersten vier Wochen brachte klassisches Dehnen mehr Beweglichkeit als die Rolle."
+],
+"grenze": "Die untersuchten Programme waren sehr verschieden und umfassten vor allem junge Erwachsene um die 24 Jahre.",
+"fuer_dich": "Willst du deine Sprunggelenke beweglicher machen? Nutze Dehnen oder Krafttraining statt Wadenrollen – die Rolle lohnt eher am Oberschenkel.",
+"labor": {
+"design": "Systematisches Review und Meta-Analyse, mehrwöchiges Foam Rolling auf chronische ROM nach Muskel u. Dauer",
+"teilnehmer": "290 Teilnehmende aus 11 Studien (Alter 23,9 ± 6,3 Jahre)",
+"ergebnis": "ROM gesamt ES 0,823 (95 % KI 0,325–1,322, p=0,001, I²=72,8 %); >4 Wo. besser (p=0,049); Oberschenkel > Wade (p=0,047)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du möchtest dein Sprunggelenk langfristig beweglicher machen, damit du tiefer in die Hocke kommst. Reicht es dafür, wochenlang die Waden auszurollen?",
+"richtig": "Meist nicht – an der Wade brachte die Rolle kaum Zuwachs",
+"falsch": [
+"Ja, gerade an der Wade wirkt die Faszienrolle am stärksten",
+"Ja, schon nach zwei Wochen Rollen ist das Sprunggelenk frei",
+"Nein, Ausrollen bringt auch an den Oberschenkeln gar nichts"
+],
+"warum": "Über mehrere Wochen verbesserte Ausrollen die Beweglichkeit der Oberschenkel, am Sprunggelenk blieb ein klarer Effekt aber aus."
+},
+"plus": {
+"frage": "Du planst ein langfristiges Foam-Rolling-Programm für bessere Beweglichkeit. Bei welchen Muskeln und ab welcher Dauer lohnt es sich laut Daten am ehesten?",
+"richtig": "Erst über mehrere Wochen, vor allem an Hamstrings und Quadrizeps",
+"falsch": [
+"Kurzfristig über wenige Wochen gezielt für die Sprunggelenks-ROM",
+"Nach zwei Wochen an den Waden, wo es Dehnen deutlich übertrifft",
+"Unabhängig von Muskel und Dauer mit identischem Effekt überall"
+],
+"warum": "Erst ab über vier Wochen stieg der Effekt klar an, und signifikante Zuwächse zeigten sich an Oberschenkeln, nicht an der Wade."
+},
+"labor": {
+"frage": "Eine Meta-Analyse (11 Studien, n=290) analysierte chronisches Foam Rolling auf die ROM mit Subgruppen nach Dauer und Muskelgruppe. Was fiel auf?",
+"richtig": "Hohe Heterogenität; längere Dauer und Oberschenkel schnitten besser ab",
+"falsch": [
+"Bei kurzer Dauer war Foam Rolling dem statischen Dehnen klar überlegen",
+"Triceps surae reagierte signifikant stärker als die Hamstrings",
+"Die Protokolle waren sehr homogen ohne Unterschiede nach Dauer"
+],
+"warum": "Bei hoher Heterogenität (I²=72,8 %) waren >4 Wochen (p=0,049) und Oberschenkel gegenüber Waden (p=0,047) klar im Vorteil."
+}
+}
+},
+{
+"id": "WAR-117",
+"karte": {
+"kopf": "2.756 Menschen · 55 Studien zusammengefasst",
+"titel": "Krafttraining mit Gewichten macht Gelenke spürbar beweglicher",
+"titel_hervor": "spürbar beweglicher",
+"setup": "Eine Auswertung aus 55 Studien prüfte bei Menschen zwischen 8 und 78 Jahren, wie Krafttraining über den vollen Bewegungsweg die Beweglichkeit ändert.",
+"zahl": null,
+"kern": [
+"Freie Gewichte und Maschinen verbesserten die Beweglichkeit in jedem Alter.",
+"Reines Training mit dem eigenen Körpergewicht zeigte dagegen keinen klaren Effekt.",
+"Weder Alter noch wöchentliche Trainingshäufigkeit änderten etwas am positiven Trend."
+],
+"grenze": "Möglicherweise blieben Studien ohne Effekt unveröffentlicht – der echte Vorteil könnte etwas kleiner sein.",
+"fuer_dich": "Trainierst du mit Gewichten sauber über den vollen Weg? Dann brauchst du kein Pflicht-Dehnen mehr, nur um beweglich zu bleiben.",
+"labor": {
+"design": "Systematisches Review und Meta-Analyse, Krafttraining (Full ROM) vs. Kontrolle auf Gelenk-ROM",
+"teilnehmer": "2.756 Teilnehmende aus 55 Studien (Alter 8,1–78,8 Jahre)",
+"ergebnis": "SMD 0,73 (95 % KI 0,55–0,91, p<0,001, I²=64,1 %); Egger-Test Bias p=0,002; Eigengewicht n. s."
+}
+},
+"quiz": {
+"basis": {
+"frage": "Ein verbreiteter Mythos sagt, Krafttraining mache steif und unbeweglich. Was passiert tatsächlich, wenn du mit Gewichten über den vollen Weg trainierst?",
+"richtig": "Deine Beweglichkeit verbessert sich im Schnitt spürbar",
+"falsch": [
+"Deine Gelenke werden durch schwere Gewichte deutlich steifer",
+"Nur Jugendliche werden beweglicher, Ältere profitieren nicht",
+"Eigengewichtsübungen wirken dabei viel besser als Gewichte"
+],
+"warum": "Über 55 Studien steigerte Krafttraining mit Gewichten oder Maschinen die Beweglichkeit in allen Altersgruppen moderat."
+},
+"plus": {
+"frage": "Du willst mit Krafttraining nebenbei auch deine Beweglichkeit verbessern. Worauf kommt es bei der Übungsauswahl und Ausführung an?",
+"richtig": "Externe Lasten (freie Gewichte oder Maschinen) über Full ROM nutzen",
+"falsch": [
+"Ausschließlich mit Eigengewicht trainieren statt mit Zusatzlast",
+"Nur Teilwiederholungen ausführen, um Gelenke nicht zu reizen",
+"Trotz Full-ROM-Krafttraining trotzdem noch eine Stunde extra dehnen"
+],
+"warum": "Externe Zusatzlasten über den vollen Bewegungsumfang steigerten die ROM signifikant, reines Eigengewichtstraining dagegen nicht."
+},
+"labor": {
+"frage": "Eine Meta-Analyse (55 Studien, n=2.756) fand einen moderaten ROM-Gewinn durch Krafttraining (SMD 0,73). Welche methodische Einschränkung zeigte der Egger-Test?",
+"richtig": "Signifikanter Publikationsbias im Vergleich zur Kontrollgruppe",
+"falsch": [
+"Nur Studien mit geringer methodischer Qualität wurden eingeschlossen",
+"Ältere Teilnehmende wurden aus allen Analysen ausgeschlossen",
+"Zwischen Krafttraining und Dehnen bestand starker Publikationsbias"
+],
+"warum": "Für Krafttraining vs. Kontrolle war der Egger-Test signifikant (p=0,002), nicht aber für Krafttraining vs. Dehnen (p=0,95)."
+}
+}
+},
+{
+"id": "WAR-118",
+"karte": {
+"kopf": "452 Teilnehmende · 11 Studien zusammengefasst",
+"titel": "Krafttraining macht langfristig ähnlich beweglich wie Dehnen",
+"titel_hervor": "ähnlich beweglich wie Dehnen",
+"setup": "Eine Auswertung aus 11 Vergleichsstudien stellte angeleitetes Krafttraining direkt gegen statisches oder dynamisches Dehntraining.",
+"zahl": null,
+"kern": [
+"Weder bei aktiver noch bei passiver Beweglichkeit lag eine Methode klar vorn.",
+"Mit sauberem Krafttraining deckst du Kraft und Beweglichkeit in einer Einheit ab.",
+"Die Ergebnisse zeigten in den einzelnen Studien durchweg in dieselbe Richtung."
+],
+"grenze": "Die verglichenen Programme unterschieden sich stark in Dauer, Übungen und Zielgruppen – direkte Rezepte hängen vom Einzelfall ab.",
+"fuer_dich": "Hast du wenig Zeit für Sport und willst stark und beweglich werden? Setze auf Krafttraining über den vollen Weg statt extra Dehnen.",
+"labor": {
+"design": "Systematisches Review und Meta-Analyse aus 11 RCTs, überwachtes Krafttraining vs. Dehntraining auf ROM",
+"teilnehmer": "452 Teilnehmende aus 11 Studien (Einsteiger u. Trainierte)",
+"ergebnis": "Unterschied Krafttraining vs. Dehnen: ES −0,22 (95 % KI −0,55 bis 0,12, p=0,206, nicht signifikant)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du hast nur zweimal pro Woche Zeit für Sport und willst sowohl kräftiger als auch beweglicher werden. Was nutzt deine Zeit am besten?",
+"richtig": "Krafttraining über den vollen Bewegungsweg statt extra Dehnen",
+"falsch": [
+"Ausschließlich Dehnen, weil Krafttraining nicht beweglich macht",
+"Die Hälfte jeder Einheit für langes Haltedehnen abzwacken",
+"Erst monatelang nur dehnen und später mit Kraft anfangen"
+],
+"warum": "In 11 Vergleichsstudien brachte angeleitetes Krafttraining langfristig ähnlich viel Beweglichkeit wie Dehntraining – plus mehr Kraft."
+},
+"plus": {
+"frage": "Dein Wochenplan ist voll und du überlegst, deine separaten 30-Minuten-Dehneinheiten zu streichen. Wann gelingt das ohne Einbußen bei der Beweglichkeit?",
+"richtig": "Wenn du dein Krafttraining kontrolliert über Full ROM ausführst",
+"falsch": [
+"Gar nicht – für passive ROM ist statisches Dehnen unverzichtbar",
+"Nur wenn du stattdessen täglich zehn Minuten auf der Rolle liegst",
+"Nur bei Teilwiederholungen mit sehr schweren Gewichten"
+],
+"warum": "Überwachtes Full-ROM-Krafttraining verbesserte aktive und passive ROM langfristig statistisch genauso gut wie Dehntraining."
+},
+"labor": {
+"frage": "Eine Meta-Analyse aus 11 RCTs (n=452) verglich überwachtes Krafttraining direkt mit Dehntraining auf die Gelenkbeweglichkeit. Was zeigte der Vergleich?",
+"richtig": "Keinen statistisch signifikanten Unterschied bei hoher Protokoll-Heterogenität",
+"falsch": [
+"Einen klaren Vorteil für statisches Dehnen bei passiver Beweglichkeit",
+"Einen hochsignifikanten Vorsprung des Krafttrainings in allen Studien",
+"Völlig einheitliche Trainingsdauern und Übungsprotokolle über alle RCTs"
+],
+"warum": "Der Unterschied war nicht signifikant (ES −0,22; p=0,206) bei homogener Effektrichtung, aber sehr unterschiedlichen Studienprotokollen."
+}
+}
+},
+{
+"id": "WAR-119",
+"karte": {
+"kopf": "Verschiedene Gruppen · 6 Studien ausgewertet",
+"titel": "Betontes Ablassen von Gewicht kann Muskelfasern wirklich verlängern",
+"titel_hervor": "Muskelfasern wirklich verlängern",
+"setup": "Eine Übersicht aus sechs kontrollierten Studien untersuchte, wie langsam gebremstes Krafttraining Beweglichkeit und Muskelfasern der Beine verändert.",
+"zahl": {
+"label": "Längere Muskelfasern im Oberschenkel",
+"wert": "+22 %",
+"alltag": "+16 mm (normales Training: +8 %)"
+},
+"kern": [
+"Anders als kurzes Dehnen baut langsames Ablassen unter Last echte neue Faserlänge auf.",
+"Auch die Beweglichkeit im Sprunggelenk stieg deutlich stärker als ohne dieses Training.",
+"Wichtig ist, das Gewicht kontrolliert bis in die gedehnte Position abzusenken."
+],
+"grenze": "Nur sechs Studien mit verschiedenen Messmethoden – eine direkte rechnerische Meta-Analyse gegen Dehnen war nicht möglich.",
+"fuer_dich": "Fühlen sich deine Beine oder Waden eng an? Senke bei RDL oder Wadenheben das Gewicht langsam bis in die volle Dehnung.",
+"labor": {
+"design": "Systematisches Review ohne Meta-Analyse aus 6 RCTs, exzentrisches Krafttraining der unteren Extremität",
+"teilnehmer": "6 randomisierte kontrollierte Studien, gemischte Gruppen",
+"ergebnis": "Dorsalflexion +6° vs. +1°; Faszikel Gastrocnemius +3,36 vs. +1,01 mm; Vastus lateralis +22 % vs. +8 %"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du willst die Muskeln in deinen Beinen nicht nur kurz lockern, sondern wirklich länger und beweglicher machen. Welche Trainingsart schafft das am ehesten?",
+"richtig": "Gewichte kontrolliert und langsam bis in die Dehnung absenken",
+"falsch": [
+"Die Beine drei Wochen lang jeden Abend locker im Sitzen dehnen",
+"Gewichte möglichst schnell fallen lassen und nur kräftig hochdrücken",
+"Nach dem Training regelmäßig über die Faszienrolle rollen"
+],
+"warum": "Gebremstes Ablassen unter Last vergrößerte in sechs Studien sowohl die Beweglichkeit als auch tatsächlich die Muskelfaserlänge."
+},
+"plus": {
+"frage": "Du willst bei Hamstrings, Quadrizeps oder Waden nicht nur die Dehntoleranz, sondern auch die strukturelle Faszikellänge verbessern. Wie passt du dein Training an?",
+"richtig": "Exzentrisch betonte Übungen bis in die gedehnte Position einbauen",
+"falsch": [
+"Nur die konzentrische Phase trainieren und exzentrisch abwerfen",
+"Krafttraining durch vier Wochen passives Haltedehnen ersetzen",
+"Ausschließlich isometrisch in verkürzter Muskelposition arbeiten"
+],
+"warum": "Exzentrische Belastung in gedehnter Position fördert eine echte strukturelle Verlängerung der Faszikel und verbessert zugleich die ROM."
+},
+"labor": {
+"frage": "Ein Review aus 6 RCTs zeigte unter exzentrischem Training längere Muskelfaszikel und mehr Dorsalflexion. Was begrenzt die direkte Einordnung gegenüber Dehnen?",
+"richtig": "Unterschiedliche Messmethoden verhinderten eine direkte Meta-Analyse",
+"falsch": [
+"Die Faszikellänge stieg nur kurzfristig für weniger als 30 Minuten",
+"Exzentrisches Training schnitt schlechter ab als konzentrisches",
+"Es lagen gar keine randomisierten Kontrollgruppen zum Vergleich vor"
+],
+"warum": "Zwar deuten die RCTs auf strukturelle Sarkomerogenese hin, wegen heterogener Messmethoden fehlte aber ein gepoolter Vergleich mit Dehnen."
+}
+}
+}
+]

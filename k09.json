@@ -1,0 +1,1142 @@
+[
+{
+"id": "FAST-115",
+"karte": {
+"kopf": "Übergewichtige · 23 Meta-Analysen & Studien",
+"titel": "Sehr kurze Essensfenster ließen das Cholesterin wieder steigen",
+"titel_hervor": "Cholesterin wieder steigen",
+"setup": "Große Übersichten und eine Jahresstudie verglichen moderate Fastenformen, Fenster unter 8 Stunden und jeden-zweiten-Tag-Fasten bei Blutfetten.",
+"zahl": {
+"label": "Mehr Gesamtcholesterin bei <8-Std.-Fenster",
+"wert": "+15,17 mg/dL",
+"alltag": "im Vergleich zu >8 Std. Essen"
+},
+"kern": [
+"Moderates Fasten senkte Triglyzeride und LDL gegenüber keiner Diät",
+"Fenster unter 8 Stunden erhöhten dagegen das Gesamtcholesterin deutlich",
+"Auch jeden zweiten Tag fasten erhöhte LDL nach einem Jahr gegenüber Diät"
+],
+"grenze": "Bei kurzer Dauer bis 12 Wochen können Blutfette durch schnellen Fettabbau vorübergehend schwanken.",
+"fuer_dich": "Du fastest zeitbegrenzt? Halte dein Essensfenster bei mindestens 8 Stunden und iss ballaststoffreich mit wenig gesättigtem Fett.",
+"labor": {
+"design": "Umbrella Review (23 MAs), Netzwerk-MA & 12-Monats-RCT, verschiedene IF-Formen vs. Kontrolle/CER",
+"teilnehmer": "Erwachsene mit Übergewicht",
+"ergebnis": "IF vs. Kontrolle: TG SMD −0,23, LDL −0,20; <8h vs. >8h: TC +15,17 mg/dL; ADF vs. CER: LDL +11,5 mg/dL"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du verkürzt deine tägliche Essenszeit extrem stark auf unter 8 Stunden. Was kann dabei im Schnitt mit deinen Cholesterinwerten passieren?",
+"richtig": "Das Gesamtcholesterin kann im Vergleich zu längeren Fenstern steigen",
+"falsch": [
+"Das Cholesterin sinkt umso tiefer, je kürzer das Fenster ist",
+"Die Länge des Essensfensters beeinflusst Cholesterin überhaupt nicht",
+"Nur die Blutzuckerwerte ändern sich, Blutfette bleiben immer gleich"
+],
+"warum": "Während moderates Fasten Blutfette oft bessert, führten Fenster unter 8 Stunden im Schnitt zu höherem Gesamtcholesterin."
+},
+"plus": {
+"frage": "Du willst dein Essensfenster auf 20:4 oder 18:6 verkürzen, achtest aber auf deine Herz-Kreislauf-Werte. Was ist die klügere Alternative?",
+"richtig": "Beim Fenster ab 8 Stunden bleiben und ballaststoffreich essen",
+"falsch": [
+"Auf jeden zweiten Tag fasten wechseln, um LDL sicher zu senken",
+"Das Fenster noch weiter kürzen und abends sehr fettreich essen",
+"Alle Ballaststoffe weglassen, um die Verdauung zu entlasten"
+],
+"warum": "Fenster ab 8 Stunden vermeiden den Cholesterin-Anstieg sehr kurzer Fenster; Ballaststoffe und wenig gesättigtes Fett helfen zusätzlich."
+},
+"labor": {
+"frage": "Ein Umbrella Review und eine Netzwerk-MA zeigen gegensätzliche Lipid-Effekte beim Fasten. Wovon hing die Richtung beim Cholesterin wesentlich ab?",
+"richtig": "Von der Vergleichsgruppe sowie der Kürze des Fensters und der Dauer",
+"falsch": [
+"Ausschließlich davon, ob morgens oder abends trainiert wurde",
+"Nur vom Alter der Probanden unabhängig vom Fastenprotokoll",
+"Davon, ob das Fasten weniger als vier Wochen dauerte"
+],
+"warum": "Gegenüber Nicht-Intervention sanken TG und LDL, doch <8-h-Fenster und 12 Monate ADF erhöhten Gesamt- bzw. LDL-Cholesterin."
+}
+}
+},
+{
+"id": "FAST-116",
+"karte": {
+"kopf": "Abnehmende Erwachsene · 17 Studien",
+"titel": "Intervallfasten macht im Schnitt nicht weniger hungrig als Diät",
+"titel_hervor": "nicht weniger hungrig",
+"setup": "In 17 Studien verglichen Abnehmende ihren Hunger, ihr Sättigungsgefühl und ihr Essverlangen bei Intervallfasten gegen tägliches Kaloriensparen.",
+"zahl": null,
+"kern": [
+"Hunger und Essverlangen fielen in beiden Gruppen im Schnitt gleich aus",
+"Auch das Sättigungsgefühl unterschied sich nicht deutlich voneinander",
+"Einzelne Studien sahen nur bei frühem Essensfenster weniger Essverlangen"
+],
+"grenze": "Die Auswertung umfasste verschiedene Fastenformen (16:8, 5:2, jeden zweiten Tag) zusammengefasst.",
+"fuer_dich": "Du fastest in der Hoffnung auf weniger Diät-Hunger? Setze für echte Sättigung lieber auf reichlich Eiweiß und ein frühes Essensfenster.",
+"labor": {
+"design": "Systematisches Review & Meta-Analyse (17 RCTs: 6 ADF, 6 5:2, 4 TRE, 1 Drei-Arm), IF vs. CER",
+"teilnehmer": "Erwachsene beim Abnehmen",
+"ergebnis": "Hunger WMD −3,03 (p=0,25); Sättigung +3,11 (p=0,18); Essverlangen −3,89 (p=0,38)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Viele hoffen, dass Intervallfasten den Hunger in einer Diät automatisch abstellt. Was zeigt der Vergleich mit normalem Kaloriensparen?",
+"richtig": "Hunger und Sättigung sind im Schnitt bei beiden gleich",
+"falsch": [
+"Intervallfasten schaltet den Hunger nach einer Woche ab",
+"Normale Diäten machen im Schnitt deutlich weniger satt",
+"Beim Fasten steigt der Hunger immer doppelt so stark an"
+],
+"warum": "Über 17 Studien unterschieden sich Hunger, Sättigung und Essverlangen zwischen Intervallfasten und normaler Diät nicht."
+},
+"plus": {
+"frage": "Im Cut plagt dich starker Hunger, deshalb willst du auf 16:8 wechseln. Was hilft dir neben dem Zeitfenster wirklich gegen den Hunger?",
+"richtig": "Ein hohes Proteinziel und eher ein frühes Essensfenster",
+"falsch": [
+"Allein der Fasten-Timer, weil Fasten Appetit automatisch hemmt",
+"Ein möglichst spätes Essensfenster spät am Abend",
+"Von 16:8 direkt auf jeden zweiten Tag fasten umsteigen"
+],
+"warum": "Fasten allein dämpft Hunger im Mittel nicht besser als normale Diät – Protein und frühe Essenszeiten helfen eher bei der Sättigung."
+},
+"labor": {
+"frage": "Eine Meta-Analyse aus 17 RCTs verglich subjektive Appetitmarker zwischen verschiedenen IF-Formen und CER. Wie fielen Hunger, Fullness und Essverlangen aus?",
+"richtig": "Kein signifikanter Unterschied in keinem der geprüften Appetitmarker",
+"falsch": [
+"Signifikant weniger Hunger, aber geringere Sättigung unter IF",
+"Deutlich geringeres Essverlangen bei allen IF-Formen zusammen",
+"Signifikant höherer Hunger bei IF gegenüber täglicher Reduktion"
+],
+"warum": "Alle vier geprüften Marker zeigten p-Werte zwischen 0,18 und 0,43, also keinen statistischen Vorteil für IF."
+}
+}
+},
+{
+"id": "FAST-117",
+"karte": {
+"kopf": "Übergewichtige Erwachsene · 50-Wochen-Studie",
+"titel": "Bei der 5:2-Diät hielt nach einem Jahr nur jeder Fünfte durch",
+"titel_hervor": "nur jeder Fünfte durch",
+"setup": "150 übergewichtige Erwachsene machten 50 Wochen lang entweder die 5:2-Diät oder sparten jeden Tag etwas Kalorien – teils mit MRT-Messung.",
+"zahl": {
+"label": "Hielten 2 Fastentage nach 50 Wochen durch",
+"wert": "21,4 %",
+"alltag": "rund jeder Fünfte"
+},
+"kern": [
+"Nach 50 Wochen nahmen beide Gruppen fast genau gleich viel ab",
+"Auch Bauchfett, Leberfett und Unterhautfett schmolzen in beiden gleich",
+"Ohne enge Betreuung gaben die meisten die zwei Fastentage nach und nach auf"
+],
+"grenze": "Teilnehmende erhielten 400 € für Untersuchungstermine; ohne diesen Anreiz bleiben im Alltag oft noch weniger dran.",
+"fuer_dich": "Du brichst deine 5:2-Fastentage zweimal hintereinander ab oder isst danach zu viel? Wechsle lieber auf ein moderates tägliches Defizit oder 14:10.",
+"labor": {
+"design": "Randomisierte kontrollierte Studie, 50 Wochen, 5:2 (ICR) vs. tägliche CR, inkl. MRT",
+"teilnehmer": "150 Erwachsene mit Übergewicht (35–65 J.; MRT-Subgruppe n=145)",
+"ergebnis": "Wo. 50: −5,2 % vs. −4,9 % (p=0,89); keine Diff. bei VAT/Leberfett; 5:2-Adhärenz sank auf 21,4 %"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du startest die 5:2-Diät mit zwei strengen Fastentagen pro Woche. Was passiert bei den meisten Menschen, wenn sie ein Jahr lang ohne enge Begleitung weitermachen?",
+"richtig": "Nur rund jeder Fünfte hält die zwei Fastentage dauerhaft durch",
+"falsch": [
+"Fast alle finden 5:2 nach einem Jahr leichter als normale Diät",
+"Man verliert damit deutlich mehr Bauch- und Leberfett als täglich",
+"Nach einem Jahr nimmt man das gesamte Gewicht wieder zu"
+],
+"warum": "Nach 50 Wochen hielten nur noch 21,4 % die zwei Fastentage ein, und der Fettverlust entsprach dem täglichen Kaloriensparen."
+},
+"plus": {
+"frage": "Du machst 5:2, aber in den letzten zwei Wochen hast du deine Fastentage abgebrochen oder danach stark übergegessen. Was ist dein bester nächster Schritt?",
+"richtig": "Auf ein moderates tägliches Defizit oder 14:10 wechseln",
+"falsch": [
+"Einen dritten Fastentag einbauen, um den Ausfall aufzuholen",
+"Die Kalorien an den zwei Fastentagen auf null senken",
+"Trotzdem bei 5:2 bleiben, weil es mehr Leberfett abbaut"
+],
+"warum": "Da 5:2 keinen Vorteil bei Gewicht oder Bauchfett bringt, lohnt sich ein Wechsel auf eine nachhaltigere Routine."
+},
+"labor": {
+"frage": "In einer 50-Wochen-RCT mit MRT-Subgruppe (n=145) wurden 5:2 und tägliche Kalorienreduktion verglichen. Was zeigten Körperkomposition und Adhärenz?",
+"richtig": "Gleicher Gewichts- und Viszeralfettverlust bei stark sinkender 5:2-Adhärenz",
+"falsch": [
+"Stärkerer Rückgang von Leberfett unter 5:2 trotz geringerer Adhärenz",
+"Stabile Protokolltreue von über 70 % nach Ende der Betreuung",
+"Deutlicher Vorteil von 5:2 beim Gewichtsverlust in Woche 50"
+],
+"warum": "Nach 50 Wochen gab es keine Unterschiede bei Gewicht, VAT oder Leberfett, während die 5:2-Treue auf 21,4 % fiel."
+}
+}
+},
+{
+"id": "FAST-118",
+"karte": {
+"kopf": "Erwachsene mit Adipositas · 12-Monats-Studie",
+"titel": "Fasten jeden zweiten Tag brachen mehr Menschen ab als normale Diät",
+"titel_hervor": "brachen mehr Menschen ab",
+"setup": "100 Erwachsene mit Adipositas machten 12 Monate lang entweder jeden-zweiten-Tag-Fasten, tägliches Kaloriensparen oder gar keine Diät.",
+"zahl": {
+"label": "Abbruchrate nach 12 Monaten",
+"wert": "38 %",
+"alltag": "vs. 29 % bei täglicher Diät"
+},
+"kern": [
+"Beim Abnehmen und dem Muskelanteil lagen beide Diäten nach einem Jahr gleichauf",
+"An Fastentagen aßen Teilnehmende mehr als geplant, an Essenstagen weniger",
+"So verwandelte sich das strenge Wechselfasten faktisch in eine tägliche Diät"
+],
+"grenze": "Die Gruppe bestand zu 86 % aus Frauen; schon ab Monat 3 verwischten die Grenzen zur täglichen Diät.",
+"fuer_dich": "Du willst jeden zweiten Tag fasten testen? Plane es erst mal für 4 bis 8 Wochen ein und prüfe, ob du die Fastentage wirklich triffst.",
+"labor": {
+"design": "Randomisierte kontrollierte Studie, 12 Monate (6 Mo. Abnahme + 6 Mo. Erhalt), ADF vs. CR vs. Kontrolle",
+"teilnehmer": "100 Erwachsene mit Adipositas (86 % Frauen)",
+"ergebnis": "Dropout: ADF 38 % vs. CR 29 % vs. Kontrolle 26 %; Gewicht Mo. 12: −6,0 % vs. −5,3 %"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du probierst ein Jahr lang, jeden zweiten Tag stark zu fasten. Was passiert dabei bei vielen Menschen im Alltag?",
+"richtig": "Sie brechen häufiger ab oder essen an Fastentagen mehr als geplant",
+"falsch": [
+"Sie halten es leichter durch als normales tägliches Kaloriensparen",
+"Sie verlieren nach einem Jahr deutlich mehr Gewicht als bei Diät",
+"Sie halten die Fastentage streng ein und essen an normalen Tagen doppelt"
+],
+"warum": "Die Abbruchrate lag bei 38 % (vs. 29 % bei täglicher Diät), und viele glitten unbemerkt in eine normale tägliche Diät ab."
+},
+"plus": {
+"frage": "Du hast jeden zweiten Tag fasten gestartet, überschreitest aber ständig dein Fastentags-Limit. Worauf deutet das hin?",
+"richtig": "Ein Frühzeichen, dass das Protokoll im Alltag zu streng ist",
+"falsch": [
+"Kein Problem, solange du an Essenstagen doppelt so viel isst",
+"Ein Zeichen, dass dein Stoffwechsel mehr Energie verbrennt",
+"Der beste Moment, die Fastentage auf null Kalorien zu senken"
+],
+"warum": "Abweichungen am Fastentag zeigen oft, dass das strenge Protokoll langfristig kaum durchhaltbar ist und ein Abbruch droht."
+},
+"labor": {
+"frage": "In einer 12-Monats-RCT (n=100) wurden ADF und tägliche Kalorienreduktion verglichen. Welches Verhaltensmuster trat ab Monat 3 in der ADF-Gruppe auf?",
+"richtig": "Mehr Aufnahme an Fastentagen und weniger an Essenstagen – faktisch tägliche CR",
+"falsch": [
+"Exakte Einhaltung der Fastentage bei starkem Überessen an Essenstagen",
+"Deutlich geringerer Dropout als in der täglichen Kontrollgruppe",
+"Überlegener Erhalt der fettfreien Masse gegenüber täglicher CR"
+],
+"warum": "Durch systematische Verhaltenskonversion näherte sich ADF einer täglichen Kalorienreduktion an, bei höherem Dropout (38 %)."
+}
+}
+},
+{
+"id": "FAST-121",
+"karte": {
+"kopf": "Gesunde junge Erwachsene · 11 Studien",
+"titel": "Kraft und Muskeln wachsen beim Fasten genauso wie sonst",
+"titel_hervor": "genauso wie sonst",
+"setup": "11 Trainingsstudien prüften, ob Intervallfasten beim Krafttraining den Aufbau von Muskeln, Maximalkraft oder Explosivkraft bremst.",
+"zahl": null,
+"kern": [
+"Muskelaufbau und Explosivkraft fielen mit Fasten praktisch gleich aus",
+"Voraussetzung war, dass Training und Tagesnährstoffe beibehalten wurden",
+"Entscheidend bleibt das erreichte Tagesziel, nicht die Zahl der Mahlzeiten"
+],
+"grenze": "Die meisten der 11 Studien dauerten nur 4 bis 8 Wochen; zur Kraftausdauer sind die Daten noch ungenau.",
+"fuer_dich": "Du willst Krafttraining und Intervallfasten kombinieren? Solange du dein tägliches Eiweiß- und Kalorienziel schaffst, spricht nichts dagegen.",
+"labor": {
+"design": "Systematisches Review & Multilevel-Meta-Analyse (11 Studien, meist 4–8 Wochen), IF + RT vs. RT",
+"teilnehmer": "303 gesunde junge Erwachsene",
+"ergebnis": "Gesamt g=0,09 (95 % KI −0,23 bis 0,40); Hypertrophie g=0,05 (p=0,454); Explosivkraft g=0,03"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du gehst regelmäßig ins Krafttraining und möchtest zusätzlich Intervallfasten machen. Bremst das Fasten deinen Muskelaufbau?",
+"richtig": "Im Schnitt nicht, solange Training und Tagesernährung stimmen",
+"falsch": [
+"Ja, ohne fünf Mahlzeiten am Tag wachsen Muskeln kaum noch",
+"Ja, zumindest die Schnellkraft geht beim Fasten stark zurück",
+"Im Gegenteil, Fasten verdoppelt den Muskelaufbau automatisch"
+],
+"warum": "In 11 Studien zeigten sich bei Muskelaufbau, Maximalkraft und Explosivkraft keine Nachteile, wenn die Nährstoffe passten."
+},
+"plus": {
+"frage": "Du trainierst auf Hypertrophie und willst 16:8 testen. Worauf kommt es an, damit deine Gains nicht leiden?",
+"richtig": "Dein gesamtes Protein- und Kalorienziel im Fenster erreichen",
+"falsch": [
+"Das Trainingsvolumen halbieren, um Energie zu sparen",
+"Alle schweren Grundübungen durch leichte Isolationsübungen ersetzen",
+"Zwischen den Sätzen deutlich längere Pausen einlegen"
+],
+"warum": "Solange Trainingsreiz sowie tägliches Protein- und Energieziel stimmen, bleibt die Hypertrophie-Anpassung vergleichbar."
+},
+"labor": {
+"frage": "Eine Multilevel-Meta-Analyse aus 11 Studien (n=303) untersuchte Krafttraining unter Intervallfasten. Welche Grenze schränkt die Langzeitaussage ein?",
+"richtig": "Die meisten Primärstudien dauerten nur 4 bis 8 Wochen",
+"falsch": [
+"Die Effektstärke für Hypertrophie war stark negativ",
+"Explosivkraft wurde in den Studien gar nicht erhoben",
+"Alle Teilnehmenden waren untrainierte Senioren"
+],
+"warum": "Zwar sprachen Effektstärken nahe null (g=0,05 bis 0,09) für Äquivalenz, doch liefen die meisten Studien nur 4 bis 8 Wochen."
+}
+}
+},
+{
+"id": "FAST-122",
+"karte": {
+"kopf": "Trainierte Männer & Frauen · 8-Wochen-Studie",
+"titel": "Nüchterntraining mit 16:8 bremste den Kraftzuwachs bei Kniebeugen",
+"titel_hervor": "bremste den Kraftzuwachs",
+"setup": "Gut Trainierte aßen 8 Wochen lang 10 % über Bedarf (2,2 g/kg Eiweiß) – eine Gruppe mit 16:8 und Essen erst eine Stunde nach dem Training.",
+"zahl": {
+"label": "Weniger Kniebeugen-Kraftzuwachs mit 16:8",
+"wert": "−4,2 kg",
+"alltag": "+10,4 kg vs. +14,6 kg"
+},
+"kern": [
+"Die Fastengruppe schaffte über 8 Wochen weniger Wiederholungen insgesamt",
+"Muskelmasse und Bankdrücken entwickelten sich in beiden Gruppen ähnlich",
+"Ohne Fasten bauten die Sportler im Schnitt 1,4 kg mehr Körperfett auf"
+],
+"grenze": "Kleine Gruppe mit nur 17 Trainierten über 8 Wochen; die Fastengruppe trainierte nüchtern.",
+"fuer_dich": "Du trainierst schwer für Beinkraft und hohes Volumen? Lege dein Training lieber ins Essensfenster statt nüchtern zu starten.",
+"labor": {
+"design": "Randomisierte kontrollierte Studie, 8 Wochen, +10 % Kalorien, 16:8 (Essen >=1 h post-RT) vs. ganztägig",
+"teilnehmer": "17 gut trainierte Männer und Frauen (2,2 g/kg/Tag Protein)",
+"ergebnis": "Squat 1RM +10,4 vs. +14,6 kg (p=0,04); Volumen 6.960 vs. 7.334 Wdh.; Fett +1,4 kg höher in FED"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du trainierst im leichten Kalorienüberschuss schwer die Beine, isst aber erst nach dem Training das erste Mal. Was kann dabei passieren?",
+"richtig": "Du schaffst etwas weniger Wiederholungen und baust weniger Beinkraft auf",
+"falsch": [
+"Du verlierst trotz Überschuss fast deine gesamte Muskelmasse",
+"Du wirst bei Kniebeugen deutlich stärker als mit Frühstück",
+"Du baust genauso viel Körperfett auf wie bei ganztägigem Essen"
+],
+"warum": "Nüchterntraining mit verzögertem Essensstart senkte Gesamtvolumen und Kniebeugen-Kraftzuwachs trotz gleichem Muskelaufbau."
+},
+"plus": {
+"frage": "Im Bulk willst du dein Squat-1RM pushen und hohes Volumen fahren, nutzt aber 16:8. Wie passt du dein Timing sinnvoll an?",
+"richtig": "Das Beintraining ins Essensfenster legen statt nüchtern zu trainieren",
+"falsch": [
+"Noch länger nach dem Training mit der ersten Mahlzeit warten",
+"Das Protein von 2,2 g/kg auf über 3,5 g/kg anheben",
+"Schwere Kniebeugen im 16:8-Modus komplett aus dem Plan nehmen"
+],
+"warum": "Trainieren innerhalb des Essensfensters liefert Energie für hohes Unterkörper-Volumen und stärkere 1RM-Zuwächse."
+},
+"labor": {
+"frage": "In einer 8-Wochen-RCT (n=17, 10 % Überschuss, 2,2 g/kg Protein) trainierte die 16:8-Gruppe nüchtern mit Essensstart >=1 h post-RT. Was zeigte sich?",
+"richtig": "Ähnliche FFM, weniger Fettzuwachs, aber geringeres Squat-1RM und Volumen",
+"falsch": [
+"Signifikant weniger FFM-Zuwachs bei unveränderter Squat-Kraft",
+"Deutlicher Kraftverlust sowohl beim Bankdrücken als auch bei Kniebeugen",
+"Höherer Fettaufbau in der 16:8-Gruppe durch große Abendmahlzeiten"
+],
+"warum": "Während FFM vergleichbar stieg und Fett geringer zunahm, blieben Squat-1RM (−4,2 kg, p=0,04) und Volumen hinter der Kontrollgruppe zurück."
+}
+}
+},
+{
+"id": "FAST-123",
+"karte": {
+"kopf": "Krafttrainierte Erwachsene · 12-Wochen-Studie",
+"titel": "16:8 im Muskelaufbau halbierte den Fettzuwachs bei gleichen Muskeln",
+"titel_hervor": "halbierte den Fettzuwachs",
+"setup": "23 Krafttrainierte absolvierten eine 12-wöchige Aufbauphase – die eine Hälfte mit 16:8-Essensfenster, die andere ohne Zeitbegrenzung.",
+"zahl": {
+"label": "Fettaufbau in 12 Wochen mit 16:8",
+"wert": "+2,0 kg",
+"alltag": "vs. +4,36 kg ohne Fasten"
+},
+"kern": [
+"Fettfreie Masse und Kreuzheben-Kraft stiegen in beiden Gruppen fast gleich",
+"Im 8-Stunden-Fenster aßen die Sportler spontan weniger Kalorien",
+"Allerdings verfehlten sie im Schnitt ihr vorgegebenes Eiweißziel etwas"
+],
+"grenze": "Kleine Studie mit 23 Personen; im engen 8-Stunden-Fenster fiel es schwerer, das Eiweißziel zu treffen.",
+"fuer_dich": "Du willst Muskeln aufbauen, aber möglichst wenig Fett ansetzen? 16:8 kann den Überschuss bremsen – behalte dabei dein Eiweißziel im Blick.",
+"labor": {
+"design": "Randomisierte kontrollierte Studie, 12 Wochen Aufbauphase, 16:8-TRE vs. Kontrolle",
+"teilnehmer": "23 krafttrainierte Erwachsene",
+"ergebnis": "Fett +2,00 vs. +4,36 kg (p=0,009); FFM +1,34 vs. +1,38 kg; Deadlift +26,4 vs. +26,0 kg"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du bist in einer Muskelaufbauphase und begrenzt dein Essen auf 8 Stunden am Tag. Was passiert dabei oft ganz von selbst?",
+"richtig": "Du isst weniger Überschuss und setzt deutlich weniger Fett an",
+"falsch": [
+"Du baust im engen Fenster gar keine neuen Muskeln auf",
+"Du nimmst mehr Körperfett zu, weil die Portionen größer sind",
+"Deine Kraft beim Kreuzheben bleibt komplett stehen"
+],
+"warum": "Das 8-Stunden-Fenster bremste die spontane Kalorienaufnahme, halbierte den Fettaufbau und ließ Muskeln und Kraft gleich stark wachsen."
+},
+"plus": {
+"frage": "Du nutzt 16:8 für einen möglichst sauberen Lean Bulk. Auf welche typische Falle solltest du im Tracking besonders achten?",
+"richtig": "Dass du im kurzen Fenster dein tägliches Proteinziel erreichst",
+"falsch": [
+"Dass du nicht zu viel Körperfett durch große Portionen ansetzt",
+"Dass deine Maximalkraft im Kreuzheben stark abfällt",
+"Dass du mindestens sechs kleine Mahlzeiten einbaust"
+],
+"warum": "Im 8-Stunden-Fenster sank die spontane Proteinzufuhr unter das Ziel (1,44 statt 1,60 g/kg), sodass aktives Erinnern hilft."
+},
+"labor": {
+"frage": "In einer 12-wöchigen Aufbau-RCT (n=23) verglich man 16:8 mit freier Mahlzeitenverteilung. Wie sind FFM-Gleichheit und halbierter Fettaufbau zu erklären?",
+"richtig": "Das 8-h-Fenster begrenzte die spontane Energieaufnahme bei ausreichendem Reiz",
+"falsch": [
+"Die 16:8-Gruppe aß mehr Protein und verbrannte mehr Kalorien",
+"Beide Gruppen nahmen exakt dieselbe Kalorien- und Proteinmenge auf",
+"Die Kontrollgruppe führte weniger Krafttrainingseinheiten durch"
+],
+"warum": "Die geringere Adhärenz an Kalorien- und Proteinziel im 8-h-Fenster bremste den Fettaufbau (+2,0 vs. +4,36 kg) bei gleicher FFM."
+}
+}
+},
+{
+"id": "FAST-124",
+"karte": {
+"kopf": "Erfahrene Kraftsportler · 8-Wochen-Studie",
+"titel": "16:8 mit Training baute Fett ab, senkte aber Testosteron",
+"titel_hervor": "senkte aber Testosteron",
+"setup": "34 erfahrene Kraftsportler aßen 8 Wochen lang dieselben Kalorien – die eine Gruppe zwischen 13 und 20 Uhr rund ums Nachmittagstraining.",
+"zahl": null,
+"kern": [
+"Die 16:8-Gruppe verlor deutlich Körperfett bei vollem Muskelerhalt",
+"Auch die Maximalkraft blieb über die 8 Wochen komplett stabil",
+"Gleichzeitig sanken die Hormone Testosteron und IGF-1 im Blut"
+],
+"grenze": "Nur erfahrene Männer über 8 Wochen untersucht; ob der Hormonrückgang langfristig stört, ist unklar.",
+"fuer_dich": "Du willst als Kraftsportler Fett abbauen und Muskeln halten? Ein 8-Stunden-Fenster rund ums Nachmittagstraining funktioniert gut.",
+"labor": {
+"design": "Randomisierte kontrollierte Studie, 8 Wochen, isokalorisch (~2.826 kcal), 16:8 (13–20 h) vs. Kontrolle",
+"teilnehmer": "34 erfahrene Kraftsportler (>5 Jahre Training, nur Männer)",
+"ergebnis": "Fettmasse signifikant gesunken (p=0,0448); FFM/1RM erhalten; Testosteron (p=0,0476) & IGF-1 gesunken"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Erfahrene Kraftsportler aßen 8 Wochen lang nur zwischen 13 und 20 Uhr und trainierten nachmittags. Was passierte mit Körperfett und Muskeln?",
+"richtig": "Das Körperfett sank, während Muskeln und Kraft erhalten blieben",
+"falsch": [
+"Muskeln und Kraft gingen durch das späte Frühstück stark zurück",
+"Weder Körperfett noch Blutwerte veränderten sich spürbar",
+"Das Testosteron stieg durch das Fasten deutlich an"
+],
+"warum": "Bei gleicher Kalorienmenge baute die 16:8-Gruppe Fett ab und hielt Muskeln und Kraft stabil, während Testosteron sank."
+},
+"plus": {
+"frage": "Du trainierst regelmäßig nachmittags und willst mit 16:8 etwas Körperfett verlieren. Wie legst du deine Mahlzeiten sinnvoll ums Training?",
+"richtig": "Eine Mahlzeit vorher und eine nachher innerhalb des 8-Stunden-Fensters",
+"falsch": [
+"Das Nachmittagstraining komplett nüchtern ohne Essen davor machen",
+"Alle Kalorien morgens essen und nach dem Training fasten",
+"Bei 16:8 auf schweres Training verzichten, um Hormone zu schonen"
+],
+"warum": "Mahlzeiten um 13, 16 und 20 Uhr rund ums Nachmittagstraining erhielten Kraft und Muskelmasse vollständig."
+},
+"labor": {
+"frage": "In einer 8-Wochen-RCT mit 34 erfahrenen Kraftsportlern sanken unter 16:8 Testosteron und IGF-1 trotz konstanter FFM. Was bleibt dabei offen?",
+"richtig": "Die klinische Bedeutung des Hormonrückgangs und Effekte bei Frauen",
+"falsch": [
+"Ob die 16:8-Gruppe überhaupt Körperfett verloren hat",
+"Ob die Maximalkraft in den acht Wochen erhalten blieb",
+"Ob die Teilnehmenden genug Trainingserfahrung mitbrachten"
+],
+"warum": "Untersucht wurden nur Männer über 8 Wochen; wie sich niedrigere anabole Hormone über Monate auswirken, blieb unklar."
+}
+}
+},
+{
+"id": "FAST-125",
+"karte": {
+"kopf": "Krafttrainierte Frauen · 8-Wochen-Studie",
+"titel": "Aktive Frauen bauten mit 16:8 genauso viel Muskel und Kraft auf",
+"titel_hervor": "genauso viel Muskel und Kraft",
+"setup": "Aktive, krafttrainierte Frauen aßen 8 Wochen lang 1,6 g Eiweiß pro Kilo – entweder im 8-Stunden-Fenster (12–20 Uhr) oder über 13 Stunden.",
+"zahl": {
+"label": "Zuwachs fettfreier Masse in 8 Wochen",
+"wert": "+2–3 %",
+"alltag": "gleich in beiden Gruppen"
+},
+"kern": [
+"Muskeldicke, fettfreie Masse und Kraft stiegen in beiden Gruppen gleich",
+"Frauen, die 16:8 genau einhielten, verloren zusätzlich 2 bis 7 % Fett",
+"Entscheidend für den Aufbau war die hohe Eiweißzufuhr im Fenster"
+],
+"grenze": "Der zusätzliche Fettverlust zeigte sich nur bei strenger Einhaltung, nicht über alle 40 Gestarteten.",
+"fuer_dich": "Du bist eine aktive Kraftsportlerin und nutzt 16:8? Achte auf mindestens 1,6 g Eiweiß pro Kilo am Tag, dann bleiben Aufbau und Kraft voll da.",
+"labor": {
+"design": "Randomisierte kontrollierte Studie, 8 Wochen, 16:8-TRF (12–20 h) vs. 13-h-Fenster, + RT",
+"teilnehmer": "40 aktive, krafttrainierte Frauen (24 in der Per-Protocol-Analyse)",
+"ergebnis": "FFM +2 % bis +3 % in allen Gruppen; Fettmasse −2 % bis −7 % unter TRF (nur PP-Analyse)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Stimmt es, dass Frauen beim 16:8-Intervallfasten schlechter Muskeln und Kraft aufbauen als bei normalen Essenszeiten?",
+"richtig": "Nein, bei genug Eiweiß bauten aktive Frauen genauso gut auf",
+"falsch": [
+"Ja, Frauen verlieren bei 16:8 fast immer Muskelmasse",
+"Ja, Kraftzuwächse sind nur mit Frühstück am Morgen möglich",
+"Nein, sie bauen sogar doppelt so viel Muskel auf wie sonst"
+],
+"warum": "Bei 1,6 g Eiweiß pro Kilo stiegen fettfreie Masse, Muskeldicke und Kraft bei 16:8 genauso wie bei 13 Stunden Essenszeit."
+},
+"plus": {
+"frage": "Als krafttrainierte Frau willst du 16:8 (12 bis 20 Uhr) mit schwerem Training verbinden. Welcher Wert sichert deinen Muskelaufbau ab?",
+"richtig": "Mindestens rund 1,6 g Protein pro Kilo Körpergewicht im Fenster",
+"falsch": [
+"Ein strenges Kaloriendefizit von über tausend Kalorien",
+"Training ausschließlich früh morgens viele Stunden vor dem Essen",
+"Der vollständige Verzicht auf Kohlenhydrate nach dem Training"
+],
+"warum": "Eine tägliche Proteinzufuhr ab 1,6 g/kg im 8-Stunden-Fenster ermöglichte identische Kraft- und Hypertrophie-Zuwächse."
+},
+"labor": {
+"frage": "Eine 8-Wochen-RCT mit 40 krafttrainierten Frauen verglich 16:8 mit einem 13-h-Fenster. Wie unterschieden sich Intention-to-Treat- und Per-Protocol-Analyse?",
+"richtig": "Der zusätzliche Fettverlust war nur in der Per-Protocol-Analyse signifikant",
+"falsch": [
+"Nur in der Intention-to-Treat-Analyse stieg die fettfreie Masse",
+"Beide Analysen zeigten einen Kraftverlust in der 16:8-Gruppe",
+"In der Per-Protocol-Analyse brachen über 80 % die Studie ab"
+],
+"warum": "Während FFM in allen Gruppen um 2–3 % wuchs, trat der signifikante Fettverlust (−2 bis −7 %) nur bei strenger Einhaltung (n=24) auf."
+}
+}
+},
+{
+"id": "FAST-126",
+"karte": {
+"kopf": "Krafttrainierende Männer · Vergleichsstudie",
+"titel": "Ohne Frühstück schafften Sportler 15 % weniger Kniebeugen",
+"titel_hervor": "15 % weniger Kniebeugen",
+"setup": "16 Männer, die sonst frühstücken, machten morgens 4 Sätze Kniebeugen und Bankdrücken bis zum Versagen – einmal mit, einmal ohne Frühstück.",
+"zahl": {
+"label": "Weniger Kniebeugen ohne Frühstück",
+"wert": "−15 %",
+"alltag": "58 statt 68 Wiederholungen"
+},
+"kern": [
+"Auch beim Bankdrücken fielen nüchtern 6 % der Wiederholungen weg",
+"Das Frühstück enthielt viele Kohlenhydrate und lag 2 Stunden vorher",
+"Besonders große Muskelgruppen wie die Beine litten unter dem Verzicht"
+],
+"grenze": "Alle Teilnehmer waren gewohnte Frühstücker; wer langfristig nüchtern trainiert, reagiert vielleicht anders.",
+"fuer_dich": "Steht morgens hartes Beintraining mit viel Volumen an? Iss rund 2 Stunden vorher eine kohlenhydratreiche Mahlzeit.",
+"labor": {
+"design": "Randomisierte Crossover-Studie, 4 Sätze bei 90 % 10RM bis Versagen, Frühstück (1,5 g/kg KH) vs. nüchtern",
+"teilnehmer": "16 krafttrainierende Männer (gewohnte Frühstücker)",
+"ergebnis": "Squat 58±11 vs. 68±14 Wdh. (−15 %, ES=0,98, p<0,001); Bank 38±5 vs. 40±5 (−6 %, ES=1,06)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du frühstückst normalerweise immer, gehst aber einmal nüchtern ins harte Morgentraining. Was passiert dabei im Schnitt bei Kniebeugen?",
+"richtig": "Du schaffst spürbar weniger Wiederholungen über deine Sätze",
+"falsch": [
+"Du bist nüchtern leichter und schaffst deutlich mehr Wiederholungen",
+"Die Leistung bleibt bei Beinen gleich und sinkt nur bei den Armen",
+"Du kannst das Gewicht gar nicht mehr bewegen"
+],
+"warum": "Ohne gewohntes Kohlenhydrat-Frühstück fielen über 4 Sätze Kniebeugen im Schnitt 15 % der Wiederholungen weg."
+},
+"plus": {
+"frage": "Morgens steht ein hochvolumiges Beintraining nahe am Muskelversagen an. Wie holst du die beste Satzleistung heraus?",
+"richtig": "Etwa zwei Stunden vorher eine kohlenhydratreiche Mahlzeit essen",
+"falsch": [
+"Nüchtern trainieren und nur schwarzen Kaffee trinken",
+"Vorher ausschließlich reines Fett und Protein essen",
+"Die Kniebeugen streichen und nur Bankdrücken machen"
+],
+"warum": "Kohlenhydrate rund zwei Stunden vor dem Morgentraining verhinderten den deutlichen Volumenverlust bei schweren Beinsätzen."
+},
+"labor": {
+"frage": "In einer Crossover-Studie absolvierten 16 gewohnte Frühstücker 4 Sätze bis Versagen mit oder ohne 1,5 g/kg KH. Welche Grenze hat das Design?",
+"richtig": "Die Probanden waren nicht chronisch an morgendliches Fasten angepasst",
+"falsch": [
+"Es wurde nur das Bankdrücken, aber keine Unterkörperübung getestet",
+"Die Effekte waren klein und statistisch nicht signifikant",
+"Es gab keinen Innersubjekt-Vergleich zwischen den Bedingungen"
+],
+"warum": "Da alle Teilnehmer gewohnte Frühstücker waren, spiegelt der starke Einbruch (ES ≈ 1,0) eine akute Umstellung wider."
+}
+}
+},
+{
+"id": "FAST-127",
+"karte": {
+"kopf": "Trainierte Männer · Vergleichsstudie",
+"titel": "Schon ein Schein-Frühstück ohne Kalorien half bei Kniebeugen",
+"titel_hervor": "Schein-Frühstück ohne Kalorien",
+"setup": "22 trainierte Männer tranken 2 Stunden vor dem Morgentraining entweder Wasser, ein kalorienfreies dickflüssiges Schein-Frühstück oder echte Kohlenhydrate.",
+"zahl": {
+"label": "Mehr Kniebeugen nach Schein-Frühstück",
+"wert": "+14,9 %",
+"alltag": "43 statt 38 Wdh. nach Wasser"
+},
+"kern": [
+"Das kalorienfreie Schein-Frühstück half fast genauso gut wie echte Kohlenhydrate",
+"Vor allem weniger Hunger und die Erwartung im Kopf stützten die Leistung",
+"Beim Bankdrücken zeigte sich zwischen den drei Varianten kein klarer Unterschied"
+],
+"grenze": "Getestet wurde nur eine einzelne Trainingseinheit mit 4 Sätzen nach nächtlichem Fasten.",
+"fuer_dich": "Du trainierst morgens im Defizit und willst Kalorien sparen? Schon eine kalorienarme, sättigende Kleinigkeit kann den Hunger-Einbruch bremsen.",
+"labor": {
+"design": "Randomisierte Crossover-Studie, 4 Sätze bei 90 % 10RM, Wasser vs. visköses Placebo vs. KH",
+"teilnehmer": "22 krafttrainierende Männer",
+"ergebnis": "Squat: Wasser 38±10, Placebo 43±10 (+14,9 %), KH 44±10 (+15,7 %, p<0,001); Bank p=0,130"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Warum schafften Sportler morgens nach einem dicken, aber kalorienfreien Schein-Frühstück fast genauso viele Kniebeugen wie nach echten Kohlenhydraten?",
+"richtig": "Weil weniger Hunger und der Kopf die Leistung stark mitbestimmen",
+"falsch": [
+"Weil Wasser allein die Muskeln direkt schwächt",
+"Weil der Körper aus dickflüssigen Getränken heimlich Energie baut",
+"Weil Kohlenhydrate beim Krafttraining überhaupt keine Rolle spielen"
+],
+"warum": "Ein sättigendes Schein-Frühstück dämpfte den Hunger und erzeugte über den Placebo-Effekt fast denselben Leistungsschub wie Kohlenhydrate."
+},
+"plus": {
+"frage": "Du bist im Cut, trainierst früh morgens und willst deine Kalorien lieber später essen, merkst aber Hunger-Einbrüche bei Squats. Was kann helfen?",
+"richtig": "Eine kalorienarme, voluminöse und sättigende Kleinigkeit vorab",
+"falsch": [
+"Nur ein großes Glas klares Wasser direkt vor dem ersten Satz",
+"Das Beintraining im Defizit komplett durch Cardio ersetzen",
+"Auf keinen Fall etwas essen, weil sonst der Fettabbau stoppt"
+],
+"warum": "Schon Volumen im Magen und weniger Hunger können den akuten Leistungseinbruch beim morgendlichen Beintraining spürbar abmildern."
+},
+"labor": {
+"frage": "In einer Crossover-Studie (n=22) verglich man Wasser, ein kalorienfreies visköses Placebo und Kohlenhydrate vor 4 Sätzen bei 90 % 10RM. Was zeigte sich?",
+"richtig": "Placebo und KH steigerten Squat-Wiederholungen ähnlich stark gegenüber Wasser",
+"falsch": [
+"Nur echte Kohlenhydrate verbesserten die Kniebeugen-Leistung signifikant",
+"Auch beim Bankdrücken brachte das Placebo einen hochsignifikanten Schub",
+"Die Studie zeigte den Effekt über acht Wochen Trainingsdauer"
+],
+"warum": "Bei Kniebeugen lagen Placebo (+14,9 %) und Kohlenhydrate (+15,7 %) fast gleichauf über Wasser, während Bankdrücken unverändert blieb (p=0,130)."
+}
+}
+},
+{
+"id": "FAST-128",
+"karte": {
+"kopf": "Erwachsene · 27 Studien zusammengefasst",
+"titel": "Nüchternes Ausdauertraining verbrennt akut mehr Fett",
+"titel_hervor": "verbrennt akut mehr Fett",
+"setup": "Teilnehmer trainierten Ausdauer entweder nüchtern oder nach einer Mahlzeit. Gemessen wurden Fettverbrennung, Blutzucker und Insulin.",
+"zahl": {
+"label": "Mehr verbranntes Fett pro Einheit",
+"wert": "+3,08 g",
+"alltag": ""
+},
+"kern": [
+"Blutzucker und Insulin blieben beim Nüchterntraining deutlich niedriger",
+"Der Effekt gilt für moderates Ausdauertraining während der Einheit selbst",
+"Für die tägliche Fettbilanz ist der kleine Extra-Verbrauch allein kein Garant"
+],
+"grenze": "Mehr verbranntes Fett während des Trainings heißt nicht automatisch mehr Körperfettverlust über 24 Stunden.",
+"fuer_dich": "Du willst gezielt deinen Fettstoffwechsel bei lockerem Tempo ansprechen? Dann kannst du deinen Lauf nüchtern einplanen.",
+"labor": {
+"design": "Systematisches Review & Meta-Analyse, aerobes Training nüchtern vs. gefüttert",
+"teilnehmer": "27 Studien, n = 273 (untrainierte bis trainierte Erwachsene)",
+"ergebnis": "Fettoxidation WMD +3,08 g (95 % KI 0,79 bis 5,38 g, I² = 39,1 %); gefüttert: Glukose +0,78 mmol/l, Insulin +104,5 pmol/l"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du gehst morgens vor dem Frühstück locker laufen statt nach dem Essen. Was passiert während dieses Laufs im Körper?",
+"richtig": "Dein Körper greift während des Laufs etwas mehr auf Fett zurück",
+"falsch": [
+"Dein Körper verbrennt sofort doppelt so viel Körperfett am Tag",
+"Dein Körper nutzt nur noch Muskeln als Energiequelle",
+"Es gibt keinen Unterschied bei der Energiequelle im Training"
+],
+"warum": "Ohne vorherige Mahlzeit bleiben Blutzucker und Insulin niedriger, sodass im Training akut etwas mehr Fett verbrannt wird."
+},
+"plus": {
+"frage": "Du machst morgens nüchtern leichtes Ausdauertraining, um langfristig schneller abzunehmen. Was solltest du dabei beachten?",
+"richtig": "Mehr Fettverbrauch im Lauf garantiert keinen höheren Fettverlust über 24 Stunden",
+"falsch": [
+"Ohne Frühstück zählt jede verbrannte Kalorie doppelt für die Bilanz",
+"Nach dem Nüchternlauf stoppt der Körper den Fettstoffwechsel für den Rest des Tages",
+"Nur nüchternes Ausdauertraining baut langfristig Körperfett ab"
+],
+"warum": "Die akute Fettoxidation steigt zwar leicht an, entscheidend für den Körperfettverlust bleibt aber die Bilanz über den ganzen Tag."
+},
+"labor": {
+"frage": "In einer Meta-Analyse aus 27 Studien wurde aerobes Training nüchtern mit gefüttertem Training verglichen. Wie fiel der Unterschied bei der akuten Fettoxidation aus?",
+"richtig": "Signifikant höher im Nüchternzustand bei niedrigerem Insulin und Glukose",
+"falsch": [
+"Kein signifikanter Unterschied zwischen beiden Zuständen",
+"Signifikant höher im gefütterten Zustand durch mehr Energie",
+"Nur bei hochtrainierten Leistungssportlern messbar erhöht"
+],
+"warum": "Im Nüchternzustand lag die Fettoxidation im Mittel um 3,08 g höher, während Glukose und Insulin im gefütterten Zustand deutlich höher waren."
+}
+}
+},
+{
+"id": "FAST-129",
+"karte": {
+"kopf": "Aktive Erwachsene · 37 Studien zusammengefasst",
+"titel": "Ab einer Stunde Dauer bremst Nüchterntraining die Leistung",
+"titel_hervor": "bremst Nüchterntraining die Leistung",
+"setup": "Ausdauerleistungen im nüchternen Zustand wurden mit Leistungen nach einer Mahlzeit verglichen – getrennt nach Dauer unter und über 60 Minuten.",
+"zahl": null,
+"kern": [
+"Bei kurzen Läufen unter 60 Minuten machte Essen vorab keinen Unterschied",
+"Ab über 60 Minuten schnitten Sportler mit vorheriger Mahlzeit deutlich besser ab",
+"Nach Nüchterntraining waren mehr freie Fettsäuren im Blut messbar"
+],
+"grenze": "Die einzelnen Studien nutzten unterschiedliche Leistungstests wie Zeitfahren und Erschöpfungstests.",
+"fuer_dich": "Steht heute ein Dauerlauf über 60 Minuten an? Iss vorher Kohlenhydrate; kürzere Läufe klappen auch nüchtern.",
+"labor": {
+"design": "Systematisches Review & Meta-Analyse, Ausdauerleistung nüchtern vs. gefüttert (<60 min vs. >60 min)",
+"teilnehmer": "37 Studien (ausdauertrainierte und aktive Erwachsene)",
+"ergebnis": "<60 min: k = 22, g = 0,00 (95 % KI −0,3 bis 0,2, p = 0,687); >60 min: k = 25, g = 0,30 für gefüttert (95 % KI 0,1 bis 0,5, p = 0,012)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du planst einen 40-minütigen Lauf und fragst dich, ob du vorher unbedingt essen musst. Was zeigen Vergleiche aus vielen Ausdauerstudien?",
+"richtig": "Bei kurzen Läufen unter einer Stunde bleibt die Leistung meist gleich",
+"falsch": [
+"Ohne Frühstück bricht die Leistung schon nach 20 Minuten stark ein",
+"Nüchtern läufst du auf kurzen Strecken deutlich schneller als satt",
+"Erst ab drei Stunden Dauer spielt eine Mahlzeit vorab eine Rolle"
+],
+"warum": "Bei Belastungen unter 60 Minuten zeigte sich im Schnitt kein Leistungsunterschied zwischen nüchternem und gefüttertem Training."
+},
+"plus": {
+"frage": "Am Wochenende steht ein 90-Minuten-Dauerlauf an, du fastest aber normalerweise bis mittags. Wie solltest du die Einheit planen?",
+"richtig": "Vor dem langen Lauf Kohlenhydrate essen, statt ihn nüchtern durchzuziehen",
+"falsch": [
+"Den 90-Minuten-Lauf nüchtern laufen, da Essen vorher die Ausdauer bremst",
+"Die Dauer egalisieren, weil Essen erst ab einem Marathon Vorteile bringt",
+"Vorab nur reines Fett essen, um die Ausdauerleistung zu maximieren"
+],
+"warum": "Ab einer Belastungsdauer von über 60 Minuten steigert eine Mahlzeit vor dem Training die Ausdauerleistung signifikant."
+},
+"labor": {
+"frage": "Eine Meta-Analyse über 37 Studien verglich nüchternes mit gefüttertem Ausdauertraining getrennt nach Belastungsdauer. Was zeigte die Subgruppenanalyse?",
+"richtig": "Kein Effekt unter 60 Minuten, aber ein klarer Vorteil für gefüttert über 60 Minuten",
+"falsch": [
+"Ein gleich großer Vorteil für gefüttert in beiden Zeitbereichen",
+"Ein Leistungsvorteil für Nüchterntraining ab über 60 Minuten Dauer",
+"Weder unter noch über 60 Minuten ein signifikanter Unterschied"
+],
+"warum": "Unter 60 Minuten lag die Effektstärke bei g = 0,00, während über 60 Minuten gefüttertes Training mit g = 0,30 signifikant besser abschnitt."
+}
+}
+},
+{
+"id": "FAST-130",
+"karte": {
+"kopf": "Trainierte Radsportler · Zufallsstudie",
+"titel": "Nüchterne Sprints kosten Spitzenkraft, verlängern aber Ausdauer",
+"titel_hervor": "kosten Spitzenkraft",
+"setup": "Radsportler absolvierten 4 Wochen lang dreimal pro Woche 30-Sekunden-Sprints – entweder morgens nüchtern oder mit Kohlenhydraten.",
+"zahl": {
+"label": "Spitzenleistung nüchtern vs. mit Essen",
+"wert": "9,9 vs. 10,6 W/kg",
+"alltag": ""
+},
+"kern": [
+"Mit Kohlenhydraten schafften die Sportler mehr Gesamtarbeit pro Sprint-Einheit",
+"Die Nüchtern-Gruppe hielt im Ausdauertest bei hohem Tempo gut 3 Minuten länger durch",
+"Die maximale Sauerstoffaufnahme entwickelte sich in beiden Gruppen ähnlich"
+],
+"grenze": "Nach nur 4 Wochen stieg die maximale Sauerstoffaufnahme bei den gut trainierten Sportlern noch nicht signifikant an.",
+"fuer_dich": "Stehen harte Intervalle mit maximaler Sprintkraft oder Pace auf dem Plan? Dann iss vorher Kohlenhydrate.",
+"labor": {
+"design": "RCT über 4 Wochen, 3×/Woche 4–7 × 30 s Sprint-Intervalltraining morgens nüchtern vs. mit Kohlenhydraten",
+"teilnehmer": "20 trainierte Radsportler",
+"ergebnis": "Peak Power 9,9 vs. 10,6 W/kg (p = 0,010); Arbeit 3664,9 vs. 3871,7 J/kg (p = 0,021); T85 % 19,7 ± 3,0 vs. 16,6 ± 3,0 min (p = 0,038)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du machst morgens sehr harte kurze Sprints auf dem Rad, ohne vorher gegessen zu haben. Was passiert im Vergleich zu Sprints nach dem Essen?",
+"richtig": "Deine maximale Sprintkraft fällt etwas niedriger aus",
+"falsch": [
+"Deine maximale Sprintkraft steigt durch den leeren Magen deutlich an",
+"Deine Sprints bleiben genauso kraftvoll wie nach einer Mahlzeit",
+"Du kannst keine 30-Sekunden-Sprints mehr zu Ende fahren"
+],
+"warum": "Ohne vorherige Kohlenhydrate waren sowohl die Spitzenleistung als auch die gesamte Trainingsarbeit in den Sprints signifikant geringer."
+},
+"plus": {
+"frage": "Dein heutiges Intervalltraining zielt auf maximale Sprint-Power und hohe Pace-Qualität ab. Wie solltest du dich verpflegen?",
+"richtig": "Vor den Intervallen essen, um hohe Spitzenleistung und Arbeit abzurufen",
+"falsch": [
+"Bewusst nüchtern trainieren, weil Sprints dann mehr Power erzeugen",
+"Nüchtern bleiben, um die maximale Sauerstoffaufnahme schneller zu steigern",
+"Vorab nur Wasser trinken, da 30-Sekunden-Sprints keine Energie kosten"
+],
+"warum": "Im gefütterten Zustand erreichten die Sportler deutlich höhere Peak Power und mehr mechanische Gesamtarbeit in den Sprints."
+},
+"labor": {
+"frage": "Trainierte Radsportler führten 4 Wochen lang 30-Sekunden-Sprintintervalle nüchtern oder mit Kohlenhydraten durch. Welches Muster zeigte sich?",
+"richtig": "Geringere akute Sprintleistung nüchtern, aber längere Ermüdungszeit bei 85 % VO2peak",
+"falsch": [
+"Höhere akute Sprintleistung und höhere VO2peak in der Nüchtern-Gruppe",
+"Schlechtere Werte der Nüchtern-Gruppe in allen gemessenen Leistungsparametern",
+"Signifikant höhere VO2peak-Zuwächse in der Kohlenhydrat-Gruppe"
+],
+"warum": "Nüchternes Sprinttraining senkte Peak Power und Arbeit, verlängerte aber die submaximale Ermüdungszeit bei ähnlicher VO2peak."
+}
+}
+},
+{
+"id": "FAST-131",
+"karte": {
+"kopf": "Ausdauer- & Spielsportler · 11 Studien geprüft",
+"titel": "Leere Speicher setzen Zellsignale, helfen aber selten der Leistung",
+"titel_hervor": "helfen aber selten der Leistung",
+"setup": "Elf Studien zum Training mit wenig Kohlenhydraten wurden daraufhin geprüft, wann Anpassungssignale steigen und ob die Leistung besser wird.",
+"zahl": {
+"label": "Studien mit besserer Wettkampfleistung",
+"wert": "37 %",
+"alltag": "etwa jede dritte Studie"
+},
+"kern": [
+"Erste Hinweise zeigen stärkere Zellsignale erst bei stark geleerten Muskelspeichern",
+"Selbst bei starken Zellsignalen verbesserte sich die echte Leistung meist nicht",
+"Wie voll die Muskelspeicher wirklich sind, lässt sich im Alltag nur grob schätzen"
+],
+"grenze": "Es handelt sich um ein Konzept-Review mit ersten Hinweisen; Muskelglykogen ist im Alltag nicht direkt messbar.",
+"fuer_dich": "Du willst deine Kohlenhydrate ans Training anpassen? Iss an harten Tagen reichlich und spare sie höchstens an lockeren Tagen.",
+"labor": {
+"design": "Systematisches Konzept-Review / Framework zu „Fuel for the Work Required“ und Glykogen-Schwellenwerten",
+"teilnehmer": "11 Train-Low-Studien (Ausdauer- und Spielsportler)",
+"ergebnis": "Leistungssteigerung in 37 % der Studien; verstärkte AMPK/p38/p53-Signale bei Glykogen <200 vs. 200–350 mmol/kg Trockengewicht"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Manche Sportler trainieren absichtlich mit leeren Energiespeichern, um schneller zu werden. Klappt das in der Praxis zuverlässig?",
+"richtig": "Nur manchmal – in den meisten Untersuchungen wurde die Leistung nicht besser",
+"falsch": [
+"Ja, fast jeder wird dadurch im Wettkampf deutlich schneller",
+"Nein, der Körper reagiert auf leere Speicher mit keinerlei Anpassung",
+"Ja, aber nur wenn man wochenlang gar keine Kohlenhydrate isst"
+],
+"warum": "Obwohl leere Speicher Zellsignale verstärken können, zeigte sich nur in rund einem Drittel der geprüften Studien eine bessere Leistung."
+},
+"plus": {
+"frage": "Du willst deine Kohlenhydratzufuhr sinnvoll über die Trainingswoche steuern. Welcher Ansatz passt am besten?",
+"richtig": "Kohlenhydrate an Dauer und Härte jeder einzelnen Einheit anpassen",
+"falsch": [
+"Vor jeder harten Einheit gezielt die Speicher leeren, um mehr Reiz zu setzen",
+"Jeden Tag exakt gleich wenig Kohlenhydrate essen, egal was ansteht",
+"Kohlenhydrate nur am Ruhetag essen und vor dem Training weglassen"
+],
+"warum": "Nach dem Prinzip „Fuel for the Work Required“ richtet sich die Kohlenhydratmenge nach dem tatsächlichen Bedarf der jeweiligen Einheit."
+},
+"labor": {
+"frage": "Ein Konzept-Review untersuchte den Zusammenhang zwischen Muskelglykogen-Schwelle, mitochondrialen Signalwegen und Leistung. Was war das zentrale Ergebnis?",
+"richtig": "Stärkere Zellsignale führten nur in 37 % der Studien zu mehr Leistung",
+"falsch": [
+"Jedes Training unterhalb der Glykogen-Schwelle steigerte die Wettkampfleistung",
+"Mitochondriale Signalwege blieben auch bei sehr niedrigem Glykogen unverändert",
+"Muskelglykogen lässt sich im Trainingsalltag exakt über die Herzfrequenz messen"
+],
+"warum": "Zelluläre Signale wie AMPK, p38 und p53 stiegen bei sehr niedrigem Glykogen an, übersetzten sich aber inkonsistent in echte Leistung."
+}
+}
+},
+{
+"id": "FAST-132",
+"karte": {
+"kopf": "Ausdauerathleten · 9 Studien zusammengefasst",
+"titel": "Gezielt mit wenig Kohlenhydraten trainieren bringt keinen Vorteil",
+"titel_hervor": "bringt keinen Vorteil",
+"setup": "Bei gut trainierten Ausdauerathleten wurde zeitweises Training mit wenig Kohlenhydraten mit dauerhaft hoher Zufuhr verglichen.",
+"zahl": null,
+"kern": [
+"Die Ausdauerleistung fiel im Schnitt bei beiden Strategien gleich aus",
+"Untersucht wurden gut trainierte Athleten mit hoher aerober Fitness",
+"Wenig Kohlenhydrate bergen das Risiko, harte Intervalle langsamer zu laufen"
+],
+"grenze": "Die Daten beziehen sich auf gut trainierte Ausdauerathleten und zeigen keinen Vorteil für Wettkampfleistung.",
+"fuer_dich": "Du bereitest dich auf eine neue Bestzeit vor? Bleib bei Schlüsseleinheiten bei gut gefüllten Kohlenhydratspeichern.",
+"labor": {
+"design": "Systematisches Review & Meta-Analyse, periodisiertes Train-Low vs. konstant hohe Kohlenhydratverfügbarkeit",
+"teilnehmer": "9 Studien (gut trainierte Ausdauerathleten, VO2max ≥ 55–60 ml/kg/min)",
+"ergebnis": "Ausdauerleistung SMD = 0,17 (95 % KI −0,15 bis 0,49, p = 0,29)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Trainierte Ausdauersportler wechseln gezielt zwischen Tagen mit wenig und viel Kohlenhydraten. Werden sie dadurch leistungsfähiger als mit konstant viel Kohlenhydraten?",
+"richtig": "Im Schnitt zeigte sich kein klarer Vorteil für die Ausdauerleistung",
+"falsch": [
+"Ja, sie verbessern ihre Ausdauerleistung dadurch deutlich stärker",
+"Nein, ihre Ausdauerleistung bricht über Wochen massiv ein",
+"Ja, weil der Körper dann überhaupt keine Kohlenhydrate mehr braucht"
+],
+"warum": "In der Auswertung von 9 Studien brachte periodisiertes Training mit wenig Kohlenhydraten keinen signifikanten Leistungsvorteil."
+},
+"plus": {
+"frage": "Du bist gut trainiert und planst deine Woche mit harten Intervallen und lockeren Läufen. Wie solltest du mit Train-Low umgehen?",
+"richtig": "Höchstens optional bei lockeren Einheiten nutzen, nicht bei Schlüsseleinheiten",
+"falsch": [
+"Gerade vor harten Intervallen einsetzen, um den größten Fortschritt zu holen",
+"Verpflichtend in jeder zweiten Einheit anwenden, sonst stagniert die Ausdauer",
+"Komplett auf Kohlenhydrate verzichten, weil trainierte Sportler keine brauchen"
+],
+"warum": "Train-Low brachte keinen Leistungsvorteil, erhöht aber das Risiko, dass die Intensität in harten Intervallen leidet."
+},
+"labor": {
+"frage": "Eine Meta-Analyse aus 9 Studien verglich periodisiertes Train-Low mit konstant hoher Kohlenhydratverfügbarkeit bei gut trainierten Ausdauerathleten. Was kam heraus?",
+"richtig": "Kein signifikanter Unterschied in der Ausdauerleistung zwischen beiden Strategien",
+"falsch": [
+"Ein starker, hochsignifikanter Leistungsvorteil durch periodisiertes Train-Low",
+"Ein starker, signifikanter Leistungsverlust durch periodisiertes Train-Low",
+"Ein Vorteil nur bei Athleten mit sehr niedriger VO2max"
+],
+"warum": "Die gepoolte Effektstärke lag bei SMD = 0,17 (p = 0,29) und belegte keinen überlegenen Effekt von Train-Low."
+}
+}
+},
+{
+"id": "FAST-133",
+"karte": {
+"kopf": "Kraftsportler · Evidenz-Überblick",
+"titel": "Für Muskelaufbau zählt das Tagesziel von 1,6 bis 2,2 g/kg Protein",
+"titel_hervor": "1,6 bis 2,2 g/kg Protein",
+"setup": "Studien zur Proteinverteilung über den Tag wurden ausgewertet, um sinnvolle Portionsgrößen für Kraftsportler abzuleiten.",
+"zahl": {
+"label": "Empfohlene Proteinmenge pro Tag",
+"wert": "1,6–2,2 g/kg",
+"alltag": ""
+},
+"kern": [
+"Bei vier Mahlzeiten am Tag entsprechen das 0,40 bis 0,55 g/kg pro Portion",
+"Wer im kurzen Essensfenster seltener isst, braucht größere Portionen pro Mahlzeit",
+"Gemischte Mahlzeiten werden langsamer aufgenommen als isolierte Shakes"
+],
+"grenze": "Es handelt sich um eine Übersichtsarbeit; eine feste Obergrenze pro Einzelmahlzeit war 2018 noch nicht genau gemessen.",
+"fuer_dich": "Du isst beim Intervallfasten nur zwei- oder dreimal am Tag? Mach jede Portion deutlich proteinreicher, um dein Tagesziel zu schaffen.",
+"labor": {
+"design": "Narratives Evidenz-Review / Leitlinie zur täglichen Proteinverteilung und Einzeldosis beim Krafttraining",
+"teilnehmer": "Krafttrainierende Athleten (Literaturübersicht)",
+"ergebnis": "Tagesziel 1,6–2,2 g/kg/Tag; bei ≥ 4 Mahlzeiten 0,40–0,55 g/kg/Mahlzeit; gemischte Mahlzeiten verzögern Absorption (Ei ~3 g/h)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du machst Krafttraining und isst wegen Intervallfasten nur zwei große Mahlzeiten am Tag. Wie solltest du dein Protein anpassen?",
+"richtig": "Größere Proteinportionen pro Mahlzeit essen, um das Tagesziel zu erreichen",
+"falsch": [
+"Bei kleinen Portionen bleiben, weil der Körper pro Mahlzeit kaum Protein aufnimmt",
+"Lieber weniger Protein am Tag essen, statt die Portionen zu vergrößern",
+"Intervallfasten macht Protein für den Muskelaufbau weitgehend überflüssig"
+],
+"warum": "Bei weniger Mahlzeiten pro Tag braucht jede einzelne Mahlzeit mehr Protein, damit die wichtige Tagesgesamtmenge erreicht wird."
+},
+"plus": {
+"frage": "Du willst Muskeln aufbauen und isst in einem engen Essensfenster nur dreimal am Tag. Worauf solltest du beim Protein achten?",
+"richtig": "Die Portion pro Mahlzeit über 0,55 g/kg anheben, um mindestens 1,6 g/kg am Tag zu treffen",
+"falsch": [
+"Streng bei maximal 25 g pro Mahlzeit bleiben, da alles darüber verpufft",
+"Nur noch reine Shakes trinken, weil feste Mahlzeiten zu langsam verdaut werden",
+"Die Tagesmenge halbieren, weil der Körper im Fastenfenster effizienter wird"
+],
+"warum": "Um das Tagesziel von mindestens 1,6 g/kg bei weniger als vier Mahlzeiten zu sichern, müssen die einzelnen Proteinportionen entsprechend größer ausfallen."
+},
+"labor": {
+"frage": "Ein Evidenz-Review zur Proteinverteilung bei Kraftsportlern leitete Portionsgrößen aus dem Tagesbedarf ab. Welche Einordnung gilt für verkürzte Essensfenster?",
+"richtig": "Das Tagesziel zählt mehr; bei wenigen Mahlzeiten braucht es größere Portionen",
+"falsch": [
+"Mehr als 0,40 g/kg pro Mahlzeit werden im Darm nicht mehr resorbiert",
+"Die Absorptionsrate ist bei gemischten Mahlzeiten genauso schnell wie bei freien Aminosäuren",
+"Weniger als vier Mahlzeiten schließen Muskelaufbau physiologisch aus"
+],
+"warum": "Gemischte Mahlzeiten werden langsamer absorbiert, und größere Einzeldosen sichern bei weniger Mahlzeiten das Tagesziel von 1,6–2,2 g/kg."
+}
+}
+},
+{
+"id": "FAST-134",
+"karte": {
+"kopf": "Junge Männer · Laborstudie mit Gruppen",
+"titel": "Auch 100 Gramm Protein auf einmal nutzt der Muskel aus",
+"titel_hervor": "nutzt der Muskel aus",
+"setup": "Nach dem Krafttraining bekamen junge Männer 0, 25 oder 100 Gramm Milchprotein. Über 12 Stunden wurde der Muskelaufbau direkt gemessen.",
+"zahl": {
+"label": "Dauer des Muskelaufbausignals bei 100 g",
+"wert": "12 Std.",
+"alltag": "mehr als doppelt so lang wie bei 25 g"
+},
+"kern": [
+"100 Gramm erzeugten deutlich mehr Muskelaufbau als 25 Gramm",
+"Bei 25 Gramm hielt die erhöhte Muskelproteinsynthese nur rund 5 Stunden an",
+"Vom großen Protein-Anteil ging kaum etwas ungenutzt durch Verbrennung verloren"
+],
+"grenze": "Getestet wurde Milchprotein bei jungen Männern – für reines Whey-Isolat und Frauen zeigen andere Daten teils ein früheres Plateau.",
+"fuer_dich": "Du schaffst im Fastenfenster nur ein bis zwei große Mahlzeiten? Du kannst ruhig 60 bis 100 g gemischtes Protein auf einmal essen.",
+"labor": {
+"design": "RCT mit Isotopen-Tracern über 12 h nach Krafttraining, 0 g vs. 25 g vs. 100 g Milchprotein",
+"teilnehmer": "36 gesunde, aktive junge Männer",
+"ergebnis": "100 g vs. 25 g: signifikant höhere Muskel- und Ganzkörperproteinsynthese über gesamte 12 h (vs. ~5 h bei 25 g), minimale Oxidation"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Oft heißt es, der Körper könne pro Mahlzeit höchstens 25 bis 30 Gramm Eiweiß für die Muskeln nutzen. Stimmt das nach neueren Messungen?",
+"richtig": "Nein – auch 100 Gramm wurden über viele Stunden genutzt",
+"falsch": [
+"Ja – alles über 30 Gramm wird direkt ungenutzt ausgeschieden",
+"Ja – große Portionen bremsen den Muskelaufbau sogar ab",
+"Nur wenn man dazu mindestens vier Stunden lang trainiert"
+],
+"warum": "Nach 100 g Milchprotein lief der Muskelaufbau über die gesamten 12 Stunden erhöht weiter, mit nur minimalem Verlust durch Verbrennung."
+},
+"plus": {
+"frage": "Durch ein enges Fastenfenster isst du nach dem Krafttraining nur noch eine sehr große Mahlzeit. Wie gehst du mit deiner Proteinmenge um?",
+"richtig": "Du kannst 60 bis 100 g langsam verdauliches Protein in diese Mahlzeit packen",
+"falsch": [
+"Du solltest die Portion auf 25 g begrenzen und auf den Rest verzichten",
+"Du musst das Fastenfenster aufgeben, weil große Portionen kaum ankommen",
+"Du solltest statt Protein lieber nur Kohlenhydrate essen, da Protein verfällt"
+],
+"warum": "Große Mengen langsam oder gemischt verdaulichen Proteins verlängern die Muskelproteinsynthese über viele Stunden hinweg deutlich."
+},
+"labor": {
+"frage": "In einer Isotopen-Tracer-Studie nach Krafttraining wurden 0 g, 25 g und 100 g Milchprotein über 12 Stunden verglichen. Was zeigte sich bei 100 g?",
+"richtig": "Eine höhere und bis Stunde 12 anhaltende Muskelproteinsynthese bei minimaler Oxidation",
+"falsch": [
+"Ein Plateau ab Stunde 5 mit stark steigender Aminosäure-Oxidation",
+"Die gleiche myofibrilläre Syntheserate wie bei 25 g über den gesamten Zeitraum",
+"Eine kürzere, aber extrem steile Synthesespitze innerhalb der ersten zwei Stunden"
+],
+"warum": "Die 100-g-Gabe hielt die myofibrilläre Muskelproteinsynthese über den gesamten 12-Stunden-Messzeitraum erhöht, statt nach rund 5 Stunden abzufallen."
+}
+}
+},
+{
+"id": "FAST-135",
+"karte": {
+"kopf": "Gesunde Erwachsene · Überkreuz-Studie",
+"titel": "Gleichmäßig verteiltes Protein steigerte den Muskelaufbau um 25 %",
+"titel_hervor": "steigerte den Muskelaufbau um 25 %",
+"setup": "Dieselben Personen aßen je 7 Tage lang rund 90 g Protein – einmal gleichmäßig auf drei Mahlzeiten verteilt, einmal stark abends gebündelt.",
+"zahl": {
+"label": "Mehr Muskelaufbau-Aktivität über 24 Std.",
+"wert": "+25 %",
+"alltag": "bei gleicher Tagesmenge (~90 g)"
+},
+"kern": [
+"Die gleichmäßige Verteilung lag bei etwa 30 Gramm pro Mahlzeit",
+"Bei der abendlastigen Variante gab es morgens und mittags nur 10 bis 16 Gramm",
+"Schon bei moderater Tagesmenge machte die Aufteilung einen deutlichen Unterschied"
+],
+"grenze": "Nur 8 Personen nahmen teil, die Gesamtmenge war mit ~90 g moderat und es gab kein begleitendes Krafttraining.",
+"fuer_dich": "Du isst drei Mahlzeiten im Essensfenster? Gib jeder Mahlzeit eine vollwertige Portion Protein statt winziger Snacks am Morgen.",
+"labor": {
+"design": "Randomisierte Crossover-Studie über 7 Tage, ~90 g Protein/Tag gleichmäßig (~30/30/30 g) vs. abendlastig (~10/16/65 g)",
+"teilnehmer": "8 gesunde Erwachsene (ohne begleitendes Krafttraining)",
+"ergebnis": "24-h-MPS gleichmäßig 0,075 ± 0,006 %/h vs. abendlastig 0,056 ± 0,006 %/h (+25 %, p = 0,003)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du isst drei Mahlzeiten am Tag und kommst insgesamt auf eine moderate Eiweißmenge. Was regt den Muskelaufbau über den Tag stärker an?",
+"richtig": "Das Eiweiß etwa gleichmäßig auf alle drei Mahlzeiten aufteilen",
+"falsch": [
+"Morgens und mittags fast keins essen und fast alles abends nachholen",
+"Nur zum Frühstück Eiweiß essen und den Rest des Tages darauf verzichten",
+"Die Verteilung spielt bei kleinen Frühstücksportionen keinerlei Rolle"
+],
+"warum": "Drei etwa gleich große Eiweißportionen steigerten die 24-Stunden-Muskelproteinsynthese um 25 % gegenüber einer stark abendlastigen Verteilung."
+},
+"plus": {
+"frage": "Du planst drei Mahlzeiten in deinem Essensfenster und willst dein Protein optimal nutzen. Welcher Aufbau ist am sinnvollsten?",
+"richtig": "Jede der drei Mahlzeiten deutlich über die Proteinschwelle bringen statt Mini-Snacks",
+"falsch": [
+"Zwei leichte Mahlzeiten unter 15 g Protein und ein riesiges Abendessen",
+"Morgens nur Kohlenhydrate essen, damit abends mehr Protein wirkt",
+"Die Gesamtmenge reduzieren, damit jede Portion gleich klein bleibt"
+],
+"warum": "Kleine Portionen von 10 bis 16 g lösen das Aufbausignal schwächer aus als drei gleichmäßig dosierte Mahlzeiten."
+},
+"labor": {
+"frage": "In einer Crossover-Studie erhielten Erwachsene ~90 g Protein pro Tag entweder gleichmäßig (~30/30/30 g) oder abendlastig (~10/16/65 g). Was ist die wichtigste Grenze dieser Daten?",
+"richtig": "Sehr kleine Stichprobe (n = 8), moderate Gesamtmenge und kein Krafttraining",
+"falsch": [
+"Die Gruppen bekamen unterschiedlich viel Gesamtprotein pro Tag",
+"Die Messung dauerte nur zwei Stunden statt eines ganzen Tages",
+"Es wurden ausschließlich Hochleistungssportler im Defizit untersucht"
+],
+"warum": "Bei n = 8, ~90 g/Tag und ohne Krafttraining lässt sich der Effekt nicht einfach auf hohe Proteinmengen im Kraftsport übertragen."
+}
+}
+},
+{
+"id": "FAST-136",
+"karte": {
+"kopf": "Junge Männer · 12-Wochen-Zufallsstudie",
+"titel": "Protein vor dem Schlafen brachte 75 % mehr Muskelwachstum",
+"titel_hervor": "75 % mehr Muskelwachstum",
+"setup": "Junge Männer trainierten 12 Wochen abends Kraft. Vor dem Schlafen tranken sie entweder 27,5 g Casein plus Kohlenhydrate oder ein Placebo.",
+"zahl": {
+"label": "Stärkeres Oberschenkel-Wachstum",
+"wert": "+75 %",
+"alltag": "mit Protein vor dem Schlafen"
+},
+"kern": [
+"Auch die schnellen Typ-II-Muskelfasern und die Maximalkraft legten stärker zu",
+"Trainiert wurde dreimal pro Woche am Abend",
+"Die Protein-Gruppe nahm über den ganzen Tag allerdings insgesamt mehr Protein auf"
+],
+"grenze": "Die Casein-Gruppe aß insgesamt mehr Protein pro Tag (1,9 vs. 1,3 g/kg) – wie viel allein am späten Zeitpunkt lag, bleibt offen.",
+"fuer_dich": "Du trainierst abends oder dein Essensfenster endet spät? Dann kann eine Portion Casein oder Mischprotein vor dem Schlafen helfen.",
+"labor": {
+"design": "RCT über 12 Wochen (3×/Woche Abend-Krafttraining), 27,5 g Casein + 15 g KH vor dem Schlafen vs. Placebo",
+"teilnehmer": "44 gesunde junge Männer",
+"ergebnis": "Quadrizeps-CSA +8,4 ± 1,1 vs. +4,8 ± 0,8 cm² (+75 %, p < 0,05); Typ-II-Fasern +2319 vs. +1017 µm² (p < 0,05)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du trainierst abends Kraft und trinkst vor dem Schlafengehen noch einen Eiweißshake. Schadet das der nächtlichen Erholung?",
+"richtig": "Nein – in einer 12-Wochen-Studie wuchsen Muskeln und Kraft damit deutlich stärker",
+"falsch": [
+"Ja – der Körper kann im Schlaf gar kein Eiweiß mehr verarbeiten",
+"Ja – spätes Eiweiß verhindert das Muskelwachstum über Nacht",
+"Es bringt nur etwas, wenn man mitten in der Nacht nochmals trainiert"
+],
+"warum": "Mit einem Casein-Shake vor dem Schlafen legten Oberschenkelmuskel, Typ-II-Fasern und Maximalkraft über 12 Wochen stärker zu als mit Placebo."
+},
+"plus": {
+"frage": "Du trainierst abends Kraft und willst deine letzte Mahlzeit im Essensfenster sinnvoll planen. Was passt gut vor dem Schlafen?",
+"richtig": "30 bis 40 g langsam verdauliches Protein etwa 30 bis 60 Minuten vor dem Schlafen",
+"falsch": [
+"Nach 18 Uhr grundsätzlich kein Protein mehr essen, um Wachstumshormone zu schonen",
+"Vor dem Schlafen nur Zucker trinken, weil Protein nachts ungenutzt bleibt",
+"Das Abendessen ganz weglassen, damit die Muskeln über Nacht besser regenerieren"
+],
+"warum": "Eine Portion Casein oder Mischprotein vor dem Schlafen unterstützt die nächtliche Versorgung und hilft, die tägliche Proteinmenge zu sichern."
+},
+"labor": {
+"frage": "In einer 12-Wochen-RCT erhielten abends trainierende Männer vor dem Schlafen Casein oder ein Placebo und bauten deutlich mehr Muskel auf. Was schränkt die Aussage zum Timing ein?",
+"richtig": "Die Gruppen waren nicht isonitrogen – die Casein-Gruppe aß insgesamt mehr Protein",
+"falsch": [
+"Die Kontrollgruppe trainierte nur einmal pro Woche statt dreimal",
+"Die Studiendauer war mit zwei Wochen zu kurz für Muskelwachstum",
+"Es wurden keine Muskelfasern oder Muskelquerschnitte gemessen"
+],
+"warum": "Die Casein-Gruppe kam auf 1,9 g/kg/Tag Gesamtprotein gegenüber 1,3 g/kg/Tag bei Placebo, sodass der reine Timing-Effekt nicht isoliert ist."
+}
+}
+}
+]

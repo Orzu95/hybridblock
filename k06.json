@@ -1,0 +1,1102 @@
+[
+{
+"id": "CON-104",
+"karte": {
+"kopf": "Trainierende · 18 Studien zusammengefasst",
+"titel": "Zusätzliches Ausdauertraining bremst die Schnellkraft spürbar",
+"titel_hervor": "bremst die Schnellkraft spürbar",
+"setup": "Fast tausend Teilnehmende trainierten mindestens vier Wochen lang entweder nur Kraft oder Kraft plus Ausdauer; gemessen wurde die Explosivkraft.",
+"zahl": null,
+"kern": [
+"Auch beim kombinierten Training steigt die Schnellkraft, aber schwächer.",
+"Besonders empfindlich reagiert die Fähigkeit, Kraft extrem schnell abzurufen.",
+"Als Hauptursache gilt angesammelte Ermüdung im Nervensystem."
+],
+"grenze": "Der genaue biologische Mechanismus im Nervensystem ist bisher nur vermutet, nicht direkt bewiesen.",
+"fuer_dich": "Du willst explosiver sprinten oder springen? Halte Ausdauer auf zwei bis drei kurze Einheiten und trenne sie vom Krafttraining.",
+"labor": {
+"design": "Systematisches Review & Meta-Analyse, ≥ 4 Wochen, Kraft vs. Kraft + Ausdauer",
+"teilnehmer": "18 Explosivkraft-Studien (aus 43), 525 vs. 442 Teilnehmende",
+"ergebnis": "SMD −0,28 (95 % KI −0,48 bis −0,08, p = 0,007); Power ES 0,55 vs. 0,91"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Welche Fähigkeit leidet im Schnitt am ehesten, wenn du neben Krafttraining viel Ausdauer trainierst?",
+"richtig": "Die Schnellkraft beim Sprinten oder Springen",
+"falsch": [
+"Die allgemeine Beweglichkeit der Gelenke",
+"Die Fähigkeit, überhaupt Muskeln aufzubauen",
+"Das Gleichgewicht im Alltag"
+],
+"warum": "Die Schnellkraft reagiert besonders empfindlich auf Ermüdung und wächst bei kombiniertem Training spürbar langsamer."
+},
+"plus": {
+"frage": "Dein Hauptziel für die nächsten Wochen ist mehr Explosivkraft. Wie gehst du mit zusätzlichem Ausdauertraining um?",
+"richtig": "Du begrenzt es auf wenige kurze, getrennte Einheiten",
+"falsch": [
+"Du hängst nach jedem Sprungtraining einen langen Lauf an",
+"Du erhöhst das Ausdauervolumen, um schneller zu werden",
+"Du kombinierst Explosivkraft und Ausdauer im Superset"
+],
+"warum": "Weniger und zeitlich getrenntes Ausdauertraining hält die Ermüdung niedrig, damit du explosiv arbeiten kannst."
+},
+"labor": {
+"frage": "In einer Meta-Analyse über 18 Studien wurde die Entwicklung der Explosivkraft bei isoliertem Kraft- vs. Concurrent Training verglichen. Welcher Mechanismus wird diskutiert?",
+"richtig": "Gedämpfte schnelle neuronale Aktivierung durch kumulative Ermüdung",
+"falsch": [
+"Vollständiger Abbau der schnellen Muskelfasern ab vier Wochen",
+"Blockierte Proteinsynthese ausschließlich im Oberkörper",
+"Geringere Sauerstoffaufnahme während der Krafttests"
+],
+"warum": "Vermutet wird eine beeinträchtigte Rate of Force Development und geringere Motoneuronen-Feuerungsfrequenz."
+}
+}
+},
+{
+"id": "CON-105",
+"karte": {
+"kopf": "Trainierende · 43 Studien zusammengefasst",
+"titel": "Mindestens drei Stunden Pause schützen die Explosivkraft",
+"titel_hervor": "drei Stunden Pause schützen",
+"setup": "Ausgewertet wurde, ob die Schnellkraft stärker leidet, wenn Kraft und Ausdauer direkt nacheinander statt mit mindestens drei Stunden Pause folgen.",
+"zahl": null,
+"kern": [
+"Direkt nacheinander (unter 20 Minuten Pause) sank der Schnellkraftzuwachs klar.",
+"Ab drei Stunden Erholung war statistisch kein Nachteil mehr messbar.",
+"Die zeitliche Trennung funktioniert auch dann, wenn beides am selben Tag liegt."
+],
+"grenze": "Was bei ein bis zwei Stunden Pause dazwischen passiert, wurde in den Studien nicht direkt getestet.",
+"fuer_dich": "Du trainierst Kraft und Ausdauer am selben Tag? Lege mindestens drei Stunden Pause zwischen beide Einheiten.",
+"labor": {
+"design": "Systematisches Review & Meta-Analyse, Subgruppen ≤ 20 min vs. ≥ 3 h Abstand",
+"teilnehmer": "43 Studien, verschiedene Trainingsstufen",
+"ergebnis": "≤ 20 min: SMD −0,31 (95 % KI −0,62 bis −0,01, p=0,043); ≥ 3 h: nicht signifikant"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du möchtest am selben Tag Kraft und Ausdauer trainieren, ohne deine Sprung- und Sprintkraft auszubremsen. Was hilft dabei?",
+"richtig": "Einige Stunden Pause zwischen beiden Einheiten lassen",
+"falsch": [
+"Beides ohne Pause direkt hintereinander erledigen",
+"Nur wenige Minuten Pause zum kurzen Durchatmen machen",
+"Vorher und nachher einfach doppelt so viel trinken"
+],
+"warum": "Ab drei Stunden Abstand war kein messbarer Nachteil mehr für die Explosivkraft nachweisbar."
+},
+"plus": {
+"frage": "Dein Zeitplan zwingt dich dazu, eine Kraft- und eine Ausdauereinheit am selben Tag zu absolvieren. Welche Planung schützt deine Explosivkraft?",
+"richtig": "Morgens eine Einheit und nach mehreren Stunden Pause die zweite",
+"falsch": [
+"Beide Einheiten mit einer ganz kurzen Pause direkt koppeln",
+"Ausdauer direkt vor den schweren Sätzen einbauen",
+"Beide Einheiten abwechselnd im selben Zirkel trainieren"
+],
+"warum": "Die Einbußen traten bei enger Kopplung unter zwanzig Minuten auf, nicht mehr bei mindestens drei Stunden Pause."
+},
+"labor": {
+"frage": "In einer Meta-Analyse zu Explosivkraft bei Concurrent Training wurden Abstände von ≤ 20 Minuten mit ≥ 3 Stunden verglichen. Welche Forschungslücke blieb?",
+"richtig": "Das Zeitfenster zwischen 20 Minuten und drei Stunden fehlte",
+"falsch": [
+"Es wurden überhaupt keine Krafttests durchgeführt",
+"Die Studien dauerten alle kürzer als eine Woche",
+"Abstände unter 20 Minuten wurden nicht ausgewertet"
+],
+"warum": "Zwischen 20 Minuten und drei Stunden Pause (z. B. ein bis zwei Stunden) fehlten direkte Primärdaten."
+}
+}
+},
+{
+"id": "CON-106",
+"karte": {
+"kopf": "Rugbyspieler · 7-Wochen-Studie",
+"titel": "Ein ganzer Tag Pause bringt mehr Schnellkraft und Ausdauer",
+"titel_hervor": "ganzer Tag Pause bringt",
+"setup": "58 Amateur-Rugbyspieler trainierten sieben Wochen Kraft und Ausdauer – entweder direkt nacheinander, nach sechs Stunden oder nach 24 Stunden.",
+"zahl": null,
+"kern": [
+"Bei null Stunden Pause wuchs auch die Maximalkraft deutlich schwächer.",
+"Gegenüber sechs Stunden Pause brachte ein ganzer Tag mehr Schnellkraft.",
+"Auch die maximale Sauerstoffaufnahme stieg bei 24 Stunden Pause stärker."
+],
+"grenze": "Getestet wurde nur Kraft vor Ausdauer bei Rugbyspielern – andere Abläufe sind offen.",
+"fuer_dich": "Du willst gleichzeitig Ausdauer und Schnellkraft maximieren? Lege Kraft und Ausdauer möglichst auf abwechselnde Tage.",
+"labor": {
+"design": "Kontrollierte Interventionsstudie, 7 Wochen, 0 h vs. 6 h vs. 24 h Abstand",
+"teilnehmer": "58 trainierte Amateur-Rugbyspieler",
+"ergebnis": "0 h < 6 h & 24 h bei Maximalkraft; 6 h < 24 h bei Schnellkraft & VO2max"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du trainierst Kraft und Ausdauer und kannst frei planen. Welcher Abstand zwischen beiden Einheiten brachte Sportlern die besten Fortschritte?",
+"richtig": "Etwa ein ganzer Tag Pause an abwechselnden Tagen",
+"falsch": [
+"Gar keine Pause, sondern alles in einer Einheit",
+"Nur wenige Minuten Pause zum kurzen Durchatmen",
+"Höchstens eine Stunde Pause dazwischen"
+],
+"warum": "Mit 24 Stunden Abstand verbesserten sich sowohl Schnellkraft als auch Ausdauerleistung am deutlichsten."
+},
+"plus": {
+"frage": "Du willst sowohl deine Explosivkraft als auch deine Ausdauerleistung (VO2max) voll ausschöpfen. Reichen wenige Stunden Pause zwischen den Einheiten?",
+"richtig": "Abwechselnde Tage mit einem vollen Tag Pause brachten mehr",
+"falsch": [
+"Wenige Stunden sind deutlich besser als ein ganzer Tag Pause",
+"Null Stunden Pause bringen den stärksten Trainingsreiz",
+"Der Abstand hat auf die Ausdauerleistung keinen Einfluss"
+],
+"warum": "Bei 24 Stunden Erholung stiegen Schnellkraft und VO2max deutlich stärker als bei nur sechs Stunden Pause."
+},
+"labor": {
+"frage": "58 trainierte Rugbyspieler absolvierten sieben Wochen Kraft und Ausdauer mit 0, 6 oder 24 Stunden Pause. Was schränkt die Übertragbarkeit ein?",
+"richtig": "Es wurde nur die Reihenfolge Kraft vor Ausdauer untersucht",
+"falsch": [
+"Die Studie hatte keine Vergleichsgruppen mit anderen Pausen",
+"Die Ausdauerleistung wurde am Ende gar nicht gemessen",
+"Es nahmen ausschließlich untrainierte Einsteiger teil"
+],
+"warum": "Geprüft wurde nur Kraft vor Ausdauer; nach vorheriger Ausdauer kann die Erholung der Kraftleistung 8 bis 24 Stunden dauern."
+}
+}
+},
+{
+"id": "CON-107",
+"karte": {
+"kopf": "Trainierende · 10 Studien zusammengefasst",
+"titel": "Kraft vor Ausdauer bringt rund sieben Prozent mehr Beinkraft",
+"titel_hervor": "rund sieben Prozent mehr",
+"setup": "Verglichen wurde, ob es in einer gemeinsamen Einheit (unter 15 Minuten Pause) besser ist, zuerst Kraft oder zuerst Ausdauer zu trainieren.",
+"zahl": {
+"label": "Mehr Beinkraft bei Kraft zuerst",
+"wert": "+6,9 %",
+"alltag": "≈ +4 kg mehr Gewicht"
+},
+"kern": [
+"Für den Muskelaufbau spielte die Reihenfolge im Schnitt keine Rolle.",
+"Auch die Ausdauerleistung entwickelte sich in beiden Reihenfolgen gleich.",
+"Nach Kraft fühlt sich der Ausdauerteil allerdings anstrengender an."
+],
+"grenze": "Gilt nur für direkt gekoppelte Einheiten unter 15 Minuten Pause, nicht für getrennte Tage.",
+"fuer_dich": "Du machst Kraft und Ausdauer in einer Einheit und willst stärker werden? Starte mit dem Krafttraining.",
+"labor": {
+"design": "Systematisches Review & Meta-Analyse, ≥ 5 Wochen, Kraft–Ausdauer vs. umgekehrt",
+"teilnehmer": "10 Studien (20 Gruppen), 227 Kraft-, 137 Hypertrophie-, 184 VO2max-Daten",
+"ergebnis": "Beinkraft WMD +6,91 % (+3,96 kg); Hypertrophie +1,15 % (n. s.); VO2max +0,39 ml/kg/min"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du willst in derselben Trainingseinheit Kraft und Ausdauer machen und dabei stärker in den Beinen werden. Womit fängst du am besten an?",
+"richtig": "Erst Krafttraining, danach das Ausdauertraining",
+"falsch": [
+"Erst Ausdauertraining, danach das Krafttraining",
+"Die Reihenfolge ändert auch bei der Kraft nichts",
+"Nach jedem Kraftsatz kurz eine Runde laufen gehen"
+],
+"warum": "Wer frisch ins Krafttraining startet, erzielt im Schnitt rund sieben Prozent mehr Zuwachs bei der Beinkraft."
+},
+"plus": {
+"frage": "Du absolvierst Kraft- und Ausdauertraining direkt hintereinander und startest mit Kraft. Was passiert dabei mit deinem Ausdauerfortschritt?",
+"richtig": "Die Ausdauer wächst gleich gut, fühlt sich aber härter an",
+"falsch": [
+"Die Ausdauerleistung sinkt durch die Vorermüdung deutlich",
+"Die Ausdauer wächst doppelt so schnell wie sonst",
+"Das Ausdauertraining wirkt danach gar nicht mehr"
+],
+"warum": "Die VO2max-Anpassung blieb unverändert, allerdings steigt die gefühlte Anstrengung (sRPE) im anschließenden Ausdauerteil."
+},
+"labor": {
+"frage": "Eine Meta-Analyse (10 Studien) verglich die Intra-Session-Reihenfolge (< 15 min Pause) von Kraft- und Ausdauertraining. Welcher Parameter profitierte signifikant von Kraft zuerst?",
+"richtig": "Nur die dynamische Unterkörper-Maximalkraft",
+"falsch": [
+"Sowohl Muskelhypertrophie als auch VO2max deutlich",
+"Ausschließlich die maximale Sauerstoffaufnahme",
+"Keiner der gemessenen Leistungsparameter"
+],
+"warum": "Die dynamische Beinkraft stieg um +6,91 %, während Hypertrophie und VO2max keinen signifikanten Unterschied zeigten."
+}
+}
+},
+{
+"id": "CON-108",
+"karte": {
+"kopf": "Trainierende · 2 große Übersichtsarbeiten",
+"titel": "Laufen bremst Beinmuskeln wohl doch nicht klar stärker als Rad",
+"titel_hervor": "nicht klar stärker als Rad",
+"setup": "Verglichen wurden ältere und neuere Sammelauswertungen dazu, ob Laufen den Bein-Kraftaufbau stärker stört als Radfahren.",
+"zahl": null,
+"kern": [
+"Ältere Auswertungen sahen beim Laufen klarere Nachteile als beim Radfahren.",
+"Neuere Analysen mit gleichem Kraftvolumen fanden auf Ganzmuskelebene keinen Unterschied.",
+"Laufen beansprucht Muskeln und Gelenke durch die Stöße beim Aufprall stärker."
+],
+"grenze": "Je nach Studienauswahl schwanken die Ergebnisse – beim Radfahren litt teils die Explosivkraft.",
+"fuer_dich": "Deine Beine sind nach schwerem Krafttraining schwer oder gereizt? Wechsle an diesen Tagen lieber aufs Rad statt zu laufen.",
+"labor": {
+"design": "Vergleich zweier Meta-Analysen (2012 vs. 2022), Laufen vs. Radfahren",
+"teilnehmer": "21 Studien (422 Effekte) vs. 43 Studien (24 Rad, 16 Laufen)",
+"ergebnis": "2012: Lauf-Hypertrophie ES 0,68 vs. Kraft 1,23; 2022: kein Ganzmuskel-Unterschied"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Stimmt die alte Faustregel, dass Joggen deine Beinmuskeln viel stärker ausbremst als Radfahren?",
+"richtig": "Neuere Daten zeigen insgesamt kaum noch einen Unterschied",
+"falsch": [
+"Ja, Joggen macht jedes Beintraining sofort wirkungslos",
+"Nein, beim Joggen wachsen Beinmuskeln doppelt so gut",
+"Ja, Radfahren baut überhaupt keine Ausdauer auf"
+],
+"warum": "Bei gleichem Krafttraining fanden neuere Auswertungen keinen klaren Unterschied zwischen Laufen und Radfahren."
+},
+"plus": {
+"frage": "Deine Beine fühlen sich nach schweren Kniebeugen stark ermüdet an, aber eine Ausdauereinheit steht an. Wann lohnt sich der Wechsel aufs Rad?",
+"richtig": "Bei hoher Beinermüdung, da beim Radfahren die Aufprallstöße fehlen",
+"falsch": [
+"Nur wenn du dein Krafttraining ganz pausieren möchtest",
+"Gar nicht, weil Laufen weniger muskuläre Schäden verursacht",
+"Nur wenn du gar keine Ausdauer aufbauen willst"
+],
+"warum": "Laufen verursacht durch die Bodenstöße stärkere Muskelschäden, während Radfahren die Beine mechanisch schont."
+},
+"labor": {
+"frage": "Warum fand eine neuere Meta-Analyse (43 Studien) keinen Ganzmuskel-Unterschied mehr zwischen Laufen und Radfahren, anders als eine ältere Analyse (21 Studien)?",
+"richtig": "Strengere Einschlusskriterien mit gleichem Kraftvolumen je Gruppe",
+"falsch": [
+"In der neueren Analyse wurden nur noch Oberkörperübungen erfasst",
+"Die ältere Analyse untersuchte ausschließlich Schwimmer",
+"In der neueren Analyse fehlten jegliche Laufstudien"
+],
+"warum": "Die neuere Analyse schloss nur Studien ein, in denen das Krafttrainingsvolumen beider Gruppen tatsächlich gleich war."
+}
+}
+},
+{
+"id": "CON-109",
+"karte": {
+"kopf": "Männer & Frauen · 14 Studien",
+"titel": "Kurze harte Intervalle bremsen die Beinkraft nur leicht",
+"titel_hervor": "Beinkraft nur leicht",
+"setup": "263 Teilnehmende trainierten mindestens vier Wochen Kraft allein oder kombiniert mit hochintensiven Intervallen auf dem Rad oder laufend.",
+"zahl": null,
+"kern": [
+"Muskelaufbau und Oberkörperkraft blieben von den Intervallen unberührt.",
+"Rad-Intervalle ermüdeten die Oberschenkel tendenziell stärker als Lauf-Intervalle.",
+"Die harte Beinarbeit auf dem Rad überlappt stark mit Kniebeugen und Beinpresse."
+],
+"grenze": "Ein direkter Vergleich zwischen Intervall- und ruhigem Dauertraining neben Kraft fehlt noch weitgehend.",
+"fuer_dich": "Du kombinierst HIIT mit Krafttraining? Nutze eher Lauf-Intervalle oder plane nach Rad-HIIT mindestens 24 Stunden vor dem Beintag.",
+"labor": {
+"design": "Systematisches Review & Meta-Analyse, ≥ 4 Wochen, Kraft vs. Kraft + HIIT",
+"teilnehmer": "14 Studien, 263 Teilnehmende (182 Männer, 81 Frauen)",
+"ergebnis": "Beinkraft ES −0,25 (p=0,049); Rad-HIIT −0,38 vs. Lauf −0,18; Hypertrophie +0,11 (n. s.)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du kombinierst dein Krafttraining mit kurzen, sehr anstrengenden Ausdauer-Intervallen. Was passiert dabei im Schnitt mit deinen Muskeln?",
+"richtig": "Muskelaufbau und Oberkörperkraft laufen normal weiter",
+"falsch": [
+"Du baust am gesamten Körper keine Muskeln mehr auf",
+"Vor allem deine Arm- und Brustkraft sinkt deutlich",
+"Die Intervalle ersetzen das Krafttraining vollständig"
+],
+"warum": "Muskelwachstum und Oberkörperkraft blieben ungestört; nur die Beinkraft fiel geringfügig schwächer aus."
+},
+"plus": {
+"frage": "Du möchtest HIIT in deinen Kraftplan einbauen, ohne dein Beintraining auszubremsen. Welche Lösung ist am sinnvollsten?",
+"richtig": "Lauf-HIIT wählen oder Rad-HIIT auf einen anderen Tag legen",
+"falsch": [
+"Rad-HIIT direkt vor schweren Kniebeugen machen",
+"Nur noch Oberkörper-Krafttraining im Plan behalten",
+"HIIT ausschließlich ohne Pause im Bein-Superset fahren"
+],
+"warum": "Rad-HIIT ermüdet den Oberschenkel lokal besonders stark und bremste die Beinkraft tendenziell mehr als Lauf-HIIT."
+},
+"labor": {
+"frage": "In einer Meta-Analyse (14 Studien) zu Krafttraining plus HIIT zeigte Rad-HIIT eine tendenziell stärkere Minderung der Beinkraft als Lauf-HIIT. Was ist die vermutete Ursache?",
+"richtig": "Hohe lokale Ermüdung des Quadrizeps wie bei Kniebeugen",
+"falsch": [
+"Stärkere exzentrische Aufprallkräfte beim Treten",
+"Deutlicher Verlust der Oberkörper-Maximalkraft",
+"Unzureichende Trainingsdauer unter vier Wochen"
+],
+"warum": "Die intensive konzentrische Belastung des Oberschenkels beim Rad-HIIT überlappt direkt mit der Kniebeuge- und Beinpressleistung."
+}
+}
+},
+{
+"id": "CON-110",
+"karte": {
+"kopf": "Trainierende · 2 Meta-Analysen",
+"titel": "Je häufiger und länger die Ausdauer, desto weniger Kraftzuwachs",
+"titel_hervor": "häufiger und länger",
+"setup": "Verglichen wurde, wie stark die Zahl und Länge der wöchentlichen Ausdauereinheiten mit den Fortschritten im Krafttraining zusammenhängen.",
+"zahl": null,
+"kern": [
+"Sowohl häufigere als auch längere Ausdauereinheiten drückten den Kraftzuwachs.",
+"Eine feste magische Grenze ab fünf Einheiten pro Woche ließ sich nicht belegen.",
+"Wie viel du verträgst, hängt stark von Kalorien, Trainingsstand und Timing ab."
+],
+"grenze": "Eine exakte Schwelle für alle gibt es nicht – Gesamtbelastung und Ernährung spielen stark mit.",
+"fuer_dich": "Kraft oder Schnellkraft haben bei dir Vorrang? Halte Ausdauer eher auf maximal drei Einheiten à 20 bis 40 Minuten.",
+"labor": {
+"design": "Meta-Regression (21 Studien) vs. Subgruppenanalyse < 5 vs. > 5 Einheiten (43 Studien)",
+"teilnehmer": "21 bzw. 43 Studien über verschiedene Trainingsstufen",
+"ergebnis": "Frequenz-Korrelation r = −0,26 bis −0,35 (p < 0,05); Schwelle 5 Einheiten n. s."
+}
+},
+"quiz": {
+"basis": {
+"frage": "Wie hängt die Menge deines Ausdauertrainings meist mit deinen Fortschritten beim Krafttraining zusammen?",
+"richtig": "Je öfter und länger die Ausdauer, desto eher bremst sie",
+"falsch": [
+"Ab einer festen Grenze stoppt jeder Fortschritt schlagartig",
+"Lange Ausdauereinheiten steigern die Maximalkraft stark mit",
+"Nur sehr kurze Einheiten bremsen die Kraftentwicklung"
+],
+"warum": "Es gibt keinen harten Schalter, aber mehr Häufigkeit und längere Dauer drücken den Kraftzuwachs im Schnitt schrittweise."
+},
+"plus": {
+"frage": "Du willst in diesem Block vor allem Maximalkraft und Schnellkraft pushen, aber etwas Ausdauer behalten. Wie dosierst du sie sinnvoll?",
+"richtig": "Wenige und eher kurze Ausdauereinheiten pro Woche wählen",
+"falsch": [
+"Viele lange Einheiten über jeweils eineinhalb Stunden",
+"Jeden Tag eine lange Ausdauereinheit vor dem Krafttraining",
+"Gar keine Anpassung, da die Dauer keine Rolle spielt"
+],
+"warum": "Kürzere (ca. 20–40 min) und seltenere Ausdauereinheiten halten die negative Dosis-Wirkung auf Kraft und Power klein."
+},
+"labor": {
+"frage": "Meta-Regressionen zeigen negative Korrelationen zwischen Ausdauervolumen und Kraftzuwachs, eine 5-Einheiten-Schwelle war aber nicht signifikant. Warum?",
+"richtig": "Der Zusammenhang ist fließend und hängt von Kalorien und Status ab",
+"falsch": [
+"Weil Ausdauervolumen gar keinen Einfluss auf die Ermüdung hat",
+"Weil in keiner Studie mehr als zwei Einheiten getestet wurden",
+"Weil Krafttraining die Ausdauerdauer voll ausgleicht"
+],
+"warum": "Eine biologisch scharfe Grenze existiert nicht; Energiebilanz, Trainingsstatus und Timing moderieren den Effekt."
+}
+}
+},
+{
+"id": "CON-111",
+"karte": {
+"kopf": "Männer & Frauen · 59 Studien",
+"titel": "Bei Frauen bremste Ausdauer die Beinkraft im Schnitt nicht",
+"titel_hervor": "Beinkraft im Schnitt nicht",
+"setup": "Über 1.300 Frauen und Männer trainierten mindestens vier Wochen Kraft allein oder kombiniert mit Ausdauer; verglichen wurden die Geschlechter.",
+"zahl": null,
+"kern": [
+"Bei Männern fiel der Kraftzuwachs in den Beinen durch Ausdauer klar kleiner aus.",
+"Bei Oberkörperkraft, Schnellkraft und Ausdauer gab es keinen Geschlechtsunterschied.",
+"Als mögliche Ursache gelten ermüdungsresistentere Muskelfasern bei Frauen."
+],
+"grenze": "Ob dieser Unterschied auch beim reinen Muskelwachstum besteht, gaben die Daten nicht her.",
+"fuer_dich": "Du bist eine Frau und kombinierst Kraft und Ausdauer? Für deine Beinkraft brauchst du keine pauschalen Abstriche einplanen.",
+"labor": {
+"design": "Systematisches Review & Meta-Analyse, ≥ 4 Wochen, Geschlechtervergleich",
+"teilnehmer": "59 Studien, 1.346 Teilnehmende, 18 bis 50 Jahre",
+"ergebnis": "Beinkraft Männer SMD −0,43 vs. Frauen +0,08 (p = 0,03); Oberkörper/Power/VO2max n. s."
+}
+},
+"quiz": {
+"basis": {
+"frage": "Männer und Frauen kombinieren Krafttraining mit Ausdauer. Bei wem litt der Kraftzuwachs in den Beinen im Schnitt eher darunter?",
+"richtig": "Eher bei Männern als bei Frauen",
+"falsch": [
+"Eher bei Frauen als bei Männern",
+"Bei beiden gleich stark an den Armen",
+"Bei beiden ging die Beinkraft zurück"
+],
+"warum": "Während Männer im Schnitt spürbare Einbußen bei der Beinkraft hatten, zeigte sich bei Frauen kein solcher Bremseffekt."
+},
+"plus": {
+"frage": "Eine trainierte Athletin kombiniert Kraft und Ausdauer und will ihre Beinkraft steigern. Braucht sie wegen des Ausdauertrainings pauschale Abzüge?",
+"richtig": "Nein, bei Frauen zeigte sich kein Verlust bei der Beinkraft",
+"falsch": [
+"Ja, Frauen verlieren dabei doppelt so viel Kraft wie Männer",
+"Ja, sie sollte Ausdauer ganz aus dem Plan streichen",
+"Nein, aber nur solange sie keine Oberkörperübungen macht"
+],
+"warum": "Über 59 Studien hinweg gab es bei Frauen keinen Interferenzeffekt auf die Unterkörper-Maximalkraft."
+},
+"labor": {
+"frage": "Eine Meta-Analyse (59 Studien, n = 1.346) prüfte Geschlechtsunterschiede beim Concurrent Training. Wo lag ein signifikanter Unterschied – und wo fehlten Daten?",
+"richtig": "Unterschied nur bei Beinkraft; Daten zu Hypertrophie fehlten",
+"falsch": [
+"Unterschied bei VO2max; Daten zur Beinkraft fehlten",
+"Unterschied bei Oberkörperkraft; Power wurde nicht gemessen",
+"Kein Unterschied irgendwo; alle Variablen waren vollständig"
+],
+"warum": "Nur bei der Unterkörperkraft unterschieden sich Männer (SMD −0,43) und Frauen (0,08; p = 0,03); für Hypertrophie reichten die Daten nicht."
+}
+}
+},
+{
+"id": "CON-112",
+"karte": {
+"kopf": "Einsteiger & Sportler · 59 Studien",
+"titel": "Bei Einsteigern bremst Krafttraining anfangs die Ausdauer",
+"titel_hervor": "bremst Krafttraining anfangs",
+"setup": "Verglichen wurde, wie stark sich die Ausdauerleistung bei reinem Ausdauertraining versus kombiniertem Training je nach Fitnesslevel verbesserte.",
+"zahl": null,
+"kern": [
+"Bei bereits trainierten Ausdauersportlern gab es keinen solchen Nachteil.",
+"Ungewohnter Muskelkater drückt bei Einsteigern die Qualität der Läufe.",
+"Wer an höhere Umfänge gewöhnt ist, steckt die Doppelbelastung besser weg."
+],
+"grenze": "Betrifft vor allem die Eingewöhnungsphase ab vier Wochen – langfristig gleicht sich vieles an.",
+"fuer_dich": "Du fängst neu an und willst vor allem deine Ausdauer steigern? Starte mit kleinem Kraftumfang, damit du frisch bleibst.",
+"labor": {
+"design": "Systematisches Review & Meta-Analyse, ≥ 4 Wochen, Subgruppen nach Trainingsstatus",
+"teilnehmer": "59 Studien, 1.346 Teilnehmende, 18 bis 50 Jahre",
+"ergebnis": "Signifikanter Gruppenunterschied für VO2max-Zuwachs (p = 0,04) zulasten Untrainierter"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du fängst ganz neu mit dem Sport an und willst vor allem deine Kondition aufbauen. Was passiert, wenn du sofort sehr viel Krafttraining dazupackst?",
+"richtig": "Deine Kondition wächst anfangs oft etwas langsamer",
+"falsch": [
+"Deine Kondition wächst dadurch doppelt so schnell",
+"Dein Körper baut überhaupt keine Ausdauer mehr auf",
+"Krafttraining hat für Anfänger gar keinen Einfluss"
+],
+"warum": "Ungewohnter Muskelkater und Erschöpfung aus dem Krafttraining drücken bei Einsteigern die Qualität der Ausdauereinheiten."
+},
+"plus": {
+"frage": "Ein Einsteiger möchte primär seine VO2max steigern, aber auch Kraft trainieren. Wie sollte das Kraftvolumen zum Start aussehen?",
+"richtig": "Moderat starten, um Muskelkater und Müdigkeit klein zu halten",
+"falsch": [
+"Sofort mit maximalem Volumen und Muskelversagen einsteigen",
+"Krafttraining ganz weglassen, bis die VO2max perfekt ist",
+"Jede Ausdauereinheit durch schweres Beintraining ersetzen"
+],
+"warum": "Zu viel ungewohntes Kraftvolumen führt zu starkem Muskelkater und hemmt anfangs die Ausdaueranpassung."
+},
+"labor": {
+"frage": "In einer Meta-Analyse (59 Studien) sank der VO2max-Zuwachs durch Concurrent Training bei Untrainierten, nicht aber bei trainierten Ausdauersportlern. Wie wird das erklärt?",
+"richtig": "Muskelkater und Ermüdung mindern bei Neulingen die Ausdauerqualität",
+"falsch": [
+"Trainierte Ausdauersportler sprechen nicht auf Krafttraining an",
+"Untrainierte verlieren durch Krafttraining sofort an Lungengröße",
+"Bei Trainierten wurde die VO2max in den Studien nicht gemessen"
+],
+"warum": "Ungewohnter Muskelkater (DOMS) und Glykogenmangel bremsen Einsteiger, während erfahrene Sportler an hohe Volumina gewöhnt sind."
+}
+}
+},
+{
+"id": "CON-113",
+"karte": {
+"kopf": "Läufer · 24 Studien zusammengefasst",
+"titel": "Schweres Krafttraining macht Läufer rund vier Prozent sparsamer",
+"titel_hervor": "rund vier Prozent sparsamer",
+"setup": "Mittel- und Langstreckenläufer ergänzten ihr Lauftraining über mindestens vier Wochen um schweres Kraft- und Sprungtraining.",
+"zahl": {
+"label": "Bessere Laufökonomie im Schnitt",
+"wert": "ca. 4 %",
+"alltag": "Spanne: 2 bis 8 % weniger Energie"
+},
+"kern": [
+"Auch Sprinttempo und Wettkampfzeiten über die Distanz verbesserten sich.",
+"Das Körpergewicht stieg im Schnitt nicht an (0 kg Zunahme).",
+"Leichte Gewichte mit über 15 Wiederholungen blieben dagegen wirkungslos."
+],
+"grenze": "Bei Eliteläufern reicht eine Krafteinheit pro Woche nicht aus – es braucht zwei bis drei.",
+"fuer_dich": "Du läufst regelmäßig und willst effizienter werden? Plane acht bis zwölf Wochen lang zwei- bis dreimal schweres Kraft- und Sprungtraining.",
+"labor": {
+"design": "Systematisches Review (k=24) & Meta-Analyse (k=5), ≥ 4 bzw. 8–12 Wochen",
+"teilnehmer": "Mittel- bis Ultraläufer (VO2max 47–70); Meta-Analyse: 93 hochtrainierte Läufer",
+"ergebnis": "Laufökonomie +2–8 % (Ø ca. 4 %); SMD −1,43 (−2,32 ml/kg/min O2-Kosten); +0 kg Masse"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Viele Läufer meiden schwere Gewichte, weil sie Angst haben, schwerer und langsamer zu werden. Was zeigt sich bei regelmäßigem Krafttraining wirklich?",
+"richtig": "Sie laufen sparsamer und schneller, ohne schwerer zu werden",
+"falsch": [
+"Sie nehmen stark zu und verlieren deutlich an Lauftempo",
+"Nur leichte Gewichte mit vielen Wiederholungen helfen",
+"Krafttraining verschlechtert die Ausdauer bei Läufern"
+],
+"warum": "Schweres Kraft- und Sprungtraining verbesserte die Laufökonomie im Schnitt um rund vier Prozent – bei null Kilo Gewichtszunahme."
+},
+"plus": {
+"frage": "Du bist Läufer und möchtest deine Laufökonomie durch Krafttraining verbessern. Welche Belastung funktioniert dafür am besten?",
+"richtig": "Zwei bis drei Einheiten mit schweren Lasten und Sprüngen",
+"falsch": [
+"Eine kurze Einheit pro Woche mit sehr vielen Wiederholungen",
+"Tägliches Kraftausdauertraining mit sehr leichten Gewichten",
+"Ausschließlich Dehnübungen ohne zusätzliche Last"
+],
+"warum": "Wirksam waren zwei bis drei Einheiten pro Woche mit schweren Lasten (ab 80 % 1RM) und Sprüngen; über 15 RM half nicht."
+},
+"labor": {
+"frage": "In einem Review (24 Studien) und einer Meta-Analyse (93 hochtrainierte Läufer) wurde schweres Kraft- und Plyometrietraining ergänzt. Welcher Effekt zeigte sich?",
+"richtig": "Klar geringere Sauerstoffkosten beim Laufen ohne Gewichtszunahme",
+"falsch": [
+"Starker Anstieg der Körpermasse bei sinkender VO2max",
+"Verbesserung der Laufökonomie nur durch leichtes > 15-RM-Training",
+"Geringere Sprintgeschwindigkeit bei besserer Ausdauer"
+],
+"warum": "Die Sauerstoffkosten sanken deutlich (SMD −1,43 bzw. −2,32 ml/kg/min), während Körpermasse und VO2max stabil blieben."
+}
+}
+},
+{
+"id": "CON-114",
+"karte": {
+"kopf": "Krafttrainierende · 59 Studien",
+"titel": "Ab 500 Kalorien Defizit am Tag wächst kaum noch Muskelmasse",
+"titel_hervor": "500 Kalorien Defizit",
+"setup": "Fast 1.500 Teilnehmende machten mindestens drei Wochen Krafttraining – entweder mit Kaloriendefizit oder ausgeglichener Energiebilanz.",
+"zahl": {
+"label": "Kein Muskelzuwachs mehr ab",
+"wert": "≈ 500 kcal",
+"alltag": "Defizit pro Tag"
+},
+"kern": [
+"Je größer das tägliche Kaloriendefizit, desto weniger Muskelmasse entstand.",
+"Die Maximalkraft stieg im Schnitt selbst im Kaloriendefizit weiter an.",
+"Bei einem kleineren Defizit war gleichzeitiger Muskelaufbau noch möglich."
+],
+"grenze": "Meist wurde ohne zusätzliches Ausdauertraining getestet; sehr Erfahrene verlieren teils auch Kraft.",
+"fuer_dich": "Du willst abnehmen und trotzdem Muskeln aufbauen? Halte dein tägliches Defizit lieber klein zwischen 200 und 500 kcal.",
+"labor": {
+"design": "Systematisches Review, Meta-Analyse & Meta-Regression, ≥ 3 Wochen",
+"teilnehmer": "59 Studien, 1.495 Teilnehmende",
+"ergebnis": "Fettfreie Masse ES −0,57 (p=0,02), Steigung −0,00035/kcal; Maximalkraft n. s."
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du machst Krafttraining und isst gleichzeitig deutlich weniger Kalorien als du verbrauchst. Was passiert im Schnitt mit Muskeln und Kraft?",
+"richtig": "Muskeln wachsen kaum noch, die Kraft steigt aber oft weiter",
+"falsch": [
+"Muskeln und Kraft steigen im Defizit doppelt so schnell",
+"Die Kraft bricht sofort ein, während Muskeln normal wachsen",
+"Beides bleibt vom Kaloriendefizit völlig unberührt"
+],
+"warum": "Ab rund 500 Kalorien Defizit pro Tag stoppt im Schnitt das Muskelwachstum, während die Kraft meist noch zulegen kann."
+},
+"plus": {
+"frage": "Du möchtest Fett verlieren, aber gleichzeitig möglichst noch Muskelmasse aufbauen (Body-Recomposition). Wie gehst du beim Defizit vor?",
+"richtig": "Ein kleines bis moderates Defizit wählen statt stark zu sparen",
+"falsch": [
+"Ein sehr großes Defizit wählen, damit das Fett schneller schmilzt",
+"Die Höhe des Defizits ignorieren, da Krafttraining ausreicht",
+"Stark im Defizit bleiben und das Kraftvolumen halbieren"
+],
+"warum": "Ab etwa 500 kcal Defizit pro Tag wurde im Schnitt kein Muskelmassezuwachs mehr beobachtet."
+},
+"labor": {
+"frage": "Eine Meta-Regression (59 Studien, n = 1.495) prüfte Krafttraining im Kaloriendefizit. Welcher Unterschied zeigte sich zwischen fettfreier Masse und Maximalkraft?",
+"richtig": "Fettfreie Masse sank dosisabhängig, Maximalkraft nicht signifikant",
+"falsch": [
+"Maximalkraft sank stark, fettfreie Masse blieb unverändert",
+"Beide Parameter sanken ab kleinem Defizit gleich stark",
+"Fettfreie Masse stieg mit größerem Defizit kontinuierlich an"
+],
+"warum": "Pro kcal Defizit sank der Effekt auf fettfreie Masse (Steigung −0,00035), während die Maximalkraft im Schnitt stabil blieb."
+}
+}
+},
+{
+"id": "CON-115",
+"karte": {
+"kopf": "Expertenkonsens · Noch wenig erforscht",
+"titel": "Energiemangel beim Kombi-Training ist bisher kaum erforscht",
+"titel_hervor": "bisher kaum erforscht",
+"setup": "Fachleute werteten den Wissensstand dazu aus, wie stark Energiemangel die gegenseitige Störung von Kraft- und Ausdauertraining beeinflusst.",
+"zahl": null,
+"kern": [
+"Direkte Vergleichsstudien zu Energiemangel und Kombi-Training fehlen noch.",
+"Manche früheren Kraftverluste könnten schlicht auf zu wenig Essen beruhen.",
+"Empfehlungen stützen sich bisher auf Fachmeinungen zu Energiemangel im Sport."
+],
+"grenze": "Ohne direkte Interventionsstudien bleibt offen, wie stark Energiemangel die Kraft wirklich bremst.",
+"fuer_dich": "Du erhöhst dein Kraft- und Ausdauervolumen? Gleiche den zusätzlichen Verbrauch möglichst voll über Essen und Kohlenhydrate aus.",
+"labor": {
+"design": "Expertenkonsens und Positionspapier (REDs), keine direkte Interventionsstudie",
+"teilnehmer": "",
+"ergebnis": ""
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du trainierst viel Kraft und Ausdauer gleichzeitig, isst aber kaum mehr als vorher. Was vermuten Fachleute dabei als häufiges Problem?",
+"richtig": "Dass Energiemangel deine Trainingsfortschritte ausbremst",
+"falsch": [
+"Dass weniger Essen den Muskelaufbau automatisch verstärkt",
+"Dass der Körper fehlende Energie einfach aus Wasser bildet",
+"Dass zusätzliches Ausdauertraining keine Kalorien verbraucht"
+],
+"warum": "Auch wenn direkte Studien fehlen, warnen Fachleute vor Energiemangel, wenn hoher Trainingsverbrauch nicht ausgeglichen wird."
+},
+"plus": {
+"frage": "Dein Trainingsumfang steigt durch kombiniertes Kraft- und Ausdauertraining deutlich an. Wie passt du deine Ernährung laut Expertenkonsens an?",
+"richtig": "Du erhöhst Kalorien und Kohlenhydrate um den Mehrverbrauch",
+"falsch": [
+"Du lässt die Kalorien unverändert, um schneller abzunehmen",
+"Du streichst Kohlenhydrate ganz an Ausdauertagen",
+"Du isst nur an reinen Ruhetagen mehr als sonst"
+],
+"warum": "Den zusätzlichen Trainingsumsatz auszugleichen hilft, nicht unbemerkt in eine niedrige Energieverfügbarkeit abzurutschen."
+},
+"labor": {
+"frage": "Wie gut ist der direkte Zusammenhang zwischen definierter niedriger Energieverfügbarkeit (LEA) und dem Interferenzeffekt beim Concurrent Training belegt?",
+"richtig": "Es fehlen direkte Studien; Empfehlungen basieren auf Konsens",
+"falsch": [
+"Über 50 kontrollierte Studien belegen einen exakten Grenzwert",
+"Mehrarmige Studien schließen jeden Einfluss von LEA aus",
+"Meta-Analysen zeigen eine klare Dosis-Wirkung für LEA"
+],
+"warum": "Es bestehen erhebliche Forschungslücken, ob frühere Interferenz-Effekte teils Artefakte nicht kompensierter Energiedefizite waren."
+}
+}
+},
+{
+"id": "EIN-101",
+"karte": {
+"kopf": "Jüngere & Ältere · Vergleichsstudie",
+"titel": "Jüngere halten Muskeln mit einem Neuntel, Ältere brauchen mehr",
+"titel_hervor": "halten Muskeln mit einem Neuntel",
+"setup": "70 Erwachsene bauten 16 Wochen Kraft auf und trainierten danach 32 Wochen mit einem Drittel, einem Neuntel des Umfangs oder gar nicht.",
+"zahl": {
+"label": "Kraftgewinn selbst mit Erhaltungsdosis",
+"wert": "+7–8 %",
+"alltag": ""
+},
+"kern": [
+"Jüngere hielten ihre Muskelmasse schon mit einem Neuntel des Aufbautrainings.",
+"Ältere verloren damit Muskelfasergröße, behielten aber ihre Maximalkraft.",
+"Nach 32 Wochen Pause sank die Kraft leicht, lag aber noch über dem Startwert."
+],
+"grenze": "Welche genaue Mindestmenge Ältere zwischen einem Drittel und vollem Umfang brauchen, blieb offen.",
+"fuer_dich": "Du hast wenig Zeit? Unter 35 reicht 1 Einheit pro Woche mit 1–3 Sätzen, ab 60 plane besser mindestens 2 ein.",
+"labor": {
+"design": "RCT: 16 Wo. Aufbau (3x/Wo.), dann 32 Wo. 1/3-Dosis, 1/9-Dosis oder Pause",
+"teilnehmer": "70 Erwachsene (39 Jüngere 20–35 J., 31 Ältere 60–75 J.)",
+"ergebnis": "+7–8 % 1RM mit Erhaltungsdosis; −7 % 1RM nach 32 Wo. Pause (+23 % über Start); +4,8 % Magermasse in Phase 1"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du hast monatelang trainiert und kürzt dein Training stark. Was passiert mit deinen Muskeln im Vergleich zwischen 25- und 65-Jährigen?",
+"richtig": "Jüngere halten ihre Muskeln leichter als Ältere",
+"falsch": [
+"Ältere halten ihre Muskeln leichter als Jüngere",
+"Beide verlieren sofort ihre gesamte Muskelmasse",
+"Beide bauen mit stark gekürztem Training weiter auf"
+],
+"warum": "Jüngere erhalten ihre Muskelmasse oft schon mit einem Bruchteil des Umfangs, während Ältere dafür mehr Training brauchen."
+},
+"plus": {
+"frage": "Du bist 62, willst für ein paar Monate in den Erhaltungsmodus und dein Volumen drastisch kürzen. Was ist für den Muskelerhalt am sinnvollsten?",
+"richtig": "Mindestens zwei Einheiten pro Woche beibehalten",
+"falsch": [
+"Auf einen einzigen Satz pro Woche reduzieren",
+"Alle zwei Wochen eine leichte Einheit machen",
+"Das Gewicht stark senken und nur noch dehnen"
+],
+"warum": "Ab 60 reicht eine winzige Erhaltungsdosis zwar oft für die Kraft, für den Muskelerhalt sind aber meist mindestens zwei Einheiten nötig."
+},
+"labor": {
+"frage": "Nach 16 Wochen Aufbau trainierten jüngere und ältere Gruppen 32 Wochen mit einem Drittel oder einem Neuntel des Volumens. Was zeigte sich bei den Älteren?",
+"richtig": "Der Faserquerschnitt sank, die Maximalkraft blieb erhalten",
+"falsch": [
+"Sowohl Faserquerschnitt als auch Maximalkraft stiegen stark",
+"Die Maximalkraft sank deutlich, der Faserquerschnitt blieb",
+"Weder Faserquerschnitt noch Maximalkraft änderten sich"
+],
+"warum": "Durch neuronale Anpassungen blieb die 1RM-Kraft bei Älteren erhalten, obwohl der Muskelfaserquerschnitt bei stark reduziertem Volumen abnahm."
+}
+}
+},
+{
+"id": "EIN-102",
+"karte": {
+"kopf": "Ältere Erwachsene · Trainingsvergleich",
+"titel": "Schwereres Krafttraining schützt im Alter besser vor Pausen",
+"titel_hervor": "schützt im Alter besser",
+"setup": "Ältere trainierten 12 Wochen mit schweren oder mittleren Gewichten und machten anschließend 12 Wochen Pause.",
+"zahl": {
+"label": "Kraftverlust nach 12 Wochen Pause",
+"wert": "−18 bis −27 %",
+"alltag": ""
+},
+"kern": [
+"Schwereres Training brachte mit +78 % fast doppelt so viel Kraft wie moderates.",
+"Nach der Pause blieb die Kraft nach schwerem Training auf höherem Niveau.",
+"Bei über 80-Jährigen sank die Kraft schon nach 6 Wochen Pause spürbar ab."
+],
+"grenze": "Die Gruppen waren mit rund 20 Personen klein und die Alltagsbewegung in der Pause wurde nicht erfasst.",
+"fuer_dich": "Du bist über 65 und machst 6–12 Wochen Pause? Starte mit 15–27 % weniger Gewicht und trainiere davor ruhig schwerer.",
+"labor": {
+"design": "RCT: 12 Wo. Krafttraining (80 % vs. 60 % 1RM) gefolgt von 12 Wo. Pause; ergänzend 6 Wo. Pause",
+"teilnehmer": "20 Erwachsene (65–66 J.) sowie 22 Hochbetagte (80–88 J.)",
+"ergebnis": "1RM −18 % bis −27 % nach 12 Wo. Pause; 3RM −15 % bis −25 % (60–87 % des Zuwachses) nach 6 Wo. bei >80 J."
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du bist über 65 und weißt, dass bald eine mehrwöchige Trainingspause ansteht. Welche Art Krafttraining polstert deine Kraft davor am besten auf?",
+"richtig": "Krafttraining mit schwereren Gewichten",
+"falsch": [
+"Krafttraining mit sehr leichten Gewichten",
+"Ausschließlich lockeres Spazierengehen",
+"Training mit langen Pausen und kaum Anstrengung"
+],
+"warum": "Schwereres Training baut vorher mehr Kraft auf, sodass nach der Pause im Schnitt ein höheres Niveau übrig bleibt."
+},
+"plus": {
+"frage": "Du bist 67 und steigst nach einer achtwöchigen Trainingspause wieder ins Krafttraining ein. Wie wählst du dein Startgewicht sinnvoll?",
+"richtig": "Deutlich leichter als vor der Pause starten",
+"falsch": [
+"Direkt mit dem letzten Arbeitsgewicht beginnen",
+"Das alte Gewicht für Extra-Reize leicht erhöhen",
+"Erst vier Wochen lang ohne jedes Gewicht üben"
+],
+"warum": "Nach 6 bis 12 Wochen Pause sinkt die Maximalkraft bei Älteren oft um rund ein Fünftel, daher lohnt ein reduzierter Wiedereinstieg."
+},
+"labor": {
+"frage": "Ältere trainierten 12 Wochen bei 80 % oder 60 % 1RM und pausierten danach 12 Wochen. Wie unterschied sich das Kraftniveau am Ende der Pause?",
+"richtig": "Die 80-%-Gruppe blieb absolut auf einem höheren Kraftniveau",
+"falsch": [
+"Beide Gruppen fielen auf genau denselben Ausgangswert zurück",
+"Die 60-%-Gruppe verlor gar keine Kraft in der Pause",
+"Die 80-%-Gruppe fiel unter das Niveau der 60-%-Gruppe"
+],
+"warum": "Trotz eines deutlichen prozentualen Abfalls in beiden Gruppen sicherte der größere Ausgangsgewinn der 80-%-Gruppe ein höheres Restniveau."
+}
+}
+},
+{
+"id": "EIN-103",
+"karte": {
+"kopf": "Erwachsene · 20 Studien ausgewertet",
+"titel": "Wie schnell Muskeln in langen Pausen schrumpfen, ist kaum belegt",
+"titel_hervor": "ist kaum belegt",
+"setup": "20 Studien zum Kraft- und Muskelabbau nach Trainingspausen wurden gesichtet und für die Kraft statistisch zusammengefasst.",
+"zahl": null,
+"kern": [
+"Für den zeitlichen Verlauf des Muskelabbaus fehlten belastbare Studiendaten.",
+"Ein Kraftvorteil zeigte sich in zwei Studien noch nach 16 bis 24 Wochen Pause.",
+"Ab 32 Wochen Pause war statistisch kein klarer Kraftvorteil mehr nachweisbar."
+],
+"grenze": "Viele Einzelstudien hatten methodische Schwächen, für Muskelmasse reichten die Daten nicht für eine Gesamtrechnung.",
+"fuer_dich": "Du kommst nach über 16 Wochen Pause zurück? Nutze keine Abbauformel, sondern teste dein Gewicht locker bei RPE 6–7.",
+"labor": {
+"design": "Systematisches Review mit Meta-Analyse zu Detraining-Zeiträumen (16–48 Wo.)",
+"teilnehmer": "20 Studien qualitativ, davon 2 Studien in der Kraft-Meta-Analyse",
+"ergebnis": "Kraft vs. Kontrolle: 16–24 Wo. g = 1,99–3,16 (p < 0,01); ab 32 Wo. (p > 0,10) und 48 Wo. (p > 0,26) n. s."
+}
+},
+"quiz": {
+"basis": {
+"frage": "Im Netz kursieren genaue Prozentformeln, wie viel Muskelmasse man pro Pausenwoche verliert. Wie gut sind solche Formeln belegt?",
+"richtig": "Bisher schlecht – es fehlen belastbare Daten",
+"falsch": [
+"Sehr gut – sie stimmen auf das Gramm genau",
+"Sie gelten exakt für alle über 30 Jahre",
+"Sie sind für Arme genau, für Beine aber nicht"
+],
+"warum": "Bisherige Untersuchungen reichen qualitativ nicht aus, um den genauen zeitlichen Verlauf des Muskelabbaus verzerrungsfrei zu berechnen."
+},
+"plus": {
+"frage": "Nach fünf Monaten Trainingspause gehst du wieder ins Gym. Wie bestimmst du deine Arbeitsgewichte in der ersten Woche am besten?",
+"richtig": "Mit einem lockeren Einstiegstest bei RPE 6–7",
+"falsch": [
+"Mit einer festen Prozentformel für den Muskelabbau",
+"Mit einem direkten 1RM-Maximaltest am ersten Tag",
+"Indem du genau die alten Gewichte halbierst"
+],
+"warum": "Da es keine zuverlässige Abbauformel gibt, liefert ein submaximaler Einstieg nach Anstrengungsgefühl die verlässlichste Basis."
+},
+"labor": {
+"frage": "In einer Übersichtsarbeit zu langen Trainingspausen wurde Kraft gegen Kontrollgruppen gepoolt. Wann verschwand der signifikante Kraftvorteil?",
+"richtig": "Ab 32 Wochen Pause war kein klarer Vorteil mehr messbar",
+"falsch": [
+"Schon nach 4 Wochen war jeder Kraftvorteil weg",
+"Auch nach 48 Wochen blieb der Vorteil hochsignifikant",
+"Der Kraftvorteil stieg während der Pause weiter an"
+],
+"warum": "Nach 16 bis 24 Wochen zeigten zwei Studien noch einen deutlichen Kraftvorteil, ab 32 und 48 Wochen war dieser statistisch nicht mehr signifikant."
+}
+}
+},
+{
+"id": "EIN-104",
+"karte": {
+"kopf": "Junge Männer · Vergleichsstudie",
+"titel": "Kurze Pausen brachten nach 24 Wochen genauso viel Muskel und Kraft",
+"titel_hervor": "genauso viel Muskel und Kraft",
+"setup": "Eine Gruppe trainierte 24 Wochen durch, die andere machte nach je 6 Wochen Training jeweils 3 Wochen Trainingspause.",
+"zahl": null,
+"kern": [
+"Nach 24 Wochen waren Brust-, Trizepswachstum und Maximalkraft ähnlich groß.",
+"In den 3 Wochen Pause ging etwas verloren, was danach schneller wiederkam.",
+"Nach der Pause reagierten die Muskeln wieder stärker auf den Trainingsreiz."
+],
+"grenze": "Geprüft wurden nur junge Männer und Pausen von genau 3 Wochen – für längere Auszeiten gilt das nicht.",
+"fuer_dich": "Du musst nach 6 Trainingswochen bis zu 3 Wochen pausieren? Steig danach mit deinem alten Umfang wieder ein.",
+"labor": {
+"design": "RCT über 24 Wo.: periodisch (6 Wo. Training / 3 Wo. Pause) vs. kontinuierlich",
+"teilnehmer": "Junge Männer",
+"ergebnis": "Kein signifikanter Gruppenunterschied bei CSA (M. triceps brachii, M. pectoralis major) und 1RM nach 24 Wo."
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du trainierst sechs Wochen regelmäßig und machst dann drei Wochen Urlaubspause. Ruiniert das deinen Fortschritt über ein halbes Jahr?",
+"richtig": "Meist nicht – danach holt der Körper schnell auf",
+"falsch": [
+"Ja, danach fängst du wieder ganz von vorn an",
+"Ja, Muskeln wachsen danach nur noch halb so gut",
+"Nein, denn Muskeln wachsen in der Pause weiter"
+],
+"warum": "Nach kurzen dreiwöchigen Pausen wuchsen Muskeln beim Wiedereinstieg schneller, sodass das Ergebnis nach 24 Wochen ähnlich ausfiel."
+},
+"plus": {
+"frage": "Nach einem sechswöchigen Trainingsblock fällst du drei Wochen aus. Wie passt du dein Jahresziel und dein Training danach an?",
+"richtig": "Alten Umfang wieder aufnehmen und Jahresziel behalten",
+"falsch": [
+"Das Jahresziel für Muskelaufbau deutlich absenken",
+"Das Satzvolumen für vier Wochen verdoppeln",
+"Erst einen Monat nur Ausdauertraining einplanen"
+],
+"warum": "Ein dreiwöchiger Ausfall lässt sich über einen normalen sechswöchigen Trainingsblock meist wieder ausgleichen, ohne langfristige Ziele zu streichen."
+},
+"labor": {
+"frage": "Zwei Gruppen trainierten 24 Wochen lang entweder durchgehend oder im Wechsel aus 6 Wochen Training und 3 Wochen Detraining. Was zeigte der Endvergleich?",
+"richtig": "Keine klaren Unterschiede bei Muskelquerschnitt und 1RM",
+"falsch": [
+"Die durchgehende Gruppe baute doppelt so viel Muskel auf",
+"Die Pausengruppe verlor im Vergleich deutlich an Maximalkraft",
+"Die Pausengruppe hatte nach 24 Wochen klar dickere Muskeln"
+],
+"warum": "Die beschleunigte Hypertrophie nach den dreiwöchigen Pausen glich den kurzzeitigen Rückgang im Muskelquerschnitt und bei der Maximalkraft wieder aus."
+}
+}
+},
+{
+"id": "EIN-105",
+"karte": {
+"kopf": "Erwachsene · Zwei Trainingsstudien",
+"titel": "Zelluläres Muscle Memory ist beim Menschen bisher widersprüchlich",
+"titel_hervor": "bisher widersprüchlich",
+"setup": "Erwachsene trainierten mehrere Wochen, pausierten 7 bis 20 Wochen und bauten danach wieder auf, während Muskelproben untersucht wurden.",
+"zahl": null,
+"kern": [
+"Eine Studie fand bleibende genetische Marker und schnelleren Wiederaufbau.",
+"Eine andere Studie fand nach 20 Wochen Pause keine zusätzlichen Muskelzellkerne.",
+"Im direkten Beinvergleich wuchs das vortrainierte Bein nicht schneller nach."
+],
+"grenze": "Kleine Gruppen und verschiedene Pausenzeiten lassen offen, wann der Effekt beim Menschen wirklich greift.",
+"fuer_dich": "Du startest nach 7–20 Wochen Pause neu? Steigere dein Gewicht nach Tagesform auf 70–80 % alter Bestwerte.",
+"labor": {
+"design": "RCTs: 10 Wo. unilateral / 20 Wo. Pause / 5 Wo. Retraining vs. 7/7/7-Wo.-Zyklus",
+"teilnehmer": "19 Erwachsene (Seitenvergleichsstudie) sowie weitere kleine Trainingsgruppe",
+"ergebnis": ""
+}
+},
+"quiz": {
+"basis": {
+"frage": "Oft heißt es, Muskeln merken sich altes Training in ihren Zellen und wachsen danach garantiert viel schneller. Was zeigen Messungen am Menschen bisher?",
+"richtig": "Die Ergebnisse dazu sind bisher widersprüchlich",
+"falsch": [
+"Der Effekt ist beim Menschen zweifelsfrei bewiesen",
+"Zellkerne bleiben garantiert ein Leben lang erhöht",
+"Nach einer Pause wachsen Muskeln langsamer als neu"
+],
+"warum": "Einige Daten zeigen genetische Spuren und schnellen Wiederaufbau, ein direkter Seitenvergleich nach 20 Wochen Pause fand diesen Vorteil aber nicht."
+},
+"plus": {
+"frage": "Du warst vier Monate raus und willst wieder an alte Bestwerte anknüpfen. Wie steuerst du deine Gewichte in den ersten 4 bis 8 Wochen?",
+"richtig": "Progressiv nach Leistung Richtung 70–80 % alter PRs",
+"falsch": [
+"Sofort mit 95 % der alten Bestwerte einsteigen",
+"Auf schnelles Muscle Memory setzen und Volumen verdoppeln",
+"Die Gewichte acht Wochen lang gar nicht steigern"
+],
+"warum": "Weil schnelle Aufbauraten nicht garantiert sind, schützt eine schrittweise Steigerung nach echter Satzleistung vor Überlastung."
+},
+"labor": {
+"frage": "In einer Seitenvergleichsstudie wurde ein Bein 10 Wochen trainiert, nach 20 Wochen Pause beide Beine 5 Wochen lang. Was ergaben die Muskelbiopsien?",
+"richtig": "Weder mehr Myonuklei noch schnelleres Wachstum am Vorbein",
+"falsch": [
+"Dauerhaft verdoppelte Myonuklei und doppeltes Wachstum",
+"Deutlich mehr Muskelmasse am untrainierten Vergleichsbein",
+"Starken Verlust an Zellkernen durch das erneute Training"
+],
+"warum": "Im Gegensatz zu einer kürzeren Epigenetik-Studie blieben nach 20 Wochen Pause weder erhöhte Zellkernzahlen noch ein Hypertrophievorteil nachweisbar."
+}
+}
+},
+{
+"id": "EIN-106",
+"karte": {
+"kopf": "Gesunde ab 65 · 25 Studien zusammengefasst",
+"titel": "Ab 65 bringen zwei bis drei Krafteinheiten pro Woche am meisten",
+"titel_hervor": "zwei bis drei Krafteinheiten",
+"setup": "25 Vergleichsstudien mit gesunden Älteren werteten aus, welche Gewichte, Satz- und Pausenzahlen Kraft und Muskeln am besten fördern.",
+"zahl": null,
+"kern": [
+"Für mehr Kraft schnitten schwere Gewichte und zwei Einheiten pro Woche am besten ab.",
+"Für Muskelmasse wirkten mittlere Gewichte bei drei Einheiten pro Woche günstig.",
+"Zwei bis drei Sätze mit 7 bis 9 Wiederholungen pro Übung genügten im Schnitt."
+],
+"grenze": "Für Muskelmasse gab es nur neun Studien, und einzelne Faktoren ließen sich statistisch nicht sauber trennen.",
+"fuer_dich": "Du bist über 65 und fit? Trainiere 2–3 Mal pro Woche mit 2–3 Sätzen à 8–12 Wiederholungen und 2 Minuten Pause.",
+"labor": {
+"design": "Systematisches Review mit Meta-Analyse und Meta-Regression von Dosis-Wirkungs-Daten",
+"teilnehmer": "25 RCTs mit gesunden Erwachsenen (Durchschnittsalter ≥ 65 Jahre)",
+"ergebnis": "Kraft-Optimum: 70–79 % 1RM, 2x/Wo.; Morphologie (k=9): 51–69 % 1RM, 3x/Wo., 120 s Pause"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du bist fit, über 65 und möchtest mit Krafttraining anfangen. Wie oft pro Woche lohnt sich das Training im Schnitt am meisten?",
+"richtig": "Zwei- bis dreimal pro Woche",
+"falsch": [
+"Jeden Tag ohne Ruhetag",
+"Einmal im Monat sehr intensiv",
+"Fünfmal pro Woche mit leichten Hanteln"
+],
+"warum": "In 25 Studien schnitten zwei Einheiten pro Woche für die Kraft und drei Einheiten für die Muskelmasse am wirksamsten ab."
+},
+"plus": {
+"frage": "Du planst für eine gesunde 68-jährige Person ein Kraftprogramm für Kraft und Muskelerhalt. Welcher Rahmen passt am besten?",
+"richtig": "2–3x/Woche, 2–3 Sätze à 8–12 Wdh., 2 Min. Pause",
+"falsch": [
+"1x/Woche, 1 Satz à 25 Wdh., 30 Sekunden Pause",
+"5x/Woche, 6 Sätze à 3 Wdh., 4 Minuten Pause",
+"2x/Woche, 5 Sätze à 20 Wdh., ohne Satzpause"
+],
+"warum": "Zwei bis drei Sätze pro Übung mit mittleren bis höheren Lasten und etwa zwei Minuten Pause decken Kraft- und Muskelziele im Alter gut ab."
+},
+"labor": {
+"frage": "Eine Meta-Regression wertete 25 RCTs mit gesunden Älteren ab 65 aus. Welcher Unterschied zeigte sich zwischen Kraft und Muskelmorphologie?",
+"richtig": "Kraft sprach besser auf höhere Lasten an, Morphologie eher auf mittlere",
+"falsch": [
+"Beide Ziele brauchten zwingend fünf Einheiten pro Woche",
+"Für Kraft waren leichte Lasten unter 50 % 1RM klar überlegen",
+"Für Morphologie gab es deutlich mehr Studien als für Kraft"
+],
+"warum": "Für Kraft lagen die besten Werte bei 70–79 % 1RM und zweimal pro Woche, für Muskelmorphologie bei 51–69 % 1RM und dreimal pro Woche."
+}
+}
+},
+{
+"id": "EIN-107",
+"karte": {
+"kopf": "Erwachsene ab 65 · Studien-Auswertung",
+"titel": "Schwere Gewichte steigern die Kraft ab 65 stärker als leichte",
+"titel_hervor": "Kraft ab 65 stärker",
+"setup": "Mehrere Studien verglichen bei Erwachsenen ab 65 Jahren Krafttraining mit hohen, mittleren und niedrigen Gewichten.",
+"zahl": null,
+"kern": [
+"Hohe Trainingslasten über 70 % der Bestleistung brachten klar mehr Kraft.",
+"Mittlere und leichte Gewichte blieben beim Kraftgewinn spürbar dahinter.",
+"Bei einfachen Alltagstests waren die Unterschiede zwischen den Lasten kleiner."
+],
+"grenze": "Für hochbetagte oder gebrechliche Menschen fehlen noch ausreichende Daten zu optimalen Trainingslasten.",
+"fuer_dich": "Du trainierst ab 65 seit 4–8 Wochen beschwerdefrei? Steigere deine Gewichte schrittweise auf 70–85 % deiner Bestleistung.",
+"labor": {
+"design": "Meta-Analyse: hohe (>70 % 1RM) vs. moderate (51–69 % 1RM) und niedrige Intensität (≤50 %)",
+"teilnehmer": "Erwachsene mit einem Durchschnittsalter ab 65 Jahren",
+"ergebnis": ""
+}
+},
+"quiz": {
+"basis": {
+"frage": "Stimmt der Satz, dass man ab 65 für mehr Muskelkraft lieber nur mit ganz leichten Gewichten trainieren sollte?",
+"richtig": "Nein – schwerere Gewichte bringen deutlich mehr Kraft",
+"falsch": [
+"Ja – leichte Gewichte bauen im Alter mehr Kraft auf",
+"Ja – schwere Gewichte wirken ab 65 gar nicht mehr",
+"Nein – das Gewicht spielt für die Kraft keine Rolle"
+],
+"warum": "Studienauswertungen zeigen bei Älteren ab 65 klar größere Kraftgewinne durch schwereres Krafttraining im Vergleich zu leichten Lasten."
+},
+"plus": {
+"frage": "Du bist 66 und trainierst seit zwei Monaten beschwerdefrei mit moderaten Gewichten. Wie holst du als Nächstes mehr Maximalkraft heraus?",
+"richtig": "Die Last schrittweise Richtung 70–85 % 1RM steigern",
+"falsch": [
+"Auf 40 % 1RM senken und mehr Wiederholungen machen",
+"Das Gewicht gleich lassen und nur schneller atmen",
+"Die Pausen zwischen den Sätzen komplett streichen"
+],
+"warum": "Nach der Gewöhnungsphase sorgen höhere Lasten über 70 % 1RM bei beschwerdefreien Älteren für die größten Kraftsteigerungen."
+},
+"labor": {
+"frage": "Meta-Analysen verglichen hohe (>70 % 1RM) mit moderaten und niedrigen Lasten ab 65 Jahren. Wo fiel der Vorteil schwerer Lasten kleiner aus?",
+"richtig": "Bei funktionellen Alltagstests waren die Unterschiede geringer",
+"falsch": [
+"Bei der Maximalkraft gab es keinen messbaren Unterschied",
+"Bei gesunden 65-Jährigen wirkten leichte Lasten stärker",
+"Für Gebrechliche gab es die meisten Dosis-Wirkungs-Daten"
+],
+"warum": "Während hohe Lasten die Maximalkraft deutlich stärker steigerten, lagen die Intensitätsbereiche bei funktionellen Alltagstests näher beieinander."
+}
+}
+},
+{
+"id": "EIN-108",
+"karte": {
+"kopf": "Ältere Einsteiger · 8 Studien zusammengefasst",
+"titel": "Flottes Krafttraining baut ab 60 genauso viel Muskeln auf",
+"titel_hervor": "genauso viel Muskeln auf",
+"setup": "Acht Studien verglichen bei untrainierten Älteren über 6 bis 24 Wochen explosives Training mit moderatem Krafttraining oder Ruhe.",
+"zahl": null,
+"kern": [
+"Leichtere Gewichte schnell bewegt ließen Muskeln ähnlich stark wachsen.",
+"Für Bewegungen im Alltag schnitt das schnelle Training sogar besser ab.",
+"Gegenüber gar keinem Training brachte das Schnellkrafttraining klaren Zuwachs."
+],
+"grenze": "Untersucht wurden nur untrainierte Ältere bis 24 Wochen; bei geringem Umfang wuchsen Muskeln teils etwas weniger.",
+"fuer_dich": "Du willst ab 60 Muskeln und Alltagsfitness stärken? Baue zügige Übungen mit 40–60 % deiner Bestleistung ein.",
+"labor": {
+"design": "Systematisches Review mit Meta-Analyse (6–24 Wo.): Power-Training (40–60 % 1RM) vs. moderat (70–85 %)",
+"teilnehmer": "8 Studien (vs. Kontrolle) bzw. 7 Studien (vs. moderat), untrainierte Ältere",
+"ergebnis": "Hypertrophie vs. Kontrolle SMD = 0,31 (95 % KI 0,04–0,58); vs. moderat SMD = 0,07 (95 % KI −0,18–0,32; I² = 0 %)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Wachsen Muskeln im Alter nur, wenn man schwere Gewichte ganz langsam hebt, oder hilft auch zügiges Training mit mittleren Gewichten?",
+"richtig": "Zügiges Training baut ähnlich viel Muskel auf",
+"falsch": [
+"Nur ganz langsames Heben lässt Muskeln wachsen",
+"Zügiges Training baut im Alter gar keine Muskeln auf",
+"Zügiges Training schadet der Alltagsfitness eher"
+],
+"warum": "In acht Studien führte schnelles Krafttraining bei Älteren zu vergleichbarem Muskelwachstum und verbesserte Alltagsbewegungen sogar stärker."
+},
+"plus": {
+"frage": "Du bist 64 und möchtest neben Muskelerhalt vor allem flotter aufstehen und Treppen steigen. Welche Ergänzung passt gut zu normalem Krafttraining?",
+"richtig": "Explosives Heben mit rund 40–60 % 1RM einbauen",
+"falsch": [
+"Jede Bewegung auf zehn Sekunden verlangsamen",
+"Nur noch statische Halteübungen ohne Bewegung machen",
+"Ausschließlich Maximalversuche über 90 % 1RM nutzen"
+],
+"warum": "Schnellkraftübungen mit explosiver Aufwärtsbewegung bei moderater Last fördern die Alltagsfunktion stark und erhalten Muskeln gleichwertig."
+},
+"labor": {
+"frage": "Eine Meta-Analyse verglich Power-Training (40–60 % 1RM) mit moderatem Krafttraining (70–85 % 1RM) bei untrainierten Älteren. Wie fiel der Hypertrophie-Vergleich aus?",
+"richtig": "Kein signifikanter Unterschied bei geringer Streuung",
+"falsch": [
+"Moderates Training war der Hypertrophie hoch überlegen",
+"Power-Training verdoppelte die Muskelmasse deutlich",
+"Beide Trainingsformen brachten weniger als Nichtstun"
+],
+"warum": "Der Unterschied zwischen Power- und moderatem Training war mit SMD 0,07 (p = 0,50; I² = 0 %) nicht signifikant."
+}
+}
+}
+]

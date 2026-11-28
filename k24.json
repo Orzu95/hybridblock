@@ -1,0 +1,1122 @@
+[
+{
+"id": "REC-116",
+"karte": {
+"kopf": "Leistungssportler · Zufallsstudie",
+"titel": "Langsamer abnehmen brachte Sportlern mehr Muskel und mehr Fettverlust",
+"titel_hervor": "mehr Muskel und mehr Fettverlust",
+"setup": "Leistungssportler nahmen bei viermal Krafttraining pro Woche gleich viel Gewicht ab – eine Gruppe langsam, die andere schnell.",
+"zahl": {
+"label": "Fettverlust bei langsamer vs. schneller Diät",
+"wert": "−31 vs. −21 %",
+"alltag": "bei +2,1 % statt −0,2 % Muskelmasse"
+},
+"kern": [
+"Beide Gruppen verloren am Ende rund 5,5 % ihres Körpergewichts.",
+"Die langsamere Gruppe verlor deutlich mehr Körperfett und baute Muskeln auf.",
+"Zwölf Monate später waren die Unterschiede zwischen beiden Gruppen verschwunden."
+],
+"grenze": "Getestet an Leistungssportlern mit vier Krafteinheiten pro Woche; nach einem Jahr glichen sich beide Gruppen wieder an.",
+"fuer_dich": "Du bist trainiert und willst Fett verlieren, ohne Muskeln zu opfern? Peile maximal 0,7 % Gewichtsverlust pro Woche an.",
+"labor": {
+"design": "RCT, 4x/Wo. Krafttraining, langsames (19 % Defizit, 8,5 Wo.) vs. schnelles (30 %, 5,3 Wo.) Abnehmen",
+"teilnehmer": "Leistungssportler (Trainierte)",
+"ergebnis": "Magermasse +2,1±0,4 % vs. −0,2±0,7 % (p<0,01); Fettmasse −31±3 % vs. −21±4 %"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Zwei sportliche Gruppen nehmen gleich viel Gewicht ab – eine langsam, die andere mit strenger Diät. Was zeigt sich am Ende der Diät?",
+"richtig": "Die langsamere Gruppe verliert mehr Fett und baut Muskeln auf",
+"falsch": [
+"Beide Gruppen haben am Ende exakt denselben Anteil Fett verloren",
+"Die schnellere Gruppe schützt die Muskeln durch die kürzere Zeit",
+"In beiden Gruppen schrumpfen die Muskeln genauso stark wie das Fett"
+],
+"warum": "Bei gleichem Gewichtsverlust verlor die langsamere Gruppe deutlich mehr Fett und legte sogar Muskelmasse zu."
+},
+"plus": {
+"frage": "Du trainierst viermal pro Woche Kraft und willst für eine definiertere Form Gewicht reduzieren. Welche Strategie schützt deine Muskelmasse am besten?",
+"richtig": "Langsam mit moderatem Defizit abnehmen statt die Diät zu hetzen",
+"falsch": [
+"Möglichst schnell mit starkem Defizit abnehmen für kurze Dauer",
+"Das Krafttraining pausieren, bis das Wunschgewicht erreicht ist",
+"Kalorien drastisch kürzen und nur noch Ausdauertraining machen"
+],
+"warum": "Mit rund 0,7 % Gewichtsverlust pro Woche (etwa 19 % Defizit) bauten Sportler sogar Magermasse auf statt sie zu verlieren."
+},
+"labor": {
+"frage": "Leistungssportler nahmen im RCT mit 19 % oder 30 % Defizit die gleiche Menge ab; langsam war bei Fett und Magermasse klar überlegen. Was zeigte das 12-Monats-Follow-up?",
+"richtig": "Nach einem Jahr gab es keine signifikanten Unterschiede mehr",
+"falsch": [
+"Die schnelle Gruppe verlor im Folgejahr weiter deutlich an Kraft",
+"Der Muskelvorsprung der langsamen Gruppe verdoppelte sich weiter",
+"Nur die schnelle Gruppe konnte ihr niedrigeres Gewicht halten"
+],
+"warum": "Während der Diätphase war langsames Abnehmen klar vorteilhaft, doch ein Jahr später glichen sich Körperzusammensetzung und Leistung wieder an."
+}
+}
+},
+{
+"id": "REC-117",
+"karte": {
+"kopf": "Erwachsene im Defizit · Zufallsstudien",
+"titel": "Zu wenig Schlaf halbierte den Fettverlust beim Abnehmen",
+"titel_hervor": "halbierte den Fettverlust",
+"setup": "Teilnehmende machten eine Diät und schliefen entweder ausreichend oder unter der Woche kürzer – teils mit Ausschlafen am Wochenende.",
+"zahl": {
+"label": "Weniger Fettverlust bei zu wenig Schlaf",
+"wert": "−55 %",
+"alltag": "gleichzeitig 60 % mehr Muskelverlust"
+},
+"kern": [
+"Bei 5,5 statt 8,5 Stunden im Bett bestand der Gewichtsverlust nur zu 25 % aus Fett.",
+"Schon rund eine Stunde weniger Schlaf unter der Woche bremste den Fettabbau.",
+"Am Wochenende länger auszuschlafen glich den Schlafmangel nicht aus."
+],
+"grenze": "Geprüft in kurzen bis achtwöchigen Diäten – wie stark Krafttraining den Muskelverlust abfedert, stand nicht im Fokus.",
+"fuer_dich": "Du schläfst unter der Woche oft unter sechs Stunden? Verkleinere dein Kaloriendefizit und bringe zuerst deinen Schlaf in Ordnung.",
+"labor": {
+"design": "Zwei RCTs im Energiedefizit: 8 Wo. −1 h/5 Nächte (+WE) bzw. 14 Tage 5,5 vs. 8,5 h Bettzeit",
+"teilnehmer": "Erwachsene im Kaloriendefizit (u. a. n=36 im 8-Wochen-RCT)",
+"ergebnis": "Fettverlust −55 % (0,6 vs. 1,4 kg, p=0,043); Magermasseverlust +60 % (2,4 vs. 1,5 kg, p=0,002)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du bist auf Diät, schläfst unter der Woche eine Stunde zu wenig und holst am Wochenende Schlaf nach. Was passiert mit deinem Fettabbau?",
+"richtig": "Du verlierst im Schnitt weniger Fett und mehr Muskelmasse",
+"falsch": [
+"Das Ausschlafen am Wochenende gleicht das Schlafdefizit gut aus",
+"Wenig Schlaf verbrennt durch längeres Wachsein mehr Körperfett",
+"Schlaf beeinflusst nur deine Stimmung, nicht den Fettabbau"
+],
+"warum": "Schlafmangel verschiebt den Gewichtsverlust weg vom Fett hin zur Muskelmasse – auch Wochenend-Nachholschlaf konnte das nicht ausgleichen."
+},
+"plus": {
+"frage": "Du steckst in einer Diät, kommst aber an fünf Nächten pro Woche auf unter sechs Stunden Schlaf. Welche Anpassung ist jetzt am sinnvollsten?",
+"richtig": "Das Defizit verkleinern und zuerst die Schlafdauer verbessern",
+"falsch": [
+"Das Defizit noch vergrößern, um den gebremsten Fettabbau auszugleichen",
+"Unter der Woche hart kürzen und am Sonntag zwölf Stunden schlafen",
+"Morgens nüchtern zusätzliches Ausdauertraining einbauen"
+],
+"warum": "Bei anhaltendem Schlafmangel droht erhöhter Muskelverlust; das Defizit Richtung Erhalt zu senken und den Schlaf zu stabilisieren schützt dich."
+},
+"labor": {
+"frage": "In kontrollierten Defizit-Studien verschob Schlafrestriktion den Gewichtsverlust stark Richtung Magermasse. Welche Stoffwechsel- und Hormonänderungen zeigten sich dabei?",
+"richtig": "Weniger Fettverbrennung, weniger Leptin sowie mehr Ghrelin und Hunger",
+"falsch": [
+"Höhere nächtliche Fettverbrennung bei stark sinkendem Hungergefühl",
+"Starker Anstieg von Leptin und dauerhafte Unterdrückung von Ghrelin",
+"Keinerlei messbare Hormonveränderungen im Vergleich zur Kontrolle"
+],
+"warum": "Schlafmangel dämpfte die nächtliche Lipolyse, senkte das Sättigungshormon Leptin und steigerte Ghrelin sowie subjektiven Hunger."
+}
+}
+},
+{
+"id": "REC-118",
+"karte": {
+"kopf": "Untrainierte Männer · Pilot-Zufallsstudie",
+"titel": "Besserer Schlaf ließ beim Krafttraining 1,8 kg Fett schmelzen",
+"titel_hervor": "1,8 kg Fett schmelzen",
+"setup": "Untrainierte Männer trainierten zehn Wochen lang zweimal pro Woche Kraft; eine Hälfte erhielt zusätzlich Tipps für besseren Schlaf.",
+"zahl": {
+"label": "Fettverlust mit Schlaftraining in 10 Wochen",
+"wert": "−1,8 kg",
+"alltag": "ohne Schlaftipps stieg das Fett um +0,8 kg"
+},
+"kern": [
+"Beide Gruppen bauten ähnlich viel Muskelmasse auf (+1,7 vs. +1,3 kg).",
+"Nur mit besseren Schlafgewohnheiten sank gleichzeitig auch das Körperfett.",
+"Das Paket enthielt weniger Bildschirmlicht, frühen Koffein-Stopp und Essenspause."
+],
+"grenze": "Pilotstudie mit 22 untrainierten Männern – welcher einzelne Schlaftipp am stärksten wirkte, lässt sich nicht trennen.",
+"fuer_dich": "Du startest Krafttraining für weniger Fett? Plane 8 Stunden Schlaf, 6 Stunden ohne Koffein und 2 Stunden Essenspause davor ein.",
+"labor": {
+"design": "RCT-Pilotstudie, 10 Wochen Krafttraining (2x/Wo.) mit vs. ohne Schlafhygiene-Intervention",
+"teilnehmer": "22 untrainierte Männer in Endanalyse (30 rekrutiert; ExS n=10, Ex n=12)",
+"ergebnis": "Fettmasse −1,8±0,8 vs. +0,8±1,0 kg (p=0,02); Magermasse +1,7±1,1 vs. +1,3±0,8 kg (p=0,29)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Zwei Gruppen von Einsteigern trainieren zehn Wochen lang gleich viel Kraft, eine verbessert zusätzlich ihren Schlaf. Was unterschied die Schlafgruppe?",
+"richtig": "Sie baute Muskeln auf und verlor gleichzeitig spürbar Körperfett",
+"falsch": [
+"Sie baute deutlich weniger Muskeln auf durch die frühe Bettruhe",
+"Beide Gruppen verloren am Ende exakt dieselbe Menge Körperfett",
+"Sie nahm durch die längere Schlafdauer an Körperfett zu"
+],
+"warum": "Alleiniges Krafttraining steigerte nur die Muskelmasse, während besseres Schlafverhalten zusätzlich 1,8 kg Körperfett abbaute."
+},
+"plus": {
+"frage": "Du startest ein Krafttrainingsprogramm für Fettabbau und willst begleitend deinen Schlaf optimieren. Welche Abendroutine unterstützt das am besten?",
+"richtig": "Koffein früh stoppen, Licht dimmen und vor dem Schlaf nicht essen",
+"falsch": [
+"Kurz vor dem Schlafen noch einen Espresso und eine große Mahlzeit",
+"Das Krafttraining auf spät in die Nacht bei hellem Licht legen",
+"Unter der Woche kurz schlafen und am Wochenende lange nachholen"
+],
+"warum": "Ein Ziel von acht Stunden Schlaf, früher Koffein-Stopp, weniger Bildschirmlicht und zwei Stunden Essenspause stützten den Fettabbau."
+},
+"labor": {
+"frage": "In einer zehnwöchigen Pilotstudie mit 22 untrainierten Männern führte Krafttraining plus Schlafhygiene zu signifikantem Fettverlust. Was lässt sich methodisch nicht ableiten?",
+"richtig": "Welcher einzelne Baustein der Schlafhygiene den größten Effekt hatte",
+"falsch": [
+"Ob sich die Fettmasse zwischen beiden Gruppen unterschied",
+"Wie oft pro Woche das Ganzkörper-Krafttraining stattfand",
+"Ob die Teilnehmenden überhaupt Muskelmasse aufbauten"
+],
+"warum": "Da mehrere Verhaltensregeln gleichzeitig eingesetzt wurden, bleibt der isolierte Effekt von Licht, Koffein oder Essenszeit offen."
+}
+}
+},
+{
+"id": "REG-101",
+"karte": {
+"kopf": "Sportler · 69 Studien zusammengefasst",
+"titel": "Nach wenig Schlaf sinkt die Leistung im Schnitt um rund 8 Prozent",
+"titel_hervor": "sinkt die Leistung",
+"setup": "Trainierende absolvierten Kraft-, Ausdauer- und Techniktests nach normalem Schlaf und nach Nächten mit Schlafmangel.",
+"zahl": {
+"label": "Mittlerer Leistungsabfall am Folgetag",
+"wert": "−7,6 %",
+"alltag": ""
+},
+"kern": [
+"Technik und Koordination leiden am stärksten, um rund ein Fünftel.",
+"Schwere Maximalkraft fällt morgens kaum ab, abends deutlich mehr.",
+"Jede zusätzliche Wachstunde vor dem Training kostet im Schnitt 0,4 %."
+],
+"grenze": "Fast neun von zehn Teilnehmenden waren Männer, und die Schlafprotokolle unterschieden sich stark.",
+"fuer_dich": "Weniger als sechs Stunden geschlafen? Trainiere Kraft lieber morgens und verschiebe Technik oder hartes HIIT.",
+"labor": {
+"design": "Systematisches Review mit Meta-Analyse, normaler Schlaf vs. akuter Schlafmangel",
+"teilnehmer": "69 Studien, 227 Messwerte, 959 Teilnehmende (89 % Männer)",
+"ergebnis": "−7,56 % (95 % KI −11,9 bis −3,13; p = 0,001); Skill −20,9 %, Maximalkraft −2,85 %"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du hast eine Nacht viel zu wenig geschlafen. Welche Trainingsart leidet am nächsten Tag meist am stärksten?",
+"richtig": "Anspruchsvolle Technik- und Koordinationsübungen",
+"falsch": [
+"Schwere Einzelversuche beim Krafttraining morgens",
+"Kurzes lockeres Aufwärmen vor dem Sport",
+"Alle Trainingsarten leiden gleich stark"
+],
+"warum": "Koordination und Technik fallen nach Schlafmangel rund ein Fünftel ab, während morgendliche Maximalkraft kaum leidet."
+},
+"plus": {
+"frage": "Du hast unter sechs Stunden geschlafen, willst aber trotzdem trainieren. Wie planst du den Tag am sinnvollsten?",
+"richtig": "Schwere Kraft morgens machen, Technik und HIIT verschieben",
+"falsch": [
+"Schwere Kraft auf den späten Abend verschieben",
+"Gerade jetzt hochkomplexe Technik und HIIT üben",
+"Abends einfach mit unveränderten Zielwerten trainieren"
+],
+"warum": "Morgens bleibt die Maximalkraft fast erhalten, während die Leistung mit jeder Wachstunde bis zum Abend weiter sinkt."
+},
+"labor": {
+"frage": "In 69 Untersuchungen wurde die Sportleistung nach akutem Schlafmangel getestet. Welcher Unterschied zeigte sich zwischen spätem Zubettgehen und frühem Aufwachen?",
+"richtig": "Frühes Aufwachen senkte die Leistung, spätes Zubettgehen kaum",
+"falsch": [
+"Spätes Zubettgehen senkte die Leistung deutlich stärker",
+"Beide Formen zeigten identische Leistungseinbußen",
+"Keine der beiden Formen beeinflusste die Leistung"
+],
+"warum": "Bei normaler Aufwachzeit (Early Restriction) fand sich kein signifikanter Gesamteffekt, wohl aber bei frühem Aufwachen."
+}
+}
+},
+{
+"id": "REG-102",
+"karte": {
+"kopf": "Erwachsene · 2 kontrollierte Laborstudien",
+"titel": "Starker Schlafmangel bremst den Muskelaufbau um fast ein Fünftel",
+"titel_hervor": "bremst den Muskelaufbau",
+"setup": "Teilnehmende schliefen fünf Nächte nur vier Stunden oder blieben eine Nacht ganz wach, während ihre Muskelproteinsynthese gemessen wurde.",
+"zahl": {
+"label": "Weniger Muskelaufbau nach Schlafmangel",
+"wert": "−18 bis −19 %",
+"alltag": "fast ein Fünftel weniger"
+},
+"kern": [
+"Schon eine einzelne durchwachte Nacht senkt Testosteron und erhöht Cortisol.",
+"Drei kurze HIIT-Einheiten hielten den Muskelaufbau trotz Schlafmangel stabil.",
+"Wenig Schlaf signalisiert dem Körper eher Abbau statt Aufbau von Muskelmasse."
+],
+"grenze": "Kleine Kurzzeitstudien über ein bis fünf Nächte – bei Frauen und sechs Stunden Schlaf ist die Lage noch offen.",
+"fuer_dich": "Mehrere Nächte unter fünf Stunden geschlafen? Streiche das Training nicht, sondern kürze das Volumen bei hoher Intensität.",
+"labor": {
+"design": "Zwei RCTs im Labor: 5 Nächte 4 vs. 8 Std. (teils mit HIIT) und 1 Nacht 0 Std. Schlaf",
+"teilnehmer": "24 Teilnehmende (5-Nächte-Studie) und 13 Teilnehmende (1-Nacht-Studie)",
+"ergebnis": "MPS −19 % (1,24 vs. 1,53 %/Tag; mit HIIT 1,61 %/Tag) bzw. −18 %; Cortisol +21 %, Testosteron −24 %"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du schläfst mehrere Nächte hintereinander nur vier Stunden. Was passiert dabei mit dem Muskelaufbau im Körper?",
+"richtig": "Die Muskelbildung sinkt um fast ein Fünftel",
+"falsch": [
+"Die Muskelbildung bleibt im Schnitt unverändert",
+"Der Körper bildet zum Ausgleich mehr Muskeln",
+"Die Muskeln reagieren nur nach wochenlangem Mangel"
+],
+"warum": "Bereits eine durchwachte Nacht oder fünf Nächte mit vier Stunden Schlaf senken die Muskelproteinsynthese um 18 bis 19 %."
+},
+"plus": {
+"frage": "Nach drei Nächten mit unter fünf Stunden Schlaf steht dein Training an. Was schützt deine Muskelmasse am besten?",
+"richtig": "Kurz und intensiv trainieren, aber mit weniger Volumen",
+"falsch": [
+"Das Training mehrere Tage ganz ausfallen lassen",
+"Das Trainingsvolumen erhöhen, um das Defizit auszugleichen",
+"Nur locker dehnen und jede intensive Belastung meiden"
+],
+"warum": "Intensive Reize wie kurzes HIIT oder reduziertes Krafttraining können den schlafbedingten Abfall der Proteinsynthese abfangen."
+},
+"labor": {
+"frage": "In einer Laborstudie mit fünf Nächten à vier Stunden Bettzeit wurde die myofibrilläre Proteinsynthese mit und ohne drei HIIT-Einheiten gemessen. Was zeigte sich?",
+"richtig": "HIIT verhinderte den Abfall der Proteinsynthese im Mittel",
+"falsch": [
+"HIIT verstärkte den Rückgang der Proteinsynthese deutlich",
+"HIIT wirkte nur in Kombination mit hohem Kraftvolumen",
+"Die Proteinsynthese fiel in beiden Gruppen gleich stark ab"
+],
+"warum": "Ohne Training fiel die Proteinsynthese um 19 %, während drei HIIT-Einheiten sie auf dem Niveau von 8 Stunden Schlaf hielten."
+}
+}
+},
+{
+"id": "REG-103",
+"karte": {
+"kopf": "Übergewichtige Erwachsene · 2 Diät-Studien",
+"titel": "Zu wenig Schlaf beim Abnehmen halbiert den Fettverlust",
+"titel_hervor": "halbiert den Fettverlust",
+"setup": "Erwachsene hielten dasselbe Kaloriendefizit ein und schliefen dabei entweder ausreichend oder deutlich verkürzt.",
+"zahl": {
+"label": "Weniger Fettverlust bei kurzem Schlaf",
+"wert": "−55 %",
+"alltag": "0,6 statt 1,4 kg Fett in 14 Tagen"
+},
+"kern": [
+"Auf der Waage nahmen beide Gruppen gleich viel ab, nur verlor eine mehr Muskeln.",
+"In zwei Wochen ging mit 5,5 Stunden Schlaf 60 % mehr fettfreie Masse verloren.",
+"Ausschlafen am Wochenende glich den Schlafmangel der Woche nicht aus."
+],
+"grenze": "Die Teilnehmenden machten kein schweres Krafttraining – wie stark Training und viel Protein schützen, ist offen.",
+"fuer_dich": "Im Defizit unter sieben Stunden Schlaf pro Werktag? Verkleinere dein Defizit etwas und achte besonders auf genug Protein.",
+"labor": {
+"design": "Zwei RCTs im Kaloriendefizit: 14-Tage-Crossover (5,5 vs. 8,5 Std.) und 8-Wochen-RCT",
+"teilnehmer": "10 Erwachsene (14 Tage) und 36 übergewichtige Erwachsene (8 Wochen)",
+"ergebnis": "Fettverlust −55 % (p = 0,043), Magermasseverlust +60 % (p = 0,002); Fettanteil 58,4 vs. 82,7 %"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Zwei Menschen essen gleich wenig zum Abnehmen, aber einer schläft deutlich zu kurz. Was passiert auf der Waage und im Körper?",
+"richtig": "Beide nehmen ähnlich ab, aber der Kurzschläfer verliert mehr Muskeln",
+"falsch": [
+"Wer kurz schläft, verliert deutlich mehr Körperfett pro Woche",
+"Beide verlieren denselben Anteil an Körperfett und Muskelmasse",
+"Wer kurz schläft, verliert gar kein Gewicht auf der Waage"
+],
+"warum": "Bei gleichem Gesamtgewichtsverlust sinkt der Fettanteil deutlich, während wesentlich mehr fettfreie Masse abgebaut wird."
+},
+"plus": {
+"frage": "Du bist in einer Diät, schläfst werktags aber rund eine Stunde zu wenig und schläfst am Wochenende aus. Wie wirkt sich das aus?",
+"richtig": "Ausschlafen reicht nicht – ein höherer Anteil Muskelmasse geht verloren",
+"falsch": [
+"Das Ausschlafen am Wochenende gleicht den Schlafmangel voll aus",
+"Das Defizit sollte vergrößert werden, um den Effekt auszugleichen",
+"Die Körperzusammensetzung leidet erst ab unter vier Stunden Schlaf"
+],
+"warum": "Selbst mit fast einer Stunde Nachholschlaf am Wochenende verschob sich der Gewichtsverlust deutlich Richtung Muskelabbau."
+},
+"labor": {
+"frage": "Übergewichtige Erwachsene machten eine kontrollierte Diät mit ausreichendem oder verkürztem Schlaf. Welche Grenze schränkt die Übertragung auf Kraftsportler ein?",
+"richtig": "Es fehlten schweres Krafttraining und eine sehr hohe Proteinzufuhr",
+"falsch": [
+"Die Kalorienzufuhr war zwischen den Schlafgruppen nicht gleich",
+"Es wurde nur das Körpergewicht, nicht die Körperzusammensetzung gemessen",
+"Der Effekt trat nur bei Frauen, aber nicht bei Männern auf"
+],
+"warum": "Beide Kernstudien liefen ohne begleitendes Hypertrophietraining; wie stark Krafttraining und viel Protein abpuffern, ist noch unklar."
+}
+}
+},
+{
+"id": "REG-104",
+"karte": {
+"kopf": "Jugendliche Sportler · 7 Beobachtungsstudien",
+"titel": "Jugendliche mit unter acht Stunden Schlaf verletzen sich öfter",
+"titel_hervor": "verletzen sich öfter",
+"setup": "Jugendliche Sportler gaben ihre übliche Schlafdauer an und wurden über Monate hinweg auf Sportverletzungen beobachtet.",
+"zahl": {
+"label": "Höheres Verletzungsrisiko unter 8 Std.",
+"wert": "1,7-fach",
+"alltag": "rund 70 % höheres Risiko"
+},
+"kern": [
+"Das Risiko blieb auch dann erhöht, wenn andere Faktoren herausgerechnet wurden.",
+"Eine Auswertung von sieben Studien bestätigte den Zusammenhang bei chronischem Mangel.",
+"Jugendliche im Wachstum brauchen deutlich mehr Schlaf als viele Erwachsene."
+],
+"grenze": "Schlaf wurde nur abgefragt, nicht gemessen – Schulstress oder andere Faktoren könnten mitwirken.",
+"fuer_dich": "Unter 19 und in der letzten Woche unter acht Stunden geschlafen? Steigere dein Volumen nicht und nimm die Intensität zurück.",
+"labor": {
+"design": "Prospektive Kohorte (21 Monate) und Meta-Analyse von 7 Beobachtungsstudien",
+"teilnehmer": "112 Jugendliche (12–18 Jahre) sowie 7 gepoolte Studien",
+"ergebnis": "Multivariates RR = 1,7 (95 % KI 1,0–3,0; p = 0,04); Meta-Analyse OR = 1,58 (95 % KI 1,05–2,37)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Ein jugendlicher Sportler schläft dauerhaft weniger als acht Stunden pro Nacht. Welcher Zusammenhang zeigt sich dabei?",
+"richtig": "Er verletzt sich im Sport deutlich häufiger",
+"falsch": [
+"Er gewöhnt sich daran ohne Folgen für den Körper",
+"Er verletzt sich nur, wenn er zusätzlich krank ist",
+"Das Risiko steigt erst unter fünf Stunden Schlaf"
+],
+"warum": "Bei Jugendlichen war dauerhafter Schlaf unter acht Stunden mit einem rund 1,7-fach höheren Verletzungsrisiko verbunden."
+},
+"plus": {
+"frage": "Du bist unter 19 und dein Wochenschnitt beim Schlaf lag unter acht Stunden. Wie solltest du deine nächste Trainingswoche steuern?",
+"richtig": "Volumen nicht steigern und die Intensität spürbar senken",
+"falsch": [
+"Das Volumen normal steigern, solange kein Muskelkater da ist",
+"Intensität erhöhen, um die Einheiten kürzer zu halten",
+"Nur das Aufwärmen verlängern und sonst nichts anpassen"
+],
+"warum": "Lastspitzen bei chronischem Schlafmangel erhöhen das Risiko – Volumen halten und Intensität drosseln entlastet den Körper."
+},
+"labor": {
+"frage": "In Beobachtungsstudien wurde die per Fragebogen erhobene Schlafdauer jugendlicher Athleten mit Verletzungen verknüpft. Was schränkt die Aussagekraft ein?",
+"richtig": "Selbstberichte sind ungenau und Stress lässt sich schwer trennen",
+"falsch": [
+"Der Zusammenhang verschwand in der multivariaten Analyse",
+"Es wurden ausschließlich Freizeit- und keine Leistungssportler erfasst",
+"Die Meta-Analyse fand überhaupt keinen statistischen Effekt"
+],
+"warum": "Fragebögen unterliegen Erinnerungsfehlern, und Beobachtungsdaten beweisen keine Kausalität unabhängig von Schulstress."
+}
+}
+},
+{
+"id": "REG-105",
+"karte": {
+"kopf": "Sportler · 7 Studien zusammengefasst",
+"titel": "Eine einzelne kurze Nacht erhöht das Verletzungsrisiko wohl kaum",
+"titel_hervor": "erhöht das Verletzungsrisiko wohl kaum",
+"setup": "Beobachtungsstudien verglichen die Schlafdauer in der Nacht direkt vor dem Sport zwischen verletzten und unverletzten Athleten.",
+"zahl": null,
+"kern": [
+"Die Schlafdauer vor der Verletzung war im Schnitt fast gleich wie an normalen Tagen.",
+"Bisherige Daten bei Erwachsenen zeigen keinen klaren Zusammenhang nach einer Nacht.",
+"Die Leistung kann trotzdem sinken, auch wenn das Verletzungsrisiko nicht sofort steigt."
+],
+"grenze": "Zu akutem Schlafmangel gibt es bisher wenige Studien mit teils widersprüchlichen Ergebnissen.",
+"fuer_dich": "Nur eine Nacht schlecht geschlafen bei sonst gutem Schnitt? Kein Grund zur Panik – richte das Training nach deiner Tagesform.",
+"labor": {
+"design": "Systematisches Review mit Meta-Analyse (2 Studien zu akutem Schlaf) und Kohorten",
+"teilnehmer": "Athleten aus 7 Beobachtungsstudien und prospektiven Kohorten",
+"ergebnis": "Akuter Schlaf: RR = 0,98 (95 % KI 0,58–1,70; p = 0,93), Cohen's d = 0,06 (n. s.)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du schläfst sonst gut, hattest aber einmalig eine schlechte Nacht. Steigt dadurch das Verletzungsrisiko beim Sport sofort stark an?",
+"richtig": "Bisherige Daten zeigen keinen klaren Anstieg nach einer Nacht",
+"falsch": [
+"Schon eine kurze Nacht verdoppelt das Risiko deutlich",
+"Jede Bewegung ist am nächsten Tag gefährlich für Gelenke",
+"Nur lockeres Laufen geht noch, Krafttraining wird riskant"
+],
+"warum": "In bisherigen Beobachtungen unterschied sich die Schlafdauer direkt vor einer Verletzung im Schnitt kaum von normalen Nächten."
+},
+"plus": {
+"frage": "Dein Wochenschnitt liegt über sieben Stunden, nur letzte Nacht waren es unter sechs. Wie gehst du an dein Training heran?",
+"richtig": "Nach Tagesform trainieren und bei Bedarf das Tempo anpassen",
+"falsch": [
+"Aus Angst vor Verletzungen sofort eine Pause einlegen",
+"Die Einheit unbedingt mit maximalen Gewichten durchziehen",
+"Das Risiko ist genauso hoch wie bei monatelangem Schlafmangel"
+],
+"warum": "Eine einzelne kurze Nacht zeigt bisher kein klar erhöhtes Verletzungsrisiko – deine aktuelle Tagesform ist der bessere Maßstab."
+},
+"labor": {
+"frage": "Kohortenstudien und eine Meta-Analyse prüften den Zusammenhang zwischen einer einzelnen kurzen Nacht und akuten Sportverletzungen. Wie ist die Beweislage?",
+"richtig": "Schwach und widersprüchlich, im Mittel kein signifikanter Effekt",
+"falsch": [
+"Eindeutig bewiesen mit stark erhöhtem relativem Risiko",
+"Durch zahlreiche große kontrollierte Experimente klar widerlegt",
+"Nur für Erwachsene eindeutig belegt, aber nicht für Jugendliche"
+],
+"warum": "Mit einem relativen Risiko von 0,98 und nur zwei gepoolten Studien ist die Datenlage dünn und bei Einzelbefunden uneinheitlich."
+}
+}
+},
+{
+"id": "REG-106",
+"karte": {
+"kopf": "Sportler · Systematische Übersicht",
+"titel": "Mehr Bettzeit verbessert die Leistung, reine Schlaftipps kaum",
+"titel_hervor": "Mehr Bettzeit verbessert die Leistung",
+"setup": "Übersichtsarbeiten verglichen allgemeine Schlafaufklärung mit gezielten Plänen, bei denen Sportler ihre Bettzeit über Wochen ausdehnten.",
+"zahl": null,
+"kern": [
+"Wer über drei bis sieben Wochen mehr schläft, verbessert Sprint, Wurf und Ausdauer.",
+"Strukturierte Schlafpläne verlängerten den Schlaf in Einzelstudien um über eine Stunde.",
+"Sehr frühe Morgentrainings machen gute Schlafgewohnheiten oft wieder zunichte."
+],
+"grenze": "Die Übersicht fasste die Studien nur beschreibend zusammen, ohne einen gemeinsamen Mittelwert zu berechnen.",
+"fuer_dich": "Schläfst du meist unter sieben Stunden? Plane für drei bis sieben Wochen eine Stunde früher ins Bett, statt nur Tipps zu lesen.",
+"labor": {
+"design": "Systematisches Review (qualitativ) zu Schlafhygiene-Aufklärung und Sleep Extension",
+"teilnehmer": "Athleten verschiedener Sportarten aus mehreren Interventionsstudien",
+"ergebnis": "Kein gepoolter Wert; Einzelstudien zur Schlafdauer ES g = 0,95 bis 1,0 (+1,4 bis +1,6 Std.)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du liest allgemeine Schlaftipps, gehst aber weiter genauso spät ins Bett wie sonst. Bringt das deiner Sportleistung spürbar etwas?",
+"richtig": "Meist kaum, solange du nicht wirklich länger im Bett liegst",
+"falsch": [
+"Ja, schon das Wissen über guten Schlaf steigert die Leistung",
+"Ja, die Schlafqualität ersetzt die fehlenden Stunden ganz",
+"Nein, länger schlafen hilft Sportlern grundsätzlich nicht"
+],
+"warum": "Reine Aufklärung über Schlafhygiene verbessert die Leistung kaum – entscheidend ist, die tatsächliche Bettzeit zu verlängern."
+},
+"plus": {
+"frage": "Dein Schlaf liegt im Schnitt unter sieben Stunden. Welche Maßnahme hat die besten Chancen, deine Leistung messbar zu steigern?",
+"richtig": "Feste Schlafregeln mit einer Stunde mehr Bettzeit über Wochen",
+"falsch": [
+"Einmalig ein Merkblatt zur Schlafhygiene durchlesen",
+"Das Training noch früher in den Morgen verlegen",
+"Nur an einem einzelnen Wochenende länger schlafen"
+],
+"warum": "Gezielte Schlafverlängerung um 60 bis 90 Minuten über drei bis sieben Wochen verbesserte Sprint-, Wurf- und Ausdauerwerte."
+},
+"labor": {
+"frage": "Übersichtsarbeiten werteten Schlafhygiene-Programme bei Athleten aus. Warum blieb reine Schlafaufklärung oft ohne messbaren Effekt auf die Wettkampfleistung?",
+"richtig": "Sie wurde selten langfristig umgesetzt und verlängerte die Bettzeit kaum",
+"falsch": [
+"Schlaf spielt für objektive Wettkampfleistungen eine Nebenrolle",
+"Die Teilnehmenden schliefen bereits über neun Stunden pro Nacht",
+"Schlafhygiene wirkte nur im Ausdauersport, nicht im Kraftsport"
+],
+"warum": "Ohne konkrete Zeitfenstersteuerung scheitert reine Aufklärung an der Umsetzung, und frühe Morgentrainings wirken dagegen."
+}
+}
+},
+{
+"id": "REG-107",
+"karte": {
+"kopf": "Sportler · 18 Studien zusammengefasst",
+"titel": "Ein Nickerchen am frühen Nachmittag steigert die Leistung messbar",
+"titel_hervor": "steigert die Leistung messbar",
+"setup": "Athleten machten am frühen Nachmittag unterschiedlich lange Nickerchen und absolvierten danach Kraft-, Sprung- oder Ausdauertests.",
+"zahl": {
+"label": "Mehr Sprungkraft nach kurzem Tagschlaf",
+"wert": "+3,5 bis +3,7 %",
+"alltag": ""
+},
+"kern": [
+"Am besten liegt der Tagschlaf zwischen 13 und 16 Uhr, um die Nacht nicht zu stören.",
+"20 bis 30 Minuten reichen oft schon und halten die Müdigkeit nach dem Aufwachen klein.",
+"Ein 90-Minuten-Schlaf bringt mehr Schub, braucht aber viel Zeit zum Wachwerden."
+],
+"grenze": "Oft wurde nur die Liegezeit statt des echten Schlafs gemessen, und die Teilnehmenden wussten Bescheid.",
+"fuer_dich": "Müde vor der Abendeinheit? Schlafe zwischen 13 und 16 Uhr 20 bis 30 Minuten – oder 90 Minuten mit mindestens einer Stunde Puffer.",
+"labor": {
+"design": "Systematisches Review zu Dauer und Timing von Tagschlaf vs. kein Nickerchen",
+"teilnehmer": "18 Studien, davon 14 direkt an Athleten",
+"ergebnis": "Sprungkraft +3,5 bis +3,7 %; Teamsport-Ausdauer SMD = 0,96 (95 % KI 0,62–1,29); 90 vs. 40 min d = 1,74"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du willst dich vor dem Abendtraining kurz hinlegen, hast aber nicht viel Zeit zum Wachwerden. Welche Dauer passt am besten?",
+"richtig": "Etwa 20 bis 30 Minuten am frühen Nachmittag",
+"falsch": [
+"Mindestens zwei Stunden bis kurz vor dem Start",
+"Erst ab 18 Uhr für eine volle Stunde",
+"Tagschlaf macht die Beine für das Abendtraining schwer"
+],
+"warum": "Kurze Nickerchen von 20 bis 30 Minuten steigern die Leistungsfähigkeit und vermeiden starke Schlaftrunkenheit."
+},
+"plus": {
+"frage": "Zwischen zwei harten Einheiten planst du einen langen 90-Minuten-Nap. Worauf musst du vor dem zweiten Training achten?",
+"richtig": "Mindestens ein bis zwei Stunden Wachzeit zum Hochfahren einplanen",
+"falsch": [
+"Direkt nach dem Aufwachen sofort mit Maximalgewichten starten",
+"Den Nap möglichst spät am Abend nach 17 Uhr ansetzen",
+"Einen langen Nap auch bei nächtlichen Einschlafproblemen nutzen"
+],
+"warum": "Nach einem 90-Minuten-Nap ist der Leistungszuwachs größer, aber die Schlaftrunkenheit braucht 60 bis 120 Minuten Puffer."
+},
+"labor": {
+"frage": "In 18 Untersuchungen zum Tagschlaf bei Sportlern zeigten sich klare Leistungsgewinne. Welche methodische Schwäche trat besonders häufig auf?",
+"richtig": "Fehlende Verblindung und Messung der Liegezeit statt des Schlafs",
+"falsch": [
+"Die Studien untersuchten fast ausschließlich Senioren ohne Training",
+"Es wurden ausschließlich kurze Naps unter zehn Minuten getestet",
+"Ausdauerleistungen wurden in keiner der Studien erhoben"
+],
+"warum": "Über 88 % der Primärstudien waren unverblindet und erfassten nur die Liegezeit statt einer objektiven Schlafmessung per EEG."
+}
+}
+},
+{
+"id": "REG-108",
+"karte": {
+"kopf": "Sportler · 2 Übersichtsarbeiten",
+"titel": "Auslaufen senkt Laktat, rettet aber kaum die Leistung am Folgetag",
+"titel_hervor": "rettet aber kaum die Leistung",
+"setup": "Übersichten verglichen aktives Auslaufen oder lockeres Ausradeln nach dem Training mit einfachem Ausruhen im Hinblick auf Erholung und Folgeleistung.",
+"zahl": null,
+"kern": [
+"Blutlaktat baut sich zwar schneller ab, doch die Kraft am Folgetag profitiert meist nicht.",
+"Ob Muskelkater spürbar weniger wird, zeigen die beiden Übersichten widersprüchlich.",
+"Ein zu langes Cool-Down kann das Wiederauffüllen der Energiespeicher im Muskel stören."
+],
+"grenze": "Eine Meta-Analyse fand weniger Muskelkater, die meisten Einzelstudien dagegen kaum einen Vorteil – das Bild bleibt uneinheitlich.",
+"fuer_dich": "Nach einer harten Einheit auslaufen? Halte es bei 10 bis 15 Minuten sehr locker – und spare es dir bei zwei Einheiten am selben Tag.",
+"labor": {
+"design": "Narratives Review zu aktivem Cool-Down (<= 1 Std. nach Belastung) und Meta-Analyse (k = 99)",
+"teilnehmer": "Trainierte und Freizeitsportler aus kontrollierten Regenerationsstudien",
+"ergebnis": "DOMS g = −0,94 (Meta-Analyse); kein signifikanter Effekt auf Ermüdung, CK, IL-6, CRP oder Folgeleistung"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Nach dem Sport zehn Minuten auslaufen – macht dich das am nächsten Tag zuverlässig wieder leistungsfähiger?",
+"richtig": "Meist nicht, für den nächsten Tag zeigt sich kaum ein Vorteil",
+"falsch": [
+"Ja, ohne Auslaufen bleibt der Muskel tagelang blockiert",
+"Ja, Auslaufen senkt das Verletzungsrisiko deutlich",
+"Ja, es verhindert Entzündungen im Muskel zuverlässig"
+],
+"warum": "Ein aktives Cool-Down baut Laktat schneller ab, verbessert aber in den meisten Studien weder Folgetagsleistung noch Verletzungsrisiko."
+},
+"plus": {
+"frage": "Du hast heute Morgen eine harte Einheit absolviert und trainierst heute Abend erneut. Wie sinnvoll ist ein langes aktives Cool-Down?",
+"richtig": "Lieber weglassen, um die Glykogenspeicher nicht auszubremsen",
+"falsch": [
+"Unbedingt 30 Minuten ausradeln, um die Speicher zu füllen",
+"Möglichst intensiv auslaufen, damit Laktat schneller sinkt",
+"Nur sinnvoll, wenn du dabei auf Essen und Trinken verzichtest"
+],
+"warum": "Längere aktive Erholung kann die Glykogen-Resynthese in Typ-I-Muskelfasern stören, was vor einer zweiten Einheit ungünstig ist."
+},
+"labor": {
+"frage": "Zwei Übersichtsarbeiten verglichen aktives Cool-Down nach dem Training mit passiver Ruhe. Wo widersprachen sich die Befunde am deutlichsten?",
+"richtig": "Beim subjektiven Muskelkater zwischen gepoolter Analyse und Einzelstudien",
+"falsch": [
+"Beim Laktatabbau, der in einer Arbeit sogar langsamer verlief",
+"Bei der Kreatinkinase, die in beiden Arbeiten stark absank",
+"Bei der Folgetagsleistung, die in fast allen Studien stark stieg"
+],
+"warum": "Die Meta-Analyse fand einen großen Effekt auf DOMS (g = −0,94), während die Einzelstudien-Übersicht meist keinen Vorteil sah."
+}
+}
+},
+{
+"id": "REG-109",
+"karte": {
+"kopf": "Sportler · 99 Studien zusammengefasst",
+"titel": "Ein Kältebad nach hartem Sport lindert Muskelkater und Müdigkeit",
+"titel_hervor": "lindert Muskelkater und Müdigkeit",
+"setup": "Nach intensiven Belastungen stiegen Sportler für 10 bis 15 Minuten in 10 bis 15 Grad kaltes Wasser oder ruhten sich einfach aus.",
+"zahl": null,
+"kern": [
+"Besonders die gefühlte Erschöpfung ging in den Tagen danach deutlich zurück.",
+"Auch der verzögerte Muskelkater fiel im Schnitt spürbar milder aus.",
+"Blutwerte für Muskelschäden und Entzündungen sanken ebenfalls leicht."
+],
+"grenze": "Kaltes Wasser lässt sich nicht verheimlichen – Erwartungseffekte können bei Schmerz und Müdigkeit mitspielen.",
+"fuer_dich": "Steht in den nächsten zwei Tagen schon der nächste Wettkampf an? Nutze danach 10 bis 15 Minuten Kaltwasser bei 10 bis 15 °C.",
+"labor": {
+"design": "Systematisches Review mit Meta-Analyse zu Regenerationsmethoden (u. a. Kaltwasser 10–15 °C)",
+"teilnehmer": "Sportler aus 99 kontrollierten Regenerationsstudien",
+"ergebnis": "DOMS SMD = −0,47 (95 % KI −0,77 bis −0,18); Ermüdung SMD = −1,16 (95 % KI −1,94 bis −0,39)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du steigst nach einem harten Spiel oder Lauf in ein kaltes Bad. Was bringt das in den nächsten Tagen vor allem?",
+"richtig": "Weniger Muskelkater und geringere gefühlte Erschöpfung",
+"falsch": [
+"Sofortigen Muskelzuwachs durch den Kältereiz",
+"Deutlich höhere Maximalkraft direkt nach dem Bad",
+"Erhöhte Muskelspannung und längeren Muskelkater"
+],
+"warum": "Kaltes Wasser von 10 bis 15 °C über 10 bis 15 Minuten senkt sowohl verzögerten Muskelkater als auch die wahrgenommene Ermüdung."
+},
+"plus": {
+"frage": "Bei einem Turnierwochenende spielst du am Samstag und Sonntag hart. Wann passt ein Kältebad am besten?",
+"richtig": "Direkt nach der Belastung für 10 bis 15 Minuten bei 10 bis 15 °C",
+"falsch": [
+"Unmittelbar vor dem Aufwärmen für eine halbe Stunde",
+"In eiskaltem Wasser unter zwei Grad für über 30 Minuten",
+"Nur nach reinen Hypertrophie-Einheiten zum Muskelaufbau"
+],
+"warum": "Wenn schnelle Erholung zwischen Wettkämpfen zählt und Muskelaufbau nicht im Fokus steht, wirkt dieses Protokoll am zuverlässigsten."
+},
+"labor": {
+"frage": "In einer Meta-Analyse senkte Kaltwasserimmersion (10 bis 15 °C) subjektive Ermüdung und Muskelkater. Welche Einschränkung gilt für diese Befunde?",
+"richtig": "Fehlende Verblindung macht Placebo-Effekte bei subjektiven Werten möglich",
+"falsch": [
+"Frauen profitierten bei der Schmerzreduktion deutlich stärker als Männer",
+"Die Effekte zeigten sich nur bei Blutmarkern, nicht beim Befinden",
+"Es wurden ausschließlich untrainierte Personen untersucht"
+],
+"warum": "Da niemand im Kältebad verblindet werden kann, lassen sich Erwartungseffekte nicht ausschließen; zudem sprachen Männer stärker an."
+}
+}
+},
+{
+"id": "REG-110",
+"karte": {
+"kopf": "Kraftsportler · 8 Studien zusammengefasst",
+"titel": "Eisbäder direkt nach dem Krafttraining bremsen den Muskelaufbau",
+"titel_hervor": "bremsen den Muskelaufbau",
+"setup": "In mehrwöchigen Programmen trainierten Gruppen identisch Kraft – eine nahm kurz danach ein Kältebad, die andere nicht.",
+"zahl": null,
+"kern": [
+"Die Wahrscheinlichkeit für geringeres Muskelwachstum lag bei knapp 96 Prozent.",
+"Das Kältebad fand in allen Studien innerhalb von 15 Minuten nach dem Training statt.",
+"Anpassungen aus dem Ausdauertraining werden durch Kälte dagegen nicht ausgebremst."
+],
+"grenze": "Ob einige Stunden Abstand den Bremseffekt vermeiden, ist noch ungeprüft – und Frauen waren kaum vertreten.",
+"fuer_dich": "Dein Ziel ist Muskelaufbau? Verzichte nach dem Krafttraining auf das Eisbad und lege es auf Ruhetage oder Ausdauertage.",
+"labor": {
+"design": "Systematisches Review mit Bayes'scher Meta-Analyse (4–12 Wochen, Kälte <= 15 min post)",
+"teilnehmer": "8 Trainingsstudien, überwiegend männliche Teilnehmende",
+"ergebnis": "cSMD = −0,22 (95 % CrI −0,47 bis 0,04); p(<0) = 95,7 %; SMD 0,14 vs. 0,36 ohne Kälte"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du machst regelmäßig Krafttraining für mehr Muskeln und gehst danach jedes Mal ins Eisbad. Wie wirkt sich das über Wochen aus?",
+"richtig": "Deine Muskeln wachsen im Schnitt spürbar langsamer",
+"falsch": [
+"Deine Muskeln wachsen durch die Kälte deutlich schneller",
+"Die Kälte hat keinen Einfluss auf den Muskelaufbau",
+"Der Effekt bremst nur das Ausdauertraining, nicht die Muskeln"
+],
+"warum": "Regelmäßige Kältebäder direkt nach dem Krafttraining dämpften den Muskelzuwachs im Vergleich zu Training ohne Kälte deutlich."
+},
+"plus": {
+"frage": "Du liebst Eisbäder, steckst aber mitten in einer Hypertrophie-Phase. Wie baust du beides am klügsten in deine Woche ein?",
+"richtig": "Kältebäder auf Ruhetage oder reine Ausdauertage legen",
+"falsch": [
+"Direkt innerhalb von 15 Minuten nach jedem Krafttraining baden",
+"Das Eisbad nur nach dem Beintraining direkt anhängen",
+"Statt Krafttraining einfach häufiger ins Kältebad gehen"
+],
+"warum": "Direkt nach dem Krafttraining hemmt Kälte das Muskelwachstum; Ausdaueranpassungen leiden dagegen nicht darunter."
+},
+"labor": {
+"frage": "Eine Bayes'sche Meta-Analyse verglich mehrwöchiges Krafttraining mit und ohne Kältebad binnen 15 Minuten. Was bleibt dabei noch ungeklärt?",
+"richtig": "Ob vier bis sechs Stunden Abstand den negativen Effekt aufheben",
+"falsch": [
+"Ob das Kältebad überhaupt eine Tendenz zur Dämpfung zeigt",
+"Ob Ausdauertraining genauso stark gebremst wird wie Krafttraining",
+"Ob Kältebäder von 10 bis 20 Minuten überhaupt getestet wurden"
+],
+"warum": "Alle acht Studien nutzten Kälte innerhalb von 15 Minuten – Langzeitdaten zu größerem Abstand und zu Frauen fehlen noch."
+}
+}
+},
+{
+"id": "REG-111",
+"karte": {
+"kopf": "Läufer · Kleine Studie und Übersicht",
+"titel": "Sauna nach dem Laufen liefert erste Hinweise auf mehr Ausdauer",
+"titel_hervor": "erste Hinweise auf mehr Ausdauer",
+"setup": "Sechs männliche Läufer gingen drei Wochen lang direkt nach dem Training in die Sauna und absolvierten anschließend einen Lauftest bis zur Erschöpfung.",
+"zahl": {
+"label": "Länger durchhalten im Lauftest",
+"wert": "+32 %",
+"alltag": "≈ 1,9 % schneller über 5 km"
+},
+"kern": [
+"Das Blutplasmavolumen stieg um rund 7 %, was eng mit dem Laufgewinn zusammenhing.",
+"Die Wärme hilft dem Körper, sich besser an Hitzebelastungen anzupassen.",
+"Beim Radfahren oder in kühler Luft zeigten sich bisher keine klaren Zuwächse."
+],
+"grenze": "Die Hauptstudie hatte nur sechs männliche Läufer – für andere Sportarten ist die Datenlage noch dünn.",
+"fuer_dich": "Bereitest du dich auf einen warmen Laufwettkampf vor? Probiere drei Wochen lang 20 bis 30 Minuten Sauna nach dem Lauf – und trinke genug.",
+"labor": {
+"design": "Randomisierte Crossover-Studie (3 Wochen, 12–15 Saunagänge bei ~90 °C) und Review",
+"teilnehmer": "6 männliche Läufer (Hauptstudie); 5 chronische Studien im Review",
+"ergebnis": "Laufzeit +32 % (90 % KI 21–43 %; ~1,9 % über 5 km); Plasmavolumen +7,1 % (r = 0,96)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du gehst drei Wochen lang regelmäßig direkt nach dem Laufen in die Sauna. Worauf deuten erste Untersuchungen hin?",
+"richtig": "Deine Ausdauer beim Laufen kann sich spürbar verbessern",
+"falsch": [
+"Deine Maximalkraft steigt dadurch am stärksten an",
+"Die Hitze baut deine Kondition über Wochen wieder ab",
+"Sauna wirkt nur, wenn du auf das Trinken verzichtest"
+],
+"warum": "Durch die regelmäßige Hitze nimmt das Blutplasmavolumen zu, was vor allem Läufern erste Hinweise auf bessere Ausdauer liefert."
+},
+"plus": {
+"frage": "Du willst mit Sauna nach dem Laufen eine Hitzeanpassung aufbauen. Worauf solltest du dabei besonders achten?",
+"richtig": "Drei Wochen lang 3–4 Mal direkt nach dem Lauf und viel trinken",
+"falsch": [
+"Einmal im Monat eine Stunde saunieren, das genügt meist",
+"Flüssigkeitsverluste erst am nächsten Tag wieder ausgleichen",
+"Sauna lieber vor dem Lauf nutzen, um erschöpft zu starten"
+],
+"warum": "In der Praxis bewährten sich 20 bis 30 Minuten bei 80 bis 90 °C direkt nach dem Lauf samt konsequentem Ausgleich von Wasser und Elektrolyten."
+},
+"labor": {
+"frage": "In einer Crossover-Studie absolvierten Läufer drei Wochen lang Saunagänge direkt nach dem Training und wurden auf ihre Laufzeit getestet. Warum ist Vorsicht bei der Bewertung nötig?",
+"richtig": "Die Hauptstudie hatte nur sechs Männer und Effekte beim Radfahren fehlten",
+"falsch": [
+"Das Plasmavolumen ging trotz besserer Laufzeit messbar zurück",
+"Die Teilnehmenden wurden nicht zufällig den Bedingungen zugeteilt",
+"Die Sauna wurde nur bei milden Temperaturen unter 50 Grad getestet"
+],
+"warum": "Die Stichprobe war extrem klein, und eine neuere Übersicht fand keine konsistenten Gewinne für Radleistung oder VO2max im Kühlen."
+}
+}
+},
+{
+"id": "REG-112",
+"karte": {
+"kopf": "Sportler · 14 Studien zusammengefasst",
+"titel": "Sauna nach dem Sport macht dich für morgen nicht verlässlich fitter",
+"titel_hervor": "nicht verlässlich fitter",
+"setup": "Eine Übersicht wertete Studien aus, in denen Sportler nach dem Training eine Sauna, Infrarotkabine oder ein warmes Bad zur schnellen Erholung nutzten.",
+"zahl": null,
+"kern": [
+"Von neun Akutstudien zeigten vier keinen Vorteil, vier einen positiven und eine Schaden.",
+"Sehr heiße Sauna über 80 °C bremste bei Schwimmern sogar den Sprint am nächsten Morgen.",
+"Zusätzlicher Hitzestress und Flüssigkeitsverlust können den Körper erst recht ermüden."
+],
+"grenze": "Sauna, Infrarot und warme Bäder wurden sehr unterschiedlich angewendet – ein einheitlicher Effekt fehlt.",
+"fuer_dich": "Steht morgen ein Wettkampf oder schweres Training an? Lasse heute die heiße Sauna aus und lege sie lieber vor einen Ruhetag.",
+"labor": {
+"design": "Systematisches Review ohne Meta-Analyse zu akuter Wärme (>= 36 °C) nach Belastung",
+"teilnehmer": "14 Studien (9 Akutstudien), insgesamt 194 Teilnehmende",
+"ergebnis": "Akutleistung: 4 Studien neutral, 4 positiv, 1 negativ (3 × 8 min bei 80–85 °C vor Sprint)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du hattest heute ein hartes Training und willst morgen wieder topfit sein. Hilft ein heißer Saunagang heute zuverlässig dabei?",
+"richtig": "Nein, die Wirkung ist unsicher und kann sogar ermüden",
+"falsch": [
+"Ja, heiße Sauna macht die Muskeln über Nacht sofort stärker",
+"Ja, je heißer die Sauna, desto schneller die Erholung",
+"Ja, sie ersetzt Schlaf und Flüssigkeitszufuhr weitgehend"
+],
+"warum": "Einzelne Wärmeanwendungen bringen keinen verlässlichen Erholungsvorteil; große Hitze kann die Leistung am Folgetag sogar dämpfen."
+},
+"plus": {
+"frage": "In weniger als 24 Stunden steht ein wichtiges Rennen oder schweres Maximalkrafttraining an. Wie gehst du mit der Sauna um?",
+"richtig": "Intensive Saunagänge meiden und lieber vor Ruhetage legen",
+"falsch": [
+"Mindestens 25 Minuten bei über 80 °C zur Erholung einplanen",
+"Mehrere lange Aufgüsse nutzen, um die Muskeln weich zu machen",
+"Nur auf das Trinken verzichten, damit der Kreislauf ruhig bleibt"
+],
+"warum": "Starke Hitzebelastung und Wasserverlust belasten Kreislauf und Nervensystem zusätzlich und können die Leistung am nächsten Tag mindern."
+},
+"labor": {
+"frage": "Ein Review wertete neun Akutstudien zu Wärmeanwendungen nach dem Training aus. Warum ließ sich kein einheitlicher Gesamteffekt berechnen?",
+"richtig": "Die Befunde widersprachen sich und die Hitzeprotokolle waren zu verschieden",
+"falsch": [
+"In allen neun Studien verschlechterte sich die Leistung am Folgetag",
+"Es wurde ausschließlich traditionelle finnische Sauna untersucht",
+"Die Teilnehmenden zeigten keinerlei Unterschiede zur Kontrollgruppe"
+],
+"warum": "Vier neutrale, vier positive und eine negative Studie sowie verschiedene Wärmequellen machten eine Meta-Analyse unmöglich."
+}
+}
+},
+{
+"id": "REG-113",
+"karte": {
+"kopf": "Sportler · 99 Studien im Methodenvergleich",
+"titel": "Sportmassage lindert Muskelkater im Vergleich am stärksten",
+"titel_hervor": "im Vergleich am stärksten",
+"setup": "Eine große Auswertung verglich verschiedene Erholungsmethoden, darunter 20- bis 30-minütige Massagen innerhalb von zwei Stunden nach dem Training.",
+"zahl": null,
+"kern": [
+"Die schmerzlindernde Wirkung hielt bis zu vier Tage nach dem Training spürbar an.",
+"Auch die gefühlte Erschöpfung und Blutwerte für Muskelschäden gingen deutlich zurück.",
+"Die maximale Haltekraft der Muskeln erholte sich nach der Massage schneller."
+],
+"grenze": "Getestet wurden Handmassagen durch Fachleute – ob Massagepistolen genauso wirken, zeigt diese Analyse nicht.",
+"fuer_dich": "Ungewohnt hart trainiert und starken Muskelkater vor Augen? Eine 20- bis 30-minütige Massage innerhalb von zwei Stunden hilft am besten.",
+"labor": {
+"design": "Systematisches Review mit Meta-Analyse (Massage 20–30 min, <= 2 Std. nach Belastung)",
+"teilnehmer": "99 Regenerationsstudien; für Massage bei DOMS 14 Gruppen (n = 158)",
+"ergebnis": "DOMS g = −2,26 (95 % KI −3,05 bis −1,47); Ermüdung g bis −2,55; CK SMD = −0,64; Kraft SMD = 0,56"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Welche klassische Erholungsmethode nach hartem Sport schnitt im Vergleich bei Muskelkater und Müdigkeit am besten ab?",
+"richtig": "Eine 20- bis 30-minütige Sportmassage durch Fachleute",
+"falsch": [
+"Langes lockeres Auslaufen direkt nach dem Training",
+"Einfaches Ausruhen ohne jede weitere Maßnahme",
+"Kurzes Dehnen für fünf Minuten vor dem Duschen"
+],
+"warum": "Manuelle Sportmassage zeigte im Methodenvergleich die stärkste Senkung von Muskelkater, Ermüdung und Muskelschaden-Markern."
+},
+"plus": {
+"frage": "Nach einer ungewohnt harten Einheit mit vielen exzentrischen Sätzen willst du eine Massage nutzen. Wann wirkt sie am besten?",
+"richtig": "Innerhalb von zwei Stunden nach dem Training für 20 bis 30 Minuten",
+"falsch": [
+"Erst am dritten Tag, wenn der Muskelkater fast wieder weg ist",
+"Nur für zwei Minuten unmittelbar vor dem Aufwärmen",
+"Erst nach einer ganzen trainingsfreien Woche"
+],
+"warum": "Die untersuchten wirksamen Protokolle dauerten 20 bis 30 Minuten und fanden in den ersten zwei Stunden nach der Belastung statt."
+},
+"labor": {
+"frage": "In einer Meta-Analyse senkte manuelle Sportmassage nach dem Training Muskelkater, Kreatinkinase und Ermüdung. Was lässt sich daraus nicht ableiten?",
+"richtig": "Dass Massagepistolen dieselben Effekte auf Blutmarker erzielen",
+"falsch": [
+"Dass Massage auch die Erholung der isometrischen Kraft unterstützt",
+"Dass die Schmerzlinderung über mehr als einen Tag anhält",
+"Dass Massage bei der subjektiven Ermüdung wirksam sein kann"
+],
+"warum": "Die gepoolten Daten stammen aus manuellen Behandlungen durch Therapeuten; für Massagepistolen belegt diese Analyse keine gleichen Effekte."
+}
+}
+},
+{
+"id": "REG-114",
+"karte": {
+"kopf": "Sportler · 21 Studien zusammengefasst",
+"titel": "Die Faszienrolle lindert Muskelkater leicht, erholt aber kaum Kraft",
+"titel_hervor": "lindert Muskelkater leicht",
+"setup": "In 21 Studien rollten Teilnehmende vor oder nach dem Training über eine Faszienrolle, danach wurden Schmerz, Beweglichkeit und Leistung getestet.",
+"zahl": {
+"label": "Weniger empfundener Muskelkater",
+"wert": "−6 %",
+"alltag": ""
+},
+"kern": [
+"Kraft, Sprint und Sprungkraft erholten sich durch das Rollen nicht signifikant schneller.",
+"Im Warm-up eingesetzt verbessert kurzes Rollen die Beweglichkeit um rund 4 Prozent.",
+"Der Effekt läuft über Schmerzhemmung im Nervensystem, nicht über gelöste Verklebungen."
+],
+"grenze": "Keine der 21 Studien war verblindet – Erwartungseffekte könnten den kleinen Schmerzvorteil mitbestimmen.",
+"fuer_dich": "Willst du deine Faszienrolle sinnvoll nutzen? Rolle ein bis zwei Minuten pro Muskel im Warm-up für mehr Beweglichkeit.",
+"labor": {
+"design": "Systematisches Review mit Meta-Analyse zu Pre- und Post-Exercise Foam Rolling",
+"teilnehmer": "21 Studien mit insgesamt 454 Teilnehmenden",
+"ergebnis": "Schmerz −6 % (g = 0,47); Kraft +3,9 % (p = 0,28) & Sprint +3,1 % (p = 0,12) n. s.; ROM +4 % (SMD = 0,74)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du rollst nach dem Sport deine Beine auf der Faszienrolle aus. Was bringt dir das in den Tagen danach?",
+"richtig": "Etwas weniger Muskelkater, aber kaum schnellere Krafterholung",
+"falsch": [
+"Verklebte Muskelfasern werden dauerhaft geglättet",
+"Kraft und Sprungkraft kehren doppelt so schnell zurück",
+"Der Muskelkater verschwindet dadurch fast vollständig"
+],
+"warum": "Foam Rolling senkte den empfundenen Schmerz um rund 6 %, beschleunigte aber weder Kraft- noch Sprung- oder Sprinterholung signifikant."
+},
+"plus": {
+"frage": "Wo passt Foam Rolling in deinem Trainingsplan am besten hin – und was solltest du nicht erwarten?",
+"richtig": "Kurz ins Warm-up für mehr Beweglichkeit, nicht als Pause-Verkürzer",
+"falsch": [
+"Nach jedem Training, um am nächsten Tag wieder maximal zu heben",
+"Eine halbe Stunde pro Muskelgruppe statt des eigentlichen Warm-ups",
+"Nur bei starkem Muskelkater, weil es im Warm-up die Kraft raubt"
+],
+"warum": "Ein bis zwei Minuten Rollen im Warm-up steigern die Beweglichkeit um etwa 4 %, verkürzen aber nach dem Training nicht die echte Erholungszeit."
+},
+"labor": {
+"frage": "In 21 Studien reduzierte Foam Rolling nach Belastung das subjektive Schmerzempfinden moderat. Welcher Mechanismus erklärt diesen Effekt am ehesten?",
+"richtig": "Zentralnervöse Schmerzhemmung statt struktureller Gewebereparatur",
+"falsch": [
+"Mechanisches Lösen dauerhafter Verklebungen in den Faszien",
+"Stark beschleunigte Wiederherstellung der Maximalkraft",
+"Nachgewiesener Effekt frei von jedem Placebo-Einfluss"
+],
+"warum": "Die Schmerzlinderung beruht auf zentralnervöser Modulation (Gate-Control/DNIC); fehlende Verblindung birgt zudem ein Placebo-Risiko."
+}
+}
+},
+{
+"id": "REG-115",
+"karte": {
+"kopf": "Sportler · 12 Studien zusammengefasst",
+"titel": "Kompressionskleidung nach dem Sport hilft Muskeln spürbar beim Erholen",
+"titel_hervor": "hilft Muskeln spürbar",
+"setup": "Nach hartem, muskelbelastendem Training trugen Sportler enge Kompressionskleidung oder normale Kleidung und wurden bis zu drei Tage lang getestet.",
+"zahl": null,
+"kern": [
+"Muskelkraft und Schnellkraft kehrten mit Kompression im Schnitt moderat schneller zurück.",
+"Muskelkater, gefühlte Ermüdung und Kreatinkinase im Blut fielen geringer aus.",
+"Am häufigsten wurde die Kleidung binnen zwei Stunden nach dem Training angezogen."
+],
+"grenze": "Welcher genaue Druck am besten wirkt und wie der Effekt im Gewebe genau entsteht, ist noch nicht einheitlich geklärt.",
+"fuer_dich": "Schweres Beintraining oder viele Sprünge hinter dir? Ziehe innerhalb von zwei Stunden Kompressionskleidung für ein bis zwei Tage an.",
+"labor": {
+"design": "Systematisches Review mit Meta-Analyse (Kompression <= 2 Std. post, Messung nach 24–72 Std.)",
+"teilnehmer": "12 Studien mit 15 bis 18 Datenpunkten an Sportlern",
+"ergebnis": "Kraft g = 0,46; Power g = 0,44; DOMS g = 0,40 (bzw. −0,92); CK g = 0,44; Ermüdung SMD = −0,88"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du ziehst nach einem sehr harten Beintraining enge Kompressionskleidung an. Welche Wirkung zeigte sich im Mittel?",
+"richtig": "Weniger Muskelkater und etwas schnellere Rückkehr der Kraft",
+"falsch": [
+"Die Kleidung wirkt nur optisch ohne messbaren Nutzen",
+"Die Muskeln erholen sich dadurch deutlich langsamer",
+"Es hilft nur beim Laufen, nicht nach dem Krafttraining"
+],
+"warum": "Kompressionskleidung senkte Muskelkater, Ermüdung und Kreatinkinase und beschleunigte die Erholung von Kraft und Schnellkraft moderat."
+},
+"plus": {
+"frage": "Nach einer Einheit mit viel exzentrischer Belastung willst du Kompressionskleidung nutzen. Wie wendest du sie am sinnvollsten an?",
+"richtig": "Binnen zwei Stunden anziehen und 24 bis 48 Stunden tragen",
+"falsch": [
+"Nur für zehn Minuten direkt beim Duschen und Umziehen tragen",
+"Erst nach zwei Tagen anziehen, sobald der Muskelkater abklingt",
+"Nur während des Aufwärmens tragen und danach sofort ausziehen"
+],
+"warum": "In den wirksamen Protokollen wurde die Kleidung innerhalb von zwei Stunden nach Trainingsende angelegt und über ein bis zwei Tage getragen."
+},
+"labor": {
+"frage": "Zwei Meta-Analysen verglichen Kompressionskleidung mit normaler Kleidung nach hartem Training. Was ist für die Praxis noch unzureichend standardisiert?",
+"richtig": "Der optimale Kompressionsdruck und der genaue physiologische Ablauf",
+"falsch": [
+"Ob die Effekte auf Muskelkater überhaupt statistisch signifikant sind",
+"Ob Schnellkraft und Maximalkraft jemals zusammen gemessen wurden",
+"Ob die Kleidung erst nach Belastungsende getragen werden darf"
+],
+"warum": "Während die Effekte konsistent positiv ausfielen, fehlen einheitliche Vorgaben zum optimalen Druck in mmHg und ein abschließend geklärter Mechanismus."
+}
+}
+},
+{
+"id": "REG-116",
+"karte": {
+"kopf": "Männer & Frauen · 99 Studien zusammengefasst",
+"titel": "Kälte, Massage und Co. lindern Muskelkater bei Männern stärker",
+"titel_hervor": "bei Männern stärker",
+"setup": "Eine Auswertung von 99 Studien prüfte, ob Alter, Fitnesslevel oder Geschlecht beeinflussen, wie gut Methoden wie Massage, Kälte oder Kompression wirken.",
+"zahl": null,
+"kern": [
+"Die gefühlte Gesamtermüdung ging bei Frauen und Männern dagegen gleich stark zurück.",
+"Alter, Trainingsstand und Härte der Einheit machten keinen statistischen Unterschied.",
+"Vermutet werden hormonelle Unterschiede bei Entzündung und Schmerzverarbeitung."
+],
+"grenze": "Der Unterschied wurde über alle Methoden zusammen berechnet und nicht für jede Technik einzeln bewiesen.",
+"fuer_dich": "Als Frau trotz Massage oder Kältebad noch Muskelkater? Das ist normal – deine allgemeine Erholung profitiert trotzdem genauso.",
+"labor": {
+"design": "Meta-Analyse mit Moderatoranalyse über Massage, Kaltwasser, Kompression, Kryo, Cool-Down",
+"teilnehmer": "99 Studien, 106 experimentelle Gruppen (n = 1.188 für DOMS)",
+"ergebnis": "DOMS-Reduktion: Männer g = −2,07 vs. Frauen g = −0,43 (Z = 4,44; p < 0,01); Ermüdung ohne Unterschied"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Wirken Erholungsmethoden wie Massage oder Kältebad bei Frauen und Männern auf die gleiche Weise?",
+"richtig": "Gegen Müdigkeit gleich gut, gegen Muskelkater bei Männern stärker",
+"falsch": [
+"Sie helfen bei Frauen weder gegen Müdigkeit noch gegen Muskelkater",
+"Sie lindern Muskelkater bei Frauen deutlich stärker als bei Männern",
+"Nur das Alter bestimmt, wie gut solche Maßnahmen anschlagen"
+],
+"warum": "Über 99 Studien senkten Regenerationsmethoden die Ermüdung bei beiden Geschlechtern gleich stark, den Muskelkater aber stärker bei Männern."
+},
+"plus": {
+"frage": "Du bist eine Frau und nutzt nach hartem Training Kaltwasser oder Kompression, spürst aber weiter Muskelkater. Was bedeutet das?",
+"richtig": "Deine allgemeine Ermüdung kann trotzdem genauso gut gesunken sein",
+"falsch": [
+"Die Maßnahme wirkt bei dir vermutlich kaum auf die Erholung",
+"Du musst die Dauer im Kältebad verdoppeln, damit es wirkt",
+"Dein Trainingsstand ist zu niedrig für solche Erholungsmethoden"
+],
+"warum": "Auch wenn der lokale Muskelkater bei Frauen im Schnitt weniger abnimmt, fällt die Entlastung bei der allgemeinen Ermüdung gleich aus."
+},
+"labor": {
+"frage": "In einer Meta-Analyse über 99 Regenerationsstudien moderierte das Geschlecht den Rückgang des Muskelkaters. Welche Grenze hat dieses Ergebnis?",
+"richtig": "Der Effekt wurde über alle Methoden gepoolt, nicht einzeln geprüft",
+"falsch": [
+"Das Trainingsniveau zeigte einen noch stärkeren Einfluss als das Geschlecht",
+"Die Analyse umfasste weniger als 100 Teilnehmende insgesamt",
+"Für die gefühlte Ermüdung war der Unterschied noch größer"
+],
+"warum": "Massage, Kaltwasser, Kompression, Kryotherapie und aktives Cool-Down wurden zusammengefasst, sodass Einzelmethoden offenbleiben."
+}
+}
+},
+{
+"id": "SPD-101",
+"karte": {
+"kopf": "Trainierte Männer · Biomechanik-Messung",
+"titel": "Starke hintere Oberschenkel treiben wohl den Antritt nach vorn",
+"titel_hervor": "treiben wohl den Antritt",
+"setup": "Bei 14 Männern wurden Muskelaktivität, Beinkraft und Vortrieb während maximaler Sprints auf einem speziellen Laufband gemessen.",
+"zahl": null,
+"kern": [
+"Der hintere Oberschenkel spannt schon an, kurz bevor der Fuß den Boden trifft.",
+"Auf den ersten zehn Schritten liefert vor allem die Gesäßmuskulatur starken Schub.",
+"Lassen die hinteren Oberschenkel ermüdet nach, springt der Gesäßmuskel stärker ein."
+],
+"grenze": "Nur 14 Männer auf einem speziellen Sprint-Laufband untersucht – erste Hinweise, kein Trainingsbeweis.",
+"fuer_dich": "Dein Antritt fühlt sich träge an? Trainiere bremsende Beinbeuger-Übungen und Hüftstrecker gezielt vor kurzen Sprints.",
+"labor": {
+"design": "Experimentelle Biomechanik-Studie auf Sprint-Laufband, Muskel-EMG und Kraftmessung",
+"teilnehmer": "14 trainierte Männer (24,2 ± 4,6 Jahre, 79,9 ± 7,9 kg)",
+"ergebnis": "Multiple Regression für horizontalen Vortrieb: p = 0,041 bis p = 0,045; bei Ermüdung sinkt Hamstring-Kraft (p = 0,033)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Beim Sprinten willst du kraftvoll nach vorn beschleunigen. Welche Muskelgruppe spielt neben dem Gesäß dabei wohl eine Schlüsselrolle?",
+"richtig": "Die Rückseite der Oberschenkel",
+"falsch": [
+"Vor allem die Wadenmuskulatur",
+"Fast nur die vorderen Oberschenkel",
+"Hauptsächlich die Bauchmuskeln"
+],
+"warum": "Die hinteren Oberschenkel spannen schon vor dem Bodenkontakt an und helfen zusammen mit dem Gesäß beim Vorschub."
+},
+"plus": {
+"frage": "Du willst deine Beschleunigung auf den ersten 10 bis 28 Schritten verbessern. Welche Kraftkombination passt zu den Daten am besten?",
+"richtig": "Exzentrische Hamstrings plus schwere Hüftstrecker",
+"falsch": [
+"Isoliertes Beinstrecken plus leichtes Wadentraining",
+"Nur maximales Kniebeugen ohne Rückseiten-Übungen",
+"Reines Rumpftraining kombiniert mit langen Läufen"
+],
+"warum": "Hohe bremsende Kraft der Hamstrings und kräftige Hüftstrecker hängen eng mit starkem horizontalem Vortrieb zusammen."
+},
+"labor": {
+"frage": "Bei 14 Männern wurden EMG und Kraftwerte auf einem Sprint-Laufband bei wiederholten Sprints gemessen. Was zeigte sich unter Ermüdung?",
+"richtig": "Hamstring-Kraft sank, der Gluteus übernahm mehr Vortrieb",
+"falsch": [
+"Die Hamstrings arbeiteten noch deutlich stärker mit",
+"Der Gluteus schaltete bei Ermüdung fast ganz ab",
+"Die Muskelverteilung blieb über alle Sprints gleich"
+],
+"warum": "Unter Ermüdung nahm die Hamstring-Kraft signifikant ab (p = 0,033), während der Gluteus maximus kompensatorisch stärker arbeitete (p = 0,007)."
+}
+}
+}
+]

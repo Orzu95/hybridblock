@@ -1,0 +1,1126 @@
+[
+{
+"id": "PACE-110",
+"karte": {
+"kopf": "Freizeit- & Leistungsläufer · Rechenmodell",
+"titel": "Eine einzige Wettkampfzeit reicht für fünf passende Tempobereiche",
+"titel_hervor": "fünf passende Tempobereiche",
+"setup": "Das Modell verbindet den Sauerstoffbedarf pro Tempo mit einer Ermüdungskurve über die Laufzeit und leitet daraus fünf Trainingszonen ab.",
+"zahl": null,
+"kern": [
+"Das Modell passt die Zonen an, weil langsamere Läufer länger unterwegs sind",
+"Die fünf Bereiche reichen vom lockeren Dauerlauf bis zu kurzen Wiederholungen",
+"Aus einer 5-km-Zeit fällt das Marathonziel bei wenig Wochenumfang oft zu hoch aus"
+],
+"grenze": "Ohne genug Trainingsumfang überschätzt das Modell aus kurzen Tests die mögliche Marathonzeit deutlich.",
+"fuer_dich": "Du berechnest deine Zonen aus einer 5-km-Zeit? Prüfe das Marathontempo kritisch, falls du bisher wenig Kilometer pro Woche läufst.",
+"labor": {
+"design": "Physiologisches Standardmodell (Sauerstoffkosten- und Ermüdungskurve)",
+"teilnehmer": "Freizeit- und Leistungsläufer",
+"ergebnis": "Zonen: E 59–74 %, M 75–84 %, T 83–88 %, I 97–100 %, R 105–110 % VDOT"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Zwei Läufer schaffen 5 Kilometer in sehr unterschiedlichen Zeiten. Warum können nicht beide denselben Anteil ihrer Maximalleistung halten?",
+"richtig": "Wer langsamer läuft, ist länger unterwegs und ermüdet dabei stärker",
+"falsch": [
+"Wer schneller läuft, verbraucht auf derselben Strecke weniger Sauerstoff",
+"Langsamere Läufer können über längere Zeit sogar härter belastet laufen",
+"Die Laufzeit hat keinen Einfluss darauf, wie hoch das Tempo sein darf"
+],
+"warum": "Je länger ein Lauf dauert, desto kleiner wird der Anteil der maximalen Ausdauerleistung, den der Körper durchhalten kann."
+},
+"plus": {
+"frage": "Du läufst wenig Kilometer pro Woche und hast deine Zonen über eine flotte 5-km-Zeit per VDOT berechnet. Welche Zone solltest du vorsichtig prüfen?",
+"richtig": "Die Marathon-Pace, da sie bei geringem Wochenumfang oft zu schnell ausfällt",
+"falsch": [
+"Die Easy-Pace, da sie für Freizeitläufer meistens viel zu langsam liegt",
+"Die Intervall-Pace, da 5-km-Läufe dafür überhaupt keine Basis bieten",
+"Die Schwellen-Pace, da sie beim 5-km-Lauf stark unterschätzt wird"
+],
+"warum": "Ohne spezifisches Ausdauertraining und ausreichenden Umfang überschätzt das Modell aus einer 5-km-Zeit die Marathonleistung."
+},
+"labor": {
+"frage": "Wie verknüpft das klassische fünfstufige Pace-Zonen-Modell die Leistung aus einem Zeitlauf mit den Trainingsbereichen?",
+"richtig": "Über eine quadratische Sauerstoffkosten-Kurve und eine Ermüdungskurve",
+"falsch": [
+"Über ein lineares Pulsmodell allein aus Alter und Körpergewicht",
+"Über feste Prozentabzüge vom maximalen 100-Meter-Sprinttempo",
+"Über gemessene Blutlaktatwerte aus mindestens drei Labortests"
+],
+"warum": "Das Modell berechnet den Sauerstoffbedarf der Wettkampfgeschwindigkeit und korrigiert ihn über eine bi-exponentielle Ermüdungskurve."
+}
+}
+},
+{
+"id": "PACE-111",
+"karte": {
+"kopf": "Freizeitläufer · Datenstudie (2.303 Läufer)",
+"titel": "Standard-Rechner überschätzen jeden zweiten Hobby-Marathonläufer",
+"titel_hervor": "jeden zweiten Hobby-Marathonläufer",
+"setup": "Wettkampf- und Trainingsdaten von 2.303 Freizeitläufern wurden genutzt, um gängige Laufzeit-Prognosen mit echten Zielzeiten zu vergleichen.",
+"zahl": {
+"label": "Lag beim Marathon mind. 10 Min. daneben",
+"wert": "50 %",
+"alltag": "jeder zweite Freizeitläufer"
+},
+"kern": [
+"Bis zum Halbmarathon traf die klassische Hochrechnung im Schnitt sehr gut",
+"Beim Marathon versprach sie der Hälfte eine mindestens 10 Minuten zu schnelle Zeit",
+"Floss das wöchentliche Laufvolumen mit ein, sank der Vorhersagefehler deutlich"
+],
+"grenze": "Die Daten beruhten auf Selbstangaben – je nach Trainingsumfang schwankt der passende Faktor zwischen 1,05 und 1,08.",
+"fuer_dich": "Du rechnest deine 10-km-Zeit auf den Marathon hoch? Verlasse dich ohne Einbezug deiner Wochenkilometer lieber nur bis zum Halbmarathon.",
+"labor": {
+"design": "Empirische Kohorten- und Validierungsstudie (Trainings- und Validierungsset)",
+"teilnehmer": "2.303 Freizeitläufer",
+"ergebnis": "Marathon-MSE: Standardformel 381 vs. 1-Rennen+Umfang 228 vs. 2-Rennen 208; ≥ 10 min Fehler bei 50 %"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du gibst deine 5-km-Zeit in einen Online-Laufrechner ein, um deine Marathonzeit vorherzusagen. Was passiert dabei bei Freizeitläufern häufig?",
+"richtig": "Die vorhergesagte Marathonzeit ist oft deutlich zu optimistisch",
+"falsch": [
+"Die vorhergesagte Marathonzeit fällt meist viel zu langsam aus",
+"Der Rechner trifft beim Marathon genauer als beim Halbmarathon",
+"Die wöchentlichen Trainingskilometer spielen dabei kaum eine Rolle"
+],
+"warum": "Bei rund der Hälfte der Freizeitläufer lag die einfache Hochrechnung beim Marathon um mindestens 10 Minuten zu schnell."
+},
+"plus": {
+"frage": "Du willst aus einer 10-km-Bestzeit deine realistische Zielzeit für den ersten Marathon abschätzen. Wie machst du die Prognose verlässlicher?",
+"richtig": "Dein wöchentliches Laufvolumen oder eine zweite längere Rennzeit einbeziehen",
+"falsch": [
+"Die Standardformel einfach direkt auf 42,2 km hochrechnen",
+"Stattdessen einen kürzeren 1-km-Test als Grundlage wählen",
+"Den Faktor der Formel noch aggressiver auf schnellere Zeiten setzen"
+],
+"warum": "Modelle mit Wochenumfang oder zwei Wettkampfzeiten reduzierten den Vorhersagefehler beim Marathon gegenüber der Standardformel drastisch."
+},
+"labor": {
+"frage": "An 2.303 Freizeitläufern wurde die klassische Hochrechnungsformel gegen Modelle mit Trainingsumfang geprüft. Was zeigte sich für 21,1 km vs. 42,2 km?",
+"richtig": "Bis 21,1 km im Mittel unverzerrt, über 42,2 km klarer Optimismus-Bias",
+"falsch": [
+"Über beide Distanzen ähnlich großer systematischer Fehler",
+"Über 21,1 km stark verzerrt, aber über 42,2 km sehr präzise",
+"Ein festes 1-Rennen-Modell schlug selbst das 2-Rennen-Modell"
+],
+"warum": "Der mittlere quadratische Marathon-Fehler sank von 381 (Standard) auf 228 (mit Umfang) und 208 (zwei Rennen)."
+}
+}
+},
+{
+"id": "PACE-112",
+"karte": {
+"kopf": "Alle Altersgruppen · Validierungsstudien",
+"titel": "Ohne deinen Ruhepuls liegen einfache Pulszonen oft spürbar daneben",
+"titel_hervor": "Ohne deinen Ruhepuls",
+"setup": "Forschende prüften eine Altersformel für den Maximalpuls und zeigten, wie der Ruhepuls die persönlichen Herzfrequenz-Zonen verfeinert.",
+"zahl": {
+"label": "Mögliche Streuung der Altersformel",
+"wert": "±10 Schläge/min",
+"alltag": ""
+},
+"kern": [
+"Die moderne Altersformel dient als bewährter Standard für den Maximalpuls",
+"Im Einzelfall weicht der echte Maximalpuls trotzdem oft um rund 10 Schläge ab",
+"Mit deinem Ruhepuls nutzt die Zonenrechnung deine echte Puls-Spanne"
+],
+"grenze": "Jede Altersformel bleibt eine Schätzung – ein real gemessener Maximalpuls ist deutlich genauer.",
+"fuer_dich": "Du kennst deinen echten Maximalpuls noch nicht? Nutze die Altersformel plus Ruhepuls und trag später deinen gemessenen Wert ein.",
+"labor": {
+"design": "Validierungsstudie zur altersgeschätzten HFmax und Längsschnittstudie zur HRR",
+"teilnehmer": "Erwachsene aller Altersgruppen",
+"ergebnis": "HFmax = 208 − 0,7 × Alter (Streuung ca. ±10 bpm); %HRR personalisiert Zonen"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Viele Sportuhren schätzen deinen höchsten Puls nur über dein Alter. Wie genau passt diese Zahl für dich persönlich?",
+"richtig": "Sie ist ein grober Richtwert und kann spürbar vom eigenen Wert abweichen",
+"falsch": [
+"Sie stimmt für fast alle gesunden Menschen auf wenige Schläge genau",
+"Sie gilt nur für Menschen unter 30 und gar nicht für Ältere",
+"Sie berücksichtigt automatisch, wie niedrig dein Ruhepuls morgens ist"
+],
+"warum": "Altersformeln liefern einen guten Durchschnitt, doch der echte Maximalpuls streut von Person zu Person um etwa ±10 Schläge pro Minute."
+},
+"plus": {
+"frage": "Du kennst deinen Ruhepuls und möchtest deine Herzfrequenz-Zonen genauer einstellen als über simple Prozentwerte der HFmax. Welcher Weg hilft?",
+"richtig": "Die Zonen über deine Pulsreserve zwischen Ruhepuls und HFmax berechnen",
+"falsch": [
+"Pauschal zehn Schläge von allen berechneten Pulszonen abziehen",
+"Den Ruhepuls ignorieren, weil er beim Laufen keine Rolle spielt",
+"Allein nach dem Alter rechnen und reale Maximalwerte nicht eintragen"
+],
+"warum": "Die Rechnung über die Herzfrequenzreserve (HFmax minus Ruhepuls) passt die Zonen an deinen tatsächlich nutzbaren Pulsbereich an."
+},
+"labor": {
+"frage": "Eine altersbasierte HFmax-Gleichung wird mit der Herzfrequenzreserve (%HRR) kombiniert. Welche praktische Konsequenz folgt aus der Formel-Streuung?",
+"richtig": "Nutzer müssen die geschätzte HFmax manuell durch gemessene Werte ersetzen können",
+"falsch": [
+"Die Einbeziehung des Ruhepulses beseitigt jeden Schätzfehler der HFmax",
+"Prozentwerte von HFmax und %HRR liefern im Grundlagentraining identische Werte",
+"Die Formel überschätzt die HFmax ausschließlich bei sehr fitten Sportlern"
+],
+"warum": "Wegen der individuellen Streuung von rund ±10 bpm sollte eine geschätzte HFmax bei Vorliegen realer Messwerte überschrieben werden."
+}
+}
+},
+{
+"id": "PACE-113",
+"karte": {
+"kopf": "Freizeit- & Ausdauerläufer · Trainingsstudie",
+"titel": "Schon lockere Läufe zeigen, ob deine Ausdauer besser wird",
+"titel_hervor": "lockere Läufe zeigen",
+"setup": "Ausdauerläufer zeichneten bei normalen, lockeren Läufen Puls und Tempo auf. Ein Index verband beide Werte, um Fortschritte ohne Härtetest zu messen.",
+"zahl": null,
+"kern": [
+"Läufst du bei gleichem Puls schneller, spricht das für bessere Ausdauer",
+"So lassen sich Fortschritte laufend verfolgen, ohne dich voll auszubelasten",
+"Hitze, Flüssigkeitsmangel und Hügel verfälschen das Puls-Tempo-Verhältnis"
+],
+"grenze": "Ohne Korrektur für Höhenmeter und Hitze kann der Wert an warmen Tagen schlechter wirken als er ist.",
+"fuer_dich": "Keine Lust auf Härtetests? Vergleiche dein Tempo bei gleichem Puls über mehrere flache, lockere Läufe bei ähnlicher Temperatur.",
+"labor": {
+"design": "Experimentelle Trainingsstudie, submaximaler HR-RS-Index im Feld",
+"teilnehmer": "Freizeit- und Ausdauerläufer",
+"ergebnis": ""
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du joggst seit Wochen auf derselben flachen Runde bei kühlem Wetter. Woran erkennst du auch ohne Wettkampf, dass deine Ausdauer wächst?",
+"richtig": "Du läufst bei gleichem Puls spürbar schneller als zu Beginn",
+"falsch": [
+"Dein Puls steigt beim gleichen lockeren Tempo weiter an",
+"Dein Tempo schwankt von Lauf zu Lauf so stark wie möglich",
+"Ohne vollen Sprinttest lässt sich kein Fortschritt erkennen"
+],
+"warum": "Das Verhältnis aus Lauftempo und Herzfrequenz im lockeren Dauerlauf spiegelt Trainingsanpassungen auch ohne Maximaltest wider."
+},
+"plus": {
+"frage": "Dein Puls-zu-Pace-Index aus lockeren Läufen sinkt an einem schwülen Sommertag auf hügeliger Strecke plötzlich ab. Wie deutest du das?",
+"richtig": "Eher als Effekt von Hitze, Trinkmenge oder Gelände statt Fitnessverlust",
+"falsch": [
+"Als klares Zeichen für raschen Ausdauerverlust über wenige Tage",
+"Als Beweis, dass dein Maximalpuls im Profil zu niedrig steht",
+"Als Signal, deine Trainingszonen sofort nach unten zu korrigieren"
+],
+"warum": "Hitze, Dehydratation und Steigungen treiben den Puls hoch; erst Trends über mehrere bereinigte Easy-Läufe sind aussagekräftig."
+},
+"labor": {
+"frage": "Der submaximale Heart-Rate-Running-Speed-Index misst Ausdaueranpassungen aus Alltagsdaten (GPS und HF). Welche Vorfilterung ist im Feld nötig?",
+"richtig": "Bereinigung von Steigungen, Temperaturdrift und der Einschwingphase",
+"falsch": [
+"Ausschließlich Daten aus maximalen Bahntests über 5 Kilometer nutzen",
+"Alle Läufe unterhalb der Laktatschwelle aus der Berechnung streichen",
+"Die Herzfrequenz im Stehen weglassen und nur die End-HF verwenden"
+],
+"warum": "Temperaturbedingter Pulsdrift, unebenes Gelände und die Anlaufphase verzerren das Puls-Tempo-Verhältnis und müssen gefiltert werden."
+}
+}
+},
+{
+"id": "PACE-114",
+"karte": {
+"kopf": "8 Sportuhren · Messgenauigkeitsstudie",
+"titel": "GPS-Uhren weichen beim Laufen im Schnitt um bis zu 6 % ab",
+"titel_hervor": "um bis zu 6 % ab",
+"setup": "Forschende testeten acht gängige GPS-Sportuhren auf genau vermessenen Strecken in Stadt, Wald, auf der Bahn und im freien Gelände.",
+"zahl": {
+"label": "Mittlerer Distanzfehler der Sportuhren",
+"wert": "0,6–6,1 %",
+"alltag": "≈ 30 bis 300 m auf 5 km"
+},
+"kern": [
+"Im Wald und zwischen Häusern maßen Uhren Strecken teils bis zu 9 % zu kurz",
+"Auf engen 400-m-Bahnen zeigten GPS-Uhren die Distanz häufig etwas zu lang an",
+"Im offenen Gelände lagen die Abweichungen deutlich niedriger, oft unter 2 %"
+],
+"grenze": "Die Genauigkeit hängt stark von Modell, Tragweise, Kurven und freier Sicht zu den Satelliten ab.",
+"fuer_dich": "Deine Uhr meldet im Wald eine knappe neue Bestzeit? Pass deine Trainingszonen erst an, wenn der Sprung mindestens 2 % beträgt.",
+"labor": {
+"design": "Instrumenten-Validierungsstudie, 8 GPS-Sportuhren gegen Referenzstrecken",
+"teilnehmer": "8 getestete Consumer-Sportuhren im Freiland, Wald, Stadt und Bahn",
+"ergebnis": "MAPE 3,2–6,1 % gesamt; bis −9 % Wald/Urban; offenes Feld 0,6 ± 0,3 bis 1,9 ± 1,5 %"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du läufst mit deiner GPS-Uhr durch einen dichten Wald oder zwischen hohen Häusern. Was passiert dabei mit der gemessenen Strecke oft?",
+"richtig": "Die Uhr misst die Strecke häufig etwas kürzer, als sie wirklich ist",
+"falsch": [
+"Die Uhr misst durch Bäume und Häuser fast auf den Meter genau",
+"Die Uhr zeichnet im Wald grundsätzlich gar keine Daten auf",
+"Die Uhr rechnet zwischen Häusern die Strecke stark nach oben"
+],
+"warum": "Bäume und Gebäude stören das Satellitensignal, sodass Sportuhren Strecken im Wald und in der Stadt teils bis zu 9 % unterschätzen."
+},
+"plus": {
+"frage": "Nach einem Trainingslauf mit deiner GPS-Uhr zeigt die App eine minimal schnellere Bestzeit an. Sollten deine Pace-Zonen direkt hochgestuft werden?",
+"richtig": "Nein, erst ab einem klaren Sprung oberhalb normaler Messfehler",
+"falsch": [
+"Ja, weil moderne GPS-Uhren auf jeder Strecke fast fehlerfrei messen",
+"Ja, besonders nach Kurvenläufen auf einer 400-m-Bahn ist GPS exakt",
+"Nein, GPS-Läufe eignen sich überhaupt nicht zur Trainingssteuerung"
+],
+"warum": "Da GPS-Uhren im Mittel 0,6 bis 6,1 % abweichen, verhindert eine Schwelle von mindestens 2 % voreilige Sprünge der Pace-Zonen."
+},
+"labor": {
+"frage": "Acht gängige GPS-Sportuhren wurden auf Referenzstrecken in unterschiedlichem Gelände geprüft. Wie unterschied sich die Richtung des Fehlers?",
+"richtig": "Unterschätzung im Wald und Stadtgebiet, leichte Überschätzung auf der Bahn",
+"falsch": [
+"Überschätzung im Wald und Stadtgebiet, Unterschätzung auf der 400-m-Bahn",
+"Gleichmäßiger Fehler unter 1 % unabhängig von Kurven und Satellitensicht",
+"Größte Messfehler im offenen Gelände und kleinste zwischen Hochhäusern"
+],
+"warum": "Multipath-Effekte führten in Wald und Stadt zu bis zu −9 % Abweichung, während enge Kurven auf 400-m-Bahnen leicht überschätzt wurden."
+}
+}
+},
+{
+"id": "PACE-115",
+"karte": {
+"kopf": "Läufer · Laborstudie auf dem Laufband (10 Pers.)",
+"titel": "Bei 10 % Steigung kostet Laufen fast doppelt so viel Energie",
+"titel_hervor": "fast doppelt so viel Energie",
+"setup": "Zehn Läufer liefen auf einem neigbaren Laufband bei Steigungen und Gefällen zwischen −45 % und +45 %, während ihr Energieverbrauch gemessen wurde.",
+"zahl": {
+"label": "Mehr Energieaufwand bei 10 % Steigung",
+"wert": "+88 %",
+"alltag": "fast doppelter Aufwand"
+},
+"kern": [
+"Schon bei 5 % Steigung brauchst du rund 30 % mehr Energie pro Meter",
+"Am wenigsten Energie kostet Laufen bei leichtem Gefälle von 10 bis 20 %",
+"Geht es noch steiler bergab, steigt der Verbrauch durchs Abbremsen wieder"
+],
+"grenze": "Nur zehn Personen wurden getestet – wie sparsam jemand bergab bremst, unterscheidet sich individuell stark.",
+"fuer_dich": "Du läufst im Hügeligen und wunderst dich über dein langsames Tempo? Nutze die steigungsbereinigte Pace statt starrer Flachland-Ziele.",
+"labor": {
+"design": "Biomechanisch-physiologische Laborstudie, Laufband −45 % bis +45 % Neigung",
+"teilnehmer": "10 Läufer",
+"ergebnis": "Cr(0) 3,6; Cr(+5 %) 4,69 (+30,1 %); Cr(+10 %) 6,78 (+88 %); Min. Cr(−20 %) 1,73 J/kg/m"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du läufst einen steilen Berg hinunter. Stimmt es, dass Laufen umso weniger Energie kostet, je steiler es bergab geht?",
+"richtig": "Nein, nach einem Tiefpunkt bei mäßigem Gefälle steigt der Aufwand wieder",
+"falsch": [
+"Ja, bergab sinkt der Energieverbrauch bis zu extremen Hängen weiter ab",
+"Nein, schon das kleinste Gefälle kostet mehr Energie als die Ebene",
+"Ja, bergab verbraucht der Körper genauso viel Energie wie im Stehen"
+],
+"warum": "Das Energieminimum liegt bei rund 10 bis 20 % Gefälle; wird es noch steiler, kostet das ständige Abbremsen wieder mehr Energie."
+},
+"plus": {
+"frage": "Deine Strecke hat Abschnitte mit deutlicher Steigung. Warum solltest du dort nicht stur versuchen, deine flache Z2-Pace zu halten?",
+"richtig": "Weil der Energieaufwand bei Steigung schnell sehr stark ansteigt",
+"falsch": [
+"Weil der Energieaufwand erst bei extremen Steigungen zunimmt",
+"Weil steile Anstiege nur die Waden, kaum aber den Kreislauf fordern",
+"Weil GPS-Uhren bergauf das Tempo grundsätzlich zu schnell anzeigen"
+],
+"warum": "Bei +5 % Steigung steigt der Aufwand bereits um rund 30 %, bei +10 % sogar um 88 % – die steigungsbereinigte GAP hilft beim Pacing."
+},
+"labor": {
+"frage": "Auf Basis von 10 Läufern zwischen −45 % und +45 % Laufbandneigung wurde ein Polynommodell der Energiekosten erstellt. Wo liegt eine wesentliche Grenze?",
+"richtig": "Hohe Streuung beim Bremsen bergab und engerer verlässlicher Steigungsbereich",
+"falsch": [
+"Die Energiekosten bergauf ließen sich überhaupt nicht modellieren",
+"Das Modell gilt ausschließlich für Gehen und nicht für das Laufen",
+"Bei deutlicher Steigung änderte sich der Energieverbrauch kaum gegenüber flach"
+],
+"warum": "Individuelle Lauftechnik beim Bremsen bergab streut stark, weshalb der verlässliche Bereich des Polynoms bei −25 % bis +30 % liegt."
+}
+}
+},
+{
+"id": "PACE-116",
+"karte": {
+"kopf": "Wettkampfläufer · Analysen (über 1,7 Mio. Starts)",
+"titel": "Ab 15 Grad Hitze-Index bremst jedes Grad deine Laufleistung messbar",
+"titel_hervor": "bremst jedes Grad",
+"setup": "Wettkampfdaten aus über 1.250 Rennen und 1,79 Millionen Marathonstarts wurden mit Temperatur, Luftfeuchte und Sonnenstrahlung abgeglichen.",
+"zahl": {
+"label": "Leistungsverlust pro +1 °C Hitze-Index",
+"wert": "−0,3 bis −0,4 %",
+"alltag": ""
+},
+"kern": [
+"Die schnellsten Zeiten gelingen bei kühlen Bedingungen unter etwa 15 °C",
+"Langsamere Läufer verlieren bei Hitze im Schnitt deutlich mehr Zeit als Profis",
+"Pralle Sonne, Schwüle und Windstille belasten stärker als Lufttemperatur allein"
+],
+"grenze": "Die reine Lufttemperatur reicht nicht – Schatten, Wind und Luftfeuchte verändern die echte Hitzebelastung stark.",
+"fuer_dich": "Es hat über 15 Grad? Nimm dein Zieltempo pro Grad etwas zurück und verzichte bei extremer Schwüle und Hitze auf harte Intervalle.",
+"labor": {
+"design": "Großskalige Wettkampfanalysen (Regression und Machine Learning)",
+"teilnehmer": "7.867 Athleten (1.258 Rennen) sowie 1,79 Mio. Marathonläufer",
+"ergebnis": "−0,3 bis −0,4 % Leistung pro +1 °C WBGT > 15 °C (5 km −0,3 %, Elite-Marathon −0,2 %)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Es ist ein warmer Sommertag mit über 25 Grad. Wen bremst die Hitze bei einem längeren Lauf im Schnitt stärker aus?",
+"richtig": "Langsamere Freizeitläufer verlieren meist mehr als sehr schnelle Profis",
+"falsch": [
+"Sehr schnelle Profis brechen im Schnitt deutlich stärker ein",
+"Die Hitze bremst schnelle und langsame Läufer genau gleich stark",
+"Erst ab über 35 Grad Lufttemperatur sinkt die Laufleistung spürbar"
+],
+"warum": "Oberhalb kühler Idealwerte fällt die Leistung pro Grad ab, und langsamere Läufer sind der Hitze länger ausgesetzt und verlieren stärker."
+},
+"plus": {
+"frage": "Du planst ein hartes Schwellentraining, aber draußen hat es 24 Grad in praller Sonne bei hoher Luftfeuchte. Was ist die sinnvollste Anpassung?",
+"richtig": "Das Zieltempo spürbar drosseln, weil Sonne und Schwüle extra belasten",
+"falsch": [
+"Das normale Flachland-Tempo durchziehen, weil nur die Lufttemperatur zählt",
+"Das Tempo leicht anziehen, um schneller wieder im Schatten zu sein",
+"Erst ab 30 Grad Lufttemperatur überhaupt etwas am Tempo verändern"
+],
+"warum": "Bereits ab etwa 15 °C sinkt die Leistung spürbar pro Grad, und Sonnenstrahlung sowie Luftfeuchte verschärfen den Hitzestress zusätzlich."
+},
+"labor": {
+"frage": "Wettkampfdaten aus 1.258 Rennen und 1,79 Mio. Marathonstarts wurden nach Temperatur und Feuchtkugeltemperatur (WBGT) analysiert. Was zeigte sich?",
+"richtig": "Optimum bei kühlen Bedingungen und messbarer Abfall bei steigender Wärme",
+"falsch": [
+"Optimum bei warmen 20 bis 25 °C mit leichtem Anstieg bei Sommerhitze",
+"Allein die Lufttemperatur sagte den Einbruch besser voraus als WBGT",
+"Die Marathon-Elite verlor pro Grad mehr Prozentpunkte als 5000-m-Läufer"
+],
+"warum": "Über 15 °C WBGT sank die Leistung um 0,3–0,4 % pro °C (Elite-Marathon −0,2 %), wobei Sonne und Wind den WBGT stark prägen."
+}
+}
+},
+{
+"id": "PACE-117",
+"karte": {
+"kopf": "Ausdauersportler · Höhen-Experiment (8 Pers.)",
+"titel": "Schon ab 300 Metern Höhe sinkt deine Ausdauer pro 1000 Meter um 6 %",
+"titel_hervor": "pro 1000 Meter um 6 %",
+"setup": "Acht Ausdauersportler absolvierten Leistungstests bei verschiedenen Höhenstufen zwischen 300 und 2.800 Metern über dem Meeresspiegel.",
+"zahl": {
+"label": "Weniger Ausdauerleistung je 1000 m Höhe",
+"wert": "−6,3 %",
+"alltag": ""
+},
+"kern": [
+"Die Blutsauerstoff-Sättigung fiel bei Belastung von 89 % auf 76,5 % ab",
+"Harte Belastungen bis zur Erschöpfung verkürzten sich um 14,5 % je 1000 m",
+"Nach ein bis zwei Wochen Anpassung fällt der Verlust meist kleiner aus"
+],
+"grenze": "Nur acht Ausdauersportler wurden getestet – wie stark jemand auf dünne Luft reagiert, ist individuell verschieden.",
+"fuer_dich": "Du fährst ins Gebirge über 800 Meter zum Laufen? Drossle dein Ausdauertempo spürbar und verlängere die Pausen bei kurzen Sprints.",
+"labor": {
+"design": "Kontrollierte Hypoxie-Experimentstudie zwischen 300 m und 2.800 m Höhe",
+"teilnehmer": "8 Ausdauersportler",
+"ergebnis": "VO2max −6,3 %/1000 m (p < 0,01); TTE −14,5 %/1000 m (p < 0,001); SpO2 89,0 → 76,5 %"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du machst Urlaub in den Bergen auf etwa 1.500 Metern und gehst laufen. Stimmt es, dass dünne Luft erst im Hochgebirge ab 3.000 Metern bremst?",
+"richtig": "Nein, die Ausdauerleistung sinkt bereits in mittleren Höhenlagen messbar",
+"falsch": [
+"Ja, unterhalb von 2.500 Metern bleibt die Ausdauer völlig unverändert",
+"Ja, in mittleren Höhen verbessert die dünne Luft das Tempo sofort",
+"Nein, aber nach einem einzigen Tag ist der Verlust vollständig weg"
+],
+"warum": "Die maximale Sauerstoffaufnahme nimmt schon ab 300 Metern Höhe linear ab, im Schnitt um etwa 6,3 % pro 1.000 Höhenmeter."
+},
+"plus": {
+"frage": "Du bist frisch auf 1.800 Metern Höhe angekommen und hast Ausdauerläufe sowie kurze schnelle Wiederholungen (Z5b) im Plan. Wie passt du an?",
+"richtig": "Ausdauer-Paces spürbar reduzieren, kurze Wiederholungen mit längerer Pause laufen",
+"falsch": [
+"Alle Flachland-Paces unverändert durchziehen, um schneller anzupassen",
+"Nur die kurzen Wiederholungen drosseln und das Schwellentempo halten",
+"Alle Pausen verkürzen, um die dünne Luft schneller auszugleichen"
+],
+"warum": "In der Höhe sinkt die aerobe Kapazität linear, sodass Z1–Z5a gedrosselt werden sollten, während kurze Z5b-Abschnitte mehr Pause brauchen."
+},
+"labor": {
+"frage": "Acht Ausdauersportler wurden kontrolliert zwischen 300 und 2.800 m Höhe getestet. Wie veränderten sich VO2max und Durchhaltezeit bei 107 % vVO2max?",
+"richtig": "Lineare Abnahme der VO2max und noch stärkerer Einbruch der Durchhaltezeit",
+"falsch": [
+"Abrupter Knick der VO2max erst oberhalb von 2.000 Metern Höhe",
+"Stabile Blutsauerstoffsättigung trotz fallender Laufleistung",
+"Gleiche prozentuale Abnahme bei VO2max und Zeit bis zur Erschöpfung"
+],
+"warum": "Pro 1.000 m sank die VO2max um 6,3 %, während die Zeit bis zur Erschöpfung bei 107 % vVO2max sogar um 14,5 % fiel."
+}
+}
+},
+{
+"id": "PACE-118",
+"karte": {
+"kopf": "Alle Trainingsstufen · Leitlinie & Fragebogen",
+"titel": "Ungewohnte Härtetests erhöhen das Herzrisiko bei Inaktiven stark",
+"titel_hervor": "erhöhen das Herzrisiko",
+"setup": "Fachleute werteten Daten zu akuten Herzereignissen beim Sport aus und prüften ein dreistufiges Prüfverfahren vor dem Trainingsstart.",
+"zahl": {
+"label": "Höheres Herzinfarkt-Risiko bei Inaktiven",
+"wert": "bis 50-fach",
+"alltag": "im Vergleich zu ≥ 5×/Woche Aktiven"
+},
+"kern": [
+"Während harter Belastung steigt das Risiko für akute Herzereignisse deutlich",
+"Regelmäßiges Training senkt dieses Risiko im Vergleich zu Inaktivität stark",
+"Ein gezielter Kurzcheck prüft Aktivität, Beschwerden und Vorerkrankungen"
+],
+"grenze": "Ein Fragebogen in der App schützt nur so gut, wie du deine Angaben ehrlich und genau machst.",
+"fuer_dich": "Du steigst neu ein oder merkst Beschwerden? Verzichte auf Maximaltests, starte moderat und lass Beschwerden ärztlich abklären.",
+"labor": {
+"design": "Konsensus-Leitlinie zum Pre-Participation-Screening und Fragebogen-Validierung",
+"teilnehmer": "Allgemeinbevölkerung, Inaktive und regelmäßig Trainierende",
+"ergebnis": "Intensive Belastung (≥ 6 METs): SCD 5-fach, AMI 3,5-fach; Inaktive vs. ≥ 5×/Wo: bis 50-fach"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du hast Monate keinen Sport gemacht und willst direkt mit einem harten All-Out-Lauftest starten. Warum raten Fachleute davon ab?",
+"richtig": "Ungewohnte Höchstbelastung erhöht bei Inaktiven das akute Herzrisiko",
+"falsch": [
+"Harte Tests verfälschen nur die Stoppuhr, sind aber völlig risikofrei",
+"Untrainierte erreichen bei Maximaltests zu niedrige Pulswerte",
+"Nur wer täglich zweimal trainiert, hat beim Sport ein erhöhtes Risiko"
+],
+"warum": "Bei bisher Inaktiven ist das akute Herzinfarkt-Risiko bei plötzlicher Höchstbelastung bis zu 50-mal höher als bei Vieltrainierenden."
+},
+"plus": {
+"frage": "Du warst drei Monate sportlich inaktiv und hast eine bekannte Herz- oder Stoffwechselerkrankung. Wie solltest du deine Startfitness testen?",
+"richtig": "Keine Maximaltests starten und das Vorgehen zuerst ärztlich abklären",
+"falsch": [
+"Direkt einen maximalen 3-km-Lauf machen, um genaue Zonen zu bekommen",
+"Einen 30-Minuten-Test am Limit absolvieren, aber den Puls ausblenden",
+"Mit kurzen Maximalsprints beginnen und die Pausen kurz halten"
+],
+"warum": "Bei Inaktivität plus relevanten Vorerkrankungen oder Symptomen werden Maximaltests ausgeschlossen und ein ärztlich geklärter Einstieg gewählt."
+},
+"labor": {
+"frage": "Eine große Konsensus-Leitlinie empfiehlt ein dreistufiges Screening vor Trainings- und Teststarts. Welche drei Kriterien steuern die Freigabe?",
+"richtig": "Aktueller Aktivitätsstatus, mögliche Symptome und bekannte Vorerkrankungen",
+"falsch": [
+"Nur das Lebensalter, der BMI und die bisherige 5-km-Bestzeit",
+"Allein der Ruhepuls am Morgen und die maximale Griffkraft",
+"Ausschließlich die Selbsteinschätzung der eigenen Schmerztoleranz"
+],
+"warum": "Die Kombination aus Aktivitätsniveau, Symptomen und Herz-, Stoffwechsel- oder Nierenerkrankungen senkt Risiken ohne unnötige Hürden."
+}
+}
+},
+{
+"id": "PACE-119",
+"karte": {
+"kopf": "Einsteiger & Ältere · Meta-Analyse (1.156 Pers.)",
+"titel": "Ein zügiger Gehtest schätzt die Ausdauer ganz ohne Laufen verlässlich",
+"titel_hervor": "ganz ohne Laufen",
+"setup": "Über 1.150 Erwachsene gingen eine Meile (1,6 km) zügig. Aus Gehzeit, Endpuls, Alter, Gewicht und Geschlecht wurde die Fitness gegen das Labor geprüft.",
+"zahl": null,
+"kern": [
+"Der Gehtest trifft die Fitness gut und schont dabei Gelenke und Kreislauf",
+"Die Formel nutzt Daten, die du ohnehin kennst: Alter, Gewicht, Zeit und Puls",
+"Besonders für Einsteiger, Ältere und Menschen mit Übergewicht ist er sinnvoll"
+],
+"grenze": "Bei jungen Menschen Anfang 20 mit sehr hohem Endpuls oder untypischem Pulsverlauf kann der Test ungenau werden.",
+"fuer_dich": "Du fängst neu an oder möchtest deine Gelenke schonen? Geh 1,6 km so zügig wie möglich und nutze Zeit und Endpuls für deine Start-Fitness.",
+"labor": {
+"design": "Validierungsstudie (30–69 Jahre) und Meta-Analyse (6 Studien) vs. Labor-VO2max",
+"teilnehmer": "1.156 Personen in der Meta-Analyse; Schwerpunkt Untrainierte und Ältere",
+"ergebnis": "Laborvalidierung r = 0,80–0,85; Meta-Analyse (K = 6): rp = 0,79 (95 % KI 0,74–0,84)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du möchtest deine Ausdauer testen, willst aber Gelenke und Herz nicht mit einem harten Lauf belasten. Funktioniert dafür auch zügiges Gehen?",
+"richtig": "Ja, ein zügiger 1,6-km-Gehtest mit Endpuls schätzt die Fitness gut",
+"falsch": [
+"Nein, ohne schnelles Laufen lässt sich die Ausdauer nicht abschätzen",
+"Ja, aber nur die reine Gehzeit zählt, der Puls ist dabei unwichtig",
+"Nein, Gehtests liefern nur bei Leistungssportlern brauchbare Werte"
+],
+"warum": "Ein zügiger 1-Meilen-Gehtest kombiniert Gehzeit, Endpuls, Alter, Gewicht und Geschlecht und trifft die Labor-Ausdauer verlässlich."
+},
+"plus": {
+"frage": "Für welche Personengruppe ist ein submaximaler 1-Meilen-Gehtest als Fitness-Einstiegstest besonders geeignet?",
+"richtig": "Für Laufanfänger, Ältere und Menschen mit Übergewicht",
+"falsch": [
+"Für junge Sprinter Anfang 20 mit sehr hohem Endpuls",
+"Für hochtrainierte Marathonläufer zur Feinjustierung der Schwelle",
+"Für Athleten, die ihre maximale Sprintleistung messen möchten"
+],
+"warum": "Der Gehtest schätzt die VO2max ohne orthopädische oder kardiale Höchstbelastung, kann aber bei jungen Erwachsenen mit hohem Endpuls ungenau sein."
+},
+"labor": {
+"frage": "In einer Validierungsstudie (30–69 Jahre) und einer Meta-Analyse (6 Studien, N = 1.156) wurde der 1-Meilen-Gehtest gegen Labor-VO2max geprüft. Wo liegt eine Schwäche?",
+"richtig": "Bei jungen Erwachsenen mit sehr hohem Endpuls wird die Schätzung ungenauer",
+"falsch": [
+"Die Korrelation zur Labor-VO2max lag in der Meta-Analyse nur sehr niedrig",
+"Der Test erforderte eine volle Ausbelastung bis zur Erschöpfung",
+"Gewicht und Geschlecht hatten keinen Einfluss auf die Gleichung"
+],
+"warum": "Die Meta-Analyse zeigte rp = 0,79, doch bei 20- bis 23-Jährigen mit Endpuls ab 180 bpm oder untypischer Pulsreaktion sinkt die Genauigkeit."
+}
+}
+},
+{
+"id": "PACE-120",
+"karte": {
+"kopf": "Freizeit- & erfahrene Läufer · 2 Feldstudien",
+"titel": "Ein kurzes Stufen-Warm-up ersetzt harte Lauftests im Trainingsblock",
+"titel_hervor": "ersetzt harte Lauftests",
+"setup": "Je 40 Läufer absolvierten einen 9- bis 16-minütigen Stufenlauf nach Puls oder Anstrengungsgefühl, um Fitness und Schwellentempo ohne Ausbelastung zu prüfen.",
+"zahl": null,
+"kern": [
+"Drei ansteigende Stufen reichen, um Fortschritte verlässlich zu verfolgen",
+"Du sparst dir erschöpfende Härtetests und nutzt den Check als Aufwärmen",
+"Die Steuerung nach Belastungsgefühl war auf der härtesten Stufe am stabilsten"
+],
+"grenze": "Die Puls-Variante braucht einen genauen Maximalpuls, die Gefühls-Variante etwas Übung mit der Anstrengungsskala.",
+"fuer_dich": "Du willst alle ein bis zwei Wochen deine Form prüfen, ohne müde zu werden? Nutze einen 15-minütigen Stufenlauf direkt als Warm-up.",
+"labor": {
+"design": "Prospektive Trainings- und Feldvalidierungsstudien (3-Stufen-Submaximaltest)",
+"teilnehmer": "Je 40 Freizeit- und fortgeschrittene Läufer",
+"ergebnis": "Hohe Konstruktvalidität zu vLT1, vLT2, vVO2max; höchste Reliabilität bei RPE 17"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du möchtest alle paar Wochen prüfen, ob dein Lauftraining wirkt, willst dich aber nicht ständig bis ans Limit quälen. Geht das?",
+"richtig": "Ja, ein kurzer Stufenlauf in drei moderaten Tempostufen reicht dafür aus",
+"falsch": [
+"Nein, nur ein voller Wettkampf über 5 Kilometer zeigt Fortschritte",
+"Ja, aber erst ab einer Laufzeit von über einer ganzen Stunde",
+"Nein, leichtes Aufwärmen liefert keinerlei Hinweis auf deine Form"
+],
+"warum": "Ein 9- bis 16-minütiger Lauf in drei ansteigenden Belastungsstufen misst die Entwicklung verlässlich ohne volle Ausbelastung."
+},
+"plus": {
+"frage": "Du nutzt alle zwei Wochen ein dreistufiges Submaximal-Warm-up nach Herzfrequenz zum Formcheck. Was kann die Auswertung am ehesten verfälschen?",
+"richtig": "Ein falsch hinterlegter Maximalpuls in deinem Profil",
+"falsch": [
+"Dass der Test direkt vor einer normalen Einheit stattfindet",
+"Dass die erste Minute jeder Stufe nicht mitgezählt wird",
+"Dass du dabei nicht bis zur völligen Erschöpfung läufst"
+],
+"warum": "Bei der pulsgesteuerten Variante verschieben falsche HFmax-Werte alle drei Stufen; alternativ lässt sich der Test nach RPE steuern."
+},
+"labor": {
+"frage": "In zwei Feldstudien (je N = 40) wurde ein dreistufiger submaximaler Lauftest über HFmax oder die RPE-Anstrengungsskala gesteuert. Was zeigte die RPE-Variante?",
+"richtig": "Hohe Gültigkeit für Schwellen und vVO2max, höchste Stabilität oben",
+"falsch": [
+"Deutlich geringere Aussagekraft für Schwellen-Paces als ein Einzelpuls",
+"Höchste Wiederholbarkeit auf der lockersten der drei Stufen",
+"Keinerlei Eingewöhnungsbedarf für Läufer ohne Skala-Erfahrung"
+],
+"warum": "Der RPE-Stufentest bildete vLT1, vLT2 und vVO2max gut ab und erreichte auf der höchsten Stufe (RPE 17) die höchste Reliabilität, braucht aber kurze Übung."
+}
+}
+},
+{
+"id": "PAUSE-101",
+"karte": {
+"kopf": "Sportler · 54 Studien & Fachkonsens",
+"titel": "Ein Atemwegsinfekt dauert im Schnitt rund eine Woche",
+"titel_hervor": "rund eine Woche",
+"setup": "Fachleute werteten 54 Studien zu Atemwegsinfekten bei Sportlern aus und prüften Regeln für Training bei Erkältung.",
+"zahl": {
+"label": "Mittlere Dauer eines Atemwegsinfekts",
+"wert": "7,1 Tage",
+"alltag": "≈ eine Woche"
+},
+"kern": [
+"Bei gut jedem fünften Infekt fiel mehr als ein Trainingstag aus",
+"Die alte Hals-Regel wurde wissenschaftlich nicht in Studien geprüft",
+"Wichtiger ist, ob der ganze Körper oder nur die Nase betroffen ist"
+],
+"grenze": "Die bisherige Hals-Regel beruht auf Expertenmeinung und wurde nicht direkt in Kontrollstudien getestet.",
+"fuer_dich": "Du hast Fieber, Hals- oder Gliederschmerzen? Dann pausiere das Training und lass Beschwerden ärztlich abklären.",
+"labor": {
+"design": "Konsenspapier, systematisches Review und Meta-Analyse zu akuten Atemwegsinfekten",
+"teilnehmer": "54 Studien mit insgesamt 31.065 Sportlern",
+"ergebnis": "Mittlere Symptomdauer 7,1 Tage (95 % KI 6,2–8,0); Time-Loss > 1 Tag: 20,4 %"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du hast Schnupfen, aber zusätzlich Halsschmerzen und fühlst dich schlapp. Was gilt für dein Training?",
+"richtig": "Training pausieren und die Beschwerden auskurieren",
+"falsch": [
+"Normal trainieren, da alle Symptome am Kopf sind",
+"Extra hart schwitzen, um den Infekt auszuschwitzen",
+"Nur Krafttraining machen und Ausdauer weglassen"
+],
+"warum": "Sobald Hals- oder Allgemeinbeschwerden dazukommen, rät die Sportmedizin zur Trainingspause, um Komplikationen vorzubeugen."
+},
+"plus": {
+"frage": "Du hast seit zwei Tagen leichten Schnupfen ohne Fieber, Hals- oder Gliederschmerzen. Welche Entscheidung passt am ehesten?",
+"richtig": "Höchstens sehr lockeres Ausdauertraining bei niedrigem Puls",
+"falsch": [
+"Intensive Intervalle, weil die Lunge frei wirkt",
+"Schweres Krafttraining bis 1 RIR, solange kein Fieber da ist",
+"Wie gewohnt weitertrainieren, da Schnupfen keine Rolle spielt"
+],
+"warum": "Bei rein lokalem, leichtem Schnupfen wird höchstens lockeres aerobes Training empfohlen, bei Unsicherheit lieber Pause."
+},
+"labor": {
+"frage": "Ein großes Review wertete 54 Studien zu Atemwegsinfekten bei Sportlern aus und prüfte die klassische Hals-Regel. Was zeigte sich?",
+"richtig": "Die Hals-Regel ist nicht prospektiv validiert; Symptom-Cluster sind besser",
+"falsch": [
+"Die Hals-Regel wurde in kontrollierten Studien eindeutig bestätigt",
+"Atemwegsinfekte führten fast gar nicht zu Trainingsausfällen",
+"Untere Atemwegssymptome erlaubten moderates Ausdauertraining"
+],
+"warum": "Der historische Neck-Check stammt aus Expertenmeinung ohne RCT-Nachweis, daher wird heute nach Symptom-Clustern unterschieden."
+}
+}
+},
+{
+"id": "PAUSE-102",
+"karte": {
+"kopf": "Junge Erwachsene · Kontrollierte Versuche",
+"titel": "Lockeres Ausdauertraining verschlimmerte leichten Schnupfen nicht",
+"titel_hervor": "verschlimmerte leichten Schnupfen nicht",
+"setup": "Junge Erwachsene mit leichter Schnupfen-Erkältung trainierten moderat oder ruhten sich aus, während Dauer und Stärke der Beschwerden erfasst wurden.",
+"zahl": null,
+"kern": [
+"Die Erkältung dauerte mit lockerer Bewegung genauso lang wie mit Ruhe",
+"Auch die Stärke der Schnupfensymptome unterschied sich kaum",
+"Alle Teilnehmenden hatten nur leichte Nasensymptome ohne Fieber"
+],
+"grenze": "Gilt nur für leichten Schnupfen ohne Fieber – auf andere Viren oder echte Grippe ist das nicht übertragbar.",
+"fuer_dich": "Du hast nur leichten Schnupfen ohne Fieber? Wenn du unsicher bist oder dich schlapp fühlst, pausiere und kläre es ärztlich ab.",
+"labor": {
+"design": "Kontrollierte klinische Interventionsstudien (Rhinovirus-16-Inokulation und natürliche URTI)",
+"teilnehmer": "34 junge Erwachsene (18–29 Jahre, VO2max 32–60 ml/kg/min)",
+"ergebnis": "Kein signifikanter Unterschied bei Symptomschwere und Krankheitsdauer (p > 0,05)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Junge Erwachsene mit reinem, leichtem Schnupfen ohne Fieber machten lockeres Ausdauertraining. Wie verlief die Erkältung im Vergleich zu Ruhe?",
+"richtig": "Sie dauerte ähnlich lang und war ähnlich stark",
+"falsch": [
+"Sie heilte durch das Schwitzen deutlich schneller ab",
+"Sie wurde bei fast allen deutlich schlimmer",
+"Sie schlug bei den meisten sofort auf die Lunge"
+],
+"warum": "Bei unkompliziertem Schnupfen ohne Fieber veränderte moderate Bewegung weder Dauer noch Stärke der Beschwerden."
+},
+"plus": {
+"frage": "Du willst nach einer leichten Erkältung testen, ob lockeres Training geht, fühlst dich aber allgemein matt. Wie entscheidest du?",
+"richtig": "Pausieren, denn der Befund gilt nur ohne Allgemeinsymptome",
+"falsch": [
+"Trotzdem 30 Minuten moderat laufen, um es auszutesten",
+"Auf schweres Krafttraining statt Ausdauer ausweichen",
+"Nur die Intensität leicht senken und normal durchziehen"
+],
+"warum": "Moderates Training zeigte nur bei reinem, lokalem Schnupfen keinen Nachteil – bei allgemeinem Krankheitsgefühl gilt Pause."
+},
+"labor": {
+"frage": "In kontrollierten Versuchen wurden junge Erwachsene mit einem Schnupfenvirus infiziert und mit moderatem Ausdauertraining belastet. Welche Grenze hat dieser Befund?",
+"richtig": "Er ist nicht auf fieberhafte oder systemische Virusinfekte übertragbar",
+"falsch": [
+"Die Belastung verschlechterte selbst leichten Schnupfen deutlich",
+"Es wurden ausschließlich ältere Leistungssportler untersucht",
+"Die Symptome verschwanden durch das Training nach einem Tag"
+],
+"warum": "Untersucht wurden nur unkomplizierte Infekte der oberen Atemwege ohne Fieber – auf andere Erreger darf man das nicht übertragen."
+}
+}
+},
+{
+"id": "PAUSE-103",
+"karte": {
+"kopf": "Alle Sportler · Kardiologische Leitlinie",
+"titel": "Sport bei Fieber oder Herzmuskelentzündung gefährdet das Herz",
+"titel_hervor": "gefährdet das Herz",
+"setup": "Herzspezialisten fassten die klinische Studienlage zusammen, um klare Regeln für Sport bei Herzmuskelentzündung und Fieberinfekten festzulegen.",
+"zahl": null,
+"kern": [
+"Belastung kann bei entzündetem Herzmuskel gefährliche Rhythmusstörungen auslösen",
+"Schon bei Fieber oder starken Muskelschmerzen gilt sofortige Trainingspause",
+"Nach einer Herzmuskelentzündung folgt eine mehrmonatige Sportpause"
+],
+"grenze": "Ob nach einer Herzmuskelentzündung drei oder sechs Monate pausiert wird, hängt vom ärztlichen Verlauf ab.",
+"fuer_dich": "Du hast Fieber oder starke Gliederschmerzen? Pausiere dein Training sofort und lass vor dem Neustart alles ärztlich abklären.",
+"labor": {
+"design": "Klinische Praxisleitlinie für Sportkardiologie",
+"teilnehmer": "Alle Sportler (Leitlinienempfehlungen auf Basis klinischer Evidenz)",
+"ergebnis": "Sportkarenz bei Myokarditis 3–6 Monate (Klasse III, Level B), bei Perikarditis 30 Tage bis 3 Monate (Klasse I, Level C)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du hast Fieber, fühlst dich aber nach einer Tablette wieder etwas fitter. Warum solltest du trotzdem auf Sport verzichten?",
+"richtig": "Belastung bei fieberhaften Infekten kann das Herz ernsthaft gefährden",
+"falsch": [
+"Schwitzen macht fiebersenkende Mittel sofort unwirksam",
+"Muskeln können bei Fieber gar keine Kraft erzeugen",
+"Die Erkältung dauert dann genau doppelt so lange"
+],
+"warum": "Bei Fieberinfekten besteht die Gefahr, das Herz zu überlasten und schwere Rhythmusstörungen auszulösen."
+},
+"plus": {
+"frage": "Nach einem starken Infekt wurde eine Herzmuskelentzündung festgestellt, du fühlst dich nach zwei Wochen aber gut. Was ist richtig?",
+"richtig": "Monatelang pausieren und erst nach kardiologischer Freigabe starten",
+"falsch": [
+"Mit leichtem Zone-2-Training beginnen, sobald das Fieber weg ist",
+"Zuerst Krafttraining im Sitzen machen, um den Puls niedrig zu halten",
+"Nach drei symptomfreien Tagen langsam wieder steigern"
+],
+"warum": "Bei bestätigter Herzmuskelentzündung empfehlen Fachleitlinien eine Pause von mehreren Monaten und eine ärztliche Freigabe."
+},
+"labor": {
+"frage": "Kardiologische Praxisleitlinien empfehlen bei bestätigter Myokarditis eine Sportpause von 3 bis 6 Monaten. Worauf stützt sich die genaue Dauer im Einzelfall?",
+"richtig": "Auf Expertenkonsens sowie Bildgebungs- und Langzeit-EKG-Verläufe",
+"falsch": [
+"Allein auf das subjektive Wohlbefinden nach dem Fieber",
+"Auf einheitliche Grenzwerte aus großen Zufallsstudien",
+"Auf den Ruhepuls drei Tage nach Symptomende"
+],
+"warum": "Die Entscheidung zwischen drei und sechs Monaten stützt sich laut Leitlinie auf Expertenkonsens sowie MRT- und Holter-Verläufe."
+}
+}
+},
+{
+"id": "PAUSE-104",
+"karte": {
+"kopf": "Sportler nach Virusinfekt · Expertenkonsens",
+"titel": "Nach einem Virusinfekt raten Fachleute zu stufenweisem Einstieg",
+"titel_hervor": "stufenweisem Einstieg",
+"setup": "Sportmediziner erstellten einen sechsstufigen Leitfaden, wie Sportler nach milden bis moderaten Virusinfekten sicher wieder einsteigen können.",
+"zahl": null,
+"kern": [
+"In den ersten Stufen wird nur leichtes Ausdauertraining getestet",
+"Krafttraining kommt laut Leitfaden erst ab der dritten Stufe hinzu",
+"Zwischen zwei Stufen liegt mindestens ein beschwerdefreier Tag"
+],
+"grenze": "Basiert auf Expertenkonsens, nicht auf Kontrollstudien – frühere lange Wartefristen wurden später oft verkürzt.",
+"fuer_dich": "Du startest nach einem Virusinfekt wieder? Taste dich locker heran – bei Beschwerden pausieren und ärztlich abklären.",
+"labor": {
+"design": "Expertenkonsens und klinischer Leitfaden (Graduated Return to Play, 6 Phasen)",
+"teilnehmer": "Sportler nach mildem bis moderatem Virusinfekt",
+"ergebnis": "6 Phasen mit mind. 24 h Abstand ohne Symptome; ursprünglich 10 Tage Ruhe und 7 Tage symptomfrei"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du bist nach einem Virusinfekt wieder gesund und willst neu starten. Womit empfehlen Fachleute zu beginnen?",
+"richtig": "Mit sehr kurzem, lockerem Ausdauertraining in kleinen Schritten",
+"falsch": [
+"Sofort mit schwerem Krafttraining, weil der Puls niedrig bleibt",
+"Mit einem intensiven Testlauf, um die aktuelle Form zu prüfen",
+"Direkt mit dem alten Trainingsplan bei halber Pausenzeit"
+],
+"warum": "Ein stufenweiser Start mit leichter Ausdauer prüft zuerst, wie gut Herz und Kreislauf die Belastung wieder vertragen."
+},
+"plus": {
+"frage": "Du steigst nach einem Virusinfekt stufenweise wieder ein und schaffst zwei kurze, lockere Ausdauereinheiten beschwerdefrei. Was ist der nächste sinnvolle Schritt?",
+"richtig": "Erste lockere Kraftreize ergänzen und die Reaktion beobachten",
+"falsch": [
+"Sofort wieder alle alten Arbeitsgewichte bis 1 RIR laden",
+"Krafttraining noch mehrere Wochen lang auslassen",
+"Zwei Stufen überspringen und direkt Intervalle laufen"
+],
+"warum": "Im Stufenmodell wird erst das Herz-Kreislauf-System getestet, bevor ab der dritten Phase schrittweise Krafttraining dazukommt."
+},
+"labor": {
+"frage": "Ein klinischer Expertenleitfaden schlug nach Virusinfekten sechs Stufen sowie lange Ruhefristen vor. Wie ist die Evidenzlage dazu einzuordnen?",
+"richtig": "Es handelt sich um Expertenkonsens; Fristen wurden später verkürzt",
+"falsch": [
+"Die sechs Phasen wurden in großen Meta-Analysen als optimal bewiesen",
+"Spätere Konsenspapiere verlängerten die Wartefristen deutlich",
+"Das Modell zeigte, dass Krafttraining vor Ausdauer sicherer ist"
+],
+"warum": "Der Leitfaden hat niedrige Evidenz (Expertenkonsens) und seine ursprünglichen Fristen wurden für milde Verläufe später auf drei symptomfreie Tage verkürzt."
+}
+}
+},
+{
+"id": "PAUSE-105",
+"karte": {
+"kopf": "Breiten- & Leistungssportler · Fachkonsens",
+"titel": "Nach mildem Infekt raten Fachleute zu drei symptomfreien Tagen",
+"titel_hervor": "drei symptomfreien Tagen",
+"setup": "Sportmedizinische Expertengremien bewerteten, wie lange nach Atemwegsinfekten je nach Schweregrad bis zum Trainingsstart pausiert werden sollte.",
+"zahl": null,
+"kern": [
+"Nach milden Beschwerden folgen drei Tage ohne Symptome bis zum Start",
+"Bis zum Wettkampf werden bei mildem Verlauf zehn symptomfreie Tage empfohlen",
+"Bei stärkerem Verlauf oder Luftnot steht zuerst ein Arztbesuch an"
+],
+"grenze": "Symptome werden subjektiv eingeschätzt – auch nach dem Start bleiben Ruhepuls und Müdigkeit wichtige Warnsignale.",
+"fuer_dich": "Dein leichter Infekt ist gerade abgeklungen? Warte noch drei beschwerdefreie Tage ab und kläre stärkere Verläufe ärztlich ab.",
+"labor": {
+"design": "Sportmedizinischer Expertenkonsens und klinischer Entscheidungspfad",
+"teilnehmer": "Breiten- und Leistungssportler nach SARS-CoV-2 und ähnlichen Infekten",
+"ergebnis": "Milder Verlauf: 3 symptomfreie Tage bis Training, 10 bis Wettkampf; Konsensgrad M = 8,21–8,75"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du hattest einen milden Atemwegsinfekt und wachst heute erstmals ohne Beschwerden auf. Wann empfehlen Sportmediziner den Trainingsstart?",
+"richtig": "Nach drei aufeinanderfolgenden Tagen ganz ohne Beschwerden",
+"falsch": [
+"Sofort am selben Nachmittag mit normalem Umfang",
+"Erst nach genau vier Wochen Pause für jeden Infekt",
+"Am nächsten Morgen, sofern der Appetit zurück ist"
+],
+"warum": "Nach einem milden Verlauf raten Fachleute zu drei symptomfreien Tagen als Puffer, bevor das Training reduziert startet."
+},
+"plus": {
+"frage": "Nach einem milden Infekt bist du seit drei Tagen symptomfrei und startest reduziert. Worauf solltest du in den ersten Einheiten besonders achten?",
+"richtig": "Auf ungewöhnlich hohen Ruhepuls und starke Erschöpfung",
+"falsch": [
+"Dass du direkt wieder deine alte Laufpace erreichst",
+"Dass du den Ausfall mit Extra-Sätzen aufholst",
+"Nur auf Muskelkater, da der Puls nach Infekten egal ist"
+],
+"warum": "Da man Symptome subjektiv einschätzt, helfen Ruhepuls und Ermüdungsgefühl beim Erkennen einer Überlastung."
+},
+"labor": {
+"frage": "Ein sportmedizinischer Konsens empfiehlt nach milden Infekten drei symptomfreie Tage bis zum Trainingsstart. Welche Einschränkung gilt für diese Regel?",
+"richtig": "Die Einschätzung der Symptome ist subjektiv und braucht Monitoring",
+"falsch": [
+"Sie gilt nur für Wettkämpfe, nicht für normales Training",
+"Sie schließt eine ärztliche Abklärung bei moderaten Verläufen aus",
+"Sie beruht auf einer einzelnen Laborstudie an Laufanfängern"
+],
+"warum": "Der Konsens betont, dass Symptomwahrnehmung subjektiv bleibt und nach dem Einstieg Ruhepuls sowie Fatigue beobachtet werden sollten."
+}
+}
+},
+{
+"id": "PAUSE-106",
+"karte": {
+"kopf": "Trainierende & Patienten · 31 Zufallsstudien",
+"titel": "Einseitiges Training stärkt die andere Seite im Schnitt um 12 %",
+"titel_hervor": "stärkt die andere Seite",
+"setup": "In Übersichtsarbeiten trainierten Teilnehmende nur einen Arm oder ein Bein. Gemessen wurde, wie sich die Kraft der untrainierten Gegenseite veränderte.",
+"zahl": {
+"label": "Mittlerer Krafttransfer auf die Gegenseite",
+"wert": "+11,9 %",
+"alltag": ""
+},
+"kern": [
+"An den Beinen war der Effekt mit +16,4 % größer als an den Armen",
+"Betont langsames Absenken brachte mit +17,7 % besonders viel Transfer",
+"Der Effekt entsteht vor allem über das Nervensystem, weniger über Muskelgröße"
+],
+"grenze": "Einzelne eingeschlossene Studien waren methodisch fehleranfällig; Muskelmasse wächst auf der Gegenseite kaum mit.",
+"fuer_dich": "Ein Arm oder Bein muss gerade pausieren? Kläre ärztlich ab, ob einseitiges Training der gesunden Seite für dich infrage kommt.",
+"labor": {
+"design": "Systematische Reviews und Meta-Analysen zu unilateralem Krafttraining (Cross-Education)",
+"teilnehmer": "31 RCTs mit 785 Teilnehmenden (zweite Übersicht: 96 Studien)",
+"ergebnis": "Gepoolt +11,9 % (95 % KI 9,1–14,8 %); Beine +16,4 %, Arme +9,4 %, exzentrisch +17,7 %; Patienten +29 % (SMD 0,76)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Jemand trainiert mehrere Wochen lang nur das rechte Bein mit Gewichten. Was passiert dabei im Schnitt mit der Kraft des untrainierten linken Beins?",
+"richtig": "Das linke Bein wird durch das Nervensystem spürbar stärker",
+"falsch": [
+"Das linke Bein verliert im Ausgleich deutlich an Kraft",
+"Das linke Bein verändert seine Kraft überhaupt nicht",
+"Das linke Bein wächst sichtbar dicker als das rechte"
+],
+"warum": "Über Anpassungen im Nervensystem überträgt sich ein Teil der Kraft auf die nicht trainierte Gegenseite."
+},
+"plus": {
+"frage": "Nach ärztlicher Rücksprache trainierst du während einer einseitigen Verletzung die gesunde Seite weiter. Welche Trainingsart zeigte den stärksten Krafttransfer?",
+"richtig": "Exzentrisch betontes Krafttraining, besonders an den Beinen",
+"falsch": [
+"Sehr leichtes Ausdauertraining ohne nennenswerten Widerstand",
+"Statisches Dehnen der gesunden Muskelgruppe",
+"Reines Armtraining, weil Arme doppelt so stark übertragen"
+],
+"warum": "In den Meta-Analysen war der Transfer am Unterkörper und bei exzentrisch betontem Krafttraining am größten."
+},
+"labor": {
+"frage": "Meta-Analysen zu einseitigem Krafttraining zeigten einen deutlichen Krafttransfer auf die Gegenseite. Über welchen Hauptmechanismus wirkt dieser Effekt?",
+"richtig": "Vor allem über zentrale neuronale Anpassungen, weniger über Hypertrophie",
+"falsch": [
+"Vor allem über lokales Muskelwachstum auf der Gegenseite",
+"Über erhöhte Durchblutung durch das passive Mitbewegen",
+"Über hormonelle Effekte, die nur im Oberkörper auftreten"
+],
+"warum": "Der Cross-Education-Effekt beruht primär auf zentralen neuronalen Anpassungen, während die Muskelmasse der Gegenseite kaum zunimmt."
+}
+}
+},
+{
+"id": "PAUSE-107",
+"karte": {
+"kopf": "Erwachsene mit Gips · Kontrollierte Studien",
+"titel": "Training des gesunden Arms schützte den eingegipsten Muskel",
+"titel_hervor": "schützte den eingegipsten Muskel",
+"setup": "Während ein Arm drei bis vier Wochen im Gips ruhiggestellt war, trainierte eine Gruppe intensiv den gesunden Arm, die andere Gruppe pausierte.",
+"zahl": {
+"label": "Verhinderter Kraftverlust im Gips",
+"wert": "~13 %",
+"alltag": ""
+},
+"kern": [
+"Auch ein Muskelverlust von rund 4 % Querschnitt wurde abgewendet",
+"Dafür trainierten die Teilnehmenden den gesunden Arm mit hoher Intensität",
+"Ohne Gips schützt einseitiges Training bei Kraftsportlern eher nur die Kraft"
+],
+"grenze": "Bei normaler Pause ohne Gips schützt das Verfahren bei Krafttrainierten zwar die Kraft, aber kaum den Muskelquerschnitt.",
+"fuer_dich": "Ein Arm oder Bein steckt im Gips? Sprich ärztlich ab, ob intensives Training der gesunden Seite für dich sinnvoll ist.",
+"labor": {
+"design": "Übersichtsarbeit und kontrollierte Immobilisationsstudien über 3–4 Wochen",
+"teilnehmer": "Menschen mit einseitiger Gips-Immobilisation eines Arms",
+"ergebnis": "Verhinderung von ~13 % Kraftverlust und ~4 % Muskelquerschnittsverlust (CSA) gegenüber Ruhigstellung ohne Training"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Ein Arm liegt mehrere Wochen im Gips. Was zeigte sich in Versuchen, wenn der andere, gesunde Arm in dieser Zeit kräftig trainiert wurde?",
+"richtig": "Der eingegipste Arm verlor deutlich weniger Kraft und Muskel",
+"falsch": [
+"Der eingegipste Arm baute noch schneller Muskeln ab",
+"Der gesunde Arm konnte wegen des Gipses nicht stärker werden",
+"Es machte keinen Unterschied für den eingegipsten Arm"
+],
+"warum": "Intensives Training der gesunden Seite wirkte dem typischen Kraft- und Muskelabbau im ruhiggestellten Arm entgegen."
+},
+"plus": {
+"frage": "Du hast keine Verletzung mit Gips, sondern pausierst nur eine Seite normal vom Krafttraining. Was kann einseitiges Training der anderen Seite laut Daten erhalten?",
+"richtig": "Vor allem die Maximalkraft, weniger den Muskelquerschnitt",
+"falsch": [
+"Nur den Muskelquerschnitt, aber nicht die Maximalkraft",
+"Weder Maximalkraft noch Muskelquerschnitt in messbarem Umfang",
+"Sowohl mehr Muskelmasse als auch mehr Ausdauer auf der Gegenseite"
+],
+"warum": "Bei bereits Krafttrainierten im normalen Detraining ohne Gips blieb zwar das 1RM erhalten, nicht aber der Muskelquerschnitt."
+},
+"labor": {
+"frage": "Kontrollierte Studien verglichen 3 bis 4 Wochen Arm-Immobilisation mit und ohne Training der Gegenseite. Was unterschied diesen Befund von normalem Detraining?",
+"richtig": "Im Gips-Modell blieben sowohl Kraft als auch Querschnitt erhalten",
+"falsch": [
+"Im Gips-Modell ging die Kraft trotz Gegenseitentraining zurück",
+"Nur im normalen Detraining blieb der Muskelquerschnitt erhalten",
+"Der Effekt zeigte sich erst ab mindestens acht Wochen Immobilisation"
+],
+"warum": "Während im Gips-Modell rund 13 % Kraftverlust und 4 % CSA-Verlust verhindert wurden, schützte es ohne Gips bei Trainierten nur das 1RM."
+}
+}
+},
+{
+"id": "PAUSE-108",
+"karte": {
+"kopf": "Sportler mit Sehnenreizung · 9 Studien",
+"titel": "Begleitetes Training mit leichtem Schmerz schadete Sehnen nicht",
+"titel_hervor": "schadete Sehnen nicht",
+"setup": "In Studien zu Sehnenüberlastungen trainierte eine Gruppe schmerzfrei, die andere unter Kontrolle bis mittlerem Schmerz ohne Verschlechterung am Folgetag.",
+"zahl": null,
+"kern": [
+"Entscheidend war, dass der Schmerz am nächsten Morgen nicht zunahm",
+"Beide Gruppen erreichten ähnliche funktionelle Verbesserungen",
+"Das Konzept gilt nur für begleitete Überlastungen, nicht für akute Risse"
+],
+"grenze": "Gilt nur für betreute Sehnenüberlastungen – akute oder strukturelle Verletzungen brauchen Pause und Abklärung.",
+"fuer_dich": "Du spürst anhaltende Sehnenschmerzen beim Training? Pausiere betroffene Übungen und lass die Beschwerden ärztlich abklären.",
+"labor": {
+"design": "Randomisierte kontrollierte Studie und Meta-Analyse (schmerzadaptiertes vs. schmerzfreies Training)",
+"teilnehmer": "RCT mit 38 Teilnehmenden; Meta-Analyse aus 9 Studien mit 385 Teilnehmenden",
+"ergebnis": "VISA-A-S Score von 57 auf 85 Punkte (p < 0,01); kurzfristiger Vergleich SMD −0,27"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Was zeigen Untersuchungen zu betreutem Training bei chronischen Sehnenüberlastungen im Vergleich zu strikter Schmerzfreiheit?",
+"richtig": "Kontrolliertes Training bei leichtem Schmerz verschlechterte das Ergebnis nicht",
+"falsch": [
+"Jedes Ziehen bei Sehnenreizung führt sofort zu einem Riss",
+"Je stärker der Schmerz im Training, desto schneller heilt die Sehne",
+"Nur monatelange Bettruhe verbessert Sehnenbeschwerden"
+],
+"warum": "In betreuten Studien schadete maßvoller Schmerz der Genesung nicht, solange er am nächsten Morgen nicht anstieg."
+},
+"plus": {
+"frage": "Du hast Sehnenbeschwerden und bemerkst nach einer Einheit am nächsten Morgen deutlich stärkere Schmerzen als vorher. Was bedeutet das?",
+"richtig": "Die Belastung war zu hoch – pausieren und ärztlich abklären",
+"falsch": [
+"Das ist ein gutes Zeichen für schnelle Anpassung der Sehne",
+"Die gleiche Einheit sollte direkt wiederholt werden",
+"Solange es beim Aufwärmen weggeht, ist jede Last unkritisch"
+],
+"warum": "Selbst in betreuten Schmerz-Monitoring-Studien galt ein Schmerzanstieg am Folgetag als klares Stoppsignal."
+},
+"labor": {
+"frage": "Eine Meta-Analyse verglich schmerzadaptiertes mit strikt schmerzfreiem Training bei Überlastungsbeschwerden. Für welche Fälle gilt dieser Befund ausdrücklich nicht?",
+"richtig": "Für akute strukturelle Verletzungen mit Warnzeichen",
+"falsch": [
+"Für chronische Sehnenbeschwerden an der Achillessehne",
+"Für funktionelle Verbesserungen über mehrere Wochen",
+"Für den Abbau von Bewegungsangst bei Überlastungen"
+],
+"warum": "Das Pain-Monitoring-Modell gilt nur für Überlastungsbeschwerden und Tendinopathien; akute strukturelle Verletzungen erfordern sofortige Sperre."
+}
+}
+},
+{
+"id": "PAUSE-109",
+"karte": {
+"kopf": "Ausdauersportler · 21 Studien zusammengefasst",
+"titel": "Nach über einem Monat Pause sinkt die Ausdauer um fast ein Zehntel",
+"titel_hervor": "um fast ein Zehntel",
+"setup": "In 21 Studien legten Ausdauersportler eine komplette Trainingspause ein. Gemessen wurde, wie stark die maximale Sauerstoffaufnahme abfiel.",
+"zahl": {
+"label": "Mittlerer Ausdauerverlust ab 30 Tagen Pause",
+"wert": "−9,4 %",
+"alltag": "≈ ein Zehntel weniger"
+},
+"kern": [
+"In den ersten Wochen sinkt vor allem das Blutvolumen rasch ab",
+"Bis 30 Tage Pause lag der Verlust im Schnitt bei rund 4 %",
+"Nach ein bis zwei Monaten flacht der Abfall auf ein Plateau ab"
+],
+"grenze": "Die Werte schwankten zwischen den Studien stark; Einsteiger fallen oft zurück auf ihr Ausgangsniveau.",
+"fuer_dich": "Du hast drei oder mehr Wochen nicht gelaufen? Starte bewusst langsamer und orientiere dich an lockerem Gefühl statt alter Pace.",
+"labor": {
+"design": "Systematisches Review mit Meta-Analyse und klassische Detraining-Interventionsstudien",
+"teilnehmer": "21 Studien an Ausdauersportlern und Läufern",
+"ergebnis": "VO2max ≤ 30 Tage: −3,9 % (ES −0,62); > 30 Tage: −9,4 % (ES −1,42); Hochtrainierte SMD −1,91 vs. −0,85; I² = 76,3 %"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du machst zwei bis drei Wochen Laufpause und merkst beim ersten Lauf einen höheren Puls. Was ist der wichtigste Grund dafür?",
+"richtig": "Das Blutvolumen ist in den ersten Wochen rasch gesunken",
+"falsch": [
+"Die Beinmuskeln haben sich fast vollständig abgebaut",
+"Die Lunge kann dauerhaft weniger Luft aufnehmen",
+"Der Körper hat das Laufen motorisch verlernt"
+],
+"warum": "Schon innerhalb weniger Tage sinkt das Blutplasmavolumen, sodass das Herz pro Schlag weniger Blut pumpt."
+},
+"plus": {
+"frage": "Nach fünf Wochen Laufpause willst du wieder einsteigen. Wie gehst du sinnvollerweise mit deiner alten Trainingspace um?",
+"richtig": "Pace spürbar drosseln, da die VO2max deutlich gesunken ist",
+"falsch": [
+"Sofort alte Pace laufen, da nach vier Wochen kaum Verlust entsteht",
+"Schneller laufen als vorher, um das Blutvolumen rasch hochzutreiben",
+"Alte Pace halten, weil gut Trainierte im Schnitt nichts verlieren"
+],
+"warum": "Bei Pausen über 30 Tage sinkt die VO2max im Schnitt um fast ein Zehntel, bei sehr gut Trainierten oft noch stärker."
+},
+"labor": {
+"frage": "Eine Meta-Analyse über 21 Studien untersuchte den VO2max-Verlust nach Trainingsstopp. Wie unterschied sich der Verlauf zwischen Gruppen?",
+"richtig": "Hochtrainierte verloren stärker, blieben aber über Untrainierten",
+"falsch": [
+"Hochtrainierte verloren kaum, während Anfänger alles behielten",
+"Die Ergebnisse waren über alle Langzeitstudien fast identisch",
+"Der Abfall begann erst nach mehr als acht Wochen Pause"
+],
+"warum": "Hochtrainierte zeigten eine größere Effektstärke im Abfall (SMD −1,91 vs. −0,85), hielten aber ein Plateau über dem Niveau Untrainierter."
+}
+}
+}
+]

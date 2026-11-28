@@ -1,0 +1,1134 @@
+[
+{
+"id": "SUP-107",
+"karte": {
+"kopf": "Kaffeetrinker im Sport · 60 Studien",
+"titel": "Auch wer täglich Kaffee trinkt, profitiert im Sport von Koffein",
+"titel_hervor": "profitiert im Sport von Koffein",
+"setup": "60 Studien prüften bei Männern und Frauen, ob regelmäßiger Koffeinkonsum oder ein kurzer Entzug die akute Leistungswirkung vor dem Sport verändert.",
+"zahl": null,
+"kern": [
+"Koffein half bei Ausdauer, Schnellkraft und Maximalkraft trotz Gewohnheit.",
+"Ein ein- bis zweitägiger Koffeinentzug brachte vor dem Test keinen Vorteil.",
+"Wichtig ist, dass die Sportdosis höher liegt als die gewohnte Menge."
+],
+"grenze": "Bei Frauen mit sehr hohem Kaffeekonsum wirkten niedrige Dosen in einzelnen Kraftausdauer-Tests schwächer.",
+"fuer_dich": "Du trinkst täglich Kaffee vor dem Wettkampf? Spar dir kurzen Entzug und nutze lieber 3 bis 6 mg/kg über deiner gewohnten Einzeldosis.",
+"labor": {
+"design": "Meta-Analyse von 60 Studien zu habituellem Koffeinkonsum, Entzug (<24 h, 24–48 h) und Akutdosis",
+"teilnehmer": "Männer (44 Studien) und Frauen (9 Studien), Einsteiger bis Athleten",
+"ergebnis": "SMD 0,21 (95 % CI 0,06–0,36; p=0,006) bei Akutdosis > Gewohnheit; Männer ES 0,26; Frauen ES 0,23"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du trinkst jeden Tag Kaffee und willst vor einem Wettkampf Koffein für mehr Leistung nutzen. Musst du dafür vorher zwei Tage verzichten?",
+"richtig": "Nein, ein kurzer Verzicht bringt im Schnitt keinen extra Schub",
+"falsch": [
+"Ja, sonst zeigt Koffein bei Kaffeetrinkern keine Wirkung mehr",
+"Ja, ein Tag Pause verdoppelt die Leistungswirkung am Wettkampftag",
+"Nein, aber Koffein wirkt bei Kaffeetrinkern nur noch auf Ausdauer"
+],
+"warum": "Ein kurzer Entzug bis 48 Stunden änderte die Leistungswirkung nicht – entscheidend ist eine ausreichend hohe akute Dosis."
+},
+"plus": {
+"frage": "Du trinkst täglich zwei Kaffee und planst am Wochenende einen harten Leistungstest. Wie setzt du Koffein sinnvoll ein?",
+"richtig": "Normal weitertrinken und vorm Test etwas höher als gewohnt dosieren",
+"falsch": [
+"Zwei Tage auf Koffein verzichten, damit die Rezeptoren frei werden",
+"Weniger als deine normale Morgenmenge nehmen, damit es besser wirkt",
+"Auf Koffein verzichten, weil Gewohnheitstrinker kaum profitieren"
+],
+"warum": "Solange die akute Dosis über deiner gewohnten Zufuhr liegt, bleibt der Leistungseffekt erhalten – kurzer Entzug half nicht."
+},
+"labor": {
+"frage": "Eine Meta-Analyse über 60 Studien prüfte habituelle Koffeinnutzung und kurzen Entzug bei Männern und Frauen. Was war entscheidend?",
+"richtig": "Die akute Dosis musste die gewohnte Zufuhr übersteigen, Entzug war egal",
+"falsch": [
+"Nur nach zweitägigem Entzug blieben die Effektstärken positiv",
+"Der Leistungsgewinn blieb nur bei Männern statistisch erhalten",
+"Auch kleinste Dosen unter der Gewohnheitsmenge wirkten unvermindert"
+],
+"warum": "Bei Akutdosen oberhalb der gewohnten Menge blieb der Effekt signifikant (SMD 0,21) – bei Männern (ES 0,26) wie Frauen (ES 0,23)."
+}
+}
+},
+{
+"id": "SUP-108",
+"karte": {
+"kopf": "Sportler · Studien zusammengefasst",
+"titel": "Beta-Alanin hilft vor allem bei harten Belastungen bis 10 Minuten",
+"titel_hervor": "harten Belastungen bis 10 Minuten",
+"setup": "Eine Auswertung mehrerer Studien prüfte, bei welchen Belastungsdauern eine mehrwöchige Beta-Alanin-Einnahme die Leistung im Vergleich zu Placebo steigert.",
+"zahl": null,
+"kern": [
+"Am deutlichsten wirkt es bei Belastungen zwischen 30 Sekunden und 10 Minuten.",
+"Es wirkt nicht sofort, sondern baut über Wochen einen Säurepuffer im Muskel auf.",
+"Bei ganz kurzen Sprints unter 30 Sekunden bringt es nur wenig Nutzen."
+],
+"grenze": "Eine einzelne Einnahme direkt vor dem Training wirkt nicht – und für sehr kurze Sprints ist der Nutzen gering.",
+"fuer_dich": "Dein Training enthält harte Intervalle von 30 Sekunden bis 10 Minuten? Nimm mindestens 6 Wochen lang täglich etwa 4,8 g Beta-Alanin.",
+"labor": {
+"design": "Meta-Analyse von Studien zu chronischer Beta-Alanin-Einnahme (z. B. 4,8 g/Tag, mind. 6 Wochen)",
+"teilnehmer": "Trainierte, Ausdauer- und Hybridsportler",
+"ergebnis": ""
+}
+},
+"quiz": {
+"basis": {
+"frage": "Jemand schluckt vor dem Laufen einmalig Beta-Alanin in der Hoffnung auf einen sofortigen Leistungsschub. Klappt das?",
+"richtig": "Nein, es muss über mehrere Wochen täglich eingenommen werden",
+"falsch": [
+"Ja, es wirkt genau wie Koffein innerhalb einer Stunde",
+"Ja, aber nur bei ganz kurzen Sprints unter zehn Sekunden",
+"Nein, es wirkt nur, wenn man dazu keinen Sport macht"
+],
+"warum": "Beta-Alanin füllt erst über Wochen den Säurepuffer in den Muskeln auf und hat keinen akuten Soforteffekt."
+},
+"plus": {
+"frage": "Für welche Trainingsform lohnt sich eine mehrwöchige Beta-Alanin-Einnahme am ehesten?",
+"richtig": "Hochintensive Intervalle im mittleren Minutenbereich",
+"falsch": [
+"Einzelne Maximalkraft-Versuche von wenigen Sekunden Dauer",
+"Sehr lockere Grundlageneinheiten ohne starkes Muskelbrennen",
+"Spontane Einzelgaben am Wettkampftag ohne längere Vorlaufzeit"
+],
+"warum": "Bei harten Belastungen zwischen 0,5 und 10 Minuten übersäuert der Muskel stark – dort hilft der erhöhte Carnosinspeicher am meisten."
+},
+"labor": {
+"frage": "Eine Meta-Analyse verglich chronische Beta-Alanin-Einnahme über verschiedene Belastungsdauern. Wie erklärt sich das optimale Zeitfenster?",
+"richtig": "Mehr intramuskuläres Carnosin puffert Säure bei harten Minuten-Belastungen",
+"falsch": [
+"Akute Nervenreizung steigert vor allem Sprints unter dreißig Sekunden",
+"Beta-Alanin ersetzt Kreatinphosphat bei maximalen Einzelwiederholungen",
+"Der Effekt entsteht vor allem durch schnelle Erweiterung der Blutgefäße"
+],
+"warum": "Mehrwöchige Zufuhr erhöht das Muskel-Carnosin als intrazellulären Säurepuffer, was besonders bei 0,5 bis 10 Minuten hochintensiver Arbeit zählt."
+}
+}
+},
+{
+"id": "SUP-109",
+"karte": {
+"kopf": "Sportler · 8 Meta-Analysen zusammengefasst",
+"titel": "Natriumbicarbonat hilft bei harten Belastungen bis 8 Minuten",
+"titel_hervor": "harten Belastungen bis 8 Minuten",
+"setup": "Acht Meta-Analysen prüften, ob Natriumbicarbonat (Natron) vor dem Sport kurze, sehr harte Belastungen, Kraftausdauer oder Maximalkraft verbessert.",
+"zahl": {
+"label": "Schneller beim 2000-Meter-Rudern",
+"wert": "+1,4 %",
+"alltag": ""
+},
+"kern": [
+"Besonders wirksam ist es bei harten Belastungen von 45 Sekunden bis 8 Minuten.",
+"Auch Kraftausdauer und anstrengende Intervall-Lauftests verbesserten sich.",
+"Für reine Maximalkraft bei einzelnen schweren Versuchen zeigte sich kein Effekt."
+],
+"grenze": "Es verursacht oft Magen-Darm-Probleme, und bei Teilen der Ausdauerdaten ist die Studienqualität nur niedrig.",
+"fuer_dich": "Harter Wettkampf über 1 bis 8 Minuten geplant? Teste 0,2 bis 0,3 g/kg ein bis drei Stunden vorher unbedingt erst im Training.",
+"labor": {
+"design": "Umbrella-Review aus 8 Meta-Analysen, akut (0,2–0,3 g/kg, 60–180 min vorab) oder mehrtägig",
+"teilnehmer": "Trainierte, Ausdauer-, Hybridsportler und Frauen aus 8 Meta-Analysen",
+"ergebnis": "Ausdauer 45 s–8 min ES 0,40; Yo-Yo ES 0,36; 2000-m-Rudern +1,4 % (90 % CL 0,1–2,6 %); Maximalkraft kein Effekt"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Ein Sportler nimmt vor einem harten 4-Minuten-Rennen Natriumbicarbonat (Natron). Was sollte er vor dem ersten Wettkampf beachten?",
+"richtig": "Verträglichkeit und Zeitpunkt vorher im Training testen",
+"falsch": [
+"Möglichst viel nehmen, weil es kaum Nebenwirkungen gibt",
+"Es erst direkt beim Startschuss schlucken, weil es sofort wirkt",
+"Es hilft vor allem beim einmaligen Heben von Maximalgewicht"
+],
+"warum": "Natriumbicarbonat kann Magen-Darm-Beschwerden auslösen und braucht 60 bis 180 Minuten Vorlauf – daher unbedingt erst im Training testen."
+},
+"plus": {
+"frage": "Du planst einen Test deiner 1RM-Maximalkraft im Bankdrücken. Lohnt sich dafür eine akute Einnahme von Natriumbicarbonat?",
+"richtig": "Nein, auf die Maximalkraft zeigte sich in Studien kein Effekt",
+"falsch": [
+"Ja, gerade bei einzelnen Maximalversuchen ist der Nutzen am größten",
+"Ja, aber nur bei Einnahme kurz vor dem ersten Aufwärmsatz",
+"Nein, es bremst die Maximalkraft und senkt auch die Kraftausdauer"
+],
+"warum": "Natriumbicarbonat unterstützt Kraftausdauer und harte Belastungen von 45 Sekunden bis 8 Minuten, nicht aber einzelne 1RM-Versuche."
+},
+"labor": {
+"frage": "Ein Umbrella-Review aus acht Meta-Analysen bewertete Natriumbicarbonat nach GRADE für verschiedene Tests. Wie fiel die Einordnung aus?",
+"richtig": "Moderat für Wingate und Yo-Yo, niedriger für 2000-m-Rudern und Ausdauer",
+"falsch": [
+"Durchweg hohe Evidenzqualität für Maximalkraft und lange Ausdauer",
+"Kein messbarer Effekt in Kraftausdauer- und Yo-Yo-Untersuchungen",
+"Die Effekte traten nur bei mehrtägiger Einnahme, nicht akut auf"
+],
+"warum": "Für Wingate- und Yo-Yo-Tests war die GRADE-Qualität moderat, bei 2000-m-Rudern und 45 s–8 min Ausdauer durch Publikationsbias niedriger."
+}
+}
+},
+{
+"id": "SUP-110",
+"karte": {
+"kopf": "Einsteiger & Athleten · Meta-Analyse",
+"titel": "Rote-Bete-Nitrat hilft vor allem Einsteigern bei mittlerer Ausdauer",
+"titel_hervor": "Einsteigern bei mittlerer Ausdauer",
+"setup": "Eine Auswertung von Studien prüfte, ob Nitrat etwa aus Rote-Bete-Saft zwei bis drei Stunden vor dem Sport Ausdauer und Kraft verbessert.",
+"zahl": null,
+"kern": [
+"Am ehesten hilft Nitrat bei intensiver Ausdauer von etwa 10 bis 17 Minuten.",
+"Im Krafttraining zeigte sich insgesamt kein klarer Leistungsvorteil.",
+"Rund 7 von 10 Aktiven kennen das nötige Timing von 2 bis 3 Stunden nicht."
+],
+"grenze": "Bei hochtrainierten Ausdauerathleten und beim Oberkörper-Krafttraining bleiben deutliche Gewinne oft aus.",
+"fuer_dich": "Du planst einen harten 10- bis 17-Minuten-Lauf? Trink 2 bis 3 Stunden vorher Rote-Bete-Saft mit etwa 300 bis 1000 mg Nitrat.",
+"labor": {
+"design": "Meta-Analyse zu akuter und mehrtägiger Nitratgabe (5–16,8 mmol, 2–3 h vorab) bei Ausdauer und Kraft",
+"teilnehmer": "Einsteiger, Ausdauer-, Hybridsportler, Ältere; Umfrage n=1.404 Aktive",
+"ergebnis": "Krafttraining kein signifikanter Haupteffekt (p=0,154); 3,9 % Nebenwirkungen; 69,4 % falsches Timing"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Viele trinken Rote-Bete-Saft kurz vor dem Loslaufen. Was übersehen dabei fast sieben von zehn Aktiven?",
+"richtig": "Er muss schon einige Stunden vor dem Sport getrunken werden",
+"falsch": [
+"Er wirkt nur, wenn man ihn erst während des Laufens trinkt",
+"Er hilft vor allem beim Bankdrücken und nicht beim Laufen",
+"Er sollte erst direkt nach dem Training getrunken werden"
+],
+"warum": "Der Körper wandelt Nitrat erst über Speichel und Stoffwechsel um – dafür braucht es rund zwei bis drei Stunden Vorlauf."
+},
+"plus": {
+"frage": "Du bist Einsteiger im Laufen und planst einen intensiven 15-Minuten-Testlauf. Wann ist Rote-Bete-Saft sinnvoll?",
+"richtig": "Einige Stunden vor dem Start als Nitratquelle einnehmen",
+"falsch": [
+"Kurz vor dem Warm-up für einen schnellen Koffein-ähnlichen Kick",
+"Nur an Krafttrainingstagen für mehr Gewicht beim Bankdrücken",
+"Erst ab Profi-Niveau sinnvoll, weil Einsteiger kaum profitieren"
+],
+"warum": "Gerade weniger Trainierte profitieren bei 10 bis 17 Minuten harter Ausdauer, wenn Nitrat zwei bis drei Stunden vorher genommen wird."
+},
+"labor": {
+"frage": "In einer Meta-Analyse wurde Nitratsupplementierung über verschiedene Sportarten und Trainingslevel hinweg verglichen. Wo zeigten sich klare Grenzen?",
+"richtig": "Kaum Effekt bei Elite-Ausdauerathleten und kein Haupteffekt im Krafttraining",
+"falsch": [
+"Starke Effekte im Oberkörper-Krafttraining, aber keine bei Ausdauer",
+"Über ein Drittel der Nutzer berichtete über schwere Nebenwirkungen",
+"Die Umwandlung zu Stickstoffmonoxid wirkte erst ab zwei Stunden Laufzeit"
+],
+"warum": "Im Krafttraining blieb der Haupteffekt aus (p=0,154), und auch bei hochtrainierten Elite-Ausdauerathleten fielen Gewinne oft weg."
+}
+}
+},
+{
+"id": "SUP-111",
+"karte": {
+"kopf": "Krafttrainierende · 49 Studien (1.863 Pers.)",
+"titel": "Mehr Protein bringt bis 1,6 g pro Kilo extra Kraft und Muskel",
+"titel_hervor": "bis 1,6 g pro Kilo",
+"setup": "49 Studien über 6 bis 52 Wochen verglichen Krafttraining mit zusätzlichem Proteinpulver gegen Krafttraining ohne extra Protein.",
+"zahl": {
+"label": "Zusätzlicher Kraftgewinn im Schnitt",
+"wert": "+9 %",
+"alltag": "≈ +2,5 kg beim Maximalgewicht"
+},
+"kern": [
+"Die fettfreie Masse stieg im Schnitt um 0,30 kg, bei Trainierten um 0,75 kg.",
+"Die gesamte Tagesmenge zählt mehr als der genaue Zeitpunkt oder die Quelle.",
+"Über 1,62 g pro Kilo Körpergewicht wuchs die Muskelmasse im Schnitt nicht weiter."
+],
+"grenze": "Mit höherem Alter – besonders ab 60 – fällt der zusätzliche Muskelaufbau durch extra Protein kleiner aus.",
+"fuer_dich": "Schaffst du mit normalem Essen keine 1,6 g Protein pro Kilo? Füll die Lücke flexibel mit einem Shake, wann es dir passt.",
+"labor": {
+"design": "Meta-Analyse von 49 RCTs (6–52 Wochen, 2–5 Einheiten/Woche), Protein vs. Kontrolle",
+"teilnehmer": "1.863 Erwachsene (Einsteiger, Trainierte, Frauen und Ältere)",
+"ergebnis": "1RM +2,49 kg (+9 %); FFM +0,30 kg (Trainierte +0,75 kg); Plateau 1,62 g/kg/Tag (bis 2,2 g/kg)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du trinkst direkt nach dem Krafttraining einen Eiweißshake, isst über den Tag aber sonst kaum Eiweiß. Was ist wichtiger?",
+"richtig": "Wie viel Eiweiß du insgesamt über den ganzen Tag isst",
+"falsch": [
+"Dass der Shake in den ersten zehn Minuten getrunken wird",
+"Dass das Eiweiß vor allem aus teurem Pulver stammt",
+"Dass du an Ruhetagen möglichst wenig Eiweiß zu dir nimmst"
+],
+"warum": "Für Kraft und Muskelaufbau zählt die gesamte tägliche Proteinmenge deutlich mehr als der genaue Zeitpunkt."
+},
+"plus": {
+"frage": "Du isst im Schnitt schon reichlich Protein über dem typischen Muskelaufbau-Plateau. Was bringt dir ein zusätzlicher Shake noch?",
+"richtig": "Meist kaum noch extra Muskelzuwachs, da die Grenze erreicht ist",
+"falsch": [
+"Jedes weitere Gramm sorgt linear für genauso viel neuen Muskelaufbau",
+"Der Shake wirkt nur, wenn er direkt vor dem Schlafen getrunken wird",
+"Ohne deutlich mehr Protein lässt sich die 1RM-Kraft nicht steigern"
+],
+"warum": "Im Schnitt flachte der Muskelzuwachs ab 1,62 g/kg ab; bis 2,2 g/kg dient vor allem als individuelle Sicherheitsmarge."
+},
+"labor": {
+"frage": "Eine Meta-Analyse über 49 Krafttrainings-RCTs untersuchte den Effekt von Proteinsupplementierung nach Trainingsstatus und Alter. Was zeigte sich?",
+"richtig": "Trainierte gewannen mehr FFM hinzu, mit steigendem Alter sank der Effekt",
+"falsch": [
+"Ältere über 60 bauten durch Protein mehr Muskelmasse auf als Junge",
+"Proteinpulver steigerte zwar die FFM, veränderte die 1RM-Kraft aber nicht",
+"Oberhalb des Plateaus verdoppelte sich der Muskelzuwachs noch einmal"
+],
+"warum": "Bei Trainierten lag das Plus an fettfreier Masse höher (+0,75 kg), während der Effekt pro Lebensjahr leicht sank (−0,01 kg/Jahr)."
+}
+}
+},
+{
+"id": "SUP-112",
+"karte": {
+"kopf": "Sportler & Erwachsene · 12 Studien",
+"titel": "Omega-3 lindert Muskelkater kaum spürbar, hilft Kraft wohl etwas",
+"titel_hervor": "lindert Muskelkater kaum spürbar",
+"setup": "12 Studien prüften nach harten Trainingsbelastungen, ob Omega-3-Kapseln Muskelkater verringern und die Kraft schneller zurückbringen.",
+"zahl": {
+"label": "Weniger Muskelkater auf 10er-Skala",
+"wert": "−0,93 Pkt.",
+"alltag": "kaum spürbar (Spürgrenze: 1,4)"
+},
+"kern": [
+"Der Rückgang beim Muskelkater war im Alltag meist zu klein, um ihn zu spüren.",
+"In einigen Studien kam die Muskelkraft schneller zurück, in 18 anderen nicht.",
+"Etwa jeder dritte Sportler hatte niedrige Omega-3-Werte im Blut."
+],
+"grenze": "Die Studienlage ist widersprüchlich, und fast keine Studie maß den tatsächlichen Omega-3-Wert im Blut.",
+"fuer_dich": "Du isst selten fetten Seefisch und trainierst hart? 1,35 bis 3 g EPA/DHA täglich über 4+ Wochen können helfen – Muskelkater bleibt aber.",
+"labor": {
+"design": "Meta-Analyse von 12 RCTs nach exzentrischer Belastung (z. B. 3 g/Tag EPA/DHA, 4 Wochen)",
+"teilnehmer": "301 Erwachsene (145 Intervention, 156 Kontrolle), inkl. Athleten",
+"ergebnis": "DOMS −0,93 VAS-Pkt. (MCID 1,4); Kraftregeneration g=0,45 (9 Studien; 18 ohne Effekt)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du nimmst Omega-3-Kapseln, um nach hartem Beintraining keinen Muskelkater mehr zu bekommen. Was zeigen die bisherigen Studien?",
+"richtig": "Der Muskelkater wird damit im Alltag kaum spürbar geringer",
+"falsch": [
+"Muskelkater verschwindet schon nach einer einzigen Einnahme",
+"Omega-3 verstärkt Muskelkater, weil es Entzündungen anheizt",
+"Die Schmerzen halbieren sich nach jeder intensiven Einheit"
+],
+"warum": "Der statistische Rückgang beim Muskelkater lag unter der Schwelle, ab der Menschen einen echten Unterschied spüren."
+},
+"plus": {
+"frage": "Du isst kaum fetten Seefisch und startest einen Trainingsblock mit vielen langsamen, exzentrischen Sätzen. Wie ordnest du Omega-3 ein?",
+"richtig": "Über Wochen testen für Kraftregeneration, ohne Wunder bei Muskelkater",
+"falsch": [
+"Nur an Muskelkater-Tagen nehmen, weil Omega-3 wie ein Akutmittel wirkt",
+"Wenig sinnvoll, weil Sportler fast alle hohe Omega-3-Werte haben",
+"Verhindert Muskelkater zuverlässig, sodass du Deloads streichen kannst"
+],
+"warum": "Bei wenig Seefisch und hohem Volumen gibt es erste Hinweise für Kraftregeneration nach 4+ Wochen, nicht aber gegen Muskelkater."
+},
+"labor": {
+"frage": "Meta-Analysen untersuchten Omega-3 nach exzentrischer Belastung anhand von Schmerzskalen (VAS) und Krafttests. Was schränkt die Aussagekraft ein?",
+"richtig": "Widersprüchliche Kraftdaten und fehlende Messung des Omega-3-Index im Blut",
+"falsch": [
+"Alle Kraftstudien zeigten übereinstimmend sehr große Effektstärken",
+"Die Schmerzreduktion überschritt die klinische Relevanzschwelle deutlich",
+"Omega-3 erhöhte in den Studien die Entzündungsmarker IL-6 und CK stark"
+],
+"warum": "Neben 9 positiven Kraftstudien fanden 18 keinen Effekt, und fast keine Studie kontrollierte den tatsächlichen Omega-3-Ausgangsstatus."
+}
+}
+},
+{
+"id": "SUP-113",
+"karte": {
+"kopf": "Sportler · 10 Studien (354 Personen)",
+"titel": "Vitamin D hebt den Blutwert klar, macht aber nicht direkt stärker",
+"titel_hervor": "macht aber nicht direkt stärker",
+"setup": "10 Studien gaben Sportlern 11 bis 12 Wochen lang Vitamin D3 oder ein Scheinpräparat und maßen den Blutspiegel sowie die Muskelkraft.",
+"zahl": {
+"label": "Anstieg beim Vitamin-D-Blutwert",
+"wert": "+14,76 ng/mL",
+"alltag": ""
+},
+"kern": [
+"Weder Oberkörper- noch Beinkraft stiegen insgesamt statistisch verlässlich.",
+"Das galt selbst für Sportler, die mit eher niedrigen Blutwerten starteten.",
+"Werte über 100 ng/mL gelten als giftig – blind hochdosieren schadet eher."
+],
+"grenze": "Die Gruppen waren eher klein und in vier Studien brachen über 15 % der Teilnehmenden vorzeitig ab.",
+"fuer_dich": "Im Winter wenig Sonne oder Blutwert unter 30 ng/mL? Nutze Vitamin D3 gegen Mangel, erwarte davon aber keinen direkten Kraftschub.",
+"labor": {
+"design": "Meta-Analyse von 10 RCTs (11–12 Wochen), 2.000–3.570 IE/Tag Vitamin D3 vs. Placebo",
+"teilnehmer": "354 Athleten (318 abgeschlossen), inkl. Ausdauer- und Jugendsportler",
+"ergebnis": "25(OH)D MD +14,76 ng/mL (p<0,0001); Gesamtkraft SMD 0,18 (95 % CI −0,02 bis 0,37; p=0,08)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Ein Sportler nimmt im Winter drei Monate lang Vitamin D3, um beim Training stärker zu werden. Was zeigen die Studien?",
+"richtig": "Der Blutwert steigt klar, die Muskelkraft aber nicht verlässlich",
+"falsch": [
+"Die Kraft steigt im Schnitt genauso stark wie durch Kreatin",
+"Vitamin D3 erhöht den Blutwert bei Sportlern überhaupt nicht",
+"Die Beinkraft sinkt, während die Ausdauer sprunghaft ansteigt"
+],
+"warum": "Vitamin D3 hebt zuverlässig den Blutspiegel, führte in der Gesamtauswertung aber zu keinem klaren Kraftgewinn."
+},
+"plus": {
+"frage": "Dein Vitamin-D-Wert liegt im Winter im Mangelbereich und du überlegst, ob sich Vitamin D3 lohnt. Was ist die richtige Erwartung?",
+"richtig": "Sinnvoll zum Ausgleich des Mangels, aber kein direkter Kraft-Booster",
+"falsch": [
+"Möglichst hoch dosieren, weil höhere Spiegel linear mehr Kraft bringen",
+"Überflüssig, weil Vitamin D3 den Blutspiegel im Winter kaum anhebt",
+"Lohnt sich vor allem für schnelle Zuwächse beim Bankdrücken"
+],
+"warum": "Gegen einen Mangel unter 30 ng/mL helfen 2.000 bis 3.570 IE/Tag zuverlässig – direkte Kraftsprünge sind aber nicht belegt."
+},
+"labor": {
+"frage": "In einer Meta-Analyse aus zehn RCTs erhielten Athleten elf bis zwölf Wochen Vitamin D3 gegen Placebo. Wie fielen Blutwert und Kraft aus?",
+"richtig": "Hochsignifikanter Anstieg von 25(OH)D, aber kein signifikanter Krafteffekt",
+"falsch": [
+"Signifikanter Kraftgewinn im Unterkörper bei unverändertem 25(OH)D-Spiegel",
+"Starke Zuwächse in Ober- und Unterkörperkraft bei allen Ausgangswerten",
+"Nur wöchentliche Gaben steigerten die Kraft, tägliche blieben wirkungslos"
+],
+"warum": "25(OH)D stieg deutlich an (p<0,0001), während Gesamtkraft (SMD 0,18; p=0,08) sowie Ober- und Unterkörperkraft nicht signifikant blieben."
+}
+}
+},
+{
+"id": "SUP-114",
+"karte": {
+"kopf": "Ausdauersportlerinnen · Meta-Analyse",
+"titel": "Eisen steigert die Ausdauer vor allem bei leeren Eisenspeichern",
+"titel_hervor": "bei leeren Eisenspeichern",
+"setup": "Studien prüften bei Ausdauersportlern mit niedrigen Eisenspeichern ohne Blutarmut, ob Eisentabletten Blutwerte und Sauerstoffaufnahme verbessern.",
+"zahl": {
+"label": "Betroffene Sportlerinnen mit Eisenmangel",
+"wert": "15 bis 35 %",
+"alltag": "teils über jede Zweite"
+},
+"kern": [
+"Eisenspeicher, Blutfarbstoff und Sauerstoffaufnahme verbesserten sich klar.",
+"Leistungsgewinne traten verlässlich erst bei sehr leeren Speichern auf.",
+"Selbst ohne Blutarmut kann ein leerer Eisenspeicher die Ausdauer bremsen."
+],
+"grenze": "Bei volleren Speichern über 20 µg/L Ferritin sind Leistungsgewinne widersprüchlich – blindes Einnehmen hilft nicht.",
+"fuer_dich": "Du bist Ausdauersportlerin und fühlst dich oft müde? Lass jährlich dein Blut prüfen und nimm Eisen nur nach ärztlicher Freigabe.",
+"labor": {
+"design": "Meta-Analyse zu oraler Eisengabe (10–209 mg/Tag, 8 Wochen bis 6 Monate) und IV-Eisen-Studie",
+"teilnehmer": "Ausdauersportlerinnen und -sportler mit IDNA (Hb ≥12 g/dL)",
+"ergebnis": "Ferritin g=1,088; Serumeisen g=1,004 (beide p<0,001); VO2max p=0,004; Leistungs-Cutoff ≤20 µg/L"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Eine Läuferin hat keine Blutarmut, aber ihre Eisenspeicher sind sehr leer. Kann zusätzliches Eisen helfen?",
+"richtig": "Ja, nach ärztlicher Prüfung kann es Blutwerte und Ausdauer bessern",
+"falsch": [
+"Nein, ohne Blutarmut hat ein leerer Speicher keine Folgen",
+"Ja, jede Läuferin sollte auch ohne Bluttest hochdosiert Eisen nehmen",
+"Nein, Eisen spielt nur beim Krafttraining eine wichtige Rolle"
+],
+"warum": "Auch ohne Blutarmut kann ein sehr niedriger Eisenspeicher die Sauerstoffaufnahme bremsen – ein Bluttest beim Arzt klärt das ab."
+},
+"plus": {
+"frage": "Als Ausdauersportlerin überlegst du, vorbeugend Eisentabletten zu nehmen. Wann ist ein klarer Leistungsgewinn am wahrscheinlichsten?",
+"richtig": "Wenn ein Bluttest sehr leere Ferritin-Speicher zeigt und ein Arzt zustimmt",
+"falsch": [
+"Auch bei vollen Eisenspeichern steigt die Ausdauer zuverlässig weiter",
+"Schon eine Woche Einnahme reicht meist schon für volle Eisenspeicher",
+"Nur bei Männern, weil Sportlerinnen selten niedrige Werte haben"
+],
+"warum": "Verlässliche Leistungsgewinne zeigten sich vor allem bei sehr niedrigem Ferritin (≤20 µg/L), und das Auffüllen dauert oft Monate."
+},
+"labor": {
+"frage": "Studien untersuchten Eisengaben bei Ausdauersportlern mit nicht-anämischem Eisenmangel (niedriges Ferritin, normales Hämoglobin). Wo lag die Grenze?",
+"richtig": "Bei nur leicht erniedrigten Speichern war die Leistungs-Evidenz gemischt",
+"falsch": [
+"Orale Eisengaben veränderten weder Ferritin noch Serumeisen signifikant",
+"Intravenöses Eisen steigerte nach vier Wochen vor allem die VO2peak stark",
+"Die Effekte traten erst auf, wenn bereits eine schwere Anämie vorlag"
+],
+"warum": "Während Ferritin und Serumeisen stark stiegen, zeigten sich oberhalb von 20 µg/L Ferritin sechs positive neben sechs neutralen Studien."
+}
+}
+},
+{
+"id": "SUP-115",
+"karte": {
+"kopf": "Sportler · 24 Studien ausgewertet",
+"titel": "Isolierte BCAA bringen im Sport keinen belegten Vorteil",
+"titel_hervor": "keinen belegten Vorteil",
+"setup": "Eine Übersichtsarbeit wertete Studien aus, die untersuchten, ob einzelne BCAA-Aminosäuren Leistung oder Erholung von Sportlern verbessern.",
+"zahl": null,
+"kern": [
+"Für Muskelaufbau braucht der Körper alle neun wichtigen Eiweißbausteine.",
+"In den meisten Studien wurde gar nicht gemessen, wie viel Eiweiß gegessen wurde.",
+"Einzelne positive Funde entstanden oft nur, weil sonst zu wenig Eiweiß da war."
+],
+"grenze": "Die untersuchten Studien waren sehr uneinheitlich und kontrollierten die normale Ernährung meist kaum.",
+"fuer_dich": "Du überlegst, BCAA-Pulver zu kaufen? Spar dir das Geld und deck deinen Tagesbedarf lieber über vollständiges Protein.",
+"labor": {
+"design": "Systematisches Review zu isolierter BCAA-Einnahme für Leistung und Regeneration",
+"teilnehmer": "Trainierte, Einsteiger und Ausdauersportler aus 24 Referenzstudien",
+"ergebnis": ""
+}
+},
+"quiz": {
+"basis": {
+"frage": "Im Fitnessstudio empfehlen manche BCAA-Drinks für schnelleren Muskelaufbau und bessere Erholung. Was zeigt die Forschung?",
+"richtig": "Für einzelne BCAA gibt es keinen guten Beleg für echten Nutzen",
+"falsch": [
+"Sie ersetzen problemlos eine ganze eiweißreiche Mahlzeit",
+"Sie halbieren die Erholungszeit nach jedem harten Training",
+"Sie bauen Muskeln besser auf als vollständiges Eiweiß aus Essen"
+],
+"warum": "Einzelne Bausteine reichen nicht für nachhaltigen Muskelaufbau – vollständiges Eiweiß über den Tag ist klar wichtiger."
+},
+"plus": {
+"frage": "Du erreichst dein tägliches Proteinziel bereits über Mahlzeiten und Shakes. Macht ein zusätzlicher BCAA-Drink im Training Sinn?",
+"richtig": "Nein, bei genug Gesamtprotein sind isolierte BCAA verzichtbar",
+"falsch": [
+"Ja, weil einzelne BCAA schneller wirken als vollständiges Protein",
+"Ja, sonst kann dein Körper normales Nahrungsprotein nicht nutzen",
+"Ja, vor allem als Ersatz für deine abendliche Proteinmahlzeit"
+],
+"warum": "Ohne alle neun essenziellen Aminosäuren entsteht kein nachhaltiger Muskelaufbau – genug vollständiges Protein deckt BCAA schon ab."
+},
+"labor": {
+"frage": "Ein Review bewertete Studien zu isolierten BCAA bei Athleten. Welcher methodische Mangel erklärte vermeintliche Effekte oft am ehesten?",
+"richtig": "Die tägliche Gesamtproteinzufuhr wurde meistens nicht kontrolliert",
+"falsch": [
+"Die Studien liefen alle über mehr als zwei Jahre mit zu hohen Dosen",
+"Es wurden fast nur Ausdauerprofis mit sehr viel Protein getestet",
+"Leucin blockierte in den Versuchen alle weiteren Aminosäuren im Blut"
+],
+"warum": "Fehlende Kontrolle der Basisproteinzufuhr verzerrte Einzelstudien; zudem trägt Leucin ohne die übrigen essenziellen Aminosäuren keinen Aufbau."
+}
+}
+},
+{
+"id": "SUP-116",
+"karte": {
+"kopf": "50 Handelsprodukte · Inhaltsstoff-Analyse",
+"titel": "Über 60 % der Stoffe in Testo-Boostern sind am Menschen ungeprüft",
+"titel_hervor": "am Menschen ungeprüft",
+"setup": "Eine Auswertung prüfte 109 Inhaltsstoffe aus 50 verkäuflichen Testosteron-Boostern auf Studien am Menschen und behördliche Höchstmengen.",
+"zahl": {
+"label": "Inhaltsstoffe ohne Studien am Menschen",
+"wert": "61,5 %",
+"alltag": "fast zwei von drei Stoffen"
+},
+"kern": [
+"Jeder zehnte geprüfte Inhaltsstoff senkte Testosteron sogar statt es zu heben.",
+"Jedes vierte Produkt überschritt Höchstmengen, etwa für Zink oder Vitamin B3.",
+"Dauerhaft zu viel Zink kann den Kupfer- und Eisenhaushalt stören."
+],
+"grenze": "Es wurden einzelne Stoffe und Etiketten geprüft – verlässliche Belege für fertige Mischprodukte fehlen.",
+"fuer_dich": "Du siehst Werbung für Testosteron-Booster? Finger weg – sie sind kaum belegt und oft riskant überdosiert.",
+"labor": {
+"design": "Systematisches Review von 50 kommerziellen Produkten (109 Inhaltsstoffe, im Mittel 8,3/Produkt)",
+"teilnehmer": "50 Testosteron-Booster-Produkte, Abgleich mit PubMed-Humanstudien und FDA-UL",
+"ergebnis": "61,5 % ohne Humandaten; 18,3 % kein Effekt; 10,1 % Testosteronsenkung; 26 % (13/50) über UL"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Im Netz werben viele Kapseln damit, deinen Testosteronspiegel natürlich zu steigern. Was fand eine Prüfung von 50 solcher Produkte?",
+"richtig": "Die meisten Stoffe sind ungeprüft, manche Produkte sogar überdosiert",
+"falsch": [
+"Fast alle Mittel steigern Testosteron deutlich und ohne Risiken",
+"Frei verkäufliche Kapseln halten behördliche Höchstmengen streng ein",
+"Alle enthaltenen Pflanzenstoffe wurden jahrelang am Menschen getestet"
+],
+"warum": "Über 60 % der Inhaltsstoffe hatten gar keine Humanstudien, und etwa jedes vierte Produkt lag über behördlichen Obergrenzen."
+},
+"plus": {
+"frage": "Ein Trainingskollege will einen fertigen Testosteron-Booster mit acht Inhaltsstoffen testen. Welches Risiko wird oft übersehen?",
+"richtig": "Überdosierte Vitamine oder Zink sowie mögliche Verunreinigungen",
+"falsch": [
+"Der Spiegel steigt so stark an, dass man sofort ins Übertraining gerät",
+"Die Kapseln wirken erst, wenn man die empfohlene Menge verdoppelt",
+"Es drohen kaum Risiken, weil nur harmlose Vitamine enthalten sind"
+],
+"warum": "Ein Viertel der Produkte überschritt zulässige Obergrenzen – dauerhaft zu viel Zink stört etwa Kupfer- und Eisenstoffwechsel."
+},
+"labor": {
+"frage": "Ein Review analysierte 109 Inhaltsstoffe aus 50 kommerziellen Testosteron-Boostern anhand von Humandaten und UL-Grenzwerten. Was fiel auf?",
+"richtig": "Rund zwei Drittel ohne Humandaten und etwa ein Viertel über Obergrenzen",
+"falsch": [
+"Die große Mehrheit zeigte konsistente Anstiege in randomisierten Studien",
+"Keines der untersuchten Produkte überschritt die Obergrenzen für Zink",
+"Fertige Mischpräparate waren besser belegt als einzelne Wirkstoffe"
+],
+"warum": "Für 61,5 % fehlten PubMed-Humandaten völlig, 18,3 % zeigten keinen Effekt, 10,1 % sogar eine Senkung und 13 von 50 Produkten lagen über UL."
+}
+}
+},
+{
+"id": "SUP-117",
+"karte": {
+"kopf": "Erwachsene · Übersichtsarbeit",
+"titel": "Fertige Fatburner lassen Körperfett nicht verlässlich schmelzen",
+"titel_hervor": "nicht verlässlich schmelzen",
+"setup": "Eine Übersichtsarbeit prüfte, ob verkäufliche Fatburner-Mischungen die Fettverbrennung im Alltag wirksam ankurbeln und beim Abnehmen helfen.",
+"zahl": null,
+"kern": [
+"Nur für Einzelstoffe wie Koffein und Grüntee-Extrakt gibt es valide Daten.",
+"Ohne Kaloriendefizit baut auch mehr Fettverbrennung im Sport kein Fett ab.",
+"Komplexe Fatburner-Mischungen stehen mit Risiken für die Leber in Verbindung."
+],
+"grenze": "Die Produktgruppe wird stark vom Marketing getrieben – belastbare Langzeitdaten für fertige Mischungen fehlen.",
+"fuer_dich": "Du willst Körperfett abbauen? Lass Fatburner weg und setz auf ein klares Kaloriendefizit plus mindestens 1,6 g Protein pro Kilo.",
+"labor": {
+"design": "Übersichtsarbeit (Review) zu kommerziellen Fatburnern und Fettoxidation",
+"teilnehmer": "Erwachsene, Einsteiger, Trainierte und Frauen aus ausgewerteten Studien",
+"ergebnis": ""
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du möchtest abnehmen und überlegst, einen Fatburner aus der Werbung zu kaufen. Was zeigen wissenschaftliche Übersichten?",
+"richtig": "Für fertige Fatburner-Mischungen fehlen gute Belege für echten Fettverlust",
+"falsch": [
+"Sie bauen Körperfett auch dann ab, wenn du zu viele Kalorien isst",
+"Sie sind wirksamer und harmloser als ein normales Kaloriendefizit",
+"Sie ersetzen Bewegung und sorgen über Nacht für deutlichen Fettabbau"
+],
+"warum": "Abnehmen klappt nur über ein Kaloriendefizit – kommerzielle Fatburner-Mischungen sind kaum belegt und bergen teils Risiken."
+},
+"plus": {
+"frage": "Du startest eine Diätphase und liest, dass Koffein die Fettverbrennung beim Training leicht anregt. Reicht das allein zum Abnehmen?",
+"richtig": "Nein, ohne Kaloriendefizit verlierst du damit kein Körperfett",
+"falsch": [
+"Ja, höhere Fettverbrennung im Training schmilzt automatisch Fett",
+"Ja, solange du es mit einem fertigen Kombi-Fatburner kombinierst",
+"Nein, aber ein Fatburner ersetzt die nötige Proteinzufuhr in der Diät"
+],
+"warum": "Eine kurzfristig höhere Fettoxidation im Training verändert ohne negative Energiebilanz den Körperfettanteil nicht."
+},
+"labor": {
+"frage": "Ein Review untersuchte die Evidenzlage für kommerzielle Multi-Ingredient-Fatburner im Vergleich zu Einzelsubstanzen. Wie fiel das Fazit aus?",
+"richtig": "Valide Akutdaten nur für Koffein und Grüntee-Extrakt, sonst kaum Evidenz",
+"falsch": [
+"Komplexe Mischungen zeigten große klinische Effekte bei hoher Verträglichkeit",
+"Akute Fettoxidation führte unabhängig von der Energiebilanz zu Fettverlust",
+"Für die meisten verkäuflichen Fatburner liegen belastbare Langzeitdaten vor"
+],
+"warum": "Abseits von Koffein und Grüntee-Extrakt fehlen belastbare Effektgrößen, während Mischungen mit oxidativem Stress und Leberrisiken assoziiert sind."
+}
+}
+},
+{
+"id": "TST-101",
+"karte": {
+"kopf": "Sporttests · Methodische Übersicht",
+"titel": "Ein Fitness-Test taugt nur, wenn der Messfehler klein bleibt",
+"titel_hervor": "der Messfehler klein bleibt",
+"setup": "Methoden-Arbeiten werteten aus, ab wann ein Fitness-Test echte Fortschritte statt bloßer Messschwankungen anzeigt.",
+"zahl": null,
+"kern": [
+"Jeder Test schwankt von Tag zu Tag, auch wenn deine Fitness gleich bleibt.",
+"Erst wenn ein Fortschritt größer ist als diese Schwankung, zeigt der Test ihn.",
+"Vier Durchgänge zu mitteln, halbiert das zufällige Messrauschen rechnerisch."
+],
+"grenze": "Methodische Einordnung ohne eigene Probandendaten – ob eine kleine Schwelle im Wettkampf zählt, bleibt offen.",
+"fuer_dich": "Dein Testergebnis ändert sich leicht? Prüfe erst, wie stark der Test ohnehin schwankt, und mittle bei Bedarf mehrere Versuche.",
+"labor": {
+"design": "Methodische Übersichtsarbeit zu Test-Retest-Reliabilität, typischem Messfehler (TE) und SWC",
+"teilnehmer": "",
+"ergebnis": "SWC = 0,2 SD (Verschiebung 50. auf 58. Perzentil); SWC/TE > 1,5 gut, 0,5–1,5 akzeptabel; 4 Versuche halbieren TE"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du wiederholst denselben Fitness-Test zweimal kurz hintereinander und bekommst leicht andere Werte. Was bedeutet das für spätere Fortschritte?",
+"richtig": "Fortschritte müssen größer sein als diese Schwankung",
+"falsch": [
+"Jede noch so kleine Steigerung beweist sofort Erfolg",
+"Der Test ist für Vergleiche gar nicht mehr nutzbar",
+"Beim zweiten Durchgang zählt nur der höhere Wert"
+],
+"warum": "Schwankt ein Test von Natur aus stark, gehen kleine reale Fortschritte leicht in dieser Messungenauigkeit unter."
+},
+"plus": {
+"frage": "Dein Leistungstest schwankt zwischen zwei Tagen moderat, obwohl sich deine Fitness nicht geändert hat. Wie bekommst du verlässlichere Werte?",
+"richtig": "Mehrere Durchgänge machen und den Mittelwert bilden",
+"falsch": [
+"Nur den besten Einzelversuch als Maßstab nutzen",
+"Den Test seltener und nur einmal im Jahr machen",
+"Die kleinste Verbesserung direkt als Fortschritt werten"
+],
+"warum": "Wird ein Test bis zu viermal wiederholt und gemittelt, lässt sich das zufällige Messrauschen rechnerisch halbieren."
+},
+"labor": {
+"frage": "In methodischen Analysen wird die kleinste sinnvolle Veränderung (SWC, 0,2 SD) mit dem typischen Messfehler (TE) verglichen. Welche Grenze gilt für diese Schwelle?",
+"richtig": "Sie ist eine statistische Konvention, kein festes Wettkampfmaß",
+"falsch": [
+"Sie zeigt direkt an, wer einen Wettkampf am Ende gewinnt",
+"Sie macht eine Schätzung des Messfehlers überflüssig",
+"Sie gilt erst ab einer sehr großen Effektstärke von 1,0"
+],
+"warum": "Die 0,2-SD-Regel ist eine statistische Vereinbarung und spiegelt nicht automatisch sportartspezifische Wettkampfabstände wider."
+}
+}
+},
+{
+"id": "TST-102",
+"karte": {
+"kopf": "Sporttests · Methodische Übersicht",
+"titel": "Erst der genaue Messfehler trennt Zufall von echtem Fortschritt",
+"titel_hervor": "trennt Zufall von echtem Fortschritt",
+"setup": "Eine methodische Auswertung prüfte, welche Kennwerte nötig sind, um echte Fortschritte von Lern- und Messfehlern zu trennen.",
+"zahl": null,
+"kern": [
+"Ein hoher Gesamtwert für die Testgüte kann große einzelne Messfehler verdecken.",
+"In bunt gemischten Gruppen wirken Tests statistisch oft besser als sie sind.",
+"Erste Übungsdurchgänge verfälschen Werte oft durch Lernen oder Ermüdung."
+],
+"grenze": "Methodische Einordnung ohne eigene Trainingsdaten – konkrete Fehlergrenzen hängen vom jeweiligen Test ab.",
+"fuer_dich": "Du machst einen Test zum ersten Mal? Strecke ein paar Probeversuche vorweg, bevor du deinen Ausgangswert festhältst.",
+"labor": {
+"design": "Methodische Übersichtsarbeit zu Intraklassen-Korrelation (ICC), Standardmessfehler (SEM) und minimaler Differenz",
+"teilnehmer": "",
+"ergebnis": ""
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du probierst einen neuen Fitness-Test aus und bist beim zweiten Versuch direkt besser als beim ersten. Was steckt oft dahinter?",
+"richtig": "Du hast dich erst an den Ablauf des Tests gewöhnt",
+"falsch": [
+"Deine Muskelkraft ist sofort deutlich gewachsen",
+"Der erste Versuch zeigt meist das wahre Maximum",
+"Solche Sprünge treten nur bei Profisportlern auf"
+],
+"warum": "Bei neuen Tests verzerren Lerneffekte die ersten Durchgänge – erst nach Gewöhnung spiegeln Werte die echte Leistung."
+},
+"plus": {
+"frage": "Ein Test schneidet in einer bunt gemischten Gruppe von Einsteigern und Profis auf dem Papier sehr genau ab. Worauf solltest du achten?",
+"richtig": "Prüfen, wie groß der einzelne Messfehler tatsächlich ist",
+"falsch": [
+"Den Test ohne weitere Prüfung für kleine Sprünge nutzen",
+"Nur noch die Ergebnisse der Profis als Maßstab nehmen",
+"Auf Probeversuche vor der ersten Messung verzichten"
+],
+"warum": "Große Leistungsunterschiede in einer Gruppe lassen Reliabilitätswerte hoch wirken, obwohl der Einzelfehler groß sein kann."
+},
+"labor": {
+"frage": "Zur Bewertung von Tests wird oft der Intraklassen-Korrelationskoeffizient (ICC) zusammen mit dem Standardmessfehler (SEM) genutzt. Warum reicht der ICC allein nicht?",
+"richtig": "In heterogenen Gruppen kann er trotz hohem Messfehler hoch sein",
+"falsch": [
+"Er lässt sich bei wiederholten Messungen rechnerisch kaum bestimmen",
+"Er sinkt automatisch, sobald sich Testpersonen stark unterscheiden",
+"Er erfasst ausschließlich Ermüdung, aber keine Messschwankungen"
+],
+"warum": "Der ICC hängt stark von der Streuung in der Stichprobe ab – erst der SEM beziffert die konkrete Fehlerbreite für Einzelpersonen."
+}
+}
+},
+{
+"id": "TST-103",
+"karte": {
+"kopf": "Einsteiger & Trainierte · 32 Studien",
+"titel": "Ein Maximalgewicht-Test liefert im Schnitt sehr stabile Werte",
+"titel_hervor": "sehr stabile Werte",
+"setup": "Über 1.500 Frauen und Männer unterschiedlichen Alters testeten ihr Maximalgewicht für eine Wiederholung an zwei Terminen.",
+"zahl": {
+"label": "Typische Schwankung zwischen zwei Tests",
+"wert": "4,2 %",
+"alltag": ""
+},
+"kern": [
+"Die hohe Verlässlichkeit galt für Frauen, Männer, Einsteiger und Ältere.",
+"Trainierte schwankten im Schnitt weniger (3,3 %) als Untrainierte (5,5 %).",
+"In rund einem Drittel der Vergleiche lag der zweite Versuch leicht höher."
+],
+"grenze": "Für Menschen mit Vorerkrankungen liegen nur wenige Daten vor; kleine Anstiege können Übungseffekte sein.",
+"fuer_dich": "Du testest dein Maximalgewicht? Sitzt die Technik, reicht ein Termin – werte aber erst spürbare Sprünge als echten Fortschritt.",
+"labor": {
+"design": "Systematisches Review von 32 Studien zur Test-Retest-Reliabilität von 1RM-Tests",
+"teilnehmer": "1.595 Personen (Einsteiger, Trainierte, Frauen, Ältere)",
+"ergebnis": "ICC 0,64–0,99 (Median 0,97; 92 % ≥ 0,90); CV 0,5–12,1 % (Median 4,2 %; Trainierte 3,3 %, Untrainierte 5,5 %)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du testest an zwei Tagen, wie viel Gewicht du sauber genau einmal bewegen kannst. Wie ähnlich fallen die Ergebnisse meist aus?",
+"richtig": "Sie liegen sehr nah beieinander, mit kleiner Schwankung",
+"falsch": [
+"Sie weichen meist stark ab, oft um fast die Hälfte",
+"Nur bei jungen Leistungssportlern bleiben sie ähnlich",
+"Ohne mehrere Probetage sind die Werte kaum brauchbar"
+],
+"warum": "Über 32 Studien hinweg blieben Maximaltests bei Einsteigern, Trainierten, Frauen und Älteren sehr stabil."
+},
+"plus": {
+"frage": "Nach vier Wochen Training liegt dein neuer 1RM-Wert rund zwei Prozent über dem alten. Wie ordnest du das ein?",
+"richtig": "Das liegt noch im Bereich der normalen Testschwankung",
+"falsch": [
+"Das beweist eindeutig einen klaren Kraftzuwachs",
+"Das zeigt, dass dein Trainingsplan nicht wirkt",
+"Das passiert nur, wenn du ohne Probetag getestet hast"
+],
+"warum": "Selbst bei Trainierten schwanken 1RM-Werte im Mittel um gut drei Prozent – kleine Sprünge sind noch kein klarer Nachweis."
+},
+"labor": {
+"frage": "In einem systematischen Review wurde die Test-Retest-Reliabilität von 1RM-Tests über 32 Studien geprüft. Was zeigte sich beim zweiten Testtermin?",
+"richtig": "Hohe Reliabilität, teils mit kleinem Anstieg beim Zweittest",
+"falsch": [
+"Deutlich geringere Reliabilität bei Frauen und Älteren",
+"Ohne separate Gewöhnungstage sank die Güte drastisch",
+"Trainierte zeigten eine größere Streuung als Einsteiger"
+],
+"warum": "Der Median-ICC lag bei 0,97, doch in 34 % der Analysen traten beim Retest leicht höhere Werte auf."
+}
+}
+},
+{
+"id": "TST-104",
+"karte": {
+"kopf": "Gesunde Erwachsene · Beobachtungsstudien",
+"titel": "Bei gesunden Erwachsenen traten im Krafttest keine Herz-Vorfälle auf",
+"titel_hervor": "keine Herz-Vorfälle auf",
+"setup": "Über 6.600 vorab medizinisch geprüfte Erwachsene absolvierten betreute Maximalkrafttests, während Herz-Kreislauf-Vorfälle erfasst wurden.",
+"zahl": {
+"label": "Schwere Herz-Vorfälle bei 6.653 Personen",
+"wert": "0",
+"alltag": ""
+},
+"kern": [
+"Alle Teilnehmenden waren vorab untersucht und beschwerdefrei.",
+"In einer kleineren Gruppe blieben 192 Tests auch ohne Verletzungen.",
+"Getestet wurde unter Aufsicht, mit Aufwärmen und ruhiger Atmung."
+],
+"grenze": "Beobachtungsdaten bei gesunden Menschen unter Aufsicht – Verletzungen wurden in der großen Gruppe nicht erfasst.",
+"fuer_dich": "Du willst deine Maximalkraft testen? Wärm dich kurz auf, meide langes Luftanhalten und lass Beschwerden vorab ärztlich abklären.",
+"labor": {
+"design": "Beobachtungsstudie zu kardiovaskulären Ereignissen bei 1RM-Tests plus kleinere Testserie (192 Sitzungen)",
+"teilnehmer": "6.653 vorab untersuchte Erwachsene; zusätzlich 48 Jüngere und Ältere",
+"ergebnis": "0 klinisch signifikante kardiovaskuläre Ereignisse (n = 6.653); 0 unerwünschte Ereignisse in 192 Sitzungen (n = 48)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Müssen gesunde Einsteiger und ältere Menschen auf einen betreuten Maximalkrafttest verzichten, weil er das Herz gefährdet?",
+"richtig": "Bei gesunden, vorgeprüften Menschen gab es keine Herz-Vorfälle",
+"falsch": [
+"Ja, maximale Krafttests sind nur für junge Profis geeignet",
+"Ja, bei Älteren kommt es dabei häufig zu Kreislaufproblemen",
+"Nur wenn man vorher wochenlang Ausdauer trainiert hat"
+],
+"warum": "In einer großen Beobachtung mit über 6.600 gesunden, vorgeprüften Erwachsenen traten unter Aufsicht keine schweren Herz-Vorfälle auf."
+},
+"plus": {
+"frage": "Du bist beschwerdefrei und planst als Einsteiger deinen ersten 1RM-Test. Was gehört zu einem vernünftigen Ablauf?",
+"richtig": "Kurz aufwärmen und langes Luftanhalten vermeiden",
+"falsch": [
+"Vorher kalt starten, um keine Energie zu verlieren",
+"Beim Heben so lange wie möglich die Luft anhalten",
+"Als Einsteiger den Test erst nach zwei Jahren wagen"
+],
+"warum": "Die positiven Daten gelten für gesunde Personen nach kurzem Aufwärmen und ohne langes Pressatmen – bei Beschwerden gilt ärztliche Abklärung."
+},
+"labor": {
+"frage": "Eine Beobachtungsstudie wertete Maximalkrafttests bei über 6.600 vorab gescreenten Erwachsenen aus. Was lässt sich daraus nicht direkt schließen?",
+"richtig": "Wie hoch das allgemeine Verletzungs- oder Herzkranken-Risiko ist",
+"falsch": [
+"Ob bei gesunden Erwachsenen schwere Herz-Kreislauf-Vorfälle auftraten",
+"Ob Maximalkrafttests überhaupt mit großen Gruppen machbar sind",
+"Ob die Teilnehmenden vor dem Test medizinisch geprüft wurden"
+],
+"warum": "In der großen Gruppe wurden Verletzungen nicht ausgewertet, und die Ergebnisse gelten nur für vorgeprüfte, beschwerdefreie Personen unter Aufsicht."
+}
+}
+},
+{
+"id": "TST-105",
+"karte": {
+"kopf": "Erwachsene 18–69 · Beobachtungsstudie",
+"titel": "Je mehr Wiederholungen im Test, desto ungenauer die Kraft-Schätzung",
+"titel_hervor": "desto ungenauer die Kraft-Schätzung",
+"setup": "90 Frauen und Männer testeten ihr Maximum für 1, 5, 10 und 20 Wiederholungen beim Bankdrücken und an der Beinpresse.",
+"zahl": {
+"label": "Schätzfehler bei 5 Wdh. (Bankdrücken)",
+"wert": "2,98 kg",
+"alltag": ""
+},
+"kern": [
+"Am genauesten ließ sich das Maximum aus 5 Wiederholungen ableiten.",
+"Über 10 Wiederholungen hinaus wuchs der Rechenfehler deutlich an.",
+"An der Beinpresse fiel die Schätzung ungenauer aus als beim Bankdrücken."
+],
+"grenze": "Nur für Bankdrücken und Beinpresse untersucht – bei anderen Übungen und je nach Geschlecht weicht der Kraftabfall ab.",
+"fuer_dich": "Du willst dein Maximalgewicht schätzen, ohne es direkt zu heben? Wähle ein Gewicht für etwa 5, höchstens 10 Wiederholungen.",
+"labor": {
+"design": "Beobachtungsstudie mit Kreuzvalidierung: Vergleich von 1RM gegen 5RM, 10RM und 20RM (Bankdrücken, Beinpresse)",
+"teilnehmer": "70 Erwachsene (34 M, 36 F, 18–69 J.) plus 20 zur Kreuzvalidierung",
+"ergebnis": "5RM: R² = 0,993 (SEE 2,98 kg, Bankdrücken) bzw. R² = 0,974 (SEE 16,16 kg, Beinpresse); ab > 10 Wdh. ungenauer"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du willst aus einem Satz mit leichterem Gewicht abschätzen, wie viel du maximal einmal heben könntest. Wann klappt das am besten?",
+"richtig": "Wenn du nur wenige schwere Wiederholungen schaffst",
+"falsch": [
+"Wenn du mindestens zwanzig leichte Wiederholungen machst",
+"Die Zahl der Wiederholungen spielt dafür keine Rolle",
+"Bei Beinübungen klappt es genauer als beim Oberkörper"
+],
+"warum": "Mit wenigen Wiederholungen bleibt die Schätzung deutlich näher am echten Maximum – bei hohen Zahlen steigt der Fehler."
+},
+"plus": {
+"frage": "Du möchtest dein 1RM im Bankdrücken rechnerisch schätzen, ohne direkt ein Einzelmaximum zu testen. Welchen Bereich wählst du?",
+"richtig": "Einen schweren Satz im Bereich von etwa 5 bis 10 Wiederholungen",
+"falsch": [
+"Einen langen Ausdauersatz mit etwa 20 Wiederholungen",
+"Einen sehr leichten Satz weit entfernt vom Muskelversagen",
+"Denselben festen Rechenfaktor für jede beliebige Übung"
+],
+"warum": "Die 5RM-Schätzung war am präzisesten, während lineare Formeln über 10 Wiederholungen deutlich an Genauigkeit verloren."
+},
+"labor": {
+"frage": "In einer Validierungsstudie wurden 5RM-, 10RM- und 20RM-Tests mit dem direkten 1RM bei Bankdrücken und Beinpresse verglichen. Welcher Unterschied zeigte sich?",
+"richtig": "Der Fehler nahm nichtlinear zu und war an der Beinpresse größer",
+"falsch": [
+"Alle drei Tests schätzten das 1RM bei beiden Übungen gleich gut",
+"Männer hielten bei hohen Wiederholungen prozentual mehr Kraft",
+"Lineare Gleichungen blieben bis 20 Wiederholungen fehlerfrei"
+],
+"warum": "Bei 5RM war der Schätzfehler klein, stieg über 10 Wdh. stark an und fiel bei der Beinpresse deutlich höher aus als beim Bankdrücken."
+}
+}
+},
+{
+"id": "TST-106",
+"karte": {
+"kopf": "Trainierte & Einsteiger · Beobachtung",
+"titel": "Rechenformeln und Tempo-Sensoren verschätzen sich beim Fortschritt",
+"titel_hervor": "verschätzen sich beim Fortschritt",
+"setup": "Direkte Maximalkrafttests wurden mit Schätzungen aus Wiederholungsformeln und Hantelgeschwindigkeit über die Zeit verglichen.",
+"zahl": {
+"label": "Fehleranteil bei Fortschritt-Schätzung",
+"wert": "28,6–33,0 %",
+"alltag": ""
+},
+"kern": [
+"Momentaufnahmen passen oft gut, doch Fortschritte über Zeit verfehlen Formeln leicht.",
+"Tempo-Schätzungen lagen bei freien Kniebeugen um fast 30 bis 39 kg zu hoch.",
+"Training verändert Maximalkraft und Kraftausdauer nicht im gleichen Maß."
+],
+"grenze": "Widersprüchliche Datenlage – wie groß der Fehler ausfällt, hängt stark von Übung, Ausführung und Rechenmodell ab.",
+"fuer_dich": "Du willst echte Kraftzuwächse prüfen? Vergleiche nicht geschätzte mit echt gehobenen Werten und meide Tempo-Schätzungen bei Kniebeugen.",
+"labor": {
+"design": "Beobachtungsdaten zu RM-Formeln über die Zeit sowie 2- und 4-Punkt-Last-Geschwindigkeits-Profilen (VBT)",
+"teilnehmer": "",
+"ergebnis": "RM-Fehler 7,16–14,29 kg (28,6–33,0 % der Änderung); VBT-Überschätzung Kniebeuge +29–39 kg (ES 1,63–1,89), Bank +7–9 kg"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du berechnest dein Maximalgewicht einmal per Formel und hebst es beim nächsten Mal wirklich. Warum solltest du beide Werte nicht direkt vergleichen?",
+"richtig": "Rechenformeln liegen bei Fortschritten oft spürbar daneben",
+"falsch": [
+"Berechnete Werte sind genauer als echte Tests",
+"Formeln unterschätzen die eigene Kraft regelmäßig stark",
+"Beide Verfahren liefern fast deckungsgleiche Zahlen"
+],
+"warum": "Formeln können eine Momentaufnahme gut treffen, weichen aber bei Veränderungen über Wochen oft deutlich von echten Messungen ab."
+},
+"plus": {
+"frage": "Du trackst dein Training mit einem Geschwindigkeitssensor und willst damit dein 1RM in der freien Kniebeuge schätzen. Was solltest du beachten?",
+"richtig": "Die Schätzung vermeiden, da sie die Kraft stark überschätzt",
+"falsch": [
+"Vier statt zwei Messpunkte lösen das Problem zuverlässig",
+"Den geschätzten Wert direkt mit echten 1RM-Tests vergleichen",
+"Nur bei der Kniebeuge, nicht beim Bankdrücken darauf vertrauen"
+],
+"warum": "Geschwindigkeitsbasierte Modelle überschätzten das 1RM bei freien Kniebeugen systematisch stark – geschätzte und direkte Werte sind nicht austauschbar."
+},
+"labor": {
+"frage": "Vergleicht man 1RM-Schätzungen aus Wiederholungsformeln oder Last-Geschwindigkeits-Profilen mit direkten Messungen über die Zeit, was zeigt sich?",
+"richtig": "Hohe Querschnitts-Korrelation, aber große Fehler bei Fortschritten",
+"falsch": [
+"Geringe Korrelation im Querschnitt, aber genaue Verlaufsdaten",
+"VBT-Profile sind bei Kniebeugen deutlich präziser als beim Bankdrücken",
+"Das Verhältnis von Maximalkraft zu Kraftausdauer bleibt konstant"
+],
+"warum": "Training verschiebt das Verhältnis von Maximalkraft zu Kraftausdauer, und Standard-Minimalgeschwindigkeiten erzeugen bei VBT große Fehlprognosen."
+}
+}
+},
+{
+"id": "TST-107",
+"karte": {
+"kopf": "Sportler · 151 Studien zusammengefasst",
+"titel": "Der Schnitt aus mehreren Sprüngen zeigt Ermüdung genauer als der beste",
+"titel_hervor": "Schnitt aus mehreren Sprüngen",
+"setup": "Eine große Auswertung verglich, ob der beste Einzelsprung oder der Schnitt mehrerer Strecksprünge Ermüdung besser aufdeckt.",
+"zahl": {
+"label": "Studien nutzten bisher nur den besten Sprung",
+"wert": "85,4 %",
+"alltag": ""
+},
+"kern": [
+"Der Durchschnitt zeigt Ermüdung und Erholungsschübe empfindlicher an.",
+"Nur rund jede achte Studie nutzte bislang den Mittelwert statt des Maximums.",
+"Auch Kraft- und Tempo-Werte reagieren gut, brauchen aber spezielle Messplatten."
+],
+"grenze": "Reine Sprunghöhe ersetzt keine Labor-Sensorik – feinere Kraftwerte lassen sich im Alltag ohne Messplatte nicht erfassen.",
+"fuer_dich": "Du nutzt Sprungtests für deinen Frische-Check? Spring mindestens dreimal und vergleiche den Durchschnitt, nicht deinen Rekordsprung.",
+"labor": {
+"design": "Meta-Analyse (151 Studien, 531 Effektstärken): CMJ-Mittelwert vs. bester Einzelwert für Ermüdung",
+"teilnehmer": "151 Studien mit Trainierten, Ausdauer-, Hybridathleten und Jugendlichen",
+"ergebnis": "Höhere Sensitivität des CMJ-Mittelwerts (531 Effektstärken); 85,4 % nutzten Maximum, 13,2 % Mittelwert, 1,3 % beide"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du machst drei hohe Sprünge aus dem Stand, um zu prüfen, wie erholt deine Beine heute sind. Welcher Wert hilft dir am meisten?",
+"richtig": "Der Durchschnitt aus allen drei Sprüngen",
+"falsch": [
+"Nur der allerhöchste einzelne Sprung",
+"Nur der erste Sprung ohne Aufwärmen",
+"Der Abstand zwischen bestem und schwächstem"
+],
+"warum": "Ein einzelner Ausreißer nach oben kann Müdigkeit kaschieren – der Schnitt mehrerer Sprünge bildet Ermüdung empfindlicher ab."
+},
+"plus": {
+"frage": "Du trackst deine Readiness mit einem CMJ-Test vor dem Training und willst Ermüdung früh erkennen. Wie wertest du deine Sprünge aus?",
+"richtig": "Mindestens drei Sprünge machen und deren Mittelwert nutzen",
+"falsch": [
+"Nur den höchsten Einzelsprung im Tagebuch eintragen",
+"Nach einem einzigen Sprung direkt mit dem Training starten",
+"Den schwächsten Versuch streichen und nur das Top-Ergebnis zählen"
+],
+"warum": "Über 151 Studien hinweg reagierte die gemittelte CMJ-Sprunghöhe empfindlicher auf Ermüdung und Erholung als der höchste Einzelwert."
+},
+"labor": {
+"frage": "Eine Meta-Analyse mit 151 Studien prüfte, wie der Countermovement Jump (CMJ) Ermüdung und Superkompensation abbildet. Was fiel im Vergleich zur Praxis auf?",
+"richtig": "Der Mittelwert war sensitiver, doch meist wurde das Maximum genutzt",
+"falsch": [
+"Der höchste Einzelwert war dem Mittelwert deutlich überlegen",
+"Fast alle Studien verwendeten bereits den Mittelwert als Standard",
+"Die reine Sprunghöhe war genauer als Kraftmessplatten-Daten"
+],
+"warum": "Obwohl der Durchschnittswert sensitiver auf Ermüdung reagierte, werteten über 85 % der Studien nur den höchsten Einzelsprung aus."
+}
+}
+},
+{
+"id": "TST-108",
+"karte": {
+"kopf": "11 Spielsportler · Beobachtungsstudie",
+"titel": "Müde Sportler gleichen die Sprunghöhe oft durch längeres Ausholen aus",
+"titel_hervor": "durch längeres Ausholen aus",
+"setup": "Elf Spielsportler absolvierten vor sowie 0, 24 und 72 Stunden nach harter Belastung Sprungtests mit Messung von Höhe und Bewegungsablauf.",
+"zahl": {
+"label": "Messwerte änderten sich direkt danach",
+"wert": "18 von 22",
+"alltag": ""
+},
+"kern": [
+"Trotz Ermüdung hielten motivierte Sportler die reine Sprunghöhe oft stabil.",
+"Dafür holten sie tiefer aus und brauchten für den Absprung mehr Zeit.",
+"Zeit- und Kraftwerte zeigten noch nach drei Tagen kleine Ermüdungsspuren."
+],
+"grenze": "Sehr kleine Beobachtungsgruppe mit nur 11 Spielsportlern – für den Alltag ohne Kraftmessplatte nur bedingt direkt messbar.",
+"fuer_dich": "Deine Sprunghöhe wirkt nach hartem Training normal, aber die Beine fühlen sich träge an? Verlass dich nicht blind auf die Höhe allein.",
+"labor": {
+"design": "Beobachtungsstudie: 22 CMJ-Variablen an 6 Terminen sowie 0 h, 24 h und 72 h nach hochintensiver Belastung",
+"teilnehmer": "11 Spielsportler (6 CMJ-Versuche pro Termin)",
+"ergebnis": "0 h: triviale bis moderate Effekte bei 18/22 Variablen; 72 h: kleine Anstiege zeitbezogener Größen (> CV); CV < 10 % bei 20–21/22"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Nach einem sehr harten Training springst du beim Test genauso hoch wie sonst. Heißt das, dass deine Beine wieder frisch sind?",
+"richtig": "Nicht unbedingt – vielleicht holst du unbewusst länger aus",
+"falsch": [
+"Ja, die Sprunghöhe sinkt bei Müdigkeit ohne Ausnahme",
+"Ja, nach einem Tag ist Muskelmüdigkeit kaum noch da",
+"Nur wenn du beim Springen keine Schuhe trägst"
+],
+"warum": "Motivierte Sportler gleichen Müdigkeit oft aus, indem sie tiefer in die Hocke gehen und langsamer abdrücken – die Höhe täuscht dann."
+},
+"plus": {
+"frage": "Nach einer sehr harten Einheit bleibt deine CMJ-Sprunghöhe auf der Kontaktmatte unverändert, obwohl du dich schwerfällig fühlst. Was erklärt das?",
+"richtig": "Eine veränderte Sprungtechnik kann Ermüdung bei der Höhe kaschieren",
+"falsch": [
+"Die Kontaktmatte misst nach harten Einheiten meist zu niedrig",
+"Ermüdung zeigt sich im CMJ frühestens nach einer ganzen Woche",
+"Wenn die Höhe stimmt, bist du voll einsatzbereit für neue Bestwerte"
+],
+"warum": "Athleten verändern unter Ermüdung oft Ausholtiefe und Absprungdauer, sodass reine Sprunghöhenmessungen falsch-grünes Licht geben können."
+},
+"labor": {
+"frage": "In einer kleinen Studie mit 11 Spielsportlern wurden 22 CMJ-Variablen bis 72 Stunden nach hochintensiver Belastung verfolgt. Welche Parameter deckten Ermüdung länger auf?",
+"richtig": "Zeit- und kraftverlaufbasierte Mechanik-Variablen statt Höhe allein",
+"falsch": [
+"Ausschließlich die vertikale Sprunghöhe ohne Bewegungsdaten",
+"Keine Variable, da nach 24 Stunden alle Werte normal waren",
+"Nur die maximale Ausholtiefe direkt vor dem Warm-up"
+],
+"warum": "Zeitbezogene und mechanische Parameter zeigten teils bis 72 Stunden Veränderungen, während die reine Sprunghöhe kompensiert werden konnte."
+}
+}
+},
+{
+"id": "TST-109",
+"karte": {
+"kopf": "Sprinter & Sportler · Forschungsübersicht",
+"titel": "Kurze Sprints schwanken im Test oft stärker als echte Fortschritte",
+"titel_hervor": "stärker als echte Fortschritte",
+"setup": "Eine Übersichtsarbeit wertete aus, wie genau Sprinttests über 5 bis 40 Meter echte Fortschritte abbilden.",
+"zahl": {
+"label": "Typischer Messfehler über 10 Meter",
+"wert": "1,6 %",
+"alltag": ""
+},
+"kern": [
+"Bei der Höchstgeschwindigkeit lag der typische Messfehler bei 2,9 %.",
+"Trainierte verbessern sich in einer Saison oft nur um Hundertstelsekunden.",
+"Wechsel zwischen Stoppuhr, Video und Lichtschranke verzerren Werte stark."
+],
+"grenze": "Messfehler variieren je nach Messgerät – direkte Vergleiche zwischen verschiedenen Zeitmesssystemen sind nicht aussagekräftig.",
+"fuer_dich": "Du testest deine Sprintzeit? Nutze dasselbe Messsystem, mittle 2 bis 4 Läufe und werte winzige Sprünge nicht sofort als Fortschritt.",
+"labor": {
+"design": "Systematisches Review zur Reliabilität und Messgenauigkeit linearer Sprinttests (5–40 m)",
+"teilnehmer": "",
+"ergebnis": "Typischer Messfehler (TE): 1,6 % für 10-m-Sprintzeit, 2,9 % für maximale Sprintgeschwindigkeit (MSS)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Nach einigen Wochen Training bist du auf 10 Metern einen winzigen Bruchteil einer Sekunde schneller als beim letzten Test. Was zeigt das?",
+"richtig": "Das kann noch im normalen Messfehler des Tests liegen",
+"falsch": [
+"Das beweist eine große Steigerung der Beschleunigung",
+"Auf 10 Metern gibt es praktisch keine Messschwankungen",
+"Ein einziger Testlauf reicht für klare Schlüsse aus"
+],
+"warum": "Selbst bei 10-Meter-Sprints schwanken die Zeiten typischerweise um rund 1,6 % – winzige Unterschiede verschwinden im Messrauschen."
+},
+"plus": {
+"frage": "Du willst deine 10-m- und 30-m-Sprintzeiten über eine Saison sauber verfolgen. Wie verringerst du das Risiko falscher Schlüsse?",
+"richtig": "Dasselbe Messsystem nutzen und mehrere Läufe mitteln",
+"falsch": [
+"Zwischen Stoppuhr und Video wechseln, je nach Wetter",
+"Nur einen einzelnen Sprint laufen, um frisch zu bleiben",
+"Jede Hundertstelsekunde direkt als Fortschritt verbuchen"
+],
+"warum": "Verschiedene Zeitmesssysteme weichen oft stärker voneinander ab als echte Trainingsfortschritte, und Mittelwerte aus 2–4 Läufen senken das Rauschen."
+},
+"labor": {
+"frage": "Ein systematisches Review analysierte den typischen Messfehler linearer Sprinttests über 5 bis 40 Meter. Warum sind echte Saison-Fortschritte bei Trainierten schwer nachweisbar?",
+"richtig": "Reale Gewinne liegen oft nahe am oder unter dem Messfehler",
+"falsch": [
+"Die Sprintzeit verbessert sich bei Trainierten meist um über 10 %",
+"Bei Höchstgeschwindigkeit ist der Messfehler kleiner als über 10 m",
+"Unterschiedliche Messsysteme liefern fast deckungsgleiche Zeiten"
+],
+"warum": "Bei Trainierten betragen Saison-Gewinne oft nur Hundertstelsekunden, während der typische Messfehler bei 1,6 % (10 m) bis 2,9 % (MSS) liegt."
+}
+}
+}
+]

@@ -1,0 +1,1122 @@
+[
+{
+"id": "TST-110",
+"karte": {
+"kopf": "Sprinter & Sportler · Forschungsübersicht",
+"titel": "Wind, Start und zu kurze Pausen verzerren Sprintzeiten stark",
+"titel_hervor": "verzerren Sprintzeiten stark",
+"setup": "Eine Übersichtsarbeit prüfte, welche äußeren Einflüsse und Abläufe die Ergebnisse bei 10- und 30-Meter-Sprints verzerren.",
+"zahl": null,
+"kern": [
+"Äußere Störfaktoren verändern Sprintzeiten oft stärker als echtes Training.",
+"Schon ein Wippen mit dem Oberkörper am Start verfälscht die gemessene Zeit.",
+"Auch Bodenbelag, Wind und zu kurze Pausen machen Vergleiche unbrauchbar."
+],
+"grenze": "Kein bezifferter Einzeleffekt pro Störfaktor – zudem reichen bei sehr schnellen Sportlern unter 30 Meter nicht fürs Top-Tempo.",
+"fuer_dich": "Du willst deine Sprintzeit sauber vergleichen? Starte ruhig aus gleicher Position, lauf über die Linie hinaus und mach ausreichend Pause.",
+"labor": {
+"design": "Systematisches Review zu Standardisierung und Störgrößen bei 10-m- und 30-m-Sprinttests",
+"teilnehmer": "",
+"ergebnis": ""
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du vergleichst deine Sprintzeit heute auf nassem Rasen bei Rückenwind mit deiner letzten Zeit auf trockenem Boden. Was ist das Problem?",
+"richtig": "Die äußeren Bedingungen verzerren die Zeit stärker als Training",
+"falsch": [
+"Boden und Wind ändern bei kurzen Sprints fast nichts",
+"Solche Unterschiede gleichen sich im zweiten Lauf aus",
+"Nur bei langen Läufen über Kilometer spielt Wind eine Rolle"
+],
+"warum": "Wind, Untergrund, Startposition und Pausenlänge beeinflussen kurze Sprintzeiten oft stärker als echte Trainingsanpassungen."
+},
+"plus": {
+"frage": "Du führst einen 30-Meter-Sprinttest mit mehreren Läufen durch und willst saubere, vergleichbare Zeiten bekommen. Worauf achtest du?",
+"richtig": "Ruhig aus gleicher Position starten, durchziehen und lang genug pausieren",
+"falsch": [
+"Mit Schwung anlaufen und genau an der Ziellinie abbremsen",
+"Zwischen den Sprints nur kurz verschnaufen, um Zeit zu sparen",
+"Auf ein fremdes Startkommando reagieren, um Druck zu erzeugen"
+],
+"warum": "Ein Auslaufziel hinter der Linie, ein ruhiger Eigenstart ohne Schwung und volle Pausen (rund 3 Minuten bei 30 m) vermeiden Messfehler."
+},
+"labor": {
+"frage": "Ein systematisches Review untersuchte Störgrößen bei 10- und 30-Meter-Sprinttests mit Lichtschranken. Welcher Fehler verfälscht die Messung besonders drastisch?",
+"richtig": "Ein fliegender Start oder Oberkörper-Wippen vor der ersten Schranke",
+"falsch": [
+"Die Verwendung von Doppelstrahl-Schranken auf rund einem Meter Höhe",
+"Eine Auslaufmarkierung deutlich hinter der eigentlichen Ziellinie",
+"Ausreichende Pausen von einer Minute je zehn Meter Sprintstrecke"
+],
+"warum": "Ein Wippen oder Anlaufen löst die erste Schranke anders aus und verändert die Zeit oft stärker als echte Leistungsfortschritte."
+}
+}
+},
+{
+"id": "TST-111",
+"karte": {
+"kopf": "Alle Altersgruppen · 123 Studien",
+"titel": "12-Minuten- und 1,5-Meilen-Lauf schätzen Ausdauer am besten",
+"titel_hervor": "schätzen Ausdauer am besten",
+"setup": "123 Studien verglichen 15 Lauf- und Gehtests im Freien mit der direkten Messung der Sauerstoffaufnahme im Labor.",
+"zahl": {
+"label": "Zusammenhang mit Labortest (Skala bis 1)",
+"wert": "0,78–0,79",
+"alltag": ""
+},
+"kern": [
+"Beide Tests schnitten über alle 15 geprüften Lauf- und Gehtests am besten ab.",
+"Das Ergebnis galt unabhängig von Geschlecht, Alter und Fitnesslevel.",
+"Kürzere oder reine Gehtests lagen im Vergleich deutlich weiter vom Laborwert weg."
+],
+"grenze": "Es bleibt eine Schätzung – Tempo-Einteilung, Laufstil, Motivation und Wetter beeinflussen das Ergebnis deutlich.",
+"fuer_dich": "Du willst deine Ausdauer ohne Labor testen? Lauf 12 Minuten so weit wie möglich – am besten bei ruhigem Wetter auf einer flachen Bahn.",
+"labor": {
+"design": "Meta-Analyse (123 Studien, 200 Korrelationen): 15 Lauf-/Geh-Feldtests vs. Labor-VO2max",
+"teilnehmer": "Stichproben von 28 bis 1.856 Personen (Median 367), alle Gruppen",
+"ergebnis": "Gesamtspanne rp = 0,42–0,79; 12-Min.-Cooper rp = 0,78 (95 % KI 0,72–0,83); 1,5-Meilen rp = 0,79 (95 % KI 0,73–0,85)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du möchtest draußen ohne teure Geräte herausfinden, wie gut deine Ausdauer im Vergleich zu einem Labortest ist. Welcher Test eignet sich am ehesten?",
+"richtig": "Ein gleichmäßiger Lauf über 12 Minuten auf flacher Strecke",
+"falsch": [
+"Ein kurzer Spaziergang in gemütlichem Tempo",
+"Ein einzelner kurzer Sprint über wenige Sekunden",
+"Alle Lauf- und Gehtests schätzen gleich genau"
+],
+"warum": "Über 123 Studien bildeten der 12-Minuten-Lauf und der 1,5-Meilen-Lauf die im Labor gemessene Ausdauer am besten ab."
+},
+"plus": {
+"frage": "Du hast keinen Zugang zur Spiroergometrie und willst deine VO2max im Feld schätzen. Worauf solltest du beim 12-Minuten-Cooper-Test achten?",
+"richtig": "Gleichmäßig einteilen, da Pacing und Bedingungen das Ergebnis prägen",
+"falsch": [
+"Er ersetzt das Labor eins zu eins, egal wie du dein Tempo wählst",
+"Er funktioniert nur bei trainierten jungen Läufern verlässlich",
+"Ein einfacher Gehtest liefert für Läufer dieselbe Genauigkeit"
+],
+"warum": "Der 12-Minuten-Test schätzt die VO2max über alle Gruppen gut, bleibt aber anfällig für schlechtes Pacing, Laufökonomie und Wetter."
+},
+"labor": {
+"frage": "Eine Meta-Analyse mit 123 Studien verglich 15 Lauf- und Geh-Feldtests mit der im Labor gemessenen VO2max. Was zeigte sich zur Kriteriumsvalidität?",
+"richtig": "Cooper- und 1,5-Meilen-Lauf lagen vorn, unabhängig von Alter und Fitness",
+"falsch": [
+"Nur bei Frauen und Jugendlichen erreichten Lauf-Feldtests hohe Werte",
+"Die Korrelationen aller 15 Feldtests lagen eng beieinander",
+"Feldtests zeigten keine Beeinflussung durch Laufökonomie oder Pacing"
+],
+"warum": "Der 12-Minuten- und der 1,5-Meilen-Lauf erreichten mit rp = 0,78–0,79 die höchste Validität, bleiben aber indirekte Schätzungen."
+}
+}
+},
+{
+"id": "TST-112",
+"karte": {
+"kopf": "59 Elite-Ruderer · Beobachtungsstudie",
+"titel": "Beim 2000-Meter-Rudern zählt neben Ausdauer auch kurze Maximalkraft",
+"titel_hervor": "auch kurze Maximalkraft",
+"setup": "Bei 59 Spitzenruderern wurden Laborwerte für Ausdauer, Stoffwechsel und 5-Schläge-Kraft mit ihrer 2000-Meter-Zeit verglichen.",
+"zahl": {
+"label": "Anteil schneller Energie ohne Sauerstoff",
+"wert": "21–30 %",
+"alltag": "etwa ein Fünftel bis ein Drittel"
+},
+"kern": [
+"Spitzenleistung und maximale Zugkraft über 5 Schläge prägten das Tempo stark.",
+"Ausdauerwerte und Kraft zusammen erklärten fast die gesamte Leistungsstreuung.",
+"Wer nur Grundlagenausdauer betrachtet, unterschätzt die Härte der Strecke."
+],
+"grenze": "Daten stammen von Elite-Ruderern – bei Einsteigern schwanken 2000-Meter-Zeiten wegen schwieriger Tempo-Einteilung stark.",
+"fuer_dich": "Du ruderst als Einsteiger auf dem Ergometer? Teste lieber 100 Meter oder 6 Minuten, statt gleich am 2000-Meter-Pacing zu verzweifeln.",
+"labor": {
+"design": "Beobachtungsstudie mit Kreuzvalidierung: physiologische Prädiktoren der 2000-m-Ergometerzeit",
+"teilnehmer": "41 Elite-Ruderer plus 18 Elite-Ruderer zur Kreuzvalidierung",
+"ergebnis": "Leistung bei VO2max & Maximalkraft r = 0,95; 4-mmol-Laktat r = 0,92; Gesamtmodell R² = 0,983 (−1,5 bis +6,9 s)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du willst über 2.000 Meter auf dem Ruderergometer schneller werden. Reicht dafür allein ruhiges Ausdauertraining?",
+"richtig": "Nein – ein deutlicher Teil kommt aus Kraft und hohem Tempo",
+"falsch": [
+"Ja, die Strecke ist fast eine reine Ausdauerbelastung",
+"Nein, es zählt fast nur die Kraft der ersten fünf Züge",
+"Ja, Kraft spielt erst bei deutlich längeren Strecken mit"
+],
+"warum": "Über 2.000 Meter stammen gut ein Fünftel bis knapp ein Drittel der Energie aus schnellen Kraftreserven – Ausdauer und Zugkraft wirken zusammen."
+},
+"plus": {
+"frage": "Du bist neu auf dem Ruderergometer und möchtest deinen Fitnessstand testen. Warum ist der klassische 2000-m-Test anfangs oft ungünstig?",
+"richtig": "Ohne Pacing-Erfahrung schwanken die Ergebnisse stark",
+"falsch": [
+"Auf dem Ergometer lässt sich die Zeit nur ungenau messen",
+"Die Strecke fordert ausschließlich langsame Ausdauer",
+"Einsteiger schaffen die Distanz technisch kaum am Stück"
+],
+"warum": "Bei Anfängern ist die Reliabilität des 2000-m-Tests wegen schwierigem Pacing gering – kürzere Tests wie 6 Minuten oder 100 m eignen sich anfangs besser."
+},
+"labor": {
+"frage": "In einer Beobachtungsstudie mit Elite-Ruderern wurden Laborwerte mit der 2000-m-Ergometerleistung verknüpft. Welche Faktoren erklärten zusammen fast die gesamte Varianz?",
+"richtig": "Aerobe Spitzen- und Schwellenleistung plus 5-Schläge-Maximalkraft",
+"falsch": [
+"Allein die maximale Sauerstoffaufnahme ohne Kraftkomponente",
+"Vor allem das Körpergewicht und die gewählte Schlagfrequenz",
+"Ausschließlich die anaerobe Leistung der ersten fünf Schläge"
+],
+"warum": "VO2max-Leistung, Schwellenwerte und 5-Schläge-Maximalkraft erklärten zusammen 98,3 % der Varianz – der anaerobe Anteil liegt bei 21–30 %."
+}
+}
+},
+{
+"id": "TST-113",
+"karte": {
+"kopf": "9.440 Sportler · 248 Studien",
+"titel": "Pendellauf-Tests trennen Leistungsklassen im Teamsport zuverlässig",
+"titel_hervor": "trennen Leistungsklassen im Teamsport",
+"setup": "248 Studien werteten aus, wie verlässlich wiederholte 20-Meter-Pendelläufe mit kurzen Pausen die Spielsport-Fitness abbilden.",
+"zahl": {
+"label": "Typische Schwankung bei Wiederholung",
+"wert": "8,1–9,6 %",
+"alltag": ""
+},
+"kern": [
+"Höhere Ligen liefen im Test klar weiter als niedrigere Klassen.",
+"Längere Varianten prüfen Erholung, kürzere fordern maximale Sprints.",
+"Torhüter, Feldspieler, Frauen und Männer brauchen eigene Maßstäbe."
+],
+"grenze": "Bei Freizeitaktiven schwanken harte Varianten stärker (bis 12,7 %), und ungenaues Abbrechen verzerrt Vergleiche.",
+"fuer_dich": "Du nutzt Pendellauf-Tests für dein Training? Brich sauber beim zweiten Fehler ab und werte erst Sprünge über rund 10 % als klar echt.",
+"labor": {
+"design": "Systematisches Review (248 quantitative / 264 qualitative Studien) zu Yo-Yo-Intermittent-Tests",
+"teilnehmer": "9.440 Sportler (YYIR1: 4.726 in 239 Subgruppen, Median 21,1 J.)",
+"ergebnis": "Test-Retest r = 0,93; CV = 8,1 % (YYIR1), 9,6 % (YYIR2), bis 12,7 % bei Freizeitaktiven; klare Liga-Stufung"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du läufst bei einem Fitness-Test wiederholt 20 Meter hin und her mit kurzen Pausen, bis das Tempo zu hoch wird. Was misst das vor allem?",
+"richtig": "Wie gut du dich zwischen schnellen Läufen erholst",
+"falsch": [
+"Wie schnell du über einen Marathon gleichmäßig joggst",
+"Wie viel Gewicht deine Beine einmalig im Kraftraum bewegen",
+"Wie beweglich deine Hüfte bei weiten Ausfallschritten ist"
+],
+"warum": "Solche Pendellauf-Tests bilden gezielt die Wechselbelastung aus schnellen Läufen und kurzen Erholungspausen ab, wie sie im Teamsport auftritt."
+},
+"plus": {
+"frage": "Dein Ergebnis im Yo-Yo-Intermittent-Test ist nach sechs Wochen um rund fünf Prozent gestiegen. Wie bewertest du diesen Anstieg?",
+"richtig": "Noch vorsichtig – die normale Testschwankung liegt meist höher",
+"falsch": [
+"Als klaren Beweis für einen deutlichen Sprung deiner Ausdauer",
+"Als Zeichen, dass du sofort auf die härtere Teststufe wechselst",
+"Als Messfehler, weil der Test kaum stabile Werte liefert"
+],
+"warum": "Beim Yo-Yo-Test schwanken Wiederholungen typischerweise um 8 bis knapp 10 Prozent – kleine Gewinne können noch im Messrauschen liegen."
+},
+"labor": {
+"frage": "Ein systematisches Review über 248 Studien analysierte die Yo-Yo-Intermittent-Tests (YYIR1 und YYIR2). Worin unterscheiden sich beide Varianten physiologisch?",
+"richtig": "YYIR1 prüft eher aerobe Erholung, YYIR2 stark anaerobe Leistung",
+"falsch": [
+"Beide Varianten belasten fast ausschließlich das aerobe System",
+"YYIR2 dauert deutlich länger und schwankt bei Freizeitsportlern kaum",
+"Feldspieler und Torhüter lassen sich mit einer Normtabelle vergleichen"
+],
+"warum": "Der längere YYIR1 betont die aerobe Erholungsfähigkeit, während der kürzere YYIR2 massiv anaerobe Glykolyse und schnelle Energie-Resynthese fordert."
+}
+}
+},
+{
+"id": "TST-114",
+"karte": {
+"kopf": "Sportler · 21 Studien zusammengefasst",
+"titel": "Der 30-15-Intervalltest liefert stabile Werte fürs Tempotraining",
+"titel_hervor": "stabile Werte fürs Tempotraining",
+"setup": "21 Studien prüften, wie verlässlich ein Wechsel-Lauftest mit 30 Sekunden Lauf und 15 Sekunden Gehpause Tempo und Fitness abbildet.",
+"zahl": {
+"label": "Typischer Messfehler beim Endtempo",
+"wert": "1,8–2,6 %",
+"alltag": "≈ 0,3 bis 0,5 km/h"
+},
+"kern": [
+"Der Test verbindet Ausdauer, Beschleunigung, Wenden und kurze Erholung.",
+"Das erreichte Endtempo eignet sich gut, um harte Intervalle zu steuern.",
+"Die rechnerische Sauerstoffaufnahme lag im Schnitt gut 5 % über dem Labor."
+],
+"grenze": "Eine halbe Stufe mehr reicht wegen des Messfehlers nicht als Fortschritt – zudem ersetzt die Formel keinen direkten Labortest.",
+"fuer_dich": "Du steuerst deine Intervalle über den 30-15-Test? Werte erst ein bis zwei volle Stufen mehr als echten Fortschritt deiner Fitness.",
+"labor": {
+"design": "Systematisches Review (21 Studien) zu Reliabilität und Validität des 30-15 Intermittent Fitness Test",
+"teilnehmer": "21 Studien (Trainierte, Jugendliche, Frauen, Hybridathleten)",
+"ergebnis": "VIFT: ICC 0,80–0,99, TE 0,31–0,50 km/h (1,8–2,6 %); VO2max-Korrelation r = 0,67–0,73 (+5,49 % Überschätzung)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Bei einem Lauftest läufst du 30 Sekunden hin und her, gehst 15 Sekunden und wirst schrittweise schneller. Was misst du damit besonders gut?",
+"richtig": "Ausdauer zusammen mit Antritt, Wenden und schneller Erholung",
+"falsch": [
+"Nur das ruhige Durchhalten bei einem langsamen Dauerlauf",
+"Ausschließlich die maximale Kraft bei einem einzelnen Sprung",
+"Den exakten Laborwert ohne jede Abweichung nach oben"
+],
+"warum": "Der Wechsel aus kurzen schnellen Läufen, Richtungswechseln und Gehpausen prüft Ausdauer, Beschleunigung und Erholung gemeinsam."
+},
+"plus": {
+"frage": "Im 30-15-IFT hast du heute eine halbe Stufe mehr geschafft als beim letzten Test. Reicht das schon als klarer Nachweis für deinen Fortschritt?",
+"richtig": "Nein – erst ab ein bis zwei vollen Stufen ist der Zuwachs klar",
+"falsch": [
+"Ja, schon eine halbe Stufe liegt deutlich über dem Messfehler",
+"Ja, der Test schwankt fast gar nicht zwischen zwei Tagen",
+"Nein, der Test eignet sich nur für die maximale Herzfrequenz"
+],
+"warum": "Der typische Messfehler liegt bei etwa 0,3 bis 0,5 km/h – erst ein Plus von mindestens einer bis zwei Stufen zeigt eine echte Verbesserung."
+},
+"labor": {
+"frage": "Ein Review über 21 Studien verglich die finale Geschwindigkeit im 30-15 IFT (VIFT) und deren VO2max-Schätzung mit Laborwerten. Was zeigte sich?",
+"richtig": "Hohe VIFT-Reliabilität, aber systematische VO2max-Überschätzung",
+"falsch": [
+"Der Test unterschätzte die Labor-VO2max deutlich und systematisch",
+"Die Reliabilität von VIFT war schwach und kaum reproduzierbar",
+"Der Messfehler lag klar unter der kleinsten sinnvollen Veränderung"
+],
+"warum": "VIFT war sehr reliabel (ICC 0,80–0,99), doch die indirekte Formel überschätzte die Labor-VO2max im Schnitt um rund 5,5 %."
+}
+}
+},
+{
+"id": "TST-115",
+"karte": {
+"kopf": "Läufer & Alltagssportler · 14 Studien",
+"titel": "Smartwatches schätzen Ausdauer beim Laufen besser als in Ruhe",
+"titel_hervor": "besser als in Ruhe",
+"setup": "14 Studien verglichen die Ausdauer-Schätzung gängiger Smartwatches in Ruhe und bei Belastung mit direkten Labormessungen.",
+"zahl": {
+"label": "Einzel-Schwankungsbreite beim Laufen",
+"wert": "±9,8 ml/kg/min",
+"alltag": "in Ruhe sogar ±15,2 ml/kg/min"
+},
+"kern": [
+"Laufdaten machten die Schätzung klar enger als Messungen im Ruhezustand.",
+"Für einzelne Personen bleibt der Fehler dennoch zu groß für genaue Werte.",
+"Sehr fitte Menschen werden oft unterschätzt, Untrainierte eher überschätzt."
+],
+"grenze": "Hohes Verzerrungsrisiko in 11 von 14 Studien; optischer Handgelenkspuls schneidet in Ruhe schlechter ab als ein Brustgurt.",
+"fuer_dich": "Deine Uhr zeigt einen Ausdauerwert an? Hinterlege deinen echten Puls, nutze Laufdaten und achte auf deinen Trend statt auf Einzelzahlen.",
+"labor": {
+"design": "Meta-Analyse (14 Studien): Smartwatch-VO2max (Ruhe- vs. Belastungs-Algorithmen) gegen Labor-VO2max",
+"teilnehmer": "14 Studien (Einsteiger, Trainierte, Ausdauersportler)",
+"ergebnis": "95 % LoA Belastung ±9,83 vs. Ruhe ±15,24 ml/kg/min (5,4 ml/kg/min enger); Ruhe-Bias +2,17; I² = 77–88 %"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Deine Smartwatch zeigt dir einen Fitness-Wert für deine Ausdauer an. Wie gehst du am sinnvollsten mit dieser Zahl um?",
+"richtig": "Den Verlauf über Monate beobachten statt die Einzelzahl wörtlich nehmen",
+"falsch": [
+"Die Zahl genau so ernst nehmen wie eine Messung im Sportlabor",
+"Lieber nur den Ruhepuls messen lassen statt beim Laufen zu tracken",
+"Den Wert ganz ignorieren, weil er überhaupt keine Richtung zeigt"
+],
+"warum": "Smartwatches weichen im Einzelfall deutlich vom Laborwert ab, eignen sich mit Laufdaten aber für persönliche Langzeittrends."
+},
+"plus": {
+"frage": "Du willst deine VO2max-Schätzung auf der Sportuhr möglichst brauchbar machen. Welche Einstellung hilft dir am meisten?",
+"richtig": "Laufbasierte Schätzungen nutzen und echten Ruhe- und Maximalpuls angeben",
+"falsch": [
+"Ausschließlich die Schätzung im Ruhezustand am Handgelenk verwenden",
+"Die automatischen Standardwerte der Uhr für den Maximalpuls lassen",
+"Nach einem einzigen Lauf direkt deinen genauen Laborwert ableiten"
+],
+"warum": "Belastungsbasierte Algorithmen streuen deutlich weniger als Ruhe-Schätzungen, und echte Pulswerte im Profil verbessern die Basis."
+},
+"labor": {
+"frage": "Eine Meta-Analyse über 14 Studien verglich Ruhe- und Belastungs-Algorithmen von Wearables mit der Labor-VO2max. Wo liegt das zentrale Problem?",
+"richtig": "Breite individuelle Übereinstimmungsgrenzen und hohes Studien-Bias",
+"falsch": [
+"Ruhe-Algorithmen waren deutlich genauer als belastungsbasierte Modelle",
+"Sehr hoch trainierte Athleten wurden systematisch stark überschätzt",
+"Optische Sensoren am Handgelenk schlugen Brustgurte in Ruhe klar"
+],
+"warum": "Selbst bei Belastungs-Algorithmen lagen die 95 %-Limits of Agreement bei rund ±9,8 ml/kg/min, und 79 % der Studien hatten ein hohes Verzerrungsrisiko."
+}
+}
+},
+{
+"id": "TST-116",
+"karte": {
+"kopf": "Testplanung · Fachlicher Expertenkonsens",
+"titel": "Für Testwochen gibt es keine Vergleichsstudien, nur Fachkonsens",
+"titel_hervor": "keine Vergleichsstudien, nur Fachkonsens",
+"setup": "Fachleitlinien ordneten verschiedene Fitness-Tests nach Ermüdungsgrad an, weil direkte Vergleichsstudien zu ganzen Testwochen fehlen.",
+"zahl": null,
+"kern": [
+"Erst Messungen ohne Ermüdung, dann Schnelligkeit, Kraft, Sprints und Ausdauer.",
+"Ausdauertests vor Kraft- oder Sprungtests verfälschen deren Ergebnisse.",
+"Nach intensiven Sprung- oder Spielbelastungen hält Ermüdung oft 2 bis 3 Tage an."
+],
+"grenze": "Reiner Expertenkonsens ohne direkte Vergleichsstudien verschiedener Testwochen – bisher wenig experimentell geprüft.",
+"fuer_dich": "Du planst mehrere Fitness-Tests? Mach Messungen, Sprünge und Kraft zuerst frisch und leg harte Ausdauertests auf einen eigenen Tag.",
+"labor": {
+"design": "Expertenkonsens und Fachbuch-Leitlinie zur Sequenzierung mehrtägiger Testbatterien (keine RCTs)",
+"teilnehmer": "",
+"ergebnis": ""
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du willst in einer Woche deine Sprungkraft, deine Maximalkraft und einen harten 12-Minuten-Lauf testen. Welche Reihenfolge ist sinnvoll?",
+"richtig": "Erst Sprünge und Kraft frisch testen, den harten Lauf zum Schluss",
+"falsch": [
+"Mit dem harten Ausdauerlauf starten, um warm zu werden",
+"Die Reihenfolge spielt keine Rolle, solange du gut schläfst",
+"Alle drei Tests direkt hintereinander ohne Pause durchziehen"
+],
+"warum": "Harte Ausdauerbelastungen ermüden Muskeln und Nerven stark – danach fallen Kraft- und Sprungtests deutlich schwächer aus."
+},
+"plus": {
+"frage": "Du musst Kraft- und Ausdauertests in derselben Testwoche unterbringen, im Notfall sogar am selben Tag. Wie planst du den Abstand?",
+"richtig": "Kraft zuerst, Ausdauer an eigenem Tag oder mit vielen Stunden Pause",
+"falsch": [
+"Ausdauer morgens und schwere 1RM-Tests direkt danach am Vormittag",
+"Einen Tag vor dem Ausdauertest eine harte Sprint-Einheit einbauen",
+"Kurze 15 Minuten Pause reichen zwischen Kraft- und Ausdauertest"
+],
+"warum": "Fachleitlinien empfehlen Ausdauertests getrennt oder frühestens nach 7 Stunden Pause nach Krafttests sowie 48 Stunden Ruhe vor harten Feldtests."
+},
+"labor": {
+"frage": "Worauf beruht die gängige 7-stufige Reihenfolge einer mehrtägigen Testbatterie, und welche physiologische Beobachtung stützt sie?",
+"richtig": "Auf Expertenkonsens und verzögerter Ermüdung über 24 bis 48 Stunden",
+"falsch": [
+"Auf zahlreichen randomisierten Cross-over-Studien zu Testwochen",
+"Darauf, dass neuromuskuläre Ermüdung nach wenigen Stunden abklingt",
+"Auf dem Nachweis, dass Ausdauer vor Kraft die Testvalidität erhöht"
+],
+"warum": "Direkte Vergleichsstudien zu Testwochen fehlen, doch wiederholte Dehnungs-Verkürzungs-Belastungen erzeugen oft einen zweiten Ermüdungsabfall nach 24–48 h."
+}
+}
+},
+{
+"id": "WAR-101",
+"karte": {
+"kopf": "Trainierte Männer · Vergleichsstudie",
+"titel": "Zwei Aufwärmsätze bringen im ersten schweren Satz deutlich mehr Tempo",
+"titel_hervor": "deutlich mehr Tempo",
+"setup": "Trainierte Männer absolvierten Kniebeugen oder Bankdrücken mit schwerer Last – einmal ohne Aufwärmen, einmal nach zwei gestuften Aufwärmsätzen.",
+"zahl": {
+"label": "Mehr Hanteltempo im ersten Kniebeuge-Satz",
+"wert": "+10 %",
+"alltag": "1,32 statt 1,20 m/s in der Spitze"
+},
+"kern": [
+"Sowohl bei Kniebeugen als auch beim Bankdrücken bewegte sich die Hantel schneller.",
+"Die Muskeln wurden wärmer und das Nervensystem war für die Last besser aktiviert.",
+"Ab dem zweiten Arbeitssatz glich sich das Tempo beider Gruppen weitgehend an."
+],
+"grenze": "Nur trainierte Männer an einem Tag getestet – ob daraus langfristig mehr Kraft oder Muskeln folgen, blieb offen.",
+"fuer_dich": "Startest du mit schweren Kniebeugen oder Bankdrücken? Mach vorher je 6 Wdh. mit 40 % und 80 % deines Arbeitsgewichts.",
+"labor": {
+"design": "Randomisierte Crossover-Studie, 3x6 bei 80 % 1RM, 2x6 Aufwärmsätze (40 %/80 %) vs. kein Aufwärmen",
+"teilnehmer": "34 trainierte Männer (12 Kniebeuge, 22 Bankdrücken)",
+"ergebnis": "Satz 1 mittl. Geschw. ES 0,91 (Kniebeuge, p=0,009) u. ES 0,56 (Bankdrücken, p=0,02); Spitze Kniebeuge ES 1,23"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du startest im Studio direkt mit deinem schweren Gewicht bei Kniebeugen oder Bankdrücken, ohne dich vorher einzuarbeiten. Was passiert im ersten Satz meist?",
+"richtig": "Du bewegst das Gewicht im ersten Satz spürbar langsamer",
+"falsch": [
+"Du bist im ersten Satz frischer und bewegst es schneller",
+"Die Kraft leidet erst im letzten Satz der Übung spürbar",
+"Aufwärmsätze wirken nur an Beinen, nicht am Oberkörper"
+],
+"warum": "Zwei gestufte Aufwärmsätze aktivieren Muskeln und Nervensystem – so startet der erste schwere Satz dynamischer."
+},
+"plus": {
+"frage": "Du planst 3x6 Kniebeugen bei 80 % 1RM und willst schon im ersten Arbeitssatz voll da sein. Wie bereitest du dich an der Hantel am besten vor?",
+"richtig": "Zwei gestufte spezifische Aufwärmsätze von leicht bis nah an die Last",
+"falsch": [
+"Direkt mit dem Arbeitsgewicht starten, um keine Energie zu verlieren",
+"Nur leichtes Cardio machen und spezifische Aufwärmsätze weglassen",
+"Vier schwere Sätze bis nahe ans Muskelversagen vorschalten"
+],
+"warum": "Zwei gezielte Sätze bei 40 % und 80 % des Arbeitsgewichts steigerten das Tempo in Satz 1, ohne die Folgesätze zu schwächen."
+},
+"labor": {
+"frage": "Trainierte Männer führten 3x6 bei 80 % 1RM mit und ohne zwei spezifische Aufwärmsätze (40 % und 80 % der Last) im Crossover-Design aus. Wo zeigte sich der Effekt?",
+"richtig": "Vor allem in den ersten Wiederholungen des ersten Arbeitssatzes",
+"falsch": [
+"Gleichmäßig stark über alle drei Arbeitssätze hinweg",
+"Erst ab dem dritten Arbeitssatz durch geringere Ermüdung",
+"Ausschließlich bei der Kniebeuge, nicht beim Bankdrücken"
+],
+"warum": "In Satz 1 lagen mittlere bis große Effektstärken vor (ES 0,56–1,23), während die Effekte in Satz 2 und 3 trivial blieben."
+}
+}
+},
+{
+"id": "WAR-102",
+"karte": {
+"kopf": "Trainierte Männer · Vergleichsstudie",
+"titel": "Nur leichtes Aufwärmen bremst dich – ein schwererer Satz hilft",
+"titel_hervor": "ein schwererer Satz hilft",
+"setup": "Trainierte Männer wärmten sich vor schweren Kniebeugen und Bankdrücken entweder nur leicht, nur schwerer oder gestuft auf.",
+"zahl": {
+"label": "Schneller auf Top-Tempo beim Bankdrücken",
+"wert": "−17 %",
+"alltag": "575 statt 695 ms bis zur Spitze"
+},
+"kern": [
+"Ein einziger leichter Satz mit 40 % reichte nicht für volle Leistung aus.",
+"Mit einem Satz bei 80 % der Arbeitslast stieg beim Bankdrücken die Gesamtarbeit.",
+"Bei Kniebeugen genügte teils schon ein schwererer Aufwärmsatz ohne leichten Vorsatz."
+],
+"grenze": "Geprüft wurden nur junge, trainierte Männer bei zwei Grundübungen – für Frauen oder Einsteiger fehlen direkte Daten.",
+"fuer_dich": "Machst du beim Aufwärmen nur ein paar ganz leichte Wdh.? Nimm noch 6 Wdh. bei 80 % deines Arbeitsgewichts dazu.",
+"labor": {
+"design": "Randomisierte Crossover-Studie, 3x6 bei 80 % 1RM, Aufwärmen 40 %+80 % vs. nur 80 % vs. nur 40 %",
+"teilnehmer": "40 trainierte Männer (19–30 Jahre)",
+"ergebnis": "Bankdrücken 40 %+80 % vs. 40 %: Zeit bis Spitze Satz 1 ES 0,69 (p<0,01), Satz 2 ES 0,43; Gesamtarbeit ES 0,54"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Vor deinen schweren Sätzen beim Bankdrücken machst du nur einen sehr leichten Satz mit wenig Gewicht. Was passiert im Training oft?",
+"richtig": "Du kommst langsamer in Schwung und leistest weniger Gesamtarbeit",
+"falsch": [
+"Du sparst maximale Kraft und drückst dadurch deutlich explosiver",
+"Ein leichter Satz reicht aus, schwerere Sätze ermüden nur unnötig",
+"Die Leistung bleibt gleich, nur das Verletzungsrisiko sinkt stark"
+],
+"warum": "Erst ein Aufwärmsatz näher am eigentlichen Trainingsgewicht bereitet Muskeln und Nervensystem gut auf die schwere Last vor."
+},
+"plus": {
+"frage": "Du wärmst dich für 3x6 Bankdrücken bei 80 % 1RM auf und hast gerade einen leichten Satz bei 40 % der Arbeitslast absolviert. Wie machst du weiter?",
+"richtig": "Du hängst noch einen schwereren Aufwärmsatz nah am Arbeitsgewicht an",
+"falsch": [
+"Du startest direkt mit dem Arbeitsgewicht, um Kraft zu sparen",
+"Du machst zwei weitere sehr leichte Sätze für mehr Durchblutung",
+"Du gehst direkt an dein Maximalgewicht hoch, um den Muskel zu wecken"
+],
+"warum": "Ein letzter Aufwärmsatz bei 80 % des Arbeitsgewichts verkürzte die Zeit bis zur Spitzengeschwindigkeit und steigerte die Gesamtarbeit."
+},
+"labor": {
+"frage": "Im Crossover-Vergleich testeten trainierte Männer drei Aufwärmprotokolle (40 %, 80 %, 40 %+80 % der Arbeitslast) vor 3x6 bei 80 % 1RM. Was zeigte sich?",
+"richtig": "Mit 80 % der Trainingslast stiegen Tempo und Arbeit im Bankdrücken",
+"falsch": [
+"Nur 40 % der Trainingslast brachte die höchste Gesamtarbeit",
+"Die Kniebeuge brauchte zwingend mindestens drei gestufte Sätze",
+"Zwischen allen drei Aufwärmprotokollen gab es keinen Unterschied"
+],
+"warum": "Im Bankdrücken übertraf 40 %+80 % das reine 40-%-Protokoll bei Zeit bis Spitzengeschwindigkeit (ES 0,69) und Gesamtarbeit (ES 0,54)."
+}
+}
+},
+{
+"id": "WAR-103",
+"karte": {
+"kopf": "Trainierte Männer · Kleine Vergleichsstudie",
+"titel": "Bei Sätzen ans Limit zeigen erste Daten kein Plus durch Aufwärmen",
+"titel_hervor": "kein Plus durch Aufwärmen",
+"setup": "Männer trainierten Kniebeugen, Bankdrücken und Bizepscurls bis zur Erschöpfung – mal ohne Aufwärmen, mal mit Ausdauer, leichten Sätzen oder beidem.",
+"zahl": null,
+"kern": [
+"Weder Ausdauer noch Aufwärmsätze steigerten die Gesamtzahl der Wiederholungen.",
+"Die Datenlage ist widersprüchlich: Bei explosiven Sätzen hilft Aufwärmen dagegen.",
+"Wenig Zeit heißt laut ersten Hinweisen: Aufwärm-Cardio lässt sich am ehesten kürzen."
+],
+"grenze": "Sehr kleine Gruppe mit nur 15 Männern – und Verletzungsrisiko oder langfristiger Fortschritt wurden nicht untersucht.",
+"fuer_dich": "Hast du wenig Zeit für dein Krafttraining? Lass allgemeines Cardio weg und mach nur kurze Aufwärmsätze an der Übung.",
+"labor": {
+"design": "Randomisierte Crossover-Studie, 4 Sätze bis Versagen (80 % 1RM), Kontrolle vs. spezifisch vs. aerob vs. kombiniert",
+"teilnehmer": "15 trainierte Männer",
+"ergebnis": "Kein signifikanter Unterschied bei Gesamtwiederholungen oder Ermüdungsindex; Effektstärke nicht berichtet"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du hast wenig Zeit für dein Krafttraining bis an dein Limit. Brauchst du vorher unbedingt Ausdauer-Aufwärmen auf dem Laufband für mehr Wiederholungen?",
+"richtig": "Erste Hinweise zeigen keinen Vorteil für die Zahl der Wiederholungen",
+"falsch": [
+"Ohne Laufband schaffst du in allen Sätzen deutlich weniger Gewicht",
+"Ausdauer vorher verdoppelt im Schnitt die Ausdauer in den Sätzen",
+"Nur Kombination aus Laufband und Dehnen erhält die volle Leistung"
+],
+"warum": "In einem kleinen Test brachten weder Ausdauer noch extra Aufwärmen mehr Gesamtwiederholungen – kurze Gewöhnungssätze reichten bei Zeitnot."
+},
+"plus": {
+"frage": "Du willst heute 4 Sätze bei 80 % 1RM bis zum Muskelversagen trainieren, bist aber unter Zeitdruck. Wo kannst du beim Warm-up am ehesten kürzen?",
+"richtig": "Allgemeines Cardio streichen und nur kurz spezifisch aufwärmen",
+"falsch": [
+"Spezifische Sätze weglassen und 15 Minuten locker einlaufen",
+"Die Arbeitslast halbieren, weil ohne Cardio die Kraft einbricht",
+"Alle Satzpausen halbieren und dafür länger auf dem Rad bleiben"
+],
+"warum": "Bei Sätzen bis zum Muskelversagen zeigte allgemeines Cardio keinen Vorteil für das Volumen, sodass kurze Gewöhnungssätze genügen."
+},
+"labor": {
+"frage": "15 Männer führten 4 Sätze bis zum Versagen bei 80 % 1RM nach verschiedenen Warm-ups (ohne, spezifisch, aerob, kombiniert) aus. Wie passt das zur übrigen Literatur?",
+"richtig": "Widerspruch: Bei explosiven, submaximalen Sätzen helfen Warm-up-Sätze eher",
+"falsch": [
+"Einheitlich: Alle Studien zeigen keinen Effekt von Aufwärmsätzen",
+"Widerspruch: Nur Ausdauer-Warm-up steigert nachweislich die Muskelkraft",
+"Einheitlich: Warm-ups helfen ausschließlich bei Isolationsübungen"
+],
+"warum": "Bei Versagenssätzen fehlte ein Volumenvorteil, während submaximale, explosive Protokolle höhere Hantelgeschwindigkeiten zeigten."
+}
+}
+},
+{
+"id": "WAR-104",
+"karte": {
+"kopf": "1.954 Sportler · 47 Studien zusammengefasst",
+"titel": "Sehr schwere Kraftreize können Sprung und Sprint danach anschieben",
+"titel_hervor": "Sprung und Sprint danach anschieben",
+"setup": "In 47 Studien hoben Teilnehmende sehr schwere Gewichte und testeten nach einer Pause ihre Sprung-, Wurf- oder Sprintleistung.",
+"zahl": null,
+"kern": [
+"Der Schub wirkt nur nach genug Pause, weil Ermüdung den Effekt sonst überdeckt.",
+"Stärkere Trainierte profitieren schneller, meist schon nach einem Satz und kurzer Pause.",
+"Einsteiger brauchen oft mehrere vorbereitende Sätze und längere Pausen dazwischen."
+],
+"grenze": "Die Reaktion schwankt stark von Person zu Person – bei zu viel Ermüdung bleibt der Schnellkraft-Schub aus.",
+"fuer_dich": "Willst du Sprünge oder Sprints mit schwerem Krafttraining koppeln? Pause als Fortgeschrittener 3–7 Min., als Einsteiger 7–10 Min.",
+"labor": {
+"design": "Systematisches Review und Meta-Analyse, schwere Vorbelastung (>85 % 1RM) vor Schnellkrafttests",
+"teilnehmer": "1.954 Teilnehmende aus 47 Studien (135 Gruppen)",
+"ergebnis": "Sprung ES 0,29; Wurf ES 0,26; Sprint moderater Effekt; optimale Pause 3–12 Min. je nach Kraftniveau"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du machst ein paar sehr schwere Kraft-Wiederholungen und willst danach möglichst hoch springen. Wann klappt der Sprung meist am besten?",
+"richtig": "Nach einigen Minuten Pause, wenn die erste Müdigkeit weg ist",
+"falsch": [
+"Sofort in derselben Sekunde, bevor die Muskeln abkühlen",
+"Erst am nächsten Tag nach einer vollen Nacht Schlaf",
+"Gar nicht besser, schweres Heben bremst Sprünge stundenlang"
+],
+"warum": "Ein schwerer Reiz weckt das Nervensystem, aber erst nach einigen Minuten Pause überwiegt der Schub gegenüber der Ermüdung."
+},
+"plus": {
+"frage": "Du planst Komplextraining mit schweren Kniebeugen (>85 % 1RM) vor Sprüngen. Wie unterscheidet sich die ideale Pause zwischen starken Trainierten und Einsteigern?",
+"richtig": "Trainierte brauchen kürzere Pausen, Einsteiger eher längere Pausen",
+"falsch": [
+"Einsteiger brauchen kürzere Pausen, Trainierte deutlich längere",
+"Beide Gruppen springen idealerweise direkt ohne Pause los",
+"Nur Einsteiger profitieren von schweren Sätzen vor Sprüngen"
+],
+"warum": "Stärkere Athleten erholen sich schneller von schwerer Last (ca. 3–7 Min.) und nutzen das Potenzierungsfenster früher als Einsteiger (ca. 7–10 Min.)."
+},
+"labor": {
+"frage": "Eine Meta-Analyse aus 47 Studien untersuchte Post-Aktivierungs-Potenzierung nach Vorbelastungen über 85 % 1RM. Welche Einschränkung prägt die Praxis?",
+"richtig": "Die Wirkung schwankt individuell stark zwischen Potenzierung und Ermüdung",
+"falsch": [
+"Der Effekt trat nur bei Würfen auf, nicht bei Sprints oder Sprüngen",
+"Tiefe Kniebeugen potenzierten konsistent stärker als flachere",
+"Die Effektstärken waren bei allen Tests extrem groß und stabil"
+],
+"warum": "Die mittleren Effekte sind klein bis moderat (z. B. Sprung ES 0,29) und hängen individuell stark vom Verhältnis aus Ermüdung und Aktivierung ab."
+}
+}
+},
+{
+"id": "WAR-105",
+"karte": {
+"kopf": "Alle Trainierenden · Expertenempfehlung",
+"titel": "Für das perfekte Aufwärm-Schema gibt es bisher keine klaren Belege",
+"titel_hervor": "keine klaren Belege",
+"setup": "Für exakte Stufen und Wiederholungen bei Aufwärmsätzen fehlen kontrollierte Studien, weshalb Pläne auf Expertenkonsens beruhen.",
+"zahl": null,
+"kern": [
+"Ob bestimmte Aufwärmstufen Verletzungen oder Muskelaufbau verbessern, ist kaum erforscht.",
+"In der Praxis bewähren sich 2–4 leichte bis mittelschwere Sätze vor der ersten Grundübung.",
+"Wer Aufwärmsätze mitloggt, verzerrt sein Trainingsvolumen um bis zu 50 %."
+],
+"grenze": "Expertenkonsens statt direkter Vergleichsstudien – exakte Prozentstufen sind Richtwerte, keine bewiesenen Regeln.",
+"fuer_dich": "Startest du mit einer Grundübung? Taste dich in 2–4 lockeren Sätzen hoch, zähle sie nicht mit und kürze bei Folgeübungen.",
+"labor": {
+"design": "Expertenkonsens und Praxisrichtlinien, keine RCTs zu Ramping-Schemata",
+"teilnehmer": "",
+"ergebnis": ""
+}
+},
+"quiz": {
+"basis": {
+"frage": "In manchen Trainingsplänen stehen genaue Prozentzahlen für jeden Aufwärmsatz. Wie gut sind solche starren Regeln wissenschaftlich bewiesen?",
+"richtig": "Bisher kaum erforscht – sie beruhen vor allem auf Erfahrung",
+"falsch": [
+"Streng bewiesen – jede Abweichung senkt den Muskelaufbau stark",
+"Klar widerlegt – Aufwärmsätze sind vor Grundübungen überflüssig",
+"Eindeutig geklärt – jede Übung braucht genau fünf Aufwärmsätze"
+],
+"warum": "Für exakte Aufwärmstufen fehlen kontrollierte Studien; die gängigen Stufen sind sinnvolle, aber flexible Praxis-Richtwerte."
+},
+"plus": {
+"frage": "Du machst nach schweren Kniebeugen eine zweite Übung für dieselbe Muskelgruppe. Was empfehlen Praxisrichtlinien beim Aufwärmen und Tracking?",
+"richtig": "0–1 kurzer Gewöhnungssatz und Aufwärmsätze nicht ins Volumen zählen",
+"falsch": [
+"Wieder 4 volle Ramping-Sätze machen und komplett ins Volumen loggen",
+"Alle Aufwärmsätze bis 1 RIR ausreizen, damit der Muskel bereit ist",
+"Die zweite Übung ohne jedes Gewicht mit 30 Wiederholungen starten"
+],
+"warum": "Die Muskulatur ist bereits warm, sodass 0–1 leichter Satz reicht; mitgeloggte Aufwärmsätze würden das Volumen stark verfälschen."
+},
+"labor": {
+"frage": "Wie ist die Evidenzlage für konkrete Ramping-Schemata (z. B. 50 %, 70 %, 85 %) zur Verletzungsprävention und Hypertrophie im Krafttraining?",
+"richtig": "Es fehlen prospektive Interventionsstudien; Basis ist Expertenkonsens",
+"falsch": [
+"Mehrere Meta-Analysen belegen ein optimales 4-Stufen-Ramping",
+"RCTs zeigen weniger Verletzungen nur bei exakt 3 Aufwärmsätzen",
+"Langzeitstudien belegen deutlich mehr Hypertrophie ab 4 Ramping-Sätzen"
+],
+"warum": "Kontrollierte Vergleichsstudien zu exakten Ramping-Protokollen fehlen bisher (Evidenzgrad D), weshalb Praxisempfehlungen genutzt werden."
+}
+}
+},
+{
+"id": "WAR-106",
+"karte": {
+"kopf": "Verschiedene Sportler · Forschungsüberblick",
+"titel": "Langes statisches Dehnen vor dem Training kostet spürbar Kraft",
+"titel_hervor": "kostet spürbar Kraft",
+"setup": "Eine große Auswertung prüfte, wie sich Haltedehnen und Anspann-Entspann-Dehnen kurz vor Kraft- und Schnellkrafttests auswirken.",
+"zahl": {
+"label": "Weniger Leistung ab 60 Sek. statischem Dehnen",
+"wert": "−4,6 %",
+"alltag": "Unter 60 Sek. nur −1,1 %"
+},
+"kern": [
+"Kurzes Halten unter einer Minute je Muskel bremst die Leistung dagegen kaum.",
+"Die kurzfristig bessere Beweglichkeit verfliegt meist in weniger als 30 Minuten.",
+"Schließt du dynamische Übungen an, verschwindet das Kraftminus fast wieder."
+],
+"grenze": "Viele Tests fanden isoliert im Labor statt – im echten Aufwärmen mit Bewegung danach fällt der Verlust kleiner aus.",
+"fuer_dich": "Dehnst du dich vor dem Krafttraining gern statisch? Bleib unter 60 Sekunden pro Muskel und beweg dich danach dynamisch.",
+"labor": {
+"design": "Systematisches Review (quantitative Synthese), statisches u. PNF-Dehnen 3–5 Min. vor Leistungstests",
+"teilnehmer": "Trainierte, Ausdauer- und Hybridathleten sowie Allgemeinbevölkerung",
+"ergebnis": "Statisch gesamt −3,7 %; ≥60 s −4,6 %; <60 s −1,1 %; PNF −4,4 %; lange Muskellängen +2,2 %"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du dehnst deine Beine vor dem Krafttraining minutenlang im Sitzen, ohne dich danach richtig warmzubewegen. Was passiert bei den Übungen danach oft?",
+"richtig": "Deine Kraft und Explosivität sind kurzzeitig etwas schwächer",
+"falsch": [
+"Deine Muskeln erzeugen direkt deutlich mehr Maximalkraft",
+"Deine Beweglichkeit bleibt dadurch mehrere Stunden erhöht",
+"Die Leistung ändert sich erst ab mindestens zehn Minuten Dehnen"
+],
+"warum": "Statisches Halten ab einer Minute pro Muskel dämpft die Leistung im Schnitt um 4,6 %, wenn keine aktive Bewegung folgt."
+},
+"plus": {
+"frage": "Du fühlst dich vor Kniebeugen steif und willst kurz statisch dehnen, ohne Leistung zu verschenken. Wie baust du es ins Warm-up ein?",
+"richtig": "Nur kurz unter einer Minute pro Muskel halten und dynamisch aktivieren",
+"falsch": [
+"Zwei Minuten pro Muskel halten und direkt ans Arbeitsgewicht gehen",
+"Intensives PNF-Dehnen direkt vor dem ersten Arbeitssatz ausführen",
+"Nach dem Dehnen zehn Minuten still sitzen, bis der Effekt nachlässt"
+],
+"warum": "Unter 60 Sekunden ist der Effekt mit −1,1 % minimal, und anschließende dynamische Übungen heben das Defizit meist auf."
+},
+"labor": {
+"frage": "Eine quantitative Synthese verglich akutes statisches Dehnen (<60 s vs. ≥60 s) und PNF-Dehnen vor Krafttests. Welche methodische Grenze relativiert die Ergebnisse?",
+"richtig": "Oft fehlten sportspezifische dynamische Übungen im Anschluss",
+"falsch": [
+"Die Tests wurden erst mehr als zwei Stunden nach dem Dehnen gemacht",
+"Es wurden ausschließlich untrainierte Senioren im Labor untersucht",
+"Statisches Dehnen unter 60 Sekunden senkte die Kraft am stärksten"
+],
+"warum": "Viele Laborprotokolle testeten direkt 3–5 Minuten nach dem Dehnen; folgt ein dynamisches Warm-up, verschwindet das Defizit meist."
+}
+}
+},
+{
+"id": "WAR-107",
+"karte": {
+"kopf": "Verschiedene Gruppen · Forschungsüberblick",
+"titel": "Schwungvolles Dehnen vor dem Sport bringt ein kleines Leistungsplus",
+"titel_hervor": "ein kleines Leistungsplus",
+"setup": "Eine Forschungsübersicht wertete aus, wie sich dynamisches Dehnen kurz vor Kraft-, Sprint- oder Sprungbelastungen auswirkt.",
+"zahl": {
+"label": "Mehr Kraft- und Schnellkraft danach",
+"wert": "+1,3 %",
+"alltag": ""
+},
+"kern": [
+"Im Gegensatz zu langem Halten macht aktives Dehnen die Gelenke warm und leistungsbereit.",
+"Der gewonnene Bewegungsspielraum hält kurzfristig, meist weniger als 30 Minuten.",
+"Ob es allein vor Verletzungen schützt, ist bisher nicht durch Daten belegt."
+],
+"grenze": "Die untersuchten Programme unterschieden sich stark in Tempo und Dauer – das eine optimale Rezept gibt es nicht.",
+"fuer_dich": "Machst du dich vor Kraft, Sprints oder Sprüngen warm? Nutze dynamische Bewegungen über den vollen Weg statt langem Halten.",
+"labor": {
+"design": "Systematisches Review (quantitative Synthese), akutes dynamisches Dehnen vor Kraft-/Schnellkrafttests",
+"teilnehmer": "Allgemeinbevölkerung, Trainierte, Hybridathleten und Jugendliche",
+"ergebnis": "+1,3 % Leistungssteigerung; akuter ROM-Zuwachs hält <30 Min."
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du wärmst dich vor dem Laufen oder Krafttraining mit aktiven, kontrollierten Schwüngen statt starrem Halten auf. Was bringt das direkt danach?",
+"richtig": "Mehr Beweglichkeit und ein kleines Plus an Kraft und Tempo",
+"falsch": [
+"Einen spürbaren Kraftverlust in den ersten Trainingsminuten",
+"Einen bewiesenen Schutz vor fast allen Sportverletzungen",
+"Eine dauerhaft höhere Beweglichkeit für den gesamten Resttag"
+],
+"warum": "Dynamisches Dehnen vergrößert kurzzeitig den Bewegungsumfang (<30 Min.) und hebt die Leistung im Schnitt leicht um 1,3 % an."
+},
+"plus": {
+"frage": "Vor einem Kraft- oder Sprinttraining möchtest du Hüfte und Schultern mobilisieren, ohne Spritzigkeit einzubüßen. Welche Methode passt am besten?",
+"richtig": "Dynamisches Dehnen über den vollen Bewegungsumfang kurz vor Start",
+"falsch": [
+"Statisches Dehnen über 90 Sekunden je Muskel ohne Anschlussübung",
+"PNF-Dehnen direkt vor dem ersten schweren Arbeitssatz",
+"Völlig auf Mobilisation verzichten, weil jede Dehnung bremst"
+],
+"warum": "Dynamisches Dehnen verbessert akut die Beweglichkeit und steigert Kraft- und Schnellkraftleistungen im Mittel leicht."
+},
+"labor": {
+"frage": "Eine quantitative Übersicht zeigte durch akutes dynamisches Dehnen einen kleinen Leistungszuwachs (+1,3 %). Welche Lücke besteht in der Evidenz?",
+"richtig": "Hohe Protokoll-Heterogenität und fehlende Daten zur Verletzungsprävention",
+"falsch": [
+"Es wurden nur ältere Menschen ohne Sporterfahrung untersucht",
+"Dynamisches Dehnen verbesserte die Beweglichkeit akut gar nicht",
+"Der Leistungszuwachs trat ausschließlich nach über 30 Minuten auf"
+],
+"warum": "Bewegungsfrequenz, Amplitude und Dauer variierten stark zwischen den Studien, und direkte Verletzungsdaten fehlen."
+}
+}
+},
+{
+"id": "WAR-108",
+"karte": {
+"kopf": "Verschiedene Gruppen · 51 Studien ausgewertet",
+"titel": "Beim Dehnen zählt Regelmäßigkeit mehr als einzelne lange Runden",
+"titel_hervor": "zählt Regelmäßigkeit mehr",
+"setup": "Eine Übersicht aus 51 Studien verglich verschiedene Dehnprogramme daraufhin, welche Dauer und Häufigkeit die Beweglichkeit langfristig verbessern.",
+"zahl": null,
+"kern": [
+"Wichtigste Schwelle waren mindestens fünf Dehntage pro Woche je Muskelgruppe.",
+"Zudem brachten Programme ab fünf Minuten Dehndauer pro Woche die besten Zuwächse.",
+"Die Länge einer einzelnen Einheit war weniger wichtig als das Wochenpensum."
+],
+"grenze": "Die Studien nutzten sehr unterschiedliche Beweglichkeitstests – exakte Gradzahlen für einzelne Gelenke lassen sich nicht ableiten.",
+"fuer_dich": "Willst du dauerhaft beweglicher werden? Dehn die Zielmuskeln lieber 5-mal pro Woche kurz (z. B. 2x30 Sek.) statt einmal lang.",
+"labor": {
+"design": "Systematisches Review, Vergleich von Dauer, Frequenz und Wochenvolumen bei statischem Dehnen",
+"teilnehmer": "51 Studien aus 250 gesichteten Artikeln, gemischte Populationen",
+"ergebnis": "Schwellenwerte: ≥5 Min./Woche und ≥5 Tage/Woche pro Muskelgruppe am wirksamsten"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du willst langfristig beweglicher werden. Was bringt über die Wochen hinweg meist mehr?",
+"richtig": "Fast jeden Tag kurz dehnen statt einmal pro Woche sehr lang",
+"falsch": [
+"Einmal am Wochenende eine halbe Stunde pro Muskel dehnen",
+"Nur dann dehnen, wenn der Muskel stark verspannt wirkt",
+"Jede einzelne Position jeweils mindestens fünf Minuten halten"
+],
+"warum": "Häufigkeit und Wochensumme waren entscheidend: Ab fünf Tagen und fünf Minuten pro Woche stieg die Beweglichkeit am deutlichsten."
+},
+"plus": {
+"frage": "Du planst dein Mobility-Programm für steife Hamstrings. Welche Aufteilung trifft die wirksamen Prinzipien für statisches Dehnen am besten?",
+"richtig": "Mindestens fünf Tage pro Woche kurz dehnen für genug Wochenvolumen",
+"falsch": [
+"Einmal pro Woche eine lange Einheit mit demselben Wochenvolumen",
+"Zweimal pro Woche je einen kurzen Satz vor dem Krafttraining",
+"Dreimal pro Woche nur wenige Sekunden je Seite im Warm-up"
+],
+"warum": "Entscheidend waren mindestens fünf Dehntage und insgesamt mindestens fünf Minuten pro Woche je Muskelgruppe."
+},
+"labor": {
+"frage": "Ein Review aus 51 Studien wertete Dehnparameter für chronische ROM-Zuwächse aus. Welcher Faktor korrelierte stärker als die Dauer einer einzelnen Dehneinheit?",
+"richtig": "Die wöchentliche Frequenz und das gesamte Wochenvolumen",
+"falsch": [
+"Ausschließlich die maximale Haltedauer eines einzelnen Satzes",
+"Die Tageszeit, zu der die Dehneinheit durchgeführt wurde",
+"Das Halten über zwei Minuten bei maximal zwei Tagen pro Woche"
+],
+"warum": "Wochenvolumen (≥5 Min.) und Frequenz (≥5 Tage/Woche) erklärten die ROM-Fortschritte besser als die Länge der einzelnen Serie."
+}
+}
+},
+{
+"id": "WAR-109",
+"karte": {
+"kopf": "Verschiedene Gruppen · 26 Studien ausgewertet",
+"titel": "Dehnen über einige Wochen macht Muskeln meist nicht physisch länger",
+"titel_hervor": "meist nicht physisch länger",
+"setup": "Eine Auswertung aus 26 Studien untersuchte, ob drei bis acht Wochen Dehntraining Muskelfasern verlängern oder Gewebe weicher machen.",
+"zahl": null,
+"kern": [
+"Du kommst tiefer in die Dehnung, weil dein Nervensystem den Zug besser aushält.",
+"Muskelfaserlänge und Steifigkeit blieben im untersuchten Zeitraum unverändert.",
+"Bessere Beweglichkeit heißt also vor allem Gewöhnung, nicht umgebautes Gewebe."
+],
+"grenze": "Die Studien liefen nur 3 bis 8 Wochen – was sehr langes oder extremes Dehnen über Monate im Gewebe bewirkt, bleibt offen.",
+"fuer_dich": "Hoffst du beim Dehnen darauf, verkürzte Muskeln in Wochen zu verlängern? Versteh es als Gewöhnung ans Zuggefühl statt Umbau.",
+"labor": {
+"design": "Systematisches Review und Meta-Analyse, 3–8 Wochen Dehntraining auf Muskelarchitektur und Steifigkeit",
+"teilnehmer": "26 Studien (24 in Meta-Analyse), gemischte Populationen",
+"ergebnis": "Steifigkeit ES −0,19 (−0,77 bis 0,39); Faszikellänge ES −0,09 (−0,37 bis 0,20); Fiederungswinkel ES 0,02"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Nach sechs Wochen regelmäßigem Dehnen kommst du mit den Fingern deutlich näher zum Boden. Warum klappt das meistens?",
+"richtig": "Dein Körper gewöhnt sich besser an das starke Zuggefühl",
+"falsch": [
+"Deine Muskeln sind dauerhaft einige Zentimeter länger geworden",
+"Deine Sehnen haben sich dauerhaft gedehnt wie ein Gummiband",
+"Die Muskelspannung hat sich dauerhaft fast vollständig gelöst"
+],
+"warum": "In 3 bis 8 Wochen änderten sich Muskelfasern und Steifigkeit nicht – der Fortschritt kam vor allem durch höhere Dehnungstoleranz."
+},
+"plus": {
+"frage": "Ein Trainingspartner dehnt seit 6 Wochen täglich, um seine Beinrückseite strukturell zu verlängern. Wie ordnest du das ein?",
+"richtig": "Mehr ROM entsteht hier über Dehntoleranz, nicht über Faserlänge",
+"falsch": [
+"Nach 6 Wochen wachsen die Muskelfasern nachweislich messbar",
+"Die Muskelsteifigkeit sinkt schon nach wenigen Wochen dauerhaft",
+"Ohne Faserverlängerung ist gar kein Gewinn an ROM möglich"
+],
+"warum": "Über 3–8 Wochen verändert Dehnen weder Faszikellänge noch Muskelsteifigkeit signifikant; der ROM-Gewinn ist primär sensorisch."
+},
+"labor": {
+"frage": "Eine Meta-Analyse (24 Studien) prüfte 3–8 Wochen Dehntraining auf Steifigkeit, Faszikellänge und Fiederungswinkel. Welche Theorie stützt das Ergebnis?",
+"richtig": "Die sensorische Theorie einer erhöhten Dehnungstoleranz",
+"falsch": [
+"Die strukturelle Verlängerung von Faszikeln in wenigen Wochen",
+"Eine deutliche Abnahme des Fiederungswinkels der Muskulatur",
+"Eine dauerhafte Senkung der passiven Muskelsteifigkeit"
+],
+"warum": "Alle strukturellen Parameter lagen nahe null (ES −0,19 bis 0,02), sodass die ROM-Zunahme primär über nozizeptive Anpassung erklärt wird."
+}
+}
+},
+{
+"id": "WAR-110",
+"karte": {
+"kopf": "Verschiedene Gruppen · Studien zusammengefasst",
+"titel": "Dehnen macht Muskeln und Sehnen nur kurz weicher, nicht dauerhaft",
+"titel_hervor": "nur kurz weicher",
+"setup": "Eine große Auswertung verglich, wie sich einmaliges und mehrwöchiges Haltedehnen auf die Steifigkeit von Muskeln und Sehnen auswirken.",
+"zahl": null,
+"kern": [
+"Direkt nach rund vier Minuten Haltedehnen gab das Gewebe spürbar leichter nach.",
+"Über mehrere Wochen betrachtet blieb die Grundsteifigkeit im Schnitt unverändert.",
+"Zwischen Männern und Frauen zeigten sich dabei keine nachweisbaren Unterschiede."
+],
+"grenze": "Bei Programmen über mehr als zwölf Wochen gibt es einzelne Hinweise auf weichere Waden – insgesamt fehlt aber ein klarer Effekt.",
+"fuer_dich": "Willst du Gewebe langfristig anpassungsfähiger machen? Setze auf Krafttraining über den vollen Weg statt nur auf passives Dehnen.",
+"labor": {
+"design": "Systematisches Review und Meta-Analyse, akutes vs. langfristiges statisches Dehnen (3–12 Wochen)",
+"teilnehmer": "Allgemeinbevölkerung und Trainierte, Männer und Frauen",
+"ergebnis": "Akut reduzierte Steifigkeit (ca. 240 s Dehnung); langfristig kein signifikanter gepoolter Effekt"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Nach einer längeren Dehneinheit fühlen sich deine Beine erst mal lockerer an. Bleiben Muskeln und Sehnen durch wochenlanges Dehnen auch dauerhaft weicher?",
+"richtig": "Im Schnitt nicht – die Lockerung hält vor allem kurzfristig an",
+"falsch": [
+"Ja, nach einigen Wochen sinkt die Spannung dauerhaft sehr stark",
+"Nein, Dehnen hat nicht einmal direkt danach einen spürbaren Effekt",
+"Das klappt dauerhaft nur bei Frauen, nicht aber bei Männern"
+],
+"warum": "Einzelnes Dehnen von rund vier Minuten senkt die Steifigkeit kurzfristig, mehrwöchiges Dehnen veränderte sie im Mittel nicht."
+},
+"plus": {
+"frage": "Du möchtest deine Muskel-Sehnen-Struktur langfristig anpassen, nicht nur vorübergehend lockern. Wie gehst du im Training am sinnvollsten vor?",
+"richtig": "Krafttraining über den vollen Bewegungsumfang statt nur passiv dehnen",
+"falsch": [
+"Jeden Tag genau vier Minuten statisch dehnen für dauerhaften Umbau",
+"Passives Dehnen ganz weglassen, weil es nicht mal akut wirkt",
+"Vor jedem Satz vier Minuten statisch dehnen, um Sehnen zu stärken"
+],
+"warum": "Langfristiges passives Dehnen verändert die Gewebesteifigkeit im Schnitt nicht; für echte Anpassung ist Krafttraining über Full ROM besser."
+},
+"labor": {
+"frage": "Eine Meta-Analyse verglich akutes und chronisches statisches Dehnen auf die passive Muskel-Sehnen-Steifigkeit. Welches Muster zeigte sich?",
+"richtig": "Kurzfristige Senkung nach langem Dehnen, aber kein Langzeiteffekt",
+"falsch": [
+"Kein akuter Effekt, jedoch starke Steifigkeitsabnahme nach drei Wochen",
+"Signifikante Langzeit-Senkung ausschließlich bei weiblichen Gruppen",
+"Sowohl akut als auch chronisch stieg die passive Steifigkeit klar an"
+],
+"warum": "Direkt nach rund 240 s Dehnen sank die Steifigkeit, während gepoolte Langzeitdaten über 3–12 Wochen keinen signifikanten Effekt zeigten."
+}
+}
+},
+{
+"id": "WAR-111",
+"karte": {
+"kopf": "26.610 Sportler · 25 Studien zusammengefasst",
+"titel": "Krafttraining senkt das Verletzungsrisiko stark – Dehnen allein nicht",
+"titel_hervor": "senkt das Verletzungsrisiko stark",
+"setup": "Eine große Auswertung aus 25 Studien mit über 26.000 Sportlern verglich, wie gut Dehnen, Kraft- und Gleichgewichtstraining Verletzungen vorbeugen.",
+"zahl": {
+"label": "Weniger Sportverletzungen mit Krafttraining",
+"wert": "−69 %",
+"alltag": "Dehnen allein brachte keinen Schutz"
+},
+"kern": [
+"Krafttraining halbierte im Schnitt auch die typischen Überlastungsverletzungen.",
+"Gleichgewichts- und Koordinationstraining senkte das Verletzungsrisiko ebenfalls deutlich.",
+"Wer sich früher schon verletzt hat, trägt trotzdem weiterhin das höchste Risiko."
+],
+"grenze": "Die Daten bündeln viele Sportarten und Verletzungsarten – für einzelne Gelenke oder Spezialfälle gelten sie nicht automatisch.",
+"fuer_dich": "Willst du beim Sport seltener ausfallen? Plane 2–3 Krafteinheiten pro Woche ein, statt dich nur auf Dehnroutinen zu verlassen.",
+"labor": {
+"design": "Systematisches Review und Meta-Analyse aus 25 RCTs, Dehnen vs. Krafttraining vs. Propriozeption",
+"teilnehmer": "26.610 Teilnehmende mit 3.464 erfassten Verletzungen",
+"ergebnis": "Krafttraining RR 0,315 (Sportverletzungen, ca. −69 %) u. RR 0,527 (Überlastung); Propriozeption RR 0,55; Dehnen RR 0,963"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Viele dehnen sich vor oder nach dem Laufen, um Verletzungen zu vermeiden. Was schützt laut großen Vergleichsstudien deutlich besser?",
+"richtig": "Regelmäßiges Krafttraining über die Woche verteilt",
+"falsch": [
+"Tägliches Dehnen schützt genauso gut wie Krafttraining",
+"Nur intensives Dehnen senkt Überlastungsverletzungen klar",
+"Sportverletzungen lassen sich durch Training kaum beeinflussen"
+],
+"warum": "Über 25 Studien bot Dehnen allein keinen messbaren Schutz, während Krafttraining das Risiko im Schnitt um fast zwei Drittel senkte."
+},
+"plus": {
+"frage": "Du bereitest dich auf eine intensive Ausdauer- oder Hybrid-Saison vor und willst Verletzungen vorbeugen. Wo solltest du deine Zusatzzeit zuerst investieren?",
+"richtig": "In regelmäßige Krafteinheiten statt isolierter Dehnroutinen",
+"falsch": [
+"In tägliches statisches Dehnen statt zusätzlichem Krafttraining",
+"Ausschließlich in mehr lockeres Grundlagentempo ohne Kraftreize",
+"In langes Dehnen nach jeder Einheit, weil es Überlastung halbiert"
+],
+"warum": "Krafttraining senkte Sportverletzungen um rund zwei Drittel und Überlastungen fast um die Hälfte; Dehnen allein zeigte keinen Schutz."
+},
+"labor": {
+"frage": "In einer Meta-Analyse aus 25 RCTs (n=26.610) wurden Präventionsprogramme gegen Verletzungen verglichen. Wie schnitten Dehnen und Krafttraining ab?",
+"richtig": "Krafttraining senkte das Risiko stark, Dehnen blieb nicht signifikant",
+"falsch": [
+"Dehnen und Krafttraining erreichten nahezu identische Risikoreduktionen",
+"Nur Propriozeption wirkte, während Krafttraining keinen Effekt hatte",
+"Dehnen schützte stark vor Überlastung, Krafttraining nur akut"
+],
+"warum": "Krafttraining lag bei RR 0,315 (Sportverletzungen) und 0,527 (Überlastung), während Dehnen mit RR 0,963 keinen signifikanten Schutz bot."
+}
+}
+},
+{
+"id": "WAR-112",
+"karte": {
+"kopf": "Gemischte Gruppen · 25 Studien ausgewertet",
+"titel": "Dehnen macht beweglicher, bringt aber kaum Muskelaufbau",
+"titel_hervor": "bringt aber kaum Muskelaufbau",
+"setup": "Eine Auswertung aus 25 Studien prüfte, ob regelmäßiges statisches Dehnen neben der Beweglichkeit auch das Muskelwachstum steigert.",
+"zahl": null,
+"kern": [
+"Die Beweglichkeit verbesserte sich im Schnitt spürbar und zuverlässig.",
+"Für mehr Muskelmasse reichte normales Dehnen kaum – dazu bräuchte es extrem viel Zeit.",
+"Wer beweglicher wurde, baute deshalb nicht automatisch mehr Muskeln auf."
+],
+"grenze": "Spürbares Muskelwachstum durch Dehnen zeigte sich nur bei teils 30 bis 120 Minuten hartem Dehnen pro Tag – wenig alltagstauglich.",
+"fuer_dich": "Willst du Muskeln aufbauen und beweglich bleiben? Setze zuerst auf Krafttraining statt auf stundenlange Dehnprogramme.",
+"labor": {
+"design": "Systematisches Review und Multilevel-Meta-Analyse, chronisches statisches Dehnen auf ROM u. Hypertrophie",
+"teilnehmer": "25 Studien mit Untrainierten, Trainierten und Frauen",
+"ergebnis": "Hypertrophie SMD 0,118 (95 % PI −0,233 bis 0,469); ROM β=0,698 (p<0,001); Korrelation ROM–Hypertrophie β=0,036"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Kannst du mit einem normalen täglichen Dehnprogramm ähnlich gut Muskeln aufbauen wie mit Krafttraining?",
+"richtig": "Nein, normales Dehnen bringt fast keinen Muskelaufbau",
+"falsch": [
+"Ja, ab fünf Minuten pro Tag wachsen Muskeln spürbar",
+"Ja, besonders bei Einsteigern wirkt Dehnen wie Hanteltraining",
+"Nein, Dehnen verbessert nicht einmal die Beweglichkeit"
+],
+"warum": "Normales Dehnen macht beweglicher, hat aber kaum Effekt auf die Muskelmasse – dazu wären extrem lange, harte Dehneinheiten nötig."
+},
+"plus": {
+"frage": "Du willst gleichzeitig Hypertrophie und mehr Beweglichkeit erreichen, hast aber nur begrenzt Zeit. Worauf setzt du den Schwerpunkt?",
+"richtig": "Primär auf Krafttraining statt langwieriger statischer Dehnprotokolle",
+"falsch": [
+"Auf 30 Minuten intensives Dehnen täglich als Ersatz für Arbeitssätze",
+"Auf lockeres Dehnen, weil mehr ROM direkt zu mehr Muskelmasse führt",
+"Auf kurze Dehnserien, da sie Hypertrophie genauso effizient anregen"
+],
+"warum": "Der Hypertrophie-Effekt von Dehnen ist insgesamt trivial und korreliert nicht mit dem ROM-Gewinn – Krafttraining ist klar effizienter."
+},
+"labor": {
+"frage": "Eine Multilevel-Meta-Analyse (25 Studien) prüfte chronisches statisches Dehnen auf ROM und Muskelquerschnitt. Was zeigte der Zusammenhang beider Effekte?",
+"richtig": "Moderater ROM-Gewinn, trivialer Muskeleffekt und keine Korrelation",
+"falsch": [
+"Starker Muskelzuwachs parallel zum Anstieg der Gelenkbeweglichkeit",
+"Deutliche Hypertrophie vor allem bei Untrainierten schon nach kurzer Zeit",
+"Negativer Zusammenhang: Mehr Beweglichkeit bremste den Muskelaufbau"
+],
+"warum": "ROM stieg moderat (β=0,698), Hypertrophie blieb trivial (SMD 0,118) und beide Effekte hingen nicht zusammen (β=0,036, p=0,638)."
+}
+}
+},
+{
+"id": "WAR-113",
+"karte": {
+"kopf": "Verschiedene Gruppen · 26 Studien ausgewertet",
+"titel": "Die Faszienrolle lockert kurzfristig ähnlich gut wie Dehnen",
+"titel_hervor": "ähnlich gut wie Dehnen",
+"setup": "Eine Auswertung aus 26 Studien verglich einmaliges Ausrollen mit der Faszienrolle gegen Nichtstun, Dehnen und Rollen mit Vibration.",
+"zahl": null,
+"kern": [
+"Der Beweglichkeitsschub war spürbar, hielt aber meist nur 10 bis 30 Minuten an.",
+"Teurere Rollen mit Vibration brachten im Schnitt keinen klar belegten Vorteil.",
+"Bei Frauen und gemischten Gruppen fiel der akute Effekt größer aus als bei Männern."
+],
+"grenze": "Das Ergebnis gilt nur für den Moment direkt nach dem Rollen – ob man langfristig beweglicher bleibt, prüfte diese Auswertung nicht.",
+"fuer_dich": "Magst du vor dem Training lieber die Rolle als Dehnen? Roll 30 bis 120 Sekunden pro Muskel langsam aus – ohne Vibration reicht.",
+"labor": {
+"design": "Systematisches Review und Multilevel-Meta-Analyse, akutes Foam Rolling vs. Kontrolle, Dehnen u. Vibration",
+"teilnehmer": "26 Studien mit Frauen, Männern und Trainierten",
+"ergebnis": "vs. Kontrolle SMD 0,74 (p=0,0002); vs. Dehnen SMD −0,02 (p=0,95); Vibration vs. Standard SMD 0,66 (p=0,32)"
+}
+},
+"quiz": {
+"basis": {
+"frage": "Du überlegst, dir für das Aufwärmen eine teure Faszienrolle mit Vibration zu kaufen, um beweglicher zu werden. Was zeigen Vergleichsstudien?",
+"richtig": "Eine normale Rolle hilft akut ähnlich wie Dehnen – Vibration ist kein Muss",
+"falsch": [
+"Nur Rollen mit Vibration verbessern die Beweglichkeit vor dem Sport",
+"Faszienrollen wirken deutlich schwächer als kurzes Dehnen",
+"Einmaliges Ausrollen hält die Gelenke den ganzen Tag über locker"
+],
+"warum": "Normales Ausrollen steigerte die Beweglichkeit ähnlich stark wie Dehnen für rund 10–30 Minuten; Vibration brachte keinen gesicherten Vorteil."
+},
+"plus": {
+"frage": "Du möchtest im Warm-up Foam Rolling statt Dehnen einsetzen, um deine Hüft-ROM kurzfristig zu öffnen. Wie wendest du es sinnvoll an?",
+"richtig": "Ruhig und kontrolliert bis zu zwei Minuten pro Muskel ausrollen",
+"falsch": [
+"Mindestens fünf Minuten sehr schnell über jeden Muskel rollen",
+"Unbedingt eine Vibrationsrolle nutzen, da Standardrollen kaum wirken",
+"Schon eine Stunde vor Trainingsbeginn rollen, damit der Effekt greift"
+],
+"warum": "30–120 Sekunden ruhiges Rollen (2–4 s je Bahn) erzielten denselben akuten ROM-Effekt wie Dehnen, halten aber meist nur 10–30 Minuten."
+},
+"labor": {
+"frage": "Eine Multilevel-Meta-Analyse (26 Studien) untersuchte akutes Foam Rolling auf die Gelenkbeweglichkeit. Welcher Moderator erwies sich als signifikant?",
+"richtig": "Geschlecht: Männer zeigten im Mittel kleinere Effekte als Frauen",
+"falsch": [
+"Rollgeschwindigkeit: Schnelles Rollen war klar überlegen",
+"Vibration: Vibrationsrollen waren signifikant besser als Standardrollen",
+"Körpergewicht: Höherer BMI verstärkte den Effekt deutlich"
+],
+"warum": "BMI, Tempo, Dauer und Vibration waren nicht signifikant, während Männer signifikant geringere akute ROM-Zuwächse hatten als Frauen (p<0,05)."
+}
+}
+}
+]
